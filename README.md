@@ -1,4 +1,4 @@
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=digabi/exam-engine&identifier=166815626)](https://dependabot.com)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=digabi/exam-engine&identifier=223358056)](https://dependabot.com)
 
 Engine for the MEX exam format.
 
