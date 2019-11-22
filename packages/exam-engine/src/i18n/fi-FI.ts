@@ -8,6 +8,7 @@ export const fi_FI = {
   'exam-total': 'Koe yhteensä',
   material: 'Aineisto',
   material_plural: 'Aineistot',
+  'external-material-title': 'Aineisto',
   question: '{{displayNumber}}',
   part: 'Osa {{displayNumber}}:',
   points: '{{count}} p.',

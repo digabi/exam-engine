@@ -3,6 +3,7 @@ import { ExamTranslations } from './fi-FI'
 export const PA: ExamTranslations = {
   'exam-total': 'Puntuación total',
   material: 'Material',
+  'external-material-title': 'Material',
   part: 'Parte {{displayNumber}}:',
   'points-screen-reader': '{{count}} punto',
   'points-screen-reader_plural': '{{count}} puntos',

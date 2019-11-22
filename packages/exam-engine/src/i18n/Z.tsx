@@ -3,6 +3,7 @@ import { ExamTranslations } from './fi-FI'
 export const Z: ExamTranslations = {
   'exam-total': 'Iskkus oktiibuot',
   material: 'Ávdnasat',
+  'external-material-title': 'Ávdnasat',
   part: 'Oassi {{displayNumber}}:',
   points: '{{count}} č.',
   'points-screen-reader': '{{count}} čuokkis',

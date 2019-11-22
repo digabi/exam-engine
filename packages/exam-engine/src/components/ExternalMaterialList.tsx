@@ -46,7 +46,7 @@ function ExternalMaterialList({ element, showTitle = true, forceRender = false }
 
   return (
     <div className="external-material-list e-mrg-b-4">
-      {showTitle && <div className="e-font-size-l e-semibold">{t('material')}</div>}
+      {showTitle && <div className="e-font-size-l e-semibold">{t('external-material-title')}</div>}
       <ol className="e-list-data e-pad-l-0 e-mrg-0">{renderChildNodes(element)}</ol>
     </div>
   )

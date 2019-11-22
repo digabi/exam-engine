@@ -5,6 +5,7 @@ export const sv_FI: Translations = {
   'exam-total': 'Provet sammanlagt',
   material: 'Material',
   material_plural: 'Material',
+  'external-material-title': 'Material',
   part: 'Del {{displayNumber}}:',
   question: '{{displayNumber}}',
   points: '{{count}} p.',

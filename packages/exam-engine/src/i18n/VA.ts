@@ -4,6 +4,7 @@ export const VA: ExamTranslations = {
   'exam-total': 'Весь экзамен',
   material: 'Материал',
   material_plural: 'Материал',
+  'external-material-title': 'Материал',
   part: 'Часть {{displayNumber}}:',
   points: '{{count}} балла',
   points_plural: '{{count}} баллов',

@@ -4,6 +4,7 @@ export const FA: ExamTranslations = {
   'exam-total': 'Total des points',
   material: 'Document',
   material_plural: 'Documents',
+  'external-material-title': 'Document',
   part: 'Partie {{displayNumber}} :',
   points: '{{count}} pt',
   points_plural: '{{count}} pts',

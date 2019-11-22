@@ -3,6 +3,7 @@ import { ExamTranslations } from './fi-FI'
 export const SA: ExamTranslations = {
   'exam-total': 'Die Prüfung insgesamt',
   material: 'Materialien',
+  'external-material-title': 'Materialien',
   part: 'Teil {{displayNumber}}:',
   points: '{{count}} P.',
   'points-screen-reader': '{{count}} Punkt',

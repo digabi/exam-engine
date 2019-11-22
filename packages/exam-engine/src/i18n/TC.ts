@@ -3,6 +3,7 @@ import { ExamTranslations } from './fi-FI'
 export const TC: ExamTranslations = {
   'exam-total': 'Punteggio complessivo',
   material: 'Materiale',
+  'external-material-title': 'Materiale',
   part: 'Parte {{displayNumber}}:',
   'points-screen-reader': '{{count}} punto',
   'points-screen-reader_plural': '{{count}} punti',
