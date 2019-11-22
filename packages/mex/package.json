@@ -17,7 +17,7 @@
     "unit-tests:ci": "JUNIT_REPORT_PATH=../../mex-mocha-report.xml mocha --reporter mocha-jenkins-reporter 'test/unit-test/*.ts?(x)'"
   },
   "dependencies": {
-    "@digabi/exam-engine": "^4.4.0",
+    "@digabi/exam-engine": "^4.4.1",
     "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
     "i18next": "^19.0.1",
