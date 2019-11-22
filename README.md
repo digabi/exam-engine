@@ -102,7 +102,7 @@ $ cd ..
 Offline version refers to a standalone version of an exam that can be viewed in web browser without
 additional tools.
 
-To create an offline versions into subdirectories of `tmp/`, use:
+To create offline versions into subdirectories of `tmp/`, use:
 
 ```
 $ yarn offline exams/MexDocumentation/MexDocumentation.xml tmp
@@ -110,7 +110,7 @@ $ yarn offline exams/MexDocumentation/MexDocumentation.xml tmp
 
 # Development
 
-The information in this section is only relevant for developers of the exam-engine.
+The information in this section is only relevant for developers of the exam-engine itself.
 
 ## Lint
 
