@@ -50,7 +50,7 @@ function parseExam(xml) {
  * @param {string} shuffleSecret The salt used for shuffling. Should be kept secret.
  * @param {boolean} removeHiddenElements If `true`, all elements marked with `hidden="true"` will be removed.
  * @param {boolean} generateGradingStructure
- * @returns {Promise<[{ xml: string, language: string, attachments: { filename: string, restricted: boolean }[], title: string, gradingStructure: any }]>}
+ * @returns {Promise<[{ xml: string, language: string, attachments: { filename: string, restricted: boolean }[], title: string, gradingStructure: any, date: string, examStructure: { examCode: string, examUuid: string, content: any, visuallyImpaired: boolean, scannerVersion: boolean, language: string } }]>}
  */
 async function masterExam(
   xml,
@@ -206,7 +206,7 @@ function generateHvpForLanguage(xml, targetLanguage) {
  * @param {string} shuffleSecret
  * @param {boolean} removeHiddenElements
  * @param {boolean} generateGradingStructure
- * @returns {Promise<{ xml: string, attachments: { filename: string, restricted: boolean }[], title: string, gradingStructure: any }>}
+ * @returns {Promise<{ xml: string, attachments: { filename: string, restricted: boolean }[], title: string, gradingStructure: any, date: string, examStructure: { examCode: string, examUuid: string, content: any, visuallyImpaired: boolean, scannerVersion: boolean, language: string } }>}
  */
 async function masterExamForLanguage(
   xml,
@@ -248,11 +248,31 @@ async function masterExamForLanguage(
 
   removeCorrectAnswers(doc)
 
+  const exam = doc.root()
+  const date = getAttr('date', exam)
+  const examCode = [getAttr('exam-code', exam), getAttr('day-code', exam)].filter(x => x).join('_')
+  const examUuid = getAttr('exam-uuid', exam)
+  const visuallyImpaired = false
+  const scannerVersion = false
+  const language = targetLanguage.split('-')[0]
+  const title = examTitle && examTitle.text().trim()
+
   return {
     xml: doc.toString(false),
     attachments: collectAttachments(doc),
-    title: examTitle && examTitle.text().trim(),
-    gradingStructure
+    title,
+    gradingStructure,
+    date,
+    examStructure: {
+      examCode,
+      examUuid,
+      content: {
+        title
+      },
+      visuallyImpaired,
+      scannerVersion,
+      language
+    }
   }
 }
 
