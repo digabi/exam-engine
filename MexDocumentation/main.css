@@ -1485,6 +1485,20 @@
   flex: none;
   width: 100%;
 }
+.e-exam a,
+.e-exam .e-link-button {
+  color: #359bb7;
+  text-decoration: none;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+.e-exam a:hover,
+.e-exam .e-link-button:hover {
+  text-decoration: underline;
+  color: #288199;
+}
 .e-exam .e-list-plain {
   list-style: none;
 }
@@ -1588,20 +1602,6 @@
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 1rem;
-}
-.e-exam a,
-.e-exam .e-link-button {
-  color: #359bb7;
-  text-decoration: none;
-  border: none;
-  background-color: inherit;
-  padding: 0;
-  cursor: pointer;
-}
-.e-exam a:hover,
-.e-exam .e-link-button:hover {
-  text-decoration: underline;
-  color: #288199;
 }
 .e-exam .e-width-full {
   width: 100%;
