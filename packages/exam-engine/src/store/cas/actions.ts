@@ -1,4 +1,5 @@
-import { action, createAction } from 'typesafe-actions'
+import { action, deprecated } from 'typesafe-actions'
+const { createAction } = deprecated
 
 export const allowCas = createAction('ALLOW_CAS')
 
