@@ -141,9 +141,6 @@ function mapStateToprops(state: AppState, { element }: ExamComponentProps) {
   return { answer }
 }
 
-export default connect(
-  mapStateToprops,
-  {
-    saveAnswer: actions.saveAnswer
-  }
-)(DropdownAnswer)
+export default connect(mapStateToprops, {
+  saveAnswer: actions.saveAnswer
+})(DropdownAnswer)

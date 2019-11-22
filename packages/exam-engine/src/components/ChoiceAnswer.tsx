@@ -128,9 +128,6 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   return { answer, isSaved }
 }
 
-export default connect(
-  mapStateToProps,
-  {
-    saveAnswer: actions.saveAnswer
-  }
-)(ChoiceAnswer)
+export default connect(mapStateToProps, {
+  saveAnswer: actions.saveAnswer
+})(ChoiceAnswer)

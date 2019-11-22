@@ -218,12 +218,9 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  {
-    saveAnswer: actions.saveAnswer,
-    selectAnswerVersion: actions.selectAnswerVersion,
-    answerFocused: actions.answerFocused,
-    answerBlurred: actions.answerBlurred
-  }
-)(TextAnswer)
+export default connect(mapStateToProps, {
+  saveAnswer: actions.saveAnswer,
+  selectAnswerVersion: actions.selectAnswerVersion,
+  answerFocused: actions.answerFocused,
+  answerBlurred: actions.answerBlurred
+})(TextAnswer)
