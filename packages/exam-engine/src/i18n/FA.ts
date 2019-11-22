@@ -12,7 +12,7 @@ export const FA: ExamTranslations = {
   'points-screen-reader_plural': '{{count}} points',
   references: {
     heading: 'Sources',
-    source: 'D&apos;après',
+    source: "D'après",
     date: 'Publié :',
     'reference-date': 'Téléchargé de',
     translator: 'Traduction :',
