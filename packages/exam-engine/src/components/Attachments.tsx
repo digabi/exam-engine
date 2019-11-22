@@ -21,15 +21,15 @@ const renderChildNodes = createRenderChildNodes({
   section: withSectionContext(RenderChildNodes)
 })
 
-function Attachments({ doc, language, resolveAttachment }: ExamProps) {
-  const root = doc.documentElement
+function Attachments({}: ExamProps) {
+  const { root, language, date, dateTimeFormatter, resolveAttachment } = useContext(ExamContext)
   const examTitle = findChildElementByLocalName(root, 'exam-title')!
   const examStylesheet = root.getAttribute('exam-stylesheet')
   const externalMaterial = findChildElementByLocalName(root, 'external-material')
-  const { date, dateTimeFormatter } = useContext(ExamContext)
-  const { t } = useTranslation()
 
   initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
+  const { t } = useTranslation()
+
   useEffect(scrollToHash, [])
 
   return (
