@@ -30,7 +30,7 @@
     "child-process-promise": "^2.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "date-fns": "^2.8.0",
+    "date-fns": "^2.8.1",
     "dexie": "^2.0.4",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.7.0",
