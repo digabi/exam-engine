@@ -1,0 +1,144 @@
+{
+  "questions": [
+    {
+      "maxScore": 2,
+      "displayNumber": "1.1.",
+      "id": 1,
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 100000,
+          "type": "choice",
+          "text": "",
+          "displayNumber": "1.1.",
+          "options": [
+            {
+              "id": 100001,
+              "text": "Lorem",
+              "correct": true,
+              "score": 2
+            },
+            {
+              "id": 100002,
+              "text": "Ipsum",
+              "correct": false,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "maxScore": 3,
+      "displayNumber": "1.2.",
+      "id": 2,
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 200000,
+          "type": "choice",
+          "text": "",
+          "displayNumber": "1.2.",
+          "options": [
+            {
+              "id": 200001,
+              "text": "Dolor",
+              "correct": true,
+              "score": 3
+            },
+            {
+              "id": 200002,
+              "text": "Sit",
+              "correct": false,
+              "score": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "maxScore": 5,
+      "displayNumber": "1.3.",
+      "id": 3,
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 300000,
+          "type": "choice",
+          "text": "",
+          "displayNumber": "1.3.",
+          "options": [
+            {
+              "id": 300001,
+              "text": "Esse",
+              "correct": true,
+              "score": 5
+            },
+            {
+              "id": 300002,
+              "text": "Exercitation",
+              "correct": false,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "maxScore": 6,
+      "displayNumber": "2.1.",
+      "id": 4,
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 400000,
+          "type": "choice",
+          "text": "",
+          "displayNumber": "2.1.",
+          "options": [
+            {
+              "id": 400001,
+              "text": "Aliqua",
+              "correct": true,
+              "score": 6
+            },
+            {
+              "id": 400002,
+              "text": "Anim",
+              "correct": false,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "maxScore": 7,
+      "displayNumber": "3.1.",
+      "id": 5,
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 500000,
+          "type": "choice",
+          "text": "",
+          "displayNumber": "3.1.",
+          "options": [
+            {
+              "id": 500001,
+              "text": "Pariatur",
+              "correct": false,
+              "score": 0
+            },
+            {
+              "id": 500002,
+              "text": "Culpa",
+              "correct": true,
+              "score": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

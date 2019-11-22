@@ -1,0 +1,7 @@
+#!/bin/bash
+
+. ~/.nvm/nvm.sh
+EXAM_ENGINE_DIR=$(realpath ~/exam-engine/)
+nvm use "$(cat "$EXAM_ENGINE_DIR"/.nvmrc)"
+
+"$EXAM_ENGINE_DIR"/scripts/start.sh koe.xml

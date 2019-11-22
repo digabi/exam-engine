@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mex/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-code="A" day-code="X">
+    <e:languages>
+        <e:language>fi-FI</e:language>
+        <e:language>sv-FI</e:language>
+    </e:languages>
+    <e:exam-title />
+    <e:exam-instruction />
+    <e:section>
+        <e:section-title />
+    </e:section>
+</e:exam>

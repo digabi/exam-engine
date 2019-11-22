@@ -1,0 +1,2 @@
+--require ./test/require-ts.js --watch-extensions js,xml,ts,tsx
+--require ./test/setup-enzyme.ts

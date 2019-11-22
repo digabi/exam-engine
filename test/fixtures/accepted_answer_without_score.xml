@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd exam.xsd"
+        exam-schema-version="0.1" date="2018-09-29" exam-code="FF" exam-stylesheet="custom.css">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+  </e:languages>
+  <e:exam-title>Produktiivinen aukko ilman pisteitä</e:exam-title>
+  <e:section>
+    <e:section-title>Ensimmäinen osa</e:section-title>
+    <e:question>
+      <e:question-title>Produktiivinen aukko</e:question-title>
+      <e:scored-text-answers>
+        <e:scored-text-answer>
+          <e:accepted-answer>Pisteetön vaihtoehto</e:accepted-answer>
+        </e:scored-text-answer>
+      </e:scored-text-answers>
+    </e:question>
+  </e:section>
+</e:exam>

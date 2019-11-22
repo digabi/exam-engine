@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "maxScore": 2,
+      "displayNumber": "1.1.",
+      "id": 1,
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 100000,
+          "type": "choice",
+          "text": "",
+          "displayNumber": "1.1.",
+          "options": [
+            {
+              "id": 100001,
+              "text": "Lorem",
+              "correct": true,
+              "score": 2
+            },
+            {
+              "id": 100002,
+              "text": "Ipsum",
+              "correct": false,
+              "score": 0
+            },
+            {
+              "id": 100003,
+              "text": "Dolor",
+              "correct": false,
+              "score": 0
+            },
+            {
+              "id": 100004,
+              "text": "Sit",
+              "correct": false,
+              "score": -1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

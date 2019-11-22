@@ -1,0 +1,93 @@
+code,
+.code {
+  line-height: 1.5rem;
+  background-color: #f6f8fa;
+  border-radius: 0.25rem;
+  color: #000;
+}
+
+.e-exam .code {
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+
+summary {
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+div.tree div {
+  padding-left: 1rem;
+  border-left: 2px solid #c6e6f2;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+div.tree div:hover {
+  border-color: #88d0d0;
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.marquee > * {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.rainbow {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.example {
+  border: 0.25rem solid #f6f8fa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.code + .example {
+  margin-top: -1rem;
+}
+
+.spacing-example span {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid grey;
+}
+
+.grid-example .e-column {
+  background-color: darkcyan;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.warning-box {
+  border: 1px solid #7c5c5c;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #ffb1b1;
+  color: rgb(190, 0, 0);
+}

@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "type": "text",
+      "id": 1,
+      "displayNumber": "1.1",
+      "maxScore": 1
+    },
+    {
+      "type": "text",
+      "id": 2,
+      "displayNumber": "1.2",
+      "maxScore": 1
+    },
+    {
+      "type": "text",
+      "id": 3,
+      "displayNumber": "2.1.1",
+      "maxScore": 3
+    },
+    {
+      "type": "text",
+      "id": 4,
+      "displayNumber": "2.1.2",
+      "maxScore": 7
+    },
+    {
+      "type": "text",
+      "id": 5,
+      "displayNumber": "2.1.3",
+      "maxScore": 2
+    },
+    {
+      "type": "text",
+      "id": 6,
+      "displayNumber": "2.2.1",
+      "maxScore": 20
+    },
+    {
+      "type": "text",
+      "id": 7,
+      "displayNumber": "2.2.2",
+      "maxScore": 3
+    }
+  ]
+}

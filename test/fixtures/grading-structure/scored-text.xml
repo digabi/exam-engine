@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../../packages/mex/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="EA">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+  </e:languages>
+  <e:exam-title>Laborum esse consequat magna elit</e:exam-title>
+  <e:table-of-contents />
+  <e:section>
+    <e:section-title>Anim esse incididunt incididunt culpa</e:section-title>
+    <e:question>
+      <e:question-title>Ipsum pariatur reprehenderit tempor enim Lorem amet adipisicing ullamco</e:question-title>
+      <e:scored-text-answer max-score="6">
+        <e:accepted-answer score="1">minim</e:accepted-answer>
+        <e:accepted-answer score="3">incididunt</e:accepted-answer>
+        <e:accepted-answer score="-1">laboris</e:accepted-answer>
+      </e:scored-text-answer>
+    </e:question>
+    <e:question>
+      <e:question-title>Non ad occaecat pariatur nulla cupidatat dolor sit cillum veniam cillum deserunt cillum sunt</e:question-title>
+      <e:scored-text-answer>
+        <e:accepted-answer score="1">minim</e:accepted-answer>
+        <e:accepted-answer score="3">incididunt</e:accepted-answer>
+        <e:accepted-answer score="-1">laboris</e:accepted-answer>
+      </e:scored-text-answer>
+    </e:question>
+  </e:section>
+  <e:section>
+    <e:section-title>Duis nisi est dolor amet magna est</e:section-title>
+  </e:section>
+</e:exam>

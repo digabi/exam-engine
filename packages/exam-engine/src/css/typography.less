@@ -1,0 +1,181 @@
+.e-exam {
+  // Font weight
+  font-weight: 400;
+
+  .e-sans-serif {
+    font-family: 'Noto Sans', sans-serif;
+  }
+
+  .e-monospace,
+  code,
+  pre {
+    font-family: 'Noto Mono', monospace;
+  }
+
+  // Override form element defaults
+  input,
+  select,
+  textarea,
+  button {
+    .e-sans-serif;
+  }
+
+  // Font weights
+  .e-light {
+    font-weight: 300;
+  }
+
+  .e-normal {
+    font-weight: 400;
+  }
+
+  .e-semibold {
+    font-weight: 600;
+  }
+
+  // Base margins for block elements
+  p,
+  ol,
+  ul,
+  dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  // Prevent superscript and subscript from changing the line-height
+  sub,
+  sup {
+    line-height: 0;
+    font-size: 0.75em;
+  }
+
+  // Base font sizes
+  .e-font-size-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .e-font-size-s {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .e-font-size-m {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .e-font-size-l {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .e-font-size-xl {
+    font-size: 1.3125rem;
+    line-height: 2rem;
+  }
+
+  .e-font-size-xxl {
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+  }
+
+  .e-font-size-xxxl {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  // Headings
+
+  h1  {
+    .e-font-size-xxxl();
+    .e-light();
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    .e-font-size-xxl();
+    .e-normal();
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    .e-font-size-xl();
+    .e-semibold();
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  h4  {
+    .e-font-size-l();
+    .e-semibold();
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    .e-font-size-m();
+    .e-semibold();
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  h6  {
+    .e-font-size-m();
+    .e-semibold();
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  // Text decorations
+
+  .e-underline {
+    text-decoration: underline;
+  }
+
+  // Other typographic elements
+
+  strong,
+  b,
+  th {
+    .e-semibold();
+  }
+
+  .e-exam-separator {
+    border: 0;
+    border-top: 1px solid @colors[lightblue-shade];
+    box-shadow: 0 -1px 1px 0.5px @colors[lightblue];
+    margin: 0 -3rem 2rem -3rem;
+  }
+
+  .e-italic {
+    font-style: italic;
+  }
+
+  blockquote {
+    padding: 0 1.25rem;
+    border-left: 0.5rem solid @colors[midgrey];
+  }
+
+  .e-text-gap {
+    display: inline-block;
+    text-align: center;
+    min-width: 10rem;
+    box-shadow: inset 0px -4px 0px -3px #111;
+    margin: 0 0.125rem;
+  }
+
+  // Utility classes
+
+  .e-nowrap {
+    white-space: nowrap;
+  }
+
+  .e-break-word {
+    word-break: break-word;
+  }
+}

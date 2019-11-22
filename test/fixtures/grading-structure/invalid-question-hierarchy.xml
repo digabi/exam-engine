@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../../packages/mex/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="EA">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+  </e:languages>
+  <e:exam-title>Laborum esse consequat magna elit</e:exam-title>
+  <e:exam-instruction>
+    <p>
+    Anim eiusmod id duis est ipsum sunt occaecat nisi aliquip cillum. Proident mollit nulla nostrud dolor culpa esse aliqua
+    exercitation qui magna sunt proident occaecat. Aute non cillum duis quis exercitation in laboris nulla esse. Amet aliqua
+    minim fugiat nulla reprehenderit tempor do.
+    </p>
+  </e:exam-instruction>
+  <e:table-of-contents />
+  <e:section>
+    <e:section-title>Quis culpa eiusmod tempor eu anim proident excepteur velit do voluptate laborum anim consequat magna</e:section-title>
+    <e:question>
+      <e:question-title>Labore qui elit deserunt excepteur nisi aliquip</e:question-title>
+
+      <e:text-answer max-score="6" type="single-line" />
+
+      <e:question>
+        <e:question-title>Occaecat pariatur elit aliqua pariatur incididunt sunt nostrud sunt sunt nulla cupidatat quis commodo dolore</e:question-title>
+
+        <div>
+          <div>
+            <p>
+              Enim adipisicing pariatur occaecat consectetur deserunt commodo consequat ad anim voluptate pariatur
+              aliqua laboris. Voluptate veniam exercitation cillum dolor laborum laborum nulla ex amet commodo.
+              </p>
+            <e:text-answer max-score="4" type="single-line" />
+          </div>
+        </div>
+
+        <e:text-answer max-score="2" type="multi-line" />
+
+        <e:text-answer max-score="5" type="single-line" />
+
+        <div>
+          <e:text-answer max-score="7" type="multi-line" />
+        </div>
+
+      </e:question>
+
+      <e:question>
+        <e:question-title>Duis id aute esse veniam</e:question-title>
+
+        <e:text-answer max-score="10" type="rich-text" />
+
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>Nostrud cillum veniam ipsum sit.</e:question-title>
+
+      <e:text-answer max-score="12" type="rich-text" />
+
+      <e:question>
+        <e:question-title>Aliquip laborum commodo eiusmod in qui culpa dolore.</e:question-title>
+
+        <e:text-answer max-score="13" type="rich-text" />
+
+      </e:question>
+
+    </e:question>
+
+  </e:section>
+  <e:section>
+    <e:section-title>Duis nisi est dolor amet magna est</e:section-title>
+
+    <e:question>
+      <e:question-title>Officia duis enim minim officia</e:question-title>
+      <e:text-answer max-score="14" type="rich-text" />
+    </e:question>
+
+  </e:section>
+</e:exam>

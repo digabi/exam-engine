@@ -1,0 +1,36 @@
+.e-exam {
+  caption {
+    .e-exam.e-semibold();
+    .e-exam.e-font-size-l();
+    .e-exam.e-text-left();
+    margin-bottom: 0.5rem;
+  }
+}
+
+// As an exception, do not put .e-table inside .e-exam to reduce its selector
+// specifity. This allow for easier overriding using other .e-foo classes.
+.e-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+
+  th,
+  td {
+    text-align: left;
+    border: 1px solid @colors[grey];
+    padding: 0.25rem 0.5rem;
+  }
+
+  &--borderless {
+    th,
+    td {
+      border: none;
+    }
+  }
+
+  &--zebra {
+    tbody tr:nth-child(odd){
+      background: rgba(0,0,0,0.06);
+    }
+  }  
+}

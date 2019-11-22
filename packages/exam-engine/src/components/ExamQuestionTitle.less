@@ -1,0 +1,10 @@
+.exam-question-title {
+  position: relative;
+  &__display-number--indented {
+    position: absolute;
+    width: 4em;
+    left: -$width;
+    text-align: right;
+    white-space: pre-wrap; // Ensure the trailing space doesn't get collapsed.
+  }
+}

@@ -1,0 +1,42 @@
+.e-exam {
+  .e-columns {
+    display: flex;
+
+    &--center-v {
+      align-items: center;
+    }
+    &--inline {
+      display: inline-flex;
+    }
+  }
+
+  .e-column {
+    flex: 1 1 0;
+  }
+
+  .e-column--auto {
+    flex: auto;
+  }
+
+  .e-column--narrow {
+    flex: none;
+  }
+
+  .e-column + .e-column {
+    margin-left: 1rem;
+    .desktop-small({
+      margin-left: 0.5rem;
+    })    
+  }
+
+  .e-column + .e-column--gapless {
+    margin-left: 0;
+  }
+
+  each(range(12), {
+    .e-column--@{value} {
+      flex: none;
+      width: (@value / 12 * 100%);
+    }
+  });
+}

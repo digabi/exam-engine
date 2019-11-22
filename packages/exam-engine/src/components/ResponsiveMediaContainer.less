@@ -1,0 +1,37 @@
+.e-exam {
+  .responsive-media-container {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    margin: 0;
+
+    &--bordered {
+      border: 1px solid @colors[lightgrey];
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+  }
+  .e-choice-answer-option--selected .responsive-media-container--bordered {
+    box-shadow: 0 0 0 1px @colors[link], inset 0 0 0 1px @colors[link];
+    border-color: @colors[link];
+  }
+
+  .responsive-media-container__inner {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    img,
+    video {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+    }
+    .e-zoomable {
+      cursor: zoom-in;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+import { ExamTranslations } from './fi-FI'
+
+export const VA: ExamTranslations = {
+  'exam-total': 'Весь экзамен',
+  material: 'Материал',
+  material_plural: 'Материал',
+  part: 'Часть {{displayNumber}}:',
+  points: '{{count}} балла',
+  points_plural: '{{count}} баллов',
+  'points-screen-reader': '{{count}} баллов',
+  'points-screen-reader_plural': '{{count}} баллов',
+  references: {
+    heading: 'Источники',
+    source: 'Источник',
+    date: 'Опубликовано',
+    'reference-date': 'Дата обращения',
+    translator: 'Перевод',
+    'modified-by': 'Адаптировано'
+  },
+  'toc-heading': 'Содержание'
+}

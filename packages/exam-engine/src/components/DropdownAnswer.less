@@ -1,0 +1,76 @@
+.e-exam {
+  .e-dropdown-answer {
+    @margin: 1px;
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+
+    &__label {
+      max-width: 100%;
+    }
+
+    &__toggle-button {
+      max-width: 100%;
+      outline: none;
+      min-height: 1.5rem;
+      user-select: none;
+
+      // Draw the border in an absolutely positioned pseudo element. We need to
+      // draw it separately, because we want the a 1px margin outside the border
+      // without it affecting the dimensions of the element.
+      &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: @margin;
+        right: 0px;
+        bottom: @margin;
+        left: 0px;
+        border: 1px solid @colors[link];
+        border-radius: 4px;
+      }
+
+      &:focus:after,
+      &:hover:after {
+        box-shadow: 0 0 1px 1px @colors[link-hover];
+      }
+
+      &--open:after {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    &__toggle-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      position: absolute;
+      top: @margin;
+      right: 0;
+      bottom: @margin;
+      width: 1.5rem;
+    }
+
+    &__menu {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      border: 1px solid @colors[link];
+      transform: translateY(-2px);
+      // Toggle visibility via CSS due to MathJax. It is so slow to render new
+      // formulas that we need to pre-render them before making the dropdown
+      // menu visible.
+      visibility: hidden;
+      &--open {
+        visibility: visible;
+      }
+    }
+
+    &__menu-item-inner {
+      display: table;
+    }
+  }
+}

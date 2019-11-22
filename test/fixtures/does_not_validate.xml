@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd exam.xsd"
+        exam-schema-version="0.1" date="2018-09-29" exam-code="FF" exam-stylesheet="custom.css">
+  <e:exam-title></e:exam-title>
+</e:exam>

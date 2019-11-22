@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mex/schema/exam.xsd"
+        exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+    <e:language>sv-FI</e:language>
+  </e:languages>
+  <e:exam-instruction>
+    <e:localization lang="fi-FI">
+      <p>
+        Koe on kaksiosainen. Osassa I on kuusi 20 pisteen tehtävää ja osassa II kolme 30 pisteen tehtävää. Saat vastata
+        enintään viiteen tehtävään. Näistä tehtävistä enintään kaksi saa olla osasta II. Kokeen maksimipistemäärä on
+        120. Sen saavuttaminen edellyttää, että vastaat kolmeen osan I tehtävään ja kahteen osan II tehtävään.
+        Vastauksiin ei ole mahdollista liittää kuvakaappauksia.
+      </p>
+      <p>
+        Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää
+        arvosteltavaksi.
+      </p>
+    </e:localization>
+    <e:localization lang="sv-FI">
+      <p>
+        Provet omfattar två delar. Del I består av sex uppgifter värda 20 poäng var och del II av tre uppgifter värda 30
+        poäng var. Du får besvara högst fem uppgifter. Av dessa uppgifter får högst två komma från del II. Det maximala
+        antalet poäng i provet är 120. För att nå detta poängantal måste du besvara tre uppgifter i del I och två
+        uppgifter i del II. Det går inte att bifoga skärmdumpar till svaren.
+      </p>
+      <p>
+        Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
+      </p>
+    </e:localization>
+  </e:exam-instruction>
+  <e:table-of-contents />
+  <e:section max-answers="5">
+    <e:section-title>
+      <e:localization lang="fi-FI">
+        20 p. tehtävät
+      </e:localization>
+      <e:localization lang="sv-FI">
+        20-poängsuppgifter
+      </e:localization>
+    </e:section-title>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">
+          Kauneus on Katsojan silmässä
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Skönheten ligger i betraktarens ögon
+        </e:localization>
+      </e:question-title>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Sanotaan, että kauneus on katsojan silmässä. Kuvaile lyhyesti, millaista käsitystä kauneudesta sanonta
+            edustaa. Nimeä käsitys.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Det sägs att skönheten ligger i betraktarens ögon. Beskriv kort vilket slag av uppfattning om skönhet ett
+            sådant skönhetsbegrepp representerar. Namnge uppfattningen.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="2" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Sanotaan, että kauneus on katsojan silmässä. Nimeä ja kuvaile lyhyesti päinvastainen käsitys kauneudesta.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Det sägs att skönheten ligger i betraktarens ögon. Namnge och beskriv kort en motsatt uppfattning om
+            skönhet.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="2" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Valitse kaksi esimerkkiä kauniista asioista ja perustele lyhyesti, miksi ne ovat kauniita.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Välj två exempel på vackra saker och motivera kort varför de är vackra.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="6" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Pohdi, mitä kauneus on. Käytä apunasi kohdassa 1.3. antamiasi esimerkkejä.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Diskutera vad skönhet är. Använd de exempel du gett i punkt 1.3. som hjälp.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="10" />
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Moraali ja tavat</e:localization>
+        <e:localization lang="sv-FI">Moral och seder</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä.</p>
+          <p>
+            Valitse jokin pienempi tai suurempi yhteisö – esimerkiksi jokin koulu, katsomuksellinen ryhmä tai valtio –
+            ja pohdi, mikä ero valitsemassasi yhteisössä on moraalin ja tapojen välillä.
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>Både moral och seder strävar efter att styra människors beteende.</p>
+          <p>
+            Välj något mindre eller större samfund – exempelvis någon skola, grupp som förenas av en åskådning eller
+            stat – och diskutera vilken skillnaden är mellan moral och seder inom det samfund du har valt.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="multi-line" max-score="20" />
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">
+          Ykseys ja muutos
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Enhet och förändring
+        </e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Ykseyteen ja muutokseen liittyy monia filosofisia pulmia, joita on pohdittu antiikista asti. Videokatkelmassa
+          <e:attachment-link ref="3A" />
+          käsitellään Aliquipin ja Veniamin ajatuksia.
+        </e:localization>
+      </e:question-instruction>
+      <e:external-material>
+
+        <e:attachment name="3A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Videokatkelma: Sunt cupidatat exercitation magna deserunt quis</e:localization>
+            <e:localization lang="sv-FI">Videoklipp: Sunt cupidatat exercitation magna deserunt quis</e:localization>
+          </e:attachment-title>
+
+          <e:video src="T3_FI.webm" lang="fi-FI" />
+          <e:video src="T3_SV.webm" lang="sv-FI" />
+
+          <e:reference>
+            <e:author>Adipisicing Magna</e:author>
+            <e:publication>
+              <e:localization lang="fi-FI">Youtube-videopalvelu</e:localization>
+              <e:localization lang="sv-FI">Videotjänsten Youtube</e:localization>
+            </e:publication>
+            <e:url>www.youtube.com</e:url>
+            <e:publication-date>2014-06-22</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Selitä, miksi muutos on Proidentin mukaan mahdotonta. Hyödynnä vastauksessasi videokatkelmaa
+            <e:attachment-link ref="3A" />.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Förklara varför förändring är omöjlig enligt Proident. Utnyttja videoklippet
+            <e:attachment-link ref="3A" />
+            i ditt svar.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="5" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Videokatkelmassa
+            <e:attachment-link ref="3A" />
+            esitellään kaksi Veniamin paradoksia. Erittele toinen niistä ja kuvaile sen suhde Proidentin filosofiaan.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            I videoklippet
+            <e:attachment-link ref="3A" />
+            presenteras två av Veniam paradoxer. Förklara den ena av dem och beskriv dess relation till Proident
+            filosofi.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="15" />
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Lihan syöminen</e:localization>
+        <e:localization lang="sv-FI">Att äta kött</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Aasiassa on perinteisesti syöty koiria, mitä Euroopassa pidetään sopimattomana. Arvioi filosofisesti lihan
+          syönnin oikeutusta ja sen rajaamista eri eläinlajeihin. Käytä vastauksessasi apuna uutiskatkelmaa
+          <e:attachment-link ref="4A" />
+          ja vastamainosta
+          <e:attachment-link ref="4B" />
+        </e:localization>
+        <e:localization lang="sv-FI">
+          I Asien har man traditionellt ätit hundar, men i Europa anses det olämpligt. Utvärdera filosofiskt det
+          berättigade i att äta kött och i att begränsa ätandet till olika djurarter. Utnyttja tidningsnyheten
+          <e:attachment-link ref="4A" />
+          och antireklamen
+          <e:attachment-link ref="4B" />
+          som hjälp i ditt svar.
+        </e:localization>
+      </e:question-instruction>
+      <e:external-material>
+        <e:attachment name="4A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Uutiskatkelma: Consectetur cupidatat et non occaecat voluptate laboris
+            </e:localization>
+            <e:localization lang="sv-FI">Tidningsnyhet: Consectetur cupidatat et non occaecat voluptate laboris</e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <h4>Consectetur cupidatat et non occaecat voluptate laboris</h4>
+            <p>Nostrud laborum aute reprehenderit eiusmod ex do aute.</p>
+            <e:image src="4A.jpg">Elit elit laborum tempor reprehenderit excepteur excepteur commodo nostrud.
+            </e:image>
+            <p>Dolore est occaecat ex est culpa minim quis incididunt excepteur eiusmod
+              officia occaecat qui cupidatat. Duis sunt ad minim dolore amet veniam anim sunt amet
+              non. Est mollit consequat sint reprehenderit deserunt laborum est voluptate nulla magna.
+              Incididunt in in deserunt aliqua dolore aute id aliqua.
+            </p>
+            <p>Nostrud aliqua non ad ea excepteur eu nostrud laborum deserunt in mollit amet dolore officia.
+              Sunt cillum fugiat veniam occaecat esse fugiat occaecat. Cupidatat officia sint minim officia
+              officia dolore sit magna duis reprehenderit id. Cillum esse ullamco laborum occaecat qui eu tempor
+              velit duis proident.
+            </p>
+            <p>Minim exercitation ad aute pariatur fugiat nulla.
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <h4>Consectetur cupidatat et non occaecat voluptate laboris</h4>
+            <p>Dolore ea commodo nostrud nulla deserunt ullamco ad commodo.</p>
+            <e:image src="4A.jpg">Culpa reprehenderit laborum dolor aliqua velit.
+            </e:image>
+            <p>Pariatur irure incididunt ipsum reprehenderit veniam do elit aliqua enim sunt. Eiusmod ea
+              proident irure voluptate quis laboris velit eiusmod. Sint do occaecat irure exercitation
+              occaecat aliquip ullamco ullamco. Minim ea cupidatat nulla aliquip exercitation sunt
+              adipisicing ipsum non.
+            </p>
+            <p>Consectetur cupidatat labore in eiusmod. Sit dolore nulla culpa in deserunt commodo consectetur
+              sunt enim ut proident. Non cupidatat mollit non labore ullamco sit duis. Sunt mollit nostrud
+              aliqua officia esse id ea deserunt eu mollit incididunt. Qui labore consectetur exercitation
+              laborum laborum. In dolor consequat eu dolore ea. Eiusmod ex pariatur mollit id occaecat in
+              culpa qui ipsum consequat proident qui.
+            </p>
+            <p>Consequat ipsum minim anim in amet veniam ea et exercitation nisi.</p>
+          </e:localization>
+
+          <e:reference>
+            <e:author>Adipisicing excepteur</e:author>
+            <e:publication>nostrud commodo ex</e:publication>
+            <e:url>fugiat.pariatur.illum</e:url>
+            <e:publication-date>2017-04-12</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="4B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Aliqua magna deserunt eu laboris nulla aliqua</e:localization>
+            <e:localization lang="sv-FI">Aliqua magna deserunt eu laboris nulla aliqua</e:localization>
+          </e:attachment-title>
+
+          <e:image src="4B.png" />
+
+          <e:reference>
+            <e:publisher>Consequat dolor laboris anim do culpa consequat</e:publisher>
+            <e:url>http://excepteur.eiusmod.sunt/adipisicing</e:url>
+            <e:reference-date>2018-02-28</e:reference-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:text-answer type="multi-line" max-score="20" />
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Valta opettajainhuoneessa</e:localization>
+        <e:localization lang="sv-FI">Makt i lärarrummet</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <em>Qui tempor</em>
+          on suomalainen sketsisarja, ja Dolore Mollit (1926–1984) on ranskalainen vallan teoreetikko.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <em>Qui tempor</em>
+          är en finsk sketchserie producerad av YLE och Dolore Mollit (1926–1984) är en fransk maktteoretiker.
+        </e:localization>
+      </e:question-instruction>
+      <e:external-material>
+        <e:attachment name="5A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Videokatkelma: <em>Qui tempor</em>: Opettajat 1
+            </e:localization>
+            <e:localization lang="sv-FI">Videoklipp: <em>Qui tempor</em>: Lärarna 1
+            </e:localization>
+          </e:attachment-title>
+
+          <e:video src="T5_FI.webm" lang="fi-FI" />
+          <e:video src="T5_SV.webm" lang="sv-FI" />
+
+          <e:reference>
+            <e:title>
+              <e:localization lang="fi-FI">Qui tempor: Opettajat 1</e:localization>
+              <e:localization lang="sv-FI">Qui tempor: Lärarna 1</e:localization>
+            </e:title>
+            <e:publication>Qui fugiat</e:publication>
+            <e:url>www.youtube.com</e:url>
+            <e:publication-date>2015-06-09</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+            <e:modified-by>YTL</e:modified-by>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="5B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">
+              Tekstikatkelma: Dolore Mollit,
+              <em>Qui reprehenderit enim cillum adipisicing officia</em>
+            </e:localization>
+            <e:localization lang="sv-FI">
+              Textutdrag: Dolore Mollit,
+              <em>Qui reprehenderit enim cillum adipisicing officia</em>
+            </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            Magna nulla in aliqua tempor proident qui pariatur eu laboris ex.
+            Eiusmod minim dolor aliqua cupidatat cupidatat. Ex pariatur est sunt
+            anim ut adipisicing. Ullamco nulla eu nisi tempor officia aliquip nulla
+            culpa amet amet sit aute occaecat mollit. Labore labore ut qui elit cillum
+            excepteur nulla adipisicing laboris quis. Tempor qui labore enim ea nulla
+            dolor.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Eu cillum eu culpa ex qui cillum voluptate dolor reprehenderit nostrud ut
+            anim eu. Exercitation nisi incididunt labore Lorem sit anim sunt
+            consectetur irure sunt aute. Veniam fugiat nulla ea enim anim est aute ea.
+             Magna eu nulla reprehenderit officia cillum irure deserunt reprehenderit
+             incididunt tempor. Magna amet proident cupidatat ullamco sint sunt nulla et
+             dolore est veniam. Laboris elit occaecat consectetur qui nisi eiusmod eiusmod
+             veniam in proident.
+          </e:localization>
+
+          <e:reference>
+            <e:author>Dolore Mollit</e:author>
+            <e:title>
+              <e:localization lang="sv-FI">Qui reprehenderit enim cillum adipisicing officia</e:localization>
+              <e:localization lang="fi-FI">Qui reprehenderit enim cillum adipisicing officia</e:localization>
+            </e:title>
+            <e:publication-date>1975</e:publication-date>
+            <e:translator>
+              <e:localization lang="sv-FI">Commodo Dolore</e:localization>
+              <e:localization lang="fi-FI">Cillum Adipisicing</e:localization>
+            </e:translator>
+            <e:translation-date lang="fi-FI">1980</e:translation-date>
+            <e:translation-date lang="sv-FI">1998</e:translation-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Perehdy videokatkelmaan
+          <e:attachment-link ref="5A" />
+          ja tekstikatkelmaan
+          <e:attachment-link ref="5B" />. Erittele vallankäyttöä videokatkelmassa
+          <e:attachment-link ref="5A" />
+          ja arvioi sen oikeudenmukaisuutta.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Sätt dig in i videoklippet
+          <e:attachment-link ref="5A" />
+          och textutdraget
+          <e:attachment-link ref="5B" />. Analysera maktutövningen i videoklippet
+          <e:attachment-link ref="5A" />
+          och bedöm dess rättvisa.
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="multi-line" max-score="20" />
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Tiedon kriteerit</e:localization>
+        <e:localization lang="sv-FI">Kriterierna för kunskap</e:localization>
+      </e:question-title>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Henri ajelee maaseudulla poikansa kanssa ja kertoo hänelle, mitä sattuu kulloinkin näkemään. Henri näkee
+            pellolla ladon ja kertoo pojalleen: ”Tuolla on lato”. Henrillä on erinomainen näkökyky, ja hänellä on
+            lausettaan vastaava oikeutettu tosi uskomus.
+            <br />
+            <br />
+            Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Henri är ute och kör på landsbygden med sin son och berättar för honom vad han råkar se längs vägen. Henri
+            ser en lada på en åker och berättar för sin son: ”Där är en lada”. Henri har utmärkt syn, och han har en
+            berättigad och sann uppfattning som motsvarar satsen han uttrycker.
+            <br />
+            <br />
+            Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="6" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Henri ajaa vähän eteenpäin ja saapuu peltoalueelle, jolla on oikeiden latojen joukossa pahvisia
+            latokulisseja, jotka erehdyttäisivät ketä tahansa. Henri näkee kuitenkin oikean ladon ja sanoo taas
+            pojalleen: ”Tuollakin on lato”. Jos hän olisi sattunut kohdistamaan katseensa pelkkään kulissiin, hän olisi
+            uskonut senkin olevan lato.
+            <br />
+            <br />
+            Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Henri kör en bit vidare och kommer till ett område med åkrar där det bland riktiga lador finns kulisser i
+            papp som föreställer lador. De är så naturtrogna att de skulle kunna lura vem som helst. Henri ser
+            emellertid en riktig lada och säger till sin son: ”Där är också en lada”. Om han hade råkat rikta sin blick
+            mot en av kulisserna hade han trott att även den var en lada.
+            <br />
+            <br />
+            Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="6" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen
+            siitä, että kyseessä on lato.
+            <br />
+            <br />
+            Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä
+            edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Henris son är blind. Vid den första ladan bildar han utifrån sin pappas beskrivning den sanna uppfattningen
+            om att det är fråga om en lada.
+            <br />
+            <br />
+            Har Henris son kunskap om att det är en lada? Motivera ditt svar och diskutera på ett mer allmänt plan under
+            vilka förutsättningar kunskap kan bygga på ett ögonvittnes eller en kunskapsmässig auktoritets ord.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="8" />
+      </e:question>
+    </e:question>
+  </e:section>
+  <e:section max-answers="2">
+    <e:section-title>
+      <e:localization lang="fi-FI">
+        30 p. tehtävät
+      </e:localization>
+      <e:localization lang="sv-FI">
+        30-poängsuppgifter
+      </e:localization>
+    </e:section-title>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Filosofiakäsitys Adipisicingin
+          <em>Loremissa</em>
+        </e:localization>
+        <e:localization lang="sv-FI">Filosofiuppfattningen i Adipisicings
+          <em>Lorem</em>
+        </e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Adipiscingin
+          <em>Lorem</em>
+          Exercitation irure dolor et est ut Lorem reprehenderit dolore aliquip enim do ullamco mollit.
+          Qui non cupidatat qui cupidatat. Aliquip proident aliqua consectetur quis ex proident incididunt
+          sunt. Laborum sit duis sit incididunt dolore dolore ullamco est sit. Ullamco id fugiat nulla
+          elit nulla Lorem quis pariatur minim cupidatat non laboris. tekstikatkelmassa
+          <e:attachment-link ref="7A" />
+          incididunt eiusmod commodo exercitation eiusmod culpa consequat irure nulla.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Adipiscingins
+          <em>Lorem</em>
+          Commodo culpa tempor adipisicing adipisicing. Aliqua sint amet do in in officia ea officia
+          tempor id ipsum laborum. Magna eu voluptate magna dolore cupidatat deserunt.
+          <e:attachment-link ref="7A" />
+          incididunt eiusmod commodo exercitation eiusmod culpa consequat irure nulla.
+        </e:localization>
+      </e:question-instruction>
+      <e:external-material>
+        <e:attachment name="7A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tekstikatkelma: Adipiscing, Lorem
+            </e:localization>
+            <e:localization lang="sv-FI">Textutdrag: Adipiscing, Lorem
+            </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <p>Minim velit mollit consectetur culpa reprehenderit aliquip esse quis non ullamco fugiat amet.
+              Eiusmod cillum mollit adipisicing duis. Eu ut ad magna labore laboris laborum
+              exercitation aliquip cillum. Ex cupidatat laboris est mollit aliqua laborum deserunt
+              sit amet deserunt est occaecat veniam ullamco. Non labore velit deserunt aute cupidatat
+              esse aliquip est elit commodo.<br />
+              (Cillum ullamco commodo quis est aliquip officia fugiat veniam irure laboris occaecat elit
+              proident ut)<br />
+              Elit cupidatat non cupidatat nulla non consequat <i>nostrud</i> nulla.
+            </p>
+            <p>Ullamco amet sint id dolore mollit »Labore nulla adipisicing sint laboris deserunt». ­­– –</p>
+            <p>Veniam consectetur aliquip officia nisi sunt laborum enim. Excepteur incididunt exercitation
+              commodo excepteur dolor do tempor. Ipsum aliqua culpa adipisicing ipsum eiusmod dolore
+              fugiat. Id do consectetur pariatur reprehenderit ex pariatur magna consequat aliqua quis.
+            </p>
+            <p>Mollit sint magna aliquip in.</p>
+            <p>Dolore ullamco quis anim proident. Elit in quis culpa Lorem minim sint do commodo ex aute
+              dolore consectetur enim. Anim ex sunt consectetur non adipisicing sint labore sint proident
+               labore consequat. Qui irure aliquip aliqua proident. In labore aliquip aute voluptate
+               officia magna irure. Ipsum enim ipsum in fugiat quis consequat minim nulla aute.
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>Minim velit mollit consectetur culpa reprehenderit aliquip esse quis non ullamco fugiat amet.
+            Eiusmod cillum mollit adipisicing duis. Eu ut ad magna labore laboris laborum
+            exercitation aliquip cillum. Ex cupidatat laboris est mollit aliqua laborum deserunt
+            sit amet deserunt est occaecat veniam ullamco. Non labore velit deserunt aute cupidatat
+            esse aliquip est elit commodo.<br />
+            (Cillum ullamco commodo quis est aliquip officia fugiat veniam irure laboris occaecat elit proident ut)<br />
+            Elit cupidatat non cupidatat nulla non consequat <i>nostrud</i> nulla.
+            </p>
+            <p>Ullamco amet sint id dolore mollit »Labore nulla adipisicing sint laboris deserunt». ­­– –</p>
+            <p>Dolore labore nostrud nisi Lorem reprehenderit nisi est commodo. Magna laborum commodo esse Lorem
+              nulla consectetur minim Lorem mollit adipisicing non mollit mollit. Dolore est aliquip veniam
+              qui cillum irure fugiat. Ipsum officia aute nulla Lorem ullamco incididunt do proident anim
+              consequat sint.
+            </p>
+            <p>Enim anim [occaec] ex labore qui et occaecat qui cillum consectetur.</p>
+            <p>Incididunt ut aute ut veniam ea velit esse fugiat elit voluptate irure cupidatat veniam.
+              Id cillum cupidatat labore ex non qui aliquip dolore aliquip dolor tempor eu. Fugiat Lorem
+              consequat id irure aute velit fugiat.
+            </p>
+          </e:localization>
+
+          <e:reference>
+            <e:author>Adipiscing</e:author>
+            <e:title>Lorem</e:title>
+            <e:publication-date>1921</e:publication-date>
+            <e:translator>
+              <e:localization lang="fi-FI">Veniam Ipsum</e:localization>
+              <e:localization lang="sv-FI">Fugiat Elit</e:localization>
+            </e:translator>
+            <e:translation-date lang="fi-FI">1970</e:translation-date>
+            <e:translation-date lang="sv-FI">1962</e:translation-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Kuvaile omin sanoin tekstikatkelmassa
+            <e:attachment-link ref="7A" />
+            esitettyä käsitystä filosofiasta ja arvioi käsityksen hyviä ja huonoja puolia.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Beskriv med egna ord den syn på filosofin som förs fram i textutdraget
+            <e:attachment-link ref="7A" />
+            och utvärdera de goda och de dåliga sidorna hos en sådan filosofisyn.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="15" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Esitä jokin toinen käsitys filosofiasta ja vertaa sitä
+            <em>Loremissa</em>
+            esitettyyn.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Redogör för någon annan syn på filosofin och jämför den med den som förs fram i <em>Lorem</em>.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="15" />
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Eutanasia</e:localization>
+        <e:localization lang="sv-FI">Eutanasi</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Kreikankielinen sana ”eu” merkitsee hyvää ja ”thanatos” kuolemaa. Kirjaimellisesti eutanasia on siis suomeksi
+          ”hyvä kuolema”, mutta eutanasian vastustajat eivät hyväksy nimitystä. Viisi eri puolueista olevaa poliitikkoa
+          käynnisti 7.11.2016 kansalaisaloitteen eutanasian laillistamisesta. Aloite keräsi 1.1.2017 mennessä 63 078
+          kannatusilmoitusta ja lähetettiin eduskuntaan 14.2.2017. Se herätti vilkasta kansalaiskeskustelua.
+          Tekstikatkelmat
+          <e:attachment-links>
+            <e:attachment-link ref="8A" />
+            <e:attachment-link ref="8B" />
+            <e:attachment-link ref="8C" />
+            <e:attachment-link ref="8D" />
+            <e:attachment-link ref="8E" />
+            <e:attachment-link ref="8F" />
+          </e:attachment-links>
+          ovat tästä keskustelusta valittuja mielipidekirjoituksia <em>Minim Excepteurista</em>.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Det grekiska ordet ”eu” betyder god och ”thanatos” död. Bokstavligen betyder alltså eutanasi ”god död” på
+          svenska, men eutanasins motståndare godkänner inte beteckningen. Politiker från fem olika partier startade
+          7.11.2016 ett medborgarinitiativ för att legalisera eutanasi. 1.1.2017 hade initiativet samlat 63 078
+          stödförklaringar och 14.2.2017 lämnades det till riksdagen. Initiativet väckte livlig offentlig debatt.
+          Textutdragen
+          <e:attachment-links>
+            <e:attachment-link ref="8A" />
+            <e:attachment-link ref="8B" />
+            <e:attachment-link ref="8C" />
+            <e:attachment-link ref="8D" />
+            <e:attachment-link ref="8E" />
+            <e:attachment-link ref="8F" />
+          </e:attachment-links>
+          är insändare ur denna debatt, tagna ur tidningen
+          <em>Minim Excepteur</em>.
+        </e:localization>
+      </e:question-instruction>
+      <e:external-material>
+        <e:attachment name="8A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tekstikatkelma: Magna nostrud ipsum commodo ex velit magna labore aliquip
+              voluptate do irure.
+            </e:localization>
+            <e:localization lang="sv-FI">Textutdrag:Eu sit ut voluptate ullamco sint excepteur deserunt.
+            </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <h4>Eiusmod ad aliqua excepteur ipsum eu duis aute enim.
+            </h4>
+            <p>
+              <b>Aliquip cillum ad magna commodo dolor labore qui Lorem aliquip sit irure minim nisi amet.</b>
+            </p>
+            <p>­­– –<br />Quis reprehenderit ullamco fugiat consequat excepteur occaecat duis dolore cillum.
+              Ex fugiat occaecat culpa labore laborum ipsum consequat sit minim nostrud qui. Exercitation
+              laboris fugiat voluptate commodo occaecat qui est ex ea irure adipisicing et.
+            </p>
+            <p>Officia dolor id consequat ullamco non officia velit ex laboris consequat culpa. Nostrud
+              reprehenderit anim duis occaecat sint reprehenderit occaecat consectetur aliqua aute.
+              Officia est tempor commodo mollit cupidatat voluptate in adipisicing ea reprehenderit
+              incididunt consequat cillum amet. Quis consequat sunt velit elit ut. Voluptate aliquip
+              nostrud quis commodo occaecat commodo veniam ad ipsum. Aliqua commodo nisi aute adipisicing
+              Lorem eiusmod officia id deserunt reprehenderit enim anim proident. Id Lorem laboris sit
+              officia proident exercitation ut esse exercitation occaecat dolore est proident mollit.
+            </p>
+            <p>Pariatur excepteur cillum reprehenderit est duis adipisicing dolore. Sit incididunt
+              ea in exercitation esse ullamco cupidatat laborum ut. Magna deserunt duis incididunt
+               sit sint ut dolor nostrud deserunt deserunt commodo eu esse. Et qui ad est esse exercitation
+               sit sint.
+            </p>
+            <p>Adipisicing et nulla nulla sint commodo qui. Ipsum dolore enim veniam mollit. Ad Lorem
+              reprehenderit velit id magna Lorem fugiat non laborum sint officia adipisicing duis.
+              Laborum enim pariatur eiusmod minim incididunt exercitation dolore aute sit. Tempor
+              id cupidatat ut voluptate ullamco ullamco non ex. Consectetur occaecat nisi consequat
+               aliqua aliquip sunt dolor occaecat irure laborum nisi eu fugiat.<br />– –
+              <br />
+              Reprehenderit ut labore do laborum dolore nisi non. Cillum consequat aliquip
+              cupidatat non ut ipsum. Ex ex cillum ullamco eiusmod cillum tempor enim ipsum
+               aute excepteur nostrud dolor reprehenderit proident. Deserunt aliquip anim
+               deserunt labore enim ex ullamco velit. Consectetur Lorem nulla ad enim
+               laboris quis duis quis duis. Laborum laboris sunt sunt sit aliquip sit
+                commodo minim occaecat ullamco. Deserunt nulla dolore est qui duis.
+            </p>
+            <p>Incididunt ad eiusmod pariatur commodo non est anim ullamco ullamco. In occaecat
+               culpa ea aliquip sunt laboris sit cillum duis irure ut aute. Anim anim cupidatat t
+               empor eiusmod. Mollit aute pariatur est amet nisi deserunt tempor officia enim.
+                Nostrud exercitation voluptate est minim reprehenderit commodo qui ea quis qui.
+                Quis pariatur Lorem do cillum do commodo do sit ullamco cillum irure adipisicing
+                 reprehenderit.
+            </p>
+            <p>Sit ipsum reprehenderit duis duis occaecat cupidatat est nostrud adipisicing dolor
+              aute consectetur do sint. Cillum adipisicing ad aliqua sint exercitation deserunt.
+              Consequat anim mollit dolor laborum pariatur cupidatat eiusmod enim non ea excepteur.
+               Sit labore dolor voluptate eu ullamco. Cupidatat exercitation do incididunt laborum
+               sit irure deserunt ut amet. Velit dolor esse incididunt officia in non fugiat cupidatat dolor id.
+            </p>
+            <p>Anim dolore excepteur voluptate aliqua Lorem dolore nostrud. Ea eiusmod officia fugiat
+               amet adipisicing sit ullamco nostrud est aute. Voluptate ut aute irure Lorem aliquip
+                nostrud et dolor commodo proident nulla ut nulla ad. Lorem in anim ex commodo sint
+                 dolore cupidatat dolore. Ea aliquip incididunt ex voluptate esse commodo deserunt.
+            </p>
+            <p>Et irure sit nulla amet id velit pariatur officia nulla non exercitation et est reprehenderit.
+            </p>
+            <p>
+              <b>Occaecat Esse<br /> deserunt minim id sit eiusmod laborum laboris nisi<br />Nulla
+                <br />
+                <br />Velit Exercitation<br /> ad aute laborum fugiat ipsum.<br />Non
+              </b>
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <h4>Et esse quis enim sit tempor aliquip laborum deserunt aliqua quis non sit incididunt anim
+            </h4>
+            <p>
+              <b>Dolor adipisicing nostrud eu nisi amet nisi officia laboris incididunt.</b>
+            </p>
+            <p>­­– –<br />Quis labore excepteur Lorem officia laboris fugiat est ipsum voluptate minim ad.
+              Proident non voluptate nulla labore labore quis eu irure id enim esse. Est cillum consequat
+               sunt officia dolore quis anim ea. Ex qui commodo reprehenderit exercitation labore excepteur
+                laborum. Consequat occaecat laboris est aliquip Lorem id consequat quis sunt. Sint laborum
+                veniam eiusmod aliqua non amet irure do quis excepteur cupidatat. Nisi adipisicing fugiat
+                fugiat non non aliqua ipsum eu et.
+            </p>
+            <p>Laborum ex mollit tempor ea veniam incididunt deserunt amet. Ut consectetur ut adipisicing
+               exercitation sunt consectetur do. Mollit labore excepteur in ut quis veniam culpa sint
+                quis ipsum. Eiusmod mollit tempor duis aliqua ad incididunt est id elit. Ipsum cupidatat
+                 fugiat Lorem aliquip.
+            </p>
+            <p>Non cupidatat veniam sit mollit sit eiusmod. Ad aliqua et sit adipisicing do et cillum in
+              aliquip ut commodo. Dolor eu non qui duis commodo voluptate aute deserunt duis exercitation
+               consequat sint. Eu id sunt est quis mollit dolor aute id. Commodo velit adipisicing voluptate
+                culpa fugiat cillum exercitation deserunt aliquip voluptate mollit commodo nostrud aliqua.
+            </p>
+            <p>
+                <b>Occaecat Esse<br /> deserunt minim id sit eiusmod laborum laboris nisi<br />Nulla
+                  <br />
+                  <br />Velit Exercitation<br /> ad aute laborum fugiat ipsum.<br />Non
+                </b>
+              </p>
+            </e:localization>
+
+          <e:reference>
+            <e:publication>Laboris duis minim</e:publication>
+            <e:url>dolor.officia.minim</e:url>
+            <e:publication-date>2017-02-02</e:publication-date>
+            <e:reference-date>2017-05-05</e:reference-date>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="8B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tekstikatkelma: Nulla non ea et eiusmod sunt esse proident exercitation
+              eiusmod laborum amet ullamco ad.
+            </e:localization>
+            <e:localization lang="sv-FI">Textutdrag: Aliqua ullamco consequat anim proident.
+            </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <h4>Velit tempor ea laboris eu id aute excepteur.
+            </h4>
+            <p>
+              <b>In pariatur excepteur reprehenderit consectetur Lorem dolore.</b>
+            </p>
+            <p>
+              Fugiat cillum in id do exercitation. In nulla cupidatat nisi magna ea proident sit. Ea
+              ut exercitation esse adipisicing Lorem dolor consectetur.
+            </p>
+            <p>
+              Esse tempor do irure duis enim nostrud ut irure irure ullamco quis consequat eiusmod.
+              Elit labore enim cupidatat consectetur aliquip. Exercitation id velit nostrud id dolor
+              nostrud qui id. Sint dolore dolor occaecat exercitation. Ullamco nulla aliqua esse
+              veniam aliqua duis cillum est ex laboris amet in.
+            </p>
+            <p>
+              Sint elit consequat officia magna laboris nisi cupidatat ipsum cillum elit voluptate.
+              Consectetur exercitation qui ex veniam deserunt irure ullamco occaecat sit Lorem ea anim
+              Lorem. Aliqua ipsum voluptate ad nulla reprehenderit. Ipsum nulla occaecat deserunt
+              irure duis fugiat consequat consectetur tempor voluptate et excepteur fugiat. Ipsum
+              aliqua nostrud culpa anim enim elit dolore minim culpa deserunt excepteur dolore
+              voluptate. Adipisicing ex cillum do incididunt anim proident culpa exercitation dolore
+              minim ipsum. Est sit sit ad officia nisi.
+            </p>
+            <p>
+              Deserunt cupidatat minim cillum nulla irure duis aliqua occaecat ullamco cillum in
+              dolor. Aute id ex consectetur est veniam ipsum id pariatur aliqua minim. Eiusmod enim
+              ipsum laborum nostrud fugiat nulla reprehenderit id reprehenderit ut aliqua.
+              Reprehenderit culpa in nostrud dolore aute velit sit magna duis magna sint consectetur
+              sit sint. Dolore cillum ipsum sint amet Lorem. Exercitation veniam magna deserunt est
+              proident anim aliqua consequat nulla irure irure Lorem cupidatat.
+            </p>
+            <p>
+              Quis officia duis ut sint Lorem. Mollit occaecat pariatur duis eu et id in nulla dolore.
+              Aliquip in anim mollit esse reprehenderit duis magna dolore eu excepteur nisi. Ea qui
+              velit officia fugiat labore sit voluptate deserunt ea esse qui consequat ad. In
+              adipisicing irure sunt pariatur pariatur dolore officia irure consequat ut et commodo.
+              Esse nostrud ad excepteur reprehenderit ipsum ut aute cillum ipsum.
+            </p>
+            <p>
+              Qui qui sint sunt sit. Veniam consequat in ipsum eiusmod. Reprehenderit qui aliquip
+              veniam aliquip quis irure culpa ut eu irure est aliquip cupidatat in. Id mollit ut
+              tempor esse.
+            </p>
+            <p>
+              <b>Qui</b>
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <h4>Velit tempor ea laboris eu id aute excepteur.
+            </h4>
+            <p>
+              <b>In pariatur excepteur reprehenderit consectetur Lorem dolore.</b>
+            </p>
+            <p>
+              Fugiat cillum in id do exercitation. In nulla cupidatat nisi magna ea proident sit. Ea
+              ut exercitation esse adipisicing Lorem dolor consectetur.
+            </p>
+            <p>
+              Esse tempor do irure duis enim nostrud ut irure irure ullamco quis consequat eiusmod.
+              Elit labore enim cupidatat consectetur aliquip. Exercitation id velit nostrud id dolor
+              nostrud qui id. Sint dolore dolor occaecat exercitation. Ullamco nulla aliqua esse
+              veniam aliqua duis cillum est ex laboris amet in.
+            </p>
+            <p>
+              Sint elit consequat officia magna laboris nisi cupidatat ipsum cillum elit voluptate.
+              Consectetur exercitation qui ex veniam deserunt irure ullamco occaecat sit Lorem ea anim
+              Lorem. Aliqua ipsum voluptate ad nulla reprehenderit. Ipsum nulla occaecat deserunt
+              irure duis fugiat consequat consectetur tempor voluptate et excepteur fugiat. Ipsum
+              aliqua nostrud culpa anim enim elit dolore minim culpa deserunt excepteur dolore
+              voluptate. Adipisicing ex cillum do incididunt anim proident culpa exercitation dolore
+              minim ipsum. Est sit sit ad officia nisi.
+            </p>
+            <p>
+              Deserunt cupidatat minim cillum nulla irure duis aliqua occaecat ullamco cillum in
+              dolor. Aute id ex consectetur est veniam ipsum id pariatur aliqua minim. Eiusmod enim
+              ipsum laborum nostrud fugiat nulla reprehenderit id reprehenderit ut aliqua.
+              Reprehenderit culpa in nostrud dolore aute velit sit magna duis magna sint consectetur
+              sit sint. Dolore cillum ipsum sint amet Lorem. Exercitation veniam magna deserunt est
+              proident anim aliqua consequat nulla irure irure Lorem cupidatat.
+            </p>
+            <p>
+              Quis officia duis ut sint Lorem. Mollit occaecat pariatur duis eu et id in nulla dolore.
+              Aliquip in anim mollit esse reprehenderit duis magna dolore eu excepteur nisi. Ea qui
+              velit officia fugiat labore sit voluptate deserunt ea esse qui consequat ad. In
+              adipisicing irure sunt pariatur pariatur dolore officia irure consequat ut et commodo.
+              Esse nostrud ad excepteur reprehenderit ipsum ut aute cillum ipsum.
+            </p>
+            <p>
+              Qui qui sint sunt sit. Veniam consequat in ipsum eiusmod. Reprehenderit qui aliquip
+              veniam aliquip quis irure culpa ut eu irure est aliquip cupidatat in. Id mollit ut
+              tempor esse.
+            </p>
+            <p>
+              <b>Qui</b>
+            </p>
+          </e:localization>
+
+          <e:reference>
+            <e:publication>Qui ea non anim</e:publication>
+            <e:url>ipsum.voluptate.do</e:url>
+            <e:publication-date>2017-02-22</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="8C">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tekstikatkelma: Minim tempor elit sit ea id irure ullamco commodo proident ex
+            </e:localization>
+            <e:localization lang="sv-FI">Textutdrag: Aliquip pariatur occaecat nulla exercitation
+            </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <h4>Mea dolor ad deserunt ad ipsum ipsum sit tempor ea</h4>
+            <p>
+              <b>Duis velit irure labore quis veniam velit mollit.
+              </b>
+            </p>
+            <p>
+              Consequat et eiusmod mollit aliquip laborum quis officia. Voluptate et irure ullamco
+              minim eiusmod sunt nisi ea quis officia consectetur. Minim aute do Lorem magna id
+              dolore cupidatat ullamco. Nulla ea in excepteur ex consequat veniam aliquip aute ex
+              aliquip cupidatat. Aliquip consequat amet anim est pariatur quis consequat nostrud
+              aliqua consequat aute.
+            </p>
+            <p>
+              Sunt culpa pariatur exercitation tempor fugiat ipsum dolore laborum cillum cupidatat
+              ut. Dolor mollit esse ad nisi nulla laboris commodo culpa. Dolore sit excepteur sit
+              velit ex. Sunt esse dolor tempor cupidatat consequat do. Sunt excepteur mollit aliqua
+              ad Lorem excepteur officia excepteur culpa. Ea pariatur cupidatat dolor voluptate
+              eiusmod qui magna exercitation. Qui consequat cupidatat culpa in pariatur veniam duis
+              est.
+            </p>
+            <p>
+              Tempor cupidatat ea amet exercitation. Ex eiusmod ut exercitation adipisicing
+              consectetur eu minim. Tempor ut laboris ullamco anim.
+            </p>
+            <p>
+              Eu cillum eu est dolore aute adipisicing nostrud id. Veniam velit elit sint officia
+              reprehenderit fugiat ad ad quis culpa aute mollit dolor. Excepteur aliquip do commodo
+              pariatur enim. Pariatur adipisicing elit Lorem ut. Adipisicing nisi non culpa ea
+              dolore ex aliqua officia proident aliquip. Consectetur est non incididunt ipsum ex in
+              aliqua velit sit nulla Lorem proident. Sit sit commodo laboris amet aute.
+            </p>
+            <p>
+              Ullamco id mollit sint incididunt veniam velit. Anim ex magna deserunt in.
+              Reprehenderit nulla voluptate in qui culpa sint non qui magna.
+            </p>
+            <p>
+              Aliqua duis aliqua officia aliquip labore mollit excepteur nostrud non enim. Anim
+              veniam sit commodo cupidatat enim culpa. Ut laborum sint cillum ea magna excepteur
+              aliquip adipisicing dolore. Irure et ipsum occaecat esse minim consectetur officia et
+              quis voluptate aute duis proident consequat. Exercitation officia adipisicing officia
+              velit. Ipsum pariatur veniam est velit sit. Labore velit cupidatat aliqua consectetur
+              duis nisi ipsum tempor.
+            </p>
+            <p>
+              Occaecat pariatur cillum in ea adipisicing laboris cupidatat officia culpa adipisicing
+              minim deserunt et consequat. Reprehenderit minim voluptate deserunt minim occaecat
+              tempor sint in consequat. Incididunt veniam Lorem adipisicing sit nostrud culpa.
+              Proident ullamco irure eu sint quis voluptate qui amet aliquip amet est. Ad velit
+              veniam aliquip id. Nostrud fugiat non voluptate esse aliqua adipisicing qui proident
+              et sunt eiusmod do ea irure.
+            </p>
+            <p>
+              <b>Aliquip</b>
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <h4>Sunt cupidatat deserunt fugiat est in exercitation elit ut nostrud sit sit veniam id consequat</h4>
+            <p>
+              <b>Non pariatur cupidatat do eiusmod qui.
+              </b>
+            </p>
+            <p>
+              Consequat et eiusmod mollit aliquip laborum quis officia. Voluptate et irure ullamco
+              minim eiusmod sunt nisi ea quis officia consectetur. Minim aute do Lorem magna id
+              dolore cupidatat ullamco. Nulla ea in excepteur ex consequat veniam aliquip aute ex
+              aliquip cupidatat. Aliquip consequat amet anim est pariatur quis consequat nostrud
+              aliqua consequat aute.
+            </p>
+            <p>
+              Sunt culpa pariatur exercitation tempor fugiat ipsum dolore laborum cillum cupidatat
+              ut. Dolor mollit esse ad nisi nulla laboris commodo culpa. Dolore sit excepteur sit
+              velit ex. Sunt esse dolor tempor cupidatat consequat do. Sunt excepteur mollit aliqua
+              ad Lorem excepteur officia excepteur culpa. Ea pariatur cupidatat dolor voluptate
+              eiusmod qui magna exercitation. Qui consequat cupidatat culpa in pariatur veniam duis
+              est.
+            </p>
+            <p>
+              Tempor cupidatat ea amet exercitation. Ex eiusmod ut exercitation adipisicing
+              consectetur eu minim. Tempor ut laboris ullamco anim.
+            </p>
+            <p>
+              Eu cillum eu est dolore aute adipisicing nostrud id. Veniam velit elit sint officia
+              reprehenderit fugiat ad ad quis culpa aute mollit dolor. Excepteur aliquip do commodo
+              pariatur enim. Pariatur adipisicing elit Lorem ut. Adipisicing nisi non culpa ea
+              dolore ex aliqua officia proident aliquip. Consectetur est non incididunt ipsum ex in
+              aliqua velit sit nulla Lorem proident. Sit sit commodo laboris amet aute.
+            </p>
+            <p>
+              Ullamco id mollit sint incididunt veniam velit. Anim ex magna deserunt in.
+              Reprehenderit nulla voluptate in qui culpa sint non qui magna.
+            </p>
+            <p>
+              Aliqua duis aliqua officia aliquip labore mollit excepteur nostrud non enim. Anim
+              veniam sit commodo cupidatat enim culpa. Ut laborum sint cillum ea magna excepteur
+              aliquip adipisicing dolore. Irure et ipsum occaecat esse minim consectetur officia et
+              quis voluptate aute duis proident consequat. Exercitation officia adipisicing officia
+              velit. Ipsum pariatur veniam est velit sit. Labore velit cupidatat aliqua consectetur
+              duis nisi ipsum tempor.
+            </p>
+            <p>
+              Occaecat pariatur cillum in ea adipisicing laboris cupidatat officia culpa adipisicing
+              minim deserunt et consequat. Reprehenderit minim voluptate deserunt minim occaecat
+              tempor sint in consequat. Incididunt veniam Lorem adipisicing sit nostrud culpa.
+              Proident ullamco irure eu sint quis voluptate qui amet aliquip amet est. Ad velit
+              veniam aliquip id. Nostrud fugiat non voluptate esse aliqua adipisicing qui proident
+              et sunt eiusmod do ea irure.
+            </p>
+            <p>
+              <b>Aliquip</b>
+            </p>
+          </e:localization>
+
+          <e:reference>
+            <e:publication>Consequat est dolore</e:publication>
+            <e:url>https://onsectetur.consequat.consequat/</e:url>
+            <e:publication-date>2017-02-22</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="8D">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tekstikatkelma: Pariatur occaecat est non aliquip cupidatat ad officia tempor</e:localization>
+            <e:localization lang="sv-FI">Textutdrag: Consequat reprehenderit nulla quis voluptate reprehenderit fugiat</e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <h4>Dolore reprehenderit ipsum minim exercitation duis officia</h4>
+            <p>
+              Laborum cupidatat pariatur irure dolor nisi labore eiusmod anim. Aliquip dolor mollit
+              tempor laboris consectetur veniam enim nostrud commodo ullamco enim consectetur.
+              Consectetur amet excepteur dolor reprehenderit laborum. Aute ex commodo nulla ut Lorem
+              amet officia velit. Voluptate non sit occaecat pariatur irure in amet deserunt dolore
+              tempor pariatur. Do anim voluptate eiusmod nostrud et do ipsum ipsum excepteur sit
+              consectetur anim.
+            </p>
+            <p>
+              Et mollit nostrud aliquip nisi adipisicing aliqua aute irure consequat sint amet
+              occaecat. Velit culpa commodo amet amet incididunt est. Veniam labore nulla
+              consectetur sit occaecat cillum qui excepteur dolore magna commodo aliquip.
+            </p>
+            <p>
+              Qui magna eu sint dolor mollit. Lorem sint incididunt culpa laborum aliqua aute enim
+              Lorem. Nulla enim esse nostrud excepteur tempor irure elit aliqua qui incididunt dolor
+              voluptate eiusmod.
+            </p>
+            <p>
+              <b>Elit Eu magna duis fugiat</b>
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+              <h4>Dolore Lorem labore nostrud nisi duis id ex voluptate adipisicing ullamco aliquip cillum.</h4>
+              <p>
+                Laborum cupidatat pariatur irure dolor nisi labore eiusmod anim. Aliquip dolor mollit
+                tempor laboris consectetur veniam enim nostrud commodo ullamco enim consectetur.
+                Consectetur amet excepteur dolor reprehenderit laborum. Aute ex commodo nulla ut Lorem
+                amet officia velit. Voluptate non sit occaecat pariatur irure in amet deserunt dolore
+                tempor pariatur. Do anim voluptate eiusmod nostrud et do ipsum ipsum excepteur sit
+                consectetur anim.
+              </p>
+              <p>
+                Et mollit nostrud aliquip nisi adipisicing aliqua aute irure consequat sint amet
+                occaecat. Velit culpa commodo amet amet incididunt est. Veniam labore nulla
+                consectetur sit occaecat cillum qui excepteur dolore magna commodo aliquip.
+              </p>
+              <p>
+                Qui magna eu sint dolor mollit. Lorem sint incididunt culpa laborum aliqua aute enim
+                Lorem. Nulla enim esse nostrud excepteur tempor irure elit aliqua qui incididunt dolor
+                voluptate eiusmod.
+              </p>
+              <p>
+                <b>Elit Eu magna duis fugiat</b>
+              </p>
+            </e:localization>
+
+          <e:reference>
+            <e:publication>Aliquip exercitation elit mollit laboris</e:publication>
+            <e:url>https://nim.voluptate.ea</e:url>
+            <e:publication-date>2017-02-22</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="8E">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tekstikatkelma: In tempor est et aute pariatur qui ullamco dolor duis</e:localization>
+            <e:localization lang="sv-FI">Textutdrag: Duis cillum dolor minim voluptate irure minim</e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <h4>Lorem nulla consectetur in occaecat sit</h4>
+            <p>
+              Incididunt incididunt sint non officia laboris laborum eu laboris amet aliqua esse.
+              Excepteur sit proident do adipisicing ex. Proident exercitation consequat et ipsum
+              incididunt sint excepteur non. Duis aliqua duis id fugiat duis exercitation deserunt
+              nulla dolor. Ad incididunt ea minim eiusmod cupidatat exercitation ex tempor quis
+              pariatur non. Culpa ipsum ullamco ex duis laborum mollit non sunt. Dolore sit nostrud
+              sit in ex enim cupidatat ea duis.
+            </p>
+            <p>
+              Ut laboris ea eiusmod duis nostrud velit elit ad duis tempor et reprehenderit. Qui
+              magna commodo ex deserunt. Cupidatat aliquip quis commodo commodo dolor esse sunt esse
+              commodo consectetur veniam eiusmod id.
+            </p>
+            <p>
+              Quis ad velit cupidatat duis quis tempor qui. Occaecat Lorem est excepteur id ut
+              deserunt enim adipisicing occaecat deserunt laborum id. Exercitation exercitation est
+              adipisicing cupidatat ea ex reprehenderit labore in ullamco id tempor proident
+              officia. Do eiusmod sint nulla pariatur anim aute fugiat aute eu incididunt nisi
+              fugiat. Occaecat in deserunt sint sunt officia occaecat pariatur laborum sint sint
+              sint. Occaecat reprehenderit duis duis non dolore eiusmod sunt. Ad consectetur ad
+              aliqua ut nulla adipisicing dolor aliquip reprehenderit in elit est non est.
+            </p>
+            <p>
+              Adipisicing sit elit tempor aliquip deserunt qui. Voluptate officia sunt aute
+              cupidatat sunt aliquip velit eiusmod laborum deserunt fugiat cillum commodo elit.
+              Consequat veniam sint nulla dolore cillum id laborum elit dolore ad pariatur commodo.
+              Sit ut elit cillum ullamco laboris nisi anim in. Amet pariatur elit sunt ut pariatur
+              nostrud laboris proident. Consequat amet voluptate officia laborum quis sint in
+              proident proident enim ea. Incididunt ad aute id eu incididunt laboris voluptate
+              mollit ullamco.
+            </p>
+            <p>
+              Lorem laborum mollit in eiusmod mollit voluptate ea do nostrud ex. Amet ipsum fugiat
+              culpa ea consequat nulla reprehenderit cillum enim esse aliquip non. Duis est
+              reprehenderit ex fugiat. Et Lorem voluptate ea ex enim voluptate enim veniam. Minim
+              velit et dolor exercitation do. Voluptate ut incididunt est in id sit duis mollit.
+            </p>
+            <p>
+              <b>Elit Incididuntm, ullamco, Aliqua</b>
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <h4>Mollit cupidatat cupidatat excepteur do dolore anim excepteur do elit</h4>
+            <p>
+              Incididunt incididunt sint non officia laboris laborum eu laboris amet aliqua esse.
+              Excepteur sit proident do adipisicing ex. Proident exercitation consequat et ipsum
+              incididunt sint excepteur non. Duis aliqua duis id fugiat duis exercitation deserunt
+              nulla dolor. Ad incididunt ea minim eiusmod cupidatat exercitation ex tempor quis
+              pariatur non. Culpa ipsum ullamco ex duis laborum mollit non sunt. Dolore sit nostrud
+              sit in ex enim cupidatat ea duis.
+            </p>
+            <p>
+              Ut laboris ea eiusmod duis nostrud velit elit ad duis tempor et reprehenderit. Qui
+              magna commodo ex deserunt. Cupidatat aliquip quis commodo commodo dolor esse sunt esse
+              commodo consectetur veniam eiusmod id.
+            </p>
+            <p>
+              Quis ad velit cupidatat duis quis tempor qui. Occaecat Lorem est excepteur id ut
+              deserunt enim adipisicing occaecat deserunt laborum id. Exercitation exercitation est
+              adipisicing cupidatat ea ex reprehenderit labore in ullamco id tempor proident
+              officia. Do eiusmod sint nulla pariatur anim aute fugiat aute eu incididunt nisi
+              fugiat. Occaecat in deserunt sint sunt officia occaecat pariatur laborum sint sint
+              sint. Occaecat reprehenderit duis duis non dolore eiusmod sunt. Ad consectetur ad
+              aliqua ut nulla adipisicing dolor aliquip reprehenderit in elit est non est.
+            </p>
+            <p>
+              Adipisicing sit elit tempor aliquip deserunt qui. Voluptate officia sunt aute
+              cupidatat sunt aliquip velit eiusmod laborum deserunt fugiat cillum commodo elit.
+              Consequat veniam sint nulla dolore cillum id laborum elit dolore ad pariatur commodo.
+              Sit ut elit cillum ullamco laboris nisi anim in. Amet pariatur elit sunt ut pariatur
+              nostrud laboris proident. Consequat amet voluptate officia laborum quis sint in
+              proident proident enim ea. Incididunt ad aute id eu incididunt laboris voluptate
+              mollit ullamco.
+            </p>
+            <p>
+              Lorem laborum mollit in eiusmod mollit voluptate ea do nostrud ex. Amet ipsum fugiat
+              culpa ea consequat nulla reprehenderit cillum enim esse aliquip non. Duis est
+              reprehenderit ex fugiat. Et Lorem voluptate ea ex enim voluptate enim veniam. Minim
+              velit et dolor exercitation do. Voluptate ut incididunt est in id sit duis mollit.
+            </p>
+            <p>
+              <b>Elit Incididuntm, ullamco, Aliqua</b>
+            </p>
+          </e:localization>
+
+          <e:reference>
+            <e:publication>Esse nostrud velit cupidatat duis in pariatur</e:publication>
+            <e:url>https://ostrud.tempor.adipisicing/</e:url>
+            <e:publication-date>2017-02-22</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="8F">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tekstikatkelma: Reprehenderit amet excepteur esse quis dolor Lorem minim</e:localization>
+            <e:localization lang="sv-FI">Textutdrag: Velit occaecat in irure ea commodo id et do ut dolore incididunt</e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <h4>Proident esse eu aliqua esse</h4>
+            <p>
+              Elit duis labore labore mollit culpa voluptate nulla esse commodo non ex dolore nostrud cillum. Sit sunt cupidatat quis nisi non labore sunt eu veniam esse. Commodo ipsum minim anim magna sit ex pariatur amet dolore labore duis aliqua. Enim duis mollit aliquip enim. Ipsum incididunt sint irure dolore amet laboris exercitation anim exercitation.
+            </p>
+            <p>
+              Qui duis dolor duis veniam deserunt velit aliqua minim non occaecat eu tempor id mollit. Enim amet anim ea velit magna non dolore elit. Consectetur pariatur fugiat laborum laborum velit officia aliquip occaecat reprehenderit duis ipsum consectetur amet. Quis esse laborum culpa anim adipisicing Lorem pariatur. Velit fugiat nisi sunt sunt quis quis reprehenderit aliquip do eiusmod aliqua ipsum. Mollit in nulla mollit anim eiusmod veniam laboris incididunt ullamco. Et proident eiusmod amet ipsum commodo sit.
+            </p>
+            <p>
+              Ea elit labore culpa ea quis nulla nulla commodo pariatur. In culpa ut quis Lorem dolor ea pariatur aliquip non ad quis cupidatat eiusmod est. Incididunt minim eiusmod reprehenderit consectetur nulla esse dolore esse amet occaecat minim nisi elit aute.
+            </p>
+            <p>
+              Sunt incididunt do aute laborum consequat adipisicing occaecat veniam. Ad veniam officia consequat magna. Dolor laboris deserunt ut laborum dolore est.
+            </p>
+            <p>
+              <b>Ad Nostrud<br /> quis in laboris<br />Elit irure sunt excepteur nostrud.
+              </b>
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <h4>Duis ullamco nisi excepteur eiusmod in id commodo et sint anim aute enim</h4>
+            <p>
+              Elit duis labore labore mollit culpa voluptate nulla esse commodo non ex dolore nostrud cillum. Sit sunt cupidatat quis nisi non labore sunt eu veniam esse. Commodo ipsum minim anim magna sit ex pariatur amet dolore labore duis aliqua. Enim duis mollit aliquip enim. Ipsum incididunt sint irure dolore amet laboris exercitation anim exercitation.
+            </p>
+            <p>
+              Qui duis dolor duis veniam deserunt velit aliqua minim non occaecat eu tempor id mollit. Enim amet anim ea velit magna non dolore elit. Consectetur pariatur fugiat laborum laborum velit officia aliquip occaecat reprehenderit duis ipsum consectetur amet. Quis esse laborum culpa anim adipisicing Lorem pariatur. Velit fugiat nisi sunt sunt quis quis reprehenderit aliquip do eiusmod aliqua ipsum. Mollit in nulla mollit anim eiusmod veniam laboris incididunt ullamco. Et proident eiusmod amet ipsum commodo sit.
+            </p>
+            <p>
+              Ea elit labore culpa ea quis nulla nulla commodo pariatur. In culpa ut quis Lorem dolor ea pariatur aliquip non ad quis cupidatat eiusmod est. Incididunt minim eiusmod reprehenderit consectetur nulla esse dolore esse amet occaecat minim nisi elit aute.
+            </p>
+            <p>
+              Sunt incididunt do aute laborum consequat adipisicing occaecat veniam. Ad veniam officia consequat magna. Dolor laboris deserunt ut laborum dolore est.
+            </p>
+            <p>
+              <b>Ad Nostrud<br /> quis in laboris<br />Elit irure sunt excepteur nostrud.
+              </b>
+            </p>
+          </e:localization>
+
+          <e:reference>
+            <e:publication>Cillum excepteur enim quis qui sint ipsum</e:publication>
+            <e:url>https://ad.velit.aute/</e:url>
+            <e:publication-date>2017-02-22</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Valitse tekstikatkelmista
+            <e:attachment-links>
+              <e:attachment-link ref="8A" />
+              <e:attachment-link ref="8B" />
+              <e:attachment-link ref="8C" />
+              <e:attachment-link ref="8D" />
+              <e:attachment-link ref="8E" />
+              <e:attachment-link ref="8F" />
+            </e:attachment-links>
+            kaksi eutanasiaa puolustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana.
+            Erittele argumentit sekä niiden ansiot ja puutteet.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Välj ut två argument för eutanasi ur textutdragen
+            <e:attachment-links>
+              <e:attachment-link ref="8A" />
+              <e:attachment-link ref="8B" />
+              <e:attachment-link ref="8C" />
+              <e:attachment-link ref="8D" />
+              <e:attachment-link ref="8E" />
+              <e:attachment-link ref="8F" />
+            </e:attachment-links>
+            av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt
+            deras förtjänster och brister.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="10" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Valitse tekstikatkelmista
+            <e:attachment-links>
+              <e:attachment-link ref="8A" />
+              <e:attachment-link ref="8B" />
+              <e:attachment-link ref="8C" />
+              <e:attachment-link ref="8D" />
+              <e:attachment-link ref="8E" />
+              <e:attachment-link ref="8F" />
+            </e:attachment-links>
+            kaksi eutanasiaa vastustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana.
+            Erittele argumentit sekä niiden ansiot ja puutteet.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Välj ut två argument mot eutanasi ur textutdragen
+            <e:attachment-links>
+              <e:attachment-link ref="8A" />
+              <e:attachment-link ref="8B" />
+              <e:attachment-link ref="8C" />
+              <e:attachment-link ref="8D" />
+              <e:attachment-link ref="8E" />
+              <e:attachment-link ref="8F" />
+            </e:attachment-links>
+            av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt
+            deras förtjänster och brister.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="10" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Esitä oma perusteltu kantasi eutanasian laillistamisesta.</e:localization>
+          <e:localization lang="sv-FI">Redogör för din egen motiverade ståndpunkt till legaliseringen av eutanasi.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="10" />
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Tieteelliset mallit</e:localization>
+        <e:localization lang="sv-FI">Vetenskapliga modeller</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Tieteessä rakennetaan malleja todellisuuden selittämiseksi.</e:localization>
+        <e:localization lang="sv-FI">Inom vetenskapen bygger man modeller för att förklara verkligheten.
+        </e:localization>
+      </e:question-instruction>
+      <e:external-material>
+        <e:attachment name="9A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur</e:localization>
+            <e:localization lang="sv-FI">Videoklipp: Incididunt id culpa ad deserunt dolor pariatur</e:localization>
+          </e:attachment-title>
+
+          <e:video src="T9_1_FI.webm" lang="fi-FI" />
+          <e:video src="T9_1_SV.webm" lang="sv-FI" />
+
+          <e:reference>
+            <e:author>Consectetur Excepteur</e:author>
+            <e:title>Incididunt id culpa ad deserunt dolor pariatur</e:title>
+            <e:publication>
+              <e:localization lang="fi-FI">Youtube-videopalvelu</e:localization>
+              <e:localization lang="sv-FI">Videotjänsten Youtube</e:localization>
+            </e:publication>
+            <e:url>www.youtube.com/</e:url>
+            <e:publication-date>2013-07-12</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+          </e:reference>
+        </e:attachment>
+        <e:attachment name="9B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:localization>
+            <e:localization lang="sv-FI">Videoklipp: Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:localization>
+          </e:attachment-title>
+
+          <e:video src="T9_2_FI.webm" lang="fi-FI" />
+          <e:video src="T9_2_SV.webm" lang="sv-FI" />
+
+          <e:reference>
+            <e:author>Ex anim</e:author>
+            <e:title>Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:title>
+            <e:publication>
+              <e:localization lang="fi-FI">Youtube-videopalvelu</e:localization>
+              <e:localization lang="sv-FI">Videotjänsten Youtube</e:localization>
+            </e:publication>
+            <e:url>www.youtube.com/</e:url>
+            <e:publication-date>2010-09-09</e:publication-date>
+            <e:reference-date>2017-05-09</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Valitse videokatkelmista
+            <e:attachment-links>
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+            </e:attachment-links>
+
+            yksi kuvaus tieteellisestä toiminnasta ja erittele sitä tieteenfilosofian näkökulmasta.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Välj ut en beskrivning av vetenskaplig verksamhet ur videoklippen
+            <e:attachment-links>
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+            </e:attachment-links>
+            och analysera den ur ett vetenskapsfilosofiskt perspektiv.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="10" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi aineesta. Selitä sen rakenne ja
+            vähintään yksi sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofisesti.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Välj ut en vetenskaplig modell, exempelvis från något läroämne du har studerat i gymnasiet. Förklara dess
+            struktur och minst ett av dess teoretiska begrepp, samt utvärdera modellen och dess betydelse på ett
+            vetenskapsfilosofiskt sätt.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="multi-line" max-score="20" />
+      </e:question>
+    </e:question>
+  </e:section>
+</e:exam>

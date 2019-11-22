@@ -1,0 +1,26 @@
+
+@colors: {
+  black: #333;
+  off-white: #fefefe;
+  grey: #aaaaaa;
+  error: #9e0000;
+  darkgrey: #777777;
+  midgrey: #DDDDDD;  
+  lightgrey: #f0f0f0;
+  tinted-white: #f5fbfe;
+  lightblue: #e0f4fe;
+  lighterblue: #f0faff;
+  lightblue-shade: #c6e6f2;
+  lightturquoise: #88d0d0;
+  link: #359bb7;
+  link-hover: #288199;
+}
+
+each(@colors, {
+  .e-exam .e-color-@{key} {
+    color: @value;
+  }
+  .e-exam .e-bg-color-@{key} {
+    background-color: @value;
+  }
+});
