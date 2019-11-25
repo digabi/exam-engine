@@ -1,9 +1,9 @@
 dist/
-exams/
 node_modules/
 output/
 public/
 test/fixtures
+packages/mexamples/exams
 packages/**/bundle
 packages/**/dist
 packages/**/node_modules/

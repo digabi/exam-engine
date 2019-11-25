@@ -14,7 +14,7 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
   before('Generate offline exam', async function() {
     this.timeout(120000)
     const outputpath = await tmp.dir().then(r => r.path)
-    await spawn('npm', ['run', 'offline', 'exams/MexDocumentation/MexDocumentation.xml', outputpath])
+    await spawn('npm', ['run', 'offline', 'packages/mexamples/exams/MexDocumentation/MexDocumentation.xml', outputpath])
     const outputHtmlFiles = await glob(outputpath + '/*/*.html')
     examHtmlFile = outputHtmlFiles.find(f => f.endsWith('koe.html'))!
     attachmentsHtmlFile = outputHtmlFiles.find(f => f.endsWith('aineisto.html'))!

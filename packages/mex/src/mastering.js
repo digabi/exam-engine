@@ -244,7 +244,7 @@ async function masterExamForLanguage(
   await addMediaMetadata(doc, memoize(getMediaMetadata))
 
   const examTitle = doc.get('//e:exam-title', ns)
-  const gradingStructure = generateGradingStructure ? createGradingStructure(doc, targetLanguage) : undefined
+  const gradingStructure = generateGradingStructure ? createGradingStructure(doc, targetLanguage) : null
 
   removeCorrectAnswers(doc)
 

@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { Page } from 'puppeteer'
-import { resolveFixture } from '../fixtures'
+import { resolveExam } from '../fixtures'
 import createTestServer, { CloseFunction } from './createTestServer'
 import { delay, getCurrentPage, getTextContent } from './domUtils'
 
@@ -11,7 +11,7 @@ describe('testTextAnswers.ts — Text answer interactions', function() {
   let close: CloseFunction
 
   before('Start server', async () => {
-    ;[url, close] = await createTestServer(resolveFixture('exams/A_X/A_X.xml'))
+    ;[url, close] = await createTestServer(resolveExam('A_X/A_X.xml'))
   })
 
   after('Close server', async () => {

@@ -79,7 +79,6 @@
     "browser-tests:ci": "JUNIT_REPORT_PATH=mocha-report.xml mocha --reporter mocha-jenkins-reporter 'test/browser-test/*.ts'"
   },
   "workspaces": [
-    "packages/**",
-    "exams"
+    "packages/**"
   ]
 }

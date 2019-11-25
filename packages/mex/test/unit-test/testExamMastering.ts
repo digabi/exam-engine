@@ -1,24 +1,13 @@
 import chai, { assert } from 'chai'
 import chaiJestDiff from 'chai-jest-diff'
-import * as R from 'ramda'
+import { promises as fs } from 'fs'
+import path from 'path'
 import sinon, { assert as sinonAssert } from 'sinon'
-import { readFixture, writeFixture } from '../../../../test/fixtures'
+import { assertEqualsExamFixture, listExams, readFixture } from '../../../../test/fixtures'
 import { masterExam } from '../../src/mastering'
 
 chai.use(chaiJestDiff)
 
-interface Attachment {
-  filename: string
-  restricted: boolean
-}
-
-interface TestResultData {
-  language: string
-  filename: string
-  attachments: Attachment[]
-}
-
-const mkAttachment = (filename: string, restricted: boolean = false): Attachment => ({ filename, restricted })
 const generateUuid = (_?: {
   examCode: string
   date: string
@@ -82,117 +71,16 @@ describe('Exam mastering', () => {
     })
   })
 
-  it('masters the A_X exam correctly', async () => {
-    await assertMasteredExams('../../exams/A_X/A_X.xml', [
-      {
-        language: 'fi-FI',
-        filename: 'A_X/A_X_fi-FI.xml',
-        attachments: [
-          mkAttachment('1.A.webm'),
-          mkAttachment('1.A_KV.webm'),
-          mkAttachment('2.A.ogg'),
-          mkAttachment('4.A.ogg')
-        ]
+  for (const exam of listExams()) {
+    it(`masters ${path.basename(exam)} exam correctly`, async () => {
+      const source = await fs.readFile(exam, 'utf-8')
+      const results = await masterExam(source, generateUuid, getMediaMetadata)
+      for (const result of results) {
+        await assertEqualsExamFixture(exam, result.language, 'mastering-result.json', result)
       }
-    ])
-  })
-
-  it('masters the exam with exam-specific external material correctly', async () => {
-    await assertMasteredExams('exam_specific_external_material.xml', [
-      {
-        language: 'fi-FI',
-        filename: 'exam_specific_external_material_fi-FI.xml',
-        attachments: []
-      }
-    ])
-  })
-
-  it('masters the FF exam structure correctly', async () => {
-    await assertMasteredExams('../../exams/FF/FF.xml', [
-      {
-        language: 'fi-FI',
-        filename: 'FF/FF_fi-FI.xml',
-        attachments: [
-          mkAttachment('T3_FI.webm'),
-          mkAttachment('4A.jpg'),
-          mkAttachment('4B.png'),
-          mkAttachment('T5_FI.webm'),
-          mkAttachment('T9_1_FI.webm'),
-          mkAttachment('T9_2_FI.webm')
-        ]
-      },
-      {
-        language: 'sv-FI',
-        filename: 'FF/FF_sv-FI.xml',
-        attachments: [
-          mkAttachment('T3_SV.webm'),
-          mkAttachment('4A.jpg'),
-          mkAttachment('4B.png'),
-          mkAttachment('T5_SV.webm'),
-          mkAttachment('T9_1_SV.webm'),
-          mkAttachment('T9_2_SV.webm')
-        ]
-      }
-    ])
-  })
-
-  it('masters the EA exam structure correctly', async () => {
-    await assertMasteredExams('../../exams/EA/EA.xml', [
-      {
-        language: 'fi-FI',
-        filename: 'EA/EA_fi-FI.xml',
-        attachments: [mkAttachment('audio-test.ogg'), mkAttachment('1.mp3', true), mkAttachment('1.1.mp3', true)]
-      }
-    ])
-  })
-
-  it('masters the M exam structure correctly', async () => {
-    await assertMasteredExams('../../exams/M/M.xml', [
-      {
-        language: 'fi-FI',
-        filename: 'M/M_fi-FI.xml',
-        attachments: []
-      }
-    ])
-  })
-
-  it('masters the MexDocumentation correctly', async () => {
-    await assertMasteredExams('../../exams/MexDocumentation/MexDocumentation.xml', [
-      {
-        language: 'fi-FI',
-        filename: 'MexDocumentation/MexDocumentation-FI.xml',
-        attachments: [
-          mkAttachment('example_high.jpg'),
-          mkAttachment('example.jpg'),
-          mkAttachment('example_small.jpg'),
-          mkAttachment('example1.webm'),
-          mkAttachment('example1.webm', true),
-          mkAttachment('example2.webm', true),
-          mkAttachment('example3.webm', true),
-          mkAttachment('custom.css')
-        ]
-      }
-    ])
-  })
-})
-
-async function assertMasteredExams(sourceFilename: string, testResult: TestResultData[]) {
-  const source = await readFixture(sourceFilename)
-  const results = await masterExam(source, generateUuid, getMediaMetadata)
-
-  for (const { language, filename, attachments } of testResult) {
-    const result = results.find(R.whereEq({ language }))!
-
-    if (process.env.OVERWRITE_FIXTURES) {
-      await writeFixture(filename, result.xml)
-    }
-
-    const expectedXml = await readFixture(filename)
-
-    assert.deepStrictEqual(result.xml, expectedXml, `XML mismatch for ${language}`)
-    assert.deepStrictEqual(result.attachments, attachments)
+    })
   }
-}
+})
 
 async function assertRejected<T>(promise: Promise<T>, message?: string) {
   try {

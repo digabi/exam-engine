@@ -52,7 +52,7 @@ $ make start              # Makefile runs nvm, yarn, and necessary scripts from 
 ```
 
 This starts the preview of
-[exams/MexDocumentation/MexDocumentation.xml](exams/MexDocumentation/MexDocumentation.xml).
+[packages/mexamples/exams/MexDocumentation/MexDocumentation.xml](packages/mexamples/exams/MexDocumentation/MexDocumentation.xml)
 
 Offline version of the documentation exam is hosted at
 [https://digabi.github.io/exam-engine/MexDocumentation/koe.html](https://digabi.github.io/exam-engine/MexDocumentation/koe.html).
@@ -64,7 +64,7 @@ To start live preview of any exam, use commands:
 ```
 $ nvm use
 $ yarn install
-$ yarn start exams/MexDocumentation/MexDocumentation.xml
+$ yarn start packages/mexamples/exams/MexDocumentation/MexDocumentation.xml
 ```
 
 This starts `webpack-dev-server` that automatically updates the exam in Firefox when
@@ -118,7 +118,7 @@ additional tools.
 To create offline versions into subdirectories of `tmp/`, use:
 
 ```
-$ yarn offline exams/MexDocumentation/MexDocumentation.xml tmp
+$ yarn offline packages/mexamples/exams/MexDocumentation/MexDocumentation.xml tmp
 ```
 
 # Intellectual property rights

@@ -1,6 +1,6 @@
 import { Page } from 'puppeteer'
 import { QuestionId } from '../../packages/exam-engine/src/components/types'
-import { resolveFixture } from '../fixtures'
+import { resolveExam } from '../fixtures'
 import createTestServer, { CloseFunction } from './createTestServer'
 import { getCurrentPage } from './domUtils'
 
@@ -11,7 +11,7 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', functio
   let close: CloseFunction
 
   before('Start server', async () => {
-    ;[url, close] = await createTestServer(resolveFixture('exams/EA/EA.xml'))
+    ;[url, close] = await createTestServer(resolveExam('EA/EA.xml'))
   })
 
   after('Close server', async () => {
