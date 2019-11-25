@@ -1,2 +1,4 @@
+addons:
+  chrome: stable
 language: node_js
-script: make unit-tests
+script: make test
