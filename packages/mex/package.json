@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/chai": "^4.2.5",
-    "@types/libxmljs": "^0.18.4",
+    "@types/libxmljs": "^0.18.5",
     "@types/mocha": "^5.2.7",
     "@types/yazl": "^2.4.2",
     "chai": "^4.2.0",
