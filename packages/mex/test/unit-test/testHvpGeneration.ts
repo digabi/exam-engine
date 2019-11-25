@@ -1,15 +1,11 @@
 import { assert } from 'chai'
+import { readFixture, writeFixture } from '../../../../test/fixtures'
 import { generateHvpForLanguage } from '../../src/mastering'
-import { readFixture, writeFixture } from '../fixtures'
 
 describe('HVP generation', () => {
   ;['fi-FI', 'sv-FI'].forEach(language =>
     it(`Generates HVP for ${language}`, async () => {
-      await assertGeneratedHvp(
-        '../../exams/EA/EA.xml',
-        `../../test/fixtures/EA/EA_${language}-HVP.txt`,
-        language
-      )
+      await assertGeneratedHvp('../../exams/EA/EA.xml', `EA/EA_${language}-HVP.txt`, language)
     })
   )
 })
