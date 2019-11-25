@@ -43,7 +43,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "esm": "^3.2.25",
-    "file-loader": "^4.3.0",
+    "file-loader": "^5.0.1",
     "fontfaceobserver": "^2.1.0",
     "i18next": "^19.0.1",
     "jsdom": "^15.2.1",
