@@ -108,6 +108,15 @@ To create offline versions into subdirectories of `tmp/`, use:
 $ yarn offline exams/MexDocumentation/MexDocumentation.xml tmp
 ```
 
+# Intellectual property rights
+
+Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). Exceptions are:
+
+* XHTML-based XML Schema Definition files [packages/mex/schema](packages/mex/schema).
+  See [packages/mex/schema/xhtml11.xsd](packages/mex/schema/xhtml11.xsd) for the license.
+* Abitti and the Abitti logo are EU trademarks registered by the Finnish Matriculation Examination
+  Board (FMEB) under the codes 015833742 and 015838915.
+
 # Development
 
 The information in this section is only relevant for developers of the exam-engine itself.
