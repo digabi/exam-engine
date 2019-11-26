@@ -232,7 +232,97 @@
     </e:question>
 
     <e:question>
-      <e:question-title>Language versions</e:question-title>
+      <e:question-title>Exam</e:question-title>
+      <e:question-instruction>
+        <p>
+          Top-level exam element.
+        </p>
+      </e:question-instruction>
+      <table class="e-table e-width-full">
+        <caption>Element attributes</caption>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Mandatory</th>
+            <th>Default value</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>exam-schema-version</td>
+            <td>Version string</td>
+            <td>No</td>
+            <td>—</td>
+            <td>Schema version, only 0.1 for now</td>
+          </tr>
+          <tr>
+            <td>date</td>
+            <td>YYYY-MM-DD</td>
+            <td>No</td>
+            <td>—</td>
+            <td>Exam date</td>
+          </tr>
+          <tr>
+            <td>exam-code</td>
+            <td>exam code string</td>
+            <td>No</td>
+            <td>—</td>
+            <td>Exam code used for exam specific translations</td>
+          </tr>
+          <tr>
+            <td>day-code</td>
+            <td>exam day code string</td>
+            <td>No</td>
+            <td>—</td>
+            <td>Exam day code used for exam specific translations</td>
+          </tr>
+          <tr>
+            <td>exam-stylesheet</td>
+            <td>custom CSS stylesheet file name</td>
+            <td>No</td>
+            <td>—</td>
+            <td>CSS file with this name must exist in attachments directory</td>
+          </tr>
+          <tr>
+            <td>max-answers</td>
+            <td>Integer</td>
+            <td>No</td>
+            <td>No limit</td>
+            <td>Maximum number of questions student should answer</td>
+          </tr>
+          </tbody>
+      </table>
+      <p>
+        <code>exam-code</code> and <code>day-code</code> attributes control exam-specific
+        translations, e.g. the heading text of table of contents, and the exam title if specific
+        <code>e:exam-title</code> element is missing. Currently supported exam and day
+        code pairs can be found in
+        <a href="https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json">https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json</a>.
+      </p>
+      <div class="warning-box">
+        max-answers is not supported in Abitti grading.
+      </div>
+      <e:question>
+        <e:question-title>Example</e:question-title>
+        <h4></h4>
+        <pre class="code">
+          <![CDATA[<e:exam
+  xmlns:e="http://ylioppilastutkinto.fi/exam.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mex/schema/exam.xsd"
+  exam-schema-version="0.1"
+  date="2018-09-29"
+  exam-code="EA"
+  exam-stylesheet="custom.css">]]>
+        </pre>
+      </e:question>
+    </e:question>
+
+    <e:question>
+      <e:question-title>Languages and localization</e:question-title>
       <e:question-instruction>
         <p>
           Content for multiple language versions of the same exam can be defined using localization elements.
