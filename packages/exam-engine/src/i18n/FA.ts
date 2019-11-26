@@ -14,7 +14,7 @@ export const FA: ExamTranslations = {
     heading: 'Sources',
     source: "D'après",
     date: 'Publié :',
-    'reference-date': 'Téléchargé de',
+    'reference-date': 'Téléchargement le',
     translator: 'Traduction :',
     'modified-by': 'Adaptation :'
   },
