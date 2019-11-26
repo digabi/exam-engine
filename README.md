@@ -27,8 +27,7 @@ Make sure the following are installed in your system:
 ```
 $ nvm install
 ```
-to install the version specified in [.nvmrc](
-https://github.com/digabi/exam-engine/blob/master/.nvmrc)
+to install the version specified in [.nvmrc](.nvmrc)
 * yarn and npm:
 ```
 $ nvm use
@@ -46,7 +45,8 @@ $ cd exam-engine
 $ make start              # Makefile runs nvm, yarn, and necessary scripts from package.json
 ```
 
-This starts the preview of `exams/MexDocumentation/MexDocumentation.xml` using
+This starts the preview of
+[exams/MexDocumentation/MexDocumentation.xml](exams/MexDocumentation/MexDocumentation.xml) using
 `webpack-dev-server` and opens it in Firefox.
 
 To start previewing some other exam, use commands directly:
