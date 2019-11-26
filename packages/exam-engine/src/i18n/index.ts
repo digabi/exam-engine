@@ -16,6 +16,10 @@ import { Z } from './Z'
 
 const examSpecificTranslations = {
   A_E,
+  BA: sv_FI,
+  BB: sv_FI,
+  CA: fi_FI,
+  CB: fi_FI,
   EA,
   EC: EA,
   DC: Z,
