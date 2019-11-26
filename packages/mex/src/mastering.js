@@ -92,16 +92,16 @@ const createHvp = (doc, targetLanguage) => {
   const findQuestionTypes = node => {
     const elementNamesToTypes = {
       'fi-FI': {
-        'e:scored-text-answer': 'keskitetysti arvosteltava tekstitehtävä',
-        'e:choice-answer': 'monivalintatehtävä',
-        'e:dropdown-answer': 'aukkomonivalintatehtävä',
-        'e:text-answer': 'tekstitehtävä'
+        'e:scored-text-answer': 'keskitetysti arvosteltava tekstivastaus',
+        'e:choice-answer': 'monivalintavastaus',
+        'e:dropdown-answer': 'aukkomonivalintavastaus',
+        'e:text-answer': 'tekstivastaus'
       },
       'sv-FI': {
-        'e:scored-text-answer': 'centraliserat bedömd textuppgift',
-        'e:dropdown-answer': 'flervalsluckuppgift',
-        'e:choice-answer': 'flervalsuppgift',
-        'e:text-answer': 'textuppgift'
+        'e:scored-text-answer': 'centraliserat bedömt textsvar',
+        'e:dropdown-answer': 'flervalslucksvar',
+        'e:choice-answer': 'flervalssvar',
+        'e:text-answer': 'textsvar'
       }
     }
 
