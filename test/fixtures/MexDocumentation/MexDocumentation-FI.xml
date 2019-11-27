@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mex/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="24"><e:exam-title>MEX format documentation</e:exam-title><e:exam-instruction><p>
       This exam describes the MEX XML format.
+    </p><p>
+      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p></e:exam-instruction><e:table-of-contents/><e:section display-number="I" max-score="0"><e:section-title>Exam structure</e:section-title><e:question display-number="1." max-score="0"><e:question-title>XML structure</e:question-title><e:question-instruction>Exam structure is described in XML. It can contain also (X)HTML elements.
       </e:question-instruction><div class="tree"><div><strong>
             Exam
@@ -995,4 +997,6 @@ consequat laboris adipisicing duis proident proident amet.
       </p><pre class="code"><![CDATA[<div class="e-columns">
   <div class="e-column">e-column</div>
   <div class="e-column e-column--narrow">e-column--narrow</div>
-</div>]]></pre><div class="example grid-example"><div class="e-columns"><div class="e-column block">e-column</div><div class="e-column e-column--narrow block">e-column--narrow</div></div></div></e:question></e:section><e:references/><e:exam-footer><p class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
+</div>]]></pre><div class="example grid-example"><div class="e-columns"><div class="e-column block">e-column</div><div class="e-column e-column--narrow block">e-column--narrow</div></div></div></e:question></e:section><e:references/><e:exam-footer><p>
+      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
+    </p></e:exam-footer></e:exam>

@@ -36,7 +36,7 @@ $ npm install --global npm
 ```
 * Firefox web browser
 
-# MEX documentation and preview
+# MEX format documentation
 
 The MEX format documentation is written as an exam itself. To open it using the preview, run:
 ```
@@ -46,10 +46,14 @@ $ make start              # Makefile runs nvm, yarn, and necessary scripts from 
 ```
 
 This starts the preview of
-[exams/MexDocumentation/MexDocumentation.xml](exams/MexDocumentation/MexDocumentation.xml) using
-`webpack-dev-server` and opens it in Firefox.
+[exams/MexDocumentation/MexDocumentation.xml](exams/MexDocumentation/MexDocumentation.xml).
 
-To start previewing some other exam, use commands directly:
+Offline version of the documentation exam is hosted at
+[https://digabi.github.io/exam-engine/MexDocumentation/koe.html](https://digabi.github.io/exam-engine/MexDocumentation/koe.html).
+
+# Preview
+
+To start live preview of any exam, use commands:
 
 ```
 $ nvm use
@@ -57,8 +61,12 @@ $ yarn install
 $ yarn start exams/MexDocumentation/MexDocumentation.xml
 ```
 
-It is also possible to preview exams in Abitti compatibility mode. In this mode errors will be
-displayed in preview if exam XML uses features that are not supported by Abitti:
+This starts `webpack-dev-server` that automatically updates the exam in Firefox when
+the XML file is being edited.
+
+It is also possible to preview exams in Abitti compatibility mode. In this mode the preview
+reports errors if you use some major features not available in Abitti. All incompatibilies are
+not checked, so it is still important to test the exam in Abitti.
 
 ```
 $ nvm use

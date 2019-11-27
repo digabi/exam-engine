@@ -10,6 +10,9 @@
     <p>
       This exam describes the MEX XML format.
     </p>
+    <p>
+      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
+    </p>
   </e:exam-instruction>
   <e:table-of-contents />
   <e:section>
@@ -2698,4 +2701,9 @@ consequat laboris adipisicing duis proident proident amet.
   </e:section>
 
   <e:references />
+  <e:exam-footer>
+    <p>
+      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
+    </p>
+  </e:exam-footer>
 </e:exam>
