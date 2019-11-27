@@ -1,5 +1,11 @@
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=digabi/exam-engine&identifier=223358056)](https://dependabot.com)
 
+![Abitti.dev](https://abitti.dev/images/abittidev_logo.svg)
+
+[Abitti.dev](https://abitti.dev)
+
+[Use of Abitti Trademark policy](https://abitti.dev/abitti-trademark.html)
+
 Engine for the MEX exam format.
 
 Provides:
