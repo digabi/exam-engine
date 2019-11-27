@@ -10,7 +10,6 @@
 // As an exception, do not put .e-table inside .e-exam to reduce its selector
 // specifity. This allow for easier overriding using other .e-foo classes.
 .e-table {
-  background-color: @colors[off-white];
   border-spacing: 0;
   border-collapse: collapse;
   margin-bottom: 1rem;
@@ -30,8 +29,8 @@
   }
 
   &--zebra {
-    tbody tr:nth-child(odd) {
-      background: rgba(0, 0, 0, 0.06);
+    tbody tr:nth-child(odd){
+      background: rgba(0,0,0,0.06);
     }
-  }
+  }  
 }
