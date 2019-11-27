@@ -6,11 +6,13 @@ function createGradingStructure(masteredDoc) {
   assertAbittiCompatibleGradingStructure(masteredDoc)
 
   const sectionElements = masteredDoc.find('//e:section', ns)
-  const questions = _.flatMap(sectionElements, sectionElement =>
-    findClosestChildQuestions(sectionElement)
-      .map(questionElement => createQuestions(questionElement))
-      .flat()
+  const questions = _(
+    _.flatMap(sectionElements, sectionElement =>
+      findClosestChildQuestions(sectionElement).map(questionElement => createQuestions(questionElement))
+    )
   )
+    .flattenDepth()
+    .value()
 
   return { questions }
 }
@@ -155,8 +157,8 @@ const createDropdownQuestion = questionElement => {
   // Get id of the parent question from the first answer element's id
   const id = Number(answerElements[0].attr('question-id').value()) * 100000
 
-  const content = answerElements
-    .map(answerElement => {
+  const content = _(
+    answerElements.map(answerElement => {
       // If there is only single answer as a direct child of a question, use the
       // question's display-number directly.
       const displayNumber = `${parentDisplayNumber}${answerElement.attr('display-number').value()}`
@@ -178,7 +180,9 @@ const createDropdownQuestion = questionElement => {
         }
       ]
     })
-    .flat()
+  )
+    .flattenDepth()
+    .value()
 
   return {
     maxScore,

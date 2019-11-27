@@ -1,6 +1,6 @@
 {
   "name": "@digabi/mex",
-  "version": "4.4.3",
+  "version": "4.4.4-1",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
