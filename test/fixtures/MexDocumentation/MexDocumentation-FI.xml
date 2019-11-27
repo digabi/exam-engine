@@ -979,7 +979,16 @@ consequat laboris adipisicing duis proident proident amet.
       <td class="e-text-right">Dolor</td>
     </tr>
   </tbody>
-</table>]]></pre><div class="example"><table class="e-table e-width-full"><caption>Table title</caption><thead><tr><th class="e-pad-l-8">First column (padding to the left)</th><th class="e-text-center">Second column (centered)</th><th class="e-text-right">Third column (aligned to the right)</th></tr></thead><tbody><tr><td class="e-pad-l-8">Lorem</td><td class="e-text-center">Ipsum</td><td class="e-text-right">Dolor</td></tr></tbody></table></div></e:question><e:question display-number="26." max-score="0"><e:question-title>Text columns</e:question-title><e:question-instruction><p>
+</table>]]></pre><div class="example"><table class="e-table e-width-full"><caption>Table title</caption><thead><tr><th class="e-pad-l-8">First column (padding to the left)</th><th class="e-text-center">Second column (centered)</th><th class="e-text-right">Third column (aligned to the right)</th></tr></thead><tbody><tr><td class="e-pad-l-8">Lorem</td><td class="e-text-center">Ipsum</td><td class="e-text-right">Dolor</td></tr></tbody></table></div><p>
+        If a table is very wide, you can prevent it from overflowing and make
+        it scrollable by wrapping it in an <code>.e-scrollable-x</code>
+        element.
+      </p><pre class="code"><![CDATA[<div class="e-scrollable-x">
+  <table class="e-table">
+    …
+  </table>
+</div>
+]]></pre><div class="example"><div class="e-scrollable-x"><table class="e-table"><thead><tr><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th></tr></thead><tbody><tr><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td></tr><tr><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td></tr><tr><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td></tr></tbody></table></div></div></e:question><e:question display-number="26." max-score="0"><e:question-title>Text columns</e:question-title><e:question-instruction><p>
           Text columns can be added using
           <code>e-columns</code>
           class. Ever child element within it must have
