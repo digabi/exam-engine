@@ -1408,6 +1408,97 @@
 .e-exam .e-bg-color-link-hover {
   background-color: #288199;
 }
+.e-exam .e-columns {
+  display: flex;
+}
+.e-exam .e-columns--center-v {
+  align-items: center;
+}
+.e-exam .e-columns--inline {
+  display: inline-flex;
+}
+.e-exam .e-column {
+  flex: 1 1 0;
+}
+.e-exam .e-column--auto {
+  flex: auto;
+}
+.e-exam .e-column--narrow {
+  flex: none;
+}
+.e-exam .e-column + .e-column {
+  margin-left: 1rem;
+}
+@media (max-width: 832px) {
+  .e-exam .e-column + .e-column {
+    margin-left: 0.5rem;
+  }
+}
+.e-exam .e-column + .e-column--gapless {
+  margin-left: 0;
+}
+.e-exam .e-column--1 {
+  flex: none;
+  width: 8.33333333%;
+}
+.e-exam .e-column--2 {
+  flex: none;
+  width: 16.66666667%;
+}
+.e-exam .e-column--3 {
+  flex: none;
+  width: 25%;
+}
+.e-exam .e-column--4 {
+  flex: none;
+  width: 33.33333333%;
+}
+.e-exam .e-column--5 {
+  flex: none;
+  width: 41.66666667%;
+}
+.e-exam .e-column--6 {
+  flex: none;
+  width: 50%;
+}
+.e-exam .e-column--7 {
+  flex: none;
+  width: 58.33333333%;
+}
+.e-exam .e-column--8 {
+  flex: none;
+  width: 66.66666667%;
+}
+.e-exam .e-column--9 {
+  flex: none;
+  width: 75%;
+}
+.e-exam .e-column--10 {
+  flex: none;
+  width: 83.33333333%;
+}
+.e-exam .e-column--11 {
+  flex: none;
+  width: 91.66666667%;
+}
+.e-exam .e-column--12 {
+  flex: none;
+  width: 100%;
+}
+.e-exam a,
+.e-exam .e-link-button {
+  color: #359bb7;
+  text-decoration: none;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+.e-exam a:hover,
+.e-exam .e-link-button:hover {
+  text-decoration: underline;
+  color: #288199;
+}
 .e-exam .e-list-plain {
   list-style: none;
 }
@@ -1458,24 +1549,35 @@
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.03);
 }
-.e-exam a,
-.e-exam .e-link-button {
-  color: #359bb7;
-  text-decoration: none;
-  border: none;
-  background-color: inherit;
-  padding: 0;
-  cursor: pointer;
-}
-.e-exam a:hover,
-.e-exam .e-link-button:hover {
-  text-decoration: underline;
-  color: #288199;
-}
 .e-exam .e-illustration-right {
   float: right;
   margin-left: 1rem;
   margin-bottom: 1rem;
+}
+@media print {
+  html {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .e-exam {
+    max-width: none !important;
+    color: #000;
+  }
+  button {
+    background: none !important;
+    color: #000 !important;
+  }
+  section {
+    padding: 0 !important;
+  }
+  .beta-ribbon {
+    display: none;
+  }
+  .rich-text-editor-tools {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }
 .e-exam .notification {
   background: #f0faff;
@@ -1952,83 +2054,6 @@
 .e-table--zebra tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.06);
 }
-.e-exam .e-columns {
-  display: flex;
-}
-.e-exam .e-columns--center-v {
-  align-items: center;
-}
-.e-exam .e-columns--inline {
-  display: inline-flex;
-}
-.e-exam .e-column {
-  flex: 1 1 0;
-}
-.e-exam .e-column--auto {
-  flex: auto;
-}
-.e-exam .e-column--narrow {
-  flex: none;
-}
-.e-exam .e-column + .e-column {
-  margin-left: 1rem;
-}
-@media (max-width: 832px) {
-  .e-exam .e-column + .e-column {
-    margin-left: 0.5rem;
-  }
-}
-.e-exam .e-column + .e-column--gapless {
-  margin-left: 0;
-}
-.e-exam .e-column--1 {
-  flex: none;
-  width: 8.33333333%;
-}
-.e-exam .e-column--2 {
-  flex: none;
-  width: 16.66666667%;
-}
-.e-exam .e-column--3 {
-  flex: none;
-  width: 25%;
-}
-.e-exam .e-column--4 {
-  flex: none;
-  width: 33.33333333%;
-}
-.e-exam .e-column--5 {
-  flex: none;
-  width: 41.66666667%;
-}
-.e-exam .e-column--6 {
-  flex: none;
-  width: 50%;
-}
-.e-exam .e-column--7 {
-  flex: none;
-  width: 58.33333333%;
-}
-.e-exam .e-column--8 {
-  flex: none;
-  width: 66.66666667%;
-}
-.e-exam .e-column--9 {
-  flex: none;
-  width: 75%;
-}
-.e-exam .e-column--10 {
-  flex: none;
-  width: 83.33333333%;
-}
-.e-exam .e-column--11 {
-  flex: none;
-  width: 91.66666667%;
-}
-.e-exam .e-column--12 {
-  flex: none;
-  width: 100%;
-}
 .e-exam {
   font-weight: 400;
 }
@@ -2172,31 +2197,6 @@
 }
 .e-exam .e-break-word {
   word-break: break-word;
-}
-@media print {
-  html {
-    font-size: 12px;
-    line-height: 18px;
-  }
-  .e-exam {
-    max-width: none !important;
-    color: #000;
-  }
-  button {
-    background: none !important;
-    color: #000 !important;
-  }
-  section {
-    padding: 0 !important;
-  }
-  .beta-ribbon {
-    display: none;
-  }
-  .rich-text-editor-tools {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
 }
 .e-exam .e-ellipsis {
   overflow: hidden;
