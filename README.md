@@ -133,6 +133,8 @@ Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). 
 * Abitti and the Abitti logo are EU trademarks registered by the Finnish Matriculation Examination
   Board (FMEB) under the codes 015833742 and 015838915.
   For detailed use rights, see [https://abitti.dev/abitti-trademark.html](https://abitti.dev/abitti-trademark.html)
+* Several attachments in the SC sample exam [packages/mexamples/exams/SC/](packages/mexamples/exams/SC/) are third party material. See
+  the `<e:reference>` tags in [packages/mexamples/exams/SC/SC.xml](packages/mexamples/exams/SC/SC.xml) for details.
 
 # Development
 
