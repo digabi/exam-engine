@@ -1,6 +1,6 @@
 import { assert } from 'chai'
+import { readFixture, writeFixture } from '../../../../test/fixtures'
 import { masterExamForLanguage } from '../../src/mastering'
-import { readFixture, writeFixture } from '../fixtures'
 
 const language = 'fi-FI'
 
@@ -18,9 +18,9 @@ describe('testGradingStructureGeneration.ts - Grading structure generation', () 
   ].forEach(examName =>
     it(`Generates grading structure for ${examName}`, async () => {
       await assertGeneratedGradingStructure(
-        `../../test/fixtures/grading-structure/${examName}.xml`,
-        `../../test/fixtures/grading-structure/${examName}-grading-structure.json`,
-        `../../test/fixtures/grading-structure/${examName}-title.txt`
+        `grading-structure/${examName}.xml`,
+        `grading-structure/${examName}-grading-structure.json`,
+        `grading-structure/${examName}-title.txt`
       )
     })
   )
@@ -41,7 +41,7 @@ describe('testGradingStructureGeneration.ts - Grading structure generation', () 
     'invalid-dropdown-html'
   ].forEach(examName =>
     it(`Throws error with ${examName}`, async () => {
-      await assertThrowsValidationError(`../../test/fixtures/grading-structure/${examName}.xml`)
+      await assertThrowsValidationError(`grading-structure/${examName}.xml`)
     })
   )
 })

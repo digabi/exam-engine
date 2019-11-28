@@ -1,29 +1,14 @@
-import { assert } from 'chai'
+import { promises as fs } from 'fs'
+import { assertEqualsExamFixture, resolveExam } from '../../../../test/fixtures'
 import { generateHvpForLanguage } from '../../src/mastering'
-import { readFixture, writeFixture } from '../fixtures'
 
 describe('HVP generation', () => {
-  ;['fi-FI', 'sv-FI'].forEach(language =>
+  for (const language of ['fi-FI', 'sv-FI']) {
     it(`Generates HVP for ${language}`, async () => {
-      await assertGeneratedHvp(
-        '../../exams/EA/EA.xml',
-        `../../test/fixtures/EA/EA_${language}-HVP.txt`,
-        language
-      )
+      const exam = resolveExam('EA/EA.xml')
+      const source = await fs.readFile(exam, 'utf-8')
+      const result = await generateHvpForLanguage(source, language)
+      await assertEqualsExamFixture(exam, language, 'hvp.txt', result)
     })
-  )
-})
-
-async function assertGeneratedHvp(sourceFilename: string, fixtureFilename: string, language: string) {
-  const exam = await readFixture(sourceFilename)
-  const result = await generateHvpForLanguage(exam, language)
-
-  if (process.env.OVERWRITE_FIXTURES) {
-    await writeFixture(fixtureFilename, result)
   }
-
-  const expectedHvp = await readFixture(fixtureFilename)
-  return assert.deepStrictEqual(result, expectedHvp)
-
-  assert.deepStrictEqual(result, expectedHvp)
-}
+})

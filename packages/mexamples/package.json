@@ -2,5 +2,9 @@
   "name": "@digabi/mexamples",
   "version": "4.0.1",
   "author": "Matriculation Examination Board, Finland",
-  "license": "EUPL-1.1"
+  "license": "EUPL-1.1",
+  "files": [
+    "./exams/*/*.xml",
+    "./exams/*/*.mex"
+  ]
 }

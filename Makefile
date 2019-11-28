@@ -17,9 +17,9 @@ EE_MEX_PKG_DIR =$(EE_DIR)/packages/mex
 EE_MEX_PKG_COMPILED=$(EE_MEX_PKG_DIR)/dist/index.js
 EE_EXAM_ENGINE_PKG_DIR= $(EE_DIR)/packages/exam-engine
 EE_MEX_PKG_DIR= $(EE_DIR)/packages/mex
-EE_EXAMS_DIR= $(EE_DIR)/exams
+EE_EXAMS_DIR= $(EE_DIR)/packages/mexamples/exams/
 
-EE_EXAM_XML_FILES = $(shell find ./exams/**/*.xml)
+EE_EXAM_XML_FILES = $(shell find ./packages/mexamples/exams/*/*.xml)
 # Change @ to empty string "" if you want to see all commands echoed:
 VERBOSE?=@
 
@@ -41,7 +41,7 @@ create-amd-bundle: $(EE_EXAM_ENGINE_BUILT)
 
 # Example on how to call this target:
 #
-# make create-mex e="exams/A_X/A_X.xml" p="salasana" n=~/digabi-top/yo-tools/scripts/nsa-scripts.zip
+# make create-mex e="packages/mexamples/exams/A_X/A_X.xml" p="salasana" n=~/digabi-top/yo-tools/scripts/nsa-scripts.zip
 # See https://www.gnu.org/software/make/manual/html_node/Target_002dspecific.html
 create-mex: p?=salasana
 create-mex: s?=$(EE_DIR)/test/security-codes.json
@@ -50,7 +50,7 @@ create-mex: o?=$(EE_DIR)
 create-mex: $(EE_EXAM_ENGINE_BUILT) $(EE_MEX_PKG_COMPILED)
 	$(EE_NVM_EXEC) yarn create-mex -e $(e) -p $(p) -n $(n) -o $(o) -s $(s) -k $(k)
 
-exams/*/%.mex: exams/*/%.xml
+packages/mexamples/exams/*/%.mex: packages/mexamples/exams/*/%.xml
 	@$(MAKE) create-mex e=$< o=$(@D)
 
 start: build

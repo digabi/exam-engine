@@ -1,5 +1,5 @@
 import { Page } from 'puppeteer'
-import { resolveFixture } from '../fixtures'
+import { resolveExam } from '../fixtures'
 import createTestServer, { CloseFunction } from './createTestServer'
 import { getCurrentPage } from './domUtils'
 
@@ -11,7 +11,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', function
   let page: Page
 
   before('Start server', async () => {
-    ;[url, close] = await createTestServer(resolveFixture('exams/M/M.xml'))
+    ;[url, close] = await createTestServer(resolveExam('M/M.xml'))
     page = await getCurrentPage()
   })
 
