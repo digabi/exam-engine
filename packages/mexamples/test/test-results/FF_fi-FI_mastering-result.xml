@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mex/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>FI – Filosofia</e:exam-title><e:exam-instruction><p>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>FI – Filosofia</e:exam-title><e:exam-instruction><p>
         Koe on kaksiosainen. Osassa I on kuusi 20 pisteen tehtävää ja osassa II kolme 30 pisteen tehtävää. Saat vastata
         enintään viiteen tehtävään. Näistä tehtävistä enintään kaksi saa olla osasta II. Kokeen maksimipistemäärä on
         120. Sen saavuttaminen edellyttää, että vastaat kolmeen osan I tehtävään ja kahteen osan II tehtävään.
