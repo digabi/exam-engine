@@ -1,0 +1,19 @@
+{
+  "language": "fi-FI",
+  "attachments": [
+    {
+      "filename": "audio-test.ogg",
+      "restricted": false
+    },
+    {
+      "filename": "1.mp3",
+      "restricted": true
+    },
+    {
+      "filename": "1.1.mp3",
+      "restricted": true
+    }
+  ],
+  "title": "FI – Englanti, pitkä oppimäärä",
+  "gradingStructure": null
+}

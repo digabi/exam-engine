@@ -1,0 +1,155 @@
+{
+  "language": "fi-FI",
+  "attachments": [
+    {
+      "filename": "audio-test.ogg",
+      "restricted": false
+    },
+    {
+      "filename": "1.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "1.1.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "1.2.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "1.3_1.4.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "1.5.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "2.1.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "2.2.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "2.3.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "2.4.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "3.1.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "3.2_3.3.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "3.4_3.5.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "4.1.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "4.2.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "5.webm",
+      "restricted": false
+    },
+    {
+      "filename": "6.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "6.1.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "6.2.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "6.3.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "7.1.7279.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.1.4327.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.1.0478.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.1.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "7.2.7276.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.2.1617.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.2.7291.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.2.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "7.3.4927.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.3.7459.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.3.4375.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.3.ogg",
+      "restricted": true
+    },
+    {
+      "filename": "maxmoritz.png",
+      "restricted": false
+    },
+    {
+      "filename": "7.2.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "7.4.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "24.1.jpg",
+      "restricted": false
+    },
+    {
+      "filename": "custom.css",
+      "restricted": false
+    }
+  ],
+  "title": "FI – Saksa, lyhyt oppimäärä",
+  "gradingStructure": null
+}

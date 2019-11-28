@@ -27,7 +27,7 @@ export function resolveExam(filename: string) {
  */
 export async function assertEqualsExamFixture(examFilename: string, language: string, fixture: string, content: any) {
   const examDirectory = path.dirname(examFilename)
-  const basename = path.basename(examDirectory) + '_' + path.basename(examFilename, '.xml')
+  const basename = path.basename(examFilename, '.xml')
   const fixtureFilename = path.resolve(examDirectory, '../../test/test-results', `${basename}_${language}_${fixture}`)
   const serializeAsJson = typeof content !== 'string'
 

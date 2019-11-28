@@ -5,6 +5,7 @@ import path from 'path'
 import sinon, { assert as sinonAssert } from 'sinon'
 import { assertEqualsExamFixture, listExams, readFixture } from '../../../../test/fixtures'
 import { masterExam } from '../../src/mastering'
+import _ from 'lodash'
 
 chai.use(chaiJestDiff)
 
@@ -76,7 +77,8 @@ describe('Exam mastering', () => {
       const source = await fs.readFile(exam, 'utf-8')
       const results = await masterExam(source, generateUuid, getMediaMetadata)
       for (const result of results) {
-        await assertEqualsExamFixture(exam, result.language, 'mastering-result.json', result)
+        await assertEqualsExamFixture(exam, result.language, 'mastering-result.json', _.omit(result, 'xml'))
+        await assertEqualsExamFixture(exam, result.language, 'mastering-result.xml', result.xml)
       }
     })
   }
