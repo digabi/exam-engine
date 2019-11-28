@@ -100,9 +100,9 @@ To use an exam in Abitti, the exam must be packaged manually as a transfer zip. 
 to import it to Abitti using "Tuo koe/För in prov" functionality:
 
 ```
-$ cd MyExam                                           # Go to the exam directory
+$ cd exams/A_X                                        # Go to the exam directory
 $ mkdir tmp                                           # Create a new empty temporary directory
-$ cp MyExam.xml tmp/exam.xml                          # Copy xml to exam.xml
+$ cp A_X.xml tmp/exam.xml                             # Copy xml to exam.xml
 $ cd attachments
 $ zip -r ../tmp/attachments.zip *                     # Create the attachments.zip
 $ cd ../tmp
