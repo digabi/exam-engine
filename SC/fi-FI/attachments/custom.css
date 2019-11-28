@@ -1,0 +1,50 @@
+/* Puhekuplat */
+
+.kupla1 {
+  position: relative;
+  margin-bottom: 10px;
+  background: #ACF2CE;
+  border-radius: .4em;
+  max-width: 50%;
+  padding: 7px 10px 7px 10px;
+}
+
+.kupla1:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.625em solid transparent;
+  border-right-color: #ACF2CE;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -0.312em;
+  margin-left: -0.5em;
+}
+
+.kupla2 {
+  position: relative;
+  margin-left: auto;
+  margin-bottom: 10px;
+  background: #B3F2AC;
+  border-radius: .4em;
+  max-width: 50%;
+  padding: 7px 10px 7px 10px;
+}
+
+.kupla2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 0.625em solid transparent;
+  border-top-color: #B3F2AC;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -0.312em;
+  margin-bottom: -0.5em;
+}
