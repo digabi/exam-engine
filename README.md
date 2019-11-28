@@ -95,14 +95,15 @@ in exam-engine. There are warnings about unsupported features in the
 attempt to upload such an exam to Abitti, you likely get a misleading general error message.
 Abitti also has some additional limits, like maximum size of attachment files.**
 
-**Because of this, only [exams/A_X/](exams/AX/) in the sample exams directory [exams/](exams/)
-currently works with Abitti.**
+**Because of this, only [packages/mexamples/exams/A_X/](packages/mexamples/exams/A_X/) in the
+sample exams directory [packages/mexamples/exams/](packages/mexamples/exams/) currently works
+with Abitti.**
 
 To use an exam in Abitti, the exam must be packaged manually as a transfer zip. It is then possible
 to import it to Abitti using "Tuo koe/För in prov" functionality:
 
 ```
-$ cd exams/A_X                                        # Go to the exam directory
+$ cd packages/mexamples/exams/A_X                     # Go to the exam directory
 $ mkdir tmp                                           # Create a new empty temporary directory
 $ cp A_X.xml tmp/exam.xml                             # Copy xml to exam.xml
 $ cd attachments
