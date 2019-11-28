@@ -68,7 +68,6 @@
   },
   "scripts": {
     "start": "TYPECHECK=1 scripts/start.sh",
-    "start-abitti": "TYPECHECK=1 GENERATE_GRADING_STRUCTURE=true scripts/start.sh",
     "build": "TYPECHECK=1 webpack -p",
     "offline": "TYPECHECK=1 node scripts/offline.js",
     "create-mex": "ts-node scripts/create-mex.ts",

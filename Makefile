@@ -56,9 +56,6 @@ exams/*/%.mex: exams/*/%.xml
 start: build
 	$(EE_NVM_EXEC) yarn start
 
-start-abitti: $(EE_YARN_INSTALLED)
-	$(EE_NVM_EXEC) yarn start-abitti exams/M/M.xml
-
 build: $(EE_EXAM_ENGINE_BUILT) $(EE_MEX_PKG_COMPILED)
 
 clean:

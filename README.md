@@ -70,16 +70,6 @@ $ yarn start exams/MexDocumentation/MexDocumentation.xml
 This starts `webpack-dev-server` that automatically updates the exam in Firefox when
 the XML file is being edited.
 
-It is also possible to preview exams in Abitti compatibility mode. In this mode the preview
-reports errors if you use some major features not available in Abitti. All incompatibilies are
-not checked, so it is still important to test the exam in Abitti.
-
-```
-$ nvm use
-$ yarn install
-$ yarn start-abitti exams/M/M.xml
-```
-
 # XML schema
 
 Customized XML schema in directory `packages/mex/schema` is helpful when editing MEX format. For example,
