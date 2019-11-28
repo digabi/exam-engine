@@ -87,6 +87,15 @@ to `packages/mex/schema/exam.xsd` in `xsi:schemaLocation`:
 
 # Using an exam in Abitti
 
+**[Abitti](https://oma.abitti.fi/) does not at the moment support all the features available
+in exam-engine. There are warnings about unsupported features in the
+[MEX format documentation](https://digabi.github.io/exam-engine/MexDocumentation/koe.html). If you
+attempt to upload such an exam to Abitti, you likely get a misleading general error message.
+Abitti also has some additional limits, like maximum size of attachment files.**
+
+**Because of this, only [exams/A_X/](exams/AX/) in the sample exams directory [exams/](exams/)
+currently works with Abitti.**
+
 To use an exam in Abitti, the exam must be packaged manually as a transfer zip. It is then possible
 to import it to Abitti using "Tuo koe/För in prov" functionality:
 

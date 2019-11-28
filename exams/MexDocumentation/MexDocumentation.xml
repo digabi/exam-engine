@@ -13,6 +13,9 @@
     <p>
       For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
+    <div class="warning-box">
+      Some of the features do not work in <a href="https://oma.abitti.fi/">Abitti</a>. They are documented in warning boxes like this.
+    </div>
   </e:exam-instruction>
   <e:table-of-contents />
   <e:section>
