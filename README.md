@@ -1,4 +1,5 @@
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=digabi/exam-engine&identifier=223358056)](https://dependabot.com)
+[![Gitter](https://badges.gitter.im/abitti-dev/exam-engine.svg)](https://gitter.im/abitti-dev/exam-engine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 [![Abitti.dev](https://abitti.dev/images/abittidev_logo.svg)](https://abitti.dev/)
 
