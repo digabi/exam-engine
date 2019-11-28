@@ -69,7 +69,7 @@ $ yarn install
 $ yarn start packages/mexamples/exams/MexDocumentation/MexDocumentation.xml
 ```
 
-This starts `webpack-dev-server` that automatically updates the exam in Firefox when
+This starts `webpack-dev-server` that automatically updates the exam in Firefox while
 the XML file is being edited.
 
 # XML schema
