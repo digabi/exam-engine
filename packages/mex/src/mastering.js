@@ -50,7 +50,7 @@ function parseExam(xml) {
  * @param {string} shuffleSecret The salt used for shuffling. Should be kept secret.
  * @param {boolean} removeHiddenElements If `true`, all elements marked with `hidden="true"` will be removed.
  * @param {boolean} generateGradingStructure
- * @returns {Promise<[{ xml: string, language: string, attachments: { filename: string, restricted: boolean }[], title: string, gradingStructure: any, date: string, examStructure: { examCode: string, examUuid: string, content: any, visuallyImpaired: boolean, scannerVersion: boolean, language: string } }]>}
+ * @returns {Promise<[{ attachments: { filename: string, restricted: boolean }[], date: string, dayCode?: string, examCode?: string, examUuid: string, gradingStructure: any, language: string, title?: string, xml: string }]>}
  */
 async function masterExam(
   xml,
@@ -66,9 +66,8 @@ async function masterExam(
   const targetLanguages = doc.find('//e:languages/e:language/text()', ns).map(String)
 
   return Promise.all(
-    targetLanguages.map(async language => ({
-      language,
-      ...(await masterExamForLanguage(
+    targetLanguages.map(language =>
+      masterExamForLanguage(
         xml,
         language,
         generateUuid,
@@ -78,8 +77,8 @@ async function masterExam(
         shuffleSecret,
         removeHiddenElements,
         generateGradingStructure
-      ))
-    }))
+      )
+    )
   )
 }
 
@@ -198,7 +197,7 @@ function generateHvpForLanguage(xml, targetLanguage) {
  * Master an exam for a particular language.
  *
  * @param {string} xml
- * @param {string} targetLanguage
+ * @param {string} language
  * @param {(metadata?: {examCode: string, date: string, language: string, type: 'normal' | 'visually-impaired' | 'scanner'}) => Promise<string> | string} generateUuid
  * @param {(src: string, type: 'video' | 'audio' | 'image') => Promise<{ width: number, height: number } | { duration: number }>} getMediaMetadata
  * @param {boolean} lenientLaTexParsing
@@ -206,11 +205,11 @@ function generateHvpForLanguage(xml, targetLanguage) {
  * @param {string} shuffleSecret
  * @param {boolean} removeHiddenElements
  * @param {boolean} generateGradingStructure
- * @returns {Promise<{ xml: string, attachments: { filename: string, restricted: boolean }[], title: string, gradingStructure: any, date: string, examStructure: { examCode: string, examUuid: string, content: any, visuallyImpaired: boolean, scannerVersion: boolean, language: string } }>}
+ * @returns {Promise<{ attachments: { filename: string, restricted: boolean }[], date: string, dayCode?: string, examCode?: string, examUuid: string, gradingStructure: any, language: string, title?: string, xml: string }>}
  */
 async function masterExamForLanguage(
   xml,
-  targetLanguage,
+  language,
   generateUuid,
   getMediaMetadata,
   lenientLaTexParsing = false,
@@ -220,13 +219,14 @@ async function masterExamForLanguage(
   generateGradingStructure = false
 ) {
   const doc = assertExamIsValid(parseExam(xml))
+  const exam = doc.root()
 
-  await addExamUuid(doc, generateUuid, targetLanguage)
+  await addExamUuid(doc, generateUuid, language)
   removeLanguages(doc)
   removeComments(doc)
   if (removeHiddenElements) doRemoveHiddenElements(doc)
-  applyLocalizations(doc, targetLanguage)
-  addYoCustomizations(doc, targetLanguage)
+  applyLocalizations(doc, language)
+  addYoCustomizations(doc, language)
   addSectionNumbers(doc)
   addQuestionNumbers(doc)
   addAnswerNumbers(doc)
@@ -243,36 +243,21 @@ async function masterExamForLanguage(
   await renderFormulas(doc, lenientLaTexParsing)
   await addMediaMetadata(doc, memoize(getMediaMetadata))
 
-  const examTitle = doc.get('//e:exam-title', ns)
-  const gradingStructure = generateGradingStructure ? createGradingStructure(doc, targetLanguage) : null
-
+  const gradingStructure = generateGradingStructure ? createGradingStructure(doc, language) : null
   removeCorrectAnswers(doc)
 
-  const exam = doc.root()
-  const date = getAttr('date', exam)
-  const examCode = [getAttr('exam-code', exam), getAttr('day-code', exam)].filter(x => x).join('_')
-  const examUuid = getAttr('exam-uuid', exam)
-  const visuallyImpaired = false
-  const scannerVersion = false
-  const language = targetLanguage.split('-')[0]
-  const title = examTitle && examTitle.text().trim()
+  const examTitle = exam.get('//e:exam-title', ns)
 
   return {
-    xml: doc.toString(false),
     attachments: collectAttachments(doc),
-    title,
+    date: getAttr('date', exam),
+    dayCode: getAttr('day-code', exam),
+    examCode: getAttr('exam-code', exam),
+    examUuid: getAttr('exam-uuid', exam),
     gradingStructure,
-    date,
-    examStructure: {
-      examCode,
-      examUuid,
-      content: {
-        title
-      },
-      visuallyImpaired,
-      scannerVersion,
-      language
-    }
+    language,
+    title: examTitle ? examTitle.text().trim() : undefined,
+    xml: doc.toString(false)
   }
 }
 
