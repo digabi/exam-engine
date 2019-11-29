@@ -1,5 +1,4 @@
 {
-  "language": "fi-FI",
   "attachments": [
     {
       "filename": "T3_FI.webm",
@@ -26,6 +25,128 @@
       "restricted": false
     }
   ],
-  "title": "FI – Filosofia",
-  "gradingStructure": null
+  "date": "2018-09-29",
+  "dayCode": null,
+  "examCode": "FF",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "id": 1,
+        "displayNumber": "1.1.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 2,
+        "displayNumber": "1.2.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 3,
+        "displayNumber": "1.3.",
+        "maxScore": 6,
+        "type": "text"
+      },
+      {
+        "id": 4,
+        "displayNumber": "1.4.",
+        "maxScore": 10,
+        "type": "text"
+      },
+      {
+        "id": 5,
+        "displayNumber": "2.",
+        "maxScore": 20,
+        "type": "text"
+      },
+      {
+        "id": 6,
+        "displayNumber": "3.1.",
+        "maxScore": 5,
+        "type": "text"
+      },
+      {
+        "id": 7,
+        "displayNumber": "3.2.",
+        "maxScore": 15,
+        "type": "text"
+      },
+      {
+        "id": 8,
+        "displayNumber": "4.",
+        "maxScore": 20,
+        "type": "text"
+      },
+      {
+        "id": 9,
+        "displayNumber": "5.",
+        "maxScore": 20,
+        "type": "text"
+      },
+      {
+        "id": 10,
+        "displayNumber": "6.1.",
+        "maxScore": 6,
+        "type": "text"
+      },
+      {
+        "id": 11,
+        "displayNumber": "6.2.",
+        "maxScore": 6,
+        "type": "text"
+      },
+      {
+        "id": 12,
+        "displayNumber": "6.3.",
+        "maxScore": 8,
+        "type": "text"
+      },
+      {
+        "id": 13,
+        "displayNumber": "7.1.",
+        "maxScore": 15,
+        "type": "text"
+      },
+      {
+        "id": 14,
+        "displayNumber": "7.2.",
+        "maxScore": 15,
+        "type": "text"
+      },
+      {
+        "id": 15,
+        "displayNumber": "8.1.",
+        "maxScore": 10,
+        "type": "text"
+      },
+      {
+        "id": 16,
+        "displayNumber": "8.2.",
+        "maxScore": 10,
+        "type": "text"
+      },
+      {
+        "id": 17,
+        "displayNumber": "8.3.",
+        "maxScore": 10,
+        "type": "text"
+      },
+      {
+        "id": 18,
+        "displayNumber": "9.1.",
+        "maxScore": 10,
+        "type": "text"
+      },
+      {
+        "id": 19,
+        "displayNumber": "9.2.",
+        "maxScore": 20,
+        "type": "text"
+      }
+    ]
+  },
+  "language": "fi-FI",
+  "title": "FI – Filosofia"
 }

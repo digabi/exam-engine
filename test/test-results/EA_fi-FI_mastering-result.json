@@ -1,5 +1,4 @@
 {
-  "language": "fi-FI",
   "attachments": [
     {
       "filename": "audio-test.ogg",
@@ -14,6 +13,74 @@
       "restricted": true
     }
   ],
-  "title": "FI – Englanti, pitkä oppimäärä",
-  "gradingStructure": null
+  "date": "2018-09-19",
+  "dayCode": null,
+  "examCode": "EA",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "id": 2,
+        "displayNumber": "2.1.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 3,
+        "displayNumber": "2.2.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 4,
+        "displayNumber": "2.3.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 5,
+        "displayNumber": "2.4.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 6,
+        "displayNumber": "2.5.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 7,
+        "displayNumber": "2.6.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 8,
+        "displayNumber": "2.7.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 9,
+        "displayNumber": "2.8.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 10,
+        "displayNumber": "2.9.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 11,
+        "displayNumber": "2.10.",
+        "maxScore": 1,
+        "type": "text"
+      }
+    ]
+  },
+  "language": "fi-FI",
+  "title": "FI – Englanti, pitkä oppimäärä"
 }

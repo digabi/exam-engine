@@ -1,6 +1,12 @@
 {
-  "language": "sv-FI",
   "attachments": [],
-  "title": "SV – Matematik, lång lärokurs",
-  "gradingStructure": null
+  "date": "2019-03-26",
+  "dayCode": null,
+  "examCode": "M",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": []
+  },
+  "language": "sv-FI",
+  "title": "SV – Matematik, lång lärokurs"
 }
