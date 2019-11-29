@@ -1,5 +1,4 @@
 {
-  "language": "sv-FI",
   "attachments": [
     {
       "filename": "audio-test.ogg",
@@ -150,6 +149,134 @@
       "restricted": false
     }
   ],
-  "title": "SV – Tyska, kort lärokurs",
-  "gradingStructure": null
+  "date": "1970-01-01",
+  "dayCode": null,
+  "examCode": "SC",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "id": 2,
+        "displayNumber": "1.2.",
+        "maxScore": 6,
+        "type": "text"
+      },
+      {
+        "id": 5,
+        "displayNumber": "1.5.",
+        "maxScore": 6,
+        "type": "text"
+      },
+      {
+        "id": 17,
+        "displayNumber": "5.1.",
+        "maxScore": 3,
+        "type": "text"
+      },
+      {
+        "id": 35,
+        "displayNumber": "10.2.",
+        "maxScore": 6,
+        "type": "text"
+      },
+      {
+        "id": 39,
+        "displayNumber": "11.2.1.",
+        "maxScore": 3,
+        "type": "text"
+      },
+      {
+        "id": 40,
+        "displayNumber": "11.2.2.",
+        "maxScore": 3,
+        "type": "text"
+      },
+      {
+        "id": 50,
+        "displayNumber": "13.3.",
+        "maxScore": 4,
+        "type": "text"
+      },
+      {
+        "id": 52,
+        "displayNumber": "14.2.",
+        "maxScore": 4,
+        "type": "text"
+      },
+      {
+        "id": 55,
+        "displayNumber": "15.1.",
+        "maxScore": 4,
+        "type": "text"
+      },
+      {
+        "id": 64,
+        "displayNumber": "16.4.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 81,
+        "displayNumber": "18.1.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 82,
+        "displayNumber": "18.2.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 83,
+        "displayNumber": "19.1.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 84,
+        "displayNumber": "19.2.",
+        "maxScore": 3,
+        "type": "text"
+      },
+      {
+        "id": 85,
+        "displayNumber": "19.3.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 86,
+        "displayNumber": "19.4.",
+        "maxScore": 3,
+        "type": "text"
+      },
+      {
+        "id": 87,
+        "displayNumber": "20.1.",
+        "maxScore": 33,
+        "type": "text"
+      },
+      {
+        "id": 88,
+        "displayNumber": "20.2.",
+        "maxScore": 33,
+        "type": "text"
+      },
+      {
+        "id": 89,
+        "displayNumber": "21.1.",
+        "maxScore": 66,
+        "type": "text"
+      },
+      {
+        "id": 90,
+        "displayNumber": "21.2.",
+        "maxScore": 66,
+        "type": "text"
+      }
+    ]
+  },
+  "language": "sv-FI",
+  "title": "SV – Tyska, kort lärokurs"
 }

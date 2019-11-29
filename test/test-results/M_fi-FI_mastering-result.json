@@ -1,6 +1,12 @@
 {
-  "language": "fi-FI",
   "attachments": [],
-  "title": "FI – Matematiikka, pitkä oppimäärä",
-  "gradingStructure": null
+  "date": "2019-03-26",
+  "dayCode": null,
+  "examCode": "M",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": []
+  },
+  "language": "fi-FI",
+  "title": "FI – Matematiikka, pitkä oppimäärä"
 }

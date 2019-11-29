@@ -1,5 +1,4 @@
 {
-  "language": "sv-FI",
   "attachments": [
     {
       "filename": "example_high.jpg",
@@ -34,6 +33,68 @@
       "restricted": false
     }
   ],
-  "title": "MEX format documentation",
-  "gradingStructure": null
+  "date": "2018-09-29",
+  "dayCode": null,
+  "examCode": "EA",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "id": 1,
+        "displayNumber": "7.1.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 2,
+        "displayNumber": "7.2.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 3,
+        "displayNumber": "7.3.",
+        "maxScore": 2,
+        "type": "text"
+      },
+      {
+        "id": 8,
+        "displayNumber": "10.1.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 9,
+        "displayNumber": "10.2.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 10,
+        "displayNumber": "10.3.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 11,
+        "displayNumber": "10.4.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 12,
+        "displayNumber": "10.5.",
+        "maxScore": 1,
+        "type": "text"
+      },
+      {
+        "id": 13,
+        "displayNumber": "10.6.",
+        "maxScore": 3,
+        "type": "text"
+      }
+    ]
+  },
+  "language": "sv-FI",
+  "title": "MEX format documentation"
 }

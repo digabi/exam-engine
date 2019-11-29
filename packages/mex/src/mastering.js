@@ -8,11 +8,11 @@ const { initI18n } = require('./i18n')
 const LRU = require('lru-cache')
 const _ = require('lodash')
 const crypto = require('crypto')
+const { ns } = require('./mastering/schema')
 
 const DEFAULT_SHUFFLE_SECRET = 'tJXjzAhY3dT4B26aikG2tPmPRlWRTKXF5eVpOR2eDFz3Aj4a3FHF1jB3tswVWPhc'
-const { createGradingStructure } = require('./grading-structure')
+const { createGradingStructure } = require('./mastering/createGradingStructure')
 
-const ns = { e: 'http://ylioppilastutkinto.fi/exam.xsd' }
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
 const schemaDir = path.resolve(__dirname, '../schema')
@@ -49,8 +49,7 @@ function parseExam(xml) {
  * @param {boolean} enableShuffling If `true`, all `<e:choice-answer>` and `<e:dropdown-answer>` options will be shuffled to prevent students from guessing the correct answer, unless they are marked with `ordering="fixed"`.
  * @param {string} shuffleSecret The salt used for shuffling. Should be kept secret.
  * @param {boolean} removeHiddenElements If `true`, all elements marked with `hidden="true"` will be removed.
- * @param {boolean} generateGradingStructure
- * @returns {Promise<[{ attachments: { filename: string, restricted: boolean }[], date: string, dayCode?: string, examCode?: string, examUuid: string, gradingStructure: any, language: string, title?: string, xml: string }]>}
+ * @returns {Promise<[{ attachments: { filename: string, restricted: boolean }[], date: string | null, dayCode: string | null, examCode: string | null, examUuid: string, gradingStructure: any, language: string, title: string | null, xml: string }]>}
  */
 async function masterExam(
   xml,
@@ -59,8 +58,7 @@ async function masterExam(
   lenientLaTexParsing = false,
   enableShuffling = true,
   shuffleSecret = DEFAULT_SHUFFLE_SECRET,
-  removeHiddenElements = true,
-  generateGradingStructure = false
+  removeHiddenElements = true
 ) {
   const doc = assertExamIsValid(parseExam(xml))
   const targetLanguages = doc.find('//e:languages/e:language/text()', ns).map(String)
@@ -75,8 +73,7 @@ async function masterExam(
         lenientLaTexParsing,
         enableShuffling,
         shuffleSecret,
-        removeHiddenElements,
-        generateGradingStructure
+        removeHiddenElements
       )
     )
   )
@@ -204,8 +201,7 @@ function generateHvpForLanguage(xml, targetLanguage) {
  * @param {boolean} enableShuffling
  * @param {string} shuffleSecret
  * @param {boolean} removeHiddenElements
- * @param {boolean} generateGradingStructure
- * @returns {Promise<{ attachments: { filename: string, restricted: boolean }[], date: string, dayCode?: string, examCode?: string, examUuid: string, gradingStructure: any, language: string, title?: string, xml: string }>}
+ * @returns {Promise<{ attachments: { filename: string, restricted: boolean }[], date: string | null, dayCode: string | null, examCode: string | null, examUuid: string, gradingStructure: any, language: string, title: string | null, xml: string }>}
  */
 async function masterExamForLanguage(
   xml,
@@ -215,8 +211,7 @@ async function masterExamForLanguage(
   lenientLaTexParsing = false,
   enableShuffling = true,
   shuffleSecret = DEFAULT_SHUFFLE_SECRET,
-  removeHiddenElements = true,
-  generateGradingStructure = false
+  removeHiddenElements = true
 ) {
   const doc = assertExamIsValid(parseExam(xml))
   const exam = doc.root()
@@ -224,8 +219,10 @@ async function masterExamForLanguage(
   await addExamUuid(doc, generateUuid, language)
   removeLanguages(doc)
   removeComments(doc)
-  if (removeHiddenElements) doRemoveHiddenElements(doc)
   applyLocalizations(doc, language)
+
+  const answers = doc.find(answerTypesXPath, ns)
+
   addYoCustomizations(doc, language)
   addSectionNumbers(doc)
   addQuestionNumbers(doc)
@@ -243,20 +240,22 @@ async function masterExamForLanguage(
   await renderFormulas(doc, lenientLaTexParsing)
   await addMediaMetadata(doc, memoize(getMediaMetadata))
 
-  const gradingStructure = generateGradingStructure ? createGradingStructure(doc, language) : null
+  const gradingStructure = createGradingStructure(answers)
+
   removeCorrectAnswers(doc)
+  if (removeHiddenElements) doRemoveHiddenElements(doc)
 
   const examTitle = exam.get('//e:exam-title', ns)
 
   return {
     attachments: collectAttachments(doc),
-    date: getAttr('date', exam),
-    dayCode: getAttr('day-code', exam),
-    examCode: getAttr('exam-code', exam),
-    examUuid: getAttr('exam-uuid', exam),
+    date: getAttr('date', exam) || null,
+    dayCode: getAttr('day-code', exam) || null,
+    examCode: getAttr('exam-code', exam) || null,
+    examUuid: getAttr('exam-uuid', exam) || null,
     gradingStructure,
     language,
-    title: examTitle ? examTitle.text().trim() : undefined,
+    title: examTitle ? examTitle.text().trim() : null,
     xml: doc.toString(false)
   }
 }
@@ -391,8 +390,9 @@ function addQuestionNumbers(doc, level = 0, prefix = '') {
 
 function addAnswerNumbers(doc) {
   doc.find('//e:question', ns).forEach(question => {
-    questionAnswers(question).forEach((answer, i) => {
-      answer.attr('display-number', String(i + 1))
+    const questionNumber = getAttr('display-number', question)
+    questionAnswers(question).forEach((answer, i, answers) => {
+      answer.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}${i + 1}.`)
     })
   })
 }

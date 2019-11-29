@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { RenderChildNodes } from '../createRenderChildNodes'
-import { findChildElementByLocalName, getNumericAttribute } from '../dom-utils'
+import { findChildElementByLocalName, getNumericAttribute, NBSP } from '../dom-utils'
 import { AppState } from '../store'
 import { Score } from './Score'
 import { ExamComponentProps, QuestionId } from './types'
@@ -38,7 +38,7 @@ function ScoredTextAnswerHint({
   renderChildNodes: RenderChildNodes
 }) {
   const questionId = getNumericAttribute(scoredTextAnswer, 'question-id')
-  const displayNumber = getNumericAttribute(scoredTextAnswer, 'display-number')
+  const displayNumber = scoredTextAnswer.getAttribute('display-number')!
   const maxScore = getNumericAttribute(scoredTextAnswer, 'max-score')!
   const hint = findChildElementByLocalName(scoredTextAnswer, 'hint')!
 
@@ -55,7 +55,8 @@ function ScoredTextAnswerHint({
       }}
       data-question-id={questionId}
     >
-      {displayNumber + '. '}
+      <sup>{displayNumber}</sup>
+      {NBSP}
       <span className="e-mrg-r-1">{renderChildNodes(hint)}</span>
       <Score score={maxScore} />
     </p>
