@@ -1589,6 +1589,20 @@
 .e-exam .notification--inline {
   display: inline-block;
 }
+.rich-text-editor-overlay,
+.rich-text-editor-new-equation {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.rich-text-editor-overlay h3 {
+  font-size: 1.3125rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 .e-exam .e-width-full {
   width: 100%;
 }
@@ -2015,20 +2029,6 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
-.rich-text-editor-overlay,
-.rich-text-editor-new-equation {
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-.rich-text-editor-overlay h3 {
-  font-size: 1.3125rem;
-  line-height: 2rem;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
 .e-exam caption {
   font-weight: 600;
   font-size: 1.125rem;
@@ -2053,40 +2053,6 @@
 }
 .e-table--zebra tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.06);
-}
-.e-exam .e-ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.e-exam .e-bordered {
-  border: 1px solid #aaaaaa;
-}
-.e-exam .e-rounded {
-  border-radius: 4px;
-}
-.e-exam .e-scrollable-x {
-  overflow-x: auto;
-}
-.e-exam .e-box {
-  border: 1px solid #aaaaaa;
-  border-radius: 4px;
-  padding: 1rem;
-  background-color: #f0f0f0;
-}
-.e-exam .e-screen-reader-only {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important;
 }
 .e-exam {
   font-weight: 400;
@@ -2231,5 +2197,39 @@
 }
 .e-exam .e-break-word {
   word-break: break-word;
+}
+.e-exam .e-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.e-exam .e-bordered {
+  border: 1px solid #aaaaaa;
+}
+.e-exam .e-rounded {
+  border-radius: 4px;
+}
+.e-exam .e-scrollable-x {
+  overflow-x: auto;
+}
+.e-exam .e-box {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+.e-exam .e-screen-reader-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 

@@ -984,6 +984,9 @@
   }
 }
 
+.attachments {
+  margin-top: 2rem;
+}
 .attachments-attachment + .attachments-attachment:before {
   display: block;
   content: '';
@@ -993,9 +996,6 @@
   margin-left: -3rem;
   margin-right: -3rem;
   margin-bottom: 3rem;
-}
-.attachments {
-  margin-top: 2rem;
 }
 .e-exam .e-radio-button,
 .e-exam .e-checkbox {

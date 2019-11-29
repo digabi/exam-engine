@@ -1324,6 +1324,83 @@
   background: #c8c8c8;
   cursor: auto;
 }
+.e-exam .e-columns {
+  display: flex;
+}
+.e-exam .e-columns--center-v {
+  align-items: center;
+}
+.e-exam .e-columns--inline {
+  display: inline-flex;
+}
+.e-exam .e-column {
+  flex: 1 1 0;
+}
+.e-exam .e-column--auto {
+  flex: auto;
+}
+.e-exam .e-column--narrow {
+  flex: none;
+}
+.e-exam .e-column + .e-column {
+  margin-left: 1rem;
+}
+@media (max-width: 832px) {
+  .e-exam .e-column + .e-column {
+    margin-left: 0.5rem;
+  }
+}
+.e-exam .e-column + .e-column--gapless {
+  margin-left: 0;
+}
+.e-exam .e-column--1 {
+  flex: none;
+  width: 8.33333333%;
+}
+.e-exam .e-column--2 {
+  flex: none;
+  width: 16.66666667%;
+}
+.e-exam .e-column--3 {
+  flex: none;
+  width: 25%;
+}
+.e-exam .e-column--4 {
+  flex: none;
+  width: 33.33333333%;
+}
+.e-exam .e-column--5 {
+  flex: none;
+  width: 41.66666667%;
+}
+.e-exam .e-column--6 {
+  flex: none;
+  width: 50%;
+}
+.e-exam .e-column--7 {
+  flex: none;
+  width: 58.33333333%;
+}
+.e-exam .e-column--8 {
+  flex: none;
+  width: 66.66666667%;
+}
+.e-exam .e-column--9 {
+  flex: none;
+  width: 75%;
+}
+.e-exam .e-column--10 {
+  flex: none;
+  width: 83.33333333%;
+}
+.e-exam .e-column--11 {
+  flex: none;
+  width: 91.66666667%;
+}
+.e-exam .e-column--12 {
+  flex: none;
+  width: 100%;
+}
 .e-exam .e-color-black {
   color: #333;
 }
@@ -1407,83 +1484,6 @@
 }
 .e-exam .e-bg-color-link-hover {
   background-color: #288199;
-}
-.e-exam .e-columns {
-  display: flex;
-}
-.e-exam .e-columns--center-v {
-  align-items: center;
-}
-.e-exam .e-columns--inline {
-  display: inline-flex;
-}
-.e-exam .e-column {
-  flex: 1 1 0;
-}
-.e-exam .e-column--auto {
-  flex: auto;
-}
-.e-exam .e-column--narrow {
-  flex: none;
-}
-.e-exam .e-column + .e-column {
-  margin-left: 1rem;
-}
-@media (max-width: 832px) {
-  .e-exam .e-column + .e-column {
-    margin-left: 0.5rem;
-  }
-}
-.e-exam .e-column + .e-column--gapless {
-  margin-left: 0;
-}
-.e-exam .e-column--1 {
-  flex: none;
-  width: 8.33333333%;
-}
-.e-exam .e-column--2 {
-  flex: none;
-  width: 16.66666667%;
-}
-.e-exam .e-column--3 {
-  flex: none;
-  width: 25%;
-}
-.e-exam .e-column--4 {
-  flex: none;
-  width: 33.33333333%;
-}
-.e-exam .e-column--5 {
-  flex: none;
-  width: 41.66666667%;
-}
-.e-exam .e-column--6 {
-  flex: none;
-  width: 50%;
-}
-.e-exam .e-column--7 {
-  flex: none;
-  width: 58.33333333%;
-}
-.e-exam .e-column--8 {
-  flex: none;
-  width: 66.66666667%;
-}
-.e-exam .e-column--9 {
-  flex: none;
-  width: 75%;
-}
-.e-exam .e-column--10 {
-  flex: none;
-  width: 83.33333333%;
-}
-.e-exam .e-column--11 {
-  flex: none;
-  width: 91.66666667%;
-}
-.e-exam .e-column--12 {
-  flex: none;
-  width: 100%;
 }
 .e-exam a,
 .e-exam .e-link-button {
@@ -2054,6 +2054,40 @@
 .e-table--zebra tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.06);
 }
+.e-exam .e-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.e-exam .e-bordered {
+  border: 1px solid #aaaaaa;
+}
+.e-exam .e-rounded {
+  border-radius: 4px;
+}
+.e-exam .e-scrollable-x {
+  overflow-x: auto;
+}
+.e-exam .e-box {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+.e-exam .e-screen-reader-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
 .e-exam {
   font-weight: 400;
 }
@@ -2197,39 +2231,5 @@
 }
 .e-exam .e-break-word {
   word-break: break-word;
-}
-.e-exam .e-ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.e-exam .e-bordered {
-  border: 1px solid #aaaaaa;
-}
-.e-exam .e-rounded {
-  border-radius: 4px;
-}
-.e-exam .e-scrollable-x {
-  overflow-x: auto;
-}
-.e-exam .e-box {
-  border: 1px solid #aaaaaa;
-  border-radius: 4px;
-  padding: 1rem;
-  background-color: #f0f0f0;
-}
-.e-exam .e-screen-reader-only {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important;
 }
 
