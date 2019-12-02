@@ -2018,18 +2018,6 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
-.e-exam .e-width-full {
-  width: 100%;
-}
-.e-exam .e-width-half {
-  width: 50%;
-}
-.e-exam .e-width-third {
-  width: 33.33333333%;
-}
-.e-exam .e-width-quarter {
-  width: 25%;
-}
 .e-exam caption {
   font-weight: 600;
   font-size: 1.125rem;
@@ -2054,6 +2042,21 @@
 }
 .e-table--zebra tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.06);
+}
+.e-exam .e-width-full {
+  width: 100%;
+}
+.e-exam .e-width-threequarters {
+  width: 75%;
+}
+.e-exam .e-width-half {
+  width: 50%;
+}
+.e-exam .e-width-third {
+  width: 33.33333333%;
+}
+.e-exam .e-width-quarter {
+  width: 25%;
 }
 .e-exam {
   font-weight: 400;

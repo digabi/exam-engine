@@ -1607,6 +1607,9 @@
 .e-exam .e-width-full {
   width: 100%;
 }
+.e-exam .e-width-threequarters {
+  width: 75%;
+}
 .e-exam .e-width-half {
   width: 50%;
 }
