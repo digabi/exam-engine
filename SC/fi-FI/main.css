@@ -1500,36 +1500,6 @@
   text-decoration: underline;
   color: #288199;
 }
-.e-exam .e-illustration-right {
-  float: right;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-@media print {
-  html {
-    font-size: 12px;
-    line-height: 18px;
-  }
-  .e-exam {
-    max-width: none !important;
-    color: #000;
-  }
-  button {
-    background: none !important;
-    color: #000 !important;
-  }
-  section {
-    padding: 0 !important;
-  }
-  .beta-ribbon {
-    display: none;
-  }
-  .rich-text-editor-tools {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
-}
 .e-exam .e-list-plain {
   list-style: none;
 }
@@ -1579,6 +1549,36 @@
   border: solid 1px #aaaaaa;
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.03);
+}
+.e-exam .e-illustration-right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+@media print {
+  html {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .e-exam {
+    max-width: none !important;
+    color: #000;
+  }
+  button {
+    background: none !important;
+    color: #000 !important;
+  }
+  section {
+    padding: 0 !important;
+  }
+  .beta-ribbon {
+    display: none;
+  }
+  .rich-text-editor-tools {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }
 .e-exam .notification {
   background: #f0faff;
