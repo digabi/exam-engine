@@ -2162,6 +2162,15 @@ consequat laboris adipisicing duis proident proident amet.
           </tr>
           <tr>
             <td>
+              <code>e-width-threequarters</code>
+            </td>
+            <td>
+              Sets element width to
+              <strong>75%</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <code>e-width-half</code>
             </td>
             <td>

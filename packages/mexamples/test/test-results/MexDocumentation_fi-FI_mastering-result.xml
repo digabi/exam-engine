@@ -753,6 +753,9 @@ consequat laboris adipisicing duis proident proident amet.
             </td></tr><tr><td><code>e-clearfix</code></td><td>Stops floating</td></tr><tr><td><code>e-width-full</code></td><td>
               Sets element width to
               <strong>100%</strong>
+            </td></tr><tr><td><code>e-width-threequarters</code></td><td>
+              Sets element width to
+              <strong>75%</strong>
             </td></tr><tr><td><code>e-width-half</code></td><td>
               Sets element width to
               <strong>50%</strong>
