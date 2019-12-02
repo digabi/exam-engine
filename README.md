@@ -20,7 +20,7 @@ production. This manual testing should include holding the exam, answering all q
 it, and checking that all examinees' answers are available.**
 
 **The MEX format and this engine is still under development: All functionalities of the MEX format
-do not yet work in Abitti. Breaking changes are also still possible without up-front warning.**
+do not yet work in Abitti. Breaking changes are also still possible without prior warning.**
 
 # Setup
 
