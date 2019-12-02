@@ -3,34 +3,34 @@
     <xs:import namespace="http://www.w3.org/1999/xhtml/datatypes/" schemaLocation="xhtml-datatypes-1.xsd" />
     <xs:import namespace="http://ylioppilastutkinto.fi/exam.xsd" schemaLocation="exam.xsd" />
     <xs:annotation>
-        <xs:documentation> 
-            This is the XML Schema module of common content models for XHTML11 
-            
-            $Id: xhtml11-model-1.xsd,v 1.9 2009/02/03 15:14:49 ahby Exp $ 
+        <xs:documentation>
+            This is the XML Schema module of common content models for XHTML11
+
+            $Id: xhtml11-model-1.xsd,v 1.9 2009/02/03 15:14:49 ahby Exp $
         </xs:documentation>
         <xs:documentation source="xhtml-copyright-1.xsd" />
     </xs:annotation>
     <xs:annotation>
-        <xs:documentation> 
-            XHTML Document Model 
-            This module describes the groupings of elements/attributes 
-            that make up common content models for XHTML elements. 
-            XHTML has following basic content models: 
+        <xs:documentation>
+            XHTML Document Model
+            This module describes the groupings of elements/attributes
+            that make up common content models for XHTML elements.
+            XHTML has following basic content models:
                xhtml.Inline.mix; character-level elements
                xhtml.Block.mix; block-like elements, e.g., paragraphs and lists
-               xhtml.Flow.mix; any block or inline elements 
+               xhtml.Flow.mix; any block or inline elements
                xhtml.InlinePre.mix; Special class for pre content model
-               xhtml.InlineNoAnchor.mix; Content model for Anchor 
-            
-            Any groups declared in this module may be used to create 
-            element content models, but the above are considered 'global' 
+               xhtml.InlineNoAnchor.mix; Content model for Anchor
+
+            Any groups declared in this module may be used to create
+            element content models, but the above are considered 'global'
             (insofar as that term applies here). XHTML has the
-            following Attribute Groups 
-               xhtml.Core.extra.attrib 
+            following Attribute Groups
+               xhtml.Core.extra.attrib
                xhtml.I18n.extra.attrib
-               xhtml.Common.extra 
-            
-            The above attribute Groups are considered Global 
+               xhtml.Common.extra
+
+            The above attribute Groups are considered Global
         </xs:documentation>
     </xs:annotation>
     <xs:attributeGroup name="xhtml.I18n.extra.attrib">
@@ -76,7 +76,7 @@
             <xs:element name="del" type="xhtml.edit.type" />
         </xs:choice>
     </xs:group>
-    
+
     <xs:group name="xhtml.Misc.extra">
         <xs:choice>
             <xs:group ref="e:Answer.class" />

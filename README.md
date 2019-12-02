@@ -72,21 +72,6 @@ $ yarn start packages/mexamples/exams/MexDocumentation/MexDocumentation.xml
 This starts `webpack-dev-server` that automatically updates the exam in Firefox while
 the XML file is being edited.
 
-# XML schema
-
-Customized XML schema in directory `packages/mex/schema` is helpful when editing MEX format. For example,
-editor can warn you when a mandatory element like `<e:languages>` is missing. With Visual Studio Code you
-can use https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml , and add the local path
-to `packages/mex/schema/exam.xsd` in `xsi:schemaLocation`:
-
-```
-<e:exam
-  ...
-  xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mex/schema/exam.xsd"
-  ...
-  >
-```
-
 # Using an exam in Abitti
 
 **[Abitti](https://oma.abitti.fi/) does not at the moment support all the features available

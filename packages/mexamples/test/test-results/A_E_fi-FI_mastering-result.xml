@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mex/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="E" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="60"><e:exam-title>FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe</e:exam-title><e:exam-instruction><p>Kirjoitustaidon kokeessa kirjoitetaan yksi pohtiva tai kantaa
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="E" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="60"><e:exam-title>FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe</e:exam-title><e:exam-instruction><p>Kirjoitustaidon kokeessa kirjoitetaan yksi pohtiva tai kantaa
         ottava teksti, jossa hyödynnetään vähintään kahta annetuista
         aineistoista. Tekstin sopiva pituus on noin 6 000 merkkiä. Kokeen
         enimmäispistemäärä on 60 pistettä.</p><p>Tutustu aiheisiin (1–6) ja aineistoihin (A–H). Valitse yksi

@@ -56,7 +56,7 @@
               <e:localization lang="sv-FI">SEN</e:localization>
             </e:author>
           </e:reference>
-        </e:attachment>  
+        </e:attachment>
       </e:audio-group>
 
       <e:audio-group>
@@ -135,7 +135,7 @@
                 <e:localization lang="sv-FI">SEN</e:localization>
               </e:author>
             </e:reference>
-          </e:attachment>  
+          </e:attachment>
         </e:question>
       </e:audio-group>
 
@@ -156,7 +156,7 @@
                 <e:localization lang="sv-FI">SEN</e:localization>
               </e:author>
             </e:reference>
-          </e:attachment>          
+          </e:attachment>
         </e:question>
       </e:audio-group>
 
@@ -177,7 +177,7 @@
                 <e:localization lang="sv-FI">SEN</e:localization>
               </e:author>
             </e:reference>
-          </e:attachment>                    
+          </e:attachment>
         </e:question>
       </e:audio-group>
 
@@ -198,7 +198,7 @@
                 <e:localization lang="sv-FI">SEN</e:localization>
               </e:author>
             </e:reference>
-          </e:attachment>                    
+          </e:attachment>
         </e:question>
       </e:audio-group>
 
@@ -255,7 +255,7 @@
                 <e:localization lang="sv-FI">SEN</e:localization>
               </e:author>
             </e:reference>
-          </e:attachment>          
+          </e:attachment>
         </e:question>
       </e:audio-group>
 
@@ -285,7 +285,7 @@
               </e:author>
             </e:reference>
           </e:attachment>
-          
+
         </e:question>
       </e:audio-group>
 
@@ -370,7 +370,7 @@
           </e:reference>
         </e:attachment>
       </e:external-material>
-      
+
       <e:question>
         <e:question-title>
           <e:localization lang="fi-FI">Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti suomeksi.</e:localization>
@@ -403,7 +403,7 @@
       <e:question-title>Termine</e:question-title>
       <e:question-instruction>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile. Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.</e:question-instruction>
       <p>Marit möchte mit Katarina und Lars eine Party für die Klasse planen. Sie versuchen einen gemeinsamen freien Zeitpunkt zu finden. Das ist aber sehr schwer.</p>
-      
+
       <e:audio-group>
         <e:attachment>
           <e:attachment-title>6. audio</e:attachment-title>
@@ -707,12 +707,12 @@
         <e:localization lang="fi-FI">
           <p>
             Seuraavat tekstit kuvaavat samaa tapahtumaa kahdesta eri näkökulmasta. Niissä on kuitenkin joitakin eroja. Mitä sanomalehtiartikkelin yksityiskohtia lehden lukija muistaa oikein (Richtig), ja mitä väärin (Falsch)?
-          </p>      
+          </p>
         </e:localization>
         <e:localization lang="sv-FI">
           <p>
             Följande texter beskriver samma händelse ur två olika perspektiv. Det finns emellertid vissa skillnader mellan dem. Vilka detaljer i tidningsartikeln minns tidningsläsaren rätt (Richtig), och vilka minns han fel (Falsch)?
-          </p>      
+          </p>
         </e:localization>
       </e:question-instruction>
       <e:external-material>
@@ -802,7 +802,7 @@
               <e:localization lang="fi-FI">YTL</e:localization>
               <e:localization lang="sv-FI">SEN</e:localization>
             </e:author>
-          </e:reference> 
+          </e:reference>
         </e:attachment>
       </e:external-material>
 
@@ -873,7 +873,7 @@
 
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella.</e:localization>          
+          <e:localization lang="fi-FI">Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella.</e:localization>
           <e:localization lang="sv-FI">Fyll i luckorna enligt det understrukna stället i stycket „Voluptate voluptate“.</e:localization>
         </e:question-title>
         <e:localization lang="fi-FI">
@@ -1015,7 +1015,7 @@
               <e:localization lang="sv-FI">SEN</e:localization>
             </e:author>
           </e:reference>
-        </e:attachment>      
+        </e:attachment>
       </e:external-material>
 
       <e:question>
@@ -1146,7 +1146,7 @@
           <e:choice-answer-option>Sie sind besonders stolz auf die Berliner Postkarten</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
-      
+
       <e:question>
         <e:question-title>Was ärgert die Kartenverkäufer?</e:question-title>
         <e:choice-answer>
@@ -1250,7 +1250,7 @@
           <e:url>https://de.wikisource.org/wiki/Max_und_Moritz</e:url>
           <e:howpublished>public domain</e:howpublished>
           <e:reference-date>2018-05-15</e:reference-date>
-        </e:reference>  
+        </e:reference>
       </e:attachment>
       <br/>
       <e:attachment>
@@ -1263,7 +1263,7 @@
             <e:dropdown-answer-option>kann</e:dropdown-answer-option>
             <e:dropdown-answer-option>darf</e:dropdown-answer-option>
           </e:dropdown-answer>
-          man oft von 
+          man oft von
           <e:dropdown-answer>
             <e:dropdown-answer-option score="1">bösen</e:dropdown-answer-option>
             <e:dropdown-answer-option>netten</e:dropdown-answer-option>
@@ -1280,7 +1280,7 @@
           </e:dropdown-answer>
           diesen,
           <br/>
-          Welche Max und Moritz 
+          Welche Max und Moritz
           <span class="e-nowrap"><e:dropdown-answer><e:dropdown-answer-option score="1">hießen</e:dropdown-answer-option><e:dropdown-answer-option score="1">heißen</e:dropdown-answer-option><e:dropdown-answer-option>sind</e:dropdown-answer-option></e:dropdown-answer>;</span>
           <br/>
           <span class="e-nowrap"><e:dropdown-answer><e:dropdown-answer-option score="1">Die</e:dropdown-answer-option><e:dropdown-answer-option>Der</e:dropdown-answer-option><e:dropdown-answer-option>Das</e:dropdown-answer-option></e:dropdown-answer>,</span>
@@ -1312,7 +1312,7 @@
           <br/>
           – Ja, zur Übeltätigkeit,
           <br/>
-          Ja, 
+          Ja,
           <e:dropdown-answer>
             <e:dropdown-answer-option score="1">dazu</e:dropdown-answer-option>
             <e:dropdown-answer-option>danach</e:dropdown-answer-option>
@@ -1435,10 +1435,10 @@
             Tim sitzt am Küchentisch. Sein großer Bruder Jan kommt in die Küche.
           </p>
           <p>
-            Tim fragt: <e:scored-text-answer max-score="2"><e:hint><e:localization lang="fi-FI">Voitko auttaa minua?</e:localization><e:localization lang="sv-FI">Kan du hjälpa mig?</e:localization></e:hint></e:scored-text-answer> 
+            Tim fragt: <e:scored-text-answer max-score="2"><e:hint><e:localization lang="fi-FI">Voitko auttaa minua?</e:localization><e:localization lang="sv-FI">Kan du hjälpa mig?</e:localization></e:hint></e:scored-text-answer>
             <br/>
-            Jan: Ja, klar. Was ist denn? 
-            <br/>  
+            Jan: Ja, klar. Was ist denn?
+            <br/>
             Tim antwortet: <e:scored-text-answer max-score="3"><e:hint><e:attachment><e:attachment-title>7.2. kuva</e:attachment-title><e:image src="7.2.jpg"/><e:reference><e:url>https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a</e:url><e:title>math final</e:title><e:author>Elise Forest</e:author><e:howpublished>CC BY-NC-ND 2.0</e:howpublished><e:reference-date>2019-11-25</e:reference-date></e:reference></e:attachment></e:hint></e:scored-text-answer>
           </p>
           <br/>
@@ -1460,7 +1460,7 @@
         </e:reference>
       </e:attachment>
     </e:question>
-    
+
   </e:section>
 
   <e:section>
@@ -1546,7 +1546,7 @@
 
       <e:question>
         <e:question-title>Lange Schreibaufgabe</e:question-title>
-        <e:question-instruction>      
+        <e:question-instruction>
           <e:localization lang="fi-FI">
             Ystäväsi haluaa tietää, miten kesälomasi sujui. Kirjoita hänelle lomakuviesi avulla, mitä matkalla tapahtui.
           </e:localization>
@@ -1586,7 +1586,7 @@
               <e:howpublished>CC BY 2.0</e:howpublished>
               <e:reference-date>2019-11-25</e:reference-date>
             </e:reference>
-          </e:attachment>      
+          </e:attachment>
         </p>
         <e:text-answer type="multi-line" max-score="66"/>
       </e:question>
