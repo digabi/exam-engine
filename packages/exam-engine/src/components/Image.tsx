@@ -22,7 +22,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           bordered: caption != null || element.closest('choice-answer') != null
         }}
       >
-        {element.closest('choice-answer') != null ? (
+        {element.closest('choice-answer, hint') != null ? (
           <img className="image" src={resolveAttachment(src)} />
         ) : (
           <a href={resolveAttachment(src)} target="original-picture" className="e-zoomable">
