@@ -62,7 +62,7 @@
             sådant skönhetsbegrepp representerar. Namnge uppfattningen.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="2" />
+        <e:text-answer type="rich-text" max-score="2" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -74,7 +74,7 @@
             skönhet.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="2" />
+        <e:text-answer type="rich-text" max-score="2" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -85,7 +85,7 @@
             Välj två exempel på vackra saker och motivera kort varför de är vackra.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -96,7 +96,7 @@
             Diskutera vad skönhet är. Använd de exempel du gett i punkt 1.3. som hjälp.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10" />
       </e:question>
     </e:question>
     <e:question>
@@ -120,7 +120,7 @@
           </p>
         </e:localization>
       </e:question-instruction>
-      <e:text-answer type="multi-line" max-score="20" />
+      <e:text-answer type="rich-text" max-score="20" />
     </e:question>
     <e:question>
       <e:question-title>
@@ -181,7 +181,7 @@
             i ditt svar.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="5" />
+        <e:text-answer type="rich-text" max-score="5" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -197,7 +197,7 @@
             filosofi.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="15" />
+        <e:text-answer type="rich-text" max-score="15" />
       </e:question>
     </e:question>
     <e:question>
@@ -290,7 +290,7 @@
           </e:reference>
         </e:attachment>
       </e:external-material>
-      <e:text-answer type="multi-line" max-score="20" />
+      <e:text-answer type="rich-text" max-score="20" />
     </e:question>
     <e:question>
       <e:question-title>
@@ -395,7 +395,7 @@
           och bedöm dess rättvisa.
         </e:localization>
       </e:question-instruction>
-      <e:text-answer type="multi-line" max-score="20" />
+      <e:text-answer type="rich-text" max-score="20" />
     </e:question>
     <e:question>
       <e:question-title>
@@ -421,7 +421,7 @@
             Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -444,7 +444,7 @@
             Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -465,7 +465,7 @@
             vilka förutsättningar kunskap kan bygga på ett ögonvittnes eller en kunskapsmässig auktoritets ord.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8" />
       </e:question>
     </e:question>
   </e:section>
@@ -586,7 +586,7 @@
             och utvärdera de goda och de dåliga sidorna hos en sådan filosofisyn.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="15" />
+        <e:text-answer type="rich-text" max-score="15" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -599,7 +599,7 @@
             Redogör för någon annan syn på filosofin och jämför den med den som förs fram i <em>Lorem</em>.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="15" />
+        <e:text-answer type="rich-text" max-score="15" />
       </e:question>
     </e:question>
     <e:question>
@@ -1240,7 +1240,7 @@
             deras förtjänster och brister.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -1271,7 +1271,7 @@
             deras förtjänster och brister.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -1279,7 +1279,7 @@
           <e:localization lang="sv-FI">Redogör för din egen motiverade ståndpunkt till legaliseringen av eutanasi.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10" />
       </e:question>
     </e:question>
     <e:question>
@@ -1372,7 +1372,7 @@
             och analysera den ur ett vetenskapsfilosofiskt perspektiv.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -1386,7 +1386,7 @@
             vetenskapsfilosofiskt sätt.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="20" />
+        <e:text-answer type="rich-text" max-score="20" />
       </e:question>
     </e:question>
   </e:section>

@@ -144,32 +144,32 @@
         <e:section-title />
         <e:question>
             <e:question-title>Digitaalinen arki</e:question-title>
-            <e:text-answer type="multi-line" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60" />
         </e:question>
 
         <e:question>
             <e:question-title>Sosiaaliset suhteet someaikana</e:question-title>
-            <e:text-answer type="multi-line" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60" />
         </e:question>
 
         <e:question>
             <e:question-title>Elämää ilman sosiaalista mediaa?</e:question-title>
-            <e:text-answer type="multi-line" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60" />
         </e:question>
 
         <e:question>
             <e:question-title>Osallistumisen tai itsensä ilmaisemisen uusia tapoja digiaikana</e:question-title>
-            <e:text-answer type="multi-line" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60" />
         </e:question>
 
         <e:question>
             <e:question-title>Eri ihmisryhmät sosiaalisen median käyttäjinä</e:question-title>
-            <e:text-answer type="multi-line" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60" />
         </e:question>
 
         <e:question>
             <e:question-title>Sosiaalisen median edut ja haitat</e:question-title>
-            <e:text-answer type="multi-line" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60" />
         </e:question>
     </e:section>
 </e:exam>

@@ -58,7 +58,7 @@
           <e:attachment-link ref="ipsumin-mainos" />
           käytettyjä mainonnan keinoja. Vastauksen sopiva pituus on noin 3 500 merkkiä.
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="18" />
+        <e:text-answer type="rich-text" max-score="18" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -66,7 +66,7 @@
           <e:attachment-link ref="ipsumin-mainos" />
           nais- ja mieskuvaa. Vastauksen sopiva pituus on noin 2 000 merkkiä.
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="12" />
+        <e:text-answer type="rich-text" max-score="12" />
       </e:question>
     </e:question>
     <e:question>
@@ -169,7 +169,7 @@
           </e:reference>
         </e:attachment>
       </e:external-material>
-      <e:text-answer type="multi-line" max-score="30" />
+      <e:text-answer type="rich-text" max-score="30" />
     </e:question>
   </e:section>
   <e:section max-answers="1">
@@ -213,7 +213,7 @@
           </e:reference>
         </e:attachment>
       </e:external-material>
-      <e:text-answer type="multi-line" max-score="30" />
+      <e:text-answer type="rich-text" max-score="30" />
     </e:question>
     <e:question>
       <e:question-title>Räppi ja runo</e:question-title>
@@ -409,7 +409,7 @@
           </e:attachment-links>
           runoudelle tyypillisiä piirteitä ja anna niistä esimerkit. Vastauksen sopiva pituus on noin 2 000 merkkiä
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="12" />
+        <e:text-answer type="rich-text" max-score="12" />
       </e:question>
       <e:question>
         <e:question-title>
@@ -422,7 +422,7 @@
           <e:attachment-link ref="deserunt-magnan-runo" />
           sisältämiä ikääntymisen kuvauksia. Vastauksen sopiva pituus on noin 3 500 merkkiä.
         </e:question-title>
-        <e:text-answer type="multi-line" max-score="18" />
+        <e:text-answer type="rich-text" max-score="18" />
       </e:question>
     </e:question>
   </e:section>

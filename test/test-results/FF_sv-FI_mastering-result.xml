@@ -13,28 +13,28 @@
         </e:question-title><e:question display-number="1.1." max-score="2"><e:question-title>
             Det sägs att skönheten ligger i betraktarens ögon. Beskriv kort vilket slag av uppfattning om skönhet ett
             sådant skönhetsbegrepp representerar. Namnge uppfattningen.
-          </e:question-title><e:text-answer type="multi-line" max-score="2" display-number="1.1." question-id="1"/></e:question><e:question display-number="1.2." max-score="2"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="2" display-number="1.1." question-id="1"/></e:question><e:question display-number="1.2." max-score="2"><e:question-title>
             Det sägs att skönheten ligger i betraktarens ögon. Namnge och beskriv kort en motsatt uppfattning om
             skönhet.
-          </e:question-title><e:text-answer type="multi-line" max-score="2" display-number="1.2." question-id="2"/></e:question><e:question display-number="1.3." max-score="6"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="2" display-number="1.2." question-id="2"/></e:question><e:question display-number="1.3." max-score="6"><e:question-title>
             Välj två exempel på vackra saker och motivera kort varför de är vackra.
-          </e:question-title><e:text-answer type="multi-line" max-score="6" display-number="1.3." question-id="3"/></e:question><e:question display-number="1.4." max-score="10"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="6" display-number="1.3." question-id="3"/></e:question><e:question display-number="1.4." max-score="10"><e:question-title>
             Diskutera vad skönhet är. Använd de exempel du gett i punkt 1.3. som hjälp.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="1.4." question-id="4"/></e:question></e:question><e:question display-number="2." max-score="20"><e:question-title>Moral och seder</e:question-title><e:question-instruction><p>Både moral och seder strävar efter att styra människors beteende.</p><p>
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="1.4." question-id="4"/></e:question></e:question><e:question display-number="2." max-score="20"><e:question-title>Moral och seder</e:question-title><e:question-instruction><p>Både moral och seder strävar efter att styra människors beteende.</p><p>
             Välj något mindre eller större samfund – exempelvis någon skola, grupp som förenas av en åskådning eller
             stat – och diskutera vilken skillnaden är mellan moral och seder inom det samfund du har valt.
-          </p></e:question-instruction><e:text-answer type="multi-line" max-score="20" display-number="2." question-id="5"/></e:question><e:question display-number="3." max-score="20"><e:question-title>
+          </p></e:question-instruction><e:text-answer type="rich-text" max-score="20" display-number="2." question-id="5"/></e:question><e:question display-number="3." max-score="20"><e:question-title>
           Enhet och förändring
         </e:question-title><e:question-instruction/><e:external-material><e:attachment name="3A" display-number="3. A"><e:attachment-title>Videoklipp: Sunt cupidatat exercitation magna deserunt quis</e:attachment-title><e:video src="T3_SV.webm" lang="sv-FI" width="999" height="999"/><e:reference><e:author>Adipisicing Magna</e:author><e:publication>Videotjänsten Youtube</e:publication><e:url>www.youtube.com</e:url><e:publication-date>2014-06-22</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>SEN</e:modified-by><e:translator>SEN</e:translator></e:reference></e:attachment></e:external-material><e:question display-number="3.1." max-score="5"><e:question-title>
             Förklara varför förändring är omöjlig enligt Proident. Utnyttja videoklippet
             <e:attachment-link ref="3A"/>
             i ditt svar.
-          </e:question-title><e:text-answer type="multi-line" max-score="5" display-number="3.1." question-id="6"/></e:question><e:question display-number="3.2." max-score="15"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="5" display-number="3.1." question-id="6"/></e:question><e:question display-number="3.2." max-score="15"><e:question-title>
             I videoklippet
             <e:attachment-link ref="3A"/>
             presenteras två av Veniam paradoxer. Förklara den ena av dem och beskriv dess relation till Proident
             filosofi.
-          </e:question-title><e:text-answer type="multi-line" max-score="15" display-number="3.2." question-id="7"/></e:question></e:question><e:question display-number="4." max-score="20"><e:question-title>Att äta kött</e:question-title><e:question-instruction>
+          </e:question-title><e:text-answer type="rich-text" max-score="15" display-number="3.2." question-id="7"/></e:question></e:question><e:question display-number="4." max-score="20"><e:question-title>Att äta kött</e:question-title><e:question-instruction>
           I Asien har man traditionellt ätit hundar, men i Europa anses det olämpligt. Utvärdera filosofiskt det
           berättigade i att äta kött och i att begränsa ätandet till olika djurarter. Utnyttja tidningsnyheten
           <e:attachment-link ref="4A"/>
@@ -51,7 +51,7 @@
               aliqua officia esse id ea deserunt eu mollit incididunt. Qui labore consectetur exercitation
               laborum laborum. In dolor consequat eu dolore ea. Eiusmod ex pariatur mollit id occaecat in
               culpa qui ipsum consequat proident qui.
-            </p><p>Consequat ipsum minim anim in amet veniam ea et exercitation nisi.</p><e:reference><e:author>Adipisicing excepteur</e:author><e:publication>nostrud commodo ex</e:publication><e:url>fugiat.pariatur.illum</e:url><e:publication-date>2017-04-12</e:publication-date><e:reference-date>2017-05-09</e:reference-date></e:reference></e:attachment><e:attachment name="4B" display-number="4. B"><e:attachment-title>Aliqua magna deserunt eu laboris nulla aliqua</e:attachment-title><e:image src="4B.png" width="999" height="999"/><e:reference><e:publisher>Consequat dolor laboris anim do culpa consequat</e:publisher><e:url>http://excepteur.eiusmod.sunt/adipisicing</e:url><e:reference-date>2018-02-28</e:reference-date></e:reference></e:attachment></e:external-material><e:text-answer type="multi-line" max-score="20" display-number="4." question-id="8"/></e:question><e:question display-number="5." max-score="20"><e:question-title>Makt i lärarrummet</e:question-title><e:question-instruction><em>Qui tempor</em>
+            </p><p>Consequat ipsum minim anim in amet veniam ea et exercitation nisi.</p><e:reference><e:author>Adipisicing excepteur</e:author><e:publication>nostrud commodo ex</e:publication><e:url>fugiat.pariatur.illum</e:url><e:publication-date>2017-04-12</e:publication-date><e:reference-date>2017-05-09</e:reference-date></e:reference></e:attachment><e:attachment name="4B" display-number="4. B"><e:attachment-title>Aliqua magna deserunt eu laboris nulla aliqua</e:attachment-title><e:image src="4B.png" width="999" height="999"/><e:reference><e:publisher>Consequat dolor laboris anim do culpa consequat</e:publisher><e:url>http://excepteur.eiusmod.sunt/adipisicing</e:url><e:reference-date>2018-02-28</e:reference-date></e:reference></e:attachment></e:external-material><e:text-answer type="rich-text" max-score="20" display-number="4." question-id="8"/></e:question><e:question display-number="5." max-score="20"><e:question-title>Makt i lärarrummet</e:question-title><e:question-instruction><em>Qui tempor</em>
           är en finsk sketchserie producerad av YLE och Dolore Mollit (1926–1984) är en fransk maktteoretiker.
         </e:question-instruction><e:external-material><e:attachment name="5A" display-number="5. A"><e:attachment-title>Videoklipp: <em>Qui tempor</em>: Lärarna 1
             </e:attachment-title><e:video src="T5_SV.webm" lang="sv-FI" width="999" height="999"/><e:reference><e:title>Qui tempor: Lärarna 1</e:title><e:publication>Qui fugiat</e:publication><e:url>www.youtube.com</e:url><e:publication-date>2015-06-09</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>YTL</e:modified-by></e:reference></e:attachment><e:attachment name="5B" display-number="5. B"><e:attachment-title>
@@ -72,14 +72,14 @@
           <e:attachment-link ref="5B"/>. Analysera maktutövningen i videoklippet
           <e:attachment-link ref="5A"/>
           och bedöm dess rättvisa.
-        </e:question-instruction><e:text-answer type="multi-line" max-score="20" display-number="5." question-id="9"/></e:question><e:question display-number="6." max-score="20"><e:question-title>Kriterierna för kunskap</e:question-title><e:question display-number="6.1." max-score="6"><e:question-title>
+        </e:question-instruction><e:text-answer type="rich-text" max-score="20" display-number="5." question-id="9"/></e:question><e:question display-number="6." max-score="20"><e:question-title>Kriterierna för kunskap</e:question-title><e:question display-number="6.1." max-score="6"><e:question-title>
             Henri är ute och kör på landsbygden med sin son och berättar för honom vad han råkar se längs vägen. Henri
             ser en lada på en åker och berättar för sin son: ”Där är en lada”. Henri har utmärkt syn, och han har en
             berättigad och sann uppfattning som motsvarar satsen han uttrycker.
             <br/>
             <br/>
             Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar.
-          </e:question-title><e:text-answer type="multi-line" max-score="6" display-number="6.1." question-id="10"/></e:question><e:question display-number="6.2." max-score="6"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="6" display-number="6.1." question-id="10"/></e:question><e:question display-number="6.2." max-score="6"><e:question-title>
             Henri kör en bit vidare och kommer till ett område med åkrar där det bland riktiga lador finns kulisser i
             papp som föreställer lador. De är så naturtrogna att de skulle kunna lura vem som helst. Henri ser
             emellertid en riktig lada och säger till sin son: ”Där är också en lada”. Om han hade råkat rikta sin blick
@@ -87,14 +87,14 @@
             <br/>
             <br/>
             Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar.
-          </e:question-title><e:text-answer type="multi-line" max-score="6" display-number="6.2." question-id="11"/></e:question><e:question display-number="6.3." max-score="8"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="6" display-number="6.2." question-id="11"/></e:question><e:question display-number="6.3." max-score="8"><e:question-title>
             Henris son är blind. Vid den första ladan bildar han utifrån sin pappas beskrivning den sanna uppfattningen
             om att det är fråga om en lada.
             <br/>
             <br/>
             Har Henris son kunskap om att det är en lada? Motivera ditt svar och diskutera på ett mer allmänt plan under
             vilka förutsättningar kunskap kan bygga på ett ögonvittnes eller en kunskapsmässig auktoritets ord.
-          </e:question-title><e:text-answer type="multi-line" max-score="8" display-number="6.3." question-id="12"/></e:question></e:question></e:section><e:section max-answers="2" display-number="II" max-score="60" min-answers="0"><e:section-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="8" display-number="6.3." question-id="12"/></e:question></e:question></e:section><e:section max-answers="2" display-number="II" max-score="60" min-answers="0"><e:section-title>
         30-poängsuppgifter
       </e:section-title><e:question display-number="7." max-score="30"><e:question-title>Filosofiuppfattningen i Adipisicings
           <em>Lorem</em>
@@ -124,9 +124,9 @@
             Beskriv med egna ord den syn på filosofin som förs fram i textutdraget
             <e:attachment-link ref="7A"/>
             och utvärdera de goda och de dåliga sidorna hos en sådan filosofisyn.
-          </e:question-title><e:text-answer type="multi-line" max-score="15" display-number="7.1." question-id="13"/></e:question><e:question display-number="7.2." max-score="15"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="15" display-number="7.1." question-id="13"/></e:question><e:question display-number="7.2." max-score="15"><e:question-title>
             Redogör för någon annan syn på filosofin och jämför den med den som förs fram i <em>Lorem</em>.
-          </e:question-title><e:text-answer type="multi-line" max-score="15" display-number="7.2." question-id="14"/></e:question></e:question><e:question display-number="8." max-score="30"><e:question-title>Eutanasi</e:question-title><e:question-instruction>
+          </e:question-title><e:text-answer type="rich-text" max-score="15" display-number="7.2." question-id="14"/></e:question></e:question><e:question display-number="8." max-score="30"><e:question-title>Eutanasi</e:question-title><e:question-instruction>
           Det grekiska ordet ”eu” betyder god och ”thanatos” död. Bokstavligen betyder alltså eutanasi ”god död” på
           svenska, men eutanasins motståndare godkänner inte beteckningen. Politiker från fem olika partier startade
           7.11.2016 ett medborgarinitiativ för att legalisera eutanasi. 1.1.2017 hade initiativet samlat 63 078
@@ -291,19 +291,19 @@
             <e:attachment-links><e:attachment-link ref="8A"/><e:attachment-link ref="8B"/><e:attachment-link ref="8C"/><e:attachment-link ref="8D"/><e:attachment-link ref="8E"/><e:attachment-link ref="8F"/></e:attachment-links>
             av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt
             deras förtjänster och brister.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="8.1." question-id="15"/></e:question><e:question display-number="8.2." max-score="10"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="8.1." question-id="15"/></e:question><e:question display-number="8.2." max-score="10"><e:question-title>
             Välj ut två argument mot eutanasi ur textutdragen
             <e:attachment-links><e:attachment-link ref="8A"/><e:attachment-link ref="8B"/><e:attachment-link ref="8C"/><e:attachment-link ref="8D"/><e:attachment-link ref="8E"/><e:attachment-link ref="8F"/></e:attachment-links>
             av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt
             deras förtjänster och brister.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="8.2." question-id="16"/></e:question><e:question display-number="8.3." max-score="10"><e:question-title>Redogör för din egen motiverade ståndpunkt till legaliseringen av eutanasi.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="8.3." question-id="17"/></e:question></e:question><e:question display-number="9." max-score="30"><e:question-title>Vetenskapliga modeller</e:question-title><e:question-instruction>Inom vetenskapen bygger man modeller för att förklara verkligheten.
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="8.2." question-id="16"/></e:question><e:question display-number="8.3." max-score="10"><e:question-title>Redogör för din egen motiverade ståndpunkt till legaliseringen av eutanasi.
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="8.3." question-id="17"/></e:question></e:question><e:question display-number="9." max-score="30"><e:question-title>Vetenskapliga modeller</e:question-title><e:question-instruction>Inom vetenskapen bygger man modeller för att förklara verkligheten.
         </e:question-instruction><e:external-material><e:attachment name="9A" display-number="9. A"><e:attachment-title>Videoklipp: Incididunt id culpa ad deserunt dolor pariatur</e:attachment-title><e:video src="T9_1_SV.webm" lang="sv-FI" width="999" height="999"/><e:reference><e:author>Consectetur Excepteur</e:author><e:title>Incididunt id culpa ad deserunt dolor pariatur</e:title><e:publication>Videotjänsten Youtube</e:publication><e:url>www.youtube.com/</e:url><e:publication-date>2013-07-12</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>SEN</e:modified-by><e:translator>SEN</e:translator></e:reference></e:attachment><e:attachment name="9B" display-number="9. B"><e:attachment-title>Videoklipp: Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:attachment-title><e:video src="T9_2_SV.webm" lang="sv-FI" width="999" height="999"/><e:reference><e:author>Ex anim</e:author><e:title>Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:title><e:publication>Videotjänsten Youtube</e:publication><e:url>www.youtube.com/</e:url><e:publication-date>2010-09-09</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>SEN</e:modified-by><e:translator>SEN</e:translator></e:reference></e:attachment></e:external-material><e:question display-number="9.1." max-score="10"><e:question-title>
             Välj ut en beskrivning av vetenskaplig verksamhet ur videoklippen
             <e:attachment-links><e:attachment-link ref="9A"/><e:attachment-link ref="9B"/></e:attachment-links>
             och analysera den ur ett vetenskapsfilosofiskt perspektiv.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="9.1." question-id="18"/></e:question><e:question display-number="9.2." max-score="20"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="9.1." question-id="18"/></e:question><e:question display-number="9.2." max-score="20"><e:question-title>
             Välj ut en vetenskaplig modell, exempelvis från något läroämne du har studerat i gymnasiet. Förklara dess
             struktur och minst ett av dess teoretiska begrepp, samt utvärdera modellen och dess betydelse på ett
             vetenskapsfilosofiskt sätt.
-          </e:question-title><e:text-answer type="multi-line" max-score="20" display-number="9.2." question-id="19"/></e:question></e:question></e:section><e:exam-footer><p class="e-text-center e-semibold">Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.</p></e:exam-footer></e:exam>
+          </e:question-title><e:text-answer type="rich-text" max-score="20" display-number="9.2." question-id="19"/></e:question></e:question></e:section><e:exam-footer><p class="e-text-center e-semibold">Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.</p></e:exam-footer></e:exam>

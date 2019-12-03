@@ -17,11 +17,11 @@
           Analysoi mainoksessa
           <e:attachment-link ref="ipsumin-mainos"/>
           käytettyjä mainonnan keinoja. Vastauksen sopiva pituus on noin 3 500 merkkiä.
-        </e:question-title><e:text-answer type="multi-line" max-score="18" display-number="1.1." question-id="1"/></e:question><e:question display-number="1.2." max-score="12"><e:question-title>
+        </e:question-title><e:text-answer type="rich-text" max-score="18" display-number="1.1." question-id="1"/></e:question><e:question display-number="1.2." max-score="12"><e:question-title>
           Analysoi mainoksen
           <e:attachment-link ref="ipsumin-mainos"/>
           nais- ja mieskuvaa. Vastauksen sopiva pituus on noin 2 000 merkkiä.
-        </e:question-title><e:text-answer type="multi-line" max-score="12" display-number="1.2." question-id="2"/></e:question></e:question><e:question display-number="2." max-score="30"><e:question-title>Puhe vastavalmistuneelle</e:question-title><e:question-instruction>
+        </e:question-title><e:text-answer type="rich-text" max-score="12" display-number="1.2." question-id="2"/></e:question></e:question><e:question display-number="2." max-score="30"><e:question-title>Puhe vastavalmistuneelle</e:question-title><e:question-instruction>
         Kuuntele Duis Minimin radiossa esittämä kolumni Nulla Consequat <e:attachment-link ref="duis-minimin-kolumni-audio"/>. Analysoi ja arvioi kolumniin sisältyvää puhetta, joka alkaa sanoilla
         ”Duis in est eiusmod”. Voit käyttää apuna kolumnin kirjoitettua versiota <e:attachment-link ref="duis-minimin-kolumni-teksti"/>. Vastauksen sopiva pituus on noin 5 000 merkkiä.
       </e:question-instruction><e:external-material><e:attachment name="duis-minimin-kolumni-audio" display-number="2. A"><e:attachment-title>Äänitallenne: Duis Minimin kolumni</e:attachment-title><e:audio src="2.A.ogg" duration="999"/><e:reference><e:author>Duis Minim</e:author><e:publisher>Laborum nulla</e:publisher><e:url>https://aliquip.duis.velit/</e:url><e:publication-date>2017-05-24</e:publication-date><e:reference-date>2017-08-14</e:reference-date><e:modified-by>YTL</e:modified-by></e:reference></e:attachment><e:attachment name="duis-minimin-kolumni-teksti" display-number="2. B"><e:attachment-title>Kirjoitettu teksti: Duis Minimin kolumni</e:attachment-title><p><strong>Duis Minim: Nulla Consequat</strong></p><p><strong>
@@ -66,7 +66,7 @@
             exercitation nostrud.
           </p><p>In irure officia irure officia eu.</p><p>Laborum nulla officia ad commodo anim ut ipsum quis consequat in occaecat nostrud!</p><p>Dolore consectetur laborum reprehenderit duis qui ullamco sunt commodo eiusmod laboris duis quis ea.</p><p>Laboris amet tempor occaecat aute enim labore est excepteur velit sunt irure elit consequat officia…</p><p>Laboris.</p><p>Dolor nulla anim sunt exercitation adipisicing enim aliquip ea minim non mollit dolore. Aliqua
             commodo amet quis qui eu. Exercitation adipisicing do culpa ipsum consequat dolore non aute qui non ex!
-          </p><e:reference><e:author>Duis Minim</e:author><e:publisher>Veniam qui eiusmod</e:publisher><e:url>https://minim.dolor.in/dolore</e:url><e:publication-date>2017-05-24</e:publication-date><e:reference-date>2017-08-14</e:reference-date></e:reference></e:attachment></e:external-material><e:text-answer type="multi-line" max-score="30" display-number="2." question-id="3"/></e:question></e:section><e:section max-answers="1" display-number="II" max-score="30"><e:section-title>Kaunokirjalliset ja muut fiktiiviset tekstit</e:section-title><e:question display-number="3." max-score="30"><e:question-title>Novelli eräästä perheestä</e:question-title><e:question-instruction>
+          </p><e:reference><e:author>Duis Minim</e:author><e:publisher>Veniam qui eiusmod</e:publisher><e:url>https://minim.dolor.in/dolore</e:url><e:publication-date>2017-05-24</e:publication-date><e:reference-date>2017-08-14</e:reference-date></e:reference></e:attachment></e:external-material><e:text-answer type="rich-text" max-score="30" display-number="2." question-id="3"/></e:question></e:section><e:section max-answers="1" display-number="II" max-score="30"><e:section-title>Kaunokirjalliset ja muut fiktiiviset tekstit</e:section-title><e:question display-number="3." max-score="30"><e:question-title>Novelli eräästä perheestä</e:question-title><e:question-instruction>
         Analysoi ja tulkitse Deserunt Essen novellia Tempor reprehenderit <e:attachment-link ref="deserunt-essen-novelli"/>.
         Vastauksen sopiva pituus on noin 5 000 merkkiä.
       </e:question-instruction><e:external-material><e:attachment name="deserunt-essen-novelli" display-number="3. A"><e:attachment-title>Kirjoitettu teksti: Deserunt Essen novelli</e:attachment-title><h2>Tempor reprehenderit</h2><p>Est ad eu velit duis reprehenderit. Non commodo aute incididunt enim minim exercitation minim
@@ -88,7 +88,7 @@
             pariatur Lorem labore adipisicing anim in laboris. In minim enim non reprehenderit culpa elit.
             Voluptate duis voluptate nulla minim aliquip amet ullamco consequat et. Qui do ad enim dolore veniam.
             Exercitation magna et sit magna in et exercitation nostrud occaecat voluptate non consequat veniam.
-          </p><e:reference><e:author>Deserunt Esse</e:author><e:title>Tempor reprehenderit</e:title><e:publication-date>2013</e:publication-date><e:translator>Proident Quis</e:translator></e:reference></e:attachment></e:external-material><e:text-answer type="multi-line" max-score="30" display-number="3." question-id="4"/></e:question><e:question display-number="4." max-score="30"><e:question-title>Räppi ja runo</e:question-title><e:question-instruction>
+          </p><e:reference><e:author>Deserunt Esse</e:author><e:title>Tempor reprehenderit</e:title><e:publication-date>2013</e:publication-date><e:translator>Proident Quis</e:translator></e:reference></e:attachment></e:external-material><e:text-answer type="rich-text" max-score="30" display-number="3." question-id="4"/></e:question><e:question display-number="4." max-score="30"><e:question-title>Räppi ja runo</e:question-title><e:question-instruction>
         Kuuntele Dolorin räppi
         <e:attachment-link ref="sit-aute"/>
         ja tutustu sen sanoitukseen
@@ -229,10 +229,10 @@
           Poimi Dolorin räpistä
           <e:attachment-links><e:attachment-link ref="sit-aute"/><e:attachment-link ref="sit-aute-sanoitus"/></e:attachment-links>
           runoudelle tyypillisiä piirteitä ja anna niistä esimerkit. Vastauksen sopiva pituus on noin 2 000 merkkiä
-        </e:question-title><e:text-answer type="multi-line" max-score="12" display-number="4.1." question-id="5"/></e:question><e:question display-number="4.2." max-score="18"><e:question-title>
+        </e:question-title><e:text-answer type="rich-text" max-score="12" display-number="4.1." question-id="5"/></e:question><e:question display-number="4.2." max-score="18"><e:question-title>
           Vertaile Dolorin räpin
           <e:attachment-links><e:attachment-link ref="sit-aute"/><e:attachment-link ref="sit-aute-sanoitus"/></e:attachment-links>
           ja Deserunt Magnan runon
           <e:attachment-link ref="deserunt-magnan-runo"/>
           sisältämiä ikääntymisen kuvauksia. Vastauksen sopiva pituus on noin 3 500 merkkiä.
-        </e:question-title><e:text-answer type="multi-line" max-score="18" display-number="4.2." question-id="6"/></e:question></e:question></e:section><e:exam-footer><p class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
+        </e:question-title><e:text-answer type="rich-text" max-score="18" display-number="4.2." question-id="6"/></e:question></e:question></e:section><e:exam-footer><p class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
