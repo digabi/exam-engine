@@ -16,7 +16,8 @@ EE_EXAM_ENGINE_BUILT=$(EE_AMD_BUNDLE_DIR)/main-bundle.js
 EE_MEX_PKG_DIR =$(EE_DIR)/packages/mex
 EE_MEX_PKG_COMPILED=$(EE_MEX_PKG_DIR)/dist/index.js
 EE_EXAM_ENGINE_PKG_DIR= $(EE_DIR)/packages/exam-engine
-EE_MEX_PKG_DIR= $(EE_DIR)/packages/mex
+EE_MEXAMPLES_DIR =$(EE_DIR)/packages/mexamples
+EE_MEXAMPLES_COMPILED=$(EE_MEXAMPLES_DIR)/dist/index.js
 
 EE_EXAM_XML_FILES = $(shell find ./packages/mexamples/*/*.xml)
 # Change @ to empty string "" if you want to see all commands echoed:
@@ -34,6 +35,10 @@ $(EE_EXAM_ENGINE_BUILT): $(EE_YARN_INSTALLED) $(shell find $(EE_EXAM_ENGINE_PKG_
 $(EE_MEX_PKG_COMPILED): $(EE_YARN_INSTALLED) $(shell find $(EE_MEX_PKG_DIR)/src -type f)
 	$(PRINT_TARGET)
 	$(VERBOSE)cd $(EE_MEX_PKG_DIR) && $(EE_NVM_EXEC) yarn build
+
+$(EE_MEXAMPLES_COMPILED): $(EE_YARN_INSTALLED) $(shell find $(EE_MEXAMPLES_DIR)/src -type f)
+	$(PRINT_TARGET)
+	$(VERBOSE)cd $(EE_MEXAMPLES_DIR) && $(EE_NVM_EXEC) yarn build
 
 # In case you only want to create the amd bundle which is packaged into the .mex package:
 create-amd-bundle: $(EE_EXAM_ENGINE_BUILT)
@@ -55,7 +60,7 @@ packages/mexamples/*/%.mex: packages/mexamples/*/%.xml
 start: build
 	$(EE_NVM_EXEC) yarn start
 
-build: $(EE_EXAM_ENGINE_BUILT) $(EE_MEX_PKG_COMPILED)
+build: $(EE_EXAM_ENGINE_BUILT) $(EE_MEX_PKG_COMPILED) $(EE_MEXAMPLES_COMPILED)
 
 clean:
 	$(PRINT_TARGET)
@@ -96,7 +101,7 @@ publish-mex-pkg: $(EE_MEX_PKG_COMPILED)
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/mex publish --new-version $(version)
 
-publish-mexamples: $(patsubst %.xml,%.mex,$(EE_EXAM_XML_FILES)) $(EE_MEX_PKG_COMPILED)
+publish-mexamples: $(patsubst %.xml,%.mex,$(EE_EXAM_XML_FILES)) $(EE_MEX_PKG_COMPILED) $(EE_MEXAMPLES_COMPILED)
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/mexamples publish --new-version $(version)
 
@@ -104,8 +109,10 @@ lint: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine lint
 	$(EE_NVM_EXEC) yarn workspace @digabi/mex lint
+	$(EE_NVM_EXEC) yarn workspace @digabi/mexamples lint
 
 lint-ci: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine ci:lint
 	$(EE_NVM_EXEC) yarn workspace @digabi/mex ci:lint
+	$(EE_NVM_EXEC) yarn workspace @digabi/mexamples ci:lint

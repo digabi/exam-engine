@@ -1,5 +1,5 @@
 import { Page } from 'puppeteer'
-import { resolveExam } from '../fixtures'
+import { resolveExam } from '@digabi/mexamples'
 import createTestServer, { CloseFunction } from './createTestServer'
 import { getCurrentPage } from './domUtils'
 

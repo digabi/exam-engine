@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs'
-import { assertEqualsExamFixture, resolveExam } from '../../../../test/fixtures'
+import { assertEqualsExamFixture } from '../../../../test/fixtures'
+import { resolveExam } from '@digabi/mexamples'
 import { generateHvpForLanguage } from '../../src/mastering'
 
 describe('HVP generation', () => {

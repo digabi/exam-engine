@@ -11,5 +11,5 @@
     "member-access": false
   },
   "rulesDirectory": [],
-  "linterOptions": { "exclude": ["**/*.js"] }
+  "linterOptions": { "exclude": ["**/*.js", "**/dist"] }
 }

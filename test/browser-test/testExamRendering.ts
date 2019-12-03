@@ -3,7 +3,8 @@
 import chai from 'chai'
 import chaiJestDiff from 'chai-jest-diff'
 import path from 'path'
-import { assertEqualsExamFixture, listExams } from '../fixtures'
+import { assertEqualsExamFixture } from '../fixtures'
+import { listExams } from '@digabi/mexamples'
 import createTestServer, { CloseFunction } from './createTestServer'
 import * as utils from './domUtils'
 
