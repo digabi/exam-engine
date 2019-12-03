@@ -16,6 +16,7 @@
     "unit-tests:ci": "JUNIT_REPORT_PATH=../../exam-engine-mocha-report.xml node -r esm node_modules/.bin/mocha --reporter mocha-jenkins-reporter 'test/unit-test/*.ts?(x)'"
   },
   "devDependencies": {
+    "@digabi/mexamples": "^4.0.1",
     "@digabi/noto-sans": "^2.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",

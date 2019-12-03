@@ -1,6 +1,6 @@
 import { Page } from 'puppeteer'
 import { QuestionId } from '../../packages/exam-engine/src/components/types'
-import { resolveExam } from '../fixtures'
+import { resolveExam } from '@digabi/mexamples'
 import createTestServer, { CloseFunction } from './createTestServer'
 import { getCurrentPage } from './domUtils'
 

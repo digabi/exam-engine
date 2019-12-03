@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { Page } from 'puppeteer'
-import { resolveExam } from '../fixtures'
+import { resolveExam } from '@digabi/mexamples'
 import createTestServer, { CloseFunction } from './createTestServer'
 import { delay, getCurrentPage, getTextContent } from './domUtils'
 
