@@ -4,7 +4,7 @@
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "files": [
-    "./exams/*/*.xml",
-    "./exams/*/*.mex"
+    "./*/*.xml",
+    "./*/*.mex"
   ]
 }

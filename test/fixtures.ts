@@ -13,7 +13,7 @@ export function listExams() {
 
 /** Resolves a filename relative to the exams directory */
 export function resolveExam(filename: string) {
-  return path.resolve(__dirname, '../packages/mexamples/exams/', filename)
+  return path.resolve(__dirname, '../packages/mexamples/', filename)
 }
 
 /**
@@ -23,12 +23,12 @@ export function resolveExam(filename: string) {
  * If `process.env.OVERWRITE_FIXTURES` is defined, it will write the content to
  * the specified fixture instead.
  *
- * Fixtures are written to ../test/test-results directory relative to the exam XML file.
+ * Fixtures are written to ../../../test/test-results directory relative to the exam XML file.
  */
 export async function assertEqualsExamFixture(examFilename: string, language: string, fixture: string, content: any) {
   const examDirectory = path.dirname(examFilename)
   const basename = path.basename(examFilename, '.xml')
-  const fixtureFilename = path.resolve(examDirectory, '../../test/test-results', `${basename}_${language}_${fixture}`)
+  const fixtureFilename = path.resolve(examDirectory, '../../../test/test-results', `${basename}_${language}_${fixture}`)
   const serializeAsJson = typeof content !== 'string'
 
   if (process.env.OVERWRITE_FIXTURES) {

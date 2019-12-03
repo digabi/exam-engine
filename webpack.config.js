@@ -7,7 +7,7 @@ const mathSvgHandler = require('rich-text-editor').mathSvgResponse
 module.exports = function(env) {
   const examFilename =
     (env && env.EXAM_FILENAME) ||
-    path.resolve(__dirname, './packages/mexamples/exams/MexDocumentation/MexDocumentation.xml')
+    path.resolve(__dirname, './packages/mexamples/MexDocumentation/MexDocumentation.xml')
   const attachmentsDirectory = path.join(path.dirname(examFilename), 'attachments')
   const examLanguage = env && env.EXAM_LANGUAGE
   const generateGradingStructure = env && env.GENERATE_GRADING_STRUCTURE
