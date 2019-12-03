@@ -1,4 +1,4 @@
-import { Node, Element } from 'libxmljs2'
+import { Element, Node } from 'libxmljs2'
 import _ from 'lodash'
 
 export function byLocalName(...names: string[]) {

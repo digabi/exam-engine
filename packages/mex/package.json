@@ -9,17 +9,15 @@
     "schema"
   ],
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "lint": "tslint --project tsconfig.json; eslint src",
-    "ci:lint": "tslint -t checkstyle -o tslint.xml --project tsconfig.json & eslint -f checkstyle -o eslint.xml src & wait",
-    "unit-tests:dev": "mocha 'test/unit-test/*.ts?(x)'",
-    "unit-tests:ci": "JUNIT_REPORT_PATH=../../mex-mocha-report.xml mocha --reporter mocha-jenkins-reporter 'test/unit-test/*.ts?(x)'"
+    "build": "tsc --build",
+    "lint": "tslint -p .",
+    "test": "jest"
   },
   "dependencies": {
     "@digabi/exam-engine": "^4.4.1",
     "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
+    "glob-promise": "^3.4.0",
     "i18next": "^19.0.1",
     "libxmljs2": "^0.22.0",
     "lru-cache": "^5.1.1",
@@ -27,17 +25,5 @@
     "ramda": "^0.26.1",
     "roman-numerals": "^0.3.2",
     "yazl": "^2.5.1"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.2.6",
-    "@types/libxmljs": "^0.18.5",
-    "@types/mocha": "^5.2.7",
-    "@types/roman-numerals": "^0.3.0",
-    "@types/yazl": "^2.4.2",
-    "chai": "^4.2.0",
-    "chai-jest-diff": "^1.0.2",
-    "eslint": "^6.7.2",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.3"
   }
 }

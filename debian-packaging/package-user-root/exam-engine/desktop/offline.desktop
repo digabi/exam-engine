@@ -2,5 +2,5 @@
 Comment=
 Terminal=true
 Name=Tee offline (mex)
-Exec=bash -c "mkdir -p ~/media && source ~/.nvm/nvm.sh && nvm use \"$(cat ~/exam-engine/.nvmrc)\" && node ~/exam-engine/scripts/offline.js `dirname %k`/*.xml ~/media && read -n 1 -s -p 'Valmis!'"
+Exec=bash -c "mkdir -p ~/media && source ~/.nvm/nvm.sh && nvm use \"$(cat ~/exam-engine/.nvmrc)\" && node ~/exam-engine/packages/cli/dist/offline.js `dirname %k`/*.xml `dirname %k` && read -n 1 -s -p 'Valmis!'"
 Type=Application

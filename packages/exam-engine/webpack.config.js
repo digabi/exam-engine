@@ -1,11 +1,9 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = function() {
   const plugins = [
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
@@ -14,31 +12,17 @@ module.exports = function() {
 
   return {
     mode: 'production',
-    entry: path.resolve(__dirname, 'src/main-bundle.ts'),
+    entry: [path.resolve(__dirname, 'dist/index.js'), path.resolve(__dirname, 'src/css/main.less')],
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'main-bundle.js',
       library: 'ExamBundle',
-      libraryTarget: 'umd'
-    },
-    resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+      libraryTarget: 'umd',
+      globalObject: 'this'
     },
     plugins,
     module: {
       rules: [
-        {
-          test: /\.(js|jsx|ts|tsx)$/,
-          exclude: {
-            test: /node_modules/
-          },
-          use: {
-            loader: 'ts-loader',
-            options: {
-              onlyCompileBundledFiles: true
-            }
-          }
-        },
         {
           test: /\.(less|css)$/,
           use: [

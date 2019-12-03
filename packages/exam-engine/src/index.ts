@@ -2,6 +2,7 @@ import Attachments from './components/Attachments'
 import Exam from './components/Exam'
 import parseExam from './parser/parseExam'
 
+export * from './components/types'
 export { Attachments, Exam, parseExam }
 
 export interface ExamBundle {
@@ -9,5 +10,3 @@ export interface ExamBundle {
   Exam: typeof Exam
   parseExam: typeof parseExam
 }
-
-export * from './components/types'

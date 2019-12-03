@@ -1,20 +1,29 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "commonjs",
-    "strict": true,
-    "moduleResolution": "node",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
     "jsx": "react",
-    "noImplicitAny": true,
-    "sourceMap": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "typeRoots": ["node_modules/@types", "typings"],
-    "outDir": "dist"
+    "resolveJsonModule": true,
+    "plugins": [{ "name": "typescript-tslint-plugin" }],
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2019",
+    "typeRoots": ["./typings", "./node_modules/@types"]
   },
-  "include": ["utils/*", "test/**/*.ts", "test/**/*.tsx", "scripts/**/*.ts"]
+  "files": [],
+  "references": [
+    { "path": "./packages/exam-engine" },
+    { "path": "./packages/mex" },
+    { "path": "./packages/mexamples" },
+    { "path": "./packages/rendering" },
+    { "path": "./packages/cli" }
+  ]
 }

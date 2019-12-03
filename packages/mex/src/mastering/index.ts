@@ -1,26 +1,24 @@
-import { Document, Element, SyntaxError, Namespace } from 'libxmljs2'
-import * as libxml from 'libxmljs2'
-import { toRoman } from 'roman-numerals'
-import path from 'path'
-import { readFileSync } from 'fs'
-import { initI18n } from '../i18n'
-import _ from 'lodash'
 import crypto from 'crypto'
-import { ns, choiceAnswerTypes, answerTypes, attachmentTypes } from './schema'
+import { readFileSync } from 'fs'
+import * as libxml from 'libxmljs2'
+import { Document, Element, Namespace, SyntaxError } from 'libxmljs2'
+import _ from 'lodash'
+import path from 'path'
+import { toRoman } from 'roman-numerals'
+import { initI18n } from '../i18n'
 import { createGradingStructure, GradingStructure } from './createGradingStructure'
-import {
-  getAttribute,
-  byLocalName as byName,
-  byAttribute,
-  getNumericAttribute,
-  asElements,
-  xpathOr,
-  hasAttribute
-} from './utils'
 import { createHvp } from './createHvp'
-
-const renderFormula = require('./render-formula')
-// const { createHvp } = require('./mastering/createHvp')
+import renderFormula from './render-formula'
+import { answerTypes, attachmentTypes, choiceAnswerTypes, ns } from './schema'
+import {
+  asElements,
+  byAttribute,
+  byLocalName as byName,
+  getAttribute,
+  getNumericAttribute,
+  hasAttribute,
+  xpathOr
+} from './utils'
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
@@ -145,11 +143,11 @@ export async function masterExam(
     .find('//e:languages/e:language/text()', ns)
     .map(String)
   const memoizedGetMediaMetadata = _.memoize(getMediaMetadata, _.join)
-  const _options = { ...defaultOptions, ...options }
+  const optionsWithDefaults = { ...defaultOptions, ...options }
 
   return Promise.all(
     languages.map(language =>
-      masterExamForLanguage(parseExam(xml), language, generateUuid, memoizedGetMediaMetadata, _options)
+      masterExamForLanguage(parseExam(xml), language, generateUuid, memoizedGetMediaMetadata, optionsWithDefaults)
     )
   )
 }
@@ -176,7 +174,9 @@ async function masterExamForLanguage(
   addQuestionNumbers(exam)
   addAnswerNumbers(questions)
   addQuestionIds(answers)
-  if (options.multiChoiceShuffleSecret) shuffleAnswerOptions(answers, options.multiChoiceShuffleSecret)
+  if (options.multiChoiceShuffleSecret) {
+    shuffleAnswerOptions(answers, options.multiChoiceShuffleSecret)
+  }
   addAttachmentNumbers(exam, questions)
   updateMaxScoresToAnswers(answers)
   countMaxScores(exam, sections)
@@ -191,7 +191,9 @@ async function masterExamForLanguage(
 
   removeComments(exam)
   removeCorrectAnswers(answers)
-  if (options.removeHiddenElements) removeHiddenElements(exam)
+  if (options.removeHiddenElements) {
+    removeHiddenElements(exam)
+  }
 
   return {
     attachments: collectAttachments(exam, attachments),
@@ -218,12 +220,12 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
       const type = name === 'audio-test' ? 'audio' : name
       const metadata = await getMediaMetadata(getAttribute('src', attachment), type)
       if (type === 'audio') {
-        const _metadata = metadata as AudioMetadata
-        attachment.attr('duration', String(_metadata.duration))
+        const audioMetadata = metadata as AudioMetadata
+        attachment.attr('duration', String(audioMetadata.duration))
       } else {
-        const _metadata = metadata as ImageMetadata | VideoMetadata
-        attachment.attr('width', String(_metadata.width))
-        attachment.attr('height', String(_metadata.height))
+        const imageOrVideoMetadata = metadata as ImageMetadata | VideoMetadata
+        attachment.attr('width', String(imageOrVideoMetadata.width))
+        attachment.attr('height', String(imageOrVideoMetadata.height))
       }
     }
   }
@@ -253,7 +255,9 @@ async function addExamUuid(exam: Element, generateUuid: GenerateUuid, language: 
 function addYoCustomizations(exam: Element, language: string) {
   const examCode = getAttribute('exam-code', exam, null)
 
-  if (!examCode) return
+  if (!examCode) {
+    return
+  }
 
   const i18n = initI18n(language)
   const dayCode = getAttribute('day-code', exam, null)
@@ -386,7 +390,9 @@ function addQuestionIds(answers: Element[]) {
 
 function countSectionMaxAndMinAnswers(exam: Element, sections: Element[]) {
   const examMaxAnswers = getNumericAttribute('max-answers', exam, null)
-  if (!examMaxAnswers) return
+  if (!examMaxAnswers) {
+    return
+  }
 
   for (const section of sections) {
     if (!getNumericAttribute('max-answers', section) == null) {
@@ -398,7 +404,7 @@ function countSectionMaxAndMinAnswers(exam: Element, sections: Element[]) {
     const maxAnswers = getNumericAttribute('max-answers', section)
     const otherSectionMaxAnswers = _.sumBy(
       sections.filter(s => s !== section),
-      section => getNumericAttribute('max-answers', section)
+      otherSection => getNumericAttribute('max-answers', otherSection)
     )
     const minAnswers = _.clamp(maxAnswers, 0, examMaxAnswers - otherSectionMaxAnswers)
     section.attr('min-answers', String(minAnswers))
@@ -483,7 +489,9 @@ function shuffleAnswerOptions(answers: Element[], multichoiceShuffleSecret: stri
       const sortedOptions = _.sortBy(options, option =>
         createHash(answerKey + options.indexOf(option) + multichoiceShuffleSecret)
       )
-      for (const option of sortedOptions) answer.addChild(option)
+      for (const option of sortedOptions) {
+        answer.addChild(option)
+      }
     })
 }
 

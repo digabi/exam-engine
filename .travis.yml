@@ -1,4 +1,4 @@
 addons:
   chrome: stable
 language: node_js
-script: make test
+script: make test lint-ci

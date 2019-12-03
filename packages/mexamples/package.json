@@ -10,9 +10,8 @@
     "./*/*.mex"
   ],
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "lint": "tslint --project tsconfig.json",
-    "ci:lint": "tslint -t checkstyle -o tslint.xml --project tsconfig.json & wait"
+    "build": "tsc --build",
+    "lint": "tslint -p .",
+    "test": "echo OK"
   }
 }

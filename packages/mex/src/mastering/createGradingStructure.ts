@@ -1,6 +1,6 @@
 import { Element } from 'libxmljs2'
-import { getAttribute, getNumericAttribute, isElement } from './utils'
 import _ from 'lodash'
+import { getAttribute, getNumericAttribute, isElement } from './utils'
 
 export interface GradingStructure {
   questions: GradingStructureQuestion[]
@@ -67,7 +67,7 @@ function mkTextQuestion(answer: Element): TextQuestion {
 }
 
 function mkChoiceGroupQuestion(answer: Element): ChoiceGroupQuestion {
-  const id = getNumericAttribute('question-id', answer)
+  const questionId = getNumericAttribute('question-id', answer)
   const displayNumber = getAttribute('display-number', answer)
   const maxScore = getNumericAttribute('max-score', answer)
 
@@ -83,12 +83,12 @@ function mkChoiceGroupQuestion(answer: Element): ChoiceGroupQuestion {
 
   const choices: ChoiceGroupChoice[] = [
     {
-      id,
+      id: questionId,
       displayNumber,
       type: 'choice',
       options
     }
   ]
 
-  return { id, displayNumber, maxScore, type: 'choicegroup', choices }
+  return { id: questionId, displayNumber, maxScore, type: 'choicegroup', choices }
 }

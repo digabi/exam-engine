@@ -27,6 +27,12 @@ const errorSvg = `<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
   </g>
 </svg>`
 
+/**
+ *
+ * @param {string} formula
+ * @param {string | null} mode
+ * @param {boolean | undefined} throwOnLatexError
+ */
 async function renderFormula(formula, mode, throwOnLatexError) {
   return mjAPI
     .typeset({

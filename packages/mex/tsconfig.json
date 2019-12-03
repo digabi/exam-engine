@@ -1,21 +1,8 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "target": "es2019",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "commonjs",
-    "declaration": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "jsx": "react",
-    "noImplicitAny": true,
-    "sourceMap": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "typeRoots": ["../../typings", "../../node_modules/@types", "node_modules/@types"],
-    "outDir": "dist"
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
-  "include": ["src/**/*"]
+  "extends": "../../tsconfig.json",
+  "include": ["./src", "./src/**/*.json", "./src/**/*.js"]
 }

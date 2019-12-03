@@ -1,17 +1,9 @@
 import fs from 'fs'
-import * as glob from 'glob'
+import glob from 'glob-promise'
 import path from 'path'
 import { PassThrough, Readable } from 'stream'
 import yazl, { ZipFile } from 'yazl'
 import { createAES256EncryptStreamWithIv, deriveAES256KeyAndIv, KeyAndIv, signWithSHA256AndRSA } from './crypto-utils'
-
-const bundleDir = path.dirname(require.resolve('@digabi/exam-engine/dist/main-bundle.js'))
-const renderingFiles = glob
-  .sync(bundleDir + '/**/*', {
-    nodir: true,
-    realpath: true
-  })
-  .filter(file => !file.endsWith('.d.ts'))
 
 interface ExamFile {
   /** A relative filename (e.g. "foo.mp3"). This should be the same filename than in the exam XML. */
@@ -35,6 +27,12 @@ export async function createMex(
   outputStream: NodeJS.WritableStream,
   json?: Buffer | null
 ) {
+  const bundleDir = path.dirname(require.resolve('@digabi/exam-engine/dist/main-bundle.js'))
+  const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
+    nodir: true,
+    realpath: true
+  })
+
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
 

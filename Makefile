@@ -10,14 +10,7 @@ EE_NVM_EXEC=$(EE_NVM_DIR)/nvm-exec
 EE_NODE=$(EE_NVM_EXEC) node
 EE_YARN=$(EE_NVM_EXEC) yarn
 EE_YARN_INSTALLED=$(EE_DIR)/node_modules/.yarn_install_executed
-EE_PKG_DIR=$(EE_DIR)/packages/exam-engine
-EE_AMD_BUNDLE_DIR=$(EE_PKG_DIR)/dist
-EE_EXAM_ENGINE_BUILT=$(EE_AMD_BUNDLE_DIR)/main-bundle.js
-EE_MEX_PKG_DIR =$(EE_DIR)/packages/mex
-EE_MEX_PKG_COMPILED=$(EE_MEX_PKG_DIR)/dist/index.js
-EE_EXAM_ENGINE_PKG_DIR= $(EE_DIR)/packages/exam-engine
-EE_MEXAMPLES_DIR =$(EE_DIR)/packages/mexamples
-EE_MEXAMPLES_COMPILED=$(EE_MEXAMPLES_DIR)/dist/index.js
+EE_EXAM_ENGINE_BUILT=$(EE_DIR)/packages/exam-engine/dist/main-bundle.js
 
 EE_EXAM_XML_FILES = $(shell find ./packages/mexamples/*/*.xml)
 # Change @ to empty string "" if you want to see all commands echoed:
@@ -28,20 +21,9 @@ $(EE_YARN_INSTALLED): $(EE_DIR)/package.json $(EE_DIR)/yarn.lock $(EE_NVM_EXEC)
 	$(VERBOSE)$(EE_NVM_EXEC) yarn install --pure-lockfile
 	$(VERBOSE)touch $@
 
-$(EE_EXAM_ENGINE_BUILT): $(EE_YARN_INSTALLED) $(shell find $(EE_EXAM_ENGINE_PKG_DIR)/src -type f) $(shell find packages/exam-engine/ -maxdepth 1 -name '*config*' -o -name '*.less' -o -name 'package.json')
+$(EE_EXAM_ENGINE_BUILT):
 	$(PRINT_TARGET)
-	$(VERBOSE)cd $(EE_EXAM_ENGINE_PKG_DIR) && $(EE_NVM_EXEC) yarn build
-
-$(EE_MEX_PKG_COMPILED): $(EE_YARN_INSTALLED) $(shell find $(EE_MEX_PKG_DIR)/src -type f)
-	$(PRINT_TARGET)
-	$(VERBOSE)cd $(EE_MEX_PKG_DIR) && $(EE_NVM_EXEC) yarn build
-
-$(EE_MEXAMPLES_COMPILED): $(EE_YARN_INSTALLED) $(shell find $(EE_MEXAMPLES_DIR)/src -type f)
-	$(PRINT_TARGET)
-	$(VERBOSE)cd $(EE_MEXAMPLES_DIR) && $(EE_NVM_EXEC) yarn build
-
-# In case you only want to create the amd bundle which is packaged into the .mex package:
-create-amd-bundle: $(EE_EXAM_ENGINE_BUILT)
+	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine build
 
 # Example on how to call this target:
 #
@@ -51,7 +33,7 @@ create-mex: p?=salasana
 create-mex: s?=$(EE_DIR)/test/security-codes.json
 create-mex: n?=$(EE_DIR)/test/dummy-nsa-scripts.zip
 create-mex: o?=$(EE_DIR)
-create-mex: $(EE_EXAM_ENGINE_BUILT) $(EE_MEX_PKG_COMPILED)
+create-mex: build $(EE_EXAM_ENGINE_BUILT)
 	$(EE_NVM_EXEC) yarn create-mex -e $(e) -p $(p) -n $(n) -o $(o) -s $(s) -k $(k)
 
 packages/mexamples/*/%.mex: packages/mexamples/*/%.xml
@@ -60,59 +42,47 @@ packages/mexamples/*/%.mex: packages/mexamples/*/%.xml
 start: build
 	$(EE_NVM_EXEC) yarn start
 
-build: $(EE_EXAM_ENGINE_BUILT) $(EE_MEX_PKG_COMPILED) $(EE_MEXAMPLES_COMPILED)
+build: $(EE_YARN_INSTALLED)
+	$(PRINT_TARGET)
+	$(EE_NVM_EXEC) yarn build
 
 clean:
 	$(PRINT_TARGET)
-	$(VERBOSE)rm -rf $(EE_PKG_DIR)/dist
-	$(VERBOSE)rm -rf $(EE_PKG_DIR)/node_modules
-	$(VERBOSE)rm $(EE_PKG_DIR)/*lint.xml 2>/dev/null || true
-	$(VERBOSE)rm -rf $(EE_AMD_BUNDLE_DIR)
-	$(VERBOSE)rm -rf $(EE_MEX_PKG_DIR)/dist
-	$(VERBOSE)rm -rf $(EE_MEX_PKG_DIR)/node_modules
-	$(VERBOSE)rm $(EE_MEX_PKG_DIR)/*lint.xml 2>/dev/null || true
 	$(VERBOSE)rm -rf $(EE_DIR)/node_modules
+	$(VERBOSE)rm -rf $(EE_DIR)/packages/*/dist
+	$(VERBOSE)rm $(EE_DIR)/packages/*/tslint.xml 2>/dev/null || true	
+	$(VERBOSE)rm $(EE_DIR)/packages/*/jest-report.xml 2>/dev/null || true		
+	$(VERBOSE)rm $(EE_DIR)/packages/*/tsconfig.tsbuildinfo 2>/dev/null || true		
 
-test: browser-tests unit-tests
-
-browser-tests: build
+test: build
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn browser-tests:dev
-
-unit-tests: build
-	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine unit-tests:dev
-	$(EE_NVM_EXEC) yarn workspace @digabi/mex unit-tests:dev
+	$(EE_NVM_EXEC) yarn test
 
 unit-tests-ci: build
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine unit-tests:ci
-	$(EE_NVM_EXEC) yarn workspace @digabi/mex unit-tests:ci
+	$(EE_NVM_EXEC) yarn workspace @digabi/mex test --ci
+	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine test --ci 
 
 browser-tests-ci: build
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn browser-tests:ci
+	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine-rendering test --ci
 
 publish-exam-engine: $(EE_EXAM_ENGINE_BUILT)
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine publish --new-version $(version)
 
-publish-mex-pkg: $(EE_MEX_PKG_COMPILED)
+publish-mex-pkg: build
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/mex publish --new-version $(version)
 
-publish-mexamples: $(patsubst %.xml,%.mex,$(EE_EXAM_XML_FILES)) $(EE_MEX_PKG_COMPILED) $(EE_MEXAMPLES_COMPILED)
+publish-mexamples: build $(patsubst %.xml,%.mex,$(EE_EXAM_XML_FILES))
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/mexamples publish --new-version $(version)
 
 lint: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine lint
-	$(EE_NVM_EXEC) yarn workspace @digabi/mex lint
-	$(EE_NVM_EXEC) yarn workspace @digabi/mexamples lint
+	$(EE_NVM_EXEC) yarn workspaces run lint	--fix
 
 lint-ci: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine ci:lint
-	$(EE_NVM_EXEC) yarn workspace @digabi/mex ci:lint
-	$(EE_NVM_EXEC) yarn workspace @digabi/mexamples ci:lint
+	$(EE_NVM_EXEC) yarn workspaces run lint	-t checkstyle -o tslint.xml
