@@ -29,7 +29,6 @@
     "yazl": "^2.5.1"
   },
   "devDependencies": {
-    "@digabi/mexamples": "^4.0.1",
     "@types/chai": "^4.2.6",
     "@types/libxmljs": "^0.18.5",
     "@types/mocha": "^5.2.7",
