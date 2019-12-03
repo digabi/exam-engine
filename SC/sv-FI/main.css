@@ -65,7 +65,7 @@
 @font-face {
   font-family: Symbola;
   src: url(assets/Symbola.eot);
-  src: local("Symbola Regular"), local("Symbola"), url(assets/Symbola.woff2) format("woff2"), url(assets/Symbola.woff) format("woff"), url(assets/Symbola.ttf) format("truetype"), url("[object Module]#Symbola") format("svg");
+  src: local("Symbola Regular"), local("Symbola"), url(assets/Symbola.woff2) format("woff2"), url(assets/Symbola.woff) format("woff"), url(assets/Symbola.ttf) format("truetype"), url(assets/Symbola.svg#Symbola) format("svg");
 }
 .mq-editable-field {
   display: -moz-inline-box;
