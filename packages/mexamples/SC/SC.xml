@@ -1501,7 +1501,7 @@
             Din vän är lite sjuk. Fråga i ett WhatsApp-meddelande om du kan hjälpa vännen på något sätt och gör ett förslag.
           </e:localization>
         </e:question-instruction>
-        <e:text-answer type="multi-line" max-score="33"/>
+        <e:text-answer type="rich-text" max-score="33"/>
       </e:question>
       <e:question>
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
@@ -1513,7 +1513,7 @@
             Du har kommit långt med förberedelserna för din grillfest men du har glömt att bjuda in den tyska utbyteseleven på din klass. Skriv i sista minuten ett textmeddelande med en inbjudan till hen och berätta också vad hen kan ha med sig till festen.
           </e:localization>
         </e:question-instruction>
-        <e:text-answer type="multi-line" max-score="33"/>
+        <e:text-answer type="rich-text" max-score="33"/>
       </e:question>
     </e:question>
 
@@ -1588,7 +1588,7 @@
             </e:reference>
           </e:attachment>
         </p>
-        <e:text-answer type="multi-line" max-score="66"/>
+        <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
       <e:question>
@@ -1601,7 +1601,7 @@
             En pappa har skickat in texten till en diskussionsspalt <e:attachment-link ref="zeugnis" />. Han ber om åsikter om vem som har rätt – han eller hans son. Skriv ett svar till pappan i spalten. Motivera din åsikt.
           </e:localization>
         </e:question-instruction>
-        <e:text-answer type="multi-line" max-score="66"/>
+        <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
     </e:question>

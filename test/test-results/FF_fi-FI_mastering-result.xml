@@ -14,16 +14,16 @@
         </e:question-title><e:question display-number="1.1." max-score="2"><e:question-title>
             Sanotaan, että kauneus on katsojan silmässä. Kuvaile lyhyesti, millaista käsitystä kauneudesta sanonta
             edustaa. Nimeä käsitys.
-          </e:question-title><e:text-answer type="multi-line" max-score="2" display-number="1.1." question-id="1"/></e:question><e:question display-number="1.2." max-score="2"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="2" display-number="1.1." question-id="1"/></e:question><e:question display-number="1.2." max-score="2"><e:question-title>
             Sanotaan, että kauneus on katsojan silmässä. Nimeä ja kuvaile lyhyesti päinvastainen käsitys kauneudesta.
-          </e:question-title><e:text-answer type="multi-line" max-score="2" display-number="1.2." question-id="2"/></e:question><e:question display-number="1.3." max-score="6"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="2" display-number="1.2." question-id="2"/></e:question><e:question display-number="1.3." max-score="6"><e:question-title>
             Valitse kaksi esimerkkiä kauniista asioista ja perustele lyhyesti, miksi ne ovat kauniita.
-          </e:question-title><e:text-answer type="multi-line" max-score="6" display-number="1.3." question-id="3"/></e:question><e:question display-number="1.4." max-score="10"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="6" display-number="1.3." question-id="3"/></e:question><e:question display-number="1.4." max-score="10"><e:question-title>
             Pohdi, mitä kauneus on. Käytä apunasi kohdassa 1.3. antamiasi esimerkkejä.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="1.4." question-id="4"/></e:question></e:question><e:question display-number="2." max-score="20"><e:question-title>Moraali ja tavat</e:question-title><e:question-instruction><p>Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä.</p><p>
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="1.4." question-id="4"/></e:question></e:question><e:question display-number="2." max-score="20"><e:question-title>Moraali ja tavat</e:question-title><e:question-instruction><p>Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä.</p><p>
             Valitse jokin pienempi tai suurempi yhteisö – esimerkiksi jokin koulu, katsomuksellinen ryhmä tai valtio –
             ja pohdi, mikä ero valitsemassasi yhteisössä on moraalin ja tapojen välillä.
-          </p></e:question-instruction><e:text-answer type="multi-line" max-score="20" display-number="2." question-id="5"/></e:question><e:question display-number="3." max-score="20"><e:question-title>
+          </p></e:question-instruction><e:text-answer type="rich-text" max-score="20" display-number="2." question-id="5"/></e:question><e:question display-number="3." max-score="20"><e:question-title>
           Ykseys ja muutos
         </e:question-title><e:question-instruction>
           Ykseyteen ja muutokseen liittyy monia filosofisia pulmia, joita on pohdittu antiikista asti. Videokatkelmassa
@@ -32,11 +32,11 @@
         </e:question-instruction><e:external-material><e:attachment name="3A" display-number="3. A"><e:attachment-title>Videokatkelma: Sunt cupidatat exercitation magna deserunt quis</e:attachment-title><e:video src="T3_FI.webm" lang="fi-FI" width="999" height="999"/><e:reference><e:author>Adipisicing Magna</e:author><e:publication>Youtube-videopalvelu</e:publication><e:url>www.youtube.com</e:url><e:publication-date>2014-06-22</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>YTL</e:modified-by><e:translator>YTL</e:translator></e:reference></e:attachment></e:external-material><e:question display-number="3.1." max-score="5"><e:question-title>
             Selitä, miksi muutos on Proidentin mukaan mahdotonta. Hyödynnä vastauksessasi videokatkelmaa
             <e:attachment-link ref="3A"/>.
-          </e:question-title><e:text-answer type="multi-line" max-score="5" display-number="3.1." question-id="6"/></e:question><e:question display-number="3.2." max-score="15"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="5" display-number="3.1." question-id="6"/></e:question><e:question display-number="3.2." max-score="15"><e:question-title>
             Videokatkelmassa
             <e:attachment-link ref="3A"/>
             esitellään kaksi Veniamin paradoksia. Erittele toinen niistä ja kuvaile sen suhde Proidentin filosofiaan.
-          </e:question-title><e:text-answer type="multi-line" max-score="15" display-number="3.2." question-id="7"/></e:question></e:question><e:question display-number="4." max-score="20"><e:question-title>Lihan syöminen</e:question-title><e:question-instruction>
+          </e:question-title><e:text-answer type="rich-text" max-score="15" display-number="3.2." question-id="7"/></e:question></e:question><e:question display-number="4." max-score="20"><e:question-title>Lihan syöminen</e:question-title><e:question-instruction>
           Aasiassa on perinteisesti syöty koiria, mitä Euroopassa pidetään sopimattomana. Arvioi filosofisesti lihan
           syönnin oikeutusta ja sen rajaamista eri eläinlajeihin. Käytä vastauksessasi apuna uutiskatkelmaa
           <e:attachment-link ref="4A"/>
@@ -53,7 +53,7 @@
               officia dolore sit magna duis reprehenderit id. Cillum esse ullamco laborum occaecat qui eu tempor
               velit duis proident.
             </p><p>Minim exercitation ad aute pariatur fugiat nulla.
-            </p><e:reference><e:author>Adipisicing excepteur</e:author><e:publication>nostrud commodo ex</e:publication><e:url>fugiat.pariatur.illum</e:url><e:publication-date>2017-04-12</e:publication-date><e:reference-date>2017-05-09</e:reference-date></e:reference></e:attachment><e:attachment name="4B" display-number="4. B"><e:attachment-title>Aliqua magna deserunt eu laboris nulla aliqua</e:attachment-title><e:image src="4B.png" width="999" height="999"/><e:reference><e:publisher>Consequat dolor laboris anim do culpa consequat</e:publisher><e:url>http://excepteur.eiusmod.sunt/adipisicing</e:url><e:reference-date>2018-02-28</e:reference-date></e:reference></e:attachment></e:external-material><e:text-answer type="multi-line" max-score="20" display-number="4." question-id="8"/></e:question><e:question display-number="5." max-score="20"><e:question-title>Valta opettajainhuoneessa</e:question-title><e:question-instruction><em>Qui tempor</em>
+            </p><e:reference><e:author>Adipisicing excepteur</e:author><e:publication>nostrud commodo ex</e:publication><e:url>fugiat.pariatur.illum</e:url><e:publication-date>2017-04-12</e:publication-date><e:reference-date>2017-05-09</e:reference-date></e:reference></e:attachment><e:attachment name="4B" display-number="4. B"><e:attachment-title>Aliqua magna deserunt eu laboris nulla aliqua</e:attachment-title><e:image src="4B.png" width="999" height="999"/><e:reference><e:publisher>Consequat dolor laboris anim do culpa consequat</e:publisher><e:url>http://excepteur.eiusmod.sunt/adipisicing</e:url><e:reference-date>2018-02-28</e:reference-date></e:reference></e:attachment></e:external-material><e:text-answer type="rich-text" max-score="20" display-number="4." question-id="8"/></e:question><e:question display-number="5." max-score="20"><e:question-title>Valta opettajainhuoneessa</e:question-title><e:question-instruction><em>Qui tempor</em>
           on suomalainen sketsisarja, ja Dolore Mollit (1926–1984) on ranskalainen vallan teoreetikko.
         </e:question-instruction><e:external-material><e:attachment name="5A" display-number="5. A"><e:attachment-title>Videokatkelma: <em>Qui tempor</em>: Opettajat 1
             </e:attachment-title><e:video src="T5_FI.webm" lang="fi-FI" width="999" height="999"/><e:reference><e:title>Qui tempor: Opettajat 1</e:title><e:publication>Qui fugiat</e:publication><e:url>www.youtube.com</e:url><e:publication-date>2015-06-09</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>YTL</e:modified-by></e:reference></e:attachment><e:attachment name="5B" display-number="5. B"><e:attachment-title>
@@ -73,14 +73,14 @@
           <e:attachment-link ref="5B"/>. Erittele vallankäyttöä videokatkelmassa
           <e:attachment-link ref="5A"/>
           ja arvioi sen oikeudenmukaisuutta.
-        </e:question-instruction><e:text-answer type="multi-line" max-score="20" display-number="5." question-id="9"/></e:question><e:question display-number="6." max-score="20"><e:question-title>Tiedon kriteerit</e:question-title><e:question display-number="6.1." max-score="6"><e:question-title>
+        </e:question-instruction><e:text-answer type="rich-text" max-score="20" display-number="5." question-id="9"/></e:question><e:question display-number="6." max-score="20"><e:question-title>Tiedon kriteerit</e:question-title><e:question display-number="6.1." max-score="6"><e:question-title>
             Henri ajelee maaseudulla poikansa kanssa ja kertoo hänelle, mitä sattuu kulloinkin näkemään. Henri näkee
             pellolla ladon ja kertoo pojalleen: ”Tuolla on lato”. Henrillä on erinomainen näkökyky, ja hänellä on
             lausettaan vastaava oikeutettu tosi uskomus.
             <br/>
             <br/>
             Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
-          </e:question-title><e:text-answer type="multi-line" max-score="6" display-number="6.1." question-id="10"/></e:question><e:question display-number="6.2." max-score="6"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="6" display-number="6.1." question-id="10"/></e:question><e:question display-number="6.2." max-score="6"><e:question-title>
             Henri ajaa vähän eteenpäin ja saapuu peltoalueelle, jolla on oikeiden latojen joukossa pahvisia
             latokulisseja, jotka erehdyttäisivät ketä tahansa. Henri näkee kuitenkin oikean ladon ja sanoo taas
             pojalleen: ”Tuollakin on lato”. Jos hän olisi sattunut kohdistamaan katseensa pelkkään kulissiin, hän olisi
@@ -88,14 +88,14 @@
             <br/>
             <br/>
             Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
-          </e:question-title><e:text-answer type="multi-line" max-score="6" display-number="6.2." question-id="11"/></e:question><e:question display-number="6.3." max-score="8"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="6" display-number="6.2." question-id="11"/></e:question><e:question display-number="6.3." max-score="8"><e:question-title>
             Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen
             siitä, että kyseessä on lato.
             <br/>
             <br/>
             Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä
             edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan.
-          </e:question-title><e:text-answer type="multi-line" max-score="8" display-number="6.3." question-id="12"/></e:question></e:question></e:section><e:section max-answers="2" display-number="II" max-score="60" min-answers="0"><e:section-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="8" display-number="6.3." question-id="12"/></e:question></e:question></e:section><e:section max-answers="2" display-number="II" max-score="60" min-answers="0"><e:section-title>
         30 p. tehtävät
       </e:section-title><e:question display-number="7." max-score="30"><e:question-title>Filosofiakäsitys Adipisicingin
           <em>Loremissa</em>
@@ -128,11 +128,11 @@
             Kuvaile omin sanoin tekstikatkelmassa
             <e:attachment-link ref="7A"/>
             esitettyä käsitystä filosofiasta ja arvioi käsityksen hyviä ja huonoja puolia.
-          </e:question-title><e:text-answer type="multi-line" max-score="15" display-number="7.1." question-id="13"/></e:question><e:question display-number="7.2." max-score="15"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="15" display-number="7.1." question-id="13"/></e:question><e:question display-number="7.2." max-score="15"><e:question-title>
             Esitä jokin toinen käsitys filosofiasta ja vertaa sitä
             <em>Loremissa</em>
             esitettyyn.
-          </e:question-title><e:text-answer type="multi-line" max-score="15" display-number="7.2." question-id="14"/></e:question></e:question><e:question display-number="8." max-score="30"><e:question-title>Eutanasia</e:question-title><e:question-instruction>
+          </e:question-title><e:text-answer type="rich-text" max-score="15" display-number="7.2." question-id="14"/></e:question></e:question><e:question display-number="8." max-score="30"><e:question-title>Eutanasia</e:question-title><e:question-instruction>
           Kreikankielinen sana ”eu” merkitsee hyvää ja ”thanatos” kuolemaa. Kirjaimellisesti eutanasia on siis suomeksi
           ”hyvä kuolema”, mutta eutanasian vastustajat eivät hyväksy nimitystä. Viisi eri puolueista olevaa poliitikkoa
           käynnisti 7.11.2016 kansalaisaloitteen eutanasian laillistamisesta. Aloite keräsi 1.1.2017 mennessä 63 078
@@ -326,17 +326,17 @@
             <e:attachment-links><e:attachment-link ref="8A"/><e:attachment-link ref="8B"/><e:attachment-link ref="8C"/><e:attachment-link ref="8D"/><e:attachment-link ref="8E"/><e:attachment-link ref="8F"/></e:attachment-links>
             kaksi eutanasiaa puolustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana.
             Erittele argumentit sekä niiden ansiot ja puutteet.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="8.1." question-id="15"/></e:question><e:question display-number="8.2." max-score="10"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="8.1." question-id="15"/></e:question><e:question display-number="8.2." max-score="10"><e:question-title>
             Valitse tekstikatkelmista
             <e:attachment-links><e:attachment-link ref="8A"/><e:attachment-link ref="8B"/><e:attachment-link ref="8C"/><e:attachment-link ref="8D"/><e:attachment-link ref="8E"/><e:attachment-link ref="8F"/></e:attachment-links>
             kaksi eutanasiaa vastustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana.
             Erittele argumentit sekä niiden ansiot ja puutteet.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="8.2." question-id="16"/></e:question><e:question display-number="8.3." max-score="10"><e:question-title>Esitä oma perusteltu kantasi eutanasian laillistamisesta.</e:question-title><e:text-answer type="multi-line" max-score="10" display-number="8.3." question-id="17"/></e:question></e:question><e:question display-number="9." max-score="30"><e:question-title>Tieteelliset mallit</e:question-title><e:question-instruction>Tieteessä rakennetaan malleja todellisuuden selittämiseksi.</e:question-instruction><e:external-material><e:attachment name="9A" display-number="9. A"><e:attachment-title>Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur</e:attachment-title><e:video src="T9_1_FI.webm" lang="fi-FI" width="999" height="999"/><e:reference><e:author>Consectetur Excepteur</e:author><e:title>Incididunt id culpa ad deserunt dolor pariatur</e:title><e:publication>Youtube-videopalvelu</e:publication><e:url>www.youtube.com/</e:url><e:publication-date>2013-07-12</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>YTL</e:modified-by><e:translator>YTL</e:translator></e:reference></e:attachment><e:attachment name="9B" display-number="9. B"><e:attachment-title>Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:attachment-title><e:video src="T9_2_FI.webm" lang="fi-FI" width="999" height="999"/><e:reference><e:author>Ex anim</e:author><e:title>Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:title><e:publication>Youtube-videopalvelu</e:publication><e:url>www.youtube.com/</e:url><e:publication-date>2010-09-09</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>YTL</e:modified-by><e:translator>YTL</e:translator></e:reference></e:attachment></e:external-material><e:question display-number="9.1." max-score="10"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="8.2." question-id="16"/></e:question><e:question display-number="8.3." max-score="10"><e:question-title>Esitä oma perusteltu kantasi eutanasian laillistamisesta.</e:question-title><e:text-answer type="rich-text" max-score="10" display-number="8.3." question-id="17"/></e:question></e:question><e:question display-number="9." max-score="30"><e:question-title>Tieteelliset mallit</e:question-title><e:question-instruction>Tieteessä rakennetaan malleja todellisuuden selittämiseksi.</e:question-instruction><e:external-material><e:attachment name="9A" display-number="9. A"><e:attachment-title>Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur</e:attachment-title><e:video src="T9_1_FI.webm" lang="fi-FI" width="999" height="999"/><e:reference><e:author>Consectetur Excepteur</e:author><e:title>Incididunt id culpa ad deserunt dolor pariatur</e:title><e:publication>Youtube-videopalvelu</e:publication><e:url>www.youtube.com/</e:url><e:publication-date>2013-07-12</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>YTL</e:modified-by><e:translator>YTL</e:translator></e:reference></e:attachment><e:attachment name="9B" display-number="9. B"><e:attachment-title>Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:attachment-title><e:video src="T9_2_FI.webm" lang="fi-FI" width="999" height="999"/><e:reference><e:author>Ex anim</e:author><e:title>Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:title><e:publication>Youtube-videopalvelu</e:publication><e:url>www.youtube.com/</e:url><e:publication-date>2010-09-09</e:publication-date><e:reference-date>2017-05-09</e:reference-date><e:modified-by>YTL</e:modified-by><e:translator>YTL</e:translator></e:reference></e:attachment></e:external-material><e:question display-number="9.1." max-score="10"><e:question-title>
             Valitse videokatkelmista
             <e:attachment-links><e:attachment-link ref="9A"/><e:attachment-link ref="9B"/></e:attachment-links>
 
             yksi kuvaus tieteellisestä toiminnasta ja erittele sitä tieteenfilosofian näkökulmasta.
-          </e:question-title><e:text-answer type="multi-line" max-score="10" display-number="9.1." question-id="18"/></e:question><e:question display-number="9.2." max-score="20"><e:question-title>
+          </e:question-title><e:text-answer type="rich-text" max-score="10" display-number="9.1." question-id="18"/></e:question><e:question display-number="9.2." max-score="20"><e:question-title>
             Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi aineesta. Selitä sen rakenne ja
             vähintään yksi sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofisesti.
-          </e:question-title><e:text-answer type="multi-line" max-score="20" display-number="9.2." question-id="19"/></e:question></e:question></e:section><e:exam-footer><p class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
+          </e:question-title><e:text-answer type="rich-text" max-score="20" display-number="9.2." question-id="19"/></e:question></e:question></e:section><e:exam-footer><p class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
