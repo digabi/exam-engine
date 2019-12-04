@@ -7,6 +7,7 @@ import { FA } from './FA'
 import { fi_FI } from './fi-FI'
 import { GC } from './GC'
 import { M } from './M'
+import { O_E } from './O_E'
 import { PA } from './PA'
 import { SA } from './SA'
 import { sv_FI } from './sv-FI'
@@ -28,6 +29,7 @@ const examSpecificTranslations = {
   GC,
   M,
   N: M,
+  O_E,
   SA,
   SC: SA,
   PA,
