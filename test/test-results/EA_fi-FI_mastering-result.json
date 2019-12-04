@@ -20,6 +20,36 @@
   "gradingStructure": {
     "questions": [
       {
+        "id": 1,
+        "displayNumber": "1.1.",
+        "maxScore": 1,
+        "type": "choicegroup",
+        "choices": [
+          {
+            "id": 1,
+            "displayNumber": "1.1.",
+            "type": "choice",
+            "options": [
+              {
+                "id": 1,
+                "score": -1,
+                "correct": false
+              },
+              {
+                "id": 2,
+                "score": 0,
+                "correct": false
+              },
+              {
+                "id": 3,
+                "score": 1,
+                "correct": true
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": 2,
         "displayNumber": "2.1.",
         "maxScore": 1,

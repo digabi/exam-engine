@@ -13,6 +13,10 @@ export function hasAttribute(name: string) {
   return (element: Element) => element.attr(name) != null
 }
 
+export function isElement(node: Node): node is Element {
+  return node instanceof Element
+}
+
 export function asElements(nodes: Node[]): Element[] {
   return nodes as Element[]
 }
