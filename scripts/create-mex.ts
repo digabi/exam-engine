@@ -1,5 +1,5 @@
 #!/usr/bin/env ts-node
-import { createMex, getMediaMetadataFromLocalFile, mastering } from '@digabi/mex'
+import { createMex, getMediaMetadataFromLocalFile, masterExam } from '@digabi/mex'
 import { accessSync, createReadStream, createWriteStream, promises as fs } from 'fs'
 import * as fsExtra from 'fs-extra'
 import path from 'path'
@@ -33,11 +33,7 @@ const argv = yargs
   const securityCodes = securityCodesPath ? createReadStream(securityCodesPath) : null
   const answersPrivateKey = await fs.readFile(argv['private-key'], 'utf-8')
 
-  const results = await mastering.masterExam(
-    sourceXml,
-    () => uuid.v4(),
-    getMediaMetadataFromLocalFile(resolveAttachment)
-  )
+  const results = await masterExam(sourceXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
   const outdir = path.resolve(argv.outdir)
   await fsExtra.ensureDir(outdir)
 

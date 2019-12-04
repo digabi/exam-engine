@@ -5,24 +5,14 @@ import path from 'path'
 import sinon, { assert as sinonAssert } from 'sinon'
 import { assertEqualsExamFixture, readFixture } from '../../../../test/fixtures'
 import { listExams } from '@digabi/mexamples'
-import { masterExam } from '../../src/mastering'
+import { masterExam, GetMediaMetadata, GenerateUuid } from '@digabi/mex'
 import _ from 'lodash'
 
 chai.use(chaiJestDiff)
 
-const generateUuid = (_?: {
-  examCode: string
-  date: string
-  language: string
-  type: 'normal' | 'visually-impaired' | 'scanner'
-}) => '00000000-0000-0000-0000-000000000000'
-const getMediaMetadata = async (_: string, type: 'video' | 'audio' | 'image') => {
-  if (type === 'audio') {
-    return { duration: 999 }
-  } else {
-    return { width: 999, height: 999 }
-  }
-}
+const generateUuid: GenerateUuid = () => '00000000-0000-0000-0000-000000000000'
+const getMediaMetadata: GetMediaMetadata = async (_, type) =>
+  type === 'audio' ? { duration: 999 } : { width: 999, height: 999 }
 
 describe('Exam mastering', () => {
   it('throws an error if XML is invalid', async () => {
@@ -78,8 +68,9 @@ describe('Exam mastering', () => {
       const source = await fs.readFile(exam, 'utf-8')
       const results = await masterExam(source, generateUuid, getMediaMetadata)
       for (const result of results) {
-        await assertEqualsExamFixture(exam, result.language, 'mastering-result.json', _.omit(result, 'xml'))
+        await assertEqualsExamFixture(exam, result.language, 'mastering-result.json', _.omit(result, 'xml', 'hvp'))
         await assertEqualsExamFixture(exam, result.language, 'mastering-result.xml', result.xml)
+        await assertEqualsExamFixture(exam, result.language, 'hvp.txt', result.hvp)
       }
     })
   }

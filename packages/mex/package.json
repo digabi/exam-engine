@@ -9,7 +9,7 @@
     "schema"
   ],
   "scripts": {
-    "build": "tsc && cp src/error.svg dist",
+    "build": "tsc",
     "watch": "tsc --watch",
     "lint": "tslint --project tsconfig.json; eslint src",
     "ci:lint": "tslint -t checkstyle -o tslint.xml --project tsconfig.json & eslint -f checkstyle -o eslint.xml src & wait",
@@ -25,13 +25,14 @@
     "lru-cache": "^5.1.1",
     "mathjax-node": "^2.1.1",
     "ramda": "^0.26.1",
-    "romanize": "^1.1.1",
+    "roman-numerals": "^0.3.2",
     "yazl": "^2.5.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.6",
     "@types/libxmljs": "^0.18.5",
     "@types/mocha": "^5.2.7",
+    "@types/roman-numerals": "^0.3.0",
     "@types/yazl": "^2.4.2",
     "chai": "^4.2.0",
     "chai-jest-diff": "^1.0.2",

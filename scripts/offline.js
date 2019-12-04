@@ -6,7 +6,7 @@ const yargs = require('yargs')
 const { spawn } = require('child-process-promise')
 const fsExtra = require('fs-extra')
 const { format, parseISO } = require('date-fns')
-const { mastering } = require('@digabi/mex')
+const { parseExam } = require('@digabi/mex')
 
 const { exam, outdir } = yargs.command('$0 <exam> <outdir>', '', y =>
   y
@@ -17,7 +17,7 @@ const ns = { e: 'http://ylioppilastutkinto.fi/exam.xsd' }
 
 ;(async () => {
   const xml = await fs.readFile(path.resolve(process.cwd(), exam))
-  const doc = mastering.parseExam(xml)
+  const doc = parseExam(xml)
 
   const examCode = doc
     .root()

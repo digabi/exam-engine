@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+const mjAPI = require('mathjax-node')
+
+mjAPI.config({
+  extensions: 'TeX/mhchem.js',
+  MathJax: {
+    SVG: {
+      font: 'Latin-Modern'
+    }
+  }
+})
+
+mjAPI.start()
+
+const errorSvg = `<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <svg width="17px" height="15px" viewBox="0 0 17 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g transform="translate(-241.000000, -219.000000)">
@@ -12,4 +25,24 @@
       </g>
     </g>
   </g>
-</svg>
+</svg>`
+
+async function renderFormula(formula, mode, throwOnLatexError) {
+  return mjAPI
+    .typeset({
+      math: formula,
+      format: mode === 'display' ? 'TeX' : 'inline-TeX',
+      mml: true,
+      svg: true,
+      ex: 9 // Noto Sans 16px
+    })
+    .catch(async errors => {
+      if (throwOnLatexError) {
+        throw errors
+      } else {
+        return { svg: errorSvg, mml: '' }
+      }
+    })
+}
+
+module.exports = renderFormula
