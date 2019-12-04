@@ -451,6 +451,11 @@
   dependencies:
     redux "^4.0.0"
 
+"@types/roman-numerals@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@types/roman-numerals/-/roman-numerals-0.3.0.tgz#6e8ad8e7c0dc6e2d4f4d6aca9df6677f3b8e2282"
+  integrity sha512-sfO4vwDEH5hpm9GHQMkcJaRUWgcrlgJn9YLQv+6l9JBQk+Xe4nx9zfbHgS+3x1sMwZUnFc0sgTY0eAHr9Foqhw==
+
 "@types/sanitize-html@^1.20.2":
   version "1.20.2"
   resolved "https://registry.yarnpkg.com/@types/sanitize-html/-/sanitize-html-1.20.2.tgz#59777f79f015321334e3a9f28882f58c0a0d42b8"
@@ -7057,12 +7062,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-romanize@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/romanize/-/romanize-1.1.1.tgz#c956fa1387641c8372703077a0099cd1b7d70c1c"
-  integrity sha1-yVb6E4dkHINycDB3oAmc0bfXDBw=
-  dependencies:
-    repeat-string "^1.6.1"
+roman-numerals@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/roman-numerals/-/roman-numerals-0.3.2.tgz#907ddf90c64e1b5dce8ed5e8fb0718318f2f26e6"
+  integrity sha1-kH3fkMZOG13OjtXo+wcYMY8vJuY=
 
 rst-selector-parser@^2.2.3:
   version "2.2.3"

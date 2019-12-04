@@ -4,32 +4,40 @@ import ReactDOM from 'react-dom'
 import { Attachments, Exam, parseExam, RestrictedAudioPlaybackStats } from './packages/exam-engine/src'
 import './packages/exam-engine/src/css/main.less'
 import indexedDBExamServerAPI from './packages/exam-engine/src/utils/indexedDBExamServerAPI'
+import { MasteringResult } from '@digabi/mex'
 
-const exams = require(process.env.EXAM_FILENAME!) // tslint:disable-line no-var-requires
+const { original, results }: { original: string; results: MasteringResult[] } = require(process.env.EXAM_FILENAME!)
 
-function LanguageSelector({ languages, children }: { languages: string[]; children: React.ReactNode }) {
+function Toolbar({ hvp, languages, children }: { languages: string[]; hvp: string; children: React.ReactNode }) {
   return (
     <>
-      <ol className="language-selector">
+      <ol className="toolbar">
         {languages.map(language => (
-          <Language language={language} key={language} />
+          <ChangeLanguage language={language} key={language} />
         ))}
+        <CopyHvp hvp={hvp} />
       </ol>
       {children}
     </>
   )
 }
 
-function Language({ language }: { language: string }) {
+function ChangeLanguage({ language }: { language: string }) {
   const onClick = () => {
     Cookie.set('language', language)
     window.location.reload()
   }
   return (
-    <li className="language-selector__language">
-      <a onClick={onClick} href="">
-        {language}
-      </a>
+    <li className="toolbar__item">
+      <button onClick={onClick}>{language}</button>
+    </li>
+  )
+}
+
+function CopyHvp({ hvp }: { hvp: string }) {
+  return (
+    <li className="toolbar__item">
+      <button onClick={() => navigator.clipboard.writeText(hvp)}>Kopioi HVP</button>
     </li>
   )
 }
@@ -37,13 +45,14 @@ function Language({ language }: { language: string }) {
 window.onload = async () => {
   const app = document.getElementById('app')!
 
-  const languages = Object.keys(exams.mastered)
+  const languages = results.map(r => r.language)
   const languageCookie = Cookie.get('language')
   const language = languages.find(lang => lang === languageCookie) || languages[0]
   const deterministicRendering = !!process.env.DETERMINISTIC_RENDERING
 
   if (language) {
-    const doc = parseExam(exams.mastered[language], deterministicRendering)
+    const { xml, hvp } = results.find(r => r.language === language)!
+    const doc = parseExam(xml, deterministicRendering)
 
     const Root = location.pathname.startsWith('/attachments') ? Attachments : Exam
     const attachmentsURL = '/attachments/'
@@ -60,7 +69,7 @@ window.onload = async () => {
     document.body.style.backgroundColor = Root === Exam ? '#e0f4fe' : '#f0f0f0'
 
     ReactDOM.render(
-      <LanguageSelector {...{ languages, selectedLanguage: language }}>
+      <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
         <Root
           {...{
             doc,
@@ -73,7 +82,7 @@ window.onload = async () => {
             examServerApi
           }}
         />
-      </LanguageSelector>,
+      </Toolbar>,
       app,
       () => {
         const maybeScrollY = localStorage.getItem(scrollKey)
@@ -86,7 +95,7 @@ window.onload = async () => {
       }
     )
   } else {
-    const sourceDoc = parseExam(exams.original, deterministicRendering)
+    const sourceDoc = parseExam(original, deterministicRendering)
     const root = document.importNode(sourceDoc.documentElement, true)
     app.appendChild(root)
   }

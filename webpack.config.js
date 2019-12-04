@@ -10,7 +10,6 @@ module.exports = function(env) {
     path.resolve(__dirname, './packages/mexamples/MexDocumentation/MexDocumentation.xml')
   const attachmentsDirectory = path.join(path.dirname(examFilename), 'attachments')
   const examLanguage = env && env.EXAM_LANGUAGE
-  const generateGradingStructure = env && env.GENERATE_GRADING_STRUCTURE
   const deterministicRendering = env && env.DETERMINISTIC_RENDERING
   const isOffline = env != null && env.OFFLINE != null
   const transpileOnly = process.env.TYPECHECK == null
@@ -24,7 +23,6 @@ module.exports = function(env) {
       'process.env.NODE_ENV': JSON.stringify(transpileOnly ? 'production' : 'development'),
       'process.env.EXAM_FILENAME': JSON.stringify(examFilename),
       'process.env.EXAM_LANGUAGE': JSON.stringify(examLanguage),
-      'process.env.GENERATE_GRADING_STRUCTURE': JSON.stringify(generateGradingStructure),
       'process.env.DETERMINISTIC_RENDERING': deterministicRendering,
       'process.env.CAS_COUNTDOWN_DURATION_SECONDS': JSON.stringify(Number(env.CAS_COUNTDOWN_DURATION_SECONDS))
     })
@@ -78,7 +76,7 @@ module.exports = function(env) {
           use: [
             {
               loader: path.resolve(__dirname, 'exam-loader.js'),
-              options: { examLanguage, generateGradingStructure }
+              options: { examLanguage }
             }
           ]
         },

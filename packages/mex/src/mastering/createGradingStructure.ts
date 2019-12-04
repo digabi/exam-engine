@@ -2,7 +2,7 @@ import { Element } from 'libxmljs2'
 import { getAttribute, getNumericAttribute } from './utils'
 import _ from 'lodash'
 
-interface GradingStructure {
+export interface GradingStructure {
   questions: GradingStructureQuestion[]
 }
 
@@ -33,11 +33,6 @@ function mkTextQuestion(answer: Element): TextQuestion {
   const id = getNumericAttribute('question-id', answer)!
   const displayNumber = getAttribute('display-number', answer)!
   const maxScore = getNumericAttribute('max-score', answer)!
-
-  if (!id) {
-    console.log(answer.toString())
-    console.log(answer.parent().toString())
-  }
 
   return {
     id,

@@ -1,8 +1,7 @@
 const path = require('path')
 const uuid = require('uuid')
 const loaderUtils = require('loader-utils')
-const _ = require('lodash')
-const { getMediaMetadataFromLocalFile, mastering } = require('@digabi/mex')
+const { getMediaMetadataFromLocalFile, masterExam } = require('@digabi/mex')
 
 function stringifyModule(obj, attachments = []) {
   const imports = attachments.map(attachment => `require('./attachments/${attachment.filename}')`).join('\n')
@@ -16,35 +15,16 @@ module.exports = async function(original) {
   const getMediaMetadata = getMediaMetadataFromLocalFile(resolveAttachment)
   const UUID = uuid.v4()
   const generateUuid = () => UUID
-  const { examLanguage, generateGradingStructure } = loaderUtils.getOptions(this)
+  const { examLanguage } = loaderUtils.getOptions(this)
 
   try {
     if (examLanguage) {
-      const { xml, attachments } = await mastering.masterExamForLanguage(
-        original,
-        examLanguage,
-        generateUuid,
-        getMediaMetadata,
-        false,
-        false,
-        undefined,
-        false,
-        generateGradingStructure
-      )
+      const results = await masterExam(original, generateUuid, getMediaMetadata)
+      const { xml, attachments } = results.find(result => result.language === examLanguage)
       callback(null, stringifyModule(xml, attachments))
     } else {
-      const results = await mastering.masterExam(
-        original,
-        generateUuid,
-        getMediaMetadata,
-        false,
-        true,
-        undefined,
-        false,
-        generateGradingStructure
-      )
-      const mastered = _.fromPairs(results.map(({ language, xml }) => [language, xml]))
-      const module = { original, mastered }
+      const results = await masterExam(original, generateUuid, getMediaMetadata)
+      const module = { original, results }
 
       callback(null, stringifyModule(module))
     }
