@@ -51,6 +51,7 @@ export const sv_FI: Translations = {
   'answer-length_plural': 'Svarets längd: {{count}} tecken.',
   'answer-length': 'Svarets längd: {{count}} tecken.',
   'previous-answer-versions': 'Tidigare utkast till svar',
+  'zoom-in': 'Förstora',
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.

@@ -54,6 +54,7 @@ export const fi_FI = {
   'answer-length': 'Vastauksen pituus: {{count}} merkki.',
   'answer-length_plural': 'Vastauksen pituus: {{count}} merkkiä.',
   'previous-answer-versions': 'Aiemmat vastausluonnokset',
+  'zoom-in': 'Suurenna',
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.
