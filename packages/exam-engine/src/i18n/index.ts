@@ -2,6 +2,8 @@ import i18n from 'i18next'
 import * as _ from 'lodash-es'
 import { initReactI18next } from 'react-i18next'
 import { A_E } from './A_E'
+import { BA } from './BA'
+import { CA } from './CA'
 import { EA } from './EA'
 import { FA } from './FA'
 import { fi_FI } from './fi-FI'
@@ -17,10 +19,10 @@ import { Z } from './Z'
 
 const examSpecificTranslations = {
   A_E,
-  BA: sv_FI,
-  BB: sv_FI,
-  CA: fi_FI,
-  CB: fi_FI,
+  BA,
+  BB: BA,
+  CA,
+  CB: CA,
   EA,
   EC: EA,
   DC: Z,
