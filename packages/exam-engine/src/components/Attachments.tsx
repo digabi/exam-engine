@@ -41,7 +41,7 @@ function Attachments({}: ExamProps) {
           <DocumentTitle id="title">
             {renderChildNodes(examTitle)}
             {examTitle.textContent!.includes(',') ? '; ' : ', '}
-            {t('material').toLowerCase()}
+            {t('attachments-page-title')}
           </DocumentTitle>
         )}
         <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
