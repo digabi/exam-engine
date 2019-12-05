@@ -158,6 +158,8 @@ You can use grep to run subset of tests. Note: Run tests using `make` commands f
 $ yarn browser-tests:dev --grep "MexDocumentation"
 ```
 
+Travis CI runs tests on all branches and pull requests in https://travis-ci.org/digabi/exam-engine
+
 ## npm releases
 Login to npm first with digabi user.
 Makefile has commands for npm releases that take version as a parameter and will
