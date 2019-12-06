@@ -1550,6 +1550,11 @@
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.03);
 }
+.e-exam .e-illustration-right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
 @media print {
   html {
     font-size: 12px;
@@ -1584,11 +1589,6 @@
 }
 .e-exam .notification--inline {
   display: inline-block;
-}
-.e-exam .e-illustration-right {
-  float: right;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
 }
 .rich-text-editor-overlay,
 .rich-text-editor-new-equation {
