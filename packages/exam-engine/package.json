@@ -21,7 +21,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@types/classnames": "^2.2.8",
-    "@types/enzyme": "^3.10.3",
+    "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/fontfaceobserver": "^0.0.6",
     "@types/lodash-es": "^4.17.3",
