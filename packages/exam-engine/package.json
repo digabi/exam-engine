@@ -34,7 +34,7 @@
     "@types/sinon": "^7.5.1",
     "@types/webpack": "^4.41.0",
     "@types/webpack-dev-server": "^3.9.0",
-    "baconjs": "^3.0.11",
+    "baconjs": "^3.0.12",
     "classnames": "^2.2.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.1",
