@@ -1,7 +1,9 @@
+import { queryAll } from '../dom-utils'
+
 export default function parseExam(examXml: string, deterministicRendering: boolean = false): XMLDocument {
   const doc = new DOMParser().parseFromString(examXml, 'application/xml')
   if (!deterministicRendering) {
-    Array.from(doc.querySelectorAll('choice-answer, dropdown-answer'))
+    queryAll(doc.documentElement, ['choice-answer', 'dropdown-answer'])
       .filter(e => e.getAttribute('ordering') !== 'fixed')
       .forEach(e => randomizeChildElementOrder(e))
   }

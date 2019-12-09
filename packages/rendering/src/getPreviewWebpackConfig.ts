@@ -14,7 +14,6 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
     plugins: [
       new webpack.DefinePlugin({
         'process.env.EXAM_FILENAME': JSON.stringify(examFilename),
-        'process.env.DETERMINISTIC_RENDERING': JSON.stringify(options.deterministicRendering),
         'process.env.CAS_COUNTDOWN_DURATION_SECONDS': Number(options.casCountdownDurationSeconds)
       })
     ],

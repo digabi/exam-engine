@@ -10,7 +10,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   let close: CloseFunction
 
   beforeAll(async () => {
-    ;[url, close] = await previewExam(resolveExam('A_X/A_X.xml'), { deterministicRendering: true })
+    ;[url, close] = await previewExam(resolveExam('A_X/A_X.xml'))
     page = await createPage()
   })
 

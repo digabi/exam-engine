@@ -1,5 +1,5 @@
 import React from 'react'
-import { findChildElementByLocalName, getNumericAttribute, parentElements } from '../dom-utils'
+import { closest, findChildElement, getNumericAttribute, parentElements, queryAll } from '../dom-utils'
 import { ExamComponentProps } from './types'
 import { withContext } from './withContext'
 
@@ -15,16 +15,16 @@ export interface QuestionContext {
 export const QuestionContext = React.createContext<QuestionContext>({} as QuestionContext)
 
 export const withQuestionContext = withContext<QuestionContext, ExamComponentProps>(QuestionContext, ({ element }) => {
-  const childQuestions = Array.from(element.querySelectorAll('question')).filter(
-    childQuestion => childQuestion.parentElement!.closest('question') === element
+  const childQuestions = queryAll(element, 'question').filter(
+    childQuestion => closest(childQuestion.parentElement!, 'question') === element
   )
 
   return {
     displayNumber: element.getAttribute('display-number')!,
-    hasExternalMaterial: findChildElementByLocalName(element, 'external-material') != null,
+    hasExternalMaterial: findChildElement(element, 'external-material') != null,
     maxAnswers: getNumericAttribute(element, 'max-answers'),
     maxScore: getNumericAttribute(element, 'max-score')!,
-    level: parentElements(element).filter(parent => parent.localName === 'question').length,
+    level: parentElements(element, 'question').length,
     childQuestions
   }
 })

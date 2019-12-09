@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
+import { closest, queryAll } from '../dom-utils'
 import { ExamContext } from './ExamContext'
 import Reference from './Reference'
 import Section from './Section'
@@ -10,8 +11,8 @@ const renderChildNodes = createRenderChildNodes({})
 
 function References(_: ExamComponentProps) {
   const { root } = useContext(ExamContext)
-  const internalReferences = Array.from(root.querySelectorAll('reference')).filter(
-    reference => reference.closest('external-material') == null
+  const internalReferences = queryAll(root, 'reference').filter(
+    reference => closest(reference, 'external-material') == null
   )
 
   return internalReferences.length > 0 ? (
@@ -20,11 +21,11 @@ function References(_: ExamComponentProps) {
         <Translation>{t => t('references.heading')}</Translation>
       </h2>
       <ol className="e-list-data e-color-darkgrey e-light">
-        {internalReferences.map(reference => {
-          const question = reference.closest('question')!
+        {internalReferences.map((reference, i) => {
+          const question = closest(reference, 'question')!
           const displayNumber = question.getAttribute('display-number')!
           return (
-            <li data-list-number={displayNumber} key={displayNumber}>
+            <li data-list-number={displayNumber} key={displayNumber + i}>
               <Reference element={reference} renderChildNodes={renderChildNodes} />
             </li>
           )

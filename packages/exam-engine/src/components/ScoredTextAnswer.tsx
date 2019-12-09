@@ -1,12 +1,12 @@
 import React from 'react'
-import { findChildElementByLocalName } from '../dom-utils'
+import { findChildElement } from '../dom-utils'
 import TextAnswer from './TextAnswer'
 import { ExamComponentProps } from './types'
 
 function ScoredTextAnswer(props: ExamComponentProps) {
   const { element, renderChildNodes } = props
   const displayNumber = element.getAttribute('display-number')!
-  const hint = findChildElementByLocalName(element, 'hint')
+  const hint = findChildElement(element, 'hint')
   const textAnswer = <TextAnswer {...props} />
 
   return hint ? (

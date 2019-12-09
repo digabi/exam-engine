@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
 import * as richTextEditor from 'rich-text-editor/dist/rich-text-editor'
-import i18n from '../i18n'
+import { ExamContext } from './ExamContext'
 import { AnswerError, RichTextAnswer as RichTextAnswerT } from './types'
 
 interface Props {
@@ -15,7 +15,9 @@ interface Props {
   saveScreenshot: (screenshot: Blob) => Promise<string>
 }
 
-export default class RichTextAnswer extends React.PureComponent<Props> {
+export default class RichTextAnswer extends React.PureComponent<Props, {}> {
+  static contextType = ExamContext
+  declare context: React.ContextType<typeof ExamContext>
   private ref: React.RefObject<HTMLDivElement>
   private lastHTML: string
 
@@ -37,7 +39,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
       richTextEditor.makeRichText(
         current,
         {
-          locale: i18n.language.slice(0, 2).toUpperCase(),
+          locale: this.context.language.slice(0, 2).toUpperCase(),
           screenshot: {
             saver: ({ data, type }: any) =>
               saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch(err => {

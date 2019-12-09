@@ -1,13 +1,11 @@
 import path from 'path'
 import webpack from 'webpack'
-import { RenderingOptions } from '.'
 import { getWebpackConfig } from './getWebpackConfig'
 
 export function getOfflineWebpackConfig(
   examFilename: string,
   outputDirectory: string,
-  examLanguage: string,
-  options: RenderingOptions
+  examLanguage: string
 ): webpack.Configuration {
   const attachmentsDirectory = path.resolve(path.dirname(examFilename), 'attachments')
 
@@ -24,8 +22,7 @@ export function getOfflineWebpackConfig(
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': JSON.stringify('production'),
           'process.env.EXAM_FILENAME': JSON.stringify(examFilename),
-          'process.env.EXAM_LANGUAGE': JSON.stringify(examLanguage),
-          'process.env.DETERMINISTIC_RENDERING': JSON.stringify(options.deterministicRendering)
+          'process.env.EXAM_LANGUAGE': JSON.stringify(examLanguage)
         })
       ]
     },

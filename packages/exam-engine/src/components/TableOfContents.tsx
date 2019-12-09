@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Translation, useTranslation } from 'react-i18next'
 import { createRenderChildNodes, RenderOptions } from '../createRenderChildNodes'
-import { findChildElementByLocalName } from '../dom-utils'
+import { findChildElement } from '../dom-utils'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
 import { ExamContext } from './ExamContext'
@@ -11,7 +11,7 @@ import { ExamComponentProps } from './types'
 
 function TOCSection({ element }: ExamComponentProps) {
   const { maxAnswers, minAnswers, displayNumber, childQuestions } = useContext(SectionContext)
-  const sectionTitle = findChildElementByLocalName(element, 'section-title')
+  const sectionTitle = findChildElement(element, 'section-title')
 
   return (
     <li>
@@ -66,8 +66,8 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
 function TOCQuestion({ element }: ExamComponentProps) {
   const { attachmentsURL } = useContext(ExamContext)
   const { level, displayNumber, maxScore } = useContext(QuestionContext)
-  const hasExternalAttachments = findChildElementByLocalName(element, 'external-material') != null
-  const questionTitle = findChildElementByLocalName(element, 'question-title')
+  const hasExternalAttachments = findChildElement(element, 'external-material') != null
+  const questionTitle = findChildElement(element, 'question-title')
 
   return level === 0 ? (
     <li data-list-number={displayNumber}>

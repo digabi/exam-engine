@@ -11,7 +11,7 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   let close: CloseFunction
 
   beforeAll(async () => {
-    ;[url, close] = await previewExam(resolveExam('EA/EA.xml'), { deterministicRendering: true })
+    ;[url, close] = await previewExam(resolveExam('EA/EA.xml'))
     page = await createPage()
   })
 

@@ -1,11 +1,20 @@
 /** @jest-environment jsdom */
 
+import { i18n } from 'i18next'
 import React from 'react'
+import { I18nextProvider } from 'react-i18next'
 import TestRenderer from 'react-test-renderer'
 import AnsweringInstructions, { AnsweringInstructionProps } from '../src/components/AnsweringInstructions'
 import '../src/i18n'
+import { initI18n } from '../src/i18n'
 
 describe('<AnsweringInstructions />', () => {
+  let i18n: i18n
+
+  beforeAll(() => {
+    i18n = initI18n('fi-FI', null, null)
+  })
+
   describe('question', () => {
     it('numerals', () => {
       assertRendering({
@@ -91,7 +100,11 @@ describe('<AnsweringInstructions />', () => {
   })
 
   function assertRendering(props: AnsweringInstructionProps) {
-    const container = TestRenderer.create(<AnsweringInstructions {...props} />)
+    const container = TestRenderer.create(
+      <I18nextProvider i18n={i18n}>
+        <AnsweringInstructions {...props} />
+      </I18nextProvider>
+    )
     expect(container.toJSON()).toMatchSnapshot()
   }
 

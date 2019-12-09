@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { getNumericAttribute } from '../dom-utils'
+import { closest, getNumericAttribute } from '../dom-utils'
 import { ExamContext } from './ExamContext'
 import ResponsiveMediaContainer from './ResponsiveMediaContainer'
 import { ExamComponentProps } from './types'
@@ -21,10 +21,10 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           width,
           height,
           caption,
-          bordered: caption != null || element.closest('choice-answer') != null
+          bordered: caption != null || closest(element, 'choice-answer') != null
         }}
       >
-        {element.closest('choice-answer, hint') != null ? (
+        {closest(element, 'choice-answer, hint') != null ? (
           <Img />
         ) : (
           <a title={t('zoom-in')} href={resolveAttachment(src)} target="original-picture" className="e-zoomable">

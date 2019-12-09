@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 import { connect } from 'react-redux'
-import { getNumericAttribute, mapChildElements } from '../dom-utils'
+import { getNumericAttribute, mapChildElements, query } from '../dom-utils'
 import { AppState } from '../store'
 import * as actions from '../store/answers/actions'
 import AnswerToolbar from './AnswerToolbar'
@@ -39,7 +39,7 @@ function ChoiceAnswerOption({
       <label
         className={classNames('e-columns', {
           'e-columns--inline':
-            element.querySelector('image, video') == null /* Force full width for options containing responsive media */
+            query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */
         })}
       >
         <input

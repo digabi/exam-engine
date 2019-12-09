@@ -37,27 +37,31 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
 
   const labelRef = useRef<HTMLDivElement>(null)
   const menuRef = useRef<HTMLElement | null>(null)
-  // Force a re-measure if element changes or fonts are loaded after this
-  // component has been rendered.
-  const [, setFontsLoaded] = useState(fonts.loaded)
-  fonts.ready.then(() => setFontsLoaded(true))
   const [measuring, setMeasuring] = useState(true)
-  useEffect(() => setMeasuring(true), [element])
 
-  useEffect(() => {
-    if (!process.env.DETERMINISTIC_RENDERING && measuring) {
-      const menuEl = menuRef.current!
-      const labelEl = labelRef.current!
-      const preferredWidth = _.max(mapChildElements(menuEl, el => el.firstElementChild!.scrollWidth))!
+  if (window.name !== 'nodejs') {
+    // Force a re-measure if element changes or fonts are loaded after this
+    // component has been rendered.
+    const [, setFontsLoaded] = useState(fonts.loaded)
+    fonts.ready.then(() => setFontsLoaded(true))
 
-      // Run the DOM mutations on the next frame to avoid layout trashing in exams with lots of dropdowns.
-      const requestId = requestAnimationFrame(() => {
-        labelEl.style.width = preferredWidth + menuBorderWidthPx + roundingErrorCompensationPx + 'px'
-        setMeasuring(false)
-      })
-      return () => cancelAnimationFrame(requestId)
-    }
-  })
+    useEffect(() => setMeasuring(true), [element])
+
+    useEffect(() => {
+      if (measuring && menuRef.current && labelRef.current) {
+        const menuEl = menuRef.current
+        const labelEl = labelRef.current
+        const preferredWidth = _.max(mapChildElements(menuEl, el => el.firstElementChild!.scrollWidth))!
+
+        // Run the DOM mutations on the next frame to avoid layout trashing in exams with lots of dropdowns.
+        const requestId = requestAnimationFrame(() => {
+          labelEl.style.width = preferredWidth + menuBorderWidthPx + roundingErrorCompensationPx + 'px'
+          setMeasuring(false)
+        })
+        return () => cancelAnimationFrame(requestId)
+      }
+    })
+  }
 
   const items: Item[] = [noAnswer, ...element.children]
 
@@ -104,9 +108,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           <div
             {...getMenuProps({
               className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
-              ref: el => {
-                menuRef.current = el // Use a function ref until https://github.com/downshift-js/downshift/issues/713 is resolved
-              }
+              ref: menuRef
             })}
           >
             {items.map((item, i) => (

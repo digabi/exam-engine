@@ -9,17 +9,13 @@ import { getPreviewWebpackConfig } from './getPreviewWebpackConfig'
 
 export interface RenderingOptions {
   casCountdownDurationSeconds?: number
-  deterministicRendering?: boolean
   openFirefox?: boolean
 }
 
 export type CloseFunction = () => Promise<void>
 
-export async function previewExam(examFile: string, options?: RenderingOptions): Promise<[string, CloseFunction]> {
-  const config = getPreviewWebpackConfig(examFile, {
-    deterministicRendering: false,
-    ...options
-  })
+export async function previewExam(examFile: string, options: RenderingOptions = {}): Promise<[string, CloseFunction]> {
+  const config = getPreviewWebpackConfig(examFile, options)
   const compiler = webpack(config)
   const webpackDevServer = new WebpackDevServer(compiler, config.devServer)
 
@@ -37,11 +33,7 @@ export async function previewExam(examFile: string, options?: RenderingOptions):
   })
 }
 
-export async function createOfflineExam(
-  examFile: string,
-  outputDirectory: string,
-  options?: RenderingOptions
-): Promise<string[]> {
+export async function createOfflineExam(examFile: string, outputDirectory: string): Promise<string[]> {
   const source = await fs.readFile(examFile, 'utf-8')
   const doc = parseExam(source)
   const languages = doc
@@ -56,10 +48,7 @@ export async function createOfflineExam(
       outputDirectory,
       `${path.basename(path.dirname(examFile))}_offline_${language}`
     )
-    const config = getOfflineWebpackConfig(examFile, examVersionDirectory, language, {
-      deterministicRendering: true,
-      ...options
-    })
+    const config = getOfflineWebpackConfig(examFile, examVersionDirectory, language)
     await new Promise<string>((resolve, reject) => {
       webpack(config, (err, stats) => {
         if (err || stats.hasErrors()) {

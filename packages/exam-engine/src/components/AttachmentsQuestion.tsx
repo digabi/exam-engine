@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { RenderOptions } from '../createRenderChildNodes'
-import { findChildElementByLocalName, parentElements } from '../dom-utils'
+import { findChildElement, parentElements } from '../dom-utils'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import Section from './Section'
 import { ExamComponentProps } from './types'
@@ -22,7 +22,7 @@ function isTopmostQuestionContainingExternalMaterial(element: Element, hasExtern
     hasExternalMaterial &&
     (level === 0 ||
       parentElements(element).every(parent =>
-        parent.localName === 'question' ? !findChildElementByLocalName(parent, 'external-material') : true
+        parent.localName === 'question' ? !findChildElement(parent, 'external-material') : true
       ))
   )
 }

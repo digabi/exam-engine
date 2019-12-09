@@ -1,5 +1,5 @@
 import React from 'react'
-import { getNumericAttribute } from '../dom-utils'
+import { getNumericAttribute, queryAll } from '../dom-utils'
 import { ExamProps } from './Exam'
 import { ExamServerAPI } from './types'
 import { withContext } from './withContext'
@@ -35,7 +35,7 @@ export const withExamContext = withContext<ExamContext, ExamProps>(
       language,
       maxAnswers: getNumericAttribute(root, 'max-answers'),
       maxScore: getNumericAttribute(root, 'max-score'),
-      numberOfSections: root.querySelectorAll('section').length
+      numberOfSections: queryAll(root, 'section').length
     }
   }
 )

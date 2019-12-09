@@ -1,6 +1,6 @@
 import React from 'react'
 import { Translation } from 'react-i18next'
-import { findChildElementByLocalName, NBSP } from '../dom-utils'
+import { closest, findChildElement, NBSP } from '../dom-utils'
 import * as actions from '../store/answers/actions'
 import { AnswerError, ExamAnswer } from './types'
 
@@ -46,8 +46,8 @@ function AnswerToolbar({
                   // but the current element we're at is text-answer. So we have to find the containing question
                   // and its question-title element (which is specified to be the first child element of the question).
                   if (selectAnswerVersion) {
-                    const question = element.closest('question')!
-                    const questionTitle = findChildElementByLocalName(question, 'question-title')!
+                    const question = closest(element, 'question')!
+                    const questionTitle = findChildElement(question, 'question-title')!
                     selectAnswerVersion(answer.questionId, questionTitle.textContent!)
                   }
                 }}

@@ -1,8 +1,10 @@
+import { i18n } from 'i18next'
 import React, { PureComponent } from 'react'
+import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { Store } from 'redux'
 import { createRenderChildNodes } from '../createRenderChildNodes'
-import { findChildElementByLocalName } from '../dom-utils'
+import { findChildElement } from '../dom-utils'
 import { initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
 import initializeStore, { AppState } from '../store'
@@ -89,10 +91,13 @@ const renderChildNodes = createRenderChildNodes({
 export class Exam extends PureComponent<ExamProps> {
   private store: Store<AppState>
   private ref: React.RefObject<HTMLDivElement>
+  private i18n: i18n
 
   constructor(props: ExamProps) {
     super(props)
     this.ref = React.createRef()
+    const root = props.doc.documentElement
+    this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
     this.store = initializeStore(
       props.casStatus,
       props.answers,
@@ -108,38 +113,38 @@ export class Exam extends PureComponent<ExamProps> {
   render() {
     const { doc, language } = this.props
     const root = doc.documentElement
-    const examTitle = findChildElementByLocalName(root, 'exam-title')
-    const examInstruction = findChildElementByLocalName(root, 'exam-instruction')
-    const tableOfContents = findChildElementByLocalName(root, 'table-of-contents')
-    const externalMaterial = findChildElementByLocalName(root, 'external-material')
+    const examTitle = findChildElement(root, 'exam-title')
+    const examInstruction = findChildElement(root, 'exam-instruction')
+    const tableOfContents = findChildElement(root, 'table-of-contents')
+    const externalMaterial = findChildElement(root, 'external-material')
     const examStylesheet = root.getAttribute('exam-stylesheet')
-
-    initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
 
     return (
       <Provider store={this.store}>
-        <ExamContext.Consumer>
-          {({ date, dateTimeFormatter, resolveAttachment }) => (
-            <main className="e-exam" lang={language} ref={this.ref}>
-              <React.StrictMode />
-              {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-              <Section aria-labelledby="title">
-                {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-                {date && (
-                  <p>
-                    <strong>{dateTimeFormatter.format(date)}</strong>
-                  </p>
-                )}
-                {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
-                {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
-                {externalMaterial && (
-                  <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                )}
-              </Section>
-              {renderChildNodes(root)}
-            </main>
-          )}
-        </ExamContext.Consumer>
+        <I18nextProvider i18n={this.i18n}>
+          <ExamContext.Consumer>
+            {({ date, dateTimeFormatter, resolveAttachment }) => (
+              <main className="e-exam" lang={language} ref={this.ref}>
+                <React.StrictMode />
+                {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+                <Section aria-labelledby="title">
+                  {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+                  {date && (
+                    <p>
+                      <strong>{dateTimeFormatter.format(date)}</strong>
+                    </p>
+                  )}
+                  {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+                  {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
+                  {externalMaterial && (
+                    <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                  )}
+                </Section>
+                {renderChildNodes(root)}
+              </main>
+            )}
+          </ExamContext.Consumer>
+        </I18nextProvider>
       </Provider>
     )
   }

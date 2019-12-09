@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
-import { mapChildElements } from '../dom-utils'
+import { mapChildElements, query } from '../dom-utils'
 import { url } from '../url'
 import AttachmentLinkAnchor from './AttachmentLinkAnchor'
 import { ExamContext } from './ExamContext'
@@ -10,7 +10,7 @@ function AttachmentLinks({ element }: ExamComponentProps) {
   const { root, attachmentsURL } = useContext(ExamContext)
   const displayNumbers = mapChildElements(element, attachmentLink => {
     const name = attachmentLink.getAttribute('ref')!
-    const attachment = root.querySelector(`attachment[name="${name}"]`)!
+    const attachment = query(root, el => el.localName === 'attachment' && el.getAttribute('name') === name)!
     return attachment.getAttribute('display-number')!
   })
   const groupedDisplayNumbers = splitWhen(displayNumbers, (displayNumber, i) => {

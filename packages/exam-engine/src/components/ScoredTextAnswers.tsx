@@ -2,15 +2,15 @@ import classNames from 'classnames'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { RenderChildNodes } from '../createRenderChildNodes'
-import { findChildElementByLocalName, getNumericAttribute, NBSP } from '../dom-utils'
+import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
 import { AppState } from '../store'
 import { Score } from './Score'
 import { ExamComponentProps, QuestionId } from './types'
 
 function ScoredTextAnswers({ element, renderChildNodes }: ExamComponentProps) {
   const focusedQuestionId = useSelector((state: AppState) => state.answers.focusedQuestionId)
-  const scoredTextAnswersWithHints = Array.from(element.querySelectorAll('scored-text-answer')).filter(
-    scoredTextAnswer => findChildElementByLocalName(scoredTextAnswer, 'hint') != null
+  const scoredTextAnswersWithHints = queryAll(element, 'scored-text-answer').filter(
+    scoredTextAnswer => findChildElement(scoredTextAnswer, 'hint') != null
   )
 
   return (
@@ -40,7 +40,7 @@ function ScoredTextAnswerHint({
   const questionId = getNumericAttribute(scoredTextAnswer, 'question-id')
   const displayNumber = scoredTextAnswer.getAttribute('display-number')!
   const maxScore = getNumericAttribute(scoredTextAnswer, 'max-score')!
-  const hint = findChildElementByLocalName(scoredTextAnswer, 'hint')!
+  const hint = findChildElement(scoredTextAnswer, 'hint')!
 
   return (
     <p

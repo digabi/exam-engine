@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
+import { query } from '../dom-utils'
 import { url } from '../url'
 import AttachmentLinkAnchor from './AttachmentLinkAnchor'
 import { ExamContext } from './ExamContext'
@@ -8,7 +9,7 @@ import { ExamComponentProps } from './types'
 function AttachmentLink({ element }: ExamComponentProps) {
   const name = element.getAttribute('ref')!
   const { root, attachmentsURL } = useContext(ExamContext)
-  const attachment = root.querySelector(`attachment[name="${name}"]`)!
+  const attachment = query(root, el => el.localName === 'attachment' && el.getAttribute('name') === name)!
   const displayNumber = attachment.getAttribute('display-number')!
   const isShort = element.getAttribute('type') === 'short'
   const href = url(attachmentsURL, { hash: displayNumber })

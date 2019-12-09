@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import { I18nextProvider, Translation } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
-import { findChildElementByLocalName } from '../dom-utils'
+import { findChildElement } from '../dom-utils'
 import { initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
 import AttachmentsExternalMaterial from './AttachmentsExternalMaterial'
@@ -23,34 +23,35 @@ const renderChildNodes = createRenderChildNodes({
 
 function Attachments({}: ExamProps) {
   const { root, language, date, dateTimeFormatter, resolveAttachment } = useContext(ExamContext)
-  const examTitle = findChildElementByLocalName(root, 'exam-title')!
+  const examTitle = findChildElement(root, 'exam-title')!
   const examStylesheet = root.getAttribute('exam-stylesheet')
-  const externalMaterial = findChildElementByLocalName(root, 'external-material')
+  const externalMaterial = findChildElement(root, 'external-material')
 
-  initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-  const { t } = useTranslation()
+  const i18n = initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
 
   useEffect(scrollToHash, [])
 
   return (
-    <main className="e-exam attachments">
-      <React.StrictMode />
-      {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-      <Section aria-labelledby="title">
-        {examTitle && (
-          <DocumentTitle id="title">
-            {renderChildNodes(examTitle)}
-            {examTitle.textContent!.includes(',') ? '; ' : ', '}
-            {t('material').toLowerCase()}
-          </DocumentTitle>
-        )}
-        <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
-        {externalMaterial && (
-          <AttachmentsExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-        )}
-      </Section>
-      {renderChildNodes(root)}
-    </main>
+    <I18nextProvider i18n={i18n}>
+      <main className="e-exam attachments">
+        <React.StrictMode />
+        {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+        <Section aria-labelledby="title">
+          {examTitle && (
+            <DocumentTitle id="title">
+              {renderChildNodes(examTitle)}
+              {examTitle.textContent!.includes(',') ? '; ' : ', '}
+              <Translation>{t => t('material').toLowerCase()}</Translation>
+            </DocumentTitle>
+          )}
+          <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
+          {externalMaterial && (
+            <AttachmentsExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+          )}
+        </Section>
+        {renderChildNodes(root)}
+      </main>
+    </I18nextProvider>
   )
 }
 

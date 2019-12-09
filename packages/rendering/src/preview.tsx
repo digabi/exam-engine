@@ -48,10 +48,9 @@ function CopyHvp({ hvp }: { hvp: string }) {
 
 window.onload = async () => {
   const app = document.getElementById('app')!
-  const deterministicRendering = !!process.env.DETERMINISTIC_RENDERING
 
   if (!results) {
-    const sourceDoc = parseExam(original, deterministicRendering)
+    const sourceDoc = parseExam(original, false)
     const root = document.importNode(sourceDoc.documentElement, true)
     return app.appendChild(root)
   }
@@ -62,7 +61,7 @@ window.onload = async () => {
 
   if (language) {
     const { xml, hvp } = results.find(r => r.language === language)!
-    const doc = parseExam(xml, deterministicRendering)
+    const doc = parseExam(xml, false)
 
     const Root = location.pathname.startsWith('/attachments') ? Attachments : Exam
     const attachmentsURL = '/attachments/'

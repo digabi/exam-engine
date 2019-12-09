@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { findChildElementByLocalName } from '../dom-utils'
+import { findChildElement } from '../dom-utils'
 import { ExamContext } from './ExamContext'
 import RenderChildNodes from './RenderChildNodes'
 import { ExamComponentProps } from './types'
@@ -8,7 +8,7 @@ import { ExamComponentProps } from './types'
 function Reference({ element, renderChildNodes }: ExamComponentProps) {
   const { t } = useTranslation()
   function renderWith(localName: string, Component: React.ComponentType<ExamComponentProps>) {
-    const childElement = findChildElementByLocalName(element, localName)
+    const childElement = findChildElement(element, localName)
     return childElement && <Component {...{ element: childElement, renderChildNodes, key: childElement.localName }} />
   }
 
@@ -17,7 +17,7 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
     translationKey: string,
     Component: React.ComponentType<ExamComponentProps>
   ) {
-    const childElement = findChildElementByLocalName(element, localName)
+    const childElement = findChildElement(element, localName)
     return (
       childElement && (
         <React.Fragment key={childElement.localName}>
