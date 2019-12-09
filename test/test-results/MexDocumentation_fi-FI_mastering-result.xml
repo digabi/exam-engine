@@ -2,10 +2,16 @@
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="EA" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="24"><e:exam-title>MEX format documentation</e:exam-title><e:exam-instruction><p>
       This exam describes the MEX XML format.
     </p><p>
-      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
+      For more information about using this format, see
+      <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p><div class="warning-box">
-      Some of the features do not work in <a href="https://oma.abitti.fi/">Abitti</a>. They are documented in warning boxes like this.
-    </div></e:exam-instruction><e:table-of-contents/><e:section display-number="I" max-score="0"><e:section-title>Exam structure</e:section-title><e:question display-number="1." max-score="0"><e:question-title>XML structure</e:question-title><e:question-instruction>Exam structure is described in XML. It can contain also (X)HTML elements.
+      Some of the features do not work in
+      <a href="https://oma.abitti.fi/">Abitti</a>
+      . They are documented in warning boxes like this.
+    </div></e:exam-instruction><e:table-of-contents/><e:external-material><e:attachment display-number="A"><e:attachment-title>Exam-specific external material title</e:attachment-title><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Aspernatur, libero sunt. Eos corporis quam fugiat maiores
+          expedita quidem quaerat, quos voluptatem similique quae cum.
+          Voluptate iste sed facere cum omnis.</p><e:reference><e:author>YTL</e:author></e:reference></e:attachment></e:external-material><e:section display-number="I" max-score="0"><e:section-title>Exam structure</e:section-title><e:question display-number="1." max-score="0"><e:question-title>XML structure</e:question-title><e:question-instruction>Exam structure is described in XML. It can contain also (X)HTML elements.
       </e:question-instruction><div class="tree"><div><strong>
             Exam
             <code>&lt;e:exam&gt;</code>
@@ -49,6 +55,25 @@
               <code>&lt;e:table-of-contents&gt;</code>
             </strong>
             1 element
+          </div>
+          <div><strong>
+              Exam-specific external material
+              <code>&lt;e:external-material&gt;</code>
+            </strong>
+            0-1 elements
+            <p>
+              External material page is constructed based on
+              <code>e:external-material</code>
+              elements
+              defined within
+              <code>e:exam</code>
+              and
+              <code>e:question</code>
+              elements.
+              Contains
+              <code>e:attachment</code>
+              elements.
+            </p>
           </div>
           <div><strong>
               Section
@@ -95,7 +120,7 @@
                 <p>Question instructions can contain HTML elements.</p>
               </div>
               <div><strong>
-                  External material
+                  Question-specific external material
                   <code>&lt;e:external-material&gt;</code>
                 </strong>
                 0-1 elements
@@ -103,13 +128,11 @@
                   External material page is constructed based on
                   <code>e:external-material</code>
                   elements
-                  defined within all
+                  defined within
+                  <code>e:exam</code>
+                  and
                   <code>e:question</code>
-                  elements. Therefore it is always clear what
-                  question external material is part of.
-                  <code>
-                    &lt;e:external-material&gt;
-                  </code>
+                  elements.
                   Contains
                   <code>e:attachment</code>
                   elements.
@@ -187,11 +210,16 @@
           </div>
         </div></div></e:question><e:question display-number="2." max-score="0"><e:question-title>Exam</e:question-title><e:question-instruction><p>
           Top-level exam element.
-        </p></e:question-instruction><table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>exam-schema-version</td><td>Version string</td><td>No</td><td>—</td><td>Schema version, only 0.1 for now</td></tr><tr><td>date</td><td>YYYY-MM-DD</td><td>No</td><td>—</td><td>Exam date</td></tr><tr><td>exam-code</td><td>exam code string</td><td>No</td><td>—</td><td>Exam code used for exam specific translations</td></tr><tr><td>day-code</td><td>exam day code string</td><td>No</td><td>—</td><td>Exam day code used for exam specific translations</td></tr><tr><td>exam-stylesheet</td><td>custom CSS stylesheet file name</td><td>No</td><td>—</td><td>CSS file with this name must exist in attachments directory</td></tr><tr><td>max-answers</td><td>Integer</td><td>No</td><td>No limit</td><td>Maximum number of questions student should answer</td></tr></tbody></table><p><code>exam-code</code> and <code>day-code</code> attributes control exam-specific
+        </p></e:question-instruction><table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>exam-schema-version</td><td>Version string</td><td>No</td><td>—</td><td>Schema version, only 0.1 for now</td></tr><tr><td>date</td><td>YYYY-MM-DD</td><td>No</td><td>—</td><td>Exam date</td></tr><tr><td>exam-code</td><td>exam code string</td><td>No</td><td>—</td><td>Exam code used for exam specific translations</td></tr><tr><td>day-code</td><td>exam day code string</td><td>No</td><td>—</td><td>Exam day code used for exam specific translations</td></tr><tr><td>exam-stylesheet</td><td>custom CSS stylesheet file name</td><td>No</td><td>—</td><td>CSS file with this name must exist in attachments directory</td></tr><tr><td>max-answers</td><td>Integer</td><td>No</td><td>No limit</td><td>Maximum number of questions student should answer</td></tr></tbody></table><p><code>exam-code</code>
+        and
+        <code>day-code</code>
+        attributes control exam-specific
         translations, e.g. the heading text of table of contents, and the exam title if specific
-        <code>e:exam-title</code> element is missing. Currently supported exam and day
+        <code>e:exam-title</code>
+        element is missing. Currently supported exam and day
         code pairs can be found in
-        <a href="https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json">https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json</a>.
+        <a href="https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json">https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json</a>
+        .
       </p><div class="warning-box">
         max-answers is not supported in Abitti grading.
       </div><e:question display-number="2.1." max-score="0"><e:question-title>Example</e:question-title><h4/><pre class="code"><![CDATA[<e:exam
@@ -470,9 +498,15 @@
           displayed on an external material page, the
           <code>e:attachment</code>
           element can be defined
-          as child of an
+          as a child of an
           <code>e:external-material</code>
           element.
+        </p><p><code>e:external-material</code>
+          can be either a child of an
+          <code>e:exam</code>
+          or
+          <code>e:question</code>
+          element, depending on whether the material is exam-specific, or specific to a single question.
         </p></e:question-instruction><table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>String</td><td>No</td><td>–</td><td>
               Name of the material. Used only when material is linked to from
               <code>e:attachment-link</code>
@@ -528,7 +562,23 @@
       <e:note>Free text field</e:note>
     </e:reference>
   </e:attachment>
-</e:external-material>]]></pre><e:external-material><e:attachment name="test-material" display-number="11. A"><e:attachment-title>Title 1</e:attachment-title><p>...HTML code...</p><e:image src="example.jpg" width="999" height="999"/><p>...More HTML code...</p><e:reference><e:author>Matriculation examination board</e:author></e:reference></e:attachment><e:attachment name="another-test-material" display-number="11. B"><e:attachment-title>Title 2</e:attachment-title><e:video src="example1.webm" width="999" height="999"/><e:reference><e:author>Dolor Tempor</e:author><e:title>Qui ullamco non ut proident sit incididunt adipisicing</e:title><e:publisher>Culpa ex</e:publisher><e:publication>MEB web service</e:publication><e:howpublished>Internet service</e:howpublished><e:url>https://www.ylioppilastutkinto.fi/en/matriculation-examination</e:url><e:publication-date>1983-05-09</e:publication-date><e:reference-date>2019-04-01</e:reference-date><e:translator>Travis Translator</e:translator><e:modified-by>Mary Modifier</e:modified-by><e:note>Free text field</e:note></e:reference></e:attachment></e:external-material></e:question><e:question display-number="12." max-score="0"><e:question-title>image</e:question-title><e:question-instruction><code>e:image</code>
+</e:external-material>]]></pre><e:external-material><e:attachment name="test-material" display-number="11. A"><e:attachment-title>Title 1</e:attachment-title><p>...HTML code...</p><e:image src="example.jpg" width="999" height="999"/><p>...More HTML code...</p><e:reference><e:author>Matriculation examination board</e:author></e:reference></e:attachment><e:attachment name="another-test-material" display-number="11. B"><e:attachment-title>Title 2</e:attachment-title><e:video src="example1.webm" width="999" height="999"/><e:reference><e:author>Dolor Tempor</e:author><e:title>Qui ullamco non ut proident sit incididunt adipisicing</e:title><e:publisher>Culpa ex</e:publisher><e:publication>MEB web service</e:publication><e:howpublished>Internet service</e:howpublished><e:url>https://www.ylioppilastutkinto.fi/en/matriculation-examination</e:url><e:publication-date>1983-05-09</e:publication-date><e:reference-date>2019-04-01</e:reference-date><e:translator>Travis Translator</e:translator><e:modified-by>Mary Modifier</e:modified-by><e:note>Free text field</e:note></e:reference></e:attachment></e:external-material><h4>Example of exam-specific external material</h4><pre class="code"><![CDATA[<e:exam ...>
+  ...
+  <e:table-of-contents />
+  <e:external-material>
+    <e:attachment>
+      <e:attachment-title>Exam-specific external material title</e:attachment-title>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Aspernatur, libero sunt. Eos corporis quam fugiat maiores
+          expedita quidem quaerat, quos voluptatem similique quae cum.
+          Voluptate iste sed facere cum omnis.</p>
+      <e:reference>
+        <e:author>YTL</e:author>
+      </e:reference>
+    </e:attachment>
+  </e:external-material>
+  <e:section>
+    ...]]></pre></e:question><e:question display-number="12." max-score="0"><e:question-title>image</e:question-title><e:question-instruction><code>e:image</code>
         element adds an image to the exam. It can be used anywhere where
         HTML is allowed.
       </e:question-instruction><table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>String</td><td>Yes</td><td>–</td><td>Filename of the image</td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when image should be included only in certain language version.
@@ -986,7 +1036,8 @@ consequat laboris adipisicing duis proident proident amet.
   </tbody>
 </table>]]></pre><div class="example"><table class="e-table e-width-full"><caption>Table title</caption><thead><tr><th class="e-pad-l-8">First column (padding to the left)</th><th class="e-text-center">Second column (centered)</th><th class="e-text-right">Third column (aligned to the right)</th></tr></thead><tbody><tr><td class="e-pad-l-8">Lorem</td><td class="e-text-center">Ipsum</td><td class="e-text-right">Dolor</td></tr></tbody></table></div><p>
         If a table is very wide, you can prevent it from overflowing and make
-        it scrollable by wrapping it in an <code>.e-scrollable-x</code>
+        it scrollable by wrapping it in an
+        <code>.e-scrollable-x</code>
         element.
       </p><pre class="code"><![CDATA[<div class="e-scrollable-x">
   <table class="e-table">
@@ -1029,5 +1080,6 @@ consequat laboris adipisicing duis proident proident amet.
   <div class="e-column">e-column</div>
   <div class="e-column e-column--narrow">e-column--narrow</div>
 </div>]]></pre><div class="example grid-example"><div class="e-columns"><div class="e-column block">e-column</div><div class="e-column e-column--narrow block">e-column--narrow</div></div></div></e:question></e:section><e:references/><e:exam-footer><p>
-      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
+      For more information about using this format, see
+      <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p><p><a href="https://abitti.dev/abitti-trademark.html">Use of Abitti Trademark policy</a></p></e:exam-footer></e:exam>
