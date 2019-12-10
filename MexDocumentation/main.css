@@ -1500,6 +1500,36 @@
   text-decoration: underline;
   color: #288199;
 }
+.e-exam .e-illustration-right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+@media print {
+  html {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .e-exam {
+    max-width: none !important;
+    color: #000;
+  }
+  button {
+    background: none !important;
+    color: #000 !important;
+  }
+  section {
+    padding: 0 !important;
+  }
+  .beta-ribbon {
+    display: none;
+  }
+  .rich-text-editor-tools {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
 .e-exam .e-list-plain {
   list-style: none;
 }
@@ -1550,36 +1580,6 @@
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.03);
 }
-.e-exam .e-illustration-right {
-  float: right;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-@media print {
-  html {
-    font-size: 12px;
-    line-height: 18px;
-  }
-  .e-exam {
-    max-width: none !important;
-    color: #000;
-  }
-  button {
-    background: none !important;
-    color: #000 !important;
-  }
-  section {
-    padding: 0 !important;
-  }
-  .beta-ribbon {
-    display: none;
-  }
-  .rich-text-editor-tools {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
-}
 .e-exam .notification {
   background: #f0faff;
   margin-bottom: 2rem;
@@ -1589,21 +1589,6 @@
 }
 .e-exam .notification--inline {
   display: inline-block;
-}
-.e-exam .e-width-full {
-  width: 100%;
-}
-.e-exam .e-width-threequarters {
-  width: 75%;
-}
-.e-exam .e-width-half {
-  width: 50%;
-}
-.e-exam .e-width-third {
-  width: 33.33333333%;
-}
-.e-exam .e-width-quarter {
-  width: 25%;
 }
 .rich-text-editor-overlay,
 .rich-text-editor-new-equation {
@@ -2032,6 +2017,21 @@
 .e-exam .e-mrg-y-8 {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+.e-exam .e-width-full {
+  width: 100%;
+}
+.e-exam .e-width-threequarters {
+  width: 75%;
+}
+.e-exam .e-width-half {
+  width: 50%;
+}
+.e-exam .e-width-third {
+  width: 33.33333333%;
+}
+.e-exam .e-width-quarter {
+  width: 25%;
 }
 .e-exam caption {
   font-weight: 600;

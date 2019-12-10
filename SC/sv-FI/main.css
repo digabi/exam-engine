@@ -1288,6 +1288,29 @@
   content: '';
   clear: both;
 }
+.e-exam .e-button {
+  background-color: #359bb7;
+  color: #fefefe;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  min-width: 6rem;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.e-exam .e-button:hover {
+  background: #288199;
+}
+.e-exam .e-button:disabled {
+  opacity: 0.6;
+  box-shadow: none;
+  background: #c8c8c8;
+  cursor: auto;
+}
 .e-exam .e-crossfade-leave {
   opacity: 1;
 }
@@ -1385,29 +1408,6 @@
 }
 .e-exam .e-bg-color-link-hover {
   background-color: #288199;
-}
-.e-exam .e-button {
-  background-color: #359bb7;
-  color: #fefefe;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  min-width: 6rem;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-.e-exam .e-button:hover {
-  background: #288199;
-}
-.e-exam .e-button:disabled {
-  opacity: 0.6;
-  box-shadow: none;
-  background: #c8c8c8;
-  cursor: auto;
 }
 .e-exam .e-columns {
   display: flex;
@@ -2033,31 +2033,6 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
-.e-exam caption {
-  font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  text-align: left;
-  margin-bottom: 0.5rem;
-}
-.e-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-}
-.e-table th,
-.e-table td {
-  text-align: left;
-  border: 1px solid #aaaaaa;
-  padding: 0.25rem 0.5rem;
-}
-.e-table--borderless th,
-.e-table--borderless td {
-  border: none;
-}
-.e-table--zebra tbody tr:nth-child(odd) {
-  background: rgba(0, 0, 0, 0.06);
-}
 .e-exam {
   font-weight: 400;
 }
@@ -2201,6 +2176,31 @@
 }
 .e-exam .e-break-word {
   word-break: break-word;
+}
+.e-exam caption {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.e-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.e-table th,
+.e-table td {
+  text-align: left;
+  border: 1px solid #aaaaaa;
+  padding: 0.25rem 0.5rem;
+}
+.e-table--borderless th,
+.e-table--borderless td {
+  border: none;
+}
+.e-table--zebra tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.06);
 }
 .e-exam .e-ellipsis {
   overflow: hidden;
