@@ -42,7 +42,6 @@
     "css-loader": "^3.2.1",
     "date-fns": "^2.8.1",
     "downshift": "^3.4.5",
-    "eslint": "^6.7.2",
     "file-loader": "^5.0.2",
     "fontfaceobserver": "^2.1.0",
     "glob-promise": "^3.4.0",
