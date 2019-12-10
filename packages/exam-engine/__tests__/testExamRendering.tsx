@@ -26,10 +26,10 @@ for (const exam of listExams()) {
         const props: ExamProps = {
           doc,
           answers: [],
-          attachmentsURL: '',
+          attachmentsURL: '/attachments',
           casStatus: 'forbidden',
           examServerApi,
-          resolveAttachment,
+          resolveAttachment: (filename: string) => `/attachments/${encodeURIComponent(filename)}`,
           restrictedAudioPlaybackStats: [],
           language
         }

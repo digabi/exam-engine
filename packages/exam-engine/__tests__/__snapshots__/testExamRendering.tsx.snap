@@ -32,7 +32,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#A"
+            href="/attachments#A"
             target="attachments"
           >
             
@@ -51,7 +51,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#B"
+            href="/attachments#B"
             target="attachments"
           >
             
@@ -70,7 +70,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#C"
+            href="/attachments#C"
             target="attachments"
           >
             
@@ -89,7 +89,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#D"
+            href="/attachments#D"
             target="attachments"
           >
             
@@ -108,7 +108,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#E"
+            href="/attachments#E"
             target="attachments"
           >
             
@@ -127,7 +127,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#F"
+            href="/attachments#F"
             target="attachments"
           >
             
@@ -146,7 +146,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#G"
+            href="/attachments#G"
             target="attachments"
           >
             
@@ -165,7 +165,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#H"
+            href="/attachments#H"
             target="attachments"
           >
             
@@ -711,7 +711,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#A"
+            href="/attachments#A"
             target="attachments"
           >
             
@@ -730,7 +730,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#B"
+            href="/attachments#B"
             target="attachments"
           >
             
@@ -749,7 +749,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#C"
+            href="/attachments#C"
             target="attachments"
           >
             
@@ -768,7 +768,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#D"
+            href="/attachments#D"
             target="attachments"
           >
             
@@ -787,7 +787,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#E"
+            href="/attachments#E"
             target="attachments"
           >
             
@@ -806,7 +806,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#F"
+            href="/attachments#F"
             target="attachments"
           >
             
@@ -825,7 +825,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#G"
+            href="/attachments#G"
             target="attachments"
           >
             
@@ -844,7 +844,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#H"
+            href="/attachments#H"
             target="attachments"
           >
             
@@ -1226,7 +1226,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#1.%20A"
+            href="/attachments#1.%20A"
             target="attachments"
           >
             Video: Ipsumin mainos
@@ -1238,7 +1238,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#1.%20B"
+            href="/attachments#1.%20B"
             target="attachments"
           >
             Video: Ipsumin mainos (tekstitetty kuulovammaisia varten)
@@ -1277,7 +1277,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/attachments/1.A.webm"
+              src="/attachments/1.A.webm"
             />
           </video>
         </div>
@@ -1328,7 +1328,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/attachments/1.A_KV.webm"
+              src="/attachments/1.A_KV.webm"
             />
           </video>
         </div>
@@ -1373,7 +1373,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#2.%20A"
+            href="/attachments#2.%20A"
             target="attachments"
           >
             Äänitallenne: Duis Minimin kolumni
@@ -1385,7 +1385,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#2.%20B"
+            href="/attachments#2.%20B"
             target="attachments"
           >
             Kirjoitettu teksti: Duis Minimin kolumni
@@ -1411,7 +1411,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           preload="metadata"
         >
           <source
-            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/attachments/2.A.ogg"
+            src="/attachments/2.A.ogg"
           />
         </audio>
         <div
@@ -1711,7 +1711,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#4.%20A"
+            href="/attachments#4.%20A"
             target="attachments"
           >
             Äänitallenne: Räppi Sit Aute esittäjinä Dolor ja Occaecat
@@ -1723,7 +1723,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#4.%20B"
+            href="/attachments#4.%20B"
             target="attachments"
           >
             Kirjoitettu teksti: Dolorin räpin sanoitus
@@ -1735,7 +1735,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#4.%20C"
+            href="/attachments#4.%20C"
             target="attachments"
           >
             Kirjoitettu teksti: Deserunt Magnan runo
@@ -1761,7 +1761,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           preload="metadata"
         >
           <source
-            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/attachments/4.A.ogg"
+            src="/attachments/4.A.ogg"
           />
         </audio>
         <div
@@ -2275,7 +2275,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#1."
+                    href="/attachments#1."
                     target="attachments"
                   >
                     Aineisto
@@ -2307,7 +2307,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#2."
+                    href="/attachments#2."
                     target="attachments"
                   >
                     Aineisto
@@ -2355,7 +2355,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#3."
+                    href="/attachments#3."
                     target="attachments"
                   >
                     Aineisto
@@ -2387,7 +2387,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#4."
+                    href="/attachments#4."
                     target="attachments"
                   >
                     Aineisto
@@ -2482,7 +2482,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#1.%20A"
+          href="/attachments#1.%20A"
           target="attachments"
         >
           aineisto
@@ -2510,7 +2510,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#1.%20A"
+              href="/attachments#1.%20A"
               target="attachments"
             >
               Video: Ipsumin mainos
@@ -2522,7 +2522,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#1.%20B"
+              href="/attachments#1.%20B"
               target="attachments"
             >
               Video: Ipsumin mainos (tekstitetty kuulovammaisia varten)
@@ -2548,7 +2548,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#1.%20A"
+            href="/attachments#1.%20A"
             target="attachments"
           >
             aineisto
@@ -2611,7 +2611,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#1.%20A"
+            href="/attachments#1.%20A"
             target="attachments"
           >
             aineisto
@@ -2686,7 +2686,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#2.%20A"
+          href="/attachments#2.%20A"
           target="attachments"
         >
           aineisto
@@ -2699,7 +2699,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#2.%20B"
+          href="/attachments#2.%20B"
           target="attachments"
         >
           aineisto
@@ -2727,7 +2727,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#2.%20A"
+              href="/attachments#2.%20A"
               target="attachments"
             >
               Äänitallenne: Duis Minimin kolumni
@@ -2739,7 +2739,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#2.%20B"
+              href="/attachments#2.%20B"
               target="attachments"
             >
               Kirjoitettu teksti: Duis Minimin kolumni
@@ -2837,7 +2837,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#3.%20A"
+          href="/attachments#3.%20A"
           target="attachments"
         >
           aineisto
@@ -2866,7 +2866,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#3.%20A"
+              href="/attachments#3.%20A"
               target="attachments"
             >
               Kirjoitettu teksti: Deserunt Essen novelli
@@ -2930,7 +2930,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#4.%20A"
+          href="/attachments#4.%20A"
           target="attachments"
         >
           aineisto
@@ -2944,7 +2944,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#4.%20B"
+          href="/attachments#4.%20B"
           target="attachments"
         >
           aineisto
@@ -2957,7 +2957,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#4.%20C"
+          href="/attachments#4.%20C"
           target="attachments"
         >
           aineisto
@@ -2985,7 +2985,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#4.%20A"
+              href="/attachments#4.%20A"
               target="attachments"
             >
               Äänitallenne: Räppi Sit Aute esittäjinä Dolor ja Occaecat
@@ -2997,7 +2997,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#4.%20B"
+              href="/attachments#4.%20B"
               target="attachments"
             >
               Kirjoitettu teksti: Dolorin räpin sanoitus
@@ -3009,7 +3009,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#4.%20C"
+              href="/attachments#4.%20C"
               target="attachments"
             >
               Kirjoitettu teksti: Deserunt Magnan runo
@@ -3035,7 +3035,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#4.%20A"
+            href="/attachments#4.%20A"
             target="attachments"
           >
             aineistot
@@ -3098,7 +3098,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#4.%20A"
+            href="/attachments#4.%20A"
             target="attachments"
           >
             aineistot
@@ -3112,7 +3112,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#4.%20C"
+            href="/attachments#4.%20C"
             target="attachments"
           >
             aineisto
@@ -4332,7 +4332,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T3_FI.webm"
+              src="/attachments/T3_FI.webm"
             />
           </video>
         </div>
@@ -4399,7 +4399,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#4.%20A"
+            href="/attachments#4.%20A"
             target="attachments"
           >
             Uutiskatkelma: Consectetur cupidatat et non occaecat voluptate laboris
@@ -4412,7 +4412,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#4.%20B"
+            href="/attachments#4.%20B"
             target="attachments"
           >
             Aliqua magna deserunt eu laboris nulla aliqua
@@ -4454,13 +4454,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="e-zoomable"
-            href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4A.jpg"
+            href="/attachments/4A.jpg"
             target="original-picture"
             title="Suurenna"
           >
             <img
               className="image"
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4A.jpg"
+              src="/attachments/4A.jpg"
             />
           </a>
         </div>
@@ -4545,13 +4545,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="e-zoomable"
-            href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4B.png"
+            href="/attachments/4B.png"
             target="original-picture"
             title="Suurenna"
           >
             <img
               className="image"
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4B.png"
+              src="/attachments/4B.png"
             />
           </a>
         </div>
@@ -4604,7 +4604,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#5.%20A"
+            href="/attachments#5.%20A"
             target="attachments"
           >
             Videokatkelma: 
@@ -4621,7 +4621,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#5.%20B"
+            href="/attachments#5.%20B"
             target="attachments"
           >
             
@@ -4672,7 +4672,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T5_FI.webm"
+              src="/attachments/T5_FI.webm"
             />
           </video>
         </div>
@@ -4878,7 +4878,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20A"
+            href="/attachments#8.%20A"
             target="attachments"
           >
             Tekstikatkelma: Magna nostrud ipsum commodo ex velit magna labore aliquip
@@ -4892,7 +4892,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20B"
+            href="/attachments#8.%20B"
             target="attachments"
           >
             Tekstikatkelma: Nulla non ea et eiusmod sunt esse proident exercitation
@@ -4906,7 +4906,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20C"
+            href="/attachments#8.%20C"
             target="attachments"
           >
             Tekstikatkelma: Minim tempor elit sit ea id irure ullamco commodo proident ex
@@ -4919,7 +4919,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20D"
+            href="/attachments#8.%20D"
             target="attachments"
           >
             Tekstikatkelma: Pariatur occaecat est non aliquip cupidatat ad officia tempor
@@ -4931,7 +4931,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20E"
+            href="/attachments#8.%20E"
             target="attachments"
           >
             Tekstikatkelma: In tempor est et aute pariatur qui ullamco dolor duis
@@ -4943,7 +4943,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20F"
+            href="/attachments#8.%20F"
             target="attachments"
           >
             Tekstikatkelma: Reprehenderit amet excepteur esse quis dolor Lorem minim
@@ -5557,7 +5557,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#9.%20A"
+            href="/attachments#9.%20A"
             target="attachments"
           >
             Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur
@@ -5569,7 +5569,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#9.%20B"
+            href="/attachments#9.%20B"
             target="attachments"
           >
             Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
@@ -5608,7 +5608,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T9_1_FI.webm"
+              src="/attachments/T9_1_FI.webm"
             />
           </video>
         </div>
@@ -5685,7 +5685,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T9_2_FI.webm"
+              src="/attachments/T9_2_FI.webm"
             />
           </video>
         </div>
@@ -5801,7 +5801,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T3_SV.webm"
+              src="/attachments/T3_SV.webm"
             />
           </video>
         </div>
@@ -5868,7 +5868,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#4.%20A"
+            href="/attachments#4.%20A"
             target="attachments"
           >
             Tidningsnyhet: Consectetur cupidatat et non occaecat voluptate laboris
@@ -5880,7 +5880,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#4.%20B"
+            href="/attachments#4.%20B"
             target="attachments"
           >
             Aliqua magna deserunt eu laboris nulla aliqua
@@ -5921,13 +5921,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="e-zoomable"
-            href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4A.jpg"
+            href="/attachments/4A.jpg"
             target="original-picture"
             title="Förstora"
           >
             <img
               className="image"
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4A.jpg"
+              src="/attachments/4A.jpg"
             />
           </a>
         </div>
@@ -6012,13 +6012,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="e-zoomable"
-            href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4B.png"
+            href="/attachments/4B.png"
             target="original-picture"
             title="Förstora"
           >
             <img
               className="image"
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/4B.png"
+              src="/attachments/4B.png"
             />
           </a>
         </div>
@@ -6071,7 +6071,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#5.%20A"
+            href="/attachments#5.%20A"
             target="attachments"
           >
             Videoklipp: 
@@ -6088,7 +6088,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#5.%20B"
+            href="/attachments#5.%20B"
             target="attachments"
           >
             
@@ -6139,7 +6139,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T5_SV.webm"
+              src="/attachments/T5_SV.webm"
             />
           </video>
         </div>
@@ -6345,7 +6345,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20A"
+            href="/attachments#8.%20A"
             target="attachments"
           >
             Textutdrag:Eu sit ut voluptate ullamco sint excepteur deserunt.
@@ -6358,7 +6358,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20B"
+            href="/attachments#8.%20B"
             target="attachments"
           >
             Textutdrag: Aliqua ullamco consequat anim proident.
@@ -6371,7 +6371,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20C"
+            href="/attachments#8.%20C"
             target="attachments"
           >
             Textutdrag: Aliquip pariatur occaecat nulla exercitation
@@ -6384,7 +6384,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20D"
+            href="/attachments#8.%20D"
             target="attachments"
           >
             Textutdrag: Consequat reprehenderit nulla quis voluptate reprehenderit fugiat
@@ -6396,7 +6396,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20E"
+            href="/attachments#8.%20E"
             target="attachments"
           >
             Textutdrag: Duis cillum dolor minim voluptate irure minim
@@ -6408,7 +6408,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#8.%20F"
+            href="/attachments#8.%20F"
             target="attachments"
           >
             Textutdrag: Velit occaecat in irure ea commodo id et do ut dolore incididunt
@@ -6973,7 +6973,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#9.%20A"
+            href="/attachments#9.%20A"
             target="attachments"
           >
             Videoklipp: Incididunt id culpa ad deserunt dolor pariatur
@@ -6985,7 +6985,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#9.%20B"
+            href="/attachments#9.%20B"
             target="attachments"
           >
             Videoklipp: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
@@ -7024,7 +7024,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T9_1_SV.webm"
+              src="/attachments/T9_1_SV.webm"
             />
           </video>
         </div>
@@ -7101,7 +7101,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/attachments/T9_2_SV.webm"
+              src="/attachments/T9_2_SV.webm"
             />
           </video>
         </div>
@@ -7283,7 +7283,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#3."
+                    href="/attachments#3."
                     target="attachments"
                   >
                     Aineisto
@@ -7315,7 +7315,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#4."
+                    href="/attachments#4."
                     target="attachments"
                   >
                     Aineisto
@@ -7347,7 +7347,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#5."
+                    href="/attachments#5."
                     target="attachments"
                   >
                     Aineisto
@@ -7425,7 +7425,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#7."
+                    href="/attachments#7."
                     target="attachments"
                   >
                     Aineisto
@@ -7457,7 +7457,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#8."
+                    href="/attachments#8."
                     target="attachments"
                   >
                     Aineisto
@@ -7489,7 +7489,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#9."
+                    href="/attachments#9."
                     target="attachments"
                   >
                     Aineisto
@@ -7870,7 +7870,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#3.%20A"
+          href="/attachments#3.%20A"
           target="attachments"
         >
           aineisto
@@ -7899,7 +7899,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#3.%20A"
+              href="/attachments#3.%20A"
               target="attachments"
             >
               Videokatkelma: Sunt cupidatat exercitation magna deserunt quis
@@ -7925,7 +7925,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#3.%20A"
+            href="/attachments#3.%20A"
             target="attachments"
           >
             aineisto
@@ -7987,7 +7987,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#3.%20A"
+            href="/attachments#3.%20A"
             target="attachments"
           >
             aineisto
@@ -8064,7 +8064,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#4.%20A"
+          href="/attachments#4.%20A"
           target="attachments"
         >
           aineisto
@@ -8078,7 +8078,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#4.%20B"
+          href="/attachments#4.%20B"
           target="attachments"
         >
           aineisto
@@ -8106,7 +8106,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#4.%20A"
+              href="/attachments#4.%20A"
               target="attachments"
             >
               Uutiskatkelma: Consectetur cupidatat et non occaecat voluptate laboris
@@ -8119,7 +8119,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#4.%20B"
+              href="/attachments#4.%20B"
               target="attachments"
             >
               Aliqua magna deserunt eu laboris nulla aliqua
@@ -8201,7 +8201,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#5.%20A"
+              href="/attachments#5.%20A"
               target="attachments"
             >
               Videokatkelma: 
@@ -8218,7 +8218,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#5.%20B"
+              href="/attachments#5.%20B"
               target="attachments"
             >
               
@@ -8242,7 +8242,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#5.%20A"
+          href="/attachments#5.%20A"
           target="attachments"
         >
           aineisto
@@ -8256,7 +8256,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#5.%20B"
+          href="/attachments#5.%20B"
           target="attachments"
         >
           aineisto
@@ -8269,7 +8269,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#5.%20A"
+          href="/attachments#5.%20A"
           target="attachments"
         >
           aineisto
@@ -8586,7 +8586,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#7.%20A"
+          href="/attachments#7.%20A"
           target="attachments"
         >
           aineisto
@@ -8615,7 +8615,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#7.%20A"
+              href="/attachments#7.%20A"
               target="attachments"
             >
               Tekstikatkelma: Adipiscing, Lorem
@@ -8642,7 +8642,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#7.%20A"
+            href="/attachments#7.%20A"
             target="attachments"
           >
             aineisto
@@ -8777,7 +8777,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#8.%20A"
+          href="/attachments#8.%20A"
           target="attachments"
         >
           aineistot
@@ -8810,7 +8810,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20A"
+              href="/attachments#8.%20A"
               target="attachments"
             >
               Tekstikatkelma: Magna nostrud ipsum commodo ex velit magna labore aliquip
@@ -8824,7 +8824,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20B"
+              href="/attachments#8.%20B"
               target="attachments"
             >
               Tekstikatkelma: Nulla non ea et eiusmod sunt esse proident exercitation
@@ -8838,7 +8838,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20C"
+              href="/attachments#8.%20C"
               target="attachments"
             >
               Tekstikatkelma: Minim tempor elit sit ea id irure ullamco commodo proident ex
@@ -8851,7 +8851,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20D"
+              href="/attachments#8.%20D"
               target="attachments"
             >
               Tekstikatkelma: Pariatur occaecat est non aliquip cupidatat ad officia tempor
@@ -8863,7 +8863,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20E"
+              href="/attachments#8.%20E"
               target="attachments"
             >
               Tekstikatkelma: In tempor est et aute pariatur qui ullamco dolor duis
@@ -8875,7 +8875,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20F"
+              href="/attachments#8.%20F"
               target="attachments"
             >
               Tekstikatkelma: Reprehenderit amet excepteur esse quis dolor Lorem minim
@@ -8901,7 +8901,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#8.%20A"
+            href="/attachments#8.%20A"
             target="attachments"
           >
             aineistot
@@ -8965,7 +8965,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#8.%20A"
+            href="/attachments#8.%20A"
             target="attachments"
           >
             aineistot
@@ -9102,7 +9102,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#9.%20A"
+              href="/attachments#9.%20A"
               target="attachments"
             >
               Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur
@@ -9114,7 +9114,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#9.%20B"
+              href="/attachments#9.%20B"
               target="attachments"
             >
               Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
@@ -9140,7 +9140,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#9.%20A"
+            href="/attachments#9.%20A"
             target="attachments"
           >
             aineistot
@@ -9381,7 +9381,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#3."
+                    href="/attachments#3."
                     target="attachments"
                   >
                     Material
@@ -9413,7 +9413,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#4."
+                    href="/attachments#4."
                     target="attachments"
                   >
                     Material
@@ -9445,7 +9445,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#5."
+                    href="/attachments#5."
                     target="attachments"
                   >
                     Material
@@ -9523,7 +9523,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#7."
+                    href="/attachments#7."
                     target="attachments"
                   >
                     Material
@@ -9555,7 +9555,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#8."
+                    href="/attachments#8."
                     target="attachments"
                   >
                     Material
@@ -9587,7 +9587,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#9."
+                    href="/attachments#9."
                     target="attachments"
                   >
                     Material
@@ -9980,7 +9980,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#3.%20A"
+              href="/attachments#3.%20A"
               target="attachments"
             >
               Videoklipp: Sunt cupidatat exercitation magna deserunt quis
@@ -10006,7 +10006,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#3.%20A"
+            href="/attachments#3.%20A"
             target="attachments"
           >
             material
@@ -10069,7 +10069,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#3.%20A"
+            href="/attachments#3.%20A"
             target="attachments"
           >
             material
@@ -10147,7 +10147,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#4.%20A"
+          href="/attachments#4.%20A"
           target="attachments"
         >
           material
@@ -10161,7 +10161,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#4.%20B"
+          href="/attachments#4.%20B"
           target="attachments"
         >
           material
@@ -10190,7 +10190,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#4.%20A"
+              href="/attachments#4.%20A"
               target="attachments"
             >
               Tidningsnyhet: Consectetur cupidatat et non occaecat voluptate laboris
@@ -10202,7 +10202,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#4.%20B"
+              href="/attachments#4.%20B"
               target="attachments"
             >
               Aliqua magna deserunt eu laboris nulla aliqua
@@ -10284,7 +10284,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#5.%20A"
+              href="/attachments#5.%20A"
               target="attachments"
             >
               Videoklipp: 
@@ -10301,7 +10301,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#5.%20B"
+              href="/attachments#5.%20B"
               target="attachments"
             >
               
@@ -10325,7 +10325,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#5.%20A"
+          href="/attachments#5.%20A"
           target="attachments"
         >
           material
@@ -10339,7 +10339,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#5.%20B"
+          href="/attachments#5.%20B"
           target="attachments"
         >
           material
@@ -10352,7 +10352,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#5.%20A"
+          href="/attachments#5.%20A"
           target="attachments"
         >
           material
@@ -10667,7 +10667,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#7.%20A"
+          href="/attachments#7.%20A"
           target="attachments"
         >
           material
@@ -10696,7 +10696,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#7.%20A"
+              href="/attachments#7.%20A"
               target="attachments"
             >
               Textutdrag: Adipiscing, Lorem
@@ -10723,7 +10723,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#7.%20A"
+            href="/attachments#7.%20A"
             target="attachments"
           >
             material
@@ -10856,7 +10856,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#8.%20A"
+          href="/attachments#8.%20A"
           target="attachments"
         >
           material
@@ -10890,7 +10890,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20A"
+              href="/attachments#8.%20A"
               target="attachments"
             >
               Textutdrag:Eu sit ut voluptate ullamco sint excepteur deserunt.
@@ -10903,7 +10903,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20B"
+              href="/attachments#8.%20B"
               target="attachments"
             >
               Textutdrag: Aliqua ullamco consequat anim proident.
@@ -10916,7 +10916,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20C"
+              href="/attachments#8.%20C"
               target="attachments"
             >
               Textutdrag: Aliquip pariatur occaecat nulla exercitation
@@ -10929,7 +10929,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20D"
+              href="/attachments#8.%20D"
               target="attachments"
             >
               Textutdrag: Consequat reprehenderit nulla quis voluptate reprehenderit fugiat
@@ -10941,7 +10941,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20E"
+              href="/attachments#8.%20E"
               target="attachments"
             >
               Textutdrag: Duis cillum dolor minim voluptate irure minim
@@ -10953,7 +10953,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20F"
+              href="/attachments#8.%20F"
               target="attachments"
             >
               Textutdrag: Velit occaecat in irure ea commodo id et do ut dolore incididunt
@@ -10979,7 +10979,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#8.%20A"
+            href="/attachments#8.%20A"
             target="attachments"
           >
             material
@@ -11043,7 +11043,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#8.%20A"
+            href="/attachments#8.%20A"
             target="attachments"
           >
             material
@@ -11182,7 +11182,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#9.%20A"
+              href="/attachments#9.%20A"
               target="attachments"
             >
               Videoklipp: Incididunt id culpa ad deserunt dolor pariatur
@@ -11194,7 +11194,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#9.%20B"
+              href="/attachments#9.%20B"
               target="attachments"
             >
               Videoklipp: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
@@ -11220,7 +11220,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#9.%20A"
+            href="/attachments#9.%20A"
             target="attachments"
           >
             material
@@ -12307,7 +12307,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
   className="e-exam attachments"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -12351,7 +12351,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#11.%20A"
+            href="/attachments#11.%20A"
             target="attachments"
           >
             Title 1
@@ -12363,7 +12363,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#11.%20B"
+            href="/attachments#11.%20B"
             target="attachments"
           >
             Title 2
@@ -12401,13 +12401,13 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
         >
           <a
             className="e-zoomable"
-            href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+            href="/attachments/example.jpg"
             target="original-picture"
             title="Suurenna"
           >
             <img
               className="image"
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+              src="/attachments/example.jpg"
             />
           </a>
         </div>
@@ -12459,7 +12459,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example1.webm"
+              src="/attachments/example1.webm"
             />
           </video>
         </div>
@@ -12519,7 +12519,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
   className="e-exam attachments"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -12563,7 +12563,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#11.%20A"
+            href="/attachments#11.%20A"
             target="attachments"
           >
             Title 1
@@ -12575,7 +12575,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="exam-attachment-title"
-            href="#11.%20B"
+            href="/attachments#11.%20B"
             target="attachments"
           >
             Title 2
@@ -12613,13 +12613,13 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
         >
           <a
             className="e-zoomable"
-            href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+            href="/attachments/example.jpg"
             target="original-picture"
             title="Förstora"
           >
             <img
               className="image"
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+              src="/attachments/example.jpg"
             />
           </a>
         </div>
@@ -12671,7 +12671,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example1.webm"
+              src="/attachments/example1.webm"
             />
           </video>
         </div>
@@ -12732,7 +12732,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
   lang="fi-FI"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -13105,7 +13105,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#11."
+                    href="/attachments#11."
                     target="attachments"
                   >
                     Material
@@ -15653,13 +15653,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_high.jpg"
+                      href="/attachments/example_high.jpg"
                       target="original-picture"
                       title="Suurenna"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_high.jpg"
+                        src="/attachments/example_high.jpg"
                       />
                     </a>
                   </div>
@@ -15702,13 +15702,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                      href="/attachments/example.jpg"
                       target="original-picture"
                       title="Suurenna"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                        src="/attachments/example.jpg"
                       />
                     </a>
                   </div>
@@ -15751,13 +15751,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_small.jpg"
+                      href="/attachments/example_small.jpg"
                       target="original-picture"
                       title="Suurenna"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_small.jpg"
+                        src="/attachments/example_small.jpg"
                       />
                     </a>
                   </div>
@@ -15800,13 +15800,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                      href="/attachments/example.jpg"
                       target="original-picture"
                       title="Suurenna"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                        src="/attachments/example.jpg"
                       />
                     </a>
                   </div>
@@ -15849,13 +15849,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                      href="/attachments/example.jpg"
                       target="original-picture"
                       title="Suurenna"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                        src="/attachments/example.jpg"
                       />
                     </a>
                   </div>
@@ -17212,13 +17212,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
             >
               <a
                 className="e-zoomable"
-                href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                href="/attachments/example.jpg"
                 target="original-picture"
                 title="Suurenna"
               >
                 <img
                   className="image"
-                  src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                  src="/attachments/example.jpg"
                 />
               </a>
             </div>
@@ -17280,7 +17280,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#11.%20A"
+              href="/attachments#11.%20A"
               target="attachments"
             >
               Title 1
@@ -17292,7 +17292,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#11.%20B"
+              href="/attachments#11.%20B"
               target="attachments"
             >
               Title 2
@@ -17442,13 +17442,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="e-zoomable"
-              href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+              href="/attachments/example.jpg"
               target="original-picture"
               title="Suurenna"
             >
               <img
                 className="image"
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                src="/attachments/example.jpg"
               />
             </a>
           </div>
@@ -18470,7 +18470,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               preload="metadata"
             >
               <source
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example1.webm"
+                src="/attachments/example1.webm"
               />
             </video>
           </div>
@@ -18603,7 +18603,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         <a
           className="file e-nowrap"
           download={true}
-          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example1.webm"
+          href="/attachments/example1.webm"
         >
           Text of the file link
            (
@@ -18762,7 +18762,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20A"
+          href="/attachments#11.%20A"
           target="attachments"
         >
           material
@@ -18783,7 +18783,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20B"
+          href="/attachments#11.%20B"
           target="attachments"
         >
           11. B
@@ -18847,7 +18847,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20A"
+          href="/attachments#11.%20A"
           target="attachments"
         >
           material
@@ -18858,7 +18858,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         <br />
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20A"
+          href="/attachments#11.%20A"
           target="attachments"
         >
           11. A–11. B
@@ -20081,13 +20081,13 @@ consequat laboris adipisicing duis proident proident amet.
             >
               <a
                 className="e-zoomable"
-                href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                href="/attachments/example.jpg"
                 target="original-picture"
                 title="Suurenna"
               >
                 <img
                   className="image"
-                  src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                  src="/attachments/example.jpg"
                 />
               </a>
             </div>
@@ -20117,13 +20117,13 @@ consequat laboris adipisicing duis proident proident amet.
             >
               <a
                 className="e-zoomable"
-                href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                href="/attachments/example.jpg"
                 target="original-picture"
                 title="Suurenna"
               >
                 <img
                   className="image"
-                  src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                  src="/attachments/example.jpg"
                 />
               </a>
             </div>
@@ -20223,13 +20223,13 @@ consequat laboris adipisicing duis proident proident amet.
           >
             <a
               className="e-zoomable"
-              href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+              href="/attachments/example.jpg"
               target="original-picture"
               title="Suurenna"
             >
               <img
                 className="image"
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                src="/attachments/example.jpg"
               />
             </a>
           </div>
@@ -21630,7 +21630,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
   lang="sv-FI"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -22003,7 +22003,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#11."
+                    href="/attachments#11."
                     target="attachments"
                   >
                     Material
@@ -24551,13 +24551,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_high.jpg"
+                      href="/attachments/example_high.jpg"
                       target="original-picture"
                       title="Förstora"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_high.jpg"
+                        src="/attachments/example_high.jpg"
                       />
                     </a>
                   </div>
@@ -24600,13 +24600,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                      href="/attachments/example.jpg"
                       target="original-picture"
                       title="Förstora"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                        src="/attachments/example.jpg"
                       />
                     </a>
                   </div>
@@ -24649,13 +24649,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_small.jpg"
+                      href="/attachments/example_small.jpg"
                       target="original-picture"
                       title="Förstora"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example_small.jpg"
+                        src="/attachments/example_small.jpg"
                       />
                     </a>
                   </div>
@@ -24698,13 +24698,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                      href="/attachments/example.jpg"
                       target="original-picture"
                       title="Förstora"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                        src="/attachments/example.jpg"
                       />
                     </a>
                   </div>
@@ -24747,13 +24747,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                   >
                     <a
                       className="e-zoomable"
-                      href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                      href="/attachments/example.jpg"
                       target="original-picture"
                       title="Förstora"
                     >
                       <img
                         className="image"
-                        src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                        src="/attachments/example.jpg"
                       />
                     </a>
                   </div>
@@ -26110,13 +26110,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
             >
               <a
                 className="e-zoomable"
-                href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                href="/attachments/example.jpg"
                 target="original-picture"
                 title="Förstora"
               >
                 <img
                   className="image"
-                  src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                  src="/attachments/example.jpg"
                 />
               </a>
             </div>
@@ -26178,7 +26178,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#11.%20A"
+              href="/attachments#11.%20A"
               target="attachments"
             >
               Title 1
@@ -26190,7 +26190,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#11.%20B"
+              href="/attachments#11.%20B"
               target="attachments"
             >
               Title 2
@@ -26340,13 +26340,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="e-zoomable"
-              href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+              href="/attachments/example.jpg"
               target="original-picture"
               title="Förstora"
             >
               <img
                 className="image"
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                src="/attachments/example.jpg"
               />
             </a>
           </div>
@@ -27368,7 +27368,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               preload="metadata"
             >
               <source
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example1.webm"
+                src="/attachments/example1.webm"
               />
             </video>
           </div>
@@ -27501,7 +27501,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         <a
           className="file e-nowrap"
           download={true}
-          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example1.webm"
+          href="/attachments/example1.webm"
         >
           Text of the file link
            (
@@ -27660,7 +27660,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20A"
+          href="/attachments#11.%20A"
           target="attachments"
         >
           material
@@ -27681,7 +27681,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20B"
+          href="/attachments#11.%20B"
           target="attachments"
         >
           11. B
@@ -27745,7 +27745,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         (
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20A"
+          href="/attachments#11.%20A"
           target="attachments"
         >
           material
@@ -27756,7 +27756,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         <br />
         <a
           className="attachment-link e-nowrap"
-          href="#11.%20A"
+          href="/attachments#11.%20A"
           target="attachments"
         >
           11. A–11. B
@@ -28979,13 +28979,13 @@ consequat laboris adipisicing duis proident proident amet.
             >
               <a
                 className="e-zoomable"
-                href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                href="/attachments/example.jpg"
                 target="original-picture"
                 title="Förstora"
               >
                 <img
                   className="image"
-                  src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                  src="/attachments/example.jpg"
                 />
               </a>
             </div>
@@ -29015,13 +29015,13 @@ consequat laboris adipisicing duis proident proident amet.
             >
               <a
                 className="e-zoomable"
-                href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                href="/attachments/example.jpg"
                 target="original-picture"
                 title="Förstora"
               >
                 <img
                   className="image"
-                  src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                  src="/attachments/example.jpg"
                 />
               </a>
             </div>
@@ -29121,13 +29121,13 @@ consequat laboris adipisicing duis proident proident amet.
           >
             <a
               className="e-zoomable"
-              href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+              href="/attachments/example.jpg"
               target="original-picture"
               title="Förstora"
             >
               <img
                 className="image"
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/attachments/example.jpg"
+                src="/attachments/example.jpg"
               />
             </a>
           </div>
@@ -30527,7 +30527,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
   className="e-exam attachments"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -30590,7 +30590,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/5.webm"
+              src="/attachments/5.webm"
             />
           </video>
         </div>
@@ -31025,7 +31025,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
   className="e-exam attachments"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -31088,7 +31088,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
             preload="metadata"
           >
             <source
-              src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/5.webm"
+              src="/attachments/5.webm"
             />
           </video>
         </div>
@@ -31524,7 +31524,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
   lang="fi-FI"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -31695,7 +31695,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#5."
+                    href="/attachments#5."
                     target="attachments"
                   >
                     Materialien
@@ -31784,7 +31784,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#8."
+                    href="/attachments#8."
                     target="attachments"
                   >
                     Materialien
@@ -31816,7 +31816,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#9."
+                    href="/attachments#9."
                     target="attachments"
                   >
                     Materialien
@@ -31848,7 +31848,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#10."
+                    href="/attachments#10."
                     target="attachments"
                   >
                     Materialien
@@ -31880,7 +31880,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#11."
+                    href="/attachments#11."
                     target="attachments"
                   >
                     Materialien
@@ -31934,7 +31934,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#13."
+                    href="/attachments#13."
                     target="attachments"
                   >
                     Materialien
@@ -31966,7 +31966,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#14."
+                    href="/attachments#14."
                     target="attachments"
                   >
                     Materialien
@@ -31998,7 +31998,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#15."
+                    href="/attachments#15."
                     target="attachments"
                   >
                     Materialien
@@ -32030,7 +32030,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#16."
+                    href="/attachments#16."
                     target="attachments"
                   >
                     Materialien
@@ -35018,7 +35018,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#5.%20A"
+              href="/attachments#5.%20A"
               target="attachments"
             >
               Video: Katze
@@ -36335,13 +36335,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.7279.jpg"
+                          href="/attachments/7.1.7279.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.7279.jpg"
+                            src="/attachments/7.1.7279.jpg"
                           />
                         </a>
                       </div>
@@ -36388,13 +36388,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.4327.jpg"
+                          href="/attachments/7.1.4327.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.4327.jpg"
+                            src="/attachments/7.1.4327.jpg"
                           />
                         </a>
                       </div>
@@ -36441,13 +36441,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.0478.jpg"
+                          href="/attachments/7.1.0478.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.0478.jpg"
+                            src="/attachments/7.1.0478.jpg"
                           />
                         </a>
                       </div>
@@ -36610,13 +36610,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7276.jpg"
+                          href="/attachments/7.2.7276.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7276.jpg"
+                            src="/attachments/7.2.7276.jpg"
                           />
                         </a>
                       </div>
@@ -36663,13 +36663,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.1617.jpg"
+                          href="/attachments/7.2.1617.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.1617.jpg"
+                            src="/attachments/7.2.1617.jpg"
                           />
                         </a>
                       </div>
@@ -36716,13 +36716,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7291.jpg"
+                          href="/attachments/7.2.7291.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7291.jpg"
+                            src="/attachments/7.2.7291.jpg"
                           />
                         </a>
                       </div>
@@ -36885,13 +36885,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4927.jpg"
+                          href="/attachments/7.3.4927.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4927.jpg"
+                            src="/attachments/7.3.4927.jpg"
                           />
                         </a>
                       </div>
@@ -36938,13 +36938,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.7459.jpg"
+                          href="/attachments/7.3.7459.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.7459.jpg"
+                            src="/attachments/7.3.7459.jpg"
                           />
                         </a>
                       </div>
@@ -36991,13 +36991,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4375.jpg"
+                          href="/attachments/7.3.4375.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4375.jpg"
+                            src="/attachments/7.3.4375.jpg"
                           />
                         </a>
                       </div>
@@ -37146,7 +37146,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20A"
+              href="/attachments#8.%20A"
               target="attachments"
             >
               Text: Whatsapp-Chat
@@ -37427,7 +37427,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#9.%20A"
+              href="/attachments#9.%20A"
               target="attachments"
             >
               Texte: Freitag der Dreizehnte
@@ -38013,7 +38013,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#10.%20A"
+              href="/attachments#10.%20A"
               target="attachments"
             >
               Text: Duis Minim?
@@ -38442,7 +38442,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#11.%20A"
+              href="/attachments#11.%20A"
               target="attachments"
             >
               Text: Excepteur cupidatat!
@@ -39813,7 +39813,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#13.%20A"
+              href="/attachments#13.%20A"
               target="attachments"
             >
               Text: Adipisicing voluptate
@@ -40136,7 +40136,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#14.%20A"
+              href="/attachments#14.%20A"
               target="attachments"
             >
               Text: Ullamco
@@ -40571,7 +40571,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#15.%20A"
+              href="/attachments#15.%20A"
               target="attachments"
             >
               Text: Eiusmod
@@ -41220,7 +41220,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#16.%20A"
+              href="/attachments#16.%20A"
               target="attachments"
             >
               Text: Duis dolore
@@ -41666,13 +41666,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           >
             <a
               className="e-zoomable"
-              href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/maxmoritz.png"
+              href="/attachments/maxmoritz.png"
               target="original-picture"
               title="Suurenna"
             >
               <img
                 className="image"
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/maxmoritz.png"
+                src="/attachments/maxmoritz.png"
               />
             </a>
           </div>
@@ -44068,13 +44068,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                          href="/attachments/7.2.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                            src="/attachments/7.2.jpg"
                           />
                         </a>
                       </div>
@@ -44168,13 +44168,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                          href="/attachments/7.4.jpg"
                           target="original-picture"
                           title="Suurenna"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                            src="/attachments/7.4.jpg"
                           />
                         </a>
                       </div>
@@ -44254,13 +44254,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                     >
                       <a
                         className="e-zoomable"
-                        href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                        href="/attachments/7.2.jpg"
                         target="original-picture"
                         title="Suurenna"
                       >
                         <img
                           className="image"
-                          src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                          src="/attachments/7.2.jpg"
                         />
                       </a>
                     </div>
@@ -44328,13 +44328,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                     >
                       <a
                         className="e-zoomable"
-                        href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                        href="/attachments/7.4.jpg"
                         target="original-picture"
                         title="Suurenna"
                       >
                         <img
                           className="image"
-                          src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                          src="/attachments/7.4.jpg"
                         />
                       </a>
                     </div>
@@ -44612,13 +44612,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
               >
                 <a
                   className="e-zoomable"
-                  href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/24.1.jpg"
+                  href="/attachments/24.1.jpg"
                   target="original-picture"
                   title="Suurenna"
                 >
                   <img
                     className="image"
-                    src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/24.1.jpg"
+                    src="/attachments/24.1.jpg"
                   />
                 </a>
               </div>
@@ -44680,7 +44680,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#10.%20A"
+            href="/attachments#10.%20A"
             target="attachments"
           >
             materialien
@@ -45439,7 +45439,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
   lang="sv-FI"
 >
   <link
-    href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/custom.css"
+    href="/attachments/custom.css"
     rel="stylesheet"
   />
   <section
@@ -45610,7 +45610,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#5."
+                    href="/attachments#5."
                     target="attachments"
                   >
                     Materialien
@@ -45699,7 +45699,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#8."
+                    href="/attachments#8."
                     target="attachments"
                   >
                     Materialien
@@ -45731,7 +45731,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#9."
+                    href="/attachments#9."
                     target="attachments"
                   >
                     Materialien
@@ -45763,7 +45763,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#10."
+                    href="/attachments#10."
                     target="attachments"
                   >
                     Materialien
@@ -45795,7 +45795,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#11."
+                    href="/attachments#11."
                     target="attachments"
                   >
                     Materialien
@@ -45849,7 +45849,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#13."
+                    href="/attachments#13."
                     target="attachments"
                   >
                     Materialien
@@ -45881,7 +45881,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#14."
+                    href="/attachments#14."
                     target="attachments"
                   >
                     Materialien
@@ -45913,7 +45913,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#15."
+                    href="/attachments#15."
                     target="attachments"
                   >
                     Materialien
@@ -45945,7 +45945,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   className="e-column e-column--narrow"
                 >
                   <a
-                    href="#16."
+                    href="/attachments#16."
                     target="attachments"
                   >
                     Materialien
@@ -48933,7 +48933,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#5.%20A"
+              href="/attachments#5.%20A"
               target="attachments"
             >
               Video: Katze
@@ -50250,13 +50250,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.7279.jpg"
+                          href="/attachments/7.1.7279.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.7279.jpg"
+                            src="/attachments/7.1.7279.jpg"
                           />
                         </a>
                       </div>
@@ -50303,13 +50303,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.4327.jpg"
+                          href="/attachments/7.1.4327.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.4327.jpg"
+                            src="/attachments/7.1.4327.jpg"
                           />
                         </a>
                       </div>
@@ -50356,13 +50356,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.0478.jpg"
+                          href="/attachments/7.1.0478.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.1.0478.jpg"
+                            src="/attachments/7.1.0478.jpg"
                           />
                         </a>
                       </div>
@@ -50525,13 +50525,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7276.jpg"
+                          href="/attachments/7.2.7276.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7276.jpg"
+                            src="/attachments/7.2.7276.jpg"
                           />
                         </a>
                       </div>
@@ -50578,13 +50578,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.1617.jpg"
+                          href="/attachments/7.2.1617.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.1617.jpg"
+                            src="/attachments/7.2.1617.jpg"
                           />
                         </a>
                       </div>
@@ -50631,13 +50631,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7291.jpg"
+                          href="/attachments/7.2.7291.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.7291.jpg"
+                            src="/attachments/7.2.7291.jpg"
                           />
                         </a>
                       </div>
@@ -50800,13 +50800,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4927.jpg"
+                          href="/attachments/7.3.4927.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4927.jpg"
+                            src="/attachments/7.3.4927.jpg"
                           />
                         </a>
                       </div>
@@ -50853,13 +50853,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.7459.jpg"
+                          href="/attachments/7.3.7459.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.7459.jpg"
+                            src="/attachments/7.3.7459.jpg"
                           />
                         </a>
                       </div>
@@ -50906,13 +50906,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4375.jpg"
+                          href="/attachments/7.3.4375.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.3.4375.jpg"
+                            src="/attachments/7.3.4375.jpg"
                           />
                         </a>
                       </div>
@@ -51061,7 +51061,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#8.%20A"
+              href="/attachments#8.%20A"
               target="attachments"
             >
               Text: Whatsapp-Chat
@@ -51342,7 +51342,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#9.%20A"
+              href="/attachments#9.%20A"
               target="attachments"
             >
               Texte: Freitag der Dreizehnte
@@ -51928,7 +51928,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#10.%20A"
+              href="/attachments#10.%20A"
               target="attachments"
             >
               Text: Duis Minim?
@@ -52357,7 +52357,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#11.%20A"
+              href="/attachments#11.%20A"
               target="attachments"
             >
               Text: Excepteur cupidatat!
@@ -53728,7 +53728,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#13.%20A"
+              href="/attachments#13.%20A"
               target="attachments"
             >
               Text: Adipisicing voluptate
@@ -54051,7 +54051,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#14.%20A"
+              href="/attachments#14.%20A"
               target="attachments"
             >
               Text: Ullamco
@@ -54486,7 +54486,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#15.%20A"
+              href="/attachments#15.%20A"
               target="attachments"
             >
               Text: Eiusmod
@@ -55135,7 +55135,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="exam-attachment-title"
-              href="#16.%20A"
+              href="/attachments#16.%20A"
               target="attachments"
             >
               Text: Duis dolore
@@ -55581,13 +55581,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           >
             <a
               className="e-zoomable"
-              href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/maxmoritz.png"
+              href="/attachments/maxmoritz.png"
               target="original-picture"
               title="Förstora"
             >
               <img
                 className="image"
-                src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/maxmoritz.png"
+                src="/attachments/maxmoritz.png"
               />
             </a>
           </div>
@@ -57983,13 +57983,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                          href="/attachments/7.2.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                            src="/attachments/7.2.jpg"
                           />
                         </a>
                       </div>
@@ -58083,13 +58083,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                       >
                         <a
                           className="e-zoomable"
-                          href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                          href="/attachments/7.4.jpg"
                           target="original-picture"
                           title="Förstora"
                         >
                           <img
                             className="image"
-                            src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                            src="/attachments/7.4.jpg"
                           />
                         </a>
                       </div>
@@ -58169,13 +58169,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                     >
                       <a
                         className="e-zoomable"
-                        href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                        href="/attachments/7.2.jpg"
                         target="original-picture"
                         title="Förstora"
                       >
                         <img
                           className="image"
-                          src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.2.jpg"
+                          src="/attachments/7.2.jpg"
                         />
                       </a>
                     </div>
@@ -58243,13 +58243,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                     >
                       <a
                         className="e-zoomable"
-                        href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                        href="/attachments/7.4.jpg"
                         target="original-picture"
                         title="Förstora"
                       >
                         <img
                           className="image"
-                          src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/7.4.jpg"
+                          src="/attachments/7.4.jpg"
                         />
                       </a>
                     </div>
@@ -58527,13 +58527,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
               >
                 <a
                   className="e-zoomable"
-                  href="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/24.1.jpg"
+                  href="/attachments/24.1.jpg"
                   target="original-picture"
                   title="Förstora"
                 >
                   <img
                     className="image"
-                    src="/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/attachments/24.1.jpg"
+                    src="/attachments/24.1.jpg"
                   />
                 </a>
               </div>
@@ -58595,7 +58595,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           (
           <a
             className="attachment-link e-nowrap"
-            href="#10.%20A"
+            href="/attachments#10.%20A"
             target="attachments"
           >
             materialien
