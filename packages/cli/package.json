@@ -7,6 +7,9 @@
     "dist"
   ],
   "dependencies": {
+    "@digabi/exam-engine-rendering": "^1.0.0",
+    "@digabi/mex": "^4.4.4",
+    "@digabi/mexamples": "^5.0.0-0",
     "uuid": "^3.3.3",
     "yargs": "^15.0.2"
   },

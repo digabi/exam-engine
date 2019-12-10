@@ -8,6 +8,8 @@
     "public"
   ],
   "dependencies": {
+    "@digabi/exam-engine": "^4.4.1",
+    "@digabi/mex": "^4.4.4",
     "css-loader": "^3.2.1",
     "dexie": "^2.0.4",
     "file-loader": "^5.0.2",
