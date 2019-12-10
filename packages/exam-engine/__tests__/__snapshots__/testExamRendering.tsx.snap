@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_E/A_E.xml renders properly: <Attachments /> 1`] = `
+exports[`A_E.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
@@ -464,7 +464,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_E/A_E.
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_E/A_E.xml renders properly: <Exam /> 1`] = `
+exports[`A_E.xml renders properly: <Exam /> 1`] = `
 <main
   className="e-exam"
   lang="fi-FI"
@@ -1181,7 +1181,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_E/A_E.
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/A_X.xml renders properly: <Attachments /> 1`] = `
+exports[`A_X.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
@@ -2177,7 +2177,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/A_X.
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/A_X.xml renders properly: <Exam /> 1`] = `
+exports[`A_X.xml renders properly: <Exam /> 1`] = `
 <main
   className="e-exam"
   lang="fi-FI"
@@ -3171,7 +3171,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/A_X/A_X.
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/EA/EA.xml renders properly: <Attachments /> 1`] = `
+exports[`EA.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
@@ -3195,7 +3195,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/EA/EA.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/EA/EA.xml renders properly: <Exam /> 1`] = `
+exports[`EA.xml renders properly: <Exam /> 1`] = `
 <main
   className="e-exam"
   lang="fi-FI"
@@ -4266,7 +4266,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/EA/EA.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xml renders properly: <Attachments /> 1`] = `
+exports[`FF.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
@@ -5735,7 +5735,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xml renders properly: <Attachments /> 2`] = `
+exports[`FF.xml renders properly: <Attachments /> 2`] = `
 <main
   className="e-exam attachments"
 >
@@ -7151,7 +7151,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xml renders properly: <Exam /> 1`] = `
+exports[`FF.xml renders properly: <Exam /> 1`] = `
 <main
   className="e-exam"
   lang="fi-FI"
@@ -9250,7 +9250,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xml renders properly: <Exam /> 2`] = `
+exports[`FF.xml renders properly: <Exam /> 2`] = `
 <main
   className="e-exam"
   lang="sv-FI"
@@ -11330,7 +11330,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/FF/FF.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml renders properly: <Attachments /> 1`] = `
+exports[`M.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
@@ -11354,7 +11354,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml 
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml renders properly: <Attachments /> 2`] = `
+exports[`M.xml renders properly: <Attachments /> 2`] = `
 <main
   className="e-exam attachments"
 >
@@ -11378,7 +11378,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml 
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml renders properly: <Exam /> 1`] = `
+exports[`M.xml renders properly: <Exam /> 1`] = `
 <main
   className="e-exam"
   lang="fi-FI"
@@ -11840,7 +11840,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml 
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml renders properly: <Exam /> 2`] = `
+exports[`M.xml renders properly: <Exam /> 2`] = `
 <main
   className="e-exam"
   lang="sv-FI"
@@ -12302,7 +12302,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/M/M.xml 
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/MexDocumentation.xml renders properly: <Attachments /> 1`] = `
+exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
@@ -12514,7 +12514,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocum
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/MexDocumentation.xml renders properly: <Attachments /> 2`] = `
+exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
 <main
   className="e-exam attachments"
 >
@@ -12726,7 +12726,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocum
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/MexDocumentation.xml renders properly: <Exam /> 1`] = `
+exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
 <main
   className="e-exam"
   lang="fi-FI"
@@ -21624,7 +21624,7 @@ consequat laboris adipisicing duis proident proident amet.
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/MexDocumentation/MexDocumentation.xml renders properly: <Exam /> 2`] = `
+exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
 <main
   className="e-exam"
   lang="sv-FI"
@@ -30522,7 +30522,7 @@ consequat laboris adipisicing duis proident proident amet.
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/SC.xml renders properly: <Attachments /> 1`] = `
+exports[`SC.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
@@ -31020,7 +31020,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/SC.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/SC.xml renders properly: <Attachments /> 2`] = `
+exports[`SC.xml renders properly: <Attachments /> 2`] = `
 <main
   className="e-exam attachments"
 >
@@ -31518,7 +31518,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/SC.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/SC.xml renders properly: <Exam /> 1`] = `
+exports[`SC.xml renders properly: <Exam /> 1`] = `
 <main
   className="e-exam"
   lang="fi-FI"
@@ -45433,7 +45433,7 @@ exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/SC.xm
 </main>
 `;
 
-exports[`/Users/sluukkonen/Work/Code/ytl/exam-engine/packages/mexamples/SC/SC.xml renders properly: <Exam /> 2`] = `
+exports[`SC.xml renders properly: <Exam /> 2`] = `
 <main
   className="e-exam"
   lang="sv-FI"
