@@ -11,13 +11,29 @@
       This exam describes the MEX XML format.
     </p>
     <p>
-      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
+      For more information about using this format, see
+      <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <div class="warning-box">
-      Some of the features do not work in <a href="https://oma.abitti.fi/">Abitti</a>. They are documented in warning boxes like this.
+      Some of the features do not work in
+      <a href="https://oma.abitti.fi/">Abitti</a>
+      . They are documented in warning boxes like this.
     </div>
   </e:exam-instruction>
   <e:table-of-contents />
+  <e:external-material>
+    <e:attachment>
+      <e:attachment-title>Exam-specific external material title</e:attachment-title>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Aspernatur, libero sunt. Eos corporis quam fugiat maiores
+          expedita quidem quaerat, quos voluptatem similique quae cum.
+          Voluptate iste sed facere cum omnis.</p>
+      <e:reference>
+        <e:author>YTL</e:author>
+      </e:reference>
+    </e:attachment>
+
+  </e:external-material>
   <e:section>
     <e:section-title>Exam structure</e:section-title>
     <e:question>
@@ -78,6 +94,26 @@
           </div>
           <div>
             <strong>
+              Exam-specific external material
+              <code>&lt;e:external-material&gt;</code>
+            </strong>
+            0-1 elements
+            <p>
+              External material page is constructed based on
+              <code>e:external-material</code>
+              elements
+              defined within
+              <code>e:exam</code>
+              and
+              <code>e:question</code>
+              elements.
+              Contains
+              <code>e:attachment</code>
+              elements.
+            </p>
+          </div>
+          <div>
+            <strong>
               Section
               <code>&lt;e:section&gt;</code>
             </strong>
@@ -128,7 +164,7 @@
               </div>
               <div>
                 <strong>
-                  External material
+                  Question-specific external material
                   <code>&lt;e:external-material&gt;</code>
                 </strong>
                 0-1 elements
@@ -136,13 +172,11 @@
                   External material page is constructed based on
                   <code>e:external-material</code>
                   elements
-                  defined within all
+                  defined within
+                  <code>e:exam</code>
+                  and
                   <code>e:question</code>
-                  elements. Therefore it is always clear what
-                  question external material is part of.
-                  <code>
-                    &lt;e:external-material&gt;
-                  </code>
+                  elements.
                   Contains
                   <code>e:attachment</code>
                   elements.
@@ -295,14 +329,19 @@
             <td>No limit</td>
             <td>Maximum number of questions student should answer</td>
           </tr>
-          </tbody>
+        </tbody>
       </table>
       <p>
-        <code>exam-code</code> and <code>day-code</code> attributes control exam-specific
+        <code>exam-code</code>
+        and
+        <code>day-code</code>
+        attributes control exam-specific
         translations, e.g. the heading text of table of contents, and the exam title if specific
-        <code>e:exam-title</code> element is missing. Currently supported exam and day
+        <code>e:exam-title</code>
+        element is missing. Currently supported exam and day
         code pairs can be found in
-        <a href="https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json">https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json</a>.
+        <a href="https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json">https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json</a>
+        .
       </p>
       <div class="warning-box">
         max-answers is not supported in Abitti grading.
@@ -1067,9 +1106,17 @@
           displayed on an external material page, the
           <code>e:attachment</code>
           element can be defined
-          as child of an
+          as a child of an
           <code>e:external-material</code>
           element.
+        </p>
+        <p>
+          <code>e:external-material</code>
+          can be either a child of an
+          <code>e:exam</code>
+          or
+          <code>e:question</code>
+          element, depending on whether the material is exam-specific, or specific to a single question.
         </p>
       </e:question-instruction>
 
@@ -1305,6 +1352,27 @@
           </e:reference>
         </e:attachment>
       </e:external-material>
+
+      <h4>Example of exam-specific external material</h4>
+      <pre class="code">
+        <![CDATA[<e:exam ...>
+  ...
+  <e:table-of-contents />
+  <e:external-material>
+    <e:attachment>
+      <e:attachment-title>Exam-specific external material title</e:attachment-title>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Aspernatur, libero sunt. Eos corporis quam fugiat maiores
+          expedita quidem quaerat, quos voluptatem similique quae cum.
+          Voluptate iste sed facere cum omnis.</p>
+      <e:reference>
+        <e:author>YTL</e:author>
+      </e:reference>
+    </e:attachment>
+  </e:external-material>
+  <e:section>
+    ...]]>
+      </pre>
 
     </e:question>
     <e:question>
@@ -2708,7 +2776,8 @@ consequat laboris adipisicing duis proident proident amet.
 
       <p>
         If a table is very wide, you can prevent it from overflowing and make
-        it scrollable by wrapping it in an <code>.e-scrollable-x</code>
+        it scrollable by wrapping it in an
+        <code>.e-scrollable-x</code>
         element.
       </p>
 
@@ -2910,7 +2979,8 @@ consequat laboris adipisicing duis proident proident amet.
   <e:references />
   <e:exam-footer>
     <p>
-      For more information about using this format, see <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
+      For more information about using this format, see
+      <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <p>
       <a href="https://abitti.dev/abitti-trademark.html">Use of Abitti Trademark policy</a>

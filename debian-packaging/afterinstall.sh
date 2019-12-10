@@ -7,7 +7,7 @@ function afterinstall() {
     rm -rf /home/digabi/Työpöytä/mex-demo
     mkdir /home/digabi/Työpöytä/mex-demo
 
-    exams=( MexDocumentation FF A_X SC )
+    exams=( MexDocumentation FF A_X SC N )
     for exam in "${exams[@]}"
     do
         mkdir -p /home/digabi/Työpöytä/mex-demo/$exam

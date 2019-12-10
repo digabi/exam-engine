@@ -395,7 +395,7 @@ function countSectionMaxAndMinAnswers(exam: Element, sections: Element[]) {
   }
 
   for (const section of sections) {
-    if (!getNumericAttribute('max-answers', section) == null) {
+    if (getNumericAttribute('max-answers', section, null) == null) {
       section.attr('max-answers', String(Math.min(section.find('./e:question', ns).length, examMaxAnswers)))
     }
   }

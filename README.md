@@ -121,6 +121,15 @@ Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). 
 
 The information in this section is only relevant for developers of the exam-engine itself.
 
+## Compilation
+
+Before doing any changes, you'll always want to command TypeScript to compile
+any changes within the whole project automatically.
+
+```
+$ yarn watch
+```
+
 ## Lint
 
 ```
@@ -135,12 +144,21 @@ To run all tests
 $ yarn test
 ```
 
+To run a specific test or a specific set of tests, use
+
+```
+$ yarn test packages/foo/__tests__/testFoo.ts
+$ yarn test packages/foo
+```
+
 If you've made changes to the code that affect exam mastering or rendering,
 you need to update the test snapshots by running
 
 ```
 $ yarn test -u
 ```
+
+Travis CI runs tests on all branches and pull requests in https://travis-ci.org/digabi/exam-engine
 
 ## NPM releases
 

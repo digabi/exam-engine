@@ -10,7 +10,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   let close: CloseFunction
 
   beforeAll(async () => {
-    ;[url, close] = await previewExam(resolveExam('M/M.xml'), {
+    ;[url, close] = await previewExam(resolveExam('N/N.xml'), {
       casCountdownDurationSeconds: 2
     })
     page = await createPage()
@@ -46,7 +46,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   async function assertQuestionVisibility(visible: boolean) {
     await page.waitFor(
       innerVisible => {
-        const element = document.querySelector('.exam-question')
+        const element = document.querySelector('.exam-question[id="1."]')
         return innerVisible ? element != null : element == null
       },
       undefined,

@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd"
+        exam-schema-version="0.1" date="2019-09-24" exam-code="N" exam-stylesheet="custom.css" max-answers="10">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+    <e:language>sv-FI</e:language>
+  </e:languages>
+  <e:exam-instruction>
+    <e:localization lang="fi-FI">
+      <p>
+        Koe koostuu 13 tehtävästä, joista vastataan kymmeneen. Tehtävät on jaettu kolmeen osaan. A-osassa on neljä kaikille pakollista tehtävää. B1-osassa on viisi tehtävää, joista vastataan kolmeen. B2-osassa on neljä tehtävää, joista vastataan kolmeen. Kaikki tehtävät arvostellaan pistein 0–12, joten kokeen maksimipistemäärä on 120.
+      </p>  
+      <p>
+        A-osassa saat käyttää taulukkokirjaa ja koejärjestelmän tarjoamia perusohjelmia. A-osa palautetaan tehtävän 4 jäljessä olevalla painikkeella. Tämän jälkeen A-osan vastauksia ei voi enää muokata. A-osan palauttamisen jälkeen kaikki koejärjestelmän ohjelmat ovat käytettävissäsi. Lisäksi saat käyttöön oman laskimesi. Voit vastata B-osien tehtäviin myös ennen A-osan palauttamista.
+      </p>
+      <p>
+        Useimmissa tehtävissä kaikkien osatehtävien vastaukset kirjoitetaan samaan vastauskenttään. Jaottele vastauksesi osatehtävien mukaisesti. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen.
+      </p>
+      <p>
+          Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+      </p>      
+    </e:localization>
+    <e:localization lang="sv-FI">
+      <p>
+        Provet består av 13 uppgifter, av vilka tio uppgifter ska lösas. Uppgifterna är indelade i tre delar. Del A består av fyra uppgifter som är obligatoriska för alla. Del B1 består av fem uppgifter av vilka tre ska lösas. Del B2 består av fyra uppgifter av vilka tre ska lösas. Alla uppgifter bedöms med 0–12 poäng, vilket betyder att provets maximala antal poäng är 120.
+      </p>    
+      <p>
+        I del A får du använda tabellbok och de basprogram som ingår i provsystemet. Del A återlämnas med hjälp av tryckknappen efter uppgift 4. Efter detta kan svaren i del A inte längre redigeras och alla program i provsystemet kan användas. Dessutom kan du använda din egen räknare. Du kan även lösa uppgifterna i B-delarna innan du lämnat in del A.
+      </p>
+      <p>
+        I de flesta uppgifter skrivs lösningarna till alla deluppgifter in i samma svarsfält. Dela in ditt svar enligt deluppgifterna. Om du vill kan du skapa figurer, diagram eller tabeller som stöd för svaret och bifoga en skärmdump av dem till vilket textsvar som helst.
+      </p>
+      <p>
+        Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
+      </p>
+    </e:localization>
+    </e:exam-instruction>
+  <e:table-of-contents />
+  <e:section cas-forbidden="true">
+    <e:section-title>
+      <e:localization lang="fi-FI">A-osa</e:localization>  
+      <e:localization lang="sv-FI">Del A</e:localization>
+    </e:section-title>
+    <e:section-instruction>
+      <e:localization lang="fi-FI">Pakolliset tehtävät.</e:localization>
+      <e:localization lang="sv-FI">Obligatoriska uppgifter.</e:localization>
+    </e:section-instruction>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Lukujonot</e:localization>  
+        <e:localization lang="sv-FI"> Talföljder</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Alla on annettu eräiden lukujonojen yleisten termien lausekkeet. Valitse kunkin jonon alasvetovalikosta, onko jono aritmeettinen, geometrinen, kumpaakin vai ei kumpaakaan tyyppiä.</e:localization>  
+        <e:localization lang="sv-FI">Formlerna för de allmänna elementen till vissa talföljder är givna nedan. Välj i rullgardinsmenyn om talföljden är aritmetisk, geometrisk, både och eller av varkendera typen.</e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
+        </e:question-title>
+        <p>
+          <e:formula>a_n=3\cdot 2^n</e:formula>
+        </p>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option score="2">
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="sv-FI">aritmetisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="sv-FI">geometrisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="sv-FI">både och</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="sv-FI">varkendera</e:localization>
+          </e:dropdown-answer-option>
+        </e:dropdown-answer>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
+        </e:question-title>
+        <p>
+          <e:formula>b_n=n\cdot 3^n</e:formula>
+        </p>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="sv-FI">aritmetisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="sv-FI">geometrisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="sv-FI">både och</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option score="2">
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="sv-FI">varkendera</e:localization>
+          </e:dropdown-answer-option>
+        </e:dropdown-answer>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>   
+        </e:question-title>
+        <p>
+          <e:formula>c_n=7^{n+1}</e:formula>
+        </p>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="sv-FI">aritmetisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option score="2">
+            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="sv-FI">geometrisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="sv-FI">både och</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="sv-FI">varkendera</e:localization>
+          </e:dropdown-answer-option>
+        </e:dropdown-answer>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>   
+        </e:question-title>
+        <p>
+          <e:formula>d_n=5</e:formula>
+        </p>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="sv-FI">aritmetisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="sv-FI">geometrisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option score="2">
+            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="sv-FI">både och</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="sv-FI">varkendera</e:localization>
+          </e:dropdown-answer-option>
+        </e:dropdown-answer>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>       
+        </e:question-title>
+        <p>
+          <e:formula>e_n=2019-1/n</e:formula>
+        </p>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="sv-FI">aritmetisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="sv-FI">geometrisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="sv-FI">både och</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option score="2">
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="sv-FI">varkendera</e:localization>
+          </e:dropdown-answer-option>
+        </e:dropdown-answer>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>       
+        </e:question-title>
+        <p>
+          <e:formula>f_n=3-9n</e:formula>
+        </p>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option score="2">
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="sv-FI">aritmetisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="sv-FI">geometrisk</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="sv-FI">både och</e:localization>
+          </e:dropdown-answer-option>
+          <e:dropdown-answer-option>
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="sv-FI">varkendera</e:localization>
+          </e:dropdown-answer-option>
+        </e:dropdown-answer>
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Kuusi kolmiota </e:localization>
+        <e:localization lang="sv-FI">Sex trianglar</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>
+            Alla on esitetty kuusi kolmiota, joista on annettu joitakin tietoja. Tarkoituksena on ratkaista sivu <e:formula>x</e:formula> tai kulma <e:formula>\theta</e:formula>.
+          </p>    
+          <p>
+            Valitse kunkin kolmion osalta tilanteeseen parhaiten soveltuva kaava ja kirjoita vastauskenttään sivun <e:formula>x</e:formula> pituus tai kulman <e:formula>\theta</e:formula> suuruus asteen tarkkuudella. Älä perustele tämän tehtävän vastauksia. Tässä tehtävässä ei voi käyttää kaavaeditoria. Kunkin vastauksen maksimipituus on 10 merkkiä.
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+            Nedan är sex trianglar och någon information om dem givna. Avsikten är att bestämma sidan <e:formula>x</e:formula> eller vinkeln <e:formula>\theta</e:formula>.
+          </p>    
+          <p>
+            Välj för varje triangel den mest lämpliga formeln och skriv i svarsfältet in längden på sidan <e:formula>x</e:formula> eller storleken på vinkeln <e:formula>\theta</e:formula> med en grads noggrannhet. Motivera inte svaren i denna uppgift. I denna uppgift kan du inte använda formeleditorn. Maximilängden för varje svar är 10 tecken.
+          </p>  
+        </e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:localization>
+          <e:localization lang="sv-FI">Välj den mest lämpliga formeln för triangeln.</e:localization>
+        </e:question-title>
+        <e:attachment>
+          <e:attachment-title>Kuva 1</e:attachment-title>
+          <e:image src="2A.png"/>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+        
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1"><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Kirjoita vastauskenttään sivun <e:formula>x</e:formula> pituus.</e:localization>
+          <e:localization lang="sv-FI">Skriv i svarsfältet in längden på sidan <e:formula>x</e:formula>.</e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          Kohdan 2.1. kolmiossa pätee sivun pituudelle <e:formula>x =</e:formula> <e:text-answer max-score="1"/> yksikköä.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          I triangeln i fall 2.1. är sidans längd <e:formula>x =</e:formula> <e:text-answer max-score="1"/> längdenheter.
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:localization>
+          <e:localization lang="sv-FI">Välj den mest lämpliga formeln för triangeln.</e:localization>
+        </e:question-title>
+        <e:attachment>
+          <e:attachment-title>Kuva 2</e:attachment-title>
+          <e:image src="2B.png"/>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+        
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
+          <e:choice-answer-option score="1"><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
+        </e:choice-answer>        
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus.</e:localization>
+          <e:localization lang="sv-FI">Skriv i svarsfältet in storleken på vinkeln <e:formula>\theta</e:formula>.</e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">Kohdan 2.3. kolmiossa pätee kulman suuruudelle <e:formula>\theta =</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+        <e:localization lang="sv-FI">I triangeln i fall 2.3. är vinkelns storlek <e:formula>\theta =</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:localization>
+          <e:localization lang="sv-FI">Välj den mest lämpliga formeln för triangeln.</e:localization>
+        </e:question-title>
+        <e:attachment>
+          <e:attachment-title>Kuva 3</e:attachment-title>
+          <e:image src="2C.png"/>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
+          <e:choice-answer-option score="1"><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
+        </e:choice-answer>        
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus asteen tarkkuudella.</e:localization>
+          <e:localization lang="sv-FI">Skriv i svarsfältet in storleken på vinkeln <e:formula>\theta</e:formula> med en grads noggrannhet.</e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">Kohdan 2.5. kolmiossa pätee kulman suuruudelle <e:formula>\theta \approx</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+        <e:localization lang="sv-FI">I triangeln i fall 2.5. är vinkelns storlek <e:formula>\theta \approx</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:localization>
+          <e:localization lang="sv-FI">Välj den mest lämpliga formeln för triangeln.</e:localization>
+        </e:question-title>
+        <e:attachment>
+          <e:attachment-title>Kuva 4</e:attachment-title>
+          <e:image src="2D.png"/>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
+          <e:choice-answer-option score="1"><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
+        </e:choice-answer>        
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus.</e:localization>
+          <e:localization lang="sv-FI">Skriv i svarsfältet in storleken på vinkeln <e:formula>\theta</e:formula>.</e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">Kohdan 2.8. kolmiossa pätee kulman suuruudelle <e:formula>\theta =</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+        <e:localization lang="sv-FI">I triangeln i fall 2.8. är vinkelns storlek <e:formula>\theta =</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:localization>
+          <e:localization lang="sv-FI">Välj den mest lämpliga formeln för triangeln.</e:localization>
+        </e:question-title>
+        <e:attachment>
+          <e:attachment-title>Kuva 5</e:attachment-title>
+          <e:image src="2E.png"/>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
+          <e:choice-answer-option score="1"><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
+        </e:choice-answer> 
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Kirjoita vastauskenttään sivun <e:formula>x</e:formula> pituus.</e:localization>
+          <e:localization lang="sv-FI">Skriv i svarsfältet in längden på sidan <e:formula>x</e:formula>.</e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">Kohdan 2.9. kolmiossa pätee sivun pituudelle <e:formula>x =</e:formula> <e:text-answer max-score="1"/> yksikköä.</e:localization>
+        <e:localization lang="sv-FI">I triangeln i fall 2.9. är sidans längd <e:formula>x =</e:formula> <e:text-answer max-score="1"/> längdenheter.</e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:localization>
+          <e:localization lang="sv-FI">Välj den mest lämpliga formeln för triangeln.</e:localization>
+        </e:question-title>
+        <e:attachment>
+          <e:attachment-title>Kuva 6</e:attachment-title>
+          <e:image src="2F.png"/>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
+          <e:choice-answer-option score="1"><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
+          <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
+        </e:choice-answer>        
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus asteen tarkkuudella.</e:localization>
+          <e:localization lang="sv-FI">Skriv i svarsfältet in storleken på vinkeln <e:formula>\theta</e:formula> med en grads noggrannhet.</e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">Kohdan 2.11. kolmiossa pätee kulman suuruudelle <e:formula>\theta \approx</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+        <e:localization lang="sv-FI">I triangeln i fall 2.11. är vinkelns storlek <e:formula>\theta \approx</e:formula> <e:text-answer max-score="1"/><e:formula>°</e:formula>.</e:localization>
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Paraabeli ja suora</e:localization>
+        <e:localization lang="sv-FI">Parabel och linje</e:localization>
+      </e:question-title>
+      <e:external-material>
+        <e:attachment name="3A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kuva: Leikkauspisteet</e:localization>
+            <e:localization lang="sv-FI">Figur: Skärningspunkter</e:localization>
+          </e:attachment-title>
+          <e:image src="3A.jpg"/>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Kuvassa <e:attachment-link ref="3A" type="short"/> on paraabeli <e:formula>y=4x^2</e:formula> ja eräs suora. Määritä graafisesti suoran yhtälö. Määritä laskemalla leikkauspiste <e:formula>P</e:formula> suoran ja paraabelin yhtälöiden avulla.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          I figur <e:attachment-link ref="3A" type="short"/> är parabeln <e:formula>y=4x^2</e:formula> och en rät linje inritade. Bestäm grafiskt linjens ekvation. Bestäm skärningspunkten <e:formula>P</e:formula> genom beräkning med hjälp av linjens och parabelns ekvationer.
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Numerotemppu</e:localization>
+        <e:localization lang="sv-FI">Siffertrick</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>
+            Riikka on kehittänyt seuraavan numerotempun ja testaa sitä serkullaan Almalla. Alma on syntynyt 1.2.2000. Riikka esittää Almalle seuraavat askeleet:
+          </p>
+          <ol class="e-list-lower-alpha">
+            <li>Valitse luku väliltä <e:formula>1–9</e:formula>.</li>
+            <li>Kerro valitsemasi luku luvulla <e:formula>2</e:formula>.</li>
+            <li>Lisää saamaasi lukuun <e:formula>5</e:formula>.</li>
+            <li>Kerro nyt saamasi luku luvulla <e:formula>50</e:formula>.</li>
+            <li>
+              <ul>
+                <li>Jos olet jo viettänyt syntymäpäivääsi tänä vuonna, lisää lukuusi luku <e:formula>1769</e:formula>.</li>
+                <li>Jos et ole vielä viettänyt syntymäpäivääsi tänä vuonna, lisää lukuusi luku <e:formula>1768</e:formula>.</li>
+              </ul>
+            </li>
+            <li>Vähennä nyt tuloksesta syntymävuotesi.</li>
+            <li>Kerro, minkä tuloksen olet saanut.</li>
+          </ol>
+          <p>
+            Kun Alma vastaa <e:formula>319</e:formula>, niin Riikka tietää kertoa, että Alma on <e:formula>19</e:formula>-vuotias ja että hän valitsi alussa luvun <e:formula>3</e:formula>.
+          </p>
+          <p>
+            Selitä matemaattisesti, miksi Riikan numerotemppu toimi Almalle, ja miksei se toimi Alman isoisoäidille, joka on yli <e:formula>100</e:formula>-vuotias.
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+              Erika har utvecklat följande siffertrick och testar tricket på sin kusin Alma. Alma är född 1.2.2000. Erika presenterar följande steg för Alma:
+          </p>
+          <ol class="e-list-lower-alpha">
+            <li>Välj ett tal i intervallet <e:formula>1–9</e:formula>.</li>
+            <li>Multiplicera det tal som du valt med talet <e:formula>2</e:formula>.</li>
+            <li>Addera talet du får med talet <e:formula>5</e:formula>.</li>
+            <li>Multiplicera nu det tal du får med talet <e:formula>50</e:formula>.</li>
+            <li>
+              <ul>
+                <li>Lägg talet <e:formula>1769</e:formula> till ditt tal om du redan haft din födelsedag det här året.</li>
+                <li>Lägg talet <e:formula>1768</e:formula> till ditt tal om du inte ännu har haft din födelsedag det här året.</li>
+              </ul>
+            </li>
+            <li>Subtrahera ditt födelseår från resultatet.</li>
+            <li>Berätta vilket resultat du fått.</li>
+          </ol>
+          <p>
+            Då Alma svarar <e:formula>319</e:formula> vet Erika berätta att Alma är <e:formula>19</e:formula> år gammal och att hon i början valde talet <e:formula>3</e:formula>.
+          </p>
+          <p>
+            Förklara matematiskt varför Erikas siffertrick fungerar på Alma, och varför det inte fungerar på Almas gammelmormor som är över <e:formula>100</e:formula> år gammal.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+  </e:section>
+
+  <e:section cas-forbidden="false" max-answers="3">
+    <e:section-title>
+      <e:localization lang="fi-FI">B1-osa</e:localization>
+      <e:localization lang="sv-FI">Del B1</e:localization>
+    </e:section-title>
+    <e:section-instruction>
+      <e:localization lang="fi-FI">Ratkaise kolme tehtävistä 5–9. Tässä osassa saat käyttää kaikkia koejärjestelmän ohjelmia ja omaa laskintasi, kun olet palauttanut A-osan vastaukset.</e:localization>
+      <e:localization lang="sv-FI">Lös tre av uppgifterna 5–9. I den här delen får du använda alla program i provsystemet och din egen räknare, efter att du lämnat in svaren i del A.</e:localization>
+    </e:section-instruction>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Akun varaus</e:localization>
+        <e:localization lang="sv-FI">Laddningen i en ackumulator</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Akun varausta kuvaa malli <e:formula>a \cdot q^{t}</e:formula>, kun <e:formula>t</e:formula> on aika tunneissa, <e:formula>a=100</e:formula> C ja <e:formula>q=0{,}877</e:formula> Mikä on akun varauksen puoliintumisaika?</e:localization>
+        <e:localization lang="sv-FI">Laddningen i en ackumulator följer modellen <e:formula>a \cdot q^{t}</e:formula>, då <e:formula>t</e:formula> är tiden i timmar, <e:formula>a=100</e:formula> C och <e:formula>q=0{,}877</e:formula>. Vilken är halveringstiden för ackumulatorns laddning?</e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Algoritmista ajattelua</e:localization>
+        <e:localization lang="sv-FI">Algoritmiskt tänkande</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>
+            Alakoulun oppilaat harjoittelevat algoritmista ajattelua ja ohjelmointia. Oppilaiden tehtävänä on ohjelmoida toisiaan toimimaan täsmälleen tarkasti annettujen ohjeiden mukaan. Eräs oppilas antaa luokkatoverilleen seuraavat ohjeet:
+          </p>
+          <ol class="e-list-lower-alpha">
+            <li>Aloita pisteestä A.</li>
+            <li>Kulje täsmälleen <e:formula>2</e:formula> metriä suoraan eteenpäin.</li>
+            <li>Käänny <e:formula>90</e:formula> astetta oikealle.</li>
+            <li>Kulje täsmälleen <e:formula>4</e:formula> metriä eteenpäin.</li>
+            <li>Käänny <e:formula>90</e:formula> astetta oikealle.</li>
+            <li>Kulje täsmälleen <e:formula>7</e:formula> metriä eteenpäin ja olet perillä pisteessä B.</li>
+          </ol>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+            Eleverna i ett lågstadium tränar algoritmiskt tänkande och programmering. Elevernas uppgift är att programmera varandra att exakt följa noggrant givna instruktioner. En elev ger en klasskamrat följande instruktioner:
+          </p>
+          <ol class="e-list-lower-alpha">
+            <li>Starta i punkt A.</li>
+            <li>Gå exakt <e:formula>2</e:formula> meter rakt framåt.</li>
+            <li>Vänd dig <e:formula>90</e:formula> grader åt höger.</li>
+            <li>Gå exakt <e:formula>4</e:formula> meter framåt.</li>
+            <li>Vänd dig <e:formula>90</e:formula> grader åt höger.</li>
+            <li>Gå exakt <e:formula>7</e:formula> meter framåt och du är framme vid punkten B.</li>
+          </ol>
+        </e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua.</e:localization>
+          <e:localization lang="sv-FI">Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram och bildkapningsverktyget.</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6"/>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Laske pisteiden A ja B välinen etäisyys.</e:localization>
+          <e:localization lang="sv-FI">Beräkna avståndet mellan punkterna A och B.</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6"/>
+      </e:question>
+    </e:question>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Osakekaupat</e:localization>
+        <e:localization lang="sv-FI">Aktiehandel</e:localization>
+      </e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Tiedosto: Pörssikurssit</e:localization>
+            <e:localization lang="sv-FI">Datafil: Börskurser</e:localization>
+          </e:attachment-title>
+          <p>
+            <e:localization lang="fi-FI">Jokainen alla oleva tiedosto sisältää samat tiedot. Tallenna tiedosto, käynnistä valitsemasi ohjelmisto ja avaa tallentamasi tiedosto ohjelmiston valikosta.</e:localization>
+            <e:localization lang="sv-FI">Varje fil nedan innehåller samma data. Spara filen, öppna programmet du valt och öppna filen som du sparat från programmets meny.</e:localization>
+          </p>
+          <e:localization lang="fi-FI">
+            <e:file src="7Afi.ods">LibreOffice Calc</e:file>
+            <br/>
+            <e:file src="7Afi.ggb">GeoGebra</e:file>
+            <br/>
+            <e:file src="7Afi.cmbl">Logger <i>Pro</i></e:file>
+            <br/>
+            <e:file src="7Afi.vcp">Casio ClassPad Manager</e:file>
+            <br/>
+            <e:file src="7Afi.tns">TI Nspire</e:file>
+          </e:localization>
+          <e:localization lang="sv-FI">
+              <e:file src="7Asv.ods">LibreOffice Calc</e:file>
+              <br/>
+              <e:file src="7Asv.ggb">GeoGebra</e:file>
+              <br/>
+              <e:file src="7Asv.cmbl">Logger <i>Pro</i></e:file>
+              <br/>
+              <e:file src="7Asv.vcp">Casio ClassPad Manager</e:file>
+              <br/>
+              <e:file src="7Asv.tns">TI Nspire</e:file>  
+          </e:localization>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>
+            Aineistossa 7.A on Helsingin pörssin kolmen eri osakkeen osakekurssit, joiden mukaisin hinnoin Roope osti ja myi osakkeita. Hän ostaa 1.2.2018 kello 14.00 osaketta B yhteensä 1 000 eurolla. Hän vaihtaa 2.2.2018 kello 10.00 kaiken osakkeeseen C, ja samana päivänä kello 18.00 hän vaihtaa edelleen kaiken osakkeeseen A. Hän myy kaiken 3.2.2018 kello 16.00. Jokaisesta osto- ja myyntitoimeksiannosta Roope maksaa 4,00 euroa välityspalkkiota. Vaihdon yhteydessä tapahtuu sekä myynti- että ostotoimeksianto.
+          </p>
+          <p>
+            Kuinka paljon Roopella on rahaa osakkeet myytyään?
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+            Materialet 7.A består av aktiekurserna för tre olika aktier på Helsingforsbörsen. Robert köpte och sålde aktier enligt dessa aktiekurser. Han köper 1.2.2018 klockan 14.00 aktie B för totalt 1 000 euro. Den 2.2.2018 klockan 10.00 byter han alltsammans till aktie C, och samma dag kl. 18.00 byter han ytterligare en gång alltsammans till aktie A. Han säljer allt 3.2.2018 klockan 16.00. För varje köpuppdrag och säljuppdrag betalar Robert 4,00 euro i förmedlingsavgift. Vid ett byte görs både ett köpuppdrag och ett säljuppdrag.
+          </p>
+          <p>
+            Hur mycket pengar har Robert efter att han sålt sina aktier?
+          </p>
+         </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Kuvaajan tangentti</e:localization>
+        <e:localization lang="sv-FI">Tangenten till en graf</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Tarkastellaan polynomia <e:formula>p(x)=x^3+5x</e:formula> ja sen kuvaajan tangenttia pisteessä <e:formula>(1, 6)</e:formula>. Määritä derivaatan avulla tämän tangentin yhtälö.</e:localization>
+        <e:localization lang="sv-FI">Vi undersöker polynomet <e:formula>p(x)=x^3+5x</e:formula> och tangenten till polynomets graf i punkten <e:formula>(1, 6)</e:formula>. Bestäm med hjälp av derivatan ekvationen för denna tangent.</e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+    <e:question max-answers="1">
+      <e:question-title>
+        <e:localization lang="fi-FI">Vektorit / 12-sivuinen noppa</e:localization>
+        <e:localization lang="sv-FI">Vektorer / 12-sidig tärning</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Jos valitset tämän tehtävän, ratkaise joko 9.1. TAI 9.2. (Voit valita kumman tahansa tehtävän riippumatta siitä, minkä opetussuunnitelman mukaisesti olet opiskellut.)</e:localization>
+        <e:localization lang="sv-FI">Om du väljer den här uppgiften löser du antingen 9.1. ELLER 9.2. (Du kan välja vilken som helst av uppgifterna oberoende av enligt vilken läroplan du studerat.)</e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Vektorit</e:localization>
+          <e:localization lang="sv-FI">Vektorer</e:localization>
+        </e:question-title>
+        <p>
+          <e:localization lang="fi-FI">(Vanha opetussuunnitelma, ennen 1.8.2016 lukion aloittaneet)</e:localization>
+          <e:localization lang="sv-FI">(Gamla läroplanen, de som påbörjat gymnasiet före 1.8.2016)</e:localization>
+        </p>
+        
+        <e:external-material>
+          <e:attachment name="91A">
+            <e:attachment-title>
+              <e:localization lang="fi-FI">Kuva: Suunnikas</e:localization>
+              <e:localization lang="sv-FI">Figur: Parallellogram</e:localization>
+            </e:attachment-title>
+            <e:image src="9A.png"/>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:external-material>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">Kuvassa <e:attachment-link ref="91A" type="short"/> on suunnikas. Esitä vektorit <e:formula>\overline{AE}</e:formula> ja <e:formula>\overline{BD}</e:formula> vektorien <e:formula>\overline{a} = \overline{AB}</e:formula> ja <e:formula>\overline{b} = \overline{AD}</e:formula> avulla lausuttuina, kun piste <e:formula>E</e:formula> on janan <e:formula>CD</e:formula> keskipiste.</e:localization>
+          <e:localization lang="sv-FI">Bilden <e:attachment-link ref="91A" type="short"/> föreställer en parallellogram. Uttryck vektorerna <e:formula>\overline{AE}</e:formula> och <e:formula>\overline{BD}</e:formula> med hjälp av vektorerna <e:formula>\overline{a} = \overline{AB}</e:formula> och <e:formula>\overline{b} = \overline{AD}</e:formula>, då punkten <e:formula>E</e:formula> är mittpunkt på sträckan <e:formula>CD</e:formula>.</e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="12"/>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">12-sivuinen noppa</e:localization>
+          <e:localization lang="sv-FI">12-sidig tärning</e:localization>
+        </e:question-title>
+        <p>
+          <e:localization lang="fi-FI">(Uusi opetussuunnitelma, 1.8.2016 tai sen jälkeen lukion aloittaneet)</e:localization>
+          <e:localization lang="sv-FI">(Nya läroplanen, de som påbörjat gymnasiet 1.8.2016 eller senare)</e:localization>
+        </p>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">Heitetään kahta 12-sivuista noppaa, joiden silmäluvut ovat 1, 2, ..., 12. Laske tulosten summan odotusarvo ja keskihajonta esimerkiksi taulukkolaskentaohjelman avulla.</e:localization>
+          <e:localization lang="sv-FI">Vi kastar två tolvsidiga tärningar, vilkas ögontal är 1, 2, ..., 12. Beräkna väntevärde och standardavvikelse för ögontalens summa till exempel med hjälp av ett kalkylprogram.</e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="12"/>
+      </e:question>
+    </e:question>
+
+  </e:section>
+
+  <e:section cas-forbidden="false" max-answers="3">
+    <e:section-title>
+      <e:localization lang="fi-FI">B2-osa</e:localization>
+      <e:localization lang="sv-FI">Del B2</e:localization>
+    </e:section-title>
+    <e:section-instruction>
+      <e:localization lang="fi-FI">Ratkaise kolme tehtävistä 10–13. Tässä osassa saat käyttää kaikkia koejärjestelmän ohjelmia ja omaa laskintasi, kun olet palauttanut A-osan vastaukset.</e:localization>
+      <e:localization lang="sv-FI">Lös tre av uppgifterna 10–13. I den här delen får du använda alla program i provsystemet och din egen räknare, efter att du lämnat in svaren i del A.</e:localization>
+    </e:section-instruction>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Perheen keski-ikä</e:localization>
+        <e:localization lang="sv-FI">Medelåldern i en familj</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>
+            Matti ja Maija menevät naimisiin, kun he ovat <e:formula>23</e:formula>- ja <e:formula>21</e:formula>-vuotiaita. Heille syntyy ensimmäinen lapsi tasan <e:formula>2</e:formula> vuotta häiden jälkeen. Esikoisen jälkeen perheeseen syntyy vielä kolme lasta tasan <e:formula>4</e:formula> vuoden välein.
+          </p>
+          <p>
+            Milloin perheen keski-ikä on pienimmillään? Mikä on perheen keski-ikä silloin?
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+              Mats och Maj gifter sig då de är <e:formula>23</e:formula> respektive <e:formula>21</e:formula> år gamla. De får sitt första barn exakt <e:formula>2</e:formula> år efter bröllopet. Efter det första barnet föds ytterligare tre barn i familjen med exakt <e:formula>4</e:formula> års mellanrum.
+          </p>
+          <p>
+            När är familjens medelålder som lägst? Vilken är familjens medelålder då?
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Neliöjuuren likiarvo</e:localization>
+        <e:localization lang="sv-FI">Närmevärde för kvadratrot</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>Opiskelijoiden tehtävänä on määrittää lävistäjän pituus sellaiselle suorakulmiolle, jonka sivujen pituudet ovat <e:formula>1</e:formula> ja <e:formula>2</e:formula>. Käytössä on kuitenkin vain laskin, jolla voi laskea yhteen-, vähennys-, kerto- ja jakolaskuja, mutta ei neliöjuuria. Opiskelijat tietävät, että luvun <e:formula>5</e:formula> neliöjuurelle voi määrittää likiarvoja seuraavan jonon avulla:</p>
+          <p class="e-text-center">
+            <e:formula mode="display">x_1 = 3,</e:formula>
+            <e:formula mode="display">x_{n+1} = \frac{1}{2}\left(x_n + \frac{5}{x_n}\right), n\ge 1.</e:formula>
+          </p>
+          <p>
+            Ilpo yrittää päästä helpolla ja tarjoaa luvulle <e:formula>\sqrt 5</e:formula> arviota <e:formula>x_2</e:formula>. Simo puolestaan päättää käyttää arviota <e:formula>x_4</e:formula>. Vertaa arvioita <e:formula>x_2</e:formula> ja <e:formula>x_4</e:formula> laskimen antamaan luvun <e:formula>\sqrt 5</e:formula> likiarvoon.
+          </p>
+          <p>            
+            Kuinka monta prosenttia liian suuria Ilpon ja Simon arviot ovat?
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>En grupp studerande har som uppgift att bestämma diagonalens längd i en rektangel, vars sidor har längderna <e:formula>1</e:formula> och <e:formula>2</e:formula>. De får emellertid endast använda en räknare med vilken det går att beräkna addition, subtraktion, multiplikation och division, men inte kvadratrot. Studerandena vet att det går att bestämma närmevärden för kvadratroten av talet <e:formula>5</e:formula> med följande talföljd:</p>
+          <p class="e-text-center">
+            <e:formula mode="display">x_1 = 3,</e:formula>
+            <e:formula mode="display">x_{n+1} = \frac{1}{2}\left(x_n + \frac{5}{x_n}\right), n\ge 1.</e:formula>
+          </p>
+          <p>
+            Ivar försöker komma lätt undan och föreslår uppskattningen <e:formula>x_2</e:formula> för talet <e:formula>\sqrt 5</e:formula>. Simon beslutar sig i stället för att använda uppskattningen <e:formula>x_4</e:formula>. Jämför uppskattningarna <e:formula>x_2</e:formula> och <e:formula>x_4</e:formula> med det närmevärde på <e:formula>\sqrt 5</e:formula> som räknaren ger.
+          </p>
+          <p>            
+            Hur många procent för stora är Ivars och Simons uppskattningar?
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Suureiden suhteet</e:localization>
+        <e:localization lang="sv-FI">Förhållande mellan storheter</e:localization>
+      </e:question-title>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Marmeladilevy</e:localization>
+          <e:localization lang="sv-FI">Marmeladskiva</e:localization>
+        </e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              Tasapaksusta marmeladilevystä leikataan herkkupaloja isolla ja pienellä ympyränmuotoisella muotilla. Ison muotin halkaisija on kaksi kertaa niin suuri kuin pienen. Namuska on tottunut syömään kolme isoa marmeladipalaa.
+            </p>  
+            <p>
+              Kuinka monta pientä palaa hänen pitäisi syödä saadakseen yhtä paljon marmeladia?
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              Delikatessbitar med ett stort och med ett litet cirkelformat mått skärs ut ur en jämntjock marmeladskiva. Det större måttets diameter är dubbelt så stor som det mindre måttets. Nalle brukar äta tre stora marmeladbitar.
+            </p>
+            <p>
+              Hur många små bitar borde han äta för att få i sig lika mycket marmelad?
+            </p>
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="4"/>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Lassi Lounastaja</e:localization>
+          <e:localization lang="sv-FI">Lasse Lunchare</e:localization>
+        </e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              Lassi Lounastaja on tottunut syömään lounaallaan kaksi isoa perunaa. Eräänä päivänä tarjolla on pieniä perunoita, joiden halkaisija on vain <e:formula>60</e:formula> prosenttia ison perunan halkaisijasta. Kaikki perunat ovat yhdenmuotoisia.
+            </p>  
+            <p>
+              Kuinka monta pikkuperunaa Lassin pitäisi syödä saadakseen saman verran perunaa?
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              Lasse Lunchare brukar på sin lunch äta två stora potatisar. En dag serveras små potatisar som har en diameter på endast <e:formula>60</e:formula> procent av diametern på en stor potatis. Alla potatisar är likformiga med varandra.
+            </p>
+            <p>
+              Hur många små potatisar borde Lasse äta för att få i sig lika mycket potatis som han brukar?
+            </p>
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="6"/>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Musiikkikappale</e:localization>
+          <e:localization lang="sv-FI">Musikstycke</e:localization>
+        </e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              Erään musiikkikappaleen esittämiseen kuluu <e:formula>40</e:formula>-henkiseltä kuorolta <e:formula>7</e:formula> minuuttia ja <e:formula>40</e:formula> sekuntia. Eräässä esityksessä kolme kuoron jäsentä on flunssan takia poissa.
+            </p>
+            <p>
+              Kuinka kauan tämän kappaleen esittämiseen kuluu <e:formula>37</e:formula>-henkiseltä kuorolta?
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              Det tar <e:formula>7</e:formula> minuter och <e:formula>40</e:formula> sekunder för en <e:formula>40</e:formula> personer stor kör att framföra ett visst musikstycke. Vid ett framförande är tre av körmedlemmarna frånvarande på grund av en influensa.
+            </p>
+            <p>
+              Hur lång tid tar det att framföra samma musikstycke för en kör med <e:formula>37</e:formula> personer?
+            </p>
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="2"/>
+      </e:question>
+    </e:question>
+
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Suomen väestön rakenne</e:localization>
+        <e:localization lang="sv-FI">Finlands befolkningsstruktur</e:localization>
+      </e:question-title>
+      <e:external-material>
+        <e:attachment name="13A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Taulukko: Suomen väestön rakenne</e:localization>
+            <e:localization lang="sv-FI">Tabell: Finlands befolkningsstruktur </e:localization>
+          </e:attachment-title>
+          <e:localization lang="fi-FI">
+            <p>Avaa aineisto LibreOffice Calc -ohjelmaan napsauttamalla alla olevaa linkkiä.</p>  
+            <e:file src="13Afi.ods">LibreOffice Calc</e:file>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>Öppna materialet i programmet LibreOffice Calc genom att klicka på länken nedan.</p>
+            <e:file src="13Asv.ods">Libreoffice Calc</e:file>
+          </e:localization>
+          <e:reference>
+            <e:publisher>
+              <e:localization lang="fi-FI">Tilastokeskus</e:localization>
+              <e:localization lang="sv-FI">Statistikcentralen</e:localization>
+            </e:publisher>
+            <e:url>https://www.tilastokeskus.fi/tup/suoluk/suoluk_vaesto.html</e:url>
+            <e:reference-date>2018-05-25</e:reference-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Aineistossa <e:attachment-link ref="13A" type="short"/> on esitetty Suomen väestön rakenne. Laske 15–64-vuotiaiden asukkaiden lukumäärät vuosina 1900, 1950, 1990, 2000, 2010 ja 2016. Sovita laskemaasi aineistoon lineaarinen malli <e:formula>f(x)</e:formula> ja toisen asteen polynomi <e:formula>g(x)</e:formula> Ennusta molempien mallien avulla Suomen 15–64-vuotiaiden lukumäärät vuosina 2035 ja 2350 ja pohdi ennusteiden mielekkyyttä.</e:localization>
+        <e:localization lang="sv-FI">I material <e:attachment-link ref="13A" type="short"/> presenteras Finlands befolkningsstruktur. Beräkna antalet 15–64-åriga invånare åren 1900, 1950, 1990, 2000, 2010 och 2016. Anpassa en linjär modell <e:formula>f(x)</e:formula> och ett polynom av andra graden <e:formula>g(x)</e:formula> till ditt material. Gör med hjälp av båda modellerna en prognos för antalet 15–64-åringar åren 2035 och 2350 samt diskutera hur förnuftiga prognoserna är.</e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="12"/>
+    </e:question>
+
+  </e:section>
+
+  <e:references />
+</e:exam>

@@ -11,8 +11,8 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
   const caption = element.hasChildNodes() ? renderChildNodes(element) : undefined
-  const { resolveAttachment } = useContext(ExamContext)
-  const Img = () => <img className="image" src={resolveAttachment(src)} />
+  const imgUrl = useContext(ExamContext).resolveAttachment(src)
+  const Img = () => <img className="image" src={imgUrl} />
   return (
     <>
       <ResponsiveMediaContainer
@@ -27,7 +27,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
         {closest(element, 'choice-answer, hint') != null ? (
           <Img />
         ) : (
-          <a title={t('zoom-in')} href={resolveAttachment(src)} target="original-picture" className="e-zoomable">
+          <a title={t('zoom-in')} href={imgUrl} target="original-picture" className="e-zoomable">
             <Img />
           </a>
         )}
