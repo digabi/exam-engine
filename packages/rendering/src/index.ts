@@ -1,7 +1,9 @@
-import { ns, parseExam } from '@digabi/mex'
+import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/mex'
 import { promises as fs } from 'fs'
 import { AddressInfo } from 'net'
 import path from 'path'
+import puppeteer from 'puppeteer'
+import uuid from 'uuid'
 import webpack from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
 import { getOfflineWebpackConfig } from './getOfflineWebpackConfig'
@@ -33,39 +35,63 @@ export async function previewExam(examFile: string, options: RenderingOptions = 
   })
 }
 
-export async function createOfflineExam(examFile: string, outputDirectory: string): Promise<string[]> {
+export async function createOfflineExam(
+  examFile: string,
+  outputDirectory: string,
+  prerender: boolean = false
+): Promise<string[]> {
+  const resolveAttachment = (filename: string) => path.resolve(path.dirname(examFile), 'attachments', filename)
   const source = await fs.readFile(examFile, 'utf-8')
-  const doc = parseExam(source)
-  const languages = doc
-    .root()!
-    .find('//e:language/text()', ns)
-    .map(String)
-  const indexHtml = path.resolve(__dirname, '../public/offline.html')
   const outputFiles = []
 
-  for (const language of languages) {
+  for (const result of await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))) {
     const examVersionDirectory = path.resolve(
       outputDirectory,
-      `${path.basename(path.dirname(examFile))}_offline_${language}`
+      `${path.basename(path.dirname(examFile))}_offline_${result.language}`
     )
-    const config = getOfflineWebpackConfig(examFile, examVersionDirectory, language)
+    const resolveOutputFile = (filename: string) => path.resolve(examVersionDirectory, filename)
+    const config = getOfflineWebpackConfig(result, examVersionDirectory)
     await new Promise<string>((resolve, reject) => {
       webpack(config, (err, stats) => {
         if (err || stats.hasErrors()) {
           reject(err || stats.toString({ colors: true }))
         } else {
-          resolve(stats.toString({ colors: true }))
+          resolve()
         }
       })
     })
 
-    const examOutputFile = path.resolve(examVersionDirectory, 'koe.html')
-    const attachmentsOutputFile = path.resolve(examVersionDirectory, 'aineisto.html')
+    for (const { filename } of result.attachments) {
+      await fs.copyFile(resolveAttachment(filename), resolveOutputFile(`attachments/${filename}`))
+    }
 
-    await fs.copyFile(indexHtml, examOutputFile)
-    await fs.copyFile(indexHtml, attachmentsOutputFile)
+    outputFiles.push(resolveOutputFile('index.html'), resolveOutputFile('attachments/index.html'))
+  }
 
-    outputFiles.push(examOutputFile, attachmentsOutputFile)
+  if (prerender) {
+    const browser = await puppeteer.launch()
+    try {
+      const context = await browser.createIncognitoBrowserContext()
+      const page = await context.newPage()
+      await page.setViewport({ width: 1920, height: 1200 })
+      for (const outputFile of outputFiles) {
+        await page.goto('file://' + outputFile, { waitUntil: 'networkidle0' })
+        await page.evaluate(() => {
+          // Remove rich-text-editor injected styles
+          document.head.querySelectorAll(':scope > style').forEach(e => {
+            if (e.textContent!.includes('.e-exam')) {
+              e.remove()
+            }
+          })
+          // Remove rich-text-editor injected HTML.
+          document.body.querySelectorAll(':scope > :not(main)').forEach(e => e.remove())
+        })
+        const prerenderedContent = await page.content()
+        await fs.writeFile(outputFile, prerenderedContent, 'utf-8')
+      }
+    } finally {
+      await browser.close()
+    }
   }
 
   return outputFiles

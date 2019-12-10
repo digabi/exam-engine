@@ -2,26 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="main.css" />
-    <style type="text/css">
-      body {
-        margin: 0;
-        padding: 0 1rem;
-      }
-      .audio-player {
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: translateY(-100%);
-        transition: transform 0.5s;
-      }
-      .audio-player--visible {
-        transform: translateY(0);
-      }
-    </style>
-    <script src="main-bundle.js"></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link rel="preload" href="<%= htmlWebpackPlugin.options.scriptSrc %>" as="script" />
+    <link rel="preload" href="<%= htmlWebpackPlugin.options.styleSheetHref %>" as="stylesheet" />
+
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.styleSheetHref %>" />
+    <script src="<%= htmlWebpackPlugin.options.scriptSrc %>" defer></script>
   </head>
-  <body>
-    <div id="app" />
-  </body>
+  <body style="background-color: <%= htmlWebpackPlugin.options.backgroundColor %>;" />
 </html>

@@ -14,10 +14,11 @@ yargs
           type: 'string'
         })
         .positional('outputDirectory', { description: 'The output directory', type: 'string' })
-        .demandOption(['examFilename', 'outputDirectory']),
-    async ({ examFilename, outputDirectory }) => {
+        .option('prerender', { type: 'boolean', description: 'Prerender the HTML with Puppeteer', default: false })
+        .demandOption(['examFilename', 'outputDirectory', 'prerender']),
+    async ({ examFilename, outputDirectory, prerender }) => {
       try {
-        await createOfflineExam(path.resolve(process.cwd(), examFilename), outputDirectory)
+        await createOfflineExam(path.resolve(process.cwd(), examFilename), outputDirectory, prerender)
       } catch (err) {
         // tslint:disable-next-line: no-console
         console.error(err)

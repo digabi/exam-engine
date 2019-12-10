@@ -5,9 +5,7 @@ import { RenderingOptions } from '.'
 import { getWebpackConfig } from './getWebpackConfig'
 
 export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions): webpack.Configuration {
-  const attachmentsDirectory = path.resolve(path.dirname(examFilename), 'attachments')
-
-  return getWebpackConfig(attachmentsDirectory, {
+  return getWebpackConfig({
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: path.resolve(__dirname, 'preview.js'),
