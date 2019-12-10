@@ -6,7 +6,7 @@ import yargs from 'yargs'
 yargs
   .command(
     '$0 <examFilename> <outputDirectory>',
-    'Starts the exam preview.',
+    'Generates a static offline version of the exam ',
     yargsc =>
       yargsc
         .positional('examFilename', {
