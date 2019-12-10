@@ -4,5 +4,6 @@
     "rootDir": "./src"
   },
   "extends": "../../tsconfig.json",
-  "include": ["./src"]
+  "include": ["./src"],
+  "references": [{ "path": "../mex" }]
 }
