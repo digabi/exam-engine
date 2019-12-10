@@ -1,4 +1,4 @@
 addons:
   chrome: stable
 language: node_js
-script: yarn && yarn test && yarn lint
+script: yarn && yarn test -i --ci && yarn lint
