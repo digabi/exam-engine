@@ -5,6 +5,9 @@
   "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
+  "engines": {
+    "node": ">= 10.0"
+  },
   "devDependencies": {
     "@digabi/noto-sans": "^2.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
