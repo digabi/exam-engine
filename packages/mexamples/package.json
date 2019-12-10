@@ -12,6 +12,6 @@
     "build": "tsc --build",
     "lint": "tslint -p .",
     "test": "echo OK",
-    "prepublish": "yarn build"
+    "prepublishOnly": "yarn build"
   }
 }

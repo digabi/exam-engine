@@ -30,7 +30,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "tslint -p . -p __tests__",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "test": "jest"
   }
 }

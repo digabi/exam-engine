@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "tslint -p .",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "test": "echo OK"
   }
 }
