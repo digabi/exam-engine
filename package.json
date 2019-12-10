@@ -6,7 +6,7 @@
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "devDependencies": {
-    "@types/chai": "^4.2.6",
+    "@types/chai": "^4.2.7",
     "@types/child-process-promise": "^2.2.1",
     "@types/fs-extra": "^8.0.1",
     "@types/js-cookie": "^2.2.4",
