@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { createOfflineExam } from '@digabi/exam-engine-rendering'
 import path from 'path'
 import yargs from 'yargs'

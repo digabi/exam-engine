@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { previewExam } from '@digabi/exam-engine-rendering'
 import { resolveExam } from '@digabi/mexamples'
 import path from 'path'
