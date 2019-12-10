@@ -12,7 +12,7 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
 
   beforeAll(async () => {
     const tmpdir = await tmp.dir().then(r => r.path)
-    ;[examHtmlFile, attachmentsHtmlFile] = await createOfflineExam(resolveExam('SC/SC.xml'), tmpdir)
+    ;[examHtmlFile, attachmentsHtmlFile] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir)
     page = await createPage()
   })
 
