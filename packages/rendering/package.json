@@ -28,7 +28,7 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "lint": "tslint -p .",
+    "lint": "tslint -p . -p __tests__",
     "test": "jest"
   }
 }

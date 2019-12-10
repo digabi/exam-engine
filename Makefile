@@ -81,8 +81,8 @@ publish-mexamples: build $(patsubst %.xml,%.mex,$(EE_EXAM_XML_FILES))
 
 lint: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspaces run lint	--fix
+	$(EE_NVM_EXEC) yarn workspaces run lint --fix
 
 lint-ci: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspaces run lint	-t checkstyle -o tslint.xml
+	$(EE_NVM_EXEC) yarn workspaces run lint -t checkstyle -o tslint.xml

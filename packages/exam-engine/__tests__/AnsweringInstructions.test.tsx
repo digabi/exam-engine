@@ -1,15 +1,12 @@
-/** @jest-environment jsdom */
-
-import { i18n } from 'i18next'
+import * as i18next from 'i18next'
 import React from 'react'
 import { I18nextProvider } from 'react-i18next'
 import TestRenderer from 'react-test-renderer'
 import AnsweringInstructions, { AnsweringInstructionProps } from '../src/components/AnsweringInstructions'
-import '../src/i18n'
 import { initI18n } from '../src/i18n'
 
 describe('<AnsweringInstructions />', () => {
-  let i18n: i18n
+  let i18n: i18next.i18n
 
   beforeAll(() => {
     i18n = initI18n('fi-FI', null, null)

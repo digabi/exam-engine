@@ -21,9 +21,12 @@
   "files": [],
   "references": [
     { "path": "./packages/exam-engine" },
+    { "path": "./packages/exam-engine/__tests__" },
     { "path": "./packages/mex" },
+    { "path": "./packages/mex/__tests__" },
     { "path": "./packages/mexamples" },
     { "path": "./packages/rendering" },
+    { "path": "./packages/rendering/__tests__" },
     { "path": "./packages/cli" }
   ]
 }
