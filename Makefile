@@ -60,12 +60,11 @@ test: build
 
 unit-tests-ci: build
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/mex test --ci
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine test --ci 
+	$(EE_NVM_EXEC) yarn test --test-path-ignore-patterns packages/rendering
 
 browser-tests-ci: build
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine-rendering test --ci
+	$(EE_NVM_EXEC) yarn test packages/rendering
 
 publish-exam-engine: $(EE_EXAM_ENGINE_BUILT)
 	$(PRINT_TARGET)
