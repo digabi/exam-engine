@@ -984,6 +984,9 @@
   }
 }
 
+.attachments {
+  margin-top: 2rem;
+}
 .attachments-attachment + .attachments-attachment:before {
   display: block;
   content: '';
@@ -993,9 +996,6 @@
   margin-left: -3rem;
   margin-right: -3rem;
   margin-bottom: 3rem;
-}
-.attachments {
-  margin-top: 2rem;
 }
 .e-exam .e-radio-button,
 .e-exam .e-checkbox {
@@ -1325,90 +1325,6 @@
   background: #c8c8c8;
   cursor: auto;
 }
-.e-exam .e-color-black {
-  color: #333;
-}
-.e-exam .e-bg-color-black {
-  background-color: #333;
-}
-.e-exam .e-color-off-white {
-  color: #fefefe;
-}
-.e-exam .e-bg-color-off-white {
-  background-color: #fefefe;
-}
-.e-exam .e-color-grey {
-  color: #aaaaaa;
-}
-.e-exam .e-bg-color-grey {
-  background-color: #aaaaaa;
-}
-.e-exam .e-color-error {
-  color: #9e0000;
-}
-.e-exam .e-bg-color-error {
-  background-color: #9e0000;
-}
-.e-exam .e-color-darkgrey {
-  color: #777777;
-}
-.e-exam .e-bg-color-darkgrey {
-  background-color: #777777;
-}
-.e-exam .e-color-midgrey {
-  color: #DDDDDD;
-}
-.e-exam .e-bg-color-midgrey {
-  background-color: #DDDDDD;
-}
-.e-exam .e-color-lightgrey {
-  color: #f0f0f0;
-}
-.e-exam .e-bg-color-lightgrey {
-  background-color: #f0f0f0;
-}
-.e-exam .e-color-tinted-white {
-  color: #f5fbfe;
-}
-.e-exam .e-bg-color-tinted-white {
-  background-color: #f5fbfe;
-}
-.e-exam .e-color-lightblue {
-  color: #e0f4fe;
-}
-.e-exam .e-bg-color-lightblue {
-  background-color: #e0f4fe;
-}
-.e-exam .e-color-lighterblue {
-  color: #f0faff;
-}
-.e-exam .e-bg-color-lighterblue {
-  background-color: #f0faff;
-}
-.e-exam .e-color-lightblue-shade {
-  color: #c6e6f2;
-}
-.e-exam .e-bg-color-lightblue-shade {
-  background-color: #c6e6f2;
-}
-.e-exam .e-color-lightturquoise {
-  color: #88d0d0;
-}
-.e-exam .e-bg-color-lightturquoise {
-  background-color: #88d0d0;
-}
-.e-exam .e-color-link {
-  color: #359bb7;
-}
-.e-exam .e-bg-color-link {
-  background-color: #359bb7;
-}
-.e-exam .e-color-link-hover {
-  color: #288199;
-}
-.e-exam .e-bg-color-link-hover {
-  background-color: #288199;
-}
 .e-exam .e-columns {
   display: flex;
 }
@@ -1500,6 +1416,90 @@
   text-decoration: underline;
   color: #288199;
 }
+.e-exam .e-color-black {
+  color: #333;
+}
+.e-exam .e-bg-color-black {
+  background-color: #333;
+}
+.e-exam .e-color-off-white {
+  color: #fefefe;
+}
+.e-exam .e-bg-color-off-white {
+  background-color: #fefefe;
+}
+.e-exam .e-color-grey {
+  color: #aaaaaa;
+}
+.e-exam .e-bg-color-grey {
+  background-color: #aaaaaa;
+}
+.e-exam .e-color-error {
+  color: #9e0000;
+}
+.e-exam .e-bg-color-error {
+  background-color: #9e0000;
+}
+.e-exam .e-color-darkgrey {
+  color: #777777;
+}
+.e-exam .e-bg-color-darkgrey {
+  background-color: #777777;
+}
+.e-exam .e-color-midgrey {
+  color: #DDDDDD;
+}
+.e-exam .e-bg-color-midgrey {
+  background-color: #DDDDDD;
+}
+.e-exam .e-color-lightgrey {
+  color: #f0f0f0;
+}
+.e-exam .e-bg-color-lightgrey {
+  background-color: #f0f0f0;
+}
+.e-exam .e-color-tinted-white {
+  color: #f5fbfe;
+}
+.e-exam .e-bg-color-tinted-white {
+  background-color: #f5fbfe;
+}
+.e-exam .e-color-lightblue {
+  color: #e0f4fe;
+}
+.e-exam .e-bg-color-lightblue {
+  background-color: #e0f4fe;
+}
+.e-exam .e-color-lighterblue {
+  color: #f0faff;
+}
+.e-exam .e-bg-color-lighterblue {
+  background-color: #f0faff;
+}
+.e-exam .e-color-lightblue-shade {
+  color: #c6e6f2;
+}
+.e-exam .e-bg-color-lightblue-shade {
+  background-color: #c6e6f2;
+}
+.e-exam .e-color-lightturquoise {
+  color: #88d0d0;
+}
+.e-exam .e-bg-color-lightturquoise {
+  background-color: #88d0d0;
+}
+.e-exam .e-color-link {
+  color: #359bb7;
+}
+.e-exam .e-bg-color-link {
+  background-color: #359bb7;
+}
+.e-exam .e-color-link-hover {
+  color: #288199;
+}
+.e-exam .e-bg-color-link-hover {
+  background-color: #288199;
+}
 .e-exam .e-list-plain {
   list-style: none;
 }
@@ -1550,6 +1550,31 @@
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.03);
 }
+@media print {
+  html {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .e-exam {
+    max-width: none !important;
+    color: #000;
+  }
+  button {
+    background: none !important;
+    color: #000 !important;
+  }
+  section {
+    padding: 0 !important;
+  }
+  .beta-ribbon {
+    display: none;
+  }
+  .rich-text-editor-tools {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
 .e-exam .e-illustration-right {
   float: right;
   margin-left: 1rem;
@@ -1579,31 +1604,6 @@
   margin-top: 0;
   margin-bottom: 1rem;
 }
-@media print {
-  html {
-    font-size: 12px;
-    line-height: 18px;
-  }
-  .e-exam {
-    max-width: none !important;
-    color: #000;
-  }
-  button {
-    background: none !important;
-    color: #000 !important;
-  }
-  section {
-    padding: 0 !important;
-  }
-  .beta-ribbon {
-    display: none;
-  }
-  .rich-text-editor-tools {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
-}
 .e-exam .e-width-full {
   width: 100%;
 }
@@ -1618,31 +1618,6 @@
 }
 .e-exam .e-width-quarter {
   width: 25%;
-}
-.e-exam caption {
-  font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  text-align: left;
-  margin-bottom: 0.5rem;
-}
-.e-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-}
-.e-table th,
-.e-table td {
-  text-align: left;
-  border: 1px solid #aaaaaa;
-  padding: 0.25rem 0.5rem;
-}
-.e-table--borderless th,
-.e-table--borderless td {
-  border: none;
-}
-.e-table--zebra tbody tr:nth-child(odd) {
-  background: rgba(0, 0, 0, 0.06);
 }
 .e-exam .e-pad-0 {
   padding: 0rem;
@@ -2057,6 +2032,31 @@
 .e-exam .e-mrg-y-8 {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+.e-exam caption {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.e-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.e-table th,
+.e-table td {
+  text-align: left;
+  border: 1px solid #aaaaaa;
+  padding: 0.25rem 0.5rem;
+}
+.e-table--borderless th,
+.e-table--borderless td {
+  border: none;
+}
+.e-table--zebra tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.06);
 }
 .e-exam {
   font-weight: 400;
