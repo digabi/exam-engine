@@ -66,18 +66,6 @@ browser-tests-ci: build
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn test packages/rendering
 
-publish-exam-engine: $(EE_EXAM_ENGINE_BUILT)
-	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine publish --new-version $(version)
-
-publish-mex-pkg: build
-	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/mex publish --new-version $(version)
-
-publish-mexamples: build $(patsubst %.xml,%.mex,$(EE_EXAM_XML_FILES))
-	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/mexamples publish --new-version $(version)
-
 lint: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn lint --fix
