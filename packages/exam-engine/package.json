@@ -11,6 +11,7 @@
   "scripts": {
     "build": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
     "lint": "tslint -p . -p __tests__",
+    "prepublish": "yarn build",
     "test": "jest"
   },
   "peerDependencies": {

@@ -149,5 +149,5 @@ Login to npm first with digabi user.
 ## exam-engine
 
 ```
-$ lerna publish
+$ yarn lerna publish
 ```

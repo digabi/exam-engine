@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "EUPL-1.1",
-  "private": true,
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "uuid": "^3.3.3",
     "yargs": "^15.0.2"
@@ -11,6 +13,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "tslint -p .",
+    "prepublish": "yarn build",
     "test": "echo OK"
   }
 }

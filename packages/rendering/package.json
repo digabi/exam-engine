@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
-  "private": true,
   "files": [
     "dist",
     "public"
@@ -29,6 +28,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "tslint -p . -p __tests__",
+    "prepublish": "yarn build",
     "test": "jest"
   }
 }

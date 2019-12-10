@@ -6,12 +6,12 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "./*/*.xml",
-    "./*/*.mex"
+    "./*/*.xml"
   ],
   "scripts": {
     "build": "tsc --build",
     "lint": "tslint -p .",
-    "test": "echo OK"
+    "test": "echo OK",
+    "prepublish": "yarn build"
   }
 }
