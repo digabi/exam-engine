@@ -1,6 +1,6 @@
 {
   "name": "@digabi/mexamples",
-  "version": "6.0.0-2020.1",
+  "version": "6.0.0-2020.3",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "main": "dist/index.js",
