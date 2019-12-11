@@ -1,6 +1,6 @@
 {
   "name": "@digabi/mex",
-  "version": "6.0.0-2020.2",
+  "version": "6.0.0-2020.5",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
