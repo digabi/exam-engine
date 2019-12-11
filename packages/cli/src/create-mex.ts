@@ -9,12 +9,12 @@ import yargs from 'yargs'
 const argv = yargs
   .usage('-e exam-filename -o output-directory -p passphrase')
   .option('exam', { alias: 'e', describe: 'The exam XML', type: 'string' })
-  .option('outdir', { alias: 'o', describe: 'The output directory', type: 'string' })
+  .option('outdir', { alias: 'o', describe: 'The output directory.', type: 'string' })
   .option('passphrase', { alias: 'p', describe: 'The passphrase used for encrypting the exam', type: 'string' })
   .option('nsa-scripts', { alias: 'n', describe: 'The NSA scripts zip', type: 'string' })
   .option('security-codes', { alias: 's', describe: 'Security codes JSON file', type: 'string' })
   .option('private-key', { alias: 'k', description: 'Private key used for signing the exam files.', type: 'string' })
-  .demandOption(['exam', 'outdir', 'passphrase', 'nsa-scripts', 'private-key'])
+  .demandOption(['exam', 'passphrase', 'nsa-scripts', 'private-key'])
   .check(a => {
     accessSync(a.exam)
     accessSync(a['nsa-scripts'])
@@ -34,7 +34,7 @@ const argv = yargs
   const answersPrivateKey = await fs.readFile(argv['private-key'], 'utf-8')
 
   const results = await masterExam(sourceXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
-  const outdir = path.resolve(argv.outdir)
+  const outdir = argv.outdir ? path.resolve(argv.outdir) : path.dirname(argv.exam)
   await fs.mkdir(outdir, { recursive: true })
 
   for (const { language, xml, attachments } of results) {
