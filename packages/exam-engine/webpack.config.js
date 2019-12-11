@@ -11,8 +11,7 @@ module.exports = function() {
   ]
 
   return {
-    mode: 'production',
-    entry: [path.resolve(__dirname, 'dist/index.js'), path.resolve(__dirname, 'src/css/main.less')],
+    entry: path.resolve(__dirname, 'dist/index.js'),
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'main-bundle.js',
