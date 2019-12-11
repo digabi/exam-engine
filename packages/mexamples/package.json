@@ -18,6 +18,6 @@
     "build": "tsc --build",
     "lint": "tslint -p .",
     "test": "echo OK",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build && find . -name '*.xml' -exec node ../cli/dist/create-mex.js -e {} -p salasana -n nsa-scripts.zip -s security-codes.json -k $ANSWERS_PRIVATE_KEY \\;"
   }
 }

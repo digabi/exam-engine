@@ -167,5 +167,5 @@ Login to npm first with digabi user.
 ## exam-engine
 
 ```
-$ yarn lerna publish
+$ env ANSWERS_PRIVATE_KEY=/path/to/answers-private-key.pem yarn lerna publish
 ```
