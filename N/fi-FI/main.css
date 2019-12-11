@@ -997,13 +997,6 @@
   margin-right: -3rem;
   margin-bottom: 3rem;
 }
-.e-exam .e-radio-button,
-.e-exam .e-checkbox {
-  width: 1rem;
-  height: 1rem;
-  padding: 0;
-  margin: 0.25rem 0;
-}
 .e-exam .e-dropdown-answer {
   display: inline-block;
   max-width: 100%;
@@ -1066,6 +1059,13 @@
 .e-exam .e-dropdown-answer__menu-item-inner {
   display: table;
 }
+.e-exam .e-radio-button,
+.e-exam .e-checkbox {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  margin: 0.25rem 0;
+}
 .e-exam {
   margin: 0 auto;
   width: 100%;
@@ -1078,10 +1078,6 @@
 .e-exam * {
   box-sizing: border-box;
 }
-.external-material-list {
-  border-left: 0.5rem solid #359bb7;
-  padding-left: 1.25rem;
-}
 .exam-question-title {
   position: relative;
 }
@@ -1091,6 +1087,10 @@
   left: -4em;
   text-align: right;
   white-space: pre-wrap;
+}
+.external-material-list {
+  border-left: 0.5rem solid #359bb7;
+  padding-left: 1.25rem;
 }
 .e-progress-bar {
   border: 1px solid #aaaaaa;
@@ -1555,16 +1555,6 @@
   margin-left: 1rem;
   margin-bottom: 1rem;
 }
-.e-exam .notification {
-  background: #f0faff;
-  margin-bottom: 2rem;
-  border-radius: 0.25rem;
-  border: 1px solid #88d0d0;
-  padding: 1rem;
-}
-.e-exam .notification--inline {
-  display: inline-block;
-}
 @media print {
   html {
     font-size: 12px;
@@ -1590,20 +1580,15 @@
     overflow: hidden;
   }
 }
-.e-exam .e-width-full {
-  width: 100%;
+.e-exam .notification {
+  background: #f0faff;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid #88d0d0;
+  padding: 1rem;
 }
-.e-exam .e-width-threequarters {
-  width: 75%;
-}
-.e-exam .e-width-half {
-  width: 50%;
-}
-.e-exam .e-width-third {
-  width: 33.33333333%;
-}
-.e-exam .e-width-quarter {
-  width: 25%;
+.e-exam .notification--inline {
+  display: inline-block;
 }
 .rich-text-editor-overlay,
 .rich-text-editor-new-equation {
@@ -2201,6 +2186,21 @@
 }
 .e-exam .e-break-word {
   word-break: break-word;
+}
+.e-exam .e-width-full {
+  width: 100%;
+}
+.e-exam .e-width-threequarters {
+  width: 75%;
+}
+.e-exam .e-width-half {
+  width: 50%;
+}
+.e-exam .e-width-third {
+  width: 33.33333333%;
+}
+.e-exam .e-width-quarter {
+  width: 25%;
 }
 .e-exam .e-ellipsis {
   overflow: hidden;

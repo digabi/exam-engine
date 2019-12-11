@@ -1172,6 +1172,15 @@
 .restricted-audio-player__duration {
   color: #333;
 }
+.e-exam .e-score {
+  border-radius: 1.5rem;
+  padding: 0 0.5rem 0.0625rem;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0.25px 1px rgba(0, 0, 0, 0.15);
+}
+.e-exam .e-score--large {
+  padding: 0 0.625rem 0.125rem;
+}
 .e-scored-text-answers {
   position: -webkit-sticky;
   position: sticky;
@@ -1190,15 +1199,6 @@
 .e-scored-text-answer-hint--focused {
   border-left-color: #359bb7;
   color: inherit;
-}
-.e-exam .e-score {
-  border-radius: 1.5rem;
-  padding: 0 0.5rem 0.0625rem;
-  background: rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 0 0.25px 1px rgba(0, 0, 0, 0.15);
-}
-.e-exam .e-score--large {
-  padding: 0 0.625rem 0.125rem;
 }
 .e-exam .e-section {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
