@@ -1,6 +1,4 @@
-import Attachments from '@digabi/exam-engine/src/components/Attachments'
-import Exam from '@digabi/exam-engine/src/components/Exam'
-import parseExam from '@digabi/exam-engine/src/parser/parseExam'
+import { Attachments, Exam, parseExam } from '@digabi/exam-engine'
 import { getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/mex'
 import { listExams } from '@digabi/mexamples'
 import { promises as fs } from 'fs'
