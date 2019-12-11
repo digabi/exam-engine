@@ -19,7 +19,6 @@ interface ChoiceGroupQuestion {
   type: 'choicegroup'
   id: number
   displayNumber: string
-  maxScore: number
   choices: ChoiceGroupChoice[]
 }
 
@@ -90,5 +89,5 @@ function mkChoiceGroupQuestion(answer: Element): ChoiceGroupQuestion {
     }
   ]
 
-  return { id: questionId, displayNumber, maxScore, type: 'choicegroup', choices }
+  return { id: questionId, displayNumber, type: 'choicegroup', choices }
 }
