@@ -6,7 +6,13 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "./*/*.xml"
+    "A_E",
+    "A_X",
+    "EA",
+    "FF",
+    "N",
+    "MexDocumentation",
+    "SC"
   ],
   "scripts": {
     "build": "tsc --build",
