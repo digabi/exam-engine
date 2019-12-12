@@ -17,6 +17,7 @@ import {
   getAttribute,
   getNumericAttribute,
   hasAttribute,
+  queryAncestors,
   xpathOr
 } from './utils'
 
@@ -87,7 +88,27 @@ function assertExamIsValid(doc: Document): Document {
     throw doc.validationErrors.find(err => err.level! > 1)
   }
 
-  // TODO: Add extra validations that we can't express in the schema here.
+  const root = doc.root()!
+
+  for (const answer of asElements(root.find(xpathOr(answerTypes), ns))) {
+    // Ensure that the each answer element is directly within a question,
+    // ignoring a few special HTML-like exam elements.
+    const htmlLikeExamElements = ['scored-text-answers', 'localization', 'attachment']
+    const maybeParentQuestion = queryAncestors(
+      answer,
+      e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
+    )
+
+    if (maybeParentQuestion?.name() !== 'question') {
+      throw mkError('All answers must be within a question.', answer)
+    }
+
+    // Ensure that the question containing the answer doesn't have any child questions.
+    const maybeChildQuestion = maybeParentQuestion.get('.//e:question', ns)
+    if (maybeChildQuestion != null) {
+      throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion)
+    }
+  }
 
   return doc
 }

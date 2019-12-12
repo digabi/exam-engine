@@ -1,6 +1,28 @@
 import { Element, Node } from 'libxmljs2'
 import _ from 'lodash'
 
+type ElementPredicate = (e: Element) => boolean
+type Query = string | string[] | ElementPredicate
+
+function mkPredicate(query: Query) {
+  return _.isString(query)
+    ? (e: Element) => e.name() === query
+    : _.isFunction(query)
+    ? query
+    : (e: Element) => query.includes(e.name())
+}
+
+export function queryAncestors(element: Element, query: Query) {
+  let parent = element.parent()
+  const predicate = mkPredicate(query)
+  while (parent instanceof Element) {
+    if (predicate(parent)) {
+      return parent
+    }
+    parent = parent.parent()
+  }
+}
+
 export function byLocalName(...names: string[]) {
   return (element: Element) => names.includes(element.name())
 }

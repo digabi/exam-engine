@@ -38,6 +38,20 @@ describe('Exam mastering', () => {
     )
   })
 
+  it('validates that all answers are directly under a question', async () => {
+    const xml = await readFixture('answer_not_under_question.xml')
+    return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+      'All answers must be within a question.'
+    )
+  })
+
+  it('validates that a question may not contain both answers and child questions', async () => {
+    const xml = await readFixture('question_containing_both_subquestions_and_answers.xml')
+    return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+      'A question may not contain both answer elements and child questions'
+    )
+  })
+
   it('calls generateUuid with exam metadata if it is an yo exam', async () => {
     const xml = await readFixture('minimal_yo_exam.xml')
     const spy = jest.fn(generateUuid)
