@@ -8,6 +8,8 @@
 
 [Use of Abitti Trademark policy](https://abitti.dev/abitti-trademark.html)
 
+[Documentation](https://digabi.github.io/exam-engine/MexDocumentation/koe.html)
+
 Engine for the MEX exam format.
 
 Provides:
@@ -39,21 +41,6 @@ $ git clone https://github.com/digabi/exam-engine.git
 $ cd exam-engine
 $ yarn
 ```
-
-# MEX format documentation
-
-The MEX format documentation is written as an exam itself. To open it using the preview, run:
-
-```
-$ cd exam-engine
-$ yarn start
-```
-
-This starts the preview of
-[packages/mexamples/MexDocumentation/MexDocumentation.xml](packages/mexamples/MexDocumentation/MexDocumentation.xml)
-
-Offline version of the documentation exam is hosted at
-[https://digabi.github.io/exam-engine/MexDocumentation/koe.html](https://digabi.github.io/exam-engine/MexDocumentation/koe.html).
 
 # Preview
 
