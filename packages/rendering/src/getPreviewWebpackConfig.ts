@@ -1,8 +1,8 @@
 import path from 'path'
-import { mathSvgResponse } from 'rich-text-editor'
 import webpack from 'webpack'
 import { RenderingOptions } from '.'
 import { getWebpackConfig } from './getWebpackConfig'
+const { mathSvgResponse } = require('rich-text-editor')
 
 export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions): webpack.Configuration {
   return getWebpackConfig({

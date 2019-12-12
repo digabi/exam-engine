@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
-import * as richTextEditor from 'rich-text-editor/dist/rich-text-editor'
 import { ExamContext } from './ExamContext'
 import { AnswerError, RichTextAnswer as RichTextAnswerT } from './types'
+const richTextEditor = require('rich-text-editor/dist/rich-text-editor')
 
 interface Props {
   answer?: RichTextAnswerT
