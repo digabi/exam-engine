@@ -20,7 +20,7 @@
     "@digabi/exam-engine": "^4.4.1",
     "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
-    "i18next": "^19.0.1",
+    "i18next": "^19.0.2",
     "libxmljs2": "^0.22.0",
     "lru-cache": "^5.1.1",
     "mathjax-node": "^2.1.1",
