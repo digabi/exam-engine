@@ -1,4 +1,4 @@
-import { Attachment, getMediaMetadataFromLocalFile, masterExam } from '@digabi/mex'
+import { Attachment, getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import { SyntaxError } from 'libxmljs2'
 import loaderUtils from 'loader-utils'
 import path from 'path'

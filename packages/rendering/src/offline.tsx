@@ -1,4 +1,4 @@
-import { Attachments, Exam, ExamAnswer, parseExam } from '@digabi/exam-engine'
+import { Attachments, Exam, ExamAnswer, parseExam } from '@digabi/exam-engine-core'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import '../public/offline.less'

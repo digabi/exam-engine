@@ -27,7 +27,7 @@ export async function createMex(
   outputStream: NodeJS.WritableStream,
   json?: Buffer | null
 ) {
-  const bundleDir = path.dirname(require.resolve('@digabi/exam-engine/dist/main-bundle.js'))
+  const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
     nodir: true,
     realpath: true

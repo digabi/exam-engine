@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
+import { resolveExam } from '@digabi/exam-engine-exams'
 import { previewExam } from '@digabi/exam-engine-rendering'
-import { resolveExam } from '@digabi/mexamples'
 import path from 'path'
 import yargs from 'yargs'
 

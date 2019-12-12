@@ -1,6 +1,6 @@
-import { QuestionId } from '@digabi/exam-engine'
+import { QuestionId } from '@digabi/exam-engine-core'
+import { resolveExam } from '@digabi/exam-engine-exams'
 import { CloseFunction, previewExam } from '@digabi/exam-engine-rendering'
-import { resolveExam } from '@digabi/mexamples'
 import { Page } from 'puppeteer'
 import { initPuppeteer } from './puppeteerUtils'
 

@@ -1,5 +1,5 @@
+import { resolveExam } from '@digabi/exam-engine-exams'
 import { createOfflineExam } from '@digabi/exam-engine-rendering'
-import { resolveExam } from '@digabi/mexamples'
 import path from 'path'
 import { Page } from 'puppeteer'
 import tmp from 'tmp-promise'

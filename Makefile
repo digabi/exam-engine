@@ -23,7 +23,7 @@ $(EE_YARN_INSTALLED): $(EE_DIR)/package.json $(EE_DIR)/yarn.lock $(EE_NVM_EXEC)
 
 $(EE_EXAM_ENGINE_BUILT):
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine build
+	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine-core build
 
 # Example on how to call this target:
 #

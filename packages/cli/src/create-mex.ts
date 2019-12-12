@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { createMex, getMediaMetadataFromLocalFile, masterExam } from '@digabi/mex'
+import { createMex, getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import { accessSync, createReadStream, createWriteStream, promises as fs } from 'fs'
 import path from 'path'
 import * as uuid from 'uuid'

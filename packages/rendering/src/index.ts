@@ -1,4 +1,4 @@
-import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/mex'
+import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import { AddressInfo } from 'net'
 import path from 'path'

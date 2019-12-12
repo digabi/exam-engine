@@ -5,5 +5,5 @@
   },
   "extends": "../../tsconfig.json",
   "include": ["./src"],
-  "references": [{ "path": "../mex" }, { "path": "../mexamples" }, { "path": "../rendering" }]
+  "references": [{ "path": "../mastering" }, { "path": "../exams" }, { "path": "../rendering" }]
 }

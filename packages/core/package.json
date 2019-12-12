@@ -1,5 +1,5 @@
 {
-  "name": "@digabi/exam-engine",
+  "name": "@digabi/exam-engine-core",
   "version": "6.0.0-2020.2",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",

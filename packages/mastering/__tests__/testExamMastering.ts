@@ -1,5 +1,5 @@
-import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/mex'
-import { listExams } from '@digabi/mexamples'
+import { listExams } from '@digabi/exam-engine-exams'
+import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import { wrap } from 'jest-snapshot-serializer-raw'
 import _ from 'lodash'

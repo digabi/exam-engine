@@ -20,9 +20,9 @@
   },
   "files": [],
   "references": [
-    { "path": "./packages/exam-engine" },
-    { "path": "./packages/mex" },
-    { "path": "./packages/mexamples" },
+    { "path": "./packages/core" },
+    { "path": "./packages/exams" },
+    { "path": "./packages/mastering" },
     { "path": "./packages/rendering" },
     { "path": "./packages/cli" }
   ]

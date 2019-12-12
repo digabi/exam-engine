@@ -1,4 +1,4 @@
-import { MasteringResult } from '@digabi/mex'
+import { MasteringResult } from '@digabi/exam-engine-mastering'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import path from 'path'

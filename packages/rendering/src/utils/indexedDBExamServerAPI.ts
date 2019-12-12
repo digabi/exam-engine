@@ -1,4 +1,4 @@
-import { ExamAnswer, ExamServerAPI } from '@digabi/exam-engine'
+import { ExamAnswer, ExamServerAPI } from '@digabi/exam-engine-core'
 import Dexie from 'dexie'
 
 /** Creates a mock Exam Server API, backed by a local IndexedDB database. */

@@ -8,8 +8,8 @@
   ],
   "dependencies": {
     "@digabi/exam-engine-rendering": "^6.0.0-2020.6",
-    "@digabi/mex": "^6.0.0-2020.6",
-    "@digabi/mexamples": "^6.0.0-2020.6",
+    "@digabi/exam-engine-mastering": "^6.0.0-2020.6",
+    "@digabi/exam-engine-exams": "^6.0.0-2020.6",
     "uuid": "^3.3.3",
     "yargs": "^15.0.2"
   },
