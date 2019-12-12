@@ -149,6 +149,8 @@ export interface MasteringResult {
   xml: string
 }
 
+export type GenerateId = () => number
+
 /**
  * Master an exam.
  */
@@ -181,6 +183,7 @@ async function masterExamForLanguage(
   options: MasteringOptions
 ): Promise<MasteringResult> {
   const exam = doc.root()!
+  const generateId = mkGenerateId()
 
   await addExamUuid(exam, generateUuid, language)
   applyLocalizations(exam, language)
@@ -194,7 +197,7 @@ async function masterExamForLanguage(
   addSectionNumbers(sections)
   addQuestionNumbers(exam)
   addAnswerNumbers(questions)
-  addQuestionIds(answers)
+  addQuestionIds(answers, generateId)
   if (options.multiChoiceShuffleSecret) {
     shuffleAnswerOptions(answers, options.multiChoiceShuffleSecret)
   }
@@ -403,10 +406,10 @@ function addAttachmentNumbers(exam: Element, questions: Element[]) {
   }
 }
 
-function addQuestionIds(answers: Element[]) {
-  answers.forEach((answer, i) => {
-    answer.attr('question-id', String(i + 1))
-  })
+function addQuestionIds(answers: Element[], generateId: GenerateId) {
+  for (const answer of answers) {
+    answer.attr('question-id', String(generateId()))
+  }
 }
 
 function countSectionMaxAndMinAnswers(exam: Element, sections: Element[]) {
@@ -539,4 +542,9 @@ function mkError(message: string, element: Element): SyntaxError {
 
 function questionAnswers(question: Element): Element[] {
   return asElements(question.find(`${xpathOr(answerTypes)}[ancestor::e:question[1][self::*]]`, ns))
+}
+
+function mkGenerateId(): GenerateId {
+  let current = 1
+  return () => current++
 }
