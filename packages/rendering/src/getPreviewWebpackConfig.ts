@@ -2,7 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import { RenderingOptions } from '.'
 import { getWebpackConfig } from './getWebpackConfig'
-const { mathSvgResponse } = require('rich-text-editor')
+const { mathSvgResponse } = require('rich-text-editor') // tslint:disable-line no-var-requires
 
 export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions): webpack.Configuration {
   return getWebpackConfig({

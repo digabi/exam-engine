@@ -3,7 +3,7 @@ import * as _ from 'lodash-es'
 import React from 'react'
 import { ExamContext } from './ExamContext'
 import { AnswerError, RichTextAnswer as RichTextAnswerT } from './types'
-const richTextEditor = require('rich-text-editor/dist/rich-text-editor')
+const richTextEditor = require('rich-text-editor/dist/rich-text-editor') // tslint:disable-line no-var-requires
 
 interface Props {
   answer?: RichTextAnswerT
