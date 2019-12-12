@@ -9,7 +9,7 @@ import { initI18n } from '../i18n'
 import { createGradingStructure, GradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import renderFormula from './render-formula'
-import { answerTypes, attachmentTypes, choiceAnswerTypes, ns } from './schema'
+import { Answer, answerTypes, attachmentTypes, choiceAnswerTypes, Exam, ns, Question, Section } from './schema'
 import {
   asElements,
   byAttribute,
@@ -182,54 +182,52 @@ async function masterExamForLanguage(
   getMediaMetadata: GetMediaMetadata,
   options: MasteringOptions
 ): Promise<MasteringResult> {
-  const exam = doc.root()!
+  const root = doc.root()!
   const generateId = mkGenerateId()
 
-  await addExamUuid(exam, generateUuid, language)
-  applyLocalizations(exam, language)
+  await addExamUuid(root, generateUuid, language)
+  applyLocalizations(root, language)
 
-  const sections = asElements(exam.find('//e:section', ns))
-  const questions = asElements(exam.find('//e:question', ns))
-  const answers = asElements(exam.find(xpathOr(answerTypes), ns))
-  const attachments = asElements(exam.find(xpathOr(attachmentTypes), ns))
+  const exam = parseExamStructure(root)
+  const attachments = asElements(root.find(xpathOr(attachmentTypes), ns))
 
-  addYoCustomizations(exam, language)
-  addSectionNumbers(sections)
+  addYoCustomizations(root, language)
+  addSectionNumbers(exam)
   addQuestionNumbers(exam)
-  addAnswerNumbers(questions)
-  addQuestionIds(answers, generateId)
+  addAnswerNumbers(exam)
+  addQuestionIds(exam, generateId)
   if (options.multiChoiceShuffleSecret) {
-    shuffleAnswerOptions(answers, options.multiChoiceShuffleSecret)
+    shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
   }
-  addAttachmentNumbers(exam, questions)
-  updateMaxScoresToAnswers(answers)
-  countMaxScores(exam, sections)
-  countSectionMaxAndMinAnswers(exam, sections)
-  addAnswerOptionIds(answers)
+  addAttachmentNumbers(exam)
+  updateMaxScoresToAnswers(exam)
+  countMaxScores(exam)
+  countSectionMaxAndMinAnswers(exam)
+  addAnswerOptionIds(exam)
   addRestrictedAudioMetadata(attachments)
-  await renderFormulas(exam, options.throwOnLatexError)
+  await renderFormulas(root, options.throwOnLatexError)
   await addMediaMetadata(attachments, getMediaMetadata)
 
-  const gradingStructure = createGradingStructure(answers)
+  const gradingStructure = createGradingStructure(exam)
   const hvp = createHvp(doc, language)
 
-  removeComments(exam)
-  removeCorrectAnswers(answers)
+  removeComments(root)
+  removeCorrectAnswers(exam)
   if (options.removeHiddenElements) {
-    removeHiddenElements(exam)
+    removeHiddenElements(root)
   }
 
   return {
-    attachments: collectAttachments(exam, attachments),
-    date: getAttribute('date', exam, null),
-    dayCode: getAttribute('day-code', exam, null),
-    examCode: getAttribute('exam-code', exam, null),
-    examUuid: getAttribute('exam-uuid', exam),
+    attachments: collectAttachments(root, attachments),
+    date: getAttribute('date', root, null),
+    dayCode: getAttribute('day-code', root, null),
+    examCode: getAttribute('exam-code', root, null),
+    examUuid: getAttribute('exam-uuid', root),
     gradingStructure,
     hvp,
     language,
     title:
-      exam
+      root
         .get('//e:exam-title', ns)
         ?.text()
         .trim() ?? null,
@@ -315,37 +313,37 @@ function removeHiddenElements(exam: Element) {
   exam.find('//e:*[@hidden=true()]', ns).forEach(e => e.remove())
 }
 
-function updateMaxScoresToAnswers(answers: Element[]) {
-  for (const answer of answers) {
-    switch (answer.name()) {
+function updateMaxScoresToAnswers(exam: Exam) {
+  for (const { element } of exam.answers) {
+    switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
       case 'scored-text-answer': {
-        if (answer.attr('max-score') == null) {
+        if (element.attr('max-score') == null) {
           const scores = asElements(
-            answer.find('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
+            element.find('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
           ).map(option => getNumericAttribute('score', option, 0))
           const maxScore = _.max(scores)
-          answer.attr('max-score', String(maxScore || 0))
+          element.attr('max-score', String(maxScore || 0))
         }
       }
     }
   }
 }
 
-function removeCorrectAnswers(answers: Element[]) {
-  for (const answer of answers) {
-    switch (answer.name()) {
+function removeCorrectAnswers(exam: Exam) {
+  for (const { element } of exam.answers) {
+    switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
         {
-          for (const option of asElements(answer.find('//e:choice-answer-option | //e:dropdown-answer-option', ns))) {
+          for (const option of asElements(element.find('//e:choice-answer-option | //e:dropdown-answer-option', ns))) {
             option.attr('score')?.remove()
           }
         }
         break
       case 'scored-text-answer': {
-        answer.find('.//e:accepted-answer', ns).forEach(e => e.remove())
+        element.find('.//e:accepted-answer', ns).forEach(e => e.remove())
       }
     }
   }
@@ -366,129 +364,131 @@ function applyLocalizations(exam: Element, language: string) {
   exam.find(`//e:*[@lang and @lang!='${language}']`, ns).forEach(element => element.remove())
 }
 
-function addSectionNumbers(sections: Element[]) {
-  sections.forEach((section, i) => section.attr('display-number', toRoman(i + 1)))
+function addSectionNumbers(exam: Exam) {
+  exam.sections.forEach((section, i) => section.element.attr('display-number', toRoman(i + 1)))
 }
 
-function addQuestionNumbers(element: Element, level = 0, prefix = '') {
-  asElements(element.find(`.//e:question[count(ancestor::e:question) = ${level}]`, ns)).forEach((question, i) => {
-    const displayNumber = prefix + (i + 1) + '.'
-    question.attr('display-number', displayNumber)
-    addQuestionNumbers(question, level + 1, displayNumber)
-  })
-}
-
-function addAnswerNumbers(questions: Element[]) {
-  for (const question of questions) {
-    const questionNumber = getAttribute('display-number', question)
-    questionAnswers(question).forEach((answer, i, answers) => {
-      answer.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}${i + 1}.`)
-    })
+function addQuestionNumbers(exam: Exam) {
+  function addQuestionNumber(question: Question, index: number, prefix: string = '') {
+    const displayNumber = prefix + (index + 1) + '.'
+    question.element.attr('display-number', displayNumber)
+    question.childQuestions.forEach((q, i) => addQuestionNumber(q, i, displayNumber))
   }
+
+  exam.topLevelQuestions.forEach((q, i) => addQuestionNumber(q, i))
 }
 
-function addAttachmentNumbers(exam: Element, questions: Element[]) {
+function addAnswerNumbers(exam: Exam) {
+  function addAnswerNumber(question: Question) {
+    const questionNumber = getAttribute('display-number', question.element)
+    question.answers.forEach((answer, i, answers) => {
+      answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}${i + 1}.`)
+    })
+    question.childQuestions.forEach(addAnswerNumber)
+  }
+
+  exam.topLevelQuestions.forEach(addAnswerNumber)
+}
+
+function addAttachmentNumbers(exam: Exam) {
   // Exam-specific external material
-  asElements(exam.find('./e:external-material/e:attachment', ns)).forEach((attachment, i) => {
+  asElements(exam.element.find('./e:external-material/e:attachment', ns)).forEach((attachment, i) => {
     attachment.attr('display-number', alphabet[i])
   })
 
   // Question external-material
-  for (const question of questions) {
-    const questionDisplayNumber = getAttribute('display-number', question)!
+  for (const question of exam.questions) {
+    const questionDisplayNumber = getAttribute('display-number', question.element)!
     // Only number external attachments for now, since you can't refer to internal
     // attachments. This also makes the numbering less confusing for users,
     // since it will always start at "A".
-    asElements(question.find('./e:external-material/e:attachment', ns)).forEach((attachment, i) => {
+    asElements(question.element.find('./e:external-material/e:attachment', ns)).forEach((attachment, i) => {
       const displayNumber = questionDisplayNumber + ' ' + alphabet[i]
       attachment.attr('display-number', String(displayNumber))
     })
   }
 }
 
-function addQuestionIds(answers: Element[], generateId: GenerateId) {
-  for (const answer of answers) {
-    answer.attr('question-id', String(generateId()))
+function addQuestionIds(exam: Exam, generateId: GenerateId) {
+  for (const answer of exam.answers) {
+    answer.element.attr('question-id', String(generateId()))
   }
 }
 
-function countSectionMaxAndMinAnswers(exam: Element, sections: Element[]) {
-  const examMaxAnswers = getNumericAttribute('max-answers', exam, null)
+function countSectionMaxAndMinAnswers(exam: Exam) {
+  const examMaxAnswers = getNumericAttribute('max-answers', exam.element, null)
   if (!examMaxAnswers) {
     return
   }
 
-  for (const section of sections) {
-    if (getNumericAttribute('max-answers', section, null) == null) {
-      section.attr('max-answers', String(Math.min(section.find('./e:question', ns).length, examMaxAnswers)))
+  for (const section of exam.sections) {
+    if (getNumericAttribute('max-answers', section.element, null) == null) {
+      section.element.attr('max-answers', String(Math.min(section.questions.length, examMaxAnswers)))
     }
   }
 
-  for (const section of sections) {
-    const maxAnswers = getNumericAttribute('max-answers', section)
+  for (const section of exam.sections) {
+    const maxAnswers = getNumericAttribute('max-answers', section.element)
     const otherSectionMaxAnswers = _.sumBy(
-      sections.filter(s => s !== section),
-      otherSection => getNumericAttribute('max-answers', otherSection)
+      exam.sections.filter(s => s !== section),
+      otherSection => getNumericAttribute('max-answers', otherSection.element)
     )
     const minAnswers = _.clamp(maxAnswers, 0, examMaxAnswers - otherSectionMaxAnswers)
-    section.attr('min-answers', String(minAnswers))
+    section.element.attr('min-answers', String(minAnswers))
   }
 }
 
-function countMaxScores(exam: Element, sections: Element[]) {
-  function countMaxScore(answerables: Element[], maxAnswers: number | null) {
-    const maxScores = answerables.map(a => getNumericAttribute('max-score', a))
+function countMaxScores(exam: Exam) {
+  function countMaxScore(answerables: Array<Question | Answer>, maxAnswers: number | null) {
+    const maxScores = answerables.map(a => getNumericAttribute('max-score', a.element))
     return _.sum(_.take(_.orderBy(maxScores, _.identity, 'desc'), maxAnswers ?? answerables.length))
   }
 
-  function countQuestionMaxScores(element = exam, level = 0) {
-    for (const question of asElements(element.find(`.//e:question[count(ancestor::e:question) = ${level}]`, ns))) {
-      countQuestionMaxScores(element, level + 1)
-      const maxAnswers = getNumericAttribute('max-answers', question, null)
-      const answers = questionAnswers(question)
-      const answerables =
-        answers.length > 0 ? answers : asElements(question.find(`.//e:question[ancestor::e:question[1][self::*]]`, ns))
-      const maxScore = countMaxScore(answerables, maxAnswers)
-      question.attr('max-score', String(maxScore ?? 0))
-    }
+  function countQuestionMaxScores(question: Question) {
+    question.childQuestions.forEach(countQuestionMaxScores)
+    const maxAnswers = getNumericAttribute('max-answers', question.element, null)
+    const answerables = question.childQuestions.length ? question.childQuestions : question.answers
+    const maxScore = countMaxScore(answerables, maxAnswers)
+    question.element.attr('max-score', String(maxScore ?? 0))
   }
 
   function countSectionMaxScores() {
-    for (const section of sections) {
-      const maxAnswers = getNumericAttribute('max-answers', section, null)
-      const questions = asElements(section.find('./e:question', ns))
-      const maxScore = countMaxScore(questions, maxAnswers)
-      section.attr('max-score', String(maxScore ?? 0))
+    for (const section of exam.sections) {
+      section.questions.forEach(countQuestionMaxScores)
+      const maxAnswers = getNumericAttribute('max-answers', section.element, null)
+      const maxScore = countMaxScore(section.questions, maxAnswers)
+      section.element.attr('max-score', String(maxScore ?? 0))
     }
   }
 
   function countExamMaxScore() {
-    const examMaxAnswers = getNumericAttribute('max-answers', exam, null)
-    const questionsWithHighestMaxScoresPerSection = _.flatMap(sections, section => {
-      const sectionMaxAnswers = getNumericAttribute('max-answers', section, null)
-      const questions = asElements(section.find('./e:question', ns))
+    const examMaxAnswers = getNumericAttribute('max-answers', exam.element, null)
+    const questionsWithHighestMaxScoresPerSection = _.flatMap(exam.sections, section => {
+      const sectionMaxAnswers = getNumericAttribute('max-answers', section.element, null)
+      const questions = section.questions
       return _.take(
-        _.orderBy(questions, question => getNumericAttribute('max-score', question), 'desc'),
+        _.orderBy(questions, question => getNumericAttribute('max-score', question.element), 'desc'),
         sectionMaxAnswers ?? questions.length
       )
     })
     const maxScore = countMaxScore(questionsWithHighestMaxScoresPerSection, examMaxAnswers)
-    exam.attr('max-score', String(maxScore ?? 0))
+    exam.element.attr('max-score', String(maxScore ?? 0))
   }
 
-  countQuestionMaxScores()
   countSectionMaxScores()
   countExamMaxScore()
 }
 
-function addAnswerOptionIds(answers: Element[]) {
-  answers.filter(byName(...choiceAnswerTypes)).forEach(choiceAnswer =>
-    asElements(choiceAnswer.find('./e:choice-answer-option | ./e:dropdown-answer-option', ns)).forEach(
-      (answerOption, i) => {
-        answerOption.attr('option-id', String(i + 1))
-      }
-    )
-  )
+function addAnswerOptionIds(exam: Exam) {
+  for (const { element } of exam.answers) {
+    if (_.includes(choiceAnswerTypes, element.name())) {
+      asElements(element.find('./e:choice-answer-option | ./e:dropdown-answer-option', ns)).forEach(
+        (answerOption, i) => {
+          answerOption.attr('option-id', String(i + 1))
+        }
+      )
+    }
+  }
 }
 
 function addRestrictedAudioMetadata(attachments: Element[]) {
@@ -498,13 +498,14 @@ function addRestrictedAudioMetadata(attachments: Element[]) {
     .forEach((audio, i) => audio.attr('restricted-audio-id', String(i)))
 }
 
-function shuffleAnswerOptions(answers: Element[], multichoiceShuffleSecret: string) {
+function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
   const createHash = (value: string) => {
     const hash = crypto.createHash('sha256')
     hash.update(value)
     return hash.digest('hex')
   }
-  return answers
+  return exam.answers
+    .map(a => a.element)
     .filter(byName(...choiceAnswerTypes))
     .filter(_.negate(byAttribute('ordering', 'fixed')))
     .forEach(answer => {
@@ -540,8 +541,36 @@ function mkError(message: string, element: Element): SyntaxError {
   return err
 }
 
-function questionAnswers(question: Element): Element[] {
-  return asElements(question.find(`${xpathOr(answerTypes)}[ancestor::e:question[1][self::*]]`, ns))
+function parseExamStructure(element: Element): Exam {
+  const sections = asElements(element.find('//e:section', ns)).map(parseSection)
+  const topLevelQuestions = _.flatMap(sections, s => s.questions)
+  const collectAnswers = (q: Question): Answer[] =>
+    q.answers.length ? q.answers : _.flatMap(q.childQuestions, collectAnswers)
+  const answers = _.flatMap(topLevelQuestions, collectAnswers)
+  const collectQuestions = (q: Question): Question[] => [q, ..._.flatMap(q.childQuestions, collectQuestions)]
+  const questions = _.flatMap(topLevelQuestions, collectQuestions)
+  return { element, sections, questions, topLevelQuestions, answers }
+}
+
+function parseSection(element: Element): Section {
+  const questions = asElements(element.find('./e:question', ns)).map(parseQuestion)
+  return { element, questions }
+}
+
+function parseAnswer(element: Element, question: Element) {
+  return { element, question }
+}
+
+function parseQuestion(question: Element): Question {
+  const childQuestions = asElements(question.find('.//e:question[ancestor::e:question[1][self::*]]', ns)).map(
+    parseQuestion
+  )
+  if (childQuestions.length) {
+    return { element: question, childQuestions, answers: [] }
+  } else {
+    const answers = asElements(question.find(xpathOr(answerTypes), ns)).map(element => parseAnswer(element, question))
+    return { element: question, childQuestions: [], answers }
+  }
 }
 
 function mkGenerateId(): GenerateId {

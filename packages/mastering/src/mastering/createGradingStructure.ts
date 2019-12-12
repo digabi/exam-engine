@@ -1,5 +1,6 @@
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
+import { Exam } from './schema'
 import { getAttribute, getNumericAttribute, isElement } from './utils'
 
 export interface GradingStructure {
@@ -35,15 +36,15 @@ interface ChoiceGroupOption {
   score: number
 }
 
-export function createGradingStructure(answers: Element[]): GradingStructure {
-  const questions = _.flatMap(answers, answer => {
-    switch (answer.name()) {
+export function createGradingStructure(exam: Exam): GradingStructure {
+  const questions = _.flatMap(exam.answers, ({ element }) => {
+    switch (element.name()) {
       case 'text-answer':
       case 'scored-text-answer':
-        return mkTextQuestion(answer)
+        return mkTextQuestion(element)
       case 'choice-answer':
       case 'dropdown-answer':
-        return mkChoiceGroupQuestion(answer)
+        return mkChoiceGroupQuestion(element)
       default:
         return []
     }
