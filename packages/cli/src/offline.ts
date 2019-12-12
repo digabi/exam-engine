@@ -16,11 +16,10 @@ yargs
           type: 'string'
         })
         .positional('outputDirectory', { description: 'The output directory', type: 'string' })
-        .option('prerender', { type: 'boolean', description: 'Prerender the HTML with Puppeteer', default: false })
-        .demandOption(['examFilename', 'outputDirectory', 'prerender']),
-    async ({ examFilename, outputDirectory, prerender }) => {
+        .demandOption(['examFilename', 'outputDirectory']),
+    async ({ examFilename, outputDirectory }) => {
       try {
-        await createOfflineExam(path.resolve(process.cwd(), examFilename), outputDirectory, prerender)
+        await createOfflineExam(path.resolve(process.cwd(), examFilename), outputDirectory)
       } catch (err) {
         // tslint:disable-next-line: no-console
         console.error(err)

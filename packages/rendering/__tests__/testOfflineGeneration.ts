@@ -1,5 +1,6 @@
 import { createOfflineExam } from '@digabi/exam-engine-rendering'
 import { resolveExam } from '@digabi/mexamples'
+import path from 'path'
 import { Page } from 'puppeteer'
 import tmp from 'tmp-promise'
 import { initPuppeteer } from './puppeteerUtils'
@@ -12,7 +13,9 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
 
   beforeAll(async () => {
     const tmpdir = await tmp.dir().then(r => r.path)
-    ;[examHtmlFile, attachmentsHtmlFile] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir)
+    const [outputDirectory] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir)
+    examHtmlFile = path.resolve(outputDirectory, 'index.html')
+    attachmentsHtmlFile = path.resolve(outputDirectory, 'attachments/index.html')
     page = await createPage()
   })
 
