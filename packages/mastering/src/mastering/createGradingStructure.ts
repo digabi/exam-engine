@@ -1,6 +1,7 @@
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
-import { Exam } from './schema'
+import { GenerateId } from '.'
+import { Answer, Exam } from './schema'
 import { getAttribute, getNumericAttribute, isElement } from './utils'
 
 export interface GradingStructure {
@@ -36,19 +37,27 @@ interface ChoiceGroupOption {
   score: number
 }
 
-export function createGradingStructure(exam: Exam): GradingStructure {
-  const questions = _.flatMap(exam.answers, ({ element }) => {
-    switch (element.name()) {
-      case 'text-answer':
-      case 'scored-text-answer':
-        return mkTextQuestion(element)
-      case 'choice-answer':
-      case 'dropdown-answer':
-        return mkChoiceGroupQuestion(element)
-      default:
-        return []
-    }
-  })
+export function createGradingStructure(exam: Exam, generateId: GenerateId): GradingStructure {
+  const questions = _.chain(exam.answers)
+    .groupBy(a => getAttribute('display-number', a.question))
+    .flatMap((questionAnswers, questionDisplayNumber) =>
+      _.chain(questionAnswers)
+        .groupBy(answer => answer.element.name())
+        .flatMap((answers, answerType): GradingStructureQuestion[] => {
+          switch (answerType) {
+            case 'text-answer':
+            case 'scored-text-answer':
+              return answers.map(a => mkTextQuestion(a.element))
+            case 'choice-answer':
+            case 'dropdown-answer':
+              return [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
+            default:
+              throw new Error(`Bug: grading structure generation not implemented for ${answerType}`)
+          }
+        })
+        .value()
+    )
+    .value()
 
   return { questions }
 }
@@ -66,29 +75,33 @@ function mkTextQuestion(answer: Element): TextQuestion {
   }
 }
 
-function mkChoiceGroupQuestion(answer: Element): ChoiceGroupQuestion {
-  const questionId = getNumericAttribute('question-id', answer)
-  const displayNumber = getAttribute('display-number', answer)
-  const maxScore = getNumericAttribute('max-score', answer)
+function mkChoiceGroupQuestion(
+  answers: Answer[],
+  questionDisplayNumber: string,
+  generateId: GenerateId
+): ChoiceGroupQuestion {
+  const choices: ChoiceGroupChoice[] = answers.map(answer => {
+    const questionId = getNumericAttribute('question-id', answer.element)
+    const displayNumber = getAttribute('display-number', answer.element)
+    const maxScore = getNumericAttribute('max-score', answer.element)
 
-  const options: ChoiceGroupOption[] = answer
-    .childNodes()
-    .filter(isElement)
-    .map(option => {
-      const id = getNumericAttribute('option-id', option)
-      const score = getNumericAttribute('score', option, 0)
-      const correct = score > 0 && score === maxScore
-      return { id, score, correct }
-    })
+    const options: ChoiceGroupOption[] = answer.element
+      .childNodes()
+      .filter(isElement)
+      .map(option => {
+        const id = getNumericAttribute('option-id', option)
+        const score = getNumericAttribute('score', option, 0)
+        const correct = score > 0 && score === maxScore
+        return { id, score, correct }
+      })
 
-  const choices: ChoiceGroupChoice[] = [
-    {
+    return {
       id: questionId,
       displayNumber,
       type: 'choice',
       options
     }
-  ]
+  })
 
-  return { id: questionId, displayNumber, type: 'choicegroup', choices }
+  return { id: generateId(), displayNumber: questionDisplayNumber, type: 'choicegroup', choices }
 }

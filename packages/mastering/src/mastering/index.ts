@@ -208,7 +208,7 @@ async function masterExamForLanguage(
   await renderFormulas(root, options.throwOnLatexError)
   await addMediaMetadata(attachments, getMediaMetadata)
 
-  const gradingStructure = createGradingStructure(exam)
+  const gradingStructure = createGradingStructure(exam, generateId)
   const hvp = createHvp(doc, language)
 
   removeComments(root)
