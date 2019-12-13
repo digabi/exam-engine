@@ -9,9 +9,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
+    "build": "webpack -d",
+    "watch": "webpack -d --watch",
     "lint": "tslint -p . -p __tests__",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
     "test": "jest"
   },
   "peerDependencies": {

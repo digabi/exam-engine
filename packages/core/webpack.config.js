@@ -47,6 +47,7 @@ module.exports = function() {
         }
       ]
     },
+    stats: 'errors-warnings',
     externals: {
       react: {
         root: 'React',
