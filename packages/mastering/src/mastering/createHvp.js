@@ -64,7 +64,7 @@ export const createHvp = (doc, targetLanguage) => {
         const answerTypesInQuestion = findQuestionTypes(node)
         const questionTitle = cleanString(node.find('e:question-title', ns)[0].text())
         return [
-          `\n\t${getDisplayNumber(node)} ${questionTitle} (${getMaxScore(node)} p.) (${answerTypesInQuestion.join(
+          `\n\t${getDisplayNumber(node)}. ${questionTitle} (${getMaxScore(node)} p.) (${answerTypesInQuestion.join(
             ', '
           )})`
         ]

@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
-import { Translation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { QuestionContext } from './QuestionContext'
 import { ExamComponentProps } from './types'
 
 function AttachmentsQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, hasExternalMaterial } = useContext(QuestionContext)
+  const { t } = useTranslation()
 
   return hasExternalMaterial ? (
     <h2 id={displayNumber + '-title'}>
-      <Translation>{t => t('question', { displayNumber })}</Translation> {renderChildNodes(element)}
+      {t('question', { displayNumber })}. {renderChildNodes(element)}
     </h2>
   ) : null
 }

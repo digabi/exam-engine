@@ -370,7 +370,7 @@ function addSectionNumbers(exam: Exam) {
 
 function addQuestionNumbers(exam: Exam) {
   function addQuestionNumber(question: Question, index: number, prefix: string = '') {
-    const displayNumber = prefix + (index + 1) + '.'
+    const displayNumber = (prefix ? prefix + '.' : '') + (index + 1)
     question.element.attr('display-number', displayNumber)
     question.childQuestions.forEach((q, i) => addQuestionNumber(q, i, displayNumber))
   }
@@ -382,7 +382,7 @@ function addAnswerNumbers(exam: Exam) {
   function addAnswerNumber(question: Question) {
     const questionNumber = getAttribute('display-number', question.element)
     question.answers.forEach((answer, i, answers) => {
-      answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}${i + 1}.`)
+      answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
     })
     question.childQuestions.forEach(addAnswerNumber)
   }
@@ -403,7 +403,7 @@ function addAttachmentNumbers(exam: Exam) {
     // attachments. This also makes the numbering less confusing for users,
     // since it will always start at "A".
     asElements(question.element.find('./e:external-material/e:attachment', ns)).forEach((attachment, i) => {
-      const displayNumber = questionDisplayNumber + ' ' + alphabet[i]
+      const displayNumber = `${questionDisplayNumber}. ${alphabet[i]}`
       attachment.attr('display-number', String(displayNumber))
     })
   }

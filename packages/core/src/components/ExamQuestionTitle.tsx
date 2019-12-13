@@ -17,7 +17,10 @@ function ExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
           className={classNames('exam-question-title__display-number', {
             'exam-question-title__display-number--indented': level > 0
           })}
-        >{`${displayNumber} `}</strong>
+        >
+          {displayNumber}
+          {'. '}
+        </strong>
         {renderChildNodes(element)} <Score score={maxScore} size={level === 0 ? 'large' : 'small'} />
       </Tag>
       {maxAnswers != null && childQuestions.length > 0 && (

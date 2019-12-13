@@ -70,7 +70,7 @@ function TOCQuestion({ element }: ExamComponentProps) {
   const questionTitle = findChildElement(element, 'question-title')
 
   return level === 0 ? (
-    <li data-list-number={displayNumber}>
+    <li data-list-number={displayNumber + '.'}>
       <div className="e-columns">
         {questionTitle && (
           <span className="e-column">

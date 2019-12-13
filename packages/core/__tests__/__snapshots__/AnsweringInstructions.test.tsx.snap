@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AnsweringInstructions /> question 2 child questions and maxAnswers = 1 1`] = `"Vastaa joko kohtaan 1.1. tai 1.2."`;
+exports[`<AnsweringInstructions /> question 2 child questions and maxAnswers = 1 1`] = `"Vastaa joko kohtaan 1.1 tai 1.2."`;
 
-exports[`<AnsweringInstructions /> question fallback 1`] = `"Vastaa 11 kohdista 1.1.–1.12."`;
+exports[`<AnsweringInstructions /> question fallback 1`] = `"Vastaa 11 kohdista 1.1–1.12."`;
 
-exports[`<AnsweringInstructions /> question numerals 1`] = `"Vastaa yhteen kohdista 1.1.–1.10."`;
+exports[`<AnsweringInstructions /> question numerals 1`] = `"Vastaa yhteen kohdista 1.1–1.10."`;
 
-exports[`<AnsweringInstructions /> question numerals 2`] = `"Vastaa viiteen kohdista 1.1.–1.10."`;
+exports[`<AnsweringInstructions /> question numerals 2`] = `"Vastaa viiteen kohdista 1.1–1.10."`;
 
-exports[`<AnsweringInstructions /> section 2 child questions and maxAnswers = 1 1`] = `"Vastaa joko tehtävään 1. tai 2."`;
+exports[`<AnsweringInstructions /> section 2 child questions and maxAnswers = 1 1`] = `"Vastaa joko tehtävään 1 tai 2."`;
 
 exports[`<AnsweringInstructions /> section fallback 1`] = `"Vastaa 2–5 tehtävään."`;
 
