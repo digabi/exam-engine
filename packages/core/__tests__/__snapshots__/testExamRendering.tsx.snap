@@ -29864,10 +29864,6 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
 >
-  <link
-    href="/attachments/custom.css"
-    rel="stylesheet"
-  />
   <section
     aria-labelledby="title"
     className="e-section e-bg-color-off-white e-pad-6"
@@ -30173,10 +30169,6 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
 <main
   className="e-exam attachments"
 >
-  <link
-    href="/attachments/custom.css"
-    rel="stylesheet"
-  />
   <section
     aria-labelledby="title"
     className="e-section e-bg-color-off-white e-pad-6"
@@ -30483,10 +30475,6 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
   className="e-exam"
   lang="fi-FI"
 >
-  <link
-    href="/attachments/custom.css"
-    rel="stylesheet"
-  />
   <section
     aria-labelledby="title"
     className="e-section e-bg-color-off-white e-pad-6"
@@ -37910,10 +37898,6 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
   className="e-exam"
   lang="sv-FI"
 >
-  <link
-    href="/attachments/custom.css"
-    rel="stylesheet"
-  />
   <section
     aria-labelledby="title"
     className="e-section e-bg-color-off-white e-pad-6"
@@ -74153,6 +74137,848 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
       className="e-text-center e-semibold"
     >
       Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
+    </p>
+  </section>
+</main>
+`;
+
+exports[`UE.xml renders properly: <Attachments /> 1`] = `
+<main
+  className="e-exam attachments"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      FI – Evankelisluterilainen uskonto
+      , 
+      aineisto
+    </h1>
+    <div
+      className="e-semibold e-mrg-b-6"
+    >
+      2/29/2020
+    </div>
+  </section>
+</main>
+`;
+
+exports[`UE.xml renders properly: <Exam /> 1`] = `
+<main
+  className="e-exam"
+  lang="fi-FI"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      FI – Evankelisluterilainen uskonto
+    </h1>
+    <p>
+      <strong>
+        2/29/2020
+      </strong>
+    </p>
+    <div
+      className="exam-instruction notification e-pad-4"
+    >
+      
+    Ohje
+  
+    </div>
+    <nav
+      aria-labelledby="toc-title"
+      className="table-of-contents e-mrg-b-6"
+    >
+      <h2
+        id="toc-title"
+      >
+        Sisällys
+      </h2>
+      <ol
+        className="e-list-plain e-pad-l-0"
+      >
+        <li>
+          <header>
+            <b>
+               
+              
+      Negatiiviset monivalinnat
+    
+            </b>
+            <div>
+              Vastaa kolmeen tehtävään.
+            </div>
+          </header>
+          <ol
+            className="e-list-data e-pad-l-0"
+          >
+            <li
+              data-list-number="1."
+            >
+              <div
+                className="e-columns"
+              >
+                <span
+                  className="e-column"
+                >
+                  <a
+                    href="#1."
+                  >
+                    
+            Vanha case, tehtävästä 1 sai 0/2/4 pistettä. Ei -4. Halutaan varmaan, että toimii näin?
+        
+                  </a>
+                </span>
+                <span
+                  className="e-column e-column--narrow table-of-contents--score-column"
+                >
+                  4 p.
+                </span>
+              </div>
+            </li>
+            <li
+              data-list-number="2."
+            >
+              <div
+                className="e-columns"
+              >
+                <span
+                  className="e-column"
+                >
+                  <a
+                    href="#2."
+                  >
+                    
+          Uusi koeformaatti sallii päätason negatiivisen monivalinnan, tästä saisi -2 tai 2 pistettä? Pitäiskö sallia? Pitäiskö kieltää?
+      
+                  </a>
+                </span>
+                <span
+                  className="e-column e-column--narrow table-of-contents--score-column"
+                >
+                  2 p.
+                </span>
+              </div>
+            </li>
+            <li
+              data-list-number="3."
+            >
+              <div
+                className="e-columns"
+              >
+                <span
+                  className="e-column"
+                >
+                  <a
+                    href="#3."
+                  >
+                    
+          Entä jos sekaisin negatiivisia pisteitä monivalinnoista ja avoja, voiko tästä saada -4..6 pistettä?
+      
+                  </a>
+                </span>
+                <span
+                  className="e-column e-column--narrow table-of-contents--score-column"
+                >
+                  6 p.
+                </span>
+              </div>
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <div
+        className="e-columns"
+      >
+        <strong
+          className="e-column"
+        >
+          Koe yhteensä
+        </strong>
+        <strong
+          className="e-column e-column--narrow table-of-contents--score-column"
+        >
+          12 p.
+        </strong>
+      </div>
+    </nav>
+  </section>
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      
+      Negatiiviset monivalinnat
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa kolmeen tehtävään.
+    </span>
+    <div
+      className="exam-question e-mrg-b-8 e-clearfix"
+      id="1."
+    >
+      <h3
+        className="exam-question-title"
+      >
+        <strong
+          className="exam-question-title__display-number"
+        >
+          1. 
+        </strong>
+        
+            Vanha case, tehtävästä 1 sai 0/2/4 pistettä. Ei -4. Halutaan varmaan, että toimii näin?
+        
+         
+        <span
+          aria-label="4 pistettä"
+          className="e-score e-nowrap e-semibold e-score--large e-font-size-l"
+        >
+          4 p.
+        </span>
+      </h3>
+      <div
+        className="exam-question e-mrg-l-8 e-mrg-y-4"
+        id="1.1."
+      >
+        <h4
+          className="exam-question-title e-normal e-font-size-m"
+        >
+          <strong
+            className="exam-question-title__display-number exam-question-title__display-number--indented"
+          >
+            1.1. 
+          </strong>
+          Json oli hyvä
+           
+          <span
+            aria-label="2 pistettä"
+            className="e-score e-nowrap e-semibold e-font-size-m"
+          >
+            2 p.
+          </span>
+        </h4>
+        <div
+          className="e-choice-answer"
+        >
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="1"
+                onChange={[Function]}
+                type="radio"
+                value="1"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                Joo (-2)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="1"
+                onChange={[Function]}
+                type="radio"
+                value="2"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                En tiedä (0)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="1"
+                onChange={[Function]}
+                type="radio"
+                value="3"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                Ei (2)
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
+        >
+          <div
+            className="answer-toolbar__answer-length e-column e-column--auto"
+          >
+             
+          </div>
+          <div
+            className="answer-toolbar__errors e-column e-column--narrow"
+          />
+          <div
+            className="answer-toolbar__history e-column e-column--auto e-text-right"
+          >
+            <div
+              className="answer-toolbar__saved"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="exam-question e-mrg-l-8 e-mrg-y-4"
+        id="1.2."
+      >
+        <h4
+          className="exam-question-title e-normal e-font-size-m"
+        >
+          <strong
+            className="exam-question-title__display-number exam-question-title__display-number--indented"
+          >
+            1.2. 
+          </strong>
+          Arpa toimi mahtavasti
+           
+          <span
+            aria-label="2 pistettä"
+            className="e-score e-nowrap e-semibold e-font-size-m"
+          >
+            2 p.
+          </span>
+        </h4>
+        <div
+          className="e-choice-answer"
+        >
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="2"
+                onChange={[Function]}
+                type="radio"
+                value="1"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                Joo (-2)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="2"
+                onChange={[Function]}
+                type="radio"
+                value="2"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                En tiedä (0)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="2"
+                onChange={[Function]}
+                type="radio"
+                value="3"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                Ei (2)
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
+        >
+          <div
+            className="answer-toolbar__answer-length e-column e-column--auto"
+          >
+             
+          </div>
+          <div
+            className="answer-toolbar__errors e-column e-column--narrow"
+          />
+          <div
+            className="answer-toolbar__history e-column e-column--auto e-text-right"
+          >
+            <div
+              className="answer-toolbar__saved"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="exam-question e-mrg-b-8 e-clearfix"
+      id="2."
+    >
+      <h3
+        className="exam-question-title"
+      >
+        <strong
+          className="exam-question-title__display-number"
+        >
+          2. 
+        </strong>
+        
+          Uusi koeformaatti sallii päätason negatiivisen monivalinnan, tästä saisi -2 tai 2 pistettä? Pitäiskö sallia? Pitäiskö kieltää?
+      
+         
+        <span
+          aria-label="2 pistettä"
+          className="e-score e-nowrap e-semibold e-score--large e-font-size-l"
+        >
+          2 p.
+        </span>
+      </h3>
+      <div
+        className="e-choice-answer"
+      >
+        <div
+          className="e-mrg-b-1"
+        >
+          <label
+            className="e-columns e-columns--inline"
+          >
+            <input
+              checked={false}
+              className="e-radio-button e-column e-column--narrow"
+              name="3"
+              onChange={[Function]}
+              type="radio"
+              value="1"
+            />
+            <div
+              className="e-choice-answer-option e-column"
+            >
+              Ei (-2)
+            </div>
+          </label>
+        </div>
+        <div
+          className="e-mrg-b-1"
+        >
+          <label
+            className="e-columns e-columns--inline"
+          >
+            <input
+              checked={false}
+              className="e-radio-button e-column e-column--narrow"
+              name="3"
+              onChange={[Function]}
+              type="radio"
+              value="2"
+            />
+            <div
+              className="e-choice-answer-option e-column"
+            >
+              Joo (2)
+            </div>
+          </label>
+        </div>
+      </div>
+      <div
+        className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
+      >
+        <div
+          className="answer-toolbar__answer-length e-column e-column--auto"
+        >
+           
+        </div>
+        <div
+          className="answer-toolbar__errors e-column e-column--narrow"
+        />
+        <div
+          className="answer-toolbar__history e-column e-column--auto e-text-right"
+        >
+          <div
+            className="answer-toolbar__saved"
+          >
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="exam-question e-mrg-b-8 e-clearfix"
+      id="3."
+    >
+      <h3
+        className="exam-question-title"
+      >
+        <strong
+          className="exam-question-title__display-number"
+        >
+          3. 
+        </strong>
+        
+          Entä jos sekaisin negatiivisia pisteitä monivalinnoista ja avoja, voiko tästä saada -4..6 pistettä?
+      
+         
+        <span
+          aria-label="6 pistettä"
+          className="e-score e-nowrap e-semibold e-score--large e-font-size-l"
+        >
+          6 p.
+        </span>
+      </h3>
+      <div
+        className="exam-question e-mrg-l-8 e-mrg-y-4"
+        id="3.1."
+      >
+        <h4
+          className="exam-question-title e-normal e-font-size-m"
+        >
+          <strong
+            className="exam-question-title__display-number exam-question-title__display-number--indented"
+          >
+            3.1. 
+          </strong>
+          Onko Raamattu pyhä kirja?
+           
+          <span
+            aria-label="2 pistettä"
+            className="e-score e-nowrap e-semibold e-font-size-m"
+          >
+            2 p.
+          </span>
+        </h4>
+        <div
+          className="e-choice-answer"
+        >
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="4"
+                onChange={[Function]}
+                type="radio"
+                value="1"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                Ei (-2)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="4"
+                onChange={[Function]}
+                type="radio"
+                value="2"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                On (2)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="4"
+                onChange={[Function]}
+                type="radio"
+                value="3"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                En tiedä (0)
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
+        >
+          <div
+            className="answer-toolbar__answer-length e-column e-column--auto"
+          >
+             
+          </div>
+          <div
+            className="answer-toolbar__errors e-column e-column--narrow"
+          />
+          <div
+            className="answer-toolbar__history e-column e-column--auto e-text-right"
+          >
+            <div
+              className="answer-toolbar__saved"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="exam-question e-mrg-l-8 e-mrg-y-4"
+        id="3.2."
+      >
+        <h4
+          className="exam-question-title e-normal e-font-size-m"
+        >
+          <strong
+            className="exam-question-title__display-number exam-question-title__display-number--indented"
+          >
+            3.2. 
+          </strong>
+          Entä Koraani?
+           
+          <span
+            aria-label="2 pistettä"
+            className="e-score e-nowrap e-semibold e-font-size-m"
+          >
+            2 p.
+          </span>
+        </h4>
+        <div
+          className="e-choice-answer"
+        >
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="5"
+                onChange={[Function]}
+                type="radio"
+                value="1"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                En tiedä (0)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="5"
+                onChange={[Function]}
+                type="radio"
+                value="2"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                Ei (-2)
+              </div>
+            </label>
+          </div>
+          <div
+            className="e-mrg-b-1"
+          >
+            <label
+              className="e-columns e-columns--inline"
+            >
+              <input
+                checked={false}
+                className="e-radio-button e-column e-column--narrow"
+                name="5"
+                onChange={[Function]}
+                type="radio"
+                value="3"
+              />
+              <div
+                className="e-choice-answer-option e-column"
+              >
+                On (+2)
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
+        >
+          <div
+            className="answer-toolbar__answer-length e-column e-column--auto"
+          >
+             
+          </div>
+          <div
+            className="answer-toolbar__errors e-column e-column--narrow"
+          />
+          <div
+            className="answer-toolbar__history e-column e-column--auto e-text-right"
+          >
+            <div
+              className="answer-toolbar__saved"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="exam-question e-mrg-l-8 e-mrg-y-4"
+        id="3.3."
+      >
+        <h4
+          className="exam-question-title e-normal e-font-size-m"
+        >
+          <strong
+            className="exam-question-title__display-number exam-question-title__display-number--indented"
+          >
+            3.3. 
+          </strong>
+          Muita pyhiä kirjoja:
+           
+          <span
+            aria-label="2 pistettä"
+            className="e-score e-nowrap e-semibold e-font-size-m"
+          >
+            2 p.
+          </span>
+        </h4>
+        <div
+          className="text-answer text-answer--multi-line text-answer text-answer--rich-text"
+          data-question-id={6}
+        />
+        <div
+          className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
+        >
+          <div
+            className="answer-toolbar__answer-length e-column e-column--auto"
+          >
+             
+          </div>
+          <div
+            className="answer-toolbar__errors e-column e-column--narrow"
+          />
+          <div
+            className="answer-toolbar__history e-column e-column--auto e-text-right"
+          >
+            <div
+              className="answer-toolbar__saved"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <p
+      className="e-text-center e-semibold"
+    >
+      Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
     </p>
   </section>
 </main>

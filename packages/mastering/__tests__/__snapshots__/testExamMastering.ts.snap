@@ -4891,10 +4891,6 @@ Object {
       "filename": "13Afi.ods",
       "restricted": false,
     },
-    Object {
-      "filename": "custom.css",
-      "restricted": false,
-    },
   ],
   "date": "2019-09-24",
   "dayCode": null,
@@ -5530,10 +5526,6 @@ Object {
     },
     Object {
       "filename": "13Asv.ods",
-      "restricted": false,
-    },
-    Object {
-      "filename": "custom.css",
       "restricted": false,
     },
   ],
@@ -6318,7 +6310,7 @@ DEL III: Del B2 (36 p.)
 
 exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" exam-stylesheet="custom.css" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>FI – Matematiikka, lyhyt oppimäärä</e:exam-title><e:exam-instruction><p>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>FI – Matematiikka, lyhyt oppimäärä</e:exam-title><e:exam-instruction><p>
         Koe koostuu 13 tehtävästä, joista vastataan kymmeneen. Tehtävät on jaettu kolmeen osaan. A-osassa on neljä kaikille pakollista tehtävää. B1-osassa on viisi tehtävää, joista vastataan kolmeen. B2-osassa on neljä tehtävää, joista vastataan kolmeen. Kaikki tehtävät arvostellaan pistein 0–12, joten kokeen maksimipistemäärä on 120.
       </p><p>
         A-osassa saat käyttää taulukkokirjaa ja koejärjestelmän tarjoamia perusohjelmia. A-osa palautetaan tehtävän 4 jäljessä olevalla painikkeella. Tämän jälkeen A-osan vastauksia ei voi enää muokata. A-osan palauttamisen jälkeen kaikki koejärjestelmän ohjelmat ovat käytettävissäsi. Lisäksi saat käyttöön oman laskimesi. Voit vastata B-osien tehtäviin myös ennen A-osan palauttamista.
@@ -6372,7 +6364,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" exam-stylesheet="custom.css" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>SV – Matematik, kort lärokurs</e:exam-title><e:exam-instruction><p>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>SV – Matematik, kort lärokurs</e:exam-title><e:exam-instruction><p>
         Provet består av 13 uppgifter, av vilka tio uppgifter ska lösas. Uppgifterna är indelade i tre delar. Del A består av fyra uppgifter som är obligatoriska för alla. Del B1 består av fem uppgifter av vilka tre ska lösas. Del B2 består av fyra uppgifter av vilka tre ska lösas. Alla uppgifter bedöms med 0–12 poäng, vilket betyder att provets maximala antal poäng är 120.
       </p><p>
         I del A får du använda tabellbok och de basprogram som ingår i provsystemet. Del A återlämnas med hjälp av tryckknappen efter uppgift 4. Efter detta kan svaren i del A inte längre redigeras och alla program i provsystemet kan användas. Dessutom kan du använda din egen räknare. Du kan även lösa uppgifterna i B-delarna innan du lämnat in del A.
@@ -11915,5 +11907,211 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           </e:question-instruction><p><e:attachment><e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title><e:image src="24.1.jpg" width="999" height="999"/><e:reference><e:author>Riik@mctr</e:author><e:title>Manchester Airport (EGCC)</e:title><e:url>https://www.flickr.com/photos/riikkeary/48887383951/in/photolist-2hu1C3c-PKLHCd-EeEdwT-2gkPu6W-P3e4QT-JgAdC5-NbRGcz-NcTTNk-LVtizH-8yZcMv-Drad5A-2ahQHWu-LVthK6-6VEGAg-6VJLew-29bqzwJ-2aztA8B-HV25ti-22GPdfj-2fRNRnC-cQ9YYq-86sim-Wfcorb-2gyha9j-6g1Wku-2htZ3SD-277TxNV-NbzgNr-EeEd9t-XfaGG5-5wqZ6g-2hPjtVN-2gCAYBa-FvMntq-22yohM3-Y5Ag4G-2h8kmhc-2gyha2f-2hHXtzN-2af6nPJ-DuY1pD-2hJTqGH-JaRwDj-QAUqAK-PAfBfy-gxJoJ1-NheHgK-o3qrds-HqnLf2-2aztAdg</e:url><e:howpublished>CC BY 2.0</e:howpublished><e:reference-date>2019-11-25</e:reference-date></e:reference><e:reference><e:author>Jonathan Pearson</e:author><e:title>boy racers</e:title><e:url>https://www.flickr.com/photos/jpgpearson/19589151028/in/photolist-vR2w8f-8K8cyR-5JqYZp-5JvfgY-avXAB-p9FDL1-hrNHmo-2gZf9-9jwK-5JqYKM-5q6K2N-edv3o-5JveZ5-kiCvw-aGhST-5JqYAn-Fkc7g-dF6gAv-5JveXm-5JqYYH-2huzoFM-5JveH1-6kXvwg-5mRiER-tXN4S9-avbFkR-2ZkL3-jPWTS-ciGDdb-4cwvdo-J887D-4DTo2-aveo1U-fve2FU-5e9mk9-4Tomw-J88iR-4cwo67-9BnCgP-bPnii8-otV72-aveoSU-J88Yi-dzcPPT-Qq94TL-avbHWa-6m2EuN-4mPejB-5JveRh-f64UA8</e:url><e:howpublished>CC BY 2.0</e:howpublished><e:reference-date>2019-11-25</e:reference-date></e:reference><e:reference><e:author>Conal Gallagher</e:author><e:title>Bicycle</e:title><e:url>https://www.flickr.com/photos/conalg/13929485086/in/photolist-ndUfBY-5Nihze-egRLhZ-dqiRkT-njvDDT-4oGgE-dqiSxr-dqiSkt-4XEtWw-bmb8K-DRgS2z-ewdvhp-24E1jnA-7eKYFk-eUzcBm-ccNu1C-qWH3YT-dqiZfN-oBuymS-dqiRZa-APopNz-h3KDEM-axiQ2z-g8Bktb-4rnK9J-NFcq-rxHBQ-6Mw4d5-c3RrMY-dqiRDB-aXZ3Qk-rtCqGn-7RTBd1-azuPeP-dqj3AF-53hN4q-7MvQKH-iCGZH-vKvFz-e7zHs-81xh6Y-5t4bXx-s54FqX-nqoeWh-9mdaE-AL6QNw-6C8kVT-5RpTZc-aDaCHN-6Cctny</e:url><e:howpublished>CC BY 2.0</e:howpublished><e:reference-date>2019-11-25</e:reference-date></e:reference><e:reference><e:author>Wonder Woman</e:author><e:title>Alexandra</e:title><e:url>https://www.flickr.com/photos/zamerzla/28623180177/in/photolist-SsppBA-4KrF7c-Q8AVgo-vwSEYi-2cXMWck-E1XfwB-JQiQXv-AGeL5V-h4Cf5i-SKAjUC-U7pTTw-RJSnqw-28UuR81-HNqoJG-2bN4CHs-XQAYND-2e7GFPu-VfFJcf-2bedGoa-2ckJhGu-24sAaK3-2aTLnGw-2dMyokb-PtbzSU-FYKk91-PtaNkm-BaTHKd-FSRkfF-ZAPzsP-E7kuSh-UtV741-21r8xzM-UC83Hv-NjSv39-KBkhfv-2eCtwHr-PpCzzL-2cuyVWz-5R5Z1b-843VCn-2dZCoHX-SSuPSA-Hp9GxQ-Go2Ah1-xKh4cU-29zGKha-23nmc6W-MorGx6-GVaNjr-29QybwX</e:url><e:howpublished>CC BY 2.0</e:howpublished><e:reference-date>2019-11-25</e:reference-date></e:reference></e:attachment></p><e:text-answer type="rich-text" max-score="66" display-number="21.1." question-id="89"/></e:question><e:question display-number="21.2." max-score="66"><e:question-title>Lange Schreibaufgabe</e:question-title><e:question-instruction>
             En pappa har skickat in texten till en diskussionsspalt <e:attachment-link ref="zeugnis"/>. Han ber om åsikter om vem som har rätt – han eller hans son. Skriv ett svar till pappan i spalten. Motivera din åsikt.
           </e:question-instruction><e:text-answer type="rich-text" max-score="66" display-number="21.2." question-id="90"/></e:question></e:question></e:section><e:references/><e:exam-footer><p class="e-text-center e-semibold">Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.</p></e:exam-footer></e:exam>
+
+`;
+
+exports[`Exam mastering masters UE.xml exam correctly 1`] = `
+Object {
+  "attachments": Array [],
+  "date": "2020-02-29",
+  "dayCode": null,
+  "examCode": "UE",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": Object {
+    "questions": Array [
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "1.1.",
+            "id": 1,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 1,
+                "score": -2,
+              },
+              Object {
+                "correct": false,
+                "id": 2,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 3,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.1.",
+        "id": 7,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "1.2.",
+            "id": 2,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 1,
+                "score": -2,
+              },
+              Object {
+                "correct": false,
+                "id": 2,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 3,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.2.",
+        "id": 8,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "2.",
+            "id": 3,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 1,
+                "score": -2,
+              },
+              Object {
+                "correct": true,
+                "id": 2,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "2.",
+        "id": 9,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "3.1.",
+            "id": 4,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 1,
+                "score": -2,
+              },
+              Object {
+                "correct": true,
+                "id": 2,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 3,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "3.1.",
+        "id": 10,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "3.2.",
+            "id": 5,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 1,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 2,
+                "score": -2,
+              },
+              Object {
+                "correct": true,
+                "id": 3,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "3.2.",
+        "id": 11,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "3.3.",
+        "id": 6,
+        "maxScore": 2,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "fi-FI",
+  "title": "FI – Evankelisluterilainen uskonto",
+}
+`;
+
+exports[`Exam mastering masters UE.xml exam correctly: hvp 1`] = `
+FI – Evankelisluterilainen uskonto
+
+
+OSA I: Negatiiviset monivalinnat (12 p.)
+
+	1. Vanha case, tehtävästä 1 sai 0/2/4 pistettä. Ei -4. Halutaan varmaan, että toimii näin? (4 p.) (monivalintavastaus)
+
+	1.1. Json oli hyvä (2 p.) (monivalintavastaus)
+		Joo (-2) (-2 p.), 		En tiedä (0) (0 p.), 		Ei (2) (2 p.)
+
+	1.2. Arpa toimi mahtavasti (2 p.) (monivalintavastaus)
+		Joo (-2) (-2 p.), 		En tiedä (0) (0 p.), 		Ei (2) (2 p.)
+
+	2. Uusi koeformaatti sallii päätason negatiivisen monivalinnan, tästä saisi -2 tai 2 pistettä? Pitäiskö sallia? Pitäiskö kieltää? (2 p.) (monivalintavastaus)
+		Ei (-2) (-2 p.), 		Joo (2) (2 p.)
+
+	3. Entä jos sekaisin negatiivisia pisteitä monivalinnoista ja avoja, voiko tästä saada -4..6 pistettä? (6 p.) (monivalintavastaus, tekstivastaus)
+
+	3.1. Onko Raamattu pyhä kirja? (2 p.) (monivalintavastaus)
+		Ei (-2) (-2 p.), 		On (2) (2 p.), 		En tiedä (0) (0 p.)
+
+	3.2. Entä Koraani? (2 p.) (monivalintavastaus)
+		En tiedä (0) (0 p.), 		Ei (-2) (-2 p.), 		On (+2) (2 p.)
+
+	3.3. Muita pyhiä kirjoja: (2 p.) (tekstivastaus)
+`;
+
+exports[`Exam mastering masters UE.xml exam correctly: xml 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-02-29" exam-code="UE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="12"><e:exam-title>FI – Evankelisluterilainen uskonto</e:exam-title><e:exam-instruction>
+    Ohje
+  </e:exam-instruction><e:table-of-contents/><e:section display-number="I" max-score="12" max-answers="3" min-answers="3"><e:section-title>
+      Negatiiviset monivalinnat
+    </e:section-title><e:question display-number="1." max-score="4"><e:question-title>
+            Vanha case, tehtävästä 1 sai 0/2/4 pistettä. Ei -4. Halutaan varmaan, että toimii näin?
+        </e:question-title><e:question display-number="1.1." max-score="2"><e:question-title>Json oli hyvä</e:question-title><e:choice-answer display-number="1.1." question-id="1" max-score="2"><e:choice-answer-option option-id="1">Joo (-2)</e:choice-answer-option><e:choice-answer-option option-id="2">En tiedä (0)</e:choice-answer-option><e:choice-answer-option option-id="3">Ei (2)</e:choice-answer-option></e:choice-answer></e:question><e:question display-number="1.2." max-score="2"><e:question-title>Arpa toimi mahtavasti</e:question-title><e:choice-answer display-number="1.2." question-id="2" max-score="2"><e:choice-answer-option option-id="1">Joo (-2)</e:choice-answer-option><e:choice-answer-option option-id="2">En tiedä (0)</e:choice-answer-option><e:choice-answer-option option-id="3">Ei (2)</e:choice-answer-option></e:choice-answer></e:question></e:question><e:question display-number="2." max-score="2"><e:question-title>
+          Uusi koeformaatti sallii päätason negatiivisen monivalinnan, tästä saisi -2 tai 2 pistettä? Pitäiskö sallia? Pitäiskö kieltää?
+      </e:question-title><e:choice-answer display-number="2." question-id="3" max-score="2"><e:choice-answer-option option-id="1">Ei (-2)</e:choice-answer-option><e:choice-answer-option option-id="2">Joo (2)</e:choice-answer-option></e:choice-answer></e:question><e:question display-number="3." max-score="6"><e:question-title>
+          Entä jos sekaisin negatiivisia pisteitä monivalinnoista ja avoja, voiko tästä saada -4..6 pistettä?
+      </e:question-title><e:question display-number="3.1." max-score="2"><e:question-title>Onko Raamattu pyhä kirja?</e:question-title><e:choice-answer display-number="3.1." question-id="4" max-score="2"><e:choice-answer-option option-id="1">Ei (-2)</e:choice-answer-option><e:choice-answer-option option-id="2">On (2)</e:choice-answer-option><e:choice-answer-option option-id="3">En tiedä (0)</e:choice-answer-option></e:choice-answer></e:question><e:question display-number="3.2." max-score="2"><e:question-title>Entä Koraani?</e:question-title><e:choice-answer display-number="3.2." question-id="5" max-score="2"><e:choice-answer-option option-id="1">En tiedä (0)</e:choice-answer-option><e:choice-answer-option option-id="2">Ei (-2)</e:choice-answer-option><e:choice-answer-option option-id="3">On (+2)</e:choice-answer-option></e:choice-answer></e:question><e:question display-number="3.3." max-score="2"><e:question-title>Muita pyhiä kirjoja:</e:question-title><e:text-answer type="rich-text" max-score="2" display-number="3.3." question-id="6"/></e:question></e:question></e:section><e:exam-footer><p class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
 
 `;
