@@ -32,7 +32,9 @@ Environment has been tested to work in Debian Linux, Mac OS and on Windows 10 in
 Make sure the following are installed in your system:
 
 - [git](https://git-scm.com/)
+  In Debian Linux: `sudo apt install git`
 - [Node.js](https://nodejs.org/en/) (Version 10 or later)
+  E.g. install nvm from https://github.com/nvm-sh/nvm/blob/master/README.md#install--update-script and run `nvm install`
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 ```
