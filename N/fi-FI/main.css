@@ -1409,6 +1409,70 @@
 .e-exam .e-bg-color-link-hover {
   background-color: #288199;
 }
+.e-exam a,
+.e-exam .e-link-button {
+  color: #359bb7;
+  text-decoration: none;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+.e-exam a:hover,
+.e-exam .e-link-button:hover {
+  text-decoration: underline;
+  color: #288199;
+}
+.e-exam .e-list-plain {
+  list-style: none;
+}
+.e-exam .e-list-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.e-exam .e-list-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.e-exam .e-list-lower-roman {
+  list-style-type: lower-roman;
+}
+.e-exam .e-list-upper-roman {
+  list-style-type: upper-roman;
+}
+.e-exam .e-list-data {
+  list-style: none;
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+.e-exam .e-list-data li::before {
+  content: attr(data-list-number);
+  padding-right: 1rem;
+  white-space: nowrap;
+  display: table-cell;
+  width: 1%;
+}
+.e-exam .e-list-data li {
+  display: table-row;
+  width: 100%;
+}
+.e-exam li {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.e-exam .e-list-wordcloud {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.e-exam .e-list-wordcloud > li {
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  border: solid 1px #aaaaaa;
+  border-radius: 0.25rem;
+  background: rgba(0, 0, 0, 0.03);
+}
 .e-exam .e-columns {
   display: flex;
 }
@@ -1485,70 +1549,6 @@
 .e-exam .e-column--12 {
   flex: none;
   width: 100%;
-}
-.e-exam a,
-.e-exam .e-link-button {
-  color: #359bb7;
-  text-decoration: none;
-  border: none;
-  background-color: inherit;
-  padding: 0;
-  cursor: pointer;
-}
-.e-exam a:hover,
-.e-exam .e-link-button:hover {
-  text-decoration: underline;
-  color: #288199;
-}
-.e-exam .e-list-plain {
-  list-style: none;
-}
-.e-exam .e-list-lower-alpha {
-  list-style-type: lower-alpha;
-}
-.e-exam .e-list-upper-alpha {
-  list-style-type: upper-alpha;
-}
-.e-exam .e-list-lower-roman {
-  list-style-type: lower-roman;
-}
-.e-exam .e-list-upper-roman {
-  list-style-type: upper-roman;
-}
-.e-exam .e-list-data {
-  list-style: none;
-  display: table;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 0.5rem;
-}
-.e-exam .e-list-data li::before {
-  content: attr(data-list-number);
-  padding-right: 1rem;
-  white-space: nowrap;
-  display: table-cell;
-  width: 1%;
-}
-.e-exam .e-list-data li {
-  display: table-row;
-  width: 100%;
-}
-.e-exam li {
-  margin: 0;
-  margin-bottom: 0.5rem;
-}
-.e-exam .e-list-wordcloud {
-  display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-  padding: 0;
-}
-.e-exam .e-list-wordcloud > li {
-  padding: 0.25rem 0.5rem;
-  margin: 0.25rem;
-  border: solid 1px #aaaaaa;
-  border-radius: 0.25rem;
-  background: rgba(0, 0, 0, 0.03);
 }
 .e-exam .e-illustration-right {
   float: right;
@@ -2058,6 +2058,40 @@
 .e-table--zebra tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.06);
 }
+.e-exam .e-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.e-exam .e-bordered {
+  border: 1px solid #aaaaaa;
+}
+.e-exam .e-rounded {
+  border-radius: 4px;
+}
+.e-exam .e-scrollable-x {
+  overflow-x: auto;
+}
+.e-exam .e-box {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+.e-exam .e-screen-reader-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
 .e-exam {
   font-weight: 400;
 }
@@ -2201,39 +2235,5 @@
 }
 .e-exam .e-break-word {
   word-break: break-word;
-}
-.e-exam .e-ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.e-exam .e-bordered {
-  border: 1px solid #aaaaaa;
-}
-.e-exam .e-rounded {
-  border-radius: 4px;
-}
-.e-exam .e-scrollable-x {
-  overflow-x: auto;
-}
-.e-exam .e-box {
-  border: 1px solid #aaaaaa;
-  border-radius: 4px;
-  padding: 1rem;
-  background-color: #f0f0f0;
-}
-.e-exam .e-screen-reader-only {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important;
 }
 
