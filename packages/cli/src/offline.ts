@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { createOfflineExam } from '@digabi/exam-engine-rendering'
+import { promises as fs } from 'fs'
 import path from 'path'
 import yargs from 'yargs'
 
@@ -19,6 +20,8 @@ yargs
         .demandOption(['examFilename', 'outputDirectory']),
     async ({ examFilename, outputDirectory }) => {
       try {
+        const fullExamFilename = path.resolve(process.cwd(), examFilename)
+        await fs.access(fullExamFilename)
         await createOfflineExam(path.resolve(process.cwd(), examFilename), outputDirectory)
       } catch (err) {
         // tslint:disable-next-line: no-console
