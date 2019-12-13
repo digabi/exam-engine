@@ -203,7 +203,7 @@ async function masterExamForLanguage(
   updateMaxScoresToAnswers(exam)
   countMaxScores(exam)
   countSectionMaxAndMinAnswers(exam)
-  addAnswerOptionIds(exam)
+  addAnswerOptionIds(exam, generateId)
   addRestrictedAudioMetadata(attachments)
   await renderFormulas(root, options.throwOnLatexError)
   await addMediaMetadata(attachments, getMediaMetadata)
@@ -479,14 +479,12 @@ function countMaxScores(exam: Exam) {
   countExamMaxScore()
 }
 
-function addAnswerOptionIds(exam: Exam) {
+function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
   for (const { element } of exam.answers) {
     if (_.includes(choiceAnswerTypes, element.name())) {
-      asElements(element.find('./e:choice-answer-option | ./e:dropdown-answer-option', ns)).forEach(
-        (answerOption, i) => {
-          answerOption.attr('option-id', String(i + 1))
-        }
-      )
+      asElements(element.find('./e:choice-answer-option | ./e:dropdown-answer-option', ns)).forEach(answerOption => {
+        answerOption.attr('option-id', String(generateId()))
+      })
     }
   }
 }
