@@ -154,7 +154,7 @@
       <xs:sequence>
         <xs:element name="attachment-title" type="e:Flow" />
         <xs:group ref="xhtml:xhtml.Flow.mix" maxOccurs="unbounded" />
-        <xs:element ref="e:reference" maxOccurs="unbounded" />
+        <xs:element ref="e:reference" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="name" type="xs:NMTOKEN" />
       <xs:attribute name="lang" type="xs:language" />
