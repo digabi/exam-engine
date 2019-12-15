@@ -100,6 +100,7 @@
     "lint": "yarn workspaces run lint",
     "offline": "NODE_ENV=production node packages/cli/dist/offline.js",
     "create-mex": "node packages/cli/dist/create-mex.js",
+    "new": "node packages/cli/dist/new.js",
     "test": "jest",
     "prepare": "tsc --build && yarn workspace @digabi/exam-engine-core build"
   },
