@@ -3,7 +3,7 @@ import path from 'path'
 import webpack from 'webpack'
 import webpackMerge from 'webpack-merge'
 
-export function getWebpackConfig(configuration: webpack.Configuration, examLanguage?: string): webpack.Configuration {
+export function getWebpackConfig(configuration: webpack.Configuration): webpack.Configuration {
   return webpackMerge(
     {
       output: {
@@ -39,8 +39,7 @@ export function getWebpackConfig(configuration: webpack.Configuration, examLangu
             test: /\.xml$/,
             use: [
               {
-                loader: path.resolve(__dirname, 'exam-loader.js'),
-                options: { examLanguage }
+                loader: path.resolve(__dirname, 'exam-loader.js')
               }
             ]
           },

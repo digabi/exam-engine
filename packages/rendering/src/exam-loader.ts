@@ -1,6 +1,5 @@
 import { Attachment, getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import { SyntaxError } from 'libxmljs2'
-import loaderUtils from 'loader-utils'
 import path from 'path'
 import uuid from 'uuid'
 import webpack from 'webpack'
@@ -17,19 +16,12 @@ export default async function(this: webpack.loader.LoaderContext, source: string
   const getMediaMetadata = getMediaMetadataFromLocalFile(resolveAttachment)
   const UUID = uuid.v4()
   const generateUuid = () => UUID
-  const { examLanguage }: { examLanguage?: string } = loaderUtils.getOptions(this) || {}
 
   try {
-    if (examLanguage) {
-      const results = await masterExam(source, generateUuid, getMediaMetadata)
-      const { xml, attachments } = results.find(result => result.language === examLanguage)!
-      callback(null, stringifyModule(xml, attachments))
-    } else {
-      const results = await masterExam(source, generateUuid, getMediaMetadata)
-      const module = { original: source, results }
+    const results = await masterExam(source, generateUuid, getMediaMetadata)
+    const module = { original: source, results }
 
-      callback(null, stringifyModule(module))
-    }
+    callback(null, stringifyModule(module))
   } catch (err) {
     const isLibXmlError = Object.prototype.hasOwnProperty.call(err, 'domain')
     const isParseError = isLibXmlError && err.domain === 1
