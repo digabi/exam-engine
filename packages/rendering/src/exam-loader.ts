@@ -1,5 +1,7 @@
 import { Attachment, getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
+import { promises as fs } from 'fs'
 import { SyntaxError } from 'libxmljs2'
+import _ from 'lodash'
 import path from 'path'
 import uuid from 'uuid'
 import webpack from 'webpack'
@@ -20,6 +22,14 @@ export default async function(this: webpack.loader.LoaderContext, source: string
   try {
     const results = await masterExam(source, generateUuid, getMediaMetadata)
     const module = { original: source, results }
+
+    const attachments = _.chain(results)
+      .flatMap(r => r.attachments)
+      .uniqWith(_.isEqual)
+      .value()
+    for (const attachment of attachments) {
+      await fs.access(resolveAttachment(attachment.filename))
+    }
 
     callback(null, stringifyModule(module))
   } catch (err) {
