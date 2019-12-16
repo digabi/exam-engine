@@ -65,15 +65,15 @@ in exam-engine. There are warnings about unsupported features in the
 attempt to upload such an exam to Abitti, you likely get a misleading general error message.
 Abitti also has some additional limits, like maximum size of attachment files.**
 
-**Because of this, only [packages/mexamples/A_X/](packages/mexamples/A_X/) in the
-sample exams directory [packages/mexamples/](packages/mexamples/) currently works
+**Because of this, only [packages/exams/A_X/](packages/exams/A_X/) in the
+sample exams directory [packages/exams/](packages/exams/) currently works
 with Abitti.**
 
 To use an exam in Abitti, the exam must be packaged manually as a transfer zip. It is then possible
 to import it to Abitti using "Tuo koe/För in prov" functionality:
 
 ```
-$ cd packages/mexamples/A_X                           # Go to the exam directory
+$ cd packages/exams/A_X                               # Go to the exam directory
 $ mkdir tmp                                           # Create a new empty temporary directory
 $ cp A_X.xml tmp/exam.xml                             # Copy xml to exam.xml
 $ cd attachments
@@ -103,8 +103,8 @@ Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). 
 - Abitti and the Abitti logo are EU trademarks registered by the Finnish Matriculation Examination
   Board (FMEB) under the codes 015833742 and 015838915.
   For detailed use rights, see [https://abitti.dev/abitti-trademark.html](https://abitti.dev/abitti-trademark.html)
-- Several attachments in the SC sample exam [packages/mexamples/SC/](packages/mexamples/SC/) are third party material. See
-  the `<e:reference>` tags in [packages/mexamples/SC/SC.xml](packages/mexamples/SC/SC.xml) for details.
+- Several attachments in the SC sample exam [packages/exams/SC/](packages/exams/SC/) are third party material. See
+  the `<e:reference>` tags in [packages/exams/SC/SC.xml](packages/exams/SC/SC.xml) for details.
 
 # Development
 

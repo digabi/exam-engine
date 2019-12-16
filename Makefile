@@ -12,7 +12,6 @@ EE_YARN=$(EE_NVM_EXEC) yarn
 EE_YARN_INSTALLED=$(EE_DIR)/node_modules/.yarn_install_executed
 EE_EXAM_ENGINE_BUILT=$(EE_DIR)/packages/exam-engine/dist/main-bundle.js
 
-EE_EXAM_XML_FILES = $(shell find ./packages/mexamples/*/*.xml)
 # Change @ to empty string "" if you want to see all commands echoed:
 VERBOSE?=@
 
@@ -24,20 +23,6 @@ $(EE_YARN_INSTALLED): $(EE_DIR)/package.json $(EE_DIR)/yarn.lock $(EE_NVM_EXEC)
 $(EE_EXAM_ENGINE_BUILT):
 	$(PRINT_TARGET)
 	$(EE_NVM_EXEC) yarn workspace @digabi/exam-engine-core build
-
-# Example on how to call this target:
-#
-# make create-mex e="packages/mexamples/A_X/A_X.xml" p="salasana" n=~/digabi-top/yo-tools/scripts/nsa-scripts.zip
-# See https://www.gnu.org/software/make/manual/html_node/Target_002dspecific.html
-create-mex: p?=salasana
-create-mex: s?=$(EE_DIR)/test/security-codes.json
-create-mex: n?=$(EE_DIR)/test/dummy-nsa-scripts.zip
-create-mex: o?=$(EE_DIR)
-create-mex: build $(EE_EXAM_ENGINE_BUILT)
-	$(EE_NVM_EXEC) yarn create-mex -e $(e) -p $(p) -n $(n) -o $(o) -s $(s) -k $(k)
-
-packages/mexamples/*/%.mex: packages/mexamples/*/%.xml
-	@$(MAKE) create-mex e=$< o=$(@D)
 
 start: build
 	$(EE_NVM_EXEC) yarn start
