@@ -8,7 +8,7 @@
 
 [Use of Abitti Trademark policy](https://abitti.dev/abitti-trademark.html)
 
-[Documentation](https://digabi.github.io/exam-engine/MexDocumentation/koe.html)
+[Documentation](https://digabi.github.io/exam-engine/MexDocumentation/)
 
 Engine for the MEX exam format.
 
@@ -61,7 +61,7 @@ the XML file is being edited.
 
 **[Abitti](https://oma.abitti.fi/) does not at the moment support all the features available
 in exam-engine. There are warnings about unsupported features in the
-[MEX format documentation](https://digabi.github.io/exam-engine/MexDocumentation/koe.html). If you
+[MEX format documentation](https://digabi.github.io/exam-engine/MexDocumentation/). If you
 attempt to upload such an exam to Abitti, you likely get a misleading general error message.
 Abitti also has some additional limits, like maximum size of attachment files.**
 
