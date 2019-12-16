@@ -9,8 +9,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack -d",
-    "watch": "webpack -d --watch",
+    "build": "webpack -p",
+    "watch": "webpack -p --watch",
     "lint": "tslint -p . -p __tests__",
     "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
     "test": "jest"
