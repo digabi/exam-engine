@@ -17336,9 +17336,9 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         code pairs can be found in
         
         <a
-          href="https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json"
+          href="https://github.com/digabi/exam-engine/blob/master/packages/mastering/src/i18n/exam_titles_fi-FI.json"
         >
-          https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json
+          https://github.com/digabi/exam-engine/blob/master/packages/mastering/src/i18n/exam_titles_fi-FI.json
         </a>
         
         .
@@ -29759,9 +29759,9 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         code pairs can be found in
         
         <a
-          href="https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json"
+          href="https://github.com/digabi/exam-engine/blob/master/packages/mastering/src/i18n/exam_titles_fi-FI.json"
         >
-          https://github.com/digabi/exam-engine/blob/master/packages/mex/src/i18n/exam_titles_fi-FI.json
+          https://github.com/digabi/exam-engine/blob/master/packages/mastering/src/i18n/exam_titles_fi-FI.json
         </a>
         
         .
