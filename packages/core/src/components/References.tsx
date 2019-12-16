@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
-import { closest, queryAll } from '../dom-utils'
+import { queryAll, queryAncestors } from '../dom-utils'
 import { ExamContext } from './ExamContext'
 import Reference from './Reference'
 import Section from './Section'
@@ -12,7 +12,7 @@ const renderChildNodes = createRenderChildNodes({})
 function References(_: ExamComponentProps) {
   const { root } = useContext(ExamContext)
   const internalReferences = queryAll(root, 'reference').filter(
-    reference => closest(reference, 'external-material') == null
+    reference => queryAncestors(reference, 'external-material') == null
   )
 
   return internalReferences.length > 0 ? (
@@ -22,7 +22,7 @@ function References(_: ExamComponentProps) {
       </h2>
       <ol className="e-list-data e-color-darkgrey e-light">
         {internalReferences.map((reference, i) => {
-          const question = closest(reference, 'question')!
+          const question = queryAncestors(reference, 'question')!
           const displayNumber = question.getAttribute('display-number')!
           return (
             <li data-list-number={displayNumber} key={displayNumber + i}>

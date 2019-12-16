@@ -1,6 +1,6 @@
 import React from 'react'
 import { createRenderChildNodes } from '../createRenderChildNodes'
-import { closest } from '../dom-utils'
+import { queryAncestors } from '../dom-utils'
 import AttachmentLink from './AttachmentLink'
 import AttachmentLinks from './AttachmentLinks'
 import AttachmentsAttachment from './AttachmentsAttachment'
@@ -33,7 +33,7 @@ interface AttachmentsExternalMaterialProps extends ExamComponentProps {
 }
 
 function AttachmentsExternalMaterial({ element, forceRender = false }: AttachmentsExternalMaterialProps) {
-  if (closest(element, 'question') == null && !forceRender) {
+  if (queryAncestors(element, 'question') == null && !forceRender) {
     return null
   }
 

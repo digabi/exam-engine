@@ -13898,6 +13898,28 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           0 p.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Vastaa joko kohtaan 6.1 tai 6.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >
@@ -14895,17 +14917,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example_high.jpg"
-                      target="original-picture"
-                      title="Suurenna"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example_high.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example_high.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -14944,17 +14959,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example.jpg"
-                      target="original-picture"
-                      title="Suurenna"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -14993,17 +15001,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example_small.jpg"
-                      target="original-picture"
-                      title="Suurenna"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example_small.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example_small.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -15042,17 +15043,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example.jpg"
-                      target="original-picture"
-                      title="Suurenna"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -15091,17 +15085,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example.jpg"
-                      target="original-picture"
-                      title="Suurenna"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -22956,6 +22943,28 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           0 p.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Besvara antingen punkt 6.1 eller 6.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >
@@ -23953,17 +23962,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example_high.jpg"
-                      target="original-picture"
-                      title="Förstora"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example_high.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example_high.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -24002,17 +24004,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example.jpg"
-                      target="original-picture"
-                      title="Förstora"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -24051,17 +24046,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example_small.jpg"
-                      target="original-picture"
-                      title="Förstora"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example_small.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example_small.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -24100,17 +24088,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example.jpg"
-                      target="original-picture"
-                      title="Förstora"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -24149,17 +24130,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
                       }
                     }
                   >
-                    <a
-                      className="e-zoomable"
-                      href="/attachments/example.jpg"
-                      target="original-picture"
-                      title="Förstora"
-                    >
-                      <img
-                        className="image"
-                        src="/attachments/example.jpg"
-                      />
-                    </a>
+                    <img
+                      className="image"
+                      src="/attachments/example.jpg"
+                    />
                   </div>
                 </figure>
               </div>
@@ -36545,6 +36519,28 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           12 p.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Vastaa joko kohtaan 9.1 tai 9.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >
@@ -44006,6 +44002,28 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           12 p.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Besvara antingen punkt 9.1 eller 9.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >
@@ -51366,17 +51384,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.1.7279.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.1.7279.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.1.7279.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -51419,17 +51430,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.1.4327.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.1.4327.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.1.4327.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -51472,17 +51476,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.1.0478.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.1.0478.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.1.0478.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -51642,17 +51639,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.7276.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.7276.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.7276.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -51695,17 +51685,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.1617.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.1617.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.1617.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -51748,17 +51731,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.7291.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.7291.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.7291.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -51918,17 +51894,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.3.4927.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.3.4927.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.3.4927.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -51971,17 +51940,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.3.7459.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.3.7459.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.3.7459.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -52024,17 +51986,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.3.4375.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.3.4375.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.3.4375.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -59148,17 +59103,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -59248,17 +59196,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.4.jpg"
-                          target="original-picture"
-                          title="Suurenna"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.4.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.4.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -59334,17 +59275,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                         }
                       }
                     >
-                      <a
-                        className="e-zoomable"
-                        href="/attachments/7.2.jpg"
-                        target="original-picture"
-                        title="Suurenna"
-                      >
-                        <img
-                          className="image"
-                          src="/attachments/7.2.jpg"
-                        />
-                      </a>
+                      <img
+                        className="image"
+                        src="/attachments/7.2.jpg"
+                      />
                     </div>
                   </figure>
                 </figure>
@@ -59408,17 +59342,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                         }
                       }
                     >
-                      <a
-                        className="e-zoomable"
-                        href="/attachments/7.4.jpg"
-                        target="original-picture"
-                        title="Suurenna"
-                      >
-                        <img
-                          className="image"
-                          src="/attachments/7.4.jpg"
-                        />
-                      </a>
+                      <img
+                        className="image"
+                        src="/attachments/7.4.jpg"
+                      />
                     </div>
                   </figure>
                 </figure>
@@ -59469,6 +59396,28 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           33 P.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Vastaa joko kohtaan 20.1 tai 20.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >
@@ -59625,6 +59574,28 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           66 P.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Vastaa joko kohtaan 21.1 tai 21.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >
@@ -65366,17 +65337,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.1.7279.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.1.7279.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.1.7279.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -65419,17 +65383,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.1.4327.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.1.4327.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.1.4327.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -65472,17 +65429,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.1.0478.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.1.0478.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.1.0478.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -65642,17 +65592,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.7276.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.7276.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.7276.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -65695,17 +65638,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.1617.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.1617.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.1617.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -65748,17 +65684,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.7291.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.7291.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.7291.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -65918,17 +65847,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.3.4927.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.3.4927.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.3.4927.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -65971,17 +65893,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.3.7459.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.3.7459.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.3.7459.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -66024,17 +65939,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.3.4375.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.3.4375.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.3.4375.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -73148,17 +73056,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.2.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.2.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.2.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -73248,17 +73149,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                           }
                         }
                       >
-                        <a
-                          className="e-zoomable"
-                          href="/attachments/7.4.jpg"
-                          target="original-picture"
-                          title="Förstora"
-                        >
-                          <img
-                            className="image"
-                            src="/attachments/7.4.jpg"
-                          />
-                        </a>
+                        <img
+                          className="image"
+                          src="/attachments/7.4.jpg"
+                        />
                       </div>
                     </figure>
                   </figure>
@@ -73334,17 +73228,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                         }
                       }
                     >
-                      <a
-                        className="e-zoomable"
-                        href="/attachments/7.2.jpg"
-                        target="original-picture"
-                        title="Förstora"
-                      >
-                        <img
-                          className="image"
-                          src="/attachments/7.2.jpg"
-                        />
-                      </a>
+                      <img
+                        className="image"
+                        src="/attachments/7.2.jpg"
+                      />
                     </div>
                   </figure>
                 </figure>
@@ -73408,17 +73295,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                         }
                       }
                     >
-                      <a
-                        className="e-zoomable"
-                        href="/attachments/7.4.jpg"
-                        target="original-picture"
-                        title="Förstora"
-                      >
-                        <img
-                          className="image"
-                          src="/attachments/7.4.jpg"
-                        />
-                      </a>
+                      <img
+                        className="image"
+                        src="/attachments/7.4.jpg"
+                      />
                     </div>
                   </figure>
                 </figure>
@@ -73469,6 +73349,28 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           33 P.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Besvara antingen punkt 20.1 eller 20.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >
@@ -73625,6 +73527,28 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           66 P.
         </span>
       </h3>
+      <p
+        className="e-italic"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+          data-icon="info-circle"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Besvara antingen punkt 21.1 eller 21.2.
+      </p>
       <div
         className="exam-question-instruction e-mrg-b-2"
       >

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { createRenderChildNodes, RenderOptions } from '../createRenderChildNodes'
-import { closest } from '../dom-utils'
+import { queryAncestors } from '../dom-utils'
 import { url } from '../url'
 import { AttachmentContext, withAttachmentContext } from './AttachmentContext'
 import { ExamContext } from './ExamContext'
@@ -39,7 +39,7 @@ interface ExternalMaterialListProps extends ExamComponentProps {
 }
 
 function ExternalMaterialList({ element, showTitle = true, forceRender = false }: ExternalMaterialListProps) {
-  if (closest(element, 'question') == null && !forceRender) {
+  if (queryAncestors(element, 'question') == null && !forceRender) {
     return null
   }
 

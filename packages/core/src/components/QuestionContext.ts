@@ -1,5 +1,5 @@
 import React from 'react'
-import { closest, findChildElement, getNumericAttribute, parentElements, queryAll } from '../dom-utils'
+import { findChildElement, getNumericAttribute, parentElements, queryAll } from '../dom-utils'
 import { ExamComponentProps } from './types'
 import { withContext } from './withContext'
 
@@ -15,9 +15,7 @@ export interface QuestionContext {
 export const QuestionContext = React.createContext<QuestionContext>({} as QuestionContext)
 
 export const withQuestionContext = withContext<QuestionContext, ExamComponentProps>(QuestionContext, ({ element }) => {
-  const childQuestions = queryAll(element, 'question').filter(
-    childQuestion => closest(childQuestion.parentElement!, 'question') === element
-  )
+  const childQuestions = queryAll(element, 'question', false)
 
   return {
     displayNumber: element.getAttribute('display-number')!,

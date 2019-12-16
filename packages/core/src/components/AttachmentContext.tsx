@@ -1,5 +1,5 @@
 import React from 'react'
-import { closest } from '../dom-utils'
+import { queryAncestors } from '../dom-utils'
 import { ExamComponentProps } from './types'
 import { withContext } from './withContext'
 
@@ -12,7 +12,7 @@ export const AttachmentContext = React.createContext<AttachmentContext>({} as At
 export const withAttachmentContext = withContext<AttachmentContext, ExamComponentProps>(
   AttachmentContext,
   ({ element }) => {
-    const isExternal = closest(element, 'external-material') != null
+    const isExternal = queryAncestors(element, 'external-material') != null
     const name = element.getAttribute('name')
     return isExternal
       ? { displayNumber: element.getAttribute('display-number')!, isExternal, name }

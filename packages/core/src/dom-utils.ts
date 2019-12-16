@@ -1,7 +1,7 @@
 export const NBSP = '\u00A0'
 
 export function parentElements(element: Element, selector?: Selector): Element[] {
-  const predicate = selector != null ? mkPredicate(element, selector) : undefined
+  const predicate = selector != null ? mkPredicate(selector) : undefined
   const result = []
   while (element.parentElement != null) {
     element = element.parentElement
@@ -14,16 +14,16 @@ export function parentElements(element: Element, selector?: Selector): Element[]
 
 type Selector = string | string[] | ((element: Element) => boolean)
 
-function mkPredicate(root: Element, selector: Selector): (element: Element) => boolean {
+function mkPredicate(selector: Selector): (element: Element) => boolean {
   return typeof selector === 'function'
-    ? (element: Element) => selector(element) && element !== root
+    ? (element: Element) => selector(element)
     : Array.isArray(selector)
-    ? (element: Element) => selector.includes(element.localName) && element !== root
-    : (element: Element) => element.localName === selector && element !== root
+    ? (element: Element) => selector.includes(element.localName)
+    : (element: Element) => element.localName === selector
 }
 
 export function query(root: Element, selector: Selector): Element | undefined {
-  const predicate = mkPredicate(root, selector)
+  const predicate = mkPredicate(selector)
 
   function go(element: Element): Element | undefined {
     for (let i = 0, length = element.children.length; i < length; i++) {
@@ -42,7 +42,7 @@ export function query(root: Element, selector: Selector): Element | undefined {
 }
 
 export function queryAll(root: Element, selector: Selector, recurse: boolean = true): Element[] {
-  const predicate = mkPredicate(root, selector)
+  const predicate = mkPredicate(selector)
   const results: Element[] = []
 
   function go(element: Element) {
@@ -63,8 +63,8 @@ export function queryAll(root: Element, selector: Selector, recurse: boolean = t
   return results
 }
 
-export function closest(element: Element, selector: Selector): Element | undefined {
-  const predicate = mkPredicate(element, selector)
+export function queryAncestors(element: Element, selector: Selector): Element | undefined {
+  const predicate = mkPredicate(selector)
   while (element.parentElement != null) {
     element = element.parentElement
     if (predicate(element)) {
@@ -74,7 +74,7 @@ export function closest(element: Element, selector: Selector): Element | undefin
 }
 
 export function findChildElement(element: Element, selector: Selector): Element | undefined {
-  const predicate = mkPredicate(element, selector)
+  const predicate = mkPredicate(selector)
 
   for (let i = 0, length = element.children.length; i < length; i++) {
     const childElement = element.children[i]
