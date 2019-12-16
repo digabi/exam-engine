@@ -97,6 +97,7 @@
     "lerna": "lerna",
     "lint": "yarn workspaces run lint",
     "offline": "node packages/cli/dist/offline.js",
+    "create-transfer-zip": "node packages/cli/dist/create-transfer-zip.js",
     "create-mex": "node packages/cli/dist/create-mex.js",
     "new": "node packages/cli/dist/new.js",
     "test": "NODE_ICU_DATA=node_modules/full-icu jest",

@@ -59,29 +59,17 @@ the XML file is being edited.
 
 # Using an exam in Abitti
 
-**[Abitti](https://oma.abitti.fi/) does not at the moment support all the features available
-in exam-engine. There are warnings about unsupported features in the
-[MEX format documentation](https://digabi.github.io/exam-engine/MexDocumentation/). If you
-attempt to upload such an exam to Abitti, you likely get a misleading general error message.
-Abitti also has some additional limits, like maximum size of attachment files.**
-
-**Because of this, only [packages/exams/A_X/](packages/exams/A_X/) in the
-sample exams directory [packages/exams/](packages/exams/) currently works
-with Abitti.**
-
 To use an exam in Abitti, the exam must be packaged manually as a transfer zip. It is then possible
-to import it to Abitti using "Tuo koe/För in prov" functionality:
+to import it to Abitti using the "Tuo koe/För in prov" functionality:
+
+To create a transfer zip, use the following command.
 
 ```
-$ cd packages/exams/A_X                               # Go to the exam directory
-$ mkdir tmp                                           # Create a new empty temporary directory
-$ cp A_X.xml tmp/exam.xml                             # Copy xml to exam.xml
-$ cd attachments
-$ zip -r ../tmp/attachments.zip *                     # Create the attachments.zip
-$ cd ../tmp
-$ zip ../MyExam_transfer.zip exam.xml attachments.zip # Create the transfer zip
-$ cd ..
+$ yarn create-transfer-zip path/to/exam.xml
 ```
+
+This will create a transfer zip file in the exam directory for each language
+version that the exam includes.
 
 # Offline version
 
