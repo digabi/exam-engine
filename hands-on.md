@@ -2,27 +2,30 @@
 
 ### 17.12.2019
 
----
+https://github.com/digabi/exam-engine/blob/master/hands-on.md
 
-# Agenda
-
-- Setup Tools
-- Setup Exam Engine
-- Creating exam
-- Using exam in Abitti
-- Advanced exam editing
+note: gallup: kuinka monta mac? linux? windows?
 
 ---
 
-## Setup
+## Agenda
 
-- Command line knowledge is a must
+1. Setup environment
+1. Initialize Exam Engine
+1. Create exam
+1. Use exam in Abitti
+1. Exam editing, the MEB way
+1. Q&A
+
+---
+
+## 1. Setup
+
 - `git`
-- Node.js 10+
+- Node.js 10+ (eg. from [NodeSource](https://github.com/nodesource/distributions#installation-instructions))
 - Firefox
-- Visual Studio Code with XML Extension **highly** recommended, but other editors with good XML schema support should work as well
 
-> https://github.com/digabi/exam-engine#setup
+> Recommended: Visual Studio Code with XML Extension
 
 ---
 
@@ -34,12 +37,14 @@
       npm install -g yarn
 
 - Install Firefox
-- Install Visual Studio Code
-- Install JDK for XML Extension in VSCode:
+- Recommended:
 
-      brew install openjdk
+  - Install Visual Studio Code
+  - Install JDK for XML Extension in VSCode:
 
-- Start VSCode and install XML Extension
+        brew install openjdk
+
+  - Start VSCode and install XML Extension
 
 ---
 
@@ -49,10 +54,10 @@
 
       sudo apt install git
       sudo snap install node --channel=12/stable --classic
-      # yarn got installed above
+      # yarn got installed there^
 
 - Firefox should already be installed
-- Install Visual Studio Code and JDK for XML Extension:
+- Recommended: Install Visual Studio Code and JDK for XML Extension:
 
       sudo snap install code --classic
       sudo apt install openjdk-8-jdk
@@ -69,17 +74,18 @@
       curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
       sudo apt-get install nodejs
 
-- Install Firefox and Visual Studio Code on Windows
-- Install JDK for XML Extension in VSCode:
+- Recommended:
 
-      sudo apt-get install wget openjdk-11-jdk
-      # (wget is needed by vscode server)
+  - Install Firefox and VSCode on Windows
+  - Install JDK for XML Extension in VSCode:
 
-- Start VSCode and install XML Extension
+        sudo apt-get install wget openjdk-11-jdk
+
+  - Start VSCode and install XML Extension
 
 ---
 
-## Setup Exam Engine
+## 2. Initialize Exam Engine
 
     git clone git@github.com:digabi/exam-engine.git
     cd exam-engine
@@ -87,7 +93,21 @@
 
 ---
 
-## Creating exam
+## 2.5 Updating Exam Engine
+
+       cd exam-engine
+       git pull
+       yarn
+
+- If you have made edits to exam-engine files, discard (`git checkout .`) or stash (`git stash`) your modifications
+
+---
+
+## 2.9 Glögi
+
+---
+
+## 3. Create exam
 
 - Create empty exam
 
@@ -100,34 +120,66 @@
 
 - Start exam preview
 
-      yarn start hello/exam.xml
+      yarn start hello
 
 - Use your editor: See changes or error messages (try deleting section) in preview after (auto)save
 
 ---
 
-## Using exam in Abitti
+## 4. Use exam in Abitti
 
 - Create transfer.zip:
 
-      cd hello
-      mkdir tmp; cp *xml tmp/exam.xml; cd attachments; \
-      zip attachments.zip *; cd ../tmp; zip ../transfer.zip *;\
-      cd ..; unzip -l transfer.zip
+      cd exam-engine
+      yarn create-transfer-zip hello
+      ls -l hello
 
-- Upload it to Abitti: `Tuo koe (.zip)`
+- Upload `hello_fi-FI_transfer.zip` to Abitti: `Tuo koe (.zip)`
 
-- Download exam. Have exam. Upload answers.
-
-> https://github.com/digabi/exam-engine/tree/feature/2020#using-an-exam-in-abitti
+- Download exam. Have exam. Upload answers. Score. Grade. Return.
 
 ---
 
-## Advanced exam editing
+## 5. Exam editing the MEB way
 
-- Visual Studio Code
-  - XML Extension (redhat.vscode-xml, needs JDK, openjdk-8-jdk ok)
+- Good XML editor
+- Preview
+- Latest [documentation](https://digabi.github.io/exam-engine/MexDocumentation/)
+
+---
+
+## XML Editor
+
+- Recommendation:
+
+  - Visual Studio Code
+  - and XML Extension (redhat.vscode-xml, needs JDK, openjdk-8-jdk ok)
+
+- For:
+
+  - Realtime validation
+  - Realtime code completion
+
+- Try it out
+
+       code hello/exam.xml
 
 ---
 
 ## Answer type examples
+
+- See [Documentation](https://digabi.github.io/exam-engine/MexDocumentation/)
+
+- Copy-paste to your exam
+
+---
+
+## Example exams
+
+---
+
+## 6. Questions?
+
+---
+
+## Thank you!
