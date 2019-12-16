@@ -18,7 +18,7 @@ export async function createOfflineExam(examFile: string, outputDirectory: strin
       ? `${date && date + '_'}${examCode}${dayCode ? '_' + dayCode : ''}_${shortLanguageCode}`
       : `${path.basename(path.dirname(examFile))}_offline_${language}`
     const examOutputDirectory = path.resolve(outputDirectory, dirname)
-    const resolveOutputFile = (filename: string) => path.resolve(examOutputDirectory, filename)
+    const resolveOutputFile = (...filename: string[]) => path.resolve(examOutputDirectory, ...filename)
     const config = getOfflineWebpackConfig(result, examOutputDirectory)
     await new Promise<string>((resolve, reject) => {
       webpack(config, (err, stats) => {
@@ -31,7 +31,7 @@ export async function createOfflineExam(examFile: string, outputDirectory: strin
     })
 
     for (const { filename } of result.attachments) {
-      await fs.copyFile(resolveAttachment(filename), resolveOutputFile(`attachments/${filename}`))
+      await fs.copyFile(resolveAttachment(filename), resolveOutputFile('attachments', filename))
     }
 
     examOutputDirectories.push(examOutputDirectory)
