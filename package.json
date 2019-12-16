@@ -96,7 +96,7 @@
     "watch": "concurrently -n 'tsc,webpack' -c 'blue,green' 'tsc --build --watch' 'yarn workspace @digabi/exam-engine-core watch'",
     "lerna": "lerna",
     "lint": "yarn workspaces run lint",
-    "offline": "NODE_ENV=production node packages/cli/dist/offline.js",
+    "offline": "node packages/cli/dist/offline.js",
     "create-mex": "node packages/cli/dist/create-mex.js",
     "new": "node packages/cli/dist/new.js",
     "test": "NODE_ICU_DATA=node_modules/full-icu jest",

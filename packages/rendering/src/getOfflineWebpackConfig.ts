@@ -6,7 +6,7 @@ import webpack from 'webpack'
 import { getWebpackConfig } from './getWebpackConfig'
 
 export function getOfflineWebpackConfig(result: MasteringResult, outputDirectory: string): webpack.Configuration {
-  const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development'
+  const mode = process.env.NODE_ENV === 'test' ? 'development' : 'production'
 
   return getWebpackConfig({
     mode,
