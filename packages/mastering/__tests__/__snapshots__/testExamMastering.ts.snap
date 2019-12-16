@@ -167,18 +167,6 @@ Object {
   "gradingStructure": Object {
     "questions": Array [
       Object {
-        "displayNumber": "2",
-        "id": 3,
-        "maxScore": 30,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "3",
-        "id": 4,
-        "maxScore": 30,
-        "type": "text",
-      },
-      Object {
         "displayNumber": "1.1",
         "id": 1,
         "maxScore": 18,
@@ -188,6 +176,18 @@ Object {
         "displayNumber": "1.2",
         "id": 2,
         "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "2",
+        "id": 3,
+        "maxScore": 30,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "3",
+        "id": 4,
+        "maxScore": 30,
         "type": "text",
       },
       Object {
@@ -500,6 +500,35 @@ Object {
   "gradingStructure": Object {
     "questions": Array [
       Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "1.1",
+            "id": 1,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 12,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 13,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 14,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.1",
+        "id": 15,
+        "type": "choicegroup",
+      },
+      Object {
         "displayNumber": "2.1",
         "id": 2,
         "maxScore": 1,
@@ -558,35 +587,6 @@ Object {
         "id": 11,
         "maxScore": 1,
         "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "1.1",
-            "id": 1,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 12,
-                "score": -1,
-              },
-              Object {
-                "correct": false,
-                "id": 13,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 14,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "1.1",
-        "id": 15,
-        "type": "choicegroup",
       },
     ],
   },
@@ -734,24 +734,6 @@ Object {
   "gradingStructure": Object {
     "questions": Array [
       Object {
-        "displayNumber": "2",
-        "id": 5,
-        "maxScore": 20,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "4",
-        "id": 8,
-        "maxScore": 20,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "5",
-        "id": 9,
-        "maxScore": 20,
-        "type": "text",
-      },
-      Object {
         "displayNumber": "1.1",
         "id": 1,
         "maxScore": 2,
@@ -776,6 +758,12 @@ Object {
         "type": "text",
       },
       Object {
+        "displayNumber": "2",
+        "id": 5,
+        "maxScore": 20,
+        "type": "text",
+      },
+      Object {
         "displayNumber": "3.1",
         "id": 6,
         "maxScore": 5,
@@ -785,6 +773,18 @@ Object {
         "displayNumber": "3.2",
         "id": 7,
         "maxScore": 15,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4",
+        "id": 8,
+        "maxScore": 20,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5",
+        "id": 9,
+        "maxScore": 20,
         "type": "text",
       },
       Object {
@@ -889,24 +889,6 @@ Object {
   "gradingStructure": Object {
     "questions": Array [
       Object {
-        "displayNumber": "2",
-        "id": 5,
-        "maxScore": 20,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "4",
-        "id": 8,
-        "maxScore": 20,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "5",
-        "id": 9,
-        "maxScore": 20,
-        "type": "text",
-      },
-      Object {
         "displayNumber": "1.1",
         "id": 1,
         "maxScore": 2,
@@ -931,6 +913,12 @@ Object {
         "type": "text",
       },
       Object {
+        "displayNumber": "2",
+        "id": 5,
+        "maxScore": 20,
+        "type": "text",
+      },
+      Object {
         "displayNumber": "3.1",
         "id": 6,
         "maxScore": 5,
@@ -940,6 +928,18 @@ Object {
         "displayNumber": "3.2",
         "id": 7,
         "maxScore": 15,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4",
+        "id": 8,
+        "maxScore": 20,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5",
+        "id": 9,
+        "maxScore": 20,
         "type": "text",
       },
       Object {
@@ -4899,54 +4899,6 @@ Object {
   "gradingStructure": Object {
     "questions": Array [
       Object {
-        "displayNumber": "3",
-        "id": 19,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "4",
-        "id": 20,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "5",
-        "id": 21,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "7",
-        "id": 24,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "8",
-        "id": 25,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "10",
-        "id": 28,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "11",
-        "id": 29,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "13",
-        "id": 33,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
         "choices": Array [
           Object {
             "displayNumber": "1.1",
@@ -5421,6 +5373,24 @@ Object {
         "type": "text",
       },
       Object {
+        "displayNumber": "3",
+        "id": 19,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4",
+        "id": 20,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5",
+        "id": 21,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
         "displayNumber": "6.1",
         "id": 22,
         "maxScore": 6,
@@ -5433,6 +5403,18 @@ Object {
         "type": "text",
       },
       Object {
+        "displayNumber": "7",
+        "id": 24,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8",
+        "id": 25,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
         "displayNumber": "9.1",
         "id": 26,
         "maxScore": 12,
@@ -5441,6 +5423,18 @@ Object {
       Object {
         "displayNumber": "9.2",
         "id": 27,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "10",
+        "id": 28,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "11",
+        "id": 29,
         "maxScore": 12,
         "type": "text",
       },
@@ -5460,6 +5454,12 @@ Object {
         "displayNumber": "12.3",
         "id": 32,
         "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "13",
+        "id": 33,
+        "maxScore": 12,
         "type": "text",
       },
     ],
@@ -5536,54 +5536,6 @@ Object {
   "gradingStructure": Object {
     "questions": Array [
       Object {
-        "displayNumber": "3",
-        "id": 19,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "4",
-        "id": 20,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "5",
-        "id": 21,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "7",
-        "id": 24,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "8",
-        "id": 25,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "10",
-        "id": 28,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "11",
-        "id": 29,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "13",
-        "id": 33,
-        "maxScore": 12,
-        "type": "text",
-      },
-      Object {
         "choices": Array [
           Object {
             "displayNumber": "1.1",
@@ -6058,6 +6010,24 @@ Object {
         "type": "text",
       },
       Object {
+        "displayNumber": "3",
+        "id": 19,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4",
+        "id": 20,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5",
+        "id": 21,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
         "displayNumber": "6.1",
         "id": 22,
         "maxScore": 6,
@@ -6070,6 +6040,18 @@ Object {
         "type": "text",
       },
       Object {
+        "displayNumber": "7",
+        "id": 24,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8",
+        "id": 25,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
         "displayNumber": "9.1",
         "id": 26,
         "maxScore": 12,
@@ -6078,6 +6060,18 @@ Object {
       Object {
         "displayNumber": "9.2",
         "id": 27,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "10",
+        "id": 28,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "11",
+        "id": 29,
         "maxScore": 12,
         "type": "text",
       },
@@ -6097,6 +6091,12 @@ Object {
         "displayNumber": "12.3",
         "id": 32,
         "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "13",
+        "id": 33,
+        "maxScore": 12,
         "type": "text",
       },
     ],
@@ -6577,564 +6577,6 @@ Object {
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "12.1",
-            "id": 45,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 214,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 215,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 216,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 217,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 218,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 219,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 220,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 221,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 222,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "12.2",
-            "id": 46,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 223,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 224,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 225,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 226,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 227,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 228,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 229,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 230,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 231,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "12.3",
-            "id": 47,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 232,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 233,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 234,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 235,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 236,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 237,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 238,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 239,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 240,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "12",
-        "id": 328,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.1",
-            "id": 65,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 280,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 281,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 282,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.2",
-            "id": 66,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 283,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 284,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 285,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.3",
-            "id": 67,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 286,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 287,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 288,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.4",
-            "id": 68,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 289,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 290,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 291,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.5",
-            "id": 69,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 292,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 293,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 294,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.6",
-            "id": 70,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 295,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 296,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 297,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.7",
-            "id": 71,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 298,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 299,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 300,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.8",
-            "id": 72,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 301,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 302,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 303,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.9",
-            "id": 73,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 304,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 305,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 306,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.10",
-            "id": 74,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 307,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 308,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 309,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.11",
-            "id": 75,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 310,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 311,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 312,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.12",
-            "id": 76,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 313,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 314,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 315,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.13",
-            "id": 77,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 316,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 317,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 318,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.14",
-            "id": 78,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 319,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 320,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 321,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.15",
-            "id": 79,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 322,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 323,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 324,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.16",
-            "id": 80,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 325,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 326,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 327,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17",
-        "id": 329,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "18.1",
-        "id": 81,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "18.2",
-        "id": 82,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.1",
-        "id": 83,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.2",
-        "id": 84,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.3",
-        "id": 85,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.4",
-        "id": 86,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
             "displayNumber": "1.1",
             "id": 1,
             "options": Array [
@@ -8318,6 +7760,169 @@ Object {
       Object {
         "choices": Array [
           Object {
+            "displayNumber": "12.1",
+            "id": 45,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 214,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 215,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 216,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 217,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 218,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 219,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 220,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 221,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 222,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "12.2",
+            "id": 46,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 223,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 224,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 225,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 226,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 227,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 228,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 229,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 230,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 231,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "12.3",
+            "id": 47,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 232,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 233,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 234,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 235,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 236,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 237,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 238,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 239,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 240,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "12",
+        "id": 328,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
             "displayNumber": "13.1",
             "id": 48,
             "options": Array [
@@ -8714,6 +8319,401 @@ Object {
         "displayNumber": "16.4",
         "id": 64,
         "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "17.1",
+            "id": 65,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 280,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 281,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 282,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.2",
+            "id": 66,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 283,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 284,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 285,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.3",
+            "id": 67,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 286,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 287,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 288,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.4",
+            "id": 68,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 289,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 290,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 291,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.5",
+            "id": 69,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 292,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 293,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 294,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.6",
+            "id": 70,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 295,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 296,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 297,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.7",
+            "id": 71,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 298,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 299,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 300,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.8",
+            "id": 72,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 301,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 302,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 303,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.9",
+            "id": 73,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 304,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 305,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 306,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.10",
+            "id": 74,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 307,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 308,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 309,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.11",
+            "id": 75,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 310,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 311,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 312,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.12",
+            "id": 76,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 313,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 314,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 315,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.13",
+            "id": 77,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 316,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 317,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 318,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.14",
+            "id": 78,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 319,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 320,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 321,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.15",
+            "id": 79,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 322,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 323,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 324,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.16",
+            "id": 80,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 325,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 326,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 327,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "17",
+        "id": 329,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "18.1",
+        "id": 81,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "18.2",
+        "id": 82,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.1",
+        "id": 83,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.2",
+        "id": 84,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.3",
+        "id": 85,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.4",
+        "id": 86,
+        "maxScore": 3,
         "type": "text",
       },
       Object {
@@ -8908,564 +8908,6 @@ Object {
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "12.1",
-            "id": 45,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 214,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 215,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 216,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 217,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 218,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 219,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 220,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 221,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 222,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "12.2",
-            "id": 46,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 223,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 224,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 225,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 226,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 227,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 228,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 229,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 230,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 231,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "12.3",
-            "id": 47,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 232,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 233,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 234,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 235,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 236,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 237,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 238,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 239,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 240,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "12",
-        "id": 328,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.1",
-            "id": 65,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 280,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 281,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 282,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.2",
-            "id": 66,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 283,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 284,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 285,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.3",
-            "id": 67,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 286,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 287,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 288,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.4",
-            "id": 68,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 289,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 290,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 291,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.5",
-            "id": 69,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 292,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 293,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 294,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.6",
-            "id": 70,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 295,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 296,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 297,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.7",
-            "id": 71,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 298,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 299,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 300,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.8",
-            "id": 72,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 301,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 302,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 303,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.9",
-            "id": 73,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 304,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 305,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 306,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.10",
-            "id": 74,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 307,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 308,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 309,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.11",
-            "id": 75,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 310,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 311,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 312,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.12",
-            "id": 76,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 313,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 314,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 315,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.13",
-            "id": 77,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 316,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 317,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 318,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.14",
-            "id": 78,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 319,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 320,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 321,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.15",
-            "id": 79,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 322,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 323,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 324,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-          Object {
-            "displayNumber": "17.16",
-            "id": 80,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 325,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 326,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 327,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17",
-        "id": 329,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "18.1",
-        "id": 81,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "18.2",
-        "id": 82,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.1",
-        "id": 83,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.2",
-        "id": 84,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.3",
-        "id": 85,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "19.4",
-        "id": 86,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
             "displayNumber": "1.1",
             "id": 1,
             "options": Array [
@@ -10649,6 +10091,169 @@ Object {
       Object {
         "choices": Array [
           Object {
+            "displayNumber": "12.1",
+            "id": 45,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 214,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 215,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 216,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 217,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 218,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 219,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 220,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 221,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 222,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "12.2",
+            "id": 46,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 223,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 224,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 225,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 226,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 227,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 228,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 229,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 230,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 231,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "12.3",
+            "id": 47,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 232,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 233,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 234,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 235,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 236,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 237,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 238,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 239,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 240,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "12",
+        "id": 328,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
             "displayNumber": "13.1",
             "id": 48,
             "options": Array [
@@ -11045,6 +10650,401 @@ Object {
         "displayNumber": "16.4",
         "id": 64,
         "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "17.1",
+            "id": 65,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 280,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 281,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 282,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.2",
+            "id": 66,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 283,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 284,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 285,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.3",
+            "id": 67,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 286,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 287,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 288,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.4",
+            "id": 68,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 289,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 290,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 291,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.5",
+            "id": 69,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 292,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 293,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 294,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.6",
+            "id": 70,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 295,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 296,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 297,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.7",
+            "id": 71,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 298,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 299,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 300,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.8",
+            "id": 72,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 301,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 302,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 303,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.9",
+            "id": 73,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 304,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 305,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 306,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.10",
+            "id": 74,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 307,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 308,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 309,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.11",
+            "id": 75,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 310,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 311,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 312,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.12",
+            "id": 76,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 313,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 314,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 315,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.13",
+            "id": 77,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 316,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 317,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 318,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.14",
+            "id": 78,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 319,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 320,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 321,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.15",
+            "id": 79,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 322,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 323,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 324,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.16",
+            "id": 80,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 325,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 326,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 327,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "17",
+        "id": 329,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "18.1",
+        "id": 81,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "18.2",
+        "id": 82,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.1",
+        "id": 83,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.2",
+        "id": 84,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.3",
+        "id": 85,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "19.4",
+        "id": 86,
+        "maxScore": 3,
         "type": "text",
       },
       Object {

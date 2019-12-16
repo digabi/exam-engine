@@ -57,6 +57,7 @@ export function createGradingStructure(exam: Exam, generateId: GenerateId): Grad
         })
         .value()
     )
+    .sortBy(displayNumberDigits)
     .value()
 
   return { questions }
@@ -105,3 +106,7 @@ function mkChoiceGroupQuestion(
 
   return { id: generateId(), displayNumber: questionDisplayNumber, type: 'choicegroup', choices }
 }
+
+const getDigit = (digit: number) => (question: GradingStructureQuestion): number =>
+  Number(question.displayNumber.split('.')[digit])
+const displayNumberDigits = [getDigit(0), getDigit(1), getDigit(2), getDigit(3), getDigit(4)]
