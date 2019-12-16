@@ -1555,6 +1555,16 @@
   margin-left: 1rem;
   margin-bottom: 1rem;
 }
+.e-exam .notification {
+  background: #f0faff;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid #88d0d0;
+  padding: 1rem;
+}
+.e-exam .notification--inline {
+  display: inline-block;
+}
 @media print {
   html {
     font-size: 12px;
@@ -1593,16 +1603,6 @@
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 1rem;
-}
-.e-exam .notification {
-  background: #f0faff;
-  margin-bottom: 2rem;
-  border-radius: 0.25rem;
-  border: 1px solid #88d0d0;
-  padding: 1rem;
-}
-.e-exam .notification--inline {
-  display: inline-block;
 }
 .e-exam .e-width-full {
   width: 100%;
