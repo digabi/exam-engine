@@ -1,6 +1,0 @@
-[Desktop Entry]
-Comment=
-Terminal=true
-Name=Tee HVP (mex)
-Exec=bash -c "~/exam-engine/scripts/create-hvp.sh -e `dirname %k`/*.xml; read -n 1 -s -p '\nPaina jotain'"
-Type=Application

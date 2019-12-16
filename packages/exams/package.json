@@ -1,0 +1,26 @@
+{
+  "name": "@digabi/exam-engine-exams",
+  "version": "6.0.0-2020.13",
+  "author": "Matriculation Examination Board, Finland",
+  "license": "EUPL-1.1",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "A_E",
+    "A_X",
+    "EA",
+    "FF",
+    "N",
+    "MexDocumentation",
+    "SC"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "lint": "tslint -p .",
+    "test": "echo OK",
+    "prepublishOnly": "yarn build && find . -name '*.xml' -print0 | xargs -0 -n 1 node ../cli/dist/create-mex.js -p salasana -n nsa-scripts.zip -s security-codes.json -k \"${ANSWERS_PRIVATE_KEY:?must be set}\" -e"
+  },
+  "dependencies": {
+    "@digabi/exam-engine-mastering": "^6.0.0-2020.13"
+  }
+}

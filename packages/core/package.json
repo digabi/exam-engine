@@ -1,0 +1,21 @@
+{
+  "name": "@digabi/exam-engine-core",
+  "version": "6.0.0-2020.13",
+  "main": "dist/main-bundle.js",
+  "types": "dist/index.d.ts",
+  "author": "Matriculation Examination Board, Finland",
+  "license": "EUPL-1.1",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "webpack -d",
+    "watch": "webpack -d --watch",
+    "lint": "tslint -p . -p __tests__",
+    "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^16.10.2"
+  }
+}

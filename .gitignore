@@ -70,8 +70,10 @@ packages/exam-engine/bundle
 .vscode
 .DS_Store
 
-# Mocha report generated when running ci:puppeteer
-*mocha-report.xml
+# Report files for Jenkins
+*-report.xml
+tslint.xml
 
 # Mex files
 *.mex
+*.tsbuildinfo

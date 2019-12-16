@@ -1,0 +1,17 @@
+@import '~@digabi/exam-engine-core/dist/main.css';
+
+body {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.audio-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+}
+.audio-player--visible {
+  transform: translateY(0);
+}

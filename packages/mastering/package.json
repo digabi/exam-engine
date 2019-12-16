@@ -1,0 +1,30 @@
+{
+  "name": "@digabi/exam-engine-mastering",
+  "version": "6.0.0-2020.13",
+  "main": "dist/index.js",
+  "author": "Matriculation Examination Board, Finland",
+  "license": "EUPL-1.1",
+  "files": [
+    "dist",
+    "schema"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "lint": "tslint -p . -p __tests__",
+    "prepublishOnly": "yarn build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@digabi/exam-engine-core": "^6.0.0-2020.13",
+    "ffprobe": "^1.1.0",
+    "ffprobe-static": "^3.0.0",
+    "glob-promise": "^3.4.0",
+    "i18next": "^19.0.1",
+    "libxmljs2": "^0.22.0",
+    "lru-cache": "^5.1.1",
+    "mathjax-node": "^2.1.1",
+    "ramda": "^0.26.1",
+    "roman-numerals": "^0.3.2",
+    "yazl": "^2.5.1"
+  }
+}

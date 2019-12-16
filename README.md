@@ -8,12 +8,15 @@
 
 [Use of Abitti Trademark policy](https://abitti.dev/abitti-trademark.html)
 
+[Documentation](https://digabi.github.io/exam-engine/MexDocumentation/koe.html)
+
 Engine for the MEX exam format.
 
 Provides:
-* Exam preview tools for exam developers
-* MEX format documentation
-* Tools for mastering an exam to run it in Matriculation examination board's environment
+
+- Exam preview tools for exam developers
+- MEX format documentation
+- Tools for mastering an exam to run it in Matriculation examination board's environment
 
 **Make sure you test any MEX format exam manually before publishing it or using it with Abitti in
 production. This manual testing should include holding the exam, answering all questions, grading
@@ -28,48 +31,30 @@ Environment has been tested to work in Debian Linux, Mac OS and on Windows 10 in
 
 Make sure the following are installed in your system:
 
-* git (`sudo apt install git`)
-* make (`sudo apt install make`)
-* nvm from https://github.com/nvm-sh/nvm/blob/master/README.md#install--update-script
-* node. Use:
+- [git](https://git-scm.com/)
+  In Debian Linux: `sudo apt install git`
+- [Node.js](https://nodejs.org/en/) (Version 10 or later)
+  E.g. install nvm from https://github.com/nvm-sh/nvm/blob/master/README.md#install--update-script and run `nvm install`
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+
 ```
-$ nvm install
-```
-to install the version specified in [.nvmrc](.nvmrc)
-* yarn and npm:
-```
-$ nvm use
 $ npm install --global yarn
-$ npm install --global npm
-```
-* Firefox web browser
-
-# MEX format documentation
-
-The MEX format documentation is written as an exam itself. To open it using the preview, run:
-```
-$ git clone git@github.com:digabi/exam-engine.git
+$ git clone https://github.com/digabi/exam-engine.git
 $ cd exam-engine
-$ make start              # Makefile runs nvm, yarn, and necessary scripts from package.json
+$ yarn
 ```
-
-This starts the preview of
-[packages/mexamples/MexDocumentation/MexDocumentation.xml](packages/mexamples/MexDocumentation/MexDocumentation.xml)
-
-Offline version of the documentation exam is hosted at
-[https://digabi.github.io/exam-engine/MexDocumentation/koe.html](https://digabi.github.io/exam-engine/MexDocumentation/koe.html).
 
 # Preview
 
-To start live preview of any exam, use commands:
+To start live preview of any exam on your computer, use the following commands:
 
 ```
-$ nvm use
-$ yarn install
-$ yarn start packages/mexamples/MexDocumentation/MexDocumentation.xml
+$ cd exam-engine
+$ yarn
+$ yarn start path/to/the/exam.xml
 ```
 
-This starts `webpack-dev-server` that automatically updates the exam in Firefox while
+This starts web server that automatically updates the exam in Firefox while
 the XML file is being edited.
 
 # Using an exam in Abitti
@@ -103,85 +88,73 @@ $ cd ..
 Offline version refers to a standalone version of an exam that can be viewed in web browser without
 additional tools.
 
-To create offline versions into subdirectories of `tmp/`, use:
+To create offline versions into subdirectories of `/tmp`, use:
 
 ```
-$ yarn offline packages/mexamples/MexDocumentation/MexDocumentation.xml tmp
+$ yarn offline path/to/exam.xml /tmp
 ```
 
 # Intellectual property rights
 
 Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). Exceptions are:
 
-* XHTML-based XML Schema Definition files [packages/mex/schema](packages/mex/schema).
+- XHTML-based XML Schema Definition files [packages/mex/schema](packages/mex/schema).
   See [packages/mex/schema/xhtml11.xsd](packages/mex/schema/xhtml11.xsd) for the license.
-* Abitti and the Abitti logo are EU trademarks registered by the Finnish Matriculation Examination
+- Abitti and the Abitti logo are EU trademarks registered by the Finnish Matriculation Examination
   Board (FMEB) under the codes 015833742 and 015838915.
   For detailed use rights, see [https://abitti.dev/abitti-trademark.html](https://abitti.dev/abitti-trademark.html)
-* Several attachments in the SC sample exam [packages/mexamples/SC/](packages/mexamples/SC/) are third party material. See
+- Several attachments in the SC sample exam [packages/mexamples/SC/](packages/mexamples/SC/) are third party material. See
   the `<e:reference>` tags in [packages/mexamples/SC/SC.xml](packages/mexamples/SC/SC.xml) for details.
 
 # Development
 
 The information in this section is only relevant for developers of the exam-engine itself.
 
+## Compilation
+
+Before doing any changes, you'll always want to command TypeScript to compile
+any changes within the whole project automatically.
+
+```
+$ yarn watch
+```
+
 ## Lint
 
 ```
-$ make lint
+$ yarn lint
 ```
 
 ## Tests
 
 To run all tests
+
 ```
-$ make test
+$ yarn test
 ```
 
-To update the fixtures:
+To run a specific test or a specific set of tests, use
+
 ```
-$ OVERWRITE_FIXTURES=true make test
+$ yarn test packages/foo/__tests__/testFoo.ts
+$ yarn test packages/foo
 ```
 
-To run only unit-tests:
-```
-$ make unit-tests
-```
+If you've made changes to the code that affect exam mastering or rendering,
+you need to update the test snapshots by running
 
-To run browser tests with puppeteer debug window:
 ```
-$ PUPPETEER_DEBUG=1 make browser-tests
-```
-
-You can use grep to run subset of tests. Note: Run tests using `make` commands first to handle dependencies.
-```
-$ yarn browser-tests:dev --grep "MexDocumentation"
+$ yarn test -u
 ```
 
 Travis CI runs tests on all branches and pull requests in https://travis-ci.org/digabi/exam-engine
 
-## npm releases
+## NPM releases
+
 Login to npm first with digabi user.
-Makefile has commands for npm releases that take version as a parameter and will
-automatically update the version in package.json. The parameter can also be
-"major", "minor" or "patch"
-
-Pre-releases are published by postfixing the version number with "-0" where 0 is
-the pre-release version. i.e. 2.1.0-0, 2.1.0-1, 2.1.0-2 and so on.
-
-**When updating `@digabi/exam-engine`: Note that `@digabi/mex` depends on it and new version
-will not be used in mastered exams unless you update @digabi/exam-engine version
-in `packages/mex/package.json` and publish a new version of `@digabi/mex`, too.**
 
 ## exam-engine
+
 ```
-$ make publish-exam-engine version=2.3.0
-```
-## mex
-```
-$ make publish-mex-pkg version=1.2.0
-```
-## mexamples
-```
-$ make publish-mexamples version=2.4.5 k=path/to/secret/private-key.pem
+$ env ANSWERS_PRIVATE_KEY=/path/to/answers-private-key.pem yarn lerna publish
 ```

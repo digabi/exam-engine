@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/main.css" />
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0 1rem;
+      }
+      .toolbar {
+        max-width: 65rem;
+        margin: 1rem auto;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans', 'sans-serif';
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+      .toolbar__item + .toolbar__item {
+        padding-left: 0.25rem;
+      }
+      .audio-player {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        transition: transform 0.5s;
+      }
+      .audio-player--visible {
+        transform: translateY(0);
+      }
+    </style>
+    <script src="/main-bundle.js"></script>
+  </head>
+  <body>
+    <div id="app" />
+  </body>
+</html>
