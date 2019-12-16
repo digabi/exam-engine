@@ -349,8 +349,7 @@
       <e:question>
         <e:question-title>Example</e:question-title>
         <h4></h4>
-        <pre class="code">
-          <![CDATA[<e:exam
+        <pre class="code"><![CDATA[<e:exam
   xmlns:e="http://ylioppilastutkinto.fi/exam.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://www.w3.org/1999/xhtml"
@@ -358,8 +357,7 @@
   exam-schema-version="0.1"
   date="2018-09-29"
   exam-code="EA"
-  exam-stylesheet="custom.css">]]>
-        </pre>
+  exam-stylesheet="custom.css">]]></pre>
       </e:question>
     </e:question>
 
@@ -376,8 +374,7 @@
       <e:question>
         <e:question-title>Example</e:question-title>
         <h4></h4>
-        <pre class="code">
-          <![CDATA[<e:languages>
+        <pre class="code"><![CDATA[<e:languages>
   <e:language>fi-FI</e:language>
   <e:language>sv-FI</e:language>
 </e:languages>
@@ -393,8 +390,7 @@
     Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill
     lämna in för bedömning.
   </p>
-</e:localization>]]>
-        </pre>
+</e:localization>]]></pre>
         <e:localization lang="fi-FI">
           <p>
             Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan,
@@ -436,8 +432,7 @@
     </e:section-instruction>
     <e:section-instruction>
       <h4>Example of simple section</h4>
-      <pre class="code">
-        <![CDATA[<e:section max-answers="1">
+      <pre class="code"><![CDATA[<e:section max-answers="1">
   <e:section-title>Example section title</e:section-title>
   <e:section-instruction>Section instructions</e:section-instruction>
   ...HTML code, questions...
@@ -446,8 +441,7 @@
     <e:question-instruction>Question instructions</e:question-instruction>
     …HTML code, answer types, materials, sub-questions...
   </e:question>
-</e:section>]]>
-      </pre>
+</e:section>]]></pre>
     </e:section-instruction>
     <e:question>
       <e:question-title>Example question title</e:question-title>
@@ -482,13 +476,11 @@
 
     <e:section-instruction>
       <h4>Simple question example</h4>
-      <pre class="code">
-        <![CDATA[<e:question>
+      <pre class="code"><![CDATA[<e:question>
   <e:question-title>Example question title</e:question-title>
   <e:question-instruction>Question description</e:question-instruction>
   …HTML code, answer types, materials, sub-questions...
-</e:question>]]>
-      </pre>
+</e:question>]]></pre>
     </e:section-instruction>
     <e:question>
       <e:question-title>Example question title</e:question-title>
@@ -498,8 +490,7 @@
 
     <e:section-instruction>
       <h4>Sub-question example</h4>
-      <pre class="code">
-        <![CDATA[<e:question max-answers="1">
+      <pre class="code"><![CDATA[<e:question max-answers="1">
   <e:question-title>Second example question title</e:question-title>
   <e:question-instruction>Second example question instructions</e:question-instruction>
   <e:question>
@@ -512,8 +503,7 @@
     <e:question-instruction>Second sub-question instructions</e:question-instruction>
     …HTML code, answer types, materials, sub-questions...
   </e:question>
-</e:question>]]>
-      </pre>
+</e:question>]]></pre>
     </e:section-instruction>
     <e:question max-answers="1">
       <e:question-title>Second example question title</e:question-title>
@@ -604,9 +594,7 @@
         <code>single-line</code>
         answer example
       </h4>
-      <pre class="code">
-        <![CDATA[<e:text-answer max-score="2" />]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:text-answer max-score="2" />]]></pre>
       <div class="example">
         <e:text-answer max-score="2" />
       </div>
@@ -615,9 +603,7 @@
         <code>rich-text</code>
         answer example
       </h4>
-      <pre class="code">
-        <![CDATA[<e:text-answer type="rich-text" max-score="2" />]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:text-answer type="rich-text" max-score="2" />]]></pre>
       <div class="example">
         <e:text-answer type="rich-text" max-score="2" />
       </div>
@@ -626,9 +612,7 @@
         <code>rich-text</code>
         answer example with screenshot limit
       </h4>
-      <pre class="code">
-        <![CDATA[<e:text-answer type="rich-text" max-score="2" max-images="10" />]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:text-answer type="rich-text" max-score="2" max-images="10" />]]></pre>
       <div class="example">
         <e:text-answer type="rich-text" max-score="2" max-images="10" />
       </div>
@@ -730,14 +714,12 @@
       </table>
 
       <h4>Examples</h4>
-      <pre class="code">
-        <![CDATA[<e:choice-answer>
+      <pre class="code"><![CDATA[<e:choice-answer>
   <e:choice-answer-option score="2">Lorem</e:choice-answer-option>
   <e:choice-answer-option score="0">Ipsum</e:choice-answer-option>
   <e:choice-answer-option>Dolor</e:choice-answer-option>
   <e:choice-answer-option score="-1">Sit</e:choice-answer-option>
-</e:choice-answer>]]>
-      </pre>
+</e:choice-answer>]]></pre>
       <div class="example">
         <e:choice-answer>
           <e:choice-answer-option score="2">Lorem</e:choice-answer-option>
@@ -747,8 +729,7 @@
         </e:choice-answer>
       </div>
       <p>Options can contain any HTML code, like images or formulas</p>
-      <pre class="code">
-        <![CDATA[<e:choice-answer direction="vertical">
+      <pre class="code"><![CDATA[<e:choice-answer direction="vertical">
   <e:choice-answer-option>
     <e:formula>f(x) = \sqrt{x^2}</e:formula>
   </e:choice-answer-option>
@@ -758,8 +739,7 @@
   <e:choice-answer-option>
     <e:formula>f(x) = x^4 + 3x + 5</e:formula>
   </e:choice-answer-option>
-</e:choice-answer>]]>
-      </pre>
+</e:choice-answer>]]></pre>
       <div class="example">
         <e:choice-answer direction="vertical">
           <e:choice-answer-option>
@@ -774,8 +754,7 @@
         </e:choice-answer>
       </div>
       <p>Horizontal direction works well for images</p>
-      <pre class="code">
-        <![CDATA[<e:choice-answer direction="horizontal">
+      <pre class="code"><![CDATA[<e:choice-answer direction="horizontal">
   <e:choice-answer-option>
     <e:image src="example_small.jpg" />
   </e:choice-answer-option>
@@ -791,8 +770,7 @@
   <e:choice-answer-option>
     <e:image src="example.jpg" />
   </e:choice-answer-option>
-</e:choice-answer>]]>
-      </pre>
+</e:choice-answer>]]></pre>
       <div class="example">
         <e:choice-answer direction="horizontal">
           <e:choice-answer-option>
@@ -901,14 +879,12 @@
       </table>
 
       <h4>Example</h4>
-      <pre class="code">
-        <![CDATA[<e:dropdown-answer>
+      <pre class="code"><![CDATA[<e:dropdown-answer>
   <e:dropdown-answer-option score="2">Lorem</e:dropdown-answer-option>
   <e:dropdown-answer-option score="-1">Ipsum</e:dropdown-answer-option>
   <e:dropdown-answer-option score="-1">Dolor</e:dropdown-answer-option>
   <e:dropdown-answer-option>Sit</e:dropdown-answer-option>
-</e:dropdown-answer>]]>
-      </pre>
+</e:dropdown-answer>]]></pre>
       <div class="example">
         <e:dropdown-answer>
           <e:dropdown-answer-option score="2">Lorem</e:dropdown-answer-option>
@@ -1005,8 +981,7 @@
         Example of
         <code>e:scored-text-answer</code>
       </h4>
-      <pre class="code">
-        <![CDATA[<e:scored-text-answers>
+      <pre class="code"><![CDATA[<e:scored-text-answers>
   Lorem ipsum,
   <e:scored-text-answer>
     <e:hint>dolor?</e:hint>
@@ -1033,8 +1008,7 @@
     <e:accepted-answer score="1">dolores</e:accepted-answer>
   </e:scored-text-answer>
   quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-</e:scored-text-answers>]]>
-      </pre>
+</e:scored-text-answers>]]></pre>
       <div class="example">
         <e:scored-text-answers>
           Lorem ipsum,
@@ -1074,10 +1048,8 @@
         can also be used without hints, e.g. in
         mathematics exams.
       </p>
-      <pre class="code">
-        <![CDATA[<e:formula>\frac{4{\pi}}{2}</e:formula> simplified:
-<e:scored-text-answer max-score="3"/>]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:formula>\frac{4{\pi}}{2}</e:formula> simplified:
+<e:scored-text-answer max-score="3"/>]]></pre>
       <div class="example">
         <e:formula>\frac{4{\pi}}{2}</e:formula>
         simplified:
@@ -1250,8 +1222,7 @@
         </tbody>
       </table>
       <h4>Example of internal material</h4>
-      <pre class="code">
-        <![CDATA[<e:attachment>
+      <pre class="code"><![CDATA[<e:attachment>
   <e:attachment-title>Title</e:attachment-title>
   <p>...HTML code...</p>
   <e:image src="example.jpg" />
@@ -1269,8 +1240,7 @@
     <e:modified-by>Mary Modifier</e:modified-by>
     <e:note>Free text field</e:note>
   </e:reference>
-</e:attachment>]]>
-      </pre>
+</e:attachment>]]></pre>
       <div class="example">
         <e:attachment>
           <e:attachment-title>Title</e:attachment-title>
@@ -1294,8 +1264,7 @@
       </div>
 
       <h4>Example of external material</h4>
-      <pre class="code">
-        <![CDATA[<e:external-material>
+      <pre class="code"><![CDATA[<e:external-material>
   <e:attachment name="test-material">
     <e:attachment-title>Title 1</e:attachment-title>
     <p>...HTML code...</p>
@@ -1322,8 +1291,7 @@
       <e:note>Free text field</e:note>
     </e:reference>
   </e:attachment>
-</e:external-material>]]>
-      </pre>
+</e:external-material>]]></pre>
       <e:external-material>
         <e:attachment name="test-material">
           <e:attachment-title>Title 1</e:attachment-title>
@@ -1354,8 +1322,7 @@
       </e:external-material>
 
       <h4>Example of exam-specific external material</h4>
-      <pre class="code">
-        <![CDATA[<e:exam ...>
+      <pre class="code"><![CDATA[<e:exam ...>
   ...
   <e:table-of-contents />
   <e:external-material>
@@ -1371,8 +1338,7 @@
     </e:attachment>
   </e:external-material>
   <e:section>
-    ...]]>
-      </pre>
+    ...]]></pre>
 
     </e:question>
     <e:question>
@@ -1421,9 +1387,7 @@
       </table>
 
       <h4>Example</h4>
-      <pre class="code">
-        <![CDATA[<e:image src="example.jpg">Optional image title text</e:image>]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:image src="example.jpg">Optional image title text</e:image>]]></pre>
       <div class="example">
         <e:image src="example.jpg">Optional image title text</e:image>
       </div>
@@ -1481,9 +1445,7 @@
       </table>
 
       <h4>Example</h4>
-      <pre class="code">
-        <![CDATA[<e:audio src="example1.webm" times="2">Optional description</e:audio>]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:audio src="example1.webm" times="2">Optional description</e:audio>]]></pre>
       <div class="example">
         <e:audio src="example1.webm" times="2">Optional description</e:audio>
       </div>
@@ -1496,8 +1458,7 @@
         a separator before the group.
       </e:question-instruction>
       <h4>Example</h4>
-      <pre class="code">
-        <![CDATA[<e:audio-group>
+      <pre class="code"><![CDATA[<e:audio-group>
   <e:audio src="example1.webm" times="2">The whole recording</e:audio>
 </e:audio-group>
 <e:audio-group>
@@ -1532,8 +1493,7 @@
     </e:choice-answer>
   </e:question>
   <e:audio src="example3.webm" times="2">The passage related to question 11.3.</e:audio>
-</e:audio-group>]]>
-      </pre>
+</e:audio-group>]]></pre>
       <div class="example">
         <e:audio-group>
           <e:audio src="example1.webm" times="2">The whole recording</e:audio>
@@ -1619,9 +1579,7 @@
       </table>
 
       <h4>Example</h4>
-      <pre class="code">
-        <![CDATA[<e:video src="example1.webm" />]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:video src="example1.webm" />]]></pre>
       <div class="example">
         <e:video src="example1.webm" />
       </div>
@@ -1673,9 +1631,7 @@
       </table>
 
       <h4>Exmaple</h4>
-      <pre class="code">
-        <![CDATA[<e:file src="example1.webm">Text of the file link</e:file>]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:file src="example1.webm">Text of the file link</e:file>]]></pre>
       <div class="example">
         <e:file src="example1.webm">Text of the file link</e:file>
       </div>
@@ -1734,10 +1690,8 @@
       </table>
 
       <h4>Example</h4>
-      <pre class="code">
-        <![CDATA[<e:attachment-link ref="test-material" />
-<e:attachment-link ref="another-test-material" type="short" />]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:attachment-link ref="test-material" />
+<e:attachment-link ref="another-test-material" type="short" />]]></pre>
       <div class="example">
         <code>long</code>
         type reference:
@@ -1759,16 +1713,14 @@
       </e:question-instruction>
 
       <h4>Example</h4>
-      <pre class="code">
-        <![CDATA[<e:attachment-links>
+      <pre class="code"><![CDATA[<e:attachment-links>
   <e:attachment-link ref="test-material" />
   <e:attachment-link ref="another-test-material" />
 </e:attachment-links>
 <e:attachment-links type="short">
   <e:attachment-link ref="test-material" />
   <e:attachment-link ref="another-test-material" />
-</e:attachment-links>]]>
-      </pre>
+</e:attachment-links>]]></pre>
       <div class="example">
         <e:attachment-links>
           <e:attachment-link ref="test-material" />
@@ -1833,9 +1785,7 @@
         <code>inline</code>
         formula
       </h4>
-      <pre class="code">
-        <![CDATA[<e:formula>\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:formula>\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>]]></pre>
       <p>
         <e:formula>\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>
       </p>
@@ -1845,9 +1795,7 @@
         <code>display</code>
         formula
       </h4>
-      <pre class="code">
-        <![CDATA[<e:formula mode="display">\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>]]>
-      </pre>
+      <pre class="code"><![CDATA[<e:formula mode="display">\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>]]></pre>
       <p>
         <e:formula mode="display">\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>
       </p>
@@ -1863,14 +1811,12 @@
       <h3>Title</h3>
       <p>All common header levels are in use.</p>
 
-      <pre class="code">
-        <![CDATA[<h1>h1. Title (40px, light)</h1>
+      <pre class="code"><![CDATA[<h1>h1. Title (40px, light)</h1>
 <h2>h2. Title (30px, normal)</h2>
 <h3>h3. Title (21px, semibold)</h3>
 <h4>h4. Title (18px, semibold)</h4>
 <h5>h5. Title (16px, semibold)</h5>
-<h6>h6. Title (16px, semibold)</h6>]]>
-      </pre>
+<h6>h6. Title (16px, semibold)</h6>]]></pre>
       <div class="example">
         <h1>h1. Title (40px, light)</h1>
         <h2>h2. Title (30px, normal)</h2>
@@ -1888,15 +1834,13 @@
         <code>e-font-size-*</code>
         classes.
       </p>
-      <pre class="code">
-        <![CDATA[<p class="e-font-size-xxxl">.e-font-size-xxxl: (40px)</p>
+      <pre class="code"><![CDATA[<p class="e-font-size-xxxl">.e-font-size-xxxl: (40px)</p>
 <p class="e-font-size-xxl">.e-font-size-xxl: (30px)</p>
 <p class="e-font-size-xl">.e-font-size-xl: (21px)</p>
 <p class="e-font-size-l">.e-font-size-l: (18px)</p>
 <p class="e-font-size-m">.e-font-size-m: (16px, tekstin oletuskoko)</p>
 <p class="e-font-size-s">.e-font-size-s: (14px)</p>
-<p class="e-font-size-xs">.e-font-size-xs: (12px)</p>]]>
-      </pre>
+<p class="e-font-size-xs">.e-font-size-xs: (12px)</p>]]></pre>
       <div class="example">
         <p class="e-font-size-xxxl">.e-font-size-xxxl: (40px)</p>
         <p class="e-font-size-xxl">.e-font-size-xxl: (30px)</p>
@@ -1920,13 +1864,11 @@
         classes.
       </p>
 
-      <pre class="code">
-        <![CDATA[<p class="e-semibold">.e-semibold: Lorem ipsum dolor sit amet</p>
+      <pre class="code"><![CDATA[<p class="e-semibold">.e-semibold: Lorem ipsum dolor sit amet</p>
 <p class="e-light">.e-light: Lorem ipsum dolor sit amet</p>
 <p class="e-italic">.e-italic: Lorem ipsum dolor sit amet</p>
 <p class="e-normal">.e-normal: Lorem ipsum dolor sit amet</p>
-<p class="e-underline">.e-underline: Lorem ipsum dolor sit amet</p>]]>
-      </pre>
+<p class="e-underline">.e-underline: Lorem ipsum dolor sit amet</p>]]></pre>
       <div class="example">
         <p class="e-semibold">.e-semibold: Lorem ipsum dolor sit amet</p>
         <p class="e-light">.e-light: Lorem ipsum dolor sit amet</p>
@@ -2040,17 +1982,18 @@
         <code>blockquote</code>
         element.
       </p>
-      <pre class="code">
-        <![CDATA[<blockquote>
+      <pre class="code"><![CDATA[<blockquote>
   <p>
-Consectetur quis ad fugiat ad. Do consequat sunt sit non commodo. Fugiat laborum Lorem sint laboris cupidatat ipsum eiusmod.
-Incididunt exercitation nostrud duis nulla deserunt consectetur aliquip aliquip cupidatat. In reprehenderit aliquip velit anim pariatur.
-Lorem cillum irure cupidatat veniam non incididunt enim commodo. Cillum pariatur tempor excepteur laboris tempor exercitation
-consequat laboris adipisicing duis proident proident amet.
-</p>
+    Consectetur quis ad fugiat ad. Do consequat sunt sit non commodo. Fugiat
+    laborum Lorem sint laboris cupidatat ipsum eiusmod. Incididunt
+    exercitation nostrud duis nulla deserunt consectetur aliquip aliquip
+    cupidatat. In reprehenderit aliquip velit anim pariatur. Lorem cillum
+    irure cupidatat veniam non incididunt enim commodo. Cillum pariatur
+    tempor excepteur laboris tempor exercitation consequat laboris
+    adipisicing duis proident proident amet.
+  </p>
   <p>—https://www.ylioppilastutkinto.fi</p>
-</blockquote>]]>
-      </pre>
+</blockquote>]]></pre>
       <div class="example">
         <blockquote>
           <p>
@@ -2068,14 +2011,12 @@ consequat laboris adipisicing duis proident proident amet.
         <code>e-box</code>
         class.
       </p>
-      <pre class="code">
-        <![CDATA[<div class="e-box">
+      <pre class="code"><![CDATA[<div class="e-box">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
   repudiandae sequi sapiente cumque necessitatibus ex voluptates
   ullam eveniet consequuntur nulla suscipit laboriosam fugiat, soluta
   repellat dolor quibusdam incidunt tempora. Suscipit.
-</div>]]>
-      </pre>
+</div>]]></pre>
       <div class="example">
         <div class="e-box">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
@@ -2091,13 +2032,11 @@ consequat laboris adipisicing duis proident proident amet.
       <e:question-title>Lists</e:question-title>
       <e:question-instruction>There are helper classes for various ordered lists.</e:question-instruction>
 
-      <pre class="code">
-        <![CDATA[<ol class="e-list-lower-alpha">
+      <pre class="code"><![CDATA[<ol class="e-list-lower-alpha">
   <li>Eka</li>
   <li>Toka</li>
   <li>Kolmas</li>
-</ol>]]>
-      </pre>
+</ol>]]></pre>
       <div class="example">
         <ol class="e-list-lower-alpha">
           <li>First</li>
@@ -2106,13 +2045,11 @@ consequat laboris adipisicing duis proident proident amet.
         </ol>
       </div>
 
-      <pre class="code">
-        <![CDATA[<ol class="e-list-upper-alpha">
+      <pre class="code"><![CDATA[<ol class="e-list-upper-alpha">
   <li>Eka</li>
   <li>Toka</li>
   <li>Kolmas</li>
-</ol>]]>
-      </pre>
+</ol>]]></pre>
       <div class="example">
         <ol class="e-list-upper-alpha">
           <li>First</li>
@@ -2121,13 +2058,11 @@ consequat laboris adipisicing duis proident proident amet.
         </ol>
       </div>
 
-      <pre class="code">
-        <![CDATA[<ol class="e-list-lower-roman">
+      <pre class="code"><![CDATA[<ol class="e-list-lower-roman">
   <li>Eka</li>
   <li>Toka</li>
   <li>Kolmas</li>
-</ol>]]>
-      </pre>
+</ol>]]></pre>
       <div class="example">
         <ol class="e-list-lower-roman">
           <li>First</li>
@@ -2136,13 +2071,11 @@ consequat laboris adipisicing duis proident proident amet.
         </ol>
       </div>
 
-      <pre class="code">
-        <![CDATA[<ol class="e-list-upper-roman">
+      <pre class="code"><![CDATA[<ol class="e-list-upper-roman">
   <li>Eka</li>
   <li>Toka</li>
   <li>Kolmas</li>
-</ol>]]>
-      </pre>
+</ol>]]></pre>
       <div class="example">
         <ol class="e-list-upper-roman">
           <li>First</li>
@@ -2151,8 +2084,7 @@ consequat laboris adipisicing duis proident proident amet.
         </ol>
       </div>
       <h4>Unordered list of words</h4>
-      <pre class="code">
-        <![CDATA[<ul class="e-list-wordcloud">
+      <pre class="code"><![CDATA[<ul class="e-list-wordcloud">
   <li>Sana</li>
   <li>Moniosainen ilmaisu</li>
   <li>Kolmas sana</li>
@@ -2164,8 +2096,7 @@ consequat laboris adipisicing duis proident proident amet.
   <li>Yhdeksäs</li>
   <li>Kymmenes pidempi muoto</li>
   <li>Yhdestoista</li>
-</ul>]]>
-      </pre>
+</ul>]]></pre>
       <div class="example">
         <ul class="e-list-wordcloud">
           <li>Word</li>
@@ -2269,16 +2200,14 @@ consequat laboris adipisicing duis proident proident amet.
       </table>
 
       <h3>Example</h3>
-      <pre class="code">
-        <![CDATA[<div class="e-clearfix">
+      <pre class="code"><![CDATA[<div class="e-clearfix">
   <e:image src="example.jpg" class="e-width-half e-mrg-r-2 e-float-left" />
   <p>Lorem ipsum dolor sit amet.</p>
 </div>
 <div class="e-clearfix">
   <e:image src="example.jpg" class="e-width-third e-mrg-l-2 e-float-right" />
   <p>Lorem ipsum dolor sit amet.</p>
-</div>]]>
-      </pre>
+</div>]]></pre>
       <div class="example">
         <div class="e-clearfix">
           <e:image src="example.jpg" class="e-width-half e-mrg-r-2 e-float-left" />
@@ -2305,8 +2234,7 @@ consequat laboris adipisicing duis proident proident amet.
       </e:question-instruction>
 
       <h3>Example</h3>
-      <pre class="code">
-        <![CDATA[<e:image src="example.jpg" class="e-illustration-right e-width-third" />
+      <pre class="code"><![CDATA[<e:image src="example.jpg" class="e-illustration-right e-width-third" />
 <p>
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
   dolores quam facere vel cum eos enim eaque soluta? Ullam doloribus
@@ -2324,8 +2252,7 @@ consequat laboris adipisicing duis proident proident amet.
   necessitatibus vero illo porro voluptatum fuga et quibusdam
   voluptates adipisci veniam, quas natus exercitationem atque
   voluptas tempora accusamus voluptate culpa!
-</p>]]>
-      </pre>
+</p>]]></pre>
       <div class="example e-clearfix">
         <e:image src="example.jpg" class="e-illustration-right e-width-third" />
         <p>
@@ -2501,8 +2428,7 @@ consequat laboris adipisicing duis proident proident amet.
         </tbody>
       </table>
 
-      <pre class="code">
-        <![CDATA[<div>
+      <pre class="code"><![CDATA[<div>
   <span class="e-pad-1">e-pad-1</span>
   <span class="e-pad-2">e-pad-2</span>
   <span class="e-pad-4">e-pad-4</span>
@@ -2531,8 +2457,7 @@ consequat laboris adipisicing duis proident proident amet.
   <span class="e-pad-y-2">e-pad-y-2</span>
   <span class="e-pad-y-4">e-pad-y-4</span>
   <span class="e-pad-y-8">e-pad-y-8</span>
-</div>]]>
-      </pre>
+</div>]]></pre>
       <div class="example spacing-example">
         <div>
           <span class="e-pad-1">e-pad-1</span>
@@ -2580,8 +2505,7 @@ consequat laboris adipisicing duis proident proident amet.
         .
       </e:question-instruction>
 
-      <pre class="code">
-        <![CDATA[<table class="e-table e-width-full">
+      <pre class="code"><![CDATA[<table class="e-table e-width-full">
   <caption>Table title</caption>
   <thead>
     <tr>
@@ -2597,8 +2521,7 @@ consequat laboris adipisicing duis proident proident amet.
       <td>Dolor</td>
     </tr>
   </tbody>
-</table>]]>
-      </pre>
+</table>]]></pre>
       <div class="example">
         <table class="e-table e-width-full">
           <caption>Table title</caption>
@@ -2619,8 +2542,7 @@ consequat laboris adipisicing duis proident proident amet.
         </table>
       </div>
 
-      <pre class="code">
-        <![CDATA[<table class="e-table e-table--borderless e-width-full">
+      <pre class="code"><![CDATA[<table class="e-table e-table--borderless e-width-full">
   <caption>Table title</caption>
   <thead>
   <tr>
@@ -2636,8 +2558,7 @@ consequat laboris adipisicing duis proident proident amet.
       <td>Dolor</td>
     </tr>
   </tbody>
-</table>]]>
-      </pre>
+</table>]]></pre>
       <div class="example">
         <table class="e-table e-table--borderless e-width-full">
           <caption>Table title</caption>
@@ -2658,40 +2579,38 @@ consequat laboris adipisicing duis proident proident amet.
         </table>
       </div>
 
-      <pre class="code">
-        <![CDATA[<table class="e-table e-table--borderless e-table--zebra e-width-full">
-        <caption>Table title</caption>
-        <thead>
-        <tr>
-            <th>First column</th>
-            <th>Second column</th>
-            <th>Third column</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Lorem</td>
-            <td>Ipsum</td>
-            <td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Ipsum</td>
-            <td>Dolor</td>
-            <td>Lorem</td>
-          </tr>
-          <tr>
-            <td>Dolor</td>
-            <td>Lorem</td>
-            <td>Ipsum</td>
-          </tr>
-          <tr>
-            <td>Lorem</td>
-            <td>Ipsum</td>
-            <td>Dolor</td>
-          </tr>
-        </tbody>
-      </table>]]>
-      </pre>
+      <pre class="code"><![CDATA[<table class="e-table e-table--borderless e-table--zebra e-width-full">
+  <caption>Table title</caption>
+  <thead>
+  <tr>
+      <th>First column</th>
+      <th>Second column</th>
+      <th>Third column</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lorem</td>
+      <td>Ipsum</td>
+      <td>Dolor</td>
+    </tr>
+    <tr>
+      <td>Ipsum</td>
+      <td>Dolor</td>
+      <td>Lorem</td>
+    </tr>
+    <tr>
+      <td>Dolor</td>
+      <td>Lorem</td>
+      <td>Ipsum</td>
+    </tr>
+    <tr>
+      <td>Lorem</td>
+      <td>Ipsum</td>
+      <td>Dolor</td>
+    </tr>
+  </tbody>
+</table>]]></pre>
       <div class="example">
         <table class="e-table e-table--borderless e-table--zebra e-width-full">
           <caption>Table title</caption>
@@ -2735,8 +2654,7 @@ consequat laboris adipisicing duis proident proident amet.
         classes.
       </p>
 
-      <pre class="code">
-        <![CDATA[<table class="e-table e-width-full">
+      <pre class="code"><![CDATA[<table class="e-table e-width-full">
   <caption>Table title</caption>
   <thead>
     <tr>
@@ -2752,8 +2670,7 @@ consequat laboris adipisicing duis proident proident amet.
       <td class="e-text-right">Dolor</td>
     </tr>
   </tbody>
-</table>]]>
-      </pre>
+</table>]]></pre>
       <div class="example">
         <table class="e-table e-width-full">
           <caption>Table title</caption>
@@ -2781,14 +2698,11 @@ consequat laboris adipisicing duis proident proident amet.
         element.
       </p>
 
-      <pre class="code">
-        <![CDATA[<div class="e-scrollable-x">
+      <pre class="code"><![CDATA[<div class="e-scrollable-x">
   <table class="e-table">
     …
   </table>
-</div>
-]]>
-      </pre>
+</div>]]></pre>
       <div class="example">
         <div class="e-scrollable-x">
           <table class="e-table">
@@ -2899,14 +2813,12 @@ consequat laboris adipisicing duis proident proident amet.
       <h4>Example</h4>
 
       <p>By default columns have equal width</p>
-      <pre class="code">
-        <![CDATA[<div class="e-columns">
+      <pre class="code"><![CDATA[<div class="e-columns">
   <div class="e-column">e-column</div>
   <div class="e-column">e-column</div>
   <div class="e-column">e-column</div>
   <div class="e-column">e-column</div>
-</div>]]>
-      </pre>
+</div>]]></pre>
       <div class="example grid-example">
         <div class="e-columns">
           <div class="e-column block">e-column</div>
@@ -2917,8 +2829,7 @@ consequat laboris adipisicing duis proident proident amet.
       </div>
 
       <p>You can also use a 12 column system</p>
-      <pre class="code">
-        <![CDATA[<div class="e-columns">
+      <pre class="code"><![CDATA[<div class="e-columns">
   <div class="e-column e-column--6">e-column--6</div>
   <div class="e-column e-column--3">e-column--3</div>
   <div class="e-column e-column--3">e-column--3</div>
@@ -2934,8 +2845,7 @@ consequat laboris adipisicing duis proident proident amet.
   <div class="e-column e-column--2">e-column--2</div>
   <div class="e-column e-column--8">e-column--8</div>
   <div class="e-column e-column--2">e-column--2</div>
-</div>]]>
-      </pre>
+</div>]]></pre>
       <div class="example grid-example">
         <div class="e-columns">
           <div class="e-column e-column--6 block">e-column--6</div>
@@ -2961,12 +2871,10 @@ consequat laboris adipisicing duis proident proident amet.
         <code>e-column--narrow</code>
         class.
       </p>
-      <pre class="code">
-        <![CDATA[<div class="e-columns">
+      <pre class="code"><![CDATA[<div class="e-columns">
   <div class="e-column">e-column</div>
   <div class="e-column e-column--narrow">e-column--narrow</div>
-</div>]]>
-      </pre>
+</div>]]></pre>
       <div class="example grid-example">
         <div class="e-columns">
           <div class="e-column block">e-column</div>

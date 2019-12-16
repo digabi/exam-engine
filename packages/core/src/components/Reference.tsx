@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { findChildElement } from '../dom-utils'
 import { ExamContext } from './ExamContext'
-import RenderChildNodes from './RenderChildNodes'
 import { ExamComponentProps } from './types'
 
 function Reference({ element, renderChildNodes }: ExamComponentProps) {
@@ -32,24 +31,28 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
     <span className="e-break-word">
       {t('references.source')}{' '}
       {intersperse('. ', [
-        renderWith('author', RenderChildNodes),
+        renderWith('author', Span),
         renderWith('title', Italic),
-        renderWith('publisher', RenderChildNodes),
-        renderWith('publication', RenderChildNodes),
-        renderWith('howpublished', RenderChildNodes),
+        renderWith('publisher', Span),
+        renderWith('publication', Span),
+        renderWith('howpublished', Span),
         renderWith('url', Link),
         renderWithPrefix('publication-date', 'references.date', AsDate),
         renderWithPrefix('reference-date', 'references.reference-date', AsDate),
-        renderWithPrefix('translator', 'references.translator', RenderChildNodes),
-        renderWithPrefix('modified-by', 'references.modified-by', RenderChildNodes),
-        renderWith('note', RenderChildNodes)
+        renderWithPrefix('translator', 'references.translator', Span),
+        renderWithPrefix('modified-by', 'references.modified-by', Span),
+        renderWith('note', Span)
       ])}
     </span>
   )
 }
 
+function Span({ element, renderChildNodes }: ExamComponentProps) {
+  return <span className="e-inline-block e-text-top">{renderChildNodes(element)}</span>
+}
+
 function Italic({ element, renderChildNodes }: ExamComponentProps) {
-  return <em>{renderChildNodes(element)}</em>
+  return <em className="e-inline-block e-text-top">{renderChildNodes(element)}</em>
 }
 
 function Link({ element, renderChildNodes }: ExamComponentProps) {

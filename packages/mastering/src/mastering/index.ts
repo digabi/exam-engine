@@ -9,17 +9,8 @@ import { initI18n } from '../i18n'
 import { createGradingStructure, GradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import renderFormula from './render-formula'
-import { Answer, answerTypes, attachmentTypes, choiceAnswerTypes, Exam, ns, Question, Section } from './schema'
-import {
-  asElements,
-  byAttribute,
-  byLocalName as byName,
-  getAttribute,
-  getNumericAttribute,
-  hasAttribute,
-  queryAncestors,
-  xpathOr
-} from './utils'
+import { Answer, answerTypes, attachmentTypes, choiceAnswerOptionTypes, choiceAnswerTypes, Exam, ns, Question, Section } from './schema'
+import { asElements, byAttribute, byLocalName as byName, getAttribute, getNumericAttribute, hasAttribute, queryAncestors, xpathOr } from './utils'
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
@@ -118,7 +109,7 @@ function assertExamIsValid(doc: Document): Document {
  * security purposes.
  */
 export function parseExam(xml: string) {
-  return libxml.parseXml(xml, { noent: false, nonet: true, noblanks: true })
+  return libxml.parseXml(xml, { noent: false, nonet: true })
 }
 
 export interface Attachment {
@@ -482,7 +473,7 @@ function countMaxScores(exam: Exam) {
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
   for (const { element } of exam.answers) {
     if (_.includes(choiceAnswerTypes, element.name())) {
-      asElements(element.find('./e:choice-answer-option | ./e:dropdown-answer-option', ns)).forEach(answerOption => {
+      asElements(element.find(xpathOr(choiceAnswerOptionTypes), ns)).forEach(answerOption => {
         answerOption.attr('option-id', String(generateId()))
       })
     }

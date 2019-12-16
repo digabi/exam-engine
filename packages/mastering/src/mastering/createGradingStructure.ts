@@ -1,8 +1,8 @@
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
 import { GenerateId } from '.'
-import { Answer, Exam } from './schema'
-import { getAttribute, getNumericAttribute, isElement } from './utils'
+import { Answer, choiceAnswerOptionTypes, Exam, ns } from './schema'
+import { asElements, getAttribute, getNumericAttribute, xpathOr } from './utils'
 
 export interface GradingStructure {
   questions: GradingStructureQuestion[]
@@ -86,15 +86,14 @@ function mkChoiceGroupQuestion(
     const displayNumber = getAttribute('display-number', answer.element)
     const maxScore = getNumericAttribute('max-score', answer.element)
 
-    const options: ChoiceGroupOption[] = answer.element
-      .childNodes()
-      .filter(isElement)
-      .map(option => {
+    const options: ChoiceGroupOption[] = asElements(answer.element.find(xpathOr(choiceAnswerOptionTypes), ns)).map(
+      option => {
         const id = getNumericAttribute('option-id', option)
         const score = getNumericAttribute('score', option, 0)
         const correct = score > 0 && score === maxScore
         return { id, score, correct }
-      })
+      }
+    )
 
     return {
       id: questionId,
