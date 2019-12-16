@@ -13,8 +13,9 @@ export async function createOfflineExam(examFile: string, outputDirectory: strin
 
   for (const result of await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))) {
     const { examCode, dayCode, date, language } = result
+    const shortLanguageCode = language.replace(/-.*$/, '')
     const dirname = examCode
-      ? `${date && date + '_'}${examCode}${dayCode ? '_' + dayCode : ''}_${language}`
+      ? `${date && date + '_'}${examCode}${dayCode ? '_' + dayCode : ''}_${shortLanguageCode}`
       : `${path.basename(path.dirname(examFile))}_offline_${language}`
     const examOutputDirectory = path.resolve(outputDirectory, dirname)
     const resolveOutputFile = (filename: string) => path.resolve(examOutputDirectory, filename)
