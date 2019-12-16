@@ -18,6 +18,7 @@ export function initPuppeteer() {
   return async function createPage() {
     const context = await browser.createIncognitoBrowserContext()
     const page = await context.newPage()
+    page.setDefaultNavigationTimeout(60000)
     await page.setViewport({ width: 1280, height: 1024 })
     return page
   }
