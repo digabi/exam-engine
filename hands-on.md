@@ -6,7 +6,8 @@
 
 # Agenda
 
-- Setup
+- Setup Tools
+- Setup Exam Engine
 - Creating exam
 - Using exam in Abitti
 - Advanced exam editing
@@ -78,6 +79,14 @@
 
 ---
 
+## Setup Exam Engine
+
+    git clone git@github.com:digabi/exam-engine.git
+    cd exam-engine
+    yarn
+
+---
+
 ## Creating exam
 
 - Create empty exam
@@ -93,7 +102,7 @@
 
       yarn start hello/exam.xml
 
-- Edit: See changes or error messages (try deleting section) in preview after (auto)save
+- Use your editor: See changes or error messages (try deleting section) in preview after (auto)save
 
 ---
 
