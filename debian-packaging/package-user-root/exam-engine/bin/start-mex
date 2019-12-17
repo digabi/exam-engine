@@ -1,7 +1,10 @@
 #!/bin/bash
 
-. ~/.nvm/nvm.sh
-EXAM_ENGINE_DIR=$(realpath ~/exam-engine/)
-nvm use "$(cat "$EXAM_ENGINE_DIR"/.nvmrc)"
+DIRNAME=$(pwd)
 
-"$EXAM_ENGINE_DIR"/packages/cli/dist/start.js koe.xml
+. ~/.nvm/nvm.sh
+
+EXAM_ENGINE_DIR=$(realpath ~/exam-engine/)
+cd "$EXAM_ENGINE_DIR"
+nvm use
+"$EXAM_ENGINE_DIR"/packages/cli/dist/start.js "$DIRNAME"/koe.xml
