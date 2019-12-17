@@ -98,10 +98,7 @@
     "watch": "concurrently -n 'tsc,webpack' -c 'blue,green' 'tsc --build --watch' 'yarn workspace @digabi/exam-engine-core watch'",
     "lerna": "lerna",
     "lint": "yarn workspaces run lint",
-    "offline": "node packages/cli/dist/offline.js",
-    "create-transfer-zip": "node packages/cli/dist/create-transfer-zip.js",
-    "create-mex": "node packages/cli/dist/create-mex.js",
-    "new": "node packages/cli/dist/new.js",
+    "ee": "node_modules/.bin/ee",
     "test": "NODE_ICU_DATA=node_modules/full-icu jest",
     "prepare": "tsc --build && yarn workspace @digabi/exam-engine-core build"
   },
