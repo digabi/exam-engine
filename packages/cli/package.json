@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-cli",
-  "version": "6.0.1-ee-cli.6",
+  "version": "6.0.1-ee-cli.7",
   "main": "index.js",
   "license": "EUPL-1.1",
   "files": [
