@@ -17,9 +17,9 @@
       <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <div class="warning-box">
-      Some of the features do not work in
+      Some of the features have limited support in
       <a href="https://oma.abitti.fi/">Abitti</a>
-      . They are documented in warning boxes like this.
+      . These are documented in warning boxes like this.
     </div>
   </div><nav class="table-of-contents e-mrg-b-6" aria-labelledby="toc-title"><h2 id="toc-title">Contents</h2><ol class="e-list-plain e-pad-l-0">
   
@@ -372,7 +372,7 @@
         .
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <div class="exam-question e-mrg-l-8 e-mrg-y-4" id="2.1">
         <h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">2.1. </strong>Example <span class="e-score e-nowrap e-semibold e-font-size-m" aria-label="0 points">0 p.</span></h4>
@@ -396,7 +396,7 @@
           Content for multiple language versions of the same exam can be defined using localization elements.
         </p>
         <div class="warning-box">
-          Only 1 language can be defined in Abitti exams.
+          Multiple languages work in Abitti when you create transfer zip with "yarn create-transfer-zip" -command. It generates separate transfer zip for each language.
         </div>
       </div>
       <div class="exam-question e-mrg-l-8 e-mrg-y-4" id="3.1">
@@ -444,7 +444,7 @@
         attribute.
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <p>
         CAS applications can be disabled for a
@@ -493,7 +493,7 @@
         attributes.
       </p>
       <div class="warning-box">
-          max-answers is not supported in Abitti grading.
+          max-answers is ignored in Abitti grading.
         </div>
     </div>
 
@@ -654,9 +654,6 @@
           elements.
         </p>
         <p>By default options are shuffled.</p>
-        <div class="warning-box">
-            Choice answers are not supported in Abitti
-        </div>
       </div>
 
       <table class="e-table e-width-full">
@@ -926,9 +923,6 @@
           <code>e:dropdown-anser-option</code>
           elements.
         </p>
-        <div class="warning-box">
-          Dropdown answers are not supported in Abitti
-        </div>
       </div>
 
       <table class="e-table e-width-full">
