@@ -44,6 +44,8 @@ export interface ExamProps {
   answers: ExamAnswer[]
   /** The status of CAS software on the OS */
   casStatus: InitialCasStatus
+  /** The CAS countdown duration in seconds. 60 seconds by default. */
+  casCountdownDuration?: number
   /**
    * Playback statistics about restricted audio files. Used for calculating
    * whether the user can listen to them any more.

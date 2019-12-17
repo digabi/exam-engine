@@ -62,6 +62,7 @@ window.onload = async () => {
 
     const Root = location.pathname.startsWith('/attachments') ? Attachments : Exam
     const attachmentsURL = '/attachments/'
+    const casCountdownDuration = Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || undefined
     const resolveAttachment = (filename: string) => '/attachments/' + encodeURIComponent(filename)
 
     const examUuid = doc.documentElement.getAttribute('exam-uuid')!
@@ -78,6 +79,7 @@ window.onload = async () => {
       <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
         <Root
           {...{
+            casCountdownDuration,
             doc,
             language,
             attachmentsURL,
