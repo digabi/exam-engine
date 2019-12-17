@@ -98,7 +98,7 @@
     "watch": "concurrently -n 'tsc,webpack' -c 'blue,green' 'tsc --build --watch' 'yarn workspace @digabi/exam-engine-core watch'",
     "lerna": "lerna",
     "lint": "yarn workspaces run lint",
-    "ee": "node_modules/.bin/ee",
+    "ee": "node packages/cli/dist/index.js",
     "test": "NODE_ICU_DATA=node_modules/full-icu jest",
     "prepare": "tsc --build && yarn workspace @digabi/exam-engine-core build"
   },
