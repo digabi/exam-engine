@@ -56,7 +56,7 @@ const exam = `<?xml version="1.0" encoding="utf-8" ?>
         <e:question>
             <e:question-title>Question title</e:question-title>
             <e:question-instruction>Question instructions</e:question-instruction>
-            <e:text-answer max-score="10" type="multi-line" />
+            <e:text-answer max-score="10" type="rich-text" />
         </e:question>
     </e:section>
 </e:exam>
