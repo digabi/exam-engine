@@ -23,10 +23,10 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
             test: /\.(less|css)$/,
             use: [
               MiniCssExtractPlugin.loader,
-              { loader: 'css-loader', options: { importLoaders: 2, sourceMap: true } },
-              'postcss-loader',
+              { loader: require.resolve('css-loader'), options: { importLoaders: 2, sourceMap: true } },
+              require.resolve('postcss-loader'),
               {
-                loader: 'less-loader',
+                loader: require.resolve('less-loader'),
                 options: {
                   sourceMap: true,
                   plugins: [require('less-plugin-glob')],
@@ -45,7 +45,7 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
           },
           {
             test: /\.(woff|woff2|otf|ttf|eot|svg|png|gif|jpg)$/,
-            loader: 'file-loader',
+            loader: require.resolve('file-loader'),
             options: {
               name: 'assets/[name].[ext]'
             }
