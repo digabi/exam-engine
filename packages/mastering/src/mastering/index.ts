@@ -9,8 +9,27 @@ import { initI18n } from '../i18n'
 import { createGradingStructure, GradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import renderFormula from './render-formula'
-import { Answer, answerTypes, attachmentTypes, choiceAnswerOptionTypes, choiceAnswerTypes, Exam, ns, Question, Section } from './schema'
-import { asElements, byAttribute, byLocalName as byName, getAttribute, getNumericAttribute, hasAttribute, queryAncestors, xpathOr } from './utils'
+import {
+  Answer,
+  answerTypes,
+  attachmentTypes,
+  choiceAnswerOptionTypes,
+  choiceAnswerTypes,
+  Exam,
+  ns,
+  Question,
+  Section
+} from './schema'
+import {
+  asElements,
+  byAttribute,
+  byLocalName as byName,
+  getAttribute,
+  getNumericAttribute,
+  hasAttribute,
+  queryAncestors,
+  xpathOr
+} from './utils'
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
