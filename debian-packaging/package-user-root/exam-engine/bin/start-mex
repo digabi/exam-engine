@@ -7,4 +7,4 @@ DIRNAME=$(pwd)
 EXAM_ENGINE_DIR=$(realpath ~/exam-engine/)
 cd "$EXAM_ENGINE_DIR"
 nvm use
-"$EXAM_ENGINE_DIR"/packages/cli/dist/start.js "$DIRNAME"/koe.xml
+node "$EXAM_ENGINE_DIR"/packages/cli/dist/start.js "$DIRNAME"/koe.xml
