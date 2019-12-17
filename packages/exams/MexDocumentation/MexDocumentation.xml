@@ -15,9 +15,9 @@
       <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <div class="warning-box">
-      Some of the features do not work in
+      Some of the features have limited support in
       <a href="https://oma.abitti.fi/">Abitti</a>
-      . They are documented in warning boxes like this.
+      . These are documented in warning boxes like this.
     </div>
   </e:exam-instruction>
   <e:table-of-contents />
@@ -344,7 +344,7 @@
         .
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <e:question>
         <e:question-title>Example</e:question-title>
@@ -368,7 +368,7 @@
           Content for multiple language versions of the same exam can be defined using localization elements.
         </p>
         <div class="warning-box">
-          Only 1 language can be defined in Abitti exams.
+          Multiple languages work in Abitti when you create transfer zip with "yarn create-transfer-zip" -command. It generates separate transfer zip for each language.
         </div>
       </e:question-instruction>
       <e:question>
@@ -421,7 +421,7 @@
         attribute.
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <p>
         CAS applications can be disabled for a
@@ -470,7 +470,7 @@
         attributes.
       </p>
       <div class="warning-box">
-          max-answers is not supported in Abitti grading.
+          max-answers is ignored in Abitti grading.
         </div>
     </e:section-instruction>
 
@@ -631,9 +631,6 @@
           elements.
         </p>
         <p>By default options are shuffled.</p>
-        <div class="warning-box">
-            Choice answers are not supported in Abitti
-        </div>
       </e:question-instruction>
 
       <table class="e-table e-width-full">
@@ -805,9 +802,6 @@
           <code>e:dropdown-anser-option</code>
           elements.
         </p>
-        <div class="warning-box">
-          Dropdown answers are not supported in Abitti
-        </div>
       </e:question-instruction>
 
       <table class="e-table e-width-full">
