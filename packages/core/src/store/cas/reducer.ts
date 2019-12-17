@@ -1,6 +1,5 @@
 import { ActionType } from 'typesafe-actions'
 import * as actions from './actions'
-import { casCountdownDurationSeconds } from './sagas'
 
 type CasAction = ActionType<typeof actions>
 
@@ -18,7 +17,7 @@ export default function casReducer(state: CasState = initialState, action: CasAc
     case 'ALLOW_CAS':
       return state
     case 'ALLOW_CAS_COUNTDOWN': {
-      return { casStatus: 'allowing', durationRemaining: casCountdownDurationSeconds }
+      return { casStatus: 'allowing', durationRemaining: action.payload }
     }
     case 'ALLOW_CAS_SUCCEEDED': {
       return { casStatus: 'allowed' }

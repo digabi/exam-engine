@@ -1,8 +1,5 @@
-import Attachments from '@digabi/exam-engine-core/dist/components/Attachments'
-import Exam from '@digabi/exam-engine-core/dist/components/Exam'
-import { RestrictedAudioPlaybackStats } from '@digabi/exam-engine-core/dist/components/types'
-import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
-import '@digabi/exam-engine-core/src/css/main.less'
+import { Attachments, Exam, parseExam, RestrictedAudioPlaybackStats } from '@digabi/exam-engine-core'
+import '@digabi/exam-engine-core/dist/main.css'
 import { MasteringResult } from '@digabi/exam-engine-mastering'
 import Cookie from 'js-cookie'
 import React from 'react'
@@ -65,6 +62,7 @@ window.onload = async () => {
 
     const Root = location.pathname.startsWith('/attachments') ? Attachments : Exam
     const attachmentsURL = '/attachments/'
+    const casCountdownDuration = Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || undefined
     const resolveAttachment = (filename: string) => '/attachments/' + encodeURIComponent(filename)
 
     const examUuid = doc.documentElement.getAttribute('exam-uuid')!
@@ -81,6 +79,7 @@ window.onload = async () => {
       <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
         <Root
           {...{
+            casCountdownDuration,
             doc,
             language,
             attachmentsURL,
