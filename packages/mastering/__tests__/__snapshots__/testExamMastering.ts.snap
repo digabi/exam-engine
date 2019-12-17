@@ -4288,9 +4288,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <div class="warning-box">
-      Some of the features do not work in
+      Some of the features have limited support in
       <a href="https://oma.abitti.fi/">Abitti</a>
-      . They are documented in warning boxes like this.
+      . These are documented in warning boxes like this.
     </div>
   </e:exam-instruction>
   <e:table-of-contents/>
@@ -4617,7 +4617,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         .
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <e:question display-number="2.1" max-score="0">
         <e:question-title>Example</e:question-title>
@@ -4641,7 +4641,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           Content for multiple language versions of the same exam can be defined using localization elements.
         </p>
         <div class="warning-box">
-          Only 1 language can be defined in Abitti exams.
+          Multiple languages work in Abitti when you create transfer zip with "yarn create-transfer-zip" -command. It generates separate transfer zip for each language.
         </div>
       </e:question-instruction>
       <e:question display-number="3.1" max-score="0">
@@ -4689,7 +4689,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         attribute.
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <p>
         CAS applications can be disabled for a
@@ -4738,7 +4738,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         attributes.
       </p>
       <div class="warning-box">
-          max-answers is not supported in Abitti grading.
+          max-answers is ignored in Abitti grading.
         </div>
     </e:section-instruction>
 
@@ -4899,9 +4899,6 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           elements.
         </p>
         <p>By default options are shuffled.</p>
-        <div class="warning-box">
-            Choice answers are not supported in Abitti
-        </div>
       </e:question-instruction>
 
       <table class="e-table e-width-full">
@@ -5073,9 +5070,6 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           <code>e:dropdown-anser-option</code>
           elements.
         </p>
-        <div class="warning-box">
-          Dropdown answers are not supported in Abitti
-        </div>
       </e:question-instruction>
 
       <table class="e-table e-width-full">
@@ -7181,9 +7175,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
       <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <div class="warning-box">
-      Some of the features do not work in
+      Some of the features have limited support in
       <a href="https://oma.abitti.fi/">Abitti</a>
-      . They are documented in warning boxes like this.
+      . These are documented in warning boxes like this.
     </div>
   </e:exam-instruction>
   <e:table-of-contents/>
@@ -7510,7 +7504,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
         .
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <e:question display-number="2.1" max-score="0">
         <e:question-title>Example</e:question-title>
@@ -7534,7 +7528,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           Content for multiple language versions of the same exam can be defined using localization elements.
         </p>
         <div class="warning-box">
-          Only 1 language can be defined in Abitti exams.
+          Multiple languages work in Abitti when you create transfer zip with "yarn create-transfer-zip" -command. It generates separate transfer zip for each language.
         </div>
       </e:question-instruction>
       <e:question display-number="3.1" max-score="0">
@@ -7582,7 +7576,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
         attribute.
       </p>
       <div class="warning-box">
-        max-answers is not supported in Abitti grading.
+        max-answers is ignored in Abitti grading.
       </div>
       <p>
         CAS applications can be disabled for a
@@ -7631,7 +7625,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
         attributes.
       </p>
       <div class="warning-box">
-          max-answers is not supported in Abitti grading.
+          max-answers is ignored in Abitti grading.
         </div>
     </e:section-instruction>
 
@@ -7792,9 +7786,6 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           elements.
         </p>
         <p>By default options are shuffled.</p>
-        <div class="warning-box">
-            Choice answers are not supported in Abitti
-        </div>
       </e:question-instruction>
 
       <table class="e-table e-width-full">
@@ -7966,9 +7957,6 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           <code>e:dropdown-anser-option</code>
           elements.
         </p>
-        <div class="warning-box">
-          Dropdown answers are not supported in Abitti
-        </div>
       </e:question-instruction>
 
       <table class="e-table e-width-full">
