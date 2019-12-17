@@ -24,7 +24,7 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
             use: [
               MiniCssExtractPlugin.loader,
               { loader: require.resolve('css-loader'), options: { importLoaders: 2, sourceMap: true } },
-              require.resolve('postcss-loader'),
+              { loader: require.resolve('postcss-loader'), options: { config: { path: __dirname } } },
               {
                 loader: require.resolve('less-loader'),
                 options: {
