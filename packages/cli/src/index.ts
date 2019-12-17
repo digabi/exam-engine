@@ -22,7 +22,7 @@ yargs
     },
     runCommand('./commands/new')
   )
-  .command('start [exam]', 'Preview an exam', addExamArgs, runCommand('./commands/start'))
+  .command(['preview [exam]', 'start'], 'Preview an exam', addExamArgs, runCommand('./commands/start'))
   .command(
     'create-transfer-zip [exam] [options]',
     'Create a transfer zip that can be imported to Oma Abitti',
