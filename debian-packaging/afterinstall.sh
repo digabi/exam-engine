@@ -2,6 +2,7 @@
 
 function afterinstall() {
     # Backwards compatibility: add a symlink to the old schema directory
+    rm /home/digabi/exam-engine/schema
     ln -s /home/digabi/exam-engine/packages/mastering/schema /home/digabi/exam-engine/schema
 
     rm -rf /home/digabi/Työpöytä/mex-demo
