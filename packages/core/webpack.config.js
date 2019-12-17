@@ -27,7 +27,7 @@ module.exports = function() {
           use: [
             MiniCssExtractPlugin.loader,
             { loader: 'css-loader', options: { importLoaders: 2, sourceMap: true } },
-            'postcss-loader',
+            { loader: 'postcss-loader', options: { config: { path: __dirname } } },
             {
               loader: 'less-loader',
               options: {
