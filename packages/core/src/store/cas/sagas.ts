@@ -1,17 +1,15 @@
 import { call, put, race, take, takeLatest } from 'redux-saga/effects'
 import { ExamServerAPI } from '../../components/types'
 import { countdown } from '../countdown'
-import { allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
+import { allowCas, allowCasCancelled, allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
 
-export const casCountdownDurationSeconds = Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || 60
-
-function* performEnableCas(examServerApi: ExamServerAPI) {
+function* performEnableCas(examServerApi: ExamServerAPI, { payload }: ReturnType<typeof allowCas>) {
   try {
     yield call(examServerApi.setCasStatus, 'allowing')
-    yield put(allowCasCountdown(casCountdownDurationSeconds))
+    yield put(allowCasCountdown(payload))
     const { cancelled } = yield race({
-      finished: call(countdown, casCountdownDurationSeconds, updateCasRemaining),
-      cancelled: take('ALLOW_CAS_CANCELLED')
+      finished: call(countdown, payload, updateCasRemaining),
+      cancelled: take(allowCasCancelled)
     })
     if (cancelled) {
       yield call(examServerApi.setCasStatus, 'forbidden')
@@ -25,5 +23,5 @@ function* performEnableCas(examServerApi: ExamServerAPI) {
 }
 
 export default function* casSaga(examServerApi: ExamServerAPI) {
-  yield takeLatest('ALLOW_CAS', performEnableCas, examServerApi)
+  yield takeLatest(allowCas, performEnableCas, examServerApi)
 }

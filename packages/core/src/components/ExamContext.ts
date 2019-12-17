@@ -6,6 +6,7 @@ import { withContext } from './withContext'
 
 export interface ExamContext {
   attachmentsURL: string
+  casCountdownDuration: number
   examServerApi: ExamServerAPI
   resolveAttachment: (filename: string) => string
   root: Element
@@ -21,12 +22,13 @@ export const ExamContext = React.createContext<ExamContext>({} as ExamContext)
 
 export const withExamContext = withContext<ExamContext, ExamProps>(
   ExamContext,
-  ({ doc, language, attachmentsURL, resolveAttachment, examServerApi }) => {
+  ({ casCountdownDuration, doc, language, attachmentsURL, resolveAttachment, examServerApi }) => {
     const root = doc.documentElement
     const maybeDate = root.getAttribute('date')
 
     return {
       attachmentsURL,
+      casCountdownDuration: casCountdownDuration || 60,
       examServerApi,
       resolveAttachment,
       root,

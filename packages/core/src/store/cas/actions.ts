@@ -1,7 +1,7 @@
 import { action, deprecated } from 'typesafe-actions'
 const { createAction } = deprecated
 
-export const allowCas = createAction('ALLOW_CAS')
+export const allowCas = (durationSeconds: number) => action('ALLOW_CAS', durationSeconds)
 
 export const allowCasCountdown = (durationSeconds: number) => action('ALLOW_CAS_COUNTDOWN', durationSeconds)
 
