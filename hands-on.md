@@ -85,6 +85,12 @@ note: gallup: kuinka monta mac? linux? windows?
 
 ---
 
+## Setup: Ubuntu @ WSL
+
+https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
+
+---
+
 ## 2. Initialize Exam Engine
 
     git clone git@github.com:digabi/exam-engine.git
@@ -174,8 +180,38 @@ note: gallup: kuinka monta mac? linux? windows?
 
 ---
 
-## Example exams
+## Example exams: mother tongue
 
+    cd exam-engine/packages/exams
+
+- A_X
+  - basic rich-text answer types
+- A_E
+  - global material
+
+---
+
+## Example exams: language (SC)
+
+- both language version in same exam file
+- audio-test
+- audio attachment with limited listening times
+- choice answer
+- dropdown answer
+- single-line text answer (productive, not centrally graded)
+- scored-text-answer (productive answer, centrally graded)
+
+---
+
+## Example exams: real (FF)
+
+- max-answers (not supported Abitti)
+
+---
+
+## Example exams: math (N)
+
+    <e:section cas-forbidden="true">
 ---
 
 ## 6. Questions?
