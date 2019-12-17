@@ -2,20 +2,23 @@
 
 ### 17.12.2019
 
-https://github.com/digabi/exam-engine/blob/master/hands-on.md
+- WiFi: ReittiPublic
+- Tämä esitys: https://bit.ly/abittidev
+- Gitter: https://gitter.im/abitti-dev/exam-engine
 
-note: gallup: kuinka monta mac? linux? windows?
+Pasi Huhtiniemi / Sakumatti Luukkonen / Aleksi Ahtiainen / Mikko Reinikainen / Eero Anttila
 
 ---
 
 ## Agenda
 
 1. Setup environment
-1. Initialize Exam Engine
-1. Create exam
-1. Use exam in Abitti
-1. Exam editing, the MEB way
-1. Q&A
+2. Initialize Exam Engine
+   2.5. Glögi @ 16:00
+3. Create exam
+4. Use exam in Abitti
+5. Exam editing, the MEB way
+6. Q&A
 
 ---
 
@@ -26,6 +29,33 @@ note: gallup: kuinka monta mac? linux? windows?
 - Firefox
 
 > Recommended: Visual Studio Code with XML Extension
+
+---
+
+## Windows / Mac / Linux ?
+
+---
+
+## Setup: Ubuntu @ WSL
+
+https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
+
+## Setup: Debian 10 @ WSL
+
+- Install `git` and NodeJS:
+
+      sudo apt-get install git curl
+      curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+      sudo apt-get install nodejs
+
+- Recommended:
+
+  - Install Firefox and VSCode on Windows
+  - Install JDK for XML Extension in VSCode:
+
+        sudo apt-get install wget openjdk-11-jdk
+
+  - Start VSCode and install XML Extension
 
 ---
 
@@ -66,34 +96,18 @@ note: gallup: kuinka monta mac? linux? windows?
 
 ---
 
-## Setup: Debian 10 @ WSL
+## Goal 1
 
-- Install `git` and NodeJS:
-
-      sudo apt-get install git curl
-      curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-      sudo apt-get install nodejs
-
-- Recommended:
-
-  - Install Firefox and VSCode on Windows
-  - Install JDK for XML Extension in VSCode:
-
-        sudo apt-get install wget openjdk-11-jdk
-
-  - Start VSCode and install XML Extension
-
----
-
-## Setup: Ubuntu @ WSL
-
-https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
+      15:55 $ node -v
+      v12.8.0
+      15:55 $ yarn -v
+      1.21.1
 
 ---
 
 ## 2. Initialize Exam Engine
 
-    git clone git@github.com:digabi/exam-engine.git
+    git clone https://github.com/digabi/exam-engine
     cd exam-engine
     yarn
 
@@ -109,7 +123,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
 ---
 
-## 2.9 Glögi
+## 2.9 Get some Glögi
 
 ---
 
@@ -128,7 +142,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
       yarn start hello
 
-- Use your editor: See changes or error messages (try deleting section) in preview after (auto)save
+- Demo/hands-on: See changes or error messages (try deleting section) in preview after (auto)save
 
 ---
 
@@ -142,7 +156,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
 - Upload `hello_fi-FI_transfer.zip` to Abitti: `Tuo koe (.zip)`
 
-- Download exam. Have exam. Upload answers. Score. Grade. Return.
+- Demo/hand-on: Download exam. Have exam. Upload answers. Score. Grade. Return.
 
 ---
 
@@ -166,7 +180,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
   - Realtime validation
   - Realtime code completion
 
-- Try it out
+- Demo/hands-on:
 
        code hello/exam.xml
 
@@ -177,6 +191,8 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 - See [Documentation](https://digabi.github.io/exam-engine/MexDocumentation/)
 
 - Copy-paste to your exam
+
+- Demo/hands-on
 
 ---
 
@@ -212,6 +228,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 ## Example exams: math (N)
 
     <e:section cas-forbidden="true">
+
 ---
 
 ## 6. Questions?
