@@ -3,7 +3,6 @@
 import { accessSync } from 'fs'
 import ora from 'ora'
 import yargs from 'yargs'
-
 import { resolveExam, resolveFile } from './utils'
 
 // tslint:disable-next-line:no-unused-expression
@@ -22,7 +21,7 @@ yargs
     },
     runCommand('./commands/new')
   )
-  .command(['preview [exam]', 'start'], 'Preview an exam', addExamArgs, runCommand('./commands/start'))
+  .command(['preview [exam]', 'start'], 'Preview an exam', addExamArgs, runCommand('./commands/preview'))
   .command(
     'create-transfer-zip [exam] [options]',
     'Create a transfer zip that can be imported to Oma Abitti',
