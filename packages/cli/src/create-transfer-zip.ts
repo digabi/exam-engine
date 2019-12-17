@@ -3,6 +3,7 @@
 import { getMediaMetadataFromLocalFile, masterExam, ns, parseExam } from '@digabi/exam-engine-mastering'
 import { asElements } from '@digabi/exam-engine-mastering/dist/mastering/utils'
 import { createReadStream, createWriteStream, promises as fs } from 'fs'
+import _ from 'lodash'
 import path from 'path'
 import uuid from 'uuid'
 import yargs from 'yargs'
@@ -37,7 +38,7 @@ yargs
           .map(String)
         for (const language of languages) {
           const localizedXml = localize(xml, language)
-          const [{ attachments }] = await masterExam(
+          const result = await masterExam(
             localizedXml,
             () => uuid.v4(),
             getMediaMetadataFromLocalFile(resolveAttachment)
@@ -52,12 +53,15 @@ yargs
           const attachmentsZipFile = new yazl.ZipFile()
           zipFile.addReadStream(attachmentsZipFile.outputStream, 'attachments.zip')
 
+          const attachments = _.chain(result)
+            .flatMap(r => r.attachments)
+            .map(a => a.filename)
+            .uniq()
+            .value()
           for (const attachment of attachments) {
-            attachmentsZipFile.addReadStream(
-              createReadStream(resolveAttachment(attachment.filename)),
-              attachment.filename
-            )
+            attachmentsZipFile.addReadStream(createReadStream(resolveAttachment(attachment)), attachment)
           }
+
           attachmentsZipFile.end()
 
           zipFile.outputStream.pipe(createWriteStream(path.resolve(outputFilename)))
