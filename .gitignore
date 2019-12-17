@@ -77,3 +77,4 @@ tslint.xml
 # Mex files
 *.mex
 *.tsbuildinfo
+*transfer.zip
