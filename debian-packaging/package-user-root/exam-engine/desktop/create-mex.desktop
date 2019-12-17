@@ -2,5 +2,5 @@
 Comment=
 Terminal=true
 Name=Tee Mex
-Exec=bash -c "source ~/.nvm/nvm.sh && cd ~/exam-engine && nvm use && npm run create-mex -- -e `dirname %k`/*.xml -o `dirname %k` -p salasana -s ~/exam-engine/test/security-codes.json -n ~/exam-engine/test/dummy-nsa-scripts.zip -k ~/digabi-top/yo-tools/node_modules/digabi-secret/answers-private-key.pem && read -n 1 -s -p 'Valmis!'"
+Exec=bash -c "source ~/.nvm/nvm.sh && cd ~/exam-engine && nvm use && npm run create-mex -- -e `dirname %k`/*.xml -o `dirname %k` -p salasana -s ~/exam-engine/packages/exams/security-codes.json -n ~/exam-engine/packages/exams/nsa-scripts.zip -k ~/digabi-top/yo-tools/node_modules/digabi-secret/answers-private-key.pem && read -n 1 -s -p 'Valmis!'"
 Type=Application
