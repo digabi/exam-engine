@@ -17024,6 +17024,180 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
       
       </div>
       
+      
+      <div
+        className="exam-question e-mrg-l-8 e-mrg-y-4"
+        id="1.1"
+      >
+        
+        
+        <h4
+          className="exam-question-title e-normal e-font-size-m"
+        >
+          <strong
+            className="exam-question-title__display-number exam-question-title__display-number--indented"
+          >
+            1.1
+            . 
+          </strong>
+          Special characters as entities
+           
+          <span
+            aria-label="0 points"
+            className="e-score e-nowrap e-semibold e-font-size-m"
+          >
+            0 p.
+          </span>
+        </h4>
+        
+        
+        <div
+          className="exam-question-instruction e-mrg-b-2"
+        >
+          
+          
+          <p>
+            Certain characters requires escaping as entities in exam XML documents
+          </p>
+          
+          
+          <table
+            className="e-table"
+          >
+            
+            
+            <caption />
+            
+            
+            <thead>
+              
+              
+              <tr>
+                
+                
+                <th>
+                  Character
+                </th>
+                
+                
+                <th>
+                  Notation
+                </th>
+                
+              
+              </tr>
+              
+            
+            </thead>
+            
+            
+            <tbody>
+              
+              
+              <tr>
+                
+                
+                <td>
+                  NBSP (non-breaking-space)
+                </td>
+                <td>
+                  <code>
+                    &#xA0;
+                  </code>
+                </td>
+                
+            
+              </tr>
+              
+            
+              <tr>
+                
+              
+                <td>
+                  SHY ­ (soft-hyphen)
+                </td>
+                <td>
+                  <code>
+                    &#173;
+                  </code>
+                </td>
+                
+          
+              </tr>
+              
+          
+              <tr>
+                
+                  
+                <td>
+                  &gt;
+                </td>
+                <td>
+                  <code>
+                    &gt;
+                  </code>
+                </td>
+                
+              
+              </tr>
+              
+              
+              <tr>
+                
+                  
+                <td>
+                  &lt;
+                </td>
+                <td>
+                  <code>
+                    &lt;
+                  </code>
+                </td>
+                
+              
+              </tr>
+              
+              
+              <tr>
+                
+                  
+                <td>
+                  &
+                </td>
+                <td>
+                  <code>
+                    &amp;
+                  </code>
+                </td>
+                
+              
+              </tr>
+              
+            
+            </tbody>
+            
+          
+          </table>
+          
+          
+          <p>
+            Notice, that e.g. 
+            <code>
+              &nbsp;
+            </code>
+             and 
+            <code>
+              &shy;
+            </code>
+             does not work.
+          </p>
+            
+        
+        </div>
+        
+      
+      </div>
+        
     
     </div>
     
@@ -23786,7 +23960,113 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
       
       </div>
       
-
+             
+      <p>
+        
+               Notice that certain characters in formulas require special notation.
+                 
+      </p>
+      
+                 
+      <table
+        className="e-table"
+      >
+        
+                   
+        <caption />
+        
+                   
+        <thead>
+          
+                     
+          <tr>
+            
+                       
+            <th>
+              Character
+            </th>
+            
+                       
+            <th>
+              Notation
+            </th>
+            
+                     
+          </tr>
+          
+                   
+        </thead>
+        
+                   
+        <tbody>
+          
+                     
+          <tr>
+            
+                         
+            <td>
+              &gt;
+            </td>
+            <td>
+              <code>
+                &gt;
+              </code>
+            </td>
+            
+                     
+          </tr>
+          
+                     
+          <tr>
+            
+                         
+            <td>
+              &lt;
+            </td>
+            <td>
+              <code>
+                &lt;
+              </code>
+            </td>
+            
+                     
+          </tr>
+          
+                     
+          <tr>
+            
+                         
+            <td>
+              &
+            </td>
+            <td>
+              <code>
+                &amp;
+              </code>
+            </td>
+            
+                     
+          </tr>
+          
+                   
+        </tbody>
+        
+                 
+      </table>
+        
+                 
+      <p>
+        
+                 For longer formulas also 
+        <code>
+          &lt;e:formula&gt;
+          &lt;![CDATA[ latex-code ]]&gt;
+          &lt;/e:formula&gt;
+        </code>
+         may also be used. Inside a CDATA-block escaping is not required.
+               
+      </p>
+      
       
       <table
         className="e-table e-width-full"
@@ -29429,6 +29709,180 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
       
       </div>
       
+      
+      <div
+        className="exam-question e-mrg-l-8 e-mrg-y-4"
+        id="1.1"
+      >
+        
+        
+        <h4
+          className="exam-question-title e-normal e-font-size-m"
+        >
+          <strong
+            className="exam-question-title__display-number exam-question-title__display-number--indented"
+          >
+            1.1
+            . 
+          </strong>
+          Special characters as entities
+           
+          <span
+            aria-label="0 points"
+            className="e-score e-nowrap e-semibold e-font-size-m"
+          >
+            0 p.
+          </span>
+        </h4>
+        
+        
+        <div
+          className="exam-question-instruction e-mrg-b-2"
+        >
+          
+          
+          <p>
+            Certain characters requires escaping as entities in exam XML documents
+          </p>
+          
+          
+          <table
+            className="e-table"
+          >
+            
+            
+            <caption />
+            
+            
+            <thead>
+              
+              
+              <tr>
+                
+                
+                <th>
+                  Character
+                </th>
+                
+                
+                <th>
+                  Notation
+                </th>
+                
+              
+              </tr>
+              
+            
+            </thead>
+            
+            
+            <tbody>
+              
+              
+              <tr>
+                
+                
+                <td>
+                  NBSP (non-breaking-space)
+                </td>
+                <td>
+                  <code>
+                    &#xA0;
+                  </code>
+                </td>
+                
+            
+              </tr>
+              
+            
+              <tr>
+                
+              
+                <td>
+                  SHY ­ (soft-hyphen)
+                </td>
+                <td>
+                  <code>
+                    &#173;
+                  </code>
+                </td>
+                
+          
+              </tr>
+              
+          
+              <tr>
+                
+                  
+                <td>
+                  &gt;
+                </td>
+                <td>
+                  <code>
+                    &gt;
+                  </code>
+                </td>
+                
+              
+              </tr>
+              
+              
+              <tr>
+                
+                  
+                <td>
+                  &lt;
+                </td>
+                <td>
+                  <code>
+                    &lt;
+                  </code>
+                </td>
+                
+              
+              </tr>
+              
+              
+              <tr>
+                
+                  
+                <td>
+                  &
+                </td>
+                <td>
+                  <code>
+                    &amp;
+                  </code>
+                </td>
+                
+              
+              </tr>
+              
+            
+            </tbody>
+            
+          
+          </table>
+          
+          
+          <p>
+            Notice, that e.g. 
+            <code>
+              &nbsp;
+            </code>
+             and 
+            <code>
+              &shy;
+            </code>
+             does not work.
+          </p>
+            
+        
+        </div>
+        
+      
+      </div>
+        
     
     </div>
     
@@ -36191,7 +36645,113 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
       
       </div>
       
-
+             
+      <p>
+        
+               Notice that certain characters in formulas require special notation.
+                 
+      </p>
+      
+                 
+      <table
+        className="e-table"
+      >
+        
+                   
+        <caption />
+        
+                   
+        <thead>
+          
+                     
+          <tr>
+            
+                       
+            <th>
+              Character
+            </th>
+            
+                       
+            <th>
+              Notation
+            </th>
+            
+                     
+          </tr>
+          
+                   
+        </thead>
+        
+                   
+        <tbody>
+          
+                     
+          <tr>
+            
+                         
+            <td>
+              &gt;
+            </td>
+            <td>
+              <code>
+                &gt;
+              </code>
+            </td>
+            
+                     
+          </tr>
+          
+                     
+          <tr>
+            
+                         
+            <td>
+              &lt;
+            </td>
+            <td>
+              <code>
+                &lt;
+              </code>
+            </td>
+            
+                     
+          </tr>
+          
+                     
+          <tr>
+            
+                         
+            <td>
+              &
+            </td>
+            <td>
+              <code>
+                &amp;
+              </code>
+            </td>
+            
+                     
+          </tr>
+          
+                   
+        </tbody>
+        
+                 
+      </table>
+        
+                 
+      <p>
+        
+                 For longer formulas also 
+        <code>
+          &lt;e:formula&gt;
+          &lt;![CDATA[ latex-code ]]&gt;
+          &lt;/e:formula&gt;
+        </code>
+         may also be used. Inside a CDATA-block escaping is not required.
+               
+      </p>
+      
       
       <table
         className="e-table e-width-full"

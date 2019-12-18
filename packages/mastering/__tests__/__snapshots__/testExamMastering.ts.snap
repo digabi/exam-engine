@@ -4069,6 +4069,8 @@ OSA I: Exam structure (0 p.)
 
 	1. XML structure (0 p.) ()
 
+	1.1. Special characters as entities (0 p.) ()
+
 	2. Exam (0 p.) ()
 
 	2.1. Example (0 p.) ()
@@ -4174,6 +4176,8 @@ MEX format documentation
 DEL I: Exam structure (0 p.)
 
 	1. XML structure (0 p.) ()
+
+	1.1. Special characters as entities (0 p.) ()
 
 	2. Exam (0 p.) ()
 
@@ -4539,6 +4543,39 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           </div>
         </div>
       </div>
+      <e:question display-number="1.1" max-score="0">
+        <e:question-title>Special characters as entities</e:question-title>
+        <e:question-instruction>
+          <p>Certain characters requires escaping as entities in exam XML documents</p>
+          <table class="e-table">
+            <caption/>
+            <thead>
+              <tr>
+                <th>Character</th>
+                <th>Notation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NBSP (non-breaking-space)</td><td><code>&amp;#xA0;</code></td>
+            </tr>
+            <tr>
+              <td>SHY ­ (soft-hyphen)</td><td><code>&amp;#173;</code></td>
+          </tr>
+          <tr>
+                  <td>&gt;</td><td><code>&amp;gt;</code></td>
+              </tr>
+              <tr>
+                  <td>&lt;</td><td><code>&amp;lt;</code></td>
+              </tr>
+              <tr>
+                  <td>&amp;</td><td><code>&amp;amp;</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Notice, that e.g. <code>&amp;nbsp;</code> and <code>&amp;shy;</code> does not work.</p>  
+        </e:question-instruction>
+      </e:question>  
     </e:question>
 
     <e:question display-number="2" max-score="0">
@@ -6015,7 +6052,32 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           ).
         </p>
       </e:question-instruction>
-
+             <p>
+               Notice that certain characters in formulas require special notation.
+                 </p>
+                 <table class="e-table">
+                   <caption/>
+                   <thead>
+                     <tr>
+                       <th>Character</th>
+                       <th>Notation</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                         <td>&gt;</td><td><code>&amp;gt;</code></td>
+                     </tr>
+                     <tr>
+                         <td>&lt;</td><td><code>&amp;lt;</code></td>
+                     </tr>
+                     <tr>
+                         <td>&amp;</td><td><code>&amp;amp;</code></td>
+                     </tr>
+                   </tbody>
+                 </table>  
+                 <p>
+                 For longer formulas also <code><![CDATA[<e:formula>]]>&lt;![CDATA[ latex-code ]]&gt;<![CDATA[</e:formula>]]></code> may also be used. Inside a CDATA-block escaping is not required.
+               </p>
       <table class="e-table e-width-full">
         <caption>Element attributes</caption>
         <thead>
@@ -7426,6 +7488,39 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           </div>
         </div>
       </div>
+      <e:question display-number="1.1" max-score="0">
+        <e:question-title>Special characters as entities</e:question-title>
+        <e:question-instruction>
+          <p>Certain characters requires escaping as entities in exam XML documents</p>
+          <table class="e-table">
+            <caption/>
+            <thead>
+              <tr>
+                <th>Character</th>
+                <th>Notation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NBSP (non-breaking-space)</td><td><code>&amp;#xA0;</code></td>
+            </tr>
+            <tr>
+              <td>SHY ­ (soft-hyphen)</td><td><code>&amp;#173;</code></td>
+          </tr>
+          <tr>
+                  <td>&gt;</td><td><code>&amp;gt;</code></td>
+              </tr>
+              <tr>
+                  <td>&lt;</td><td><code>&amp;lt;</code></td>
+              </tr>
+              <tr>
+                  <td>&amp;</td><td><code>&amp;amp;</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Notice, that e.g. <code>&amp;nbsp;</code> and <code>&amp;shy;</code> does not work.</p>  
+        </e:question-instruction>
+      </e:question>  
     </e:question>
 
     <e:question display-number="2" max-score="0">
@@ -8902,7 +8997,32 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           ).
         </p>
       </e:question-instruction>
-
+             <p>
+               Notice that certain characters in formulas require special notation.
+                 </p>
+                 <table class="e-table">
+                   <caption/>
+                   <thead>
+                     <tr>
+                       <th>Character</th>
+                       <th>Notation</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                         <td>&gt;</td><td><code>&amp;gt;</code></td>
+                     </tr>
+                     <tr>
+                         <td>&lt;</td><td><code>&amp;lt;</code></td>
+                     </tr>
+                     <tr>
+                         <td>&amp;</td><td><code>&amp;amp;</code></td>
+                     </tr>
+                   </tbody>
+                 </table>  
+                 <p>
+                 For longer formulas also <code><![CDATA[<e:formula>]]>&lt;![CDATA[ latex-code ]]&gt;<![CDATA[</e:formula>]]></code> may also be used. Inside a CDATA-block escaping is not required.
+               </p>
       <table class="e-table e-width-full">
         <caption>Element attributes</caption>
         <thead>
