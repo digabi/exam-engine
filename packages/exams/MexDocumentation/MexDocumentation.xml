@@ -266,6 +266,39 @@
           </div>
         </div>
       </div>
+      <e:question>
+        <e:question-title>Special characters as entities</e:question-title>
+        <e:question-instruction>
+          <p>Certain characters requires escaping as entities in exam XML documents</p>
+          <table class="e-table">
+            <caption></caption>
+            <thead>
+              <tr>
+                <th>Character</th>
+                <th>Notation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NBSP (non-breaking-space)</td><td><code>&amp;#xA0;</code></td>
+            </tr>
+            <tr>
+              <td>SHY &#173; (soft-hyphen)</td><td><code>&amp;#173;</code></td>
+          </tr>
+          <tr>
+                  <td>&gt;</td><td><code>&amp;gt;</code></td>
+              </tr>
+              <tr>
+                  <td>&lt;</td><td><code>&amp;lt;</code></td>
+              </tr>
+              <tr>
+                  <td>&amp;</td><td><code>&amp;amp;</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Notice, that e.g. <code>&amp;nbsp;</code> and <code>&amp;shy;</code> does not work.</p>  
+        </e:question-instruction>
+      </e:question>  
     </e:question>
 
     <e:question>
@@ -1747,7 +1780,32 @@
           ).
         </p>
       </e:question-instruction>
-
+             <p>
+               Notice that certain characters in formulas require special notation.
+                 </p>
+                 <table class="e-table">
+                   <caption></caption>
+                   <thead>
+                     <tr>
+                       <th>Character</th>
+                       <th>Notation</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                         <td>&gt;</td><td><code>&amp;gt;</code></td>
+                     </tr>
+                     <tr>
+                         <td>&lt;</td><td><code>&amp;lt;</code></td>
+                     </tr>
+                     <tr>
+                         <td>&amp;</td><td><code>&amp;amp;</code></td>
+                     </tr>
+                   </tbody>
+                 </table>  
+                 <p>
+                 For longer formulas also <code><![CDATA[<e:formula>]]>&lt;![CDATA[ latex-code ]]&gt;<![CDATA[</e:formula>]]></code> may also be used. Inside a CDATA-block escaping is not required.
+               </p>
       <table class="e-table e-width-full">
         <caption>Element attributes</caption>
         <thead>
