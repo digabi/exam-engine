@@ -30,7 +30,7 @@ do not yet work in Abitti. Breaking changes are also still possible without prio
 Make sure the following are installed in your system:
 
 - [Node.js](https://nodejs.org/en/) (Version 10 or later)
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- [Firefox](https://www.mozilla.org/fi-FI/firefox/new/)
 
 After Node.js has been installed, open a new terminal window and type the
 following command.
@@ -46,10 +46,10 @@ This installs the `ee` command-line program to your system.
 To create a new exam, use
 
 ```
-$ ee new name-of-exam
+$ ee new Esimerkkikoe
 ```
 
-This creates a `name-of-exam` directory, containing a basic `exam.xml` file and an
+This creates a `Esimerkkikoe` directory, containing a basic `exam.xml` file and an
 empty directory where to place attachments.
 
 # Preview
@@ -67,7 +67,7 @@ It's also possible to specify the exam explicitly.
 $ ee preview path/to/exam.xml
 ```
 
-# Using an exam in Abitti
+# Importing an exam to Abitti
 
 To use an exam in Abitti, it must be first packaged as a transfer zip. It is
 then possible to import it to Abitti by clicking "Tuo koe/För in prov".
@@ -77,6 +77,9 @@ To create a transfer zip, navigate to the exam directory and run
 ```
 $ ee create-transfer-zip
 ```
+
+This creates a transfer zip files in the exam directory for each language
+version of the exam.
 
 Like before, it's also possible to specify the exam explicitly.
 
@@ -116,7 +119,7 @@ Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). 
 
 # Development
 
-The information in this section is only relevant for developers of the exam-engine itself.
+The information in this section is only relevant for developers.
 
 ## Compilation
 
