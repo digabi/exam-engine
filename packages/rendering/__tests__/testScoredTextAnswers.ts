@@ -11,7 +11,7 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   let close: CloseFunction
 
   beforeAll(async () => {
-    ;[url, close] = await previewExam(resolveExam('EA/EA.xml'))
+    ;[url, close] = await previewExam(resolveExam('SC/SC.xml'))
     page = await createPage()
   })
 
@@ -22,21 +22,21 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   it('highlights the hint when focusing a scored text answer', async () => {
     await page.goto(url, { waitUntil: 'networkidle0' })
 
-    await focusScoredTextAnswer(2)
-    await assertScoredTextAnswerHintHighlighted(2)
+    await focusScoredTextAnswer(81)
+    await assertScoredTextAnswerHintHighlighted(81)
 
-    await focusScoredTextAnswer(3)
-    await assertScoredTextAnswerHintHighlighted(3)
+    await focusScoredTextAnswer(82)
+    await assertScoredTextAnswerHintHighlighted(82)
   })
 
   it('focuses the answer when clicking a hint', async () => {
     await page.goto(url, { waitUntil: 'networkidle0' })
 
-    await clickScoredTextAnswerHint(2)
-    await assertScoredTextAnswerHintFocused(2)
+    await clickScoredTextAnswerHint(81)
+    await assertScoredTextAnswerHintFocused(81)
 
-    await clickScoredTextAnswerHint(3)
-    await assertScoredTextAnswerHintFocused(3)
+    await clickScoredTextAnswerHint(82)
+    await assertScoredTextAnswerHintFocused(82)
   })
 
   async function focusScoredTextAnswer(questionId: QuestionId) {
