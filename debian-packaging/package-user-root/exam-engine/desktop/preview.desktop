@@ -1,0 +1,6 @@
+[Desktop Entry]
+Comment=
+Terminal=true
+Name=Esikatsele koetta
+Exec=bash -c "ee preview `dirname %k`/*.xml"
+Type=Application
