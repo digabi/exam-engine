@@ -237,7 +237,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -286,7 +286,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -335,7 +335,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -384,7 +384,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -433,7 +433,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -482,7 +482,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -531,7 +531,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -580,7 +580,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -1605,13 +1605,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Sunt Dolore
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Deserunt sit nostrud aute reprehenderit
           </span>
@@ -1674,13 +1674,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Sunt Dolore
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Deserunt sit nostrud aute reprehenderit
           </span>
@@ -1797,13 +1797,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Duis Minim
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Laborum nulla
           </span>
@@ -1825,7 +1825,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Muokkaus:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -2023,13 +2023,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Duis Minim
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Veniam qui eiusmod
           </span>
@@ -2134,13 +2134,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Deserunt Esse
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Tempor reprehenderit
           </em>
@@ -2152,7 +2152,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Käännös:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Proident Quis
           </span>
@@ -2283,13 +2283,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Voluptate Voluptate, Fugiat Tempor ea Voluptate Qui (Dolor)
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Nostrud-sivusto
           </span>
@@ -2530,13 +2530,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Voluptate Voluptate, Fugiat Tempor ea Voluptate Qui (Dolor)
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Lorem-sivusto
           </span>
@@ -2707,13 +2707,13 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Deserunt Magna
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Occaecat deserunt
           </em>
@@ -2723,7 +2723,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           2012
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Ex duis reprehenderit irure reprehenderit
               
@@ -4008,13 +4008,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Adipisicing Magna
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Youtube-videopalvelu
@@ -4039,7 +4039,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Käännös:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -4050,7 +4050,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Muokkaus:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -4232,13 +4232,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Adipisicing excepteur
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             nostrud commodo ex
           </span>
@@ -4322,7 +4322,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Consequat dolor laboris anim do culpa consequat
           </span>
@@ -4482,7 +4482,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Qui tempor: Opettajat 1
@@ -4491,7 +4491,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui fugiat
           </span>
@@ -4513,7 +4513,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Muokkaus:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -4568,13 +4568,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Dolore Mollit
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -4589,7 +4589,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Käännös:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -4717,13 +4717,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Adipiscing
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Lorem
           </em>
@@ -4735,7 +4735,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Käännös:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Veniam Ipsum
@@ -5050,7 +5050,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Laboris duis minim
           </span>
@@ -5199,7 +5199,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui ea non anim
           </span>
@@ -5358,7 +5358,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Consequat est dolore
           </span>
@@ -5460,7 +5460,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Aliquip exercitation elit mollit laboris
           </span>
@@ -5589,7 +5589,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Esse nostrud velit cupidatat duis in pariatur
           </span>
@@ -5694,7 +5694,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Cillum excepteur enim quis qui sint ipsum
           </span>
@@ -5841,19 +5841,19 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Consectetur Excepteur
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Incididunt id culpa ad deserunt dolor pariatur
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Youtube-videopalvelu
@@ -5878,7 +5878,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Käännös:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -5889,7 +5889,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Muokkaus:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -5961,19 +5961,19 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Ex anim
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Pariatur incididunt anim pariatur ipsum incididunt cupidatat
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Youtube-videopalvelu
@@ -5998,7 +5998,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Käännös:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -6009,7 +6009,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           Muokkaus:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -6145,13 +6145,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Adipisicing Magna
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -6176,7 +6176,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Översättning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -6187,7 +6187,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Bearbetning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -6367,13 +6367,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Adipisicing excepteur
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             nostrud commodo ex
           </span>
@@ -6457,7 +6457,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Consequat dolor laboris anim do culpa consequat
           </span>
@@ -6617,7 +6617,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -6626,7 +6626,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui fugiat
           </span>
@@ -6648,7 +6648,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Bearbetning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -6704,13 +6704,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Dolore Mollit
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Qui reprehenderit enim cillum adipisicing officia
@@ -6725,7 +6725,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Översättning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Commodo Dolore
@@ -6852,13 +6852,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Adipiscing
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Lorem
           </em>
@@ -6870,7 +6870,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Översättning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -7125,7 +7125,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Laboris duis minim
           </span>
@@ -7273,7 +7273,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui ea non anim
           </span>
@@ -7432,7 +7432,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Consequat est dolore
           </span>
@@ -7534,7 +7534,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Aliquip exercitation elit mollit laboris
           </span>
@@ -7663,7 +7663,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Esse nostrud velit cupidatat duis in pariatur
           </span>
@@ -7768,7 +7768,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Cillum excepteur enim quis qui sint ipsum
           </span>
@@ -7915,19 +7915,19 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Consectetur Excepteur
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Incididunt id culpa ad deserunt dolor pariatur
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -7952,7 +7952,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Översättning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -7963,7 +7963,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Bearbetning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -8035,19 +8035,19 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Ex anim
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Pariatur incididunt anim pariatur ipsum incididunt cupidatat
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -8072,7 +8072,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Översättning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -8083,7 +8083,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           Bearbetning:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -13359,7 +13359,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -13568,7 +13568,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Matriculation examination board
           </span>
@@ -13631,31 +13631,31 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Dolor Tempor
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Culpa ex
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             MEB web service
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Internet service
           </span>
@@ -13677,7 +13677,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
           Translation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Travis Translator
           </span>
@@ -13685,13 +13685,13 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
           Adaptation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Mary Modifier
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Free text field
           </span>
@@ -13831,7 +13831,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             YTL
           </span>
@@ -14040,7 +14040,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Matriculation examination board
           </span>
@@ -14103,31 +14103,31 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Dolor Tempor
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Culpa ex
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             MEB web service
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Internet service
           </span>
@@ -14149,7 +14149,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
           Translation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Travis Translator
           </span>
@@ -14157,13 +14157,13 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
           Adaptation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Mary Modifier
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Free text field
           </span>
@@ -26824,31 +26824,31 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Dolor Tempor
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Culpa ex
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             MEB web service
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Internet service
           </span>
@@ -26870,7 +26870,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           Translation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Travis Translator
           </span>
@@ -26878,13 +26878,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           Adaptation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Mary Modifier
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Free text field
           </span>
@@ -39509,31 +39509,31 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           Source:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Dolor Tempor
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Culpa ex
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             MEB web service
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Internet service
           </span>
@@ -39555,7 +39555,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           Translation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Travis Translator
           </span>
@@ -39563,13 +39563,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           Adaptation:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Mary Modifier
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Free text field
           </span>
@@ -39728,7 +39728,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -39894,7 +39894,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -39989,7 +39989,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -40089,7 +40089,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               Tilastokeskus
@@ -40237,7 +40237,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -40403,7 +40403,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -40498,7 +40498,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -40598,7 +40598,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -48997,7 +48997,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -49016,7 +49016,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -49035,7 +49035,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -49054,7 +49054,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -49073,7 +49073,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -49092,7 +49092,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           Lähde:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -57480,7 +57480,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -57499,7 +57499,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -57518,7 +57518,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -57537,7 +57537,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -57556,7 +57556,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -57575,7 +57575,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           Källa:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -57718,31 +57718,31 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Jessica Krauß
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Video: Das geheime Leben der Katzen
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             ARD
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             1 LIVE
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY-NC-ND 3.0 DE
           </span>
@@ -57764,7 +57764,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Bearbeitung:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -57913,7 +57913,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -57998,7 +57998,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -58061,7 +58061,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -58124,7 +58124,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -58190,7 +58190,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -58253,7 +58253,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -58316,7 +58316,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -58379,7 +58379,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -58553,31 +58553,31 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Jessica Krauß
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Video: Das geheime Leben der Katzen
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             ARD
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             1 LIVE
           </span>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY-NC-ND 3.0 DE
           </span>
@@ -58599,7 +58599,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Bearbeitung:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -58748,7 +58748,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -58833,7 +58833,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -58896,7 +58896,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -58959,7 +58959,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -59025,7 +59025,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -59088,7 +59088,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -59151,7 +59151,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -59214,7 +59214,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -74007,7 +74007,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -74026,7 +74026,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74045,7 +74045,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74064,7 +74064,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74083,7 +74083,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74102,7 +74102,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74121,7 +74121,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74140,7 +74140,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74159,7 +74159,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74178,7 +74178,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74197,7 +74197,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               YTL
@@ -74216,19 +74216,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Gail
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             mashed potatoes for perogies
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74254,19 +74254,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             jules
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             potato rosti
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74292,19 +74292,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             jeffhutchison
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Fried Potatoes
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74330,7 +74330,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74349,19 +74349,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Steve Garfield
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Scrambled Eggs
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74387,19 +74387,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Aaron Headly
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Poached egg
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74425,19 +74425,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Marco Verch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Die Ebene lag über dem Spiegelei in der Pfanne
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74463,7 +74463,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74482,19 +74482,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Neil
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Coffee Maker
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74520,19 +74520,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Marco Verch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Man using the French Press to make coffee
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74558,19 +74558,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Troy Tolley
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Coffee By The Cup @ Madeline's
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74596,7 +74596,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 YTL
@@ -74615,7 +74615,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
             YTL
@@ -74634,19 +74634,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Wilhelm Busch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Max und Moritz
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             public domain
           </span>
@@ -74676,19 +74676,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Wilhelm Busch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Max und Moritz
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             public domain
           </span>
@@ -74718,7 +74718,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
             YTL
@@ -74737,19 +74737,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Elise Forest
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             math final
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY-NC-ND 2.0
           </span>
@@ -74775,19 +74775,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Charles Edward Miller
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY-SA 2.0
           </span>
@@ -74813,7 +74813,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
             YTL
@@ -74832,19 +74832,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Riik@mctr
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Manchester Airport (EGCC)
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74870,19 +74870,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Jonathan Pearson
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             boy racers
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74908,19 +74908,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Conal Gallagher
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Bicycle
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -74946,19 +74946,19 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Wonder Woman
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Alexandra
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -89727,7 +89727,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -89746,7 +89746,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89765,7 +89765,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89784,7 +89784,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89803,7 +89803,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89822,7 +89822,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89841,7 +89841,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89860,7 +89860,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89879,7 +89879,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89898,7 +89898,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -89917,7 +89917,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
               
@@ -89936,19 +89936,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Gail
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             mashed potatoes for perogies
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -89974,19 +89974,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             jules
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             potato rosti
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90012,19 +90012,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             jeffhutchison
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Fried Potatoes
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90050,7 +90050,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -90069,19 +90069,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Steve Garfield
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Scrambled Eggs
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90107,19 +90107,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Aaron Headly
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Poached egg
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90145,19 +90145,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Marco Verch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Die Ebene lag über dem Spiegelei in der Pfanne
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90183,7 +90183,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -90202,19 +90202,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Neil
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Coffee Maker
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90240,19 +90240,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Marco Verch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Man using the French Press to make coffee
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90278,19 +90278,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Troy Tolley
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Coffee By The Cup @ Madeline's
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90316,7 +90316,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
                 
@@ -90335,7 +90335,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
             
@@ -90354,19 +90354,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Wilhelm Busch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Max und Moritz
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             public domain
           </span>
@@ -90396,19 +90396,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Wilhelm Busch
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Max und Moritz
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             public domain
           </span>
@@ -90438,7 +90438,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
             
@@ -90457,19 +90457,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Elise Forest
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             math final
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY-NC-ND 2.0
           </span>
@@ -90495,19 +90495,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Charles Edward Miller
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY-SA 2.0
           </span>
@@ -90533,7 +90533,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             
             
@@ -90552,19 +90552,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Riik@mctr
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Manchester Airport (EGCC)
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90590,19 +90590,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Jonathan Pearson
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             boy racers
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90628,19 +90628,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Conal Gallagher
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Bicycle
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
@@ -90666,19 +90666,19 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           Quelle:
            
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Wonder Woman
           </span>
           . 
           <em
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             Alexandra
           </em>
           . 
           <span
-            className="e-inline-block e-text-top"
+            className="e-table-cell"
           >
             CC BY 2.0
           </span>
