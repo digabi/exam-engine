@@ -20,6 +20,8 @@ export interface ChoiceAnswer extends AnswerCommon {
 }
 export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
+export type SaveState = 'initial' | 'saving' | 'saved'
+
 /**
  * CAS status is a state machine with three states.
  *

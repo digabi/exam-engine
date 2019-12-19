@@ -1,0 +1,27 @@
+.save-indicator {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: white;
+  font-size: 11px;
+  padding: 2px 8px;
+  box-sizing: content-box;
+  line-height: 16px;
+  font-weight: bold;
+  border-radius: 8px 0 0 0;
+  opacity: 0.8;
+  box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
+  color: gray;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+
+  .save-indicator-text {
+    opacity: 1;
+    transition: 0.3s all;
+
+    &--saving {
+      opacity: 0;
+    }
+  }
+}
+
