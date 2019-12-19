@@ -119,6 +119,10 @@ export class Exam extends PureComponent<ExamProps> {
     const externalMaterial = findChildElement(root, 'external-material')
     const examStylesheet = root.getAttribute('exam-stylesheet')
 
+    if (this.i18n.language !== language) {
+      this.i18n.changeLanguage(language)
+    }
+
     return (
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
