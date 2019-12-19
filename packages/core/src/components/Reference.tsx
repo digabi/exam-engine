@@ -48,11 +48,11 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
 }
 
 function Span({ element, renderChildNodes }: ExamComponentProps) {
-  return <span className="e-inline-block e-text-top">{renderChildNodes(element)}</span>
+  return <span className="e-table-cell">{renderChildNodes(element)}</span>
 }
 
 function Italic({ element, renderChildNodes }: ExamComponentProps) {
-  return <em className="e-inline-block e-text-top">{renderChildNodes(element)}</em>
+  return <em className="e-table-cell">{renderChildNodes(element)}</em>
 }
 
 function Link({ element, renderChildNodes }: ExamComponentProps) {
