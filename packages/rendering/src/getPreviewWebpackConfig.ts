@@ -5,6 +5,8 @@ import { getWebpackConfig } from './getWebpackConfig'
 const { mathSvgResponse } = require('rich-text-editor') // tslint:disable-line no-var-requires
 
 export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions): webpack.Configuration {
+  const isDev = process.env.npm_package_name === '@digabi/exam-engine-root'
+
   return getWebpackConfig({
     mode: 'development',
     devtool: 'cheap-module-source-map',
@@ -16,6 +18,14 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
         'process.env.CAS_COUNTDOWN_DURATION_SECONDS': Number(options.casCountdownDurationSeconds)
       })
     ],
+    resolve: isDev
+      ? {
+          alias: {
+            '@digabi/exam-engine-core$': path.resolve(__dirname, '../../core/dist/index.js'),
+            '@digabi/exam-engine-core/dist': path.resolve(__dirname, '../../core/dist')
+          }
+        }
+      : {},
     devServer: {
       overlay: {
         warnings: true,

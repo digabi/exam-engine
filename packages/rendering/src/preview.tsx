@@ -1,23 +1,10 @@
-import { RestrictedAudioPlaybackStats } from '@digabi/exam-engine-core'
+import { Attachments, Exam, parseExam, RestrictedAudioPlaybackStats } from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { MasteringResult } from '@digabi/exam-engine-mastering'
 import Cookie from 'js-cookie'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
-
-// Load the original source files in local development environment.
-// tslint:disable: no-var-requires
-const isDev = process.env.npm_package_name === '@digabi/exam-engine-root'
-const Attachments = isDev
-  ? require('@digabi/exam-engine-core/dist/components/Attachments').default
-  : require('@digabi/exam-engine-core').Attachments
-const Exam = isDev
-  ? require('@digabi/exam-engine-core/dist/components/Exam').default
-  : require('@digabi/exam-engine-core').Exam
-const parseExam = isDev
-  ? require('@digabi/exam-engine-core/dist/parser/parseExam').default
-  : require('@digabi/exam-engine-core').parseExam
 
 const { original, results }: { original: string; results: MasteringResult[] } = require(process.env.EXAM_FILENAME!)
 
