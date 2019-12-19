@@ -8,7 +8,7 @@ import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 
 // Load the original source files in local development environment.
 // tslint:disable: no-var-requires
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.npm_package_name === '@digabi/exam-engine-root'
 const Attachments = isDev
   ? require('@digabi/exam-engine-core/dist/components/Attachments').default
   : require('@digabi/exam-engine-core').Attachments

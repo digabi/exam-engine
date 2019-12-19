@@ -11,6 +11,7 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
     entry: path.resolve(__dirname, 'preview.js'),
     plugins: [
       new webpack.DefinePlugin({
+        'process.env.npm_package_name': JSON.stringify(process.env.npm_package_name),
         'process.env.EXAM_FILENAME': JSON.stringify(examFilename),
         'process.env.CAS_COUNTDOWN_DURATION_SECONDS': Number(options.casCountdownDurationSeconds)
       })
