@@ -1,5 +1,5 @@
 import * as _ from 'lodash-es'
-import { AudioPlaybackError, RestrictedAudioId } from '../components/types'
+import { AudioPlaybackError, ExamAnswer, QuestionId, RestrictedAudioId, SaveState } from '../components/types'
 import { AppState } from '../store'
 
 export const getAudioState = (src: string, restrictedAudioId?: RestrictedAudioId) => (state: AppState) => {
@@ -24,3 +24,29 @@ export const getPlaybackTimes = (restrictedAudioId: RestrictedAudioId) => (state
 
 export const getPlaybackTimesRemaining = (restrictedAudioId: RestrictedAudioId, times: number) => (state: AppState) =>
   times - getPlaybackTimes(restrictedAudioId)(state)
+
+export const getGlobalSaveState = () => (state: AppState): SaveState => {
+  const serverIds = state.answers.serverQuestionIds
+  const savedIds = state.answers.savedQuestionIds
+  const answers = state.answers.answersById
+
+  if (serverIds.size === 0) {
+    return 'initial'
+  } else if (serverIds.size !== savedIds.size || containsAnswerNotYetSavedInServer(serverIds, answers)) {
+    return 'saving'
+  } else {
+    return 'saved'
+  }
+}
+
+function containsAnswerNotYetSavedInServer(
+  serverIds: Set<QuestionId>,
+  answersById: Record<QuestionId, ExamAnswer>
+): boolean {
+  for (const questionId in answersById) {
+    if (!serverIds.has(Number(questionId))) {
+      return true
+    }
+  }
+  return false
+}

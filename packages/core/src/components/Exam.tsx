@@ -30,6 +30,7 @@ import File from './File'
 import Formula from './Formula'
 import Image from './Image'
 import References from './References'
+import SaveIndicator from './SaveIndicator'
 import ScoredTextAnswer from './ScoredTextAnswer'
 import ScoredTextAnswers from './ScoredTextAnswers'
 import Section from './Section'
@@ -148,6 +149,7 @@ export class Exam extends PureComponent<ExamProps> {
               </main>
             )}
           </ExamContext.Consumer>
+          <SaveIndicator />
         </I18nextProvider>
       </Provider>
     )
