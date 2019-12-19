@@ -30,8 +30,6 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   })
 
   it('focuses the answer when clicking a hint', async () => {
-    await page.goto(url, { waitUntil: 'networkidle0' })
-
     await clickScoredTextAnswerHint(81)
     await assertScoredTextAnswerHintFocused(81)
 
