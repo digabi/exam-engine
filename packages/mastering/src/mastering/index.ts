@@ -605,13 +605,13 @@ function trimWhitespace(element: Element) {
   const lastNonWhitespaceTextNode = _.findLastIndex(textNodes, nonWhitespaceNode)
 
   // Remove leading whitespace from the start
-  for (let i = 0; i <= firstNonWhitespaceTextNode; i++) {
+  for (let i = 0; firstNonWhitespaceTextNode !== -1 && i <= firstNonWhitespaceTextNode; i++) {
     const node = textNodes[i] as Element // TODO: Typings for Text are missing, use Element as a surrogate.
     node.text(node.text().trimStart())
   }
 
   // ...and trailing whitespace from the end.
-  for (let i = textNodes.length - 1; i >= lastNonWhitespaceTextNode; i--) {
+  for (let i = textNodes.length - 1; lastNonWhitespaceTextNode !== -1 && i >= lastNonWhitespaceTextNode; i--) {
     const node = textNodes[i] as Element // TODO: Typings for Text are missing, use Element as a surrogate.
     node.text(node.text().trimEnd())
   }
