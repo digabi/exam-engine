@@ -26,13 +26,14 @@ export const getPlaybackTimesRemaining = (restrictedAudioId: RestrictedAudioId, 
   times - getPlaybackTimes(restrictedAudioId)(state)
 
 export const getGlobalSaveState = () => (state: AppState): SaveState => {
-  const serverIds = state.answers.serverQuestionIds
-  const savedIds = state.answers.savedQuestionIds
-  const answers = state.answers.answersById
+  const { serverQuestionIds, savedQuestionIds, answersById } = state.answers
 
-  if (serverIds.size === 0) {
+  if (serverQuestionIds.size === 0) {
     return 'initial'
-  } else if (serverIds.size !== savedIds.size || containsAnswerNotYetSavedInServer(serverIds, answers)) {
+  } else if (
+    serverQuestionIds.size !== savedQuestionIds.size ||
+    containsAnswerNotYetSavedInServer(serverQuestionIds, answersById)
+  ) {
     return 'saving'
   } else {
     return 'saved'
