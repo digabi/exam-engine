@@ -8,7 +8,6 @@ interface AnswerToolbarProps {
   answer?: ExamAnswer
   error?: AnswerError | null
   element: Element
-  isSaved: boolean
   selectAnswerVersion?: typeof actions.selectAnswerVersion
   showAnswerHistory?: boolean
   supportsAnswerHistory?: boolean
@@ -18,7 +17,6 @@ function AnswerToolbar({
   answer,
   element,
   error,
-  isSaved,
   selectAnswerVersion,
   showAnswerHistory = false,
   supportsAnswerHistory = false
@@ -59,9 +57,6 @@ function AnswerToolbar({
             )}
           </div>
         )}
-        <div className="answer-toolbar__saved">
-          {isSaved ? <Translation>{t => t('answer-saved')}</Translation> : NBSP}
-        </div>
       </div>
     </div>
   )

@@ -73,10 +73,9 @@ function ChoiceAnswerOption({
 interface ChoiceAnswerProps extends ExamComponentProps {
   answer?: ChoiceAnswerT
   saveAnswer: typeof actions.saveAnswer
-  isSaved: boolean
 }
 
-function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes, isSaved }: ChoiceAnswerProps) {
+function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceAnswerProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')
@@ -113,8 +112,7 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes, isSaved }
       <AnswerToolbar
         {...{
           answer,
-          element,
-          isSaved
+          element
         }}
       />
     </>
@@ -124,8 +122,7 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes, isSaved }
 function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = state.answers.answersById[questionId] as ChoiceAnswerT | undefined
-  const isSaved = state.answers.savedQuestionIds.has(questionId)
-  return { answer, isSaved }
+  return { answer }
 }
 
 export default connect(mapStateToProps, {

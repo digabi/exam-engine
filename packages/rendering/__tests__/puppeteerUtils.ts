@@ -19,7 +19,7 @@ export function initPuppeteer() {
     const context = await browser.createIncognitoBrowserContext()
     const page = await context.newPage()
     page.setDefaultNavigationTimeout(60000)
-    await page.setViewport({ width: 1280, height: 1024 })
+    await page.setViewport({ width: 1280, height: 3024 })
     return page
   }
 }
@@ -63,4 +63,15 @@ export async function getTextContent(page: Page, selector: string) {
       throw new Error(`Expected a HTML element, got ${e}`)
     }
   })
+}
+
+// TODO is there a prettier way?
+export async function assertElementDoesNotExist(page: Page, selector: string) {
+  let thrown = false
+  try {
+    await page.$eval(selector, e => e)
+  } catch (expected) {
+    thrown = true
+  }
+  expect(thrown).toBe(true)
 }

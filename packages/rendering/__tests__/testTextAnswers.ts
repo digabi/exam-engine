@@ -1,7 +1,7 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { CloseFunction, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
-import { delay, getTextContent, initPuppeteer } from './puppeteerUtils'
+import { assertElementDoesNotExist, delay, getTextContent, initPuppeteer } from './puppeteerUtils'
 
 describe('testTextAnswers.ts — Text answer interactions', () => {
   const createPage = initPuppeteer()
@@ -37,20 +37,20 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   it('updates the saved indicator after a delay', async () => {
     await page.goto(url, { waitUntil: 'networkidle0' })
 
-    await assertIsSaved(false)
+    await assertSaveIndicatorNotPresent()
 
     await type('moi')
-    await assertIsSaved(false)
+    await assertIsNotSaved()
     await delay(2000)
-    await assertIsSaved(true)
+    await assertIsSaved()
 
     await type(' kaikille')
-    await assertIsSaved(false)
+    await assertIsNotSaved()
     await delay(2000)
-    await assertIsSaved(true)
+    await assertIsSaved()
 
     await page.reload({ waitUntil: 'networkidle0' })
-    await assertIsSaved(true)
+    await assertIsSaved()
   })
 
   async function type(text: string) {
@@ -68,8 +68,15 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(count).toEqual(expectedCount)
   }
 
-  async function assertIsSaved(saved: boolean) {
-    const text = await getTextContent(page, '.answer-toolbar__saved')
-    return expect(text).toEqual(saved ? 'Tallennettu' : '')
+  async function assertIsSaved() {
+    await page.$eval('.save-indicator-text--saved', e => e)
+  }
+
+  async function assertIsNotSaved() {
+    await assertElementDoesNotExist(page, '.save-indicator-text--saved')
+  }
+
+  async function assertSaveIndicatorNotPresent() {
+    await assertElementDoesNotExist(page, '.save-indicator')
   }
 })

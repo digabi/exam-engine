@@ -1125,13 +1125,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
         
@@ -1182,13 +1176,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
         
@@ -1239,13 +1227,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
         
@@ -1296,13 +1278,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
         
@@ -1353,13 +1329,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
         
@@ -1410,13 +1380,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
         
@@ -3106,13 +3070,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -3178,13 +3136,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -3316,13 +3268,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -3466,13 +3412,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -3672,13 +3612,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -3758,13 +3692,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -8239,13 +8167,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -8300,13 +8222,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -8361,13 +8277,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -8422,13 +8332,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -8508,13 +8412,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -8673,13 +8571,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -8748,13 +8640,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -8902,13 +8788,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -9094,13 +8974,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -9193,13 +9067,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -9264,13 +9132,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -9334,13 +9196,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -9563,13 +9419,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -9630,13 +9480,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -9896,13 +9740,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -9972,13 +9810,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -10031,13 +9863,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -10200,13 +10026,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -10262,13 +10082,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -10845,13 +10659,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -10907,13 +10715,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -10968,13 +10770,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -11029,13 +10825,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -11115,13 +10905,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -11265,13 +11049,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -11341,13 +11119,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -11495,13 +11267,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -11687,13 +11453,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -11786,13 +11546,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -11857,13 +11611,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -11927,13 +11675,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -12154,13 +11896,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -12219,13 +11955,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -12484,13 +12214,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -12560,13 +12284,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -12620,13 +12338,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -12789,13 +12501,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -12852,13 +12558,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -16746,7 +16446,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={1}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -16799,13 +16498,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -16854,13 +16547,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -17352,13 +17039,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -17618,13 +17299,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -17911,13 +17586,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -18796,7 +18465,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={8}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -18823,7 +18491,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={9}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -18850,7 +18517,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={10}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -18877,7 +18543,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={11}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -18904,7 +18569,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={12}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -19106,7 +18770,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={13}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -20828,13 +20491,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               />
               <div
                 className="answer-toolbar__history e-column e-column--auto e-text-right"
-              >
-                <div
-                  className="answer-toolbar__saved"
-                >
-                   
-                </div>
-              </div>
+              />
             </div>
             
           
@@ -20968,13 +20625,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               />
               <div
                 className="answer-toolbar__history e-column e-column--auto e-text-right"
-              >
-                <div
-                  className="answer-toolbar__saved"
-                >
-                   
-                </div>
-              </div>
+              />
             </div>
             
           
@@ -21179,13 +20830,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               />
               <div
                 className="answer-toolbar__history e-column e-column--auto e-text-right"
-              >
-                <div
-                  className="answer-toolbar__saved"
-                >
-                   
-                </div>
-              </div>
+              />
             </div>
             
           
@@ -29401,7 +29046,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={1}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -29454,13 +29098,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -29509,13 +29147,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -30007,13 +29639,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -30273,13 +29899,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -30566,13 +30186,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -31451,7 +31065,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={8}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -31478,7 +31091,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={9}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -31505,7 +31117,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={10}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -31532,7 +31143,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={11}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -31559,7 +31169,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               <input
                 className="text-answer text-answer--single-line"
                 data-question-id={12}
-                data-saved={false}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -31761,7 +31370,6 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={13}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -33483,13 +33091,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               />
               <div
                 className="answer-toolbar__history e-column e-column--auto e-text-right"
-              >
-                <div
-                  className="answer-toolbar__saved"
-                >
-                   
-                </div>
-              </div>
+              />
             </div>
             
           
@@ -33623,13 +33225,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               />
               <div
                 className="answer-toolbar__history e-column e-column--auto e-text-right"
-              >
-                <div
-                  className="answer-toolbar__saved"
-                >
-                   
-                </div>
-              </div>
+              />
             </div>
             
           
@@ -33834,13 +33430,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               />
               <div
                 className="answer-toolbar__history e-column e-column--auto e-text-right"
-              >
-                <div
-                  className="answer-toolbar__saved"
-                >
-                   
-                </div>
-              </div>
+              />
             </div>
             
           
@@ -42564,13 +42154,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -42651,7 +42235,6 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={8}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -43073,13 +42656,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -43159,7 +42736,6 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={10}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -43599,13 +43175,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -43685,7 +43255,6 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={12}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -44125,13 +43694,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -44211,7 +43774,6 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={14}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -44651,13 +44213,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
          
       
@@ -44737,7 +44293,6 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={16}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -45157,13 +44712,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -45243,7 +44792,6 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={18}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -45432,13 +44980,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -45803,13 +45345,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -46067,13 +45603,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -46311,13 +45841,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -46370,13 +45894,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -46492,13 +46010,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -46641,13 +46153,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -47052,13 +46558,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -47129,13 +46629,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -47353,13 +46847,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -47790,13 +47278,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -47904,13 +47386,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -48009,13 +47485,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -48175,13 +47645,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -48346,13 +47810,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -51005,13 +50463,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -51093,7 +50545,6 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={8}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -51514,13 +50965,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -51601,7 +51046,6 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={10}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -52040,13 +51484,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -52127,7 +51565,6 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={12}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -52566,13 +52003,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -52653,7 +52084,6 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={14}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -53092,13 +52522,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
          
       
@@ -53179,7 +52603,6 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={16}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -53598,13 +53021,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
                 
       
@@ -53685,7 +53102,6 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={18}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -53873,13 +53289,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -54244,13 +53654,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -54508,13 +53912,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -54752,13 +54150,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -54811,13 +54203,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -54933,13 +54319,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -55082,13 +54462,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -55493,13 +54867,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -55570,13 +54938,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -55794,13 +55156,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -56231,13 +55587,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -56345,13 +55695,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -56450,13 +55794,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -56616,13 +55954,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -56787,13 +56119,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         />
         <div
           className="answer-toolbar__history e-column e-column--auto e-text-right"
-        >
-          <div
-            className="answer-toolbar__saved"
-          >
-             
-          </div>
-        </div>
+        />
       </div>
       
     
@@ -59445,13 +58771,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -59576,13 +58896,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -59767,13 +59081,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
         
@@ -59886,13 +59194,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -60017,13 +59319,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -60249,13 +59545,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -60452,13 +59742,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -60655,13 +59939,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -60858,13 +60136,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -61104,13 +60376,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -61307,13 +60573,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
         
@@ -61426,13 +60686,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -61629,13 +60883,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
         
@@ -61748,13 +60996,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -62005,13 +61247,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -62208,13 +61444,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -62409,13 +61639,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -62529,13 +61753,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -62649,13 +61867,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -63012,13 +62224,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -63308,13 +62514,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -63604,13 +62804,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -63955,13 +63149,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -64269,13 +63457,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -64583,13 +63765,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -64865,13 +64041,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -64985,13 +64155,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65171,13 +64335,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65270,13 +64428,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65369,13 +64521,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65468,13 +64614,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65567,13 +64707,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65666,13 +64800,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65855,13 +64983,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -65915,13 +65037,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -66035,13 +65151,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -66155,13 +65265,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -66344,13 +65448,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -66391,7 +65489,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={39}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -66401,7 +65498,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={40}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -66521,13 +65617,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -66641,13 +65731,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -66761,13 +65845,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -66881,13 +65959,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -67837,13 +66909,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -67957,13 +67023,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68017,13 +67077,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68206,13 +67260,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68272,13 +67320,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68392,13 +67434,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68512,13 +67548,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68641,13 +67671,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68761,13 +67785,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -68881,13 +67899,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -69001,13 +68013,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -69121,13 +68127,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -69241,13 +68241,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -69430,13 +68424,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -69550,13 +68538,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -69670,13 +68652,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -69730,13 +68706,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -72060,7 +71030,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   <input
                     className="text-answer text-answer--single-line"
                     data-question-id={81}
-                    data-saved={false}
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -72097,7 +71066,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   <input
                     className="text-answer text-answer--single-line"
                     data-question-id={82}
-                    data-saved={false}
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -72263,7 +71231,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={83}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -72321,7 +71288,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={84}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -72368,7 +71334,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={85}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -72422,7 +71387,6 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={86}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -72745,13 +71709,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -72813,13 +71771,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -73025,13 +71977,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -73106,13 +72052,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -74876,13 +73816,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -75007,13 +73941,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -75198,13 +74126,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
         
@@ -75317,13 +74239,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -75448,13 +74364,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -75680,13 +74590,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -75883,13 +74787,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -76086,13 +74984,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -76289,13 +75181,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -76535,13 +75421,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -76738,13 +75618,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
         
@@ -76857,13 +75731,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -77060,13 +75928,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
         
@@ -77179,13 +76041,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -77436,13 +76292,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -77639,13 +76489,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -77840,13 +76684,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -77960,13 +76798,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -78080,13 +76912,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -78443,13 +77269,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -78739,13 +77559,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -79035,13 +77849,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -79386,13 +78194,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -79700,13 +78502,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -80014,13 +78810,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             />
             <div
               className="answer-toolbar__history e-column e-column--auto e-text-right"
-            >
-              <div
-                className="answer-toolbar__saved"
-              >
-                 
-              </div>
-            </div>
+            />
           </div>
           
           
@@ -80296,13 +79086,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -80416,13 +79200,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -80602,13 +79380,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -80701,13 +79473,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -80800,13 +79566,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -80899,13 +79659,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -80998,13 +79752,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -81097,13 +79845,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -81286,13 +80028,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -81346,13 +80082,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -81466,13 +80196,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -81586,13 +80310,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -81775,13 +80493,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -81823,7 +80535,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={39}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -81833,7 +80544,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         <input
           className="text-answer text-answer--single-line"
           data-question-id={40}
-          data-saved={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -81952,13 +80662,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -82072,13 +80776,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -82192,13 +80890,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -82312,13 +81004,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -83268,13 +81954,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -83388,13 +82068,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -83448,13 +82122,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -83637,13 +82305,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -83703,13 +82365,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -83823,13 +82479,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -83943,13 +82593,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84072,13 +82716,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84192,13 +82830,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84312,13 +82944,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84432,13 +83058,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84552,13 +83172,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84672,13 +83286,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84861,13 +83469,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -84981,13 +83583,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -85101,13 +83697,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -85161,13 +83751,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -87491,7 +86075,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   <input
                     className="text-answer text-answer--single-line"
                     data-question-id={81}
-                    data-saved={false}
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -87528,7 +86111,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   <input
                     className="text-answer text-answer--single-line"
                     data-question-id={82}
-                    data-saved={false}
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -87694,7 +86276,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={83}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -87752,7 +86333,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={84}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -87799,7 +86379,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={85}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -87853,7 +86432,6 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                 <input
                   className="text-answer text-answer--single-line"
                   data-question-id={86}
-                  data-saved={false}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -88176,13 +86754,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -88244,13 +86816,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -88456,13 +87022,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
@@ -88537,13 +87097,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           />
           <div
             className="answer-toolbar__history e-column e-column--auto e-text-right"
-          >
-            <div
-              className="answer-toolbar__saved"
-            >
-               
-            </div>
-          </div>
+          />
         </div>
         
       
