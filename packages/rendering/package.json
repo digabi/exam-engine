@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "6.0.0",
+  "version": "6.0.1-global-save-indicator.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -8,8 +8,8 @@
     "public"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "^6.0.0",
-    "@digabi/exam-engine-mastering": "^6.0.0",
+    "@digabi/exam-engine-core": "^6.0.1-global-save-indicator.0",
+    "@digabi/exam-engine-mastering": "^6.0.1-global-save-indicator.0",
     "css-loader": "^3.2.1",
     "dexie": "^2.0.4",
     "file-loader": "^5.0.2",

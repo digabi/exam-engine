@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-mastering",
-  "version": "6.0.0",
+  "version": "6.0.1-global-save-indicator.0",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -15,7 +15,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@digabi/exam-engine-core": "^6.0.0",
+    "@digabi/exam-engine-core": "^6.0.1-global-save-indicator.0",
     "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
     "glob": "^7.1.6",

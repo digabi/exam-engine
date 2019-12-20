@@ -1,15 +1,15 @@
 {
   "name": "@digabi/exam-engine-cli",
-  "version": "6.0.0",
+  "version": "6.0.1-global-save-indicator.0",
   "main": "index.js",
   "license": "EUPL-1.1",
   "files": [
     "dist"
   ],
   "dependencies": {
-    "@digabi/exam-engine-exams": "^6.0.0",
-    "@digabi/exam-engine-mastering": "^6.0.0",
-    "@digabi/exam-engine-rendering": "^6.0.0",
+    "@digabi/exam-engine-exams": "^6.0.1-global-save-indicator.0",
+    "@digabi/exam-engine-mastering": "^6.0.1-global-save-indicator.0",
+    "@digabi/exam-engine-rendering": "^6.0.1-global-save-indicator.0",
     "lodash": "^4.17.15",
     "uuid": "^3.3.3",
     "yargs": "^15.0.2"
