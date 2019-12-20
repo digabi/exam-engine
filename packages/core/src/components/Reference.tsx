@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { findChildElement } from '../dom-utils'
+import { findChildElement, NBSP } from '../dom-utils'
 import { ExamContext } from './ExamContext'
 import RenderChildNodes from './RenderChildNodes'
 import { ExamComponentProps } from './types'
@@ -30,7 +30,8 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
 
   return (
     <span className="e-break-word">
-      {t('references.source')}{' '}
+      {t('references.source')}
+      {NBSP}
       {intersperse('. ', [
         renderWith('author', RenderChildNodes),
         renderWith('title', Italic),
