@@ -13,7 +13,6 @@ interface Props extends ExamComponentProps {
   answer?: TextAnswerT | RichTextAnswerT
   answerBlurred: typeof actions.answerBlurred
   answerFocused: typeof actions.answerFocused
-  isSaved: boolean
   maxImages: number
   saveAnswer: typeof actions.saveAnswer
   selectAnswerVersion: typeof actions.selectAnswerVersion
@@ -110,7 +109,6 @@ export class TextAnswer extends React.PureComponent<Props, State> {
       answer,
       className,
       element,
-      isSaved,
       maxImages,
       selectAnswerVersion,
       showAnswerHistory,
@@ -142,7 +140,6 @@ export class TextAnswer extends React.PureComponent<Props, State> {
               {...{
                 answer,
                 element,
-                isSaved,
                 selectAnswerVersion,
                 showAnswerHistory,
                 supportsAnswerHistory,
@@ -162,13 +159,11 @@ export class TextAnswer extends React.PureComponent<Props, State> {
               onBlur={this.onBlur}
               ref={this.ref}
               data-question-id={questionId}
-              data-saved={isSaved}
             />
             <AnswerToolbar
               {...{
                 answer,
                 element,
-                isSaved,
                 selectAnswerVersion,
                 showAnswerHistory,
                 supportsAnswerHistory
@@ -188,7 +183,6 @@ export class TextAnswer extends React.PureComponent<Props, State> {
             onBlur={this.onBlur}
             ref={this.ref}
             data-question-id={questionId}
-            data-saved={isSaved}
           />
         )
     }
@@ -203,14 +197,12 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
-  const isSaved = state.answers.savedQuestionIds.has(questionId)
   const supportsAnswerHistory = state.answers.supportsAnswerHistory
   const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
   const maxImages = getNumericAttribute(element, 'max-images')
 
   return {
     answer,
-    isSaved,
     showAnswerHistory,
     supportsAnswerHistory,
     type,
