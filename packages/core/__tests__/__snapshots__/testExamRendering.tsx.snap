@@ -236,11 +236,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -285,11 +281,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -334,11 +326,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -383,11 +371,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -432,11 +416,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -481,11 +461,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -530,11 +506,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -579,11 +551,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -1604,17 +1572,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Sunt Dolore
-          </span>
+          Sunt Dolore
           . 
-          <span
-            className="e-table-cell"
-          >
-            Deserunt sit nostrud aute reprehenderit
-          </span>
+          Deserunt sit nostrud aute reprehenderit
           . 
         </span>
       </figcaption>
@@ -1673,17 +1633,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Sunt Dolore
-          </span>
+          Sunt Dolore
           . 
-          <span
-            className="e-table-cell"
-          >
-            Deserunt sit nostrud aute reprehenderit
-          </span>
+          Deserunt sit nostrud aute reprehenderit
           . 
         </span>
       </figcaption>
@@ -1796,17 +1748,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Duis Minim
-          </span>
+          Duis Minim
           . 
-          <span
-            className="e-table-cell"
-          >
-            Laborum nulla
-          </span>
+          Laborum nulla
           . 
           <a
             href="https://aliquip.duis.velit/"
@@ -1824,11 +1768,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           . 
           Muokkaus:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -2022,17 +1962,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Duis Minim
-          </span>
+          Duis Minim
           . 
-          <span
-            className="e-table-cell"
-          >
-            Veniam qui eiusmod
-          </span>
+          Veniam qui eiusmod
           . 
           <a
             href="https://minim.dolor.in/dolore"
@@ -2133,15 +2065,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Deserunt Esse
-          </span>
+          Deserunt Esse
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Tempor reprehenderit
           </em>
           . 
@@ -2151,11 +2077,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
           . 
           Käännös:
            
-          <span
-            className="e-table-cell"
-          >
-            Proident Quis
-          </span>
+          Proident Quis
           . 
         </span>
       </figcaption>
@@ -2282,17 +2204,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Voluptate Voluptate, Fugiat Tempor ea Voluptate Qui (Dolor)
-          </span>
+          Voluptate Voluptate, Fugiat Tempor ea Voluptate Qui (Dolor)
           . 
-          <span
-            className="e-table-cell"
-          >
-            Nostrud-sivusto
-          </span>
+          Nostrud-sivusto
           . 
           <a
             href="https://lorem.duis.eu/ea/adipisicing"
@@ -2529,17 +2443,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Voluptate Voluptate, Fugiat Tempor ea Voluptate Qui (Dolor)
-          </span>
+          Voluptate Voluptate, Fugiat Tempor ea Voluptate Qui (Dolor)
           . 
-          <span
-            className="e-table-cell"
-          >
-            Lorem-sivusto
-          </span>
+          Lorem-sivusto
           . 
           <a
             href="https://proident,exercitation.sint/"
@@ -2706,15 +2612,9 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Deserunt Magna
-          </span>
+          Deserunt Magna
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Occaecat deserunt
           </em>
           . 
@@ -2722,17 +2622,11 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
            
           2012
           . 
-          <span
-            className="e-table-cell"
-          >
-            Ex duis reprehenderit irure reprehenderit
+          Ex duis reprehenderit irure reprehenderit
               
-            <em>
-              Mollit amet.
-            </em>
-            
-            
-          </span>
+          <em>
+            Mollit amet.
+          </em>
           . 
         </span>
       </figcaption>
@@ -4007,20 +3901,9 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Adipisicing Magna
-          </span>
+          Adipisicing Magna
           . 
-          <span
-            className="e-table-cell"
-          >
-            
-              Youtube-videopalvelu
-              
-            
-          </span>
+          Youtube-videopalvelu
           . 
           <a
             href="www.youtube.com"
@@ -4038,25 +3921,11 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           . 
           Käännös:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
           Muokkaus:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -4231,17 +4100,9 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Adipisicing excepteur
-          </span>
+          Adipisicing excepteur
           . 
-          <span
-            className="e-table-cell"
-          >
-            nostrud commodo ex
-          </span>
+          nostrud commodo ex
           . 
           <a
             href="fugiat.pariatur.illum"
@@ -4321,11 +4182,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Consequat dolor laboris anim do culpa consequat
-          </span>
+          Consequat dolor laboris anim do culpa consequat
           . 
           <a
             href="http://excepteur.eiusmod.sunt/adipisicing"
@@ -4481,20 +4338,11 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <em
-            className="e-table-cell"
-          >
-            
-              Qui tempor: Opettajat 1
-              
-            
+          <em>
+            Qui tempor: Opettajat 1
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            Qui fugiat
-          </span>
+          Qui fugiat
           . 
           <a
             href="www.youtube.com"
@@ -4512,11 +4360,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           . 
           Muokkaus:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -4567,19 +4411,10 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Dolore Mollit
-          </span>
+          Dolore Mollit
           . 
-          <em
-            className="e-table-cell"
-          >
-            
-              
-              Qui reprehenderit enim cillum adipisicing officia
-            
+          <em>
+            Qui reprehenderit enim cillum adipisicing officia
           </em>
           . 
           Julkaistu:
@@ -4588,14 +4423,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           . 
           Käännös:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              Cillum Adipisicing
-            
-          </span>
+          Cillum Adipisicing
           . 
         </span>
       </figcaption>
@@ -4716,15 +4544,9 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Adipiscing
-          </span>
+          Adipiscing
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Lorem
           </em>
           . 
@@ -4734,14 +4556,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           . 
           Käännös:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              Veniam Ipsum
-              
-            
-          </span>
+          Veniam Ipsum
           . 
         </span>
       </figcaption>
@@ -5049,11 +4864,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Laboris duis minim
-          </span>
+          Laboris duis minim
           . 
           <a
             href="dolor.officia.minim"
@@ -5198,11 +5009,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Qui ea non anim
-          </span>
+          Qui ea non anim
           . 
           <a
             href="ipsum.voluptate.do"
@@ -5357,11 +5164,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Consequat est dolore
-          </span>
+          Consequat est dolore
           . 
           <a
             href="https://onsectetur.consequat.consequat/"
@@ -5459,11 +5262,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Aliquip exercitation elit mollit laboris
-          </span>
+          Aliquip exercitation elit mollit laboris
           . 
           <a
             href="https://nim.voluptate.ea"
@@ -5588,11 +5387,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Esse nostrud velit cupidatat duis in pariatur
-          </span>
+          Esse nostrud velit cupidatat duis in pariatur
           . 
           <a
             href="https://ostrud.tempor.adipisicing/"
@@ -5693,11 +5488,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Cillum excepteur enim quis qui sint ipsum
-          </span>
+          Cillum excepteur enim quis qui sint ipsum
           . 
           <a
             href="https://ad.velit.aute/"
@@ -5840,26 +5631,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Consectetur Excepteur
-          </span>
+          Consectetur Excepteur
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Incididunt id culpa ad deserunt dolor pariatur
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            
-              Youtube-videopalvelu
-              
-            
-          </span>
+          Youtube-videopalvelu
           . 
           <a
             href="www.youtube.com/"
@@ -5877,25 +5655,11 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           . 
           Käännös:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
           Muokkaus:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -5960,26 +5724,13 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            Ex anim
-          </span>
+          Ex anim
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Pariatur incididunt anim pariatur ipsum incididunt cupidatat
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            
-              Youtube-videopalvelu
-              
-            
-          </span>
+          Youtube-videopalvelu
           . 
           <a
             href="www.youtube.com/"
@@ -5997,25 +5748,11 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
           . 
           Käännös:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
           Muokkaus:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -6144,20 +5881,9 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Adipisicing Magna
-          </span>
+          Adipisicing Magna
           . 
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              Videotjänsten Youtube
-            
-          </span>
+          Videotjänsten Youtube
           . 
           <a
             href="www.youtube.com"
@@ -6175,25 +5901,11 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           . 
           Översättning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
           Bearbetning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -6366,17 +6078,9 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Adipisicing excepteur
-          </span>
+          Adipisicing excepteur
           . 
-          <span
-            className="e-table-cell"
-          >
-            nostrud commodo ex
-          </span>
+          nostrud commodo ex
           . 
           <a
             href="fugiat.pariatur.illum"
@@ -6456,11 +6160,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Consequat dolor laboris anim do culpa consequat
-          </span>
+          Consequat dolor laboris anim do culpa consequat
           . 
           <a
             href="http://excepteur.eiusmod.sunt/adipisicing"
@@ -6616,20 +6316,11 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <em
-            className="e-table-cell"
-          >
-            
-              
-              Qui tempor: Lärarna 1
-            
+          <em>
+            Qui tempor: Lärarna 1
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            Qui fugiat
-          </span>
+          Qui fugiat
           . 
           <a
             href="www.youtube.com"
@@ -6647,11 +6338,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           . 
           Bearbetning:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -6703,19 +6390,10 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Dolore Mollit
-          </span>
+          Dolore Mollit
           . 
-          <em
-            className="e-table-cell"
-          >
-            
-              Qui reprehenderit enim cillum adipisicing officia
-              
-            
+          <em>
+            Qui reprehenderit enim cillum adipisicing officia
           </em>
           . 
           Publicerad:
@@ -6724,14 +6402,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           . 
           Översättning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              Commodo Dolore
-              
-            
-          </span>
+          Commodo Dolore
           . 
         </span>
       </figcaption>
@@ -6851,15 +6522,9 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Adipiscing
-          </span>
+          Adipiscing
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Lorem
           </em>
           . 
@@ -6869,14 +6534,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           . 
           Översättning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              Fugiat Elit
-            
-          </span>
+          Fugiat Elit
           . 
         </span>
       </figcaption>
@@ -7124,11 +6782,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Laboris duis minim
-          </span>
+          Laboris duis minim
           . 
           <a
             href="dolor.officia.minim"
@@ -7272,11 +6926,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Qui ea non anim
-          </span>
+          Qui ea non anim
           . 
           <a
             href="ipsum.voluptate.do"
@@ -7431,11 +7081,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Consequat est dolore
-          </span>
+          Consequat est dolore
           . 
           <a
             href="https://onsectetur.consequat.consequat/"
@@ -7533,11 +7179,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Aliquip exercitation elit mollit laboris
-          </span>
+          Aliquip exercitation elit mollit laboris
           . 
           <a
             href="https://nim.voluptate.ea"
@@ -7662,11 +7304,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Esse nostrud velit cupidatat duis in pariatur
-          </span>
+          Esse nostrud velit cupidatat duis in pariatur
           . 
           <a
             href="https://ostrud.tempor.adipisicing/"
@@ -7767,11 +7405,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Cillum excepteur enim quis qui sint ipsum
-          </span>
+          Cillum excepteur enim quis qui sint ipsum
           . 
           <a
             href="https://ad.velit.aute/"
@@ -7914,26 +7548,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Consectetur Excepteur
-          </span>
+          Consectetur Excepteur
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Incididunt id culpa ad deserunt dolor pariatur
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              Videotjänsten Youtube
-            
-          </span>
+          Videotjänsten Youtube
           . 
           <a
             href="www.youtube.com/"
@@ -7951,25 +7572,11 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           . 
           Översättning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
           Bearbetning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -8034,26 +7641,13 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            Ex anim
-          </span>
+          Ex anim
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Pariatur incididunt anim pariatur ipsum incididunt cupidatat
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              Videotjänsten Youtube
-            
-          </span>
+          Videotjänsten Youtube
           . 
           <a
             href="www.youtube.com/"
@@ -8071,25 +7665,11 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
           . 
           Översättning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
           Bearbetning:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -13358,11 +12938,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -13567,11 +13143,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            Matriculation examination board
-          </span>
+          Matriculation examination board
           . 
         </span>
       </figcaption>
@@ -13630,35 +13202,17 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            Dolor Tempor
-          </span>
+          Dolor Tempor
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            Culpa ex
-          </span>
+          Culpa ex
           . 
-          <span
-            className="e-table-cell"
-          >
-            MEB web service
-          </span>
+          MEB web service
           . 
-          <span
-            className="e-table-cell"
-          >
-            Internet service
-          </span>
+          Internet service
           . 
           <a
             href="https://www.ylioppilastutkinto.fi/en/matriculation-examination"
@@ -13676,25 +13230,13 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
           . 
           Translation:
            
-          <span
-            className="e-table-cell"
-          >
-            Travis Translator
-          </span>
+          Travis Translator
           . 
           Adaptation:
            
-          <span
-            className="e-table-cell"
-          >
-            Mary Modifier
-          </span>
+          Mary Modifier
           . 
-          <span
-            className="e-table-cell"
-          >
-            Free text field
-          </span>
+          Free text field
         </span>
       </figcaption>
       
@@ -13830,11 +13372,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            YTL
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -14039,11 +13577,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            Matriculation examination board
-          </span>
+          Matriculation examination board
           . 
         </span>
       </figcaption>
@@ -14102,35 +13636,17 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            Dolor Tempor
-          </span>
+          Dolor Tempor
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            Culpa ex
-          </span>
+          Culpa ex
           . 
-          <span
-            className="e-table-cell"
-          >
-            MEB web service
-          </span>
+          MEB web service
           . 
-          <span
-            className="e-table-cell"
-          >
-            Internet service
-          </span>
+          Internet service
           . 
           <a
             href="https://www.ylioppilastutkinto.fi/en/matriculation-examination"
@@ -14148,25 +13664,13 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 2`] = `
           . 
           Translation:
            
-          <span
-            className="e-table-cell"
-          >
-            Travis Translator
-          </span>
+          Travis Translator
           . 
           Adaptation:
            
-          <span
-            className="e-table-cell"
-          >
-            Mary Modifier
-          </span>
+          Mary Modifier
           . 
-          <span
-            className="e-table-cell"
-          >
-            Free text field
-          </span>
+          Free text field
         </span>
       </figcaption>
       
@@ -26823,35 +26327,17 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            Dolor Tempor
-          </span>
+          Dolor Tempor
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            Culpa ex
-          </span>
+          Culpa ex
           . 
-          <span
-            className="e-table-cell"
-          >
-            MEB web service
-          </span>
+          MEB web service
           . 
-          <span
-            className="e-table-cell"
-          >
-            Internet service
-          </span>
+          Internet service
           . 
           <a
             href="https://www.ylioppilastutkinto.fi/en/matriculation-examination"
@@ -26869,25 +26355,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           . 
           Translation:
            
-          <span
-            className="e-table-cell"
-          >
-            Travis Translator
-          </span>
+          Travis Translator
           . 
           Adaptation:
            
-          <span
-            className="e-table-cell"
-          >
-            Mary Modifier
-          </span>
+          Mary Modifier
           . 
-          <span
-            className="e-table-cell"
-          >
-            Free text field
-          </span>
+          Free text field
         </span>
       </li>
     </ol>
@@ -39508,35 +38982,17 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
         >
           Source:
            
-          <span
-            className="e-table-cell"
-          >
-            Dolor Tempor
-          </span>
+          Dolor Tempor
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Qui ullamco non ut proident sit incididunt adipisicing
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            Culpa ex
-          </span>
+          Culpa ex
           . 
-          <span
-            className="e-table-cell"
-          >
-            MEB web service
-          </span>
+          MEB web service
           . 
-          <span
-            className="e-table-cell"
-          >
-            Internet service
-          </span>
+          Internet service
           . 
           <a
             href="https://www.ylioppilastutkinto.fi/en/matriculation-examination"
@@ -39554,25 +39010,13 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           . 
           Translation:
            
-          <span
-            className="e-table-cell"
-          >
-            Travis Translator
-          </span>
+          Travis Translator
           . 
           Adaptation:
            
-          <span
-            className="e-table-cell"
-          >
-            Mary Modifier
-          </span>
+          Mary Modifier
           . 
-          <span
-            className="e-table-cell"
-          >
-            Free text field
-          </span>
+          Free text field
         </span>
       </li>
     </ol>
@@ -39727,14 +39171,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -39893,14 +39330,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -39988,14 +39418,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -40088,14 +39511,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              Tilastokeskus
-              
-            
-          </span>
+          Tilastokeskus
           . 
           <a
             href="https://www.tilastokeskus.fi/tup/suoluk/suoluk_vaesto.html"
@@ -40236,14 +39652,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -40402,14 +39811,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -40497,14 +39899,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -40597,14 +39992,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              Statistikcentralen
-            
-          </span>
+          Statistikcentralen
           . 
           <a
             href="https://www.tilastokeskus.fi/tup/suoluk/suoluk_vaesto.html"
@@ -48996,14 +48384,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -49015,14 +48396,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -49034,14 +48408,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -49053,14 +48420,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -49072,14 +48432,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -49091,14 +48444,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         >
           Lähde:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -57479,14 +56825,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -57498,14 +56837,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -57517,14 +56849,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -57536,14 +56861,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -57555,14 +56873,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -57574,14 +56885,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         >
           Källa:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -57717,35 +57021,17 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Jessica Krauß
-          </span>
+          Jessica Krauß
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Video: Das geheime Leben der Katzen
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            ARD
-          </span>
+          ARD
           . 
-          <span
-            className="e-table-cell"
-          >
-            1 LIVE
-          </span>
+          1 LIVE
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY-NC-ND 3.0 DE
-          </span>
+          CC BY-NC-ND 3.0 DE
           . 
           <a
             href="https://www.daserste.de/information/wissen-kultur/w-wie-wissen/videos/das-geheime-leben-der-katzen-100.html"
@@ -57763,14 +57049,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
           . 
           Bearbeitung:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -57912,14 +57191,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -57997,14 +57269,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -58060,14 +57325,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -58123,14 +57381,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -58189,14 +57440,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -58252,14 +57496,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -58315,14 +57552,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -58378,14 +57608,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </figcaption>
@@ -58552,35 +57775,17 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Jessica Krauß
-          </span>
+          Jessica Krauß
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Video: Das geheime Leben der Katzen
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            ARD
-          </span>
+          ARD
           . 
-          <span
-            className="e-table-cell"
-          >
-            1 LIVE
-          </span>
+          1 LIVE
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY-NC-ND 3.0 DE
-          </span>
+          CC BY-NC-ND 3.0 DE
           . 
           <a
             href="https://www.daserste.de/information/wissen-kultur/w-wie-wissen/videos/das-geheime-leben-der-katzen-100.html"
@@ -58598,14 +57803,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
           . 
           Bearbeitung:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -58747,14 +57945,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -58832,14 +58023,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -58895,14 +58079,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -58958,14 +58135,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -59024,14 +58194,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -59087,14 +58250,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -59150,14 +58306,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -59213,14 +58362,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </figcaption>
@@ -74006,14 +73148,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74025,14 +73160,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74044,14 +73172,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74063,14 +73184,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74082,14 +73196,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74101,14 +73208,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74120,14 +73220,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74139,14 +73232,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74158,14 +73244,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74177,14 +73256,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74196,14 +73268,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              YTL
-              
-            
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74215,23 +73280,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Gail
-          </span>
+          Gail
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             mashed potatoes for perogies
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/gail_thepinkpeppercorn/3897246925/in/photolist-6WopJv-5yjVpz-PENXiT-5JEdPY-rFFrJ-aHFZLz-7YJJqA-4d52hf-6oZsk-duL6Ki-8o8LCU-aKCcxP-5xKqPd-9vkpVN-Az8nZ9-5EQqpY-4rRnp7-QgVwuK-8YSuna-3xZZkf-4cs1yk-hJ4Le-dj1U1k-hPBtqA-377Akz-dSWKKJ-62AkJf-qdncvk-8NtJPi-8PLzDm-9Up5S1-euxhci-ax44rV-4Z2H4S-5F3ufS-ysNitT-4Bnv8u-diez93-b7AipK-7YFuan-KKSZew-4euxgf-2J7rt-sV8Gp-651PFr-82yw7n-mWVwe2-28oEyq7-6Uhx77-2hQqza5"
@@ -74253,23 +73308,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            jules
-          </span>
+          jules
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             potato rosti
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/stone-soup/8569922071/in/photolist-e4i6g6-nocssw-x5ori3-e4oJeY-e4i8Ri-4D8G9u-e24NHj-33fS7F-6HvgkU-75GeTy-7iUPmd-4FFwVi-dqunPE-3Nqnu-6wqyjV-s2WmAj-23cQif3-fkFoYC-8Pwmi-e9jasF-dLQZCD-7AhHSj-o2Khg-tT2w75-arPW7x-aCXiDQ-sTdS2-amq8dg-dqu8KL-FJfoSA-dXTn3T-dPXtqo-5vMFob-e2wy3b-EgP2Cp-bdhxx4-amsVE3-pHSbhj-RMRTUq-5jkEdn-9WE8Ar-bxjRLt-7AUApb-aCbrmQ-aFi22G-nCUiLM-rc6Zp7-bEMyN1-bEMxbE-9a5UJK"
@@ -74291,23 +73336,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            jeffhutchison
-          </span>
+          jeffhutchison
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Fried Potatoes
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/jeffhutchison/7575557160/in/photolist-cxqHdu-5gGUcp-i7ycoR-fdvQ1E-7P9Sva-5cD7qy-e6EAGd-f1zrqK-29Lk9eu-9DT3Rx-bFFxFc-aF16SU-4AgzqE-2hoEeuB-2eM2FKW-2hEZuHF-LePoHg-bPvV6V-7xZwuj-bdt2N-6jhMST-7AYj3o-4bDMwE-7ekHar-c7WprN-5LVy1u-ZfKz6t-sKqJD-5AAEqT-xLkH4-9V9Vd3-NJpBQU-5PyFxy-qgTYKb-EK36uE-5Pk5zp-FPkG74-8wcfZr-6AhMD6-NRuQhQ-5uP6uH-5uTrcy-5uTrH3-8mnCUL-8mnCUf-5zf8yy-5vbJw8-4vdBLr-2KzZFS-8BtsL4"
@@ -74329,14 +73364,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74348,23 +73376,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Steve Garfield
-          </span>
+          Steve Garfield
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Scrambled Eggs
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="http://www.lecker.de/assets/styles/563x422/public/lecker/kochen_2/gemuese_1/kochkurse_3/wiemachtmanruehrei/wie-macht-man-ruehrei.jpg?itok=jKVlV_IS"
@@ -74386,23 +73404,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Aaron Headly
-          </span>
+          Aaron Headly
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Poached egg
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/mugland/32246233434/in/photolist-R8unKY-oSTr5y-dNBKEZ-Qx3Lvn-972jpe-9K3xaD-9yN1JE-aoPvR7-HS6jsx-5LQxtf-bAichD-b78K3F-25Feweo-4ZhiwT-JHSps8-7sriMy-4Zmwed-4ZhixX-6Gs1y8-a7Mra1-8oSD7D-nixb3o-4XhKTa-EWChYm-4yC8Qn-7YoNPX-8pMyDi-4Lr4m7-9oWr8-6wJ9nt-2htUekX-5JFQhL-24vrvUk-8pQGrh-rBSFW-4Xn2Uh-6Gs1CR-8pMwVn-9ybL7s-FSMmiu-6Gs228-8pQHj1-7D8pEr-7hxmsP-6Gs1Vg-6Gw5EW-7Aqi85-6A8Lyw-JdXn3-ZLVPMm"
@@ -74424,23 +73432,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Marco Verch
-          </span>
+          Marco Verch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Die Ebene lag über dem Spiegelei in der Pfanne
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc"
@@ -74462,14 +73460,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74481,23 +73472,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Neil
-          </span>
+          Neil
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Coffee Maker
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn"
@@ -74519,23 +73500,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Marco Verch
-          </span>
+          Marco Verch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Man using the French Press to make coffee
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/160866001@N07/48238399487/in/photolist-2guEpyT-8cBghX-e8QbbX-8cEnjE-7hsAUc-8xTNDH-6xrAUu-6ZW9kv-Mki5xT-FeEcBU-j6EvvE-9n8T5g-9jHAoH-nELVaH-dZFrft-dT4sWX-dT4sS2-7r5S7k-dT4sHV-dYaVyr-AtpJTR-dTa4ZQ-dTa4XJ-dT4sNF-dTa51y-dTa4Ws-2e6va3i-2erhpwU-2gQvEo9-ahEmTu-4iUc7f-no917U-2gQvErf-29EGD9W-9wXCsy-2g6MpCy-9zyBKB-259W8Ku-2h7XMLj-QwqwUF-2gD4awj-2ghHEqy-2aeDYrm-2h2g8oX-2h1XoJm-2g54uj3-4z9Nv5-WfcVG3-24J1X5c-2ghHpU2"
@@ -74557,23 +73528,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Troy Tolley
-          </span>
+          Troy Tolley
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Coffee By The Cup @ Madeline's
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/sugarhiccuphiccup/5195644079/in/photolist-8V82Yk-2enTK7Q-dPWyrB-mBHhQV-g58T3E-bywBZD-2ayo36A-kWrNtP-ff7Wzb-74dE78-rTCCg8-dQ419A-byD6Un-cpb9FA-aon7vk-2hQ3dte-2hPRrPL-2hPqeCM-24wEMGt-ffdsF3-mWkWcj-feSE86-dVYm3T-yikKTd-4kxoDa-bofSwk-dHp8xw-7TtmfP-bAESEd-fi74KB-ToqWsy-dGuc1X-fC1x4b-dCviKm-fKY4NL-nVFS2o-nfa8r6-g58T4b-gvpYuj-nd7qoQ-bAEShN-ejozSL-jEEdqj-pFi3pK-VWgU1N-bzZ9qP-7UM47-fmcDM6-DsArJC-dTm2as"
@@ -74595,14 +73556,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                YTL
-                
-              
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74614,14 +73568,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-            YTL
-            
-          
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74633,23 +73580,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Wilhelm Busch
-          </span>
+          Wilhelm Busch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Max und Moritz
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            public domain
-          </span>
+          public domain
           . 
           <a
             href="https://de.wikisource.org/wiki/Max_und_Moritz"
@@ -74675,23 +73612,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Wilhelm Busch
-          </span>
+          Wilhelm Busch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Max und Moritz
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            public domain
-          </span>
+          public domain
           . 
           <a
             href="https://de.wikisource.org/wiki/Max_und_Moritz"
@@ -74717,14 +73644,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-            YTL
-            
-          
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74736,23 +73656,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Elise Forest
-          </span>
+          Elise Forest
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             math final
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY-NC-ND 2.0
-          </span>
+          CC BY-NC-ND 2.0
           . 
           <a
             href="https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a"
@@ -74774,23 +73684,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Charles Edward Miller
-          </span>
+          Charles Edward Miller
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY-SA 2.0
-          </span>
+          CC BY-SA 2.0
           . 
           <a
             href="https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda"
@@ -74812,14 +73712,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-            YTL
-            
-          
-          </span>
+          YTL
           . 
         </span>
       </li>
@@ -74831,23 +73724,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Riik@mctr
-          </span>
+          Riik@mctr
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Manchester Airport (EGCC)
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/riikkeary/48887383951/in/photolist-2hu1C3c-PKLHCd-EeEdwT-2gkPu6W-P3e4QT-JgAdC5-NbRGcz-NcTTNk-LVtizH-8yZcMv-Drad5A-2ahQHWu-LVthK6-6VEGAg-6VJLew-29bqzwJ-2aztA8B-HV25ti-22GPdfj-2fRNRnC-cQ9YYq-86sim-Wfcorb-2gyha9j-6g1Wku-2htZ3SD-277TxNV-NbzgNr-EeEd9t-XfaGG5-5wqZ6g-2hPjtVN-2gCAYBa-FvMntq-22yohM3-Y5Ag4G-2h8kmhc-2gyha2f-2hHXtzN-2af6nPJ-DuY1pD-2hJTqGH-JaRwDj-QAUqAK-PAfBfy-gxJoJ1-NheHgK-o3qrds-HqnLf2-2aztAdg"
@@ -74869,23 +73752,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Jonathan Pearson
-          </span>
+          Jonathan Pearson
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             boy racers
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/jpgpearson/19589151028/in/photolist-vR2w8f-8K8cyR-5JqYZp-5JvfgY-avXAB-p9FDL1-hrNHmo-2gZf9-9jwK-5JqYKM-5q6K2N-edv3o-5JveZ5-kiCvw-aGhST-5JqYAn-Fkc7g-dF6gAv-5JveXm-5JqYYH-2huzoFM-5JveH1-6kXvwg-5mRiER-tXN4S9-avbFkR-2ZkL3-jPWTS-ciGDdb-4cwvdo-J887D-4DTo2-aveo1U-fve2FU-5e9mk9-4Tomw-J88iR-4cwo67-9BnCgP-bPnii8-otV72-aveoSU-J88Yi-dzcPPT-Qq94TL-avbHWa-6m2EuN-4mPejB-5JveRh-f64UA8"
@@ -74907,23 +73780,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Conal Gallagher
-          </span>
+          Conal Gallagher
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Bicycle
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/conalg/13929485086/in/photolist-ndUfBY-5Nihze-egRLhZ-dqiRkT-njvDDT-4oGgE-dqiSxr-dqiSkt-4XEtWw-bmb8K-DRgS2z-ewdvhp-24E1jnA-7eKYFk-eUzcBm-ccNu1C-qWH3YT-dqiZfN-oBuymS-dqiRZa-APopNz-h3KDEM-axiQ2z-g8Bktb-4rnK9J-NFcq-rxHBQ-6Mw4d5-c3RrMY-dqiRDB-aXZ3Qk-rtCqGn-7RTBd1-azuPeP-dqj3AF-53hN4q-7MvQKH-iCGZH-vKvFz-e7zHs-81xh6Y-5t4bXx-s54FqX-nqoeWh-9mdaE-AL6QNw-6C8kVT-5RpTZc-aDaCHN-6Cctny"
@@ -74945,23 +73808,13 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Wonder Woman
-          </span>
+          Wonder Woman
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Alexandra
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/zamerzla/28623180177/in/photolist-SsppBA-4KrF7c-Q8AVgo-vwSEYi-2cXMWck-E1XfwB-JQiQXv-AGeL5V-h4Cf5i-SKAjUC-U7pTTw-RJSnqw-28UuR81-HNqoJG-2bN4CHs-XQAYND-2e7GFPu-VfFJcf-2bedGoa-2ckJhGu-24sAaK3-2aTLnGw-2dMyokb-PtbzSU-FYKk91-PtaNkm-BaTHKd-FSRkfF-ZAPzsP-E7kuSh-UtV741-21r8xzM-UC83Hv-NjSv39-KBkhfv-2eCtwHr-PpCzzL-2cuyVWz-5R5Z1b-843VCn-2dZCoHX-SSuPSA-Hp9GxQ-Go2Ah1-xKh4cU-29zGKha-23nmc6W-MorGx6-GVaNjr-29QybwX"
@@ -89726,14 +88579,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89745,14 +88591,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89764,14 +88603,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89783,14 +88615,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89802,14 +88627,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89821,14 +88639,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89840,14 +88651,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89859,14 +88663,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89878,14 +88675,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89897,14 +88687,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89916,14 +88699,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-              
-              SEN
-            
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -89935,23 +88711,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Gail
-          </span>
+          Gail
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             mashed potatoes for perogies
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/gail_thepinkpeppercorn/3897246925/in/photolist-6WopJv-5yjVpz-PENXiT-5JEdPY-rFFrJ-aHFZLz-7YJJqA-4d52hf-6oZsk-duL6Ki-8o8LCU-aKCcxP-5xKqPd-9vkpVN-Az8nZ9-5EQqpY-4rRnp7-QgVwuK-8YSuna-3xZZkf-4cs1yk-hJ4Le-dj1U1k-hPBtqA-377Akz-dSWKKJ-62AkJf-qdncvk-8NtJPi-8PLzDm-9Up5S1-euxhci-ax44rV-4Z2H4S-5F3ufS-ysNitT-4Bnv8u-diez93-b7AipK-7YFuan-KKSZew-4euxgf-2J7rt-sV8Gp-651PFr-82yw7n-mWVwe2-28oEyq7-6Uhx77-2hQqza5"
@@ -89973,23 +88739,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            jules
-          </span>
+          jules
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             potato rosti
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/stone-soup/8569922071/in/photolist-e4i6g6-nocssw-x5ori3-e4oJeY-e4i8Ri-4D8G9u-e24NHj-33fS7F-6HvgkU-75GeTy-7iUPmd-4FFwVi-dqunPE-3Nqnu-6wqyjV-s2WmAj-23cQif3-fkFoYC-8Pwmi-e9jasF-dLQZCD-7AhHSj-o2Khg-tT2w75-arPW7x-aCXiDQ-sTdS2-amq8dg-dqu8KL-FJfoSA-dXTn3T-dPXtqo-5vMFob-e2wy3b-EgP2Cp-bdhxx4-amsVE3-pHSbhj-RMRTUq-5jkEdn-9WE8Ar-bxjRLt-7AUApb-aCbrmQ-aFi22G-nCUiLM-rc6Zp7-bEMyN1-bEMxbE-9a5UJK"
@@ -90011,23 +88767,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            jeffhutchison
-          </span>
+          jeffhutchison
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Fried Potatoes
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/jeffhutchison/7575557160/in/photolist-cxqHdu-5gGUcp-i7ycoR-fdvQ1E-7P9Sva-5cD7qy-e6EAGd-f1zrqK-29Lk9eu-9DT3Rx-bFFxFc-aF16SU-4AgzqE-2hoEeuB-2eM2FKW-2hEZuHF-LePoHg-bPvV6V-7xZwuj-bdt2N-6jhMST-7AYj3o-4bDMwE-7ekHar-c7WprN-5LVy1u-ZfKz6t-sKqJD-5AAEqT-xLkH4-9V9Vd3-NJpBQU-5PyFxy-qgTYKb-EK36uE-5Pk5zp-FPkG74-8wcfZr-6AhMD6-NRuQhQ-5uP6uH-5uTrcy-5uTrH3-8mnCUL-8mnCUf-5zf8yy-5vbJw8-4vdBLr-2KzZFS-8BtsL4"
@@ -90049,14 +88795,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -90068,23 +88807,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Steve Garfield
-          </span>
+          Steve Garfield
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Scrambled Eggs
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="http://www.lecker.de/assets/styles/563x422/public/lecker/kochen_2/gemuese_1/kochkurse_3/wiemachtmanruehrei/wie-macht-man-ruehrei.jpg?itok=jKVlV_IS"
@@ -90106,23 +88835,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Aaron Headly
-          </span>
+          Aaron Headly
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Poached egg
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/mugland/32246233434/in/photolist-R8unKY-oSTr5y-dNBKEZ-Qx3Lvn-972jpe-9K3xaD-9yN1JE-aoPvR7-HS6jsx-5LQxtf-bAichD-b78K3F-25Feweo-4ZhiwT-JHSps8-7sriMy-4Zmwed-4ZhixX-6Gs1y8-a7Mra1-8oSD7D-nixb3o-4XhKTa-EWChYm-4yC8Qn-7YoNPX-8pMyDi-4Lr4m7-9oWr8-6wJ9nt-2htUekX-5JFQhL-24vrvUk-8pQGrh-rBSFW-4Xn2Uh-6Gs1CR-8pMwVn-9ybL7s-FSMmiu-6Gs228-8pQHj1-7D8pEr-7hxmsP-6Gs1Vg-6Gw5EW-7Aqi85-6A8Lyw-JdXn3-ZLVPMm"
@@ -90144,23 +88863,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Marco Verch
-          </span>
+          Marco Verch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Die Ebene lag über dem Spiegelei in der Pfanne
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc"
@@ -90182,14 +88891,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -90201,23 +88903,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Neil
-          </span>
+          Neil
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Coffee Maker
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn"
@@ -90239,23 +88931,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Marco Verch
-          </span>
+          Marco Verch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Man using the French Press to make coffee
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/160866001@N07/48238399487/in/photolist-2guEpyT-8cBghX-e8QbbX-8cEnjE-7hsAUc-8xTNDH-6xrAUu-6ZW9kv-Mki5xT-FeEcBU-j6EvvE-9n8T5g-9jHAoH-nELVaH-dZFrft-dT4sWX-dT4sS2-7r5S7k-dT4sHV-dYaVyr-AtpJTR-dTa4ZQ-dTa4XJ-dT4sNF-dTa51y-dTa4Ws-2e6va3i-2erhpwU-2gQvEo9-ahEmTu-4iUc7f-no917U-2gQvErf-29EGD9W-9wXCsy-2g6MpCy-9zyBKB-259W8Ku-2h7XMLj-QwqwUF-2gD4awj-2ghHEqy-2aeDYrm-2h2g8oX-2h1XoJm-2g54uj3-4z9Nv5-WfcVG3-24J1X5c-2ghHpU2"
@@ -90277,23 +88959,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Troy Tolley
-          </span>
+          Troy Tolley
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Coffee By The Cup @ Madeline's
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/sugarhiccuphiccup/5195644079/in/photolist-8V82Yk-2enTK7Q-dPWyrB-mBHhQV-g58T3E-bywBZD-2ayo36A-kWrNtP-ff7Wzb-74dE78-rTCCg8-dQ419A-byD6Un-cpb9FA-aon7vk-2hQ3dte-2hPRrPL-2hPqeCM-24wEMGt-ffdsF3-mWkWcj-feSE86-dVYm3T-yikKTd-4kxoDa-bofSwk-dHp8xw-7TtmfP-bAESEd-fi74KB-ToqWsy-dGuc1X-fC1x4b-dCviKm-fKY4NL-nVFS2o-nfa8r6-g58T4b-gvpYuj-nd7qoQ-bAEShN-ejozSL-jEEdqj-pFi3pK-VWgU1N-bzZ9qP-7UM47-fmcDM6-DsArJC-dTm2as"
@@ -90315,14 +88987,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-                
-                SEN
-              
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -90334,14 +88999,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-            
-            SEN
-          
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -90353,23 +89011,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Wilhelm Busch
-          </span>
+          Wilhelm Busch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Max und Moritz
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            public domain
-          </span>
+          public domain
           . 
           <a
             href="https://de.wikisource.org/wiki/Max_und_Moritz"
@@ -90395,23 +89043,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Wilhelm Busch
-          </span>
+          Wilhelm Busch
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Max und Moritz
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            public domain
-          </span>
+          public domain
           . 
           <a
             href="https://de.wikisource.org/wiki/Max_und_Moritz"
@@ -90437,14 +89075,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-            
-            SEN
-          
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -90456,23 +89087,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Elise Forest
-          </span>
+          Elise Forest
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             math final
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY-NC-ND 2.0
-          </span>
+          CC BY-NC-ND 2.0
           . 
           <a
             href="https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a"
@@ -90494,23 +89115,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Charles Edward Miller
-          </span>
+          Charles Edward Miller
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY-SA 2.0
-          </span>
+          CC BY-SA 2.0
           . 
           <a
             href="https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda"
@@ -90532,14 +89143,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            
-            
-            SEN
-          
-          </span>
+          SEN
           . 
         </span>
       </li>
@@ -90551,23 +89155,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Riik@mctr
-          </span>
+          Riik@mctr
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Manchester Airport (EGCC)
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/riikkeary/48887383951/in/photolist-2hu1C3c-PKLHCd-EeEdwT-2gkPu6W-P3e4QT-JgAdC5-NbRGcz-NcTTNk-LVtizH-8yZcMv-Drad5A-2ahQHWu-LVthK6-6VEGAg-6VJLew-29bqzwJ-2aztA8B-HV25ti-22GPdfj-2fRNRnC-cQ9YYq-86sim-Wfcorb-2gyha9j-6g1Wku-2htZ3SD-277TxNV-NbzgNr-EeEd9t-XfaGG5-5wqZ6g-2hPjtVN-2gCAYBa-FvMntq-22yohM3-Y5Ag4G-2h8kmhc-2gyha2f-2hHXtzN-2af6nPJ-DuY1pD-2hJTqGH-JaRwDj-QAUqAK-PAfBfy-gxJoJ1-NheHgK-o3qrds-HqnLf2-2aztAdg"
@@ -90589,23 +89183,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Jonathan Pearson
-          </span>
+          Jonathan Pearson
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             boy racers
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/jpgpearson/19589151028/in/photolist-vR2w8f-8K8cyR-5JqYZp-5JvfgY-avXAB-p9FDL1-hrNHmo-2gZf9-9jwK-5JqYKM-5q6K2N-edv3o-5JveZ5-kiCvw-aGhST-5JqYAn-Fkc7g-dF6gAv-5JveXm-5JqYYH-2huzoFM-5JveH1-6kXvwg-5mRiER-tXN4S9-avbFkR-2ZkL3-jPWTS-ciGDdb-4cwvdo-J887D-4DTo2-aveo1U-fve2FU-5e9mk9-4Tomw-J88iR-4cwo67-9BnCgP-bPnii8-otV72-aveoSU-J88Yi-dzcPPT-Qq94TL-avbHWa-6m2EuN-4mPejB-5JveRh-f64UA8"
@@ -90627,23 +89211,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Conal Gallagher
-          </span>
+          Conal Gallagher
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Bicycle
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/conalg/13929485086/in/photolist-ndUfBY-5Nihze-egRLhZ-dqiRkT-njvDDT-4oGgE-dqiSxr-dqiSkt-4XEtWw-bmb8K-DRgS2z-ewdvhp-24E1jnA-7eKYFk-eUzcBm-ccNu1C-qWH3YT-dqiZfN-oBuymS-dqiRZa-APopNz-h3KDEM-axiQ2z-g8Bktb-4rnK9J-NFcq-rxHBQ-6Mw4d5-c3RrMY-dqiRDB-aXZ3Qk-rtCqGn-7RTBd1-azuPeP-dqj3AF-53hN4q-7MvQKH-iCGZH-vKvFz-e7zHs-81xh6Y-5t4bXx-s54FqX-nqoeWh-9mdaE-AL6QNw-6C8kVT-5RpTZc-aDaCHN-6Cctny"
@@ -90665,23 +89239,13 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
         >
           Quelle:
            
-          <span
-            className="e-table-cell"
-          >
-            Wonder Woman
-          </span>
+          Wonder Woman
           . 
-          <em
-            className="e-table-cell"
-          >
+          <em>
             Alexandra
           </em>
           . 
-          <span
-            className="e-table-cell"
-          >
-            CC BY 2.0
-          </span>
+          CC BY 2.0
           . 
           <a
             href="https://www.flickr.com/photos/zamerzla/28623180177/in/photolist-SsppBA-4KrF7c-Q8AVgo-vwSEYi-2cXMWck-E1XfwB-JQiQXv-AGeL5V-h4Cf5i-SKAjUC-U7pTTw-RJSnqw-28UuR81-HNqoJG-2bN4CHs-XQAYND-2e7GFPu-VfFJcf-2bedGoa-2ckJhGu-24sAaK3-2aTLnGw-2dMyokb-PtbzSU-FYKk91-PtaNkm-BaTHKd-FSRkfF-ZAPzsP-E7kuSh-UtV741-21r8xzM-UC83Hv-NjSv39-KBkhfv-2eCtwHr-PpCzzL-2cuyVWz-5R5Z1b-843VCn-2dZCoHX-SSuPSA-Hp9GxQ-Go2Ah1-xKh4cU-29zGKha-23nmc6W-MorGx6-GVaNjr-29QybwX"

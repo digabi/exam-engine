@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { findChildElement } from '../dom-utils'
 import { ExamContext } from './ExamContext'
+import RenderChildNodes from './RenderChildNodes'
 import { ExamComponentProps } from './types'
 
 function Reference({ element, renderChildNodes }: ExamComponentProps) {
@@ -31,28 +32,24 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
     <span className="e-break-word">
       {t('references.source')}{' '}
       {intersperse('. ', [
-        renderWith('author', Span),
+        renderWith('author', RenderChildNodes),
         renderWith('title', Italic),
-        renderWith('publisher', Span),
-        renderWith('publication', Span),
-        renderWith('howpublished', Span),
+        renderWith('publisher', RenderChildNodes),
+        renderWith('publication', RenderChildNodes),
+        renderWith('howpublished', RenderChildNodes),
         renderWith('url', Link),
         renderWithPrefix('publication-date', 'references.date', AsDate),
         renderWithPrefix('reference-date', 'references.reference-date', AsDate),
-        renderWithPrefix('translator', 'references.translator', Span),
-        renderWithPrefix('modified-by', 'references.modified-by', Span),
-        renderWith('note', Span)
+        renderWithPrefix('translator', 'references.translator', RenderChildNodes),
+        renderWithPrefix('modified-by', 'references.modified-by', RenderChildNodes),
+        renderWith('note', RenderChildNodes)
       ])}
     </span>
   )
 }
 
-function Span({ element, renderChildNodes }: ExamComponentProps) {
-  return <span className="e-table-cell">{renderChildNodes(element)}</span>
-}
-
 function Italic({ element, renderChildNodes }: ExamComponentProps) {
-  return <em className="e-table-cell">{renderChildNodes(element)}</em>
+  return <em>{renderChildNodes(element)}</em>
 }
 
 function Link({ element, renderChildNodes }: ExamComponentProps) {
@@ -69,11 +66,6 @@ function AsDate({ element }: ExamComponentProps) {
     return <>{dateTimeFormatter.format(date)}</>
   }
 }
-
-// function surroundWith(start: string, end: string, contents: React.ReactNode[]): React.ReactNode[] {
-//   const filtered = contents.filter(Boolean)
-//   return filtered.length > 0 ? [start, ...filtered, end] : []
-// }
 
 function intersperse(separator: string, contents: React.ReactNode[]): React.ReactNode[] {
   return contents.filter(Boolean).reduce<React.ReactNode[]>((acc, curr, i) => {

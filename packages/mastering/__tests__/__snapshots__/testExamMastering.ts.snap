@@ -734,8 +734,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
             <e:title>Occaecat deserunt</e:title>
             <e:publication-date>2012</e:publication-date>
             <e:note>Ex duis reprehenderit irure reprehenderit
-              <em>Mollit amet.</em>
-            </e:note>
+              <em>Mollit amet.</em></e:note>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -1315,21 +1314,12 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
 
           <e:reference>
             <e:author>Adipisicing Magna</e:author>
-            <e:publication>
-              Youtube-videopalvelu
-              
-            </e:publication>
+            <e:publication>Youtube-videopalvelu</e:publication>
             <e:url>www.youtube.com</e:url>
             <e:publication-date>2014-06-22</e:publication-date>
             <e:reference-date>2017-05-09</e:reference-date>
-            <e:modified-by>
-              YTL
-              
-            </e:modified-by>
-            <e:translator>
-              YTL
-              
-            </e:translator>
+            <e:modified-by>YTL</e:modified-by>
+            <e:translator>YTL</e:translator>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -1447,10 +1437,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
           
 
           <e:reference>
-            <e:title>
-              Qui tempor: Opettajat 1
-              
-            </e:title>
+            <e:title>Qui tempor: Opettajat 1</e:title>
             <e:publication>Qui fugiat</e:publication>
             <e:url>www.youtube.com</e:url>
             <e:publication-date>2015-06-09</e:publication-date>
@@ -1479,15 +1466,9 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
 
           <e:reference>
             <e:author>Dolore Mollit</e:author>
-            <e:title>
-              
-              Qui reprehenderit enim cillum adipisicing officia
-            </e:title>
+            <e:title>Qui reprehenderit enim cillum adipisicing officia</e:title>
             <e:publication-date>1975</e:publication-date>
-            <e:translator>
-              
-              Cillum Adipisicing
-            </e:translator>
+            <e:translator>Cillum Adipisicing</e:translator>
             <e:translation-date lang="fi-FI">1980</e:translation-date>
             
           </e:reference>
@@ -1619,10 +1600,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:author>Adipiscing</e:author>
             <e:title>Lorem</e:title>
             <e:publication-date>1921</e:publication-date>
-            <e:translator>
-              Veniam Ipsum
-              
-            </e:translator>
+            <e:translator>Veniam Ipsum</e:translator>
             <e:translation-date lang="fi-FI">1970</e:translation-date>
             
           </e:reference>
@@ -2094,21 +2072,12 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
           <e:reference>
             <e:author>Consectetur Excepteur</e:author>
             <e:title>Incididunt id culpa ad deserunt dolor pariatur</e:title>
-            <e:publication>
-              Youtube-videopalvelu
-              
-            </e:publication>
+            <e:publication>Youtube-videopalvelu</e:publication>
             <e:url>www.youtube.com/</e:url>
             <e:publication-date>2013-07-12</e:publication-date>
             <e:reference-date>2017-05-09</e:reference-date>
-            <e:modified-by>
-              YTL
-              
-            </e:modified-by>
-            <e:translator>
-              YTL
-              
-            </e:translator>
+            <e:modified-by>YTL</e:modified-by>
+            <e:translator>YTL</e:translator>
           </e:reference>
         </e:attachment>
         <e:attachment name="9B" display-number="9. B">
@@ -2123,21 +2092,12 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
           <e:reference>
             <e:author>Ex anim</e:author>
             <e:title>Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:title>
-            <e:publication>
-              Youtube-videopalvelu
-              
-            </e:publication>
+            <e:publication>Youtube-videopalvelu</e:publication>
             <e:url>www.youtube.com/</e:url>
             <e:publication-date>2010-09-09</e:publication-date>
             <e:reference-date>2017-05-09</e:reference-date>
-            <e:modified-by>
-              YTL
-              
-            </e:modified-by>
-            <e:translator>
-              YTL
-              
-            </e:translator>
+            <e:modified-by>YTL</e:modified-by>
+            <e:translator>YTL</e:translator>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -2284,21 +2244,12 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
 
           <e:reference>
             <e:author>Adipisicing Magna</e:author>
-            <e:publication>
-              
-              Videotjänsten Youtube
-            </e:publication>
+            <e:publication>Videotjänsten Youtube</e:publication>
             <e:url>www.youtube.com</e:url>
             <e:publication-date>2014-06-22</e:publication-date>
             <e:reference-date>2017-05-09</e:reference-date>
-            <e:modified-by>
-              
-              SEN
-            </e:modified-by>
-            <e:translator>
-              
-              SEN
-            </e:translator>
+            <e:modified-by>SEN</e:modified-by>
+            <e:translator>SEN</e:translator>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -2418,10 +2369,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
           <e:video src="T5_SV.webm" lang="sv-FI" width="999" height="999"/>
 
           <e:reference>
-            <e:title>
-              
-              Qui tempor: Lärarna 1
-            </e:title>
+            <e:title>Qui tempor: Lärarna 1</e:title>
             <e:publication>Qui fugiat</e:publication>
             <e:url>www.youtube.com</e:url>
             <e:publication-date>2015-06-09</e:publication-date>
@@ -2451,15 +2399,9 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
 
           <e:reference>
             <e:author>Dolore Mollit</e:author>
-            <e:title>
-              Qui reprehenderit enim cillum adipisicing officia
-              
-            </e:title>
+            <e:title>Qui reprehenderit enim cillum adipisicing officia</e:title>
             <e:publication-date>1975</e:publication-date>
-            <e:translator>
-              Commodo Dolore
-              
-            </e:translator>
+            <e:translator>Commodo Dolore</e:translator>
             
             <e:translation-date lang="sv-FI">1998</e:translation-date>
           </e:reference>
@@ -2588,10 +2530,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:author>Adipiscing</e:author>
             <e:title>Lorem</e:title>
             <e:publication-date>1921</e:publication-date>
-            <e:translator>
-              
-              Fugiat Elit
-            </e:translator>
+            <e:translator>Fugiat Elit</e:translator>
             
             <e:translation-date lang="sv-FI">1962</e:translation-date>
           </e:reference>
@@ -3029,21 +2968,12 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
           <e:reference>
             <e:author>Consectetur Excepteur</e:author>
             <e:title>Incididunt id culpa ad deserunt dolor pariatur</e:title>
-            <e:publication>
-              
-              Videotjänsten Youtube
-            </e:publication>
+            <e:publication>Videotjänsten Youtube</e:publication>
             <e:url>www.youtube.com/</e:url>
             <e:publication-date>2013-07-12</e:publication-date>
             <e:reference-date>2017-05-09</e:reference-date>
-            <e:modified-by>
-              
-              SEN
-            </e:modified-by>
-            <e:translator>
-              
-              SEN
-            </e:translator>
+            <e:modified-by>SEN</e:modified-by>
+            <e:translator>SEN</e:translator>
           </e:reference>
         </e:attachment>
         <e:attachment name="9B" display-number="9. B">
@@ -3058,21 +2988,12 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
           <e:reference>
             <e:author>Ex anim</e:author>
             <e:title>Pariatur incididunt anim pariatur ipsum incididunt cupidatat</e:title>
-            <e:publication>
-              
-              Videotjänsten Youtube
-            </e:publication>
+            <e:publication>Videotjänsten Youtube</e:publication>
             <e:url>www.youtube.com/</e:url>
             <e:publication-date>2010-09-09</e:publication-date>
             <e:reference-date>2017-05-09</e:reference-date>
-            <e:modified-by>
-              
-              SEN
-            </e:modified-by>
-            <e:translator>
-              
-              SEN
-            </e:translator>
+            <e:modified-by>SEN</e:modified-by>
+            <e:translator>SEN</e:translator>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -11571,10 +11492,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           <e:attachment-title>Kuva 1</e:attachment-title>
           <e:image src="2A.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
         
@@ -11605,10 +11523,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           <e:attachment-title>Kuva 2</e:attachment-title>
           <e:image src="2B.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
         
@@ -11637,10 +11552,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           <e:attachment-title>Kuva 3</e:attachment-title>
           <e:image src="2C.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.5" question-id="11" max-score="1">
@@ -11668,10 +11580,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           <e:attachment-title>Kuva 4</e:attachment-title>
           <e:image src="2D.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.7" question-id="13" max-score="1">
@@ -11699,10 +11608,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           <e:attachment-title>Kuva 5</e:attachment-title>
           <e:image src="2E.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.9" question-id="15" max-score="1">
@@ -11730,10 +11636,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           <e:attachment-title>Kuva 6</e:attachment-title>
           <e:image src="2F.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.11" question-id="17" max-score="1">
@@ -11766,10 +11669,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           </e:attachment-title>
           <e:image src="3A.jpg" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -11907,10 +11807,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           
           
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -11967,10 +11864,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
             </e:attachment-title>
             <e:image src="9A.png" width="999" height="999"/>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:external-material>
@@ -12130,10 +12024,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
           
           
           <e:reference>
-            <e:publisher>
-              Tilastokeskus
-              
-            </e:publisher>
+            <e:publisher>Tilastokeskus</e:publisher>
             <e:url>https://www.tilastokeskus.fi/tup/suoluk/suoluk_vaesto.html</e:url>
             <e:reference-date>2018-05-25</e:reference-date>
           </e:reference>
@@ -12381,10 +12272,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           <e:attachment-title>Kuva 1</e:attachment-title>
           <e:image src="2A.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
         
@@ -12415,10 +12303,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           <e:attachment-title>Kuva 2</e:attachment-title>
           <e:image src="2B.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
         
@@ -12447,10 +12332,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           <e:attachment-title>Kuva 3</e:attachment-title>
           <e:image src="2C.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.5" question-id="11" max-score="1">
@@ -12478,10 +12360,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           <e:attachment-title>Kuva 4</e:attachment-title>
           <e:image src="2D.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.7" question-id="13" max-score="1">
@@ -12509,10 +12388,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           <e:attachment-title>Kuva 5</e:attachment-title>
           <e:image src="2E.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.9" question-id="15" max-score="1">
@@ -12540,10 +12416,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           <e:attachment-title>Kuva 6</e:attachment-title>
           <e:image src="2F.png" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
         <e:choice-answer ordering="fixed" display-number="2.11" question-id="17" max-score="1">
@@ -12576,10 +12449,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           </e:attachment-title>
           <e:image src="3A.jpg" width="999" height="999"/>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -12717,10 +12587,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
               <e:file src="7Asv.tns">TI Nspire</e:file>  
           
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -12777,10 +12644,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
             </e:attachment-title>
             <e:image src="9A.png" width="999" height="999"/>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:external-material>
@@ -12940,10 +12804,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
             <e:file src="13Asv.ods">Libreoffice Calc</e:file>
           
           <e:reference>
-            <e:publisher>
-              
-              Statistikcentralen
-            </e:publisher>
+            <e:publisher>Statistikcentralen</e:publisher>
             <e:url>https://www.tilastokeskus.fi/tup/suoluk/suoluk_vaesto.html</e:url>
             <e:reference-date>2018-05-25</e:reference-date>
           </e:reference>
@@ -18184,10 +18045,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:attachment-title>1. audio</e:attachment-title>
           <e:audio src="1.ogg" times="1" restricted-audio-id="0" duration="999">Hören Sie den Text zuerst als Ganzes</e:audio>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:audio-group>
@@ -18263,10 +18121,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>2.1. audio</e:attachment-title>
             <e:audio src="2.1.ogg" times="1" restricted-audio-id="5" duration="999">Hören Sie den Abschnitt für die Frage 2.1.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18284,10 +18139,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>2.2. audio</e:attachment-title>
             <e:audio src="2.2.ogg" times="1" restricted-audio-id="6" duration="999">Hören Sie den Abschnitt für die Frage 2.2.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18305,10 +18157,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>2.3. audio</e:attachment-title>
             <e:audio src="2.3.ogg" times="1" restricted-audio-id="7" duration="999">Hören Sie den Abschnitt für die Frage 2.3.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18326,10 +18175,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>2.4. audio</e:attachment-title>
             <e:audio src="2.4.ogg" times="1" restricted-audio-id="8" duration="999">Hören Sie den Abschnitt für die Frage 2.4.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18354,10 +18200,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>3.1. audio</e:attachment-title>
             <e:audio src="3.1.ogg" times="2" restricted-audio-id="9" duration="999">Hören Sie den Abschnitt für die Frage 3.1.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18383,10 +18226,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>3.2.–3.3. audio</e:attachment-title>
             <e:audio src="3.2_3.3.ogg" times="2" restricted-audio-id="10" duration="999">Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18412,10 +18252,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>3.4.–3.5. audio</e:attachment-title>
             <e:audio src="3.4_3.5.ogg" times="2" restricted-audio-id="11" duration="999">Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
 
@@ -18447,10 +18284,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>4.1. audio</e:attachment-title>
             <e:audio src="4.1.ogg" times="2" restricted-audio-id="12" duration="999">Hören Sie den Abschnitt für die Frage 4.1.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18468,10 +18302,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>4.2. audio</e:attachment-title>
             <e:audio src="4.2.ogg" times="2" restricted-audio-id="13" duration="999">Hören Sie den Abschnitt für die Frage 4.2.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18494,10 +18325,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:author>Jessica Krauß</e:author>
             <e:author>Ulrike Neubecker</e:author>
             <e:url>https://www.daserste.de/information/wissen-kultur/w-wie-wissen/videos/das-geheime-leben-der-katzen-100.html</e:url>
-            <e:modified-by>
-              YTL
-              
-            </e:modified-by>
+            <e:modified-by>YTL</e:modified-by>
             <e:reference-date>2017-03-15</e:reference-date>
             <e:howpublished>CC BY-NC-ND 3.0 DE</e:howpublished>
           </e:reference>
@@ -18542,10 +18370,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:attachment-title>6. audio</e:attachment-title>
           <e:audio src="6.ogg" times="1" restricted-audio-id="14" duration="999">Hören Sie den Text zuerst als Ganzes.</e:audio>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:audio-group>
@@ -18658,10 +18483,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>7.1. audio</e:attachment-title>
             <e:audio src="7.1.ogg" times="2" restricted-audio-id="18" duration="999">Hören Sie den Abschnitt für die Frage 7.1.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18715,10 +18537,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>7.2. audio</e:attachment-title>
             <e:audio src="7.2.ogg" times="2" restricted-audio-id="19" duration="999">Hören Sie den Abschnitt für die Frage 7.2.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18772,10 +18591,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:attachment-title>7.3. audio</e:attachment-title>
             <e:audio src="7.3.ogg" times="2" restricted-audio-id="20" duration="999">Hören Sie den Abschnitt für die Frage 7.3.</e:audio>
             <e:reference>
-              <e:author>
-                YTL
-                
-              </e:author>
+              <e:author>YTL</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -18803,10 +18619,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <div class="kupla1"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen doch nicht ganz frei, aber ist ja nicht so viel … ;)</div>
           <div class="kupla2"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!</div>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -18858,10 +18671,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             „Ich habe gerade in der Zeitung etwas Komisches gelesen: Heute ist doch Freitag, der Dreizehnte aber schon vorgestern hat ein Mann richtig Pech gehabt. Er hat nämlich ein fremdes Auto mit seinem eigenen Auto verwechselt. Er war wohl einkaufen und hatte vorher sein metallblaues Auto in einer kleinen Straße in der Nähe vom Supermarkt geparkt. Als er dann vom Einkauf zurückkam, hat er sich in seinen Wagen gesetzt und wollte losfahren. Da hat er auf einmal sein eigenes Auto gegenüber auf der anderen Straßenseite gesehen. Er saß also im falschen Auto. Er war dann total aufgeregt und ist in seiner Panik ganz schnell mit seinem eigenen Auto weggefahren. Tja, als er zu Hause ankam, hatte er seine Geldbörse nicht mehr bei sich. Er hatte sie im fremden Auto auf dem Platz neben sich vergessen. In der Geldbörse waren vier Fünfzig-Euro-Scheine und außerdem auch noch sein Führerschein. Nun hofft der Mann, dass der Besitzer des Autos Kontakt zu ihm aufnimmt, wenn er die Geldbörse findet.“
           </p>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -18927,10 +18737,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
           </p>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -18983,10 +18790,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
           </p>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -19118,10 +18922,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           </e:dropdown-answer>
         </p>
         <e:reference>
-          <e:author>
-            YTL
-            
-          </e:author>
+          <e:author>YTL</e:author>
         </e:reference>
       </e:attachment>
     </e:question>
@@ -19137,10 +18938,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
           </p>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -19184,10 +18982,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
           </p>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -19240,10 +19035,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
           </p>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -19314,10 +19106,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
           </p>
           <e:reference>
-            <e:author>
-              YTL
-              
-            </e:author>
+            <e:author>YTL</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -19539,10 +19328,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <p><b>Felix:</b> Gut, melde dich dann!</p>
         </e:scored-text-answers>
         <e:reference>
-          <e:author>
-            YTL
-            
-          </e:author>
+          <e:author>YTL</e:author>
         </e:reference>
       </e:attachment>
     </e:question>
@@ -19580,10 +19366,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           </p>
         </e:scored-text-answers>
         <e:reference>
-          <e:author>
-            YTL
-            
-          </e:author>
+          <e:author>YTL</e:author>
         </e:reference>
       </e:attachment>
     </e:question>
@@ -19747,10 +19530,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:attachment-title>1. audio</e:attachment-title>
           <e:audio src="1.ogg" times="1" restricted-audio-id="0" duration="999">Hören Sie den Text zuerst als Ganzes</e:audio>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:audio-group>
@@ -19826,10 +19606,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>2.1. audio</e:attachment-title>
             <e:audio src="2.1.ogg" times="1" restricted-audio-id="5" duration="999">Hören Sie den Abschnitt für die Frage 2.1.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -19847,10 +19624,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>2.2. audio</e:attachment-title>
             <e:audio src="2.2.ogg" times="1" restricted-audio-id="6" duration="999">Hören Sie den Abschnitt für die Frage 2.2.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -19868,10 +19642,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>2.3. audio</e:attachment-title>
             <e:audio src="2.3.ogg" times="1" restricted-audio-id="7" duration="999">Hören Sie den Abschnitt für die Frage 2.3.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -19889,10 +19660,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>2.4. audio</e:attachment-title>
             <e:audio src="2.4.ogg" times="1" restricted-audio-id="8" duration="999">Hören Sie den Abschnitt für die Frage 2.4.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -19917,10 +19685,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>3.1. audio</e:attachment-title>
             <e:audio src="3.1.ogg" times="2" restricted-audio-id="9" duration="999">Hören Sie den Abschnitt für die Frage 3.1.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -19946,10 +19711,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>3.2.–3.3. audio</e:attachment-title>
             <e:audio src="3.2_3.3.ogg" times="2" restricted-audio-id="10" duration="999">Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -19975,10 +19737,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>3.4.–3.5. audio</e:attachment-title>
             <e:audio src="3.4_3.5.ogg" times="2" restricted-audio-id="11" duration="999">Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
 
@@ -20010,10 +19769,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>4.1. audio</e:attachment-title>
             <e:audio src="4.1.ogg" times="2" restricted-audio-id="12" duration="999">Hören Sie den Abschnitt für die Frage 4.1.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -20031,10 +19787,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>4.2. audio</e:attachment-title>
             <e:audio src="4.2.ogg" times="2" restricted-audio-id="13" duration="999">Hören Sie den Abschnitt für die Frage 4.2.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -20057,10 +19810,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:author>Jessica Krauß</e:author>
             <e:author>Ulrike Neubecker</e:author>
             <e:url>https://www.daserste.de/information/wissen-kultur/w-wie-wissen/videos/das-geheime-leben-der-katzen-100.html</e:url>
-            <e:modified-by>
-              
-              SEN
-            </e:modified-by>
+            <e:modified-by>SEN</e:modified-by>
             <e:reference-date>2017-03-15</e:reference-date>
             <e:howpublished>CC BY-NC-ND 3.0 DE</e:howpublished>
           </e:reference>
@@ -20105,10 +19855,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:attachment-title>6. audio</e:attachment-title>
           <e:audio src="6.ogg" times="1" restricted-audio-id="14" duration="999">Hören Sie den Text zuerst als Ganzes.</e:audio>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:audio-group>
@@ -20221,10 +19968,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>7.1. audio</e:attachment-title>
             <e:audio src="7.1.ogg" times="2" restricted-audio-id="18" duration="999">Hören Sie den Abschnitt für die Frage 7.1.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -20278,10 +20022,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>7.2. audio</e:attachment-title>
             <e:audio src="7.2.ogg" times="2" restricted-audio-id="19" duration="999">Hören Sie den Abschnitt für die Frage 7.2.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -20335,10 +20076,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:attachment-title>7.3. audio</e:attachment-title>
             <e:audio src="7.3.ogg" times="2" restricted-audio-id="20" duration="999">Hören Sie den Abschnitt für die Frage 7.3.</e:audio>
             <e:reference>
-              <e:author>
-                
-                SEN
-              </e:author>
+              <e:author>SEN</e:author>
             </e:reference>
           </e:attachment>
         </e:question>
@@ -20366,10 +20104,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <div class="kupla1"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen doch nicht ganz frei, aber ist ja nicht so viel … ;)</div>
           <div class="kupla2"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!</div>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -20421,10 +20156,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             „Ich habe gerade in der Zeitung etwas Komisches gelesen: Heute ist doch Freitag, der Dreizehnte aber schon vorgestern hat ein Mann richtig Pech gehabt. Er hat nämlich ein fremdes Auto mit seinem eigenen Auto verwechselt. Er war wohl einkaufen und hatte vorher sein metallblaues Auto in einer kleinen Straße in der Nähe vom Supermarkt geparkt. Als er dann vom Einkauf zurückkam, hat er sich in seinen Wagen gesetzt und wollte losfahren. Da hat er auf einmal sein eigenes Auto gegenüber auf der anderen Straßenseite gesehen. Er saß also im falschen Auto. Er war dann total aufgeregt und ist in seiner Panik ganz schnell mit seinem eigenen Auto weggefahren. Tja, als er zu Hause ankam, hatte er seine Geldbörse nicht mehr bei sich. Er hatte sie im fremden Auto auf dem Platz neben sich vergessen. In der Geldbörse waren vier Fünfzig-Euro-Scheine und außerdem auch noch sein Führerschein. Nun hofft der Mann, dass der Besitzer des Autos Kontakt zu ihm aufnimmt, wenn er die Geldbörse findet.“
           </p>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -20490,10 +20222,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             Materialet avlägsnat på grund av upphovsrättsskäl.
           </p>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -20546,10 +20275,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             Materialet avlägsnat på grund av upphovsrättsskäl.
           </p>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -20681,10 +20407,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           </e:dropdown-answer>
         </p>
         <e:reference>
-          <e:author>
-            
-            SEN
-          </e:author>
+          <e:author>SEN</e:author>
         </e:reference>
       </e:attachment>
     </e:question>
@@ -20700,10 +20423,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             Materialet avlägsnat på grund av upphovsrättsskäl.
           </p>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -20747,10 +20467,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             Materialet avlägsnat på grund av upphovsrättsskäl.
           </p>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -20803,10 +20520,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             Materialet avlägsnat på grund av upphovsrättsskäl.
           </p>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -20877,10 +20591,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             Materialet avlägsnat på grund av upphovsrättsskäl.
           </p>
           <e:reference>
-            <e:author>
-              
-              SEN
-            </e:author>
+            <e:author>SEN</e:author>
           </e:reference>
         </e:attachment>
       </e:external-material>
@@ -21102,10 +20813,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <p><b>Felix:</b> Gut, melde dich dann!</p>
         </e:scored-text-answers>
         <e:reference>
-          <e:author>
-            
-            SEN
-          </e:author>
+          <e:author>SEN</e:author>
         </e:reference>
       </e:attachment>
     </e:question>
@@ -21143,10 +20851,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           </p>
         </e:scored-text-answers>
         <e:reference>
-          <e:author>
-            
-            SEN
-          </e:author>
+          <e:author>SEN</e:author>
         </e:reference>
       </e:attachment>
     </e:question>
