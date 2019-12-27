@@ -1,7 +1,7 @@
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
 import { GenerateId } from '.'
-import { Answer, choiceAnswerOptionTypes, Exam, ns } from './schema'
+import { Answer, choiceAnswerOptionTypes, Exam, ns, Question } from './schema'
 import { asElements, getAttribute, getNumericAttribute, xpathOr } from './utils'
 
 export interface GradingStructure {
@@ -38,10 +38,11 @@ interface ChoiceGroupOption {
 }
 
 export function createGradingStructure(exam: Exam, generateId: GenerateId): GradingStructure {
-  const questions = _.chain(exam.answers)
-    .groupBy(a => getAttribute('display-number', a.question))
-    .flatMap((questionAnswers, questionDisplayNumber) =>
-      _.chain(questionAnswers)
+  const questions = _.chain(exam.topLevelQuestions)
+    .flatMap(question => {
+      const questionAnswers = collectAnswers(question)
+      const questionDisplayNumber = getAttribute('display-number', question.element)
+      return _.chain(questionAnswers)
         .groupBy(answer => answer.element.name())
         .flatMap((answers, answerType): GradingStructureQuestion[] => {
           switch (answerType) {
@@ -56,11 +57,15 @@ export function createGradingStructure(exam: Exam, generateId: GenerateId): Grad
           }
         })
         .value()
-    )
+    })
     .sortBy(displayNumberDigits)
     .value()
 
   return { questions }
+}
+
+function collectAnswers(question: Question): Answer[] {
+  return question.childQuestions.length ? _.flatMap(question.childQuestions, collectAnswers) : question.answers
 }
 
 function mkTextQuestion(answer: Element): TextQuestion {
@@ -107,5 +112,6 @@ function mkChoiceGroupQuestion(
 }
 
 const getDigit = (digit: number) => (question: GradingStructureQuestion): number =>
-  Number(question.displayNumber.split('.')[digit])
+  Number(question.displayNumber.split('.')[digit]) || -1
+
 const displayNumberDigits = [getDigit(0), getDigit(1), getDigit(2), getDigit(3), getDigit(4)]
