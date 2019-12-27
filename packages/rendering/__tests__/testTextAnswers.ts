@@ -1,8 +1,9 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { CloseFunction, previewExam } from '@digabi/exam-engine-rendering'
-import { Page } from 'puppeteer'
+import { DirectNavigationOptions, Page } from 'puppeteer'
 import { assertElementDoesNotExist, delay, getTextContent, initPuppeteer } from './puppeteerUtils'
 
+const navOptions: DirectNavigationOptions = { waitUntil: 'networkidle0' }
 describe('testTextAnswers.ts — Text answer interactions', () => {
   const createPage = initPuppeteer()
   let page: Page
@@ -14,12 +15,10 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     page = await createPage()
   })
 
-  afterAll(async () => {
-    await close()
-  })
+  afterAll(() => close())
 
   it('updates the character count', async () => {
-    await page.goto(url, { waitUntil: 'networkidle0' })
+    await page.goto(url, navOptions)
 
     await type('h')
     await assertCharacterCount(1)
@@ -35,7 +34,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   })
 
   it('updates the saved indicator after a delay', async () => {
-    await page.goto(url, { waitUntil: 'networkidle0' })
+    await page.goto(url, navOptions)
 
     await assertSaveIndicatorNotPresent()
 
@@ -49,13 +48,11 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await delay(2000)
     await assertIsSaved()
 
-    await page.reload({ waitUntil: 'networkidle0' })
+    await page.reload(navOptions)
     await assertIsSaved()
   })
 
-  async function type(text: string) {
-    await page.type('.text-answer', text)
-  }
+  const type = (text: string) => page.type('.text-answer', text)
 
   async function clearInput() {
     await page.click('.text-answer', { clickCount: 3 })
@@ -68,15 +65,9 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(count).toEqual(expectedCount)
   }
 
-  async function assertIsSaved() {
-    await page.$eval('.save-indicator-text--saved', e => e)
-  }
+  const assertIsSaved = () => page.$eval('.save-indicator-text--saved', e => e)
 
-  async function assertIsNotSaved() {
-    await assertElementDoesNotExist(page, '.save-indicator-text--saved')
-  }
+  const assertIsNotSaved = () => assertElementDoesNotExist(page, '.save-indicator-text--saved')
 
-  async function assertSaveIndicatorNotPresent() {
-    await assertElementDoesNotExist(page, '.save-indicator')
-  }
+  const assertSaveIndicatorNotPresent = () => assertElementDoesNotExist(page, '.save-indicator')
 })
