@@ -30,7 +30,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
     answer.value &&
     findChildElement(element, childElement => answer.value === childElement.getAttribute('option-id'))
 
-  const onChange = (selectedAnswer: Item) => {
+  const onChange = (selectedAnswer: '' | Element | null) => {
     const value = selectedAnswer ? selectedAnswer.getAttribute('option-id')! : ''
     saveAnswer({ type: 'choice', questionId, value })
   }
@@ -67,7 +67,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
 
   return (
     <Downshift
-      itemToString={item => (item ? item.textContent : '')}
+      itemToString={item => (item ? item.textContent! : '')}
       onChange={onChange}
       selectedItem={currentlySelectedItem}
     >
