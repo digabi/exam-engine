@@ -14,6 +14,7 @@ import Audio from './Audio'
 import AudioGroup from './AudioGroup'
 import AudioTest from './AudioTest'
 import ChoiceAnswer from './ChoiceAnswer'
+import ChoiceAnswerResult from './ChoiceAnswerResult'
 import DocumentTitle from './DocumentTitle'
 import DropdownAnswer from './DropdownAnswer'
 import ExamAttachment from './ExamAttachment'
@@ -60,9 +61,11 @@ export interface ExamProps {
   doc: XMLDocument
   /** The language of the user interface */
   language: string
+  /** Are we displaying results instead of doing exam */
+  results?: boolean
 }
 
-const renderChildNodes = createRenderChildNodes({
+const renderChildNodesExam = createRenderChildNodes({
   attachment: ExamAttachment,
   'attachment-link': AttachmentLink,
   'attachment-links': AttachmentLinks,
@@ -70,6 +73,31 @@ const renderChildNodes = createRenderChildNodes({
   'audio-group': AudioGroup,
   'audio-test': AudioTest,
   'choice-answer': ChoiceAnswer,
+  'dropdown-answer': DropdownAnswer,
+  'exam-footer': ExamFooter,
+  'external-material': ExternalMaterialList,
+  file: File,
+  formula: Formula,
+  image: Image,
+  question: ExamQuestion,
+  'question-instruction': ExamQuestionInstruction,
+  'question-title': ExamQuestionTitle,
+  references: References,
+  'scored-text-answer': ScoredTextAnswer,
+  'scored-text-answers': ScoredTextAnswers,
+  'section-instruction': SectionInstruction,
+  section: ExamSection,
+  'section-title': ExamSectionTitle,
+  'text-answer': TextAnswer,
+  video: Video
+})
+
+const renderChildNodesResults = createRenderChildNodes({
+  attachment: ExamAttachment,
+  'attachment-link': AttachmentLink,
+  'attachment-links': AttachmentLinks,
+  'audio-group': AudioGroup,
+  'choice-answer': ChoiceAnswerResult,
   'dropdown-answer': DropdownAnswer,
   'exam-footer': ExamFooter,
   'external-material': ExternalMaterialList,
@@ -114,15 +142,17 @@ export class Exam extends PureComponent<ExamProps> {
   render() {
     const { doc, language } = this.props
     const root = doc.documentElement
-    const examTitle = findChildElement(root, 'exam-title')
-    const examInstruction = findChildElement(root, 'exam-instruction')
-    const tableOfContents = findChildElement(root, 'table-of-contents')
-    const externalMaterial = findChildElement(root, 'external-material')
+    const examTitle = this.props.results ? null : findChildElement(root, 'exam-title')
+    const examInstruction = this.props.results ? null : findChildElement(root, 'exam-instruction')
+    const tableOfContents = this.props.results ? null : findChildElement(root, 'table-of-contents')
+    const externalMaterial = this.props.results ? null : findChildElement(root, 'external-material')
     const examStylesheet = root.getAttribute('exam-stylesheet')
 
     if (this.i18n.language !== language) {
       this.i18n.changeLanguage(language)
     }
+
+    const renderChildNodes = this.props.results ? renderChildNodesResults : renderChildNodesExam
 
     return (
       <Provider store={this.store}>
