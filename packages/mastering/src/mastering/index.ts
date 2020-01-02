@@ -83,12 +83,18 @@ interface MasteringOptions {
    * `<e:formula>…</e:formula>` element.
    */
   throwOnLatexError?: boolean
+
+  /**
+   * Leave correct answers in mastering result
+   */
+  leaveCorrectAnswers?: boolean
 }
 
 const defaultOptions = {
   multiChoiceShuffleSecret: 'tJXjzAhY3dT4B26aikG2tPmPRlWRTKXF5eVpOR2eDFz3Aj4a3FHF1jB3tswVWPhc',
   removeHiddenElements: true,
-  throwOnLatexError: true
+  throwOnLatexError: true,
+  leaveCorrectAnswers: false
 }
 
 function assertExamIsValid(doc: Document): Document {
@@ -233,7 +239,11 @@ async function masterExamForLanguage(
   const hvp = createHvp(doc, language)
 
   removeComments(root)
-  removeCorrectAnswers(exam)
+
+  if (!options.leaveCorrectAnswers) {
+    removeCorrectAnswers(exam)
+  }
+
   if (options.removeHiddenElements) {
     removeHiddenElements(root)
   }

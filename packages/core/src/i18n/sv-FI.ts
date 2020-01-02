@@ -9,6 +9,8 @@ export const sv_FI: Translations = {
   'external-material-title': 'Material',
   part: 'Del {{displayNumber}}:',
   question: '{{displayNumber}}',
+  grade: 'Vitsord',
+  comment: 'Kommentar',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} poäng',
