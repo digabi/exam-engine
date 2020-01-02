@@ -234,6 +234,7 @@ async function masterExamForLanguage(
 
   removeComments(root)
   removeCorrectAnswers(exam)
+
   if (options.removeHiddenElements) {
     removeHiddenElements(root)
   }

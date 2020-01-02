@@ -106,3 +106,7 @@ export function mapChildElements<T>(element: Element, fn: (childElement: Element
   }
   return result
 }
+
+export function findChildrenAnswers(element: Element) {
+  return queryAll(element, ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'], true)
+}
