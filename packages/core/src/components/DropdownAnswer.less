@@ -5,6 +5,28 @@
     max-width: 100%;
     position: relative;
 
+    &__answered {
+      padding: 0 0.25rem;
+      border: 1px solid black;
+
+      &--correct {
+        box-shadow: 0 -4px 0 -2px inset #5ACD46;
+        border-bottom: 1px solid #5ACD46;
+      }
+
+      &--wrong {
+        box-shadow: 0 -4px 0 -2px inset red;
+        border-bottom: 1px solid red;
+      }
+    }
+
+    &__correct {
+      padding: 0 0.25rem;
+      box-shadow: 0 -4px 0 -2px inset #5ACD46;
+      border-bottom: 1px solid #5ACD46;
+      font-style: italic;
+    }
+
     &__label {
       max-width: 100%;
     }
