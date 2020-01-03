@@ -17,6 +17,7 @@ import ChoiceAnswer from './ChoiceAnswer'
 import ChoiceAnswerResult from './ChoiceAnswerResult'
 import DocumentTitle from './DocumentTitle'
 import DropdownAnswer from './DropdownAnswer'
+import DropdownAnswerResult from './DropdownAnswerResult'
 import ExamAttachment from './ExamAttachment'
 import { ExamContext, withExamContext } from './ExamContext'
 import ExamFooter from './ExamFooter'
@@ -37,6 +38,7 @@ import Section from './Section'
 import SectionInstruction from './SectionInstruction'
 import TableOfContents from './TableOfContents'
 import TextAnswer from './TextAnswer'
+import TextAnswerResult from './TextAnswerResult'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from './types'
 import Video from './Video'
 
@@ -96,26 +98,19 @@ const renderChildNodesExam = createRenderChildNodes({
 
 const renderChildNodesResults = createRenderChildNodes({
   attachment: ExamAttachment,
-  'attachment-link': AttachmentLink,
-  'attachment-links': AttachmentLinks,
   'audio-group': AudioGroup,
   'choice-answer': ChoiceAnswerResult,
-  'dropdown-answer': DropdownAnswer,
-  'exam-footer': ExamFooter,
-  'external-material': ExternalMaterialList,
+  'dropdown-answer': DropdownAnswerResult,
   file: File,
   formula: Formula,
   image: Image,
   question: ExamQuestion,
-  'question-instruction': ExamQuestionInstruction,
   'question-title': ExamQuestionTitle,
-  references: References,
-  'scored-text-answer': ScoredTextAnswer,
+  'scored-text-answer': TextAnswerResult,
   'scored-text-answers': ScoredTextAnswers,
-  'section-instruction': SectionInstruction,
   section: ExamSection,
   'section-title': ExamSectionTitle,
-  'text-answer': TextAnswer,
+  'text-answer': TextAnswerResult,
   video: Video
 })
 
@@ -144,7 +139,7 @@ export class Exam extends PureComponent<ExamProps> {
   render() {
     const { doc, language } = this.props
     const root = doc.documentElement
-    const examTitle = this.props.results ? null : findChildElement(root, 'exam-title')
+    const examTitle = findChildElement(root, 'exam-title')
     const examInstruction = this.props.results ? null : findChildElement(root, 'exam-instruction')
     const tableOfContents = this.props.results ? null : findChildElement(root, 'table-of-contents')
     const externalMaterial = this.props.results ? null : findChildElement(root, 'external-material')
