@@ -115,6 +115,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               // tslint:disable-next-line: jsx-key
               <div
                 className={classNames('e-dropdown-answer__menu-item e-pad-l-1 e-pad-r-4', {
+                  'e-dropdown-answer__menu-item--selected': item === selectedItem,
                   'e-bg-color-off-white': highlightedIndex !== i,
                   'e-bg-color-lighterblue': highlightedIndex === i
                 })}

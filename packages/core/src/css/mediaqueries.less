@@ -1,31 +1,5 @@
-.desktop-small(@rules){
-    @media (max-width: 832px) {
-        @rules();
-    }
-}
-
-@media print {
-  html {
-    font-size: 12px;
-    line-height: 18px;
-  }
-  .e-exam {
-    max-width: none !important;
-    color: #000;
-  }
-  button {
-    background: none !important;
-    color: #000 !important;
-  }
-  section {
-    padding: 0 !important;
-  }
-  .beta-ribbon {
-    display: none;
-  }
-  .rich-text-editor-tools {
-    width: 0;
-    height: 0;
-    overflow: hidden;
+.desktop-small(@rules) {
+  @media (max-width: 832px) {
+    @rules();
   }
 }
