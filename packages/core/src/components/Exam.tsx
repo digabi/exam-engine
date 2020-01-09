@@ -25,6 +25,7 @@ import ExamInstruction from './ExamInstruction'
 import ExamQuestion from './ExamQuestion'
 import ExamQuestionInstruction from './ExamQuestionInstruction'
 import ExamQuestionTitle from './ExamQuestionTitle'
+import ExamQuestionTitleResult from './ExamQuestionTitleResult'
 import ExamSection from './ExamSection'
 import ExamSectionTitle from './ExamSectionTitle'
 import ExternalMaterialList from './ExternalMaterialList'
@@ -104,7 +105,7 @@ const renderChildNodesResults = createRenderChildNodes({
   formula: Formula,
   image: Image,
   question: ExamQuestion,
-  'question-title': ExamQuestionTitle,
+  'question-title': ExamQuestionTitleResult,
   'scored-text-answer': TextAnswerResult,
   'scored-text-answers': ScoredTextAnswers,
   section: ExamSection,
