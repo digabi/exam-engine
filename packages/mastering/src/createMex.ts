@@ -25,7 +25,8 @@ export async function createMex(
   passphrase: string,
   answersPrivateKey: string,
   outputStream: NodeJS.WritableStream,
-  json?: Buffer | null
+  json?: Buffer | null,
+  loadSimulationConfiguration?: NodeJS.ReadableStream
 ) {
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
@@ -50,6 +51,15 @@ export async function createMex(
   encryptAndSign(zipFile, 'nsa.zip', keyAndIv, answersPrivateKey, nsaScripts)
   if (securityCodes) {
     encryptAndSign(zipFile, 'security-codes.json', keyAndIv, answersPrivateKey, securityCodes)
+  }
+  if (loadSimulationConfiguration) {
+    encryptAndSign(
+      zipFile,
+      'load-simulation-configuration.json',
+      keyAndIv,
+      answersPrivateKey,
+      loadSimulationConfiguration
+    )
   }
   encryptAndSignFiles(
     zipFile,
