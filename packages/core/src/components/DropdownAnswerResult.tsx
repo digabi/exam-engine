@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -28,8 +29,15 @@ function DropdownAnswerResult({ element, answer }: DropdownAnswerProps) {
     const isAnswerCorrect = currentlySelectedItem.textContent === correctAnswer.textContent
     return (
       <>
-        <span className="e-dropdown-answer__answered">{currentlySelectedItem.textContent}</span>
-        {!isAnswerCorrect && <span className="e-dropdown-answer__corrected">{correctAnswer.textContent}</span>}
+        <span
+          className={classNames('e-dropdown-answer__answered', {
+            'e-dropdown-answer__answered--correct': isAnswerCorrect,
+            'e-dropdown-answer__answered--wrong': !isAnswerCorrect
+          })}
+        >
+          {currentlySelectedItem.textContent}
+        </span>
+        {!isAnswerCorrect && <span className="e-dropdown-answer__correct">{correctAnswer.textContent}</span>}
       </>
     )
   }
