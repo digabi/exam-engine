@@ -94,7 +94,8 @@ export async function createMultiMex(
   securityCodes: NodeJS.ReadableStream,
   passphrase: string,
   answersPrivateKey: string,
-  outputStream: NodeJS.WritableStream
+  outputStream: NodeJS.WritableStream,
+  loadSimulationConfiguration?: NodeJS.ReadableStream
 ) {
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
@@ -105,6 +106,15 @@ export async function createMultiMex(
 
   encryptAndSign(zipFile, 'nsa.zip', keyAndIv, answersPrivateKey, nsaScripts)
   encryptAndSign(zipFile, 'security-codes.json', keyAndIv, answersPrivateKey, securityCodes)
+  if (loadSimulationConfiguration) {
+    encryptAndSign(
+      zipFile,
+      'load-simulation-configuration.json',
+      keyAndIv,
+      answersPrivateKey,
+      loadSimulationConfiguration
+    )
+  }
 
   zipFile.outputStream.pipe(outputStream)
   zipFile.end()
