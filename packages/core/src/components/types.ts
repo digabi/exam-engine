@@ -8,6 +8,7 @@ interface AnswerCommon {
   value: string
   /** This field is undefined in older exams that were packaged before this change. */
   displayNumber?: string
+  scoreValue?: number
 }
 export interface TextAnswer extends AnswerCommon {
   type: 'text'
