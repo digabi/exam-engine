@@ -6,7 +6,7 @@ function afterinstall() {
     cat > /home/digabi/bin/ee << EOF
 #!/bin/bash
 
-/home/digabi/digabi-top/nvm/versions/node/v$NODE_VERSION/bin/node /home/digabi/exam-engine/packages/cli/dist/index.js "$@"
+/home/digabi/digabi-top/nvm/versions/node/v$NODE_VERSION/bin/node /home/digabi/exam-engine/packages/cli/dist/index.js "\$@"
 EOF
     chmod +x /home/digabi/bin/ee
 
