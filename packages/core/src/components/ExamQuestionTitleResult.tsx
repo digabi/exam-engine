@@ -66,7 +66,6 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
       }
     })
   )
-
   return { sumScore }
 }
 

@@ -4,11 +4,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../dom-utils'
 import { AppState } from '../store'
-import * as actions from '../store/answers/actions'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from './types'
 
 interface DropdownAnswerProps extends ExamComponentProps {
-  saveAnswer: typeof actions.saveAnswer
   answer?: ChoiceAnswerT
 }
 
@@ -50,6 +48,4 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   return { answer }
 }
 
-export default connect(mapStateToProps, {
-  saveAnswer: actions.saveAnswer
-})(DropdownAnswerResult)
+export default connect(mapStateToProps)(DropdownAnswerResult)
