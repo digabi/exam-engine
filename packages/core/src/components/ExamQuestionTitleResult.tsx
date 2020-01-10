@@ -57,7 +57,7 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   const sumScore = _.sum(
     childrenAnswers.map(answer => {
       const questionId = getNumericAttribute(answer, 'question-id')!
-      const scoredAnswer = state.answers.answersById[questionId] as any
+      const scoredAnswer = state.answers.answersById[questionId]
 
       if (scoredAnswer) {
         return scoredAnswer.scoreValue ?? 0
