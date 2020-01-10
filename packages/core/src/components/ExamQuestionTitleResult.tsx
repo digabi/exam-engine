@@ -4,29 +4,26 @@ import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { connect } from 'react-redux'
 import { getNumericAttribute, queryAll } from '../dom-utils'
-import * as actions from '../store/answers/actions'
 import { AppState } from '../store/index'
 import AnsweringInstructions from './AnsweringInstructions'
 import NotificationIcon from './NotificationIcon'
 import { QuestionContext } from './QuestionContext'
-import { Score } from './Score'
-import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from './types'
-// import { queryAll } from '../dom-utils'
+import { ExamComponentProps } from './types'
 
-function ExamQuestionTitleResult({ element, renderChildNodes }: ExamComponentProps) {
+interface ExamQuestionTitleProps extends ExamComponentProps {
+  sumScore?: number
+}
+
+function ExamQuestionTitleResult({ element, renderChildNodes, sumScore }: ExamQuestionTitleProps) {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)
   const Tag = ('h' + Math.min(3 + level, 6)) as any
   const { t } = useTranslation()
-  const givenScore = element.getAttribute('scoreValue')
-
-  // const answers = queryAll(element, 'text-answer', true)
-  // console.log("answerssss", answers)
 
   return (
     <>
       <div className="resultsScore">
-        {t('points', { count: maxScore })} max
-        {givenScore && <Score score={Number(givenScore)} size="small" />}
+        {t('points', { count: maxScore })} max <br />
+        <b>{t('points', { count: sumScore })}</b>
       </div>
       <Tag className={classNames('exam-question-title', { 'e-normal e-font-size-m': level > 0 })}>
         <strong
@@ -57,10 +54,11 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
     true
   )
 
-  const sum = _.sum(
+  const sumScore = _.sum(
     childrenAnswers.map(answer => {
       const questionId = getNumericAttribute(answer, 'question-id')!
       const scoredAnswer = state.answers.answersById[questionId] as any
+
       if (scoredAnswer) {
         return scoredAnswer.scoreValue ?? 0
       } else {
@@ -68,16 +66,8 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
       }
     })
   )
-  console.log("summa", sum)
 
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = state.answers.answersById[questionId] as ChoiceAnswerT | undefined
-  // console.log("tilan answersit", state.answers)
-  return { answer }
+  return { sumScore }
 }
 
-export default connect(mapStateToProps, {
-  saveAnswer: actions.saveAnswer
-})(ExamQuestionTitleResult)
-
-// export default React.memo(ExamQuestionTitleResult)
+export default connect(mapStateToProps)(ExamQuestionTitleResult)
