@@ -16,10 +16,6 @@ export class TextAnswerResult extends React.PureComponent<Props, {}> {
     const { answer, className, element, type } = this.props
     const value = answer && answer.value
 
-    const foo = answer as any
-
-    console.log("metadata", foo ? foo.metadata : 'ei oo')
-
     switch (type) {
       case 'rich-text':
       case 'multi-line':
