@@ -16,7 +16,7 @@ export async function createOfflineExam(examFile: string, outputDirectory: strin
     const shortLanguageCode = language.replace(/-.*$/, '')
     const dirname = examCode
       ? `${date && date + '_'}${examCode}${dayCode ? '_' + dayCode : ''}_${shortLanguageCode}`
-      : `${path.basename(path.dirname(examFile))}_offline_${language}`
+      : `${path.basename(path.dirname(examFile))}_${language}_offline`
     const examOutputDirectory = path.resolve(outputDirectory, dirname)
     const resolveOutputFile = (...filename: string[]) => path.resolve(examOutputDirectory, ...filename)
     const config = getOfflineWebpackConfig(result, examOutputDirectory)

@@ -27,59 +27,64 @@ do not yet work in Abitti. Breaking changes are also still possible without prio
 
 # Setup
 
-Environment has been tested to work in Debian Linux, Mac OS and on Windows 10 in WSL. For Windows 10 check https://docs.microsoft.com/en-us/windows/wsl/install-win10 to install WSL.
-
 Make sure the following are installed in your system:
 
-- [git](https://git-scm.com/)
-  In Debian Linux: `sudo apt install git`
 - [Node.js](https://nodejs.org/en/) (Version 10 or later)
-  E.g. install nvm from https://github.com/nvm-sh/nvm/blob/master/README.md#install--update-script and run `nvm install`
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- [Firefox](https://www.mozilla.org/fi-FI/firefox/new/)
+
+After Node.js has been installed, open a new terminal window and type the
+following command.
 
 ```
-$ npm install --global yarn
-$ git clone https://github.com/digabi/exam-engine.git
-$ cd exam-engine
-$ yarn
+$ npm install -g @digabi/exam-engine-cli
 ```
+
+This installs the `ee` command-line program to your system.
+
+# Creating a new exam
+
+To create a new exam, use
+
+```
+$ ee new Esimerkkikoe
+```
+
+This creates a `Esimerkkikoe` directory, containing a basic `exam.xml` file and an
+empty `attachments` directory where to place attachments.
 
 # Preview
 
-To start live preview of any exam on your computer, use the following commands:
+To start a live preview of any exam on your computer, navigate to the exam
+directory and run
 
 ```
-$ cd exam-engine
-$ yarn
-$ yarn start path/to/the/exam.xml
+$ ee preview
 ```
 
-This starts web server that automatically updates the exam in Firefox while
-the XML file is being edited.
+# Importing an exam to Abitti
 
-# Using an exam in Abitti
+To use an exam in Abitti, it must be first packaged as a transfer zip. It is
+then possible to import it to Abitti by clicking "Tuo koe/För in prov".
 
-To use an exam in Abitti, the exam must be packaged manually as a transfer zip. It is then possible
-to import it to Abitti using the "Tuo koe/För in prov" functionality:
-
-To create a transfer zip, use the following command.
+To create a transfer zip, navigate to the exam directory and run
 
 ```
-$ yarn create-transfer-zip path/to/exam.xml
+$ ee create-transfer-zip
 ```
 
-This will create a transfer zip file in the exam directory for each language
-version that the exam includes.
+This creates a transfer zip files in the exam directory for each language
+version of the exam.
 
-# Offline version
+# Offline versions
 
-Offline version refers to a standalone version of an exam that can be viewed in web browser without
-additional tools.
+Offline version refers to a static version of an exam that can be viewed in
+a web browser without any additional tools.
 
-To create offline versions into subdirectories of `/tmp`, use:
+To create an offline version of the exam, navigate to the exam directory and
+use
 
 ```
-$ yarn offline path/to/exam.xml /tmp
+$ ee create-offline
 ```
 
 # Intellectual property rights
@@ -96,11 +101,19 @@ Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). 
 
 # Development
 
-The information in this section is only relevant for developers of the exam-engine itself.
+The information in this section is only relevant for developers.
+
+## Preview
+
+The `ee` client can be run with `yarn ee`. So to preview an exam, run
+
+```
+$ yarn ee preview path/to/exam.xml
+```
 
 ## Compilation
 
-Before doing any changes, you'll always want to command TypeScript to compile
+Before doing any changes to the code, you'll want to command TypeScript to compile
 any changes within the whole project automatically.
 
 ```
@@ -129,7 +142,7 @@ $ yarn test packages/foo
 ```
 
 If you've made changes to the code that affect exam mastering or rendering,
-you need to update the test snapshots by running
+you need to update the test snapshots by running. Review changes the snapshots manually.
 
 ```
 $ yarn test -u
@@ -139,10 +152,8 @@ Travis CI runs tests on all branches and pull requests in https://travis-ci.org/
 
 ## NPM releases
 
-Login to npm first with digabi user.
-
-## exam-engine
+Login to npm first with digabi user and run
 
 ```
-$ env ANSWERS_PRIVATE_KEY=/path/to/answers-private-key.pem yarn lerna publish
+$ env ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem yarn lerna publish
 ```

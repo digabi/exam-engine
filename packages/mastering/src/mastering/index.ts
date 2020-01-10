@@ -215,7 +215,6 @@ async function masterExamForLanguage(
   countSectionMaxAndMinAnswers(exam)
   addAnswerOptionIds(exam, generateId)
   addRestrictedAudioMetadata(attachments)
-  trimWhitespaceInReferences(exam)
   await renderFormulas(root, options.throwOnLatexError)
   await addMediaMetadata(attachments, getMediaMetadata)
 
@@ -507,15 +506,6 @@ function addRestrictedAudioMetadata(attachments: Element[]) {
     .forEach((audio, i) => audio.attr('restricted-audio-id', String(i)))
 }
 
-function trimWhitespaceInReferences(exam: Exam) {
-  // The reference parts (e.g. author, title and so on) are displayed as inline
-  // elements. We also want to add separators between them. To avoid
-  // whitespace between an reference part and the separator, (e.g. `<span> foo
-  // </span>separator<span> bar </span>` is rendered as `foo separator bar` on
-  // the screen) trim the excess whitespace from the reference parts here.
-  asElements(exam.element.find('//e:reference/e:*', ns)).forEach(trimWhitespace)
-}
-
 function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
   const createHash = (value: string) => {
     const hash = crypto.createHash('sha256')
@@ -594,25 +584,4 @@ function parseQuestion(question: Element): Question {
 function mkGenerateId(): GenerateId {
   let current = 1
   return () => current++
-}
-
-function trimWhitespace(element: Element) {
-  // TODO: Typings for Text are missing
-  const nonWhitespaceNode = (node: any) => /\S/.test(node.text())
-
-  const textNodes = element.find('.//text()')
-  const firstNonWhitespaceTextNode = _.findIndex(textNodes, nonWhitespaceNode)
-  const lastNonWhitespaceTextNode = _.findLastIndex(textNodes, nonWhitespaceNode)
-
-  // Remove leading whitespace from the start
-  for (let i = 0; firstNonWhitespaceTextNode !== -1 && i <= firstNonWhitespaceTextNode; i++) {
-    const node = textNodes[i] as Element // TODO: Typings for Text are missing, use Element as a surrogate.
-    node.text(node.text().trimStart())
-  }
-
-  // ...and trailing whitespace from the end.
-  for (let i = textNodes.length - 1; lastNonWhitespaceTextNode !== -1 && i >= lastNonWhitespaceTextNode; i--) {
-    const node = textNodes[i] as Element // TODO: Typings for Text are missing, use Element as a surrogate.
-    node.text(node.text().trimEnd())
-  }
 }

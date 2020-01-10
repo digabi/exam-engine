@@ -4,7 +4,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { AppState } from '../store'
 import { allowCas, allowCasCancelled } from '../store/cas/actions'
 import { CasState } from '../store/cas/reducer'
-import { casCountdownDurationSeconds } from '../store/cas/sagas'
+import { ExamContext } from './ExamContext'
 import ProgressBar from './ProgressBar'
 import Section from './Section'
 import { SectionContext, withSectionContext } from './SectionContext'
@@ -25,6 +25,7 @@ function ExamSection({ element, renderChildNodes }: ExamComponentProps) {
 function CasControls(props: CasState) {
   const dispatch = useDispatch()
   const { t } = useTranslation()
+  const { casCountdownDuration } = useContext(ExamContext)
 
   return (
     <div className="e-cas-controls">
@@ -32,7 +33,7 @@ function CasControls(props: CasState) {
         <div className="e-text-center">
           <hr className="e-exam-separator" />
           <p>{t('cas.forbidden.infoText')}</p>
-          <button className="e-button" id="allow-cas" onClick={() => dispatch(allowCas())}>
+          <button className="e-button" id="allow-cas" onClick={() => dispatch(allowCas(casCountdownDuration))}>
             {t('cas.forbidden.buttonText')}
           </button>
         </div>
@@ -40,7 +41,7 @@ function CasControls(props: CasState) {
         <div className="e-text-center" ref={e => e != null && e.scrollIntoView()}>
           <hr className="e-exam-separator" />
           <p>{t('cas.allowing.infoText')}</p>
-          <ProgressBar className="e-mrg-b-2" duration={casCountdownDurationSeconds} />
+          <ProgressBar className="e-mrg-b-2" duration={casCountdownDuration} />
           <button className="e-button" id="allow-cas-cancelled" onClick={() => dispatch(allowCasCancelled())}>
             {t('cas.allowing.buttonText', { count: props.durationRemaining })}
           </button>
