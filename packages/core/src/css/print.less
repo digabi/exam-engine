@@ -1,0 +1,84 @@
+// Here be dragons…
+
+@media print {
+  .e-exam {
+    max-width: none !important;
+    color: #000;
+    font-size: 12px;
+    line-height: 18px;
+
+    button {
+      background: none !important;
+      color: #000 !important;
+    }
+
+    .e-section {
+      padding: 0 !important;
+      box-shadow: 0 0 0 0 !important;
+    }
+
+    .rich-text-editor-tools {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+
+  // Dropdown answers
+  .e-dropdown-answer {
+    line-height: 18px;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  .e-dropdown-answer__toggle-button {
+    display: none !important;
+  }
+
+  .e-dropdown-answer__toggle-button:after {
+    content: '';
+    border: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .e-dropdown-answer__menu {
+    visibility: visible !important;
+    position: relative !important;
+    border: 0 !important;
+    line-height: 16px;
+    transform: none !important;
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+  }
+
+  .e-dropdown-answer__menu-item .e-formula {
+    display: inline-block;
+    padding: 2px;
+  }
+
+  .e-dropdown-answer__menu-item:first-child {
+    display: none !important;
+  }
+
+  .e-dropdown-answer__menu-item {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    padding: 0 4px !important;
+    border: 1px gray dotted;
+    border-right: none;
+    margin: 0 -1px 1px 0;
+  }
+
+  .e-dropdown-answer__menu-item:last-child {
+    border-right: 1px gray dotted;
+  }
+
+  .e-dropdown-answer__menu-item--selected {
+    background: none;
+    border-bottom: 1px solid black;
+    box-shadow: 0 -1px 0 -0.5px inset black;
+  }
+}
