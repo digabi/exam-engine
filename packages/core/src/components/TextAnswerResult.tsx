@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import * as _ from 'lodash-es'
 import React from 'react'
 import { connect } from 'react-redux'
 import { getNumericAttribute } from '../dom-utils'
@@ -15,19 +16,31 @@ export class TextAnswerResult extends React.PureComponent<Props, {}> {
   render() {
     const { answer, className, element, type } = this.props
     const value = answer && answer.value
-
     switch (type) {
       case 'rich-text':
       case 'multi-line':
         return (
           <>
-            <div dangerouslySetInnerHTML={{ __html: value! }} />
-            <AnswerToolbar
-              {...{
-                answer,
-                element
-              }}
-            />
+            <div className="answer" data-answer-id="4220">
+              <div className="answer-text-container">
+                <div
+                  className="answerText"
+                  data-annotations={JSON.stringify(_.get(answer, 'metadata.annotations', []))}
+                  dangerouslySetInnerHTML={{ __html: value! }}
+                />
+              </div>
+              <AnswerToolbar
+                {...{
+                  answer,
+                  element
+                }}
+              />
+              <div className="answer-annotations">
+                <div className="is_pregrading">
+                  <table className="annotation-messages" />
+                </div>
+              </div>
+            </div>
           </>
         )
       case 'single-line':
