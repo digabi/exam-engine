@@ -1,9 +1,8 @@
 import classNames from 'classnames'
-import _ from 'lodash-es'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { connect } from 'react-redux'
-import { getNumericAttribute, queryAll } from '../dom-utils'
+import { calculateChildrenElemScores } from '../dom-utils'
 import { AppState } from '../store/index'
 import AnsweringInstructions from './AnsweringInstructions'
 import NotificationIcon from './NotificationIcon'
@@ -21,7 +20,7 @@ function ExamQuestionTitleResult({ element, renderChildNodes, sumScore }: ExamQu
 
   return (
     <>
-      <div className="resultsScore">
+      <div className="e-float-right">
         {t('points', { count: maxScore })} max <br />
         <b>{t('points', { count: sumScore })}</b>
       </div>
@@ -48,24 +47,7 @@ function ExamQuestionTitleResult({ element, renderChildNodes, sumScore }: ExamQu
 
 function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   const questionElem = element.parentElement!
-  const childrenAnswers = queryAll(
-    questionElem,
-    ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'],
-    true
-  )
-
-  const sumScore = _.sum(
-    childrenAnswers.map(answer => {
-      const questionId = getNumericAttribute(answer, 'question-id')!
-      const scoredAnswer = state.answers.answersById[questionId]
-
-      if (scoredAnswer) {
-        return scoredAnswer.scoreValue ?? 0
-      } else {
-        return 0
-      }
-    })
-  )
+  const sumScore = calculateChildrenElemScores(questionElem, state.answers.answersById)
   return { sumScore }
 }
 
