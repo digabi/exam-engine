@@ -1,3 +1,6 @@
+import _ from 'lodash-es'
+import { ExamAnswer, QuestionId } from './components/types'
+
 export const NBSP = '\u00A0'
 
 export function parentElements(element: Element, selector?: Selector): Element[] {
@@ -105,4 +108,25 @@ export function mapChildElements<T>(element: Element, fn: (childElement: Element
     result.push(fn(childElement, i))
   }
   return result
+}
+
+export function calculateChildrenElemScores(element: Element, answers: Record<QuestionId, ExamAnswer>): number {
+  const childrenAnswers = queryAll(
+    element,
+    ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'],
+    true
+  )
+
+  return _.sum(
+    childrenAnswers.map(answer => {
+      const questionId = getNumericAttribute(answer, 'question-id')!
+      const scoredAnswer = answers[questionId]
+
+      if (scoredAnswer) {
+        return scoredAnswer.scoreValue ?? 0
+      } else {
+        return 0
+      }
+    })
+  )
 }
