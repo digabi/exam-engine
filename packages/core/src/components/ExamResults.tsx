@@ -1,10 +1,10 @@
 import { i18n } from 'i18next'
 import React, { PureComponent } from 'react'
-import { I18nextProvider } from 'react-i18next'
+import { I18nextProvider, Translation } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { Store } from 'redux'
 import { createRenderChildNodes } from '../createRenderChildNodes'
-import { findChildElement } from '../dom-utils'
+import { calculateChildrenElemScores, findChildElement } from '../dom-utils'
 import { initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
 import initializeStore, { AppState } from '../store'
@@ -70,6 +70,8 @@ export class ExamResults extends PureComponent<ExamProps> {
       this.i18n.changeLanguage(language)
     }
 
+    const sumScore = calculateChildrenElemScores(root, this.store.getState().answers.answersById)
+
     return (
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
@@ -85,6 +87,14 @@ export class ExamResults extends PureComponent<ExamProps> {
                       <strong>{dateTimeFormatter.format(date)}</strong>
                     </p>
                   )}
+                  <div className="e-float-right">
+                    <strong className="e-column">
+                      <Translation>{t => t('exam-total')}</Translation>
+                    </strong>
+                    <strong className="e-column e-column--narrow table-of-contents--score-column">
+                      <Translation>{t => t('points', { count: sumScore })}</Translation>
+                    </strong>
+                  </div>
                 </Section>
                 {renderChildNodes(root)}
               </main>
