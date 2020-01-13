@@ -13,7 +13,6 @@ import DocumentTitle from '../DocumentTitle'
 import { ExamProps } from '../Exam'
 import ExamAttachment from '../ExamAttachment'
 import { ExamContext, withExamContext } from '../ExamContext'
-import ExamQuestion from '../ExamQuestion'
 import ExamSection from '../ExamSection'
 import ExamSectionTitle from '../ExamSectionTitle'
 import File from '../File'
@@ -23,6 +22,7 @@ import ScoredTextAnswers from '../ScoredTextAnswers'
 import Section from '../Section'
 import ChoiceAnswerResult from './ChoiceAnswerResult'
 import DropdownAnswerResult from './DropdownAnswerResult'
+import ExamQuestionResult from './ExamQuestionResult'
 import ExamQuestionTitleResult from './ExamQuestionTitleResult'
 import TextAnswerResult from './TextAnswerResult'
 
@@ -34,7 +34,7 @@ const renderChildNodes = createRenderChildNodes({
   file: File,
   formula: Formula,
   image: Image,
-  question: ExamQuestion,
+  question: ExamQuestionResult,
   'question-title': ExamQuestionTitleResult,
   'scored-text-answer': TextAnswerResult,
   'scored-text-answers': ScoredTextAnswers,
