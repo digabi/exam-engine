@@ -2,10 +2,10 @@ import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
 import { connect } from 'react-redux'
-import { getNumericAttribute } from '../dom-utils'
-import { AppState } from '../store'
-import AnswerToolbar from './AnswerToolbar'
-import { ExamComponentProps, RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from './types'
+import { getNumericAttribute } from '../../dom-utils'
+import { AppState } from '../../store'
+import AnswerToolbar from '../AnswerToolbar'
+import { ExamComponentProps, RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../types'
 
 interface Props extends ExamComponentProps {
   answer?: TextAnswerT | RichTextAnswerT
