@@ -110,18 +110,15 @@ export function mapChildElements<T>(element: Element, fn: (childElement: Element
   return result
 }
 
-export function calculateChildrenElemScores(element: Element, answers: Record<QuestionId, ExamAnswer>): number {
-  const childrenAnswers = queryAll(
-    element,
-    ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'],
-    true
-  )
+export function findChildrenAnswers(element: Element) {
+  return queryAll(element, ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'], true)
+}
 
+export function calculateChildrenElemScores(element: Element, answers: Record<QuestionId, ExamAnswer>): number {
   return _.sum(
-    childrenAnswers.map(answer => {
+    findChildrenAnswers(element).map(answer => {
       const questionId = getNumericAttribute(answer, 'question-id')!
       const scoredAnswer = answers[questionId]
-
       if (scoredAnswer) {
         return scoredAnswer.scoreValue ?? 0
       } else {
