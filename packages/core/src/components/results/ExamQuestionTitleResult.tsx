@@ -2,12 +2,12 @@ import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { connect } from 'react-redux'
-import { calculateChildrenElemScores } from '../dom-utils'
-import { AppState } from '../store/index'
-import AnsweringInstructions from './AnsweringInstructions'
-import NotificationIcon from './NotificationIcon'
-import { QuestionContext } from './QuestionContext'
-import { ExamComponentProps } from './types'
+import { calculateChildrenElemScores } from '../../dom-utils'
+import { AppState } from '../../store/index'
+import AnsweringInstructions from '../AnsweringInstructions'
+import NotificationIcon from '../NotificationIcon'
+import { QuestionContext } from '../QuestionContext'
+import { ExamComponentProps } from '../types'
 
 interface ExamQuestionTitleProps extends ExamComponentProps {
   sumScore?: number
