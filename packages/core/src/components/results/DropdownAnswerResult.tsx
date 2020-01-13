@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
 import { connect } from 'react-redux'
-import { findChildElement, getNumericAttribute, mapChildElements } from '../dom-utils'
-import { AppState } from '../store'
-import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from './types'
+import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
+import { AppState } from '../../store'
+import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from '../types'
 
 interface DropdownAnswerProps extends ExamComponentProps {
   answer?: ChoiceAnswerT
