@@ -25,6 +25,7 @@ type Item = Element | typeof noAnswer
 
 function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: DropdownAnswerProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
+  const displayNumber = element.getAttribute('display-number')!
   const currentlySelectedItem =
     answer &&
     answer.value &&
@@ -32,7 +33,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
 
   const onChange = (selectedAnswer: '' | Element | null) => {
     const value = selectedAnswer ? selectedAnswer.getAttribute('option-id')! : ''
-    saveAnswer({ type: 'choice', questionId, value })
+    saveAnswer({ type: 'choice', questionId, value, displayNumber })
   }
 
   const labelRef = useRef<HTMLDivElement>(null)
