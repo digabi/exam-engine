@@ -15,7 +15,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@digabi/exam-engine-core": "^7.0.0",
+    "@digabi/exam-engine-core": "^7.0.1-abitti-student-xml-skop.0",
     "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
     "glob": "^7.1.6",
