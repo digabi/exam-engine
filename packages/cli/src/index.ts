@@ -24,7 +24,7 @@ yargs
   .command(['preview [exam]', 'start'], 'Preview an exam', addExamArgs, runCommand('./commands/preview'))
   .command(
     'create-transfer-zip [exam] [options]',
-    'Create a transfer zip that can be imported to Oma Abitti',
+    'Create a transfer zip that can be imported to oma.abitti.fi',
     addExamArgs,
     runCommand('./commands/create-transfer-zip')
   )
