@@ -12,6 +12,7 @@ export const fi_FI = {
   'external-material-title': 'Aineisto',
   question: '{{displayNumber}}',
   part: 'Osa {{displayNumber}}:',
+  grade: 'Arvosana',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} piste',

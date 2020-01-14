@@ -26,6 +26,11 @@ import ExamQuestionResult from './ExamQuestionResult'
 import ExamQuestionTitleResult from './ExamQuestionTitleResult'
 import TextAnswerResult from './TextAnswerResult'
 
+export interface ExamResultsProps extends ExamProps {
+  /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
+  gradingText?: string
+}
+
 const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
   'audio-group': AudioGroup,
@@ -43,12 +48,12 @@ const renderChildNodes = createRenderChildNodes({
   'text-answer': TextAnswerResult
 })
 
-export class ExamResults extends PureComponent<ExamProps> {
+export class ExamResults extends PureComponent<ExamResultsProps> {
   private readonly store: Store<AppState>
   private readonly ref: React.RefObject<HTMLDivElement>
   private readonly i18n: i18n
 
-  constructor(props: ExamProps) {
+  constructor(props: ExamResultsProps) {
     super(props)
     this.ref = React.createRef()
     const root = props.doc.documentElement
@@ -61,7 +66,7 @@ export class ExamResults extends PureComponent<ExamProps> {
   }
 
   render() {
-    const { doc, language } = this.props
+    const { doc, language, gradingText } = this.props
     const root = doc.documentElement
     const examTitle = findChildElement(root, 'exam-title')
     const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -87,13 +92,23 @@ export class ExamResults extends PureComponent<ExamProps> {
                       <strong>{dateTimeFormatter.format(date)}</strong>
                     </p>
                   )}
-                  <div className="e-float-right">
-                    <strong className="e-column">
-                      <Translation>{t => t('exam-total')}</Translation>
-                    </strong>
+                  <div>
+                    <span className="e-column">
+                      <Translation>{t => t('exam-total')}</Translation>:
+                    </span>
                     <strong className="e-column e-column--narrow table-of-contents--score-column">
                       <Translation>{t => t('points', { count: sumScore })}</Translation>
                     </strong>
+                    {gradingText && (
+                      <div>
+                        <span className="e-column">
+                          <Translation>{t => t('grade')}</Translation>:
+                        </span>
+                        <strong className="e-column e-column--narrow table-of-contents--score-column">
+                          {gradingText}
+                        </strong>
+                      </div>
+                    )}
                   </div>
                 </Section>
                 {renderChildNodes(root)}
