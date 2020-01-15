@@ -15,6 +15,7 @@ import { sv_FI } from './sv-FI'
 import { TC } from './TC'
 import { VA } from './VA'
 import { Z } from './Z'
+import { I } from './I'
 
 const examSpecificTranslations = {
   A_E,
@@ -28,6 +29,7 @@ const examSpecificTranslations = {
   FA,
   FC: FA,
   GC,
+  I,
   M,
   N: M,
   O_E,
