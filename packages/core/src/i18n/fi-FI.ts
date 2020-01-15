@@ -13,6 +13,7 @@ export const fi_FI = {
   question: '{{displayNumber}}',
   part: 'Osa {{displayNumber}}:',
   grade: 'Arvosana',
+  comment: 'Kommentti',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} piste',

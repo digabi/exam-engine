@@ -10,6 +10,7 @@ export const sv_FI: Translations = {
   part: 'Del {{displayNumber}}:',
   question: '{{displayNumber}}',
   grade: 'Vitsord',
+  comment: 'Kommentar',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} poäng',
