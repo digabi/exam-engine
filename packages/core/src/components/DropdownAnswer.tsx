@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import Downshift from 'downshift'
 import * as _ from 'lodash-es'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { connect } from 'react-redux'
 import { findChildElement, getNumericAttribute, mapChildElements, NBSP } from '../dom-utils'
 import * as fonts from '../fonts'
 import { AppState } from '../store'
 import * as actions from '../store/answers/actions'
+import { QuestionContext } from './QuestionContext'
+import { Score } from './Score'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from './types'
 
 interface DropdownAnswerProps extends ExamComponentProps {
@@ -25,6 +27,7 @@ type Item = Element | typeof noAnswer
 
 function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: DropdownAnswerProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
+  const maxScore = getNumericAttribute(element, 'max-score')!
   const displayNumber = element.getAttribute('display-number')!
   const currentlySelectedItem =
     answer &&
@@ -65,77 +68,77 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   }
 
   const items: Item[] = [noAnswer, ...element.children]
+  const { answerCount } = useContext(QuestionContext)
 
   return (
-    <Downshift
-      itemToString={item => (item ? item.textContent! : '')}
-      onChange={onChange}
-      selectedItem={currentlySelectedItem}
-    >
-      {({
-        getItemProps,
-        getMenuProps,
-        getLabelProps,
-        getToggleButtonProps,
-        highlightedIndex,
-        isOpen,
-        selectedItem
-      }) => (
-        <span className={classNames('e-dropdown-answer')}>
-          <div
-            className={classNames('e-dropdown-answer__toggle-button e-columns', {
-              'e-dropdown-answer__toggle-button--open': isOpen
-            })}
-            tabIndex="0"
-            {...getToggleButtonProps()}
-          >
-            <span className="e-dropdown-answer__label e-column e-pad-l-1 e-pad-r-4" {...getLabelProps()}>
-              <div className="e-ellipsis" ref={labelRef}>
-                {selectedItem ? renderChildNodes(selectedItem) : NBSP}
-              </div>
-            </span>
-            <span
-              className={classNames(
-                'e-dropdown-answer__toggle-icon e-text-center e-column e-column--narrow e-column--gapless',
-                {
-                  'e-bg-color-link e-color-off-white': !isOpen,
-                  'e-color-link': isOpen
-                }
-              )}
+    <span className="e-nowrap">
+      <Downshift
+        itemToString={item => (item ? item.textContent! : '')}
+        onChange={onChange}
+        initialSelectedItem={currentlySelectedItem}
+      >
+        {({
+          getItemProps,
+          getMenuProps,
+          getLabelProps,
+          getToggleButtonProps,
+          highlightedIndex,
+          isOpen,
+          selectedItem
+        }) => (
+          <span className={classNames('e-dropdown-answer e-normal')}>
+            <div
+              className={classNames('e-dropdown-answer__toggle-button e-columns', {
+                'e-dropdown-answer__toggle-button--open': isOpen
+              })}
+              tabIndex="0"
+              {...getToggleButtonProps()}
             >
-              <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
-            </span>
-          </div>
-          <div
-            {...getMenuProps({
-              className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
-              ref: menuRef
-            })}
-          >
-            {items.map((item, i) => (
-              // tslint:disable-next-line: jsx-key
-              <div
-                className={classNames('e-dropdown-answer__menu-item e-pad-l-1 e-pad-r-4', {
-                  'e-dropdown-answer__menu-item--selected': item === selectedItem,
-                  'e-bg-color-off-white': highlightedIndex !== i,
-                  'e-bg-color-lighterblue': highlightedIndex === i
-                })}
-                {...getItemProps({
-                  item,
-                  index: i,
-                  key: i
-                })}
-              >
-                {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
-                <div className={classNames('e-dropdown-answer__menu-item-inner', { 'e-nowrap': measuring })}>
-                  {item ? renderChildNodes(item) : NBSP}
+              <span className="e-dropdown-answer__label e-column e-pad-l-1 e-pad-r-4" {...getLabelProps()}>
+                <div className="e-ellipsis" ref={labelRef}>
+                  {selectedItem ? renderChildNodes(selectedItem) : NBSP}
                 </div>
-              </div>
-            ))}
-          </div>
-        </span>
-      )}
-    </Downshift>
+              </span>
+              <span
+                className={classNames(
+                  'e-dropdown-answer__toggle-icon e-text-center e-column e-column--narrow e-column--gapless e-color-link'
+                )}
+              >
+                <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+              </span>
+            </div>
+            <div
+              {...getMenuProps({
+                className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
+                ref: menuRef
+              })}
+            >
+              {items.map((item, i) => (
+                // tslint:disable-next-line: jsx-key
+                <div
+                  className={classNames('e-dropdown-answer__menu-item e-pad-l-1 e-pad-r-4', {
+                    'e-dropdown-answer__menu-item--selected': item === selectedItem,
+                    'e-bg-color-off-white': highlightedIndex !== i,
+                    'e-bg-color-lighterblue': highlightedIndex === i
+                  })}
+                  {...getItemProps({
+                    item,
+                    index: i,
+                    key: i
+                  })}
+                >
+                  {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
+                  <div className={classNames('e-dropdown-answer__menu-item-inner', { 'e-nowrap': measuring })}>
+                    {item ? renderChildNodes(item) : NBSP}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </span>
+        )}
+      </Downshift>
+      {answerCount > 1 && <Score score={maxScore} size={'inline'} />}
+    </span>
   )
 }
 

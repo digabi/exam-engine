@@ -1,5 +1,6 @@
 import React from 'react'
 import { findChildElement } from '../dom-utils'
+import { shortDisplayNumber } from '../shortDisplayNumber'
 import TextAnswerInput from './TextAnswerInput'
 import { ExamComponentProps } from './types'
 
@@ -11,8 +12,9 @@ function TextAnswer(props: ExamComponentProps) {
 
   return hint ? (
     <label className="e-nowrap">
-      <sup className="e-color-darkgrey">{displayNumber}</sup>
-      <span className="e-screen-reader-only">{renderChildNodes(hint)}</span> {textAnswer}
+      <sup className="e-text-answer-display-number e-color-darkgrey">{shortDisplayNumber(displayNumber)}</sup>
+      <span className="e-screen-reader-only">{renderChildNodes(hint)}</span>
+      {textAnswer}
     </label>
   ) : (
     textAnswer

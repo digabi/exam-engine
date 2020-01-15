@@ -3,8 +3,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { RenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
+import { shortDisplayNumber } from '../shortDisplayNumber'
 import { AppState } from '../store'
-import { Score } from './Score'
 import { ExamComponentProps, QuestionId } from './types'
 
 function Hints({ element, renderChildNodes }: ExamComponentProps) {
@@ -39,7 +39,6 @@ function Hint({
 }) {
   const questionId = getNumericAttribute(answer, 'question-id')
   const displayNumber = answer.getAttribute('display-number')!
-  const maxScore = getNumericAttribute(answer, 'max-score')!
   const hint = findChildElement(answer, 'hint')!
 
   return (
@@ -55,10 +54,9 @@ function Hint({
       }}
       data-question-id={questionId}
     >
-      <sup>{displayNumber}</sup>
+      {shortDisplayNumber(displayNumber)}
       {NBSP}
-      <span className="e-mrg-r-1">{renderChildNodes(hint)}</span>
-      <Score score={maxScore} />
+      {renderChildNodes(hint)}
     </p>
   )
 }

@@ -6,7 +6,9 @@ import { AppState } from '../store'
 import * as actions from '../store/answers/actions'
 import AnswerToolbar from './AnswerToolbar'
 import { ExamContext } from './ExamContext'
+import { QuestionContext } from './QuestionContext'
 import RichTextAnswer from './RichTextAnswer'
+import { Score } from './Score'
 import { AnswerError, ExamComponentProps, RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from './types'
 
 interface Props extends ExamComponentProps {
@@ -126,6 +128,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
     } = this.props
     const { error } = this.state
     const questionId = getNumericAttribute(element, 'question-id')
+    const maxScore = getNumericAttribute(element, 'max-score')!
     const value = answer && answer.value
 
     switch (type) {
@@ -183,16 +186,21 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       case 'single-line':
       default:
         return (
-          <input
-            type="text"
-            className={classNames('text-answer text-answer--single-line', className)}
-            value={value}
-            onChange={this.onChange}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            ref={this.ref}
-            data-question-id={questionId}
-          />
+          <span className="e-nowrap">
+            <input
+              type="text"
+              className={classNames('text-answer text-answer--single-line', className)}
+              value={value}
+              onChange={this.onChange}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              ref={this.ref}
+              data-question-id={questionId}
+            />
+            <QuestionContext.Consumer>
+              {({ answerCount }) => answerCount > 1 && <Score score={maxScore} size="inline" />}
+            </QuestionContext.Consumer>
+          </span>
         )
     }
   }
