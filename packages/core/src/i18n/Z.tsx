@@ -16,5 +16,9 @@ export const Z: ExamTranslations = {
     translator: 'Jorgalus',
     'modified-by': 'Heivehus:'
   },
+  'answering-instructions': {
+    'toc-section_*_1_1': 'Fáttát',
+    'section_*_1_1': 'Vállje ovtta fáttá.'
+  },
   'toc-heading': 'Sisdoallu'
 }
