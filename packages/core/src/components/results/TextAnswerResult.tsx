@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
+import { Translation } from 'react-i18next'
 import { connect } from 'react-redux'
 import { getNumericAttribute } from '../../dom-utils'
 import { AppState } from '../../store'
@@ -16,6 +17,7 @@ export class TextAnswerResult extends React.PureComponent<Props, {}> {
   render() {
     const { answer, className, element, type } = this.props
     const value = answer && answer.value
+    const comment = answer && answer.comment
     switch (type) {
       case 'rich-text':
       case 'multi-line':
@@ -41,6 +43,14 @@ export class TextAnswerResult extends React.PureComponent<Props, {}> {
                 </div>
               </div>
             </div>
+            {comment && (
+              <>
+                <h5>
+                  <Translation>{t => t('comment')}</Translation>
+                </h5>
+                <div className="comment">{comment}</div>
+              </>
+            )}
           </>
         )
       case 'single-line':
