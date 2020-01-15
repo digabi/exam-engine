@@ -7,6 +7,7 @@ interface AnswerCommon {
   questionId: QuestionId
   value: string
   scoreValue?: number
+  comment?: string
 }
 export interface TextAnswer extends AnswerCommon {
   type: 'text'
