@@ -4,6 +4,7 @@ export const Z: ExamTranslations = {
   'exam-total': 'Iskkus oktiibuot',
   material: 'Ávdnasat',
   'external-material-title': 'Ávdnasat',
+  'attachments-page-title': 'ávdnasat',
   part: 'Oassi {{displayNumber}}:',
   points: '{{count}} č.',
   'points-screen-reader': '{{count}} čuokkis',
@@ -15,6 +16,10 @@ export const Z: ExamTranslations = {
     'reference-date': 'Vižžojuvvon:',
     translator: 'Jorgalus',
     'modified-by': 'Heivehus:'
+  },
+  'answering-instructions': {
+    'toc-section_*_1_1': 'Fáttát',
+    'section_*_1_1': 'Vállje ovtta fáttá.'
   },
   'toc-heading': 'Sisdoallu'
 }
