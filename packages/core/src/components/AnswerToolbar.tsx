@@ -23,17 +23,17 @@ function AnswerToolbar({
 }: AnswerToolbarProps) {
   return (
     <div className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2">
-      <div className="answer-toolbar__answer-length e-column e-column--auto">
+      <div className="answer-toolbar__answer-length e-column e-column--narrow">
         {answer && (answer.type === 'text' || answer.type === 'richText') ? (
           <Translation>{t => t('answer-length', { count: answer.characterCount })}</Translation>
         ) : (
           NBSP
         )}
       </div>
-      <div className="answer-toolbar__errors e-column e-column--narrow">
+      <div className="answer-toolbar__errors e-column e-column--auto e-text-center">
         {error && <Translation>{t => t(`answer-errors.${error.key}`, error.options)}</Translation>}
       </div>
-      <div className="answer-toolbar__history e-column e-column--auto e-text-right">
+      <div className="answer-toolbar__history e-column e-column--narrow e-text-right">
         {supportsAnswerHistory && (
           <div className="answer-toolbar__select-previous-version">
             {showAnswerHistory && answer != null ? (

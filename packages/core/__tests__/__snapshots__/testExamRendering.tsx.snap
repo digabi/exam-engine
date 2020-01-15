@@ -1116,15 +1116,15 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -1167,15 +1167,15 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -1218,15 +1218,15 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -1269,15 +1269,15 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -1320,15 +1320,15 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -1371,15 +1371,15 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -3061,15 +3061,15 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -3127,15 +3127,15 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -3259,15 +3259,15 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -3403,15 +3403,15 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -3603,15 +3603,15 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -3683,15 +3683,15 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -8158,15 +8158,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -8213,15 +8213,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -8268,15 +8268,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -8323,15 +8323,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -8403,15 +8403,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -8562,15 +8562,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -8631,15 +8631,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -8779,15 +8779,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -8965,15 +8965,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -9058,15 +9058,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -9123,15 +9123,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -9187,15 +9187,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -9410,15 +9410,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -9471,15 +9471,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -9731,15 +9731,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -9801,15 +9801,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -9854,15 +9854,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -10017,15 +10017,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -10073,15 +10073,15 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -10650,15 +10650,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -10706,15 +10706,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -10761,15 +10761,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -10816,15 +10816,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -10896,15 +10896,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -11040,15 +11040,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -11110,15 +11110,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -11258,15 +11258,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -11444,15 +11444,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -11537,15 +11537,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -11602,15 +11602,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -11666,15 +11666,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -11887,15 +11887,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -11946,15 +11946,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -12205,15 +12205,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -12275,15 +12275,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -12329,15 +12329,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -12492,15 +12492,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -12549,15 +12549,15 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -16489,15 +16489,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -16538,15 +16538,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -17030,15 +17030,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -17290,15 +17290,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -17577,15 +17577,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -20482,15 +20482,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
             >
               <div
-                className="answer-toolbar__answer-length e-column e-column--auto"
+                className="answer-toolbar__answer-length e-column e-column--narrow"
               >
                  
               </div>
               <div
-                className="answer-toolbar__errors e-column e-column--narrow"
+                className="answer-toolbar__errors e-column e-column--auto e-text-center"
               />
               <div
-                className="answer-toolbar__history e-column e-column--auto e-text-right"
+                className="answer-toolbar__history e-column e-column--narrow e-text-right"
               />
             </div>
             
@@ -20616,15 +20616,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
             >
               <div
-                className="answer-toolbar__answer-length e-column e-column--auto"
+                className="answer-toolbar__answer-length e-column e-column--narrow"
               >
                  
               </div>
               <div
-                className="answer-toolbar__errors e-column e-column--narrow"
+                className="answer-toolbar__errors e-column e-column--auto e-text-center"
               />
               <div
-                className="answer-toolbar__history e-column e-column--auto e-text-right"
+                className="answer-toolbar__history e-column e-column--narrow e-text-right"
               />
             </div>
             
@@ -20821,15 +20821,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
             >
               <div
-                className="answer-toolbar__answer-length e-column e-column--auto"
+                className="answer-toolbar__answer-length e-column e-column--narrow"
               >
                  
               </div>
               <div
-                className="answer-toolbar__errors e-column e-column--narrow"
+                className="answer-toolbar__errors e-column e-column--auto e-text-center"
               />
               <div
-                className="answer-toolbar__history e-column e-column--auto e-text-right"
+                className="answer-toolbar__history e-column e-column--narrow e-text-right"
               />
             </div>
             
@@ -29089,15 +29089,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -29138,15 +29138,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -29630,15 +29630,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -29890,15 +29890,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -30177,15 +30177,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -33082,15 +33082,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
             >
               <div
-                className="answer-toolbar__answer-length e-column e-column--auto"
+                className="answer-toolbar__answer-length e-column e-column--narrow"
               >
                  
               </div>
               <div
-                className="answer-toolbar__errors e-column e-column--narrow"
+                className="answer-toolbar__errors e-column e-column--auto e-text-center"
               />
               <div
-                className="answer-toolbar__history e-column e-column--auto e-text-right"
+                className="answer-toolbar__history e-column e-column--narrow e-text-right"
               />
             </div>
             
@@ -33216,15 +33216,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
             >
               <div
-                className="answer-toolbar__answer-length e-column e-column--auto"
+                className="answer-toolbar__answer-length e-column e-column--narrow"
               >
                  
               </div>
               <div
-                className="answer-toolbar__errors e-column e-column--narrow"
+                className="answer-toolbar__errors e-column e-column--auto e-text-center"
               />
               <div
-                className="answer-toolbar__history e-column e-column--auto e-text-right"
+                className="answer-toolbar__history e-column e-column--narrow e-text-right"
               />
             </div>
             
@@ -33421,15 +33421,15 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
             >
               <div
-                className="answer-toolbar__answer-length e-column e-column--auto"
+                className="answer-toolbar__answer-length e-column e-column--narrow"
               >
                  
               </div>
               <div
-                className="answer-toolbar__errors e-column e-column--narrow"
+                className="answer-toolbar__errors e-column e-column--auto e-text-center"
               />
               <div
-                className="answer-toolbar__history e-column e-column--auto e-text-right"
+                className="answer-toolbar__history e-column e-column--narrow e-text-right"
               />
             </div>
             
@@ -42145,15 +42145,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -42647,15 +42647,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -43166,15 +43166,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -43685,15 +43685,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -44204,15 +44204,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
          
@@ -44703,15 +44703,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -44971,15 +44971,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -45336,15 +45336,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -45594,15 +45594,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -45832,15 +45832,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -45885,15 +45885,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -46001,15 +46001,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -46144,15 +46144,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -46549,15 +46549,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -46620,15 +46620,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -46838,15 +46838,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -47269,15 +47269,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -47377,15 +47377,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -47476,15 +47476,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -47636,15 +47636,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -47801,15 +47801,15 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -50454,15 +50454,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -50956,15 +50956,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -51475,15 +51475,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -51994,15 +51994,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -52513,15 +52513,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
          
@@ -53012,15 +53012,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
                 
@@ -53280,15 +53280,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -53645,15 +53645,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -53903,15 +53903,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -54141,15 +54141,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -54194,15 +54194,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -54310,15 +54310,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -54453,15 +54453,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -54858,15 +54858,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -54929,15 +54929,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -55147,15 +55147,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -55578,15 +55578,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -55686,15 +55686,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -55785,15 +55785,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -55945,15 +55945,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -56110,15 +56110,15 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
         className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
       >
         <div
-          className="answer-toolbar__answer-length e-column e-column--auto"
+          className="answer-toolbar__answer-length e-column e-column--narrow"
         >
            
         </div>
         <div
-          className="answer-toolbar__errors e-column e-column--narrow"
+          className="answer-toolbar__errors e-column e-column--auto e-text-center"
         />
         <div
-          className="answer-toolbar__history e-column e-column--auto e-text-right"
+          className="answer-toolbar__history e-column e-column--narrow e-text-right"
         />
       </div>
       
@@ -58762,15 +58762,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -58887,15 +58887,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -59072,15 +59072,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -59185,15 +59185,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -59310,15 +59310,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -59536,15 +59536,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -59733,15 +59733,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -59930,15 +59930,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -60127,15 +60127,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -60367,15 +60367,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -60564,15 +60564,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -60677,15 +60677,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -60874,15 +60874,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -60987,15 +60987,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -61238,15 +61238,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -61435,15 +61435,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -61630,15 +61630,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -61744,15 +61744,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -61858,15 +61858,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -62215,15 +62215,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -62505,15 +62505,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -62795,15 +62795,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -63140,15 +63140,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -63448,15 +63448,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -63756,15 +63756,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -64032,15 +64032,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64146,15 +64146,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64326,15 +64326,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64419,15 +64419,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64512,15 +64512,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64605,15 +64605,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64698,15 +64698,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64791,15 +64791,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -64974,15 +64974,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65028,15 +65028,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65142,15 +65142,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65256,15 +65256,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65439,15 +65439,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65608,15 +65608,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65722,15 +65722,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65836,15 +65836,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -65950,15 +65950,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -66900,15 +66900,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67014,15 +67014,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67068,15 +67068,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67251,15 +67251,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67311,15 +67311,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67425,15 +67425,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67539,15 +67539,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67662,15 +67662,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67776,15 +67776,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -67890,15 +67890,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -68004,15 +68004,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -68118,15 +68118,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -68232,15 +68232,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -68415,15 +68415,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -68529,15 +68529,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -68643,15 +68643,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -68697,15 +68697,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -71700,15 +71700,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -71762,15 +71762,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -71968,15 +71968,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -72043,15 +72043,15 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -73807,15 +73807,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -73932,15 +73932,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -74117,15 +74117,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -74230,15 +74230,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -74355,15 +74355,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -74581,15 +74581,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -74778,15 +74778,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -74975,15 +74975,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -75172,15 +75172,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -75412,15 +75412,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -75609,15 +75609,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -75722,15 +75722,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -75919,15 +75919,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -76032,15 +76032,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -76283,15 +76283,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -76480,15 +76480,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -76675,15 +76675,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -76789,15 +76789,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -76903,15 +76903,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -77260,15 +77260,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -77550,15 +77550,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -77840,15 +77840,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -78185,15 +78185,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -78493,15 +78493,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -78801,15 +78801,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
             className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
           >
             <div
-              className="answer-toolbar__answer-length e-column e-column--auto"
+              className="answer-toolbar__answer-length e-column e-column--narrow"
             >
                
             </div>
             <div
-              className="answer-toolbar__errors e-column e-column--narrow"
+              className="answer-toolbar__errors e-column e-column--auto e-text-center"
             />
             <div
-              className="answer-toolbar__history e-column e-column--auto e-text-right"
+              className="answer-toolbar__history e-column e-column--narrow e-text-right"
             />
           </div>
           
@@ -79077,15 +79077,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -79191,15 +79191,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -79371,15 +79371,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -79464,15 +79464,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -79557,15 +79557,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -79650,15 +79650,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -79743,15 +79743,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -79836,15 +79836,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80019,15 +80019,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80073,15 +80073,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80187,15 +80187,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80301,15 +80301,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80484,15 +80484,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80653,15 +80653,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80767,15 +80767,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80881,15 +80881,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -80995,15 +80995,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -81945,15 +81945,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82059,15 +82059,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82113,15 +82113,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82296,15 +82296,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82356,15 +82356,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82470,15 +82470,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82584,15 +82584,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82707,15 +82707,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82821,15 +82821,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -82935,15 +82935,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -83049,15 +83049,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -83163,15 +83163,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -83277,15 +83277,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -83460,15 +83460,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -83574,15 +83574,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -83688,15 +83688,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -83742,15 +83742,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -86745,15 +86745,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -86807,15 +86807,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -87013,15 +87013,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         
@@ -87088,15 +87088,15 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2"
         >
           <div
-            className="answer-toolbar__answer-length e-column e-column--auto"
+            className="answer-toolbar__answer-length e-column e-column--narrow"
           >
              
           </div>
           <div
-            className="answer-toolbar__errors e-column e-column--narrow"
+            className="answer-toolbar__errors e-column e-column--auto e-text-center"
           />
           <div
-            className="answer-toolbar__history e-column e-column--auto e-text-right"
+            className="answer-toolbar__history e-column e-column--narrow e-text-right"
           />
         </div>
         

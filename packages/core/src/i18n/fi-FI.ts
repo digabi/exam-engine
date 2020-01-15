@@ -103,7 +103,7 @@ export const fi_FI = {
   'answer-errors': {
     'screenshot-limit-exceeded': 'Vastaukseen voi liittää enintään {{limit}} kuvaa.',
     'screenshot-too-big':
-      'Ottamasi kuvakaappaus on liian iso.<br/>Ota uusi kuvakaappaus pienemmästä osasta näyttöä ja yritä uudelleen.',
+      'Ottamasi kuvakaappaus on liian iso. Ota uusi kuvakaappaus pienemmästä osasta näyttöä ja yritä uudelleen.',
     'screenshot-byte-limit-reached':
       'Kokeesi kuvakaappauksille varattu tila on täyttynyt. (Voit viitata aineistokuviin suoraan ilman kuvakaappausta.)',
     'screenshot-upload-failed': 'Kuvan liittäminen ei onnistunut. Kokeile uudestaan.'

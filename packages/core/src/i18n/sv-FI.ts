@@ -100,7 +100,7 @@ export const sv_FI: Translations = {
   'answer-errors': {
     'screenshot-limit-exceeded': 'Max {{limit}} bilder kan bifogas till svaret.',
     'screenshot-too-big':
-      'Den skärmdump du tagit är för stor.<br/>Ta en ny skärmdump av en mindre del av skärmen och försök på nytt.',
+      'Den skärmdump du tagit är för stor. Ta en ny skärmdump av en mindre del av skärmen och försök på nytt.',
     'screenshot-byte-limit-reached':
       'Minnesutrymmet för skärmdumpar är fullt. (Du kan referera till bilder i materialet direkt utan skärmdumpar.)',
     'screenshot-upload-failed': 'Bifogandet av skärmdumpen misslyckades. Försök på nytt.'
