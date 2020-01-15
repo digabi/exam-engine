@@ -4,7 +4,7 @@ export const Z: ExamTranslations = {
   'exam-total': 'Iskkus oktiibuot',
   material: 'Ávdnasat',
   'external-material-title': 'Ávdnasat',
-  'attachments-page-title': 'Ávdnasat',
+  'attachments-page-title': 'ávdnasat',
   part: 'Oassi {{displayNumber}}:',
   points: '{{count}} č.',
   'points-screen-reader': '{{count}} čuokkis',
