@@ -79,8 +79,9 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
   const questionId = getNumericAttribute(element, 'question-id')!
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')
+  const displayNumber = element.getAttribute('display-number')!
   const onSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
-    saveAnswer({ type: 'choice', questionId, value: event.currentTarget.value })
+    saveAnswer({ type: 'choice', questionId, value: event.currentTarget.value, displayNumber })
   }
 
   return (

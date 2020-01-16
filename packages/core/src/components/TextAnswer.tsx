@@ -51,8 +51,15 @@ export class TextAnswer extends React.PureComponent<Props, State> {
   onChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { element, saveAnswer } = this.props
     const questionId = getNumericAttribute(element, 'question-id')!
+    const displayNumber = element.getAttribute('display-number')!
     const value = event.currentTarget.value
-    const answer: TextAnswerT = { type: 'text', questionId, value, characterCount: getCharacterCount(value) }
+    const answer: TextAnswerT = {
+      type: 'text',
+      questionId,
+      value,
+      characterCount: getCharacterCount(value),
+      displayNumber
+    }
     saveAnswer(answer)
     this.clearErrors()
   }
@@ -60,11 +67,13 @@ export class TextAnswer extends React.PureComponent<Props, State> {
   onRichTextChange = (answerHtml: string, answerText: string) => {
     const { element, saveAnswer } = this.props
     const questionId = getNumericAttribute(element, 'question-id')!
+    const displayNumber = element.getAttribute('display-number')!
     const answer: RichTextAnswerT = {
       type: 'richText',
       questionId,
       value: answerHtml,
-      characterCount: getCharacterCount(answerText)
+      characterCount: getCharacterCount(answerText),
+      displayNumber
     }
     saveAnswer(answer)
     this.clearErrors()
