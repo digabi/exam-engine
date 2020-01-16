@@ -25,7 +25,6 @@ const examSpecificTranslations = {
   CB: CA,
   EA,
   EC: EA,
-  DC: Z,
   FA,
   FC: FA,
   GC,
