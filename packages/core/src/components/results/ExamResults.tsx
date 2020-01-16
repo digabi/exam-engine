@@ -8,7 +8,6 @@ import { calculateChildrenElemScores, findChildElement } from '../../dom-utils'
 import { initI18n } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
 import initializeStore, { AppState } from '../../store'
-import AudioGroup from '../AudioGroup'
 import DocumentTitle from '../DocumentTitle'
 import { ExamProps } from '../Exam'
 import ExamAttachment from '../ExamAttachment'
@@ -20,6 +19,7 @@ import Formula from '../Formula'
 import Image from '../Image'
 import ScoredTextAnswers from '../ScoredTextAnswers'
 import Section from '../Section'
+import AudioGroupResult from './AudioGroupResult'
 import ChoiceAnswerResult from './ChoiceAnswerResult'
 import DropdownAnswerResult from './DropdownAnswerResult'
 import ExamQuestionResult from './ExamQuestionResult'
@@ -33,7 +33,7 @@ export interface ExamResultsProps extends ExamProps {
 
 const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
-  'audio-group': AudioGroup,
+  'audio-group': AudioGroupResult,
   'choice-answer': ChoiceAnswerResult,
   'dropdown-answer': DropdownAnswerResult,
   file: File,
