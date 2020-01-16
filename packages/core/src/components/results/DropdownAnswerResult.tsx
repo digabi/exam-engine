@@ -18,13 +18,16 @@ function DropdownAnswerResult({ element, answer }: DropdownAnswerProps) {
 
   const maxScore = _.max(mapChildElements(element, childElement => getNumericAttribute(childElement, 'score'))) || 0
 
-  const correctAnswer = findChildElement(
-    element,
-    childElement => getNumericAttribute(childElement, 'score') === maxScore
+  const correctAnswers = _.compact(
+    mapChildElements(element, childElement => {
+      if (getNumericAttribute(childElement, 'score') === maxScore) {
+        return childElement.textContent
+      }
+    })
   )
 
-  if (currentlySelectedItem && correctAnswer) {
-    const isAnswerCorrect = currentlySelectedItem.textContent === correctAnswer.textContent
+  if (currentlySelectedItem) {
+    const isAnswerCorrect = correctAnswers.includes(currentlySelectedItem.textContent!)
     return (
       <>
         <span
@@ -35,7 +38,7 @@ function DropdownAnswerResult({ element, answer }: DropdownAnswerProps) {
         >
           {currentlySelectedItem.textContent}
         </span>
-        {!isAnswerCorrect && <span className="e-dropdown-answer__correct">{correctAnswer.textContent}</span>}
+        {!isAnswerCorrect && <span className="e-dropdown-answer__correct">{correctAnswers.join(',')}</span>}
       </>
     )
   }
