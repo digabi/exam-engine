@@ -115,15 +115,17 @@ export function findChildrenAnswers(element: Element) {
 }
 
 export function calculateChildrenElemScores(element: Element, answers: Record<QuestionId, ExamAnswer>): number {
-  return _.sum(
-    findChildrenAnswers(element).map(answer => {
-      const questionId = getNumericAttribute(answer, 'question-id')!
-      const scoredAnswer = answers[questionId]
-      if (scoredAnswer) {
-        return scoredAnswer.scoreValue ?? 0
-      } else {
-        return 0
-      }
-    })
+  return Math.round(
+    _.sum(
+      findChildrenAnswers(element).map(answer => {
+        const questionId = getNumericAttribute(answer, 'question-id')!
+        const scoredAnswer = answers[questionId]
+        if (scoredAnswer) {
+          return scoredAnswer.scoreValue ?? 0
+        } else {
+          return 0
+        }
+      })
+    )
   )
 }
