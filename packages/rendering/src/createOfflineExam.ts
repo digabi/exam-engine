@@ -49,8 +49,15 @@ export async function createOfflineExam(examFile: string, outputDirectory: strin
       ]) {
         await page.goto('file://' + htmlFile, { waitUntil: 'networkidle0' })
         await page.evaluate(() => {
+          // Fix asset path on attachments page.
+          if (location.pathname.includes('attachments/index.html')) {
+            const style = document.head.querySelector(':scope > style')!
+            style.textContent = style.textContent!.replace(/url\(assets\//g, 'url(../assets/')
+          }
           // Remove rich-text-editor injected styles
-          document.head.querySelectorAll(':scope > style').forEach(e => e.remove())
+          Array.from(document.head.querySelectorAll(':scope > style'))
+            .filter(e => !e.textContent!.includes('NotoSans'))
+            .forEach(e => e.remove())
           // Remove rich-text-editor injected HTML.
           document.body.querySelectorAll(':scope > :not(main)').forEach(e => e.remove())
         })

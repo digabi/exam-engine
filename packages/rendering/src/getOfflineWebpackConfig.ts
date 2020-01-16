@@ -1,4 +1,5 @@
 import { MasteringResult } from '@digabi/exam-engine-mastering'
+import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import path from 'path'
@@ -27,17 +28,16 @@ export function getOfflineWebpackConfig(result: MasteringResult, outputDirectory
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#e0f4fe',
-        scriptSrc: 'main-bundle.js',
-        styleSheetHref: 'main.css'
+        scriptSrc: 'main-bundle.js'
       }),
       new HtmlWebpackPlugin({
         filename: 'attachments/index.html',
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#f0f0f0',
-        scriptSrc: '../main-bundle.js',
-        styleSheetHref: '../main.css'
-      })
+        scriptSrc: '../main-bundle.js'
+      }),
+      new HTMLInlineCSSWebpackPlugin()
     ]
   })
 }
