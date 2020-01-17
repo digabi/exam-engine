@@ -5084,6 +5084,13 @@ html-entities@^1.2.1:
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
 
+html-inline-css-webpack-plugin@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/html-inline-css-webpack-plugin/-/html-inline-css-webpack-plugin-1.8.0.tgz#f1120e08755658148b53f5596824fc5afece58ac"
+  integrity sha512-lNBoRA2Sl1+0VCUevElT/In208AtkvDFAMZN8K9bBkZ9gn+Ymi8vRCrKkSIF4MNVxdDL2x0LOGyDscQ7So9zcQ==
+  dependencies:
+    lodash "^4.17.15"
+
 html-minifier@^3.2.3:
   version "3.5.21"
   resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.21.tgz#d0040e054730e354db008463593194015212d20c"

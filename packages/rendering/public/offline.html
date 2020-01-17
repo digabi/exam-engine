@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-
-    <link rel="preload" href="<%= htmlWebpackPlugin.options.scriptSrc %>" as="script" />
-    <link rel="preload" href="<%= htmlWebpackPlugin.options.styleSheetHref %>" as="style" />
-
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.styleSheetHref %>" />
     <script src="<%= htmlWebpackPlugin.options.scriptSrc %>" defer></script>
   </head>
   <body style="background-color: <%= htmlWebpackPlugin.options.backgroundColor %>;" />
