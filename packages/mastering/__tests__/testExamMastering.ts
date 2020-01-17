@@ -24,13 +24,6 @@ describe('Exam mastering', () => {
     )
   })
 
-  it('score is required for accepted-answer', async () => {
-    const xml = await readFixture('accepted_answer_without_score.xml')
-    return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
-      "Element '{http://ylioppilastutkinto.fi/exam.xsd}accepted-answer': The attribute 'score' is required but missing.\n"
-    )
-  })
-
   it('does not substitute entities', async () => {
     const xml = await readFixture('has_entities.xml')
     return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
