@@ -75,7 +75,8 @@ describe('Exam mastering', () => {
       for (const result of results) {
         expect(wrap(result.xml)).toMatchSnapshot('xml')
         expect(wrap(result.hvp)).toMatchSnapshot('hvp')
-        expect(_.omit(result, 'xml', 'hvp')).toMatchSnapshot()
+        expect(wrap(result.translation)).toMatchSnapshot('translation')
+        expect(_.omit(result, 'xml', 'hvp', 'translation')).toMatchSnapshot()
       }
     })
   }

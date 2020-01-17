@@ -12,12 +12,16 @@ const { original, results }: { original: string; results: MasteringResult[] } = 
 function Toolbar({
   hvp,
   hvpFilename,
+  translation,
+  translationFilename,
   languages,
   children
 }: {
   languages: string[]
   hvp: string
   hvpFilename: string
+  translation: string
+  translationFilename: string
   children: React.ReactNode
 }) {
   return (
@@ -27,6 +31,7 @@ function Toolbar({
           <ChangeLanguage language={language} key={language} />
         ))}
         <SaveHvp {...{ hvp, hvpFilename }} />
+        <SaveTranslation {...{ translation, translationFilename }} />
       </ol>
       {children}
     </>
@@ -62,6 +67,23 @@ function SaveHvp({ hvp, hvpFilename }: { hvp: string; hvpFilename: string }) {
     </li>
   )
 }
+function SaveTranslation({ translation, translationFilename }: { translation: string; translationFilename: string }) {
+  return (
+    <li className="toolbar__item">
+      <button
+        onClick={() => {
+          const blob = new Blob([translation], { type: 'text/plain' })
+          const link = document.createElement('a')
+          link.href = URL.createObjectURL(blob)
+          link.download = translationFilename
+          link.click()
+        }}
+      >
+        Tallenna käännettävät tekstit
+      </button>
+    </li>
+  )
+}
 
 window.onload = async () => {
   const app = document.getElementById('app')!
@@ -77,8 +99,9 @@ window.onload = async () => {
   const language = languages.find(lang => lang === languageCookie) || languages[0]
 
   if (language) {
-    const { xml, hvp, examCode, dayCode } = results.find(r => r.language === language)!
+    const { xml, hvp, translation, examCode, dayCode } = results.find(r => r.language === language)!
     const hvpFilename = examCode ? `${examCode}${dayCode ? '_' + dayCode : ''}_${language}.md` : 'hvp.md'
+    const translationFilename = examCode ? `${examCode}_kaannokset.txt` : 'kaannokset.txt'
     const doc = parseExam(xml, false)
 
     const Root = location.pathname.startsWith('/attachments') ? Attachments : Exam
@@ -97,7 +120,7 @@ window.onload = async () => {
     document.body.style.backgroundColor = Root === Exam ? '#e0f4fe' : '#f0f0f0'
 
     ReactDOM.render(
-      <Toolbar {...{ languages, selectedLanguage: language, hvp, hvpFilename }}>
+      <Toolbar {...{ languages, selectedLanguage: language, hvp, hvpFilename, translation, translationFilename }}>
         <Root
           {...{
             casCountdownDuration,
