@@ -120,11 +120,7 @@ export function calculateChildrenElemScores(element: Element, answers: Record<Qu
       findChildrenAnswers(element).map(answer => {
         const questionId = getNumericAttribute(answer, 'question-id')!
         const scoredAnswer = answers[questionId]
-        if (scoredAnswer) {
-          return scoredAnswer.scoreValue ?? 0
-        } else {
-          return 0
-        }
+        return scoredAnswer ? scoredAnswer.scoreValue ?? 0 : 0
       })
     )
   )

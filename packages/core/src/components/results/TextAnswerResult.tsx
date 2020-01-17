@@ -13,7 +13,7 @@ interface Props extends ExamComponentProps {
   type: 'rich-text' | 'multi-line' | 'single-line'
 }
 
-export class TextAnswerResult extends React.PureComponent<Props, {}> {
+export class TextAnswerResult extends React.PureComponent<Props> {
   render() {
     const { answer, className, element, type } = this.props
     const value = answer && answer.value
@@ -23,7 +23,7 @@ export class TextAnswerResult extends React.PureComponent<Props, {}> {
       case 'multi-line':
         return (
           <>
-            <div className="answer" data-answer-id="4220">
+            <div className="answer">
               <div className="answer-text-container">
                 <div
                   className="answerText"
