@@ -7,10 +7,10 @@ import { AppState } from '../store'
 import { Score } from './Score'
 import { ExamComponentProps, QuestionId } from './types'
 
-function ScoredTextAnswers({ element, renderChildNodes }: ExamComponentProps) {
+function Hints({ element, renderChildNodes }: ExamComponentProps) {
   const focusedQuestionId = useSelector((state: AppState) => state.answers.focusedQuestionId)
-  const scoredTextAnswersWithHints = queryAll(element, 'scored-text-answer').filter(
-    scoredTextAnswer => findChildElement(scoredTextAnswer, 'hint') != null
+  const answersWithHints = queryAll(element, ['text-answer', 'scored-text-answer']).filter(
+    answer => findChildElement(answer, 'hint') != null
   )
 
   return (
@@ -19,33 +19,33 @@ function ScoredTextAnswers({ element, renderChildNodes }: ExamComponentProps) {
       {/* Intentionally not semantically correct, so we don't have to do any
       special handling to make screen readers ignore it, especially wrt.
       keyboard navigation. */}
-      <div className="e-scored-text-answers e-column e-column--4 e-pad-l-4" aria-hidden="true">
-        {scoredTextAnswersWithHints.map((scoredTextAnswer, i) => (
-          <ScoredTextAnswerHint {...{ scoredTextAnswer, focusedQuestionId, renderChildNodes, key: i }} />
+      <div className="e-hints e-column e-column--4 e-pad-l-4" aria-hidden="true">
+        {answersWithHints.map((answer, i) => (
+          <Hint {...{ answer, focusedQuestionId, renderChildNodes, key: i }} />
         ))}
       </div>
     </div>
   )
 }
 
-function ScoredTextAnswerHint({
-  scoredTextAnswer,
+function Hint({
+  answer,
   focusedQuestionId,
   renderChildNodes
 }: {
-  scoredTextAnswer: Element
+  answer: Element
   focusedQuestionId: QuestionId | null
   renderChildNodes: RenderChildNodes
 }) {
-  const questionId = getNumericAttribute(scoredTextAnswer, 'question-id')
-  const displayNumber = scoredTextAnswer.getAttribute('display-number')!
-  const maxScore = getNumericAttribute(scoredTextAnswer, 'max-score')!
-  const hint = findChildElement(scoredTextAnswer, 'hint')!
+  const questionId = getNumericAttribute(answer, 'question-id')
+  const displayNumber = answer.getAttribute('display-number')!
+  const maxScore = getNumericAttribute(answer, 'max-score')!
+  const hint = findChildElement(answer, 'hint')!
 
   return (
     <p
-      className={classNames('e-scored-text-answer-hint', {
-        'e-scored-text-answer-hint--focused': focusedQuestionId === questionId
+      className={classNames('e-hints__hint', {
+        'e-hints__hint--focused': focusedQuestionId === questionId
       })}
       onClick={() => {
         const question = document.querySelector<HTMLElement>(`.text-answer[data-question-id="${questionId}"]`)
@@ -63,4 +63,4 @@ function ScoredTextAnswerHint({
   )
 }
 
-export default React.memo(ScoredTextAnswers)
+export default React.memo(Hints)

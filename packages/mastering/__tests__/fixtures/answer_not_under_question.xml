@@ -5,7 +5,7 @@
         <e:language>sv-FI</e:language>
     </e:languages>
     <e:exam-title>
-        <e:text-answer /> <!-- Not allowed -->
+        <e:text-answer max-score="1"/> <!-- Not allowed -->
     </e:exam-title>
     <e:exam-instruction />
     <e:section>

@@ -28,11 +28,10 @@ import ExamSectionTitle from './ExamSectionTitle'
 import ExternalMaterialList from './ExternalMaterialList'
 import File from './File'
 import Formula from './Formula'
+import Hints from './Hints'
 import Image from './Image'
 import References from './References'
 import SaveIndicator from './SaveIndicator'
-import ScoredTextAnswer from './ScoredTextAnswer'
-import ScoredTextAnswers from './ScoredTextAnswers'
 import Section from './Section'
 import SectionInstruction from './SectionInstruction'
 import TableOfContents from './TableOfContents'
@@ -81,9 +80,9 @@ const renderChildNodes = createRenderChildNodes({
   question: ExamQuestion,
   'question-instruction': ExamQuestionInstruction,
   'question-title': ExamQuestionTitle,
+  hints: Hints,
   references: References,
-  'scored-text-answer': ScoredTextAnswer,
-  'scored-text-answers': ScoredTextAnswers,
+  'scored-text-answer': TextAnswer,
   'section-instruction': SectionInstruction,
   section: ExamSection,
   'section-title': ExamSectionTitle,

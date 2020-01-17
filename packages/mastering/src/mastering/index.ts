@@ -103,7 +103,7 @@ function assertExamIsValid(doc: Document): Document {
   for (const answer of asElements(root.find(xpathOr(answerTypes), ns))) {
     // Ensure that the each answer element is directly within a question,
     // ignoring a few special HTML-like exam elements.
-    const htmlLikeExamElements = ['scored-text-answers', 'localization', 'attachment', 'audio-group']
+    const htmlLikeExamElements = ['hints', 'localization', 'attachment', 'audio-group']
     const maybeParentQuestion = queryAncestors(
       answer,
       e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
@@ -117,6 +117,17 @@ function assertExamIsValid(doc: Document): Document {
     const maybeChildQuestion = maybeParentQuestion.get('.//e:question', ns)
     if (maybeChildQuestion != null) {
       throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion)
+    }
+
+    // Ensure that scored-text-answer has either max-score or accepted-answers.
+    if (answer.name() === 'scored-text-answer') {
+      const maxScore = answer.attr('max-score')
+      if (maxScore == null && answer.get('./e:accepted-answer', ns) == null) {
+        throw mkError(
+          'A scored-text-answer element must contain either a max-score attribute or contain accepted-answers',
+          answer
+        )
+      }
     }
   }
 
@@ -334,7 +345,7 @@ function updateMaxScoresToAnswers(exam: Exam) {
             element.find('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
           ).map(option => getNumericAttribute('score', option, 0))
           const maxScore = _.max(scores)
-          element.attr('max-score', String(maxScore || 0))
+          element.attr('max-score', String(maxScore))
         }
       }
     }

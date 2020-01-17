@@ -4881,7 +4881,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           <code>e:scored-text-answer</code>
           elements
           within a
-          <code>e:scored-text-answers</code>
+          <code>e:hints</code>
           element.
         </p>
         <div class="warning-box">
@@ -4952,7 +4952,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         Example of
         <code>e:scored-text-answer</code>
       </h4>
-      <pre class="code"><![CDATA[<e:scored-text-answers>
+      <pre class="code"><![CDATA[<e:hints>
   Lorem ipsum,
   <e:scored-text-answer>
     <e:hint>dolor?</e:hint>
@@ -4979,9 +4979,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     <e:accepted-answer score="1">dolores</e:accepted-answer>
   </e:scored-text-answer>
   quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-</e:scored-text-answers>]]></pre>
+</e:hints>]]></pre>
       <div class="example">
-        <e:scored-text-answers>
+        <e:hints>
           Lorem ipsum,
           <e:scored-text-answer display-number="10.1" question-id="8" max-score="1">
             <e:hint>dolor?</e:hint>
@@ -5008,7 +5008,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
             
           </e:scored-text-answer>
           quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-        </e:scored-text-answers>
+        </e:hints>
       </div>
 
       <h4>
@@ -7826,7 +7826,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           <code>e:scored-text-answer</code>
           elements
           within a
-          <code>e:scored-text-answers</code>
+          <code>e:hints</code>
           element.
         </p>
         <div class="warning-box">
@@ -7897,7 +7897,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
         Example of
         <code>e:scored-text-answer</code>
       </h4>
-      <pre class="code"><![CDATA[<e:scored-text-answers>
+      <pre class="code"><![CDATA[<e:hints>
   Lorem ipsum,
   <e:scored-text-answer>
     <e:hint>dolor?</e:hint>
@@ -7924,9 +7924,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     <e:accepted-answer score="1">dolores</e:accepted-answer>
   </e:scored-text-answer>
   quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-</e:scored-text-answers>]]></pre>
+</e:hints>]]></pre>
       <div class="example">
-        <e:scored-text-answers>
+        <e:hints>
           Lorem ipsum,
           <e:scored-text-answer display-number="10.1" question-id="8" max-score="1">
             <e:hint>dolor?</e:hint>
@@ -7953,7 +7953,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
             
           </e:scored-text-answer>
           quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-        </e:scored-text-answers>
+        </e:hints>
       </div>
 
       <h4>
@@ -18859,13 +18859,13 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <br/>
       <e:attachment>
         <e:attachment-title>6. teksti</e:attachment-title>
-        <e:scored-text-answers>
+        <e:hints>
           <p><b>Felix:</b> Hallo Anna! Machen wir am Wochenende etwas zusammen?</p>
           <p><b>Anna:</b> Gute Idee! Aber am Sonntag mache ich schon mit meiner Schwester eine Fahrradtour zum Tiergarten.</p>
           <p><b>Felix:</b> Ach so. Aber Samstag? <span class="e-nowrap"><e:scored-text-answer display-number="18.1" question-id="81" max-score="2"><e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint></e:scored-text-answer>?</span></p>
           <p><b>Anna:</b> Ja, gerne! Aber ich sage dir erst morgen Bescheid, <span class="e-nowrap"><e:scored-text-answer display-number="18.2" question-id="82" max-score="2"><e:hint>weil ich zuerst Mama frage (müssen)</e:hint></e:scored-text-answer>.</span></p>
           <p><b>Felix:</b> Gut, melde dich dann!</p>
-        </e:scored-text-answers>
+        </e:hints>
         <e:reference>
           <e:author>
             YTL
@@ -18884,7 +18884,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:attachment>
         <e:attachment-title>7. teksti</e:attachment-title>
         <br/>
-        <e:scored-text-answers>
+        <e:hints>
           <h4>Dialog 1</h4>
           <p>
             Tim sitzt am Küchentisch. Sein großer Bruder Jan kommt in die Küche.
@@ -18906,7 +18906,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <br/>
             Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet: <e:scored-text-answer max-score="3" display-number="19.4" question-id="86"><e:hint><e:attachment><e:attachment-title>7.4. kuva</e:attachment-title><e:image src="7.4.jpg" width="999" height="999"/><e:reference><e:url>https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda</e:url><e:reference-date>2019-11-25</e:reference-date><e:title>Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496</e:title><e:author>Charles Edward Miller</e:author><e:howpublished>CC BY-SA 2.0</e:howpublished></e:reference></e:attachment></e:hint></e:scored-text-answer>
           </p>
-        </e:scored-text-answers>
+        </e:hints>
         <e:reference>
           <e:author>
             YTL
@@ -20422,13 +20422,13 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <br/>
       <e:attachment>
         <e:attachment-title>6. teksti</e:attachment-title>
-        <e:scored-text-answers>
+        <e:hints>
           <p><b>Felix:</b> Hallo Anna! Machen wir am Wochenende etwas zusammen?</p>
           <p><b>Anna:</b> Gute Idee! Aber am Sonntag mache ich schon mit meiner Schwester eine Fahrradtour zum Tiergarten.</p>
           <p><b>Felix:</b> Ach so. Aber Samstag? <span class="e-nowrap"><e:scored-text-answer display-number="18.1" question-id="81" max-score="2"><e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint></e:scored-text-answer>?</span></p>
           <p><b>Anna:</b> Ja, gerne! Aber ich sage dir erst morgen Bescheid, <span class="e-nowrap"><e:scored-text-answer display-number="18.2" question-id="82" max-score="2"><e:hint>weil ich zuerst Mama frage (müssen)</e:hint></e:scored-text-answer>.</span></p>
           <p><b>Felix:</b> Gut, melde dich dann!</p>
-        </e:scored-text-answers>
+        </e:hints>
         <e:reference>
           <e:author>
             
@@ -20447,7 +20447,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:attachment>
         <e:attachment-title>7. teksti</e:attachment-title>
         <br/>
-        <e:scored-text-answers>
+        <e:hints>
           <h4>Dialog 1</h4>
           <p>
             Tim sitzt am Küchentisch. Sein großer Bruder Jan kommt in die Küche.
@@ -20469,7 +20469,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <br/>
             Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet: <e:scored-text-answer max-score="3" display-number="19.4" question-id="86"><e:hint><e:attachment><e:attachment-title>7.4. kuva</e:attachment-title><e:image src="7.4.jpg" width="999" height="999"/><e:reference><e:url>https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda</e:url><e:reference-date>2019-11-25</e:reference-date><e:title>Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496</e:title><e:author>Charles Edward Miller</e:author><e:howpublished>CC BY-SA 2.0</e:howpublished></e:reference></e:attachment></e:hint></e:scored-text-answer>
           </p>
-        </e:scored-text-answers>
+        </e:hints>
         <e:reference>
           <e:author>
             

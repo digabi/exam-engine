@@ -10,7 +10,7 @@
         <e:section-title />
         <e:question>
             <e:question-title />
-            <e:text-answer />
+            <e:text-answer max-score="1" />
             <e:question>
                 <e:question-title />
             </e:question>
