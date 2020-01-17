@@ -6471,10 +6471,10 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-libxmljs2@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.23.0.tgz#cfcdded8a181638e3cb7ad4cd0a3f2c0c48a741a"
-  integrity sha512-MNVkksIsGnmIa98P3B2olelYNqZROotm915IoF0bDWCmczEHpnxGpfp9vtVOzCm9ys2CjX8ze7CTe20Jwa2S4g==
+libxmljs2@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.24.0.tgz#1deacca0fa964e877f5e63b6933c7506b8297df5"
+  integrity sha512-K2ArNjpjd1pggoKiWSryQdZFUgNxIqJJGCfbiNYHC4VkH27Al8qoh0lQXZzcoASyuv/pG5wSaXHGp3r0hjCEoQ==
   dependencies:
     bindings "~1.5.0"
     nan "~2.14.0"
