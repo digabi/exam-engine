@@ -1404,13 +1404,13 @@
       <br/>
       <e:attachment>
         <e:attachment-title>6. teksti</e:attachment-title>
-        <e:scored-text-answers>
+        <e:hints>
           <p><b>Felix:</b> Hallo Anna! Machen wir am Wochenende etwas zusammen?</p>
           <p><b>Anna:</b> Gute Idee! Aber am Sonntag mache ich schon mit meiner Schwester eine Fahrradtour zum Tiergarten.</p>
           <p><b>Felix:</b> Ach so. Aber Samstag? <span class="e-nowrap"><e:scored-text-answer><e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint><e:accepted-answer score="2">Willst du am Samstag mit ins Kino kommen</e:accepted-answer></e:scored-text-answer>?</span></p>
           <p><b>Anna:</b> Ja, gerne! Aber ich sage dir erst morgen Bescheid, <span class="e-nowrap"><e:scored-text-answer><e:hint>weil ich zuerst Mama frage (müssen)</e:hint><e:accepted-answer score="2">weil ich zuerst Mama fragen muss</e:accepted-answer></e:scored-text-answer>.</span></p>
           <p><b>Felix:</b> Gut, melde dich dann!</p>
-        </e:scored-text-answers>
+        </e:hints>
         <e:reference>
           <e:author>
             <e:localization lang="fi-FI">YTL</e:localization>
@@ -1429,7 +1429,7 @@
       <e:attachment>
         <e:attachment-title>7. teksti</e:attachment-title>
         <br/>
-        <e:scored-text-answers>
+        <e:hints>
           <h4>Dialog 1</h4>
           <p>
             Tim sitzt am Küchentisch. Sein großer Bruder Jan kommt in die Küche.
@@ -1451,7 +1451,7 @@
             <br/>
             Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet: <e:scored-text-answer max-score="3"><e:hint><e:attachment><e:attachment-title>7.4. kuva</e:attachment-title><e:image src="7.4.jpg"/><e:reference><e:url>https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda</e:url><e:reference-date>2019-11-25</e:reference-date><e:title>Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496</e:title><e:author>Charles Edward Miller</e:author><e:howpublished>CC BY-SA 2.0</e:howpublished></e:reference></e:attachment></e:hint></e:scored-text-answer>
           </p>
-        </e:scored-text-answers>
+        </e:hints>
         <e:reference>
           <e:author>
             <e:localization lang="fi-FI">YTL</e:localization>

@@ -10,11 +10,11 @@
     <e:section-title>Ensimmäinen osa</e:section-title>
     <e:question>
       <e:question-title>Produktiivinen aukko</e:question-title>
-      <e:scored-text-answers>
+      <e:hints>
         <e:scored-text-answer>
           <e:accepted-answer>Pisteetön vaihtoehto</e:accepted-answer>
         </e:scored-text-answer>
-      </e:scored-text-answers>
+      </e:hints>
     </e:question>
   </e:section>
 </e:exam>

@@ -937,7 +937,7 @@
           <code>e:scored-text-answer</code>
           elements
           within a
-          <code>e:scored-text-answers</code>
+          <code>e:hints</code>
           element.
         </p>
         <div class="warning-box">
@@ -1008,7 +1008,7 @@
         Example of
         <code>e:scored-text-answer</code>
       </h4>
-      <pre class="code"><![CDATA[<e:scored-text-answers>
+      <pre class="code"><![CDATA[<e:hints>
   Lorem ipsum,
   <e:scored-text-answer>
     <e:hint>dolor?</e:hint>
@@ -1035,9 +1035,9 @@
     <e:accepted-answer score="1">dolores</e:accepted-answer>
   </e:scored-text-answer>
   quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-</e:scored-text-answers>]]></pre>
+</e:hints>]]></pre>
       <div class="example">
-        <e:scored-text-answers>
+        <e:hints>
           Lorem ipsum,
           <e:scored-text-answer>
             <e:hint>dolor?</e:hint>
@@ -1064,7 +1064,7 @@
             <e:accepted-answer score="1">dolores</e:accepted-answer>
           </e:scored-text-answer>
           quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-        </e:scored-text-answers>
+        </e:hints>
       </div>
 
       <h4>

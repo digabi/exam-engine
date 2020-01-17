@@ -19,37 +19,40 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
     await close()
   })
 
+  const firstAnswerId = 81
+  const secondAnswerId = 82
+
   it('highlights the hint when focusing a scored text answer', async () => {
     await page.goto(url, { waitUntil: 'networkidle0' })
 
-    await focusScoredTextAnswer(81)
-    await assertScoredTextAnswerHintHighlighted(81)
+    await focusAnswer(firstAnswerId)
+    await assertAnswerHintHighlighted(firstAnswerId)
 
-    await focusScoredTextAnswer(82)
-    await assertScoredTextAnswerHintHighlighted(82)
+    await focusAnswer(secondAnswerId)
+    await assertAnswerHintHighlighted(secondAnswerId)
   })
 
   it('focuses the answer when clicking a hint', async () => {
-    await clickScoredTextAnswerHint(81)
-    await assertScoredTextAnswerHintFocused(81)
+    await clickAnswerHint(firstAnswerId)
+    await assertAnswerHintFocused(firstAnswerId)
 
-    await clickScoredTextAnswerHint(82)
-    await assertScoredTextAnswerHintFocused(82)
+    await clickAnswerHint(secondAnswerId)
+    await assertAnswerHintFocused(secondAnswerId)
   })
 
-  async function focusScoredTextAnswer(questionId: QuestionId) {
+  async function focusAnswer(questionId: QuestionId) {
     await page.click(`.text-answer[data-question-id="${questionId}"]`)
   }
 
-  async function clickScoredTextAnswerHint(questionId: QuestionId) {
+  async function clickAnswerHint(questionId: QuestionId) {
     await page.click(`.text-answer[data-question-id="${questionId}"]`)
   }
 
-  async function assertScoredTextAnswerHintHighlighted(questionId: QuestionId) {
-    await page.waitForSelector(`.e-scored-text-answer-hint--focused[data-question-id="${questionId}"]`)
+  async function assertAnswerHintHighlighted(questionId: QuestionId) {
+    await page.waitForSelector(`.e-hints__hint--focused[data-question-id="${questionId}"]`)
   }
 
-  async function assertScoredTextAnswerHintFocused(questionId: QuestionId) {
+  async function assertAnswerHintFocused(questionId: QuestionId) {
     await page.waitForSelector(`.text-answer[data-question-id="${questionId}"]:focus`)
   }
 })

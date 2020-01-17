@@ -18144,7 +18144,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           within a
           
           <code>
-            e:scored-text-answers
+            e:hints
           </code>
           
           element.
@@ -18403,7 +18403,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
       <pre
         className="code"
       >
-        &lt;e:scored-text-answers&gt;
+        &lt;e:hints&gt;
   Lorem ipsum,
   &lt;e:scored-text-answer&gt;
     &lt;e:hint&gt;dolor?&lt;/e:hint&gt;
@@ -18430,7 +18430,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
     &lt;e:accepted-answer score="1"&gt;dolores&lt;/e:accepted-answer&gt;
   &lt;/e:scored-text-answer&gt;
   quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-&lt;/e:scored-text-answers&gt;
+&lt;/e:hints&gt;
       </pre>
       
       
@@ -18581,10 +18581,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-scored-text-answers e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4 e-pad-l-4"
           >
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={8}
               onClick={[Function]}
             >
@@ -18605,7 +18605,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={9}
               onClick={[Function]}
             >
@@ -18626,7 +18626,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={10}
               onClick={[Function]}
             >
@@ -18647,7 +18647,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={11}
               onClick={[Function]}
             >
@@ -18668,7 +18668,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={12}
               onClick={[Function]}
             >
@@ -30744,7 +30744,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           within a
           
           <code>
-            e:scored-text-answers
+            e:hints
           </code>
           
           element.
@@ -31003,7 +31003,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
       <pre
         className="code"
       >
-        &lt;e:scored-text-answers&gt;
+        &lt;e:hints&gt;
   Lorem ipsum,
   &lt;e:scored-text-answer&gt;
     &lt;e:hint&gt;dolor?&lt;/e:hint&gt;
@@ -31030,7 +31030,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
     &lt;e:accepted-answer score="1"&gt;dolores&lt;/e:accepted-answer&gt;
   &lt;/e:scored-text-answer&gt;
   quas autem eaque impedit dolore. Blanditiis, eos doloribus.
-&lt;/e:scored-text-answers&gt;
+&lt;/e:hints&gt;
       </pre>
       
       
@@ -31181,10 +31181,10 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-scored-text-answers e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4 e-pad-l-4"
           >
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={8}
               onClick={[Function]}
             >
@@ -31205,7 +31205,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={9}
               onClick={[Function]}
             >
@@ -31226,7 +31226,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={10}
               onClick={[Function]}
             >
@@ -31247,7 +31247,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={11}
               onClick={[Function]}
             >
@@ -31268,7 +31268,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={12}
               onClick={[Function]}
             >
@@ -71088,10 +71088,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-scored-text-answers e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4 e-pad-l-4"
           >
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={81}
               onClick={[Function]}
             >
@@ -71112,7 +71112,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={82}
               onClick={[Function]}
             >
@@ -71401,10 +71401,10 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-scored-text-answers e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4 e-pad-l-4"
           >
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={83}
               onClick={[Function]}
             >
@@ -71425,7 +71425,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={84}
               onClick={[Function]}
             >
@@ -71471,7 +71471,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={85}
               onClick={[Function]}
             >
@@ -71492,7 +71492,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={86}
               onClick={[Function]}
             >
@@ -86133,10 +86133,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-scored-text-answers e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4 e-pad-l-4"
           >
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={81}
               onClick={[Function]}
             >
@@ -86157,7 +86157,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={82}
               onClick={[Function]}
             >
@@ -86446,10 +86446,10 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-scored-text-answers e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4 e-pad-l-4"
           >
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={83}
               onClick={[Function]}
             >
@@ -86470,7 +86470,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={84}
               onClick={[Function]}
             >
@@ -86516,7 +86516,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={85}
               onClick={[Function]}
             >
@@ -86537,7 +86537,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
               </span>
             </p>
             <p
-              className="e-scored-text-answer-hint"
+              className="e-hints__hint"
               data-question-id={86}
               onClick={[Function]}
             >
