@@ -26,13 +26,7 @@ function ExamQuestionResult({ element, renderChildNodes }: ExamComponentProps) {
 
 function questionHasAnswers(element: Element, answers: Record<number, ExamAnswer>): boolean {
   const answerElems = findChildrenAnswers(element)
-  for (const e of answerElems) {
-    const questionId = getNumericAttribute(e, 'question-id')!
-    if (answers[questionId]) {
-      return true
-    }
-  }
-  return false
+  return answerElems.some(e => answers[getNumericAttribute(e, 'question-id')!])
 }
 
 export default React.memo(withQuestionContext(ExamQuestionResult))
