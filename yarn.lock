@@ -150,11 +150,6 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@digabi/exam-engine-core@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@digabi/exam-engine-core/-/exam-engine-core-7.0.0.tgz#8f7e98271d6d76056d28c022f309ebfee07dc057"
-  integrity sha512-a00Bk9YGe7Z4iAHCUGrR3DSjlAr9qKzks1KnYGnjcz2/O4TAJa/Z3vpQwiiKw+ar+kFfOSltLQJNTfmiEfXCBg==
-
 "@digabi/mathquill@^0.10.3":
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/@digabi/mathquill/-/mathquill-0.10.3.tgz#1f54d89e9f7c62c0a594ec39a0a0983fb5bebb54"

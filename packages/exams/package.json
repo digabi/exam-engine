@@ -22,5 +22,6 @@
   },
   "dependencies": {
     "@digabi/exam-engine-mastering": "^7.1.1-abitti-student-xml-skop.0"
-  }
+  },
+  "gitHead": "5bf3d7c574c4c272dca91110953003d3711b4154"
 }
