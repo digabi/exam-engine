@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "7.1.1-abitti-student-xml-skop.0",
+  "version": "7.1.1-abitti-student-xml-skop.1",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
