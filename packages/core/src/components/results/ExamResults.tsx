@@ -16,8 +16,8 @@ import ExamSection from '../ExamSection'
 import ExamSectionTitle from '../ExamSectionTitle'
 import File from '../File'
 import Formula from '../Formula'
+import Hints from '../Hints'
 import Image from '../Image'
-import ScoredTextAnswers from '../ScoredTextAnswers'
 import Section from '../Section'
 import AudioGroupResult from './AudioGroupResult'
 import ChoiceAnswerResult from './ChoiceAnswerResult'
@@ -42,7 +42,7 @@ const renderChildNodes = createRenderChildNodes({
   question: ExamQuestionResult,
   'question-title': ExamQuestionTitleResult,
   'scored-text-answer': TextAnswerResult,
-  'scored-text-answers': ScoredTextAnswers,
+  hints: Hints,
   section: ExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': TextAnswerResult
