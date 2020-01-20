@@ -296,9 +296,9 @@
               </tr>
             </tbody>
           </table>
-          <p>Notice, that e.g. <code>&amp;nbsp;</code> and <code>&amp;shy;</code> does not work.</p>  
+          <p>Notice, that e.g. <code>&amp;nbsp;</code> and <code>&amp;shy;</code> does not work.</p>
         </e:question-instruction>
-      </e:question>  
+      </e:question>
     </e:question>
 
     <e:question>
@@ -997,8 +997,8 @@
           <tr>
             <td>score</td>
             <td>Integer</td>
-            <td>No</td>
-            <td>0</td>
+            <td>Yes</td>
+            <td>-</td>
             <td>Score for answer</td>
           </tr>
         </tbody>
@@ -1802,7 +1802,7 @@
                          <td>&amp;</td><td><code>&amp;amp;</code></td>
                      </tr>
                    </tbody>
-                 </table>  
+                 </table>
                  <p>
                  For longer formulas also <code><![CDATA[<e:formula>]]>&lt;![CDATA[ latex-code ]]&gt;<![CDATA[</e:formula>]]></code> may also be used. Inside a CDATA-block escaping is not required.
                </p>
