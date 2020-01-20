@@ -83,6 +83,7 @@ const renderChildNodes = createRenderChildNodes({
   hints: Hints,
   references: References,
   'scored-text-answer': TextAnswer,
+  'scored-text-answers': Hints,
   'section-instruction': SectionInstruction,
   section: ExamSection,
   'section-title': ExamSectionTitle,

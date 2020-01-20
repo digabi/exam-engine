@@ -103,7 +103,7 @@ function assertExamIsValid(doc: Document): Document {
   for (const answer of asElements(root.find(xpathOr(answerTypes), ns))) {
     // Ensure that the each answer element is directly within a question,
     // ignoring a few special HTML-like exam elements.
-    const htmlLikeExamElements = ['hints', 'localization', 'attachment', 'audio-group']
+    const htmlLikeExamElements = ['hints', 'scored-text-answers', 'localization', 'attachment', 'audio-group']
     const maybeParentQuestion = queryAncestors(
       answer,
       e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
