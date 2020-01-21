@@ -312,6 +312,8 @@ function addYoCustomizations(exam: Element, language: string) {
     if (title) {
       const firstChild = exam.child(0) as Element
       firstChild.addPrevSibling(exam.node('exam-title', title).namespace((ns.e as any) as Namespace)) // TODO: Remove cast when libxmljs2 typings are fixed.
+    } else {
+      throw new Error(`No exam title defined for ${examCode}`)
     }
   }
 
