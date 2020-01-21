@@ -85,7 +85,9 @@ export async function createMultiMex(
   passphrase: string,
   answersPrivateKey: string,
   outputStream: NodeJS.WritableStream,
-  loadSimulationConfiguration?: NodeJS.ReadableStream
+  loadSimulationConfiguration?: NodeJS.ReadableStream,
+  ktpUpdate?: NodeJS.ReadableStream,
+  koeUpdate?: NodeJS.ReadableStream
 ) {
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
@@ -104,6 +106,12 @@ export async function createMultiMex(
       answersPrivateKey,
       loadSimulationConfiguration
     )
+  }
+  if (ktpUpdate) {
+    encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, ktpUpdate)
+  }
+  if (koeUpdate) {
+    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdate)
   }
 
   zipFile.outputStream.pipe(outputStream)
