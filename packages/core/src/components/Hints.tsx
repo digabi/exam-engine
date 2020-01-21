@@ -15,11 +15,11 @@ function Hints({ element, renderChildNodes }: ExamComponentProps) {
 
   return (
     <div className="e-columns">
-      <div className="e-column--8">{renderChildNodes(element)}</div>
+      <div className="e-column e-column--8">{renderChildNodes(element)}</div>
       {/* Intentionally not semantically correct, so we don't have to do any
       special handling to make screen readers ignore it, especially wrt.
       keyboard navigation. */}
-      <div className="e-hints e-column e-column--4 e-pad-l-4" aria-hidden="true">
+      <div className="e-hints e-column e-column--4" aria-hidden="true">
         {answersWithHints.map((answer, i) => (
           <Hint {...{ answer, focusedQuestionId, renderChildNodes, key: i }} />
         ))}
