@@ -18457,7 +18457,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           className="e-columns"
         >
           <div
-            className="e-column--8"
+            className="e-column e-column--8"
           >
             
           Lorem ipsum,
@@ -18640,7 +18640,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-hints e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4"
           >
             <p
               className="e-hints__hint"
@@ -31066,7 +31066,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           className="e-columns"
         >
           <div
-            className="e-column--8"
+            className="e-column e-column--8"
           >
             
           Lorem ipsum,
@@ -31249,7 +31249,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-hints e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4"
           >
             <p
               className="e-hints__hint"
@@ -71309,7 +71309,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="e-columns"
         >
           <div
-            className="e-column--8"
+            className="e-column e-column--8"
           >
             
           
@@ -71430,7 +71430,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-hints e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4"
           >
             <p
               className="e-hints__hint"
@@ -71513,7 +71513,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           className="e-columns"
         >
           <div
-            className="e-column--8"
+            className="e-column e-column--8"
           >
             
           
@@ -71755,7 +71755,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-hints e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4"
           >
             <p
               className="e-hints__hint"
@@ -86546,7 +86546,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="e-columns"
         >
           <div
-            className="e-column--8"
+            className="e-column e-column--8"
           >
             
           
@@ -86667,7 +86667,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-hints e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4"
           >
             <p
               className="e-hints__hint"
@@ -86750,7 +86750,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           className="e-columns"
         >
           <div
-            className="e-column--8"
+            className="e-column e-column--8"
           >
             
           
@@ -86992,7 +86992,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
           </div>
           <div
             aria-hidden="true"
-            className="e-hints e-column e-column--4 e-pad-l-4"
+            className="e-hints e-column e-column--4"
           >
             <p
               className="e-hints__hint"
