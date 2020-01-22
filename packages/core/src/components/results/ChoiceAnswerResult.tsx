@@ -1,16 +1,18 @@
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
-import React from 'react'
+import React, { useContext } from 'react'
 import { connect } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import { AppState } from '../../store'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps, QuestionId } from '../types'
+import { ExamResultsContext, findMultiChoice } from './ExamResultsContext'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
   selected: boolean
   direction: string
-  maxScore: number
+  score: number,
+  isCorrect: boolean
 }
 
 function ChoiceAnswerOption({
@@ -19,12 +21,11 @@ function ChoiceAnswerOption({
   renderChildNodes,
   questionId,
   direction,
-  maxScore
+  score,
+  isCorrect
 }: ChoiceAnswerOptionProps) {
   const className = element.getAttribute('class')
   const optionId = element.getAttribute('option-id')!
-  const score = getNumericAttribute(element, 'score') || 0
-  const isCorrect = score === maxScore
 
   const content = (
     <div
@@ -75,7 +76,8 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')
 
-  const maxScore = _.max(mapChildElements(element, childElement => getNumericAttribute(childElement, 'score'))) || 0
+  const { gradingStructure } = useContext(ExamResultsContext)
+  const choice = findMultiChoice(gradingStructure.questions, questionId)
 
   return (
     <>
@@ -85,9 +87,9 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
         })}
       >
         {mapChildElements(element, childElement => {
-          const optionId = childElement.getAttribute('option-id')!
-          const selected = answer != null && answer.value === optionId
-
+          const optionId = getNumericAttribute(childElement, 'option-id')!
+          const selected = answer != null && Number(answer.value) === optionId
+          const grading = choice.options.find((option: { id: number }) => option.id === optionId)
           return (
             <ChoiceAnswerOption
               {...{
@@ -97,7 +99,8 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
                 key: optionId,
                 direction,
                 selected,
-                maxScore
+                score: grading.score,
+                isCorrect: grading.correct
               }}
             />
           )

@@ -24,11 +24,13 @@ import ChoiceAnswerResult from './ChoiceAnswerResult'
 import DropdownAnswerResult from './DropdownAnswerResult'
 import ExamQuestionResult from './ExamQuestionResult'
 import ExamQuestionTitleResult from './ExamQuestionTitleResult'
+import { withExamResultsContext } from './ExamResultsContext'
 import TextAnswerResult from './TextAnswerResult'
 
 export interface ExamResultsProps extends ExamProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
+  gradingStructure?: any
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -92,24 +94,7 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
                       <strong>{dateTimeFormatter.format(date)}</strong>
                     </p>
                   )}
-                  <div>
-                    <span className="e-column">
-                      <Translation>{t => t('exam-total')}</Translation>:
-                    </span>
-                    <strong className="e-column e-column--narrow table-of-contents--score-column">
-                      <Translation>{t => t('points', { count: sumScore })}</Translation>
-                    </strong>
-                    {gradingText && (
-                      <div>
-                        <span className="e-column">
-                          <Translation>{t => t('grade')}</Translation>:
-                        </span>
-                        <strong className="e-column e-column--narrow table-of-contents--score-column">
-                          {gradingText}
-                        </strong>
-                      </div>
-                    )}
-                  </div>
+                  <PointsAndGrade sumScore={sumScore} gradingText={gradingText}/>
                 </Section>
                 {renderChildNodes(root)}
               </main>
@@ -121,4 +106,25 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
   }
 }
 
-export default React.memo(withExamContext(ExamResults))
+function PointsAndGrade({sumScore, gradingText}: { sumScore: number; gradingText: string | undefined }) {
+  return (
+    <div>
+      <span className="e-column">
+        <Translation>{t => t('exam-total')}</Translation>:
+      </span>
+      <strong className="e-column e-column--narrow table-of-contents--score-column">
+        <Translation>{t => t('points', { count: sumScore })}</Translation>
+      </strong>
+      {gradingText && (
+        <div>
+          <span className="e-column">
+            <Translation>{t => t('grade')}</Translation>:
+          </span>
+          <strong className="e-column e-column--narrow table-of-contents--score-column">{gradingText}</strong>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default React.memo(withExamContext(withExamResultsContext(ExamResults)))
