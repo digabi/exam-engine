@@ -20,7 +20,7 @@ function DropdownAnswerResult({ element, answer }: DropdownAnswerResultProps) {
   const { gradingStructure } = useContext(ExamResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')
 
-  const choice = findMultiChoice(gradingStructure.questions, questionId!)
+  const choice = findMultiChoice(gradingStructure, questionId!)
 
   if (currentlySelectedItem) {
     const correctIds = choice.options.filter((o: { correct: boolean }) => o.correct).map((o: { id: any }) => o.id)

@@ -1,10 +1,10 @@
 import { i18n } from 'i18next'
-import React, { PureComponent } from 'react'
+import React, { PureComponent, useContext } from 'react'
 import { I18nextProvider, Translation } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { Store } from 'redux'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
-import { calculateChildrenElemScores, findChildElement } from '../../dom-utils'
+import { findChildElement } from '../../dom-utils'
 import { initI18n } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
 import initializeStore, { AppState } from '../../store'
@@ -24,13 +24,14 @@ import ChoiceAnswerResult from './ChoiceAnswerResult'
 import DropdownAnswerResult from './DropdownAnswerResult'
 import ExamQuestionResult from './ExamQuestionResult'
 import ExamQuestionTitleResult from './ExamQuestionTitleResult'
-import { withExamResultsContext } from './ExamResultsContext'
+import { ExamResultsContext, withExamResultsContext } from './ExamResultsContext'
 import TextAnswerResult from './TextAnswerResult'
 
 export interface ExamResultsProps extends ExamProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
   gradingStructure?: any
+  scores?: any
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -68,7 +69,7 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
   }
 
   render() {
-    const { doc, language, gradingText } = this.props
+    const { doc, language } = this.props
     const root = doc.documentElement
     const examTitle = findChildElement(root, 'exam-title')
     const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -76,8 +77,6 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
     if (this.i18n.language !== language) {
       this.i18n.changeLanguage(language)
     }
-
-    const sumScore = calculateChildrenElemScores(root, this.store.getState().answers.answersById)
 
     return (
       <Provider store={this.store}>
@@ -94,7 +93,8 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
                       <strong>{dateTimeFormatter.format(date)}</strong>
                     </p>
                   )}
-                  <PointsAndGrade sumScore={sumScore} gradingText={gradingText}/>
+
+                  <ScoresAndFinalGrade />
                 </Section>
                 {renderChildNodes(root)}
               </main>
@@ -106,14 +106,16 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
   }
 }
 
-function PointsAndGrade({sumScore, gradingText}: { sumScore: number; gradingText: string | undefined }) {
+function ScoresAndFinalGrade() {
+  const { gradingText, totalScore } = useContext(ExamResultsContext)
+
   return (
     <div>
       <span className="e-column">
         <Translation>{t => t('exam-total')}</Translation>:
       </span>
       <strong className="e-column e-column--narrow table-of-contents--score-column">
-        <Translation>{t => t('points', { count: sumScore })}</Translation>
+        <Translation>{t => t('points', { count: totalScore })}</Translation>
       </strong>
       {gradingText && (
         <div>

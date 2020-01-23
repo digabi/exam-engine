@@ -77,7 +77,7 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
   const className = element.getAttribute('class')
 
   const { gradingStructure } = useContext(ExamResultsContext)
-  const choice = findMultiChoice(gradingStructure.questions, questionId)
+  const choice = findMultiChoice(gradingStructure, questionId)
 
   return (
     <>
