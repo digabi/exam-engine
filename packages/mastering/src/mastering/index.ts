@@ -38,15 +38,15 @@ const schema = libxml.parseXml(readFileSync(path.resolve(schemaDir, 'exam.xsd'))
   baseUrl: schemaDir + '/'
 } as any) // FIXME: Missing baseUrl in the libxmljs2 typings
 
-interface VideoMetadata {
+export interface VideoMetadata {
   width: number
   height: number
 }
-interface ImageMetadata {
+export interface ImageMetadata {
   width: number
   height: number
 }
-interface AudioMetadata {
+export interface AudioMetadata {
   duration: number
 }
 

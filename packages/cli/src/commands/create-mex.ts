@@ -1,5 +1,4 @@
-import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
-import { createMex } from '@digabi/exam-engine-mastering'
+import { createMex, masterExam, mkGetMediaMetadata } from '@digabi/exam-engine-mastering'
 import { createReadStream, createWriteStream, promises as fs } from 'fs'
 import path from 'path'
 import * as uuid from 'uuid'
@@ -25,7 +24,7 @@ export default async function({
   const sourceXml = await fs.readFile(exam, 'utf-8')
   const answersPrivateKey = await fs.readFile(privateKey, 'utf-8')
 
-  const results = await masterExam(sourceXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
+  const results = await masterExam(sourceXml, () => uuid.v4(), mkGetMediaMetadata(resolveAttachment))
   await fs.mkdir(outdir, { recursive: true })
 
   for (const { language, xml, attachments } of results) {

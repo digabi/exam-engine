@@ -1,6 +1,6 @@
 import { Attachments, Exam, parseExam } from '@digabi/exam-engine-core'
 import { listExams } from '@digabi/exam-engine-exams'
-import { getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
+import { masterExam, MasteringResult, mkGetMediaMetadata } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import path from 'path'
 import React from 'react'
@@ -15,7 +15,7 @@ for (const exam of listExams()) {
 
     beforeAll(async () => {
       const source = await fs.readFile(exam, 'utf-8')
-      results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment))
+      results = await masterExam(source, () => '', mkGetMediaMetadata(resolveAttachment))
     })
 
     it('renders properly', () => {

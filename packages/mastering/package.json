@@ -16,16 +16,17 @@
   },
   "dependencies": {
     "@digabi/exam-engine-core": "^8.0.0",
-    "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
     "glob": "^7.1.6",
     "glob-promise": "^3.4.0",
     "i18next": "^19.0.1",
     "libxmljs2": "^0.23.0",
+    "lodash": "^4.17.15",
     "lru-cache": "^5.1.1",
     "mathjax-node": "^2.1.1",
     "ramda": "^0.26.1",
     "roman-numerals": "^0.3.2",
+    "sharp": "^0.24.0",
     "yazl": "^2.5.1"
   }
 }

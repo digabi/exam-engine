@@ -1,4 +1,4 @@
-import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
+import { masterExam, mkGetMediaMetadata } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import path from 'path'
 import puppeteer from 'puppeteer'
@@ -11,7 +11,7 @@ export async function createOfflineExam(examFile: string, outputDirectory: strin
   const source = await fs.readFile(examFile, 'utf-8')
   const examOutputDirectories: string[] = []
 
-  for (const result of await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))) {
+  for (const result of await masterExam(source, () => uuid.v4(), mkGetMediaMetadata(resolveAttachment))) {
     const { examCode, dayCode, date, language } = result
     const shortLanguageCode = language.replace(/-.*$/, '')
     const dirname = examCode

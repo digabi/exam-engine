@@ -1,0 +1,432 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mkGetMediaMetadata reads audio metadata for A_X/attachments/2.A.ogg 1`] = `
+Object {
+  "duration": 5,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for A_X/attachments/4.A.ogg 1`] = `
+Object {
+  "duration": 5,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/1.1.ogg 1`] = `
+Object {
+  "duration": 34,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/1.2.ogg 1`] = `
+Object {
+  "duration": 31,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/1.3_1.4.ogg 1`] = `
+Object {
+  "duration": 61,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/1.5.ogg 1`] = `
+Object {
+  "duration": 20,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/1.ogg 1`] = `
+Object {
+  "duration": 142,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/2.1.ogg 1`] = `
+Object {
+  "duration": 22,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/2.2.ogg 1`] = `
+Object {
+  "duration": 21,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/2.3.ogg 1`] = `
+Object {
+  "duration": 22,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/2.4.ogg 1`] = `
+Object {
+  "duration": 21,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/3.1.ogg 1`] = `
+Object {
+  "duration": 39,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/3.2_3.3.ogg 1`] = `
+Object {
+  "duration": 48,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/3.4_3.5.ogg 1`] = `
+Object {
+  "duration": 81,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/4.1.ogg 1`] = `
+Object {
+  "duration": 19,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/4.2.ogg 1`] = `
+Object {
+  "duration": 19,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/6.1.ogg 1`] = `
+Object {
+  "duration": 41,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/6.2.ogg 1`] = `
+Object {
+  "duration": 32,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/6.3.ogg 1`] = `
+Object {
+  "duration": 30,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/6.ogg 1`] = `
+Object {
+  "duration": 102,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/7.1.ogg 1`] = `
+Object {
+  "duration": 30,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/7.2.ogg 1`] = `
+Object {
+  "duration": 25,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/7.3.ogg 1`] = `
+Object {
+  "duration": 19,
+}
+`;
+
+exports[`mkGetMediaMetadata reads audio metadata for SC/attachments/audio-test.ogg 1`] = `
+Object {
+  "duration": 19,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for FF/attachments/4A.jpg 1`] = `
+Object {
+  "height": 75,
+  "width": 100,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for FF/attachments/4B.jpg 1`] = `
+Object {
+  "height": 726,
+  "width": 970,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for FF/attachments/4B.png 1`] = `
+Object {
+  "height": 726,
+  "width": 970,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for MexDocumentation/attachments/example.jpg 1`] = `
+Object {
+  "height": 726,
+  "width": 970,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for MexDocumentation/attachments/example_high.jpg 1`] = `
+Object {
+  "height": 726,
+  "width": 373,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for MexDocumentation/attachments/example_small.jpg 1`] = `
+Object {
+  "height": 75,
+  "width": 100,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/2A.png 1`] = `
+Object {
+  "height": 218,
+  "width": 269,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/2B.png 1`] = `
+Object {
+  "height": 278,
+  "width": 279,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/2C.png 1`] = `
+Object {
+  "height": 227,
+  "width": 120,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/2D.png 1`] = `
+Object {
+  "height": 216,
+  "width": 340,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/2E.png 1`] = `
+Object {
+  "height": 192,
+  "width": 347,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/2F.png 1`] = `
+Object {
+  "height": 323,
+  "width": 225,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/3A.jpg 1`] = `
+Object {
+  "height": 664,
+  "width": 552,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for N/attachments/9A.png 1`] = `
+Object {
+  "height": 720,
+  "width": 1429,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.1.0478.jpg 1`] = `
+Object {
+  "height": 267,
+  "width": 400,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.1.4327.jpg 1`] = `
+Object {
+  "height": 266,
+  "width": 400,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.1.7279.jpg 1`] = `
+Object {
+  "height": 266,
+  "width": 399,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.2.1617.jpg 1`] = `
+Object {
+  "height": 225,
+  "width": 300,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.2.7276.jpg 1`] = `
+Object {
+  "height": 225,
+  "width": 300,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.2.7291.jpg 1`] = `
+Object {
+  "height": 225,
+  "width": 300,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.2.jpg 1`] = `
+Object {
+  "height": 300,
+  "width": 400,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.3.4375.jpg 1`] = `
+Object {
+  "height": 267,
+  "width": 400,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.3.4927.jpg 1`] = `
+Object {
+  "height": 267,
+  "width": 400,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.3.7459.jpg 1`] = `
+Object {
+  "height": 267,
+  "width": 400,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/7.4.jpg 1`] = `
+Object {
+  "height": 257,
+  "width": 400,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/24.1.jpg 1`] = `
+Object {
+  "height": 750,
+  "width": 1042,
+}
+`;
+
+exports[`mkGetMediaMetadata reads image metadata for SC/attachments/maxmoritz.png 1`] = `
+Object {
+  "height": 480,
+  "width": 601,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for A_X/attachments/1.A.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for A_X/attachments/1.A_KV.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T3_FI.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T3_SV.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T5_FI.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T5_SV.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T9_1_FI.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T9_1_SV.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T9_2_FI.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for FF/attachments/T9_2_SV.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for MexDocumentation/attachments/example1.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for MexDocumentation/attachments/example2.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for MexDocumentation/attachments/example3.webm 1`] = `
+Object {
+  "height": 360,
+  "width": 640,
+}
+`;
+
+exports[`mkGetMediaMetadata reads video metadata for SC/attachments/5.webm 1`] = `
+Object {
+  "height": 472,
+  "width": 840,
+}
+`;

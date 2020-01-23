@@ -1,4 +1,4 @@
-import { getMediaMetadataFromLocalFile, masterExam, ns, parseExam } from '@digabi/exam-engine-mastering'
+import { masterExam, mkGetMediaMetadata, ns, parseExam } from '@digabi/exam-engine-mastering'
 import { asElements } from '@digabi/exam-engine-mastering/dist/mastering/utils'
 import { createReadStream, createWriteStream, promises as fs } from 'fs'
 import _ from 'lodash'
@@ -32,7 +32,7 @@ export default async function({
     .map(String)
   for (const language of languages) {
     const localizedXml = localize(xml, language)
-    const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
+    const results = await masterExam(localizedXml, () => uuid.v4(), mkGetMediaMetadata(resolveAttachment))
     const outputFilename = path.resolve(outdir, `${examName(exam)}_${language}_transfer.zip`)
 
     const zipFile = new yazl.ZipFile()
