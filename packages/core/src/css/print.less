@@ -1,11 +1,44 @@
 // Here be dragons…
 
 @media print {
+  html {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .k-exam-html .k-exam-body {
+    margin: 0;
+    background-color: #fff;
+
+    &--attachments {
+      background-color: #fff;
+    }
+
+    .rich-text-editor-tools {
+      display: none !important;
+    }
+  }
+
+  .k-exam-content {
+    display: block;
+  }
+
+  .save-indicator {
+    display: none;
+  }
+
+  .k-finish-exam-container {
+    box-shadow: none;
+  }
+
+  .text-answer {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
   .e-exam {
     max-width: none !important;
     color: #000;
-    font-size: 12px;
-    line-height: 18px;
 
     button {
       background: none !important;
