@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { AppState } from '../../store'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from '../types'
-import { ExamResultsContext, findMultiChoice } from './ExamResultsContext'
+import { ExamResultsContext, findMultiChoiceFromGradingStructure } from './ExamResultsContext'
 
 interface DropdownAnswerResultProps extends ExamComponentProps {
   answer?: ChoiceAnswerT
@@ -20,7 +20,7 @@ function DropdownAnswerResult({ element, answer }: DropdownAnswerResultProps) {
   const { gradingStructure } = useContext(ExamResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')
 
-  const choice = findMultiChoice(gradingStructure, questionId!)
+  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId!)
 
   if (currentlySelectedItem) {
     const correctIds = choice.options.filter((o: { correct: boolean }) => o.correct).map((o: { id: any }) => o.id)

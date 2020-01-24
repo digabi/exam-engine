@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import { AppState } from '../../store'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps, QuestionId } from '../types'
-import { ExamResultsContext, findMultiChoice } from './ExamResultsContext'
+import { ExamResultsContext, findMultiChoiceFromGradingStructure } from './ExamResultsContext'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -77,7 +77,7 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
   const className = element.getAttribute('class')
 
   const { gradingStructure } = useContext(ExamResultsContext)
-  const choice = findMultiChoice(gradingStructure, questionId)
+  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)
 
   return (
     <>
