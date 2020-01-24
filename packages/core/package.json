@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "8.0.1-abitti-student-xml-skop.0",
+  "version": "8.0.1-grading-structure-in-exam-results.0",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
