@@ -7,7 +7,7 @@ import AnsweringInstructions from '../AnsweringInstructions'
 import NotificationIcon from '../NotificationIcon'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps } from '../types'
-import { calculateQuestionSumScore, ExamResultsContext} from './ExamResultsContext'
+import { calculateQuestionSumScore, ExamResultsContext } from './ExamResultsContext'
 
 function ExamQuestionTitleResult({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)
@@ -20,7 +20,7 @@ function ExamQuestionTitleResult({ element, renderChildNodes }: ExamComponentPro
 
   return (
     <>
-      <div className="e-float-right">
+      <div className="e-result-scorecount e-float-right">
         {t('points', { count: maxScore })} max <br />
         <b>{t('points', { count: sumScore })}</b>
         {level === 0 && (

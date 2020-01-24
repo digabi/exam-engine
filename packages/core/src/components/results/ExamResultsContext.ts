@@ -95,7 +95,7 @@ export function calculateQuestionSumScore(
 
 function mergeScoresToGradingStructure(gradingStructure: GradingStructure, scores: AnswerScore[]): QuestionGrading[] {
   return gradingStructure.map(question => {
-    const score = scores.find(score => score.questionId === question.id)
+    const score = scores.find(s => s.questionId === question.id)
     return score ? { ...question, scoreValue: score.scoreValue } : question
   })
 }

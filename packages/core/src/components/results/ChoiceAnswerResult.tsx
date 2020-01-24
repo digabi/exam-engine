@@ -10,7 +10,7 @@ interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
   selected: boolean
   direction: string
-  score: number,
+  score: number
   isCorrect: boolean
 }
 
