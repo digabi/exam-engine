@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
 import { connect } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
@@ -77,7 +76,7 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
   const className = element.getAttribute('class')
 
   const { gradingStructure } = useContext(ExamResultsContext)
-  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)
+  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
   return (
     <>
@@ -89,7 +88,7 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
         {mapChildElements(element, childElement => {
           const optionId = getNumericAttribute(childElement, 'option-id')!
           const selected = answer != null && Number(answer.value) === optionId
-          const grading = choice.options.find((option: { id: number }) => option.id === optionId)
+          const grading = choice.options.find(option => option.id === optionId)!
           return (
             <ChoiceAnswerOption
               {...{

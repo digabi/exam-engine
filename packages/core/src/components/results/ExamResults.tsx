@@ -19,6 +19,7 @@ import Formula from '../Formula'
 import Hints from '../Hints'
 import Image from '../Image'
 import Section from '../Section'
+import { AnswerScore, GradingStructure } from '../types'
 import AudioGroupResult from './AudioGroupResult'
 import ChoiceAnswerResult from './ChoiceAnswerResult'
 import DropdownAnswerResult from './DropdownAnswerResult'
@@ -30,8 +31,8 @@ import TextAnswerResult from './TextAnswerResult'
 export interface ExamResultsProps extends ExamProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
-  gradingStructure?: any
-  scores?: any
+  gradingStructure?: GradingStructure
+  scores?: AnswerScore[]
 }
 
 const renderChildNodes = createRenderChildNodes({

@@ -8,7 +8,6 @@ interface AnswerCommon {
   value: string
   /** This field is undefined in older exams that were packaged before this change. */
   displayNumber?: string
-  scoreValue?: number
   comment?: string
 }
 export interface TextAnswer extends AnswerCommon {
@@ -25,6 +24,42 @@ export interface ChoiceAnswer extends AnswerCommon {
 export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
+
+interface QuestionGradingCommon {
+  id: number
+  scoreValue?: number
+}
+
+export interface ChoiceGrading extends QuestionGradingCommon {
+  type: 'choicegroup'
+  choices: QuestionChoice[]
+}
+
+export interface TextGrading extends QuestionGradingCommon {
+  type: 'text'
+  maxScore: number
+}
+
+export type QuestionGrading = ChoiceGrading | TextGrading
+
+export interface QuestionChoice {
+  id: number
+  type: 'choice'
+  options: QuestionChoiceOption[]
+}
+
+export interface QuestionChoiceOption {
+  id: number
+  score: number
+  correct: boolean
+}
+
+export type GradingStructure = QuestionGrading[]
+
+export interface AnswerScore {
+  questionId: number
+  scoreValue: number
+}
 
 /**
  * CAS status is a state machine with three states.

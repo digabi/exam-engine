@@ -1,12 +1,21 @@
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
-import { ChoiceAnswer, ExamAnswer, QuestionId } from '../types'
+import {
+  AnswerScore,
+  ChoiceAnswer,
+  ChoiceGrading,
+  ExamAnswer,
+  GradingStructure,
+  QuestionChoice,
+  QuestionGrading,
+  QuestionId
+} from '../types'
 import { withContext } from '../withContext'
 import { ExamResultsProps } from './ExamResults'
 
 export interface ExamResultsContext {
-  gradingStructure: any
+  gradingStructure: GradingStructure
   gradingText: string | undefined
   totalScore: number
 }
@@ -16,18 +25,27 @@ export const ExamResultsContext = React.createContext<ExamResultsContext>({} as 
 export const withExamResultsContext = withContext<ExamResultsContext, ExamResultsProps>(
   ExamResultsContext,
   ({ gradingStructure, scores, gradingText }) => {
-    const totalScore = scores ? _.sum(scores.map((s: { scoreValue: number }) => s.scoreValue)) : 0
+    const totalScore = scores ? _.sum(scores.map(s => s.scoreValue)) : 0
+
+    const scoresAndGrades = gradingStructure
+      ? scores
+        ? mergeScoresToGradingStructure(gradingStructure, scores)
+        : gradingStructure
+      : []
 
     return {
-      gradingStructure: mergeScoresToGradingStructure(gradingStructure, scores),
+      gradingStructure: scoresAndGrades,
       totalScore,
       gradingText
     }
   }
 )
 
-export function findMultiChoiceFromGradingStructure(gradingStructure: any[], id: number) {
-  const choiceGroups = gradingStructure.filter((q: { type: string }) => q.type === 'choicegroup')
+export function findMultiChoiceFromGradingStructure(
+  gradingStructure: GradingStructure,
+  id: number
+): QuestionChoice | undefined {
+  const choiceGroups = gradingStructure.filter(q => q.type === 'choicegroup') as ChoiceGrading[]
   for (let i = 0, length = choiceGroups.length; i < length; i++) {
     for (let j = 0, choicesLength = choiceGroups[i].choices.length; j < choicesLength; j++) {
       if (choiceGroups[i].choices[j].id === id) {
@@ -35,17 +53,18 @@ export function findMultiChoiceFromGradingStructure(gradingStructure: any[], id:
       }
     }
   }
+  return undefined
 }
 
 export function calculateQuestionSumScore(
   element: Element,
-  gradingStructure: any[],
+  gradingStructure: GradingStructure,
   answersById: Record<QuestionId, ExamAnswer>,
   isTopLevel: boolean
 ) {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
     const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)
-    return choice ? choice.options.find((o: { id: number }) => o.id === Number(scoredAnswer.value)).score : 0
+    return choice ? choice.options.find(o => o.id === Number(scoredAnswer.value))!.score : 0
   }
 
   const textQuestionScore = (questionId: number) => {
@@ -74,10 +93,9 @@ export function calculateQuestionSumScore(
   return sumScore
 }
 
-function mergeScoresToGradingStructure(gradingStructure: { questions: any[] }, scores: any[]) {
-  return gradingStructure.questions.map(question => {
-    const score = scores.find((score: { questionId: number }) => score.questionId === question.id)
+function mergeScoresToGradingStructure(gradingStructure: GradingStructure, scores: AnswerScore[]): QuestionGrading[] {
+  return gradingStructure.map(question => {
+    const score = scores.find(score => score.questionId === question.id)
     return score ? { ...question, scoreValue: score.scoreValue } : question
   })
 }
-

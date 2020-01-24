@@ -20,19 +20,19 @@ function DropdownAnswerResult({ element, answer }: DropdownAnswerResultProps) {
   const { gradingStructure } = useContext(ExamResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')
 
-  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId!)
+  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId!)!
 
   if (currentlySelectedItem) {
-    const correctIds = choice.options.filter((o: { correct: boolean }) => o.correct).map((o: { id: any }) => o.id)
+    const correctIds = choice.options.filter(o => o.correct).map(o => o.id)
 
     const correctAnswers = _.compact(
       mapChildElements(element, childElement => {
-        if (correctIds.includes(getNumericAttribute(childElement, 'option-id'))) {
+        if (correctIds.includes(getNumericAttribute(childElement, 'option-id') as number)) {
           return childElement.textContent
         }
       })
     )
-    const isAnswerCorrect = correctIds.includes(getNumericAttribute(currentlySelectedItem, 'option-id'))
+    const isAnswerCorrect = correctIds.includes(getNumericAttribute(currentlySelectedItem, 'option-id') as number)
     return (
       <>
         <span
