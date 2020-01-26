@@ -7,8 +7,7 @@ import {
   ChoiceGrading,
   ExamAnswer,
   GradingStructure,
-  QuestionChoice,
-  QuestionGrading,
+  QuestionChoice, QuestionGrading,
   QuestionId
 } from '../types'
 import { withContext } from '../withContext'
@@ -29,7 +28,7 @@ export const withExamResultsContext = withContext<ExamResultsContext, ExamResult
 
     const scoresAndGrades = gradingStructure
       ? scores
-        ? mergeScoresToGradingStructure(gradingStructure, scores)
+        ? mergeScoresAndMetadataToGradingStructure(gradingStructure, scores)
         : gradingStructure
       : []
 
@@ -54,6 +53,10 @@ export function findMultiChoiceFromGradingStructure(
     }
   }
   return undefined
+}
+
+export function findGrading(gradingStructure: GradingStructure, id: number): QuestionGrading | undefined {
+  return gradingStructure.find(q => q.id === id)
 }
 
 export function calculateQuestionSumScore(
@@ -93,9 +96,14 @@ export function calculateQuestionSumScore(
   return sumScore
 }
 
-function mergeScoresToGradingStructure(gradingStructure: GradingStructure, scores: AnswerScore[]): QuestionGrading[] {
+function mergeScoresAndMetadataToGradingStructure(
+  gradingStructure: GradingStructure,
+  scores: AnswerScore[]
+): GradingStructure {
   return gradingStructure.map(question => {
     const score = scores.find(s => s.questionId === question.id)
-    return score ? { ...question, scoreValue: score.scoreValue } : question
+    return score
+      ? { ...question, scoreValue: score.scoreValue, comment: score.comment, annotations: score.annotations }
+      : question
   })
 }

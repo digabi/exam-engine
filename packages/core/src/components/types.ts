@@ -25,9 +25,17 @@ export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 
-interface QuestionGradingCommon {
+export interface QuestionGradingCommon {
   id: number
   scoreValue?: number
+  comment?: string
+  annotations: Annotation[]
+}
+
+export interface Annotation {
+  startIndex: number
+  length: number
+  message: string
 }
 
 export interface ChoiceGrading extends QuestionGradingCommon {
@@ -59,6 +67,8 @@ export type GradingStructure = QuestionGrading[]
 export interface AnswerScore {
   questionId: number
   scoreValue: number
+  comment?: string
+  annotations: Annotation[]
 }
 
 /**
