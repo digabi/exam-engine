@@ -7,7 +7,8 @@ import {
   ChoiceGrading,
   ExamAnswer,
   GradingStructure,
-  QuestionChoice, QuestionGrading,
+  QuestionChoice,
+  QuestionGrading,
   QuestionId
 } from '../types'
 import { withContext } from '../withContext'
