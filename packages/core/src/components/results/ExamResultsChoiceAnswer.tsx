@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import { AppState } from '../../store'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps, QuestionId } from '../types'
@@ -70,8 +70,10 @@ interface ChoiceAnswerResultsProps extends ExamComponentProps {
   answer?: ChoiceAnswerT
 }
 
-function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerResultsProps) {
+function ExamResultsChoiceAnswer({ element, renderChildNodes }: ChoiceAnswerResultsProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
+  const answer = useSelector((state: AppState) => state.answers.answersById[questionId])
+
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')
 
@@ -109,10 +111,4 @@ function ChoiceAnswerResult({ answer, element, renderChildNodes }: ChoiceAnswerR
   )
 }
 
-function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = state.answers.answersById[questionId] as ChoiceAnswerT | undefined
-  return { answer }
-}
-
-export default connect(mapStateToProps)(ChoiceAnswerResult)
+export default React.memo(ExamResultsChoiceAnswer)
