@@ -20,13 +20,13 @@ import Hints from '../Hints'
 import Image from '../Image'
 import Section from '../Section'
 import { AnswerScore, GradingStructure } from '../types'
-import AudioGroupResult from './AudioGroupResult'
-import ChoiceAnswerResult from './ChoiceAnswerResult'
-import DropdownAnswerResult from './DropdownAnswerResult'
+import ChoiceAnswerResult from './ExamResultsChoiceAnswer'
+import DropdownAnswerResult from './ExamResultsDropdownAnswer'
 import ExamQuestionResult from './ExamQuestionResult'
 import ExamQuestionTitleResult from './ExamQuestionTitleResult'
 import { ExamResultsContext, withExamResultsContext } from './ExamResultsContext'
 import TextAnswerResult from './TextAnswerResult'
+import RenderChildNodes from '../RenderChildNodes'
 
 export interface ExamResultsProps extends ExamProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
@@ -38,7 +38,7 @@ export interface ExamResultsProps extends ExamProps {
 
 const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
-  'audio-group': AudioGroupResult,
+  'audio-group': RenderChildNodes,
   'choice-answer': ChoiceAnswerResult,
   'dropdown-answer': DropdownAnswerResult,
   file: File,
