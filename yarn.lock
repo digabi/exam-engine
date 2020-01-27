@@ -9864,10 +9864,10 @@ rich-text-editor@^4.6.1:
     jquery "^3.3.1"
     mathjax-node "^2.1.1"
 
-rich-text-editor@^4.7.1:
-  version "4.7.1"
-  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-4.7.1.tgz#13ab869c6e6b352bf1557dd714d4b547c1612047"
-  integrity sha512-MI0a39WAY4Pn2SZ+RJNh93Tr9qMZIyz/IruxVeXzbM78nSxb1P6hMJHJpFLrO35N9GsKRH7D9icMXirBzv4YWw==
+rich-text-editor@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-4.7.2.tgz#b69f8b6c6a19b8e525f9e90b795ef39035350648"
+  integrity sha512-uHwpJWu45l7ZRRlPG/501JCO0pLPsa9MAz8TOg3Sa/vvbYu5agyDRbG3tISnxfaC78Y12O3KxKUmqIQGJdTptQ==
   dependencies:
     "@digabi/mathquill" "^0.10.3"
     jquery "^3.3.1"
