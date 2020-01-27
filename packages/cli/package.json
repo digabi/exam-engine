@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-cli",
-  "version": "8.0.0",
+  "version": "8.0.1-update-scripts-to-multimex-mastering.0",
   "main": "index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -10,9 +10,9 @@
     "ee": "./dist/index.js"
   },
   "dependencies": {
-    "@digabi/exam-engine-exams": "^8.0.0",
-    "@digabi/exam-engine-mastering": "^8.0.0",
-    "@digabi/exam-engine-rendering": "^8.0.0",
+    "@digabi/exam-engine-exams": "^8.0.1-update-scripts-to-multimex-mastering.0",
+    "@digabi/exam-engine-mastering": "^8.0.1-update-scripts-to-multimex-mastering.0",
+    "@digabi/exam-engine-rendering": "^8.0.1-update-scripts-to-multimex-mastering.0",
     "lodash": "^4.17.15",
     "ora": "^4.0.3",
     "uuid": "^3.3.3",
