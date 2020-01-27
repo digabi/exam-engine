@@ -22,6 +22,7 @@ interface DropdownAnswerProps extends ExamComponentProps {
 const menuBorderWidthPx = 2
 const roundingErrorCompensationPx = 1
 const noAnswer = ''
+const runningInBrowser = !navigator.userAgent.includes('jsdom/')
 
 type Item = Element | typeof noAnswer
 
@@ -40,10 +41,10 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   }
 
   const labelRef = useRef<HTMLDivElement>(null)
-  const menuRef = useRef<HTMLElement | null>(null)
+  const menuRef = useRef<HTMLElement>(null)
   const [measuring, setMeasuring] = useState(true)
 
-  if (window.name !== 'nodejs') {
+  if (runningInBrowser) {
     // Force a re-measure if element changes or fonts are loaded after this
     // component has been rendered.
     const [, setFontsLoaded] = useState(fonts.loaded)
