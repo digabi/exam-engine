@@ -1,26 +1,24 @@
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { AppState } from '../../store'
-import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from '../types'
+import { ExamComponentProps } from '../types'
 import { ExamResultsContext, findMultiChoiceFromGradingStructure } from './ExamResultsContext'
 
-interface DropdownAnswerResultProps extends ExamComponentProps {
-  answer?: ChoiceAnswerT
-}
+function ExamResultsDropdownAnswer({ element }: ExamComponentProps) {
 
-function DropdownAnswerResult({ element, answer }: DropdownAnswerResultProps) {
+  const questionId = getNumericAttribute(element, 'question-id')!
+  const answer = useSelector((state: AppState) => state.answers.answersById[questionId])
+
   const currentlySelectedItem =
     answer &&
     answer.value &&
     findChildElement(element, childElement => answer.value === childElement.getAttribute('option-id'))
 
   const { gradingStructure } = useContext(ExamResultsContext)
-  const questionId = getNumericAttribute(element, 'question-id')
-
-  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId!)!
+  const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
   if (currentlySelectedItem) {
     const correctIds = choice.options.filter(o => o.correct).map(o => o.id)
@@ -50,10 +48,4 @@ function DropdownAnswerResult({ element, answer }: DropdownAnswerResultProps) {
   return null
 }
 
-function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = state.answers.answersById[questionId] as ChoiceAnswerT | undefined
-  return { answer }
-}
-
-export default connect(mapStateToProps)(DropdownAnswerResult)
+export default React.memo(ExamResultsDropdownAnswer)
