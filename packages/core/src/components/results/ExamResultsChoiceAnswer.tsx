@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
-import { AppState } from '../../store'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps, QuestionId } from '../types'
 import { ExamResultsContext, findMultiChoiceFromGradingStructure } from './ExamResultsContext'
+import { ResultsState } from '../../store/index'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -72,7 +72,7 @@ interface ChoiceAnswerResultsProps extends ExamComponentProps {
 
 function ExamResultsChoiceAnswer({ element, renderChildNodes }: ChoiceAnswerResultsProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = useSelector((state: AppState) => state.answers.answersById[questionId])
+  const answer = useSelector((state: ResultsState) => state.answers.answersById[questionId])
 
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')

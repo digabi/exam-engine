@@ -7,11 +7,11 @@ import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { initI18n } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
-import initializeStore, { AppState } from '../../store'
+import { initializeResultsStore, ResultsState } from '../../store'
 import DocumentTitle from '../DocumentTitle'
-import { ExamProps } from '../Exam'
+import { CommonExamProps } from '../Exam'
 import ExamAttachment from '../ExamAttachment'
-import { ExamContext, withExamContext } from '../ExamContext'
+import { ExamAttachmentsContext, withAttachmentsContextForResults } from '../ExamAttachmentsContext'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
 import Hints from '../Hints'
@@ -27,11 +27,14 @@ import ExamResultsExamQuestionTitle from './ExamResultsExamQuestionTitle'
 import ExamResultsExamSection from './ExamResultsExamSection'
 import ExamResultsTextAnswer from './ExamResultsTextAnswer'
 
-export interface ExamResultsProps extends ExamProps {
+export type ExamResultsProps = CommonExamProps & ResultsProps
+
+interface ResultsProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
   gradingStructure?: GradingStructure
+  /** Scores for exam questions */
   scores?: AnswerScore[]
 }
 
@@ -52,7 +55,7 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 export class ExamResults extends PureComponent<ExamResultsProps> {
-  private readonly store: Store<AppState>
+  private readonly store: Store<ResultsState>
   private readonly ref: React.RefObject<HTMLDivElement>
   private readonly i18n: i18n
 
@@ -61,7 +64,7 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
     this.ref = React.createRef()
     const root = props.doc.documentElement
     this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-    this.store = initializeStore('forbidden', props.answers, [], this.props.examServerApi)
+    this.store = initializeResultsStore(props.answers)
   }
 
   componentDidMount() {
@@ -81,25 +84,28 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
     return (
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
-          <ExamContext.Consumer>
-            {({ date, dateTimeFormatter, resolveAttachment }) => (
-              <main className="e-exam" lang={language} ref={this.ref}>
-                <React.StrictMode />
-                {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-                <Section aria-labelledby="title">
-                  {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-                  {date && (
-                    <p>
-                      <strong>{dateTimeFormatter.format(date)}</strong>
-                    </p>
-                  )}
-
-                  <ScoresAndFinalGrade />
-                </Section>
-                {renderChildNodes(root)}
-              </main>
+          <ExamResultsContext.Consumer>
+            {({ date, dateTimeFormatter }) => (
+              <ExamAttachmentsContext.Consumer>
+                {({ resolveAttachment }) => (
+                  <main className="e-exam" lang={language} ref={this.ref}>
+                    <React.StrictMode />
+                    {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+                    <Section aria-labelledby="title">
+                      {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+                      {date && (
+                        <p>
+                          <strong>{dateTimeFormatter.format(date)}</strong>
+                        </p>
+                      )}
+                      <ScoresAndFinalGrade />
+                    </Section>
+                    {renderChildNodes(root)}
+                  </main>
+                )}
+              </ExamAttachmentsContext.Consumer>
             )}
-          </ExamContext.Consumer>
+          </ExamResultsContext.Consumer>
         </I18nextProvider>
       </Provider>
     )
@@ -129,4 +135,4 @@ function ScoresAndFinalGrade() {
   )
 }
 
-export default React.memo(withExamContext(withExamResultsContext(ExamResults)))
+export default React.memo(withExamResultsContext(withAttachmentsContextForResults(ExamResults)))

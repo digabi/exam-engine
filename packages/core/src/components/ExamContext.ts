@@ -5,10 +5,8 @@ import { ExamServerAPI } from './types'
 import { withContext } from './withContext'
 
 export interface ExamContext {
-  attachmentsURL: string
   casCountdownDuration: number
   examServerApi: ExamServerAPI
-  resolveAttachment: (filename: string) => string
   root: Element
   date?: Date
   dateTimeFormatter: Intl.DateTimeFormat

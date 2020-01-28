@@ -4,6 +4,7 @@ import { createRenderChildNodes, RenderOptions } from '../createRenderChildNodes
 import { findChildElement } from '../dom-utils'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
+import { ExamAttachmentsContext } from './ExamAttachmentsContext'
 import { ExamContext } from './ExamContext'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext, withSectionContext } from './SectionContext'
@@ -64,7 +65,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
 }
 
 function TOCQuestion({ element }: ExamComponentProps) {
-  const { attachmentsURL } = useContext(ExamContext)
+  const { attachmentsURL } = useContext(ExamAttachmentsContext)
   const { level, displayNumber, maxScore } = useContext(QuestionContext)
   const hasExternalAttachments = findChildElement(element, 'external-material') != null
   const questionTitle = findChildElement(element, 'question-title')

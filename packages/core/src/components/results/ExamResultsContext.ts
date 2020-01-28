@@ -1,6 +1,6 @@
 import * as _ from 'lodash-es'
 import React from 'react'
-import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
+import { findChildrenAnswers, getNumericAttribute, queryAll } from '../../dom-utils'
 import {
   AnswerScore,
   ChoiceAnswer,
@@ -18,14 +18,23 @@ export interface ExamResultsContext {
   gradingStructure: GradingStructure
   gradingText: string | undefined
   totalScore: number
+  root: Element
+  date?: Date
+  dateTimeFormatter: Intl.DateTimeFormat
+  language: string
+  maxAnswers?: number
+  maxScore?: number
+  numberOfSections: number
 }
 
 export const ExamResultsContext = React.createContext<ExamResultsContext>({} as ExamResultsContext)
 
 export const withExamResultsContext = withContext<ExamResultsContext, ExamResultsProps>(
   ExamResultsContext,
-  ({ gradingStructure, scores, gradingText }) => {
+  ({ gradingStructure, scores, gradingText, doc, language}) => {
     const totalScore = scores ? _.sum(scores.map(s => s.scoreValue)) : 0
+    const root = doc.documentElement
+    const maybeDate = root.getAttribute('date')
 
     const scoresAndGrades = gradingStructure
       ? scores
@@ -36,7 +45,14 @@ export const withExamResultsContext = withContext<ExamResultsContext, ExamResult
     return {
       gradingStructure: scoresAndGrades,
       totalScore,
-      gradingText
+      gradingText,
+      root,
+      date: maybeDate ? new Date(maybeDate) : undefined,
+      dateTimeFormatter: new Intl.DateTimeFormat('fi-FI', { timeZone: 'UTC' }),
+      language,
+      maxAnswers: getNumericAttribute(root, 'max-answers'),
+      maxScore: getNumericAttribute(root, 'max-score'),
+      numberOfSections: queryAll(root, 'section').length
     }
   }
 )

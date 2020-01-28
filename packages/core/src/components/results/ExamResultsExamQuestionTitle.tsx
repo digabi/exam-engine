@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { AppState } from '../../store/index'
+import { ResultsState } from '../../store/index'
 import AnsweringInstructions from '../AnsweringInstructions'
 import NotificationIcon from '../NotificationIcon'
 import { QuestionContext } from '../QuestionContext'
@@ -14,7 +14,7 @@ function ExamResultsExamQuestionTitle({ element, renderChildNodes }: ExamCompone
   const Tag = ('h' + Math.min(3 + level, 6)) as any
   const { t } = useTranslation()
 
-  const answersById = useSelector((state: AppState) => state.answers.answersById)
+  const answersById = useSelector((state: ResultsState) => state.answers.answersById)
   const { gradingStructure } = useContext(ExamResultsContext)
   const sumScore = calculateQuestionSumScore(element.parentElement!, gradingStructure, answersById, level === 0)
 
