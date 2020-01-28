@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { getNumericAttribute } from '../dom-utils'
-import { ExamContext } from './ExamContext'
+import { ExamAttachmentsContext } from './ExamAttachmentsContext'
 import ResponsiveMediaContainer from './ResponsiveMediaContainer'
 import { ExamComponentProps } from './types'
 
@@ -8,7 +8,7 @@ function Video({ element, className }: ExamComponentProps) {
   const src = element.getAttribute('src')!
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
-  const { resolveAttachment } = useContext(ExamContext)
+  const { resolveAttachment } = useContext(ExamAttachmentsContext)
 
   return (
     <ResponsiveMediaContainer {...{ className, width, height }}>
