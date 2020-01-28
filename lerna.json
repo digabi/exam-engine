@@ -3,5 +3,6 @@
   "packages": [
     "packages/*"
   ],
-  "version": "8.0.1-update-scripts-to-multimex-mastering-2.3"
+  "version": "8.0.1-update-scripts-to-multimex-mastering-2.3",
+  "exact": true
 }
