@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { AppState } from '../../store'
 import { ExamComponentProps } from '../types'
-import { ExamResultsContext, findMultiChoiceFromGradingStructure } from './ExamResultsContext'
+import { ResultsContext, findMultiChoiceFromGradingStructure } from './ResultsContext'
 
-function ExamResultsDropdownAnswer({ element }: ExamComponentProps) {
+function ResultsDropdownAnswer({ element }: ExamComponentProps) {
 
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = useSelector((state: AppState) => state.answers.answersById[questionId])
@@ -17,7 +17,7 @@ function ExamResultsDropdownAnswer({ element }: ExamComponentProps) {
     answer.value &&
     findChildElement(element, childElement => answer.value === childElement.getAttribute('option-id'))
 
-  const { gradingStructure } = useContext(ExamResultsContext)
+  const { gradingStructure } = useContext(ResultsContext)
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
   if (currentlySelectedItem) {
@@ -48,4 +48,4 @@ function ExamResultsDropdownAnswer({ element }: ExamComponentProps) {
   return null
 }
 
-export default React.memo(ExamResultsDropdownAnswer)
+export default React.memo(ResultsDropdownAnswer)

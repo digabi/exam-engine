@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps, QuestionId } from '../types'
-import { ExamResultsContext, findMultiChoiceFromGradingStructure } from './ExamResultsContext'
+import { ResultsContext, findMultiChoiceFromGradingStructure } from './ResultsContext'
 import { ResultsState } from '../../store/index'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
@@ -70,14 +70,14 @@ interface ChoiceAnswerResultsProps extends ExamComponentProps {
   answer?: ChoiceAnswerT
 }
 
-function ExamResultsChoiceAnswer({ element, renderChildNodes }: ChoiceAnswerResultsProps) {
+function ResultsChoiceAnswer({ element, renderChildNodes }: ChoiceAnswerResultsProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = useSelector((state: ResultsState) => state.answers.answersById[questionId])
 
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')
 
-  const { gradingStructure } = useContext(ExamResultsContext)
+  const { gradingStructure } = useContext(ResultsContext)
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
   return (
@@ -111,4 +111,4 @@ function ExamResultsChoiceAnswer({ element, renderChildNodes }: ChoiceAnswerResu
   )
 }
 
-export default React.memo(ExamResultsChoiceAnswer)
+export default React.memo(ResultsChoiceAnswer)
