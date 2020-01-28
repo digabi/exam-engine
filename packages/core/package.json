@@ -17,5 +17,8 @@
   },
   "peerDependencies": {
     "react": "^16.10.2"
+  },
+  "devDependencies": {
+    "rich-text-editor": "^4.7.2"
   }
 }
