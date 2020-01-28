@@ -7,15 +7,15 @@ import AnsweringInstructions from '../AnsweringInstructions'
 import NotificationIcon from '../NotificationIcon'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps } from '../types'
-import { calculateQuestionSumScore, ExamResultsContext } from './ExamResultsContext'
+import { calculateQuestionSumScore, ResultsContext } from './ResultsContext'
 
-function ExamResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
+function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)
   const Tag = ('h' + Math.min(3 + level, 6)) as any
   const { t } = useTranslation()
 
   const answersById = useSelector((state: ResultsState) => state.answers.answersById)
-  const { gradingStructure } = useContext(ExamResultsContext)
+  const { gradingStructure } = useContext(ResultsContext)
   const sumScore = calculateQuestionSumScore(element.parentElement!, gradingStructure, answersById, level === 0)
 
   return (
@@ -50,4 +50,4 @@ function ExamResultsExamQuestionTitle({ element, renderChildNodes }: ExamCompone
   )
 }
 
-export default React.memo(ExamResultsExamQuestionTitle)
+export default React.memo(ResultsExamQuestionTitle)

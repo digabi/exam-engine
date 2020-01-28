@@ -6,7 +6,7 @@ import { QuestionContext, withQuestionContext } from '../QuestionContext'
 import { ExamAnswer, ExamComponentProps } from '../types'
 import { ResultsState } from '../../store/index'
 
-function ExamResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
+function ResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const answers = useSelector((state: ResultsState) => state.answers.answersById)
   const hasAnswers: boolean = questionHasAnswers(element, answers)
   const { displayNumber, level } = useContext(QuestionContext)
@@ -29,4 +29,4 @@ function questionHasAnswers(element: Element, answers: Record<number, ExamAnswer
   return answerElems.some(e => answers[getNumericAttribute(e, 'question-id')!])
 }
 
-export default React.memo(withQuestionContext(ExamResultsExamQuestion))
+export default React.memo(withQuestionContext(ResultsExamQuestion))

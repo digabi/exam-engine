@@ -7,7 +7,7 @@ import { getNumericAttribute } from '../../dom-utils'
 import { AppState } from '../../store'
 import AnswerToolbar from '../AnswerToolbar'
 import { ExamComponentProps, RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../types'
-import { ExamResultsContext, findGrading } from './ExamResultsContext'
+import { ResultsContext, findGrading } from './ResultsContext'
 
 interface Props extends ExamComponentProps {
   answer?: TextAnswerT | RichTextAnswerT
@@ -15,10 +15,10 @@ interface Props extends ExamComponentProps {
   questionId: number
 }
 
-function ExamResultsTextAnswer({ answer, element, className, type, questionId }: Props) {
+function ResultsTextAnswer({ answer, element, className, type, questionId }: Props) {
   const value = answer && answer.value
 
-  const { gradingStructure } = useContext(ExamResultsContext)
+  const { gradingStructure } = useContext(ResultsContext)
   const gradingMetadata = findGrading(gradingStructure, questionId)
   const comment = gradingMetadata && gradingMetadata.comment
 
@@ -75,4 +75,4 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   }
 }
 
-export default connect(mapStateToProps)(ExamResultsTextAnswer)
+export default connect(mapStateToProps)(ResultsTextAnswer)

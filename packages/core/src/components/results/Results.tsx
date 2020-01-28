@@ -19,17 +19,17 @@ import Image from '../Image'
 import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
 import { AnswerScore, GradingStructure } from '../types'
-import ExamResultsChoiceAnswer from './ExamResultsChoiceAnswer'
-import { ExamResultsContext, withExamResultsContext } from './ExamResultsContext'
-import ExamResultsDropdownAnswer from './ExamResultsDropdownAnswer'
-import ExamResultsExamQuestion from './ExamResultsExamQuestion'
-import ExamResultsExamQuestionTitle from './ExamResultsExamQuestionTitle'
-import ExamResultsExamSection from './ExamResultsExamSection'
-import ExamResultsTextAnswer from './ExamResultsTextAnswer'
+import ResultsChoiceAnswer from './ResultsChoiceAnswer'
+import { ResultsContext, withResultsContext } from './ResultsContext'
+import ResultsDropdownAnswer from './ResultsDropdownAnswer'
+import ResultsExamQuestion from './ResultsExamQuestion'
+import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
+import ResultsExamSection from './ResultsExamSection'
+import ResultsTextAnswer from './ResultsTextAnswer'
 
-export type ExamResultsProps = CommonExamProps & ResultsProps
+export type ResultsProps = CommonExamProps & Props
 
-interface ResultsProps {
+interface Props {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -41,25 +41,25 @@ interface ResultsProps {
 const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
   'audio-group': RenderChildNodes,
-  'choice-answer': ExamResultsChoiceAnswer,
-  'dropdown-answer': ExamResultsDropdownAnswer,
+  'choice-answer': ResultsChoiceAnswer,
+  'dropdown-answer': ResultsDropdownAnswer,
   formula: Formula,
   image: Image,
-  question: ExamResultsExamQuestion,
-  'question-title': ExamResultsExamQuestionTitle,
+  question: ResultsExamQuestion,
+  'question-title': ResultsExamQuestionTitle,
   hints: Hints,
-  section: ExamResultsExamSection,
+  section: ResultsExamSection,
   'section-title': ExamSectionTitle,
-  'text-answer': ExamResultsTextAnswer,
-  'scored-text-answer': ExamResultsTextAnswer
+  'text-answer': ResultsTextAnswer,
+  'scored-text-answer': ResultsTextAnswer
 })
 
-export class ExamResults extends PureComponent<ExamResultsProps> {
+export class Results extends PureComponent<ResultsProps> {
   private readonly store: Store<ResultsState>
   private readonly ref: React.RefObject<HTMLDivElement>
   private readonly i18n: i18n
 
-  constructor(props: ExamResultsProps) {
+  constructor(props: ResultsProps) {
     super(props)
     this.ref = React.createRef()
     const root = props.doc.documentElement
@@ -84,7 +84,7 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
     return (
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
-          <ExamResultsContext.Consumer>
+          <ResultsContext.Consumer>
             {({ date, dateTimeFormatter }) => (
               <ExamAttachmentsContext.Consumer>
                 {({ resolveAttachment }) => (
@@ -105,7 +105,7 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
                 )}
               </ExamAttachmentsContext.Consumer>
             )}
-          </ExamResultsContext.Consumer>
+          </ResultsContext.Consumer>
         </I18nextProvider>
       </Provider>
     )
@@ -113,7 +113,7 @@ export class ExamResults extends PureComponent<ExamResultsProps> {
 }
 
 function ScoresAndFinalGrade() {
-  const { gradingText, totalScore } = useContext(ExamResultsContext)
+  const { gradingText, totalScore } = useContext(ResultsContext)
 
   return (
     <div>
@@ -135,4 +135,4 @@ function ScoresAndFinalGrade() {
   )
 }
 
-export default React.memo(withExamResultsContext(withAttachmentsContextForResults(ExamResults)))
+export default React.memo(withResultsContext(withAttachmentsContextForResults(Results)))

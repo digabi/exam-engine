@@ -12,9 +12,9 @@ import {
   QuestionId
 } from '../types'
 import { withContext } from '../withContext'
-import { ExamResultsProps } from './ExamResults'
+import { ResultsProps } from './Results'
 
-export interface ExamResultsContext {
+export interface ResultsContext {
   gradingStructure: GradingStructure
   gradingText: string | undefined
   totalScore: number
@@ -27,10 +27,10 @@ export interface ExamResultsContext {
   numberOfSections: number
 }
 
-export const ExamResultsContext = React.createContext<ExamResultsContext>({} as ExamResultsContext)
+export const ResultsContext = React.createContext<ResultsContext>({} as ResultsContext)
 
-export const withExamResultsContext = withContext<ExamResultsContext, ExamResultsProps>(
-  ExamResultsContext,
+export const withResultsContext = withContext<ResultsContext, ResultsProps>(
+  ResultsContext,
   ({ gradingStructure, scores, gradingText, doc, language}) => {
     const totalScore = scores ? _.sum(scores.map(s => s.scoreValue)) : 0
     const root = doc.documentElement
