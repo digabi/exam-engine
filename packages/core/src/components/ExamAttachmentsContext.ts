@@ -1,6 +1,6 @@
 import React from 'react'
 import { ExamProps } from './Exam'
-import { ExamResultsProps } from './results/ExamResults'
+import { ResultsProps } from './results/Results'
 import { withContext } from './withContext'
 
 export interface ExamAttachmentsContext {
@@ -10,7 +10,7 @@ export interface ExamAttachmentsContext {
 
 export const ExamAttachmentsContext = React.createContext<ExamAttachmentsContext>({} as ExamAttachmentsContext)
 
-export const withAttachmentsContextForResults = withContext<ExamAttachmentsContext, ExamResultsProps>(
+export const withAttachmentsContextForResults = withContext<ExamAttachmentsContext, ResultsProps>(
   ExamAttachmentsContext,
   ({ attachmentsURL, resolveAttachment }) => {
     return {
