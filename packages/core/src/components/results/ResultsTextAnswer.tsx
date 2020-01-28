@@ -1,22 +1,18 @@
 import classNames from 'classnames'
-import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getNumericAttribute } from '../../dom-utils'
-import { AppState } from '../../store'
+import { ResultsState } from '../../store/index'
 import AnswerToolbar from '../AnswerToolbar'
-import { ExamComponentProps, RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../types'
-import { ResultsContext, findGrading } from './ResultsContext'
+import { ExamComponentProps } from '../types'
+import { findGrading, ResultsContext } from './ResultsContext'
 
-interface Props extends ExamComponentProps {
-  answer?: TextAnswerT | RichTextAnswerT
-  type: 'rich-text' | 'multi-line' | 'single-line'
-  questionId: number
-}
-
-function ResultsTextAnswer({ answer, element, className, type, questionId }: Props) {
+function ResultsTextAnswer({ element, className }: ExamComponentProps) {
+  const answer = useSelector((state: ResultsState) => state.answers.answersById[questionId])
   const value = answer && answer.value
+  const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
+  const questionId = getNumericAttribute(element, 'question-id')!
 
   const { gradingStructure } = useContext(ResultsContext)
   const gradingMetadata = findGrading(gradingStructure, questionId)
@@ -63,16 +59,4 @@ function ResultsTextAnswer({ answer, element, className, type, questionId }: Pro
   }
 }
 
-function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
-  const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
-
-  return {
-    answer,
-    type,
-    questionId
-  }
-}
-
-export default connect(mapStateToProps)(ResultsTextAnswer)
+export default React.memo(ResultsTextAnswer)

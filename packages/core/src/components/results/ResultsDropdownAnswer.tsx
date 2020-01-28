@@ -5,10 +5,9 @@ import { useSelector } from 'react-redux'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { AppState } from '../../store'
 import { ExamComponentProps } from '../types'
-import { ResultsContext, findMultiChoiceFromGradingStructure } from './ResultsContext'
+import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 
 function ResultsDropdownAnswer({ element }: ExamComponentProps) {
-
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = useSelector((state: AppState) => state.answers.answersById[questionId])
 

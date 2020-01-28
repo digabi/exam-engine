@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
+import { ResultsState } from '../../store/index'
 import { QuestionContext, withQuestionContext } from '../QuestionContext'
 import { ExamAnswer, ExamComponentProps } from '../types'
-import { ResultsState } from '../../store/index'
 
 function ResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const answers = useSelector((state: ResultsState) => state.answers.answersById)
