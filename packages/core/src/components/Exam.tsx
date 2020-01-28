@@ -7,7 +7,8 @@ import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement } from '../dom-utils'
 import { initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
-import initializeStore, { AppState } from '../store'
+import { AppState } from '../store'
+import { initializeExamStore } from '../store/index'
 import AttachmentLink from './AttachmentLink'
 import AttachmentLinks from './AttachmentLinks'
 import Audio from './Audio'
@@ -17,6 +18,7 @@ import ChoiceAnswer from './ChoiceAnswer'
 import DocumentTitle from './DocumentTitle'
 import DropdownAnswer from './DropdownAnswer'
 import ExamAttachment from './ExamAttachment'
+import { ExamAttachmentsContext, withAttachmentsContextForExam } from './ExamAttachmentsContext'
 import { ExamContext, withExamContext } from './ExamContext'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
@@ -39,9 +41,24 @@ import TextAnswer from './TextAnswer'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from './types'
 import Video from './Video'
 
-export interface ExamProps {
+export type ExamProps = CommonExamProps & ExamExecutionProps
+
+/** Props common to taking the exams and viewing results */
+export interface CommonExamProps {
   /** Initial answers */
   answers: ExamAnswer[]
+  /** The URL for the attachments page */
+  attachmentsURL: string
+  /** A function that maps an attachment filename to a full URI. */
+  resolveAttachment: (filename: string) => string
+  /** The exam XML */
+  doc: XMLDocument
+  /** The language of the user interface */
+  language: string
+}
+
+/** Props related to taking the exam, 'executing' it */
+interface ExamExecutionProps {
   /** The status of CAS software on the OS */
   casStatus: InitialCasStatus
   /** The CAS countdown duration in seconds. 60 seconds by default. */
@@ -53,14 +70,6 @@ export interface ExamProps {
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[]
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
-  /** The URL for the attachments page */
-  attachmentsURL: string
-  /** A function that maps an attachment filename to a full URI. */
-  resolveAttachment: (filename: string) => string
-  /** The exam XML */
-  doc: XMLDocument
-  /** The language of the user interface */
-  language: string
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -101,7 +110,7 @@ export class Exam extends PureComponent<ExamProps> {
     this.ref = React.createRef()
     const root = props.doc.documentElement
     this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-    this.store = initializeStore(
+    this.store = initializeExamStore(
       props.casStatus,
       props.answers,
       props.restrictedAudioPlaybackStats,
@@ -130,26 +139,30 @@ export class Exam extends PureComponent<ExamProps> {
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
           <ExamContext.Consumer>
-            {({ date, dateTimeFormatter, resolveAttachment }) => (
-              <main className="e-exam" lang={language} ref={this.ref}>
-                <React.StrictMode />
-                {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-                <Section aria-labelledby="title">
-                  {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-                  {date && (
-                    <p>
-                      <strong>{dateTimeFormatter.format(date)}</strong>
-                    </p>
-                  )}
-                  {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
-                  {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
-                  {externalMaterial && (
-                    <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                  )}
-                </Section>
-                {renderChildNodes(root)}
-                <SaveIndicator />
+            {({ date, dateTimeFormatter }) => (
+              <ExamAttachmentsContext.Consumer>
+                {({ resolveAttachment }) => (
+                  <main className="e-exam" lang={language} ref={this.ref}>
+                    <React.StrictMode />
+                    {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+                    <Section aria-labelledby="title">
+                      {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+                      {date && (
+                        <p>
+                          <strong>{dateTimeFormatter.format(date)}</strong>
+                        </p>
+                      )}
+                      {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+                      {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
+                      {externalMaterial && (
+                        <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                      )}
+                    </Section>
+                    {renderChildNodes(root)}
+                  <SaveIndicator />
               </main>
+                )}
+              </ExamAttachmentsContext.Consumer>
             )}
           </ExamContext.Consumer>
         </I18nextProvider>
@@ -158,4 +171,4 @@ export class Exam extends PureComponent<ExamProps> {
   }
 }
 
-export default React.memo(withExamContext(Exam))
+export default React.memo(withExamContext(withAttachmentsContextForExam(Exam)))

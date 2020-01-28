@@ -9,6 +9,7 @@ import AttachmentsQuestion from './AttachmentsQuestion'
 import AttachmentsQuestionTitle from './AttachmentsQuestionTitle'
 import DocumentTitle from './DocumentTitle'
 import { ExamProps } from './Exam'
+import { ExamAttachmentsContext, withAttachmentsContextForExam } from './ExamAttachmentsContext'
 import { ExamContext, withExamContext } from './ExamContext'
 import RenderChildNodes from './RenderChildNodes'
 import Section from './Section'
@@ -22,7 +23,9 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 function Attachments({}: ExamProps) {
-  const { root, language, date, dateTimeFormatter, resolveAttachment } = useContext(ExamContext)
+  const { root, language, date, dateTimeFormatter } = useContext(ExamContext)
+  const { resolveAttachment } = useContext(ExamAttachmentsContext)
+
   const examTitle = findChildElement(root, 'exam-title')!
   const examStylesheet = root.getAttribute('exam-stylesheet')
   const externalMaterial = findChildElement(root, 'external-material')
@@ -55,4 +58,4 @@ function Attachments({}: ExamProps) {
   )
 }
 
-export default React.memo(withExamContext(Attachments))
+export default React.memo(withExamContext(withAttachmentsContextForExam(Attachments)))

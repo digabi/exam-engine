@@ -1,5 +1,5 @@
 import _ from 'lodash-es'
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import { applyMiddleware, combineReducers, compose, createStore, Store } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../components/types'
@@ -16,6 +16,11 @@ const rootReducer = combineReducers({
   cas: casReducer
 })
 
+// TODO combineReducer used just to get answers-field in the same way than in rootReducer, find a nicer way
+const resultsReducer = combineReducers({
+  answers: answersReducer
+})
+
 function* rootSaga(examServerApi: ExamServerAPI) {
   yield fork(answersSaga, examServerApi)
   yield fork(audioSaga, examServerApi)
@@ -23,13 +28,14 @@ function* rootSaga(examServerApi: ExamServerAPI) {
 }
 
 export type AppState = ReturnType<typeof rootReducer>
+export type ResultsState = ReturnType<typeof resultsReducer>
 
-export default function(
+export function initializeExamStore(
   casStatus: InitialCasStatus,
   initialAnswers: ExamAnswer[],
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[],
   examServerApi: ExamServerAPI
-) {
+): Store<AppState> {
   const initialQuestionIds = new Set(_.map(initialAnswers, 'questionId'))
   const playbackTimes = _.mapValues(_.keyBy(restrictedAudioPlaybackStats, 'restrictedAudioId'), 'times')
   const initialState: AppState = {
@@ -53,4 +59,18 @@ export default function(
   sagaMiddleware.run(rootSaga, examServerApi)
 
   return store
+}
+
+export function initializeResultsStore(initialAnswers: ExamAnswer[]): Store<ResultsState> {
+  const initialQuestionIds = new Set(_.map(initialAnswers, 'questionId'))
+  const initialState: ResultsState = {
+    answers: {
+      answersById: _.keyBy(initialAnswers, 'questionId'),
+      focusedQuestionId: null,
+      serverQuestionIds: initialQuestionIds,
+      supportsAnswerHistory: false,
+      savedQuestionIds: initialQuestionIds
+    }
+  }
+  return createStore(resultsReducer, initialState)
 }

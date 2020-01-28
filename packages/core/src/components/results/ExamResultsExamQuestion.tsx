@@ -2,12 +2,12 @@ import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
-import { AppState } from '../../store'
 import { QuestionContext, withQuestionContext } from '../QuestionContext'
 import { ExamAnswer, ExamComponentProps } from '../types'
+import { ResultsState } from '../../store/index'
 
 function ExamResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
-  const answers = useSelector((state: AppState) => state.answers.answersById)
+  const answers = useSelector((state: ResultsState) => state.answers.answersById)
   const hasAnswers: boolean = questionHasAnswers(element, answers)
   const { displayNumber, level } = useContext(QuestionContext)
 
