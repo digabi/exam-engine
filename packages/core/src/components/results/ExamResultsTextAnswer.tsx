@@ -15,7 +15,7 @@ interface Props extends ExamComponentProps {
   questionId: number
 }
 
-function TextAnswerResult({ answer, element, className, type, questionId }: Props) {
+function ExamResultsTextAnswer({ answer, element, className, type, questionId }: Props) {
   const value = answer && answer.value
 
   const { gradingStructure } = useContext(ExamResultsContext)
@@ -75,4 +75,4 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   }
 }
 
-export default connect(mapStateToProps)(TextAnswerResult)
+export default connect(mapStateToProps)(ExamResultsTextAnswer)

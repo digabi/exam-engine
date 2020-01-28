@@ -9,7 +9,7 @@ import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps } from '../types'
 import { calculateQuestionSumScore, ExamResultsContext } from './ExamResultsContext'
 
-function ExamQuestionTitleResult({ element, renderChildNodes }: ExamComponentProps) {
+function ExamResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)
   const Tag = ('h' + Math.min(3 + level, 6)) as any
   const { t } = useTranslation()
@@ -50,4 +50,4 @@ function ExamQuestionTitleResult({ element, renderChildNodes }: ExamComponentPro
   )
 }
 
-export default React.memo(ExamQuestionTitleResult)
+export default React.memo(ExamResultsExamQuestionTitle)
