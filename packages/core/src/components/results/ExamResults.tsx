@@ -12,21 +12,20 @@ import DocumentTitle from '../DocumentTitle'
 import { ExamProps } from '../Exam'
 import ExamAttachment from '../ExamAttachment'
 import { ExamContext, withExamContext } from '../ExamContext'
-import ExamSection from '../ExamSection'
 import ExamSectionTitle from '../ExamSectionTitle'
-import File from '../File'
 import Formula from '../Formula'
 import Hints from '../Hints'
 import Image from '../Image'
+import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
 import { AnswerScore, GradingStructure } from '../types'
-import ChoiceAnswerResult from './ExamResultsChoiceAnswer'
-import DropdownAnswerResult from './ExamResultsDropdownAnswer'
-import ExamQuestionResult from './ExamQuestionResult'
-import ExamQuestionTitleResult from './ExamQuestionTitleResult'
+import ExamResultsChoiceAnswer from './ExamResultsChoiceAnswer'
 import { ExamResultsContext, withExamResultsContext } from './ExamResultsContext'
-import TextAnswerResult from './TextAnswerResult'
-import RenderChildNodes from '../RenderChildNodes'
+import ExamResultsDropdownAnswer from './ExamResultsDropdownAnswer'
+import ExamResultsExamQuestion from './ExamResultsExamQuestion'
+import ExamResultsExamQuestionTitle from './ExamResultsExamQuestionTitle'
+import ExamResultsExamSection from './ExamResultsExamSection'
+import ExamResultsTextAnswer from './ExamResultsTextAnswer'
 
 export interface ExamResultsProps extends ExamProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
@@ -39,18 +38,17 @@ export interface ExamResultsProps extends ExamProps {
 const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
   'audio-group': RenderChildNodes,
-  'choice-answer': ChoiceAnswerResult,
-  'dropdown-answer': DropdownAnswerResult,
-  file: File,
+  'choice-answer': ExamResultsChoiceAnswer,
+  'dropdown-answer': ExamResultsDropdownAnswer,
   formula: Formula,
   image: Image,
-  question: ExamQuestionResult,
-  'question-title': ExamQuestionTitleResult,
-  'scored-text-answer': TextAnswerResult,
+  question: ExamResultsExamQuestion,
+  'question-title': ExamResultsExamQuestionTitle,
   hints: Hints,
-  section: ExamSection,
+  section: ExamResultsExamSection,
   'section-title': ExamSectionTitle,
-  'text-answer': TextAnswerResult
+  'text-answer': ExamResultsTextAnswer,
+  'scored-text-answer': ExamResultsTextAnswer
 })
 
 export class ExamResults extends PureComponent<ExamResultsProps> {
