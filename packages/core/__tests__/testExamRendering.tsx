@@ -1,4 +1,4 @@
-import { Attachments, Exam, parseExam } from '@digabi/exam-engine-core'
+import { Attachments, Exam, parseExam, Results } from '@digabi/exam-engine-core'
 import { listExams } from '@digabi/exam-engine-exams'
 import { getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
@@ -6,6 +6,7 @@ import path from 'path'
 import React from 'react'
 import { create } from 'react-test-renderer'
 import { ExamProps } from '../src/components/Exam'
+import { ResultsProps } from '../src/components/results/Results'
 import { examServerApi } from './examServerApi'
 
 for (const exam of listExams()) {
@@ -19,9 +20,9 @@ for (const exam of listExams()) {
     })
 
     it('renders properly', () => {
-      for (const { xml, language } of results) {
+      for (const { xml, language, gradingStructure } of results) {
         const doc = parseExam(xml, true)
-        const props: ExamProps = {
+        const examProps: ExamProps = {
           doc,
           answers: [],
           attachmentsURL: '/attachments',
@@ -31,8 +32,17 @@ for (const exam of listExams()) {
           restrictedAudioPlaybackStats: [],
           language
         }
-        expect(create(<Exam {...props} />).toJSON()).toMatchSnapshot('<Exam />')
-        expect(create(<Attachments {...props} />).toJSON()).toMatchSnapshot('<Attachments />')
+        expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
+        expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
+        const resultsProps: ResultsProps = {
+          doc,
+          answers: [],
+          attachmentsURL: '/attachments',
+          resolveAttachment: (filename: string) => `/attachments/${encodeURIComponent(filename)}`,
+          language,
+          gradingStructure
+        }
+        expect(create(<Results {...resultsProps} />).toJSON()).toMatchSnapshot('<Results />')
       }
     })
   })

@@ -1402,6 +1402,101 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
+exports[`A_E.xml renders properly: <Results /> 1`] = `
+<main
+  className="e-exam"
+  lang="fi-FI"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe
+    </h1>
+    <p>
+      <strong>
+        19.9.2018
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Koe yhteensä
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+    
+    
+  
+    
+  
+    
+  
+    
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+        
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Valitse yksi aihe.
+    </span>
+    
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+    
+  </section>
+  
+
+</main>
+`;
+
 exports[`A_X.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
@@ -3714,6 +3809,137 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
       Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
     </p>
   </section>
+</main>
+`;
+
+exports[`A_X.xml renders properly: <Results /> 1`] = `
+<main
+  className="e-exam"
+  lang="fi-FI"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      FI – Äidinkieli ja kirjallisuus, lukutaidon koe
+    </h1>
+    <p>
+      <strong>
+        19.9.2018
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Koe yhteensä
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      Asia- ja mediatekstit
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa joko tehtävään 1 tai 2.
+    </span>
+    
+    
+    
+    
+    
+  
+  </section>
+  
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      Kaunokirjalliset ja muut fiktiiviset tekstit
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa joko tehtävään 3 tai 4.
+    </span>
+    
+    
+    
+    
+    
+  
+  </section>
+  
+
 </main>
 `;
 
@@ -12580,6 +12806,308 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
       Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
     </p>
   </section>
+</main>
+`;
+
+exports[`FF.xml renders properly: <Results /> 1`] = `
+<main
+  className="e-exam"
+  lang="fi-FI"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      FI – Filosofia
+    </h1>
+    <p>
+      <strong>
+        29.9.2018
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Koe yhteensä
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      
+      
+        20 p. tehtävät
+      
+      
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa 3–5 tehtävään.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  </section>
+  
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      
+      
+        30 p. tehtävät
+      
+      
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa 0–2 tehtävään.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+  
+  </section>
+  
+
+</main>
+`;
+
+exports[`FF.xml renders properly: <Results /> 2`] = `
+<main
+  className="e-exam"
+  lang="sv-FI"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      SV – Filosofi
+    </h1>
+    <p>
+      <strong>
+        29.9.2018
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Provet sammanlagt
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      
+      
+      
+        20-poängsuppgifter
+      
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Besvara 3–5 uppgifter.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  </section>
+  
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      
+      
+      
+        30-poängsuppgifter
+      
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Besvara 0–2 uppgifter.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+  
+  </section>
+  
+
 </main>
 `;
 
@@ -38669,6 +39197,620 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 2`] = `
 </main>
 `;
 
+exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
+<main
+  className="e-exam"
+  lang="fi-FI"
+>
+  <link
+    href="/attachments/custom.css"
+    rel="stylesheet"
+  />
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      MEX format documentation
+    </h1>
+    <p>
+      <strong>
+        29.9.2018
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Total points for the exam
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      Exam structure
+    </h2>
+    
+    
+    
+
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      Sections
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa tehtävään 4.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="III-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="III-title"
+    >
+       
+      Questions
+    </h2>
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="IV-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="IV-title"
+    >
+       
+      Answer types
+    </h2>
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="V-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="V-title"
+    >
+       
+      Material
+    </h2>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="VI-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="VI-title"
+    >
+       
+      Links to material
+    </h2>
+    
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="VII-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="VII-title"
+    >
+       
+      Formulas
+    </h2>
+    
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="VIII-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="VIII-title"
+    >
+       
+      CSS styles
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  
+  
+  
+
+</main>
+`;
+
+exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
+<main
+  className="e-exam"
+  lang="sv-FI"
+>
+  <link
+    href="/attachments/custom.css"
+    rel="stylesheet"
+  />
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      MEX format documentation
+    </h1>
+    <p>
+      <strong>
+        29.9.2018
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Total points for the exam
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      Exam structure
+    </h2>
+    
+    
+    
+
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      Sections
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Besvara uppgift 4.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="III-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="III-title"
+    >
+       
+      Questions
+    </h2>
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="IV-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="IV-title"
+    >
+       
+      Answer types
+    </h2>
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="V-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="V-title"
+    >
+       
+      Material
+    </h2>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="VI-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="VI-title"
+    >
+       
+      Links to material
+    </h2>
+    
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="VII-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="VII-title"
+    >
+       
+      Formulas
+    </h2>
+    
+    
+    
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="VIII-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="VIII-title"
+    >
+       
+      CSS styles
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+  
+  </section>
+  
+
+  
+  
+  
+  
+
+</main>
+`;
+
 exports[`N.xml renders properly: <Attachments /> 1`] = `
 <main
   className="e-exam attachments"
@@ -56342,6 +57484,450 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
       Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
     </p>
   </section>
+</main>
+`;
+
+exports[`N.xml renders properly: <Results /> 1`] = `
+<main
+  className="e-exam"
+  lang="fi-FI"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      FI – Matematiikka, lyhyt oppimäärä
+    </h1>
+    <p>
+      <strong>
+        24.9.2019
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Koe yhteensä
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      
+      A-osa  
+      
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa neljään tehtävään.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      
+      B1-osa
+      
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa kolmeen tehtävään.
+    </span>
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="III-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="III-title"
+    >
+       
+      
+      B2-osa
+      
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Vastaa kolmeen tehtävään.
+    </span>
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  
+
+</main>
+`;
+
+exports[`N.xml renders properly: <Results /> 2`] = `
+<main
+  className="e-exam"
+  lang="sv-FI"
+>
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      SV – Matematik, kort lärokurs
+    </h1>
+    <p>
+      <strong>
+        24.9.2019
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Provet sammanlagt
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      
+        
+      Del A
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Besvara fyra uppgifter.
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      
+      
+      Del B1
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Besvara tre uppgifter.
+    </span>
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="III-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="III-title"
+    >
+       
+      
+      
+      Del B2
+    
+    </h2>
+    <span
+      className="notification notification--inline"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1"
+        data-icon="info-circle"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      Besvara tre uppgifter.
+    </span>
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  
+
 </main>
 `;
 
@@ -88324,5 +89910,393 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
       Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
     </p>
   </section>
+</main>
+`;
+
+exports[`SC.xml renders properly: <Results /> 1`] = `
+<main
+  className="e-exam"
+  lang="fi-FI"
+>
+  <link
+    href="/attachments/custom.css"
+    rel="stylesheet"
+  />
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      FI – Saksa, lyhyt oppimäärä
+    </h1>
+    <p>
+      <strong>
+        1.1.1970
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Die Prüfung insgesamt
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      Hörverständnis
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      Textverständnis
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="III-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="III-title"
+    >
+       
+      Struktur und Vokabular
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="IV-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="IV-title"
+    >
+       
+      Schriftliche Produktion
+    </h2>
+    
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  
+
+</main>
+`;
+
+exports[`SC.xml renders properly: <Results /> 2`] = `
+<main
+  className="e-exam"
+  lang="sv-FI"
+>
+  <link
+    href="/attachments/custom.css"
+    rel="stylesheet"
+  />
+  <section
+    aria-labelledby="title"
+    className="e-section e-bg-color-off-white e-pad-6"
+  >
+    <h1
+      id="title"
+    >
+      SV – Tyska, kort lärokurs
+    </h1>
+    <p>
+      <strong>
+        1.1.1970
+      </strong>
+    </p>
+    <div>
+      <span
+        className="e-column"
+      >
+        Die Prüfung insgesamt
+        :
+      </span>
+      <strong
+        className="e-column e-column--narrow table-of-contents--score-column"
+      >
+        0 p.
+      </strong>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section
+    aria-labelledby="I-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="I-title"
+    >
+       
+      Hörverständnis
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="II-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="II-title"
+    >
+       
+      Textverständnis
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="III-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="III-title"
+    >
+       
+      Struktur und Vokabular
+    </h2>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  <section
+    aria-labelledby="IV-title"
+    className="e-section e-bg-color-off-white e-pad-6 exam-section"
+  >
+    
+    
+    <h2
+      className="exam-section-title"
+      id="IV-title"
+    >
+       
+      Schriftliche Produktion
+    </h2>
+    
+    
+    
+
+    
+    
+
+  
+  </section>
+  
+
+  
+  
+
 </main>
 `;
