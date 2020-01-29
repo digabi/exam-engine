@@ -1,4 +1,5 @@
 export { createMex, createMultiMex } from './createMex'
+export * from './mastering/createGradingStructure'
 export { getMediaMetadataFromLocalFile } from './getMediaMetadataFromLocalFile'
 export * from './mastering'
 export { ns } from './mastering/schema'

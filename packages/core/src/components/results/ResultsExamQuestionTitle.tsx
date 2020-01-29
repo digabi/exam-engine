@@ -7,7 +7,7 @@ import AnsweringInstructions from '../AnsweringInstructions'
 import NotificationIcon from '../NotificationIcon'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps } from '../types'
-import { calculateQuestionSumScore, ResultsContext } from './ResultsContext'
+import { calculateSumScore, ResultsContext } from './ResultsContext'
 
 function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)
@@ -15,8 +15,8 @@ function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentPr
   const { t } = useTranslation()
 
   const answersById = useSelector((state: ResultsState) => state.answers.answersById)
-  const { gradingStructure } = useContext(ResultsContext)
-  const sumScore = calculateQuestionSumScore(element.parentElement!, gradingStructure, answersById, level === 0)
+  const { gradingStructure, scores } = useContext(ResultsContext)
+  const sumScore = calculateSumScore(element.parentElement!, gradingStructure, scores, answersById, level === 0)
 
   return (
     <>

@@ -1,3 +1,4 @@
+import { GradingStructure } from '@digabi/exam-engine-mastering'
 import { i18n } from 'i18next'
 import React, { PureComponent, useContext } from 'react'
 import { I18nextProvider, Translation } from 'react-i18next'
@@ -18,7 +19,7 @@ import Hints from '../Hints'
 import Image from '../Image'
 import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
-import { AnswerScore, GradingStructure } from '../types'
+import { AnswerScore } from '../types'
 import ResultsChoiceAnswer from './ResultsChoiceAnswer'
 import { ResultsContext, withResultsContext } from './ResultsContext'
 import ResultsDropdownAnswer from './ResultsDropdownAnswer'
@@ -27,13 +28,14 @@ import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsTextAnswer from './ResultsTextAnswer'
 
+
 export type ResultsProps = CommonExamProps & Props
 
 interface Props {
+  /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
+  gradingStructure: GradingStructure
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
-  /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
-  gradingStructure?: GradingStructure
   /** Scores for exam questions */
   scores?: AnswerScore[]
 }

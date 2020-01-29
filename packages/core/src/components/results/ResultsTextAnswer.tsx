@@ -6,16 +6,16 @@ import { getNumericAttribute } from '../../dom-utils'
 import { ResultsState } from '../../store/index'
 import AnswerToolbar from '../AnswerToolbar'
 import { ExamComponentProps } from '../types'
-import { findGrading, ResultsContext } from './ResultsContext'
+import { findScore, ResultsContext } from './ResultsContext'
 
 function ResultsTextAnswer({ element, className }: ExamComponentProps) {
+  const questionId = getNumericAttribute(element, 'question-id')!
   const answer = useSelector((state: ResultsState) => state.answers.answersById[questionId])
   const value = answer && answer.value
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
-  const questionId = getNumericAttribute(element, 'question-id')!
 
-  const { gradingStructure } = useContext(ResultsContext)
-  const gradingMetadata = findGrading(gradingStructure, questionId)
+  const { scores } = useContext(ResultsContext)
+  const gradingMetadata = findScore(scores, questionId)
   const comment = gradingMetadata && gradingMetadata.comment
 
   switch (type) {

@@ -1,4 +1,4 @@
-import { Attachments, Exam, parseExam, RestrictedAudioPlaybackStats } from '@digabi/exam-engine-core'
+import { Attachments, Exam, parseExam, RestrictedAudioPlaybackStats, Results } from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { MasteringResult } from '@digabi/exam-engine-mastering'
 import Cookie from 'js-cookie'
@@ -17,6 +17,7 @@ function Toolbar({ hvp, languages, children }: { languages: string[]; hvp: strin
           <ChangeLanguage language={language} key={language} />
         ))}
         <CopyHvp hvp={hvp} />
+        <ResultsNavigation />
       </ol>
       {children}
     </>
@@ -43,6 +44,17 @@ function CopyHvp({ hvp }: { hvp: string }) {
   )
 }
 
+function ResultsNavigation() {
+  const results = isResults()
+  const toUrl = results ? '/' : '/results'
+  const txt = results ? 'Kokeen suoritus' : 'Tulossivu'
+  return (
+    <li className="toolbar__item">
+      <button onClick={() => (location.href = toUrl)}>{txt}</button>
+    </li>
+  )
+}
+
 window.onload = async () => {
   const app = document.getElementById('app')!
 
@@ -56,18 +68,39 @@ window.onload = async () => {
   const languageCookie = Cookie.get('language')
   const language = languages.find(lang => lang === languageCookie) || languages[0]
 
-  if (language) {
-    const { xml, hvp } = results.find(r => r.language === language)!
-    const doc = parseExam(xml, false)
+  if (!language) {
+    return
+  }
+  const { xml, hvp, gradingStructure } = results.find(r => r.language === language)!
+  const doc = parseExam(xml, false)
+  const attachmentsURL = '/attachments/'
+  const resolveAttachment = (filename: string) => attachmentsURL + encodeURIComponent(filename)
+  const examUuid = doc.documentElement.getAttribute('exam-uuid')!
+  const examServerApi = indexedDBExamServerAPI(examUuid, resolveAttachment)
 
-    const Root = location.pathname.startsWith('/attachments') ? Attachments : Exam
-    const attachmentsURL = '/attachments/'
+  const answers = await examServerApi.getAnswers()
+
+  document.body.style.backgroundColor = backgroundColor()
+
+  if (isResults()) {
+    ReactDOM.render(
+      <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
+        <Results
+          {...{
+            doc,
+            language,
+            attachmentsURL,
+            resolveAttachment,
+            answers,
+            gradingStructure
+          }}
+        />
+      </Toolbar>,
+      app
+    )
+  } else {
+    const Root = isAttachments() ? Attachments : Exam
     const casCountdownDuration = Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || undefined
-    const resolveAttachment = (filename: string) => '/attachments/' + encodeURIComponent(filename)
-
-    const examUuid = doc.documentElement.getAttribute('exam-uuid')!
-    const examServerApi = indexedDBExamServerAPI(examUuid, resolveAttachment)
-    const answers = await examServerApi.getAnswers()
     const restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[] = []
 
     const scrollKey = Root === Exam ? 'examScrollY' : 'attachmentsScrollY'
@@ -104,3 +137,7 @@ window.onload = async () => {
     )
   }
 }
+
+const backgroundColor = () => (isAttachments() ? '#f0f0f0' : '#e0f4fe')
+const isResults = () => location.pathname.startsWith('/results')
+const isAttachments = () => location.pathname.startsWith('/attachments')
