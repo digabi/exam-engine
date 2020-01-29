@@ -25,44 +25,11 @@ export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 
-export interface QuestionGradingCommon {
-  id: number
-  scoreValue?: number
-  comment?: string
-  annotations: Annotation[]
-}
-
 export interface Annotation {
   startIndex: number
   length: number
   message: string
 }
-
-export interface ChoiceGrading extends QuestionGradingCommon {
-  type: 'choicegroup'
-  choices: QuestionChoice[]
-}
-
-export interface TextGrading extends QuestionGradingCommon {
-  type: 'text'
-  maxScore: number
-}
-
-export type QuestionGrading = ChoiceGrading | TextGrading
-
-export interface QuestionChoice {
-  id: number
-  type: 'choice'
-  options: QuestionChoiceOption[]
-}
-
-export interface QuestionChoiceOption {
-  id: number
-  score: number
-  correct: boolean
-}
-
-export type GradingStructure = QuestionGrading[]
 
 export interface AnswerScore {
   questionId: number
