@@ -28,7 +28,6 @@ import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsTextAnswer from './ResultsTextAnswer'
 
-
 export type ResultsProps = CommonExamProps & Props
 
 interface Props {

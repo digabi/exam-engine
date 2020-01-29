@@ -159,8 +159,8 @@ export class Exam extends PureComponent<ExamProps> {
                       )}
                     </Section>
                     {renderChildNodes(root)}
-                  <SaveIndicator />
-              </main>
+                    <SaveIndicator />
+                  </main>
                 )}
               </ExamAttachmentsContext.Consumer>
             )}
