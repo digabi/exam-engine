@@ -1,11 +1,23 @@
 // Here be dragons…
 
 @media print {
+  html {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
   .e-exam {
     max-width: none !important;
     color: #000;
-    font-size: 12px;
-    line-height: 18px;
+
+    .save-indicator {
+      display: none;
+    }
+
+    .text-answer {
+      box-shadow: none;
+      border: 1px solid #000;
+    }
 
     button {
       background: none !important;
@@ -15,12 +27,6 @@
     .e-section {
       padding: 0 !important;
       box-shadow: 0 0 0 0 !important;
-    }
-
-    .rich-text-editor-tools {
-      width: 0;
-      height: 0;
-      overflow: hidden;
     }
   }
 
