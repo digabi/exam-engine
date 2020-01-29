@@ -24,7 +24,7 @@ export const ResultsContext = React.createContext<ResultsContext>({} as ResultsC
 
 export const withResultsContext = withContext<ResultsContext, ResultsProps>(
   ResultsContext,
-  ({ gradingStructure, scores, gradingText, doc, language}) => {
+  ({ gradingStructure, scores, gradingText, doc, language }) => {
     const totalScore = scores ? _.sum(scores.map(s => s.scoreValue)) : 0
     const root = doc.documentElement
     const nonNullScores = scores || []

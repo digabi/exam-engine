@@ -45,9 +45,9 @@ function CopyHvp({ hvp }: { hvp: string }) {
 }
 
 function ResultsNavigation() {
-  const results = isResults()
-  const toUrl = results ? '/' : '/results'
-  const txt = results ? 'Kokeen suoritus' : 'Tulossivu'
+  const isInResults = inResultsPage()
+  const toUrl = isInResults ? '/' : '/results'
+  const txt = isInResults ? 'Kokeen suoritus' : 'Tulossivu'
   return (
     <li className="toolbar__item">
       <button onClick={() => (location.href = toUrl)}>{txt}</button>
@@ -82,7 +82,7 @@ window.onload = async () => {
 
   document.body.style.backgroundColor = backgroundColor()
 
-  if (isResults()) {
+  if (inResultsPage()) {
     ReactDOM.render(
       <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
         <Results
@@ -99,7 +99,7 @@ window.onload = async () => {
       app
     )
   } else {
-    const Root = isAttachments() ? Attachments : Exam
+    const Root = inAttachmentsPage() ? Attachments : Exam
     const casCountdownDuration = Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || undefined
     const restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[] = []
 
@@ -138,6 +138,6 @@ window.onload = async () => {
   }
 }
 
-const backgroundColor = () => (isAttachments() ? '#f0f0f0' : '#e0f4fe')
-const isResults = () => location.pathname.startsWith('/results')
-const isAttachments = () => location.pathname.startsWith('/attachments')
+const backgroundColor = () => (inAttachmentsPage() ? '#f0f0f0' : '#e0f4fe')
+const inResultsPage = () => location.pathname.startsWith('/results')
+const inAttachmentsPage = () => location.pathname.startsWith('/attachments')
