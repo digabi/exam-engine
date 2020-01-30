@@ -55,20 +55,24 @@ Object {
 exports[`Exam mastering masters A_E.xml exam correctly: hvp 1`] = `
 FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe
 
+### Osa I:  (60 p.)
 
-OSA I:  (60 p.)
+#### 1. Digitaalinen arki (60 p.) 
 
-	1. Digitaalinen arki (60 p.) (tekstivastaus)
 
-	2. Sosiaaliset suhteet someaikana (60 p.) (tekstivastaus)
+#### 2. Sosiaaliset suhteet someaikana (60 p.) 
 
-	3. Elämää ilman sosiaalista mediaa? (60 p.) (tekstivastaus)
 
-	4. Osallistumisen tai itsensä ilmaisemisen uusia tapoja digiaikana (60 p.) (tekstivastaus)
+#### 3. Elämää ilman sosiaalista mediaa? (60 p.) 
 
-	5. Eri ihmisryhmät sosiaalisen median käyttäjinä (60 p.) (tekstivastaus)
 
-	6. Sosiaalisen median edut ja haitat (60 p.) (tekstivastaus)
+#### 4. Osallistumisen tai itsensä ilmaisemisen uusia tapoja digiaikana (60 p.) 
+
+
+#### 5. Eri ihmisryhmät sosiaalisen median käyttäjinä (60 p.) 
+
+
+#### 6. Sosiaalisen median edut ja haitat (60 p.)
 `;
 
 exports[`Exam mastering masters A_E.xml exam correctly: xml 1`] = `
@@ -320,27 +324,32 @@ Object {
 exports[`Exam mastering masters A_X.xml exam correctly: hvp 1`] = `
 FI – Äidinkieli ja kirjallisuus, lukutaidon koe
 
+### Osa I: Asia- ja mediatekstit (30 p.)
 
-OSA I: Asia- ja mediatekstit (30 p.)
-
-	1. Miten loremia myydään? (30 p.) (tekstivastaus)
-
-	1.1. Analysoi mainoksessa käytettyjä mainonnan keinoja. Vastauksen sopiva pituus on noin 3 500 merkkiä. (18 p.) (tekstivastaus)
-
-	1.2. Analysoi mainoksen nais- ja mieskuvaa. Vastauksen sopiva pituus on noin 2 000 merkkiä. (12 p.) (tekstivastaus)
-
-	2. Puhe vastavalmistuneelle (30 p.) (tekstivastaus)
+#### 1. Miten loremia myydään? (30 p.) 
 
 
-OSA II: Kaunokirjalliset ja muut fiktiiviset tekstit (30 p.)
+1.1. Analysoi mainoksessa käytettyjä mainonnan keinoja. Vastauksen sopiva pituus on noin 3 500 merkkiä. (18 p.) (tekstivastaus)
 
-	3. Novelli eräästä perheestä (30 p.) (tekstivastaus)
 
-	4. Räppi ja runo (30 p.) (tekstivastaus)
+1.2. Analysoi mainoksen nais- ja mieskuvaa. Vastauksen sopiva pituus on noin 2 000 merkkiä. (12 p.) (tekstivastaus)
 
-	4.1. Poimi Dolorin räpistä runoudelle tyypillisiä piirteitä ja anna niistä esimerkit. Vastauksen sopiva pituus on noin 2 000 merkkiä (12 p.) (tekstivastaus)
 
-	4.2. Vertaile Dolorin räpin ja Deserunt Magnan runon sisältämiä ikääntymisen kuvauksia. Vastauksen sopiva pituus on noin 3 500 merkkiä. (18 p.) (tekstivastaus)
+#### 2. Puhe vastavalmistuneelle (30 p.) 
+
+
+### Osa II: Kaunokirjalliset ja muut fiktiiviset tekstit (30 p.)
+
+#### 3. Novelli eräästä perheestä (30 p.) 
+
+
+#### 4. Räppi ja runo (30 p.) 
+
+
+4.1. Poimi Dolorin räpistä runoudelle tyypillisiä piirteitä ja anna niistä esimerkit. Vastauksen sopiva pituus on noin 2 000 merkkiä (12 p.) (tekstivastaus)
+
+
+4.2. Vertaile Dolorin räpin ja Deserunt Magnan runon sisältämiä ikääntymisen kuvauksia. Vastauksen sopiva pituus on noin 3 500 merkkiä. (18 p.) (tekstivastaus)
 `;
 
 exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
@@ -1082,121 +1091,165 @@ Object {
 exports[`Exam mastering masters FF.xml exam correctly: hvp 1`] = `
 FI – Filosofia
 
+### Osa I: 20 p. tehtävät (100 p.)
 
-OSA I: 20 p. tehtävät (100 p.)
-
-	1. Kauneus on Katsojan silmässä (20 p.) (tekstivastaus)
-
-	1.1. Sanotaan, että kauneus on katsojan silmässä. Kuvaile lyhyesti, millaista käsitystä kauneudesta sanonta edustaa. Nimeä käsitys. (2 p.) (tekstivastaus)
-
-	1.2. Sanotaan, että kauneus on katsojan silmässä. Nimeä ja kuvaile lyhyesti päinvastainen käsitys kauneudesta. (2 p.) (tekstivastaus)
-
-	1.3. Valitse kaksi esimerkkiä kauniista asioista ja perustele lyhyesti, miksi ne ovat kauniita. (6 p.) (tekstivastaus)
-
-	1.4. Pohdi, mitä kauneus on. Käytä apunasi kohdassa 1.3. antamiasi esimerkkejä. (10 p.) (tekstivastaus)
-
-	2. Moraali ja tavat (20 p.) (tekstivastaus)
-
-	3. Ykseys ja muutos (20 p.) (tekstivastaus)
-
-	3.1. Selitä, miksi muutos on Proidentin mukaan mahdotonta. Hyödynnä vastauksessasi videokatkelmaa . (5 p.) (tekstivastaus)
-
-	3.2. Videokatkelmassa esitellään kaksi Veniamin paradoksia. Erittele toinen niistä ja kuvaile sen suhde Proidentin filosofiaan. (15 p.) (tekstivastaus)
-
-	4. Lihan syöminen (20 p.) (tekstivastaus)
-
-	5. Valta opettajainhuoneessa (20 p.) (tekstivastaus)
-
-	6. Tiedon kriteerit (20 p.) (tekstivastaus)
-
-	6.1. Henri ajelee maaseudulla poikansa kanssa ja kertoo hänelle, mitä sattuu kulloinkin näkemään. Henri näkee pellolla ladon ja kertoo pojalleen: ”Tuolla on lato”. Henrillä on erinomainen näkökyky, ja hänellä on lausettaan vastaava oikeutettu tosi uskomus. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi. (6 p.) (tekstivastaus)
-
-	6.2. Henri ajaa vähän eteenpäin ja saapuu peltoalueelle, jolla on oikeiden latojen joukossa pahvisia latokulisseja, jotka erehdyttäisivät ketä tahansa. Henri näkee kuitenkin oikean ladon ja sanoo taas pojalleen: ”Tuollakin on lato”. Jos hän olisi sattunut kohdistamaan katseensa pelkkään kulissiin, hän olisi uskonut senkin olevan lato. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi. (6 p.) (tekstivastaus)
-
-	6.3. Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen siitä, että kyseessä on lato. Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan. (8 p.) (tekstivastaus)
+#### 1. Kauneus on Katsojan silmässä (20 p.) 
 
 
-OSA II: 30 p. tehtävät (60 p.)
+1.1. Sanotaan, että kauneus on katsojan silmässä. Kuvaile lyhyesti, millaista käsitystä kauneudesta sanonta edustaa. Nimeä käsitys. (2 p.) (tekstivastaus)
 
-	7. Filosofiakäsitys Adipisicingin Loremissa (30 p.) (tekstivastaus)
 
-	7.1. Kuvaile omin sanoin tekstikatkelmassa esitettyä käsitystä filosofiasta ja arvioi käsityksen hyviä ja huonoja puolia. (15 p.) (tekstivastaus)
+1.2. Sanotaan, että kauneus on katsojan silmässä. Nimeä ja kuvaile lyhyesti päinvastainen käsitys kauneudesta. (2 p.) (tekstivastaus)
 
-	7.2. Esitä jokin toinen käsitys filosofiasta ja vertaa sitä Loremissa esitettyyn. (15 p.) (tekstivastaus)
 
-	8. Eutanasia (30 p.) (tekstivastaus)
+1.3. Valitse kaksi esimerkkiä kauniista asioista ja perustele lyhyesti, miksi ne ovat kauniita. (6 p.) (tekstivastaus)
 
-	8.1. Valitse tekstikatkelmista kaksi eutanasiaa puolustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet. (10 p.) (tekstivastaus)
 
-	8.2. Valitse tekstikatkelmista kaksi eutanasiaa vastustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet. (10 p.) (tekstivastaus)
+1.4. Pohdi, mitä kauneus on. Käytä apunasi kohdassa 1.3. antamiasi esimerkkejä. (10 p.) (tekstivastaus)
 
-	8.3. Esitä oma perusteltu kantasi eutanasian laillistamisesta. (10 p.) (tekstivastaus)
 
-	9. Tieteelliset mallit (30 p.) (tekstivastaus)
+#### 2. Moraali ja tavat (20 p.) 
 
-	9.1. Valitse videokatkelmista yksi kuvaus tieteellisestä toiminnasta ja erittele sitä tieteenfilosofian näkökulmasta. (10 p.) (tekstivastaus)
 
-	9.2. Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi aineesta. Selitä sen rakenne ja vähintään yksi sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofisesti. (20 p.) (tekstivastaus)
+#### 3. Ykseys ja muutos (20 p.) 
+
+
+3.1. Selitä, miksi muutos on Proidentin mukaan mahdotonta. Hyödynnä vastauksessasi videokatkelmaa . (5 p.) (tekstivastaus)
+
+
+3.2. Videokatkelmassa esitellään kaksi Veniamin paradoksia. Erittele toinen niistä ja kuvaile sen suhde Proidentin filosofiaan. (15 p.) (tekstivastaus)
+
+
+#### 4. Lihan syöminen (20 p.) 
+
+
+#### 5. Valta opettajainhuoneessa (20 p.) 
+
+
+#### 6. Tiedon kriteerit (20 p.) 
+
+
+6.1. Henri ajelee maaseudulla poikansa kanssa ja kertoo hänelle, mitä sattuu kulloinkin näkemään. Henri näkee pellolla ladon ja kertoo pojalleen: ”Tuolla on lato”. Henrillä on erinomainen näkökyky, ja hänellä on lausettaan vastaava oikeutettu tosi uskomus. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi. (6 p.) (tekstivastaus)
+
+
+6.2. Henri ajaa vähän eteenpäin ja saapuu peltoalueelle, jolla on oikeiden latojen joukossa pahvisia latokulisseja, jotka erehdyttäisivät ketä tahansa. Henri näkee kuitenkin oikean ladon ja sanoo taas pojalleen: ”Tuollakin on lato”. Jos hän olisi sattunut kohdistamaan katseensa pelkkään kulissiin, hän olisi uskonut senkin olevan lato. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi. (6 p.) (tekstivastaus)
+
+
+6.3. Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen siitä, että kyseessä on lato. Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan. (8 p.) (tekstivastaus)
+
+
+### Osa II: 30 p. tehtävät (60 p.)
+
+#### 7. Filosofiakäsitys Adipisicingin Loremissa (30 p.) 
+
+
+7.1. Kuvaile omin sanoin tekstikatkelmassa esitettyä käsitystä filosofiasta ja arvioi käsityksen hyviä ja huonoja puolia. (15 p.) (tekstivastaus)
+
+
+7.2. Esitä jokin toinen käsitys filosofiasta ja vertaa sitä Loremissa esitettyyn. (15 p.) (tekstivastaus)
+
+
+#### 8. Eutanasia (30 p.) 
+
+
+8.1. Valitse tekstikatkelmista kaksi eutanasiaa puolustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet. (10 p.) (tekstivastaus)
+
+
+8.2. Valitse tekstikatkelmista kaksi eutanasiaa vastustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet. (10 p.) (tekstivastaus)
+
+
+8.3. Esitä oma perusteltu kantasi eutanasian laillistamisesta. (10 p.) (tekstivastaus)
+
+
+#### 9. Tieteelliset mallit (30 p.) 
+
+
+9.1. Valitse videokatkelmista yksi kuvaus tieteellisestä toiminnasta ja erittele sitä tieteenfilosofian näkökulmasta. (10 p.) (tekstivastaus)
+
+
+9.2. Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi aineesta. Selitä sen rakenne ja vähintään yksi sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofisesti. (20 p.) (tekstivastaus)
 `;
 
 exports[`Exam mastering masters FF.xml exam correctly: hvp 2`] = `
 SV – Filosofi
 
+### Del I: 20-poängsuppgifter (100 p.)
 
-DEL I: 20-poängsuppgifter (100 p.)
-
-	1. Skönheten ligger i betraktarens ögon (20 p.) (textsvar)
-
-	1.1. Det sägs att skönheten ligger i betraktarens ögon. Beskriv kort vilket slag av uppfattning om skönhet ett sådant skönhetsbegrepp representerar. Namnge uppfattningen. (2 p.) (textsvar)
-
-	1.2. Det sägs att skönheten ligger i betraktarens ögon. Namnge och beskriv kort en motsatt uppfattning om skönhet. (2 p.) (textsvar)
-
-	1.3. Välj två exempel på vackra saker och motivera kort varför de är vackra. (6 p.) (textsvar)
-
-	1.4. Diskutera vad skönhet är. Använd de exempel du gett i punkt 1.3. som hjälp. (10 p.) (textsvar)
-
-	2. Moral och seder (20 p.) (textsvar)
-
-	3. Enhet och förändring (20 p.) (textsvar)
-
-	3.1. Förklara varför förändring är omöjlig enligt Proident. Utnyttja videoklippet i ditt svar. (5 p.) (textsvar)
-
-	3.2. I videoklippet presenteras två av Veniam paradoxer. Förklara den ena av dem och beskriv dess relation till Proident filosofi. (15 p.) (textsvar)
-
-	4. Att äta kött (20 p.) (textsvar)
-
-	5. Makt i lärarrummet (20 p.) (textsvar)
-
-	6. Kriterierna för kunskap (20 p.) (textsvar)
-
-	6.1. Henri är ute och kör på landsbygden med sin son och berättar för honom vad han råkar se längs vägen. Henri ser en lada på en åker och berättar för sin son: ”Där är en lada”. Henri har utmärkt syn, och han har en berättigad och sann uppfattning som motsvarar satsen han uttrycker. Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar. (6 p.) (textsvar)
-
-	6.2. Henri kör en bit vidare och kommer till ett område med åkrar där det bland riktiga lador finns kulisser i papp som föreställer lador. De är så naturtrogna att de skulle kunna lura vem som helst. Henri ser emellertid en riktig lada och säger till sin son: ”Där är också en lada”. Om han hade råkat rikta sin blick mot en av kulisserna hade han trott att även den var en lada. Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar. (6 p.) (textsvar)
-
-	6.3. Henris son är blind. Vid den första ladan bildar han utifrån sin pappas beskrivning den sanna uppfattningen om att det är fråga om en lada. Har Henris son kunskap om att det är en lada? Motivera ditt svar och diskutera på ett mer allmänt plan under vilka förutsättningar kunskap kan bygga på ett ögonvittnes eller en kunskapsmässig auktoritets ord. (8 p.) (textsvar)
+#### 1. Skönheten ligger i betraktarens ögon (20 p.) 
 
 
-DEL II: 30-poängsuppgifter (60 p.)
+1.1. Det sägs att skönheten ligger i betraktarens ögon. Beskriv kort vilket slag av uppfattning om skönhet ett sådant skönhetsbegrepp representerar. Namnge uppfattningen. (2 p.) (textsvar)
 
-	7. Filosofiuppfattningen i Adipisicings Lorem (30 p.) (textsvar)
 
-	7.1. Beskriv med egna ord den syn på filosofin som förs fram i textutdraget och utvärdera de goda och de dåliga sidorna hos en sådan filosofisyn. (15 p.) (textsvar)
+1.2. Det sägs att skönheten ligger i betraktarens ögon. Namnge och beskriv kort en motsatt uppfattning om skönhet. (2 p.) (textsvar)
 
-	7.2. Redogör för någon annan syn på filosofin och jämför den med den som förs fram i Lorem. (15 p.) (textsvar)
 
-	8. Eutanasi (30 p.) (textsvar)
+1.3. Välj två exempel på vackra saker och motivera kort varför de är vackra. (6 p.) (textsvar)
 
-	8.1. Välj ut två argument för eutanasi ur textutdragen av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt deras förtjänster och brister. (10 p.) (textsvar)
 
-	8.2. Välj ut två argument mot eutanasi ur textutdragen av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt deras förtjänster och brister. (10 p.) (textsvar)
+1.4. Diskutera vad skönhet är. Använd de exempel du gett i punkt 1.3. som hjälp. (10 p.) (textsvar)
 
-	8.3. Redogör för din egen motiverade ståndpunkt till legaliseringen av eutanasi. (10 p.) (textsvar)
 
-	9. Vetenskapliga modeller (30 p.) (textsvar)
+#### 2. Moral och seder (20 p.) 
 
-	9.1. Välj ut en beskrivning av vetenskaplig verksamhet ur videoklippen och analysera den ur ett vetenskapsfilosofiskt perspektiv. (10 p.) (textsvar)
 
-	9.2. Välj ut en vetenskaplig modell, exempelvis från något läroämne du har studerat i gymnasiet. Förklara dess struktur och minst ett av dess teoretiska begrepp, samt utvärdera modellen och dess betydelse på ett vetenskapsfilosofiskt sätt. (20 p.) (textsvar)
+#### 3. Enhet och förändring (20 p.) 
+
+
+3.1. Förklara varför förändring är omöjlig enligt Proident. Utnyttja videoklippet i ditt svar. (5 p.) (textsvar)
+
+
+3.2. I videoklippet presenteras två av Veniam paradoxer. Förklara den ena av dem och beskriv dess relation till Proident filosofi. (15 p.) (textsvar)
+
+
+#### 4. Att äta kött (20 p.) 
+
+
+#### 5. Makt i lärarrummet (20 p.) 
+
+
+#### 6. Kriterierna för kunskap (20 p.) 
+
+
+6.1. Henri är ute och kör på landsbygden med sin son och berättar för honom vad han råkar se längs vägen. Henri ser en lada på en åker och berättar för sin son: ”Där är en lada”. Henri har utmärkt syn, och han har en berättigad och sann uppfattning som motsvarar satsen han uttrycker. Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar. (6 p.) (textsvar)
+
+
+6.2. Henri kör en bit vidare och kommer till ett område med åkrar där det bland riktiga lador finns kulisser i papp som föreställer lador. De är så naturtrogna att de skulle kunna lura vem som helst. Henri ser emellertid en riktig lada och säger till sin son: ”Där är också en lada”. Om han hade råkat rikta sin blick mot en av kulisserna hade han trott att även den var en lada. Har Henri kunskap om att det objekt han ser är en lada? Motivera ditt svar. (6 p.) (textsvar)
+
+
+6.3. Henris son är blind. Vid den första ladan bildar han utifrån sin pappas beskrivning den sanna uppfattningen om att det är fråga om en lada. Har Henris son kunskap om att det är en lada? Motivera ditt svar och diskutera på ett mer allmänt plan under vilka förutsättningar kunskap kan bygga på ett ögonvittnes eller en kunskapsmässig auktoritets ord. (8 p.) (textsvar)
+
+
+### Del II: 30-poängsuppgifter (60 p.)
+
+#### 7. Filosofiuppfattningen i Adipisicings Lorem (30 p.) 
+
+
+7.1. Beskriv med egna ord den syn på filosofin som förs fram i textutdraget och utvärdera de goda och de dåliga sidorna hos en sådan filosofisyn. (15 p.) (textsvar)
+
+
+7.2. Redogör för någon annan syn på filosofin och jämför den med den som förs fram i Lorem. (15 p.) (textsvar)
+
+
+#### 8. Eutanasi (30 p.) 
+
+
+8.1. Välj ut två argument för eutanasi ur textutdragen av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt deras förtjänster och brister. (10 p.) (textsvar)
+
+
+8.2. Välj ut två argument mot eutanasi ur textutdragen av vilka du anser det ena vara mer övertygande och det andra mindre övertygande. Analysera argumenten samt deras förtjänster och brister. (10 p.) (textsvar)
+
+
+8.3. Redogör för din egen motiverade ståndpunkt till legaliseringen av eutanasi. (10 p.) (textsvar)
+
+
+#### 9. Vetenskapliga modeller (30 p.) 
+
+
+9.1. Välj ut en beskrivning av vetenskaplig verksamhet ur videoklippen och analysera den ur ett vetenskapsfilosofiskt perspektiv. (10 p.) (textsvar)
+
+
+9.2. Välj ut en vetenskaplig modell, exempelvis från något läroämne du har studerat i gymnasiet. Förklara dess struktur och minst ett av dess teoretiska begrepp, samt utvärdera modellen och dess betydelse på ett vetenskapsfilosofiskt sätt. (20 p.) (textsvar)
 `;
 
 exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
@@ -3736,217 +3789,297 @@ Object {
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: hvp 1`] = `
 MEX format documentation
 
+### Osa I: Exam structure (0 p.)
 
-OSA I: Exam structure (0 p.)
-
-	1. XML structure (0 p.) ()
-
-	1.1. Special characters as entities (0 p.) ()
-
-	2. Exam (0 p.) ()
-
-	2.1. Example (0 p.) ()
-
-	3. Languages and localization (0 p.) ()
-
-	3.1. Example (0 p.) ()
+#### 1. XML structure (0 p.) 
 
 
-OSA II: Sections (0 p.)
-
-	4. Example question title (0 p.) ()
+1.1. Special characters as entities (0 p.) ()
 
 
-OSA III: Questions (0 p.)
-
-	5. Example question title (0 p.) ()
-
-	6. Second example question title (0 p.) ()
-
-	6.1. First sub-question title (0 p.) ()
-
-	6.2. Second sub-question title (0 p.) ()
+#### 2. Exam (0 p.) 
 
 
-OSA IV: Answer types (18 p.)
-
-	7. text-answer (6 p.) (tekstivastaus)
-
-	8. choice-answer (2 p.) (monivalintavastaus)
-		Sit (-1 p.), 		Lorem (2 p.), 		Ipsum (0 p.)
+2.1. Example (0 p.) ()
 
 
-
-	9. dropdown-answer (2 p.) (aukkomonivalintavastaus)
-		Ipsum (-1 p.), 		Dolor (-1 p.), 		Lorem (2 p.)
-
-	10. scored-text-answer (8 p.) (keskitetysti arvosteltava tekstivastaus)
-	10.1: dolor (1 p.)
-	10.2: elit (1 p.)
-	10.3: vero (1 p.)
-	10.4: laboriosam (1 p.)
-	10.5: dolores (1 p.)
+#### 3. Languages and localization (0 p.) 
 
 
-OSA V: Material (6 p.)
-
-	11. attachment (0 p.) ()
-
-	12. image (0 p.) ()
-
-	13. audio (0 p.) ()
-
-	14. audio-group (6 p.) (monivalintavastaus)
-
-	14.1. Listening comprehension choice question (2 p.) (monivalintavastaus)
-		Sit (-1 p.), 		Lorem (2 p.), 		Ipsum (0 p.)
-
-	14.2. Listening comprehension choice question (2 p.) (monivalintavastaus)
-		Lorem (2 p.), 		Ipsum (0 p.), 		Sit (-1 p.)
-
-	14.3. Listening comprehension (2 p.) (monivalintavastaus)
-		Lorem (2 p.), 		Ipsum (0 p.), 		Sit (-1 p.)
-
-	15. video (0 p.) ()
-
-	16. file (0 p.) ()
+3.1. Example (0 p.) ()
 
 
-OSA VI: Links to material (0 p.)
+### Osa II: Sections (0 p.)
 
-	17. attachment-link (0 p.) ()
-
-	18. attachment-links (0 p.) ()
+#### 4. Example question title (0 p.) 
 
 
-OSA VII: Formulas (0 p.)
+### Osa III: Questions (0 p.)
 
-	19. Adding formulas (0 p.) ()
+#### 5. Example question title (0 p.) 
 
 
-OSA VIII: CSS styles (0 p.)
+#### 6. Second example question title (0 p.) 
 
-	20. Typography (0 p.) ()
 
-	21. Lists (0 p.) ()
+6.1. First sub-question title (0 p.) ()
 
-	22. Floating (0 p.) ()
 
-	23. Illustration images (0 p.) ()
+6.2. Second sub-question title (0 p.) ()
 
-	24. Margins and paddings (0 p.) ()
 
-	25. Tables (0 p.) ()
+### Osa IV: Answer types (18 p.)
 
-	26. Text columns (0 p.) ()
+#### 7. text-answer (6 p.) 
+
+
+#### 8. choice-answer (2 p.) 
+
+- Sit (-1 p.)
+- Lorem (2 p.)
+- Ipsum (0 p.)
+
+
+
+#### 9. dropdown-answer (2 p.) 
+
+9. Ipsum (-1 p.)
+9. Dolor (-1 p.)
+9. Lorem (2 p.)
+
+#### 10. scored-text-answer (8 p.) 
+
+- 10.1. dolor?
+    - dolor (1 p.)
+- 10.2. elit?
+    - elit (1 p.)
+- 10.3. vero?
+    - vero (1 p.)
+- 10.4. laboriosam?
+    - laboriosam (1 p.)
+- 10.5. dolores?
+    - dolores (1 p.)
+
+### Osa V: Material (6 p.)
+
+#### 11. attachment (0 p.) 
+
+
+#### 12. image (0 p.) 
+
+
+#### 13. audio (0 p.) 
+
+
+#### 14. audio-group (6 p.) 
+
+
+14.1. Listening comprehension choice question (2 p.) (monivalintavastaus)
+
+- Sit (-1 p.)
+- Lorem (2 p.)
+- Ipsum (0 p.)
+
+14.2. Listening comprehension choice question (2 p.) (monivalintavastaus)
+
+- Lorem (2 p.)
+- Ipsum (0 p.)
+- Sit (-1 p.)
+
+14.3. Listening comprehension (2 p.) (monivalintavastaus)
+
+- Lorem (2 p.)
+- Ipsum (0 p.)
+- Sit (-1 p.)
+
+#### 15. video (0 p.) 
+
+
+#### 16. file (0 p.) 
+
+
+### Osa VI: Links to material (0 p.)
+
+#### 17. attachment-link (0 p.) 
+
+
+#### 18. attachment-links (0 p.) 
+
+
+### Osa VII: Formulas (0 p.)
+
+#### 19. Adding formulas (0 p.) 
+
+
+### Osa VIII: CSS styles (0 p.)
+
+#### 20. Typography (0 p.) 
+
+
+#### 21. Lists (0 p.) 
+
+
+#### 22. Floating (0 p.) 
+
+
+#### 23. Illustration images (0 p.) 
+
+
+#### 24. Margins and paddings (0 p.) 
+
+
+#### 25. Tables (0 p.) 
+
+
+#### 26. Text columns (0 p.)
 `;
 
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: hvp 2`] = `
 MEX format documentation
 
+### Del I: Exam structure (0 p.)
 
-DEL I: Exam structure (0 p.)
-
-	1. XML structure (0 p.) ()
-
-	1.1. Special characters as entities (0 p.) ()
-
-	2. Exam (0 p.) ()
-
-	2.1. Example (0 p.) ()
-
-	3. Languages and localization (0 p.) ()
-
-	3.1. Example (0 p.) ()
+#### 1. XML structure (0 p.) 
 
 
-DEL II: Sections (0 p.)
-
-	4. Example question title (0 p.) ()
+1.1. Special characters as entities (0 p.) ()
 
 
-DEL III: Questions (0 p.)
-
-	5. Example question title (0 p.) ()
-
-	6. Second example question title (0 p.) ()
-
-	6.1. First sub-question title (0 p.) ()
-
-	6.2. Second sub-question title (0 p.) ()
+#### 2. Exam (0 p.) 
 
 
-DEL IV: Answer types (18 p.)
-
-	7. text-answer (6 p.) (textsvar)
-
-	8. choice-answer (2 p.) (flervalssvar)
-		Sit (-1 p.), 		Lorem (2 p.), 		Ipsum (0 p.)
+2.1. Example (0 p.) ()
 
 
-
-	9. dropdown-answer (2 p.) (flervalslucksvar)
-		Ipsum (-1 p.), 		Dolor (-1 p.), 		Lorem (2 p.)
-
-	10. scored-text-answer (8 p.) (centraliserat bedömt textsvar)
-	10.1: dolor (1 p.)
-	10.2: elit (1 p.)
-	10.3: vero (1 p.)
-	10.4: laboriosam (1 p.)
-	10.5: dolores (1 p.)
+#### 3. Languages and localization (0 p.) 
 
 
-DEL V: Material (6 p.)
-
-	11. attachment (0 p.) ()
-
-	12. image (0 p.) ()
-
-	13. audio (0 p.) ()
-
-	14. audio-group (6 p.) (flervalssvar)
-
-	14.1. Listening comprehension choice question (2 p.) (flervalssvar)
-		Sit (-1 p.), 		Lorem (2 p.), 		Ipsum (0 p.)
-
-	14.2. Listening comprehension choice question (2 p.) (flervalssvar)
-		Lorem (2 p.), 		Ipsum (0 p.), 		Sit (-1 p.)
-
-	14.3. Listening comprehension (2 p.) (flervalssvar)
-		Lorem (2 p.), 		Ipsum (0 p.), 		Sit (-1 p.)
-
-	15. video (0 p.) ()
-
-	16. file (0 p.) ()
+3.1. Example (0 p.) ()
 
 
-DEL VI: Links to material (0 p.)
+### Del II: Sections (0 p.)
 
-	17. attachment-link (0 p.) ()
-
-	18. attachment-links (0 p.) ()
+#### 4. Example question title (0 p.) 
 
 
-DEL VII: Formulas (0 p.)
+### Del III: Questions (0 p.)
 
-	19. Adding formulas (0 p.) ()
+#### 5. Example question title (0 p.) 
 
 
-DEL VIII: CSS styles (0 p.)
+#### 6. Second example question title (0 p.) 
 
-	20. Typography (0 p.) ()
 
-	21. Lists (0 p.) ()
+6.1. First sub-question title (0 p.) ()
 
-	22. Floating (0 p.) ()
 
-	23. Illustration images (0 p.) ()
+6.2. Second sub-question title (0 p.) ()
 
-	24. Margins and paddings (0 p.) ()
 
-	25. Tables (0 p.) ()
+### Del IV: Answer types (18 p.)
 
-	26. Text columns (0 p.) ()
+#### 7. text-answer (6 p.) 
+
+
+#### 8. choice-answer (2 p.) 
+
+- Sit (-1 p.)
+- Lorem (2 p.)
+- Ipsum (0 p.)
+
+
+
+#### 9. dropdown-answer (2 p.) 
+
+9. Ipsum (-1 p.)
+9. Dolor (-1 p.)
+9. Lorem (2 p.)
+
+#### 10. scored-text-answer (8 p.) 
+
+- 10.1. dolor?
+    - dolor (1 p.)
+- 10.2. elit?
+    - elit (1 p.)
+- 10.3. vero?
+    - vero (1 p.)
+- 10.4. laboriosam?
+    - laboriosam (1 p.)
+- 10.5. dolores?
+    - dolores (1 p.)
+
+### Del V: Material (6 p.)
+
+#### 11. attachment (0 p.) 
+
+
+#### 12. image (0 p.) 
+
+
+#### 13. audio (0 p.) 
+
+
+#### 14. audio-group (6 p.) 
+
+
+14.1. Listening comprehension choice question (2 p.) (flervalssvar)
+
+- Sit (-1 p.)
+- Lorem (2 p.)
+- Ipsum (0 p.)
+
+14.2. Listening comprehension choice question (2 p.) (flervalssvar)
+
+- Lorem (2 p.)
+- Ipsum (0 p.)
+- Sit (-1 p.)
+
+14.3. Listening comprehension (2 p.) (flervalssvar)
+
+- Lorem (2 p.)
+- Ipsum (0 p.)
+- Sit (-1 p.)
+
+#### 15. video (0 p.) 
+
+
+#### 16. file (0 p.) 
+
+
+### Del VI: Links to material (0 p.)
+
+#### 17. attachment-link (0 p.) 
+
+
+#### 18. attachment-links (0 p.) 
+
+
+### Del VII: Formulas (0 p.)
+
+#### 19. Adding formulas (0 p.) 
+
+
+### Del VIII: CSS styles (0 p.)
+
+#### 20. Typography (0 p.) 
+
+
+#### 21. Lists (0 p.) 
+
+
+#### 22. Floating (0 p.) 
+
+
+#### 23. Illustration images (0 p.) 
+
+
+#### 24. Margins and paddings (0 p.) 
+
+
+#### 25. Tables (0 p.) 
+
+
+#### 26. Text columns (0 p.)
 `;
 
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
@@ -10976,203 +11109,271 @@ Object {
 exports[`Exam mastering masters N.xml exam correctly: hvp 1`] = `
 FI – Matematiikka, lyhyt oppimäärä
 
+### Osa I: A-osa (48 p.)
 
-OSA I: A-osa (48 p.)
-
-	1. Lukujonot (12 p.) (aukkomonivalintavastaus)
-
-	1.1. Mitä tyyppiä lukujono on? (2 p.) (aukkomonivalintavastaus)
-		aritmeettinen (2 p.)
-
-	1.2. Mitä tyyppiä lukujono on? (2 p.) (aukkomonivalintavastaus)
-		ei kumpaakaan (2 p.)
-
-	1.3. Mitä tyyppiä lukujono on? (2 p.) (aukkomonivalintavastaus)
-		geometrinen (2 p.)
-
-	1.4. Mitä tyyppiä lukujono on? (2 p.) (aukkomonivalintavastaus)
-		kumpaakin (2 p.)
-
-	1.5. Mitä tyyppiä lukujono on? (2 p.) (aukkomonivalintavastaus)
-		ei kumpaakaan (2 p.)
-
-	1.6. Mitä tyyppiä lukujono on? (2 p.) (aukkomonivalintavastaus)
-		aritmeettinen (2 p.)
-
-	2. Kuusi kolmiota (12 p.) (monivalintavastaus, tekstivastaus)
-
-	2.1. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
-		a^2+b^2=c^2 (1 p.)
-
-	2.2. Kirjoita vastauskenttään sivun x pituus. (1 p.) (tekstivastaus)
-
-	2.3. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
-		\\alpha+\\beta+\\gamma=180^\\circ (1 p.)
-
-	2.4. Kirjoita vastauskenttään kulman \\theta suuruus. (1 p.) (tekstivastaus)
-
-	2.5. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
-		\\tan \\alpha = \\frac ab (1 p.)
-
-	2.6. Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella. (1 p.) (tekstivastaus)
-
-	2.7. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
-		\\alpha+\\beta+\\gamma=180^\\circ (1 p.)
-
-	2.8. Kirjoita vastauskenttään kulman \\theta suuruus. (1 p.) (tekstivastaus)
-
-	2.9. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
-		\\sin \\alpha = \\frac ac (1 p.)
-
-	2.10. Kirjoita vastauskenttään sivun x pituus. (1 p.) (tekstivastaus)
-
-	2.11. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
-		\\cos \\alpha = \\frac bc (1 p.)
-
-	2.12. Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella. (1 p.) (tekstivastaus)
-
-	3. Paraabeli ja suora (12 p.) (tekstivastaus)
-
-	4. Numerotemppu (12 p.) (tekstivastaus)
+#### 1. Lukujonot (12 p.) 
 
 
-OSA II: B1-osa (36 p.)
+1.1. Mitä tyyppiä lukujono on? (2 p.) (monivalintavastaus)
 
-	5. Akun varaus (12 p.) (tekstivastaus)
+1. aritmeettinen (2 p.)
 
-	6. Algoritmista ajattelua (12 p.) (tekstivastaus)
+1.2. Mitä tyyppiä lukujono on? (2 p.) (monivalintavastaus)
 
-	6.1. Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua. (6 p.) (tekstivastaus)
+2. ei kumpaakaan (2 p.)
 
-	6.2. Laske pisteiden A ja B välinen etäisyys. (6 p.) (tekstivastaus)
+1.3. Mitä tyyppiä lukujono on? (2 p.) (monivalintavastaus)
 
-	7. Osakekaupat (12 p.) (tekstivastaus)
+3. geometrinen (2 p.)
 
-	8. Kuvaajan tangentti (12 p.) (tekstivastaus)
+1.4. Mitä tyyppiä lukujono on? (2 p.) (monivalintavastaus)
 
-	9. Vektorit / 12-sivuinen noppa (12 p.) (tekstivastaus)
+4. kumpaakin (2 p.)
 
-	9.1. Vektorit (12 p.) (tekstivastaus)
+1.5. Mitä tyyppiä lukujono on? (2 p.) (monivalintavastaus)
 
-	9.2. 12-sivuinen noppa (12 p.) (tekstivastaus)
+5. ei kumpaakaan (2 p.)
+
+1.6. Mitä tyyppiä lukujono on? (2 p.) (monivalintavastaus)
+
+6. aritmeettinen (2 p.)
+
+#### 2. Kuusi kolmiota (12 p.) 
 
 
-OSA III: B2-osa (36 p.)
+2.1. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
 
-	10. Perheen keski-ikä (12 p.) (tekstivastaus)
+- a^2+b^2=c^2 (1 p.)
 
-	11. Neliöjuuren likiarvo (12 p.) (tekstivastaus)
+2.2. Kirjoita vastauskenttään sivun x pituus. (1 p.) (tekstivastaus)
 
-	12. Suureiden suhteet (12 p.) (tekstivastaus)
 
-	12.1. Marmeladilevy (4 p.) (tekstivastaus)
+2.3. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
 
-	12.2. Lassi Lounastaja (6 p.) (tekstivastaus)
+- \\alpha+\\beta+\\gamma=180^\\circ (1 p.)
 
-	12.3. Musiikkikappale (2 p.) (tekstivastaus)
+2.4. Kirjoita vastauskenttään kulman \\theta suuruus. (1 p.) (tekstivastaus)
 
-	13. Suomen väestön rakenne (12 p.) (tekstivastaus)
+
+2.5. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
+
+- \\tan \\alpha = \\frac ab (1 p.)
+
+2.6. Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella. (1 p.) (tekstivastaus)
+
+
+2.7. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
+
+- \\alpha+\\beta+\\gamma=180^\\circ (1 p.)
+
+2.8. Kirjoita vastauskenttään kulman \\theta suuruus. (1 p.) (tekstivastaus)
+
+
+2.9. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
+
+- \\sin \\alpha = \\frac ac (1 p.)
+
+2.10. Kirjoita vastauskenttään sivun x pituus. (1 p.) (tekstivastaus)
+
+
+2.11. Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava. (1 p.) (monivalintavastaus)
+
+- \\cos \\alpha = \\frac bc (1 p.)
+
+2.12. Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella. (1 p.) (tekstivastaus)
+
+
+#### 3. Paraabeli ja suora (12 p.) 
+
+
+#### 4. Numerotemppu (12 p.) 
+
+
+### Osa II: B1-osa (36 p.)
+
+#### 5. Akun varaus (12 p.) 
+
+
+#### 6. Algoritmista ajattelua (12 p.) 
+
+
+6.1. Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua. (6 p.) (tekstivastaus)
+
+
+6.2. Laske pisteiden A ja B välinen etäisyys. (6 p.) (tekstivastaus)
+
+
+#### 7. Osakekaupat (12 p.) 
+
+
+#### 8. Kuvaajan tangentti (12 p.) 
+
+
+#### 9. Vektorit / 12-sivuinen noppa (12 p.) 
+
+
+9.1. Vektorit (12 p.) (tekstivastaus)
+
+
+9.2. 12-sivuinen noppa (12 p.) (tekstivastaus)
+
+
+### Osa III: B2-osa (36 p.)
+
+#### 10. Perheen keski-ikä (12 p.) 
+
+
+#### 11. Neliöjuuren likiarvo (12 p.) 
+
+
+#### 12. Suureiden suhteet (12 p.) 
+
+
+12.1. Marmeladilevy (4 p.) (tekstivastaus)
+
+
+12.2. Lassi Lounastaja (6 p.) (tekstivastaus)
+
+
+12.3. Musiikkikappale (2 p.) (tekstivastaus)
+
+
+#### 13. Suomen väestön rakenne (12 p.)
 `;
 
 exports[`Exam mastering masters N.xml exam correctly: hvp 2`] = `
 SV – Matematik, kort lärokurs
 
+### Del I: Del A (48 p.)
 
-DEL I: Del A (48 p.)
-
-	1. Talföljder (12 p.) (flervalslucksvar)
-
-	1.1. Av vilken typ är talföljden? (2 p.) (flervalslucksvar)
-		aritmetisk (2 p.)
-
-	1.2. Av vilken typ är talföljden? (2 p.) (flervalslucksvar)
-		varkendera (2 p.)
-
-	1.3. Av vilken typ är talföljden? (2 p.) (flervalslucksvar)
-		geometrisk (2 p.)
-
-	1.4. Av vilken typ är talföljden? (2 p.) (flervalslucksvar)
-		både och (2 p.)
-
-	1.5. Av vilken typ är talföljden? (2 p.) (flervalslucksvar)
-		varkendera (2 p.)
-
-	1.6. Av vilken typ är talföljden? (2 p.) (flervalslucksvar)
-		aritmetisk (2 p.)
-
-	2. Sex trianglar (12 p.) (flervalssvar, textsvar)
-
-	2.1. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
-		a^2+b^2=c^2 (1 p.)
-
-	2.2. Skriv i svarsfältet in längden på sidan x. (1 p.) (textsvar)
-
-	2.3. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
-		\\alpha+\\beta+\\gamma=180^\\circ (1 p.)
-
-	2.4. Skriv i svarsfältet in storleken på vinkeln \\theta. (1 p.) (textsvar)
-
-	2.5. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
-		\\tan \\alpha = \\frac ab (1 p.)
-
-	2.6. Skriv i svarsfältet in storleken på vinkeln \\theta med en grads noggrannhet. (1 p.) (textsvar)
-
-	2.7. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
-		\\alpha+\\beta+\\gamma=180^\\circ (1 p.)
-
-	2.8. Skriv i svarsfältet in storleken på vinkeln \\theta. (1 p.) (textsvar)
-
-	2.9. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
-		\\sin \\alpha = \\frac ac (1 p.)
-
-	2.10. Skriv i svarsfältet in längden på sidan x. (1 p.) (textsvar)
-
-	2.11. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
-		\\cos \\alpha = \\frac bc (1 p.)
-
-	2.12. Skriv i svarsfältet in storleken på vinkeln \\theta med en grads noggrannhet. (1 p.) (textsvar)
-
-	3. Parabel och linje (12 p.) (textsvar)
-
-	4. Siffertrick (12 p.) (textsvar)
+#### 1. Talföljder (12 p.) 
 
 
-DEL II: Del B1 (36 p.)
+1.1. Av vilken typ är talföljden? (2 p.) (flervalssvar)
 
-	5. Laddningen i en ackumulator (12 p.) (textsvar)
+1. aritmetisk (2 p.)
 
-	6. Algoritmiskt tänkande (12 p.) (textsvar)
+1.2. Av vilken typ är talföljden? (2 p.) (flervalssvar)
 
-	6.1. Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram och bildkapningsverktyget. (6 p.) (textsvar)
+2. varkendera (2 p.)
 
-	6.2. Beräkna avståndet mellan punkterna A och B. (6 p.) (textsvar)
+1.3. Av vilken typ är talföljden? (2 p.) (flervalssvar)
 
-	7. Aktiehandel (12 p.) (textsvar)
+3. geometrisk (2 p.)
 
-	8. Tangenten till en graf (12 p.) (textsvar)
+1.4. Av vilken typ är talföljden? (2 p.) (flervalssvar)
 
-	9. Vektorer / 12-sidig tärning (12 p.) (textsvar)
+4. både och (2 p.)
 
-	9.1. Vektorer (12 p.) (textsvar)
+1.5. Av vilken typ är talföljden? (2 p.) (flervalssvar)
 
-	9.2. 12-sidig tärning (12 p.) (textsvar)
+5. varkendera (2 p.)
+
+1.6. Av vilken typ är talföljden? (2 p.) (flervalssvar)
+
+6. aritmetisk (2 p.)
+
+#### 2. Sex trianglar (12 p.) 
 
 
-DEL III: Del B2 (36 p.)
+2.1. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
 
-	10. Medelåldern i en familj (12 p.) (textsvar)
+- a^2+b^2=c^2 (1 p.)
 
-	11. Närmevärde för kvadratrot (12 p.) (textsvar)
+2.2. Skriv i svarsfältet in längden på sidan x. (1 p.) (textsvar)
 
-	12. Förhållande mellan storheter (12 p.) (textsvar)
 
-	12.1. Marmeladskiva (4 p.) (textsvar)
+2.3. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
 
-	12.2. Lasse Lunchare (6 p.) (textsvar)
+- \\alpha+\\beta+\\gamma=180^\\circ (1 p.)
 
-	12.3. Musikstycke (2 p.) (textsvar)
+2.4. Skriv i svarsfältet in storleken på vinkeln \\theta. (1 p.) (textsvar)
 
-	13. Finlands befolkningsstruktur (12 p.) (textsvar)
+
+2.5. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
+
+- \\tan \\alpha = \\frac ab (1 p.)
+
+2.6. Skriv i svarsfältet in storleken på vinkeln \\theta med en grads noggrannhet. (1 p.) (textsvar)
+
+
+2.7. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
+
+- \\alpha+\\beta+\\gamma=180^\\circ (1 p.)
+
+2.8. Skriv i svarsfältet in storleken på vinkeln \\theta. (1 p.) (textsvar)
+
+
+2.9. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
+
+- \\sin \\alpha = \\frac ac (1 p.)
+
+2.10. Skriv i svarsfältet in längden på sidan x. (1 p.) (textsvar)
+
+
+2.11. Välj den mest lämpliga formeln för triangeln. (1 p.) (flervalssvar)
+
+- \\cos \\alpha = \\frac bc (1 p.)
+
+2.12. Skriv i svarsfältet in storleken på vinkeln \\theta med en grads noggrannhet. (1 p.) (textsvar)
+
+
+#### 3. Parabel och linje (12 p.) 
+
+
+#### 4. Siffertrick (12 p.) 
+
+
+### Del II: Del B1 (36 p.)
+
+#### 5. Laddningen i en ackumulator (12 p.) 
+
+
+#### 6. Algoritmiskt tänkande (12 p.) 
+
+
+6.1. Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram och bildkapningsverktyget. (6 p.) (textsvar)
+
+
+6.2. Beräkna avståndet mellan punkterna A och B. (6 p.) (textsvar)
+
+
+#### 7. Aktiehandel (12 p.) 
+
+
+#### 8. Tangenten till en graf (12 p.) 
+
+
+#### 9. Vektorer / 12-sidig tärning (12 p.) 
+
+
+9.1. Vektorer (12 p.) (textsvar)
+
+
+9.2. 12-sidig tärning (12 p.) (textsvar)
+
+
+### Del III: Del B2 (36 p.)
+
+#### 10. Medelåldern i en familj (12 p.) 
+
+
+#### 11. Närmevärde för kvadratrot (12 p.) 
+
+
+#### 12. Förhållande mellan storheter (12 p.) 
+
+
+12.1. Marmeladskiva (4 p.) (textsvar)
+
+
+12.2. Lasse Lunchare (6 p.) (textsvar)
+
+
+12.3. Musikstycke (2 p.) (textsvar)
+
+
+#### 13. Finlands befolkningsstruktur (12 p.)
 `;
 
 exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
@@ -16956,525 +17157,699 @@ Object {
 exports[`Exam mastering masters SC.xml exam correctly: hvp 1`] = `
 FI – Saksa, lyhyt oppimäärä
 
+### Osa I: Hörverständnis (71 p.)
 
-OSA I: Hörverständnis (71 p.)
+#### 1. Picknick (21 p.) 
 
-	1. Picknick (21 p.) (monivalintavastaus, tekstivastaus)
 
-	1.1. Warum findet Alina den Stadtpark nicht gut für das Picknick? (3 p.) (monivalintavastaus)
-		Sie meint, dass dort zu viele Leute sind (3 p.)
+1.1. Warum findet Alina den Stadtpark nicht gut für das Picknick? (3 p.) (monivalintavastaus)
 
-	1.2. Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi. (6 p.) (tekstivastaus)
+- Sie meint, dass dort zu viele Leute sind (3 p.)
 
-	1.3. Warum werden die Vier am See nicht grillen? (3 p.) (monivalintavastaus)
-		Das Wetter ist so heiß und trocken (3 p.)
+1.2. Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi. (6 p.) (tekstivastaus)
 
-	1.4. Was wird Alina mitbringen? (3 p.) (monivalintavastaus)
-		Etwas Süßes (3 p.)
 
-	1.5. Mitä Paula kertoo eväistään, ja mitä muuta hän ottaa mukaan? Kirjoita vastauksesi lyhyesti suomeksi. (6 p.) (tekstivastaus)
+1.3. Warum werden die Vier am See nicht grillen? (3 p.) (monivalintavastaus)
 
-	2. Alltagssituationen (12 p.) (monivalintavastaus)
+- Das Wetter ist so heiß und trocken (3 p.)
 
-	2.1. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
-		... vielleicht ein anderes Mal. (3 p.)
+1.4. Was wird Alina mitbringen? (3 p.) (monivalintavastaus)
 
-	2.2. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
-		... ich habe natürlich nichts dagegen. (3 p.)
+- Etwas Süßes (3 p.)
 
-	2.3. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
-		... Jetzt bin ich sauer. (3 p.)
+1.5. Mitä Paula kertoo eväistään, ja mitä muuta hän ottaa mukaan? Kirjoita vastauksesi lyhyesti suomeksi. (6 p.) (tekstivastaus)
 
-	2.4. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
-		... Einverstanden! (3 p.)
 
-	3. Heimat (15 p.) (monivalintavastaus)
+#### 2. Alltagssituationen (12 p.) 
 
-	3.1. Was ist für Shari Heimat? (3 p.) (monivalintavastaus)
-		Verwandte und Freunde (3 p.)
 
-	3.2. Wie fühlte Leon sich im Urlaub? (3 p.) (monivalintavastaus)
-		Er fühlte sich dort sehr wohl (3 p.)
+2.1. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
 
-	3.3. Was sagt Leon über seine Zukunftspläne? (3 p.) (monivalintavastaus)
-		Er möchte am liebsten in der Heimatstadt bleiben (3 p.)
+- ... vielleicht ein anderes Mal. (3 p.)
 
-	3.4. Was mag Larena an ihrem Heimatdorf? (3 p.) (monivalintavastaus)
-		Sie kennt sich dort gut aus (3 p.)
+2.2. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
 
-	3.5. Was erlebte Larena während des Sprachkurses? (3 p.) (monivalintavastaus)
-		Sie machte mit den New Yorkern gute Erfahrungen (3 p.)
+- ... ich habe natürlich nichts dagegen. (3 p.)
 
-	4. Gesucht! (4 p.) (monivalintavastaus)
+2.3. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
 
-	4.1. Welche Farbe hat die Katze? (2 p.) (monivalintavastaus)
-		Sie ist schwarz-grau (2 p.)
+- ... Jetzt bin ich sauer. (3 p.)
 
-	4.2. Wer kann gestern gegen 12 Uhr etwas gesehen haben? (2 p.) (monivalintavastaus)
-		Studenten in der Mittagspause (2 p.)
+2.4. Was sagt Toni weiter? (3 p.) (monivalintavastaus)
 
-	5. Katze (Video) (7 p.) (monivalintavastaus, tekstivastaus)
+- ... Einverstanden! (3 p.)
 
-	5.1. Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti suomeksi. (3 p.) (tekstivastaus)
+#### 3. Heimat (15 p.) 
 
-	5.2. Was macht Kater Felix nachts? (2 p.) (monivalintavastaus)
-		Er rennt sehr weite Strecken (2 p.)
 
-	5.3. Was kann die nächste Studie zeigen? (2 p.) (monivalintavastaus)
-		Wie Katzen auf andere Katzen reagieren (2 p.)
+3.1. Was ist für Shari Heimat? (3 p.) (monivalintavastaus)
 
-	6. Termine (6 p.) (monivalintavastaus)
+- Verwandte und Freunde (3 p.)
 
-	6.1. Welche Zeit passt Lars am besten? (2 p.) (monivalintavastaus)
-		Montag, 15.00 Uhr (2 p.)
+3.2. Wie fühlte Leon sich im Urlaub? (3 p.) (monivalintavastaus)
 
-	6.2. Welche Zeit passt Katarina am besten? (2 p.) (monivalintavastaus)
-		Dienstag, 13.00 Uhr (2 p.)
+- Er fühlte sich dort sehr wohl (3 p.)
 
-	6.3. Welche Zeit passt Marit am besten? (2 p.) (monivalintavastaus)
-		Montag, 16.00 Uhr (2 p.)
+3.3. Was sagt Leon über seine Zukunftspläne? (3 p.) (monivalintavastaus)
 
-	7. Wissenstest für Hobbyköche (6 p.) (monivalintavastaus)
+- Er möchte am liebsten in der Heimatstadt bleiben (3 p.)
 
-	7.1. Welches Bild passt? (2 p.) (monivalintavastaus)
-		7.1.4327.jpg jules potato rosti https://www.flickr.com/photos/stone-soup/8569922071/in/photolist-e4i6g6-nocssw-x5ori3-e4oJeY-e4i8Ri-4D8G9u-e24NHj-33fS7F-6HvgkU-75GeTy-7iUPmd-4FFwVi-dqunPE-3Nqnu-6wqyjV-s2WmAj-23cQif3-fkFoYC-8Pwmi-e9jasF-dLQZCD-7AhHSj-o2Khg-tT2w75-arPW7x-aCXiDQ-sTdS2-amq8dg-dqu8KL-FJfoSA-dXTn3T-dPXtqo-5vMFob-e2wy3b-EgP2Cp-bdhxx4-amsVE3-pHSbhj-RMRTUq-5jkEdn-9WE8Ar-bxjRLt-7AUApb-aCbrmQ-aFi22G-nCUiLM-rc6Zp7-bEMyN1-bEMxbE-9a5UJK 2019-11-25 CC BY 2.0 (2 p.)
+3.4. Was mag Larena an ihrem Heimatdorf? (3 p.) (monivalintavastaus)
 
-	7.2. Welches Bild passt? (2 p.) (monivalintavastaus)
-		7.2.7291.jpg Marco Verch Die Ebene lag über dem Spiegelei in der Pfanne https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc 2019-11-25 CC BY 2.0 (2 p.)
+- Sie kennt sich dort gut aus (3 p.)
 
-	7.3. Welches Bild passt? (2 p.) (monivalintavastaus)
-		7.3.4927.jpg Coffee Maker Neil https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn 2017-11-25 CC BY 2.0 (2 p.)
+3.5. Was erlebte Larena während des Sprachkurses? (3 p.) (monivalintavastaus)
 
+- Sie machte mit den New Yorkern gute Erfahrungen (3 p.)
 
-OSA II: Textverständnis (99 p.)
+#### 4. Gesucht! (4 p.) 
 
-	8. Hausaufgaben (4 p.) (monivalintavastaus)
 
-	8.1. Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat? (2 p.) (monivalintavastaus)
-		Sie kann sich daran nicht mehr erinnern (2 p.)
+4.1. Welche Farbe hat die Katze? (2 p.) (monivalintavastaus)
 
-	8.2. Welche Hausaufgaben wird Maren für morgen machen? (2 p.) (monivalintavastaus)
-		Geschichte (2 p.)
+- Sie ist schwarz-grau (2 p.)
 
-	9. Freitag der Dreizehnte (6 p.) (monivalintavastaus)
+4.2. Wer kann gestern gegen 12 Uhr etwas gesehen haben? (2 p.) (monivalintavastaus)
 
-	9.1. An welchem Tag es passiert ist (1 p.) (monivalintavastaus)
-		Richtig (1 p.)
+- Studenten in der Mittagspause (2 p.)
 
-	9.2. Welche Farbe die Autos hatten (1 p.) (monivalintavastaus)
-		Falsch (1 p.)
+#### 5. Katze (Video) (7 p.) 
 
-	9.3. Wo im Auto der Mann etwas vergessen hatte (1 p.) (monivalintavastaus)
-		Falsch (1 p.)
 
-	9.4. Wo der Mann sein Auto geparkt hatte (1 p.) (monivalintavastaus)
-		Richtig (1 p.)
+5.1. Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti suomeksi. (3 p.) (tekstivastaus)
 
-	9.5. Was der Mann machte, nachdem er seinen Fehler bemerkt hatte (1 p.) (monivalintavastaus)
-		Falsch (1 p.)
 
-	9.6. Was alles in der Geldbörse war (1 p.) (monivalintavastaus)
-		Richtig (1 p.)
+5.2. Was macht Kater Felix nachts? (2 p.) (monivalintavastaus)
 
-	10. Duis Minim? (15 p.) (monivalintavastaus, tekstivastaus)
+- Er rennt sehr weite Strecken (2 p.)
 
-	10.1. Wie begründet der Sohn seine Bitte? (3 p.) (monivalintavastaus)
-		Er wird anders behandelt als andere Schüler (3 p.)
+5.3. Was kann die nächste Studie zeigen? (2 p.) (monivalintavastaus)
 
-	10.2. Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä siitä isän mielestä seuraa? (6 p.) (tekstivastaus)
+- Wie Katzen auf andere Katzen reagieren (2 p.)
 
-	10.3. Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“? (3 p.) (monivalintavastaus)
-		Dass der Vater das macht, was man von ihm erwartet (3 p.)
+#### 6. Termine (6 p.) 
 
-	10.4. Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen? (3 p.) (monivalintavastaus)
-		Weil der Sohn sich zu Hause oft zurückzieht (3 p.)
 
-	11. Excepteur cupidatat! (20 p.) (monivalintavastaus, tekstivastaus)
+6.1. Welche Zeit passt Lars am besten? (2 p.) (monivalintavastaus)
 
-	11.1. Was mag Proident besonders an seinem Job? (3 p.) (monivalintavastaus)
-		Die Arbeit bietet viel Abwechslung (3 p.)
+- Montag, 15.00 Uhr (2 p.)
 
-	11.2. Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella. (6 p.) (tekstivastaus)
+6.2. Welche Zeit passt Katarina am besten? (2 p.) (monivalintavastaus)
 
-	11.3. Wie ist Proidents Arbeit als Lorem und Ipsum organisiert? (2 p.) (monivalintavastaus)
-		Er arbeitet einige Monate sehr viel und dann mal sehr wenig (2 p.)
+- Dienstag, 13.00 Uhr (2 p.)
 
-	11.4. Was bedeutet es, dass Proident für seine Gäste verantwortlich ist? (3 p.) (monivalintavastaus)
-		Er muss manchmal das Tempo der Wanderung verlangsamen (3 p.)
+6.3. Welche Zeit passt Marit am besten? (2 p.) (monivalintavastaus)
 
-	11.5. Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext? (3 p.) (monivalintavastaus)
-		Es kann jedem passieren, dass etwas schief geht (3 p.)
+- Montag, 16.00 Uhr (2 p.)
 
-	11.6. Was machen viele Lorem und Ipsum, um finanziell klarzukommen? (3 p.) (monivalintavastaus)
-		Sie haben häufig zwei Arbeitsstellen (3 p.)
+#### 7. Wissenstest für Hobbyköche (6 p.) 
 
-	12. Wendungen (6 p.) (aukkomonivalintavastaus)
-		Vielen Dank im Voraus! (2 p.)
-		Und ob! (2 p.)
-		Warum immer ich? (2 p.)
 
-	13. Adipisicing voluptate (8 p.) (monivalintavastaus, tekstivastaus)
+7.1. Welches Bild passt? (2 p.) (monivalintavastaus)
 
-	13.1. Wann bekommt man bei Flugverspätung kein Essen? (2 p.) (monivalintavastaus)
-		Bei negativen Folgen auf den Zeitplan (2 p.)
+- 7.1.4327.jpg jules potato rosti https://www.flickr.com/photos/stone-soup/8569922071/in/photolist-e4i6g6-nocssw-x5ori3-e4oJeY-e4i8Ri-4D8G9u-e24NHj-33fS7F-6HvgkU-75GeTy-7iUPmd-4FFwVi-dqunPE-3Nqnu-6wqyjV-s2WmAj-23cQif3-fkFoYC-8Pwmi-e9jasF-dLQZCD-7AhHSj-o2Khg-tT2w75-arPW7x-aCXiDQ-sTdS2-amq8dg-dqu8KL-FJfoSA-dXTn3T-dPXtqo-5vMFob-e2wy3b-EgP2Cp-bdhxx4-amsVE3-pHSbhj-RMRTUq-5jkEdn-9WE8Ar-bxjRLt-7AUApb-aCbrmQ-aFi22G-nCUiLM-rc6Zp7-bEMyN1-bEMxbE-9a5UJK 2019-11-25 CC BY 2.0 (2 p.)
 
-	13.2. Wann bezahlt Lorem Ipsum Telefonate? (2 p.) (monivalintavastaus)
-		Nur wenn man sich mindestens zwei Stunden verspätet (2 p.)
+7.2. Welches Bild passt? (2 p.) (monivalintavastaus)
 
-	13.3. Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös järjestää? Kirjoita vastauksesi lyhyesti suomeksi. (4 p.) (tekstivastaus)
+- 7.2.7291.jpg Marco Verch Die Ebene lag über dem Spiegelei in der Pfanne https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc 2019-11-25 CC BY 2.0 (2 p.)
 
-	14. Ullamco (13 p.) (monivalintavastaus, tekstivastaus)
+7.3. Welches Bild passt? (2 p.) (monivalintavastaus)
 
-	14.1. Was erlebten die Ullamco? (3 p.) (monivalintavastaus)
-		Eine Ullamco auf einem anderen Ullamco als geplant (3 p.)
+- 7.3.4927.jpg Coffee Maker Neil https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn 2017-11-25 CC BY 2.0 (2 p.)
 
-	14.2. Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? (2 asiaa) Kirjoita vastauksesi lyhyesti suomeksi. (4 p.) (tekstivastaus)
+### Osa II: Textverständnis (99 p.)
 
-	14.3. Welche weitere Ullamco hatte die Ullamco? (3 p.) (monivalintavastaus)
-		Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen (3 p.)
+#### 8. Hausaufgaben (4 p.) 
 
-	14.4. Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext? (3 p.) (monivalintavastaus)
-		Ein unerwartetes Abenteuer (3 p.)
 
-	15. Eiusmod (19 p.) (monivalintavastaus, tekstivastaus)
+8.1. Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat? (2 p.) (monivalintavastaus)
 
-	15.1. Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi. (4 p.) (tekstivastaus)
+- Sie kann sich daran nicht mehr erinnern (2 p.)
 
-	15.2. Wie sind die beliebtesten Postkarten? (3 p.) (monivalintavastaus)
-		Sie zeigen oft verschiedene Bilder vom Urlaubsort (3 p.)
+8.2. Welche Hausaufgaben wird Maren für morgen machen? (2 p.) (monivalintavastaus)
 
-	15.3. Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen? (3 p.) (monivalintavastaus)
-		Sie finden solche Karten auf Reisen gut (3 p.)
+- Geschichte (2 p.)
 
-	15.4. Was ärgert die Kartenverkäufer? (3 p.) (monivalintavastaus)
-		Einige Jugendliche benutzen oft unfaire Tricks (3 p.)
+#### 9. Freitag der Dreizehnte (6 p.) 
 
-	15.5. Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext? (3 p.) (monivalintavastaus)
-		Es ist wahr, dass die Karten nicht mehr so beliebt sind (3 p.)
 
-	15.6. Wann könnte es die Postkarte schwer haben? (3 p.) (monivalintavastaus)
-		Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen (3 p.)
+9.1. An welchem Tag es passiert ist (1 p.) (monivalintavastaus)
 
-	16. Duis dolore (8 p.) (monivalintavastaus, tekstivastaus)
+- Richtig (1 p.)
 
-	16.1. Wie reagieren viele Kunden auf die Einwegbecher? (2 p.) (monivalintavastaus)
-		Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind (2 p.)
+9.2. Welche Farbe die Autos hatten (1 p.) (monivalintavastaus)
 
-	16.2. Was könnte im neuen System zum Problem werden? (2 p.) (monivalintavastaus)
-		Es ist für das Verhalten der Kunden nicht flexibel genug (2 p.)
+- Falsch (1 p.)
 
-	16.3. Was will Lorem Ipsum erreichen? (2 p.) (monivalintavastaus)
-		Die Kunden stärker zur Rückgabe der Becher zu motivieren (2 p.)
+9.3. Wo im Auto der Mann etwas vergessen hatte (1 p.) (monivalintavastaus)
 
-	16.4. Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin perusteella lyhyesti suomeksi. (2 p.) (tekstivastaus)
+- Falsch (1 p.)
 
+9.4. Wo der Mann sein Auto geparkt hatte (1 p.) (monivalintavastaus)
 
-OSA III: Struktur und Vokabular (30 p.)
+- Richtig (1 p.)
 
-	17. Auswahl-Antwort-Test (16 p.) (aukkomonivalintavastaus)
-		muß (1 p.)
-		bösen (1 p.)
-		von (1 p.)
-		hießen (1 p.), 		heißen (1 p.)
-		Die (1 p.)
-		zum (1 p.)
-		darüber (1 p.)
-		sich (1 p.)
-		dazu (1 p.)
-		Tiere (1 p.)
-		stehlen (1 p.)
-		Das (1 p.)
-		auch (1 p.)
-		Als (1 p.)
-		ein (1 p.)
-		sie (1 p.)
+9.5. Was der Mann machte, nachdem er seinen Fehler bemerkt hatte (1 p.) (monivalintavastaus)
 
-	18. Umformung (4 p.) (keskitetysti arvosteltava tekstivastaus)
-	18.1: Willst du am Samstag mit ins Kino kommen (2 p.)
-	18.2: weil ich zuerst Mama fragen muss (2 p.)
+- Falsch (1 p.)
 
-	19. Dialog (10 p.) (keskitetysti arvosteltava tekstivastaus)
-	19.1: 
-	19.2: 
-	19.3: 
-	19.4: 
+9.6. Was alles in der Geldbörse war (1 p.) (monivalintavastaus)
 
+- Richtig (1 p.)
 
-OSA IV: Schriftliche Produktion (99 p.)
+#### 10. Duis Minim? (15 p.) 
 
-	20. Kurze Schreibaufgabe (33 p.) (tekstivastaus)
 
-	20.1. Kurze Schreibaufgabe (33 p.) (tekstivastaus)
+10.1. Wie begründet der Sohn seine Bitte? (3 p.) (monivalintavastaus)
 
-	20.2. Kurze Schreibaufgabe (33 p.) (tekstivastaus)
+- Er wird anders behandelt als andere Schüler (3 p.)
 
-	21. Lange Schreibaufgabe (66 p.) (tekstivastaus)
+10.2. Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä siitä isän mielestä seuraa? (6 p.) (tekstivastaus)
 
-	21.1. Lange Schreibaufgabe (66 p.) (tekstivastaus)
 
-	21.2. Lange Schreibaufgabe (66 p.) (tekstivastaus)
+10.3. Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“? (3 p.) (monivalintavastaus)
+
+- Dass der Vater das macht, was man von ihm erwartet (3 p.)
+
+10.4. Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen? (3 p.) (monivalintavastaus)
+
+- Weil der Sohn sich zu Hause oft zurückzieht (3 p.)
+
+#### 11. Excepteur cupidatat! (20 p.) 
+
+
+11.1. Was mag Proident besonders an seinem Job? (3 p.) (monivalintavastaus)
+
+- Die Arbeit bietet viel Abwechslung (3 p.)
+
+11.2. Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella. (6 p.) (tekstivastaus)
+
+
+11.3. Wie ist Proidents Arbeit als Lorem und Ipsum organisiert? (2 p.) (monivalintavastaus)
+
+- Er arbeitet einige Monate sehr viel und dann mal sehr wenig (2 p.)
+
+11.4. Was bedeutet es, dass Proident für seine Gäste verantwortlich ist? (3 p.) (monivalintavastaus)
+
+- Er muss manchmal das Tempo der Wanderung verlangsamen (3 p.)
+
+11.5. Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext? (3 p.) (monivalintavastaus)
+
+- Es kann jedem passieren, dass etwas schief geht (3 p.)
+
+11.6. Was machen viele Lorem und Ipsum, um finanziell klarzukommen? (3 p.) (monivalintavastaus)
+
+- Sie haben häufig zwei Arbeitsstellen (3 p.)
+
+#### 12. Wendungen (6 p.) 
+
+1. Vielen Dank im Voraus! (2 p.)
+2. Und ob! (2 p.)
+3. Warum immer ich? (2 p.)
+
+#### 13. Adipisicing voluptate (8 p.) 
+
+
+13.1. Wann bekommt man bei Flugverspätung kein Essen? (2 p.) (monivalintavastaus)
+
+- Bei negativen Folgen auf den Zeitplan (2 p.)
+
+13.2. Wann bezahlt Lorem Ipsum Telefonate? (2 p.) (monivalintavastaus)
+
+- Nur wenn man sich mindestens zwei Stunden verspätet (2 p.)
+
+13.3. Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös järjestää? Kirjoita vastauksesi lyhyesti suomeksi. (4 p.) (tekstivastaus)
+
+
+#### 14. Ullamco (13 p.) 
+
+
+14.1. Was erlebten die Ullamco? (3 p.) (monivalintavastaus)
+
+- Eine Ullamco auf einem anderen Ullamco als geplant (3 p.)
+
+14.2. Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? (2 asiaa) Kirjoita vastauksesi lyhyesti suomeksi. (4 p.) (tekstivastaus)
+
+
+14.3. Welche weitere Ullamco hatte die Ullamco? (3 p.) (monivalintavastaus)
+
+- Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen (3 p.)
+
+14.4. Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext? (3 p.) (monivalintavastaus)
+
+- Ein unerwartetes Abenteuer (3 p.)
+
+#### 15. Eiusmod (19 p.) 
+
+
+15.1. Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi. (4 p.) (tekstivastaus)
+
+
+15.2. Wie sind die beliebtesten Postkarten? (3 p.) (monivalintavastaus)
+
+- Sie zeigen oft verschiedene Bilder vom Urlaubsort (3 p.)
+
+15.3. Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen? (3 p.) (monivalintavastaus)
+
+- Sie finden solche Karten auf Reisen gut (3 p.)
+
+15.4. Was ärgert die Kartenverkäufer? (3 p.) (monivalintavastaus)
+
+- Einige Jugendliche benutzen oft unfaire Tricks (3 p.)
+
+15.5. Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext? (3 p.) (monivalintavastaus)
+
+- Es ist wahr, dass die Karten nicht mehr so beliebt sind (3 p.)
+
+15.6. Wann könnte es die Postkarte schwer haben? (3 p.) (monivalintavastaus)
+
+- Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen (3 p.)
+
+#### 16. Duis dolore (8 p.) 
+
+
+16.1. Wie reagieren viele Kunden auf die Einwegbecher? (2 p.) (monivalintavastaus)
+
+- Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind (2 p.)
+
+16.2. Was könnte im neuen System zum Problem werden? (2 p.) (monivalintavastaus)
+
+- Es ist für das Verhalten der Kunden nicht flexibel genug (2 p.)
+
+16.3. Was will Lorem Ipsum erreichen? (2 p.) (monivalintavastaus)
+
+- Die Kunden stärker zur Rückgabe der Becher zu motivieren (2 p.)
+
+16.4. Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin perusteella lyhyesti suomeksi. (2 p.) (tekstivastaus)
+
+
+### Osa III: Struktur und Vokabular (30 p.)
+
+#### 17. Auswahl-Antwort-Test (16 p.) 
+
+1. muß (1 p.)
+2. bösen (1 p.)
+3. von (1 p.)
+4. hießen (1 p.)
+4. heißen (1 p.)
+5. Die (1 p.)
+6. zum (1 p.)
+7. darüber (1 p.)
+8. sich (1 p.)
+9. dazu (1 p.)
+10. Tiere (1 p.)
+11. stehlen (1 p.)
+12. Das (1 p.)
+13. auch (1 p.)
+14. Als (1 p.)
+15. ein (1 p.)
+16. sie (1 p.)
+
+#### 18. Umformung (4 p.) 
+
+- 18.1. Kommst du am Samstag mit ins Kino (wollen)
+    - Willst du am Samstag mit ins Kino kommen (2 p.)
+- 18.2. weil ich zuerst Mama frage (müssen)
+    - weil ich zuerst Mama fragen muss (2 p.)
+
+#### 19. Dialog (10 p.) 
+
+- 19.1. Voitko auttaa minua?
+
+- 19.2. 7.2. kuvahttps://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12amath finalElise ForestCC BY-NC-ND 2.02019-11-25
+
+- 19.3. Millainen sää tänään on?
+
+- 19.4. 7.4. kuvahttps://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda2019-11-25Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496Charles Edward MillerCC BY-SA 2.0
+
+
+### Osa IV: Schriftliche Produktion (99 p.)
+
+#### 20. Kurze Schreibaufgabe (33 p.) 
+
+
+20.1. Kurze Schreibaufgabe (33 p.) (tekstivastaus)
+
+
+20.2. Kurze Schreibaufgabe (33 p.) (tekstivastaus)
+
+
+#### 21. Lange Schreibaufgabe (66 p.) 
+
+
+21.1. Lange Schreibaufgabe (66 p.) (tekstivastaus)
+
+
+21.2. Lange Schreibaufgabe (66 p.) (tekstivastaus)
 `;
 
 exports[`Exam mastering masters SC.xml exam correctly: hvp 2`] = `
 SV – Tyska, kort lärokurs
 
+### Del I: Hörverständnis (71 p.)
 
-DEL I: Hörverständnis (71 p.)
+#### 1. Picknick (21 p.) 
 
-	1. Picknick (21 p.) (flervalssvar, textsvar)
 
-	1.1. Warum findet Alina den Stadtpark nicht gut für das Picknick? (3 p.) (flervalssvar)
-		Sie meint, dass dort zu viele Leute sind (3 p.)
+1.1. Warum findet Alina den Stadtpark nicht gut für das Picknick? (3 p.) (flervalssvar)
 
-	1.2. Vad har Niklas för program under det inkommande veckoslutet, och hur påverkar det picknicken? Skriv ett kort svar på svenska. (6 p.) (textsvar)
+- Sie meint, dass dort zu viele Leute sind (3 p.)
 
-	1.3. Warum werden die Vier am See nicht grillen? (3 p.) (flervalssvar)
-		Das Wetter ist so heiß und trocken (3 p.)
+1.2. Vad har Niklas för program under det inkommande veckoslutet, och hur påverkar det picknicken? Skriv ett kort svar på svenska. (6 p.) (textsvar)
 
-	1.4. Was wird Alina mitbringen? (3 p.) (flervalssvar)
-		Etwas Süßes (3 p.)
 
-	1.5. Vad berättar Paula om sin matsäck, och vad annat tar hon med sig? Skriv ett kort svar på svenska. (6 p.) (textsvar)
+1.3. Warum werden die Vier am See nicht grillen? (3 p.) (flervalssvar)
 
-	2. Alltagssituationen (12 p.) (flervalssvar)
+- Das Wetter ist so heiß und trocken (3 p.)
 
-	2.1. Was sagt Toni weiter? (3 p.) (flervalssvar)
-		... vielleicht ein anderes Mal. (3 p.)
+1.4. Was wird Alina mitbringen? (3 p.) (flervalssvar)
 
-	2.2. Was sagt Toni weiter? (3 p.) (flervalssvar)
-		... ich habe natürlich nichts dagegen. (3 p.)
+- Etwas Süßes (3 p.)
 
-	2.3. Was sagt Toni weiter? (3 p.) (flervalssvar)
-		... Jetzt bin ich sauer. (3 p.)
+1.5. Vad berättar Paula om sin matsäck, och vad annat tar hon med sig? Skriv ett kort svar på svenska. (6 p.) (textsvar)
 
-	2.4. Was sagt Toni weiter? (3 p.) (flervalssvar)
-		... Einverstanden! (3 p.)
 
-	3. Heimat (15 p.) (flervalssvar)
+#### 2. Alltagssituationen (12 p.) 
 
-	3.1. Was ist für Shari Heimat? (3 p.) (flervalssvar)
-		Verwandte und Freunde (3 p.)
 
-	3.2. Wie fühlte Leon sich im Urlaub? (3 p.) (flervalssvar)
-		Er fühlte sich dort sehr wohl (3 p.)
+2.1. Was sagt Toni weiter? (3 p.) (flervalssvar)
 
-	3.3. Was sagt Leon über seine Zukunftspläne? (3 p.) (flervalssvar)
-		Er möchte am liebsten in der Heimatstadt bleiben (3 p.)
+- ... vielleicht ein anderes Mal. (3 p.)
 
-	3.4. Was mag Larena an ihrem Heimatdorf? (3 p.) (flervalssvar)
-		Sie kennt sich dort gut aus (3 p.)
+2.2. Was sagt Toni weiter? (3 p.) (flervalssvar)
 
-	3.5. Was erlebte Larena während des Sprachkurses? (3 p.) (flervalssvar)
-		Sie machte mit den New Yorkern gute Erfahrungen (3 p.)
+- ... ich habe natürlich nichts dagegen. (3 p.)
 
-	4. Gesucht! (4 p.) (flervalssvar)
+2.3. Was sagt Toni weiter? (3 p.) (flervalssvar)
 
-	4.1. Welche Farbe hat die Katze? (2 p.) (flervalssvar)
-		Sie ist schwarz-grau (2 p.)
+- ... Jetzt bin ich sauer. (3 p.)
 
-	4.2. Wer kann gestern gegen 12 Uhr etwas gesehen haben? (2 p.) (flervalssvar)
-		Studenten in der Mittagspause (2 p.)
+2.4. Was sagt Toni weiter? (3 p.) (flervalssvar)
 
-	5. Katze (Video) (7 p.) (flervalssvar, textsvar)
+- ... Einverstanden! (3 p.)
 
-	5.1. Hur länge är katterna under GPS-övervakning? Skriv ditt svar kort på svenska. (3 p.) (textsvar)
+#### 3. Heimat (15 p.) 
 
-	5.2. Was macht Kater Felix nachts? (2 p.) (flervalssvar)
-		Er rennt sehr weite Strecken (2 p.)
 
-	5.3. Was kann die nächste Studie zeigen? (2 p.) (flervalssvar)
-		Wie Katzen auf andere Katzen reagieren (2 p.)
+3.1. Was ist für Shari Heimat? (3 p.) (flervalssvar)
 
-	6. Termine (6 p.) (flervalssvar)
+- Verwandte und Freunde (3 p.)
 
-	6.1. Welche Zeit passt Lars am besten? (2 p.) (flervalssvar)
-		Montag, 15.00 Uhr (2 p.)
+3.2. Wie fühlte Leon sich im Urlaub? (3 p.) (flervalssvar)
 
-	6.2. Welche Zeit passt Katarina am besten? (2 p.) (flervalssvar)
-		Dienstag, 13.00 Uhr (2 p.)
+- Er fühlte sich dort sehr wohl (3 p.)
 
-	6.3. Welche Zeit passt Marit am besten? (2 p.) (flervalssvar)
-		Montag, 16.00 Uhr (2 p.)
+3.3. Was sagt Leon über seine Zukunftspläne? (3 p.) (flervalssvar)
 
-	7. Wissenstest für Hobbyköche (6 p.) (flervalssvar)
+- Er möchte am liebsten in der Heimatstadt bleiben (3 p.)
 
-	7.1. Welches Bild passt? (2 p.) (flervalssvar)
-		7.1.4327.jpg jules potato rosti https://www.flickr.com/photos/stone-soup/8569922071/in/photolist-e4i6g6-nocssw-x5ori3-e4oJeY-e4i8Ri-4D8G9u-e24NHj-33fS7F-6HvgkU-75GeTy-7iUPmd-4FFwVi-dqunPE-3Nqnu-6wqyjV-s2WmAj-23cQif3-fkFoYC-8Pwmi-e9jasF-dLQZCD-7AhHSj-o2Khg-tT2w75-arPW7x-aCXiDQ-sTdS2-amq8dg-dqu8KL-FJfoSA-dXTn3T-dPXtqo-5vMFob-e2wy3b-EgP2Cp-bdhxx4-amsVE3-pHSbhj-RMRTUq-5jkEdn-9WE8Ar-bxjRLt-7AUApb-aCbrmQ-aFi22G-nCUiLM-rc6Zp7-bEMyN1-bEMxbE-9a5UJK 2019-11-25 CC BY 2.0 (2 p.)
+3.4. Was mag Larena an ihrem Heimatdorf? (3 p.) (flervalssvar)
 
-	7.2. Welches Bild passt? (2 p.) (flervalssvar)
-		7.2.7291.jpg Marco Verch Die Ebene lag über dem Spiegelei in der Pfanne https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc 2019-11-25 CC BY 2.0 (2 p.)
+- Sie kennt sich dort gut aus (3 p.)
 
-	7.3. Welches Bild passt? (2 p.) (flervalssvar)
-		7.3.4927.jpg Coffee Maker Neil https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn 2017-11-25 CC BY 2.0 (2 p.)
+3.5. Was erlebte Larena während des Sprachkurses? (3 p.) (flervalssvar)
 
+- Sie machte mit den New Yorkern gute Erfahrungen (3 p.)
 
-DEL II: Textverständnis (99 p.)
+#### 4. Gesucht! (4 p.) 
 
-	8. Hausaufgaben (4 p.) (flervalssvar)
 
-	8.1. Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat? (2 p.) (flervalssvar)
-		Sie kann sich daran nicht mehr erinnern (2 p.)
+4.1. Welche Farbe hat die Katze? (2 p.) (flervalssvar)
 
-	8.2. Welche Hausaufgaben wird Maren für morgen machen? (2 p.) (flervalssvar)
-		Geschichte (2 p.)
+- Sie ist schwarz-grau (2 p.)
 
-	9. Freitag der Dreizehnte (6 p.) (flervalssvar)
+4.2. Wer kann gestern gegen 12 Uhr etwas gesehen haben? (2 p.) (flervalssvar)
 
-	9.1. An welchem Tag es passiert ist (1 p.) (flervalssvar)
-		Richtig (1 p.)
+- Studenten in der Mittagspause (2 p.)
 
-	9.2. Welche Farbe die Autos hatten (1 p.) (flervalssvar)
-		Falsch (1 p.)
+#### 5. Katze (Video) (7 p.) 
 
-	9.3. Wo im Auto der Mann etwas vergessen hatte (1 p.) (flervalssvar)
-		Falsch (1 p.)
 
-	9.4. Wo der Mann sein Auto geparkt hatte (1 p.) (flervalssvar)
-		Richtig (1 p.)
+5.1. Hur länge är katterna under GPS-övervakning? Skriv ditt svar kort på svenska. (3 p.) (textsvar)
 
-	9.5. Was der Mann machte, nachdem er seinen Fehler bemerkt hatte (1 p.) (flervalssvar)
-		Falsch (1 p.)
 
-	9.6. Was alles in der Geldbörse war (1 p.) (flervalssvar)
-		Richtig (1 p.)
+5.2. Was macht Kater Felix nachts? (2 p.) (flervalssvar)
 
-	10. Duis Minim? (15 p.) (flervalssvar, textsvar)
+- Er rennt sehr weite Strecken (2 p.)
 
-	10.1. Wie begründet der Sohn seine Bitte? (3 p.) (flervalssvar)
-		Er wird anders behandelt als andere Schüler (3 p.)
+5.3. Was kann die nächste Studie zeigen? (2 p.) (flervalssvar)
 
-	10.2. Vad anser sonen att är dåligt med mormors sätt att ge pengar för betyget, och vad anser pappan att det leder till? (6 p.) (textsvar)
+- Wie Katzen auf andere Katzen reagieren (2 p.)
 
-	10.3. Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“? (3 p.) (flervalssvar)
-		Dass der Vater das macht, was man von ihm erwartet (3 p.)
+#### 6. Termine (6 p.) 
 
-	10.4. Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen? (3 p.) (flervalssvar)
-		Weil der Sohn sich zu Hause oft zurückzieht (3 p.)
 
-	11. Excepteur cupidatat! (20 p.) (flervalssvar, textsvar)
+6.1. Welche Zeit passt Lars am besten? (2 p.) (flervalssvar)
 
-	11.1. Was mag Proident besonders an seinem Job? (3 p.) (flervalssvar)
-		Die Arbeit bietet viel Abwechslung (3 p.)
+- Montag, 15.00 Uhr (2 p.)
 
-	11.2. Fyll i luckorna enligt det understrukna stället i stycket „Voluptate voluptate“. (6 p.) (textsvar)
+6.2. Welche Zeit passt Katarina am besten? (2 p.) (flervalssvar)
 
-	11.3. Wie ist Proidents Arbeit als Lorem und Ipsum organisiert? (2 p.) (flervalssvar)
-		Er arbeitet einige Monate sehr viel und dann mal sehr wenig (2 p.)
+- Dienstag, 13.00 Uhr (2 p.)
 
-	11.4. Was bedeutet es, dass Proident für seine Gäste verantwortlich ist? (3 p.) (flervalssvar)
-		Er muss manchmal das Tempo der Wanderung verlangsamen (3 p.)
+6.3. Welche Zeit passt Marit am besten? (2 p.) (flervalssvar)
 
-	11.5. Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext? (3 p.) (flervalssvar)
-		Es kann jedem passieren, dass etwas schief geht (3 p.)
+- Montag, 16.00 Uhr (2 p.)
 
-	11.6. Was machen viele Lorem und Ipsum, um finanziell klarzukommen? (3 p.) (flervalssvar)
-		Sie haben häufig zwei Arbeitsstellen (3 p.)
+#### 7. Wissenstest für Hobbyköche (6 p.) 
 
-	12. Wendungen (6 p.) (flervalslucksvar)
-		Vielen Dank im Voraus! (2 p.)
-		Und ob! (2 p.)
-		Warum immer ich? (2 p.)
 
-	13. Adipisicing voluptate (8 p.) (flervalssvar, textsvar)
+7.1. Welches Bild passt? (2 p.) (flervalssvar)
 
-	13.1. Wann bekommt man bei Flugverspätung kein Essen? (2 p.) (flervalssvar)
-		Bei negativen Folgen auf den Zeitplan (2 p.)
+- 7.1.4327.jpg jules potato rosti https://www.flickr.com/photos/stone-soup/8569922071/in/photolist-e4i6g6-nocssw-x5ori3-e4oJeY-e4i8Ri-4D8G9u-e24NHj-33fS7F-6HvgkU-75GeTy-7iUPmd-4FFwVi-dqunPE-3Nqnu-6wqyjV-s2WmAj-23cQif3-fkFoYC-8Pwmi-e9jasF-dLQZCD-7AhHSj-o2Khg-tT2w75-arPW7x-aCXiDQ-sTdS2-amq8dg-dqu8KL-FJfoSA-dXTn3T-dPXtqo-5vMFob-e2wy3b-EgP2Cp-bdhxx4-amsVE3-pHSbhj-RMRTUq-5jkEdn-9WE8Ar-bxjRLt-7AUApb-aCbrmQ-aFi22G-nCUiLM-rc6Zp7-bEMyN1-bEMxbE-9a5UJK 2019-11-25 CC BY 2.0 (2 p.)
 
-	13.2. Wann bezahlt Lorem Ipsum Telefonate? (2 p.) (flervalssvar)
-		Nur wenn man sich mindestens zwei Stunden verspätet (2 p.)
+7.2. Welches Bild passt? (2 p.) (flervalssvar)
 
-	13.3. När erbjuder flygbolaget hotellinkvartering, och vad arrangerar det i så fall också? Skriv ditt svar kort på svenska. (4 p.) (textsvar)
+- 7.2.7291.jpg Marco Verch Die Ebene lag über dem Spiegelei in der Pfanne https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc 2019-11-25 CC BY 2.0 (2 p.)
 
-	14. Ullamco (13 p.) (flervalssvar, textsvar)
+7.3. Welches Bild passt? (2 p.) (flervalssvar)
 
-	14.1. Was erlebten die Ullamco? (3 p.) (flervalssvar)
-		Eine Ullamco auf einem anderen Ullamco als geplant (3 p.)
+- 7.3.4927.jpg Coffee Maker Neil https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn 2017-11-25 CC BY 2.0 (2 p.)
 
-	14.2. Vad gjorde det särskilt besvärligt att ta sig från det ena flygplanet till det andra? (2 saker) Skriv ditt svar kort på svenska. (4 p.) (textsvar)
+### Del II: Textverständnis (99 p.)
 
-	14.3. Welche weitere Ullamco hatte die Ullamco? (3 p.) (flervalssvar)
-		Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen (3 p.)
+#### 8. Hausaufgaben (4 p.) 
 
-	14.4. Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext? (3 p.) (flervalssvar)
-		Ein unerwartetes Abenteuer (3 p.)
 
-	15. Eiusmod (19 p.) (flervalssvar, textsvar)
+8.1. Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat? (2 p.) (flervalssvar)
 
-	15.1. Vad berättar ett postkort enligt Lorem Ipsum om avsändaren, och hur motiverar han sin åsikt? Skriv ditt svar kort på svenska. (4 p.) (textsvar)
+- Sie kann sich daran nicht mehr erinnern (2 p.)
 
-	15.2. Wie sind die beliebtesten Postkarten? (3 p.) (flervalssvar)
-		Sie zeigen oft verschiedene Bilder vom Urlaubsort (3 p.)
+8.2. Welche Hausaufgaben wird Maren für morgen machen? (2 p.) (flervalssvar)
 
-	15.3. Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen? (3 p.) (flervalssvar)
-		Sie finden solche Karten auf Reisen gut (3 p.)
+- Geschichte (2 p.)
 
-	15.4. Was ärgert die Kartenverkäufer? (3 p.) (flervalssvar)
-		Einige Jugendliche benutzen oft unfaire Tricks (3 p.)
+#### 9. Freitag der Dreizehnte (6 p.) 
 
-	15.5. Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext? (3 p.) (flervalssvar)
-		Es ist wahr, dass die Karten nicht mehr so beliebt sind (3 p.)
 
-	15.6. Wann könnte es die Postkarte schwer haben? (3 p.) (flervalssvar)
-		Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen (3 p.)
+9.1. An welchem Tag es passiert ist (1 p.) (flervalssvar)
 
-	16. Duis dolore (8 p.) (flervalssvar, textsvar)
+- Richtig (1 p.)
 
-	16.1. Wie reagieren viele Kunden auf die Einwegbecher? (2 p.) (flervalssvar)
-		Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind (2 p.)
+9.2. Welche Farbe die Autos hatten (1 p.) (flervalssvar)
 
-	16.2. Was könnte im neuen System zum Problem werden? (2 p.) (flervalssvar)
-		Es ist für das Verhalten der Kunden nicht flexibel genug (2 p.)
+- Falsch (1 p.)
 
-	16.3. Was will Lorem Ipsum erreichen? (2 p.) (flervalssvar)
-		Die Kunden stärker zur Rückgabe der Becher zu motivieren (2 p.)
+9.3. Wo im Auto der Mann etwas vergessen hatte (1 p.) (flervalssvar)
 
-	16.4. Varför vill Hamburg övergå till det nya systemet? Svara kort på svenska på basis av hela texten. (2 p.) (textsvar)
+- Falsch (1 p.)
 
+9.4. Wo der Mann sein Auto geparkt hatte (1 p.) (flervalssvar)
 
-DEL III: Struktur und Vokabular (30 p.)
+- Richtig (1 p.)
 
-	17. Auswahl-Antwort-Test (16 p.) (flervalslucksvar)
-		muß (1 p.)
-		bösen (1 p.)
-		von (1 p.)
-		hießen (1 p.), 		heißen (1 p.)
-		Die (1 p.)
-		zum (1 p.)
-		darüber (1 p.)
-		sich (1 p.)
-		dazu (1 p.)
-		Tiere (1 p.)
-		stehlen (1 p.)
-		Das (1 p.)
-		auch (1 p.)
-		Als (1 p.)
-		ein (1 p.)
-		sie (1 p.)
+9.5. Was der Mann machte, nachdem er seinen Fehler bemerkt hatte (1 p.) (flervalssvar)
 
-	18. Umformung (4 p.) (centraliserat bedömt textsvar)
-	18.1: Willst du am Samstag mit ins Kino kommen (2 p.)
-	18.2: weil ich zuerst Mama fragen muss (2 p.)
+- Falsch (1 p.)
 
-	19. Dialog (10 p.) (centraliserat bedömt textsvar)
-	19.1: 
-	19.2: 
-	19.3: 
-	19.4: 
+9.6. Was alles in der Geldbörse war (1 p.) (flervalssvar)
 
+- Richtig (1 p.)
 
-DEL IV: Schriftliche Produktion (99 p.)
+#### 10. Duis Minim? (15 p.) 
 
-	20. Kurze Schreibaufgabe (33 p.) (textsvar)
 
-	20.1. Kurze Schreibaufgabe (33 p.) (textsvar)
+10.1. Wie begründet der Sohn seine Bitte? (3 p.) (flervalssvar)
 
-	20.2. Kurze Schreibaufgabe (33 p.) (textsvar)
+- Er wird anders behandelt als andere Schüler (3 p.)
 
-	21. Lange Schreibaufgabe (66 p.) (textsvar)
+10.2. Vad anser sonen att är dåligt med mormors sätt att ge pengar för betyget, och vad anser pappan att det leder till? (6 p.) (textsvar)
 
-	21.1. Lange Schreibaufgabe (66 p.) (textsvar)
 
-	21.2. Lange Schreibaufgabe (66 p.) (textsvar)
+10.3. Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“? (3 p.) (flervalssvar)
+
+- Dass der Vater das macht, was man von ihm erwartet (3 p.)
+
+10.4. Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen? (3 p.) (flervalssvar)
+
+- Weil der Sohn sich zu Hause oft zurückzieht (3 p.)
+
+#### 11. Excepteur cupidatat! (20 p.) 
+
+
+11.1. Was mag Proident besonders an seinem Job? (3 p.) (flervalssvar)
+
+- Die Arbeit bietet viel Abwechslung (3 p.)
+
+11.2. Fyll i luckorna enligt det understrukna stället i stycket „Voluptate voluptate“. (6 p.) (textsvar)
+
+
+11.3. Wie ist Proidents Arbeit als Lorem und Ipsum organisiert? (2 p.) (flervalssvar)
+
+- Er arbeitet einige Monate sehr viel und dann mal sehr wenig (2 p.)
+
+11.4. Was bedeutet es, dass Proident für seine Gäste verantwortlich ist? (3 p.) (flervalssvar)
+
+- Er muss manchmal das Tempo der Wanderung verlangsamen (3 p.)
+
+11.5. Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext? (3 p.) (flervalssvar)
+
+- Es kann jedem passieren, dass etwas schief geht (3 p.)
+
+11.6. Was machen viele Lorem und Ipsum, um finanziell klarzukommen? (3 p.) (flervalssvar)
+
+- Sie haben häufig zwei Arbeitsstellen (3 p.)
+
+#### 12. Wendungen (6 p.) 
+
+1. Vielen Dank im Voraus! (2 p.)
+2. Und ob! (2 p.)
+3. Warum immer ich? (2 p.)
+
+#### 13. Adipisicing voluptate (8 p.) 
+
+
+13.1. Wann bekommt man bei Flugverspätung kein Essen? (2 p.) (flervalssvar)
+
+- Bei negativen Folgen auf den Zeitplan (2 p.)
+
+13.2. Wann bezahlt Lorem Ipsum Telefonate? (2 p.) (flervalssvar)
+
+- Nur wenn man sich mindestens zwei Stunden verspätet (2 p.)
+
+13.3. När erbjuder flygbolaget hotellinkvartering, och vad arrangerar det i så fall också? Skriv ditt svar kort på svenska. (4 p.) (textsvar)
+
+
+#### 14. Ullamco (13 p.) 
+
+
+14.1. Was erlebten die Ullamco? (3 p.) (flervalssvar)
+
+- Eine Ullamco auf einem anderen Ullamco als geplant (3 p.)
+
+14.2. Vad gjorde det särskilt besvärligt att ta sig från det ena flygplanet till det andra? (2 saker) Skriv ditt svar kort på svenska. (4 p.) (textsvar)
+
+
+14.3. Welche weitere Ullamco hatte die Ullamco? (3 p.) (flervalssvar)
+
+- Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen (3 p.)
+
+14.4. Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext? (3 p.) (flervalssvar)
+
+- Ein unerwartetes Abenteuer (3 p.)
+
+#### 15. Eiusmod (19 p.) 
+
+
+15.1. Vad berättar ett postkort enligt Lorem Ipsum om avsändaren, och hur motiverar han sin åsikt? Skriv ditt svar kort på svenska. (4 p.) (textsvar)
+
+
+15.2. Wie sind die beliebtesten Postkarten? (3 p.) (flervalssvar)
+
+- Sie zeigen oft verschiedene Bilder vom Urlaubsort (3 p.)
+
+15.3. Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen? (3 p.) (flervalssvar)
+
+- Sie finden solche Karten auf Reisen gut (3 p.)
+
+15.4. Was ärgert die Kartenverkäufer? (3 p.) (flervalssvar)
+
+- Einige Jugendliche benutzen oft unfaire Tricks (3 p.)
+
+15.5. Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext? (3 p.) (flervalssvar)
+
+- Es ist wahr, dass die Karten nicht mehr so beliebt sind (3 p.)
+
+15.6. Wann könnte es die Postkarte schwer haben? (3 p.) (flervalssvar)
+
+- Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen (3 p.)
+
+#### 16. Duis dolore (8 p.) 
+
+
+16.1. Wie reagieren viele Kunden auf die Einwegbecher? (2 p.) (flervalssvar)
+
+- Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind (2 p.)
+
+16.2. Was könnte im neuen System zum Problem werden? (2 p.) (flervalssvar)
+
+- Es ist für das Verhalten der Kunden nicht flexibel genug (2 p.)
+
+16.3. Was will Lorem Ipsum erreichen? (2 p.) (flervalssvar)
+
+- Die Kunden stärker zur Rückgabe der Becher zu motivieren (2 p.)
+
+16.4. Varför vill Hamburg övergå till det nya systemet? Svara kort på svenska på basis av hela texten. (2 p.) (textsvar)
+
+
+### Del III: Struktur und Vokabular (30 p.)
+
+#### 17. Auswahl-Antwort-Test (16 p.) 
+
+1. muß (1 p.)
+2. bösen (1 p.)
+3. von (1 p.)
+4. hießen (1 p.)
+4. heißen (1 p.)
+5. Die (1 p.)
+6. zum (1 p.)
+7. darüber (1 p.)
+8. sich (1 p.)
+9. dazu (1 p.)
+10. Tiere (1 p.)
+11. stehlen (1 p.)
+12. Das (1 p.)
+13. auch (1 p.)
+14. Als (1 p.)
+15. ein (1 p.)
+16. sie (1 p.)
+
+#### 18. Umformung (4 p.) 
+
+- 18.1. Kommst du am Samstag mit ins Kino (wollen)
+    - Willst du am Samstag mit ins Kino kommen (2 p.)
+- 18.2. weil ich zuerst Mama frage (müssen)
+    - weil ich zuerst Mama fragen muss (2 p.)
+
+#### 19. Dialog (10 p.) 
+
+- 19.1. Kan du hjälpa mig?
+
+- 19.2. 7.2. kuvahttps://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12amath finalElise ForestCC BY-NC-ND 2.02019-11-25
+
+- 19.3. Hurdant väder är det idag?
+
+- 19.4. 7.4. kuvahttps://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda2019-11-25Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496Charles Edward MillerCC BY-SA 2.0
+
+
+### Del IV: Schriftliche Produktion (99 p.)
+
+#### 20. Kurze Schreibaufgabe (33 p.) 
+
+
+20.1. Kurze Schreibaufgabe (33 p.) (textsvar)
+
+
+20.2. Kurze Schreibaufgabe (33 p.) (textsvar)
+
+
+#### 21. Lange Schreibaufgabe (66 p.) 
+
+
+21.1. Lange Schreibaufgabe (66 p.) (textsvar)
+
+
+21.2. Lange Schreibaufgabe (66 p.) (textsvar)
 `;
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `

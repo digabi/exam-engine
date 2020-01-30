@@ -9,14 +9,24 @@ import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 // tslint:disable-next-line: no-var-requires
 const { original, results }: { original: string; results: MasteringResult[] } = require(process.env.EXAM_FILENAME!)
 
-function Toolbar({ hvp, languages, children }: { languages: string[]; hvp: string; children: React.ReactNode }) {
+function Toolbar({
+  hvp,
+  hvpFilename,
+  languages,
+  children
+}: {
+  languages: string[]
+  hvp: string
+  hvpFilename: string
+  children: React.ReactNode
+}) {
   return (
     <>
       <ol className="toolbar">
         {languages.map(language => (
           <ChangeLanguage language={language} key={language} />
         ))}
-        <CopyHvp hvp={hvp} />
+        <SaveHvp {...{ hvp, hvpFilename }} />
       </ol>
       {children}
     </>
@@ -35,10 +45,20 @@ function ChangeLanguage({ language }: { language: string }) {
   )
 }
 
-function CopyHvp({ hvp }: { hvp: string }) {
+function SaveHvp({ hvp, hvpFilename }: { hvp: string; hvpFilename: string }) {
   return (
     <li className="toolbar__item">
-      <button onClick={() => navigator.clipboard.writeText(hvp)}>Kopioi HVP</button>
+      <button
+        onClick={() => {
+          const blob = new Blob([hvp], { type: 'text/markdown' })
+          const link = document.createElement('a')
+          link.href = URL.createObjectURL(blob)
+          link.download = hvpFilename
+          link.click()
+        }}
+      >
+        Tallenna HVP
+      </button>
     </li>
   )
 }
@@ -57,7 +77,8 @@ window.onload = async () => {
   const language = languages.find(lang => lang === languageCookie) || languages[0]
 
   if (language) {
-    const { xml, hvp } = results.find(r => r.language === language)!
+    const { xml, hvp, examCode, dayCode } = results.find(r => r.language === language)!
+    const hvpFilename = examCode ? `${examCode}${dayCode ? '_' + dayCode : ''}_${language}.md` : 'hvp.md'
     const doc = parseExam(xml, false)
 
     const Root = location.pathname.startsWith('/attachments') ? Attachments : Exam
@@ -76,7 +97,7 @@ window.onload = async () => {
     document.body.style.backgroundColor = Root === Exam ? '#e0f4fe' : '#f0f0f0'
 
     ReactDOM.render(
-      <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
+      <Toolbar {...{ languages, selectedLanguage: language, hvp, hvpFilename }}>
         <Root
           {...{
             casCountdownDuration,
