@@ -24,11 +24,11 @@ export const ResultsContext = React.createContext<ResultsContext>({} as ResultsC
 
 export const withResultsContext = withContext<ResultsContext, ResultsProps>(
   ResultsContext,
-  ({ gradingStructure, scores, gradingText, doc, language }) => {
-    const totalScore = scores ? _.sum(scores.map(s => s.scoreValue)) : 0
+  ({ gradingStructure, scores, gradingText, doc, language, answers }) => {
     const root = doc.documentElement
     const nonNullScores = scores || []
     const maybeDate = root.getAttribute('date')
+    const totalScore = calculateSumScore(root, gradingStructure, nonNullScores, _.keyBy(answers, 'questionId'), true)
 
     return {
       gradingStructure,
