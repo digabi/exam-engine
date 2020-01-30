@@ -1,7 +1,8 @@
 import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digabi/exam-engine-mastering'
 import * as _ from 'lodash-es'
 import React from 'react'
-import { findChildrenAnswers, getNumericAttribute, queryAll } from '../../dom-utils'
+import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
+import { commonExamContext } from '../ExamContext'
 import { AnswerScore, ChoiceAnswer, ExamAnswer, QuestionId } from '../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
@@ -22,29 +23,27 @@ export interface ResultsContext {
 
 export const ResultsContext = React.createContext<ResultsContext>({} as ResultsContext)
 
-export const withResultsContext = withContext<ResultsContext, ResultsProps>(
-  ResultsContext,
-  ({ gradingStructure, scores, gradingText, doc, language, answers }) => {
-    const root = doc.documentElement
-    const nonNullScores = scores || []
-    const maybeDate = root.getAttribute('date')
-    const totalScore = calculateSumScore(root, gradingStructure, nonNullScores, _.keyBy(answers, 'questionId'), true)
+export const withResultsContext = withContext<ResultsContext, ResultsProps>(ResultsContext, (props: ResultsProps) => {
+  const { scores, doc, gradingStructure, gradingText, answers } = props
 
-    return {
-      gradingStructure,
-      scores: nonNullScores,
-      totalScore,
-      gradingText,
-      root,
-      date: maybeDate ? new Date(maybeDate) : undefined,
-      dateTimeFormatter: new Intl.DateTimeFormat('fi-FI', { timeZone: 'UTC' }),
-      language,
-      maxAnswers: getNumericAttribute(root, 'max-answers'),
-      maxScore: getNumericAttribute(root, 'max-score'),
-      numberOfSections: queryAll(root, 'section').length
-    }
+  const common = commonExamContext(props)
+  const nonNullScores = scores || []
+  const totalScore = calculateSumScore(
+    doc.documentElement,
+    gradingStructure,
+    nonNullScores,
+    _.keyBy(answers, 'questionId'),
+    true
+  )
+
+  return {
+    ...common,
+    gradingStructure,
+    scores: nonNullScores,
+    totalScore,
+    gradingText
   }
-)
+})
 
 export function findMultiChoiceFromGradingStructure(
   gradingStructure: GradingStructure,
