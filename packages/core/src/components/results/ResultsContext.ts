@@ -1,7 +1,7 @@
 import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digabi/exam-engine-mastering'
 import * as _ from 'lodash-es'
 import React from 'react'
-import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
+import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
 import { commonExamContext } from '../ExamContext'
 import { AnswerScore, ChoiceAnswer, ExamAnswer, QuestionId } from '../types'
 import { withContext } from '../withContext'
@@ -28,12 +28,12 @@ export const withResultsContext = withContext<ResultsContext, ResultsProps>(Resu
 
   const common = commonExamContext(props)
   const nonNullScores = scores || []
-  const totalScore = calculateSumScore(
-    doc.documentElement,
-    gradingStructure,
-    nonNullScores,
-    _.keyBy(answers, 'questionId'),
-    true
+
+  const topLevelQuestions = queryAll(doc.documentElement, 'question', false)
+  const totalScore = _.sum(
+    topLevelQuestions.map(question =>
+      calculateQuestionSumScore(question, gradingStructure, nonNullScores, _.keyBy(answers, 'questionId'))
+    )
   )
 
   return {
@@ -66,12 +66,11 @@ export function findScore(scores: AnswerScore[], questionId: number) {
   return scores.find(s => s.questionId === questionId)
 }
 
-export function calculateSumScore(
-  element: Element,
+export function calculateQuestionSumScore(
+  questionElement: Element,
   gradingStructure: GradingStructure,
   scores: AnswerScore[],
-  answersById: Record<QuestionId, ExamAnswer>,
-  isTopLevel: boolean
+  answersById: Record<QuestionId, ExamAnswer>
 ) {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
     const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)
@@ -84,7 +83,7 @@ export function calculateSumScore(
   }
 
   const sumScore = _.sum(
-    findChildrenAnswers(element).map(answer => {
+    findChildrenAnswers(questionElement).map(answer => {
       const questionId = getNumericAttribute(answer, 'question-id')!
       const scoredAnswer = answersById[questionId]
       if (!scoredAnswer) {
@@ -98,7 +97,7 @@ export function calculateSumScore(
     })
   )
   // top level questions may not yield negative scores
-  if (isTopLevel && sumScore < 0) {
+  if (parentElements(questionElement, 'question').length === 0 && sumScore < 0) {
     return 0
   }
   return sumScore
