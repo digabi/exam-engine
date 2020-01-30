@@ -3,6 +3,6 @@
   "packages": [
     "packages/*"
   ],
-  "version": "8.1.1-grading-structure-in-results.1",
+  "version": "8.1.1-grading-structure-in-results.2",
   "exact": true
 }
