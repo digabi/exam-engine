@@ -1,0 +1,6 @@
+[Desktop Entry]
+Comment=
+Terminal=true
+Name=Muunna HVP
+Exec=bash -c "find $(dirname %k) -name '*.md' -execdir bash -c 'pandoc {} -o $(basename {} .md).odt' \; && read -n 1 -s -p 'Valmis!'"
+Type=Application

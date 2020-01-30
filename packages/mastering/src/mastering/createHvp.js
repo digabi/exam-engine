@@ -18,13 +18,13 @@ export const createHvp = (doc, targetLanguage) => {
       'fi-FI': {
         'e:scored-text-answer': 'keskitetysti arvosteltava tekstivastaus',
         'e:choice-answer': 'monivalintavastaus',
-        'e:dropdown-answer': 'aukkomonivalintavastaus',
+        'e:dropdown-answer': 'monivalintavastaus',
         'e:text-answer': 'tekstivastaus'
       },
       'sv-FI': {
         'e:scored-text-answer': 'centraliserat bedömt textsvar',
-        'e:dropdown-answer': 'flervalslucksvar',
         'e:choice-answer': 'flervalssvar',
+        'e:dropdown-answer': 'flervalssvar',
         'e:text-answer': 'textsvar'
       }
     }
@@ -37,10 +37,12 @@ export const createHvp = (doc, targetLanguage) => {
   }
 
   const optionsWithScoresString = function(node, optionElementName) {
+    const prefix =
+      optionElementName === 'e:choice-answer-option' ? '-' : R.last(getDisplayNumber(node).split('.')) + '.'
     return node
       .find(`.//${optionElementName}[@score]`, ns)
-      .map(o => `\t\t${cleanString(o.text())} (${o.attr('score').value()} p.)`)
-      .join(', ')
+      .map((o, i) => `${prefix} ${cleanString(o.text())} (${o.attr('score').value()} p.)`)
+      .join('\n')
   }
 
   const getAttributeValue = attributeName => node => node.attr(attributeName).value()
@@ -53,20 +55,22 @@ export const createHvp = (doc, targetLanguage) => {
       case 'exam-title':
         return [cleanString(node.text())]
       case 'section': {
-        const sectionTitle = cleanString(node.find('e:section-title', ns)[0].text())
+        const sectionTitle = cleanString(node.get('./e:section-title', ns).text())
         return [
-          `\n\n${targetLanguage === 'sv-FI' ? 'DEL' : 'OSA'} ${getDisplayNumber(node)}: ${sectionTitle} (${getMaxScore(
+          `\n### ${targetLanguage === 'sv-FI' ? 'Del' : 'Osa'} ${getDisplayNumber(
             node
-          )} p.)`
+          )}: ${sectionTitle} (${getMaxScore(node)} p.)`
         ]
       }
       case 'question': {
+        const displayNumber = getDisplayNumber(node)
+        const isTopLevelQuestion = !displayNumber.includes('.')
         const answerTypesInQuestion = findQuestionTypes(node)
         const questionTitle = cleanString(node.find('e:question-title', ns)[0].text())
         return [
-          `\n\t${getDisplayNumber(node)}. ${questionTitle} (${getMaxScore(node)} p.) (${answerTypesInQuestion.join(
-            ', '
-          )})`
+          `\n${isTopLevelQuestion ? '#### ' : ''}${displayNumber}. ${questionTitle} (${getMaxScore(node)} p.) ${
+            isTopLevelQuestion ? '' : '(' + answerTypesInQuestion.join(', ') + ')'
+          }\n`
         ]
       }
       case 'choice-answer': {
@@ -74,10 +78,13 @@ export const createHvp = (doc, targetLanguage) => {
       }
       case 'scored-text-answer': {
         return [
-          `\t${getDisplayNumber(node)}: ${node
+          `- ${getDisplayNumber(node)}. ${node
+            .get('./e:hint', ns)
+            ?.text()
+            .trim() ?? ''}\n${node
             .find('.//e:accepted-answer[@score]', ns)
-            .map(elem => `${cleanString(elem.text())} (${getScore(elem)} p.)`)
-            .join(', ')}`
+            .map(elem => `    - ${cleanString(elem.text())} (${getScore(elem)} p.)`)
+            .join('\n')}`
         ]
       }
       case 'dropdown-answer': {
