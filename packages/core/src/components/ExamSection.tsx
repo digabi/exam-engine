@@ -38,7 +38,10 @@ function CasControls(props: CasState) {
           </button>
         </div>
       ) : props.casStatus === 'allowing' ? (
-        <div className="e-text-center" ref={e => e != null && e.scrollIntoView()}>
+        <div
+          className="e-text-center"
+          ref={e => e != null && casCountdownDuration === props.durationRemaining && e.scrollIntoView()}
+        >
           <hr className="e-exam-separator" />
           <p>{t('cas.allowing.infoText')}</p>
           <ProgressBar className="e-mrg-b-2" duration={casCountdownDuration} />
