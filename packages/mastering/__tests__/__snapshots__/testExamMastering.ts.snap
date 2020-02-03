@@ -75,6 +75,8 @@ FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe
 #### 6. Sosiaalisen median edut ja haitat (60 p.)
 `;
 
+exports[`Exam mastering masters A_E.xml exam correctly: translation 1`] = ``;
+
 exports[`Exam mastering masters A_E.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="E" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="60"><e:exam-title>FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe</e:exam-title>
@@ -351,6 +353,8 @@ FI – Äidinkieli ja kirjallisuus, lukutaidon koe
 
 4.2. Vertaile Dolorin räpin ja Deserunt Magnan runon sisältämiä ikääntymisen kuvauksia. Vastauksen sopiva pituus on noin 3 500 merkkiä. (18 p.) (tekstivastaus)
 `;
+
+exports[`Exam mastering masters A_X.xml exam correctly: translation 1`] = ``;
 
 exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1250,6 +1254,306 @@ SV – Filosofi
 
 
 9.2. Välj ut en vetenskaplig modell, exempelvis från något läroämne du har studerat i gymnasiet. Förklara dess struktur och minst ett av dess teoretiska begrepp, samt utvärdera modellen och dess betydelse på ett vetenskapsfilosofiskt sätt. (20 p.) (textsvar)
+`;
+
+exports[`Exam mastering masters FF.xml exam correctly: translation 1`] = `
+Koe on kaksiosainen. Osassa I on kuusi 20 pisteen tehtävää ja osassa II kolme 30 pisteen tehtävää. Saat vastata enintään viiteen tehtävään. Näistä tehtävistä enintään kaksi saa olla osasta II. Kokeen maksimipistemäärä on 120. Sen saavuttaminen edellyttää, että vastaat kolmeen osan I tehtävään ja kahteen osan II tehtävään. Vastauksiin ei ole mahdollista liittää kuvakaappauksia. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+
+20 p. tehtävät
+
+Kauneus on Katsojan silmässä
+
+Sanotaan, että kauneus on katsojan silmässä. Kuvaile lyhyesti, millaista käsitystä kauneudesta sanonta edustaa. Nimeä käsitys.
+
+Sanotaan, että kauneus on katsojan silmässä. Nimeä ja kuvaile lyhyesti päinvastainen käsitys kauneudesta.
+
+Valitse kaksi esimerkkiä kauniista asioista ja perustele lyhyesti, miksi ne ovat kauniita.
+
+Pohdi, mitä kauneus on. Käytä apunasi kohdassa 1.3. antamiasi esimerkkejä.
+
+Moraali ja tavat
+
+Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä. Valitse jokin pienempi tai suurempi yhteisö – esimerkiksi jokin koulu, katsomuksellinen ryhmä tai valtio – ja pohdi, mikä ero valitsemassasi yhteisössä on moraalin ja tapojen välillä.
+
+Ykseys ja muutos
+
+Ykseyteen ja muutokseen liittyy monia filosofisia pulmia, joita on pohdittu antiikista asti. Videokatkelmassa käsitellään Aliquipin ja Veniamin ajatuksia.
+
+Videokatkelma: Sunt cupidatat exercitation magna deserunt quis
+
+Youtube-videopalvelu
+
+YTL
+
+YTL
+
+Selitä, miksi muutos on Proidentin mukaan mahdotonta. Hyödynnä vastauksessasi videokatkelmaa .
+
+Videokatkelmassa esitellään kaksi Veniamin paradoksia. Erittele toinen niistä ja kuvaile sen suhde Proidentin filosofiaan.
+
+Lihan syöminen
+
+Aasiassa on perinteisesti syöty koiria, mitä Euroopassa pidetään sopimattomana. Arvioi filosofisesti lihan syönnin oikeutusta ja sen rajaamista eri eläinlajeihin. Käytä vastauksessasi apuna uutiskatkelmaa ja vastamainosta
+
+Uutiskatkelma: Consectetur cupidatat et non occaecat voluptate laboris
+
+Consectetur cupidatat et non occaecat voluptate laboris Nostrud laborum aute reprehenderit eiusmod ex do aute. Elit elit laborum tempor reprehenderit excepteur excepteur commodo nostrud. Dolore est occaecat ex est culpa minim quis incididunt excepteur eiusmod officia occaecat qui cupidatat. Duis sunt ad minim dolore amet veniam anim sunt amet non. Est mollit consequat sint reprehenderit deserunt laborum est voluptate nulla magna. Incididunt in in deserunt aliqua dolore aute id aliqua. Nostrud aliqua non ad ea excepteur eu nostrud laborum deserunt in mollit amet dolore officia. Sunt cillum fugiat veniam occaecat esse fugiat occaecat. Cupidatat officia sint minim officia officia dolore sit magna duis reprehenderit id. Cillum esse ullamco laborum occaecat qui eu tempor velit duis proident. Minim exercitation ad aute pariatur fugiat nulla.
+
+Aliqua magna deserunt eu laboris nulla aliqua
+
+Valta opettajainhuoneessa
+
+Qui tempor on suomalainen sketsisarja, ja Dolore Mollit (1926–1984) on ranskalainen vallan teoreetikko.
+
+Videokatkelma: Qui tempor: Opettajat 1
+
+Qui tempor: Opettajat 1
+
+Tekstikatkelma: Dolore Mollit, Qui reprehenderit enim cillum adipisicing officia
+
+Magna nulla in aliqua tempor proident qui pariatur eu laboris ex. Eiusmod minim dolor aliqua cupidatat cupidatat. Ex pariatur est sunt anim ut adipisicing. Ullamco nulla eu nisi tempor officia aliquip nulla culpa amet amet sit aute occaecat mollit. Labore labore ut qui elit cillum excepteur nulla adipisicing laboris quis. Tempor qui labore enim ea nulla dolor.
+
+Qui reprehenderit enim cillum adipisicing officia
+
+Cillum Adipisicing
+
+1980
+
+Perehdy videokatkelmaan ja tekstikatkelmaan . Erittele vallankäyttöä videokatkelmassa ja arvioi sen oikeudenmukaisuutta.
+
+Tiedon kriteerit
+
+Henri ajelee maaseudulla poikansa kanssa ja kertoo hänelle, mitä sattuu kulloinkin näkemään. Henri näkee pellolla ladon ja kertoo pojalleen: ”Tuolla on lato”. Henrillä on erinomainen näkökyky, ja hänellä on lausettaan vastaava oikeutettu tosi uskomus. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
+
+Henri ajaa vähän eteenpäin ja saapuu peltoalueelle, jolla on oikeiden latojen joukossa pahvisia latokulisseja, jotka erehdyttäisivät ketä tahansa. Henri näkee kuitenkin oikean ladon ja sanoo taas pojalleen: ”Tuollakin on lato”. Jos hän olisi sattunut kohdistamaan katseensa pelkkään kulissiin, hän olisi uskonut senkin olevan lato. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
+
+Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen siitä, että kyseessä on lato. Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan.
+
+30 p. tehtävät
+
+Filosofiakäsitys Adipisicingin Loremissa
+
+Adipiscingin Lorem Exercitation irure dolor et est ut Lorem reprehenderit dolore aliquip enim do ullamco mollit. Qui non cupidatat qui cupidatat. Aliquip proident aliqua consectetur quis ex proident incididunt sunt. Laborum sit duis sit incididunt dolore dolore ullamco est sit. Ullamco id fugiat nulla elit nulla Lorem quis pariatur minim cupidatat non laboris. tekstikatkelmassa incididunt eiusmod commodo exercitation eiusmod culpa consequat irure nulla.
+
+Tekstikatkelma: Adipiscing, Lorem
+
+Minim velit mollit consectetur culpa reprehenderit aliquip esse quis non ullamco fugiat amet. Eiusmod cillum mollit adipisicing duis. Eu ut ad magna labore laboris laborum exercitation aliquip cillum. Ex cupidatat laboris est mollit aliqua laborum deserunt sit amet deserunt est occaecat veniam ullamco. Non labore velit deserunt aute cupidatat esse aliquip est elit commodo. (Cillum ullamco commodo quis est aliquip officia fugiat veniam irure laboris occaecat elit proident ut) Elit cupidatat non cupidatat nulla non consequat nostrud nulla. Ullamco amet sint id dolore mollit »Labore nulla adipisicing sint laboris deserunt». ­­– – Veniam consectetur aliquip officia nisi sunt laborum enim. Excepteur incididunt exercitation commodo excepteur dolor do tempor. Ipsum aliqua culpa adipisicing ipsum eiusmod dolore fugiat. Id do consectetur pariatur reprehenderit ex pariatur magna consequat aliqua quis. Mollit sint magna aliquip in. Dolore ullamco quis anim proident. Elit in quis culpa Lorem minim sint do commodo ex aute dolore consectetur enim. Anim ex sunt consectetur non adipisicing sint labore sint proident labore consequat. Qui irure aliquip aliqua proident. In labore aliquip aute voluptate officia magna irure. Ipsum enim ipsum in fugiat quis consequat minim nulla aute.
+
+Veniam Ipsum
+
+1970
+
+Kuvaile omin sanoin tekstikatkelmassa esitettyä käsitystä filosofiasta ja arvioi käsityksen hyviä ja huonoja puolia.
+
+Esitä jokin toinen käsitys filosofiasta ja vertaa sitä Loremissa esitettyyn.
+
+Eutanasia
+
+Kreikankielinen sana ”eu” merkitsee hyvää ja ”thanatos” kuolemaa. Kirjaimellisesti eutanasia on siis suomeksi ”hyvä kuolema”, mutta eutanasian vastustajat eivät hyväksy nimitystä. Viisi eri puolueista olevaa poliitikkoa käynnisti 7.11.2016 kansalaisaloitteen eutanasian laillistamisesta. Aloite keräsi 1.1.2017 mennessä 63 078 kannatusilmoitusta ja lähetettiin eduskuntaan 14.2.2017. Se herätti vilkasta kansalaiskeskustelua. Tekstikatkelmat ovat tästä keskustelusta valittuja mielipidekirjoituksia Minim Excepteurista.
+
+Tekstikatkelma: Magna nostrud ipsum commodo ex velit magna labore aliquip voluptate do irure.
+
+Eiusmod ad aliqua excepteur ipsum eu duis aute enim. Aliquip cillum ad magna commodo dolor labore qui Lorem aliquip sit irure minim nisi amet. ­­– –Quis reprehenderit ullamco fugiat consequat excepteur occaecat duis dolore cillum. Ex fugiat occaecat culpa labore laborum ipsum consequat sit minim nostrud qui. Exercitation laboris fugiat voluptate commodo occaecat qui est ex ea irure adipisicing et. Officia dolor id consequat ullamco non officia velit ex laboris consequat culpa. Nostrud reprehenderit anim duis occaecat sint reprehenderit occaecat consectetur aliqua aute. Officia est tempor commodo mollit cupidatat voluptate in adipisicing ea reprehenderit incididunt consequat cillum amet. Quis consequat sunt velit elit ut. Voluptate aliquip nostrud quis commodo occaecat commodo veniam ad ipsum. Aliqua commodo nisi aute adipisicing Lorem eiusmod officia id deserunt reprehenderit enim anim proident. Id Lorem laboris sit officia proident exercitation ut esse exercitation occaecat dolore est proident mollit. Pariatur excepteur cillum reprehenderit est duis adipisicing dolore. Sit incididunt ea in exercitation esse ullamco cupidatat laborum ut. Magna deserunt duis incididunt sit sint ut dolor nostrud deserunt deserunt commodo eu esse. Et qui ad est esse exercitation sit sint. Adipisicing et nulla nulla sint commodo qui. Ipsum dolore enim veniam mollit. Ad Lorem reprehenderit velit id magna Lorem fugiat non laborum sint officia adipisicing duis. Laborum enim pariatur eiusmod minim incididunt exercitation dolore aute sit. Tempor id cupidatat ut voluptate ullamco ullamco non ex. Consectetur occaecat nisi consequat aliqua aliquip sunt dolor occaecat irure laborum nisi eu fugiat.– – Reprehenderit ut labore do laborum dolore nisi non. Cillum consequat aliquip cupidatat non ut ipsum. Ex ex cillum ullamco eiusmod cillum tempor enim ipsum aute excepteur nostrud dolor reprehenderit proident. Deserunt aliquip anim deserunt labore enim ex ullamco velit. Consectetur Lorem nulla ad enim laboris quis duis quis duis. Laborum laboris sunt sunt sit aliquip sit commodo minim occaecat ullamco. Deserunt nulla dolore est qui duis. Incididunt ad eiusmod pariatur commodo non est anim ullamco ullamco. In occaecat culpa ea aliquip sunt laboris sit cillum duis irure ut aute. Anim anim cupidatat t empor eiusmod. Mollit aute pariatur est amet nisi deserunt tempor officia enim. Nostrud exercitation voluptate est minim reprehenderit commodo qui ea quis qui. Quis pariatur Lorem do cillum do commodo do sit ullamco cillum irure adipisicing reprehenderit. Sit ipsum reprehenderit duis duis occaecat cupidatat est nostrud adipisicing dolor aute consectetur do sint. Cillum adipisicing ad aliqua sint exercitation deserunt. Consequat anim mollit dolor laborum pariatur cupidatat eiusmod enim non ea excepteur. Sit labore dolor voluptate eu ullamco. Cupidatat exercitation do incididunt laborum sit irure deserunt ut amet. Velit dolor esse incididunt officia in non fugiat cupidatat dolor id. Anim dolore excepteur voluptate aliqua Lorem dolore nostrud. Ea eiusmod officia fugiat amet adipisicing sit ullamco nostrud est aute. Voluptate ut aute irure Lorem aliquip nostrud et dolor commodo proident nulla ut nulla ad. Lorem in anim ex commodo sint dolore cupidatat dolore. Ea aliquip incididunt ex voluptate esse commodo deserunt. Et irure sit nulla amet id velit pariatur officia nulla non exercitation et est reprehenderit. Occaecat Esse deserunt minim id sit eiusmod laborum laboris nisiNulla Velit Exercitation ad aute laborum fugiat ipsum.Non
+
+Tekstikatkelma: Nulla non ea et eiusmod sunt esse proident exercitation eiusmod laborum amet ullamco ad.
+
+Velit tempor ea laboris eu id aute excepteur. In pariatur excepteur reprehenderit consectetur Lorem dolore. Fugiat cillum in id do exercitation. In nulla cupidatat nisi magna ea proident sit. Ea ut exercitation esse adipisicing Lorem dolor consectetur. Esse tempor do irure duis enim nostrud ut irure irure ullamco quis consequat eiusmod. Elit labore enim cupidatat consectetur aliquip. Exercitation id velit nostrud id dolor nostrud qui id. Sint dolore dolor occaecat exercitation. Ullamco nulla aliqua esse veniam aliqua duis cillum est ex laboris amet in. Sint elit consequat officia magna laboris nisi cupidatat ipsum cillum elit voluptate. Consectetur exercitation qui ex veniam deserunt irure ullamco occaecat sit Lorem ea anim Lorem. Aliqua ipsum voluptate ad nulla reprehenderit. Ipsum nulla occaecat deserunt irure duis fugiat consequat consectetur tempor voluptate et excepteur fugiat. Ipsum aliqua nostrud culpa anim enim elit dolore minim culpa deserunt excepteur dolore voluptate. Adipisicing ex cillum do incididunt anim proident culpa exercitation dolore minim ipsum. Est sit sit ad officia nisi. Deserunt cupidatat minim cillum nulla irure duis aliqua occaecat ullamco cillum in dolor. Aute id ex consectetur est veniam ipsum id pariatur aliqua minim. Eiusmod enim ipsum laborum nostrud fugiat nulla reprehenderit id reprehenderit ut aliqua. Reprehenderit culpa in nostrud dolore aute velit sit magna duis magna sint consectetur sit sint. Dolore cillum ipsum sint amet Lorem. Exercitation veniam magna deserunt est proident anim aliqua consequat nulla irure irure Lorem cupidatat. Quis officia duis ut sint Lorem. Mollit occaecat pariatur duis eu et id in nulla dolore. Aliquip in anim mollit esse reprehenderit duis magna dolore eu excepteur nisi. Ea qui velit officia fugiat labore sit voluptate deserunt ea esse qui consequat ad. In adipisicing irure sunt pariatur pariatur dolore officia irure consequat ut et commodo. Esse nostrud ad excepteur reprehenderit ipsum ut aute cillum ipsum. Qui qui sint sunt sit. Veniam consequat in ipsum eiusmod. Reprehenderit qui aliquip veniam aliquip quis irure culpa ut eu irure est aliquip cupidatat in. Id mollit ut tempor esse. Qui
+
+Tekstikatkelma: Minim tempor elit sit ea id irure ullamco commodo proident ex
+
+Mea dolor ad deserunt ad ipsum ipsum sit tempor ea Duis velit irure labore quis veniam velit mollit. Consequat et eiusmod mollit aliquip laborum quis officia. Voluptate et irure ullamco minim eiusmod sunt nisi ea quis officia consectetur. Minim aute do Lorem magna id dolore cupidatat ullamco. Nulla ea in excepteur ex consequat veniam aliquip aute ex aliquip cupidatat. Aliquip consequat amet anim est pariatur quis consequat nostrud aliqua consequat aute. Sunt culpa pariatur exercitation tempor fugiat ipsum dolore laborum cillum cupidatat ut. Dolor mollit esse ad nisi nulla laboris commodo culpa. Dolore sit excepteur sit velit ex. Sunt esse dolor tempor cupidatat consequat do. Sunt excepteur mollit aliqua ad Lorem excepteur officia excepteur culpa. Ea pariatur cupidatat dolor voluptate eiusmod qui magna exercitation. Qui consequat cupidatat culpa in pariatur veniam duis est. Tempor cupidatat ea amet exercitation. Ex eiusmod ut exercitation adipisicing consectetur eu minim. Tempor ut laboris ullamco anim. Eu cillum eu est dolore aute adipisicing nostrud id. Veniam velit elit sint officia reprehenderit fugiat ad ad quis culpa aute mollit dolor. Excepteur aliquip do commodo pariatur enim. Pariatur adipisicing elit Lorem ut. Adipisicing nisi non culpa ea dolore ex aliqua officia proident aliquip. Consectetur est non incididunt ipsum ex in aliqua velit sit nulla Lorem proident. Sit sit commodo laboris amet aute. Ullamco id mollit sint incididunt veniam velit. Anim ex magna deserunt in. Reprehenderit nulla voluptate in qui culpa sint non qui magna. Aliqua duis aliqua officia aliquip labore mollit excepteur nostrud non enim. Anim veniam sit commodo cupidatat enim culpa. Ut laborum sint cillum ea magna excepteur aliquip adipisicing dolore. Irure et ipsum occaecat esse minim consectetur officia et quis voluptate aute duis proident consequat. Exercitation officia adipisicing officia velit. Ipsum pariatur veniam est velit sit. Labore velit cupidatat aliqua consectetur duis nisi ipsum tempor. Occaecat pariatur cillum in ea adipisicing laboris cupidatat officia culpa adipisicing minim deserunt et consequat. Reprehenderit minim voluptate deserunt minim occaecat tempor sint in consequat. Incididunt veniam Lorem adipisicing sit nostrud culpa. Proident ullamco irure eu sint quis voluptate qui amet aliquip amet est. Ad velit veniam aliquip id. Nostrud fugiat non voluptate esse aliqua adipisicing qui proident et sunt eiusmod do ea irure. Aliquip
+
+Tekstikatkelma: Pariatur occaecat est non aliquip cupidatat ad officia tempor
+
+Dolore reprehenderit ipsum minim exercitation duis officia Laborum cupidatat pariatur irure dolor nisi labore eiusmod anim. Aliquip dolor mollit tempor laboris consectetur veniam enim nostrud commodo ullamco enim consectetur. Consectetur amet excepteur dolor reprehenderit laborum. Aute ex commodo nulla ut Lorem amet officia velit. Voluptate non sit occaecat pariatur irure in amet deserunt dolore tempor pariatur. Do anim voluptate eiusmod nostrud et do ipsum ipsum excepteur sit consectetur anim. Et mollit nostrud aliquip nisi adipisicing aliqua aute irure consequat sint amet occaecat. Velit culpa commodo amet amet incididunt est. Veniam labore nulla consectetur sit occaecat cillum qui excepteur dolore magna commodo aliquip. Qui magna eu sint dolor mollit. Lorem sint incididunt culpa laborum aliqua aute enim Lorem. Nulla enim esse nostrud excepteur tempor irure elit aliqua qui incididunt dolor voluptate eiusmod. Elit Eu magna duis fugiat
+
+Tekstikatkelma: In tempor est et aute pariatur qui ullamco dolor duis
+
+Lorem nulla consectetur in occaecat sit Incididunt incididunt sint non officia laboris laborum eu laboris amet aliqua esse. Excepteur sit proident do adipisicing ex. Proident exercitation consequat et ipsum incididunt sint excepteur non. Duis aliqua duis id fugiat duis exercitation deserunt nulla dolor. Ad incididunt ea minim eiusmod cupidatat exercitation ex tempor quis pariatur non. Culpa ipsum ullamco ex duis laborum mollit non sunt. Dolore sit nostrud sit in ex enim cupidatat ea duis. Ut laboris ea eiusmod duis nostrud velit elit ad duis tempor et reprehenderit. Qui magna commodo ex deserunt. Cupidatat aliquip quis commodo commodo dolor esse sunt esse commodo consectetur veniam eiusmod id. Quis ad velit cupidatat duis quis tempor qui. Occaecat Lorem est excepteur id ut deserunt enim adipisicing occaecat deserunt laborum id. Exercitation exercitation est adipisicing cupidatat ea ex reprehenderit labore in ullamco id tempor proident officia. Do eiusmod sint nulla pariatur anim aute fugiat aute eu incididunt nisi fugiat. Occaecat in deserunt sint sunt officia occaecat pariatur laborum sint sint sint. Occaecat reprehenderit duis duis non dolore eiusmod sunt. Ad consectetur ad aliqua ut nulla adipisicing dolor aliquip reprehenderit in elit est non est. Adipisicing sit elit tempor aliquip deserunt qui. Voluptate officia sunt aute cupidatat sunt aliquip velit eiusmod laborum deserunt fugiat cillum commodo elit. Consequat veniam sint nulla dolore cillum id laborum elit dolore ad pariatur commodo. Sit ut elit cillum ullamco laboris nisi anim in. Amet pariatur elit sunt ut pariatur nostrud laboris proident. Consequat amet voluptate officia laborum quis sint in proident proident enim ea. Incididunt ad aute id eu incididunt laboris voluptate mollit ullamco. Lorem laborum mollit in eiusmod mollit voluptate ea do nostrud ex. Amet ipsum fugiat culpa ea consequat nulla reprehenderit cillum enim esse aliquip non. Duis est reprehenderit ex fugiat. Et Lorem voluptate ea ex enim voluptate enim veniam. Minim velit et dolor exercitation do. Voluptate ut incididunt est in id sit duis mollit. Elit Incididuntm, ullamco, Aliqua
+
+Tekstikatkelma: Reprehenderit amet excepteur esse quis dolor Lorem minim
+
+Proident esse eu aliqua esse Elit duis labore labore mollit culpa voluptate nulla esse commodo non ex dolore nostrud cillum. Sit sunt cupidatat quis nisi non labore sunt eu veniam esse. Commodo ipsum minim anim magna sit ex pariatur amet dolore labore duis aliqua. Enim duis mollit aliquip enim. Ipsum incididunt sint irure dolore amet laboris exercitation anim exercitation. Qui duis dolor duis veniam deserunt velit aliqua minim non occaecat eu tempor id mollit. Enim amet anim ea velit magna non dolore elit. Consectetur pariatur fugiat laborum laborum velit officia aliquip occaecat reprehenderit duis ipsum consectetur amet. Quis esse laborum culpa anim adipisicing Lorem pariatur. Velit fugiat nisi sunt sunt quis quis reprehenderit aliquip do eiusmod aliqua ipsum. Mollit in nulla mollit anim eiusmod veniam laboris incididunt ullamco. Et proident eiusmod amet ipsum commodo sit. Ea elit labore culpa ea quis nulla nulla commodo pariatur. In culpa ut quis Lorem dolor ea pariatur aliquip non ad quis cupidatat eiusmod est. Incididunt minim eiusmod reprehenderit consectetur nulla esse dolore esse amet occaecat minim nisi elit aute. Sunt incididunt do aute laborum consequat adipisicing occaecat veniam. Ad veniam officia consequat magna. Dolor laboris deserunt ut laborum dolore est. Ad Nostrud quis in laborisElit irure sunt excepteur nostrud.
+
+Valitse tekstikatkelmista kaksi eutanasiaa puolustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet.
+
+Valitse tekstikatkelmista kaksi eutanasiaa vastustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet.
+
+Esitä oma perusteltu kantasi eutanasian laillistamisesta.
+
+Tieteelliset mallit
+
+Tieteessä rakennetaan malleja todellisuuden selittämiseksi.
+
+Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur
+
+Youtube-videopalvelu
+
+YTL
+
+YTL
+
+Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
+
+Youtube-videopalvelu
+
+YTL
+
+YTL
+
+Valitse videokatkelmista yksi kuvaus tieteellisestä toiminnasta ja erittele sitä tieteenfilosofian näkökulmasta.
+
+Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi aineesta. Selitä sen rakenne ja vähintään yksi sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofisesti.
+`;
+
+exports[`Exam mastering masters FF.xml exam correctly: translation 2`] = `
+Koe on kaksiosainen. Osassa I on kuusi 20 pisteen tehtävää ja osassa II kolme 30 pisteen tehtävää. Saat vastata enintään viiteen tehtävään. Näistä tehtävistä enintään kaksi saa olla osasta II. Kokeen maksimipistemäärä on 120. Sen saavuttaminen edellyttää, että vastaat kolmeen osan I tehtävään ja kahteen osan II tehtävään. Vastauksiin ei ole mahdollista liittää kuvakaappauksia. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+
+20 p. tehtävät
+
+Kauneus on Katsojan silmässä
+
+Sanotaan, että kauneus on katsojan silmässä. Kuvaile lyhyesti, millaista käsitystä kauneudesta sanonta edustaa. Nimeä käsitys.
+
+Sanotaan, että kauneus on katsojan silmässä. Nimeä ja kuvaile lyhyesti päinvastainen käsitys kauneudesta.
+
+Valitse kaksi esimerkkiä kauniista asioista ja perustele lyhyesti, miksi ne ovat kauniita.
+
+Pohdi, mitä kauneus on. Käytä apunasi kohdassa 1.3. antamiasi esimerkkejä.
+
+Moraali ja tavat
+
+Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä. Valitse jokin pienempi tai suurempi yhteisö – esimerkiksi jokin koulu, katsomuksellinen ryhmä tai valtio – ja pohdi, mikä ero valitsemassasi yhteisössä on moraalin ja tapojen välillä.
+
+Ykseys ja muutos
+
+Ykseyteen ja muutokseen liittyy monia filosofisia pulmia, joita on pohdittu antiikista asti. Videokatkelmassa käsitellään Aliquipin ja Veniamin ajatuksia.
+
+Videokatkelma: Sunt cupidatat exercitation magna deserunt quis
+
+Youtube-videopalvelu
+
+YTL
+
+YTL
+
+Selitä, miksi muutos on Proidentin mukaan mahdotonta. Hyödynnä vastauksessasi videokatkelmaa .
+
+Videokatkelmassa esitellään kaksi Veniamin paradoksia. Erittele toinen niistä ja kuvaile sen suhde Proidentin filosofiaan.
+
+Lihan syöminen
+
+Aasiassa on perinteisesti syöty koiria, mitä Euroopassa pidetään sopimattomana. Arvioi filosofisesti lihan syönnin oikeutusta ja sen rajaamista eri eläinlajeihin. Käytä vastauksessasi apuna uutiskatkelmaa ja vastamainosta
+
+Uutiskatkelma: Consectetur cupidatat et non occaecat voluptate laboris
+
+Consectetur cupidatat et non occaecat voluptate laboris Nostrud laborum aute reprehenderit eiusmod ex do aute. Elit elit laborum tempor reprehenderit excepteur excepteur commodo nostrud. Dolore est occaecat ex est culpa minim quis incididunt excepteur eiusmod officia occaecat qui cupidatat. Duis sunt ad minim dolore amet veniam anim sunt amet non. Est mollit consequat sint reprehenderit deserunt laborum est voluptate nulla magna. Incididunt in in deserunt aliqua dolore aute id aliqua. Nostrud aliqua non ad ea excepteur eu nostrud laborum deserunt in mollit amet dolore officia. Sunt cillum fugiat veniam occaecat esse fugiat occaecat. Cupidatat officia sint minim officia officia dolore sit magna duis reprehenderit id. Cillum esse ullamco laborum occaecat qui eu tempor velit duis proident. Minim exercitation ad aute pariatur fugiat nulla.
+
+Aliqua magna deserunt eu laboris nulla aliqua
+
+Valta opettajainhuoneessa
+
+Qui tempor on suomalainen sketsisarja, ja Dolore Mollit (1926–1984) on ranskalainen vallan teoreetikko.
+
+Videokatkelma: Qui tempor: Opettajat 1
+
+Qui tempor: Opettajat 1
+
+Tekstikatkelma: Dolore Mollit, Qui reprehenderit enim cillum adipisicing officia
+
+Magna nulla in aliqua tempor proident qui pariatur eu laboris ex. Eiusmod minim dolor aliqua cupidatat cupidatat. Ex pariatur est sunt anim ut adipisicing. Ullamco nulla eu nisi tempor officia aliquip nulla culpa amet amet sit aute occaecat mollit. Labore labore ut qui elit cillum excepteur nulla adipisicing laboris quis. Tempor qui labore enim ea nulla dolor.
+
+Qui reprehenderit enim cillum adipisicing officia
+
+Cillum Adipisicing
+
+1980
+
+Perehdy videokatkelmaan ja tekstikatkelmaan . Erittele vallankäyttöä videokatkelmassa ja arvioi sen oikeudenmukaisuutta.
+
+Tiedon kriteerit
+
+Henri ajelee maaseudulla poikansa kanssa ja kertoo hänelle, mitä sattuu kulloinkin näkemään. Henri näkee pellolla ladon ja kertoo pojalleen: ”Tuolla on lato”. Henrillä on erinomainen näkökyky, ja hänellä on lausettaan vastaava oikeutettu tosi uskomus. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
+
+Henri ajaa vähän eteenpäin ja saapuu peltoalueelle, jolla on oikeiden latojen joukossa pahvisia latokulisseja, jotka erehdyttäisivät ketä tahansa. Henri näkee kuitenkin oikean ladon ja sanoo taas pojalleen: ”Tuollakin on lato”. Jos hän olisi sattunut kohdistamaan katseensa pelkkään kulissiin, hän olisi uskonut senkin olevan lato. Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
+
+Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen siitä, että kyseessä on lato. Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan.
+
+30 p. tehtävät
+
+Filosofiakäsitys Adipisicingin Loremissa
+
+Adipiscingin Lorem Exercitation irure dolor et est ut Lorem reprehenderit dolore aliquip enim do ullamco mollit. Qui non cupidatat qui cupidatat. Aliquip proident aliqua consectetur quis ex proident incididunt sunt. Laborum sit duis sit incididunt dolore dolore ullamco est sit. Ullamco id fugiat nulla elit nulla Lorem quis pariatur minim cupidatat non laboris. tekstikatkelmassa incididunt eiusmod commodo exercitation eiusmod culpa consequat irure nulla.
+
+Tekstikatkelma: Adipiscing, Lorem
+
+Minim velit mollit consectetur culpa reprehenderit aliquip esse quis non ullamco fugiat amet. Eiusmod cillum mollit adipisicing duis. Eu ut ad magna labore laboris laborum exercitation aliquip cillum. Ex cupidatat laboris est mollit aliqua laborum deserunt sit amet deserunt est occaecat veniam ullamco. Non labore velit deserunt aute cupidatat esse aliquip est elit commodo. (Cillum ullamco commodo quis est aliquip officia fugiat veniam irure laboris occaecat elit proident ut) Elit cupidatat non cupidatat nulla non consequat nostrud nulla. Ullamco amet sint id dolore mollit »Labore nulla adipisicing sint laboris deserunt». ­­– – Veniam consectetur aliquip officia nisi sunt laborum enim. Excepteur incididunt exercitation commodo excepteur dolor do tempor. Ipsum aliqua culpa adipisicing ipsum eiusmod dolore fugiat. Id do consectetur pariatur reprehenderit ex pariatur magna consequat aliqua quis. Mollit sint magna aliquip in. Dolore ullamco quis anim proident. Elit in quis culpa Lorem minim sint do commodo ex aute dolore consectetur enim. Anim ex sunt consectetur non adipisicing sint labore sint proident labore consequat. Qui irure aliquip aliqua proident. In labore aliquip aute voluptate officia magna irure. Ipsum enim ipsum in fugiat quis consequat minim nulla aute.
+
+Veniam Ipsum
+
+1970
+
+Kuvaile omin sanoin tekstikatkelmassa esitettyä käsitystä filosofiasta ja arvioi käsityksen hyviä ja huonoja puolia.
+
+Esitä jokin toinen käsitys filosofiasta ja vertaa sitä Loremissa esitettyyn.
+
+Eutanasia
+
+Kreikankielinen sana ”eu” merkitsee hyvää ja ”thanatos” kuolemaa. Kirjaimellisesti eutanasia on siis suomeksi ”hyvä kuolema”, mutta eutanasian vastustajat eivät hyväksy nimitystä. Viisi eri puolueista olevaa poliitikkoa käynnisti 7.11.2016 kansalaisaloitteen eutanasian laillistamisesta. Aloite keräsi 1.1.2017 mennessä 63 078 kannatusilmoitusta ja lähetettiin eduskuntaan 14.2.2017. Se herätti vilkasta kansalaiskeskustelua. Tekstikatkelmat ovat tästä keskustelusta valittuja mielipidekirjoituksia Minim Excepteurista.
+
+Tekstikatkelma: Magna nostrud ipsum commodo ex velit magna labore aliquip voluptate do irure.
+
+Eiusmod ad aliqua excepteur ipsum eu duis aute enim. Aliquip cillum ad magna commodo dolor labore qui Lorem aliquip sit irure minim nisi amet. ­­– –Quis reprehenderit ullamco fugiat consequat excepteur occaecat duis dolore cillum. Ex fugiat occaecat culpa labore laborum ipsum consequat sit minim nostrud qui. Exercitation laboris fugiat voluptate commodo occaecat qui est ex ea irure adipisicing et. Officia dolor id consequat ullamco non officia velit ex laboris consequat culpa. Nostrud reprehenderit anim duis occaecat sint reprehenderit occaecat consectetur aliqua aute. Officia est tempor commodo mollit cupidatat voluptate in adipisicing ea reprehenderit incididunt consequat cillum amet. Quis consequat sunt velit elit ut. Voluptate aliquip nostrud quis commodo occaecat commodo veniam ad ipsum. Aliqua commodo nisi aute adipisicing Lorem eiusmod officia id deserunt reprehenderit enim anim proident. Id Lorem laboris sit officia proident exercitation ut esse exercitation occaecat dolore est proident mollit. Pariatur excepteur cillum reprehenderit est duis adipisicing dolore. Sit incididunt ea in exercitation esse ullamco cupidatat laborum ut. Magna deserunt duis incididunt sit sint ut dolor nostrud deserunt deserunt commodo eu esse. Et qui ad est esse exercitation sit sint. Adipisicing et nulla nulla sint commodo qui. Ipsum dolore enim veniam mollit. Ad Lorem reprehenderit velit id magna Lorem fugiat non laborum sint officia adipisicing duis. Laborum enim pariatur eiusmod minim incididunt exercitation dolore aute sit. Tempor id cupidatat ut voluptate ullamco ullamco non ex. Consectetur occaecat nisi consequat aliqua aliquip sunt dolor occaecat irure laborum nisi eu fugiat.– – Reprehenderit ut labore do laborum dolore nisi non. Cillum consequat aliquip cupidatat non ut ipsum. Ex ex cillum ullamco eiusmod cillum tempor enim ipsum aute excepteur nostrud dolor reprehenderit proident. Deserunt aliquip anim deserunt labore enim ex ullamco velit. Consectetur Lorem nulla ad enim laboris quis duis quis duis. Laborum laboris sunt sunt sit aliquip sit commodo minim occaecat ullamco. Deserunt nulla dolore est qui duis. Incididunt ad eiusmod pariatur commodo non est anim ullamco ullamco. In occaecat culpa ea aliquip sunt laboris sit cillum duis irure ut aute. Anim anim cupidatat t empor eiusmod. Mollit aute pariatur est amet nisi deserunt tempor officia enim. Nostrud exercitation voluptate est minim reprehenderit commodo qui ea quis qui. Quis pariatur Lorem do cillum do commodo do sit ullamco cillum irure adipisicing reprehenderit. Sit ipsum reprehenderit duis duis occaecat cupidatat est nostrud adipisicing dolor aute consectetur do sint. Cillum adipisicing ad aliqua sint exercitation deserunt. Consequat anim mollit dolor laborum pariatur cupidatat eiusmod enim non ea excepteur. Sit labore dolor voluptate eu ullamco. Cupidatat exercitation do incididunt laborum sit irure deserunt ut amet. Velit dolor esse incididunt officia in non fugiat cupidatat dolor id. Anim dolore excepteur voluptate aliqua Lorem dolore nostrud. Ea eiusmod officia fugiat amet adipisicing sit ullamco nostrud est aute. Voluptate ut aute irure Lorem aliquip nostrud et dolor commodo proident nulla ut nulla ad. Lorem in anim ex commodo sint dolore cupidatat dolore. Ea aliquip incididunt ex voluptate esse commodo deserunt. Et irure sit nulla amet id velit pariatur officia nulla non exercitation et est reprehenderit. Occaecat Esse deserunt minim id sit eiusmod laborum laboris nisiNulla Velit Exercitation ad aute laborum fugiat ipsum.Non
+
+Tekstikatkelma: Nulla non ea et eiusmod sunt esse proident exercitation eiusmod laborum amet ullamco ad.
+
+Velit tempor ea laboris eu id aute excepteur. In pariatur excepteur reprehenderit consectetur Lorem dolore. Fugiat cillum in id do exercitation. In nulla cupidatat nisi magna ea proident sit. Ea ut exercitation esse adipisicing Lorem dolor consectetur. Esse tempor do irure duis enim nostrud ut irure irure ullamco quis consequat eiusmod. Elit labore enim cupidatat consectetur aliquip. Exercitation id velit nostrud id dolor nostrud qui id. Sint dolore dolor occaecat exercitation. Ullamco nulla aliqua esse veniam aliqua duis cillum est ex laboris amet in. Sint elit consequat officia magna laboris nisi cupidatat ipsum cillum elit voluptate. Consectetur exercitation qui ex veniam deserunt irure ullamco occaecat sit Lorem ea anim Lorem. Aliqua ipsum voluptate ad nulla reprehenderit. Ipsum nulla occaecat deserunt irure duis fugiat consequat consectetur tempor voluptate et excepteur fugiat. Ipsum aliqua nostrud culpa anim enim elit dolore minim culpa deserunt excepteur dolore voluptate. Adipisicing ex cillum do incididunt anim proident culpa exercitation dolore minim ipsum. Est sit sit ad officia nisi. Deserunt cupidatat minim cillum nulla irure duis aliqua occaecat ullamco cillum in dolor. Aute id ex consectetur est veniam ipsum id pariatur aliqua minim. Eiusmod enim ipsum laborum nostrud fugiat nulla reprehenderit id reprehenderit ut aliqua. Reprehenderit culpa in nostrud dolore aute velit sit magna duis magna sint consectetur sit sint. Dolore cillum ipsum sint amet Lorem. Exercitation veniam magna deserunt est proident anim aliqua consequat nulla irure irure Lorem cupidatat. Quis officia duis ut sint Lorem. Mollit occaecat pariatur duis eu et id in nulla dolore. Aliquip in anim mollit esse reprehenderit duis magna dolore eu excepteur nisi. Ea qui velit officia fugiat labore sit voluptate deserunt ea esse qui consequat ad. In adipisicing irure sunt pariatur pariatur dolore officia irure consequat ut et commodo. Esse nostrud ad excepteur reprehenderit ipsum ut aute cillum ipsum. Qui qui sint sunt sit. Veniam consequat in ipsum eiusmod. Reprehenderit qui aliquip veniam aliquip quis irure culpa ut eu irure est aliquip cupidatat in. Id mollit ut tempor esse. Qui
+
+Tekstikatkelma: Minim tempor elit sit ea id irure ullamco commodo proident ex
+
+Mea dolor ad deserunt ad ipsum ipsum sit tempor ea Duis velit irure labore quis veniam velit mollit. Consequat et eiusmod mollit aliquip laborum quis officia. Voluptate et irure ullamco minim eiusmod sunt nisi ea quis officia consectetur. Minim aute do Lorem magna id dolore cupidatat ullamco. Nulla ea in excepteur ex consequat veniam aliquip aute ex aliquip cupidatat. Aliquip consequat amet anim est pariatur quis consequat nostrud aliqua consequat aute. Sunt culpa pariatur exercitation tempor fugiat ipsum dolore laborum cillum cupidatat ut. Dolor mollit esse ad nisi nulla laboris commodo culpa. Dolore sit excepteur sit velit ex. Sunt esse dolor tempor cupidatat consequat do. Sunt excepteur mollit aliqua ad Lorem excepteur officia excepteur culpa. Ea pariatur cupidatat dolor voluptate eiusmod qui magna exercitation. Qui consequat cupidatat culpa in pariatur veniam duis est. Tempor cupidatat ea amet exercitation. Ex eiusmod ut exercitation adipisicing consectetur eu minim. Tempor ut laboris ullamco anim. Eu cillum eu est dolore aute adipisicing nostrud id. Veniam velit elit sint officia reprehenderit fugiat ad ad quis culpa aute mollit dolor. Excepteur aliquip do commodo pariatur enim. Pariatur adipisicing elit Lorem ut. Adipisicing nisi non culpa ea dolore ex aliqua officia proident aliquip. Consectetur est non incididunt ipsum ex in aliqua velit sit nulla Lorem proident. Sit sit commodo laboris amet aute. Ullamco id mollit sint incididunt veniam velit. Anim ex magna deserunt in. Reprehenderit nulla voluptate in qui culpa sint non qui magna. Aliqua duis aliqua officia aliquip labore mollit excepteur nostrud non enim. Anim veniam sit commodo cupidatat enim culpa. Ut laborum sint cillum ea magna excepteur aliquip adipisicing dolore. Irure et ipsum occaecat esse minim consectetur officia et quis voluptate aute duis proident consequat. Exercitation officia adipisicing officia velit. Ipsum pariatur veniam est velit sit. Labore velit cupidatat aliqua consectetur duis nisi ipsum tempor. Occaecat pariatur cillum in ea adipisicing laboris cupidatat officia culpa adipisicing minim deserunt et consequat. Reprehenderit minim voluptate deserunt minim occaecat tempor sint in consequat. Incididunt veniam Lorem adipisicing sit nostrud culpa. Proident ullamco irure eu sint quis voluptate qui amet aliquip amet est. Ad velit veniam aliquip id. Nostrud fugiat non voluptate esse aliqua adipisicing qui proident et sunt eiusmod do ea irure. Aliquip
+
+Tekstikatkelma: Pariatur occaecat est non aliquip cupidatat ad officia tempor
+
+Dolore reprehenderit ipsum minim exercitation duis officia Laborum cupidatat pariatur irure dolor nisi labore eiusmod anim. Aliquip dolor mollit tempor laboris consectetur veniam enim nostrud commodo ullamco enim consectetur. Consectetur amet excepteur dolor reprehenderit laborum. Aute ex commodo nulla ut Lorem amet officia velit. Voluptate non sit occaecat pariatur irure in amet deserunt dolore tempor pariatur. Do anim voluptate eiusmod nostrud et do ipsum ipsum excepteur sit consectetur anim. Et mollit nostrud aliquip nisi adipisicing aliqua aute irure consequat sint amet occaecat. Velit culpa commodo amet amet incididunt est. Veniam labore nulla consectetur sit occaecat cillum qui excepteur dolore magna commodo aliquip. Qui magna eu sint dolor mollit. Lorem sint incididunt culpa laborum aliqua aute enim Lorem. Nulla enim esse nostrud excepteur tempor irure elit aliqua qui incididunt dolor voluptate eiusmod. Elit Eu magna duis fugiat
+
+Tekstikatkelma: In tempor est et aute pariatur qui ullamco dolor duis
+
+Lorem nulla consectetur in occaecat sit Incididunt incididunt sint non officia laboris laborum eu laboris amet aliqua esse. Excepteur sit proident do adipisicing ex. Proident exercitation consequat et ipsum incididunt sint excepteur non. Duis aliqua duis id fugiat duis exercitation deserunt nulla dolor. Ad incididunt ea minim eiusmod cupidatat exercitation ex tempor quis pariatur non. Culpa ipsum ullamco ex duis laborum mollit non sunt. Dolore sit nostrud sit in ex enim cupidatat ea duis. Ut laboris ea eiusmod duis nostrud velit elit ad duis tempor et reprehenderit. Qui magna commodo ex deserunt. Cupidatat aliquip quis commodo commodo dolor esse sunt esse commodo consectetur veniam eiusmod id. Quis ad velit cupidatat duis quis tempor qui. Occaecat Lorem est excepteur id ut deserunt enim adipisicing occaecat deserunt laborum id. Exercitation exercitation est adipisicing cupidatat ea ex reprehenderit labore in ullamco id tempor proident officia. Do eiusmod sint nulla pariatur anim aute fugiat aute eu incididunt nisi fugiat. Occaecat in deserunt sint sunt officia occaecat pariatur laborum sint sint sint. Occaecat reprehenderit duis duis non dolore eiusmod sunt. Ad consectetur ad aliqua ut nulla adipisicing dolor aliquip reprehenderit in elit est non est. Adipisicing sit elit tempor aliquip deserunt qui. Voluptate officia sunt aute cupidatat sunt aliquip velit eiusmod laborum deserunt fugiat cillum commodo elit. Consequat veniam sint nulla dolore cillum id laborum elit dolore ad pariatur commodo. Sit ut elit cillum ullamco laboris nisi anim in. Amet pariatur elit sunt ut pariatur nostrud laboris proident. Consequat amet voluptate officia laborum quis sint in proident proident enim ea. Incididunt ad aute id eu incididunt laboris voluptate mollit ullamco. Lorem laborum mollit in eiusmod mollit voluptate ea do nostrud ex. Amet ipsum fugiat culpa ea consequat nulla reprehenderit cillum enim esse aliquip non. Duis est reprehenderit ex fugiat. Et Lorem voluptate ea ex enim voluptate enim veniam. Minim velit et dolor exercitation do. Voluptate ut incididunt est in id sit duis mollit. Elit Incididuntm, ullamco, Aliqua
+
+Tekstikatkelma: Reprehenderit amet excepteur esse quis dolor Lorem minim
+
+Proident esse eu aliqua esse Elit duis labore labore mollit culpa voluptate nulla esse commodo non ex dolore nostrud cillum. Sit sunt cupidatat quis nisi non labore sunt eu veniam esse. Commodo ipsum minim anim magna sit ex pariatur amet dolore labore duis aliqua. Enim duis mollit aliquip enim. Ipsum incididunt sint irure dolore amet laboris exercitation anim exercitation. Qui duis dolor duis veniam deserunt velit aliqua minim non occaecat eu tempor id mollit. Enim amet anim ea velit magna non dolore elit. Consectetur pariatur fugiat laborum laborum velit officia aliquip occaecat reprehenderit duis ipsum consectetur amet. Quis esse laborum culpa anim adipisicing Lorem pariatur. Velit fugiat nisi sunt sunt quis quis reprehenderit aliquip do eiusmod aliqua ipsum. Mollit in nulla mollit anim eiusmod veniam laboris incididunt ullamco. Et proident eiusmod amet ipsum commodo sit. Ea elit labore culpa ea quis nulla nulla commodo pariatur. In culpa ut quis Lorem dolor ea pariatur aliquip non ad quis cupidatat eiusmod est. Incididunt minim eiusmod reprehenderit consectetur nulla esse dolore esse amet occaecat minim nisi elit aute. Sunt incididunt do aute laborum consequat adipisicing occaecat veniam. Ad veniam officia consequat magna. Dolor laboris deserunt ut laborum dolore est. Ad Nostrud quis in laborisElit irure sunt excepteur nostrud.
+
+Valitse tekstikatkelmista kaksi eutanasiaa puolustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet.
+
+Valitse tekstikatkelmista kaksi eutanasiaa vastustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana. Erittele argumentit sekä niiden ansiot ja puutteet.
+
+Esitä oma perusteltu kantasi eutanasian laillistamisesta.
+
+Tieteelliset mallit
+
+Tieteessä rakennetaan malleja todellisuuden selittämiseksi.
+
+Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur
+
+Youtube-videopalvelu
+
+YTL
+
+YTL
+
+Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
+
+Youtube-videopalvelu
+
+YTL
+
+YTL
+
+Valitse videokatkelmista yksi kuvaus tieteellisestä toiminnasta ja erittele sitä tieteenfilosofian näkökulmasta.
+
+Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi aineesta. Selitä sen rakenne ja vähintään yksi sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofisesti.
 `;
 
 exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
@@ -4081,6 +4385,10 @@ MEX format documentation
 
 #### 26. Text columns (0 p.)
 `;
+
+exports[`Exam mastering masters MexDocumentation.xml exam correctly: translation 1`] = `Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.`;
+
+exports[`Exam mastering masters MexDocumentation.xml exam correctly: translation 2`] = `Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.`;
 
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -11376,6 +11684,454 @@ SV – Matematik, kort lärokurs
 #### 13. Finlands befolkningsstruktur (12 p.)
 `;
 
+exports[`Exam mastering masters N.xml exam correctly: translation 1`] = `
+Koe koostuu 13 tehtävästä, joista vastataan kymmeneen. Tehtävät on jaettu kolmeen osaan. A-osassa on neljä kaikille pakollista tehtävää. B1-osassa on viisi tehtävää, joista vastataan kolmeen. B2-osassa on neljä tehtävää, joista vastataan kolmeen. Kaikki tehtävät arvostellaan pistein 0–12, joten kokeen maksimipistemäärä on 120. A-osassa saat käyttää taulukkokirjaa ja koejärjestelmän tarjoamia perusohjelmia. A-osa palautetaan tehtävän 4 jäljessä olevalla painikkeella. Tämän jälkeen A-osan vastauksia ei voi enää muokata. A-osan palauttamisen jälkeen kaikki koejärjestelmän ohjelmat ovat käytettävissäsi. Lisäksi saat käyttöön oman laskimesi. Voit vastata B-osien tehtäviin myös ennen A-osan palauttamista. Useimmissa tehtävissä kaikkien osatehtävien vastaukset kirjoitetaan samaan vastauskenttään. Jaottele vastauksesi osatehtävien mukaisesti. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+
+A-osa
+
+Pakolliset tehtävät.
+
+Lukujonot
+
+Alla on annettu eräiden lukujonojen yleisten termien lausekkeet. Valitse kunkin jonon alasvetovalikosta, onko jono aritmeettinen, geometrinen, kumpaakin vai ei kumpaakaan tyyppiä.
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Kuusi kolmiota
+
+Alla on esitetty kuusi kolmiota, joista on annettu joitakin tietoja. Tarkoituksena on ratkaista sivu x tai kulma \\theta. Valitse kunkin kolmion osalta tilanteeseen parhaiten soveltuva kaava ja kirjoita vastauskenttään sivun x pituus tai kulman \\theta suuruus asteen tarkkuudella. Älä perustele tämän tehtävän vastauksia. Tässä tehtävässä ei voi käyttää kaavaeditoria. Kunkin vastauksen maksimipituus on 10 merkkiä.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään sivun x pituus.
+
+Kohdan 2.1. kolmiossa pätee sivun pituudelle x = yksikköä.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus.
+
+Kohdan 2.3. kolmiossa pätee kulman suuruudelle \\theta = °.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella.
+
+Kohdan 2.5. kolmiossa pätee kulman suuruudelle \\theta \\approx °.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus.
+
+Kohdan 2.8. kolmiossa pätee kulman suuruudelle \\theta = °.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään sivun x pituus.
+
+Kohdan 2.9. kolmiossa pätee sivun pituudelle x = yksikköä.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella.
+
+Kohdan 2.11. kolmiossa pätee kulman suuruudelle \\theta \\approx °.
+
+Paraabeli ja suora
+
+Kuva: Leikkauspisteet
+
+YTL
+
+Kuvassa on paraabeli y=4x^2 ja eräs suora. Määritä graafisesti suoran yhtälö. Määritä laskemalla leikkauspiste P suoran ja paraabelin yhtälöiden avulla.
+
+Numerotemppu
+
+Riikka on kehittänyt seuraavan numerotempun ja testaa sitä serkullaan Almalla. Alma on syntynyt 1.2.2000. Riikka esittää Almalle seuraavat askeleet: Valitse luku väliltä 1–9. Kerro valitsemasi luku luvulla 2. Lisää saamaasi lukuun 5. Kerro nyt saamasi luku luvulla 50. Jos olet jo viettänyt syntymäpäivääsi tänä vuonna, lisää lukuusi luku 1769. Jos et ole vielä viettänyt syntymäpäivääsi tänä vuonna, lisää lukuusi luku 1768. Vähennä nyt tuloksesta syntymävuotesi. Kerro, minkä tuloksen olet saanut. Kun Alma vastaa 319, niin Riikka tietää kertoa, että Alma on 19-vuotias ja että hän valitsi alussa luvun 3. Selitä matemaattisesti, miksi Riikan numerotemppu toimi Almalle, ja miksei se toimi Alman isoisoäidille, joka on yli 100-vuotias.
+
+B1-osa
+
+Ratkaise kolme tehtävistä 5–9. Tässä osassa saat käyttää kaikkia koejärjestelmän ohjelmia ja omaa laskintasi, kun olet palauttanut A-osan vastaukset.
+
+Akun varaus
+
+Akun varausta kuvaa malli a \\cdot q^{t}, kun t on aika tunneissa, a=100 C ja q=0{,}877 Mikä on akun varauksen puoliintumisaika?
+
+Algoritmista ajattelua
+
+Alakoulun oppilaat harjoittelevat algoritmista ajattelua ja ohjelmointia. Oppilaiden tehtävänä on ohjelmoida toisiaan toimimaan täsmälleen tarkasti annettujen ohjeiden mukaan. Eräs oppilas antaa luokkatoverilleen seuraavat ohjeet: Aloita pisteestä A. Kulje täsmälleen 2 metriä suoraan eteenpäin. Käänny 90 astetta oikealle. Kulje täsmälleen 4 metriä eteenpäin. Käänny 90 astetta oikealle. Kulje täsmälleen 7 metriä eteenpäin ja olet perillä pisteessä B.
+
+Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua.
+
+Laske pisteiden A ja B välinen etäisyys.
+
+Osakekaupat
+
+Tiedosto: Pörssikurssit
+
+Jokainen alla oleva tiedosto sisältää samat tiedot. Tallenna tiedosto, käynnistä valitsemasi ohjelmisto ja avaa tallentamasi tiedosto ohjelmiston valikosta.
+
+LibreOffice Calc GeoGebra Logger Pro Casio ClassPad Manager TI Nspire
+
+YTL
+
+Aineistossa 7.A on Helsingin pörssin kolmen eri osakkeen osakekurssit, joiden mukaisin hinnoin Roope osti ja myi osakkeita. Hän ostaa 1.2.2018 kello 14.00 osaketta B yhteensä 1 000 eurolla. Hän vaihtaa 2.2.2018 kello 10.00 kaiken osakkeeseen C, ja samana päivänä kello 18.00 hän vaihtaa edelleen kaiken osakkeeseen A. Hän myy kaiken 3.2.2018 kello 16.00. Jokaisesta osto- ja myyntitoimeksiannosta Roope maksaa 4,00 euroa välityspalkkiota. Vaihdon yhteydessä tapahtuu sekä myynti- että ostotoimeksianto. Kuinka paljon Roopella on rahaa osakkeet myytyään?
+
+Kuvaajan tangentti
+
+Tarkastellaan polynomia p(x)=x^3+5x ja sen kuvaajan tangenttia pisteessä (1, 6). Määritä derivaatan avulla tämän tangentin yhtälö.
+
+Vektorit / 12-sivuinen noppa
+
+Jos valitset tämän tehtävän, ratkaise joko 9.1. TAI 9.2. (Voit valita kumman tahansa tehtävän riippumatta siitä, minkä opetussuunnitelman mukaisesti olet opiskellut.)
+
+Vektorit
+
+(Vanha opetussuunnitelma, ennen 1.8.2016 lukion aloittaneet)
+
+Kuva: Suunnikas
+
+YTL
+
+Kuvassa on suunnikas. Esitä vektorit \\overline{AE} ja \\overline{BD} vektorien \\overline{a} = \\overline{AB} ja \\overline{b} = \\overline{AD} avulla lausuttuina, kun piste E on janan CD keskipiste.
+
+12-sivuinen noppa
+
+(Uusi opetussuunnitelma, 1.8.2016 tai sen jälkeen lukion aloittaneet)
+
+Heitetään kahta 12-sivuista noppaa, joiden silmäluvut ovat 1, 2, ..., 12. Laske tulosten summan odotusarvo ja keskihajonta esimerkiksi taulukkolaskentaohjelman avulla.
+
+B2-osa
+
+Ratkaise kolme tehtävistä 10–13. Tässä osassa saat käyttää kaikkia koejärjestelmän ohjelmia ja omaa laskintasi, kun olet palauttanut A-osan vastaukset.
+
+Perheen keski-ikä
+
+Matti ja Maija menevät naimisiin, kun he ovat 23- ja 21-vuotiaita. Heille syntyy ensimmäinen lapsi tasan 2 vuotta häiden jälkeen. Esikoisen jälkeen perheeseen syntyy vielä kolme lasta tasan 4 vuoden välein. Milloin perheen keski-ikä on pienimmillään? Mikä on perheen keski-ikä silloin?
+
+Neliöjuuren likiarvo
+
+Opiskelijoiden tehtävänä on määrittää lävistäjän pituus sellaiselle suorakulmiolle, jonka sivujen pituudet ovat 1 ja 2. Käytössä on kuitenkin vain laskin, jolla voi laskea yhteen-, vähennys-, kerto- ja jakolaskuja, mutta ei neliöjuuria. Opiskelijat tietävät, että luvun 5 neliöjuurelle voi määrittää likiarvoja seuraavan jonon avulla: x_1 = 3, x_{n+1} = \\frac{1}{2}\\left(x_n + \\frac{5}{x_n}\\right), n\\ge 1. Ilpo yrittää päästä helpolla ja tarjoaa luvulle \\sqrt 5 arviota x_2. Simo puolestaan päättää käyttää arviota x_4. Vertaa arvioita x_2 ja x_4 laskimen antamaan luvun \\sqrt 5 likiarvoon. Kuinka monta prosenttia liian suuria Ilpon ja Simon arviot ovat?
+
+Suureiden suhteet
+
+Marmeladilevy
+
+Tasapaksusta marmeladilevystä leikataan herkkupaloja isolla ja pienellä ympyränmuotoisella muotilla. Ison muotin halkaisija on kaksi kertaa niin suuri kuin pienen. Namuska on tottunut syömään kolme isoa marmeladipalaa. Kuinka monta pientä palaa hänen pitäisi syödä saadakseen yhtä paljon marmeladia?
+
+Lassi Lounastaja
+
+Lassi Lounastaja on tottunut syömään lounaallaan kaksi isoa perunaa. Eräänä päivänä tarjolla on pieniä perunoita, joiden halkaisija on vain 60 prosenttia ison perunan halkaisijasta. Kaikki perunat ovat yhdenmuotoisia. Kuinka monta pikkuperunaa Lassin pitäisi syödä saadakseen saman verran perunaa?
+
+Musiikkikappale
+
+Erään musiikkikappaleen esittämiseen kuluu 40-henkiseltä kuorolta 7 minuuttia ja 40 sekuntia. Eräässä esityksessä kolme kuoron jäsentä on flunssan takia poissa. Kuinka kauan tämän kappaleen esittämiseen kuluu 37-henkiseltä kuorolta?
+
+Suomen väestön rakenne
+
+Taulukko: Suomen väestön rakenne
+
+Avaa aineisto LibreOffice Calc -ohjelmaan napsauttamalla alla olevaa linkkiä. LibreOffice Calc
+
+Tilastokeskus
+
+Aineistossa on esitetty Suomen väestön rakenne. Laske 15–64-vuotiaiden asukkaiden lukumäärät vuosina 1900, 1950, 1990, 2000, 2010 ja 2016. Sovita laskemaasi aineistoon lineaarinen malli f(x) ja toisen asteen polynomi g(x) Ennusta molempien mallien avulla Suomen 15–64-vuotiaiden lukumäärät vuosina 2035 ja 2350 ja pohdi ennusteiden mielekkyyttä.
+`;
+
+exports[`Exam mastering masters N.xml exam correctly: translation 2`] = `
+Koe koostuu 13 tehtävästä, joista vastataan kymmeneen. Tehtävät on jaettu kolmeen osaan. A-osassa on neljä kaikille pakollista tehtävää. B1-osassa on viisi tehtävää, joista vastataan kolmeen. B2-osassa on neljä tehtävää, joista vastataan kolmeen. Kaikki tehtävät arvostellaan pistein 0–12, joten kokeen maksimipistemäärä on 120. A-osassa saat käyttää taulukkokirjaa ja koejärjestelmän tarjoamia perusohjelmia. A-osa palautetaan tehtävän 4 jäljessä olevalla painikkeella. Tämän jälkeen A-osan vastauksia ei voi enää muokata. A-osan palauttamisen jälkeen kaikki koejärjestelmän ohjelmat ovat käytettävissäsi. Lisäksi saat käyttöön oman laskimesi. Voit vastata B-osien tehtäviin myös ennen A-osan palauttamista. Useimmissa tehtävissä kaikkien osatehtävien vastaukset kirjoitetaan samaan vastauskenttään. Jaottele vastauksesi osatehtävien mukaisesti. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+
+A-osa
+
+Pakolliset tehtävät.
+
+Lukujonot
+
+Alla on annettu eräiden lukujonojen yleisten termien lausekkeet. Valitse kunkin jonon alasvetovalikosta, onko jono aritmeettinen, geometrinen, kumpaakin vai ei kumpaakaan tyyppiä.
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Mitä tyyppiä lukujono on?
+
+aritmeettinen
+
+geometrinen
+
+kumpaakin
+
+ei kumpaakaan
+
+Kuusi kolmiota
+
+Alla on esitetty kuusi kolmiota, joista on annettu joitakin tietoja. Tarkoituksena on ratkaista sivu x tai kulma \\theta. Valitse kunkin kolmion osalta tilanteeseen parhaiten soveltuva kaava ja kirjoita vastauskenttään sivun x pituus tai kulman \\theta suuruus asteen tarkkuudella. Älä perustele tämän tehtävän vastauksia. Tässä tehtävässä ei voi käyttää kaavaeditoria. Kunkin vastauksen maksimipituus on 10 merkkiä.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään sivun x pituus.
+
+Kohdan 2.1. kolmiossa pätee sivun pituudelle x = yksikköä.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus.
+
+Kohdan 2.3. kolmiossa pätee kulman suuruudelle \\theta = °.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella.
+
+Kohdan 2.5. kolmiossa pätee kulman suuruudelle \\theta \\approx °.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus.
+
+Kohdan 2.8. kolmiossa pätee kulman suuruudelle \\theta = °.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään sivun x pituus.
+
+Kohdan 2.9. kolmiossa pätee sivun pituudelle x = yksikköä.
+
+Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.
+
+YTL
+
+Kirjoita vastauskenttään kulman \\theta suuruus asteen tarkkuudella.
+
+Kohdan 2.11. kolmiossa pätee kulman suuruudelle \\theta \\approx °.
+
+Paraabeli ja suora
+
+Kuva: Leikkauspisteet
+
+YTL
+
+Kuvassa on paraabeli y=4x^2 ja eräs suora. Määritä graafisesti suoran yhtälö. Määritä laskemalla leikkauspiste P suoran ja paraabelin yhtälöiden avulla.
+
+Numerotemppu
+
+Riikka on kehittänyt seuraavan numerotempun ja testaa sitä serkullaan Almalla. Alma on syntynyt 1.2.2000. Riikka esittää Almalle seuraavat askeleet: Valitse luku väliltä 1–9. Kerro valitsemasi luku luvulla 2. Lisää saamaasi lukuun 5. Kerro nyt saamasi luku luvulla 50. Jos olet jo viettänyt syntymäpäivääsi tänä vuonna, lisää lukuusi luku 1769. Jos et ole vielä viettänyt syntymäpäivääsi tänä vuonna, lisää lukuusi luku 1768. Vähennä nyt tuloksesta syntymävuotesi. Kerro, minkä tuloksen olet saanut. Kun Alma vastaa 319, niin Riikka tietää kertoa, että Alma on 19-vuotias ja että hän valitsi alussa luvun 3. Selitä matemaattisesti, miksi Riikan numerotemppu toimi Almalle, ja miksei se toimi Alman isoisoäidille, joka on yli 100-vuotias.
+
+B1-osa
+
+Ratkaise kolme tehtävistä 5–9. Tässä osassa saat käyttää kaikkia koejärjestelmän ohjelmia ja omaa laskintasi, kun olet palauttanut A-osan vastaukset.
+
+Akun varaus
+
+Akun varausta kuvaa malli a \\cdot q^{t}, kun t on aika tunneissa, a=100 C ja q=0{,}877 Mikä on akun varauksen puoliintumisaika?
+
+Algoritmista ajattelua
+
+Alakoulun oppilaat harjoittelevat algoritmista ajattelua ja ohjelmointia. Oppilaiden tehtävänä on ohjelmoida toisiaan toimimaan täsmälleen tarkasti annettujen ohjeiden mukaan. Eräs oppilas antaa luokkatoverilleen seuraavat ohjeet: Aloita pisteestä A. Kulje täsmälleen 2 metriä suoraan eteenpäin. Käänny 90 astetta oikealle. Kulje täsmälleen 4 metriä eteenpäin. Käänny 90 astetta oikealle. Kulje täsmälleen 7 metriä eteenpäin ja olet perillä pisteessä B.
+
+Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua.
+
+Laske pisteiden A ja B välinen etäisyys.
+
+Osakekaupat
+
+Tiedosto: Pörssikurssit
+
+Jokainen alla oleva tiedosto sisältää samat tiedot. Tallenna tiedosto, käynnistä valitsemasi ohjelmisto ja avaa tallentamasi tiedosto ohjelmiston valikosta.
+
+LibreOffice Calc GeoGebra Logger Pro Casio ClassPad Manager TI Nspire
+
+YTL
+
+Aineistossa 7.A on Helsingin pörssin kolmen eri osakkeen osakekurssit, joiden mukaisin hinnoin Roope osti ja myi osakkeita. Hän ostaa 1.2.2018 kello 14.00 osaketta B yhteensä 1 000 eurolla. Hän vaihtaa 2.2.2018 kello 10.00 kaiken osakkeeseen C, ja samana päivänä kello 18.00 hän vaihtaa edelleen kaiken osakkeeseen A. Hän myy kaiken 3.2.2018 kello 16.00. Jokaisesta osto- ja myyntitoimeksiannosta Roope maksaa 4,00 euroa välityspalkkiota. Vaihdon yhteydessä tapahtuu sekä myynti- että ostotoimeksianto. Kuinka paljon Roopella on rahaa osakkeet myytyään?
+
+Kuvaajan tangentti
+
+Tarkastellaan polynomia p(x)=x^3+5x ja sen kuvaajan tangenttia pisteessä (1, 6). Määritä derivaatan avulla tämän tangentin yhtälö.
+
+Vektorit / 12-sivuinen noppa
+
+Jos valitset tämän tehtävän, ratkaise joko 9.1. TAI 9.2. (Voit valita kumman tahansa tehtävän riippumatta siitä, minkä opetussuunnitelman mukaisesti olet opiskellut.)
+
+Vektorit
+
+(Vanha opetussuunnitelma, ennen 1.8.2016 lukion aloittaneet)
+
+Kuva: Suunnikas
+
+YTL
+
+Kuvassa on suunnikas. Esitä vektorit \\overline{AE} ja \\overline{BD} vektorien \\overline{a} = \\overline{AB} ja \\overline{b} = \\overline{AD} avulla lausuttuina, kun piste E on janan CD keskipiste.
+
+12-sivuinen noppa
+
+(Uusi opetussuunnitelma, 1.8.2016 tai sen jälkeen lukion aloittaneet)
+
+Heitetään kahta 12-sivuista noppaa, joiden silmäluvut ovat 1, 2, ..., 12. Laske tulosten summan odotusarvo ja keskihajonta esimerkiksi taulukkolaskentaohjelman avulla.
+
+B2-osa
+
+Ratkaise kolme tehtävistä 10–13. Tässä osassa saat käyttää kaikkia koejärjestelmän ohjelmia ja omaa laskintasi, kun olet palauttanut A-osan vastaukset.
+
+Perheen keski-ikä
+
+Matti ja Maija menevät naimisiin, kun he ovat 23- ja 21-vuotiaita. Heille syntyy ensimmäinen lapsi tasan 2 vuotta häiden jälkeen. Esikoisen jälkeen perheeseen syntyy vielä kolme lasta tasan 4 vuoden välein. Milloin perheen keski-ikä on pienimmillään? Mikä on perheen keski-ikä silloin?
+
+Neliöjuuren likiarvo
+
+Opiskelijoiden tehtävänä on määrittää lävistäjän pituus sellaiselle suorakulmiolle, jonka sivujen pituudet ovat 1 ja 2. Käytössä on kuitenkin vain laskin, jolla voi laskea yhteen-, vähennys-, kerto- ja jakolaskuja, mutta ei neliöjuuria. Opiskelijat tietävät, että luvun 5 neliöjuurelle voi määrittää likiarvoja seuraavan jonon avulla: x_1 = 3, x_{n+1} = \\frac{1}{2}\\left(x_n + \\frac{5}{x_n}\\right), n\\ge 1. Ilpo yrittää päästä helpolla ja tarjoaa luvulle \\sqrt 5 arviota x_2. Simo puolestaan päättää käyttää arviota x_4. Vertaa arvioita x_2 ja x_4 laskimen antamaan luvun \\sqrt 5 likiarvoon. Kuinka monta prosenttia liian suuria Ilpon ja Simon arviot ovat?
+
+Suureiden suhteet
+
+Marmeladilevy
+
+Tasapaksusta marmeladilevystä leikataan herkkupaloja isolla ja pienellä ympyränmuotoisella muotilla. Ison muotin halkaisija on kaksi kertaa niin suuri kuin pienen. Namuska on tottunut syömään kolme isoa marmeladipalaa. Kuinka monta pientä palaa hänen pitäisi syödä saadakseen yhtä paljon marmeladia?
+
+Lassi Lounastaja
+
+Lassi Lounastaja on tottunut syömään lounaallaan kaksi isoa perunaa. Eräänä päivänä tarjolla on pieniä perunoita, joiden halkaisija on vain 60 prosenttia ison perunan halkaisijasta. Kaikki perunat ovat yhdenmuotoisia. Kuinka monta pikkuperunaa Lassin pitäisi syödä saadakseen saman verran perunaa?
+
+Musiikkikappale
+
+Erään musiikkikappaleen esittämiseen kuluu 40-henkiseltä kuorolta 7 minuuttia ja 40 sekuntia. Eräässä esityksessä kolme kuoron jäsentä on flunssan takia poissa. Kuinka kauan tämän kappaleen esittämiseen kuluu 37-henkiseltä kuorolta?
+
+Suomen väestön rakenne
+
+Taulukko: Suomen väestön rakenne
+
+Avaa aineisto LibreOffice Calc -ohjelmaan napsauttamalla alla olevaa linkkiä. LibreOffice Calc
+
+Tilastokeskus
+
+Aineistossa on esitetty Suomen väestön rakenne. Laske 15–64-vuotiaiden asukkaiden lukumäärät vuosina 1900, 1950, 1990, 2000, 2010 ja 2016. Sovita laskemaasi aineistoon lineaarinen malli f(x) ja toisen asteen polynomi g(x) Ennusta molempien mallien avulla Suomen 15–64-vuotiaiden lukumäärät vuosina 2035 ja 2350 ja pohdi ennusteiden mielekkyyttä.
+`;
+
 exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>FI – Matematiikka, lyhyt oppimäärä</e:exam-title>
@@ -17850,6 +18606,230 @@ SV – Tyska, kort lärokurs
 
 
 21.2. Lange Schreibaufgabe (66 p.) (textsvar)
+`;
+
+exports[`Exam mastering masters SC.xml exam correctly: translation 1`] = `
+Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen tuottaminen. Voit tehdä tehtävät haluamassasi järjestyksessä. Noudata tehtäväkohtaisia vastaamisohjeita. Voit muuttaa antamiasi vastauksia koska tahansa kokeen aikana. Varaa aikaa kuullunymmärtämistehtävien tekemiseen yhteensä noin 1 tunti. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi. Onnea kokeeseen!
+
+YTL
+
+Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Mitä Paula kertoo eväistään, ja mitä muuta hän ottaa mukaan? Kirjoita vastauksesi lyhyesti suomeksi.
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti suomeksi.
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+Seuraavat tekstit kuvaavat samaa tapahtumaa kahdesta eri näkökulmasta. Niissä on kuitenkin joitakin eroja. Mitä sanomalehtiartikkelin yksityiskohtia lehden lukija muistaa oikein (Richtig), ja mitä väärin (Falsch)?
+
+YTL
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä siitä isän mielestä seuraa?
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella.
+
+Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä, , sekä siitä, miten ja miten retki suunnitellaan.
+
+Lue alla olevat kolme pikaviestiä ja valitse kuhunkin aukkoon parhaiten sopiva ilmaisu.
+
+YTL
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös järjestää? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? (2 asiaa) Kirjoita vastauksesi lyhyesti suomeksi.
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin perusteella lyhyesti suomeksi.
+
+Kirjoita kohdat kokonaan uudelleen siten, että lisäät kuhunkin lauseeseen sulkeissa annetun modaaliapuverbin.
+
+YTL
+
+Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä ja yhdestä vastauksesta. Esitä kysymykset saksaksi (1. ja 3.). Vastaa niihin saksaksi valokuvien avulla (2. ja 4.). Kohdissa 2. ja 4. vastauksen on oltava 5–15 sanan mittainen.
+
+Voitko auttaa minua?
+
+Millainen sää tänään on?
+
+YTL
+
+Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 160–240 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
+
+Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
+
+Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
+
+Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
+
+Ystäväsi haluaa tietää, miten kesälomasi sujui. Kirjoita hänelle lomakuviesi avulla, mitä matkalla tapahtui.
+
+Eräs isä on lähettänyt tekstin keskustelupalstalle . Hän pyytää mielipiteitä siitä, kumpi on oikeassa – hän vai poika. Vastaa palstalla isälle. Perustele näkemyksesi.
+`;
+
+exports[`Exam mastering masters SC.xml exam correctly: translation 2`] = `
+Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen tuottaminen. Voit tehdä tehtävät haluamassasi järjestyksessä. Noudata tehtäväkohtaisia vastaamisohjeita. Voit muuttaa antamiasi vastauksia koska tahansa kokeen aikana. Varaa aikaa kuullunymmärtämistehtävien tekemiseen yhteensä noin 1 tunti. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi. Onnea kokeeseen!
+
+YTL
+
+Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Mitä Paula kertoo eväistään, ja mitä muuta hän ottaa mukaan? Kirjoita vastauksesi lyhyesti suomeksi.
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti suomeksi.
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+Seuraavat tekstit kuvaavat samaa tapahtumaa kahdesta eri näkökulmasta. Niissä on kuitenkin joitakin eroja. Mitä sanomalehtiartikkelin yksityiskohtia lehden lukija muistaa oikein (Richtig), ja mitä väärin (Falsch)?
+
+YTL
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä siitä isän mielestä seuraa?
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella.
+
+Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä, , sekä siitä, miten ja miten retki suunnitellaan.
+
+Lue alla olevat kolme pikaviestiä ja valitse kuhunkin aukkoon parhaiten sopiva ilmaisu.
+
+YTL
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös järjestää? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? (2 asiaa) Kirjoita vastauksesi lyhyesti suomeksi.
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin perusteella lyhyesti suomeksi.
+
+Kirjoita kohdat kokonaan uudelleen siten, että lisäät kuhunkin lauseeseen sulkeissa annetun modaaliapuverbin.
+
+YTL
+
+Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä ja yhdestä vastauksesta. Esitä kysymykset saksaksi (1. ja 3.). Vastaa niihin saksaksi valokuvien avulla (2. ja 4.). Kohdissa 2. ja 4. vastauksen on oltava 5–15 sanan mittainen.
+
+Voitko auttaa minua?
+
+Millainen sää tänään on?
+
+YTL
+
+Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 160–240 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
+
+Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
+
+Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
+
+Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
+
+Ystäväsi haluaa tietää, miten kesälomasi sujui. Kirjoita hänelle lomakuviesi avulla, mitä matkalla tapahtui.
+
+Eräs isä on lähettänyt tekstin keskustelupalstalle . Hän pyytää mielipiteitä siitä, kumpi on oikeassa – hän vai poika. Vastaa palstalla isälle. Perustele näkemyksesi.
 `;
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
