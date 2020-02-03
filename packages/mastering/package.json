@@ -24,7 +24,7 @@
     "libxmljs2": "^0.23.0",
     "lru-cache": "^5.1.1",
     "mathjax-node": "^2.1.1",
-    "ramda": "^0.26.1",
+    "ramda": "^0.27.0",
     "roman-numerals": "^0.3.2",
     "yazl": "^2.5.1"
   }
