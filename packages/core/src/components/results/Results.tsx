@@ -49,6 +49,7 @@ const renderChildNodes = createRenderChildNodes({
   question: ResultsExamQuestion,
   'question-title': ResultsExamQuestionTitle,
   hints: Hints,
+  'scored-text-answers': Hints,
   section: ResultsExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,
