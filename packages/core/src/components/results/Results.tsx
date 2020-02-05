@@ -1,7 +1,6 @@
 import { GradingStructure } from '@digabi/exam-engine-mastering'
-import { i18n } from 'i18next'
-import React, { PureComponent, useContext } from 'react'
-import { I18nextProvider, Translation } from 'react-i18next'
+import React, { useContext, useEffect } from 'react'
+import { I18nextProvider, useTranslation } from 'react-i18next'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { initI18n } from '../../i18n'
@@ -51,72 +50,55 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answer': ResultsTextAnswer
 })
 
-export class Results extends PureComponent<ResultsProps> {
-  private readonly ref: React.RefObject<HTMLDivElement>
-  private readonly i18n: i18n
+function Results({}: ResultsProps) {
+  const { language, root } = useContext(CommonExamContext)
 
-  constructor(props: ResultsProps) {
-    super(props)
-    this.ref = React.createRef()
-    const root = props.doc.documentElement
-    this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-  }
+  const examTitle = findChildElement(root, 'exam-title')
+  const examStylesheet = root.getAttribute('exam-stylesheet')
 
-  componentDidMount() {
-    scrollToHash()
-  }
+  const i18n = initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
+  useEffect(scrollToHash, [])
 
-  render() {
-    const { doc, language } = this.props
-    const root = doc.documentElement
-    const examTitle = findChildElement(root, 'exam-title')
-    const examStylesheet = root.getAttribute('exam-stylesheet')
-
-    if (this.i18n.language !== language) {
-      this.i18n.changeLanguage(language)
-    }
-
-    return (
-      <I18nextProvider i18n={this.i18n}>
-        <CommonExamContext.Consumer>
-          {({ date, dateTimeFormatter, resolveAttachment }) => (
-            <main className="e-exam" lang={language} ref={this.ref}>
-              <React.StrictMode />
-              {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-              <Section aria-labelledby="title">
-                {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-                {date && (
-                  <p>
-                    <strong>{dateTimeFormatter.format(date)}</strong>
-                  </p>
-                )}
-                <ScoresAndFinalGrade />
-              </Section>
-              {renderChildNodes(root)}
-            </main>
-          )}
-        </CommonExamContext.Consumer>
-      </I18nextProvider>
-    )
-  }
+  return (
+    <I18nextProvider i18n={i18n}>
+      <CommonExamContext.Consumer>
+        {({ date, dateTimeFormatter, resolveAttachment }) => (
+          <main className="e-exam" lang={language}>
+            <React.StrictMode />
+            {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+            <Section aria-labelledby="title">
+              {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+              {date && (
+                <p>
+                  <strong>{dateTimeFormatter.format(date)}</strong>
+                </p>
+              )}
+              <ScoresAndFinalGrade />
+            </Section>
+            {renderChildNodes(root)}
+          </main>
+        )}
+      </CommonExamContext.Consumer>
+    </I18nextProvider>
+  )
 }
 
 function ScoresAndFinalGrade() {
   const { gradingText, totalScore } = useContext(ResultsContext)
+  const { t } = useTranslation()
 
   return (
     <div>
       <span className="e-column">
-        <Translation>{t => t('exam-total')}</Translation>:
+        {t('exam-total')}
+        {':'}
       </span>
       <strong className="e-column e-column--narrow table-of-contents--score-column">
-        <Translation>{t => t('points', { count: totalScore })}</Translation>
+        {t('points', { count: totalScore })}
       </strong>
       {gradingText && (
         <div>
-          <span className="e-column">
-            <Translation>{t => t('grade')}</Translation>:
-          </span>
+          <span className="e-column">{t('grade')}</span>
           <strong className="e-column e-column--narrow table-of-contents--score-column">{gradingText}</strong>
         </div>
       )}
