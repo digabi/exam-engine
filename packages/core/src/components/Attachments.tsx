@@ -9,7 +9,7 @@ import AttachmentsQuestion from './AttachmentsQuestion'
 import AttachmentsQuestionTitle from './AttachmentsQuestionTitle'
 import DocumentTitle from './DocumentTitle'
 import { ExamProps } from './Exam'
-import { ExamAttachmentsContext, withAttachmentsContextForExam } from './ExamAttachmentsContext'
+import { ExamAttachmentsContext, withExamAttachmentsContext } from './ExamAttachmentsContext'
 import { ExamContext, withExamContext } from './ExamContext'
 import RenderChildNodes from './RenderChildNodes'
 import Section from './Section'
@@ -58,4 +58,4 @@ function Attachments({}: ExamProps) {
   )
 }
 
-export default React.memo(withExamContext(withAttachmentsContextForExam(Attachments)))
+export default React.memo(withExamContext(withExamAttachmentsContext(Attachments)))

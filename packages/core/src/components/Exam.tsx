@@ -18,7 +18,7 @@ import ChoiceAnswer from './ChoiceAnswer'
 import DocumentTitle from './DocumentTitle'
 import DropdownAnswer from './DropdownAnswer'
 import ExamAttachment from './ExamAttachment'
-import { ExamAttachmentsContext, withAttachmentsContextForExam } from './ExamAttachmentsContext'
+import { ExamAttachmentsContext, withExamAttachmentsContext } from './ExamAttachmentsContext'
 import { ExamContext, withExamContext } from './ExamContext'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
@@ -41,8 +41,6 @@ import TextAnswer from './TextAnswer'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from './types'
 import Video from './Video'
 
-export type ExamProps = CommonExamProps & ExamExecutionProps
-
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
   /** Initial answers */
@@ -58,7 +56,7 @@ export interface CommonExamProps {
 }
 
 /** Props related to taking the exam, 'executing' it */
-interface ExamExecutionProps {
+export interface ExamProps extends CommonExamProps {
   /** The status of CAS software on the OS */
   casStatus: InitialCasStatus
   /** The CAS countdown duration in seconds. 60 seconds by default. */
@@ -171,4 +169,4 @@ export class Exam extends PureComponent<ExamProps> {
   }
 }
 
-export default React.memo(withExamContext(withAttachmentsContextForExam(Exam)))
+export default React.memo(withExamContext(withExamAttachmentsContext(Exam)))

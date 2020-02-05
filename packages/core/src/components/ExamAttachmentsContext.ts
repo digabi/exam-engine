@@ -1,6 +1,5 @@
 import React from 'react'
-import { ExamProps } from './Exam'
-import { ResultsProps } from './results/Results'
+import { CommonExamProps } from './Exam'
 import { withContext } from './withContext'
 
 export interface ExamAttachmentsContext {
@@ -10,22 +9,11 @@ export interface ExamAttachmentsContext {
 
 export const ExamAttachmentsContext = React.createContext<ExamAttachmentsContext>({} as ExamAttachmentsContext)
 
-export const withAttachmentsContextForResults = withContext<ExamAttachmentsContext, ResultsProps>(
-  ExamAttachmentsContext,
-  ({ attachmentsURL, resolveAttachment }) => {
+export function withExamAttachmentsContext<P extends CommonExamProps>(Component: React.ComponentType<P>) {
+  return withContext<ExamAttachmentsContext, P>(ExamAttachmentsContext, ({ attachmentsURL, resolveAttachment }) => {
     return {
       attachmentsURL,
       resolveAttachment
     }
-  }
-)
-
-export const withAttachmentsContextForExam = withContext<ExamAttachmentsContext, ExamProps>(
-  ExamAttachmentsContext,
-  ({ attachmentsURL, resolveAttachment }) => {
-    return {
-      attachmentsURL,
-      resolveAttachment
-    }
-  }
-)
+  })(Component)
+}

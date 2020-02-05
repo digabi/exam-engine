@@ -12,7 +12,7 @@ import { initializeResultsStore, ResultsState } from '../../store'
 import DocumentTitle from '../DocumentTitle'
 import { CommonExamProps } from '../Exam'
 import ExamAttachment from '../ExamAttachment'
-import { ExamAttachmentsContext, withAttachmentsContextForResults } from '../ExamAttachmentsContext'
+import { ExamAttachmentsContext, withExamAttachmentsContext } from '../ExamAttachmentsContext'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
 import Hints from '../Hints'
@@ -28,9 +28,7 @@ import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsTextAnswer from './ResultsTextAnswer'
 
-export type ResultsProps = CommonExamProps & Props
-
-interface Props {
+export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
   gradingStructure: GradingStructure
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
@@ -137,4 +135,4 @@ function ScoresAndFinalGrade() {
   )
 }
 
-export default React.memo(withResultsContext(withAttachmentsContextForResults(Results)))
+export default React.memo(withResultsContext(withExamAttachmentsContext(Results)))
