@@ -18,18 +18,16 @@ export const ResultsContext = React.createContext<ResultsContext>({} as ResultsC
 export const withResultsContext = withContext<ResultsContext, ResultsProps>(
   ResultsContext,
   ({ scores, doc, gradingStructure, gradingText, answers }) => {
-    const nonNullScores = scores || []
-
     const topLevelQuestions = queryAll(doc.documentElement, 'question', false)
     const totalScore = _.sum(
       topLevelQuestions.map(question =>
-        calculateQuestionSumScore(question, gradingStructure, nonNullScores, _.keyBy(answers, 'questionId'))
+        calculateQuestionSumScore(question, gradingStructure, scores, _.keyBy(answers, 'questionId'))
       )
     )
 
     return {
       gradingStructure,
-      scores: nonNullScores,
+      scores,
       totalScore,
       gradingText
     }

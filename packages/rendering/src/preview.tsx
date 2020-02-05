@@ -132,7 +132,8 @@ window.onload = async () => {
             attachmentsURL,
             resolveAttachment,
             answers,
-            gradingStructure
+            gradingStructure,
+            scores: []
           }}
         />
       </Toolbar>,
