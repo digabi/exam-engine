@@ -8,6 +8,7 @@ import { toRoman } from 'roman-numerals'
 import { initI18n } from '../i18n'
 import { createGradingStructure, GradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
+import { createTranslationFile } from './createTranslationFile'
 import renderFormula from './render-formula'
 import {
   Answer,
@@ -162,6 +163,8 @@ export interface MasteringResult {
   gradingStructure: GradingStructure
   /** Hyvän vastauksen piirteet for this exam. Only used in YO exams. */
   hvp: string
+  /** Strings in the exam to be sent to the translator. */
+  translation: string
   /** The language of this exam version. Defined in the `<e:languages>` element of the XML. */
   language: string
   /** The optional title of this exam */
@@ -205,6 +208,7 @@ async function masterExamForLanguage(
 ): Promise<MasteringResult> {
   const root = doc.root()!
   const generateId = mkGenerateId()
+  const translation = createTranslationFile(doc)
 
   await addExamUuid(root, generateUuid, language)
   applyLocalizations(root, language)
@@ -247,6 +251,7 @@ async function masterExamForLanguage(
     examUuid: getAttribute('exam-uuid', root),
     gradingStructure,
     hvp,
+    translation,
     language,
     title:
       root

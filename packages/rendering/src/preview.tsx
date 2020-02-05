@@ -9,14 +9,29 @@ import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 // tslint:disable-next-line: no-var-requires
 const { original, results }: { original: string; results: MasteringResult[] } = require(process.env.EXAM_FILENAME!)
 
-function Toolbar({ hvp, languages, children }: { languages: string[]; hvp: string; children: React.ReactNode }) {
+function Toolbar({
+  hvp,
+  hvpFilename,
+  translation,
+  translationFilename,
+  languages,
+  children
+}: {
+  languages: string[]
+  hvp: string
+  hvpFilename: string
+  translation: string
+  translationFilename: string
+  children: React.ReactNode
+}) {
   return (
     <>
       <ol className="toolbar">
         {languages.map(language => (
           <ChangeLanguage language={language} key={language} />
         ))}
-        <CopyHvp hvp={hvp} />
+        <SaveHvp {...{ hvp, hvpFilename }} />
+        <SaveTranslation {...{ translation, translationFilename }} />
         <ResultsNavigation />
       </ol>
       {children}
@@ -36,10 +51,37 @@ function ChangeLanguage({ language }: { language: string }) {
   )
 }
 
-function CopyHvp({ hvp }: { hvp: string }) {
+function SaveHvp({ hvp, hvpFilename }: { hvp: string; hvpFilename: string }) {
   return (
     <li className="toolbar__item">
-      <button onClick={() => navigator.clipboard.writeText(hvp)}>Kopioi HVP</button>
+      <button
+        onClick={() => {
+          const blob = new Blob([hvp], { type: 'text/markdown' })
+          const link = document.createElement('a')
+          link.href = URL.createObjectURL(blob)
+          link.download = hvpFilename
+          link.click()
+        }}
+      >
+        Tallenna HVP
+      </button>
+    </li>
+  )
+}
+function SaveTranslation({ translation, translationFilename }: { translation: string; translationFilename: string }) {
+  return (
+    <li className="toolbar__item">
+      <button
+        onClick={() => {
+          const blob = new Blob([translation], { type: 'text/plain' })
+          const link = document.createElement('a')
+          link.href = URL.createObjectURL(blob)
+          link.download = translationFilename
+          link.click()
+        }}
+      >
+        Tallenna käännettävät tekstit
+      </button>
     </li>
   )
 }
@@ -68,20 +110,21 @@ window.onload = async () => {
   const languageCookie = Cookie.get('language')
   const language = languages.find(lang => lang === languageCookie) || languages[0]
 
-  const { xml, hvp, gradingStructure } = results.find(r => r.language === language)!
+  const { xml, hvp, translation, examCode, dayCode, gradingStructure } = results.find(r => r.language === language)!
+  const hvpFilename = examCode ? `${examCode}${dayCode ? '_' + dayCode : ''}_${language}.md` : 'hvp.md'
+  const translationFilename = examCode ? `${examCode}_kaannokset.txt` : 'kaannokset.txt'
   const doc = parseExam(xml, false)
   const attachmentsURL = '/attachments/'
   const resolveAttachment = (filename: string) => attachmentsURL + encodeURIComponent(filename)
   const examUuid = doc.documentElement.getAttribute('exam-uuid')!
   const examServerApi = indexedDBExamServerAPI(examUuid, resolveAttachment)
-
   const answers = await examServerApi.getAnswers()
 
   document.body.style.backgroundColor = backgroundColor()
 
   if (inResultsPage()) {
     ReactDOM.render(
-      <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
+      <Toolbar {...{ languages, selectedLanguage: language, hvp, hvpFilename, translation, translationFilename }}>
         <Results
           {...{
             doc,
@@ -106,7 +149,7 @@ window.onload = async () => {
     document.body.style.backgroundColor = Root === Exam ? '#e0f4fe' : '#f0f0f0'
 
     ReactDOM.render(
-      <Toolbar {...{ languages, selectedLanguage: language, hvp }}>
+      <Toolbar {...{ languages, selectedLanguage: language, hvp, hvpFilename, translation, translationFilename }}>
         <Root
           {...{
             casCountdownDuration,
