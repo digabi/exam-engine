@@ -68,9 +68,6 @@ window.onload = async () => {
   const languageCookie = Cookie.get('language')
   const language = languages.find(lang => lang === languageCookie) || languages[0]
 
-  if (!language) {
-    return
-  }
   const { xml, hvp, gradingStructure } = results.find(r => r.language === language)!
   const doc = parseExam(xml, false)
   const attachmentsURL = '/attachments/'
