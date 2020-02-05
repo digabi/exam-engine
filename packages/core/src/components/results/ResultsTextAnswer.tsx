@@ -14,13 +14,13 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
   const value = answer && answer.value
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
 
-  const { scores } = useContext(ResultsContext)
-  const gradingMetadata = findScore(scores, questionId)
-  const comment = gradingMetadata && gradingMetadata.comment
-
   switch (type) {
     case 'rich-text':
-    case 'multi-line':
+    case 'multi-line': {
+      const { scores } = useContext(ResultsContext)
+      const gradingMetadata = findScore(scores, questionId)
+      const comment = gradingMetadata && gradingMetadata.comment
+
       return (
         <>
           <div className="answer">
@@ -53,6 +53,7 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
           )}
         </>
       )
+    }
     case 'single-line':
     default:
       return <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
