@@ -9,10 +9,10 @@ import { findChildElement } from '../../dom-utils'
 import { initI18n } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeResultsStore, ResultsState } from '../../store'
+import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
 import { CommonExamProps } from '../Exam'
 import ExamAttachment from '../ExamAttachment'
-import { ExamAttachmentsContext, withExamAttachmentsContext } from '../ExamAttachmentsContext'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
 import Hints from '../Hints'
@@ -84,28 +84,24 @@ export class Results extends PureComponent<ResultsProps> {
     return (
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
-          <ResultsContext.Consumer>
-            {({ date, dateTimeFormatter }) => (
-              <ExamAttachmentsContext.Consumer>
-                {({ resolveAttachment }) => (
-                  <main className="e-exam" lang={language} ref={this.ref}>
-                    <React.StrictMode />
-                    {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-                    <Section aria-labelledby="title">
-                      {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-                      {date && (
-                        <p>
-                          <strong>{dateTimeFormatter.format(date)}</strong>
-                        </p>
-                      )}
-                      <ScoresAndFinalGrade />
-                    </Section>
-                    {renderChildNodes(root)}
-                  </main>
-                )}
-              </ExamAttachmentsContext.Consumer>
+          <CommonExamContext.Consumer>
+            {({ date, dateTimeFormatter, resolveAttachment }) => (
+              <main className="e-exam" lang={language} ref={this.ref}>
+                <React.StrictMode />
+                {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+                <Section aria-labelledby="title">
+                  {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+                  {date && (
+                    <p>
+                      <strong>{dateTimeFormatter.format(date)}</strong>
+                    </p>
+                  )}
+                  <ScoresAndFinalGrade />
+                </Section>
+                {renderChildNodes(root)}
+              </main>
             )}
-          </ResultsContext.Consumer>
+          </CommonExamContext.Consumer>
         </I18nextProvider>
       </Provider>
     )
@@ -135,4 +131,4 @@ function ScoresAndFinalGrade() {
   )
 }
 
-export default React.memo(withResultsContext(withExamAttachmentsContext(Results)))
+export default React.memo(withResultsContext(withCommonExamContext(Results)))

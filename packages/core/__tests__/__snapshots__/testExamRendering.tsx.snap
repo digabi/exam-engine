@@ -3862,6 +3862,7 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="I-title"
     >
+      Osa I:
        
       Asia- ja mediatekstit
     </h2>
@@ -3906,6 +3907,7 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="II-title"
     >
+      Osa II:
        
       Kaunokirjalliset ja muut fiktiiviset tekstit
     </h2>
@@ -12859,6 +12861,7 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="I-title"
     >
+      Osa I:
        
       
       
@@ -12916,6 +12919,7 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="II-title"
     >
+      Osa II:
        
       
       
@@ -13010,6 +13014,7 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="I-title"
     >
+      Del I:
        
       
       
@@ -13067,6 +13072,7 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="II-title"
     >
+      Del II:
        
       
       
@@ -39256,6 +39262,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="I-title"
     >
+      Part I:
        
       Exam structure
     </h2>
@@ -39283,6 +39290,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="II-title"
     >
+      Part II:
        
       Sections
     </h2>
@@ -39330,6 +39338,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="III-title"
     >
+      Part III:
        
       Questions
     </h2>
@@ -39361,6 +39370,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="IV-title"
     >
+      Part IV:
        
       Answer types
     </h2>
@@ -39390,6 +39400,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="V-title"
     >
+      Part V:
        
       Material
     </h2>
@@ -39422,6 +39433,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="VI-title"
     >
+      Part VI:
        
       Links to material
     </h2>
@@ -39446,6 +39458,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="VII-title"
     >
+      Part VII:
        
       Formulas
     </h2>
@@ -39467,6 +39480,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="VIII-title"
     >
+      Part VIII:
        
       CSS styles
     </h2>
@@ -39563,6 +39577,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="I-title"
     >
+      Part I:
        
       Exam structure
     </h2>
@@ -39590,6 +39605,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="II-title"
     >
+      Part II:
        
       Sections
     </h2>
@@ -39637,6 +39653,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="III-title"
     >
+      Part III:
        
       Questions
     </h2>
@@ -39668,6 +39685,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="IV-title"
     >
+      Part IV:
        
       Answer types
     </h2>
@@ -39697,6 +39715,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="V-title"
     >
+      Part V:
        
       Material
     </h2>
@@ -39729,6 +39748,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="VI-title"
     >
+      Part VI:
        
       Links to material
     </h2>
@@ -39753,6 +39773,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="VII-title"
     >
+      Part VII:
        
       Formulas
     </h2>
@@ -39774,6 +39795,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="VIII-title"
     >
+      Part VIII:
        
       CSS styles
     </h2>
@@ -57537,6 +57559,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="I-title"
     >
+      
        
       
       A-osa  
@@ -57593,6 +57616,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="II-title"
     >
+      
        
       
       B1-osa
@@ -57655,6 +57679,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="III-title"
     >
+      
        
       
       B2-osa
@@ -57759,6 +57784,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="I-title"
     >
+      
        
       
         
@@ -57815,6 +57841,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="II-title"
     >
+      
        
       
       
@@ -57877,6 +57904,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="III-title"
     >
+      
        
       
       
@@ -89967,6 +89995,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="I-title"
     >
+      Teil I:
        
       Hörverständnis
     </h2>
@@ -90011,6 +90040,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="II-title"
     >
+      Teil II:
        
       Textverständnis
     </h2>
@@ -90058,6 +90088,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="III-title"
     >
+      Teil III:
        
       Struktur und Vokabular
     </h2>
@@ -90087,6 +90118,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
       className="exam-section-title"
       id="IV-title"
     >
+      Teil IV:
        
       Schriftliche Produktion
     </h2>
@@ -90161,6 +90193,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="I-title"
     >
+      Teil I:
        
       Hörverständnis
     </h2>
@@ -90205,6 +90238,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="II-title"
     >
+      Teil II:
        
       Textverständnis
     </h2>
@@ -90252,6 +90286,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="III-title"
     >
+      Teil III:
        
       Struktur und Vokabular
     </h2>
@@ -90281,6 +90316,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
       className="exam-section-title"
       id="IV-title"
     >
+      Teil IV:
        
       Schriftliche Produktion
     </h2>

@@ -2,7 +2,6 @@ import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digab
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { commonExamContext } from '../ExamContext'
 import { AnswerScore, ChoiceAnswer, ExamAnswer, QuestionId } from '../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
@@ -12,38 +11,30 @@ export interface ResultsContext {
   scores: AnswerScore[]
   gradingText: string | undefined
   totalScore: number
-  root: Element
-  date?: Date
-  dateTimeFormatter: Intl.DateTimeFormat
-  language: string
-  maxAnswers?: number
-  maxScore?: number
-  numberOfSections: number
 }
 
 export const ResultsContext = React.createContext<ResultsContext>({} as ResultsContext)
 
-export const withResultsContext = withContext<ResultsContext, ResultsProps>(ResultsContext, (props: ResultsProps) => {
-  const { scores, doc, gradingStructure, gradingText, answers } = props
+export const withResultsContext = withContext<ResultsContext, ResultsProps>(
+  ResultsContext,
+  ({ scores, doc, gradingStructure, gradingText, answers }) => {
+    const nonNullScores = scores || []
 
-  const common = commonExamContext(props)
-  const nonNullScores = scores || []
-
-  const topLevelQuestions = queryAll(doc.documentElement, 'question', false)
-  const totalScore = _.sum(
-    topLevelQuestions.map(question =>
-      calculateQuestionSumScore(question, gradingStructure, nonNullScores, _.keyBy(answers, 'questionId'))
+    const topLevelQuestions = queryAll(doc.documentElement, 'question', false)
+    const totalScore = _.sum(
+      topLevelQuestions.map(question =>
+        calculateQuestionSumScore(question, gradingStructure, nonNullScores, _.keyBy(answers, 'questionId'))
+      )
     )
-  )
 
-  return {
-    ...common,
-    gradingStructure,
-    scores: nonNullScores,
-    totalScore,
-    gradingText
+    return {
+      gradingStructure,
+      scores: nonNullScores,
+      totalScore,
+      gradingText
+    }
   }
-})
+)
 
 export function findMultiChoiceFromGradingStructure(
   gradingStructure: GradingStructure,

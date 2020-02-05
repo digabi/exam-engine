@@ -4,8 +4,7 @@ import { createRenderChildNodes, RenderOptions } from '../createRenderChildNodes
 import { findChildElement } from '../dom-utils'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
-import { ExamAttachmentsContext } from './ExamAttachmentsContext'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext, withSectionContext } from './SectionContext'
 import { ExamComponentProps } from './types'
@@ -41,7 +40,7 @@ export interface TOCSectionTitleProps {
 }
 
 function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, childQuestions }: TOCSectionTitleProps) {
-  const { numberOfSections } = useContext(ExamContext)
+  const { numberOfSections } = useContext(CommonExamContext)
   const { t } = useTranslation()
   return (
     <header>
@@ -65,7 +64,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
 }
 
 function TOCQuestion({ element }: ExamComponentProps) {
-  const { attachmentsURL } = useContext(ExamAttachmentsContext)
+  const { attachmentsURL } = useContext(CommonExamContext)
   const { level, displayNumber, maxScore } = useContext(QuestionContext)
   const hasExternalAttachments = findChildElement(element, 'external-material') != null
   const questionTitle = findChildElement(element, 'question-title')
@@ -99,7 +98,7 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 function TableOfContents({}: ExamComponentProps) {
-  const { root, maxScore } = useContext(ExamContext)
+  const { root, maxScore } = useContext(CommonExamContext)
 
   return (
     <nav className="table-of-contents e-mrg-b-6" aria-labelledby="toc-title">

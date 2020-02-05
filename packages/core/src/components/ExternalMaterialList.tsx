@@ -4,7 +4,7 @@ import { createRenderChildNodes, RenderOptions } from '../createRenderChildNodes
 import { queryAncestors } from '../dom-utils'
 import { url } from '../url'
 import { AttachmentContext, withAttachmentContext } from './AttachmentContext'
-import { ExamAttachmentsContext } from './ExamAttachmentsContext'
+import { CommonExamContext } from './CommonExamContext'
 import { ExamComponentProps } from './types'
 
 const renderChildNodes = createRenderChildNodes({
@@ -23,7 +23,7 @@ function Attachment({ element }: ExamComponentProps) {
 }
 
 function AttachmentTitle({ element }: ExamComponentProps) {
-  const { attachmentsURL } = useContext(ExamAttachmentsContext)
+  const { attachmentsURL } = useContext(CommonExamContext)
   const { displayNumber } = useContext(AttachmentContext)
 
   return (

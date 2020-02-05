@@ -7,10 +7,10 @@ import { scrollToHash } from '../scrollToHash'
 import AttachmentsExternalMaterial from './AttachmentsExternalMaterial'
 import AttachmentsQuestion from './AttachmentsQuestion'
 import AttachmentsQuestionTitle from './AttachmentsQuestionTitle'
+import { CommonExamContext, withCommonExamContext } from './CommonExamContext'
 import DocumentTitle from './DocumentTitle'
 import { ExamProps } from './Exam'
-import { ExamAttachmentsContext, withExamAttachmentsContext } from './ExamAttachmentsContext'
-import { ExamContext, withExamContext } from './ExamContext'
+import { withExamContext } from './ExamContext'
 import RenderChildNodes from './RenderChildNodes'
 import Section from './Section'
 import { withSectionContext } from './SectionContext'
@@ -23,8 +23,7 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 function Attachments({}: ExamProps) {
-  const { root, language, date, dateTimeFormatter } = useContext(ExamContext)
-  const { resolveAttachment } = useContext(ExamAttachmentsContext)
+  const { root, language, date, dateTimeFormatter, resolveAttachment } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')!
   const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -58,4 +57,4 @@ function Attachments({}: ExamProps) {
   )
 }
 
-export default React.memo(withExamContext(withExamAttachmentsContext(Attachments)))
+export default React.memo(withExamContext(withCommonExamContext(Attachments)))

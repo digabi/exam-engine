@@ -15,11 +15,11 @@ import Audio from './Audio'
 import AudioGroup from './AudioGroup'
 import AudioTest from './AudioTest'
 import ChoiceAnswer from './ChoiceAnswer'
+import { CommonExamContext, withCommonExamContext } from './CommonExamContext'
 import DocumentTitle from './DocumentTitle'
 import DropdownAnswer from './DropdownAnswer'
 import ExamAttachment from './ExamAttachment'
-import { ExamAttachmentsContext, withExamAttachmentsContext } from './ExamAttachmentsContext'
-import { ExamContext, withExamContext } from './ExamContext'
+import { withExamContext } from './ExamContext'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
 import ExamQuestion from './ExamQuestion'
@@ -136,37 +136,33 @@ export class Exam extends PureComponent<ExamProps> {
     return (
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
-          <ExamContext.Consumer>
-            {({ date, dateTimeFormatter }) => (
-              <ExamAttachmentsContext.Consumer>
-                {({ resolveAttachment }) => (
-                  <main className="e-exam" lang={language} ref={this.ref}>
-                    <React.StrictMode />
-                    {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-                    <Section aria-labelledby="title">
-                      {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-                      {date && (
-                        <p>
-                          <strong>{dateTimeFormatter.format(date)}</strong>
-                        </p>
-                      )}
-                      {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
-                      {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
-                      {externalMaterial && (
-                        <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                      )}
-                    </Section>
-                    {renderChildNodes(root)}
-                    <SaveIndicator />
-                  </main>
-                )}
-              </ExamAttachmentsContext.Consumer>
+          <CommonExamContext.Consumer>
+            {({ date, dateTimeFormatter, resolveAttachment }) => (
+              <main className="e-exam" lang={language} ref={this.ref}>
+                <React.StrictMode />
+                {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+                <Section aria-labelledby="title">
+                  {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+                  {date && (
+                    <p>
+                      <strong>{dateTimeFormatter.format(date)}</strong>
+                    </p>
+                  )}
+                  {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+                  {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
+                  {externalMaterial && (
+                    <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                  )}
+                </Section>
+                {renderChildNodes(root)}
+                <SaveIndicator />
+              </main>
             )}
-          </ExamContext.Consumer>
+          </CommonExamContext.Consumer>
         </I18nextProvider>
       </Provider>
     )
   }
 }
 
-export default React.memo(withExamContext(withExamAttachmentsContext(Exam)))
+export default React.memo(withExamContext(withCommonExamContext(Exam)))
