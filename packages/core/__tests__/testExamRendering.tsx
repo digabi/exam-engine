@@ -37,7 +37,8 @@ for (const exam of listExams()) {
         }
         const resultsProps: ResultsProps = {
           ...commonProps,
-          gradingStructure
+          gradingStructure,
+          scores: []
         }
         expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
         expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')

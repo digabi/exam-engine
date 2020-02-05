@@ -1,16 +1,15 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 import { getNumericAttribute } from '../../dom-utils'
-import { ResultsState } from '../../store/index'
 import AnswerToolbar from '../AnswerToolbar'
-import { ExamComponentProps } from '../types'
+import { ExamComponentProps, TextAnswer } from '../types'
 import { findScore, ResultsContext } from './ResultsContext'
 
 function ResultsTextAnswer({ element, className }: ExamComponentProps) {
+  const { answersByQuestionId } = useContext(ResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = useSelector((state: ResultsState) => state.answers.answersById[questionId])
+  const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
 

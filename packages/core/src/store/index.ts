@@ -16,11 +16,6 @@ const rootReducer = combineReducers({
   cas: casReducer
 })
 
-// TODO combineReducer used just to get answers-field in the same way than in rootReducer, find a nicer way
-const resultsReducer = combineReducers({
-  answers: answersReducer
-})
-
 function* rootSaga(examServerApi: ExamServerAPI) {
   yield fork(answersSaga, examServerApi)
   yield fork(audioSaga, examServerApi)
@@ -28,7 +23,6 @@ function* rootSaga(examServerApi: ExamServerAPI) {
 }
 
 export type AppState = ReturnType<typeof rootReducer>
-export type ResultsState = ReturnType<typeof resultsReducer>
 
 export function initializeExamStore(
   casStatus: InitialCasStatus,
@@ -59,18 +53,4 @@ export function initializeExamStore(
   sagaMiddleware.run(rootSaga, examServerApi)
 
   return store
-}
-
-export function initializeResultsStore(initialAnswers: ExamAnswer[]): Store<ResultsState> {
-  const initialQuestionIds = new Set(_.map(initialAnswers, 'questionId'))
-  const initialState: ResultsState = {
-    answers: {
-      answersById: _.keyBy(initialAnswers, 'questionId'),
-      focusedQuestionId: null,
-      serverQuestionIds: initialQuestionIds,
-      supportsAnswerHistory: false,
-      savedQuestionIds: initialQuestionIds
-    }
-  }
-  return createStore(resultsReducer, initialState)
 }

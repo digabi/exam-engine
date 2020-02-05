@@ -1,22 +1,20 @@
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
-import { useSelector } from 'react-redux'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
-import { AppState } from '../../store'
-import { ExamComponentProps } from '../types'
+import { ChoiceAnswer, ExamComponentProps } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 
 function ResultsDropdownAnswer({ element }: ExamComponentProps) {
+  const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = useSelector((state: AppState) => state.answers.answersById[questionId])
+  const answer = answersByQuestionId[questionId] as ChoiceAnswer | undefined
 
   const currentlySelectedItem =
     answer &&
     answer.value &&
     findChildElement(element, childElement => answer.value === childElement.getAttribute('option-id'))
 
-  const { gradingStructure } = useContext(ResultsContext)
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
   if (currentlySelectedItem) {

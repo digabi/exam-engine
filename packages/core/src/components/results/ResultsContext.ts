@@ -7,6 +7,7 @@ import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
 
 export interface ResultsContext {
+  answersByQuestionId: Record<QuestionId, ExamAnswer>
   gradingStructure: GradingStructure
   scores: AnswerScore[]
   gradingText: string | undefined
@@ -18,14 +19,16 @@ export const ResultsContext = React.createContext<ResultsContext>({} as ResultsC
 export const withResultsContext = withContext<ResultsContext, ResultsProps>(
   ResultsContext,
   ({ scores, doc, gradingStructure, gradingText, answers }) => {
+    const answersByQuestionId = _.keyBy(answers, 'questionId')
     const topLevelQuestions = queryAll(doc.documentElement, 'question', false)
     const totalScore = _.sum(
       topLevelQuestions.map(question =>
-        calculateQuestionSumScore(question, gradingStructure, scores, _.keyBy(answers, 'questionId'))
+        calculateQuestionSumScore(question, gradingStructure, scores, answersByQuestionId)
       )
     )
 
     return {
+      answersByQuestionId,
       gradingStructure,
       scores,
       totalScore,

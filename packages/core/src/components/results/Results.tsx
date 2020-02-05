@@ -2,13 +2,10 @@ import { GradingStructure } from '@digabi/exam-engine-mastering'
 import { i18n } from 'i18next'
 import React, { PureComponent, useContext } from 'react'
 import { I18nextProvider, Translation } from 'react-i18next'
-import { Provider } from 'react-redux'
-import { Store } from 'redux'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { initI18n } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
-import { initializeResultsStore, ResultsState } from '../../store'
 import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
 import { CommonExamProps } from '../Exam'
@@ -55,7 +52,6 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 export class Results extends PureComponent<ResultsProps> {
-  private readonly store: Store<ResultsState>
   private readonly ref: React.RefObject<HTMLDivElement>
   private readonly i18n: i18n
 
@@ -64,7 +60,6 @@ export class Results extends PureComponent<ResultsProps> {
     this.ref = React.createRef()
     const root = props.doc.documentElement
     this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-    this.store = initializeResultsStore(props.answers)
   }
 
   componentDidMount() {
@@ -82,28 +77,26 @@ export class Results extends PureComponent<ResultsProps> {
     }
 
     return (
-      <Provider store={this.store}>
-        <I18nextProvider i18n={this.i18n}>
-          <CommonExamContext.Consumer>
-            {({ date, dateTimeFormatter, resolveAttachment }) => (
-              <main className="e-exam" lang={language} ref={this.ref}>
-                <React.StrictMode />
-                {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-                <Section aria-labelledby="title">
-                  {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-                  {date && (
-                    <p>
-                      <strong>{dateTimeFormatter.format(date)}</strong>
-                    </p>
-                  )}
-                  <ScoresAndFinalGrade />
-                </Section>
-                {renderChildNodes(root)}
-              </main>
-            )}
-          </CommonExamContext.Consumer>
-        </I18nextProvider>
-      </Provider>
+      <I18nextProvider i18n={this.i18n}>
+        <CommonExamContext.Consumer>
+          {({ date, dateTimeFormatter, resolveAttachment }) => (
+            <main className="e-exam" lang={language} ref={this.ref}>
+              <React.StrictMode />
+              {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+              <Section aria-labelledby="title">
+                {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+                {date && (
+                  <p>
+                    <strong>{dateTimeFormatter.format(date)}</strong>
+                  </p>
+                )}
+                <ScoresAndFinalGrade />
+              </Section>
+              {renderChildNodes(root)}
+            </main>
+          )}
+        </CommonExamContext.Consumer>
+      </I18nextProvider>
     )
   }
 }
