@@ -3,6 +3,6 @@
   "packages": [
     "packages/*"
   ],
-  "version": "8.2.0",
+  "version": "8.2.1-refactor-create-mex-api.0",
   "exact": true
 }
