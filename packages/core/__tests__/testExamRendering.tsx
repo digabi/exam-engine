@@ -1,7 +1,4 @@
-import { AnswerScore, ExamAnswer, parseExam } from '@digabi/exam-engine-core'
-import Attachments from '@digabi/exam-engine-core/src/components/Attachments'
-import Exam from '@digabi/exam-engine-core/src/components/Exam'
-import Results from '@digabi/exam-engine-core/src/components/results/Results'
+import { AnswerScore, Attachments, Exam, ExamAnswer, parseExam, Results } from '@digabi/exam-engine-core'
 import { listExams } from '@digabi/exam-engine-exams'
 import {
   getMediaMetadataFromLocalFile,
