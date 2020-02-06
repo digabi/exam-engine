@@ -21,7 +21,7 @@
     "glob": "^7.1.6",
     "glob-promise": "^3.4.0",
     "i18next": "^19.0.1",
-    "libxmljs2": "^0.23.0",
+    "libxmljs2": "^0.25.0",
     "lru-cache": "^5.1.1",
     "mathjax-node": "^2.1.1",
     "ramda": "^0.27.0",
