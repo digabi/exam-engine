@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getNumericAttribute, queryAncestors } from '../dom-utils'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import ResponsiveMediaContainer from './ResponsiveMediaContainer'
 import { ExamComponentProps } from './types'
 
@@ -11,7 +11,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
   const caption = element.hasChildNodes() ? renderChildNodes(element) : undefined
-  const imgUrl = useContext(ExamContext).resolveAttachment(src)
+  const imgUrl = useContext(CommonExamContext).resolveAttachment(src)
   const Img = () => <img className="image" src={imgUrl} />
   return (
     <>

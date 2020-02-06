@@ -24,6 +24,19 @@ export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 
+export interface Annotation {
+  startIndex: number
+  length: number
+  message: string
+}
+
+export interface AnswerScore {
+  questionId: number
+  scoreValue: number
+  comment?: string
+  annotations: Annotation[]
+}
+
 /**
  * CAS status is a state machine with three states.
  *

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { ReactReduxContext, useSelector } from 'react-redux'
 import { RenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
@@ -8,7 +8,14 @@ import { AppState } from '../store'
 import { ExamComponentProps, QuestionId } from './types'
 
 function Hints({ element, renderChildNodes }: ExamComponentProps) {
-  const focusedQuestionId = useSelector((state: AppState) => state.answers.focusedQuestionId)
+  // Allow using this component both in stateful (Exam) and stateless (Results)
+  // contexts without having to duplicate code. `_currentValue` is an an
+  // internal implementation detail of React, so this might be a bit brittle,
+  // but the rendering tests should notice if React's implementation has
+  // changed.
+  const focusedQuestionId = (ReactReduxContext.Consumer as any)._currentValue
+    ? useSelector((state: AppState) => state.answers.focusedQuestionId)
+    : null
   const answersWithHints = queryAll(element, ['text-answer', 'scored-text-answer']).filter(
     answer => findChildElement(answer, 'hint') != null
   )

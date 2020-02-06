@@ -3,11 +3,11 @@ import { Translation } from 'react-i18next'
 import { mapChildElements, query } from '../dom-utils'
 import { url } from '../url'
 import AttachmentLinkAnchor from './AttachmentLinkAnchor'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import { ExamComponentProps } from './types'
 
 function AttachmentLinks({ element }: ExamComponentProps) {
-  const { root, attachmentsURL } = useContext(ExamContext)
+  const { root, attachmentsURL } = useContext(CommonExamContext)
   const displayNumbers = mapChildElements(element, attachmentLink => {
     const name = attachmentLink.getAttribute('ref')!
     const attachment = query(root, el => el.localName === 'attachment' && el.getAttribute('name') === name)!

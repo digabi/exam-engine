@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
 import { queryAll, queryAncestors } from '../dom-utils'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import Reference from './Reference'
 import Section from './Section'
 import { ExamComponentProps } from './types'
@@ -10,7 +10,7 @@ import { ExamComponentProps } from './types'
 const renderChildNodes = createRenderChildNodes({})
 
 function References(_: ExamComponentProps) {
-  const { root } = useContext(ExamContext)
+  const { root } = useContext(CommonExamContext)
   const internalReferences = queryAll(root, 'reference').filter(
     reference => queryAncestors(reference, 'external-material') == null
   )

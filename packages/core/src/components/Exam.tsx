@@ -7,17 +7,19 @@ import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement } from '../dom-utils'
 import { initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
-import initializeStore, { AppState } from '../store'
+import { AppState } from '../store'
+import { initializeExamStore } from '../store/index'
 import AttachmentLink from './AttachmentLink'
 import AttachmentLinks from './AttachmentLinks'
 import Audio from './Audio'
 import AudioGroup from './AudioGroup'
 import AudioTest from './AudioTest'
 import ChoiceAnswer from './ChoiceAnswer'
+import { CommonExamContext, withCommonExamContext } from './CommonExamContext'
 import DocumentTitle from './DocumentTitle'
 import DropdownAnswer from './DropdownAnswer'
 import ExamAttachment from './ExamAttachment'
-import { ExamContext, withExamContext } from './ExamContext'
+import { withExamContext } from './ExamContext'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
 import ExamQuestion from './ExamQuestion'
@@ -39,9 +41,22 @@ import TextAnswer from './TextAnswer'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from './types'
 import Video from './Video'
 
-export interface ExamProps {
+/** Props common to taking the exams and viewing results */
+export interface CommonExamProps {
   /** Initial answers */
   answers: ExamAnswer[]
+  /** The URL for the attachments page */
+  attachmentsURL: string
+  /** A function that maps an attachment filename to a full URI. */
+  resolveAttachment: (filename: string) => string
+  /** The exam XML */
+  doc: XMLDocument
+  /** The language of the user interface */
+  language: string
+}
+
+/** Props related to taking the exam, 'executing' it */
+export interface ExamProps extends CommonExamProps {
   /** The status of CAS software on the OS */
   casStatus: InitialCasStatus
   /** The CAS countdown duration in seconds. 60 seconds by default. */
@@ -53,14 +68,6 @@ export interface ExamProps {
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[]
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
-  /** The URL for the attachments page */
-  attachmentsURL: string
-  /** A function that maps an attachment filename to a full URI. */
-  resolveAttachment: (filename: string) => string
-  /** The exam XML */
-  doc: XMLDocument
-  /** The language of the user interface */
-  language: string
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -101,7 +108,7 @@ export class Exam extends PureComponent<ExamProps> {
     this.ref = React.createRef()
     const root = props.doc.documentElement
     this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-    this.store = initializeStore(
+    this.store = initializeExamStore(
       props.casStatus,
       props.answers,
       props.restrictedAudioPlaybackStats,
@@ -129,7 +136,7 @@ export class Exam extends PureComponent<ExamProps> {
     return (
       <Provider store={this.store}>
         <I18nextProvider i18n={this.i18n}>
-          <ExamContext.Consumer>
+          <CommonExamContext.Consumer>
             {({ date, dateTimeFormatter, resolveAttachment }) => (
               <main className="e-exam" lang={language} ref={this.ref}>
                 <React.StrictMode />
@@ -151,11 +158,11 @@ export class Exam extends PureComponent<ExamProps> {
                 <SaveIndicator />
               </main>
             )}
-          </ExamContext.Consumer>
+          </CommonExamContext.Consumer>
         </I18nextProvider>
       </Provider>
     )
   }
 }
 
-export default React.memo(withExamContext(Exam))
+export default React.memo(withExamContext(withCommonExamContext(Exam)))

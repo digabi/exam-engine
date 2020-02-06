@@ -1,5 +1,5 @@
 import _ from 'lodash-es'
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import { applyMiddleware, combineReducers, compose, createStore, Store } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../components/types'
@@ -24,12 +24,12 @@ function* rootSaga(examServerApi: ExamServerAPI) {
 
 export type AppState = ReturnType<typeof rootReducer>
 
-export default function(
+export function initializeExamStore(
   casStatus: InitialCasStatus,
   initialAnswers: ExamAnswer[],
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[],
   examServerApi: ExamServerAPI
-) {
+): Store<AppState> {
   const initialQuestionIds = new Set(_.map(initialAnswers, 'questionId'))
   const playbackTimes = _.mapValues(_.keyBy(restrictedAudioPlaybackStats, 'restrictedAudioId'), 'times')
   const initialState: AppState = {

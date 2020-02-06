@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import AnsweringInstructions from './AnsweringInstructions'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import NotificationIcon from './NotificationIcon'
 import { SectionContext } from './SectionContext'
 import { ExamComponentProps } from './types'
 
 function ExamSectionTitle({ element, renderChildNodes }: ExamComponentProps) {
-  const { numberOfSections } = useContext(ExamContext)
+  const { numberOfSections } = useContext(CommonExamContext)
   const { displayNumber, minAnswers, maxAnswers, childQuestions } = useContext(SectionContext)
   const { t } = useTranslation()
 

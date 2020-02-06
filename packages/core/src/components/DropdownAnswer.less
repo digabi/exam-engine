@@ -5,6 +5,28 @@
     max-width: 100%;
     position: relative;
 
+    &__answered {
+      padding: 0 0.25rem;
+      border: 1px solid black;
+
+      &--correct {
+        box-shadow: 0 -4px 0 -2px inset @colors[correctAnswer];
+        border-bottom: 1px solid @colors[correctAnswer];
+      }
+
+      &--wrong {
+        box-shadow: 0 -4px 0 -2px inset @colors[wrongAnswer];
+        border-bottom: 1px solid @colors[wrongAnswer];
+      }
+    }
+
+    &__correct {
+      padding: 0 0.25rem;
+      box-shadow: 0 -4px 0 -2px inset @colors[correctAnswer];
+      border-bottom: 1px solid @colors[correctAnswer];
+      font-style: italic;
+    }
+
     &__label {
       max-width: 100%;
     }

@@ -10,21 +10,21 @@ export interface GradingStructure {
 
 type GradingStructureQuestion = TextQuestion | ChoiceGroupQuestion
 
-interface TextQuestion {
+export interface TextQuestion {
   type: 'text'
   id: number
   displayNumber: string
   maxScore: number
 }
 
-interface ChoiceGroupQuestion {
+export interface ChoiceGroupQuestion {
   type: 'choicegroup'
   id: number
   displayNumber: string
   choices: ChoiceGroupChoice[]
 }
 
-interface ChoiceGroupChoice {
+export interface ChoiceGroupChoice {
   id: number
   displayNumber: string
   type: 'choice'

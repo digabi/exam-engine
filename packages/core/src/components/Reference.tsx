@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { findChildElement, NBSP } from '../dom-utils'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import RenderChildNodes from './RenderChildNodes'
 import { ExamComponentProps } from './types'
 
@@ -63,7 +63,7 @@ function AsDate({ element }: ExamComponentProps) {
     return <>{textContent}</>
   } else {
     const date = new Date(textContent)
-    const { dateTimeFormatter } = useContext(ExamContext)
+    const { dateTimeFormatter } = useContext(CommonExamContext)
     return <>{dateTimeFormatter.format(date)}</>
   }
 }

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import { AnswerError, RichTextAnswer as RichTextAnswerT } from './types'
 const richTextEditor = require('rich-text-editor/dist/rich-text-editor') // tslint:disable-line no-var-requires
 
@@ -16,8 +16,8 @@ interface Props {
 }
 
 export default class RichTextAnswer extends React.PureComponent<Props, {}> {
-  static contextType = ExamContext
-  declare context: React.ContextType<typeof ExamContext>
+  static contextType = CommonExamContext
+  declare context: React.ContextType<typeof CommonExamContext>
   private ref: React.RefObject<HTMLDivElement>
   private lastHTML: string
 

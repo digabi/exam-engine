@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import { ExamComponentProps } from './types'
 
 function File({ element, className, renderChildNodes }: ExamComponentProps) {
   const src = element.getAttribute('src')!
   const hasDescription = element.hasChildNodes()
-  const { resolveAttachment } = useContext(ExamContext)
+  const { resolveAttachment } = useContext(CommonExamContext)
 
   return (
     <a className={classNames('file e-nowrap', className)} href={resolveAttachment(src)} download>

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { getNumericAttribute } from '../dom-utils'
 import { getAudioPlaybackError, getPlaybackTimesRemaining } from '../store/selectors'
 import AudioPlaybackError from './AudioPlaybackError'
-import { ExamContext } from './ExamContext'
+import { CommonExamContext } from './CommonExamContext'
 import RestrictedAudioPlayer from './RestrictedAudioPlayer'
 import { ExamComponentProps } from './types'
 
@@ -21,7 +21,7 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
     times != null && restrictedAudioId != null
       ? useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
       : undefined
-  const { resolveAttachment } = useContext(ExamContext)
+  const { resolveAttachment } = useContext(CommonExamContext)
 
   return (
     <div className={classNames('audio e-columns e-columns--center-v e-mrg-b-2', className)}>
