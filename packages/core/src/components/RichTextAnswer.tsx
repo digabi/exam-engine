@@ -87,7 +87,7 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
     const { current } = this.ref
 
     // Don't update element unless value has changed from last known value to prevent cursor jumping
-    if (current && this.props.answer && this.lastHTML && this.props.answer.value !== this.lastHTML) {
+    if (current && this.props.answer && this.props.answer.value !== this.lastHTML) {
       current.innerHTML = this.lastHTML = this.props.answer.value
     }
   }
