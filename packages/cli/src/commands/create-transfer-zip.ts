@@ -1,6 +1,6 @@
 import { getMediaMetadataFromLocalFile, masterExam, ns, parseExam } from '@digabi/exam-engine-mastering'
-import { asElements } from '@digabi/exam-engine-mastering/dist/mastering/utils'
 import { createReadStream, createWriteStream, promises as fs } from 'fs'
+import { Element } from 'libxmljs2'
 import _ from 'lodash'
 import { Ora } from 'ora'
 import path from 'path'
@@ -26,10 +26,7 @@ export default async function({
   // Hack: Do the exam localization before mastering to work around abitti
   // not supporting multi-language exams.
   const doc = parseExam(xml)
-  const languages = doc
-    .root()!
-    .find('//e:languages/e:language/text()', ns)
-    .map(String)
+  const languages = doc.find('//e:languages/e:language/text()', ns).map(String)
   for (const language of languages) {
     const localizedXml = localize(xml, language)
     const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
@@ -60,15 +57,14 @@ export default async function({
 
 function localize(xml: string, language: string): string {
   const doc = parseExam(xml)
-  const root = doc.root()!
 
-  asElements(root.find('.//e:language', ns)).forEach(element => {
+  doc.find<Element>('.//e:language', ns).forEach(element => {
     if (element.text() !== language) {
       element.remove()
     }
   })
 
-  asElements(root.find('//e:localization', ns)).forEach(element => {
+  doc.find<Element>('//e:localization', ns).forEach(element => {
     if (element.attr('lang')?.value() === language) {
       for (const childNode of element.childNodes()) {
         element.addPrevSibling(childNode)
@@ -77,7 +73,7 @@ function localize(xml: string, language: string): string {
     element.remove()
   })
 
-  asElements(root.find(`//e:*[@lang and @lang!='${language}']`, ns)).forEach(element => element.remove())
+  doc.find<Element>(`//e:*[@lang and @lang!='${language}']`, ns).forEach(element => element.remove())
 
   return doc.toString(false)
 }

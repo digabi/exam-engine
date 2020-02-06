@@ -39,10 +39,6 @@ export function isElement(node: Node): node is Element {
   return node instanceof Element
 }
 
-export function asElements(nodes: Node[]): Element[] {
-  return nodes as Element[]
-}
-
 /**
  * Gets the value of an attribute from an XML element or returns a default
  * value. If the attribute doesn't exist and a default value isn't provided, it

@@ -22,7 +22,6 @@ import {
   Section
 } from './schema'
 import {
-  asElements,
   byAttribute,
   byLocalName as byName,
   getAttribute,
@@ -99,9 +98,7 @@ function assertExamIsValid(doc: Document): Document {
     throw doc.validationErrors.find(err => err.level! > 1)
   }
 
-  const root = doc.root()!
-
-  for (const answer of asElements(root.find(xpathOr(answerTypes), ns))) {
+  for (const answer of doc.find<Element>(xpathOr(answerTypes), ns)) {
     // Ensure that the each answer element is directly within a question,
     // ignoring a few special HTML-like exam elements.
     const htmlLikeExamElements = ['hints', 'scored-text-answers', 'localization', 'attachment', 'audio-group']
@@ -115,7 +112,7 @@ function assertExamIsValid(doc: Document): Document {
     }
 
     // Ensure that the question containing the answer doesn't have any child questions.
-    const maybeChildQuestion = maybeParentQuestion.get('.//e:question', ns)
+    const maybeChildQuestion = maybeParentQuestion.get<Element>('.//e:question', ns)
     if (maybeChildQuestion != null) {
       throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion)
     }
@@ -185,10 +182,7 @@ export async function masterExam(
   options?: MasteringOptions
 ): Promise<MasteringResult[]> {
   const doc = assertExamIsValid(parseExam(xml))
-  const languages = doc
-    .root()!
-    .find('//e:languages/e:language/text()', ns)
-    .map(String)
+  const languages = doc.find('//e:languages/e:language/text()', ns).map(String)
   const memoizedGetMediaMetadata = _.memoize(getMediaMetadata, _.join)
   const optionsWithDefaults = { ...defaultOptions, ...options }
 
@@ -214,7 +208,7 @@ async function masterExamForLanguage(
   applyLocalizations(root, language)
 
   const exam = parseExamStructure(root)
-  const attachments = asElements(root.find(xpathOr(attachmentTypes), ns))
+  const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
 
   addYoCustomizations(root, language)
   addSectionNumbers(exam)
@@ -255,7 +249,7 @@ async function masterExamForLanguage(
     language,
     title:
       root
-        .get('//e:exam-title', ns)
+        .get<Element>('//e:exam-title', ns)
         ?.text()
         .trim() ?? null,
     xml: doc.toString(false)
@@ -349,9 +343,9 @@ function updateMaxScoresToAnswers(exam: Exam) {
       case 'dropdown-answer':
       case 'scored-text-answer': {
         if (element.attr('max-score') == null) {
-          const scores = asElements(
-            element.find('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
-          ).map(option => getNumericAttribute('score', option, 0))
+          const scores = element
+            .find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
+            .map(option => getNumericAttribute('score', option, 0))
           const maxScore = _.max(scores)
           element.attr('max-score', String(maxScore))
         }
@@ -366,7 +360,7 @@ function removeCorrectAnswers(exam: Exam) {
       case 'choice-answer':
       case 'dropdown-answer':
         {
-          for (const option of asElements(element.find('//e:choice-answer-option | //e:dropdown-answer-option', ns))) {
+          for (const option of element.find<Element>('//e:choice-answer-option | //e:dropdown-answer-option', ns)) {
             option.attr('score')?.remove()
           }
         }
@@ -381,7 +375,7 @@ function removeCorrectAnswers(exam: Exam) {
 function applyLocalizations(exam: Element, language: string) {
   exam.find('.//e:languages', ns).forEach(e => e.remove())
 
-  for (const localization of asElements(exam.find('//e:localization', ns))) {
+  for (const localization of exam.find<Element>('//e:localization', ns)) {
     if (getAttribute('lang', localization) === language) {
       for (const childNode of localization.childNodes()) {
         localization.addPrevSibling(childNode)
@@ -421,7 +415,7 @@ function addAnswerNumbers(exam: Exam) {
 
 function addAttachmentNumbers(exam: Exam) {
   // Exam-specific external material
-  asElements(exam.element.find('./e:external-material/e:attachment', ns)).forEach((attachment, i) => {
+  exam.element.find<Element>('./e:external-material/e:attachment', ns).forEach((attachment, i) => {
     attachment.attr('display-number', alphabet[i])
   })
 
@@ -431,7 +425,7 @@ function addAttachmentNumbers(exam: Exam) {
     // Only number external attachments for now, since you can't refer to internal
     // attachments. This also makes the numbering less confusing for users,
     // since it will always start at "A".
-    asElements(question.element.find('./e:external-material/e:attachment', ns)).forEach((attachment, i) => {
+    question.element.find<Element>('./e:external-material/e:attachment', ns).forEach((attachment, i) => {
       const displayNumber = `${questionDisplayNumber}. ${alphabet[i]}`
       attachment.attr('display-number', String(displayNumber))
     })
@@ -511,7 +505,7 @@ function countMaxScores(exam: Exam) {
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
   for (const { element } of exam.answers) {
     if (_.includes(choiceAnswerTypes, element.name())) {
-      asElements(element.find(xpathOr(choiceAnswerOptionTypes), ns)).forEach(answerOption => {
+      element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
         answerOption.attr('option-id', String(generateId()))
       })
     }
@@ -536,7 +530,7 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
     .filter(byName(...choiceAnswerTypes))
     .filter(_.negate(byAttribute('ordering', 'fixed')))
     .forEach(answer => {
-      const options = asElements(answer.find('./e:choice-answer-option | ./e:dropdown-answer-option', ns))
+      const options = answer.find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option', ns)
       const answerKey = String(options.length) + getAttribute('question-id', answer)
       const sortedOptions = _.sortBy(options, option =>
         createHash(answerKey + options.indexOf(option) + multichoiceShuffleSecret)
@@ -548,7 +542,7 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
 }
 
 async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
-  for (const formula of asElements(exam.find('//e:formula', ns))) {
+  for (const formula of exam.find<Element>('//e:formula', ns)) {
     try {
       const { svg, mml } = await renderFormula(formula.text(), getAttribute('mode', formula, null), throwOnLatexError)
       formula.attr('svg', svg)
@@ -569,7 +563,7 @@ function mkError(message: string, element: Element): SyntaxError {
 }
 
 function parseExamStructure(element: Element): Exam {
-  const sections = asElements(element.find('//e:section', ns)).map(parseSection)
+  const sections = element.find<Element>('//e:section', ns).map(parseSection)
   const topLevelQuestions = _.flatMap(sections, s => s.questions)
   const collectAnswers = (q: Question): Answer[] =>
     q.answers.length ? q.answers : _.flatMap(q.childQuestions, collectAnswers)
@@ -580,7 +574,7 @@ function parseExamStructure(element: Element): Exam {
 }
 
 function parseSection(element: Element): Section {
-  const questions = asElements(element.find('./e:question', ns)).map(parseQuestion)
+  const questions = element.find<Element>('./e:question', ns).map(parseQuestion)
   return { element, questions }
 }
 
@@ -589,13 +583,13 @@ function parseAnswer(element: Element, question: Element) {
 }
 
 function parseQuestion(question: Element): Question {
-  const childQuestions = asElements(question.find('.//e:question[ancestor::e:question[1][self::*]]', ns)).map(
-    parseQuestion
-  )
+  const childQuestions = question
+    .find<Element>('.//e:question[ancestor::e:question[1][self::*]]', ns)
+    .map(parseQuestion)
   if (childQuestions.length) {
     return { element: question, childQuestions, answers: [] }
   } else {
-    const answers = asElements(question.find(xpathOr(answerTypes), ns)).map(element => parseAnswer(element, question))
+    const answers = question.find<Element>(xpathOr(answerTypes), ns).map(element => parseAnswer(element, question))
     return { element: question, childQuestions: [], answers }
   }
 }
