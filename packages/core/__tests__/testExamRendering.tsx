@@ -1,7 +1,17 @@
-import { Attachments, Exam, parseExam, Results } from '@digabi/exam-engine-core'
+import { AnswerScore, ExamAnswer, parseExam } from '@digabi/exam-engine-core'
+import Attachments from '@digabi/exam-engine-core/src/components/Attachments'
+import Exam from '@digabi/exam-engine-core/src/components/Exam'
+import Results from '@digabi/exam-engine-core/src/components/results/Results'
 import { listExams } from '@digabi/exam-engine-exams'
-import { getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
+import {
+  getMediaMetadataFromLocalFile,
+  GradingStructure,
+  masterExam,
+  MasteringResult,
+  TextQuestion
+} from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
+import _ from 'lodash'
 import path from 'path'
 import React from 'react'
 import { create } from 'react-test-renderer'
@@ -38,12 +48,54 @@ for (const exam of listExams()) {
         const resultsProps: ResultsProps = {
           ...commonProps,
           gradingStructure,
-          scores: []
+          answers: mkAnswers(gradingStructure),
+          scores: mkScores(gradingStructure)
         }
         expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
         expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
         expect(create(<Results {...resultsProps} />).toJSON()).toMatchSnapshot('<Results />')
       }
     })
+  })
+}
+
+function mkScores(gradingStructure: GradingStructure): AnswerScore[] {
+  return gradingStructure.questions
+    .filter((question): question is TextQuestion => question.type === 'text')
+    .map((question, i) => ({
+      questionId: question.id,
+      scoreValue: Math.min(question.maxScore, i),
+      comment: 'Lorem ipsum dolor amet',
+      annotations: []
+    }))
+}
+
+function mkAnswers(gradingStructure: GradingStructure): ExamAnswer[] {
+  const getCharacterCount = (answerText: string) => answerText.replace(/\s/g, '').length
+
+  return _.flatMap(gradingStructure.questions, question => {
+    switch (question.type) {
+      case 'text': {
+        const value = `Answer to question ${question.displayNumber}`
+        return [
+          {
+            questionId: question.id,
+            type: 'text',
+            characterCount: getCharacterCount(value),
+            value
+          }
+        ] as ExamAnswer[]
+      }
+      case 'choicegroup': {
+        return question.choices.map((choice, i) => {
+          const option = choice.options[i % choice.options.length]
+          return {
+            questionId: choice.id,
+            type: 'choice',
+            value: String(option.id)
+          }
+        }) as ExamAnswer[]
+      }
+    }
   })
 }
