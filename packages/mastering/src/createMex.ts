@@ -12,6 +12,30 @@ interface ExamFile {
   contents: NodeJS.ReadableStream
 }
 
+interface CreateMultiMexOptions {
+  /**
+   * If provided, will add load simulation configuration
+   * into the created multi-mex.
+   */
+  loadSimulationConfiguration?: NodeJS.ReadableStream
+  /**
+   * If provided, will add exam server update script
+   * into the created multi-mex.
+   */
+  ktpUpdate?: NodeJS.ReadableStream
+  /**
+   * If provided, will add exam client update script
+   * into the created multi-mex.
+   */
+  koeUpdate?: NodeJS.ReadableStream
+}
+
+const defaultCreateMultiMexOptions = {
+  loadSimulationConfiguration: undefined,
+  ktpUpdate: undefined,
+  koeUpdate: undefined
+}
+
 export interface AttachmentFile extends ExamFile {
   /** Whether this attachment is restricted or not. */
   restricted: boolean
@@ -85,10 +109,9 @@ export async function createMultiMex(
   passphrase: string,
   answersPrivateKey: string,
   outputStream: NodeJS.WritableStream,
-  loadSimulationConfiguration?: NodeJS.ReadableStream,
-  ktpUpdate?: NodeJS.ReadableStream,
-  koeUpdate?: NodeJS.ReadableStream
+  options?: CreateMultiMexOptions
 ) {
+  const optionsWithDefaults = { ...defaultCreateMultiMexOptions, ...options }
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
 
@@ -98,20 +121,20 @@ export async function createMultiMex(
 
   encryptAndSign(zipFile, 'nsa.zip', keyAndIv, answersPrivateKey, nsaScripts)
   encryptAndSign(zipFile, 'security-codes.json', keyAndIv, answersPrivateKey, securityCodes)
-  if (loadSimulationConfiguration) {
+  if (optionsWithDefaults.loadSimulationConfiguration) {
     encryptAndSign(
       zipFile,
       'load-simulation-configuration.json',
       keyAndIv,
       answersPrivateKey,
-      loadSimulationConfiguration
+      optionsWithDefaults.loadSimulationConfiguration
     )
   }
-  if (ktpUpdate) {
-    encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, ktpUpdate)
+  if (optionsWithDefaults.ktpUpdate) {
+    encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, optionsWithDefaults.ktpUpdate)
   }
-  if (koeUpdate) {
-    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdate)
+  if (optionsWithDefaults.koeUpdate) {
+    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, optionsWithDefaults.koeUpdate)
   }
 
   zipFile.outputStream.pipe(outputStream)
