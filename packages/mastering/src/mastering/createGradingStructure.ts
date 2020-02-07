@@ -15,6 +15,18 @@ export interface TextQuestion {
   id: number
   displayNumber: string
   maxScore: number
+  /**
+   * A tentative list of answers that will be accepted. Usually this is not the
+   * final list, since additional answers will be accepted during grading.
+   *
+   * If omitted, the question will be graded manually.
+   */
+  correctAnswers?: CorrectAnswer[]
+}
+
+export interface CorrectAnswer {
+  text: string
+  score: number
 }
 
 export interface ChoiceGroupQuestion {
@@ -48,7 +60,7 @@ export function createGradingStructure(exam: Exam, generateId: GenerateId): Grad
           switch (answerType) {
             case 'text-answer':
             case 'scored-text-answer':
-              return answers.map(a => mkTextQuestion(a.element))
+              return answers.map(a => mkTextQuestion(a.element, answerType))
             case 'choice-answer':
             case 'dropdown-answer':
               return [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
@@ -68,16 +80,25 @@ function collectAnswers(question: Question): Answer[] {
   return question.childQuestions.length ? _.flatMap(question.childQuestions, collectAnswers) : question.answers
 }
 
-function mkTextQuestion(answer: Element): TextQuestion {
+function mkTextQuestion(answer: Element, type: 'text-answer' | 'scored-text-answer'): TextQuestion {
   const id = getNumericAttribute('question-id', answer)
   const displayNumber = getAttribute('display-number', answer)
   const maxScore = getNumericAttribute('max-score', answer)
 
-  return {
+  const question = {
     id,
     displayNumber,
     maxScore,
     type: 'text' as const
+  }
+
+  if (type === 'text-answer') {
+    return question
+  } else {
+    const correctAnswers = answer
+      .find<Element>('./e:accepted-answer', ns)
+      .map(e => ({ text: e.text(), score: getNumericAttribute('score', e) }))
+    return { ...question, correctAnswers }
   }
 }
 

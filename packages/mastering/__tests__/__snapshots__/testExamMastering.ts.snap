@@ -3647,36 +3647,67 @@ Object {
         "type": "choicegroup",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "dolor",
+          },
+        ],
         "displayNumber": "10.1",
         "id": 8,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "elit",
+          },
+        ],
         "displayNumber": "10.2",
         "id": 9,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "vero",
+          },
+        ],
         "displayNumber": "10.3",
         "id": 10,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "laboriosam",
+          },
+        ],
         "displayNumber": "10.4",
         "id": 11,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "dolores",
+          },
+        ],
         "displayNumber": "10.5",
         "id": 12,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "10.6",
         "id": 13,
         "maxScore": 3,
@@ -3960,36 +3991,67 @@ Object {
         "type": "choicegroup",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "dolor",
+          },
+        ],
         "displayNumber": "10.1",
         "id": 8,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "elit",
+          },
+        ],
         "displayNumber": "10.2",
         "id": 9,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "vero",
+          },
+        ],
         "displayNumber": "10.3",
         "id": 10,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "laboriosam",
+          },
+        ],
         "displayNumber": "10.4",
         "id": 11,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 1,
+            "text": "dolores",
+          },
+        ],
         "displayNumber": "10.5",
         "id": 12,
         "maxScore": 1,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "10.6",
         "id": 13,
         "maxScore": 3,
@@ -15765,36 +15827,52 @@ Object {
         "type": "choicegroup",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "Willst du am Samstag mit ins Kino kommen",
+          },
+        ],
         "displayNumber": "18.1",
         "id": 81,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "weil ich zuerst Mama fragen muss",
+          },
+        ],
         "displayNumber": "18.2",
         "id": 82,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.1",
         "id": 83,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.2",
         "id": 84,
         "maxScore": 3,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.3",
         "id": 85,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.4",
         "id": 86,
         "maxScore": 3,
@@ -17844,36 +17922,52 @@ Object {
         "type": "choicegroup",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "Willst du am Samstag mit ins Kino kommen",
+          },
+        ],
         "displayNumber": "18.1",
         "id": 81,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "weil ich zuerst Mama fragen muss",
+          },
+        ],
         "displayNumber": "18.2",
         "id": 82,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.1",
         "id": 83,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.2",
         "id": 84,
         "maxScore": 3,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.3",
         "id": 85,
         "maxScore": 2,
         "type": "text",
       },
       Object {
+        "correctAnswers": Array [],
         "displayNumber": "19.4",
         "id": 86,
         "maxScore": 3,
