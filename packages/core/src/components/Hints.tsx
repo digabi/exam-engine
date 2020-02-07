@@ -1,38 +1,35 @@
 import classNames from 'classnames'
 import React from 'react'
-import { ReactReduxContext, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
 import { AppState } from '../store'
 import { ExamComponentProps, QuestionId } from './types'
 
-function Hints({ element, renderChildNodes }: ExamComponentProps) {
-  // Allow using this component both in stateful (Exam) and stateless (Results)
-  // contexts without having to duplicate code. `_currentValue` is an an
-  // internal implementation detail of React, so this might be a bit brittle,
-  // but the rendering tests should notice if React's implementation has
-  // changed.
-  const focusedQuestionId = (ReactReduxContext.Consumer as any)._currentValue
-    ? useSelector((state: AppState) => state.answers.focusedQuestionId)
-    : null
-  const answersWithHints = queryAll(element, ['text-answer', 'scored-text-answer']).filter(
-    answer => findChildElement(answer, 'hint') != null
-  )
+export default function mkHints({ stateful }: { stateful: boolean }) {
+  function Hints({ element, renderChildNodes }: ExamComponentProps) {
+    const focusedQuestionId = stateful ? useSelector((state: AppState) => state.answers.focusedQuestionId) : null
+    const answersWithHints = queryAll(element, ['text-answer', 'scored-text-answer']).filter(
+      answer => findChildElement(answer, 'hint') != null
+    )
 
-  return (
-    <div className="e-columns">
-      <div className="e-column e-column--8">{renderChildNodes(element)}</div>
-      {/* Intentionally not semantically correct, so we don't have to do any
+    return (
+      <div className="e-columns">
+        <div className="e-column e-column--8">{renderChildNodes(element)}</div>
+        {/* Intentionally not semantically correct, so we don't have to do any
       special handling to make screen readers ignore it, especially wrt.
       keyboard navigation. */}
-      <div className="e-hints e-column e-column--4" aria-hidden="true">
-        {answersWithHints.map((answer, i) => (
-          <Hint {...{ answer, focusedQuestionId, renderChildNodes, key: i }} />
-        ))}
+        <div className="e-hints e-column e-column--4" aria-hidden="true">
+          {answersWithHints.map((answer, i) => (
+            <Hint {...{ answer, focusedQuestionId, renderChildNodes, key: i }} />
+          ))}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
+
+  return React.memo(Hints)
 }
 
 function Hint({
@@ -67,5 +64,3 @@ function Hint({
     </p>
   )
 }
-
-export default React.memo(Hints)

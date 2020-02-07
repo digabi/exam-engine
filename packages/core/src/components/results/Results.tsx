@@ -11,7 +11,7 @@ import { CommonExamProps } from '../Exam'
 import ExamAttachment from '../ExamAttachment'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
-import Hints from '../Hints'
+import mkHints from '../Hints'
 import Image from '../Image'
 import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
@@ -42,8 +42,8 @@ const renderChildNodes = createRenderChildNodes({
   image: Image,
   question: ResultsExamQuestion,
   'question-title': ResultsExamQuestionTitle,
-  hints: Hints,
-  'scored-text-answers': Hints,
+  hints: mkHints({ stateful: false }),
+  'scored-text-answers': mkHints({ stateful: false }),
   section: ResultsExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,

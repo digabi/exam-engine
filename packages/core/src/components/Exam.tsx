@@ -30,7 +30,7 @@ import ExamSectionTitle from './ExamSectionTitle'
 import ExternalMaterialList from './ExternalMaterialList'
 import File from './File'
 import Formula from './Formula'
-import Hints from './Hints'
+import mkHints from './Hints'
 import Image from './Image'
 import References from './References'
 import SaveIndicator from './SaveIndicator'
@@ -87,10 +87,10 @@ const renderChildNodes = createRenderChildNodes({
   question: ExamQuestion,
   'question-instruction': ExamQuestionInstruction,
   'question-title': ExamQuestionTitle,
-  hints: Hints,
+  hints: mkHints({ stateful: true }),
   references: References,
   'scored-text-answer': TextAnswer,
-  'scored-text-answers': Hints,
+  'scored-text-answers': mkHints({ stateful: true }),
   'section-instruction': SectionInstruction,
   section: ExamSection,
   'section-title': ExamSectionTitle,
