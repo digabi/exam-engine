@@ -100,12 +100,10 @@ const renderChildNodes = createRenderChildNodes({
 
 export class Exam extends PureComponent<ExamProps> {
   private store: Store<AppState>
-  private ref: React.RefObject<HTMLDivElement>
   private i18n: i18n
 
   constructor(props: ExamProps) {
     super(props)
-    this.ref = React.createRef()
     const root = props.doc.documentElement
     this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
     this.store = initializeExamStore(
@@ -138,7 +136,7 @@ export class Exam extends PureComponent<ExamProps> {
         <I18nextProvider i18n={this.i18n}>
           <CommonExamContext.Consumer>
             {({ date, dateTimeFormatter, resolveAttachment }) => (
-              <main className="e-exam" lang={language} ref={this.ref}>
+              <main className="e-exam" lang={language}>
                 <React.StrictMode />
                 {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
                 <Section aria-labelledby="title">
