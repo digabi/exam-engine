@@ -4122,9 +4122,9 @@ dot-prop@^4.1.1, dot-prop@^4.2.0:
     is-obj "^1.0.0"
 
 downshift@^4.0.0:
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/downshift/-/downshift-4.0.9.tgz#f0cd6eecd414d3a99df42395e28d27a8bd389f43"
-  integrity sha512-agYmEy1PKHHe2ZLx7yVA4W0OAhi6lqj+6t8gLuWr+gCLQI2vu9ZCnshVOrRGMZ47AGX4pDuRRTeiBXu9h6DxXw==
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/downshift/-/downshift-4.0.10.tgz#5829606448d92bb49bf7bbb70975d5e23ffb94c5"
+  integrity sha512-lkq0wMsYWDCYNWS0kIqCBF7gsdt2j8n6ieLebwfOaeg6rgZke1zKxI8U2TgDSQASobmwUdK2oZOzfg4tAuTGeQ==
   dependencies:
     "@babel/runtime" "^7.4.5"
     compute-scroll-into-view "^1.0.9"
