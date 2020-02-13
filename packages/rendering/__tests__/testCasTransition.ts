@@ -21,7 +21,8 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   })
 
   it('hides questions of the first section after clicking enable CAS button', async () => {
-    await page.goto(url, { waitUntil: 'networkidle0' })
+    await page.goto(url)
+    await page.waitForSelector('.e-exam')
 
     await assertQuestionVisibility(true)
     await clickToggleCas(true)

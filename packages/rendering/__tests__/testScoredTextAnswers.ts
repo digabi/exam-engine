@@ -23,7 +23,8 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   const secondAnswerId = 82
 
   it('highlights the hint when focusing a scored text answer', async () => {
-    await page.goto(url, { waitUntil: 'networkidle0' })
+    await page.goto(url)
+    await page.waitForSelector('.e-exam')
 
     await focusAnswer(firstAnswerId)
     await assertAnswerHintHighlighted(firstAnswerId)
