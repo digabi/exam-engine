@@ -10394,6 +10394,10 @@ Object {
       "restricted": false,
     },
     Object {
+      "filename": "7Afi.mrv",
+      "restricted": false,
+    },
+    Object {
       "filename": "9A.png",
       "restricted": false,
     },
@@ -10958,6 +10962,10 @@ Object {
     },
     Object {
       "filename": "7Asv.tns",
+      "restricted": false,
+    },
+    Object {
+      "filename": "7Asv.mrv",
       "restricted": false,
     },
     Object {
@@ -11903,7 +11911,7 @@ Tiedosto: Pörssikurssit
 
 Jokainen alla oleva tiedosto sisältää samat tiedot. Tallenna tiedosto, käynnistä valitsemasi ohjelmisto ja avaa tallentamasi tiedosto ohjelmiston valikosta.
 
-LibreOffice Calc GeoGebra Logger Pro Casio ClassPad Manager TI Nspire
+LibreOffice Calc GeoGebra Logger Pro Casio ClassPad Manager TI Nspire Marvin Sketch
 
 YTL
 
@@ -12127,7 +12135,7 @@ Tiedosto: Pörssikurssit
 
 Jokainen alla oleva tiedosto sisältää samat tiedot. Tallenna tiedosto, käynnistä valitsemasi ohjelmisto ja avaa tallentamasi tiedosto ohjelmiston valikosta.
 
-LibreOffice Calc GeoGebra Logger Pro Casio ClassPad Manager TI Nspire
+LibreOffice Calc GeoGebra Logger Pro Casio ClassPad Manager TI Nspire Marvin Sketch
 
 YTL
 
@@ -12755,6 +12763,8 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
             <e:file src="7Afi.vcp">Casio ClassPad Manager</e:file>
             <br/>
             <e:file src="7Afi.tns">TI Nspire</e:file>
+	        <br/>
+            <e:file src="7Afi.mrv">Marvin Sketch</e:file>	  
           
           
           <e:reference>
@@ -13557,15 +13567,17 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
           </p>
           
           
-              <e:file src="7Asv.ods">LibreOffice Calc</e:file>
-              <br/>
-              <e:file src="7Asv.ggb">GeoGebra</e:file>
-              <br/>
-              <e:file src="7Asv.cmbl">Logger <i>Pro</i></e:file>
-              <br/>
-              <e:file src="7Asv.vcp">Casio ClassPad Manager</e:file>
-              <br/>
-              <e:file src="7Asv.tns">TI Nspire</e:file>  
+            <e:file src="7Asv.ods">LibreOffice Calc</e:file>
+            <br/>
+            <e:file src="7Asv.ggb">GeoGebra</e:file>
+            <br/>
+            <e:file src="7Asv.cmbl">Logger <i>Pro</i></e:file>
+            <br/>
+            <e:file src="7Asv.vcp">Casio ClassPad Manager</e:file>
+            <br/>
+            <e:file src="7Asv.tns">TI Nspire</e:file>  
+	        <br/>
+            <e:file src="7Asv.mrv">Marvin Sketch</e:file>	  
           
           <e:reference>
             <e:author>
