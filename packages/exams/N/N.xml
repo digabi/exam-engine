@@ -624,17 +624,21 @@
             <e:file src="7Afi.vcp">Casio ClassPad Manager</e:file>
             <br/>
             <e:file src="7Afi.tns">TI Nspire</e:file>
+	        <br/>
+            <e:file src="7Afi.mrv">Marvin Sketch</e:file>	  
           </e:localization>
           <e:localization lang="sv-FI">
-              <e:file src="7Asv.ods">LibreOffice Calc</e:file>
-              <br/>
-              <e:file src="7Asv.ggb">GeoGebra</e:file>
-              <br/>
-              <e:file src="7Asv.cmbl">Logger <i>Pro</i></e:file>
-              <br/>
-              <e:file src="7Asv.vcp">Casio ClassPad Manager</e:file>
-              <br/>
-              <e:file src="7Asv.tns">TI Nspire</e:file>  
+            <e:file src="7Asv.ods">LibreOffice Calc</e:file>
+            <br/>
+            <e:file src="7Asv.ggb">GeoGebra</e:file>
+            <br/>
+            <e:file src="7Asv.cmbl">Logger <i>Pro</i></e:file>
+            <br/>
+            <e:file src="7Asv.vcp">Casio ClassPad Manager</e:file>
+            <br/>
+            <e:file src="7Asv.tns">TI Nspire</e:file>  
+	        <br/>
+            <e:file src="7Asv.mrv">Marvin Sketch</e:file>	  
           </e:localization>
           <e:reference>
             <e:author>

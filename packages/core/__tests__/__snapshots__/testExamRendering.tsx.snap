@@ -51136,6 +51136,21 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
         )
       </a>
       
+	        
+      <br />
+      
+            
+      <a
+        className="file e-nowrap"
+        download={true}
+        href="/attachments/7Afi.mrv"
+      >
+        Marvin Sketch
+         (
+        7Afi.mrv
+        )
+      </a>
+      	  
           
           
           
@@ -51543,7 +51558,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
       
           
           
-              
+            
       <a
         className="file e-nowrap"
         download={true}
@@ -51555,10 +51570,10 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         )
       </a>
       
-              
+            
       <br />
       
-              
+            
       <a
         className="file e-nowrap"
         download={true}
@@ -51570,10 +51585,10 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         )
       </a>
       
-              
+            
       <br />
       
-              
+            
       <a
         className="file e-nowrap"
         download={true}
@@ -51588,10 +51603,10 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         )
       </a>
       
-              
+            
       <br />
       
-              
+            
       <a
         className="file e-nowrap"
         download={true}
@@ -51603,10 +51618,10 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         )
       </a>
       
-              
+            
       <br />
       
-              
+            
       <a
         className="file e-nowrap"
         download={true}
@@ -51618,6 +51633,21 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
         )
       </a>
         
+	        
+      <br />
+      
+            
+      <a
+        className="file e-nowrap"
+        download={true}
+        href="/attachments/7Asv.mrv"
+      >
+        Marvin Sketch
+         (
+        7Asv.mrv
+        )
+      </a>
+      	  
           
           
       <figcaption
