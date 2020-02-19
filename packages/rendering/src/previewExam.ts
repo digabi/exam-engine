@@ -6,7 +6,12 @@ import { getPreviewWebpackConfig } from './getPreviewWebpackConfig'
 
 export type CloseFunction = () => Promise<void>
 
-export async function previewExam(examFile: string, options: RenderingOptions = {}): Promise<[string, CloseFunction]> {
+export interface PreviewContext {
+  url: string
+  close: CloseFunction
+}
+
+export async function previewExam(examFile: string, options: RenderingOptions = {}): Promise<PreviewContext> {
   const config = getPreviewWebpackConfig(examFile, options)
   const compiler = webpack(config)
   const webpackDevServer = new WebpackDevServer(compiler, config.devServer)
@@ -19,7 +24,7 @@ export async function previewExam(examFile: string, options: RenderingOptions = 
         const addressInfo = httpServer.address() as AddressInfo
         const url = `http://localhost:${addressInfo.port}`
         const close = () => new Promise<void>(resolveClose => webpackDevServer.close(resolveClose))
-        resolve([url, close])
+        resolve({ url, close })
       }
     })
   })
