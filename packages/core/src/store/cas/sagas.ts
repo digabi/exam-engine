@@ -1,21 +1,26 @@
 import { call, put, race, take, takeLatest } from 'redux-saga/effects'
-import { ExamServerAPI } from '../../components/types'
+import { CasStatus, ExamServerAPI } from '../../components/types'
 import { countdown } from '../countdown'
-import { allowCas, allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
+import { allowCas, allowCasCancelled, allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
 
 function* performEnableCas(examServerApi: ExamServerAPI, { payload }: ReturnType<typeof allowCas>) {
   try {
-    yield call(examServerApi.setCasStatus, 'allowing')
+    const status1: CasStatus = yield call(examServerApi.setCasStatus, 'allowing')
+    if (status1 === 'allowed') {
+      return yield put(allowCasSucceeded())
+    }
+
     yield put(allowCasCountdown(payload))
     const { cancelled } = yield race({
       finished: call(countdown, payload, updateCasRemaining),
       cancelled: take('ALLOW_CAS_CANCELLED')
     })
-    if (cancelled) {
-      yield call(examServerApi.setCasStatus, 'forbidden')
-    } else {
-      yield call(examServerApi.setCasStatus, 'allowed')
+
+    const status2: CasStatus = yield call(examServerApi.setCasStatus, cancelled ? 'forbidden' : 'allowed')
+    if (status2 === 'allowed') {
       yield put(allowCasSucceeded())
+    } else if (!cancelled) {
+      yield put(allowCasCancelled())
     }
   } catch (error) {
     console.error(error) // tslint:disable-line no-console
