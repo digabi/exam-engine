@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "9.0.2",
+  "version": "9.1.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "@digabi/exam-engine-core": "9.0.2",
-    "@digabi/exam-engine-mastering": "9.0.2",
+    "@digabi/exam-engine-mastering": "9.1.0",
     "css-loader": "^3.2.1",
     "dexie": "^2.0.4",
     "file-loader": "^5.0.2",
