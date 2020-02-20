@@ -49,6 +49,7 @@ Object {
   },
   "language": "fi-FI",
   "title": "FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe",
+  "type": "normal",
 }
 `;
 
@@ -320,6 +321,7 @@ Object {
   },
   "language": "fi-FI",
   "title": "FI – Äidinkieli ja kirjallisuus, lukutaidon koe",
+  "type": "normal",
 }
 `;
 
@@ -934,6 +936,7 @@ Object {
   },
   "language": "fi-FI",
   "title": "FI – Filosofia",
+  "type": "normal",
 }
 `;
 
@@ -1089,6 +1092,7 @@ Object {
   },
   "language": "sv-FI",
   "title": "SV – Filosofi",
+  "type": "normal",
 }
 `;
 
@@ -3805,6 +3809,7 @@ Object {
   },
   "language": "fi-FI",
   "title": "MEX format documentation",
+  "type": "normal",
 }
 `;
 
@@ -4149,6 +4154,7 @@ Object {
   },
   "language": "sv-FI",
   "title": "MEX format documentation",
+  "type": "normal",
 }
 `;
 
@@ -10910,6 +10916,7 @@ Object {
   },
   "language": "fi-FI",
   "title": "FI – Matematiikka, lyhyt oppimäärä",
+  "type": "normal",
 }
 `;
 
@@ -11481,6 +11488,7 @@ Object {
   },
   "language": "sv-FI",
   "title": "SV – Matematik, kort lärokurs",
+  "type": "normal",
 }
 `;
 
@@ -15918,6 +15926,7 @@ Object {
   },
   "language": "fi-FI",
   "title": "FI – Saksa, lyhyt oppimäärä",
+  "type": "normal",
 }
 `;
 
@@ -18013,6 +18022,7 @@ Object {
   },
   "language": "sv-FI",
   "title": "SV – Tyska, kort lärokurs",
+  "type": "normal",
 }
 `;
 

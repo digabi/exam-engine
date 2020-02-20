@@ -50,11 +50,13 @@ interface AudioMetadata {
   duration: number
 }
 
+export type ExamType = 'normal' | 'visually-impaired' | 'scanner'
+
 export type GenerateUuid = (metadata?: {
   examCode: string
   date: string
   language: string
-  type: 'normal' | 'visually-impaired' | 'scanner'
+  type: ExamType
 }) => Promise<string> | string
 
 // TODO: Try to figure out a way to make this overloading be typed more accurately.
@@ -166,6 +168,8 @@ export interface MasteringResult {
   language: string
   /** The optional title of this exam */
   title: string | null
+  /** The type of the exam */
+  type: ExamType
   /** The mastered XML. */
   xml: string
 }
@@ -203,8 +207,9 @@ async function masterExamForLanguage(
   const root = doc.root()!
   const generateId = mkGenerateId()
   const translation = createTranslationFile(doc)
+  const type = 'normal'
 
-  await addExamUuid(root, generateUuid, language)
+  await addExamUuid(root, generateUuid, language, type)
   applyLocalizations(root, language)
 
   const exam = parseExamStructure(root)
@@ -252,6 +257,7 @@ async function masterExamForLanguage(
         .get<Element>('//e:exam-title', ns)
         ?.text()
         .trim() ?? null,
+    type,
     xml: doc.toString(false)
   }
 }
@@ -287,10 +293,10 @@ function collectAttachments(exam: Element, attachments: Element[]): Attachment[]
   )
 }
 
-async function addExamUuid(exam: Element, generateUuid: GenerateUuid, language: string) {
+async function addExamUuid(exam: Element, generateUuid: GenerateUuid, language: string, type: ExamType) {
   const examCode = getAttribute('exam-code', exam, null)
   const date = getAttribute('date', exam, null)
-  const metadata = examCode != null && date != null ? { examCode, date, language, type: 'normal' as const } : undefined
+  const metadata = examCode != null && date != null ? { examCode, date, language, type } : undefined
   const examUuid = await generateUuid(metadata)
   exam.attr('exam-uuid', examUuid)
 }
