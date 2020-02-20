@@ -1,27 +1,26 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
-import { CloseFunction, previewExam } from '@digabi/exam-engine-rendering'
+import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
 import { initPuppeteer } from './puppeteerUtils'
 
 describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   const createPage = initPuppeteer()
   let page: Page
-  let url: string
-  let close: CloseFunction
+  let ctx: PreviewContext
 
   beforeAll(async () => {
-    ;[url, close] = await previewExam(resolveExam('N/N.xml'), {
+    ctx = await previewExam(resolveExam('N/N.xml'), {
       casCountdownDurationSeconds: 2
     })
     page = await createPage()
   })
 
   afterAll(async () => {
-    await close()
+    await ctx.close()
   })
 
   it('hides questions of the first section after clicking enable CAS button', async () => {
-    await page.goto(url)
+    await page.goto(ctx.url)
     await page.waitForSelector('.e-exam')
 
     await assertQuestionVisibility(true)

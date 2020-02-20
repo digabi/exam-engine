@@ -1,29 +1,28 @@
 import { QuestionId } from '@digabi/exam-engine-core'
 import { resolveExam } from '@digabi/exam-engine-exams'
-import { CloseFunction, previewExam } from '@digabi/exam-engine-rendering'
+import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
 import { initPuppeteer } from './puppeteerUtils'
 
 describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   const createPage = initPuppeteer()
   let page: Page
-  let url: string
-  let close: CloseFunction
+  let ctx: PreviewContext
 
   beforeAll(async () => {
-    ;[url, close] = await previewExam(resolveExam('SC/SC.xml'))
+    ctx = await previewExam(resolveExam('SC/SC.xml'))
     page = await createPage()
   })
 
   afterAll(async () => {
-    await close()
+    await ctx.close()
   })
 
   const firstAnswerId = 81
   const secondAnswerId = 82
 
   it('highlights the hint when focusing a scored text answer', async () => {
-    await page.goto(url)
+    await page.goto(ctx.url)
     await page.waitForSelector('.e-exam')
 
     await focusAnswer(firstAnswerId)

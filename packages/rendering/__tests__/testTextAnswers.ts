@@ -1,5 +1,5 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
-import { CloseFunction, previewExam } from '@digabi/exam-engine-rendering'
+import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { DirectNavigationOptions, Page } from 'puppeteer'
 import { assertElementDoesNotExist, delay, getTextContent, initPuppeteer } from './puppeteerUtils'
 
@@ -7,18 +7,19 @@ const navOptions: DirectNavigationOptions = { waitUntil: 'networkidle0' }
 describe('testTextAnswers.ts — Text answer interactions', () => {
   const createPage = initPuppeteer()
   let page: Page
-  let url: string
-  let close: CloseFunction
+  let ctx: PreviewContext
 
   beforeAll(async () => {
-    ;[url, close] = await previewExam(resolveExam('A_X/A_X.xml'))
+    ctx = await previewExam(resolveExam('A_X/A_X.xml'))
     page = await createPage()
   })
 
-  afterAll(() => close())
+  afterAll(async () => {
+    await ctx.close()
+  })
 
   it('updates the character count', async () => {
-    await page.goto(url, navOptions)
+    await page.goto(ctx.url, navOptions)
 
     await type('h')
     await assertCharacterCount(1)
@@ -34,7 +35,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   })
 
   it('updates the saved indicator after a delay', async () => {
-    await page.goto(url, navOptions)
+    await page.goto(ctx.url, navOptions)
 
     await assertSaveIndicatorNotPresent()
 

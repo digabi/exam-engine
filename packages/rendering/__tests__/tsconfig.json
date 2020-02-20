@@ -4,5 +4,5 @@
   },
   "extends": "../../../tsconfig.json",
   "include": ["."],
-  "references": [{ "path": "../" }, { "path": "../../exams" }, { "path": "../../exam-engine" }]
+  "references": [{ "path": "../" }, { "path": "../../exams" }, { "path": "../../core" }]
 }
