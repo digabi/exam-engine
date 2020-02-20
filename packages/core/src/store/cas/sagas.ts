@@ -3,7 +3,7 @@ import { CasStatus, ExamServerAPI } from '../../components/types'
 import { countdown } from '../countdown'
 import { allowCas, allowCasCancelled, allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
 
-function* performEnableCas(examServerApi: ExamServerAPI, { payload }: ReturnType<typeof allowCas>) {
+export function* performEnableCas(examServerApi: ExamServerAPI, { payload }: ReturnType<typeof allowCas>) {
   try {
     const status1: CasStatus = yield call(examServerApi.setCasStatus, 'allowing')
     if (status1 === 'allowed') {
