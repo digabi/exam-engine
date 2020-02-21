@@ -24,6 +24,11 @@ export function initPuppeteer() {
   }
 }
 
+export async function loadExam(page: Page, url: string) {
+  await page.goto(url)
+  await page.waitForSelector('.e-exam')
+}
+
 export async function delay(millis: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, millis))
 }

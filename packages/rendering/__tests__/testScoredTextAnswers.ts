@@ -2,7 +2,7 @@ import { QuestionId } from '@digabi/exam-engine-core'
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
-import { initPuppeteer } from './puppeteerUtils'
+import { initPuppeteer, loadExam } from './puppeteerUtils'
 
 describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   const createPage = initPuppeteer()
@@ -22,8 +22,7 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   const secondAnswerId = 82
 
   it('highlights the hint when focusing a scored text answer', async () => {
-    await page.goto(ctx.url)
-    await page.waitForSelector('.e-exam')
+    await loadExam(page, ctx.url)
 
     await focusAnswer(firstAnswerId)
     await assertAnswerHintHighlighted(firstAnswerId)
