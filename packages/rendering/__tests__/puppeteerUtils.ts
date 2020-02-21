@@ -2,7 +2,7 @@
 
 import puppeteer, { Browser, Page } from 'puppeteer'
 
-const isInDebugMode = (process.env.PUPPETEER_DEBUG || '') === '1'
+const isInDebugMode = process.env.PUPPETEER_DEBUG === '1'
 
 export function initPuppeteer() {
   let browser: Browser
