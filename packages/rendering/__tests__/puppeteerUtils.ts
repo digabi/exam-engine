@@ -2,7 +2,7 @@
 
 import puppeteer, { Browser, Page } from 'puppeteer'
 
-const isInDebugMode = (process.env.PUPPETEER_DEBUG || '') === '1'
+const isInDebugMode = process.env.PUPPETEER_DEBUG === '1'
 
 export function initPuppeteer() {
   let browser: Browser
@@ -22,6 +22,11 @@ export function initPuppeteer() {
     await page.setViewport({ width: 1280, height: 3024 })
     return page
   }
+}
+
+export async function loadExam(page: Page, url: string) {
+  await page.goto(url)
+  await page.waitForSelector('.e-exam')
 }
 
 export async function delay(millis: number): Promise<void> {
