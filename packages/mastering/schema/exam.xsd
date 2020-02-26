@@ -262,6 +262,7 @@
         <xs:element name="howpublished" type="e:LocalizableFlow" />
         <xs:element name="note" type="e:LocalizableFlow" />
       </xs:choice>
+      <xs:attributeGroup ref="e:localizable" />
       <xs:attributeGroup ref="e:hidable" />
     </xs:complexType>
   </xs:element>
