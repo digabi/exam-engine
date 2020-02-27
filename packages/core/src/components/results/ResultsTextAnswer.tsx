@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { getNumericAttribute } from '../../dom-utils'
+import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { ExamComponentProps, TextAnswer } from '../types'
 import { findScore, ResultsContext } from './ResultsContext'
@@ -11,15 +12,15 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
+  const { scores } = useContext(ResultsContext)
+  const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
+  const gradingMetadata = findScore(scores, questionId)
+  const comment = gradingMetadata && gradingMetadata.comment
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
 
   switch (type) {
     case 'rich-text':
     case 'multi-line': {
-      const { scores } = useContext(ResultsContext)
-      const gradingMetadata = findScore(scores, questionId)
-      const comment = gradingMetadata && gradingMetadata.comment
-
       return (
         <>
           <div className="answer">
@@ -55,8 +56,17 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
     }
     case 'single-line':
     default:
-      return <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
+      return (
+        <>
+          <sup>{displayNumber}</sup>
+          <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
+          {/* TODO get scorevalue from gradingmetadata */}
+          {/* {gradingMetadata && <div className="e-float-right">{gradingMetadata.scoreValue}</div>} */}
+          <div className="e-result-scorecount e-float-right">
+            <sup>{displayNumber}</sup>2/3 p.
+          </div>
+        </>
+      )
   }
 }
-
 export default React.memo(ResultsTextAnswer)
