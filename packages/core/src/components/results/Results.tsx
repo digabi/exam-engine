@@ -8,11 +8,9 @@ import { scrollToHash } from '../../scrollToHash'
 import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
 import { CommonExamProps } from '../Exam'
-import ExamAttachment from '../ExamAttachment'
+import ExamQuestionInstruction from '../ExamQuestionInstruction'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
-import mkHints from '../Hints'
-import Image from '../Image'
 import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
 import { AnswerScore } from '../types'
@@ -23,7 +21,6 @@ import ResultsExamQuestion from './ResultsExamQuestion'
 import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsTextAnswer from './ResultsTextAnswer'
-import ExamQuestionInstruction from '../ExamQuestionInstruction'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -35,17 +32,13 @@ export interface ResultsProps extends CommonExamProps {
 }
 
 const renderChildNodes = createRenderChildNodes({
-  attachment: ExamAttachment,
   'audio-group': RenderChildNodes,
   'choice-answer': ResultsChoiceAnswer,
   'dropdown-answer': ResultsDropdownAnswer,
   formula: Formula,
-  image: Image,
   question: ResultsExamQuestion,
   'question-instruction': ExamQuestionInstruction,
   'question-title': ResultsExamQuestionTitle,
-  hints: mkHints({ stateful: false }),
-  'scored-text-answers': mkHints({ stateful: false }),
   section: ResultsExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,
