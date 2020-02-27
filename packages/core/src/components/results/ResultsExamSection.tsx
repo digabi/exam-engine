@@ -8,8 +8,8 @@ function ExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber } = useContext(SectionContext)
 
   return (
-    <Section className="exam-section" aria-labelledby={displayNumber + '-title'}>
-      {renderChildNodes(element)}
+    <Section aria-labelledby={displayNumber + '-title'}>
+      <div className="e-results-section-wrapper">{renderChildNodes(element)}</div>
     </Section>
   )
 }

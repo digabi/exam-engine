@@ -6,6 +6,7 @@ export type ExamTranslations = DeepPartial<Translations>
 // tslint:disable-next-line:variable-name
 export const fi_FI = {
   'exam-total': 'Koe yhteensä',
+  'grading-total': 'Yhteensä',
   material: 'Aineisto',
   material_plural: 'Aineistot',
   'attachments-page-title': 'aineisto',

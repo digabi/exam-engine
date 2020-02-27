@@ -23,6 +23,7 @@ import ResultsExamQuestion from './ResultsExamQuestion'
 import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsTextAnswer from './ResultsTextAnswer'
+import ExamQuestionInstruction from '../ExamQuestionInstruction'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -41,6 +42,7 @@ const renderChildNodes = createRenderChildNodes({
   formula: Formula,
   image: Image,
   question: ResultsExamQuestion,
+  'question-instruction': ExamQuestionInstruction,
   'question-title': ResultsExamQuestionTitle,
   hints: mkHints({ stateful: false }),
   'scored-text-answers': mkHints({ stateful: false }),
@@ -66,14 +68,16 @@ function Results({}: ResultsProps) {
           <main className="e-exam" lang={language}>
             <React.StrictMode />
             {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-            <Section aria-labelledby="title">
-              {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-              {date && (
-                <p>
-                  <strong>{dateTimeFormatter.format(date)}</strong>
-                </p>
-              )}
-              <ScoresAndFinalGrade />
+            <Section aria-labelledby="title" className="e-section--results">
+              <div className="e-columns">
+                {examTitle && (
+                  <DocumentTitle id="title" className="e-font-size-xxl e-column e-mrg-b-0">
+                    {renderChildNodes(examTitle)}
+                    {date && ', ' + dateTimeFormatter.format(date)}
+                  </DocumentTitle>
+                )}
+                <ScoresAndFinalGrade />
+              </div>
             </Section>
             {renderChildNodes(root)}
           </main>
@@ -88,20 +92,19 @@ function ScoresAndFinalGrade() {
   const { t } = useTranslation()
 
   return (
-    <div>
-      <span className="e-column">
-        {t('exam-total')}
-        {':'}
-      </span>
-      <strong className="e-column e-column--narrow table-of-contents--score-column">
-        {t('points', { count: totalScore })}
-      </strong>
-      {gradingText && (
-        <div>
-          <span className="e-column">{t('grade')}</span>
-          <strong className="e-column e-column--narrow table-of-contents--score-column">{gradingText}</strong>
-        </div>
-      )}
+    <div className="e-column--narrow e-columns">
+      <div
+        className="e-mrg-r-2"
+        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minWidth: '2rem' }}
+      >
+        {t('grading-total')}
+        {gradingText && <span className="e-column">{t('grade')}</span>}
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minWidth: '2rem' }}>
+        <strong>{t('points', { count: totalScore })}</strong>
+        {gradingText && <strong>{gradingText}</strong>}
+      </div>
     </div>
   )
 }

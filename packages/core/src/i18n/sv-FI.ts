@@ -3,6 +3,7 @@ import { Translations } from './fi-FI'
 // tslint:disable-next-line:variable-name
 export const sv_FI: Translations = {
   'exam-total': 'Provet sammanlagt',
+  'grading-total': 'Sammanlagt',
   material: 'Material',
   material_plural: 'Material',
   'attachments-page-title': 'material',
