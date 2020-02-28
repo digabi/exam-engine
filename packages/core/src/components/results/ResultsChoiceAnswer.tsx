@@ -11,7 +11,6 @@ interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
   selected: boolean
   direction: string
-  score: number
   isCorrect: boolean
 }
 
@@ -20,7 +19,7 @@ const renderChildNodes = createRenderChildNodes({
   image: Image
 })
 
-function ChoiceAnswerOption({ selected, element, questionId, direction, score, isCorrect }: ChoiceAnswerOptionProps) {
+function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrect }: ChoiceAnswerOptionProps) {
   const className = element.getAttribute('class')
   const optionId = element.getAttribute('option-id')!
 
@@ -30,7 +29,7 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, score, i
         'e-choice-answer-option--selected': selected
       })}
     >
-      ({score}) {renderChildNodes(element)}
+      {renderChildNodes(element)}
     </div>
   )
 
@@ -94,7 +93,6 @@ function ResultsChoiceAnswer({ element }: ExamComponentProps) {
                 key: optionId,
                 direction,
                 selected,
-                score: grading.score,
                 isCorrect: grading.correct
               }}
             />
