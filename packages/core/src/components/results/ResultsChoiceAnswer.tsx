@@ -32,6 +32,16 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
       {renderChildNodes(element)}
     </div>
   )
+  const RadioInput = ({ narrow = false }: { narrow?: boolean }) => (
+    <input
+      type="radio"
+      className={classNames('e-radio-button', { 'e-column e-column--narrow': narrow })}
+      name={String(questionId)}
+      value={optionId}
+      checked={selected}
+      readOnly
+    />
+  )
 
   return direction === 'vertical' ? (
     <div className="e-mrg-b-1">
@@ -42,28 +52,14 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
             query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */
         })}
       >
-        <input
-          type="radio"
-          className="e-radio-button e-column e-column--narrow"
-          name={String(questionId)}
-          value={optionId}
-          checked={selected}
-          disabled
-        />
+        <RadioInput narrow />
         {content}
       </label>
     </div>
   ) : (
     <div className="e-column e-mrg-b-1">
       <label className={classNames('e-block e-text-center', { 'e-correct-answer': isCorrect })}>
-        <input
-          type="radio"
-          className="e-radio-button"
-          name={String(questionId)}
-          value={optionId}
-          checked={selected}
-          disabled
-        />
+        <RadioInput />
         {content}
       </label>
     </div>
