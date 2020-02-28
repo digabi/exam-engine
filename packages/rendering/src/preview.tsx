@@ -1,6 +1,7 @@
-import { Attachments, Exam, parseExam, Results } from '@digabi/exam-engine-core'
+import { AnswerScore, Attachments, Exam, parseExam, Results } from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { MasteringResult } from '@digabi/exam-engine-mastering'
+import { GradingStructure, TextQuestion } from '@digabi/exam-engine-mastering/dist'
 import Cookie from 'js-cookie'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -139,7 +140,7 @@ window.onload = async () => {
       {...{
         ...commonProps,
         gradingStructure,
-        scores: []
+        scores: mkScores(gradingStructure)
       }}
     />
   ) : (
@@ -169,6 +170,17 @@ window.onload = async () => {
       }
     }
   )
+}
+
+function mkScores(gradingStructure: GradingStructure): AnswerScore[] {
+  return gradingStructure.questions
+    .filter((question): question is TextQuestion => question.type === 'text')
+    .map((question, i) => ({
+      questionId: question.id,
+      scoreValue: Math.min(question.maxScore, i),
+      comment: 'Lorem ipsum dolor amet',
+      annotations: []
+    }))
 }
 
 const backgroundColor = () => (inAttachmentsPage() ? '#f0f0f0' : '#e0f4fe')
