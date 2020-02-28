@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
-import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
+import { getNumericAttribute, mapChildElements, NBSP, query } from '../../dom-utils'
 import ExamAttachment from '../ExamAttachment'
 import Image from '../Image'
 import { ExamComponentProps, QuestionId } from '../types'
@@ -75,9 +75,17 @@ function ResultsChoiceAnswer({ element }: ExamComponentProps) {
   const className = element.getAttribute('class')
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
+  const scoreValue = answer && choice.options.find(option => option.id === Number(answer.value))!.score
+  const maxScore = getNumericAttribute(element, 'max-score')
 
   return (
     <>
+      {scoreValue !== undefined && (
+        <div className="e-result-scorecount e-float-right">
+          {NBSP}
+          <b>{scoreValue}</b> / {maxScore} p.
+        </div>
+      )}
       <div
         className={classNames('e-choice-answer', className, {
           'e-columns': direction === 'horizontal'

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
-import {getNumericAttribute, NBSP} from '../../dom-utils'
+import { getNumericAttribute, NBSP } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { ExamComponentProps, TextAnswer } from '../types'
@@ -24,6 +24,15 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
     case 'multi-line': {
       return (
         <>
+          {score && (
+            <div className="e-result-scorecount e-float-right">
+              <Translation>{t => t('points', { count: maxScore })}</Translation> max <br />
+              <b>
+                <Translation>{t => t('points', { count: score.scoreValue })}</Translation>
+              </b>
+            </div>
+          )}
+
           <div className="answer">
             <div className="answer-text-container">
               <div
@@ -65,7 +74,7 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
             <div className="e-result-scorecount e-float-right">
               <sup>{displayNumber}</sup>
               {NBSP}
-              {score.scoreValue} / {maxScore} p.
+              <b>{score.scoreValue}</b> / {maxScore} p.
             </div>
           )}
         </>
