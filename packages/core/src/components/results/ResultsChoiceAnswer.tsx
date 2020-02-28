@@ -56,7 +56,14 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
   ) : (
     <div className="e-column e-mrg-b-1">
       <label className={classNames('e-block e-text-center', { 'e-correct-answer': isCorrect })}>
-        <input type="radio" className="e-radio-button" name={String(questionId)} value={optionId} checked={selected} />
+        <input
+          type="radio"
+          className="e-radio-button"
+          name={String(questionId)}
+          value={optionId}
+          checked={selected}
+          disabled
+        />
         {content}
       </label>
     </div>
