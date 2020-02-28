@@ -32,17 +32,20 @@ export interface ResultsProps extends CommonExamProps {
 }
 
 const renderChildNodes = createRenderChildNodes({
+  attachment: RenderChildNodes,
   'audio-group': RenderChildNodes,
   'choice-answer': ResultsChoiceAnswer,
   'dropdown-answer': ResultsDropdownAnswer,
   formula: Formula,
   question: ResultsExamQuestion,
+  hints: RenderChildNodes,
   'question-instruction': ExamQuestionInstruction,
   'question-title': ResultsExamQuestionTitle,
   section: ResultsExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,
-  'scored-text-answer': ResultsTextAnswer
+  'scored-text-answer': ResultsTextAnswer,
+  'scored-text-answers': RenderChildNodes
 })
 
 function Results({}: ResultsProps) {
