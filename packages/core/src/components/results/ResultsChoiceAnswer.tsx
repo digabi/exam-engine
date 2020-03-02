@@ -1,11 +1,12 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
-import { getNumericAttribute, mapChildElements, NBSP, query } from '../../dom-utils'
+import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import ExamAttachment from '../ExamAttachment'
 import Image from '../Image'
 import { ExamComponentProps, QuestionId } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
+import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -81,10 +82,7 @@ function ResultsChoiceAnswer({ element }: ExamComponentProps) {
   return (
     <>
       {scoreValue !== undefined && (
-        <div className="e-result-scorecount e-float-right">
-          {NBSP}
-          <b>{scoreValue}</b> / {maxScore} p.
-        </div>
+        <ResultsExamQuestionScore className="e-float-right" score={scoreValue} maxScore={maxScore} />
       )}
       <div
         className={classNames('e-choice-answer', className, {

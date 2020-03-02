@@ -1,11 +1,12 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
-import { getNumericAttribute, NBSP } from '../../dom-utils'
+import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { ExamComponentProps, TextAnswer } from '../types'
 import { findScore, ResultsContext } from './ResultsContext'
+import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
 function ResultsTextAnswer({ element, className }: ExamComponentProps) {
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -24,14 +25,7 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
     case 'multi-line': {
       return (
         <>
-          {score && (
-            <div className="e-result-scorecount e-float-right">
-              <Translation>{t => t('points', { count: maxScore })}</Translation> max <br />
-              <b>
-                <Translation>{t => t('points', { count: score.scoreValue })}</Translation>
-              </b>
-            </div>
-          )}
+          {score && <ResultsExamQuestionScore className="e-float-right" score={score.scoreValue} maxScore={maxScore} />}
 
           <div className="answer">
             <div className="answer-text-container">
@@ -71,11 +65,12 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
           <sup>{displayNumber}</sup>
           <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
           {score && (
-            <div className="e-result-scorecount e-float-right">
-              <sup>{displayNumber}</sup>
-              {NBSP}
-              <b>{score.scoreValue}</b> / {maxScore} p.
-            </div>
+            <ResultsExamQuestionScore
+              className="e-float-right"
+              score={score.scoreValue}
+              maxScore={maxScore}
+              displayNumber={displayNumber}
+            />
           )}
         </>
       )
