@@ -19,6 +19,7 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
   const score = findScore(scores, questionId)
   const comment = score?.comment
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
+  const hasSiblings = element!.parentElement!.getElementsByTagName('e:text-answer').length > 1
 
   switch (type) {
     case 'rich-text':
@@ -62,14 +63,14 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
     default:
       return (
         <>
-          <sup>{displayNumber}</sup>
+          {hasSiblings && <sup>{displayNumber}</sup>}
           <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
           {score && (
             <ResultsExamQuestionScore
               className="e-float-right"
               score={score.scoreValue}
               maxScore={maxScore}
-              displayNumber={displayNumber}
+              displayNumber={hasSiblings ? displayNumber : undefined}
             />
           )}
         </>
