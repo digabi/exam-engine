@@ -81,9 +81,7 @@ function ResultsChoiceAnswer({ element }: ExamComponentProps) {
 
   return (
     <>
-      {scoreValue !== undefined && (
-        <ResultsExamQuestionScore className="e-float-right" score={scoreValue} maxScore={maxScore} />
-      )}
+      {scoreValue !== undefined && <ResultsExamQuestionScore score={scoreValue} maxScore={maxScore} />}
       <div
         className={classNames('e-choice-answer', className, {
           'e-columns': direction === 'horizontal'

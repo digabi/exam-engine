@@ -26,7 +26,7 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
     case 'multi-line': {
       return (
         <>
-          {score && <ResultsExamQuestionScore className="e-float-right" score={score.scoreValue} maxScore={maxScore} />}
+          {score && <ResultsExamQuestionScore score={score.scoreValue} maxScore={maxScore} />}
 
           <div className="answer">
             <div className="answer-text-container">
@@ -62,7 +62,6 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
           <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
           {score && (
             <ResultsExamQuestionScore
-              className="e-float-right"
               score={score.scoreValue}
               maxScore={maxScore}
               displayNumber={answers.length > 1 ? displayNumber : undefined}

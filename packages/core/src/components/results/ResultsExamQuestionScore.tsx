@@ -6,16 +6,17 @@ interface ResultsExamQuestionScoreProps {
   score?: number
   maxScore?: number
   displayNumber?: string
-  className?: string
 }
 
-const ResultsExamQuestionScore = ({ score, maxScore, displayNumber, className }: ResultsExamQuestionScoreProps) => (
-  <div className={`e-result-scorecount ${className}`}>
-    {displayNumber && <sup>{displayNumber}</sup>}
-    {NBSP}
-    {typeof score === 'number' ? <b>{score}</b> : <div className="e-result-scorecount-empty" />}{' '}
-    {maxScore ? `/ ${maxScore} ` : null} <Translation>{t => t('points')}</Translation>
-  </div>
-)
+function ResultsExamQuestionScore({ score, maxScore, displayNumber }: ResultsExamQuestionScoreProps) {
+  return (
+    <div className="e-result-scorecount e-float-right">
+      {displayNumber && <sup>{displayNumber}</sup>}
+      {NBSP}
+      {typeof score === 'number' ? <b>{score}</b> : <div className="e-result-scorecount-empty" />}{' '}
+      {maxScore ? `/ ${maxScore} ` : null} <Translation>{t => t('points')}</Translation>
+    </div>
+  )
+}
 
-export default ResultsExamQuestionScore
+export default React.memo(ResultsExamQuestionScore)

@@ -49,12 +49,7 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
         </span>
         {!isAnswerCorrect && <span className="e-dropdown-answer__correct">{correctAnswers.join(',')}</span>}
         {scoreValue != null && (
-          <ResultsExamQuestionScore
-            className="e-float-right"
-            score={scoreValue}
-            maxScore={maxScore}
-            displayNumber={displayNumber}
-          />
+          <ResultsExamQuestionScore score={scoreValue} maxScore={maxScore} displayNumber={displayNumber} />
         )}
       </>
     )
