@@ -2,8 +2,8 @@ import React from 'react'
 import { ExamComponentProps } from './components/types'
 import { mapChildNodes } from './dom-utils'
 
-const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
-const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
+export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
+export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
 
 export enum RenderOptions {
   RenderHTML,
