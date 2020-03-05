@@ -48,7 +48,7 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
     <div className="e-mrg-b-1">
       <label
         className={classNames('e-columns', {
-          'e-correct-answer': isCorrect,
+          'e-correct-answer-left': isCorrect,
           'e-columns--inline':
             query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */
         })}
@@ -59,7 +59,7 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
     </div>
   ) : (
     <div className="e-column e-mrg-b-1">
-      <label className={classNames('e-block e-text-center', { 'e-correct-answer': isCorrect })}>
+      <label className={classNames('e-block e-text-center', { 'e-correct-answer-bottom': isCorrect })}>
         <RadioInput />
         {content}
       </label>
