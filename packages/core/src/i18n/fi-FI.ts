@@ -30,6 +30,10 @@ export const fi_FI = {
     play: 'Testaa äänitteiden kuuluvuus',
     volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.'
   },
+  grading: {
+    'pregrading-annotations': 'Opettajan merkinnät',
+    'censor-annotations': 'Sensorin merkinnät'
+  },
   references: {
     heading: 'Lähteet',
     source: 'Lähde:',

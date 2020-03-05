@@ -42,18 +42,13 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
                 element
               }}
             />
-            <div className="answer-annotations">
-              <div className="is_pregrading">
-                <table className="annotation-messages" />
-              </div>
-            </div>
           </div>
           {comment && (
             <>
               <h5>
                 <Translation>{t => t('comment')}</Translation>
               </h5>
-              <div className="comment">{comment}</div>
+              <p className="comment">{comment}</p>
             </>
           )}
         </>

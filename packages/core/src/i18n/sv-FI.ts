@@ -27,6 +27,10 @@ export const sv_FI: Translations = {
     play: 'Testa hörbarheten',
     volume: 'Du kan justera ljudvolymen uppe i högra hörnet av rutan.'
   },
+  grading: {
+    'pregrading-annotations': 'Opettajan merkinnät',
+    'censor-annotations': 'Sensorin merkinnät'
+  },
   references: {
     heading: 'Källor',
     source: 'Källa:',
