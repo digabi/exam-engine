@@ -65,7 +65,7 @@ function Results({}: ResultsProps) {
             <React.StrictMode />
             {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
             <Section aria-labelledby="title" className="e-section--results">
-              <div className="e-columns">
+              <div className="e-columns e-columns--center-v">
                 {examTitle && (
                   <DocumentTitle id="title" className="e-font-size-xxl e-column e-mrg-b-0">
                     {renderChildNodes(examTitle)}
@@ -88,19 +88,21 @@ function ScoresAndFinalGrade() {
   const { t } = useTranslation()
 
   return (
-    <div className="e-column--narrow e-columns">
-      <div
-        className="e-mrg-r-2"
-        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minWidth: '2rem' }}
-      >
-        {t('grading-total')}
-        {gradingText && <span className="e-column">{t('grade')}</span>}
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minWidth: '2rem' }}>
-        <strong>{t('points', { count: totalScore })}</strong>
-        {gradingText && <strong>{gradingText}</strong>}
-      </div>
+    <div className="e-column--narrow">
+      <table className="e-table e-table--borderless e-mrg-b-0">
+        <tbody>
+          <tr>
+            <th className="e-pad-y-0 e-normal">{t('grading-total')}</th>
+            <td className="e-pad-y-0 e-semibold e-text-right">{t('points', { count: totalScore })}</td>
+          </tr>
+          {gradingText && (
+            <tr>
+              <th className="e-pad-y-0 e-normal">{t('grade')}</th>
+              <td className="e-pad-y-0 e-semibold e-text-right">{gradingText}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -1412,7 +1412,7 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -1422,35 +1422,24 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
         , 19.9.2018
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Yhteensä
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            15 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Yhteensä
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                15 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -4289,7 +4278,7 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -4299,35 +4288,24 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
         , 19.9.2018
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Yhteensä
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            15 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Yhteensä
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                15 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -13887,7 +13865,7 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -13897,35 +13875,24 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
         , 29.9.2018
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Yhteensä
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            139 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Yhteensä
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                139 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -15958,7 +15925,7 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -15968,35 +15935,24 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
         , 29.9.2018
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Sammanlagt
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            139 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Sammanlagt
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                139 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -44117,7 +44073,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -44127,35 +44083,24 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
         , 29.9.2018
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Yhteensä
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            11 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Yhteensä
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                11 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -45107,7 +45052,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -46700,7 +46645,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
                 className="e-mrg-b-1"
               >
                 <label
-                  className="e-columns e-correct-answer e-columns--inline"
+                  className="e-columns e-correct-answer-left e-columns--inline"
                 >
                   <input
                     checked={false}
@@ -46803,7 +46748,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
                 className="e-mrg-b-1"
               >
                 <label
-                  className="e-columns e-correct-answer e-columns--inline"
+                  className="e-columns e-correct-answer-left e-columns--inline"
                 >
                   <input
                     checked={false}
@@ -46933,7 +46878,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
                 className="e-mrg-b-1"
               >
                 <label
-                  className="e-columns e-correct-answer e-columns--inline"
+                  className="e-columns e-correct-answer-left e-columns--inline"
                 >
                   <input
                     checked={false}
@@ -47069,7 +47014,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -47079,35 +47024,24 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
         , 29.9.2018
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Sammanlagt
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            11 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Sammanlagt
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                11 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -48059,7 +47993,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -49652,7 +49586,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
                 className="e-mrg-b-1"
               >
                 <label
-                  className="e-columns e-correct-answer e-columns--inline"
+                  className="e-columns e-correct-answer-left e-columns--inline"
                 >
                   <input
                     checked={false}
@@ -49755,7 +49689,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
                 className="e-mrg-b-1"
               >
                 <label
-                  className="e-columns e-correct-answer e-columns--inline"
+                  className="e-columns e-correct-answer-left e-columns--inline"
                 >
                   <input
                     checked={false}
@@ -49885,7 +49819,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
                 className="e-mrg-b-1"
               >
                 <label
-                  className="e-columns e-correct-answer e-columns--inline"
+                  className="e-columns e-correct-answer-left e-columns--inline"
                 >
                   <input
                     checked={false}
@@ -67723,7 +67657,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -67733,35 +67667,24 @@ exports[`N.xml renders properly: <Results /> 1`] = `
         , 24.9.2019
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Yhteensä
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            137 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Yhteensä
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                137 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -68675,7 +68598,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -68931,7 +68854,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -69242,7 +69165,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -69439,7 +69362,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -69712,7 +69635,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -69965,7 +69888,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -73317,7 +73240,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -73327,35 +73250,24 @@ exports[`N.xml renders properly: <Results /> 2`] = `
         , 24.9.2019
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Sammanlagt
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            137 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Sammanlagt
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                137 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -74269,7 +74181,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -74525,7 +74437,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -74836,7 +74748,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -75033,7 +74945,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -75306,7 +75218,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -75559,7 +75471,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -110897,7 +110809,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -110907,35 +110819,24 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
         , 1.1.1970
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Yhteensä
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            154 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Yhteensä
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                154 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -111050,7 +110951,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -111288,7 +111189,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -111370,7 +111271,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -111579,7 +111480,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -111697,7 +111598,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -111857,7 +111758,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -111975,7 +111876,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -112108,7 +112009,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -112205,7 +112106,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -112350,7 +112251,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -112468,7 +112369,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -112529,7 +112430,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -112715,7 +112616,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -112812,7 +112713,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -113041,7 +112942,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -113166,7 +113067,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -113344,7 +113245,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -113601,7 +113502,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -113795,7 +113696,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -114047,7 +113948,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-column e-mrg-b-1"
             >
               <label
-                className="e-block e-text-center e-correct-answer"
+                className="e-block e-text-center e-correct-answer-bottom"
               >
                 <input
                   checked={false}
@@ -114334,7 +114235,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-column e-mrg-b-1"
             >
               <label
-                className="e-block e-text-center e-correct-answer"
+                className="e-block e-text-center e-correct-answer-bottom"
               >
                 <input
                   checked={false}
@@ -114447,7 +114348,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-column e-mrg-b-1"
             >
               <label
-                className="e-block e-text-center e-correct-answer"
+                className="e-block e-text-center e-correct-answer-bottom"
               >
                 <input
                   checked={false}
@@ -114753,7 +114654,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -114878,7 +114779,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -114991,7 +114892,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -115095,7 +114996,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -115178,7 +115079,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -115240,7 +115141,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -115344,7 +115245,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -115406,7 +115307,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -115564,7 +115465,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -115706,7 +115607,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -115810,7 +115711,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -115947,7 +115848,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -116150,7 +116051,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -116275,7 +116176,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -116379,7 +116280,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -116483,7 +116384,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -116803,7 +116704,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -116886,7 +116787,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -117124,7 +117025,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -117314,7 +117215,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -117439,7 +117340,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -117656,7 +117557,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -117718,7 +117619,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -117822,7 +117723,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -117926,7 +117827,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -118051,7 +117952,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -118209,7 +118110,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -118313,7 +118214,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -118417,7 +118318,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -120107,7 +120008,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
     className="e-section e-bg-color-off-white e-pad-6 e-section--results"
   >
     <div
-      className="e-columns"
+      className="e-columns e-columns--center-v"
     >
       <h1
         className="e-font-size-xxl e-column e-mrg-b-0"
@@ -120117,35 +120018,24 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
         , 1.1.1970
       </h1>
       <div
-        className="e-column--narrow e-columns"
+        className="e-column--narrow"
       >
-        <div
-          className="e-mrg-r-2"
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
+        <table
+          className="e-table e-table--borderless e-mrg-b-0"
         >
-          Sammanlagt
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "justifyContent": "flex-end",
-              "minWidth": "2rem",
-            }
-          }
-        >
-          <strong>
-            154 p.
-          </strong>
-        </div>
+          <tbody>
+            <tr>
+              <td>
+                Sammanlagt
+              </td>
+              <td
+                className="e-semibold e-text-right"
+              >
+                154 p.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -120260,7 +120150,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -120498,7 +120388,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -120580,7 +120470,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -120789,7 +120679,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -120907,7 +120797,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -121067,7 +120957,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -121185,7 +121075,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -121318,7 +121208,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -121415,7 +121305,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -121560,7 +121450,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -121678,7 +121568,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -121739,7 +121629,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -121925,7 +121815,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -122022,7 +121912,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -122251,7 +122141,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -122376,7 +122266,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -122554,7 +122444,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -122811,7 +122701,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -123005,7 +122895,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -123257,7 +123147,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-column e-mrg-b-1"
             >
               <label
-                className="e-block e-text-center e-correct-answer"
+                className="e-block e-text-center e-correct-answer-bottom"
               >
                 <input
                   checked={false}
@@ -123544,7 +123434,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-column e-mrg-b-1"
             >
               <label
-                className="e-block e-text-center e-correct-answer"
+                className="e-block e-text-center e-correct-answer-bottom"
               >
                 <input
                   checked={false}
@@ -123657,7 +123547,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-column e-mrg-b-1"
             >
               <label
-                className="e-block e-text-center e-correct-answer"
+                className="e-block e-text-center e-correct-answer-bottom"
               >
                 <input
                   checked={false}
@@ -123963,7 +123853,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -124088,7 +123978,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -124201,7 +124091,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -124305,7 +124195,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -124388,7 +124278,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -124450,7 +124340,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -124554,7 +124444,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -124616,7 +124506,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -124774,7 +124664,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -124916,7 +124806,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -125020,7 +124910,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -125157,7 +125047,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -125360,7 +125250,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -125485,7 +125375,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -125589,7 +125479,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -125693,7 +125583,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -126013,7 +125903,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -126096,7 +125986,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -126334,7 +126224,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -126524,7 +126414,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -126649,7 +126539,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -126866,7 +126756,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -126928,7 +126818,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -127032,7 +126922,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -127136,7 +127026,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -127261,7 +127151,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
@@ -127419,7 +127309,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -127523,7 +127413,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={false}
@@ -127627,7 +127517,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               className="e-mrg-b-1"
             >
               <label
-                className="e-columns e-correct-answer e-columns--inline"
+                className="e-columns e-correct-answer-left e-columns--inline"
               >
                 <input
                   checked={true}
