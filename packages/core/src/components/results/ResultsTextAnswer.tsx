@@ -10,7 +10,7 @@ import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
 function ResultsTextAnswer({ element, className }: ExamComponentProps) {
-  const { answerCount } = useContext(QuestionContext)
+  const { answers } = useContext(QuestionContext)
   const { answersByQuestionId, scores } = useContext(ResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')!
   const maxScore = getNumericAttribute(element, 'max-score')!
@@ -63,14 +63,14 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
     default:
       return (
         <>
-          {answerCount > 1 && <sup>{displayNumber}</sup>}
+          {answers.length > 1 && <sup>{displayNumber}</sup>}
           <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
           {score && (
             <ResultsExamQuestionScore
               className="e-float-right"
               score={score.scoreValue}
               maxScore={maxScore}
-              displayNumber={answerCount > 1 ? displayNumber : undefined}
+              displayNumber={answers.length > 1 ? displayNumber : undefined}
             />
           )}
         </>

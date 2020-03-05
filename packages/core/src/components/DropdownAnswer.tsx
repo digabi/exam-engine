@@ -69,7 +69,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   }
 
   const items: Item[] = [noAnswer, ...element.children]
-  const { answerCount } = useContext(QuestionContext)
+  const { answers } = useContext(QuestionContext)
 
   return (
     <span className="e-nowrap">
@@ -138,7 +138,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           </span>
         )}
       </Downshift>
-      {answerCount > 1 && <Score score={maxScore} size={'inline'} />}
+      {answers.length > 1 && <Score score={maxScore} size={'inline'} />}
     </span>
   )
 }
