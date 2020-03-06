@@ -1,6 +1,5 @@
-import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { Translation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
@@ -9,9 +8,10 @@ import { ExamComponentProps, TextAnswer } from '../types'
 import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
-function ResultsTextAnswer({ element, className }: ExamComponentProps) {
+function ResultsTextAnswer({ element }: ExamComponentProps) {
   const { answers } = useContext(QuestionContext)
   const { answersByQuestionId, scores } = useContext(ResultsContext)
+  const { t } = useTranslation()
   const questionId = getNumericAttribute(element, 'question-id')!
   const maxScore = getNumericAttribute(element, 'max-score')!
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
@@ -27,14 +27,9 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
       return (
         <>
           {score && <ResultsExamQuestionScore score={score.scoreValue} maxScore={maxScore} />}
-
-          <div className="answer">
+          <div className="answer-text e-multiline-results-text-answer">
             <div className="answer-text-container">
-              <div
-                className="answerText"
-                data-annotations={JSON.stringify(score ? score.annotations : [])}
-                dangerouslySetInnerHTML={{ __html: value! }}
-              />
+              <div className="answerText" dangerouslySetInnerHTML={{ __html: value! }} />
             </div>
             <AnswerToolbar
               {...{
@@ -45,10 +40,8 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
           </div>
           {comment && (
             <>
-              <h5>
-                <Translation>{t => t('comment')}</Translation>
-              </h5>
-              <p className="comment">{comment}</p>
+              <h5>{t('comment')}</h5>
+              <p className="e-italic">{comment}</p>
             </>
           )}
         </>
@@ -59,7 +52,11 @@ function ResultsTextAnswer({ element, className }: ExamComponentProps) {
       return (
         <>
           {answers.length > 1 && <sup>{displayNumber}</sup>}
-          <span className={classNames('text-answer text-answer--single-line', className)}>{value}</span>
+          <span className="answer">
+            <span className="text-answer text-answer--single answer-text-container">
+              <span className="answerText">{value}</span>
+            </span>
+          </span>
           {score && (
             <ResultsExamQuestionScore
               score={score.scoreValue}
