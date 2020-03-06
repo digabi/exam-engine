@@ -3,6 +3,6 @@
   "packages": [
     "packages/*"
   ],
-  "version": "9.1.2-result-page-styling.0",
+  "version": "9.1.2-result-page-styling.1",
   "exact": true
 }
