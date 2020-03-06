@@ -27,8 +27,8 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
       return (
         <>
           {score && <ResultsExamQuestionScore score={score.scoreValue} maxScore={maxScore} />}
-          <div className="answer-text e-multiline-results-text-answer">
-            <div className="answer-text-container">
+          <div className="answer ">
+            <div className="e-multiline-results-text-answer answer-text-container">
               <div
                 className="answerText"
                 data-annotations={JSON.stringify(score ? score.annotations : [])}
