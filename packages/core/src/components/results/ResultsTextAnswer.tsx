@@ -53,7 +53,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
         <>
           {answers.length > 1 && <sup>{displayNumber}</sup>}
           <span className="answer">
-            <span className="text-answer text-answer--single answer-text-container">
+            <span className="text-answer text-answer--single-line answer-text-container">
               <span className="answerText">{value}</span>
             </span>
           </span>
