@@ -29,7 +29,11 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
           {score && <ResultsExamQuestionScore score={score.scoreValue} maxScore={maxScore} />}
           <div className="answer-text e-multiline-results-text-answer">
             <div className="answer-text-container">
-              <div className="answerText" dangerouslySetInnerHTML={{ __html: value! }} />
+              <div
+                className="answerText"
+                data-annotations={JSON.stringify(score ? score.annotations : [])}
+                dangerouslySetInnerHTML={{ __html: value! }}
+              />
             </div>
             <AnswerToolbar
               {...{
@@ -54,7 +58,9 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
           {answers.length > 1 && <sup>{displayNumber}</sup>}
           <span className="answer">
             <span className="text-answer text-answer--single-line answer-text-container">
-              <span className="answerText">{value}</span>
+              <span className="answerText" data-annotations={JSON.stringify(score ? score.annotations : [])}>
+                {value}
+              </span>
             </span>
           </span>
           {score && (
@@ -68,4 +74,5 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
       )
   }
 }
+
 export default React.memo(ResultsTextAnswer)
