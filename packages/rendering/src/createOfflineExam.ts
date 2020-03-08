@@ -32,7 +32,9 @@ export async function createOfflineExam(
   const resolveAttachment = (filename: string) => path.resolve(path.dirname(examFile), 'attachments', filename)
   const source = await fs.readFile(examFile, 'utf-8')
   const examOutputDirectories: string[] = []
-  const results = await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
+  const results = await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
+    removeHiddenElements: !opts.mediaVersion
+  })
   const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then(d => d.path)
 
   for (const result of results) {
