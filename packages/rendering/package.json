@@ -10,8 +10,10 @@
   "dependencies": {
     "@digabi/exam-engine-core": "9.1.1",
     "@digabi/exam-engine-mastering": "9.1.1",
+    "child-process-promise": "^2.2.1",
     "css-loader": "^3.2.1",
     "dexie": "^2.0.4",
+    "ffmpeg-static": "^4.0.1",
     "file-loader": "^5.0.2",
     "html-inline-css-webpack-plugin": "^1.8.0",
     "html-webpack-plugin": "^3.2.0",
@@ -27,6 +29,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "rich-text-editor": "^4.7.2",
+    "tmp-promise": "^2.0.2",
     "uuid": "^3.3.3",
     "webpack": "^4.41.2",
     "webpack-dev-server": "3.8.0",

@@ -4,9 +4,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import path from 'path'
 import webpack from 'webpack'
+import { CreateOfflineExamOptions } from './createOfflineExam'
 import { getWebpackConfig } from './getWebpackConfig'
 
-export function getOfflineWebpackConfig(result: MasteringResult, outputDirectory: string): webpack.Configuration {
+export function getOfflineWebpackConfig(
+  result: MasteringResult,
+  outputDirectory: string,
+  options: CreateOfflineExamOptions
+): webpack.Configuration {
   const mode = process.env.NODE_ENV === 'test' ? 'development' : 'production'
 
   return getWebpackConfig({
@@ -20,7 +25,8 @@ export function getOfflineWebpackConfig(result: MasteringResult, outputDirectory
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(mode),
         'process.env.EXAM': JSON.stringify(result.xml),
-        'process.env.EXAM_LANGUAGE': JSON.stringify(result.language)
+        'process.env.EXAM_LANGUAGE': JSON.stringify(result.language),
+        'process.env.MEDIA_VERSION': JSON.stringify(options.mediaVersion)
       }),
       new OptimizeCssAssetsPlugin(),
       new HtmlWebpackPlugin({
