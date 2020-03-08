@@ -17,9 +17,39 @@ export function getOfflineWebpackConfig(
   return getWebpackConfig({
     mode,
     devtool: false,
-    entry: path.resolve(__dirname, 'offline.js'),
+    entry: [require.resolve('@babel/polyfill'), path.resolve(__dirname, 'offline.js')],
     output: {
       path: outputDirectory
+    },
+    module: {
+      rules: [
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          include: /@digabi\/exam-engine-core/,
+          use: {
+            loader: require.resolve('babel-loader'),
+            options: {
+              compact: false,
+              plugins: [require.resolve('@babel/plugin-transform-runtime')],
+              presets: [
+                [
+                  require.resolve('@babel/preset-env'),
+                  {
+                    targets: {
+                      chrome: '70',
+                      firefox: '60',
+                      edge: '18',
+                      safari: '12',
+                      ios: '12'
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      ]
     },
     plugins: [
       new webpack.DefinePlugin({

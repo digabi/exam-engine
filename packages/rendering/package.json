@@ -8,8 +8,14 @@
     "public"
   ],
   "dependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/runtime": "^7.8.7",
     "@digabi/exam-engine-core": "9.1.1",
     "@digabi/exam-engine-mastering": "9.1.1",
+    "babel-loader": "^8.0.6",
     "child-process-promise": "^2.2.1",
     "css-loader": "^3.2.1",
     "dexie": "^2.0.4",
