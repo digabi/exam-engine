@@ -31,7 +31,14 @@ yargs
   .command(
     'create-offline [exam] [options]',
     'Create a standalone offline version of the exam.',
-    addExamAndOutdirArgs,
+    argv => {
+      addExamAndOutdirArgs(argv)
+      argv.option('media', {
+        description:
+          'Create a media version of the exam. This will encode video files as x264 and audio files as mp3 and not remove hidden references from the exam.',
+        type: 'boolean'
+      })
+    },
     runCommand('./commands/create-offline')
   )
   .command(
