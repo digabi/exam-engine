@@ -6,12 +6,16 @@ import noopExamServerAPI from './utils/noopExamServerAPI'
 
 const exam = process.env.EXAM!
 const language = process.env.EXAM_LANGUAGE!
+const isMediaVersion = !!process.env.MEDIA_VERSION
 
 const doc = parseExam(exam, true)
 const answers: ExamAnswer[] = []
 const isExamPage = !location.pathname.includes('/attachments')
 const attachmentsURL = isExamPage ? 'attachments/index.html' : ''
-const resolveAttachment = (filename: string) => (isExamPage ? 'attachments/' : '') + encodeURIComponent(filename)
+const resolveAttachment = (filename: string) => {
+  const actualFilename = !isMediaVersion ? filename : filename.replace(/\.webm$/, '.mp4').replace(/\.ogg$/, '.mp3')
+  return (isExamPage ? 'attachments/' : '') + encodeURIComponent(actualFilename)
+}
 const examServerApi = noopExamServerAPI(resolveAttachment)
 const Root = isExamPage ? Exam : Attachments
 
