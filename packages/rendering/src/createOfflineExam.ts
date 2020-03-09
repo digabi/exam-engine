@@ -4,7 +4,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import puppeteer from 'puppeteer'
 import tmp from 'tmp-promise'
-import uuid from 'uuid'
+import * as uuid from 'uuid'
 import webpack from 'webpack'
 import { getOfflineWebpackConfig } from './getOfflineWebpackConfig'
 

@@ -3,7 +3,7 @@ import { promises as fs } from 'fs'
 import { SyntaxError } from 'libxmljs2'
 import _ from 'lodash'
 import path from 'path'
-import uuid from 'uuid'
+import * as uuid from 'uuid'
 import webpack from 'webpack'
 
 function stringifyModule(module: any, attachments: Attachment[] = []): string {
