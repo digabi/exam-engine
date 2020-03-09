@@ -3,12 +3,14 @@ import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
+import { QuestionContext } from '../QuestionContext'
 import { ChoiceAnswer, ExamComponentProps } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
 function ResultsDropdownAnswer({ element }: ExamComponentProps) {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
+  const { answers } = useContext(QuestionContext)
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = answersByQuestionId[questionId] as ChoiceAnswer | undefined
 
@@ -37,7 +39,7 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
 
     return (
       <>
-        <sup>{displayNumber}</sup>
+        {answers.length > 1 && <sup>{displayNumber}</sup>}
 
         <span
           className={classNames('e-dropdown-answer__answered', {

@@ -47397,9 +47397,6 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
         >
           
         
-          <sup>
-            9.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -47413,9 +47410,6 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              9.
-            </sup>
              
             <b>
               0
@@ -50498,9 +50492,6 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
         >
           
         
-          <sup>
-            9.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -50514,9 +50505,6 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              9.
-            </sup>
              
             <b>
               0
@@ -69674,9 +69662,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           </p>
           
         
-          <sup>
-            1.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--correct"
           >
@@ -69688,9 +69673,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              1.
-            </sup>
              
             <b>
               2
@@ -69775,9 +69757,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           </p>
           
         
-          <sup>
-            2.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -69797,9 +69776,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              2.
-            </sup>
              
             <b>
               0
@@ -69889,9 +69865,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           </p>
           
         
-          <sup>
-            3.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -69911,9 +69884,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              3.
-            </sup>
              
             <b>
               0
@@ -69987,9 +69957,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           </p>
           
         
-          <sup>
-            4.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -70009,9 +69976,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              4.
-            </sup>
              
             <b>
               0
@@ -70105,9 +70069,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           </p>
           
         
-          <sup>
-            5.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -70127,9 +70088,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              5.
-            </sup>
              
             <b>
               0
@@ -70211,9 +70169,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           </p>
           
         
-          <sup>
-            6.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -70233,9 +70188,6 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              6.
-            </sup>
              
             <b>
               0
@@ -75943,9 +75895,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           </p>
           
         
-          <sup>
-            1.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--correct"
           >
@@ -75957,9 +75906,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              1.
-            </sup>
              
             <b>
               2
@@ -76044,9 +75990,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           </p>
           
         
-          <sup>
-            2.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -76066,9 +76009,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              2.
-            </sup>
              
             <b>
               0
@@ -76158,9 +76098,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           </p>
           
         
-          <sup>
-            3.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -76180,9 +76117,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              3.
-            </sup>
              
             <b>
               0
@@ -76256,9 +76190,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           </p>
           
         
-          <sup>
-            4.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -76278,9 +76209,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              4.
-            </sup>
              
             <b>
               0
@@ -76374,9 +76302,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           </p>
           
         
-          <sup>
-            5.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -76396,9 +76321,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              5.
-            </sup>
              
             <b>
               0
@@ -76480,9 +76402,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           </p>
           
         
-          <sup>
-            6.
-          </sup>
           <span
             className="e-dropdown-answer__answered e-dropdown-answer__answered--wrong"
           >
@@ -76502,9 +76421,6 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           <div
             className="e-result-scorecount e-float-right"
           >
-            <sup>
-              6.
-            </sup>
              
             <b>
               0

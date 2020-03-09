@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { NBSP } from '../../dom-utils'
+import { QuestionContext } from '../QuestionContext'
 
 interface ResultsExamQuestionScoreProps {
   score?: number
@@ -9,9 +10,10 @@ interface ResultsExamQuestionScoreProps {
 }
 
 function ResultsExamQuestionScore({ score, maxScore, displayNumber }: ResultsExamQuestionScoreProps) {
+  const { answers } = useContext(QuestionContext)
   return (
     <div className="e-result-scorecount e-float-right">
-      {displayNumber && <sup>{displayNumber}</sup>}
+      {answers.length > 1 && displayNumber && <sup>{displayNumber}</sup>}
       {NBSP}
       {typeof score === 'number' ? <b>{score}</b> : <div className="e-result-scorecount-empty" />}{' '}
       {maxScore ? `/ ${maxScore} ` : null} <Translation>{t => t('points')}</Translation>
