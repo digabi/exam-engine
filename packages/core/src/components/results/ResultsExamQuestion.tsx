@@ -3,14 +3,15 @@ import React, { useContext } from 'react'
 import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
 import { QuestionContext, withQuestionContext } from '../QuestionContext'
 import { ExamAnswer, ExamComponentProps } from '../types'
+import AnnotationList from './AnnotationList'
 import { ResultsContext } from './ResultsContext'
 
 function ResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const { answersByQuestionId } = useContext(ResultsContext)
-  const hasAnswers: boolean = questionHasAnswers(element, answersByQuestionId)
   const { displayNumber, level } = useContext(QuestionContext)
+  const hasAnswers = questionHasAnswers(element, answersByQuestionId)
 
-  return !hasAnswers ? null : (
+  return hasAnswers ? (
     <div
       className={classNames('exam-question', {
         'e-mrg-b-8 e-clearfix': level === 0,
@@ -19,8 +20,9 @@ function ResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) 
       id={displayNumber}
     >
       {renderChildNodes(element)}
+      <AnnotationList />
     </div>
-  )
+  ) : null
 }
 
 function questionHasAnswers(element: Element, answers: Record<number, ExamAnswer>): boolean {

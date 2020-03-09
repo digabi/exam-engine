@@ -62,8 +62,8 @@ function mkScores(gradingStructure: GradingStructure): AnswerScore[] {
     .map((question, i) => ({
       questionId: question.id,
       scoreValue: Math.min(question.maxScore, i),
-      comment: 'Lorem ipsum dolor amet',
-      annotations: []
+      comment: `Comment to question ${question.displayNumber}`,
+      annotations: [{ startIndex: 0, length: 0, message: `Annotation to question ${question.displayNumber}` }]
     }))
 }
 
