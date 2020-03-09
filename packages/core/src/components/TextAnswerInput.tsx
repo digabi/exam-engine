@@ -198,7 +198,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
               data-question-id={questionId}
             />
             <QuestionContext.Consumer>
-              {({ answerCount }) => answerCount > 1 && <Score score={maxScore} size="inline" />}
+              {({ answers }) => answers.length > 1 && <Score score={maxScore} size="inline" />}
             </QuestionContext.Consumer>
           </span>
         )

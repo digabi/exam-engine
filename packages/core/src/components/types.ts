@@ -32,7 +32,7 @@ export interface Annotation {
 
 export interface AnswerScore {
   questionId: number
-  scoreValue: number
+  scoreValue: number | undefined
   comment?: string
   annotations: Annotation[]
 }

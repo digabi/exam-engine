@@ -8,11 +8,9 @@ import { scrollToHash } from '../../scrollToHash'
 import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
 import { CommonExamProps } from '../Exam'
-import ExamAttachment from '../ExamAttachment'
+import ExamQuestionInstruction from '../ExamQuestionInstruction'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
-import mkHints from '../Hints'
-import Image from '../Image'
 import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
 import { AnswerScore } from '../types'
@@ -34,20 +32,20 @@ export interface ResultsProps extends CommonExamProps {
 }
 
 const renderChildNodes = createRenderChildNodes({
-  attachment: ExamAttachment,
+  attachment: RenderChildNodes,
   'audio-group': RenderChildNodes,
   'choice-answer': ResultsChoiceAnswer,
   'dropdown-answer': ResultsDropdownAnswer,
   formula: Formula,
-  image: Image,
   question: ResultsExamQuestion,
+  hints: RenderChildNodes,
+  'question-instruction': ExamQuestionInstruction,
   'question-title': ResultsExamQuestionTitle,
-  hints: mkHints({ stateful: false }),
-  'scored-text-answers': mkHints({ stateful: false }),
   section: ResultsExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,
-  'scored-text-answer': ResultsTextAnswer
+  'scored-text-answer': ResultsTextAnswer,
+  'scored-text-answers': RenderChildNodes
 })
 
 function Results({}: ResultsProps) {
@@ -66,14 +64,16 @@ function Results({}: ResultsProps) {
           <main className="e-exam" lang={language}>
             <React.StrictMode />
             {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-            <Section aria-labelledby="title">
-              {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
-              {date && (
-                <p>
-                  <strong>{dateTimeFormatter.format(date)}</strong>
-                </p>
-              )}
-              <ScoresAndFinalGrade />
+            <Section aria-labelledby="title" className="e-section--results">
+              <div className="e-columns e-columns--center-v">
+                {examTitle && (
+                  <DocumentTitle id="title" className="e-font-size-xxl e-column e-mrg-b-0">
+                    {renderChildNodes(examTitle)}
+                    {date && ', ' + dateTimeFormatter.format(date)}
+                  </DocumentTitle>
+                )}
+                <ScoresAndFinalGrade />
+              </div>
             </Section>
             {renderChildNodes(root)}
           </main>
@@ -88,20 +88,21 @@ function ScoresAndFinalGrade() {
   const { t } = useTranslation()
 
   return (
-    <div>
-      <span className="e-column">
-        {t('exam-total')}
-        {':'}
-      </span>
-      <strong className="e-column e-column--narrow table-of-contents--score-column">
-        {t('points', { count: totalScore })}
-      </strong>
-      {gradingText && (
-        <div>
-          <span className="e-column">{t('grade')}</span>
-          <strong className="e-column e-column--narrow table-of-contents--score-column">{gradingText}</strong>
-        </div>
-      )}
+    <div className="e-column--narrow">
+      <table className="e-table e-table--borderless e-mrg-b-0">
+        <tbody>
+          <tr>
+            <th className="e-pad-y-0 e-normal">{t('grading-total')}</th>
+            <td className="e-pad-y-0 e-semibold e-text-right">{t('points', { count: totalScore })}</td>
+          </tr>
+          {gradingText && (
+            <tr>
+              <th className="e-pad-y-0 e-normal">{t('grade')}</th>
+              <td className="e-pad-y-0 e-semibold e-text-right">{gradingText}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }

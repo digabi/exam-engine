@@ -6,6 +6,7 @@ export type ExamTranslations = DeepPartial<Translations>
 // tslint:disable-next-line:variable-name
 export const fi_FI = {
   'exam-total': 'Koe yhteensä',
+  'grading-total': 'Yhteensä',
   material: 'Aineisto',
   material_plural: 'Aineistot',
   'attachments-page-title': 'aineisto',
@@ -28,6 +29,10 @@ export const fi_FI = {
       'Koe sisältää kuullunymmärtämisen tehtäviä. Tehtävien äänitteitä ei voi kuuntelun aikana pysäyttää eikä kuunnella uudestaan.',
     play: 'Testaa äänitteiden kuuluvuus',
     volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.'
+  },
+  grading: {
+    'pregrading-annotations': 'Valmistavan arvostelun merkinnät',
+    'censor-annotations': 'Sensorin merkinnät'
   },
   references: {
     heading: 'Lähteet',

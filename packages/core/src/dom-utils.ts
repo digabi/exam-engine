@@ -1,3 +1,4 @@
+import { ExamNamespaceURI } from './createRenderChildNodes'
 export const NBSP = '\u00A0'
 
 export function parentElements(element: Element, selector?: Selector): Element[] {
@@ -16,10 +17,10 @@ type Selector = string | string[] | ((element: Element) => boolean)
 
 function mkPredicate(selector: Selector): (element: Element) => boolean {
   return typeof selector === 'function'
-    ? (element: Element) => selector(element)
+    ? (element: Element) => element.namespaceURI === ExamNamespaceURI && selector(element)
     : Array.isArray(selector)
-    ? (element: Element) => selector.includes(element.localName)
-    : (element: Element) => element.localName === selector
+    ? (element: Element) => element.namespaceURI === ExamNamespaceURI && selector.includes(element.localName)
+    : (element: Element) => element.namespaceURI === ExamNamespaceURI && element.localName === selector
 }
 
 export function query(root: Element, selector: Selector): Element | undefined {
