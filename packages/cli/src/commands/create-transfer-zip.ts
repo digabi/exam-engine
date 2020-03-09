@@ -4,7 +4,7 @@ import { Element } from 'libxmljs2'
 import _ from 'lodash'
 import { Ora } from 'ora'
 import path from 'path'
-import uuid from 'uuid'
+import * as uuid from 'uuid'
 import yazl from 'yazl'
 import { examName } from '../utils'
 
