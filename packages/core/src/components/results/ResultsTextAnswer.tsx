@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getNumericAttribute } from '../../dom-utils'
@@ -30,7 +31,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
           <div className="answer">
             <div className="e-multiline-results-text-answer answer-text-container">
               <div
-                className="answerText"
+                className={classNames('answerText', { 'e-pre-wrap': type === 'multi-line' })}
                 data-annotations={JSON.stringify(score ? score.annotations : [])}
                 dangerouslySetInnerHTML={{ __html: value! }}
               />
