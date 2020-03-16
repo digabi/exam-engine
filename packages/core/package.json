@@ -13,7 +13,7 @@
     "watch": "webpack -p --watch",
     "lint": "tslint -p . && tslint -p __tests__",
     "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
-    "test": "jest"
+    "test": "NODE_ICU_DATA=../../node_modules/full-icu jest"
   },
   "peerDependencies": {
     "react": "^16.10.2"
