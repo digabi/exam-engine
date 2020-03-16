@@ -4,7 +4,7 @@ import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import ExamAttachment from '../ExamAttachment'
 import Image from '../Image'
-import { ExamComponentProps, QuestionId } from '../types'
+import { AutogradedScore, ExamComponentProps, QuestionId } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
@@ -77,11 +77,12 @@ function ResultsChoiceAnswer({ element }: ExamComponentProps) {
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
   const scoreValue = answer && choice.options.find(option => option.id === Number(answer.value))!.score
+  const score = { type: 'autograded', score: scoreValue } as AutogradedScore
   const maxScore = getNumericAttribute(element, 'max-score')
 
   return (
     <>
-      {scoreValue !== undefined && <ResultsExamQuestionScore score={scoreValue} maxScore={maxScore} />}
+      {scoreValue !== undefined && <ResultsExamQuestionScore scores={score} maxScore={maxScore} />}
       <div
         className={classNames('e-choice-answer', className, {
           'e-columns': direction === 'horizontal'

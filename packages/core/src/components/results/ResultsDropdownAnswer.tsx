@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { QuestionContext } from '../QuestionContext'
-import { ChoiceAnswer, ExamComponentProps } from '../types'
+import { AutogradedScore, ChoiceAnswer, ExamComponentProps } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
@@ -34,7 +34,7 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
     const isAnswerCorrect = correctIds.includes(getNumericAttribute(currentlySelectedItem, 'option-id') as number)
     const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
     const scoreValue = answer && choice.options.find(option => option.id === Number(answer.value))!.score
-
+    const score = { type: 'autograded', score: scoreValue } as AutogradedScore
     const maxScore = getNumericAttribute(element, 'max-score')!
 
     return (
@@ -51,7 +51,7 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
         </span>
         {!isAnswerCorrect && <span className="e-dropdown-answer__correct">{correctAnswers.join(',')}</span>}
         {scoreValue != null && (
-          <ResultsExamQuestionScore score={scoreValue} maxScore={maxScore} displayNumber={displayNumber} />
+          <ResultsExamQuestionScore scores={score} maxScore={maxScore} displayNumber={displayNumber} />
         )}
       </>
     )
