@@ -45,7 +45,8 @@ function ResultsExamQuestionManualScore({
   displayNumber?: string
 }) {
   const { answers } = useContext(QuestionContext)
-  const normalizedScores = scores.map(getScores).flat(1)
+  const normalizedScores = scores.map(getScores).reduce((a, b) => [...a, ...b])
+
   return (
     <ScoresContainer answers={answers} displayNumber={displayNumber}>
       {maxScore || null} <Translation>{t => t('points-max')}</Translation>
