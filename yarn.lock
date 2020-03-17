@@ -2478,9 +2478,9 @@
     source-map "^0.6.1"
 
 "@types/uuid@^7.0.0":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-7.0.1.tgz#6c7290f24c06dada2d3939bb16d65415588bafc8"
-  integrity sha512-nWG+LfyZLiaaOUxcqpvK4MDQNm5qaLM1LtwbGJ7MgoZ+twQHpQ9Bd46COkiJur75iXRqDFR26mPgWSJIrlemsg==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-7.0.2.tgz#d680a9c596ef84abf5c4c07a32ffd66d582526f8"
+  integrity sha512-8Ly3zIPTnT0/8RCU6Kg/G3uTICf9sRwYOpUzSIM3503tLIKcnJPRuinHhXngJUy2MntrEf6dlpOHXJju90Qh5w==
 
 "@types/webpack-dev-server@^3.9.0":
   version "3.10.1"
