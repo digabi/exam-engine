@@ -1,4 +1,4 @@
-import { AnswerScore, Attachments, Exam, ExamAnswer, parseExam, Results } from '@digabi/exam-engine-core'
+import { Attachments, Exam, ExamAnswer, parseExam, PregradingScore, Results, Scores } from '@digabi/exam-engine-core'
 import { listExams } from '@digabi/exam-engine-exams'
 import {
   getMediaMetadataFromLocalFile,
@@ -56,15 +56,20 @@ for (const exam of listExams()) {
   })
 }
 
-function mkScores(gradingStructure: GradingStructure): AnswerScore[] {
+function mkScores(gradingStructure: GradingStructure): Scores {
   return gradingStructure.questions
     .filter((question): question is TextQuestion => question.type === 'text')
-    .map((question, i) => ({
-      questionId: question.id,
-      scoreValue: Math.min(question.maxScore, i),
-      comment: `Comment to question ${question.displayNumber}`,
-      annotations: [{ startIndex: 0, length: 0, message: `Annotation to question ${question.displayNumber}` }]
-    }))
+    .map((question, i) => ({ [question.id]: [createPregradingScore(question, i)] }))
+    .reduce((p, c) => ({ ...p, ...c }), {})
+}
+
+function createPregradingScore(question: { maxScore: number; displayNumber: string }, i: number): PregradingScore {
+  return {
+    type: 'pregrading',
+    score: Math.min(question.maxScore, i),
+    comment: `Comment to question ${question.displayNumber}`,
+    annotations: [{ startIndex: 0, length: 0, message: `Annotation to question ${question.displayNumber}` }]
+  }
 }
 
 function mkAnswers(gradingStructure: GradingStructure): ExamAnswer[] {

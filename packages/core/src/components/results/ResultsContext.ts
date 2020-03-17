@@ -2,14 +2,14 @@ import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digab
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { AnswerScore, ChoiceAnswer, ExamAnswer, QuestionId } from '../types'
+import { AutogradedScore, ChoiceAnswer, ExamAnswer, ManualScore, PregradingScore, QuestionId, Scores } from '../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
 
 export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>
   gradingStructure: GradingStructure
-  scores: AnswerScore[]
+  scores: Scores
   gradingText: string | undefined
   totalScore: number
 }
@@ -54,14 +54,18 @@ export function findMultiChoiceFromGradingStructure(
   return undefined
 }
 
-export function findScore(scores: AnswerScore[], questionId: number) {
-  return scores.find(s => s.questionId === questionId)
+export function findPregradingScore(scores: Scores, questionId: number) {
+  const answerScores = scores[questionId]
+  if (!answerScores || (answerScores as AutogradedScore).type) {
+    return null
+  }
+  return (answerScores as ManualScore[]).find(a => a.type === 'pregrading') as PregradingScore
 }
 
 export function calculateQuestionSumScore(
   questionElement: Element,
   gradingStructure: GradingStructure,
-  scores: AnswerScore[],
+  scores: Scores,
   answersById: Record<QuestionId, ExamAnswer>
 ) {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
@@ -70,8 +74,8 @@ export function calculateQuestionSumScore(
   }
 
   const textQuestionScore = (questionId: number) => {
-    const score = findScore(scores, questionId)
-    return score ? score.scoreValue : 0
+    const score = findPregradingScore(scores, questionId)
+    return score ? score.score : 0
   }
 
   const sumScore = _.sum(

@@ -24,17 +24,41 @@ export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 
+export type Scores = Record<QuestionId, QuestionScore>
+
+export type ManualScore = PregradingScore | CensorScore | InspectionScore
+
+export type QuestionScore = AutogradedScore | ManualScore[]
+
+export interface AutogradedScore {
+  type: 'autograded'
+  score: number
+}
+
+export interface PregradingScore {
+  type: 'pregrading'
+  score?: number
+  comment?: string
+  annotations: Annotation[]
+}
+
+export interface CensorScore {
+  type: 'censor'
+  scores: Array<{ score: number; shortCode: string }>
+  annotations: Annotation[]
+  comment?: string
+}
+
+export interface InspectionScore {
+  type: 'inspection'
+  score: number
+  shortCodes: [string, string] | [string, string, string]
+}
+
 export interface Annotation {
   startIndex: number
   length: number
   message: string
-}
-
-export interface AnswerScore {
-  questionId: number
-  scoreValue: number | undefined
-  comment?: string
-  annotations: Annotation[]
 }
 
 /**
