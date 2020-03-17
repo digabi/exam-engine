@@ -6,7 +6,7 @@ import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps, TextAnswer } from '../types'
-import { findScore, ResultsContext } from './ResultsContext'
+import { findPregradingScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionScore from './ResultsExamQuestionScore'
 
 function ResultsTextAnswer({ element }: ExamComponentProps) {
@@ -18,7 +18,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const score = findScore(scores, questionId)
+  const score = findPregradingScore(scores, questionId)
   const comment = score?.comment
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
 
@@ -31,7 +31,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
       }
       return (
         <>
-          {score && <ResultsExamQuestionScore score={score.scoreValue} maxScore={maxScore} />}
+          {score && <ResultsExamQuestionScore score={score.score} maxScore={maxScore} />}
           <div className="answer">
             <div className="e-multiline-results-text-answer answer-text-container">
               {type === 'rich-text' ? (
@@ -70,7 +70,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
           </span>
           {score && (
             <ResultsExamQuestionScore
-              score={score.scoreValue}
+              score={score.score}
               maxScore={maxScore}
               displayNumber={answers.length > 1 ? displayNumber : undefined}
             />

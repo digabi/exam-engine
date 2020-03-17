@@ -5,7 +5,7 @@ import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { mapMaybe } from '../../utils'
 import { QuestionContext } from '../QuestionContext'
-import { ResultsContext } from './ResultsContext'
+import { findPregradingScore, ResultsContext } from './ResultsContext'
 
 function ResultsAnnotationList() {
   const { t } = useTranslation()
@@ -14,7 +14,7 @@ function ResultsAnnotationList() {
 
   const answersAndScores = mapMaybe(answers, answer => {
     const questionId = getNumericAttribute(answer, 'question-id')
-    const score = scores.find(s => s.questionId === questionId)
+    const score = findPregradingScore(scores, questionId!)
     return score?.annotations.length ? ([answer, score] as const) : undefined
   })
 

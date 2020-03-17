@@ -13,7 +13,7 @@ import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
 import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
-import { AnswerScore } from '../types'
+import { Scores } from '../types'
 import ResultsChoiceAnswer from './ResultsChoiceAnswer'
 import { ResultsContext, withResultsContext } from './ResultsContext'
 import ResultsDropdownAnswer from './ResultsDropdownAnswer'
@@ -28,7 +28,7 @@ export interface ResultsProps extends CommonExamProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
   /** Scores for exam questions */
-  scores: AnswerScore[]
+  scores: Scores
 }
 
 const renderChildNodes = createRenderChildNodes({

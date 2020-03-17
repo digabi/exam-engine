@@ -1,3 +1,4 @@
+import { PregradingScore, Scores } from '@digabi/exam-engine-core'
 import Attachments from '@digabi/exam-engine-core/dist/components/Attachments'
 import Exam from '@digabi/exam-engine-core/dist/components/Exam'
 import Results from '@digabi/exam-engine-core/dist/components/results/Results'
@@ -17,7 +18,7 @@ import React from 'react'
 import { create } from 'react-test-renderer'
 import { CommonExamProps, ExamProps } from '../src/components/Exam'
 import { ResultsProps } from '../src/components/results/Results'
-import { AnswerScore, ExamAnswer } from '../src/components/types'
+import { ExamAnswer } from '../src/components/types'
 import { examServerApi } from './examServerApi'
 
 for (const exam of listExams()) {
@@ -60,15 +61,20 @@ for (const exam of listExams()) {
   })
 }
 
-function mkScores(gradingStructure: GradingStructure): AnswerScore[] {
+function mkScores(gradingStructure: GradingStructure): Scores {
   return gradingStructure.questions
     .filter((question): question is TextQuestion => question.type === 'text')
-    .map((question, i) => ({
-      questionId: question.id,
-      scoreValue: Math.min(question.maxScore, i),
-      comment: `Comment to question ${question.displayNumber}`,
-      annotations: [{ startIndex: 0, length: 0, message: `Annotation to question ${question.displayNumber}` }]
-    }))
+    .map((question, i) => ({ [question.id]: [createPregradingScore(question, i)] }))
+    .reduce((p, c) => ({ ...p, ...c }), {})
+}
+
+function createPregradingScore(question: { maxScore: number; displayNumber: string }, i: number): PregradingScore {
+  return {
+    type: 'pregrading',
+    score: Math.min(question.maxScore, i),
+    comment: `Comment to question ${question.displayNumber}`,
+    annotations: [{ startIndex: 0, length: 0, message: `Annotation to question ${question.displayNumber}` }]
+  }
 }
 
 function mkAnswers(gradingStructure: GradingStructure): ExamAnswer[] {
