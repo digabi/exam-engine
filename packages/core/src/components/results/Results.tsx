@@ -20,6 +20,7 @@ import ResultsDropdownAnswer from './ResultsDropdownAnswer'
 import ResultsExamQuestion from './ResultsExamQuestion'
 import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
+import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
 import ResultsTextAnswer from './ResultsTextAnswer'
 
 export interface ResultsProps extends CommonExamProps {
@@ -44,7 +45,7 @@ const renderChildNodes = createRenderChildNodes({
   section: ResultsExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,
-  'scored-text-answer': ResultsTextAnswer,
+  'scored-text-answer': ResultsScoredTextAnswer,
   'scored-text-answers': RenderChildNodes
 })
 

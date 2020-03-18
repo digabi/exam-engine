@@ -1510,13 +1510,27 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            0
-          </b>
+          60
            
-          / 60 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                0
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -1617,13 +1631,27 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            1
-          </b>
+          60
            
-          / 60 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                1
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -1724,13 +1752,27 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            2
-          </b>
+          60
            
-          / 60 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                2
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -1831,13 +1873,27 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            3
-          </b>
+          60
            
-          / 60 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                3
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -1938,13 +1994,27 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            4
-          </b>
+          60
            
-          / 60 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                4
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -2045,13 +2115,27 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            5
-          </b>
+          60
            
-          / 60 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                5
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -4600,13 +4684,27 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              0
-            </b>
+            18
              
-            / 18 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -4711,13 +4809,27 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            12
              
-            / 12 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -4834,13 +4946,27 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            2
-          </b>
+          30
            
-          / 30 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                2
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -4998,13 +5124,27 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            3
-          </b>
+          30
            
-          / 30 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                3
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -5146,13 +5286,27 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            12
              
-            / 12 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -5260,13 +5414,27 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              5
-            </b>
+            18
              
-            / 18 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  5
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -14368,13 +14536,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              0
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -14479,13 +14661,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -14590,13 +14786,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -14701,13 +14911,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              3
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -14837,13 +15061,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            4
-          </b>
+          20
            
-          / 20 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                4
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -14990,13 +15228,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              5
-            </b>
+            5
              
-            / 5 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  5
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -15104,13 +15356,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            15
              
-            / 15 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -15236,13 +15502,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            7
-          </b>
+          20
            
-          / 20 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                7
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -15384,13 +15664,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            8
-          </b>
+          20
            
-          / 20 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                8
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -15526,13 +15820,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -15647,13 +15955,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -15767,13 +16089,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              8
-            </b>
+            8
              
-            / 8 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  8
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -15988,13 +16324,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              12
-            </b>
+            15
              
-            / 15 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  12
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -16105,13 +16455,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              13
-            </b>
+            15
              
-            / 15 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  13
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -16270,13 +16634,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -16385,13 +16763,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -16494,13 +16886,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -16646,13 +17052,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -16758,13 +17178,27 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              18
-            </b>
+            20
              
-            / 20 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  18
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -17000,13 +17434,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              0
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -17112,13 +17560,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -17223,13 +17685,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -17334,13 +17810,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              3
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -17470,13 +17960,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            4
-          </b>
+          20
            
-          / 20 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                4
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -17619,13 +18123,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              5
-            </b>
+            5
              
-            / 5 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  5
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -17734,13 +18252,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            15
              
-            / 15 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -17867,13 +18399,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            7
-          </b>
+          20
            
-          / 20 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                7
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -18015,13 +18561,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            8
-          </b>
+          20
            
-          / 20 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                8
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -18157,13 +18717,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -18278,13 +18852,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -18398,13 +18986,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              8
-            </b>
+            8
              
-            / 8 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  8
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -18617,13 +19219,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              12
-            </b>
+            15
              
-            / 15 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  12
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -18732,13 +19348,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              13
-            </b>
+            15
              
-            / 15 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  13
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -18898,13 +19528,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -19013,13 +19657,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -19123,13 +19781,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -19275,13 +19947,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              10
-            </b>
+            10
              
-            / 10 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  10
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -19388,13 +20074,27 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              18
-            </b>
+            20
              
-            / 20 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  18
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -45956,13 +46656,27 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               1.
             </sup>
              
-            <b>
-              0
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           
       
@@ -45998,13 +46712,27 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -46080,13 +46808,27 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -47788,7 +48530,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.1\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.1
               </div>
@@ -47801,9 +48543,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               1.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -47823,7 +48565,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.2\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.2
               </div>
@@ -47836,9 +48578,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               2.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -47858,7 +48600,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.3\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.3
               </div>
@@ -47871,9 +48613,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               3.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -47893,7 +48635,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.4\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.4
               </div>
@@ -47906,9 +48648,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               4.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -47928,7 +48670,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.5\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.5
               </div>
@@ -47941,9 +48683,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               5.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -48040,7 +48782,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.6\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.6
               </div>
@@ -48053,9 +48795,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
               6.
             </sup>
              
-            <b>
-              3
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 3 
              
@@ -49051,13 +49793,27 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               1.
             </sup>
              
-            <b>
-              0
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           
       
@@ -49093,13 +49849,27 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -49175,13 +49945,27 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -50883,7 +51667,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.1\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.1
               </div>
@@ -50896,9 +51680,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               1.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -50918,7 +51702,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.2\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.2
               </div>
@@ -50931,9 +51715,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               2.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -50953,7 +51737,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.3\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.3
               </div>
@@ -50966,9 +51750,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               3.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -50988,7 +51772,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.4\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.4
               </div>
@@ -51001,9 +51785,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               4.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -51023,7 +51807,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.5\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.5
               </div>
@@ -51036,9 +51820,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               5.
             </sup>
              
-            <b>
-              1
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 1 
              
@@ -51135,7 +51919,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 10.6\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 10.6
               </div>
@@ -51148,9 +51932,9 @@ exports[`MexDocumentation.xml renders properly: <Results /> 2`] = `
               6.
             </sup>
              
-            <b>
-              3
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 3 
              
@@ -70559,13 +71343,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              0
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
            yksikköä.
         
@@ -70834,13 +71632,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -71127,13 +71939,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -71420,13 +72246,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -71713,13 +72553,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
            yksikköä.
         
@@ -71986,13 +72840,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -72148,13 +73016,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            6
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                6
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -72569,13 +73451,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            7
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                7
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -72858,13 +73754,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            8
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                8
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -73145,13 +74055,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -73254,13 +74178,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -73394,13 +74332,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            11
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                11
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -73593,13 +74545,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -74008,13 +74974,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              12
-            </b>
+            12
              
-            / 12 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  12
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -74135,13 +75115,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              12
-            </b>
+            12
              
-            / 12 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  12
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -74405,13 +75399,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -74892,13 +75900,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -75049,13 +76071,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -75204,13 +76240,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -75420,13 +76470,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -75602,13 +76666,27 @@ exports[`N.xml renders properly: <Results /> 1`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -76793,13 +77871,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              0
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
            längdenheter.
         
@@ -77068,13 +78160,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -77361,13 +78467,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -77654,13 +78774,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -77947,13 +79081,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
            längdenheter.
       
@@ -78220,13 +79368,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            1
              
-            / 1 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <span
             className="e-formula"
@@ -78381,13 +79543,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            6
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                6
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -78802,13 +79978,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            7
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                7
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -79091,13 +80281,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            8
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                8
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -79378,13 +80582,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -79487,13 +80705,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -79627,13 +80859,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            11
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                11
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -79826,13 +81072,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -80241,13 +81501,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              12
-            </b>
+            12
              
-            / 12 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  12
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -80368,13 +81642,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              12
-            </b>
+            12
              
-            / 12 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  12
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -80638,13 +81926,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -81125,13 +82427,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -81282,13 +82598,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -81437,13 +82767,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              6
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  6
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -81653,13 +82997,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -81835,13 +83193,27 @@ exports[`N.xml renders properly: <Results /> 2`] = `
           className="e-result-scorecount e-float-right"
         >
            
-          <b>
-            12
-          </b>
+          12
            
-          / 12 
-           
-           p.
+           p max
+          <div>
+            <span>
+              <b>
+                12
+                 p
+              </b>
+               
+            </span>
+            <span>
+              
+               
+            </span>
+            <span>
+              (
+              va
+              )
+            </span>
+          </div>
         </div>
         <div
           className="answer"
@@ -114167,13 +115539,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              0
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -114496,13 +115882,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -116028,13 +117428,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            3
              
-            / 3 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -118723,13 +120137,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              3
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -119199,13 +120627,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               1.
             </sup>
              
-            <b>
-              3
-            </b>
+            3
              
-            / 3 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           , sekä siitä, miten 
           <sup>
@@ -119232,13 +120674,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               2.
             </sup>
              
-            <b>
-              3
-            </b>
+            3
              
-            / 3 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
            ja miten retki suunnitellaan.
         
@@ -120170,13 +121626,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -120423,13 +121893,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -120774,13 +122258,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -121749,13 +123247,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -122563,7 +124075,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               >
                 <div
                   className="answerText e-inline"
-                  data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 18.1\\"}]"
+                  data-annotations="[]"
                 >
                   Answer to question 18.1
                 </div>
@@ -122576,9 +124088,9 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
                 1.
               </sup>
                
-              <b>
-                2
-              </b>
+              <div
+                className="e-result-scorecount-empty"
+              />
                
               / 2 
                
@@ -122608,7 +124120,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               >
                 <div
                   className="answerText e-inline"
-                  data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 18.2\\"}]"
+                  data-annotations="[]"
                 >
                   Answer to question 18.2
                 </div>
@@ -122621,9 +124133,9 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
                 2.
               </sup>
                
-              <b>
-                2
-              </b>
+              <div
+                className="e-result-scorecount-empty"
+              />
                
               / 2 
                
@@ -122751,7 +124263,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.1\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.1
               </div>
@@ -122764,9 +124276,9 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               1.
             </sup>
              
-            <b>
-              2
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 2 
              
@@ -122792,7 +124304,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.2\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.2
               </div>
@@ -122805,9 +124317,9 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               2.
             </sup>
              
-            <b>
-              3
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 3 
              
@@ -122847,7 +124359,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.3\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.3
               </div>
@@ -122860,9 +124372,9 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               3.
             </sup>
              
-            <b>
-              2
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 2 
              
@@ -122884,7 +124396,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.4\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.4
               </div>
@@ -122897,9 +124409,9 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
               4.
             </sup>
              
-            <b>
-              3
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 3 
              
@@ -123101,13 +124613,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              16
-            </b>
+            33
              
-            / 33 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  16
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -123219,13 +124745,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              17
-            </b>
+            33
              
-            / 33 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  17
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -123441,13 +124981,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              18
-            </b>
+            66
              
-            / 66 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  18
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -123561,13 +125115,27 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              19
-            </b>
+            66
              
-            / 66 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  19
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -123915,13 +125483,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              0
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  0
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -124244,13 +125826,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              1
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  1
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -125776,13 +127372,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            3
              
-            / 3 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -128471,13 +130081,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              3
-            </b>
+            6
              
-            / 6 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -128948,13 +130572,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               1.
             </sup>
              
-            <b>
-              3
-            </b>
+            3
              
-            / 3 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           , hur man 
           <sup>
@@ -128981,13 +130619,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               2.
             </sup>
              
-            <b>
-              3
-            </b>
+            3
              
-            / 3 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  3
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
            och hur man planerar en tur.
         
@@ -129918,13 +131570,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -130171,13 +131837,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -130522,13 +132202,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              4
-            </b>
+            4
              
-            / 4 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  4
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -131497,13 +133191,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              2
-            </b>
+            2
              
-            / 2 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  2
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -132311,7 +134019,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               >
                 <div
                   className="answerText e-inline"
-                  data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 18.1\\"}]"
+                  data-annotations="[]"
                 >
                   Answer to question 18.1
                 </div>
@@ -132324,9 +134032,9 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
                 1.
               </sup>
                
-              <b>
-                2
-              </b>
+              <div
+                className="e-result-scorecount-empty"
+              />
                
               / 2 
                
@@ -132356,7 +134064,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               >
                 <div
                   className="answerText e-inline"
-                  data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 18.2\\"}]"
+                  data-annotations="[]"
                 >
                   Answer to question 18.2
                 </div>
@@ -132369,9 +134077,9 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
                 2.
               </sup>
                
-              <b>
-                2
-              </b>
+              <div
+                className="e-result-scorecount-empty"
+              />
                
               / 2 
                
@@ -132499,7 +134207,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.1\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.1
               </div>
@@ -132512,9 +134220,9 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               1.
             </sup>
              
-            <b>
-              2
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 2 
              
@@ -132540,7 +134248,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.2\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.2
               </div>
@@ -132553,9 +134261,9 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               2.
             </sup>
              
-            <b>
-              3
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 3 
              
@@ -132595,7 +134303,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.3\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.3
               </div>
@@ -132608,9 +134316,9 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               3.
             </sup>
              
-            <b>
-              2
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 2 
              
@@ -132632,7 +134340,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             >
               <div
                 className="answerText e-inline"
-                data-annotations="[{\\"startIndex\\":0,\\"length\\":0,\\"message\\":\\"Annotation to question 19.4\\"}]"
+                data-annotations="[]"
               >
                 Answer to question 19.4
               </div>
@@ -132645,9 +134353,9 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
               4.
             </sup>
              
-            <b>
-              3
-            </b>
+            <div
+              className="e-result-scorecount-empty"
+            />
              
             / 3 
              
@@ -132849,13 +134557,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              16
-            </b>
+            33
              
-            / 33 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  16
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -132967,13 +134689,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              17
-            </b>
+            33
              
-            / 33 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  17
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -133189,13 +134925,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              18
-            </b>
+            66
              
-            / 66 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  18
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
@@ -133309,13 +135059,27 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
             className="e-result-scorecount e-float-right"
           >
              
-            <b>
-              19
-            </b>
+            66
              
-            / 66 
-             
-             p.
+             p max
+            <div>
+              <span>
+                <b>
+                  19
+                   p
+                </b>
+                 
+              </span>
+              <span>
+                
+                 
+              </span>
+              <span>
+                (
+                va
+                )
+              </span>
+            </div>
           </div>
           <div
             className="answer"
