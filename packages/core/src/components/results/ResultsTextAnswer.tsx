@@ -7,7 +7,8 @@ import AnswerToolbar from '../AnswerToolbar'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps, TextAnswer } from '../types'
 import { findPregradingScore, ResultsContext } from './ResultsContext'
-import ResultsExamQuestionScore from './ResultsExamQuestionScore'
+import ResultsExamQuestionManualScore from './ResultsExamQuestionManualScore'
+import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
 
 function ResultsTextAnswer({ element }: ExamComponentProps) {
   const { answers } = useContext(QuestionContext)
@@ -18,8 +19,9 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const score = findPregradingScore(scores, questionId)
-  const comment = score?.comment
+  const pregradingScore = findPregradingScore(scores, questionId)
+  const givenScores = pregradingScore ? { pregrading: { score: pregradingScore.score || 0 } } : {}
+  const comment = pregradingScore?.comment
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
 
   switch (type) {
@@ -27,11 +29,11 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
     case 'multi-line': {
       const props = {
         className: classNames('answerText', { 'e-pre-wrap': type === 'multi-line' }),
-        'data-annotations': JSON.stringify(score ? score.annotations : [])
+        'data-annotations': JSON.stringify(pregradingScore ? pregradingScore.annotations : [])
       }
       return (
         <>
-          {score && <ResultsExamQuestionScore score={score.score} maxScore={maxScore} />}
+          <ResultsExamQuestionManualScore scores={givenScores} maxScore={maxScore} />
           <div className="answer">
             <div className="e-multiline-results-text-answer answer-text-container">
               {type === 'rich-text' ? (
@@ -59,23 +61,18 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
     case 'single-line':
     default:
       return (
-        <>
-          {answers.length > 1 && <sup>{displayNumber}</sup>}
-          <span className="answer">
-            <span className="text-answer text-answer--single-line answer-text-container">
-              <div className="answerText e-inline" data-annotations={JSON.stringify(score ? score.annotations : [])}>
-                {value}
-              </div>
-            </span>
-          </span>
-          {score && (
-            <ResultsExamQuestionScore
-              score={score.score}
-              maxScore={maxScore}
-              displayNumber={answers.length > 1 ? displayNumber : undefined}
-            />
-          )}
-        </>
+        <ResultsSingleLineAnswer
+          answers={answers}
+          displayNumber={displayNumber}
+          annotations={pregradingScore ? pregradingScore.annotations : []}
+          value={value}
+        >
+          <ResultsExamQuestionManualScore
+            scores={givenScores}
+            maxScore={maxScore}
+            displayNumber={answers.length > 1 ? displayNumber : undefined}
+          />
+        </ResultsSingleLineAnswer>
       )
   }
 }

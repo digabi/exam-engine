@@ -6,7 +6,7 @@ import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { QuestionContext } from '../QuestionContext'
 import { ChoiceAnswer, ExamComponentProps } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
-import ResultsExamQuestionScore from './ResultsExamQuestionScore'
+import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 
 function ResultsDropdownAnswer({ element }: ExamComponentProps) {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
@@ -51,7 +51,7 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
         </span>
         {!isAnswerCorrect && <span className="e-dropdown-answer__correct">{correctAnswers.join(',')}</span>}
         {scoreValue != null && (
-          <ResultsExamQuestionScore score={scoreValue} maxScore={maxScore} displayNumber={displayNumber} />
+          <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} displayNumber={displayNumber} />
         )}
       </>
     )

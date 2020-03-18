@@ -62,6 +62,14 @@ export function findPregradingScore(scores: Scores, questionId: number) {
   return (answerScores as ManualScore[]).find(a => a.type === 'pregrading') as PregradingScore
 }
 
+export function findAutogradingScore(scores: Scores, questionId: number) {
+  const answerScores = scores[questionId]
+  if (!answerScores || (answerScores as ManualScore[]).length) {
+    return null
+  }
+  return answerScores as AutogradedScore
+}
+
 export function calculateQuestionSumScore(
   questionElement: Element,
   gradingStructure: GradingStructure,
