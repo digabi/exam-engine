@@ -84179,7 +84179,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
       className="e-audio-test notification e-pad-2 e-mrg-b-4"
     >
       <p>
-        Koe sisältää kuullunymmärtämisen tehtäviä. Tehtävien äänitteitä ei voi kuuntelun aikana pysäyttää eikä kuunnella uudestaan.
+        Koe sisältää kuullunymmärtämisen tehtäviä.
       </p>
       <div
         className="e-columns e-columns--center-v e-mrg-b-2"
@@ -99416,7 +99416,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
       className="e-audio-test notification e-pad-2 e-mrg-b-4"
     >
       <p>
-        Provet omfattar uppgifter i hörförståelse. Det går inte att stoppa uppspelningen av uppgifterna och inte heller att lyssna på dem på nytt.
+        Provet omfattar uppgifter i hörförståelse.
       </p>
       <div
         className="e-columns e-columns--center-v e-mrg-b-2"
