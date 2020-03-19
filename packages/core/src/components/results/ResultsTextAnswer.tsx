@@ -25,16 +25,20 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
   switch (type) {
     case 'rich-text':
     case 'multi-line': {
+      const props = {
+        className: classNames('answerText', { 'e-pre-wrap': type === 'multi-line' }),
+        'data-annotations': JSON.stringify(score ? score.annotations : [])
+      }
       return (
         <>
           {score && <ResultsExamQuestionScore score={score.scoreValue} maxScore={maxScore} />}
           <div className="answer">
             <div className="e-multiline-results-text-answer answer-text-container">
-              <div
-                className={classNames('answerText', { 'e-pre-wrap': type === 'multi-line' })}
-                data-annotations={JSON.stringify(score ? score.annotations : [])}
-                dangerouslySetInnerHTML={{ __html: value! }}
-              />
+              {type === 'rich-text' ? (
+                <div {...props} dangerouslySetInnerHTML={{ __html: value! }} />
+              ) : (
+                <div {...props}>{value}</div>
+              )}
             </div>
             <AnswerToolbar
               {...{
