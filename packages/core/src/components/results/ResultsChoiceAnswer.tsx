@@ -6,7 +6,7 @@ import ExamAttachment from '../ExamAttachment'
 import Image from '../Image'
 import { ExamComponentProps, QuestionId } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
-import ResultsExamQuestionScore from './ResultsExamQuestionScore'
+import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -81,7 +81,7 @@ function ResultsChoiceAnswer({ element }: ExamComponentProps) {
 
   return (
     <>
-      {scoreValue !== undefined && <ResultsExamQuestionScore score={scoreValue} maxScore={maxScore} />}
+      {scoreValue !== undefined && <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} />}
       <div
         className={classNames('e-choice-answer', className, {
           'e-columns': direction === 'horizontal'
