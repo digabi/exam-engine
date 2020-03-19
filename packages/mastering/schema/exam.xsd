@@ -150,7 +150,7 @@
   </xs:attributeGroup>
 
   <xs:element name="attachment">
-    <xs:complexType mixed="true">
+    <xs:complexType>
       <xs:sequence>
         <xs:element name="attachment-title" type="e:Flow" />
         <xs:group ref="xhtml:xhtml.Flow.mix" maxOccurs="unbounded" />
@@ -347,11 +347,7 @@
 
   <xs:element name="scored-text-answers">
     <xs:annotation>
-      <xs:documentation>
-        Deprecated. Use
-        <code>e:hints</code>
-        instead.
-      </xs:documentation>
+      <xs:documentation>Deprecated. Use <code>e:hints</code> instead.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded">
