@@ -40,9 +40,9 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
     ...(scores.censoring ? normalizeCensoringScores(scores.censoring) : []),
     scores.pregrading && normalizePregradingScore(scores.pregrading)
   ].filter(s => s) as NormalizedScore[]
-
+  const containerProps = { answers, displayNumber }
   return (
-    <ResultsExamQuestionScoresContainer answers={answers} displayNumber={displayNumber}>
+    <ResultsExamQuestionScoresContainer {...containerProps}>
       {maxScore || null} <Translation>{t => t('points-max')}</Translation>
       {normalizedScores.map((score, i) => (
         <div key={i}>

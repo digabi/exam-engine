@@ -11,8 +11,9 @@ export interface ResultsExamQuestionAutoScoreProps {
 
 function ResultsExamQuestionAutoScore({ score, maxScore, displayNumber }: ResultsExamQuestionAutoScoreProps) {
   const { answers } = useContext(QuestionContext)
+  const containerProps = { answers, displayNumber }
   return (
-    <ResultsExamQuestionScoresContainer answers={answers} displayNumber={displayNumber}>
+    <ResultsExamQuestionScoresContainer {...containerProps}>
       {typeof score === 'number' ? <b>{score}</b> : <div className="e-result-scorecount-empty" />}{' '}
       {maxScore ? `/ ${maxScore} ` : null} <Translation>{t => t('points')}</Translation>
     </ResultsExamQuestionScoresContainer>
