@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { QuestionContext } from '../QuestionContext'
+import { AnswerWithScores, CensoringScore, InspectionScore, PregradingScore } from '../types'
 import ResultsExamQuestionScoresContainer from './ResultsExamQuestionScoresContainer'
-import { AnswerWithScores, InspectionScore, PregradingScore, CensoringScore } from '../types'
 
 export interface ResultsExamQuestionManualScoreProps {
   scores: AnswerWithScores | null
@@ -17,7 +17,6 @@ interface NormalizedScore {
 }
 
 function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: ResultsExamQuestionManualScoreProps) {
-  console.log(scores)
   const { answers } = useContext(QuestionContext)
 
   const containerProps = { answers, displayNumber }
@@ -30,7 +29,9 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
 }
 
 function renderNormalizedScores(scores?: AnswerWithScores | null) {
-  if (!scores) return null
+  if (!scores) {
+    return null
+  }
 
   const normalizedScores = [
     scores.inspection && normalizeInspectionScore(scores.inspection),
