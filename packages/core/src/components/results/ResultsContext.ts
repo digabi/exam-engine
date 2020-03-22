@@ -2,14 +2,14 @@ import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digab
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { AutogradedScore, ChoiceAnswer, ExamAnswer, ManualScore, PregradingScore, QuestionId, Scores } from '../types'
+import { AnswerWithScores, AutogradedScore, ChoiceAnswer, ExamAnswer, PregradingScore, QuestionId } from '../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
 
 export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>
   gradingStructure: GradingStructure
-  scores: Scores
+  scores: AnswerWithScores[]
   gradingText: string | undefined
   totalScore: number
 }
@@ -54,26 +54,24 @@ export function findMultiChoiceFromGradingStructure(
   return undefined
 }
 
-export function findPregradingScore(scores: Scores, questionId: number) {
-  const answerScores = scores[questionId]
-  if (!answerScores || (answerScores as AutogradedScore).type) {
-    return null
-  }
-  return (answerScores as ManualScore[]).find(a => a.type === 'pregrading') as PregradingScore
+export function findScore(scores: AnswerWithScores[], questionId: number): AnswerWithScores | null {
+  return scores.find(a => a.questionId === questionId) ?? null
 }
 
-export function findAutogradingScore(scores: Scores, questionId: number) {
-  const answerScores = scores[questionId]
-  if (!answerScores || (answerScores as ManualScore[]).length) {
-    return null
-  }
-  return answerScores as AutogradedScore
+export function findPregradingScore(scores: AnswerWithScores[], questionId: number): PregradingScore | null {
+  const pregradingScore = scores.find(a => a.questionId === questionId)?.pregrading
+  return pregradingScore?.score ? pregradingScore : null
+}
+
+export function findAutogradingScore(scores: AnswerWithScores[], questionId: number): AutogradedScore | null {
+  const autogradingScore = scores.find(a => a.questionId === questionId)?.autograding
+  return autogradingScore?.score ? autogradingScore : null
 }
 
 export function calculateQuestionSumScore(
   questionElement: Element,
   gradingStructure: GradingStructure,
-  scores: Scores,
+  scores: AnswerWithScores[],
   answersById: Record<QuestionId, ExamAnswer>
 ) {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {

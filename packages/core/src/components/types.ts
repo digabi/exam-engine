@@ -2,6 +2,7 @@ import { RenderChildNodes } from '../createRenderChildNodes'
 import { Translations } from '../i18n/fi-FI'
 
 export type QuestionId = number
+export type AnswerId = number
 
 interface AnswerCommon {
   questionId: QuestionId
@@ -24,33 +25,42 @@ export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 
-export type Scores = Record<QuestionId, QuestionScore>
+export type Scores = QuestionScore[]
 
-export type ManualScore = PregradingScore | CensorScore | InspectionScore
+export interface AnswerWithScores {
+  questionId: QuestionId
+  answerId: AnswerId
+  answerContent: ExamAnswer
+  value: string
+  pregrading?: PregradingScore
+  censoring?: CensoringScore
+  inspection?: InspectionScore
+  autograding?: AutogradedScore
+  /** This field is undefined in older exams that were packaged before this change. */
+  displayNumber?: string
+}
+
+export type ManualScore = PregradingScore | CensoringScore | InspectionScore
 
 export type QuestionScore = AutogradedScore | ManualScore[]
 
 export interface AutogradedScore {
-  type: 'autograded'
   score: number
 }
 
 export interface PregradingScore {
-  type: 'pregrading'
   score?: number
   comment?: string
   annotations: Annotation[]
 }
 
-export interface CensorScore {
-  type: 'censor'
+export interface CensoringScore {
   scores: Array<{ score: number; shortCode: string }>
   annotations: Annotation[]
   comment?: string
 }
 
 export interface InspectionScore {
-  type: 'inspection'
   score: number
   shortCodes: [string, string] | [string, string, string]
 }

@@ -6,7 +6,7 @@ import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps, TextAnswer } from '../types'
-import { findPregradingScore, ResultsContext } from './ResultsContext'
+import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionManualScore from './ResultsExamQuestionManualScore'
 import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
 
@@ -19,9 +19,8 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const pregradingScore = findPregradingScore(scores, questionId)
-  const givenScores = pregradingScore ? { pregrading: { score: pregradingScore.score || 0 } } : {}
-  const comment = pregradingScore?.comment
+  const givenScores = findScore(scores, questionId)
+  const comment = givenScores?.pregrading?.comment
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
 
   switch (type) {
@@ -34,7 +33,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
             <div className="e-multiline-results-text-answer answer-text-container">
               <div
                 className={classNames('answerText', { 'e-pre-wrap': type === 'multi-line' })}
-                data-annotations={JSON.stringify(pregradingScore ? pregradingScore.annotations : [])}
+                data-annotations={JSON.stringify(givenScores?.pregrading?.annotations ?? [])}
                 dangerouslySetInnerHTML={{ __html: value! }}
               />
             </div>
@@ -60,7 +59,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
         <ResultsSingleLineAnswer
           answers={answers}
           displayNumber={displayNumber}
-          annotations={pregradingScore ? pregradingScore.annotations : []}
+          annotations={givenScores?.pregrading?.annotations ?? []}
           value={value}
         >
           <ResultsExamQuestionManualScore
