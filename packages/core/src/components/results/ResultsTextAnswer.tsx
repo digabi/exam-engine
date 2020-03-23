@@ -6,6 +6,7 @@ import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps, TextAnswer } from '../types'
+import { getAnnotationAttributes } from './helpers'
 import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionManualScore from './ResultsExamQuestionManualScore'
 import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
@@ -19,20 +20,20 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const givenScores = findScore(scores, questionId)
-  const comment = givenScores?.pregrading?.comment
+  const answerScores = findScore(scores, questionId)
+  const comment = answerScores?.pregrading?.comment
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
 
   switch (type) {
     case 'rich-text':
     case 'multi-line': {
       const props = {
-        className: classNames('answerText', { 'e-pre-wrap': type === 'multi-line' }),
-        'data-annotations': JSON.stringify(givenScores?.pregrading?.annotations ?? [])
+        ...getAnnotationAttributes(answerScores),
+        className: classNames('answerText', { 'e-pre-wrap': type === 'multi-line' })
       }
       return (
         <>
-          <ResultsExamQuestionManualScore scores={givenScores} maxScore={maxScore} />
+          <ResultsExamQuestionManualScore scores={answerScores} maxScore={maxScore} />
           <div className="answer">
             <div className="e-multiline-results-text-answer answer-text-container">
               {type === 'rich-text' ? (
@@ -62,12 +63,12 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
       return (
         <ResultsSingleLineAnswer
           answers={answers}
+          answerScores={answerScores}
           displayNumber={displayNumber}
-          annotations={givenScores?.pregrading?.annotations ?? []}
           value={value}
         >
           <ResultsExamQuestionManualScore
-            scores={givenScores}
+            scores={answerScores}
             maxScore={maxScore}
             displayNumber={answers.length > 1 ? displayNumber : undefined}
           />

@@ -54,18 +54,18 @@ export function findMultiChoiceFromGradingStructure(
   return undefined
 }
 
-export function findScore(scores: AnswerWithScores[], questionId: number): AnswerWithScores | null {
-  return scores.find(a => a.questionId === questionId) ?? null
+export function findScore(scores: AnswerWithScores[], questionId: number): AnswerWithScores | undefined {
+  return scores.find(a => a.questionId === questionId)
 }
 
-export function findPregradingScore(scores: AnswerWithScores[], questionId: number): PregradingScore | null {
+export function findPregradingScore(scores: AnswerWithScores[], questionId: number): PregradingScore | undefined {
   const pregradingScore = scores.find(a => a.questionId === questionId)?.pregrading
-  return pregradingScore?.score ? pregradingScore : null
+  return pregradingScore?.score ? pregradingScore : undefined
 }
 
-export function findAutogradingScore(scores: AnswerWithScores[], questionId: number): AutogradedScore | null {
+export function findAutogradingScore(scores: AnswerWithScores[], questionId: number): AutogradedScore | undefined {
   const autogradingScore = scores.find(a => a.questionId === questionId)?.autograding
-  return autogradingScore?.score ? autogradingScore : null
+  return autogradingScore?.score ? autogradingScore : undefined
 }
 
 export function calculateQuestionSumScore(

@@ -5,7 +5,7 @@ import { AnswerWithScores, CensoringScore, InspectionScore, PregradingScore } fr
 import ResultsExamQuestionScoresContainer from './ResultsExamQuestionScoresContainer'
 
 export interface ResultsExamQuestionManualScoreProps {
-  scores: AnswerWithScores | null
+  scores?: AnswerWithScores
   maxScore?: number
   displayNumber?: string
 }
@@ -28,7 +28,7 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
   )
 }
 
-function renderNormalizedScores(scores?: AnswerWithScores | null) {
+function renderNormalizedScores(scores?: AnswerWithScores) {
   if (!scores) {
     return null
   }
