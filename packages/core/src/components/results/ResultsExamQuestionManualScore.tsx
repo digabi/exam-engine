@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { QuestionContext } from '../QuestionContext'
-import { AnswerWithScores, CensoringScore, InspectionScore, PregradingScore } from '../types'
+import { CensoringScore, InspectionScore, PregradingScore, Score } from '../types'
 import ResultsExamQuestionScoresContainer from './ResultsExamQuestionScoresContainer'
 
 export interface ResultsExamQuestionManualScoreProps {
-  scores?: AnswerWithScores
+  scores?: Score
   maxScore?: number
   displayNumber?: string
 }
@@ -28,7 +28,7 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
   )
 }
 
-function renderNormalizedScores(scores?: AnswerWithScores) {
+function renderNormalizedScores(scores?: Score) {
   if (!scores) {
     return null
   }

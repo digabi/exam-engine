@@ -25,24 +25,14 @@ export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 
-export type Scores = QuestionScore[]
-
-export interface AnswerWithScores {
+export interface Score {
   questionId: QuestionId
   answerId: AnswerId
-  answerContent: ExamAnswer
-  value: string
   pregrading?: PregradingScore
   censoring?: CensoringScore
   inspection?: InspectionScore
   autograding?: AutogradedScore
-  /** This field is undefined in older exams that were packaged before this change. */
-  displayNumber?: string
 }
-
-export type ManualScore = PregradingScore | CensoringScore | InspectionScore
-
-export type QuestionScore = AutogradedScore | ManualScore[]
 
 export interface AutogradedScore {
   score: number
@@ -51,12 +41,12 @@ export interface AutogradedScore {
 export interface PregradingScore {
   score?: number
   comment?: string
-  annotations: Annotation[]
+  annotations?: Annotation[]
 }
 
 export interface CensoringScore {
   scores: Array<{ score: number; shortCode: string }>
-  annotations: Annotation[]
+  annotations?: Annotation[]
   comment?: string
 }
 

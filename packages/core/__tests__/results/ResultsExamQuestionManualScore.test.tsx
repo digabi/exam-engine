@@ -2,25 +2,30 @@ import * as i18next from 'i18next'
 import React from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { create } from 'react-test-renderer'
+import { Score } from '../../src'
 import { QuestionContext } from '../../src/components/QuestionContext'
 import ResultsExamQuestionManualScore, {
   ResultsExamQuestionManualScoreProps
 } from '../../src/components/results/ResultsExamQuestionManualScore'
 import { initI18n } from '../../src/i18n'
+import _ from 'lodash'
 
 const defaultProps = {
   maxScore: 6,
   displayNumber: '1'
 }
 
-const defaultScores = {
-  pregrading: { score: 1, shortCode: 'PRE' },
+const defaultScores: Score = {
+  questionId: 1,
+  answerId: 1,
+  pregrading: { score: 1, annotations: [] },
   censoring: {
     scores: [
       { score: 4, shortCode: 'SE3' },
       { score: 3, shortCode: 'SE2' },
       { score: 2, shortCode: 'SE1' }
-    ]
+    ],
+    annotations: []
   },
   inspection: { score: 5, shortCodes: ['IN1', 'IN2'] }
 }
@@ -36,7 +41,7 @@ describe('<ResultsExamQuestionManualScore />', () => {
     it('renders without score', () => {
       const props = {
         ...defaultProps,
-        scores: {}
+        scores: undefined
       }
       expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
     })
@@ -44,7 +49,7 @@ describe('<ResultsExamQuestionManualScore />', () => {
     it('renders with pregrading score', () => {
       const props = {
         ...defaultProps,
-        scores: { pregrading: defaultScores.pregrading }
+        scores: _.pick(defaultScores, 'pregrading', 'answerId', 'questionId')
       }
       expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
     })
@@ -53,8 +58,8 @@ describe('<ResultsExamQuestionManualScore />', () => {
       const props = {
         ...defaultProps,
         scores: {
-          pregrading: defaultScores.pregrading,
-          censoring: { scores: [defaultScores.censoring.scores[0]] }
+          censoring: { scores: [defaultScores.censoring!.scores[0]] },
+          ..._.pick(defaultScores, 'pregrading', 'answerId', 'questionId')
         }
       }
       expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
@@ -63,10 +68,7 @@ describe('<ResultsExamQuestionManualScore />', () => {
     it('renders with pregrading and three censor scores', () => {
       const props = {
         ...defaultProps,
-        scores: {
-          pregrading: defaultScores.pregrading,
-          censoring: defaultScores.censoring
-        }
+        scores: _.pick(defaultScores, 'pregrading', 'censoring', 'answerId', 'questionId')
       }
       expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
     })
@@ -82,7 +84,7 @@ describe('<ResultsExamQuestionManualScore />', () => {
     it('renders with displayNumber where there are more than one answer', () => {
       const props = {
         ...defaultProps,
-        scores: { pregrading: defaultScores.pregrading }
+        scores: _.pick(defaultScores, 'pregrading', 'answerId', 'questionId')
       }
       expect(renderWithContext(props, [{} as Element, {} as Element]).toJSON()).toMatchSnapshot()
     })
