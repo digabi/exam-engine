@@ -22,13 +22,12 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
   const containerProps = { answers, displayNumber }
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
-      {maxScore || null} <Translation>{t => t('points-max')}</Translation>
-      {renderNormalizedScores(scores)}
+      {renderNormalizedScores(scores, maxScore)}
     </ResultsExamQuestionScoresContainer>
   )
 }
 
-function renderNormalizedScores(scores?: Score) {
+function renderNormalizedScores(scores?: Score, maxScore?: number) {
   if (!scores) {
     return null
   }
@@ -39,15 +38,37 @@ function renderNormalizedScores(scores?: Score) {
     scores.pregrading && normalizePregradingScore(scores.pregrading)
   ].filter(s => s) as NormalizedScore[]
 
-  return normalizedScores.map((score, i) => (
-    <div key={i}>
-      <span>{i === 0 ? <b>{score.score} p</b> : score.score + ' p'} </span>
-      <span>{score.shortCode} </span>
-      <span>
-        (<Translation>{t => t(score.type)}</Translation>)
-      </span>
+  return normalizedScores.map((score, i) => <ScoreRow key={i} {...score} latest={i === 0} maxScore={maxScore} />)
+}
+
+interface ScoreRowProps {
+  maxScore?: number
+  latest: boolean
+}
+
+function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & NormalizedScore) {
+  return (
+    <div className={latest ? 'e-color-black' : 'e-color-grey'}>
+      <ScoreColumn className={`${latest && 'e-font-size-m'}`}>
+        {latest ? <b>{score}</b> : score}
+        {latest && maxScore ? ` / ${maxScore}` : ''}
+        {` p.`}
+      </ScoreColumn>
+      <ScoreColumn>{shortCode}</ScoreColumn>
+      <ScoreColumn className="e-mrg-r-0">
+        <Translation>{t => t(type)}</Translation>
+      </ScoreColumn>
     </div>
-  ))
+  )
+}
+
+interface ScoreColumnProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+function ScoreColumn({ children, className }: ScoreColumnProps) {
+  return <span className={`e-font-size-xs e-mrg-r-1 ${className || ''}`}>{children}</span>
 }
 
 function normalizePregradingScore({ score }: PregradingScore): NormalizedScore | null {
