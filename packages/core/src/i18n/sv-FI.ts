@@ -12,7 +12,6 @@ export const sv_FI: Translations = {
   question: '{{displayNumber}}',
   grade: 'Vitsord',
   comment: 'Kommentar',
-  'points-max': '{{count}} p max',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} poäng',
