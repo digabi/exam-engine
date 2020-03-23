@@ -5,6 +5,7 @@ import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { mapMaybe } from '../../utils'
 import { QuestionContext } from '../QuestionContext'
+import { Annotation, Score } from '../types'
 import { findScore, ResultsContext } from './ResultsContext'
 
 function ResultsAnnotationList() {
@@ -20,35 +21,30 @@ function ResultsAnnotationList() {
       : undefined
   })
 
-  const pregradingAnnotations = _.flatMap(answersAndScores, ([answer, score]) => {
-    const prefix = answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
-    return score!
-      .pregrading!.annotations!.filter(a => a.message.length)
-      .map((annotation, i) => {
-        const key = prefix + String(i + 1) + ')'
-        return (
-          <li data-list-number={key} key={key}>
-            {annotation.message}
-          </li>
-        )
-      })
-  })
+  const getPrefix = (answer: Element) =>
+    answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
 
-  const censoringAnnotations = _.flatMap(answersAndScores, ([answer, score]) => {
-    const prefix = answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
-    return score!
-      .censoring!.annotations!.filter(a => a.message.length)
-      .map((annotation, i) => {
-        const key = prefix + String(i + 1) + ')'
-        return (
-          <li data-list-number={key} key={key}>
-            {annotation.message}
-          </li>
-        )
-      })
-  })
+  const getListOfAnnotations = (
+    answerElementAndScores: Array<readonly [Element, Score]>,
+    annotationsFrom: 'pregrading' | 'censoring'
+  ) =>
+    _.flatMap(answerElementAndScores, ([answer, score]) =>
+      score!
+        [annotationsFrom]!.annotations!.filter(a => a.message.length)
+        .map((annotation: Annotation, i: number) => {
+          const key = getPrefix(answer) + String(i + 1) + ')'
+          return (
+            <li data-list-number={key} key={key}>
+              {annotation.message}
+            </li>
+          )
+        })
+    )
 
-  return pregradingAnnotations.length ? (
+  const pregradingAnnotations = getListOfAnnotations(answersAndScores, 'pregrading')
+  const censoringAnnotations = getListOfAnnotations(answersAndScores, 'censoring')
+
+  return pregradingAnnotations.length || censoringAnnotations.length ? (
     <div className="e-annotation-list e-columns e-mrg-t-2">
       <div className="e-column e-column--6">
         <h5>{t('grading.pregrading-annotations')}</h5>
