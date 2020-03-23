@@ -1,4 +1,7 @@
-import { AnswerScore, Attachments, Exam, ExamAnswer, parseExam, Results } from '@digabi/exam-engine-core'
+import Attachments from '@digabi/exam-engine-core/dist/components/Attachments'
+import Exam from '@digabi/exam-engine-core/dist/components/Exam'
+import Results from '@digabi/exam-engine-core/dist/components/Results/Results'
+import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
 import { listExams } from '@digabi/exam-engine-exams'
 import {
   getMediaMetadataFromLocalFile,
@@ -14,6 +17,7 @@ import React from 'react'
 import { create } from 'react-test-renderer'
 import { CommonExamProps, ExamProps } from '../src/components/Exam'
 import { ResultsProps } from '../src/components/results/Results'
+import { AnswerScore, ExamAnswer } from '../src/components/types'
 import { examServerApi } from './examServerApi'
 
 for (const exam of listExams()) {
