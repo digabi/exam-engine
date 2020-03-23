@@ -25,8 +25,7 @@ export const fi_FI = {
     'other-error': 'Tallenteen toistaminen epäonnistui, pyydä apua valvojalta.'
   },
   'audio-test': {
-    instructions:
-      'Koe sisältää kuullunymmärtämisen tehtäviä. Tehtävien äänitteitä ei voi kuuntelun aikana pysäyttää eikä kuunnella uudestaan.',
+    instructions: 'Koe sisältää kuullunymmärtämisen tehtäviä.',
     play: 'Testaa äänitteiden kuuluvuus',
     volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.'
   },
