@@ -1,4 +1,4 @@
-import { Attachments, Exam, ExamAnswer, parseExam, PregradingScore, Results, Scores } from '@digabi/exam-engine-core'
+import { Attachments, Exam, ExamAnswer, parseExam, Results, Score } from '@digabi/exam-engine-core'
 import { listExams } from '@digabi/exam-engine-exams'
 import {
   getMediaMetadataFromLocalFile,
@@ -56,19 +56,43 @@ for (const exam of listExams()) {
   })
 }
 
-function mkScores(gradingStructure: GradingStructure): Scores {
+function mkScores(gradingStructure: GradingStructure) {
   return gradingStructure.questions
     .filter((question): question is TextQuestion => question.type === 'text')
-    .map((question, i) => ({ [question.id]: [createPregradingScore(question, i)] }))
-    .reduce((p, c) => ({ ...p, ...c }), {})
+    .map((question, i) => generateScore(question, i))
 }
 
-function createPregradingScore(question: { maxScore: number; displayNumber: string }, i: number): PregradingScore {
+function generateScore(question: { id: number; maxScore: number; displayNumber: string }, i: number): Score {
   return {
-    type: 'pregrading',
-    score: Math.min(question.maxScore, i),
-    comment: `Comment to question ${question.displayNumber}`,
-    annotations: [{ startIndex: 0, length: 0, message: `Annotation to question ${question.displayNumber}` }]
+    questionId: question.id,
+    answerId: question.id,
+    pregrading: {
+      score: Math.min(question.maxScore, i),
+      comment: `Pregading comment to question ${question.displayNumber}`,
+      annotations: [{ startIndex: 0, length: 0, message: `Pregading annotation to question ${question.displayNumber}` }]
+    },
+    censoring: {
+      scores: [
+        {
+          score: Math.min(question.maxScore, i),
+          shortCode: 'TestCen1'
+        },
+        {
+          score: Math.min(question.maxScore, i),
+          shortCode: 'TestCen2'
+        },
+        {
+          score: Math.min(question.maxScore, i),
+          shortCode: 'TestCen3'
+        }
+      ],
+      comment: `Censor comment to question ${question.displayNumber}`,
+      annotations: [{ startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` }]
+    },
+    inspection: {
+      score: Math.min(question.maxScore, i),
+      shortCodes: ['TestIns1', 'TestIns2']
+    }
   }
 }
 

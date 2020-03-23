@@ -1,16 +1,17 @@
 import React from 'react'
-import { Annotation } from '../types'
+import { Score } from '../types'
+import { getAnnotationAttributes } from './helpers'
 
 function ResultsSingleLineAnswer({
   answers,
   displayNumber,
-  annotations,
+  answerScores,
   value,
   children
 }: {
   answers: Element[]
+  answerScores?: Score
   displayNumber: string
-  annotations: Annotation[]
   value: string | undefined
   children: React.ReactNode
 }) {
@@ -19,7 +20,7 @@ function ResultsSingleLineAnswer({
       {answers.length > 1 && <sup>{displayNumber}</sup>}
       <span className="answer">
         <span className="text-answer text-answer--single-line answer-text-container">
-          <div className="answerText e-inline" data-annotations={JSON.stringify(annotations)}>
+          <div className="answerText e-inline" {...getAnnotationAttributes(answerScores)}>
             {value}
           </div>
         </span>

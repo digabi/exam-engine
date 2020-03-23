@@ -2,14 +2,14 @@ import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digab
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { AutogradedScore, ChoiceAnswer, ExamAnswer, ManualScore, PregradingScore, QuestionId, Scores } from '../types'
+import { ChoiceAnswer, ExamAnswer, QuestionId, Score } from '../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
 
 export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>
   gradingStructure: GradingStructure
-  scores: Scores
+  scores: Score[]
   gradingText: string | undefined
   totalScore: number
 }
@@ -54,26 +54,14 @@ export function findMultiChoiceFromGradingStructure(
   return undefined
 }
 
-export function findPregradingScore(scores: Scores, questionId: number) {
-  const answerScores = scores[questionId]
-  if (!answerScores || (answerScores as AutogradedScore).type) {
-    return null
-  }
-  return (answerScores as ManualScore[]).find(a => a.type === 'pregrading') as PregradingScore
-}
-
-export function findAutogradingScore(scores: Scores, questionId: number) {
-  const answerScores = scores[questionId]
-  if (!answerScores || (answerScores as ManualScore[]).length) {
-    return null
-  }
-  return answerScores as AutogradedScore
+export function findScore(scores: Score[], questionId: number): Score | undefined {
+  return scores.find(a => a.questionId === questionId)
 }
 
 export function calculateQuestionSumScore(
   questionElement: Element,
   gradingStructure: GradingStructure,
-  scores: Scores,
+  scores: Score[],
   answersById: Record<QuestionId, ExamAnswer>
 ) {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
@@ -82,7 +70,7 @@ export function calculateQuestionSumScore(
   }
 
   const textQuestionScore = (questionId: number) => {
-    const score = findPregradingScore(scores, questionId)
+    const score = findScore(scores, questionId)?.pregrading
     return score ? score.score : 0
   }
 

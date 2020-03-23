@@ -3,7 +3,7 @@ import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps, TextAnswer } from '../types'
-import { findAutogradingScore, ResultsContext } from './ResultsContext'
+import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
 
@@ -15,10 +15,10 @@ function ResultsScoredTextAnswer({ element }: ExamComponentProps) {
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const autogradingScore = findAutogradingScore(scores, questionId)
+  const autogradingScore = findScore(scores, questionId)?.autograding
 
   return (
-    <ResultsSingleLineAnswer answers={answers} displayNumber={displayNumber} annotations={[]} value={value}>
+    <ResultsSingleLineAnswer answers={answers} displayNumber={displayNumber} value={value}>
       <ResultsExamQuestionAutoScore
         score={autogradingScore?.score}
         maxScore={maxScore}
