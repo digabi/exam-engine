@@ -18,7 +18,7 @@ function ResultsScoredTextAnswer({ element }: ExamComponentProps) {
   const autogradingScore = findAutogradingScore(scores, questionId)
 
   return (
-    <ResultsSingleLineAnswer answers={answers} displayNumber={displayNumber} annotations={[]} value={value}>
+    <ResultsSingleLineAnswer answers={answers} displayNumber={displayNumber} value={value}>
       <ResultsExamQuestionAutoScore
         score={autogradingScore?.score}
         maxScore={maxScore}
