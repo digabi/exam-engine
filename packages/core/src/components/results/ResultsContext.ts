@@ -2,7 +2,7 @@ import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digab
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { Score, ChoiceAnswer, ExamAnswer, QuestionId } from '../types'
+import { ChoiceAnswer, ExamAnswer, QuestionId, Score } from '../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
 
