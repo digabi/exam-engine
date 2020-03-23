@@ -5,7 +5,7 @@ import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { mapMaybe } from '../../utils'
 import { QuestionContext } from '../QuestionContext'
-import { findPregradingScore, ResultsContext } from './ResultsContext'
+import { findScore, ResultsContext } from './ResultsContext'
 
 function ResultsAnnotationList() {
   const { t } = useTranslation()
@@ -14,14 +14,30 @@ function ResultsAnnotationList() {
 
   const answersAndScores = mapMaybe(answers, answer => {
     const questionId = getNumericAttribute(answer, 'question-id')
-    const score = findPregradingScore(scores, questionId!)
-    return score?.annotations.length ? ([answer, score] as const) : undefined
+    const score = findScore(scores, questionId!)
+    return score?.pregrading?.annotations.length || score?.censoring?.annotations.length
+      ? ([answer, score] as const)
+      : undefined
   })
 
   const pregradingAnnotations = _.flatMap(answersAndScores, ([answer, score]) => {
     const prefix = answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
-    return score.annotations
-      .filter(a => a.message.length)
+    return score!
+      .pregrading!.annotations.filter(a => a.message.length)
+      .map((annotation, i) => {
+        const key = prefix + String(i + 1) + ')'
+        return (
+          <li data-list-number={key} key={key}>
+            {annotation.message}
+          </li>
+        )
+      })
+  })
+
+  const censoringAnnotations = _.flatMap(answersAndScores, ([answer, score]) => {
+    const prefix = answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
+    return score!
+      .censoring!.annotations.filter(a => a.message.length)
       .map((annotation, i) => {
         const key = prefix + String(i + 1) + ')'
         return (
@@ -40,7 +56,7 @@ function ResultsAnnotationList() {
       </div>
       <div className="e-column e-column--6">
         <h5>{t('grading.censor-annotations')}</h5>
-        <ol className="e-list-data e-pad-l-0 e-font-size-s" />
+        <ol className="e-list-data e-pad-l-0 e-font-size-s">{censoringAnnotations}</ol>
       </div>
     </div>
   ) : null
