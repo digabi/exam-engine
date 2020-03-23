@@ -1,4 +1,5 @@
 import * as i18next from 'i18next'
+import _ from 'lodash'
 import React from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { create } from 'react-test-renderer'
@@ -8,7 +9,6 @@ import ResultsExamQuestionManualScore, {
   ResultsExamQuestionManualScoreProps
 } from '../../src/components/results/ResultsExamQuestionManualScore'
 import { initI18n } from '../../src/i18n'
-import _ from 'lodash'
 
 const defaultProps = {
   maxScore: 6,
