@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnswerWithScores } from '../types'
+import { Score } from '../types'
 import { getAnnotationAttributes } from './helpers'
 
 function ResultsSingleLineAnswer({
@@ -10,7 +10,7 @@ function ResultsSingleLineAnswer({
   children
 }: {
   answers: Element[]
-  answerScores?: AnswerWithScores
+  answerScores?: Score
   displayNumber: string
   value: string | undefined
   children: React.ReactNode

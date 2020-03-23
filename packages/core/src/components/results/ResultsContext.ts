@@ -2,14 +2,14 @@ import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digab
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { AnswerWithScores, AutogradedScore, ChoiceAnswer, ExamAnswer, PregradingScore, QuestionId } from '../types'
+import { Score, ChoiceAnswer, ExamAnswer, QuestionId } from '../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
 
 export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>
   gradingStructure: GradingStructure
-  scores: AnswerWithScores[]
+  scores: Score[]
   gradingText: string | undefined
   totalScore: number
 }
@@ -54,24 +54,14 @@ export function findMultiChoiceFromGradingStructure(
   return undefined
 }
 
-export function findScore(scores: AnswerWithScores[], questionId: number): AnswerWithScores | undefined {
+export function findScore(scores: Score[], questionId: number): Score | undefined {
   return scores.find(a => a.questionId === questionId)
-}
-
-export function findPregradingScore(scores: AnswerWithScores[], questionId: number): PregradingScore | undefined {
-  const pregradingScore = scores.find(a => a.questionId === questionId)?.pregrading
-  return pregradingScore?.score ? pregradingScore : undefined
-}
-
-export function findAutogradingScore(scores: AnswerWithScores[], questionId: number): AutogradedScore | undefined {
-  const autogradingScore = scores.find(a => a.questionId === questionId)?.autograding
-  return autogradingScore?.score ? autogradingScore : undefined
 }
 
 export function calculateQuestionSumScore(
   questionElement: Element,
   gradingStructure: GradingStructure,
-  scores: AnswerWithScores[],
+  scores: Score[],
   answersById: Record<QuestionId, ExamAnswer>
 ) {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
@@ -80,7 +70,7 @@ export function calculateQuestionSumScore(
   }
 
   const textQuestionScore = (questionId: number) => {
-    const score = findPregradingScore(scores, questionId)
+    const score = findScore(scores, questionId)?.pregrading
     return score ? score.score : 0
   }
 

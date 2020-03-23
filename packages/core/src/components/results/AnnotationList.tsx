@@ -15,7 +15,7 @@ function ResultsAnnotationList() {
   const answersAndScores = mapMaybe(answers, answer => {
     const questionId = getNumericAttribute(answer, 'question-id')
     const score = findScore(scores, questionId!)
-    return score?.pregrading?.annotations.length || score?.censoring?.annotations.length
+    return score?.pregrading?.annotations?.length || score?.censoring?.annotations?.length
       ? ([answer, score] as const)
       : undefined
   })
@@ -23,7 +23,7 @@ function ResultsAnnotationList() {
   const pregradingAnnotations = _.flatMap(answersAndScores, ([answer, score]) => {
     const prefix = answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
     return score!
-      .pregrading!.annotations.filter(a => a.message.length)
+      .pregrading!.annotations!.filter(a => a.message.length)
       .map((annotation, i) => {
         const key = prefix + String(i + 1) + ')'
         return (
@@ -37,7 +37,7 @@ function ResultsAnnotationList() {
   const censoringAnnotations = _.flatMap(answersAndScores, ([answer, score]) => {
     const prefix = answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
     return score!
-      .censoring!.annotations.filter(a => a.message.length)
+      .censoring!.annotations!.filter(a => a.message.length)
       .map((annotation, i) => {
         const key = prefix + String(i + 1) + ')'
         return (
