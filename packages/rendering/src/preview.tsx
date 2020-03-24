@@ -1,6 +1,6 @@
 import Attachments from '@digabi/exam-engine-core/dist/components/Attachments'
 import Exam from '@digabi/exam-engine-core/dist/components/Exam'
-import Results from '@digabi/exam-engine-core/dist/components/Results/Results'
+import Results from '@digabi/exam-engine-core/dist/components/results/Results'
 import '@digabi/exam-engine-core/dist/main.css'
 import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
 import { MasteringResult } from '@digabi/exam-engine-mastering'

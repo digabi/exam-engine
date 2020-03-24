@@ -1,6 +1,6 @@
 import Attachments from '@digabi/exam-engine-core/dist/components/Attachments'
 import Exam from '@digabi/exam-engine-core/dist/components/Exam'
-import Results from '@digabi/exam-engine-core/dist/components/Results/Results'
+import Results from '@digabi/exam-engine-core/dist/components/results/Results'
 import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
 import { listExams } from '@digabi/exam-engine-exams'
 import {
