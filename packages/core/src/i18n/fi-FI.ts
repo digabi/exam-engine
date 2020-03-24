@@ -15,7 +15,6 @@ export const fi_FI = {
   part: 'Osa {{displayNumber}}:',
   grade: 'Arvosana',
   comment: 'Kommentti',
-  'points-max': '{{count}} p max',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} piste',

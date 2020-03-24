@@ -2,7 +2,7 @@
 
 exports[`<ResultsExamQuestionAutoScore /> renders displayNumber number when there are more than one answer 1`] = `
 <div
-  className="e-result-scorecount e-float-right"
+  className="e-result-scorecount e-float-right e-mrg-b-1"
 >
   <sup>
     1
@@ -20,7 +20,7 @@ exports[`<ResultsExamQuestionAutoScore /> renders displayNumber number when ther
 
 exports[`<ResultsExamQuestionAutoScore /> renders with score 1`] = `
 <div
-  className="e-result-scorecount e-float-right"
+  className="e-result-scorecount e-float-right e-mrg-b-1"
 >
    
   <b>
@@ -35,7 +35,7 @@ exports[`<ResultsExamQuestionAutoScore /> renders with score 1`] = `
 
 exports[`<ResultsExamQuestionAutoScore /> renders without score 1`] = `
 <div
-  className="e-result-scorecount e-float-right"
+  className="e-result-scorecount e-float-right e-mrg-b-1"
 >
    
   <div
