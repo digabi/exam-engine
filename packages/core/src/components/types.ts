@@ -2,6 +2,7 @@ import { RenderChildNodes } from '../createRenderChildNodes'
 import { Translations } from '../i18n/fi-FI'
 
 export type QuestionId = number
+export type AnswerId = number
 
 interface AnswerCommon {
   questionId: QuestionId
@@ -24,17 +25,40 @@ export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 
+export interface Score {
+  questionId: QuestionId
+  answerId: AnswerId
+  pregrading?: PregradingScore
+  censoring?: CensoringScore
+  inspection?: InspectionScore
+  autograding?: AutogradedScore
+}
+
+export interface AutogradedScore {
+  score: number
+}
+
+export interface PregradingScore {
+  score?: number
+  comment?: string
+  annotations?: Annotation[]
+}
+
+export interface CensoringScore {
+  scores: Array<{ score: number; shortCode: string }>
+  annotations?: Annotation[]
+  comment?: string
+}
+
+export interface InspectionScore {
+  score: number
+  shortCodes: [string, string] | [string, string, string]
+}
+
 export interface Annotation {
   startIndex: number
   length: number
   message: string
-}
-
-export interface AnswerScore {
-  questionId: number
-  scoreValue: number | undefined
-  comment?: string
-  annotations: Annotation[]
 }
 
 /**

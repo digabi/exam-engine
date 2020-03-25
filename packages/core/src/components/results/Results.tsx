@@ -13,13 +13,14 @@ import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
 import RenderChildNodes from '../RenderChildNodes'
 import Section from '../Section'
-import { AnswerScore } from '../types'
+import { Score } from '../types'
 import ResultsChoiceAnswer from './ResultsChoiceAnswer'
 import { ResultsContext, withResultsContext } from './ResultsContext'
 import ResultsDropdownAnswer from './ResultsDropdownAnswer'
 import ResultsExamQuestion from './ResultsExamQuestion'
 import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
+import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
 import ResultsTextAnswer from './ResultsTextAnswer'
 
 export interface ResultsProps extends CommonExamProps {
@@ -27,8 +28,8 @@ export interface ResultsProps extends CommonExamProps {
   gradingStructure: GradingStructure
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
-  /** Scores for exam questions */
-  scores: AnswerScore[]
+  /** Scores for exam answers */
+  scores: Score[]
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -44,7 +45,7 @@ const renderChildNodes = createRenderChildNodes({
   section: ResultsExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,
-  'scored-text-answer': ResultsTextAnswer,
+  'scored-text-answer': ResultsScoredTextAnswer,
   'scored-text-answers': RenderChildNodes
 })
 
@@ -52,6 +53,7 @@ function Results({}: ResultsProps) {
   const { language, root } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')
+
   const examStylesheet = root.getAttribute('exam-stylesheet')
 
   const i18n = initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
