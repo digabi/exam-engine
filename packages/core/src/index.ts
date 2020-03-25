@@ -5,7 +5,7 @@ import Results from './components/results/Results'
 import parseExam from './parser/parseExam'
 
 export * from './components/types'
-export { Attachments, Exam, parseExam }
+export { Attachments, Exam, Results, parseExam }
 
 export interface ExamBundle {
   Attachments: typeof Attachments
