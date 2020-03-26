@@ -92,7 +92,10 @@ function generateScore(question: { id: number; maxScore: number; displayNumber: 
         }
       ],
       comment: `Censor comment to question ${question.displayNumber}`,
-      annotations: [{ startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` }]
+      annotations: [
+        { startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` }
+      ],
+      nonAnswerDetails: { shortCode: 'CEN' }
     },
     inspection: {
       score: Math.min(question.maxScore, i),

@@ -18,11 +18,13 @@ interface NormalizedScore {
 
 function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: ResultsExamQuestionManualScoreProps) {
   const { answers } = useContext(QuestionContext)
-
   const containerProps = { answers, displayNumber }
+  const shortCode = scores?.censoring?.nonAnswerDetails?.shortCode
+
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
       {renderNormalizedScores(scores, maxScore)}
+      {shortCode && <NonAnswer shortCode={shortCode} />}
     </ResultsExamQuestionScoresContainer>
   )
 }
@@ -39,6 +41,19 @@ function renderNormalizedScores(scores?: Score, maxScore?: number) {
   ].filter(s => s) as NormalizedScore[]
 
   return normalizedScores.map((score, i) => <ScoreRow key={i} {...score} latest={i === 0} maxScore={maxScore} />)
+}
+
+interface NonAnswerProps {
+  shortCode: string
+}
+
+function NonAnswer({ shortCode }: NonAnswerProps) {
+  return (
+    <div className="e-color-darkgrey e-columns e-columns--center-v">
+      <span className="e-font-size-xxxl e-light e-mrg-r-1">×</span>
+      <span>{shortCode}</span>
+    </div>
+  )
 }
 
 interface ScoreRowProps {
@@ -67,7 +82,7 @@ interface ScoreColumnProps {
   className?: string
 }
 
-function ScoreColumn({ children, className }: ScoreColumnProps) {
+function ScoreColumn({ className, children }: ScoreColumnProps) {
   return <span className={`e-font-size-xs e-mrg-r-1 ${className || ''}`}>{children}</span>
 }
 

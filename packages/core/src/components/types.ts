@@ -47,6 +47,7 @@ export interface PregradingScore {
 export interface CensoringScore {
   scores: Array<{ score: number; shortCode: string }>
   annotations?: Annotation[]
+  nonAnswerDetails?: { shortCode?: string }
   comment?: string
 }
 
