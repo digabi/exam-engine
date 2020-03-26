@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AnnotationList /> fi-FI renders empty without annotations 1`] = `null`;
+
+exports[`<AnnotationList /> fi-FI renders empty without score 1`] = `null`;
+
+exports[`<AnnotationList /> fi-FI renders with only censoring annotations 1`] = `
+<div
+  className="e-annotation-list e-columns e-mrg-t-2"
+>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Valmistavan arvostelun merkinnät
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    />
+  </div>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Sensorin merkinnät
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    >
+      <li
+        data-list-number="1)"
+      >
+        Test censoring annotation
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`<AnnotationList /> fi-FI renders with only pregrading annotations 1`] = `
+<div
+  className="e-annotation-list e-columns e-mrg-t-2"
+>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Valmistavan arvostelun merkinnät
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    >
+      <li
+        data-list-number="1)"
+      >
+        Test pregrading annotation
+      </li>
+    </ol>
+  </div>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Sensorin merkinnät
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    />
+  </div>
+</div>
+`;
+
+exports[`<AnnotationList /> fi-FI renders with pregrading and censoring annotations 1`] = `
+<div
+  className="e-annotation-list e-columns e-mrg-t-2"
+>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Valmistavan arvostelun merkinnät
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    >
+      <li
+        data-list-number="1)"
+      >
+        Test pregrading annotation
+      </li>
+    </ol>
+  </div>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Sensorin merkinnät
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    >
+      <li
+        data-list-number="2)"
+      >
+        Test censoring annotation
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`<AnnotationList /> sv-FI renders with pregrading and censoring annotations 1`] = `
+<div
+  className="e-annotation-list e-columns e-mrg-t-2"
+>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Preliminära bedömningens anteckningar
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    >
+      <li
+        data-list-number="1)"
+      >
+        Test pregrading annotation
+      </li>
+    </ol>
+  </div>
+  <div
+    className="e-column e-column--6"
+  >
+    <h5>
+      Censorns anteckningar
+    </h5>
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    >
+      <li
+        data-list-number="2)"
+      >
+        Test censoring annotation
+      </li>
+    </ol>
+  </div>
+</div>
+`;
