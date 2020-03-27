@@ -80,6 +80,39 @@ describe('<AnnotationList />', () => {
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
 
+    it('filters empty annotations', () => {
+      const resultsProps = {
+        scores: [
+          {
+            ..._.pick(defaultScores, 'pregrading', 'answerId', 'questionId'),
+            ...{
+              pregrading: {
+                score: 1,
+                annotations: [
+                  {
+                    startIndex: 0,
+                    length: 1,
+                    message: 'Before empty annotation'
+                  },
+                  {
+                    startIndex: 1,
+                    length: 1,
+                    message: ''
+                  },
+                  {
+                    startIndex: 2,
+                    length: 1,
+                    message: 'After empty annotation'
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+      expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
+    })
+
     it('renders with only censoring annotations', () => {
       const resultsProps = {
         scores: [_.pick(defaultScores, 'censoring', 'answerId', 'questionId')]
