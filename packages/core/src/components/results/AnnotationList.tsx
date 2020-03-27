@@ -14,38 +14,29 @@ interface AnnotationItem {
 }
 
 interface AnnotationListProps {
-  pregradingAnnotations: AnnotationItem[]
-  censoringAnnotations: AnnotationItem[]
+  i18nTitleKey?: string
+  annotations?: AnnotationItem[]
 }
 
-export const ResultsAnnotationListComponent = ({
-  pregradingAnnotations,
-  censoringAnnotations
-}: AnnotationListProps) => {
+const hasAnnotations = (score: Score) =>
+  Boolean(score?.pregrading?.annotations?.length || score?.censoring?.annotations?.length)
+
+const getPrefix = (answers: Element[], answer: Element) =>
+  answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
+
+export const ResultsAnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListProps) => {
   const { t } = useTranslation()
 
-  return pregradingAnnotations.length || censoringAnnotations.length ? (
-    <div className="e-annotation-list e-columns e-mrg-t-2">
-      <div className="e-column e-column--6">
-        <h5>{t('grading.pregrading-annotations')}</h5>
-        <ol className="e-list-data e-pad-l-0 e-font-size-s">
-          {pregradingAnnotations.map(({ numbering, message }) => (
-            <li data-list-number={numbering} key={numbering}>
-              {message}
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div className="e-column e-column--6">
-        <h5>{t('grading.censor-annotations')}</h5>
-        <ol className="e-list-data e-pad-l-0 e-font-size-s">
-          {censoringAnnotations.map(({ numbering, message }) => (
-            <li data-list-number={numbering} key={numbering}>
-              {message}
-            </li>
-          ))}
-        </ol>
-      </div>
+  return annotations ? (
+    <div className="e-column e-column--6">
+      {i18nTitleKey && <h5>{t(i18nTitleKey)}</h5>}
+      <ol className="e-list-data e-pad-l-0 e-font-size-s">
+        {annotations.map(({ numbering, message }) => (
+          <li data-list-number={numbering} key={numbering}>
+            {message}
+          </li>
+        ))}
+      </ol>
     </div>
   ) : null
 }
@@ -58,13 +49,8 @@ function ResultsAnnotationList() {
     const questionId = getNumericAttribute(answer, 'question-id')
     const score = findScore(scores, questionId!)
 
-    return score?.pregrading?.annotations?.length || score?.censoring?.annotations?.length
-      ? ([answer, score] as const)
-      : undefined
+    return score && answer && hasAnnotations(score) ? ([answer, score] as const) : undefined
   })
-
-  const getPrefix = (answer: Element) =>
-    answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
 
   const getListOfAnnotations = (
     answerElementAndScores: Array<readonly [Element, Score]>,
@@ -74,10 +60,10 @@ function ResultsAnnotationList() {
     _.flatMap(
       answerElementAndScores,
       ([answer, score]) =>
-        score![annotationsFrom]?.annotations
+        score[annotationsFrom]?.annotations
           ?.filter(a => a.message.length)
           .map((annotation: Annotation, i: number) => {
-            const numbering = getPrefix(answer) + String(listNumberOffset + i + 1) + ')'
+            const numbering = getPrefix(answers, answer) + String(listNumberOffset + i + 1) + ')'
             const message = annotation.message
             return { numbering, message }
           }) ?? []
@@ -86,7 +72,18 @@ function ResultsAnnotationList() {
   const pregradingAnnotations = getListOfAnnotations(answersAndScores, 'pregrading')
   const censoringAnnotations = getListOfAnnotations(answersAndScores, 'censoring', pregradingAnnotations.length)
 
-  return <ResultsAnnotationListComponent {...{ pregradingAnnotations, censoringAnnotations }} />
+  return pregradingAnnotations.length || censoringAnnotations.length ? (
+    <div className="e-annotation-list e-columns e-mrg-t-2">
+      <ResultsAnnotationListComponent
+        i18nTitleKey={'grading.pregrading-annotations'}
+        annotations={pregradingAnnotations}
+      />
+      <ResultsAnnotationListComponent
+        i18nTitleKey={'grading.censor-annotations'}
+        annotations={censoringAnnotations}
+      />
+    </div>
+  ) : null
 }
 
 export default React.memo(ResultsAnnotationList)
