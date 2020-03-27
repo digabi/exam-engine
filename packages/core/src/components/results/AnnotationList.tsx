@@ -78,10 +78,7 @@ function ResultsAnnotationList() {
         i18nTitleKey={'grading.pregrading-annotations'}
         annotations={pregradingAnnotations}
       />
-      <ResultsAnnotationListComponent
-        i18nTitleKey={'grading.censor-annotations'}
-        annotations={censoringAnnotations}
-      />
+      <ResultsAnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
     </div>
   ) : null
 }
