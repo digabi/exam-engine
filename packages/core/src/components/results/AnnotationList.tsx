@@ -24,7 +24,7 @@ const hasAnnotations = (score: Score) =>
 const getPrefix = (answers: Element[], answer: Element) =>
   answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
 
-export const ResultsAnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListProps) => {
+const AnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListProps) => {
   const { t } = useTranslation()
 
   return annotations ? (
@@ -43,7 +43,7 @@ export const ResultsAnnotationListComponent = ({ i18nTitleKey, annotations }: An
 
 function ResultsAnnotationList() {
   const { answers } = useContext(QuestionContext)
-  const { scores } = useContext(ResultsContext)
+  const { scores, oneGradingRound } = useContext(ResultsContext)
 
   const answersAndScores = mapMaybe(answers, answer => {
     const questionId = getNumericAttribute(answer, 'question-id')
@@ -74,11 +74,17 @@ function ResultsAnnotationList() {
 
   return pregradingAnnotations.length || censoringAnnotations.length ? (
     <div className="e-annotation-list e-columns e-mrg-t-2">
-      <ResultsAnnotationListComponent
-        i18nTitleKey={'grading.pregrading-annotations'}
-        annotations={pregradingAnnotations}
-      />
-      <ResultsAnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
+      {!oneGradingRound ? (
+        <>
+          <AnnotationListComponent
+            i18nTitleKey={'grading.pregrading-annotations'}
+            annotations={pregradingAnnotations}
+          />
+          <AnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
+        </>
+      ) : <>
+        <AnnotationListComponent annotations={pregradingAnnotations} />
+      </>}
     </div>
   ) : null
 }

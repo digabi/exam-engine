@@ -4,6 +4,28 @@ exports[`<AnnotationList /> fi-FI renders empty without annotations 1`] = `null`
 
 exports[`<AnnotationList /> fi-FI renders empty without score 1`] = `null`;
 
+exports[`<AnnotationList /> fi-FI renders null if no scores and oneGradingRound in ResultContext 1`] = `null`;
+
+exports[`<AnnotationList /> fi-FI renders only pregrading without header on oneGradingRound in ResultContext 1`] = `
+<div
+  className="e-annotation-list e-columns e-mrg-t-2"
+>
+  <div
+    className="e-column e-column--6"
+  >
+    <ol
+      className="e-list-data e-pad-l-0 e-font-size-s"
+    >
+      <li
+        data-list-number="1)"
+      >
+        Test pregrading annotation
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
 exports[`<AnnotationList /> fi-FI renders with only censoring annotations 1`] = `
 <div
   className="e-annotation-list e-columns e-mrg-t-2"

@@ -93,6 +93,22 @@ describe('<AnnotationList />', () => {
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
+
+    it('renders only pregrading without header on oneGradingRound in ResultContext', () => {
+      const resultsProps = {
+        scores: [defaultScores],
+        oneGradingRound: true
+      }
+      expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
+    })
+
+    it('renders null if no scores and oneGradingRound in ResultContext', () => {
+      const resultsProps = {
+        scores: [],
+        oneGradingRound: true
+      }
+      expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
+    })
   })
 
   describe('sv-FI', () => {

@@ -28,7 +28,8 @@ export interface ResultsProps extends CommonExamProps {
   /** Custom grading text to be displayed for the whole exam. For example total grade for the exam. */
   gradingText?: string
   /** Scores for exam answers */
-  scores: Score[]
+  scores: Score[],
+  oneGradingRound?: boolean
 }
 
 const renderChildNodes = createRenderChildNodes({
