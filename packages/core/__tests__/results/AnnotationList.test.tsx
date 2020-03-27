@@ -94,18 +94,18 @@ describe('<AnnotationList />', () => {
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
 
-    it('renders only pregrading without header on oneGradingRound in ResultContext', () => {
+    it('renders only pregrading without header on singleGrading in ResultContext', () => {
       const resultsProps = {
         scores: [defaultScores],
-        oneGradingRound: true
+        singleGrading: true
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
 
-    it('renders null if no scores and oneGradingRound in ResultContext', () => {
+    it('renders null if no scores and singleGrading in ResultContext', () => {
       const resultsProps = {
         scores: [],
-        oneGradingRound: true
+        singleGrading: true
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })

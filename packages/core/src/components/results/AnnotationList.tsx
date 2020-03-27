@@ -28,7 +28,7 @@ const AnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListPr
   const { t } = useTranslation()
 
   return annotations ? (
-    <div className="e-column e-column--6">
+    <>
       {i18nTitleKey && <h5>{t(i18nTitleKey)}</h5>}
       <ol className="e-list-data e-pad-l-0 e-font-size-s">
         {annotations.map(({ numbering, message }) => (
@@ -37,13 +37,13 @@ const AnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListPr
           </li>
         ))}
       </ol>
-    </div>
+    </>
   ) : null
 }
 
 function ResultsAnnotationList() {
   const { answers } = useContext(QuestionContext)
-  const { scores, oneGradingRound } = useContext(ResultsContext)
+  const { scores, singleGrading } = useContext(ResultsContext)
 
   const answersAndScores = mapMaybe(answers, answer => {
     const questionId = getNumericAttribute(answer, 'question-id')
@@ -74,17 +74,23 @@ function ResultsAnnotationList() {
 
   return pregradingAnnotations.length || censoringAnnotations.length ? (
     <div className="e-annotation-list e-columns e-mrg-t-2">
-      {!oneGradingRound ? (
+      {!singleGrading ? (
         <>
-          <AnnotationListComponent
-            i18nTitleKey={'grading.pregrading-annotations'}
-            annotations={pregradingAnnotations}
-          />
-          <AnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
+          <div className="e-column e-column--6">
+            <AnnotationListComponent
+              i18nTitleKey={'grading.pregrading-annotations'}
+              annotations={pregradingAnnotations}
+            />
+          </div>
+          <div className="e-column e-column--6">
+            <AnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
+          </div>
         </>
-      ) : <>
-        <AnnotationListComponent annotations={pregradingAnnotations} />
-      </>}
+      ) : (
+        <div className="e-column e-column--10">
+          <AnnotationListComponent annotations={pregradingAnnotations} />
+        </div>
+      )}
     </div>
   ) : null
 }
