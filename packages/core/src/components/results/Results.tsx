@@ -12,7 +12,6 @@ import ExamQuestionInstruction from '../ExamQuestionInstruction'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
 import RenderChildNodes from '../RenderChildNodes'
-import Section from '../Section'
 import { Score } from '../types'
 import ResultsChoiceAnswer from './ResultsChoiceAnswer'
 import { ResultsContext, withResultsContext } from './ResultsContext'
@@ -66,17 +65,15 @@ function Results({}: ResultsProps) {
           <main className="e-exam" lang={language}>
             <React.StrictMode />
             {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-            <Section aria-labelledby="title" className="e-section--results">
-              <div className="e-columns e-columns--center-v">
-                {examTitle && (
-                  <DocumentTitle id="title" className="e-font-size-xxl e-column e-mrg-b-0">
-                    {renderChildNodes(examTitle)}
-                    {date && ', ' + dateTimeFormatter.format(date)}
-                  </DocumentTitle>
-                )}
-                <ScoresAndFinalGrade />
-              </div>
-            </Section>
+            <div className="e-columns e-columns--center-v e-pad-4">
+              {examTitle && (
+                <DocumentTitle id="title" className="e-font-size-xxl e-column e-mrg-b-0">
+                  {renderChildNodes(examTitle)}
+                  {date && ', ' + dateTimeFormatter.format(date)}
+                </DocumentTitle>
+              )}
+              <ScoresAndFinalGrade />
+            </div>
             {renderChildNodes(root)}
           </main>
         )}
