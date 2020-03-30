@@ -25,7 +25,8 @@ const defaultScores: Score = {
       { score: 3, shortCode: 'SE2' },
       { score: 2, shortCode: 'SE1' }
     ],
-    annotations: []
+    annotations: [],
+    nonAnswerDetails: {}
   },
   inspection: { score: 5, shortCodes: ['IN1', 'IN2'] }
 }
