@@ -51,7 +51,7 @@ function NonAnswer({ shortCode }: NonAnswerProps) {
   return (
     <div className="e-color-darkgrey e-columns e-columns--center-v">
       <span className="e-font-size-xxxl e-light e-mrg-r-1">×</span>
-      <span>{`${shortCode}`}</span>
+      <span>{shortCode}</span>
     </div>
   )
 }
