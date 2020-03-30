@@ -69,7 +69,7 @@ function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & 
         {latest && maxScore ? ` / ${maxScore}` : ''}
         {` p.`}
       </ScoreColumn>
-      <ScoreColumn>{shortCode}</ScoreColumn>
+      <ScoreColumn className="e-result-scorecount-shortcode">{shortCode}</ScoreColumn>
       <ScoreColumn className="e-mrg-r-0">
         <Translation>{t => t(type)}</Translation>
       </ScoreColumn>
