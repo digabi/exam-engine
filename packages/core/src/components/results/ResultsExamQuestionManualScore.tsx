@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { QuestionContext } from '../QuestionContext'
@@ -64,7 +65,7 @@ interface ScoreRowProps {
 function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & NormalizedScore) {
   return (
     <div className={latest ? 'e-color-black' : 'e-color-grey'}>
-      <ScoreColumn className={`${latest && 'e-font-size-m'}`}>
+      <ScoreColumn className={classNames('e-nowrap', { 'e-font-size-m': latest })}>
         {latest ? <b>{score}</b> : score}
         {latest && maxScore ? ` / ${maxScore}` : ''}
         {` p.`}
@@ -83,7 +84,7 @@ interface ScoreColumnProps {
 }
 
 function ScoreColumn({ className, children }: ScoreColumnProps) {
-  return <span className={`e-font-size-xs e-mrg-r-1 ${className || ''}`}>{children}</span>
+  return <span className={classNames('e-font-size-xs e-mrg-r-1', className)}>{children}</span>
 }
 
 function normalizePregradingScore({ score }: PregradingScore): NormalizedScore | null {
