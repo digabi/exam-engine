@@ -74,7 +74,11 @@ function ResultsAnnotationList() {
 
   return pregradingAnnotations.length || censoringAnnotations.length ? (
     <div className="e-annotation-list e-columns e-mrg-t-2">
-      {!singleGrading ? (
+      {singleGrading ? (
+        <div className="e-column e-column--10">
+          <AnnotationListComponent annotations={pregradingAnnotations} />
+        </div>
+      ) : (
         <>
           <div className="e-column e-column--6">
             <AnnotationListComponent
@@ -86,10 +90,6 @@ function ResultsAnnotationList() {
             <AnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
           </div>
         </>
-      ) : (
-        <div className="e-column e-column--10">
-          <AnnotationListComponent annotations={pregradingAnnotations} />
-        </div>
       )}
     </div>
   ) : null
