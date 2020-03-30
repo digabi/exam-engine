@@ -84,7 +84,7 @@ interface ScoreColumnProps {
 }
 
 function ScoreColumn({ className, children }: ScoreColumnProps) {
-  return <span className={classNames('e-font-size-xs e-mrg-r-1', className)}>{children}</span>
+  return <span className={classNames('e-font-size-xs e-mrg-r-1 e-nowrap', className)}>{children}</span>
 }
 
 function normalizePregradingScore({ score }: PregradingScore): NormalizedScore | null {
