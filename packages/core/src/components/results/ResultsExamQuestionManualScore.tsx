@@ -24,17 +24,14 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
 
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
-      {renderNormalizedScores(scores, maxScore)}
+      {!scores?.pregrading && !scores?.censoring && <NoPregrading maxScore={maxScore} />}
+      {scores && renderNormalizedScores(scores, maxScore)}
       {shortCode && <NonAnswer shortCode={shortCode} />}
     </ResultsExamQuestionScoresContainer>
   )
 }
 
-function renderNormalizedScores(scores?: Score, maxScore?: number) {
-  if (!scores) {
-    return null
-  }
-
+function renderNormalizedScores(scores: Score, maxScore?: number) {
   const normalizedScores = [
     scores.inspection && normalizeInspectionScore(scores.inspection),
     ...(scores.censoring ? normalizeCensoringScores(scores.censoring) : []),
@@ -42,6 +39,20 @@ function renderNormalizedScores(scores?: Score, maxScore?: number) {
   ].filter(s => s) as NormalizedScore[]
 
   return normalizedScores.map((score, i) => <ScoreRow key={i} {...score} latest={i === 0} maxScore={maxScore} />)
+}
+
+interface NoPregradingProps {
+  maxScore?: number
+}
+
+function NoPregrading({ maxScore }: NoPregradingProps) {
+  return (
+    <>
+      <span className="e-result-scorecount-empty" />
+      {maxScore && ` / ${maxScore} `}
+      <Translation>{t => t('points')}</Translation>
+    </>
+  )
 }
 
 interface NonAnswerProps {
