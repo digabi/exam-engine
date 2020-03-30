@@ -72,7 +72,7 @@ function ScoreColumn({ children, className }: ScoreColumnProps) {
 }
 
 function normalizePregradingScore({ score }: PregradingScore): NormalizedScore | null {
-  return score ? { score, shortCode: '', type: 'va' } : null
+  return score !== undefined ? { score, shortCode: '', type: 'va' } : null
 }
 
 function normalizeCensoringScores(score: CensoringScore): NormalizedScore[] {
