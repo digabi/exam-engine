@@ -29,6 +29,7 @@ export interface ResultsProps extends CommonExamProps {
   gradingText?: string
   /** Scores for exam answers */
   scores: Score[]
+  singleGrading?: boolean
 }
 
 const renderChildNodes = createRenderChildNodes({

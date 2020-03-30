@@ -24,11 +24,11 @@ const hasAnnotations = (score: Score) =>
 const getPrefix = (answers: Element[], answer: Element) =>
   answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
 
-export const ResultsAnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListProps) => {
+const AnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListProps) => {
   const { t } = useTranslation()
 
   return annotations ? (
-    <div className="e-column e-column--6">
+    <>
       {i18nTitleKey && <h5>{t(i18nTitleKey)}</h5>}
       <ol className="e-list-data e-pad-l-0 e-font-size-s">
         {annotations.map(({ numbering, message }) => (
@@ -37,13 +37,13 @@ export const ResultsAnnotationListComponent = ({ i18nTitleKey, annotations }: An
           </li>
         ))}
       </ol>
-    </div>
+    </>
   ) : null
 }
 
 function ResultsAnnotationList() {
   const { answers } = useContext(QuestionContext)
-  const { scores } = useContext(ResultsContext)
+  const { scores, singleGrading } = useContext(ResultsContext)
 
   const answersAndScores = mapMaybe(answers, answer => {
     const questionId = getNumericAttribute(answer, 'question-id')
@@ -74,11 +74,23 @@ function ResultsAnnotationList() {
 
   return pregradingAnnotations.length || censoringAnnotations.length ? (
     <div className="e-annotation-list e-columns e-mrg-t-2">
-      <ResultsAnnotationListComponent
-        i18nTitleKey={'grading.pregrading-annotations'}
-        annotations={pregradingAnnotations}
-      />
-      <ResultsAnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
+      {singleGrading ? (
+        <div className="e-column e-column--10">
+          <AnnotationListComponent annotations={pregradingAnnotations} />
+        </div>
+      ) : (
+        <>
+          <div className="e-column e-column--6">
+            <AnnotationListComponent
+              i18nTitleKey={'grading.pregrading-annotations'}
+              annotations={pregradingAnnotations}
+            />
+          </div>
+          <div className="e-column e-column--6">
+            <AnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
+          </div>
+        </>
+      )}
     </div>
   ) : null
 }
