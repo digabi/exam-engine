@@ -21,7 +21,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with displayNumber whe
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       
     </span>
@@ -51,7 +51,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and on
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE3
     </span>
@@ -72,7 +72,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and on
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       
     </span>
@@ -102,7 +102,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and th
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE3
     </span>
@@ -123,7 +123,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and th
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE2
     </span>
@@ -144,7 +144,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and th
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE1
     </span>
@@ -165,7 +165,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and th
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       
     </span>
@@ -195,7 +195,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading score 
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       
     </span>
@@ -225,7 +225,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       IN1, IN2
     </span>
@@ -246,7 +246,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE3
     </span>
@@ -267,7 +267,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE2
     </span>
@@ -288,7 +288,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE1
     </span>
@@ -309,7 +309,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       
     </span>
@@ -345,7 +345,7 @@ exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       IN1, IN2
     </span>
@@ -366,7 +366,7 @@ exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE3
     </span>
@@ -387,7 +387,7 @@ exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE2
     </span>
@@ -408,7 +408,7 @@ exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       SE1
     </span>
@@ -429,7 +429,7 @@ exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 "
+      className="e-font-size-xs e-mrg-r-1 e-result-scorecount-shortcode"
     >
       
     </span>
