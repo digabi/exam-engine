@@ -34,21 +34,21 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
       return (
         <>
           <ResultsExamQuestionManualScore scores={answerScores} maxScore={maxScore} />
-          <div className="answer">
-            <div className="e-multiline-results-text-answer answer-text-container">
+          <div className="answer e-multiline-results-text-answer">
+            <div className="answer-text-container">
               {type === 'rich-text' ? (
                 <div {...props} dangerouslySetInnerHTML={{ __html: value! }} />
               ) : (
                 <div {...props}>{value}</div>
               )}
             </div>
-            <AnswerToolbar
-              {...{
-                answer,
-                element
-              }}
-            />
           </div>
+          <AnswerToolbar
+            {...{
+              answer,
+              element
+            }}
+          />
           {comment && (
             <>
               <h5>{t('comment')}</h5>
