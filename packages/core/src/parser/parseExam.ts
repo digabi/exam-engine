@@ -1,4 +1,4 @@
-import _ from 'lodash-es'
+import * as _ from 'lodash-es'
 import { queryAll } from '../dom-utils'
 
 export default function parseExam(examXml: string, deterministicRendering: boolean = false): XMLDocument {

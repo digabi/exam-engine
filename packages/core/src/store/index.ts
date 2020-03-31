@@ -1,4 +1,4 @@
-import _ from 'lodash-es'
+import * as _ from 'lodash-es'
 import { applyMiddleware, combineReducers, compose, createStore, Store } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
