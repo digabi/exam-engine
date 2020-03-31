@@ -61,16 +61,9 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
     case 'single-line':
     default:
       return (
-        <ResultsSingleLineAnswer
-          answers={answers}
-          answerScores={answerScores}
-          displayNumber={displayNumber}
-          value={value}
-        >
+        <ResultsSingleLineAnswer {...{ answers, answerScores, displayNumber, value }}>
           <ResultsExamQuestionManualScore
-            scores={answerScores}
-            maxScore={maxScore}
-            displayNumber={answers.length > 1 ? displayNumber : undefined}
+            {...{ scores: answerScores, maxScore, displayNumber: answers.length > 1 ? displayNumber : undefined }}
           />
         </ResultsSingleLineAnswer>
       )
