@@ -347,7 +347,11 @@
 
   <xs:element name="scored-text-answers">
     <xs:annotation>
-      <xs:documentation>Deprecated. Use <code>e:hints</code> instead.</xs:documentation>
+      <xs:documentation>
+        Deprecated. Use
+        <code>e:hints</code>
+        instead.
+      </xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded">
@@ -373,6 +377,7 @@
       <xs:simpleContent>
         <xs:extension base="xs:string">
           <xs:attribute name="score" type="xs:positiveInteger" use="required" />
+          <xs:attributeGroup ref="e:localizable" />
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
