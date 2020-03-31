@@ -64,7 +64,7 @@ module.exports = function() {
     performance: {
       maxAssetSize: maxJsSize,
       maxEntrypointSize: maxJsSize + maxCssSize,
-      hints: 'warning'
+      hints: 'error'
     }
   }
 }
