@@ -1,4 +1,5 @@
 import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digabi/exam-engine-mastering'
+import { Dictionary } from 'lodash'
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
@@ -22,11 +23,7 @@ export const withResultsContext = withContext<ResultsContext, ResultsProps>(
   ({ scores, doc, gradingStructure, gradingText, answers, singleGrading }) => {
     const answersByQuestionId = _.keyBy(answers, 'questionId')
     const topLevelQuestions = queryAll(doc.documentElement, 'question', false)
-    const totalScore = _.sum(
-      topLevelQuestions.map(question =>
-        calculateQuestionSumScore(question, gradingStructure, scores, answersByQuestionId)
-      )
-    )
+    const totalScore = calculateQuestionsTotalSumScore(topLevelQuestions, gradingStructure, scores, answersByQuestionId)
 
     return {
       answersByQuestionId,
@@ -60,6 +57,19 @@ export function findScore(scores: Score[], questionId: number): Score | undefine
   return scores.find(a => a.questionId === questionId)
 }
 
+export function calculateQuestionsTotalSumScore(
+  topLevelQuestions: Element[],
+  gradingStructure: GradingStructure,
+  scores: Score[],
+  answersByQuestionId: Dictionary<ExamAnswer>
+) {
+  return _.sum(
+    topLevelQuestions.map(question =>
+      calculateQuestionSumScore(question, gradingStructure, scores, answersByQuestionId)
+    )
+  )
+}
+
 export function calculateQuestionSumScore(
   questionElement: Element,
   gradingStructure: GradingStructure,
@@ -72,8 +82,10 @@ export function calculateQuestionSumScore(
   }
 
   const textQuestionScore = (questionId: number) => {
-    const score = findScore(scores, questionId)?.pregrading
-    return score ? score.score : 0
+    const score = findScore(scores, questionId)
+    return score
+      ? [score.inspection, score.censoring?.scores[0], score.pregrading, score.autograding].find(Boolean)?.score || 0
+      : 0
   }
 
   const sumScore = _.sum(
