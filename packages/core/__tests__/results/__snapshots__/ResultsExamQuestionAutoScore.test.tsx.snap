@@ -4,10 +4,11 @@ exports[`<ResultsExamQuestionAutoScore /> renders displayNumber number when ther
 <div
   className="e-result-scorecount e-float-right e-mrg-b-1"
 >
-  <sup>
+  <sup
+    className="e-result-scorecount-sup e-mrg-r-1"
+  >
     1
   </sup>
-   
   <b>
     1
   </b>
