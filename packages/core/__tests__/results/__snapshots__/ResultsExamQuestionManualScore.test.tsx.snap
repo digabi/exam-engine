@@ -4,15 +4,16 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with displayNumber whe
 <div
   className="e-result-scorecount e-float-right e-mrg-b-1"
 >
-  <sup>
+  <sup
+    className="e-result-scorecount-sup e-mrg-r-1"
+  >
     1
   </sup>
-   
   <div
     className="e-color-black"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
     >
       <b>
         1
@@ -21,12 +22,12 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with displayNumber whe
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       va
     </span>
@@ -42,7 +43,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and on
     className="e-color-black"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
     >
       <b>
         4
@@ -51,33 +52,33 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and on
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE3
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       1.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       1
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       va
     </span>
@@ -93,7 +94,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and th
     className="e-color-black"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
     >
       <b>
         4
@@ -102,75 +103,75 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and th
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE3
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       3.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       3
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE2
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       2.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       2
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE1
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       1.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       1
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       va
     </span>
@@ -186,7 +187,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading score 
     className="e-color-black"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
     >
       <b>
         1
@@ -195,12 +196,12 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading score 
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       va
     </span>
@@ -216,7 +217,7 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censo
     className="e-color-black"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
     >
       <b>
         5
@@ -225,96 +226,96 @@ exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       IN1, IN2
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       ta
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       4
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE3
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       3.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       3
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE2
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       2.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       2
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE1
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       1.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       1
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       va
     </span>
@@ -342,7 +343,7 @@ exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censo
     className="e-color-black"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
     >
       <b>
         5
@@ -351,96 +352,96 @@ exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censo
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       IN1, IN2
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       ta
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       4
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE3
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       3.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       3
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE2
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       2.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       2
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       SE1
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       1.s
     </span>
   </div>
   <div
-    className="e-color-grey"
+    className="e-color-grey e-font-size-xs"
   >
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-nowrap"
+      className="e-mrg-r-1 e-nowrap e-nowrap"
     >
       1
       
        p.
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
     >
       
     </span>
     <span
-      className="e-font-size-xs e-mrg-r-1 e-nowrap e-mrg-r-0"
+      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
     >
       va
     </span>

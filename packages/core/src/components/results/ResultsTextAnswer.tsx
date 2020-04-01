@@ -34,21 +34,21 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
       return (
         <>
           <ResultsExamQuestionManualScore scores={answerScores} maxScore={maxScore} />
-          <div className="answer">
-            <div className="e-multiline-results-text-answer answer-text-container">
+          <div className="answer e-multiline-results-text-answer">
+            <div className="answer-text-container">
               {type === 'rich-text' ? (
                 <div {...props} dangerouslySetInnerHTML={{ __html: value! }} />
               ) : (
                 <div {...props}>{value}</div>
               )}
             </div>
-            <AnswerToolbar
-              {...{
-                answer,
-                element
-              }}
-            />
           </div>
+          <AnswerToolbar
+            {...{
+              answer,
+              element
+            }}
+          />
           {comment && (
             <>
               <h5>{t('comment')}</h5>
@@ -61,16 +61,9 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
     case 'single-line':
     default:
       return (
-        <ResultsSingleLineAnswer
-          answers={answers}
-          answerScores={answerScores}
-          displayNumber={displayNumber}
-          value={value}
-        >
+        <ResultsSingleLineAnswer {...{ answers, answerScores, displayNumber, value }}>
           <ResultsExamQuestionManualScore
-            scores={answerScores}
-            maxScore={maxScore}
-            displayNumber={answers.length > 1 ? displayNumber : undefined}
+            {...{ scores: answerScores, maxScore, displayNumber: answers.length > 1 ? displayNumber : undefined }}
           />
         </ResultsSingleLineAnswer>
       )

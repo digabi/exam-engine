@@ -18,9 +18,9 @@ function ResultsSingleLineAnswer({
   return (
     <>
       {answers.length > 1 && <sup>{displayNumber}</sup>}
-      <span className="answer">
-        <span className="text-answer text-answer--single-line answer-text-container">
-          <div className="answerText e-inline" {...getAnnotationAttributes(answerScores)}>
+      <span className="answer text-answer text-answer--single-line">
+        <span className="e-inline-block answer-text-container">
+          <div className="answerText e-inline-block" {...getAnnotationAttributes(answerScores)}>
             {value}
           </div>
         </span>

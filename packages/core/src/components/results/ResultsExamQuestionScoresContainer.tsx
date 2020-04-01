@@ -1,5 +1,4 @@
 import React from 'react'
-import { NBSP } from '../../dom-utils'
 
 function ResultsExamQuestionScoresContainer({
   answers,
@@ -12,12 +11,7 @@ function ResultsExamQuestionScoresContainer({
 }) {
   return (
     <div className="e-result-scorecount e-float-right e-mrg-b-1">
-      {answers.length > 1 && displayNumber && (
-        <>
-          <sup>{displayNumber}</sup>
-          {NBSP}
-        </>
-      )}
+      {answers.length > 1 && displayNumber && <sup className="e-result-scorecount-sup e-mrg-r-1">{displayNumber}</sup>}
       {children}
     </div>
   )
