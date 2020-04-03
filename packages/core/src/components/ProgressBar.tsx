@@ -10,7 +10,6 @@ export default function ProgressBar({ duration, className }: { duration: number;
     // "--animating" class which breaks the css transformation (the progress
     // bar is completely filled from start). By reading clientTop we force a
     // synchronous layout/reflow in a browser
-    // tslint:disable-next-line
     progressBarRef.current!.clientTop
     setAnimating(true)
   }, [])

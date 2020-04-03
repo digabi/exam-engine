@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "lint": "tslint -p .",
+    "lint": "tsc --composite false --noEmit && eslint src --ext .js,.ts,.tsx",
     "prepublishOnly": "yarn build",
     "test": "echo OK"
   }

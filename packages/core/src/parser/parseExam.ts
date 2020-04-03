@@ -1,7 +1,7 @@
 import * as _ from 'lodash-es'
 import { queryAll } from '../dom-utils'
 
-export default function parseExam(examXml: string, deterministicRendering: boolean = false): XMLDocument {
+export default function parseExam(examXml: string, deterministicRendering = false): XMLDocument {
   const doc = new DOMParser().parseFromString(examXml, 'application/xml')
   if (!deterministicRendering) {
     queryAll(doc.documentElement, ['choice-answer', 'dropdown-answer'])

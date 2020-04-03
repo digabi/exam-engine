@@ -22,7 +22,7 @@ export default function mkHints({ stateful }: { stateful: boolean }) {
       keyboard navigation. */}
         <div className="e-hints e-column e-column--4" aria-hidden="true">
           {answersWithHints.map((answer, i) => (
-            <Hint {...{ answer, focusedQuestionId, renderChildNodes, key: i }} />
+            <Hint {...{ answer, focusedQuestionId, renderChildNodes }} key={i} />
           ))}
         </div>
       </div>

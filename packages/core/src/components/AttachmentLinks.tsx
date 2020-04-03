@@ -66,8 +66,7 @@ function isSuccessive(a: string, b: string) {
   if (length !== b.length) {
     return false
   }
-
-  return a.slice(0, length - 1) === b.slice(0, length - 1) && b.charCodeAt(length - 1) - a.charCodeAt(length - 1) === 1
+  return a.startsWith(b.slice(0, length - 1)) && b.charCodeAt(length - 1) - a.charCodeAt(length - 1) === 1
 }
 
 export default React.memo(AttachmentLinks)

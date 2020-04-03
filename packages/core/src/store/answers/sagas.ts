@@ -50,7 +50,7 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
         yield put(saveAnswer(maybeNewAnswer))
       }
     } catch (error) {
-      console.error(error) // tslint:disable-line no-console
+      console.error(error)
     }
   }
 }

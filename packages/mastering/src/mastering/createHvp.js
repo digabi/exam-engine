@@ -41,7 +41,7 @@ export const createHvp = (doc, targetLanguage) => {
       optionElementName === 'e:choice-answer-option' ? '-' : R.last(getDisplayNumber(node).split('.')) + '.'
     return node
       .find(`.//${optionElementName}[@score]`, ns)
-      .map((o, i) => `${prefix} ${cleanString(o.text())} (${o.attr('score').value()} p.)`)
+      .map(o => `${prefix} ${cleanString(o.text())} (${o.attr('score').value()} p.)`)
       .join('\n')
   }
 

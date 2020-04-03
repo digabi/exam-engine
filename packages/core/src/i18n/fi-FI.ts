@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import { DeepPartial } from 'utility-types'
 
 export type Translations = typeof fi_FI
 export type ExamTranslations = DeepPartial<Translations>
 
-// tslint:disable-next-line:variable-name
 export const fi_FI = {
   'exam-total': 'Koe yhteensä',
   'grading-total': 'Yhteensä',

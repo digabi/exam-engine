@@ -29,7 +29,7 @@ export default function indexedDBExamServerAPI(
 
   const examServerApi: ExamServerAPI = {
     async setCasStatus(casStatus) {
-      return casStatus
+      return Promise.resolve(casStatus)
     },
     async getAnswers() {
       return db.answer.where({ examUuid }).toArray()
@@ -50,7 +50,7 @@ export default function indexedDBExamServerAPI(
         audioPlayer.classList.add('audio-player--visible')
         return 'ok'
       } catch (err) {
-        console.error(err) // tslint:disable-line no-console
+        console.error(err)
         return 'other-error'
       }
     },

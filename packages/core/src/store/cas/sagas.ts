@@ -23,7 +23,7 @@ export function* performEnableCas(examServerApi: ExamServerAPI, { payload }: Ret
       yield put(allowCasCancelled())
     }
   } catch (error) {
-    console.error(error) // tslint:disable-line no-console
+    console.error(error)
   }
 }
 

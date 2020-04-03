@@ -33,7 +33,7 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
       yield put(hideAudioError(audio))
     }
   } catch (error) {
-    console.error(error) // tslint:disable-line no-console
+    console.error(error)
   }
 }
 

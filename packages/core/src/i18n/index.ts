@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import i18n from 'i18next'
 import * as _ from 'lodash-es'
 import { A_E } from './A_E'

@@ -84,7 +84,7 @@ describe('<AnsweringInstructions />', () => {
     })
   })
 
-  function range(start: number, end: number, prefix: string = ''): string[] {
+  function range(start: number, end: number, prefix = ''): string[] {
     return _.range(start, end + 1).map(n => prefix + n)
   }
 

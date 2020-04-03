@@ -97,6 +97,7 @@ const renderChildNodes = createRenderChildNodes({
   question: withQuestionContext(TOCQuestion)
 })
 
+// eslint-disable-next-line no-empty-pattern
 function TableOfContents({}: ExamComponentProps) {
   const { root, maxScore } = useContext(CommonExamContext)
 

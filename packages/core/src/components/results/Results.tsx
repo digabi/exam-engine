@@ -49,6 +49,7 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes
 })
 
+// eslint-disable-next-line no-empty-pattern
 function Results({}: ResultsProps) {
   const { language, root } = useContext(CommonExamContext)
 
