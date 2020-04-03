@@ -9,11 +9,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack -p",
-    "watch": "webpack -p --watch",
+    "build": "tsc --build && webpack -p",
+    "watch": "concurrently -n 'tsc,webpack' -c 'blue,green' 'tsc --build --watch' 'webpack -p --watch'",
     "lint": "tslint -p . && tslint -p __tests__",
     "lint-fix-all": "tslint -p . --fix && tslint -p __tests__ --fix",
-    "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
+    "prepublishOnly": "tsc --build && webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
     "test": "NODE_ICU_DATA=../../node_modules/full-icu jest"
   },
   "peerDependencies": {
