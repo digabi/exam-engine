@@ -7489,9 +7489,9 @@ levn@~0.3.0:
     type-check "~0.3.2"
 
 libxmljs2@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.25.0.tgz#82cb674159ef5f77b8a2ec2a08e4971ead9bf915"
-  integrity sha512-E+7oAijaf6VYngHPaJ6wignuxQaV4+OdvvdRYwpVGhB4bA24Yyevl5ZKxCDkPY4njOP6oWMpV3x1gR5Gb5pL8Q==
+  version "0.25.1"
+  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.25.1.tgz#212772bc86a2da299c443a8f7c31ae157d1b1ec0"
+  integrity sha512-GadNSHBsGhE+m1WpvVk8FVjG+z1XGYODWiOvXRnjF7ju3/qhehBwOv89cWo6iVOWAE8K+rN2MN5mTVk/DItGKQ==
   dependencies:
     bindings "~1.5.0"
     nan "~2.14.0"
