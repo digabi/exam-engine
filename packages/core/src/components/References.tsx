@@ -8,9 +8,7 @@ import Section from './Section'
 import { ExamComponentProps } from './types'
 
 const renderChildNodes = createRenderChildNodes({})
-
-// eslint-disable-next-line no-empty-pattern
-function References({}: ExamComponentProps) {
+function References(_props: ExamComponentProps) {
   const { root } = useContext(CommonExamContext)
   const internalReferences = queryAll(root, 'reference').filter(
     reference => queryAncestors(reference, 'external-material') == null

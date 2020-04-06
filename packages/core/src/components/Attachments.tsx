@@ -22,8 +22,7 @@ const renderChildNodes = createRenderChildNodes({
   section: withSectionContext(RenderChildNodes)
 })
 
-// eslint-disable-next-line no-empty-pattern
-function Attachments({}: ExamProps) {
+function Attachments(_props: ExamProps) {
   const { root, language, date, dateTimeFormatter, resolveAttachment } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')!
