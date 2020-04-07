@@ -36,7 +36,7 @@ function renderNormalizedScores(scores: Score, maxScore?: number) {
     scores.inspection && normalizeInspectionScore(scores.inspection),
     ...(scores.censoring ? normalizeCensoringScores(scores.censoring) : []),
     scores.pregrading && normalizePregradingScore(scores.pregrading)
-  ].filter(s => s) as NormalizedScore[]
+  ].filter(Boolean) as NormalizedScore[]
 
   return normalizedScores.map((score, i) => <ScoreRow key={i} {...score} latest={i === 0} maxScore={maxScore} />)
 }
