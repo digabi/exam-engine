@@ -3,4 +3,4 @@ cache: yarn
 node_js:
   - 10
   - 12
-script: yarn && yarn test -i --ci && yarn lint
+script: yarn && npm rebuild full-icu && yarn test -i --ci && yarn lint
