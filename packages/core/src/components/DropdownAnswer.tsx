@@ -41,9 +41,9 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   }
 
   const labelRef = useRef<HTMLDivElement>(null)
-  const menuRef = useRef<HTMLElement>(null)
-  const [measuring, setMeasuring] = useState(true)
+  const menuRef = React.useRef<HTMLElement>(null)
 
+  const [measuring, setMeasuring] = useState(true)
   if (runningInBrowser) {
     // Force a re-measure if element changes or fonts are loaded after this
     // component has been rendered.
@@ -67,7 +67,6 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
       }
     })
   }
-
   const items: Item[] = [noAnswer, ...element.children]
   const { answers } = useContext(QuestionContext)
 
@@ -109,10 +108,13 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               </span>
             </div>
             <div
-              {...getMenuProps({
-                className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
-                ref: menuRef
-              })}
+              {...getMenuProps(
+                {
+                  className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
+                  ref: menuRef
+                },
+                { suppressRefError: !runningInBrowser }
+              )}
             >
               {items.map((item, i) => (
                 // tslint:disable-next-line: jsx-key
