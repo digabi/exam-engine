@@ -63,7 +63,7 @@ const language = 'fi-FI'
 const getMediaMetadata: GetMediaMetadata = async (__, type) =>
   type === 'audio' ? { duration: 999 } : { width: 999, height: 999 }
 
-const exam = listExams().find(e => e.indexOf(testExam) > -1)
+const exam = listExams().find(e => e.includes(testExam))
 if (exam == null) {
   throw new Error('Could not find the exam file to use in test: ' + testExam)
 }
