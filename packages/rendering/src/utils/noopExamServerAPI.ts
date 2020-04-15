@@ -14,13 +14,13 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
 
   const examServerAPI: ExamServerAPI = {
     async getAnswers() {
-      return Promise.resolve([])
+      return []
     },
     async setCasStatus(casStatus) {
-      return Promise.resolve(casStatus)
+      return casStatus
     },
     async saveAnswer() {
-      return Promise.resolve()
+      return
     },
     saveScreenshot(_, file) {
       return new Promise((resolve, reject) => {

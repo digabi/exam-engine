@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { accessSync } from 'fs'
-import ora from 'ora' // eslint-disable-line import/default
+import ora = require('ora')
 import yargs from 'yargs'
 import { resolveExam, resolveFile } from './utils'
 

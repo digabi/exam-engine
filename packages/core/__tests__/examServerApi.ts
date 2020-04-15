@@ -2,21 +2,21 @@ import { ExamServerAPI } from '../src/components/types'
 
 export const examServerApi: ExamServerAPI = {
   async getAnswers() {
-    return Promise.resolve([])
+    return []
   },
   async setCasStatus(casStatus) {
-    return Promise.resolve(casStatus)
+    return casStatus
   },
   async saveAnswer() {
-    return Promise.resolve()
+    return
   },
   async saveScreenshot() {
-    return Promise.resolve('ok')
+    return 'ok'
   },
   async playAudio() {
-    return Promise.resolve('ok')
+    return 'ok'
   },
   async playRestrictedAudio() {
-    return Promise.resolve('ok')
+    return 'ok'
   }
 }

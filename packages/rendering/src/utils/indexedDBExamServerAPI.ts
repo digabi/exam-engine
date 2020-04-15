@@ -29,7 +29,7 @@ export default function indexedDBExamServerAPI(
 
   const examServerApi: ExamServerAPI = {
     async setCasStatus(casStatus) {
-      return Promise.resolve(casStatus)
+      return casStatus
     },
     async getAnswers() {
       return db.answer.where({ examUuid }).toArray()
