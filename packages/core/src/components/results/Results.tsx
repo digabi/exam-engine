@@ -66,9 +66,9 @@ function Results({}: ResultsProps) {
           <main className="e-exam" lang={language}>
             <React.StrictMode />
             {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-            <div className="e-columns e-columns--center-v e-pad-4">
+            <div className="e-columns e-columns--bottom-v e-mrg-b-4">
               {examTitle && (
-                <DocumentTitle id="title" className="e-font-size-xxl e-column e-mrg-b-0">
+                <DocumentTitle id="title" className="e-column e-mrg-b-0">
                   {renderChildNodes(examTitle)}
                   {date && ', ' + dateTimeFormatter.format(date)}
                 </DocumentTitle>
