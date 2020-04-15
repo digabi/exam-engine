@@ -97,7 +97,7 @@ const renderChildNodes = createRenderChildNodes({
   question: withQuestionContext(TOCQuestion)
 })
 
-function TableOfContents({}: ExamComponentProps) {
+function TableOfContents(_props: ExamComponentProps) {
   const { root, maxScore } = useContext(CommonExamContext)
 
   return (

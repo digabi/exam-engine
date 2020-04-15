@@ -16,7 +16,6 @@
   ],
   "scripts": {
     "build": "tsc --build",
-    "lint": "tslint -p .",
     "test": "echo OK",
     "prepublishOnly": "yarn build && find . -name '*.xml' -print0 | xargs -0 -n 1 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k \"${ANSWERS_PRIVATE_KEY:?must be set}\" "
   },

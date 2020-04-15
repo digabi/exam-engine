@@ -92,11 +92,8 @@ describe('<ResultsExamQuestionManualScore />', () => {
   })
 
   describe('sv-FI', () => {
-    beforeAll(() => {
-      i18n = initI18n('fi-SV', null, null)
-    })
-
     it('renders with pregrading, censor and inspection scores', () => {
+      i18n = initI18n('fi-SV', null, null)
       const props = {
         ...defaultProps,
         scores: defaultScores

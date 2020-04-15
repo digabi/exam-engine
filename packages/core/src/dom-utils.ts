@@ -42,7 +42,7 @@ export function query(root: Element, selector: Selector): Element | undefined {
   return go(root)
 }
 
-export function queryAll(root: Element, selector: Selector, recurse: boolean = true): Element[] {
+export function queryAll(root: Element, selector: Selector, recurse = true): Element[] {
   const predicate = mkPredicate(selector)
   const results: Element[] = []
 

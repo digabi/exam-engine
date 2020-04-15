@@ -9,7 +9,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 
-// tslint:disable-next-line: no-var-requires
 const { original, results }: { original: string; results: MasteringResult[] } = require(process.env.EXAM_FILENAME!)
 
 function Toolbar({

@@ -35,7 +35,7 @@ clean:
 	$(PRINT_TARGET)
 	$(VERBOSE)rm -rf $(EE_DIR)/node_modules
 	$(VERBOSE)rm -rf $(EE_DIR)/packages/*/dist
-	$(VERBOSE)rm $(EE_DIR)/packages/*/tslint.xml 2>/dev/null || true	
+	$(VERBOSE)rm $(EE_DIR)/packages/*/eslint3.xml 2>/dev/null || true
 	$(VERBOSE)rm $(EE_DIR)/packages/*/jest-report.xml 2>/dev/null || true		
 	$(VERBOSE)rm $(EE_DIR)/packages/*/tsconfig.tsbuildinfo 2>/dev/null || true		
 
@@ -57,4 +57,4 @@ lint: $(EE_YARN_INSTALLED)
 
 lint-ci: $(EE_YARN_INSTALLED)
 	$(PRINT_TARGET)
-	$(EE_NVM_EXEC) yarn lint -t checkstyle -o tslint.xml
+	$(EE_NVM_EXEC) yarn lint -f checkstyle -o eslint3.xml

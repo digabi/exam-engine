@@ -10,7 +10,6 @@
   ],
   "scripts": {
     "build": "tsc --build",
-    "lint": "tslint -p . && tslint -p __tests__",
     "prepublishOnly": "yarn build",
     "test": "jest"
   },

@@ -8,7 +8,6 @@ import * as uuid from 'uuid'
 import webpack from 'webpack'
 import { getOfflineWebpackConfig } from './getOfflineWebpackConfig'
 
-// tslint:disable-next-line no-var-requires
 const ffmpeg = require('ffmpeg-static')
 
 export interface CreateOfflineExamOptions {
@@ -90,7 +89,7 @@ async function copyAttachment(
     const newTarget = path.resolve(examOutputDirectory, 'attachments', newFilename)
     const cachedFilename = path.resolve(cacheDirectory, newFilename)
     try {
-      await await fs.copyFile(cachedFilename, newTarget)
+      await fs.copyFile(cachedFilename, newTarget)
     } catch (err) {
       await spawn(ffmpeg, ['-i', source, '-c:v', 'libx264', '-c:a', 'libmp3lame', '-q:a', '4', cachedFilename])
       await fs.copyFile(cachedFilename, newTarget)

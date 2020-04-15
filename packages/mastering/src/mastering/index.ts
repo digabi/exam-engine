@@ -398,7 +398,7 @@ function addSectionNumbers(exam: Exam) {
 }
 
 function addQuestionNumbers(exam: Exam) {
-  function addQuestionNumber(question: Question, index: number, prefix: string = '') {
+  function addQuestionNumber(question: Question, index: number, prefix = '') {
     const displayNumber = (prefix ? prefix + '.' : '') + (index + 1)
     question.element.attr('display-number', displayNumber)
     question.childQuestions.forEach((q, i) => addQuestionNumber(q, i, displayNumber))

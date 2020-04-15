@@ -8,7 +8,6 @@ import {
   getMediaMetadataFromLocalFile,
   GradingStructure,
   masterExam,
-  MasteringResult,
   TextQuestion
 } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
@@ -23,15 +22,11 @@ import { examServerApi } from './examServerApi'
 
 for (const exam of listExams()) {
   describe(path.basename(exam), () => {
-    let results: MasteringResult[]
     const resolveAttachment = (filename: string) => path.resolve(path.dirname(exam), 'attachments', filename)
 
-    beforeAll(async () => {
+    it('renders properly', async () => {
       const source = await fs.readFile(exam, 'utf-8')
-      results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment))
-    })
-
-    it('renders properly', () => {
+      const results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment))
       for (const { xml, language, gradingStructure } of results) {
         const doc = parseExam(xml, true)
         const commonProps: CommonExamProps = {

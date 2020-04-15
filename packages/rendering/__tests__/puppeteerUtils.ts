@@ -6,11 +6,11 @@ const isInDebugMode = process.env.PUPPETEER_DEBUG === '1'
 
 export function initPuppeteer() {
   let browser: Browser
-
+  // eslint-disable-next-line mocha/no-top-level-hooks,mocha/no-hooks-for-single-case
   beforeAll(async () => {
     browser = await puppeteer.launch({ headless: !isInDebugMode })
   })
-
+  // eslint-disable-next-line mocha/no-top-level-hooks,mocha/no-hooks-for-single-case
   afterAll(async () => {
     await browser.close()
   })
@@ -35,7 +35,6 @@ export async function delay(millis: number): Promise<void> {
 
 // Normally unused, but very useful for debugging
 export async function halt(page: Page) {
-  // tslint:disable-next-line no-console
   console.error('Test execution halted')
   await page.waitFor(2000000) // 2 million milliseconds should be enough for everybody
 }

@@ -43,7 +43,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
         audioPlayer.classList.add('audio-player--visible')
         return 'ok'
       } catch (err) {
-        console.error(err) // tslint:disable-line no-console
+        console.error(err)
         return 'other-error'
       }
     },

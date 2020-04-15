@@ -49,7 +49,7 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes
 })
 
-function Results({}: ResultsProps) {
+function Results(_props: ResultsProps) {
   const { language, root } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')

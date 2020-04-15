@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 import { accessSync } from 'fs'
-import ora from 'ora'
+import ora = require('ora')
 import yargs from 'yargs'
 import { resolveExam, resolveFile } from './utils'
 
-// tslint:disable-next-line:no-unused-expression
+/* eslint-disable @typescript-eslint/no-misused-promises */
 yargs
   .usage('Usage: $0 <command> [options]')
   .command(
@@ -79,6 +79,8 @@ yargs
   .demandCommand()
   .strict()
   .wrap(yargs.terminalWidth()).argv
+
+/* eslint-enable @typescript-eslint/no-misused-promises */
 
 function addExamArgs(yargv: yargs.Argv) {
   yargv.positional('exam', {

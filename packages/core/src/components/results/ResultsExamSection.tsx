@@ -10,7 +10,7 @@ function ResultsExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const { answersByQuestionId } = useContext(ResultsContext)
   const containsAnswers = query(element, e => {
     const maybeQuestionId = e.getAttribute('question-id')
-    return maybeQuestionId != null && answersByQuestionId.hasOwnProperty(maybeQuestionId)
+    return maybeQuestionId != null && Object.prototype.hasOwnProperty.call(answersByQuestionId, maybeQuestionId)
   })
 
   return containsAnswers ? (

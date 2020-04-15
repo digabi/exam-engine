@@ -22,7 +22,7 @@ const renderChildNodes = createRenderChildNodes({
   section: withSectionContext(RenderChildNodes)
 })
 
-function Attachments({}: ExamProps) {
+function Attachments(_props: ExamProps) {
   const { root, language, date, dateTimeFormatter, resolveAttachment } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')!

@@ -1,5 +1,5 @@
-const ffprobe = require('ffprobe') // tslint:disable-line no-var-requires
-const ffprobeStatic = require('ffprobe-static') // tslint:disable-line no-var-requires
+const ffprobe = require('ffprobe')
+const ffprobeStatic = require('ffprobe-static')
 
 interface ImageMetadata {
   width: number

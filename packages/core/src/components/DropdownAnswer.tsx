@@ -117,17 +117,16 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               )}
             >
               {items.map((item, i) => (
-                // tslint:disable-next-line: jsx-key
                 <div
                   className={classNames('e-dropdown-answer__menu-item e-pad-l-1 e-pad-r-4', {
                     'e-dropdown-answer__menu-item--selected': item === selectedItem,
                     'e-bg-color-off-white': highlightedIndex !== i,
                     'e-bg-color-lighterblue': highlightedIndex === i
                   })}
+                  key={i}
                   {...getItemProps({
                     item,
-                    index: i,
-                    key: i
+                    index: i
                   })}
                 >
                   {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}

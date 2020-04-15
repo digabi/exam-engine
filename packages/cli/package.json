@@ -20,7 +20,6 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "lint": "tslint -p .",
     "prepublishOnly": "yarn build",
     "test": "echo OK"
   }

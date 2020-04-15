@@ -145,11 +145,8 @@ describe('<AnnotationList />', () => {
   })
 
   describe('sv-FI', () => {
-    beforeAll(() => {
-      i18n = initI18n('sv-FI', null, null)
-    })
-
     it('renders with pregrading and censoring annotations', () => {
+      i18n = initI18n('sv-FI', null, null)
       const resultsProps = {
         scores: [defaultScores]
       }

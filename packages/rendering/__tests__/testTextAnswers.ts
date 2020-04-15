@@ -61,7 +61,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
 
   async function assertCharacterCount(expectedCount: number) {
     const text = await getTextContent(page, '.answer-toolbar__answer-length')
-    const count = Number(text!.match(/\d+/)![0])
+    const count = Number(/\d+/.exec(text))
     expect(count).toEqual(expectedCount)
   }
 

@@ -7,7 +7,7 @@ import path from 'path'
 
 const generateUuid: GenerateUuid = () => '00000000-0000-0000-0000-000000000000'
 const getMediaMetadata: GetMediaMetadata = async (__, type) =>
-  type === 'audio' ? { duration: 999 } : { width: 999, height: 999 }
+  Promise.resolve(type === 'audio' ? { duration: 999 } : { width: 999, height: 999 })
 
 describe('Exam mastering', () => {
   it('throws an error if XML is invalid', async () => {

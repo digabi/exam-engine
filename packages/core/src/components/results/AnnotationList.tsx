@@ -55,7 +55,7 @@ function ResultsAnnotationList() {
   const getListOfAnnotations = (
     answerElementAndScores: Array<readonly [Element, Score]>,
     annotationsFrom: 'pregrading' | 'censoring',
-    listNumberOffset: number = 0
+    listNumberOffset = 0
   ) =>
     _.flatMap(
       answerElementAndScores,
