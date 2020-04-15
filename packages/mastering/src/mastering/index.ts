@@ -138,8 +138,12 @@ function assertExamIsValid(doc: Document): Document {
  * exam XML files, since it sets libxmljs2 options that are necessary for
  * security purposes.
  */
-export function parseExam(xml: string) {
-  return libxml.parseXml(xml, { noent: false, nonet: true })
+export function parseExam(xml: string, validate = false) {
+  const doc = libxml.parseXml(xml, { noent: false, nonet: true })
+  if (validate) {
+    assertExamIsValid(doc)
+  }
+  return doc
 }
 
 export interface Attachment {
@@ -185,7 +189,7 @@ export async function masterExam(
   getMediaMetadata: GetMediaMetadata,
   options?: MasteringOptions
 ): Promise<MasteringResult[]> {
-  const doc = assertExamIsValid(parseExam(xml))
+  const doc = parseExam(xml, true)
   const languages = doc.find('//e:languages/e:language/text()', ns).map(String)
   const memoizedGetMediaMetadata = _.memoize(getMediaMetadata, _.join)
   const optionsWithDefaults = { ...defaultOptions, ...options }
