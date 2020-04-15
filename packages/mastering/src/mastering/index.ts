@@ -9,7 +9,6 @@ import { initI18n } from '../i18n'
 import { createGradingStructure, GradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import { createTranslationFile } from './createTranslationFile'
-import renderFormula from './render-formula'
 import {
   Answer,
   answerTypes,
@@ -554,7 +553,12 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
 async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
   for (const formula of exam.find<Element>('//e:formula', ns)) {
     try {
-      const { svg, mml } = await renderFormula(formula.text(), getAttribute('mode', formula, null), throwOnLatexError)
+      // Load render-formula lazily, since initializing mathjax-node is very expensive.
+      const { svg, mml } = await require('./render-formula')(
+        formula.text(),
+        getAttribute('mode', formula, null),
+        throwOnLatexError
+      )
       formula.attr('svg', svg)
       formula.attr('mml', mml)
     } catch (errors) {
