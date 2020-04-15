@@ -21,6 +21,7 @@
   "references": [
     { "path": "./packages/core" },
     { "path": "./packages/exams" },
+    { "path": "./packages/generator" },
     { "path": "./packages/mastering" },
     { "path": "./packages/rendering" },
     { "path": "./packages/cli" }
