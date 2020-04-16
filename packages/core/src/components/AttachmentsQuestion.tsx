@@ -21,7 +21,7 @@ function isTopmostQuestionContainingExternalMaterial(element: Element, hasExtern
   return (
     hasExternalMaterial &&
     (level === 0 ||
-      parentElements(element).every(parent =>
+      parentElements(element).every((parent) =>
         parent.localName === 'question' ? !findChildElement(parent, 'external-material') : true
       ))
   )

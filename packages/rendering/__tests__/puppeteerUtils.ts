@@ -30,7 +30,7 @@ export async function loadExam(page: Page, url: string) {
 }
 
 export async function delay(millis: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, millis))
+  return new Promise((resolve) => setTimeout(resolve, millis))
 }
 
 // Normally unused, but very useful for debugging
@@ -40,7 +40,7 @@ export async function halt(page: Page) {
 }
 
 export async function getInnerText(page: Page, selector: string) {
-  return page.$eval(selector, e => {
+  return page.$eval(selector, (e) => {
     if (e instanceof HTMLElement) {
       return e.innerText
     } else {
@@ -50,7 +50,7 @@ export async function getInnerText(page: Page, selector: string) {
 }
 
 export async function getOuterHtml(page: Page, selector: string) {
-  return page.$eval(selector, e => {
+  return page.$eval(selector, (e) => {
     if (e instanceof HTMLElement) {
       return e.outerHTML
     } else {
@@ -60,7 +60,7 @@ export async function getOuterHtml(page: Page, selector: string) {
 }
 
 export async function getTextContent(page: Page, selector: string) {
-  return page.$eval(selector, e => {
+  return page.$eval(selector, (e) => {
     if (e instanceof HTMLElement) {
       return e.textContent!.trim()
     } else {
@@ -73,7 +73,7 @@ export async function getTextContent(page: Page, selector: string) {
 export async function assertElementDoesNotExist(page: Page, selector: string) {
   let thrown = false
   try {
-    await page.$eval(selector, e => e)
+    await page.$eval(selector, (e) => e)
   } catch (expected) {
     thrown = true
   }

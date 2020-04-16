@@ -9,7 +9,7 @@ import { ExamComponentProps } from './types'
 
 const renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),
-  'attachment-title': AttachmentTitle
+  'attachment-title': AttachmentTitle,
 })
 
 function Attachment({ element }: ExamComponentProps) {

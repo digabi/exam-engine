@@ -49,7 +49,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
     },
     async playRestrictedAudio(src) {
       return examServerAPI.playAudio(src)
-    }
+    },
   }
 
   return examServerAPI

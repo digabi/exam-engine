@@ -31,7 +31,7 @@ const initialState: AnswersState = {
   focusedQuestionId: null,
   supportsAnswerHistory: false,
   serverQuestionIds: new Set(),
-  savedQuestionIds: new Set()
+  savedQuestionIds: new Set(),
 }
 
 export default function answersReducer(state: AnswersState = initialState, action: AnswersAction): AnswersState {

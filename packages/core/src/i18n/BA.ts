@@ -13,7 +13,7 @@ export const BA: ExamTranslations = {
     date: 'Publicerad:',
     'reference-date': 'Hämtad:',
     translator: 'Översättning:',
-    'modified-by': 'Bearbetning:'
+    'modified-by': 'Bearbetning:',
   },
-  'toc-heading': 'Innehåll'
+  'toc-heading': 'Innehåll',
 }

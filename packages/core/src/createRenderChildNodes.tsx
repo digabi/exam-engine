@@ -7,7 +7,7 @@ export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
 
 export enum RenderOptions {
   RenderHTML,
-  SkipHTML
+  SkipHTML,
 }
 
 export type RenderChildNodes = (element: Element, options?: RenderOptions) => React.ReactNode[]

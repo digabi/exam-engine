@@ -33,7 +33,7 @@ export function withCommonExamContext<P extends CommonExamProps>(Component: Reac
         language,
         maxAnswers: getNumericAttribute(root, 'max-answers'),
         maxScore: getNumericAttribute(root, 'max-score'),
-        numberOfSections: queryAll(root, 'section').length
+        numberOfSections: queryAll(root, 'section').length,
       }
     }
   )(Component)

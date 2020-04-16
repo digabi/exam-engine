@@ -29,7 +29,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
     case 'multi-line': {
       const props = {
         ...getAnnotationAttributes(answerScores),
-        className: classNames('answerText', { 'e-pre-wrap': type === 'multi-line' })
+        className: classNames('answerText', { 'e-pre-wrap': type === 'multi-line' }),
       }
       return (
         <>
@@ -46,7 +46,7 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
           <AnswerToolbar
             {...{
               answer,
-              element
+              element,
             }}
           />
           {comment && (

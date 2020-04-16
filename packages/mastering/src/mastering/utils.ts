@@ -67,7 +67,7 @@ export function getNumericAttribute<T = undefined>(
 
 /** Helper function for generating `(.//e:foo | .//e:bar | .//e:baz)`-like XPath selectors. */
 export function xpathOr(names: readonly string[]) {
-  return '(' + names.map(localName => `.//e:${localName}`).join(' | ') + ')'
+  return '(' + names.map((localName) => `.//e:${localName}`).join(' | ') + ')'
 }
 
 function _getAttr<T, U>(

@@ -19,7 +19,7 @@ export function getOfflineWebpackConfig(
     devtool: false,
     entry: [require.resolve('@babel/polyfill'), path.resolve(__dirname, 'offline.js')],
     output: {
-      path: outputDirectory
+      path: outputDirectory,
     },
     module: {
       rules: [
@@ -41,22 +41,22 @@ export function getOfflineWebpackConfig(
                       firefox: '60',
                       edge: '18',
                       safari: '12',
-                      ios: '12'
-                    }
-                  }
-                ]
-              ]
-            }
-          }
-        }
-      ]
+                      ios: '12',
+                    },
+                  },
+                ],
+              ],
+            },
+          },
+        },
+      ],
     },
     plugins: [
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(mode),
         'process.env.EXAM': JSON.stringify(result.xml),
         'process.env.EXAM_LANGUAGE': JSON.stringify(result.language),
-        'process.env.MEDIA_VERSION': JSON.stringify(options.mediaVersion)
+        'process.env.MEDIA_VERSION': JSON.stringify(options.mediaVersion),
       }),
       new OptimizeCssAssetsPlugin(),
       new HtmlWebpackPlugin({
@@ -64,16 +64,16 @@ export function getOfflineWebpackConfig(
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#e0f4fe',
-        scriptSrc: 'main-bundle.js'
+        scriptSrc: 'main-bundle.js',
       }),
       new HtmlWebpackPlugin({
         filename: 'attachments/index.html',
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#f0f0f0',
-        scriptSrc: '../main-bundle.js'
+        scriptSrc: '../main-bundle.js',
       }),
-      new HTMLInlineCSSWebpackPlugin()
-    ]
+      new HTMLInlineCSSWebpackPlugin(),
+    ],
   })
 }

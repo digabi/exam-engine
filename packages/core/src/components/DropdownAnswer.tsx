@@ -33,7 +33,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   const currentlySelectedItem =
     answer &&
     answer.value &&
-    findChildElement(element, childElement => answer.value === childElement.getAttribute('option-id'))
+    findChildElement(element, (childElement) => answer.value === childElement.getAttribute('option-id'))
 
   const onChange = (selectedAnswer: '' | Element | null) => {
     const value = selectedAnswer ? selectedAnswer.getAttribute('option-id')! : ''
@@ -56,7 +56,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
       if (measuring && menuRef.current && labelRef.current) {
         const menuEl = menuRef.current
         const labelEl = labelRef.current
-        const preferredWidth = _.max(mapChildElements(menuEl, el => el.firstElementChild!.scrollWidth))!
+        const preferredWidth = _.max(mapChildElements(menuEl, (el) => el.firstElementChild!.scrollWidth))!
 
         // Run the DOM mutations on the next frame to avoid layout trashing in exams with lots of dropdowns.
         const requestId = requestAnimationFrame(() => {
@@ -73,7 +73,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   return (
     <span className="e-nowrap">
       <Downshift
-        itemToString={item => (item ? item.textContent! : '')}
+        itemToString={(item) => (item ? item.textContent! : '')}
         onChange={onChange}
         initialSelectedItem={currentlySelectedItem}
       >
@@ -84,12 +84,12 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           getToggleButtonProps,
           highlightedIndex,
           isOpen,
-          selectedItem
+          selectedItem,
         }) => (
           <span className={classNames('e-dropdown-answer e-normal')}>
             <div
               className={classNames('e-dropdown-answer__toggle-button e-columns', {
-                'e-dropdown-answer__toggle-button--open': isOpen
+                'e-dropdown-answer__toggle-button--open': isOpen,
               })}
               tabIndex="0"
               {...getToggleButtonProps()}
@@ -111,7 +111,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               {...getMenuProps(
                 {
                   className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
-                  ref: menuRef
+                  ref: menuRef,
                 },
                 { suppressRefError: !runningInBrowser }
               )}
@@ -121,12 +121,12 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
                   className={classNames('e-dropdown-answer__menu-item e-pad-l-1 e-pad-r-4', {
                     'e-dropdown-answer__menu-item--selected': item === selectedItem,
                     'e-bg-color-off-white': highlightedIndex !== i,
-                    'e-bg-color-lighterblue': highlightedIndex === i
+                    'e-bg-color-lighterblue': highlightedIndex === i,
                   })}
                   key={i}
                   {...getItemProps({
                     item,
-                    index: i
+                    index: i,
                   })}
                 >
                   {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
@@ -151,5 +151,5 @@ function mapStateToprops(state: AppState, { element }: ExamComponentProps) {
 }
 
 export default connect(mapStateToprops, {
-  saveAnswer: actions.saveAnswer
+  saveAnswer: actions.saveAnswer,
 })(DropdownAnswer)

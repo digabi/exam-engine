@@ -5,7 +5,7 @@ import * as _ from 'lodash-es'
 export const ready = Promise.all([
   new FontFaceObserver('Noto Sans', { weight: 300 }).load(), // Light
   new FontFaceObserver('Noto Sans', { weight: 400 }).load(), // Regular
-  new FontFaceObserver('Noto Sans', { weight: 600 }).load() // Semibold
+  new FontFaceObserver('Noto Sans', { weight: 600 }).load(), // Semibold
 ])
   .then(() => {
     loaded = true

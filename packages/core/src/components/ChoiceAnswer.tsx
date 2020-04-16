@@ -20,14 +20,14 @@ function ChoiceAnswerOption({
   renderChildNodes,
   questionId,
   onSelect,
-  direction
+  direction,
 }: ChoiceAnswerOptionProps) {
   const className = element.getAttribute('class')
   const optionId = element.getAttribute('option-id')!
   const content = (
     <div
       className={classNames('e-choice-answer-option e-column', className, {
-        'e-choice-answer-option--selected': selected
+        'e-choice-answer-option--selected': selected,
       })}
     >
       {renderChildNodes(element)}
@@ -39,7 +39,7 @@ function ChoiceAnswerOption({
       <label
         className={classNames('e-columns', {
           'e-columns--inline':
-            query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */
+            query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */,
         })}
       >
         <input
@@ -88,10 +88,10 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
     <>
       <div
         className={classNames('e-choice-answer', className, {
-          'e-columns': direction === 'horizontal'
+          'e-columns': direction === 'horizontal',
         })}
       >
-        {mapChildElements(element, childElement => {
+        {mapChildElements(element, (childElement) => {
           const optionId = childElement.getAttribute('option-id')!
           const selected = answer != null && answer.value === optionId
 
@@ -104,7 +104,7 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
                 questionId,
                 key: optionId,
                 direction,
-                selected
+                selected,
               }}
             />
           )
@@ -113,7 +113,7 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
       <AnswerToolbar
         {...{
           answer,
-          element
+          element,
         }}
       />
     </>
@@ -127,5 +127,5 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
 }
 
 export default connect(mapStateToProps, {
-  saveAnswer: actions.saveAnswer
+  saveAnswer: actions.saveAnswer,
 })(ChoiceAnswer)

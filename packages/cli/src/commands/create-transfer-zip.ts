@@ -8,10 +8,10 @@ import * as uuid from 'uuid'
 import yazl from 'yazl'
 import { examName } from '../utils'
 
-export default async function({
+export default async function ({
   exam,
   outdir = path.dirname(exam),
-  spinner
+  spinner,
 }: {
   exam: string
   outdir?: string
@@ -39,8 +39,8 @@ export default async function({
     zipFile.addReadStream(attachmentsZipFile.outputStream, 'attachments.zip')
 
     const attachments = _.chain(results)
-      .flatMap(r => r.attachments)
-      .map(a => a.filename)
+      .flatMap((r) => r.attachments)
+      .map((a) => a.filename)
       .uniq()
       .value()
     for (const attachment of attachments) {
@@ -58,13 +58,13 @@ export default async function({
 function localize(xml: string, language: string): string {
   const doc = parseExam(xml)
 
-  doc.find<Element>('.//e:language', ns).forEach(element => {
+  doc.find<Element>('.//e:language', ns).forEach((element) => {
     if (element.text() !== language) {
       element.remove()
     }
   })
 
-  doc.find<Element>('//e:localization', ns).forEach(element => {
+  doc.find<Element>('//e:localization', ns).forEach((element) => {
     if (element.attr('lang')?.value() === language) {
       for (const childNode of element.childNodes()) {
         element.addPrevSibling(childNode)
@@ -73,7 +73,7 @@ function localize(xml: string, language: string): string {
     element.remove()
   })
 
-  doc.find<Element>(`//e:*[@lang and @lang!='${language}']`, ns).forEach(element => element.remove())
+  doc.find<Element>(`//e:*[@lang and @lang!='${language}']`, ns).forEach((element) => element.remove())
 
   return doc.toString(false)
 }

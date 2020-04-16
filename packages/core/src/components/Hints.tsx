@@ -11,7 +11,7 @@ export default function mkHints({ stateful }: { stateful: boolean }) {
   function Hints({ element, renderChildNodes }: ExamComponentProps) {
     const focusedQuestionId = stateful ? useSelector((state: AppState) => state.answers.focusedQuestionId) : null
     const answersWithHints = queryAll(element, ['text-answer', 'scored-text-answer']).filter(
-      answer => findChildElement(answer, 'hint') != null
+      (answer) => findChildElement(answer, 'hint') != null
     )
 
     return (
@@ -35,7 +35,7 @@ export default function mkHints({ stateful }: { stateful: boolean }) {
 function Hint({
   answer,
   focusedQuestionId,
-  renderChildNodes
+  renderChildNodes,
 }: {
   answer: Element
   focusedQuestionId: QuestionId | null
@@ -48,7 +48,7 @@ function Hint({
   return (
     <p
       className={classNames('e-hints__hint', {
-        'e-hints__hint--focused': focusedQuestionId === questionId
+        'e-hints__hint--focused': focusedQuestionId === questionId,
       })}
       onClick={() => {
         const question = document.querySelector<HTMLElement>(`.text-answer[data-question-id="${questionId}"]`)

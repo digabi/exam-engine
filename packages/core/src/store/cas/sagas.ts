@@ -13,7 +13,7 @@ export function* performEnableCas(examServerApi: ExamServerAPI, { payload }: Ret
     yield put(allowCasCountdown(payload))
     const { cancelled } = yield race({
       finished: call(countdown, payload, updateCasRemaining),
-      cancelled: take('ALLOW_CAS_CANCELLED')
+      cancelled: take('ALLOW_CAS_CANCELLED'),
     })
 
     const status2: CasStatus = yield call(examServerApi.setCasStatus, cancelled ? 'forbidden' : 'allowed')

@@ -15,28 +15,28 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
       new webpack.DefinePlugin({
         'process.env.npm_package_name': JSON.stringify(process.env.npm_package_name),
         'process.env.EXAM_FILENAME': JSON.stringify(examFilename),
-        'process.env.CAS_COUNTDOWN_DURATION_SECONDS': Number(options.casCountdownDurationSeconds)
-      })
+        'process.env.CAS_COUNTDOWN_DURATION_SECONDS': Number(options.casCountdownDurationSeconds),
+      }),
     ],
     resolve: isDev
       ? {
           alias: {
             '@digabi/exam-engine-core$': path.resolve(__dirname, '../../core/dist/index.js'),
-            '@digabi/exam-engine-core/dist': path.resolve(__dirname, '../../core/dist')
-          }
+            '@digabi/exam-engine-core/dist': path.resolve(__dirname, '../../core/dist'),
+          },
         }
       : {},
     devServer: {
       overlay: {
         warnings: true,
-        errors: true
+        errors: true,
       },
       open: options.openFirefox ? 'firefox' : undefined,
       quiet: true,
       contentBase: [path.resolve(__dirname, '../public'), path.dirname(examFilename)],
       historyApiFallback: true,
       port: 0,
-      before: app => app.get('/math.svg', mathSvgResponse)
-    }
+      before: (app) => app.get('/math.svg', mathSvgResponse),
+    },
   })
 }

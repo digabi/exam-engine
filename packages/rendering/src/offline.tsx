@@ -29,7 +29,7 @@ render(
       examServerApi,
       language,
       resolveAttachment,
-      restrictedAudioPlaybackStats: []
+      restrictedAudioPlaybackStats: [],
     }}
   />,
   document.body

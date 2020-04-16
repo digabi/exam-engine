@@ -46,7 +46,7 @@ const renderChildNodes = createRenderChildNodes({
   'section-title': ExamSectionTitle,
   'text-answer': ResultsTextAnswer,
   'scored-text-answer': ResultsScoredTextAnswer,
-  'scored-text-answers': RenderChildNodes
+  'scored-text-answers': RenderChildNodes,
 })
 
 function Results(_props: ResultsProps) {

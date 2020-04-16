@@ -7,11 +7,11 @@ import * as uuid from 'uuid'
 import webpack from 'webpack'
 
 function stringifyModule(module: any, attachments: Attachment[] = []): string {
-  const imports = attachments.map(attachment => `require('./attachments/${attachment.filename}')`).join('\n')
+  const imports = attachments.map((attachment) => `require('./attachments/${attachment.filename}')`).join('\n')
   return imports + '\nmodule.exports = ' + JSON.stringify(module)
 }
 
-export default async function(this: webpack.loader.LoaderContext, source: string) {
+export default async function (this: webpack.loader.LoaderContext, source: string) {
   const callback = this.async()!
   const baseDir = path.dirname(this.resourcePath)
   const resolveAttachment = (attachment: string) => path.resolve(baseDir, 'attachments', attachment)
@@ -24,7 +24,7 @@ export default async function(this: webpack.loader.LoaderContext, source: string
     const module = { original: source, results }
 
     const attachments = _.chain(results)
-      .flatMap(r => r.attachments)
+      .flatMap((r) => r.attachments)
       .uniqWith(_.isEqual)
       .value()
     for (const attachment of attachments) {

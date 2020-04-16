@@ -3,7 +3,7 @@ import { call, cancelled, put, take } from 'redux-saga/effects'
 import { Action } from 'typesafe-actions'
 
 const countdownChannel = (duration: number) =>
-  eventChannel<number>(emit => {
+  eventChannel<number>((emit) => {
     const intervalId = setInterval(() => {
       duration--
       if (duration > 0) {

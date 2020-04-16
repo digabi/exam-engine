@@ -17,7 +17,7 @@ function Toolbar({
   translation,
   translationFilename,
   languages,
-  children
+  children,
 }: {
   languages: string[]
   hvp: string
@@ -29,7 +29,7 @@ function Toolbar({
   return (
     <>
       <ol className="toolbar">
-        {languages.map(language => (
+        {languages.map((language) => (
           <ChangeLanguage language={language} key={language} />
         ))}
         <SaveHvp {...{ hvp, hvpFilename }} />
@@ -108,11 +108,11 @@ window.onload = async () => {
     return app.appendChild(root)
   }
 
-  const languages = results.map(r => r.language)
+  const languages = results.map((r) => r.language)
   const languageCookie = Cookie.get('language')
-  const language = languages.find(lang => lang === languageCookie) || languages[0]
+  const language = languages.find((lang) => lang === languageCookie) || languages[0]
 
-  const { xml, hvp, translation, examCode, dayCode, gradingStructure } = results.find(r => r.language === language)!
+  const { xml, hvp, translation, examCode, dayCode, gradingStructure } = results.find((r) => r.language === language)!
   const hvpFilename = examCode ? `${examCode}${dayCode ? '_' + dayCode : ''}_${language}.md` : 'hvp.md'
   const translationFilename = examCode ? `${examCode}_kaannokset.txt` : 'kaannokset.txt'
   const doc = parseExam(xml, false)
@@ -132,7 +132,7 @@ window.onload = async () => {
     language,
     attachmentsURL,
     resolveAttachment,
-    answers
+    answers,
   }
 
   const Root = inAttachmentsPage() ? Attachments : Exam
@@ -141,7 +141,7 @@ window.onload = async () => {
       {...{
         ...commonProps,
         gradingStructure,
-        scores: []
+        scores: [],
       }}
     />
   ) : (
@@ -151,7 +151,7 @@ window.onload = async () => {
         casCountdownDuration: Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || undefined,
         casStatus: 'forbidden',
         restrictedAudioPlaybackStats: [],
-        examServerApi
+        examServerApi,
       }}
     />
   )

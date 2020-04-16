@@ -12,11 +12,11 @@ export const I: ExamTranslations = {
     date: 'Almostittum:',
     'reference-date': 'Čujottum:',
     translator: 'Jurgâlus:',
-    'modified-by': 'Heiviittâs:'
+    'modified-by': 'Heiviittâs:',
   },
   'answering-instructions': {
     'toc-section_*_1_1': 'Fáádáh',
-    'section_*_1_1': 'Valjii oovtâ fáádá.'
+    'section_*_1_1': 'Valjii oovtâ fáádá.',
   },
-  'toc-heading': 'Siskáldâs'
+  'toc-heading': 'Siskáldâs',
 }

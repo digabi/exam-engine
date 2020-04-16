@@ -28,25 +28,25 @@ const defaultScores: Score = {
       {
         startIndex: 0,
         length: 1,
-        message: 'Test pregrading annotation'
-      }
-    ]
+        message: 'Test pregrading annotation',
+      },
+    ],
   },
   censoring: {
     scores: [
       { score: 4, shortCode: 'SE3' },
       { score: 3, shortCode: 'SE2' },
-      { score: 2, shortCode: 'SE1' }
+      { score: 2, shortCode: 'SE1' },
     ],
     annotations: [
       {
         startIndex: 0,
         length: 1,
-        message: 'Test censoring annotation'
-      }
-    ]
+        message: 'Test censoring annotation',
+      },
+    ],
   },
-  inspection: { score: 5, shortCodes: ['IN1', 'IN2'] }
+  inspection: { score: 5, shortCodes: ['IN1', 'IN2'] },
 }
 
 const defaultAnswer = mkTextAnswer(1, '5.1', 12)
@@ -61,21 +61,21 @@ describe('<AnnotationList />', () => {
 
     it('renders empty without score', () => {
       const resultsProps = {
-        scores: []
+        scores: [],
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
 
     it('renders empty without annotations', () => {
       const resultsProps = {
-        scores: [_.pick(defaultScores, 'answerId', 'questionId')]
+        scores: [_.pick(defaultScores, 'answerId', 'questionId')],
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
 
     it('renders with only pregrading annotations', () => {
       const resultsProps = {
-        scores: [_.pick(defaultScores, 'pregrading', 'answerId', 'questionId')]
+        scores: [_.pick(defaultScores, 'pregrading', 'answerId', 'questionId')],
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
@@ -92,37 +92,37 @@ describe('<AnnotationList />', () => {
                   {
                     startIndex: 0,
                     length: 1,
-                    message: 'Before empty annotation'
+                    message: 'Before empty annotation',
                   },
                   {
                     startIndex: 1,
                     length: 1,
-                    message: ''
+                    message: '',
                   },
                   {
                     startIndex: 2,
                     length: 1,
-                    message: 'After empty annotation'
-                  }
-                ]
-              }
-            }
-          }
-        ]
+                    message: 'After empty annotation',
+                  },
+                ],
+              },
+            },
+          },
+        ],
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
 
     it('renders with only censoring annotations', () => {
       const resultsProps = {
-        scores: [_.pick(defaultScores, 'censoring', 'answerId', 'questionId')]
+        scores: [_.pick(defaultScores, 'censoring', 'answerId', 'questionId')],
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
 
     it('renders with pregrading and censoring annotations', () => {
       const resultsProps = {
-        scores: [defaultScores]
+        scores: [defaultScores],
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
@@ -130,7 +130,7 @@ describe('<AnnotationList />', () => {
     it('renders only pregrading without header on singleGrading in ResultContext', () => {
       const resultsProps = {
         scores: [defaultScores],
-        singleGrading: true
+        singleGrading: true,
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
@@ -138,7 +138,7 @@ describe('<AnnotationList />', () => {
     it('renders null if no scores and singleGrading in ResultContext', () => {
       const resultsProps = {
         scores: [],
-        singleGrading: true
+        singleGrading: true,
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
@@ -148,7 +148,7 @@ describe('<AnnotationList />', () => {
     it('renders with pregrading and censoring annotations', () => {
       i18n = initI18n('sv-FI', null, null)
       const resultsProps = {
-        scores: [defaultScores]
+        scores: [defaultScores],
       }
       expect(renderWithContext(resultsProps, [defaultAnswer]).toJSON()).toMatchSnapshot()
     })
@@ -161,7 +161,7 @@ describe('<AnnotationList />', () => {
     maxAnswers: 2,
     maxScore: 2,
     level: 2,
-    childQuestions: []
+    childQuestions: [],
   }
 
   const resultsContextDefaults: ResultsContext = {
@@ -169,7 +169,7 @@ describe('<AnnotationList />', () => {
     gradingStructure: { questions: [] },
     scores: [],
     gradingText: '',
-    totalScore: 60
+    totalScore: 60,
   }
 
   function renderWithContext(results: Partial<ResultsContext>, answers: Element[]) {

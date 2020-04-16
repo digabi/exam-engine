@@ -18,7 +18,7 @@ import {
   Exam,
   ns,
   Question,
-  Section
+  Section,
 } from './schema'
 import {
   byAttribute,
@@ -27,14 +27,14 @@ import {
   getNumericAttribute,
   hasAttribute,
   queryAncestors,
-  xpathOr
+  xpathOr,
 } from './utils'
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
 const schemaDir = path.resolve(__dirname, '../../schema')
 const schema = libxml.parseXml(readFileSync(path.resolve(schemaDir, 'exam.xsd')).toString(), {
-  baseUrl: schemaDir + '/'
+  baseUrl: schemaDir + '/',
 } as any) // FIXME: Missing baseUrl in the libxmljs2 typings
 
 interface VideoMetadata {
@@ -89,14 +89,14 @@ interface MasteringOptions {
 const defaultOptions = {
   multiChoiceShuffleSecret: 'tJXjzAhY3dT4B26aikG2tPmPRlWRTKXF5eVpOR2eDFz3Aj4a3FHF1jB3tswVWPhc',
   removeHiddenElements: true,
-  throwOnLatexError: true
+  throwOnLatexError: true,
 }
 
 function assertExamIsValid(doc: Document): Document {
   if (!doc.validate(schema)) {
     // The Exam and XHTML schemas import each other, which causes libxml to add some extra warnings as error messages.
     // Filter them out, they aren't interesting.
-    throw doc.validationErrors.find(err => err.level! > 1)
+    throw doc.validationErrors.find((err) => err.level! > 1)
   }
 
   for (const answer of doc.find<Element>(xpathOr(answerTypes), ns)) {
@@ -105,7 +105,7 @@ function assertExamIsValid(doc: Document): Document {
     const htmlLikeExamElements = ['hints', 'scored-text-answers', 'localization', 'attachment', 'audio-group']
     const maybeParentQuestion = queryAncestors(
       answer,
-      e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
+      (e) => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
     )
 
     if (maybeParentQuestion?.name() !== 'question') {
@@ -194,7 +194,7 @@ export async function masterExam(
   const optionsWithDefaults = { ...defaultOptions, ...options }
 
   return Promise.all(
-    languages.map(language =>
+    languages.map((language) =>
       masterExamForLanguage(parseExam(xml), language, generateUuid, memoizedGetMediaMetadata, optionsWithDefaults)
     )
   )
@@ -255,13 +255,9 @@ async function masterExamForLanguage(
     hvp,
     translation,
     language,
-    title:
-      root
-        .get<Element>('//e:exam-title', ns)
-        ?.text()
-        .trim() ?? null,
+    title: root.get<Element>('//e:exam-title', ns)?.text().trim() ?? null,
     type,
-    xml: doc.toString(false)
+    xml: doc.toString(false),
   }
 }
 
@@ -289,8 +285,8 @@ function collectAttachments(exam: Element, attachments: Element[]): Attachment[]
 
   return _.uniqWith(
     [
-      ...attachments.map(a => mkAttachment(getAttribute('src', a), a.attr('times') != null)),
-      ...(maybeCustomStylesheet ? [mkAttachment(maybeCustomStylesheet)] : [])
+      ...attachments.map((a) => mkAttachment(getAttribute('src', a), a.attr('times') != null)),
+      ...(maybeCustomStylesheet ? [mkAttachment(maybeCustomStylesheet)] : []),
     ],
     _.isEqual
   )
@@ -338,11 +334,11 @@ function addYoCustomizations(exam: Element, language: string) {
 }
 
 function removeComments(exam: Element) {
-  exam.find('//comment()').forEach(e => e.remove())
+  exam.find('//comment()').forEach((e) => e.remove())
 }
 
 function removeHiddenElements(exam: Element) {
-  exam.find('//e:*[@hidden=true()]', ns).forEach(e => e.remove())
+  exam.find('//e:*[@hidden=true()]', ns).forEach((e) => e.remove())
 }
 
 function updateMaxScoresToAnswers(exam: Exam) {
@@ -354,7 +350,7 @@ function updateMaxScoresToAnswers(exam: Exam) {
         if (element.attr('max-score') == null) {
           const scores = element
             .find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
-            .map(option => getNumericAttribute('score', option, 0))
+            .map((option) => getNumericAttribute('score', option, 0))
           const maxScore = _.max(scores)
           element.attr('max-score', String(maxScore))
         }
@@ -375,14 +371,14 @@ function removeCorrectAnswers(exam: Exam) {
         }
         break
       case 'scored-text-answer': {
-        element.find('.//e:accepted-answer', ns).forEach(e => e.remove())
+        element.find('.//e:accepted-answer', ns).forEach((e) => e.remove())
       }
     }
   }
 }
 
 function applyLocalizations(exam: Element, language: string) {
-  exam.find('.//e:languages', ns).forEach(e => e.remove())
+  exam.find('.//e:languages', ns).forEach((e) => e.remove())
 
   for (const localization of exam.find<Element>('//e:localization', ns)) {
     if (getAttribute('lang', localization) === language) {
@@ -393,7 +389,7 @@ function applyLocalizations(exam: Element, language: string) {
     localization.remove()
   }
 
-  exam.find(`//e:*[@lang and @lang!='${language}']`, ns).forEach(element => element.remove())
+  exam.find(`//e:*[@lang and @lang!='${language}']`, ns).forEach((element) => element.remove())
 }
 
 function addSectionNumbers(exam: Exam) {
@@ -462,8 +458,8 @@ function countSectionMaxAndMinAnswers(exam: Exam) {
   for (const section of exam.sections) {
     const maxAnswers = getNumericAttribute('max-answers', section.element)
     const otherSectionMaxAnswers = _.sumBy(
-      exam.sections.filter(s => s !== section),
-      otherSection => getNumericAttribute('max-answers', otherSection.element)
+      exam.sections.filter((s) => s !== section),
+      (otherSection) => getNumericAttribute('max-answers', otherSection.element)
     )
     const minAnswers = _.clamp(maxAnswers, 0, examMaxAnswers - otherSectionMaxAnswers)
     section.element.attr('min-answers', String(minAnswers))
@@ -472,7 +468,7 @@ function countSectionMaxAndMinAnswers(exam: Exam) {
 
 function countMaxScores(exam: Exam) {
   function countMaxScore(answerables: Array<Question | Answer>, maxAnswers: number | null) {
-    const maxScores = answerables.map(a => getNumericAttribute('max-score', a.element))
+    const maxScores = answerables.map((a) => getNumericAttribute('max-score', a.element))
     return _.sum(_.take(_.orderBy(maxScores, _.identity, 'desc'), maxAnswers ?? answerables.length))
   }
 
@@ -495,11 +491,11 @@ function countMaxScores(exam: Exam) {
 
   function countExamMaxScore() {
     const examMaxAnswers = getNumericAttribute('max-answers', exam.element, null)
-    const questionsWithHighestMaxScoresPerSection = _.flatMap(exam.sections, section => {
+    const questionsWithHighestMaxScoresPerSection = _.flatMap(exam.sections, (section) => {
       const sectionMaxAnswers = getNumericAttribute('max-answers', section.element, null)
       const questions = section.questions
       return _.take(
-        _.orderBy(questions, question => getNumericAttribute('max-score', question.element), 'desc'),
+        _.orderBy(questions, (question) => getNumericAttribute('max-score', question.element), 'desc'),
         sectionMaxAnswers ?? questions.length
       )
     })
@@ -514,7 +510,7 @@ function countMaxScores(exam: Exam) {
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
   for (const { element } of exam.answers) {
     if (_.includes(choiceAnswerTypes, element.name())) {
-      element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
+      element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach((answerOption) => {
         answerOption.attr('option-id', String(generateId()))
       })
     }
@@ -535,13 +531,13 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
     return hash.digest('hex')
   }
   return exam.answers
-    .map(a => a.element)
+    .map((a) => a.element)
     .filter(byName(...choiceAnswerTypes))
     .filter(_.negate(byAttribute('ordering', 'fixed')))
-    .forEach(answer => {
+    .forEach((answer) => {
       const options = answer.find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option', ns)
       const answerKey = String(options.length) + getAttribute('question-id', answer)
-      const sortedOptions = _.sortBy(options, option =>
+      const sortedOptions = _.sortBy(options, (option) =>
         createHash(answerKey + options.indexOf(option) + multichoiceShuffleSecret)
       )
       for (const option of sortedOptions) {
@@ -578,7 +574,7 @@ function mkError(message: string, element: Element): SyntaxError {
 
 function parseExamStructure(element: Element): Exam {
   const sections = element.find<Element>('//e:section', ns).map(parseSection)
-  const topLevelQuestions = _.flatMap(sections, s => s.questions)
+  const topLevelQuestions = _.flatMap(sections, (s) => s.questions)
   const collectAnswers = (q: Question): Answer[] =>
     q.answers.length ? q.answers : _.flatMap(q.childQuestions, collectAnswers)
   const answers = _.flatMap(topLevelQuestions, collectAnswers)
@@ -603,7 +599,7 @@ function parseQuestion(question: Element): Question {
   if (childQuestions.length) {
     return { element: question, childQuestions, answers: [] }
   } else {
-    const answers = question.find<Element>(xpathOr(answerTypes), ns).map(element => parseAnswer(element, question))
+    const answers = question.find<Element>(xpathOr(answerTypes), ns).map((element) => parseAnswer(element, question))
     return { element: question, childQuestions: [], answers }
   }
 }

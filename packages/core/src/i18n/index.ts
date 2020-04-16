@@ -40,18 +40,18 @@ const examSpecificTranslations = {
   TC,
   VA,
   VC: VA,
-  Z
+  Z,
 }
 
 const resources = {
   'fi-FI': {
     translation: fi_FI,
-    ...examSpecificTranslations
+    ...examSpecificTranslations,
   },
   'sv-FI': {
     translation: sv_FI,
-    ...examSpecificTranslations
-  }
+    ...examSpecificTranslations,
+  },
 }
 
 export function initI18n(language: string, examCode: string | null, dayCode: string | null) {
@@ -80,8 +80,8 @@ export function initI18n(language: string, examCode: string | null, dayCode: str
             default:
               return value
           }
-        }
-      }
+        },
+      },
     },
     _.noop
   )

@@ -7,7 +7,7 @@ import { AudioPlaybackError } from './types'
 
 export default function AudioPlaybackError({
   error,
-  children
+  children,
 }: {
   error?: AudioPlaybackError
   children?: React.ReactNode

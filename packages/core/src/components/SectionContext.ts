@@ -20,8 +20,8 @@ export const withSectionContext = withContext<SectionContext, ExamComponentProps
   const maxAnswers = getNumericAttribute(element, 'max-answers')!
   const minAnswers = getNumericAttribute(element, 'min-answers')!
   const maxScore = getNumericAttribute(element, 'max-score')!
-  const childQuestions = mapChildElements(element, childElement => childElement).filter(
-    parentNode => parentNode.localName === 'question'
+  const childQuestions = mapChildElements(element, (childElement) => childElement).filter(
+    (parentNode) => parentNode.localName === 'question'
   )
 
   return {
@@ -30,6 +30,6 @@ export const withSectionContext = withContext<SectionContext, ExamComponentProps
     maxAnswers,
     minAnswers,
     maxScore,
-    childQuestions
+    childQuestions,
   }
 })

@@ -40,7 +40,7 @@ function CasControls(props: CasState) {
       ) : props.casStatus === 'allowing' ? (
         <div
           className="e-text-center"
-          ref={e => e != null && casCountdownDuration === props.durationRemaining && e.scrollIntoView()}
+          ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.scrollIntoView()}
         >
           <hr className="e-exam-separator" />
           <p>{t('cas.allowing.infoText')}</p>

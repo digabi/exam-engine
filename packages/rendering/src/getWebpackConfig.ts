@@ -7,15 +7,15 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
   return webpackMerge(
     {
       output: {
-        filename: 'main-bundle.js'
+        filename: 'main-bundle.js',
       },
       resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
       plugins: [
         new MiniCssExtractPlugin({
-          filename: '[name].css'
-        })
+          filename: '[name].css',
+        }),
       ],
       module: {
         rules: [
@@ -30,31 +30,31 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
                 options: {
                   sourceMap: true,
                   plugins: [require('less-plugin-glob')],
-                  paths: [path.resolve(__dirname, 'src')]
-                }
-              }
-            ]
+                  paths: [path.resolve(__dirname, 'src')],
+                },
+              },
+            ],
           },
           {
             test: /\.xml$/,
             use: [
               {
-                loader: path.resolve(__dirname, 'exam-loader.js')
-              }
-            ]
+                loader: path.resolve(__dirname, 'exam-loader.js'),
+              },
+            ],
           },
           {
             test: /\.(woff|woff2|otf|ttf|eot|svg|png|gif|jpg)$/,
             loader: require.resolve('file-loader'),
             options: {
-              name: 'assets/[name].[ext]'
-            }
-          }
-        ]
+              name: 'assets/[name].[ext]',
+            },
+          },
+        ],
       },
       performance: {
-        hints: false
-      }
+        hints: false,
+      },
     },
     configuration
   )

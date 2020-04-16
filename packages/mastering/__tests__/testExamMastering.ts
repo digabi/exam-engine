@@ -55,16 +55,16 @@ describe('Exam mastering', () => {
         examCode: 'A',
         date: '2020-01-01',
         language: 'fi-FI',
-        type: 'normal'
-      }
+        type: 'normal',
+      },
     ])
     expect(spy.mock.calls[1]).toEqual([
       {
         examCode: 'A',
         date: '2020-01-01',
         language: 'sv-FI',
-        type: 'normal'
-      }
+        type: 'normal',
+      },
     ])
   })
 

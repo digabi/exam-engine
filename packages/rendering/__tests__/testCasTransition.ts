@@ -10,7 +10,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
 
   beforeAll(async () => {
     ctx = await previewExam(resolveExam('N/N.xml'), {
-      casCountdownDurationSeconds: 2
+      casCountdownDurationSeconds: 2,
     })
     page = await createPage()
   })
@@ -44,7 +44,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
 
   async function assertQuestionVisibility(visible: boolean) {
     await page.waitFor(
-      innerVisible => {
+      (innerVisible) => {
         const element = document.getElementById('1')
         return innerVisible ? element != null : element == null
       },

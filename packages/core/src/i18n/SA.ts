@@ -13,7 +13,7 @@ export const SA: ExamTranslations = {
     date: 'Veröffentlicht:',
     'reference-date': 'Zugriff:',
     translator: 'Übersetzung:',
-    'modified-by': 'Bearbeitung:'
+    'modified-by': 'Bearbeitung:',
   },
-  'toc-heading': 'Inhalt'
+  'toc-heading': 'Inhalt',
 }

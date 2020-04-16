@@ -19,16 +19,16 @@ export const sv_FI: Translations = {
   'audio-errors': {
     'already-accessed': 'Du har redan spelat denna inspelning. Uppdatera sidan',
     'already-playing': 'Lyssna först inspelningen till slut.',
-    'other-error': 'Uppspelning misslyckades, be övervakaren om hjälp.'
+    'other-error': 'Uppspelning misslyckades, be övervakaren om hjälp.',
   },
   'audio-test': {
     instructions: 'Provet omfattar uppgifter i hörförståelse.',
     play: 'Testa hörbarheten',
-    volume: 'Du kan justera ljudvolymen uppe i högra hörnet av rutan.'
+    volume: 'Du kan justera ljudvolymen uppe i högra hörnet av rutan.',
   },
   grading: {
     'pregrading-annotations': 'Preliminära bedömningens anteckningar',
-    'censor-annotations': 'Censorns anteckningar'
+    'censor-annotations': 'Censorns anteckningar',
   },
   references: {
     heading: 'Källor',
@@ -36,20 +36,20 @@ export const sv_FI: Translations = {
     date: 'Publicerad:',
     'reference-date': 'Hämtad:',
     translator: 'Översättning:',
-    'modified-by': 'Bearbetning:'
+    'modified-by': 'Bearbetning:',
   },
   cas: {
     forbidden: {
       infoText: 'Du får tillgång till de blockerade räknarprogrammen efter att du returnerat del A.',
-      buttonText: 'Returnera del A'
+      buttonText: 'Returnera del A',
     },
     allowing: {
       infoText: 'Svaren i A-delen låses. Du får tillgång till de blockerade räknarprogrammen om en stund.',
-      buttonText: 'Avbryt ({{count}}s)'
+      buttonText: 'Avbryt ({{count}}s)',
     },
     allowed: {
-      infoText: 'Del A returnerad'
-    }
+      infoText: 'Del A returnerad',
+    },
   },
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',
@@ -101,7 +101,7 @@ export const sv_FI: Translations = {
     'toc-section_*_10_10': 'Besvara tio uppgifter.',
     'toc-section_1_*_1': 'Besvara uppgift {{questions, range}}.',
     'toc-section_2_*_1': 'Besvara antingen uppgift {{questions, first}} eller {{questions, last}}.',
-    'toc-section_*_*_*': 'Besvara {{answerCount, range}} uppgifter.'
+    'toc-section_*_*_*': 'Besvara {{answerCount, range}} uppgifter.',
   },
   'answer-errors': {
     'screenshot-limit-exceeded': 'Max {{limit}} bilder kan bifogas till svaret.',
@@ -109,6 +109,6 @@ export const sv_FI: Translations = {
       'Den skärmdump du tagit är för stor. Ta en ny skärmdump av en mindre del av skärmen och försök på nytt.',
     'screenshot-byte-limit-reached':
       'Minnesutrymmet för skärmdumpar är fullt. (Du kan referera till bilder i materialet direkt utan skärmdumpar.)',
-    'screenshot-upload-failed': 'Bifogandet av skärmdumpen misslyckades. Försök på nytt.'
-  }
+    'screenshot-upload-failed': 'Bifogandet av skärmdumpen misslyckades. Försök på nytt.',
+  },
 }

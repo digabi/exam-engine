@@ -38,7 +38,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
 
     this.ref = React.createRef()
     this.state = {
-      error: null
+      error: null,
     }
   }
 
@@ -60,7 +60,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       questionId,
       value,
       characterCount: getCharacterCount(value),
-      displayNumber
+      displayNumber,
     }
     saveAnswer(answer)
     this.clearErrors()
@@ -75,7 +75,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       questionId,
       value: answerHtml,
       characterCount: getCharacterCount(answerText),
-      displayNumber
+      displayNumber,
     }
     saveAnswer(answer)
     this.clearErrors()
@@ -91,7 +91,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
 
   onError = (error: AnswerError) => {
     this.setState({
-      error
+      error,
     })
   }
 
@@ -124,7 +124,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       selectAnswerVersion,
       showAnswerHistory,
       supportsAnswerHistory,
-      type
+      type,
     } = this.props
     const { error } = this.state
     const questionId = getNumericAttribute(element, 'question-id')
@@ -140,7 +140,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                 <RichTextAnswer
                   answer={answer as RichTextAnswerT}
                   className={classNames('text-answer text-answer--rich-text', className)}
-                  saveScreenshot={data => examServerApi.saveScreenshot(questionId!, data)}
+                  saveScreenshot={(data) => examServerApi.saveScreenshot(questionId!, data)}
                   onChange={this.onRichTextChange}
                   onError={this.onError}
                   maxImages={maxImages}
@@ -155,7 +155,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                 selectAnswerVersion,
                 showAnswerHistory,
                 supportsAnswerHistory,
-                error
+                error,
               }}
             />
           </>
@@ -178,7 +178,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                 element,
                 selectAnswerVersion,
                 showAnswerHistory,
-                supportsAnswerHistory
+                supportsAnswerHistory,
               }}
             />
           </>
@@ -223,7 +223,7 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
     showAnswerHistory,
     supportsAnswerHistory,
     type,
-    maxImages: maxImages !== undefined ? maxImages : 50
+    maxImages: maxImages !== undefined ? maxImages : 50,
   }
 }
 
@@ -231,5 +231,5 @@ export default connect(mapStateToProps, {
   saveAnswer: actions.saveAnswer,
   selectAnswerVersion: actions.selectAnswerVersion,
   answerFocused: actions.answerFocused,
-  answerBlurred: actions.answerBlurred
+  answerBlurred: actions.answerBlurred,
 })(TextAnswerInput)

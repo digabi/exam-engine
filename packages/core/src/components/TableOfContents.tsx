@@ -22,7 +22,7 @@ function TOCSection({ element }: ExamComponentProps) {
             displayNumber,
             maxAnswers,
             minAnswers,
-            childQuestions
+            childQuestions,
           }}
         />
       )}
@@ -80,12 +80,12 @@ function TOCQuestion({ element }: ExamComponentProps) {
         {hasExternalAttachments && (
           <span className="e-column e-column--narrow">
             <a href={url(attachmentsURL, { hash: displayNumber })} target="attachments">
-              <Translation>{t => t('material')}</Translation>
+              <Translation>{(t) => t('material')}</Translation>
             </a>
           </span>
         )}
         <span className="e-column e-column--narrow table-of-contents--score-column">
-          <Translation>{t => t('points', { count: maxScore })}</Translation>
+          <Translation>{(t) => t('points', { count: maxScore })}</Translation>
         </span>
       </div>
     </li>
@@ -94,7 +94,7 @@ function TOCQuestion({ element }: ExamComponentProps) {
 
 const renderChildNodes = createRenderChildNodes({
   section: withSectionContext(TOCSection),
-  question: withQuestionContext(TOCQuestion)
+  question: withQuestionContext(TOCQuestion),
 })
 
 function TableOfContents(_props: ExamComponentProps) {
@@ -103,15 +103,15 @@ function TableOfContents(_props: ExamComponentProps) {
   return (
     <nav className="table-of-contents e-mrg-b-6" aria-labelledby="toc-title">
       <h2 id="toc-title">
-        <Translation>{t => t('toc-heading')}</Translation>
+        <Translation>{(t) => t('toc-heading')}</Translation>
       </h2>
       <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
       <div className="e-columns">
         <strong className="e-column">
-          <Translation>{t => t('exam-total')}</Translation>
+          <Translation>{(t) => t('exam-total')}</Translation>
         </strong>
         <strong className="e-column e-column--narrow table-of-contents--score-column">
-          <Translation>{t => t('points', { count: maxScore })}</Translation>
+          <Translation>{(t) => t('points', { count: maxScore })}</Translation>
         </strong>
       </div>
     </nav>

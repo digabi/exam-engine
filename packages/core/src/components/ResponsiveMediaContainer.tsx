@@ -23,7 +23,7 @@ export default function ResponsiveMediaContainer({
   children,
   height,
   width,
-  caption
+  caption,
 }: ResponsiveMediaContainerProps) {
   const paddingBottom = (height / width) * 100 + '%'
   const maxWidth = width + (bordered ? borderedPaddingAndBorderPx : 0)
@@ -36,13 +36,13 @@ export default function ResponsiveMediaContainer({
         className
       )}
       style={{
-        maxWidth
+        maxWidth,
       }}
     >
       <div
         className="responsive-media-container__inner"
         style={{
-          paddingBottom
+          paddingBottom,
         }}
       >
         {children}

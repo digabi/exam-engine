@@ -8,9 +8,9 @@ import { ExamComponentProps } from './types'
 
 function AttachmentLinks({ element }: ExamComponentProps) {
   const { root, attachmentsURL } = useContext(CommonExamContext)
-  const displayNumbers = mapChildElements(element, attachmentLink => {
+  const displayNumbers = mapChildElements(element, (attachmentLink) => {
     const name = attachmentLink.getAttribute('ref')!
-    const attachment = query(root, el => el.localName === 'attachment' && el.getAttribute('name') === name)!
+    const attachment = query(root, (el) => el.localName === 'attachment' && el.getAttribute('name') === name)!
     return attachment.getAttribute('display-number')!
   })
   const groupedDisplayNumbers = splitWhen(displayNumbers, (displayNumber, i) => {
@@ -20,7 +20,7 @@ function AttachmentLinks({ element }: ExamComponentProps) {
   const isShort = element.getAttribute('type') === 'short'
   const href = url(attachmentsURL, { hash: displayNumbers[0] })
   const displayNumbersString = groupedDisplayNumbers
-    .map(group => {
+    .map((group) => {
       return group.length > 1 ? `${group[0]}–${group[group.length - 1]}` : group[0]
     })
     .join(', ')
@@ -32,7 +32,7 @@ function AttachmentLinks({ element }: ExamComponentProps) {
     <>
       {'('}
       <AttachmentLinkAnchor href={href}>
-        <Translation>{t => t('material', { count }).toLowerCase()}</Translation> {displayNumbersString}
+        <Translation>{(t) => t('material', { count }).toLowerCase()}</Translation> {displayNumbersString}
       </AttachmentLinkAnchor>
       {')'}
     </>

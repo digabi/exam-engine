@@ -18,5 +18,5 @@ export const examServerApi: ExamServerAPI = {
   },
   async playRestrictedAudio() {
     return 'ok'
-  }
+  },
 }

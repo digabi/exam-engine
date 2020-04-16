@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import { Ora } from 'ora'
 import path from 'path'
 
-export default async function({ directory }: { directory: string; spinner: Ora }) {
+export default async function ({ directory }: { directory: string; spinner: Ora }) {
   const resolveExamFile = (...file: string[]) => path.resolve(directory, ...file)
 
   await assertDirectoryDoesNotExist(directory)

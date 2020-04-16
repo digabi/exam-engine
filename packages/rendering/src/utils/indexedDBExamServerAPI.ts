@@ -11,7 +11,7 @@ export default function indexedDBExamServerAPI(
     constructor() {
       super('exam')
       this.version(1).stores({
-        answer: '[examUuid+questionId], examUuid'
+        answer: '[examUuid+questionId], examUuid',
       })
     }
   })()
@@ -69,7 +69,7 @@ export default function indexedDBExamServerAPI(
         }
         reader.readAsDataURL(file)
       })
-    }
+    },
   }
 
   return examServerApi

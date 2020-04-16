@@ -2,11 +2,11 @@ import { createOfflineExam } from '@digabi/exam-engine-rendering'
 import { Ora } from 'ora'
 import path from 'path'
 
-export default async function({
+export default async function ({
   exam,
   outdir = path.dirname(exam),
   media,
-  spinner
+  spinner,
 }: {
   exam: string
   outdir?: string
