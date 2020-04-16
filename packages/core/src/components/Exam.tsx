@@ -95,7 +95,7 @@ const renderChildNodes = createRenderChildNodes({
   section: ExamSection,
   'section-title': ExamSectionTitle,
   'text-answer': TextAnswer,
-  video: Video
+  video: Video,
 })
 
 export class Exam extends PureComponent<ExamProps> {

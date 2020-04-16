@@ -8,7 +8,7 @@ import {
   getMediaMetadataFromLocalFile,
   GradingStructure,
   masterExam,
-  TextQuestion
+  TextQuestion,
 } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import _ from 'lodash'
@@ -34,19 +34,19 @@ for (const exam of listExams()) {
           answers: [],
           attachmentsURL: '/attachments',
           resolveAttachment: (filename: string) => `/attachments/${encodeURIComponent(filename)}`,
-          language
+          language,
         }
         const examProps: ExamProps = {
           ...commonProps,
           casStatus: 'forbidden',
           examServerApi,
-          restrictedAudioPlaybackStats: []
+          restrictedAudioPlaybackStats: [],
         }
         const resultsProps: ResultsProps = {
           ...commonProps,
           gradingStructure,
           answers: mkAnswers(gradingStructure),
-          scores: mkScores(gradingStructure)
+          scores: mkScores(gradingStructure),
         }
         expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
         expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
@@ -69,40 +69,42 @@ function generateScore(question: { id: number; maxScore: number; displayNumber: 
     pregrading: {
       score: Math.min(question.maxScore, i),
       comment: `Pregading comment to question ${question.displayNumber}`,
-      annotations: [{ startIndex: 0, length: 0, message: `Pregading annotation to question ${question.displayNumber}` }]
+      annotations: [
+        { startIndex: 0, length: 0, message: `Pregading annotation to question ${question.displayNumber}` },
+      ],
     },
     censoring: {
       scores: [
         {
           score: Math.min(question.maxScore, i),
-          shortCode: 'TestCen1'
+          shortCode: 'TestCen1',
         },
         {
           score: Math.min(question.maxScore, i),
-          shortCode: 'TestCen2'
+          shortCode: 'TestCen2',
         },
         {
           score: Math.min(question.maxScore, i),
-          shortCode: 'TestCen3'
-        }
+          shortCode: 'TestCen3',
+        },
       ],
       comment: `Censor comment to question ${question.displayNumber}`,
       annotations: [
-        { startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` }
+        { startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` },
       ],
-      nonAnswerDetails: { shortCode: 'CEN' }
+      nonAnswerDetails: { shortCode: 'CEN' },
     },
     inspection: {
       score: Math.min(question.maxScore, i),
-      shortCodes: ['TestIns1', 'TestIns2']
-    }
+      shortCodes: ['TestIns1', 'TestIns2'],
+    },
   }
 }
 
 function mkAnswers(gradingStructure: GradingStructure): ExamAnswer[] {
   const getCharacterCount = (answerText: string) => answerText.replace(/\s/g, '').length
 
-  return _.flatMap(gradingStructure.questions, question => {
+  return _.flatMap(gradingStructure.questions, (question) => {
     switch (question.type) {
       case 'text': {
         const value = `Answer to question ${question.displayNumber}`
@@ -111,8 +113,8 @@ function mkAnswers(gradingStructure: GradingStructure): ExamAnswer[] {
             questionId: question.id,
             type: 'text',
             characterCount: getCharacterCount(value),
-            value
-          }
+            value,
+          },
         ] as ExamAnswer[]
       }
       case 'choicegroup': {
@@ -121,7 +123,7 @@ function mkAnswers(gradingStructure: GradingStructure): ExamAnswer[] {
           return {
             questionId: choice.id,
             type: 'choice',
-            value: String(option.id)
+            value: String(option.id),
           }
         }) as ExamAnswer[]
       }

@@ -8,7 +8,7 @@ import {
   playAudioFinished,
   playAudioStarted,
   showAudioError,
-  updateRemaining
+  updateRemaining,
 } from './actions'
 
 type PlayAudio = ReturnType<typeof playAudio>

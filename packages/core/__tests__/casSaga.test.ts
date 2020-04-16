@@ -4,14 +4,14 @@ import {
   allowCasCancelled,
   allowCasCountdown,
   allowCasSucceeded,
-  updateCasRemaining
+  updateCasRemaining,
 } from '../src/store/cas/actions'
 import { performEnableCas } from '../src/store/cas/sagas'
 
 describe('performEnableCas', () => {
   describe('in the successful case', () => {
     it(`calls setCasStatus with 'allowing', performs the countdown and calls setCasStatus with 'allowed'`, async () => {
-      const setCasStatus = jest.fn(casStatus => casStatus)
+      const setCasStatus = jest.fn((casStatus) => casStatus)
 
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
         .put(allowCasCountdown(2))
@@ -40,7 +40,7 @@ describe('performEnableCas', () => {
 
   describe('when the user cancels the countdown', () => {
     it(`calls setCasStatus with 'forbidden' if the user cancels the countdown`, async () => {
-      const setCasStatus = jest.fn(casStatus => casStatus)
+      const setCasStatus = jest.fn((casStatus) => casStatus)
 
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
         .put(allowCasCountdown(2))
@@ -56,7 +56,7 @@ describe('performEnableCas', () => {
 
     it(`doesn't cancel the countdown if CAS software has been allowed during the countdown`, async () => {
       const setCasStatus = jest
-        .fn(casStatus => casStatus)
+        .fn((casStatus) => casStatus)
         .mockImplementationOnce(() => 'allowing')
         .mockImplementationOnce(() => 'allowed')
 
@@ -75,7 +75,7 @@ describe('performEnableCas', () => {
 
     it(`cancels the process if the post-countdown setCasStatus returns 'forbidden'`, async () => {
       const setCasStatus = jest
-        .fn(casStatus => casStatus)
+        .fn((casStatus) => casStatus)
         .mockImplementationOnce(() => 'allowing')
         .mockImplementationOnce(() => 'forbidden')
 

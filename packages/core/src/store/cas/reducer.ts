@@ -9,7 +9,7 @@ export type CasState =
   | { casStatus: 'allowed' }
 
 const initialState: CasState = {
-  casStatus: 'forbidden'
+  casStatus: 'forbidden',
 }
 
 export default function casReducer(state: CasState = initialState, action: CasAction): CasState {

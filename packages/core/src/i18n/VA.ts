@@ -15,7 +15,7 @@ export const VA: ExamTranslations = {
     date: 'Опубликовано',
     'reference-date': 'Дата обращения',
     translator: 'Перевод',
-    'modified-by': 'Адаптировано'
+    'modified-by': 'Адаптировано',
   },
-  'toc-heading': 'Содержание'
+  'toc-heading': 'Содержание',
 }

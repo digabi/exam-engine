@@ -10,7 +10,7 @@ export function Score({ size = 'small', score }: { size?: 'inline' | 'small' | '
       className={classNames('e-score e-nowrap', {
         'e-score--small e-font-size-m e-semibold': size === 'small',
         'e-score--large e-font-size-l e-semibold': size === 'large',
-        'e-score--inline e-font-size-xs': size === 'inline'
+        'e-score--inline e-font-size-xs': size === 'inline',
       })}
       aria-label={t('points-screen-reader', { count: score })}
     >

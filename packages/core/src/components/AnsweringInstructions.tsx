@@ -21,13 +21,13 @@ function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }:
   )
   const answerCount = [minAnswers, maxAnswers]
   const questions = [_.first(childQuestions)!, _.last(childQuestions)!].map(
-    question => question.getAttribute('display-number')!
+    (question) => question.getAttribute('display-number')!
   )
   return <>{t(possibleTranslationStrings, { answerCount, questions })}</>
 }
 
 function cartesian(...arrays: any[]): any[][] {
-  return arrays.reduce((a, b) => _.flatMap(a, x => b.map((y: any) => x.concat([y]))), [[]])
+  return arrays.reduce((a, b) => _.flatMap(a, (x) => b.map((y: any) => x.concat([y]))), [[]])
 }
 
 export default React.memo(AnsweringInstructions)

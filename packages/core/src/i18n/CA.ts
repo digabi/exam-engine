@@ -13,7 +13,7 @@ export const CA: ExamTranslations = {
     date: 'Julkaistu:',
     'reference-date': 'Viitattu:',
     translator: 'Käännös:',
-    'modified-by': 'Muokkaus:'
+    'modified-by': 'Muokkaus:',
   },
-  'toc-heading': 'Sisällys'
+  'toc-heading': 'Sisällys',
 }

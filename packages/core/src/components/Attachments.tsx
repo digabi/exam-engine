@@ -19,7 +19,7 @@ const renderChildNodes = createRenderChildNodes({
   'external-material': AttachmentsExternalMaterial,
   'question-title': AttachmentsQuestionTitle,
   question: AttachmentsQuestion,
-  section: withSectionContext(RenderChildNodes)
+  section: withSectionContext(RenderChildNodes),
 })
 
 function Attachments(_props: ExamProps) {
@@ -43,7 +43,7 @@ function Attachments(_props: ExamProps) {
             <DocumentTitle id="title">
               {renderChildNodes(examTitle)}
               {examTitle.textContent!.includes(',') ? '; ' : ', '}
-              <Translation>{t => t('attachments-page-title').toLowerCase()}</Translation>
+              <Translation>{(t) => t('attachments-page-title').toLowerCase()}</Translation>
             </DocumentTitle>
           )}
           <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>

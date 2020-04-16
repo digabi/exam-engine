@@ -7,7 +7,7 @@ function ResultsSingleLineAnswer({
   displayNumber,
   answerScores,
   value,
-  children
+  children,
 }: {
   answers: Element[]
   answerScores?: Score

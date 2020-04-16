@@ -25,7 +25,7 @@ const renderChildNodes = createRenderChildNodes({
   image: Image,
   video: Video,
   formula: Formula,
-  reference: surround(Reference, 'figcaption', { className: 'e-color-darkgrey e-mrg-y-2 e-font-size-s e-light' })
+  reference: surround(Reference, 'figcaption', { className: 'e-color-darkgrey e-mrg-y-2 e-font-size-s e-light' }),
 })
 
 interface AttachmentsExternalMaterialProps extends ExamComponentProps {

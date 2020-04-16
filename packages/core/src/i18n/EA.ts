@@ -13,7 +13,7 @@ export const EA: ExamTranslations = {
     date: 'Published:',
     'reference-date': 'Accessed:',
     translator: 'Translation:',
-    'modified-by': 'Adaptation:'
+    'modified-by': 'Adaptation:',
   },
-  'toc-heading': 'Contents'
+  'toc-heading': 'Contents',
 }

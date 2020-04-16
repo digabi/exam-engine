@@ -30,7 +30,7 @@ export async function createMex(
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
     nodir: true,
-    realpath: true
+    realpath: true,
   })
 
   const zipFile = new yazl.ZipFile()
@@ -56,9 +56,9 @@ export async function createMex(
     'rendering.zip',
     keyAndIv,
     answersPrivateKey,
-    renderingFiles.map(renderingFile => ({
+    renderingFiles.map((renderingFile) => ({
       contents: fs.createReadStream(renderingFile),
-      filename: path.relative(bundleDir, renderingFile)
+      filename: path.relative(bundleDir, renderingFile),
     }))
   )
   encryptAndSignFiles(
@@ -68,7 +68,7 @@ export async function createMex(
     answersPrivateKey,
     attachments.map(({ filename, contents, restricted }) => ({
       filename: restricted ? path.join('restricted', filename) : filename,
-      contents
+      contents,
     }))
   )
 

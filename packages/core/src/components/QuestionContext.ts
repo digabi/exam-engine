@@ -28,6 +28,6 @@ export const withQuestionContext = withContext<QuestionContext, ExamComponentPro
     maxAnswers: getNumericAttribute(element, 'max-answers'),
     maxScore: getNumericAttribute(element, 'max-score')!,
     level: parentElements(element, 'question').length,
-    childQuestions
+    childQuestions,
   }
 })

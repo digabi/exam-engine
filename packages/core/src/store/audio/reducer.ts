@@ -28,7 +28,7 @@ export interface AudioState {
 const initialState: AudioState = {
   errors: {},
   nowPlaying: null,
-  playbackTimes: {}
+  playbackTimes: {},
 }
 
 export default function audioReducer(state: AudioState = initialState, action: AudioAction): AudioState {
@@ -44,7 +44,7 @@ export default function audioReducer(state: AudioState = initialState, action: A
         const listened = state.playbackTimes[audio.restrictedAudioId]
         const playbackTimes = {
           ...state.playbackTimes,
-          [audio.restrictedAudioId]: listened ? listened + 1 : 1
+          [audio.restrictedAudioId]: listened ? listened + 1 : 1,
         }
         const errors = _.omit(state.errors, [audio.src])
         return { ...state, playbackTimes, errors }
@@ -57,7 +57,7 @@ export default function audioReducer(state: AudioState = initialState, action: A
       const key = _.get(audio, 'restrictedAudioId', audio.src)
       const errors = {
         ...state.errors,
-        [key]: error
+        [key]: error,
       }
       return { ...state, errors, nowPlaying: null }
     }

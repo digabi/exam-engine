@@ -8,7 +8,7 @@ import {
   GenerateQuestionOptions,
   GenerateScoredTextAnswerOptions,
   GenerateSectionOptions,
-  GenerateTextAnswerOptions
+  GenerateTextAnswerOptions,
 } from '@digabi/exam-engine-generator'
 import { ns, parseExam } from '@digabi/exam-engine-mastering'
 import { formatISO } from 'date-fns'
@@ -97,7 +97,7 @@ describe('generateExam()', () => {
     const hint = 'Foo'
     const acceptedAnswers = [
       { text: 'Bar', score: 1 },
-      { text: 'Baz', score: 2 }
+      { text: 'Baz', score: 2 },
     ]
 
     const exam = generateAndParseExam([[[{ name: 'scored-text-answer', maxScore, hint, acceptedAnswers }]]])
@@ -109,7 +109,7 @@ describe('generateExam()', () => {
     expect(
       answer
         .find<Element>('.//e:accepted-answer', ns)
-        .map(e => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
+        .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
     ).toEqual(acceptedAnswers)
   })
 
@@ -117,25 +117,25 @@ describe('generateExam()', () => {
     const exam = generateAndParseExam([[['choice-answer']]])
     const options = exam
       .find<Element>('//e:section/e:question/e:choice-answer/e:choice-answer-option', ns)
-      .map(e => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
+      .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
 
     expect(options).toEqual([
       { text: 'Oikea vaihtoehto', score: 3 },
       { text: 'Väärä vaihtoehto', score: 0 },
-      { text: 'Väärä vaihtoehto', score: 0 }
+      { text: 'Väärä vaihtoehto', score: 0 },
     ])
   })
 
   it('supports choice-answer attributes', () => {
     const expected = [
       { text: 'Bar', score: 1 },
-      { text: 'Baz', score: 2 }
+      { text: 'Baz', score: 2 },
     ]
 
     const exam = generateAndParseExam([[[{ name: 'choice-answer', options: expected }]]])
     const options = exam
       .find<Element>('//e:section/e:question/e:choice-answer/e:choice-answer-option', ns)
-      .map(e => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
+      .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
 
     expect(options).toEqual(expected)
   })
@@ -144,25 +144,25 @@ describe('generateExam()', () => {
     const exam = generateAndParseExam([[['dropdown-answer']]])
     const options = exam
       .find<Element>('//e:section/e:question/e:dropdown-answer/e:dropdown-answer-option', ns)
-      .map(e => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
+      .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
 
     expect(options).toEqual([
       { text: 'Oikea vaihtoehto', score: 3 },
       { text: 'Väärä vaihtoehto', score: 0 },
-      { text: 'Väärä vaihtoehto', score: 0 }
+      { text: 'Väärä vaihtoehto', score: 0 },
     ])
   })
 
   it('supports dropdown-answer attributes', () => {
     const expected = [
       { text: 'Foo', score: 1 },
-      { text: 'Bar', score: 2 }
+      { text: 'Bar', score: 2 },
     ]
 
     const exam = generateAndParseExam([[[{ name: 'dropdown-answer', options: expected }]]])
     const options = exam
       .find<Element>('//e:section/e:question/e:dropdown-answer/e:dropdown-answer-option', ns)
-      .map(e => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
+      .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
 
     expect(options).toEqual(expected)
   })
@@ -179,7 +179,7 @@ describe('generateExam()', () => {
       name: fc.constant('text-answer' as const),
       maxScore,
       hint: optional(hint),
-      type: optional(type)
+      type: optional(type),
     })
     const acceptedAnswers: fc.Arbitrary<GenerateAcceptedAnswer[]> = fc.array(
       fc.record({ score: positiveScore, text: fc.string() }),
@@ -191,30 +191,30 @@ describe('generateExam()', () => {
         name: fc.constant('scored-text-answer' as const),
         maxScore,
         hint: optional(hint),
-        type: optional(type)
+        type: optional(type),
       }),
       fc.record({
         name: fc.constant('scored-text-answer' as const),
         hint: optional(hint),
         type: optional(type),
-        acceptedAnswers
+        acceptedAnswers,
       })
     )
     const options: fc.Arbitrary<GenerateChoiceAnswerOption[]> = fc.array(
       fc.record({
         score,
-        text: fc.string()
+        text: fc.string(),
       }),
       1,
       10
     )
     const choiceAnswer: fc.Arbitrary<GenerateChoiceAnswerOptions> = fc.record({
       name: fc.constant('choice-answer' as const),
-      options
+      options,
     })
     const dropdownAnswer: fc.Arbitrary<GenerateDropdownAnswerOptions> = fc.record({
       name: fc.constant('dropdown-answer' as const),
-      options
+      options,
     })
     const answer: fc.Arbitrary<GenerateQuestionOptions> = fc.oneof(
       fc.constant('text-answer' as const),
@@ -236,17 +236,17 @@ describe('generateExam()', () => {
     const exam: fc.Arbitrary<GenerateExamOptions> = fc.oneof(
       sections,
       fc.record({
-        date: optional(fc.date().map(d => formatISO(d, { representation: 'date' }))),
+        date: optional(fc.date().map((d) => formatISO(d, { representation: 'date' }))),
         examCode: optional(fc.constantFrom('EA', 'M', 'N')),
         dayCode: optional(fc.constant('X')),
         maxAnswers: optional(maxAnswers),
         languages: optional(fc.set(fc.constantFrom('fi-FI', 'sv-FI'), 1, 2)),
-        sections
+        sections,
       })
     )
 
     fc.assert(
-      fc.property(exam, examOptions => {
+      fc.property(exam, (examOptions) => {
         expect(() => generateAndParseExam(examOptions)).not.toThrow()
       })
     )

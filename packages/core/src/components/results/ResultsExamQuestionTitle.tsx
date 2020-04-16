@@ -14,7 +14,7 @@ function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentPr
       <Tag className={classNames('exam-question-title', { 'e-normal e-font-size-m': level > 0 })}>
         <strong
           className={classNames('exam-question-title__display-number', {
-            'exam-question-title__display-number--indented': level > 0
+            'exam-question-title__display-number--indented': level > 0,
           })}
         >
           {displayNumber}

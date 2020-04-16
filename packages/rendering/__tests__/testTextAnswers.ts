@@ -65,7 +65,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(count).toEqual(expectedCount)
   }
 
-  const assertIsSaved = () => page.$eval('.save-indicator-text--saved', e => e)
+  const assertIsSaved = () => page.$eval('.save-indicator-text--saved', (e) => e)
 
   const assertIsNotSaved = () => assertElementDoesNotExist(page, '.save-indicator-text--saved')
 

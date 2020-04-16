@@ -22,16 +22,16 @@ export const fi_FI = {
   'audio-errors': {
     'already-accessed': 'Olet jo toistanut tämän tallenteen. Päivitä sivu.',
     'already-playing': 'Kuuntele ensin äänite loppuun.',
-    'other-error': 'Tallenteen toistaminen epäonnistui, pyydä apua valvojalta.'
+    'other-error': 'Tallenteen toistaminen epäonnistui, pyydä apua valvojalta.',
   },
   'audio-test': {
     instructions: 'Koe sisältää kuullunymmärtämisen tehtäviä.',
     play: 'Testaa äänitteiden kuuluvuus',
-    volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.'
+    volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.',
   },
   grading: {
     'pregrading-annotations': 'Valmistavan arvostelun merkinnät',
-    'censor-annotations': 'Sensorin merkinnät'
+    'censor-annotations': 'Sensorin merkinnät',
   },
   references: {
     heading: 'Lähteet',
@@ -39,20 +39,20 @@ export const fi_FI = {
     date: 'Julkaistu:',
     'reference-date': 'Viitattu:',
     translator: 'Käännös:',
-    'modified-by': 'Muokkaus:'
+    'modified-by': 'Muokkaus:',
   },
   cas: {
     forbidden: {
       infoText: 'Saat estetyt laskinohjelmat käyttöön palautettuasi A-osan.',
-      buttonText: 'Palauta A-osa'
+      buttonText: 'Palauta A-osa',
     },
     allowing: {
       infoText: 'A-osan vastaukset lukitaan. Saat estetyt laskinohjelmat käyttöösi hetken kuluttua.',
-      buttonText: 'Peruuta ({{count}}s)'
+      buttonText: 'Peruuta ({{count}}s)',
     },
     allowed: {
-      infoText: 'A-osa palautettu'
-    }
+      infoText: 'A-osa palautettu',
+    },
   },
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
@@ -104,7 +104,7 @@ export const fi_FI = {
     'toc-section_*_10_10': 'Vastaa kymmeneen tehtävään.',
     'toc-section_1_*_1': 'Vastaa tehtävään {{questions, range}}.',
     'toc-section_2_*_1': 'Vastaa joko tehtävään {{questions, first}} tai {{questions, last}}.',
-    'toc-section_*_*_*': 'Vastaa {{answerCount, range}} tehtävään.'
+    'toc-section_*_*_*': 'Vastaa {{answerCount, range}} tehtävään.',
   },
   'answer-errors': {
     'screenshot-limit-exceeded': 'Vastaukseen voi liittää enintään {{limit}} kuvaa.',
@@ -112,6 +112,6 @@ export const fi_FI = {
       'Ottamasi kuvakaappaus on liian iso. Ota uusi kuvakaappaus pienemmästä osasta näyttöä ja yritä uudelleen.',
     'screenshot-byte-limit-reached':
       'Kokeesi kuvakaappauksille varattu tila on täyttynyt. (Voit viitata aineistokuviin suoraan ilman kuvakaappausta.)',
-    'screenshot-upload-failed': 'Kuvan liittäminen ei onnistunut. Kokeile uudestaan.'
-  }
+    'screenshot-upload-failed': 'Kuvan liittäminen ei onnistunut. Kokeile uudestaan.',
+  },
 }

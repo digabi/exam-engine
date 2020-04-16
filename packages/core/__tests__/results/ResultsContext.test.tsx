@@ -11,23 +11,23 @@ const allScores: Score[] = [
   {
     questionId: 1,
     answerId: 1,
-    autograding: { score: 3 }
+    autograding: { score: 3 },
   },
   {
     questionId: 2,
     answerId: 2,
     pregrading: {
-      score: 1
+      score: 1,
     },
     censoring: {
       scores: [
         { score: 4, shortCode: 'SE3' },
         { score: 3, shortCode: 'SE2' },
-        { score: 2, shortCode: 'SE1' }
-      ]
+        { score: 2, shortCode: 'SE1' },
+      ],
     },
-    inspection: { score: 5, shortCodes: ['IN1', 'IN2'] }
-  }
+    inspection: { score: 5, shortCodes: ['IN1', 'IN2'] },
+  },
 ]
 
 const answers: ExamAnswer[] = [
@@ -35,15 +35,15 @@ const answers: ExamAnswer[] = [
     type: 'choice',
     questionId: 1,
     value: '93',
-    displayNumber: '1.1'
+    displayNumber: '1.1',
   },
   {
     type: 'richText',
     questionId: 2,
     value: 'test',
     characterCount: 4,
-    displayNumber: '1.2'
-  }
+    displayNumber: '1.2',
+  },
 ]
 
 const textAnswer: ExamAnswer[] = [
@@ -51,8 +51,8 @@ const textAnswer: ExamAnswer[] = [
     type: 'richText',
     questionId: 2,
     value: 'test',
-    characterCount: 4
-  }
+    characterCount: 4,
+  },
 ]
 
 const answersByQuestionId = keyBy(answers, 'questionId')
@@ -63,7 +63,7 @@ const language = 'fi-FI'
 const getMediaMetadata: GetMediaMetadata = async (__, type) =>
   type === 'audio' ? { duration: 999 } : { width: 999, height: 999 }
 
-const exam = listExams().find(e => e.includes(testExam))
+const exam = listExams().find((e) => e.includes(testExam))
 if (exam == null) {
   throw new Error('Could not find the exam file to use in test: ' + testExam)
 }
@@ -76,7 +76,7 @@ describe('Total score calculation for ' + testExam, () => {
   beforeAll(async () => {
     const source = await fs.readFile(exam, 'utf-8')
     const results = await masterExam(source, () => '', getMediaMetadata)
-    result = results.find(r => r.language === language) as MasteringResult
+    result = results.find((r) => r.language === language) as MasteringResult
     doc = parseExam(result.xml, false)
     topLevelQuestions = queryAll(doc.documentElement, 'question', false)
   })
@@ -92,9 +92,9 @@ describe('Total score calculation for ' + testExam, () => {
         questionId: 2,
         answerId: 2,
         pregrading: {
-          score: 1
-        }
-      }
+          score: 1,
+        },
+      },
     ]
     expect(
       calculateQuestionSumScore(
@@ -111,12 +111,12 @@ describe('Total score calculation for ' + testExam, () => {
         questionId: 2,
         answerId: 2,
         pregrading: {
-          score: 1
+          score: 1,
         },
         censoring: {
-          scores: [{ score: 2, shortCode: 'SE1' }]
-        }
-      }
+          scores: [{ score: 2, shortCode: 'SE1' }],
+        },
+      },
     ]
     expect(
       calculateQuestionSumScore(
@@ -133,15 +133,15 @@ describe('Total score calculation for ' + testExam, () => {
         questionId: 2,
         answerId: 2,
         pregrading: {
-          score: 1
+          score: 1,
         },
         censoring: {
           scores: [
             { score: 3, shortCode: 'SE2' },
-            { score: 2, shortCode: 'SE1' }
-          ]
-        }
-      }
+            { score: 2, shortCode: 'SE1' },
+          ],
+        },
+      },
     ]
     expect(
       calculateQuestionSumScore(
@@ -158,16 +158,16 @@ describe('Total score calculation for ' + testExam, () => {
         questionId: 2,
         answerId: 2,
         pregrading: {
-          score: 1
+          score: 1,
         },
         censoring: {
           scores: [
             { score: 2, shortCode: 'SE1' },
-            { score: 3, shortCode: 'SE2' }
-          ]
+            { score: 3, shortCode: 'SE2' },
+          ],
         },
-        inspection: { score: 7, shortCodes: ['IN1', 'IN2'] }
-      }
+        inspection: { score: 7, shortCodes: ['IN1', 'IN2'] },
+      },
     ]
     expect(
       calculateQuestionSumScore(
@@ -183,7 +183,7 @@ describe('Total score calculation for ' + testExam, () => {
       type: 'choice',
       questionId: 1,
       value: '91',
-      displayNumber: '1.1'
+      displayNumber: '1.1',
     }
     expect(
       calculateQuestionSumScore(topLevelQuestions[0], result.gradingStructure, [], keyBy([choiceAnswer], 'questionId'))
@@ -196,28 +196,28 @@ describe('Total score calculation for ' + testExam, () => {
         questionId: 81,
         value: 'Willst du am Samstag mit ins Kino kommen',
         characterCount: 33,
-        displayNumber: '18.1'
+        displayNumber: '18.1',
       },
       {
         type: 'text',
         questionId: 82,
         value: 'Bar Bar',
         characterCount: 6,
-        displayNumber: '18.2'
-      }
+        displayNumber: '18.2',
+      },
     ]
 
     const scoredTextScore: Score[] = [
       {
         questionId: 81,
         answerId: 81,
-        autograding: { score: 2 }
+        autograding: { score: 2 },
       },
       {
         questionId: 82,
         answerId: 82,
-        autograding: { score: 0 }
-      }
+        autograding: { score: 0 },
+      },
     ]
 
     expect(

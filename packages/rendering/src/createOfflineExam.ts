@@ -19,7 +19,7 @@ export interface CreateOfflineExamOptions {
 }
 
 const defaultOptions: CreateOfflineExamOptions = {
-  mediaVersion: false
+  mediaVersion: false,
 }
 
 export async function createOfflineExam(
@@ -32,9 +32,9 @@ export async function createOfflineExam(
   const source = await fs.readFile(examFile, 'utf-8')
   const examOutputDirectories: string[] = []
   const results = await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
-    removeHiddenElements: !opts.mediaVersion
+    removeHiddenElements: !opts.mediaVersion,
   })
-  const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then(d => d.path)
+  const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then((d) => d.path)
 
   for (const result of results) {
     const examOutputDirectory = getExamOutputDirectory(result, examFile, outputDirectory)
@@ -109,7 +109,7 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[]) {
     for (const examOutputDirectory of examOutputDirectories) {
       for (const htmlFile of [
         path.resolve(examOutputDirectory, 'index.html'),
-        path.resolve(examOutputDirectory, 'attachments/index.html')
+        path.resolve(examOutputDirectory, 'attachments/index.html'),
       ]) {
         await page.goto('file://' + htmlFile, { waitUntil: 'networkidle0' })
         await page.evaluate(() => {
@@ -120,10 +120,10 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[]) {
           }
           // Remove rich-text-editor injected styles
           Array.from(document.head.querySelectorAll(':scope > style'))
-            .filter(e => !e.textContent!.includes('NotoSans'))
-            .forEach(e => e.remove())
+            .filter((e) => !e.textContent!.includes('NotoSans'))
+            .forEach((e) => e.remove())
           // Remove rich-text-editor injected HTML.
-          document.body.querySelectorAll(':scope > :not(main)').forEach(e => e.remove())
+          document.body.querySelectorAll(':scope > :not(main)').forEach((e) => e.remove())
         })
         const prerenderedContent = await page.content()
         await fs.writeFile(htmlFile, prerenderedContent, 'utf-8')

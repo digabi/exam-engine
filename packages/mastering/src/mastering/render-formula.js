@@ -4,9 +4,9 @@ mjAPI.config({
   extensions: 'TeX/mhchem.js',
   MathJax: {
     SVG: {
-      font: 'Latin-Modern'
-    }
-  }
+      font: 'Latin-Modern',
+    },
+  },
 })
 
 mjAPI.start()
@@ -40,9 +40,9 @@ async function renderFormula(formula, mode, throwOnLatexError) {
       format: mode === 'display' ? 'TeX' : 'inline-TeX',
       mml: true,
       svg: true,
-      ex: 9 // Noto Sans 16px
+      ex: 9, // Noto Sans 16px
     })
-    .catch(async errors => {
+    .catch(async (errors) => {
       if (throwOnLatexError) {
         throw errors
       } else {

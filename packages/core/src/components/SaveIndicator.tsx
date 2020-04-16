@@ -14,7 +14,7 @@ function SaveIndicator() {
   return (
     <div className="save-indicator">
       <span className={'save-indicator-text--' + state}>
-        <Translation>{t => t('answer-saved')}</Translation>
+        <Translation>{(t) => t('answer-saved')}</Translation>
       </span>
     </div>
   )

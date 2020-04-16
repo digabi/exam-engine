@@ -13,7 +13,7 @@ export const PA: ExamTranslations = {
     date: 'Publicado:',
     'reference-date': 'Consultado:',
     translator: 'Traducción:',
-    'modified-by': 'Adaptado:'
+    'modified-by': 'Adaptado:',
   },
-  'toc-heading': 'Contenido'
+  'toc-heading': 'Contenido',
 }

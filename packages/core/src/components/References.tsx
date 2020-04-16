@@ -11,13 +11,13 @@ const renderChildNodes = createRenderChildNodes({})
 function References(_props: ExamComponentProps) {
   const { root } = useContext(CommonExamContext)
   const internalReferences = queryAll(root, 'reference').filter(
-    reference => queryAncestors(reference, 'external-material') == null
+    (reference) => queryAncestors(reference, 'external-material') == null
   )
 
   return internalReferences.length > 0 ? (
     <Section aria-labelledby="references-title">
       <h2 id="references-title">
-        <Translation>{t => t('references.heading')}</Translation>
+        <Translation>{(t) => t('references.heading')}</Translation>
       </h2>
       <ol className="e-list-data e-color-darkgrey e-light">
         {internalReferences.map((reference, i) => {

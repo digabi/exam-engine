@@ -23,7 +23,7 @@ export function signWithSHA256AndRSA(input: NodeJS.ReadableStream, privateKeyPem
     output.push(signer.sign(privateKeyPem, 'base64'))
     output.push(null)
   })
-  signerStream.on('error', error => output.destroy(error))
+  signerStream.on('error', (error) => output.destroy(error))
 
   return output
 }

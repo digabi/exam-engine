@@ -21,7 +21,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           width,
           height,
           caption,
-          bordered: caption != null || queryAncestors(element, 'choice-answer') != null
+          bordered: caption != null || queryAncestors(element, 'choice-answer') != null,
         }}
       >
         {queryAncestors(element, ['choice-answer', 'hint']) != null ? (

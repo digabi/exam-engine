@@ -17,13 +17,13 @@ export async function previewExam(examFile: string, options: RenderingOptions = 
   const webpackDevServer = new WebpackDevServer(compiler, config.devServer)
 
   return new Promise((resolve, reject) => {
-    const httpServer = webpackDevServer.listen(0, 'localhost', err => {
+    const httpServer = webpackDevServer.listen(0, 'localhost', (err) => {
       if (err) {
         reject(err)
       } else {
         const addressInfo = httpServer.address() as AddressInfo
         const url = `http://localhost:${addressInfo.port}`
-        const close = () => new Promise<void>(resolveClose => webpackDevServer.close(resolveClose))
+        const close = () => new Promise<void>((resolveClose) => webpackDevServer.close(resolveClose))
         resolve({ url, close })
       }
     })

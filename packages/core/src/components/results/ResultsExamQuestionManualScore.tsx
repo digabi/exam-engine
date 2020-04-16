@@ -35,7 +35,7 @@ function renderNormalizedScores(scores: Score, maxScore?: number) {
   const normalizedScores = [
     scores.inspection && normalizeInspectionScore(scores.inspection),
     ...(scores.censoring ? normalizeCensoringScores(scores.censoring) : []),
-    scores.pregrading && normalizePregradingScore(scores.pregrading)
+    scores.pregrading && normalizePregradingScore(scores.pregrading),
   ].filter(Boolean) as NormalizedScore[]
 
   return normalizedScores.map((score, i) => <ScoreRow key={i} {...score} latest={i === 0} maxScore={maxScore} />)
@@ -50,7 +50,7 @@ function NoPregrading({ maxScore }: NoPregradingProps) {
     <>
       <span className="e-result-scorecount-empty" />
       {maxScore && ` / ${maxScore} `}
-      <Translation>{t => t('points')}</Translation>
+      <Translation>{(t) => t('points')}</Translation>
     </>
   )
 }
@@ -83,7 +83,7 @@ function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & 
       </ScoreColumn>
       <ScoreColumn className="e-result-scorecount-shortcode">{shortCode}</ScoreColumn>
       <ScoreColumn className="e-mrg-r-0">
-        <Translation>{t => t(type)}</Translation>
+        <Translation>{(t) => t(type)}</Translation>
       </ScoreColumn>
     </div>
   )
@@ -106,7 +106,7 @@ function normalizeCensoringScores(score: CensoringScore): NormalizedScore[] {
   return score.scores.map((s, i) => ({
     score: s.score,
     shortCode: s.shortCode || '',
-    type: `${score.scores.length - i}.s`
+    type: `${score.scores.length - i}.s`,
   }))
 }
 

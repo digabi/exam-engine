@@ -13,7 +13,7 @@ export const GC: ExamTranslations = {
     date: 'Publicado:',
     'reference-date': 'Acedido:',
     translator: 'Tradução:',
-    'modified-by': 'Adaptação:'
+    'modified-by': 'Adaptação:',
   },
-  'toc-heading': 'Conteúdo'
+  'toc-heading': 'Conteúdo',
 }

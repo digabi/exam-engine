@@ -42,12 +42,12 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
           locale: this.context.language.slice(0, 2).toUpperCase(),
           screenshot: {
             saver: ({ data, type }: any) =>
-              saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch(err => {
+              saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err) => {
                 this.handleSaveError(err)
                 throw err // Rethrow error so rich-text-editor can handle it.
               }),
-            limit: maxImages
-          }
+            limit: maxImages,
+          },
         },
         _.after(2, this.handleChange) /* TODO: Why does r-t-e send a change event in the beginning? */
       )
@@ -75,7 +75,7 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
     if (data.error) {
       onError({
         key: 'screenshot-limit-exceeded',
-        options: { limit: maxImages }
+        options: { limit: maxImages },
       })
     } else {
       this.lastHTML = data.answerHTML

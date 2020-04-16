@@ -128,7 +128,7 @@ export function generateExam(options: GenerateExamOptions): string {
     'exam-code': opts.examCode,
     'day-code': opts.dayCode,
     date: opts.date,
-    'max-answers': opts.maxAnswers
+    'max-answers': opts.maxAnswers,
   })
   const languages = createElement(exam, 'languages')
   for (const language of opts.languages ?? ['fi-FI']) {
@@ -146,7 +146,7 @@ export function generateExam(options: GenerateExamOptions): string {
 function addSection(exam: libxml.Element, options: SectionOptions): void {
   const section = createElement(exam, 'section', undefined, {
     'max-answers': options.maxAnswers,
-    'cas-forbidden': options.casForbidden
+    'cas-forbidden': options.casForbidden,
   })
 
   createElement(section, 'section-title', 'Osan otsikko')
@@ -181,7 +181,7 @@ function addTextAnswer(
 ): void {
   const answer = createElement(question, options.name, undefined, {
     'max-score': options.maxScore,
-    type: options.type
+    type: options.type,
   })
 
   if (options.hint) {
@@ -226,9 +226,9 @@ function normalizeQuestionOptions(options: GenerateQuestionOptions): QuestionOpt
         acceptedAnswers: [
           {
             text: 'Oikea vaihtoehto',
-            score: 3
-          }
-        ]
+            score: 3,
+          },
+        ],
       }
     case 'choice-answer':
     case 'dropdown-answer':
@@ -237,17 +237,17 @@ function normalizeQuestionOptions(options: GenerateQuestionOptions): QuestionOpt
         options: [
           {
             text: 'Oikea vaihtoehto',
-            score: 3
+            score: 3,
           },
           {
             text: 'Väärä vaihtoehto',
-            score: 0
+            score: 0,
           },
           {
             text: 'Väärä vaihtoehto',
-            score: 0
-          }
-        ]
+            score: 0,
+          },
+        ],
       }
     default:
       return Array.isArray(options) ? options.map(normalizeQuestionOptions) : options

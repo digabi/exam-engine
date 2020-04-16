@@ -45,7 +45,7 @@ function ResultsAnnotationList() {
   const { answers } = useContext(QuestionContext)
   const { scores, singleGrading } = useContext(ResultsContext)
 
-  const answersAndScores = mapMaybe(answers, answer => {
+  const answersAndScores = mapMaybe(answers, (answer) => {
     const questionId = getNumericAttribute(answer, 'question-id')
     const score = findScore(scores, questionId!)
 
@@ -61,7 +61,7 @@ function ResultsAnnotationList() {
       answerElementAndScores,
       ([answer, score]) =>
         score[annotationsFrom]?.annotations
-          ?.filter(a => a.message.length)
+          ?.filter((a) => a.message.length)
           .map((annotation: Annotation, i: number) => {
             const numbering = getPrefix(answers, answer) + String(listNumberOffset + i + 1) + ')'
             const message = annotation.message

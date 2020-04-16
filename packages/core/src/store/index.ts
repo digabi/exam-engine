@@ -13,7 +13,7 @@ import casSaga from './cas/sagas'
 const rootReducer = combineReducers({
   answers: answersReducer,
   audio: audioReducer,
-  cas: casReducer
+  cas: casReducer,
 })
 
 function* rootSaga(examServerApi: ExamServerAPI) {
@@ -38,14 +38,14 @@ export function initializeExamStore(
       focusedQuestionId: null,
       serverQuestionIds: initialQuestionIds,
       supportsAnswerHistory: typeof examServerApi.selectAnswerVersion === 'function',
-      savedQuestionIds: initialQuestionIds
+      savedQuestionIds: initialQuestionIds,
     },
     audio: {
       errors: {},
       nowPlaying: null,
-      playbackTimes
+      playbackTimes,
     },
-    cas: { casStatus }
+    cas: { casStatus },
   }
   const sagaMiddleware = createSagaMiddleware()
   const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

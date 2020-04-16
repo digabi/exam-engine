@@ -15,6 +15,6 @@ export const withExamContext = withContext<ExamContext, ExamProps>(ExamContext, 
 
   return {
     casCountdownDuration: casCountdownDuration || 60,
-    examServerApi
+    examServerApi,
   }
 })

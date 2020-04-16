@@ -17,15 +17,15 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
   const currentlySelectedItem =
     answer &&
     answer.value &&
-    findChildElement(element, childElement => answer.value === childElement.getAttribute('option-id'))
+    findChildElement(element, (childElement) => answer.value === childElement.getAttribute('option-id'))
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
   if (currentlySelectedItem) {
-    const correctIds = choice.options.filter(o => o.correct).map(o => o.id)
+    const correctIds = choice.options.filter((o) => o.correct).map((o) => o.id)
 
     const correctAnswers = _.compact(
-      mapChildElements(element, childElement => {
+      mapChildElements(element, (childElement) => {
         if (correctIds.includes(getNumericAttribute(childElement, 'option-id') as number)) {
           return childElement.textContent
         }
@@ -33,7 +33,7 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
     )
     const isAnswerCorrect = correctIds.includes(getNumericAttribute(currentlySelectedItem, 'option-id') as number)
     const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-    const scoreValue = answer && choice.options.find(option => option.id === Number(answer.value))!.score
+    const scoreValue = answer && choice.options.find((option) => option.id === Number(answer.value))!.score
 
     const maxScore = getNumericAttribute(element, 'max-score')!
 
@@ -44,7 +44,7 @@ function ResultsDropdownAnswer({ element }: ExamComponentProps) {
         <span
           className={classNames('e-dropdown-answer__answered', {
             'e-dropdown-answer__answered--correct': isAnswerCorrect,
-            'e-dropdown-answer__answered--wrong': !isAnswerCorrect
+            'e-dropdown-answer__answered--wrong': !isAnswerCorrect,
           })}
         >
           {currentlySelectedItem.textContent}

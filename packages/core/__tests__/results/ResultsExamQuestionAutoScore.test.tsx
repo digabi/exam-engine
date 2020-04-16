@@ -4,7 +4,7 @@ import { I18nextProvider } from 'react-i18next'
 import { create } from 'react-test-renderer'
 import { QuestionContext } from '../../src/components/QuestionContext'
 import ResultsExamQuestionAutoScore, {
-  ResultsExamQuestionAutoScoreProps
+  ResultsExamQuestionAutoScoreProps,
 } from '../../src/components/results/ResultsExamQuestionAutoScore'
 import { initI18n } from '../../src/i18n'
 
@@ -19,7 +19,7 @@ describe('<ResultsExamQuestionAutoScore />', () => {
     const props = {
       score: undefined,
       maxScore: 3,
-      displayNumber: '1'
+      displayNumber: '1',
     }
     expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
   })
@@ -28,7 +28,7 @@ describe('<ResultsExamQuestionAutoScore />', () => {
     const props = {
       score: 1,
       maxScore: 3,
-      displayNumber: '1'
+      displayNumber: '1',
     }
     expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
   })
@@ -37,7 +37,7 @@ describe('<ResultsExamQuestionAutoScore />', () => {
     const props = {
       score: 1,
       maxScore: 3,
-      displayNumber: '1'
+      displayNumber: '1',
     }
     expect(renderWithContext(props, [{} as Element, {} as Element]).toJSON()).toMatchSnapshot()
   })
@@ -49,7 +49,7 @@ describe('<ResultsExamQuestionAutoScore />', () => {
     maxAnswers: 2,
     maxScore: 2,
     level: 2,
-    childQuestions: []
+    childQuestions: [],
   }
 
   function renderWithContext(props: ResultsExamQuestionAutoScoreProps, answers: Element[]) {
