@@ -218,7 +218,7 @@ function normalizeSectionOptions(options: GenerateSectionOptions): SectionOption
 function normalizeQuestionOptions(options: GenerateQuestionOptions): QuestionOptions {
   switch (options) {
     case 'text-answer':
-      return { name: 'text-answer', maxScore: 6 }
+      return { name: 'text-answer', maxScore: 6, type: 'rich-text' }
     case 'scored-text-answer':
       return {
         name: 'scored-text-answer',
