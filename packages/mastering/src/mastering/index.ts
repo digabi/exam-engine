@@ -9,7 +9,6 @@ import { initI18n } from '../i18n'
 import { createGradingStructure, GradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import { createTranslationFile } from './createTranslationFile'
-import renderFormula from './render-formula'
 import {
   Answer,
   answerTypes,
@@ -138,8 +137,12 @@ function assertExamIsValid(doc: Document): Document {
  * exam XML files, since it sets libxmljs2 options that are necessary for
  * security purposes.
  */
-export function parseExam(xml: string) {
-  return libxml.parseXml(xml, { noent: false, nonet: true })
+export function parseExam(xml: string, validate = false) {
+  const doc = libxml.parseXml(xml, { noent: false, nonet: true })
+  if (validate) {
+    assertExamIsValid(doc)
+  }
+  return doc
 }
 
 export interface Attachment {
@@ -185,7 +188,7 @@ export async function masterExam(
   getMediaMetadata: GetMediaMetadata,
   options?: MasteringOptions
 ): Promise<MasteringResult[]> {
-  const doc = assertExamIsValid(parseExam(xml))
+  const doc = parseExam(xml, true)
   const languages = doc.find('//e:languages/e:language/text()', ns).map(String)
   const memoizedGetMediaMetadata = _.memoize(getMediaMetadata, _.join)
   const optionsWithDefaults = { ...defaultOptions, ...options }
@@ -550,7 +553,12 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
 async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
   for (const formula of exam.find<Element>('//e:formula', ns)) {
     try {
-      const { svg, mml } = await renderFormula(formula.text(), getAttribute('mode', formula, null), throwOnLatexError)
+      // Load render-formula lazily, since initializing mathjax-node is very expensive.
+      const { svg, mml } = await require('./render-formula')(
+        formula.text(),
+        getAttribute('mode', formula, null),
+        throwOnLatexError
+      )
       formula.attr('svg', svg)
       formula.attr('mml', mml)
     } catch (errors) {

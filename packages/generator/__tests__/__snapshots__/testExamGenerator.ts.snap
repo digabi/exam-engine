@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateExam() creates a basic exam when called with minimal arguments 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+  </e:languages>
+  <e:exam-title>Kokeen otsikko</e:exam-title>
+  <e:section>
+    <e:section-title>Osan otsikko</e:section-title>
+  </e:section>
+</e:exam>
+
+`;
