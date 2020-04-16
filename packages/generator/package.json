@@ -7,11 +7,6 @@
   "files": [
     "dist"
   ],
-  "scripts": {
-    "build": "tsc --build",
-    "prepublishOnly": "yarn build",
-    "test": "jest"
-  },
   "dependencies": {
     "@digabi/exam-engine-mastering": "10.1.10",
     "lodash": "^4.17.15"

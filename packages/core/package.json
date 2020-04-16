@@ -11,8 +11,7 @@
   "scripts": {
     "build": "webpack -p",
     "watch": "webpack -p --watch",
-    "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader",
-    "test": "NODE_ICU_DATA=../../node_modules/full-icu jest"
+    "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
   },
   "peerDependencies": {
     "react": "^16.10.2"
