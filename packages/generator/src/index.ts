@@ -35,18 +35,19 @@ export type GenerateQuestionOptions =
   | 'dropdown-answer'
   | GenerateDropdownAnswerOptions
 
-export interface GenerateTextAnswerOptions {
-  name: 'text-answer'
-  maxScore: number
+interface TextAnswerBase {
   hint?: string
-  type?: 'rich-text' | 'single-line'
+  type?: 'rich-text' | 'single-line' | 'multi-line'
 }
 
-export interface GenerateScoredTextAnswerOptions {
+export interface GenerateTextAnswerOptions extends TextAnswerBase {
+  name: 'text-answer'
+  maxScore: number
+}
+
+export interface GenerateScoredTextAnswerOptions extends TextAnswerBase {
   name: 'scored-text-answer'
   maxScore?: number
-  hint?: string
-  type?: 'rich-text' | 'single-line'
   acceptedAnswers?: GenerateAcceptedAnswer[]
 }
 
