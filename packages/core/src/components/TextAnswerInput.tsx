@@ -7,9 +7,9 @@ import * as actions from '../store/answers/actions'
 import AnswerToolbar from './AnswerToolbar'
 import { ExamContext } from './ExamContext'
 import { QuestionContext } from './QuestionContext'
-import RichTextAnswer from './RichTextAnswer'
+import RichTextAnswer, { AnswerError } from './RichTextAnswer'
 import { Score } from './Score'
-import { AnswerError, RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from './types'
+import { RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from './types'
 import { ExamComponentProps } from '../createRenderChildNodes'
 
 interface Props extends ExamComponentProps {

@@ -2,7 +2,8 @@ import React from 'react'
 import { Translation } from 'react-i18next'
 import { findChildElement, NBSP, queryAncestors } from '../dom-utils'
 import * as actions from '../store/answers/actions'
-import { AnswerError, ExamAnswer } from './types'
+import { ExamAnswer } from './types'
+import { AnswerError } from './RichTextAnswer'
 
 interface AnswerToolbarProps {
   answer?: ExamAnswer

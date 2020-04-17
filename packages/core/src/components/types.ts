@@ -1,5 +1,3 @@
-import { Translations } from '../i18n/fi-FI'
-
 export type QuestionId = number
 export type AnswerId = number
 
@@ -126,9 +124,4 @@ export interface ExamServerAPI {
   selectAnswerVersion?: (questionId: QuestionId, questionTitle: string) => Promise<ExamAnswer | undefined>
   /** Save screenshot to server. Should return the URL to the saved screenshot. */
   saveScreenshot: (questionId: QuestionId, screenshot: Blob) => Promise<string>
-}
-
-export interface AnswerError {
-  key: keyof Translations['answer-errors']
-  options?: object
 }
