@@ -1,4 +1,4 @@
-import { GradingStructure } from '@digabi/exam-engine-mastering'
+import { GradingStructure, Score } from '../../types'
 import React, { useContext, useEffect } from 'react'
 import { I18nextProvider, useTranslation } from 'react-i18next'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
@@ -20,7 +20,6 @@ import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
 import ResultsTextAnswer from './ResultsTextAnswer'
-import { Score } from '../../types/Score'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */

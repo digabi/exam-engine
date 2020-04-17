@@ -1,12 +1,18 @@
-import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '@digabi/exam-engine-mastering'
 import { Dictionary } from 'lodash'
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
-import { ChoiceAnswer, ExamAnswer, QuestionId } from '../../types/ExamAnswer'
-import { Score } from '../../types/Score'
+import {
+  ChoiceGroupChoice,
+  ChoiceGroupQuestion,
+  GradingStructure,
+  ChoiceAnswer,
+  ExamAnswer,
+  QuestionId,
+  Score,
+} from '../../types'
 
 export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>

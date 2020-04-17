@@ -5,6 +5,5 @@
     "outDir": "./dist"
   },
   "extends": "../../tsconfig.json",
-  "include": ["./src"],
-  "references": [{ "path": "../mastering" }]
+  "include": ["./src"]
 }

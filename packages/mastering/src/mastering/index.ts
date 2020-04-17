@@ -5,7 +5,7 @@ import _ from 'lodash'
 import path from 'path'
 import { toRoman } from 'roman-numerals'
 import { initI18n } from '../i18n'
-import { createGradingStructure, GradingStructure } from './createGradingStructure'
+import { createGradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import { createTranslationFile } from './createTranslationFile'
 import {
@@ -28,6 +28,7 @@ import {
   queryAncestors,
   xpathOr,
 } from './utils'
+import { GradingStructure } from '@digabi/exam-engine-core'
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
