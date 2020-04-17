@@ -8,7 +8,7 @@ import { ExamContext } from './ExamContext'
 import ProgressBar from './ProgressBar'
 import Section from './Section'
 import { SectionContext, withSectionContext } from './SectionContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function ExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const casState = useSelector((state: AppState) => state.cas, shallowEqual)

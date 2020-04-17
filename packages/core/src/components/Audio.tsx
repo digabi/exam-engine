@@ -7,7 +7,7 @@ import { getAudioPlaybackError, getPlaybackTimesRemaining } from '../store/selec
 import AudioPlaybackError from './AudioPlaybackError'
 import { CommonExamContext } from './CommonExamContext'
 import RestrictedAudioPlayer from './RestrictedAudioPlayer'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
   const src = element.getAttribute('src')!

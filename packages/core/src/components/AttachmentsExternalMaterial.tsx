@@ -1,5 +1,5 @@
 import React from 'react'
-import { createRenderChildNodes } from '../createRenderChildNodes'
+import { createRenderChildNodes, ExamComponentProps } from '../createRenderChildNodes'
 import { queryAncestors } from '../dom-utils'
 import AttachmentLink from './AttachmentLink'
 import AttachmentLinks from './AttachmentLinks'
@@ -12,7 +12,6 @@ import Formula from './Formula'
 import Image from './Image'
 import Reference from './Reference'
 import surround from './surround'
-import { ExamComponentProps } from './types'
 import Video from './Video'
 
 const renderChildNodes = createRenderChildNodes({

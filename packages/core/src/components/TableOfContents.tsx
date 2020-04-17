@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
 import { Translation, useTranslation } from 'react-i18next'
-import { createRenderChildNodes, RenderOptions } from '../createRenderChildNodes'
+import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 import { findChildElement } from '../dom-utils'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext, withSectionContext } from './SectionContext'
-import { ExamComponentProps } from './types'
 
 function TOCSection({ element }: ExamComponentProps) {
   const { maxAnswers, minAnswers, displayNumber, childQuestions } = useContext(SectionContext)

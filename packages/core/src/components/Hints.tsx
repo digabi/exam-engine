@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { RenderChildNodes } from '../createRenderChildNodes'
+import { ExamComponentProps, RenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
 import { AppState } from '../store'
-import { ExamComponentProps, QuestionId } from './types'
+import { QuestionId } from './types'
 
 export default function mkHints({ stateful }: { stateful: boolean }) {
   function Hints({ element, renderChildNodes }: ExamComponentProps) {

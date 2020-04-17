@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { createRenderChildNodes, RenderOptions } from '../createRenderChildNodes'
+import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 import { queryAncestors } from '../dom-utils'
 import { url } from '../url'
 import { AttachmentContext, withAttachmentContext } from './AttachmentContext'
 import { CommonExamContext } from './CommonExamContext'
-import { ExamComponentProps } from './types'
 
 const renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),

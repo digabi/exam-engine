@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { getNumericAttribute, queryAncestors } from '../dom-utils'
 import { CommonExamContext } from './CommonExamContext'
 import ResponsiveMediaContainer from './ResponsiveMediaContainer'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const { t } = useTranslation()

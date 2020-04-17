@@ -1,9 +1,16 @@
 import React from 'react'
-import { ExamComponentProps } from './components/types'
 import { mapChildNodes } from './dom-utils'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
+
+export interface ExamComponentProps {
+  className?: string
+  /** An element in the exam XML. */
+  element: Element
+  /** A function that knows how to render the child nodes of this element. */
+  renderChildNodes: RenderChildNodes
+}
 
 export enum RenderOptions {
   RenderHTML,

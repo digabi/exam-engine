@@ -6,6 +6,7 @@ import parseExam from './parser/parseExam'
 
 export * from './components/types'
 export { Attachments, Exam, Results, parseExam }
+export { ExamComponentProps } from './createRenderChildNodes'
 
 export interface ExamBundle {
   Attachments: typeof Attachments

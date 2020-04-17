@@ -1,6 +1,5 @@
 import React from 'react'
-import { RenderOptions } from '../createRenderChildNodes'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 
 function RenderExamElements({ element, renderChildNodes }: ExamComponentProps) {
   return <>{renderChildNodes(element, RenderOptions.SkipHTML)}</>

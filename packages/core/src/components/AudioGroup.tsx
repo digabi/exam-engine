@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function AudioGroup({ element, className, renderChildNodes }: ExamComponentProps) {
   return (

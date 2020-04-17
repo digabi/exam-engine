@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { query } from '../../dom-utils'
 import Section from '../Section'
 import { SectionContext, withSectionContext } from '../SectionContext'
-import { ExamComponentProps } from '../types'
 import { ResultsContext } from './ResultsContext'
+import { ExamComponentProps } from '../../createRenderChildNodes'
 
 function ResultsExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber } = useContext(SectionContext)

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { AppState } from '../store'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext } from './SectionContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function ExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const casStatus = useSelector((state: AppState) => state.cas.casStatus)

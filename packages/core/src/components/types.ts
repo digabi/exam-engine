@@ -1,4 +1,3 @@
-import { RenderChildNodes } from '../createRenderChildNodes'
 import { Translations } from '../i18n/fi-FI'
 
 export type QuestionId = number
@@ -93,14 +92,6 @@ export interface RestrictedAudioPlaybackStats {
   restrictedAudioId: RestrictedAudioId
   /** Number of times it has been listened to. */
   times: number
-}
-
-export interface ExamComponentProps {
-  className?: string
-  /** An element in the exam XML. */
-  element: Element
-  /** A function that knows how to render the child nodes of this element. */
-  renderChildNodes: RenderChildNodes
 }
 
 export interface ExamServerAPI {

@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
-import { RenderOptions } from '../createRenderChildNodes'
+import { ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 import { findChildElement, parentElements } from '../dom-utils'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import Section from './Section'
-import { ExamComponentProps } from './types'
 
 function AttachmentsQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, hasExternalMaterial, level } = useContext(QuestionContext)

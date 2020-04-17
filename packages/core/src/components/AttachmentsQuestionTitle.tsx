@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { QuestionContext } from './QuestionContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function AttachmentsQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, hasExternalMaterial } = useContext(QuestionContext)

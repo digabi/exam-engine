@@ -1,6 +1,6 @@
 import React from 'react'
 import { getDisplayName } from '../getDisplayName'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 /** Surrounds an Exam component with a static HTML element.
  *
