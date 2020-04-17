@@ -1,6 +1,7 @@
 import * as _ from 'lodash-es'
-import { AudioPlaybackError, ExamAnswer, QuestionId, RestrictedAudioId, SaveState } from '../types'
 import { AppState } from '../store'
+import { ExamAnswer, QuestionId } from '../types/ExamAnswer'
+import { AudioPlaybackError, RestrictedAudioId, SaveState } from '../types/ExamServerAPI'
 
 export const getAudioState = (src: string, restrictedAudioId?: RestrictedAudioId) => (state: AppState) => {
   const { nowPlaying } = state.audio

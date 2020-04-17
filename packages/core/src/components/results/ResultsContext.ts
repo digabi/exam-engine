@@ -3,9 +3,10 @@ import { Dictionary } from 'lodash'
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { ChoiceAnswer, ExamAnswer, QuestionId, Score } from '../../types'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
+import { ChoiceAnswer, ExamAnswer, QuestionId } from '../../types/ExamAnswer'
+import { Score } from '../../types/Score'
 
 export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>

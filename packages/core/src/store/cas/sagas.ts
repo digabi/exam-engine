@@ -1,7 +1,7 @@
 import { call, put, race, take, takeLatest } from 'redux-saga/effects'
-import { CasStatus, ExamServerAPI } from '../../types'
 import { countdown } from '../countdown'
 import { allowCas, allowCasCancelled, allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
+import { CasStatus, ExamServerAPI } from '../../types/ExamServerAPI'
 
 export function* performEnableCas(examServerApi: ExamServerAPI, { payload }: ReturnType<typeof allowCas>) {
   try {

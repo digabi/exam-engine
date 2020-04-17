@@ -2,8 +2,8 @@ import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React from 'react'
 import { CommonExamContext } from './CommonExamContext'
-import { RichTextAnswer as RichTextAnswerT } from '../types'
 import { Translations } from '../i18n/fi-FI'
+import { RichTextAnswer as RichTextAnswerT } from '../types/ExamAnswer'
 
 const richTextEditor = require('rich-text-editor/dist/rich-text-editor')
 

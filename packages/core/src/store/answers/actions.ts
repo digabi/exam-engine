@@ -1,5 +1,5 @@
 import { action } from 'typesafe-actions'
-import { ExamAnswer, QuestionId } from '../../types'
+import { ExamAnswer, QuestionId } from '../../types/ExamAnswer'
 
 export const saveAnswer = (answer: ExamAnswer) => action('SAVE_ANSWER', answer)
 

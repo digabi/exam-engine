@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import ReactCSSTransitionReplace from 'react-css-transition-replace'
 import { useTranslation } from 'react-i18next'
-import { AudioPlaybackError } from '../types'
+import { AudioPlaybackError } from '../types/ExamServerAPI'
 
 export default function AudioPlaybackError({
   error,

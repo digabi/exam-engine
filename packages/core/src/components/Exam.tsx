@@ -38,8 +38,9 @@ import Section from './Section'
 import SectionInstruction from './SectionInstruction'
 import TableOfContents from './TableOfContents'
 import TextAnswer from './TextAnswer'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types'
 import Video from './Video'
+import { ExamAnswer } from '../types/ExamAnswer'
+import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {

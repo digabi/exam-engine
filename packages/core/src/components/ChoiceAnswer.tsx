@@ -5,8 +5,8 @@ import { getNumericAttribute, mapChildElements, query } from '../dom-utils'
 import { AppState } from '../store'
 import * as actions from '../store/answers/actions'
 import AnswerToolbar from './AnswerToolbar'
-import { ChoiceAnswer as ChoiceAnswerT, QuestionId } from '../types'
 import { ExamComponentProps } from '../createRenderChildNodes'
+import { ChoiceAnswer as ChoiceAnswerT, QuestionId } from '../types/ExamAnswer'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId

@@ -12,7 +12,6 @@ import ExamQuestionInstruction from '../ExamQuestionInstruction'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
 import RenderChildNodes from '../RenderChildNodes'
-import { Score } from '../../types'
 import ResultsChoiceAnswer from './ResultsChoiceAnswer'
 import { ResultsContext, withResultsContext } from './ResultsContext'
 import ResultsDropdownAnswer from './ResultsDropdownAnswer'
@@ -21,6 +20,7 @@ import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
 import ResultsTextAnswer from './ResultsTextAnswer'
+import { Score } from '../../types/Score'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */

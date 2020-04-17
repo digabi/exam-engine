@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { QuestionContext } from '../QuestionContext'
-import { TextAnswer } from '../../types'
 import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
 import { ExamComponentProps } from '../../createRenderChildNodes'
+import { TextAnswer } from '../../types/ExamAnswer'
 
 function ResultsScoredTextAnswer({ element }: ExamComponentProps) {
   const { answers } = useContext(QuestionContext)

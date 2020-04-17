@@ -1,6 +1,6 @@
 import { ActionType } from 'typesafe-actions'
-import { ExamAnswer, QuestionId } from '../../types'
 import * as actions from './actions'
+import { ExamAnswer, QuestionId } from '../../types/ExamAnswer'
 
 type AnswersAction = ActionType<typeof actions>
 

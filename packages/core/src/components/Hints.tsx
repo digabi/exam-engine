@@ -5,7 +5,7 @@ import { ExamComponentProps, RenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
 import { AppState } from '../store'
-import { QuestionId } from '../types'
+import { QuestionId } from '../types/ExamAnswer'
 
 export default function mkHints({ stateful }: { stateful: boolean }) {
   function Hints({ element, renderChildNodes }: ExamComponentProps) {

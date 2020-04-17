@@ -1,5 +1,4 @@
 import { call, delay, put, select, takeEvery } from 'redux-saga/effects'
-import { AudioPlaybackResponse, ExamServerAPI } from '../../types'
 import { countdown } from '../countdown'
 import { getPlaybackTimes } from '../selectors'
 import {
@@ -10,6 +9,7 @@ import {
   showAudioError,
   updateRemaining,
 } from './actions'
+import { AudioPlaybackResponse, ExamServerAPI } from '../../types/ExamServerAPI'
 
 type PlayAudio = ReturnType<typeof playAudio>
 

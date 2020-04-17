@@ -14,4 +14,3 @@ export interface ExamBundle {
   parseExam: typeof parseExam
   Results: typeof Results
 }
-export { AnswerError } from './components/RichTextAnswer'
