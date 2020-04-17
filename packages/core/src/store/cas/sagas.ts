@@ -1,5 +1,5 @@
 import { call, put, race, take, takeLatest } from 'redux-saga/effects'
-import { CasStatus, ExamServerAPI } from '../../components/types'
+import { CasStatus, ExamServerAPI } from '../../types'
 import { countdown } from '../countdown'
 import { allowCas, allowCasCancelled, allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
 

@@ -1,5 +1,5 @@
 import * as _ from 'lodash-es'
-import { AudioPlaybackError, ExamAnswer, QuestionId, RestrictedAudioId, SaveState } from '../components/types'
+import { AudioPlaybackError, ExamAnswer, QuestionId, RestrictedAudioId, SaveState } from '../types'
 import { AppState } from '../store'
 
 export const getAudioState = (src: string, restrictedAudioId?: RestrictedAudioId) => (state: AppState) => {

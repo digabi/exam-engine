@@ -5,7 +5,7 @@ import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { mapMaybe } from '../../utils'
 import { QuestionContext } from '../QuestionContext'
-import { Annotation, Score } from '../types'
+import { Annotation, Score } from '../../types'
 import { findScore, ResultsContext } from './ResultsContext'
 
 interface AnnotationItem {

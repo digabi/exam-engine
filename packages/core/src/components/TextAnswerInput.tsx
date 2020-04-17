@@ -9,7 +9,7 @@ import { ExamContext } from './ExamContext'
 import { QuestionContext } from './QuestionContext'
 import RichTextAnswer, { AnswerError } from './RichTextAnswer'
 import { Score } from './Score'
-import { RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from './types'
+import { RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../types'
 import { ExamComponentProps } from '../createRenderChildNodes'
 
 interface Props extends ExamComponentProps {

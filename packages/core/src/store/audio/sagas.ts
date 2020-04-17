@@ -1,5 +1,5 @@
 import { call, delay, put, select, takeEvery } from 'redux-saga/effects'
-import { AudioPlaybackResponse, ExamServerAPI } from '../../components/types'
+import { AudioPlaybackResponse, ExamServerAPI } from '../../types'
 import { countdown } from '../countdown'
 import { getPlaybackTimes } from '../selectors'
 import {

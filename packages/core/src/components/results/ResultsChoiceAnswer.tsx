@@ -4,7 +4,7 @@ import { createRenderChildNodes, ExamComponentProps } from '../../createRenderCh
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import ExamAttachment from '../ExamAttachment'
 import Image from '../Image'
-import { QuestionId } from '../types'
+import { QuestionId } from '../../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 

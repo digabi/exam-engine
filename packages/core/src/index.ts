@@ -4,7 +4,7 @@ import Exam from './components/Exam'
 import Results from './components/results/Results'
 import parseExam from './parser/parseExam'
 
-export * from './components/types'
+export * from './types'
 export { Attachments, Exam, Results, parseExam }
 export { ExamComponentProps } from './createRenderChildNodes'
 

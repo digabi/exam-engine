@@ -1,4 +1,4 @@
-import { Score } from '../types'
+import { Score } from '../../types'
 
 export const getAnnotationAttributes = (answer?: Score) =>
   answer

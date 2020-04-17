@@ -1,6 +1,6 @@
 import React from 'react'
 import { ExamProps } from './Exam'
-import { ExamServerAPI } from './types'
+import { ExamServerAPI } from '../types'
 import { withContext } from './withContext'
 
 export interface ExamContext {

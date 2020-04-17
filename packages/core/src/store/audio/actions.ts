@@ -1,5 +1,5 @@
 import { action } from 'typesafe-actions'
-import { AudioPlaybackError } from '../../components/types'
+import { AudioPlaybackError } from '../../types'
 import { Audio } from './reducer'
 
 export const playAudio = (audio: Audio) => action('PLAY_AUDIO', audio)

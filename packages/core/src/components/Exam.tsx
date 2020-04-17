@@ -38,7 +38,7 @@ import Section from './Section'
 import SectionInstruction from './SectionInstruction'
 import TableOfContents from './TableOfContents'
 import TextAnswer from './TextAnswer'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from './types'
+import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types'
 import Video from './Video'
 
 /** Props common to taking the exams and viewing results */
