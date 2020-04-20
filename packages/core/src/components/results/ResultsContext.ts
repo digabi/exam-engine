@@ -4,15 +4,9 @@ import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
-import {
-  ChoiceGroupChoice,
-  ChoiceGroupQuestion,
-  GradingStructure,
-  ChoiceAnswer,
-  ExamAnswer,
-  QuestionId,
-  Score,
-} from '../../types'
+import { Score } from '../../types/Score'
+import { GradingStructure, ChoiceGroupQuestion, ChoiceGroupChoice } from '../../types/GradingStructure'
+import { ExamAnswer, QuestionId, ChoiceAnswer } from '../../types/ExamAnswer'
 
 export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>

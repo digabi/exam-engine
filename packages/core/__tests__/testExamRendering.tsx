@@ -1,4 +1,4 @@
-import { Score } from '@digabi/exam-engine-core'
+import { GradingStructure, Score, TextQuestion } from '@digabi/exam-engine-core'
 import Attachments from '@digabi/exam-engine-core/dist/components/Attachments'
 import Exam from '@digabi/exam-engine-core/dist/components/Exam'
 import Results from '@digabi/exam-engine-core/dist/components/results/Results'
@@ -13,7 +13,6 @@ import { CommonExamProps, ExamProps } from '../src/components/Exam'
 import { ResultsProps } from '../src/components/results/Results'
 import { examServerApi } from './examServerApi'
 import { generateAnswers } from '@digabi/exam-engine-generator'
-import { GradingStructure, TextQuestion } from '../src/types'
 
 for (const exam of listExams()) {
   describe(path.basename(exam), () => {
