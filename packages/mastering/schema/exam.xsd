@@ -1,4 +1,6 @@
-<xs:schema xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://ylioppilastutkinto.fi/exam.xsd" elementFormDefault="qualified" version="1.0" xml:lang="fi">
+<xs:schema xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://ylioppilastutkinto.fi/exam.xsd" elementFormDefault="qualified" version="1.0" xml:lang="fi">
 
   <!-- Import relevant XHTML subset -->
   <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="xhtml11.xsd" />
@@ -193,6 +195,15 @@
       <xs:attributeGroup ref="e:sourcable" />
       <xs:attributeGroup ref="e:localizable" />
       <xs:attributeGroup ref="e:stylable" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="image-overlay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="e:image" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
 

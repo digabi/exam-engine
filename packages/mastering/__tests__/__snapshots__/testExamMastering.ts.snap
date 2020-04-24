@@ -3488,6 +3488,18 @@ Object {
       "restricted": false,
     },
     Object {
+      "filename": "map-example-1.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "map-example-2.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "map-example-3.jpg",
+      "restricted": false,
+    },
+    Object {
       "filename": "example1.webm",
       "restricted": true,
     },
@@ -3720,7 +3732,7 @@ Object {
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "14.1",
+            "displayNumber": "15.1",
             "id": 14,
             "options": Array [
               Object {
@@ -3747,7 +3759,7 @@ Object {
             "type": "choice",
           },
           Object {
-            "displayNumber": "14.2",
+            "displayNumber": "15.2",
             "id": 15,
             "options": Array [
               Object {
@@ -3774,7 +3786,7 @@ Object {
             "type": "choice",
           },
           Object {
-            "displayNumber": "14.3",
+            "displayNumber": "15.3",
             "id": 16,
             "options": Array [
               Object {
@@ -3801,7 +3813,7 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "14",
+        "displayNumber": "15",
         "id": 47,
         "type": "choicegroup",
       },
@@ -3833,6 +3845,18 @@ Object {
       "restricted": false,
     },
     Object {
+      "filename": "map-example-1.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "map-example-2.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "map-example-3.jpg",
+      "restricted": false,
+    },
+    Object {
       "filename": "example1.webm",
       "restricted": true,
     },
@@ -4065,7 +4089,7 @@ Object {
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "14.1",
+            "displayNumber": "15.1",
             "id": 14,
             "options": Array [
               Object {
@@ -4092,7 +4116,7 @@ Object {
             "type": "choice",
           },
           Object {
-            "displayNumber": "14.2",
+            "displayNumber": "15.2",
             "id": 15,
             "options": Array [
               Object {
@@ -4119,7 +4143,7 @@ Object {
             "type": "choice",
           },
           Object {
-            "displayNumber": "14.3",
+            "displayNumber": "15.3",
             "id": 16,
             "options": Array [
               Object {
@@ -4146,7 +4170,7 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "14",
+        "displayNumber": "15",
         "id": 47,
         "type": "choicegroup",
       },
@@ -4240,70 +4264,73 @@ MEX format documentation
 #### 12. image (0 p.) 
 
 
-#### 13. audio (0 p.) 
+#### 13. image-overlay (0 p.) 
 
 
-#### 14. audio-group (6 p.) 
+#### 14. audio (0 p.) 
 
 
-14.1. Listening comprehension choice question (2 p.) (monivalintavastaus)
+#### 15. audio-group (6 p.) 
+
+
+15.1. Listening comprehension choice question (2 p.) (monivalintavastaus)
 
 - Sit (-1 p.)
 - Lorem (2 p.)
 - Ipsum (0 p.)
 
-14.2. Listening comprehension choice question (2 p.) (monivalintavastaus)
+15.2. Listening comprehension choice question (2 p.) (monivalintavastaus)
 
 - Lorem (2 p.)
 - Ipsum (0 p.)
 - Sit (-1 p.)
 
-14.3. Listening comprehension (2 p.) (monivalintavastaus)
+15.3. Listening comprehension (2 p.) (monivalintavastaus)
 
 - Lorem (2 p.)
 - Ipsum (0 p.)
 - Sit (-1 p.)
 
-#### 15. video (0 p.) 
+#### 16. video (0 p.) 
 
 
-#### 16. file (0 p.) 
+#### 17. file (0 p.) 
 
 
 ### Osa VI: Links to material (0 p.)
 
-#### 17. attachment-link (0 p.) 
+#### 18. attachment-link (0 p.) 
 
 
-#### 18. attachment-links (0 p.) 
+#### 19. attachment-links (0 p.) 
 
 
 ### Osa VII: Formulas (0 p.)
 
-#### 19. Adding formulas (0 p.) 
+#### 20. Adding formulas (0 p.) 
 
 
 ### Osa VIII: CSS styles (0 p.)
 
-#### 20. Typography (0 p.) 
+#### 21. Typography (0 p.) 
 
 
-#### 21. Lists (0 p.) 
+#### 22. Lists (0 p.) 
 
 
-#### 22. Floating (0 p.) 
+#### 23. Floating (0 p.) 
 
 
-#### 23. Illustration images (0 p.) 
+#### 24. Illustration images (0 p.) 
 
 
-#### 24. Margins and paddings (0 p.) 
+#### 25. Margins and paddings (0 p.) 
 
 
-#### 25. Tables (0 p.) 
+#### 26. Tables (0 p.) 
 
 
-#### 26. Text columns (0 p.)
+#### 27. Text columns (0 p.)
 `;
 
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: hvp 2`] = `
@@ -4388,70 +4415,73 @@ MEX format documentation
 #### 12. image (0 p.) 
 
 
-#### 13. audio (0 p.) 
+#### 13. image-overlay (0 p.) 
 
 
-#### 14. audio-group (6 p.) 
+#### 14. audio (0 p.) 
 
 
-14.1. Listening comprehension choice question (2 p.) (flervalssvar)
+#### 15. audio-group (6 p.) 
+
+
+15.1. Listening comprehension choice question (2 p.) (flervalssvar)
 
 - Sit (-1 p.)
 - Lorem (2 p.)
 - Ipsum (0 p.)
 
-14.2. Listening comprehension choice question (2 p.) (flervalssvar)
+15.2. Listening comprehension choice question (2 p.) (flervalssvar)
 
 - Lorem (2 p.)
 - Ipsum (0 p.)
 - Sit (-1 p.)
 
-14.3. Listening comprehension (2 p.) (flervalssvar)
+15.3. Listening comprehension (2 p.) (flervalssvar)
 
 - Lorem (2 p.)
 - Ipsum (0 p.)
 - Sit (-1 p.)
 
-#### 15. video (0 p.) 
+#### 16. video (0 p.) 
 
 
-#### 16. file (0 p.) 
+#### 17. file (0 p.) 
 
 
 ### Del VI: Links to material (0 p.)
 
-#### 17. attachment-link (0 p.) 
+#### 18. attachment-link (0 p.) 
 
 
-#### 18. attachment-links (0 p.) 
+#### 19. attachment-links (0 p.) 
 
 
 ### Del VII: Formulas (0 p.)
 
-#### 19. Adding formulas (0 p.) 
+#### 20. Adding formulas (0 p.) 
 
 
 ### Del VIII: CSS styles (0 p.)
 
-#### 20. Typography (0 p.) 
+#### 21. Typography (0 p.) 
 
 
-#### 21. Lists (0 p.) 
+#### 22. Lists (0 p.) 
 
 
-#### 22. Floating (0 p.) 
+#### 23. Floating (0 p.) 
 
 
-#### 23. Illustration images (0 p.) 
+#### 24. Illustration images (0 p.) 
 
 
-#### 24. Margins and paddings (0 p.) 
+#### 25. Margins and paddings (0 p.) 
 
 
-#### 25. Tables (0 p.) 
+#### 26. Tables (0 p.) 
 
 
-#### 26. Text columns (0 p.)
+#### 27. Text columns (0 p.)
 `;
 
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: translation 1`] = `Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.`;
@@ -5873,6 +5903,62 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       </div>
     </e:question>
     <e:question display-number="13" max-score="0">
+      <e:question-title>image-overlay</e:question-title>
+      <e:question-instruction>
+        <p>
+          <code>e:image-overlay</code>
+          element can contain one or more image elements. It can be used anywhere where
+        HTML is allowed. The images are rendered on top of each other, and an input slider
+        is added for each image to allow for the adjustment of the opacity (transparency) of
+        the image. The label for each input slider is taken from the text
+        inside each
+          <code>e:image</code>
+          element. The text can be localized.
+        </p>
+        <p>Make sure that all the images have the same width
+          and height in pixels. Differently sized images will cause unwanted layout effects.
+        </p>
+      </e:question-instruction>
+
+      <table class="e-table e-width-full">
+        <caption>Element attributes</caption>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Mandatory</th>
+            <th>Default value</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>lang</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Exam language code. Use when image-overlay should be included only in a certain language version.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre class="code"><![CDATA[<e:image-overlay>
+  <e:image src="map-example-1.jpg">Topographic Map</e:image>
+  <e:image src="map-example-2.jpg">Public Transport Map</e:image>
+  <e:image src="map-example-3.jpg">Bike Lanes Map</e:image>
+</e:image-overlay>]]></pre>
+      <div class="example">
+        <e:image-overlay>
+          <e:image src="map-example-1.jpg" width="999" height="999">Topographic Map</e:image>
+          <e:image src="map-example-2.jpg" width="999" height="999">Public Transport Map</e:image>
+          <e:image src="map-example-3.jpg" width="999" height="999">Bike Lanes Map</e:image>
+        </e:image-overlay>
+        <p>Example maps © OpenStreetMap contributors</p>
+      </div>
+    </e:question>
+    <e:question display-number="14" max-score="0">
       <e:question-title>audio</e:question-title>
       <e:question-instruction>
         <code>e:audio</code>
@@ -5930,7 +6016,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         <e:audio src="example1.webm" times="2" restricted-audio-id="0" duration="999">Optional description</e:audio>
       </div>
     </e:question>
-    <e:question display-number="14" max-score="6">
+    <e:question display-number="15" max-score="6">
       <e:question-title>audio-group</e:question-title>
       <e:question-instruction>
         <code>e:audio-group</code>
@@ -5979,18 +6065,18 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           <e:audio src="example1.webm" times="2" restricted-audio-id="1" duration="999">The whole recording</e:audio>
         </e:audio-group>
         <e:audio-group>
-          <e:question display-number="14.1" max-score="2">
+          <e:question display-number="15.1" max-score="2">
             <e:question-title>Listening comprehension choice question</e:question-title>
-            <e:choice-answer display-number="14.1" question-id="14" max-score="2">
+            <e:choice-answer display-number="15.1" question-id="14" max-score="2">
               
               
               
               
             <e:choice-answer-option option-id="33">Sit</e:choice-answer-option><e:choice-answer-option option-id="34">Lorem</e:choice-answer-option><e:choice-answer-option option-id="35">Ipsum</e:choice-answer-option><e:choice-answer-option option-id="36">Dolor</e:choice-answer-option></e:choice-answer>
           </e:question>
-          <e:question display-number="14.2" max-score="2">
+          <e:question display-number="15.2" max-score="2">
             <e:question-title>Listening comprehension choice question</e:question-title>
-            <e:choice-answer display-number="14.2" question-id="15" max-score="2">
+            <e:choice-answer display-number="15.2" question-id="15" max-score="2">
               
               
               
@@ -6000,9 +6086,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           <e:audio src="example2.webm" times="2" restricted-audio-id="2" duration="999">The passage related to the two sub-questions immediately above.</e:audio>
         </e:audio-group>
         <e:audio-group>
-          <e:question display-number="14.3" max-score="2">
+          <e:question display-number="15.3" max-score="2">
             <e:question-title>Listening comprehension</e:question-title>
-            <e:choice-answer display-number="14.3" question-id="16" max-score="2">
+            <e:choice-answer display-number="15.3" question-id="16" max-score="2">
               
               
               
@@ -6013,7 +6099,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         </e:audio-group>
       </div>
     </e:question>
-    <e:question display-number="15" max-score="0">
+    <e:question display-number="16" max-score="0">
       <e:question-title>video</e:question-title>
       <e:question-instruction>
         <code>e:video</code>
@@ -6065,7 +6151,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       </div>
     </e:question>
 
-    <e:question display-number="16" max-score="0">
+    <e:question display-number="17" max-score="0">
       <e:question-title>file</e:question-title>
       <e:question-instruction>
         <code>e:file</code>
@@ -6120,7 +6206,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
   <e:section display-number="VI" max-score="0">
     <e:section-title>Links to material</e:section-title>
-    <e:question display-number="17" max-score="0">
+    <e:question display-number="18" max-score="0">
       <e:question-title>attachment-link</e:question-title>
       <e:question-instruction>
         Material on external material page can be linked to from exam page by using
@@ -6184,7 +6270,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="18" max-score="0">
+    <e:question display-number="19" max-score="0">
       <e:question-title>attachment-links</e:question-title>
       <e:question-instruction>
         Use
@@ -6217,7 +6303,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
   <e:section display-number="VII" max-score="0">
     <e:section-title>Formulas</e:section-title>
-    <e:question display-number="19" max-score="0">
+    <e:question display-number="20" max-score="0">
       <e:question-title>Adding formulas</e:question-title>
       <e:question-instruction>
         <p>
@@ -6310,7 +6396,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   <e:section display-number="VIII" max-score="0">
     <e:section-title>CSS styles</e:section-title>
 
-    <e:question display-number="20" max-score="0">
+    <e:question display-number="21" max-score="0">
       <e:question-title>Typography</e:question-title>
 
       <h3>Title</h3>
@@ -6533,7 +6619,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="21" max-score="0">
+    <e:question display-number="22" max-score="0">
       <e:question-title>Lists</e:question-title>
       <e:question-instruction>There are helper classes for various ordered lists.</e:question-instruction>
 
@@ -6620,7 +6706,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="22" max-score="0">
+    <e:question display-number="23" max-score="0">
       <e:question-title>Floating</e:question-title>
 
       <table class="e-table e-width-full">
@@ -6726,7 +6812,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="23" max-score="0">
+    <e:question display-number="24" max-score="0">
       <e:question-title>Illustration images</e:question-title>
       <e:question-instruction>
         For images aligned to the right there is a helper class
@@ -6781,7 +6867,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       </div>
     </e:question>
 
-    <e:question display-number="24" max-score="0">
+    <e:question display-number="25" max-score="0">
       <e:question-title>Margins and paddings</e:question-title>
       <e:question-instruction>
         <p>
@@ -6998,7 +7084,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="25" max-score="0">
+    <e:question display-number="26" max-score="0">
       <e:question-title>Tables</e:question-title>
       <e:question-instruction>
         Use classes
@@ -7301,7 +7387,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="26" max-score="0">
+    <e:question display-number="27" max-score="0">
       <e:question-title>Text columns</e:question-title>
       <e:question-instruction>
         <p>
@@ -8818,6 +8904,62 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
       </div>
     </e:question>
     <e:question display-number="13" max-score="0">
+      <e:question-title>image-overlay</e:question-title>
+      <e:question-instruction>
+        <p>
+          <code>e:image-overlay</code>
+          element can contain one or more image elements. It can be used anywhere where
+        HTML is allowed. The images are rendered on top of each other, and an input slider
+        is added for each image to allow for the adjustment of the opacity (transparency) of
+        the image. The label for each input slider is taken from the text
+        inside each
+          <code>e:image</code>
+          element. The text can be localized.
+        </p>
+        <p>Make sure that all the images have the same width
+          and height in pixels. Differently sized images will cause unwanted layout effects.
+        </p>
+      </e:question-instruction>
+
+      <table class="e-table e-width-full">
+        <caption>Element attributes</caption>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Mandatory</th>
+            <th>Default value</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>lang</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Exam language code. Use when image-overlay should be included only in a certain language version.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre class="code"><![CDATA[<e:image-overlay>
+  <e:image src="map-example-1.jpg">Topographic Map</e:image>
+  <e:image src="map-example-2.jpg">Public Transport Map</e:image>
+  <e:image src="map-example-3.jpg">Bike Lanes Map</e:image>
+</e:image-overlay>]]></pre>
+      <div class="example">
+        <e:image-overlay>
+          <e:image src="map-example-1.jpg" width="999" height="999">Topographic Map</e:image>
+          <e:image src="map-example-2.jpg" width="999" height="999">Public Transport Map</e:image>
+          <e:image src="map-example-3.jpg" width="999" height="999">Bike Lanes Map</e:image>
+        </e:image-overlay>
+        <p>Example maps © OpenStreetMap contributors</p>
+      </div>
+    </e:question>
+    <e:question display-number="14" max-score="0">
       <e:question-title>audio</e:question-title>
       <e:question-instruction>
         <code>e:audio</code>
@@ -8875,7 +9017,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
         <e:audio src="example1.webm" times="2" restricted-audio-id="0" duration="999">Optional description</e:audio>
       </div>
     </e:question>
-    <e:question display-number="14" max-score="6">
+    <e:question display-number="15" max-score="6">
       <e:question-title>audio-group</e:question-title>
       <e:question-instruction>
         <code>e:audio-group</code>
@@ -8924,18 +9066,18 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           <e:audio src="example1.webm" times="2" restricted-audio-id="1" duration="999">The whole recording</e:audio>
         </e:audio-group>
         <e:audio-group>
-          <e:question display-number="14.1" max-score="2">
+          <e:question display-number="15.1" max-score="2">
             <e:question-title>Listening comprehension choice question</e:question-title>
-            <e:choice-answer display-number="14.1" question-id="14" max-score="2">
+            <e:choice-answer display-number="15.1" question-id="14" max-score="2">
               
               
               
               
             <e:choice-answer-option option-id="33">Sit</e:choice-answer-option><e:choice-answer-option option-id="34">Lorem</e:choice-answer-option><e:choice-answer-option option-id="35">Ipsum</e:choice-answer-option><e:choice-answer-option option-id="36">Dolor</e:choice-answer-option></e:choice-answer>
           </e:question>
-          <e:question display-number="14.2" max-score="2">
+          <e:question display-number="15.2" max-score="2">
             <e:question-title>Listening comprehension choice question</e:question-title>
-            <e:choice-answer display-number="14.2" question-id="15" max-score="2">
+            <e:choice-answer display-number="15.2" question-id="15" max-score="2">
               
               
               
@@ -8945,9 +9087,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
           <e:audio src="example2.webm" times="2" restricted-audio-id="2" duration="999">The passage related to the two sub-questions immediately above.</e:audio>
         </e:audio-group>
         <e:audio-group>
-          <e:question display-number="14.3" max-score="2">
+          <e:question display-number="15.3" max-score="2">
             <e:question-title>Listening comprehension</e:question-title>
-            <e:choice-answer display-number="14.3" question-id="16" max-score="2">
+            <e:choice-answer display-number="15.3" question-id="16" max-score="2">
               
               
               
@@ -8958,7 +9100,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
         </e:audio-group>
       </div>
     </e:question>
-    <e:question display-number="15" max-score="0">
+    <e:question display-number="16" max-score="0">
       <e:question-title>video</e:question-title>
       <e:question-instruction>
         <code>e:video</code>
@@ -9010,7 +9152,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
       </div>
     </e:question>
 
-    <e:question display-number="16" max-score="0">
+    <e:question display-number="17" max-score="0">
       <e:question-title>file</e:question-title>
       <e:question-instruction>
         <code>e:file</code>
@@ -9065,7 +9207,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
   <e:section display-number="VI" max-score="0">
     <e:section-title>Links to material</e:section-title>
-    <e:question display-number="17" max-score="0">
+    <e:question display-number="18" max-score="0">
       <e:question-title>attachment-link</e:question-title>
       <e:question-instruction>
         Material on external material page can be linked to from exam page by using
@@ -9129,7 +9271,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
     </e:question>
 
-    <e:question display-number="18" max-score="0">
+    <e:question display-number="19" max-score="0">
       <e:question-title>attachment-links</e:question-title>
       <e:question-instruction>
         Use
@@ -9162,7 +9304,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
   <e:section display-number="VII" max-score="0">
     <e:section-title>Formulas</e:section-title>
-    <e:question display-number="19" max-score="0">
+    <e:question display-number="20" max-score="0">
       <e:question-title>Adding formulas</e:question-title>
       <e:question-instruction>
         <p>
@@ -9255,7 +9397,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
   <e:section display-number="VIII" max-score="0">
     <e:section-title>CSS styles</e:section-title>
 
-    <e:question display-number="20" max-score="0">
+    <e:question display-number="21" max-score="0">
       <e:question-title>Typography</e:question-title>
 
       <h3>Title</h3>
@@ -9478,7 +9620,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
     </e:question>
 
-    <e:question display-number="21" max-score="0">
+    <e:question display-number="22" max-score="0">
       <e:question-title>Lists</e:question-title>
       <e:question-instruction>There are helper classes for various ordered lists.</e:question-instruction>
 
@@ -9565,7 +9707,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
     </e:question>
 
-    <e:question display-number="22" max-score="0">
+    <e:question display-number="23" max-score="0">
       <e:question-title>Floating</e:question-title>
 
       <table class="e-table e-width-full">
@@ -9671,7 +9813,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
     </e:question>
 
-    <e:question display-number="23" max-score="0">
+    <e:question display-number="24" max-score="0">
       <e:question-title>Illustration images</e:question-title>
       <e:question-instruction>
         For images aligned to the right there is a helper class
@@ -9726,7 +9868,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
       </div>
     </e:question>
 
-    <e:question display-number="24" max-score="0">
+    <e:question display-number="25" max-score="0">
       <e:question-title>Margins and paddings</e:question-title>
       <e:question-instruction>
         <p>
@@ -9943,7 +10085,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
     </e:question>
 
-    <e:question display-number="25" max-score="0">
+    <e:question display-number="26" max-score="0">
       <e:question-title>Tables</e:question-title>
       <e:question-instruction>
         Use classes
@@ -10246,7 +10388,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
 
     </e:question>
 
-    <e:question display-number="26" max-score="0">
+    <e:question display-number="27" max-score="0">
       <e:question-title>Text columns</e:question-title>
       <e:question-instruction>
         <p>

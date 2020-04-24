@@ -41,6 +41,7 @@ import TextAnswer from './TextAnswer'
 import Video from './Video'
 import { ExamAnswer } from '../types/ExamAnswer'
 import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
+import ImageOverlay from './ImageOverlay'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -97,6 +98,7 @@ const renderChildNodes = createRenderChildNodes({
   'section-title': ExamSectionTitle,
   'text-answer': TextAnswer,
   video: Video,
+  'image-overlay': ImageOverlay,
 })
 
 export class Exam extends PureComponent<ExamProps> {

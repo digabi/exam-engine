@@ -12,7 +12,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const height = getNumericAttribute(element, 'height')!
   const caption = element.hasChildNodes() ? renderChildNodes(element) : undefined
   const imgUrl = useContext(CommonExamContext).resolveAttachment(src)
-  const Img = () => <img className="image" src={imgUrl} />
+  const Img = () => <img className="e-image" src={imgUrl} />
   return (
     <>
       <ResponsiveMediaContainer
