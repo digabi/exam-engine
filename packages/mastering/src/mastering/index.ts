@@ -1,7 +1,6 @@
 import crypto from 'crypto'
 import { readFileSync } from 'fs'
-import * as libxml from 'libxmljs2'
-import { Document, Element, Namespace, SyntaxError } from 'libxmljs2'
+import { Document, Element, Namespace, parseXml, SyntaxError } from 'libxmljs2'
 import _ from 'lodash'
 import path from 'path'
 import { toRoman } from 'roman-numerals'
@@ -33,7 +32,7 @@ import {
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
 const schemaDir = path.resolve(__dirname, '../../schema')
-const schema = libxml.parseXml(readFileSync(path.resolve(schemaDir, 'exam.xsd')).toString(), {
+const schema = parseXml(readFileSync(path.resolve(schemaDir, 'exam.xsd')).toString(), {
   baseUrl: schemaDir + '/',
 } as any) // FIXME: Missing baseUrl in the libxmljs2 typings
 
@@ -138,7 +137,7 @@ function assertExamIsValid(doc: Document): Document {
  * security purposes.
  */
 export function parseExam(xml: string, validate = false) {
-  const doc = libxml.parseXml(xml, { noent: false, nonet: true })
+  const doc = parseXml(xml, { noent: false, nonet: true })
   if (validate) {
     assertExamIsValid(doc)
   }

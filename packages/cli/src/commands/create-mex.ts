@@ -1,5 +1,4 @@
-import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
-import { createMex } from '@digabi/exam-engine-mastering'
+import { createMex, getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import { createReadStream, createWriteStream, promises as fs } from 'fs'
 import path from 'path'
 import * as uuid from 'uuid'
