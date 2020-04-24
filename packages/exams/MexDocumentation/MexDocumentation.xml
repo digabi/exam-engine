@@ -1420,6 +1420,62 @@
       </div>
     </e:question>
     <e:question>
+      <e:question-title>image-overlay</e:question-title>
+      <e:question-instruction>
+        <p>
+          <code>e:image-overlay</code>
+          element can contain one or more image elements. It can be used anywhere where
+        HTML is allowed. The images are rendered on top of each other, and an input slider
+        is added for each image to allow for the adjustment of the opacity (transparency) of
+        the image. The label for each input slider is taken from the text
+        inside each
+          <code>e:image</code>
+          element. The text can be localized.
+        </p>
+        <p>Make sure that all the images have the same width
+          and height in pixels. Differently sized images will cause unwanted layout effects.
+        </p>
+      </e:question-instruction>
+
+      <table class="e-table e-width-full">
+        <caption>Element attributes</caption>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Mandatory</th>
+            <th>Default value</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>lang</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Exam language code. Use when image-overlay should be included only in a certain language version.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre class="code"><![CDATA[<e:image-overlay>
+  <e:image src="map-example-1.jpg">Topographic Map</e:image>
+  <e:image src="map-example-2.jpg">Public Transport Map</e:image>
+  <e:image src="map-example-3.jpg">Bike Lanes Map</e:image>
+</e:image-overlay>]]></pre>
+      <div class="example">
+        <e:image-overlay>
+          <e:image src="map-example-1.jpg">Topographic Map</e:image>
+          <e:image src="map-example-2.jpg">Public Transport Map</e:image>
+          <e:image src="map-example-3.jpg">Bike Lanes Map</e:image>
+        </e:image-overlay>
+        <p>Example maps © OpenStreetMap contributors</p>
+      </div>
+    </e:question>
+    <e:question>
       <e:question-title>audio</e:question-title>
       <e:question-instruction>
         <code>e:audio</code>

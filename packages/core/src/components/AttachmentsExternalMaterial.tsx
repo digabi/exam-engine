@@ -13,6 +13,7 @@ import Image from './Image'
 import Reference from './Reference'
 import surround from './surround'
 import Video from './Video'
+import ImageOverlay from './ImageOverlay'
 
 const renderChildNodes = createRenderChildNodes({
   'attachment-link': AttachmentLink,
@@ -25,6 +26,7 @@ const renderChildNodes = createRenderChildNodes({
   video: Video,
   formula: Formula,
   reference: surround(Reference, 'figcaption', { className: 'e-color-darkgrey e-mrg-y-2 e-font-size-s e-light' }),
+  'image-overlay': ImageOverlay,
 })
 
 interface AttachmentsExternalMaterialProps extends ExamComponentProps {

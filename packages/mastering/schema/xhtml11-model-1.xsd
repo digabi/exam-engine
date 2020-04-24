@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xh11d="http://www.w3.org/1999/xhtml/datatypes/" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" 
+    xmlns:xh11d="http://www.w3.org/1999/xhtml/datatypes/" elementFormDefault="qualified">
     <xs:import namespace="http://www.w3.org/1999/xhtml/datatypes/" schemaLocation="xhtml-datatypes-1.xsd" />
     <xs:import namespace="http://ylioppilastutkinto.fi/exam.xsd" schemaLocation="exam.xsd" />
     <xs:annotation>
@@ -82,6 +84,7 @@
             <xs:group ref="e:Answer.class" />
             <xs:element ref="e:attachment" />
             <xs:element ref="e:image" />
+            <xs:element ref="e:image-overlay" />
             <xs:element ref="e:video" />
             <xs:element ref="e:audio" />
             <xs:element ref="e:audio-group" />
