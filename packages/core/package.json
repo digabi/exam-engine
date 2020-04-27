@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "10.1.10",
+  "version": "11.0.0-refactor-types.0",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
