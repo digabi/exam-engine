@@ -2,13 +2,14 @@ import * as _ from 'lodash-es'
 import { applyMiddleware, combineReducers, compose, createStore, Store } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../components/types'
 import answersReducer from './answers/reducer'
 import answersSaga from './answers/sagas'
 import audioReducer from './audio/reducer'
 import audioSaga from './audio/sagas'
 import casReducer from './cas/reducer'
 import casSaga from './cas/sagas'
+import { ExamAnswer } from '../types/ExamAnswer'
+import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
 
 const rootReducer = combineReducers({
   answers: answersReducer,

@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { createRenderChildNodes } from '../../createRenderChildNodes'
+import { createRenderChildNodes, ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import ExamAttachment from '../ExamAttachment'
 import Image from '../Image'
-import { ExamComponentProps, QuestionId } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
+import { QuestionId } from '../../types/ExamAnswer'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId

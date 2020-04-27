@@ -2,7 +2,7 @@ import React from 'react'
 import { findChildElement } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
 import TextAnswerInput from './TextAnswerInput'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function TextAnswer(props: ExamComponentProps) {
   const { element, renderChildNodes } = props

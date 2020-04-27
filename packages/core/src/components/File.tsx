@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { CommonExamContext } from './CommonExamContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function File({ element, className, renderChildNodes }: ExamComponentProps) {
   const src = element.getAttribute('src')!

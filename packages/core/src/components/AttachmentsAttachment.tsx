@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AttachmentContext, withAttachmentContext } from './AttachmentContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function AttachmentsAttachment({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, isExternal } = useContext(AttachmentContext)

@@ -4,7 +4,7 @@ import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
 import NotificationIcon from './NotificationIcon'
 import { SectionContext } from './SectionContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function ExamSectionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { numberOfSections } = useContext(CommonExamContext)

@@ -1,11 +1,12 @@
+import { GradingStructure } from '@digabi/exam-engine-core'
 import crypto from 'crypto'
 import { readFileSync } from 'fs'
-import { Document, Element, Namespace, parseXml, SyntaxError } from 'libxmljs2'
+import { Document, Element, parseXml, SyntaxError } from 'libxmljs2'
 import _ from 'lodash'
 import path from 'path'
 import { toRoman } from 'roman-numerals'
 import { initI18n } from '../i18n'
-import { createGradingStructure, GradingStructure } from './createGradingStructure'
+import { createGradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import { createTranslationFile } from './createTranslationFile'
 import {
@@ -34,7 +35,7 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 const schemaDir = path.resolve(__dirname, '../../schema')
 const schema = parseXml(readFileSync(path.resolve(schemaDir, 'exam.xsd')).toString(), {
   baseUrl: schemaDir + '/',
-} as any) // FIXME: Missing baseUrl in the libxmljs2 typings
+})
 
 interface VideoMetadata {
   width: number
@@ -315,7 +316,7 @@ function addYoCustomizations(exam: Element, language: string) {
     const title = i18n.t(key, { ns: 'exam-title' })
     if (title) {
       const firstChild = exam.child(0) as Element
-      firstChild.addPrevSibling(exam.node('exam-title', title).namespace((ns.e as any) as Namespace)) // TODO: Remove cast when libxmljs2 typings are fixed.
+      firstChild.addPrevSibling(exam.node('exam-title', title).namespace(ns.e)) // TODO: Remove cast when libxmljs2 typings are fixed.
     } else {
       throw new Error(`No exam title defined for ${examCode}`)
     }
@@ -326,7 +327,7 @@ function addYoCustomizations(exam: Element, language: string) {
     const footerText = i18n.t([key, 'default'], { ns: 'exam-footer' })
     exam
       .node('exam-footer')
-      .namespace((ns.e as any) as Namespace) // TODO: Remove cast when libxmljs2 typings are fixed
+      .namespace(ns.e) // TODO: Remove cast when libxmljs2 typings are fixed
       .node('p', footerText)
       .attr('class', 'e-text-center e-semibold')
   }
@@ -566,7 +567,7 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
 function mkError(message: string, element: Element): SyntaxError {
   const err = (new Error(message) as any) as SyntaxError
   err.domain = 999
-  err.line = (element as any).line() // FIXME: libxmljs2 typings don't define `element.line()` right now.
+  err.line = element.line() // FIXME: libxmljs2 typings don't define `element.line()` right now.
   err.column = 0
   return err
 }

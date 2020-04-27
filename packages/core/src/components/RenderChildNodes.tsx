@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function RenderChildNodes({ element, renderChildNodes }: ExamComponentProps) {
   return <>{renderChildNodes(element)}</>

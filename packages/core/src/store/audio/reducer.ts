@@ -1,7 +1,7 @@
 import * as _ from 'lodash-es'
 import { ActionType } from 'typesafe-actions'
-import { AudioPlaybackError, RestrictedAudioId } from '../../components/types'
 import * as actions from './actions'
+import { AudioPlaybackError, RestrictedAudioId } from '../../types/ExamServerAPI'
 
 type AudioAction = ActionType<typeof actions>
 

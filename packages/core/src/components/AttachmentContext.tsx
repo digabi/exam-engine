@@ -1,7 +1,7 @@
 import React from 'react'
 import { queryAncestors } from '../dom-utils'
-import { ExamComponentProps } from './types'
 import { withContext } from './withContext'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 export type AttachmentContext =
   | { name: string | null; isExternal: false; displayNumber: null }

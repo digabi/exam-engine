@@ -1,7 +1,7 @@
 import React from 'react'
 import { findChildElement, getNumericAttribute, parentElements, queryAll } from '../dom-utils'
-import { ExamComponentProps } from './types'
 import { withContext } from './withContext'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 export interface QuestionContext {
   answers: Element[]

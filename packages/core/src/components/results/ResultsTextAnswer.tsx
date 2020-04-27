@@ -5,11 +5,12 @@ import { getNumericAttribute } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { QuestionContext } from '../QuestionContext'
-import { ExamComponentProps, TextAnswer } from '../types'
 import { getAnnotationAttributes } from './helpers'
 import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionManualScore from './ResultsExamQuestionManualScore'
 import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
+import { ExamComponentProps } from '../../createRenderChildNodes'
+import { TextAnswer } from '../../types/ExamAnswer'
 
 function ResultsTextAnswer({ element }: ExamComponentProps) {
   const { answers } = useContext(QuestionContext)

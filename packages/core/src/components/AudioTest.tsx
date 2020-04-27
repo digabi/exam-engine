@@ -7,7 +7,7 @@ import { getNumericAttribute, NBSP } from '../dom-utils'
 import { playAudio } from '../store/audio/actions'
 import { getAudioPlaybackError, getAudioState } from '../store/selectors'
 import AudioPlaybackError from './AudioPlaybackError'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function AudioTest({ element }: ExamComponentProps) {
   const src = element.getAttribute('src')!

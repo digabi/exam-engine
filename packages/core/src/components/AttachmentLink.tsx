@@ -4,7 +4,7 @@ import { query } from '../dom-utils'
 import { url } from '../url'
 import AttachmentLinkAnchor from './AttachmentLinkAnchor'
 import { CommonExamContext } from './CommonExamContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function AttachmentLink({ element }: ExamComponentProps) {
   const name = element.getAttribute('ref')!

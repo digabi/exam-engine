@@ -4,7 +4,7 @@ import AnsweringInstructions from './AnsweringInstructions'
 import NotificationIcon from './NotificationIcon'
 import { QuestionContext } from './QuestionContext'
 import { Score } from './Score'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function ExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)

@@ -12,7 +12,8 @@ import { AppState } from '../store'
 import * as actions from '../store/answers/actions'
 import { QuestionContext } from './QuestionContext'
 import { Score } from './Score'
-import { ChoiceAnswer as ChoiceAnswerT, ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
+import { ChoiceAnswer as ChoiceAnswerT } from '../types/ExamAnswer'
 
 interface DropdownAnswerProps extends ExamComponentProps {
   saveAnswer: typeof actions.saveAnswer

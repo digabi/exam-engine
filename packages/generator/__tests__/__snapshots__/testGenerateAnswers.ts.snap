@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateAnswers() creates an answer for each choice question in grading structure 1`] = `
+Array [
+  Object {
+    "questionId": 2,
+    "type": "choice",
+    "value": "3",
+  },
+  Object {
+    "questionId": 6,
+    "type": "choice",
+    "value": "8",
+  },
+  Object {
+    "questionId": 10,
+    "type": "choice",
+    "value": "13",
+  },
+]
+`;
+
+exports[`generateAnswers() creates an answer for each text question in grading structure 1`] = `
+Array [
+  Object {
+    "characterCount": 17,
+    "questionId": 1,
+    "type": "text",
+    "value": "Answer to question 1",
+  },
+  Object {
+    "characterCount": 17,
+    "questionId": 2,
+    "type": "text",
+    "value": "Answer to question 2",
+  },
+]
+`;

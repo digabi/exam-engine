@@ -3,51 +3,14 @@ import _ from 'lodash'
 import { GenerateId } from '.'
 import { Answer, choiceAnswerOptionTypes, Exam, ns, Question } from './schema'
 import { getAttribute, getNumericAttribute, xpathOr } from './utils'
-
-export interface GradingStructure {
-  questions: GradingStructureQuestion[]
-}
-
-type GradingStructureQuestion = TextQuestion | ChoiceGroupQuestion
-
-export interface TextQuestion {
-  type: 'text'
-  id: number
-  displayNumber: string
-  maxScore: number
-  /**
-   * A tentative list of answers that will be accepted. Usually this is not the
-   * final list, since additional answers will be accepted during grading.
-   *
-   * If omitted, the question will be graded manually.
-   */
-  correctAnswers?: CorrectAnswer[]
-}
-
-export interface CorrectAnswer {
-  text: string
-  score: number
-}
-
-export interface ChoiceGroupQuestion {
-  type: 'choicegroup'
-  id: number
-  displayNumber: string
-  choices: ChoiceGroupChoice[]
-}
-
-export interface ChoiceGroupChoice {
-  id: number
-  displayNumber: string
-  type: 'choice'
-  options: ChoiceGroupOption[]
-}
-
-interface ChoiceGroupOption {
-  id: number
-  correct: boolean
-  score: number
-}
+import {
+  ChoiceGroupChoice,
+  ChoiceGroupOption,
+  ChoiceGroupQuestion,
+  GradingStructure,
+  GradingStructureQuestion,
+  TextQuestion,
+} from '@digabi/exam-engine-core'
 
 export function createGradingStructure(exam: Exam, generateId: GenerateId): GradingStructure {
   const questions = _.chain(exam.topLevelQuestions)

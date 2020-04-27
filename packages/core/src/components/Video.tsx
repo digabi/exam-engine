@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { getNumericAttribute } from '../dom-utils'
 import { CommonExamContext } from './CommonExamContext'
 import ResponsiveMediaContainer from './ResponsiveMediaContainer'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function Video({ element, className }: ExamComponentProps) {
   const src = element.getAttribute('src')!

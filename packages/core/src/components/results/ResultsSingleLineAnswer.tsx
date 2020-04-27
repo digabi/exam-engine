@@ -1,6 +1,6 @@
 import React from 'react'
-import { Score } from '../types'
 import { getAnnotationAttributes } from './helpers'
+import { Score } from '../../types/Score'
 
 function ResultsSingleLineAnswer({
   answers,

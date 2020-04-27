@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { findChildElement, NBSP } from '../dom-utils'
 import { CommonExamContext } from './CommonExamContext'
 import RenderChildNodes from './RenderChildNodes'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function Reference({ element, renderChildNodes }: ExamComponentProps) {
   const { t } = useTranslation()

@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
-import { createRenderChildNodes } from '../createRenderChildNodes'
+import { createRenderChildNodes, ExamComponentProps } from '../createRenderChildNodes'
 import { queryAll, queryAncestors } from '../dom-utils'
 import { CommonExamContext } from './CommonExamContext'
 import Reference from './Reference'
 import Section from './Section'
-import { ExamComponentProps } from './types'
 
 const renderChildNodes = createRenderChildNodes({})
 function References(_props: ExamComponentProps) {

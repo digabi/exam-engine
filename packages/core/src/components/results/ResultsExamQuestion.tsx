@@ -2,9 +2,10 @@ import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { findChildrenAnswers, getNumericAttribute } from '../../dom-utils'
 import { QuestionContext, withQuestionContext } from '../QuestionContext'
-import { ExamAnswer, ExamComponentProps } from '../types'
 import AnnotationList from './AnnotationList'
 import { ResultsContext } from './ResultsContext'
+import { ExamComponentProps } from '../../createRenderChildNodes'
+import { ExamAnswer } from '../../types/ExamAnswer'
 
 function ResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const { answersByQuestionId } = useContext(ResultsContext)

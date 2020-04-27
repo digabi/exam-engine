@@ -1,67 +1,6 @@
-import { RenderChildNodes } from '../createRenderChildNodes'
-import { Translations } from '../i18n/fi-FI'
-
-export type QuestionId = number
-export type AnswerId = number
-
-interface AnswerCommon {
-  questionId: QuestionId
-  value: string
-  /** This field is undefined in older exams that were packaged before this change. */
-  displayNumber?: string
-}
-export interface TextAnswer extends AnswerCommon {
-  type: 'text'
-  characterCount: number
-}
-export interface RichTextAnswer extends AnswerCommon {
-  type: 'richText'
-  characterCount: number
-}
-export interface ChoiceAnswer extends AnswerCommon {
-  type: 'choice'
-}
-export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
+import { ExamAnswer, QuestionId } from './ExamAnswer'
 
 export type SaveState = 'initial' | 'saving' | 'saved'
-
-export interface Score {
-  questionId: QuestionId
-  answerId: AnswerId
-  pregrading?: PregradingScore
-  censoring?: CensoringScore
-  inspection?: InspectionScore
-  autograding?: AutogradedScore
-}
-
-export interface AutogradedScore {
-  score: number
-}
-
-export interface PregradingScore {
-  score?: number
-  comment?: string
-  annotations?: Annotation[]
-}
-
-export interface CensoringScore {
-  scores: Array<{ score: number; shortCode: string }>
-  annotations?: Annotation[]
-  nonAnswerDetails?: { shortCode?: string }
-  comment?: string
-}
-
-export interface InspectionScore {
-  score: number
-  shortCodes: [string, string] | [string, string, string]
-}
-
-export interface Annotation {
-  startIndex: number
-  length: number
-  message: string
-}
-
 /**
  * CAS status is a state machine with three states.
  *
@@ -93,14 +32,6 @@ export interface RestrictedAudioPlaybackStats {
   restrictedAudioId: RestrictedAudioId
   /** Number of times it has been listened to. */
   times: number
-}
-
-export interface ExamComponentProps {
-  className?: string
-  /** An element in the exam XML. */
-  element: Element
-  /** A function that knows how to render the child nodes of this element. */
-  renderChildNodes: RenderChildNodes
 }
 
 export interface ExamServerAPI {
@@ -135,9 +66,4 @@ export interface ExamServerAPI {
   selectAnswerVersion?: (questionId: QuestionId, questionTitle: string) => Promise<ExamAnswer | undefined>
   /** Save screenshot to server. Should return the URL to the saved screenshot. */
   saveScreenshot: (questionId: QuestionId, screenshot: Blob) => Promise<string>
-}
-
-export interface AnswerError {
-  key: keyof Translations['answer-errors']
-  options?: object
 }

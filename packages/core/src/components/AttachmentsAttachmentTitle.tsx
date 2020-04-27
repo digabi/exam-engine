@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { NBSP } from '../dom-utils'
 import { AttachmentContext } from './AttachmentContext'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function AttachmentsAttachmentTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber } = useContext(AttachmentContext)

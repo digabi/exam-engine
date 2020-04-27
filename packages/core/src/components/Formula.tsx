@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import { ExamComponentProps } from './types'
+import { ExamComponentProps } from '../createRenderChildNodes'
 
 function Formula({ element, className }: ExamComponentProps) {
   const svg = element.getAttribute('svg')!

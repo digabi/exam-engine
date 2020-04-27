@@ -4,9 +4,10 @@ import React, { useContext } from 'react'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { QuestionContext } from '../QuestionContext'
-import { ChoiceAnswer, ExamComponentProps } from '../types'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
+import { ExamComponentProps } from '../../createRenderChildNodes'
+import { ChoiceAnswer } from '../../types/ExamAnswer'
 
 function ResultsDropdownAnswer({ element }: ExamComponentProps) {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)

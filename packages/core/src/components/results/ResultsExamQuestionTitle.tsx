@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import AnsweringInstructions from '../AnsweringInstructions'
 import NotificationIcon from '../NotificationIcon'
 import { QuestionContext } from '../QuestionContext'
-import { ExamComponentProps } from '../types'
+import { ExamComponentProps } from '../../createRenderChildNodes'
 
 function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level, maxAnswers, childQuestions } = useContext(QuestionContext)
