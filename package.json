@@ -92,7 +92,7 @@
     "typesafe-actions": "^5.1.0",
     "typescript": "^3.7.3",
     "utility-types": "^3.10.0",
-    "uuid": "^7.0.2",
+    "uuid": "^8.0.0",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
   },
