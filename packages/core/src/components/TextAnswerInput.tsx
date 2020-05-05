@@ -1,16 +1,16 @@
 import classNames from 'classnames'
 import React from 'react'
 import { connect } from 'react-redux'
+import { ExamComponentProps } from '../createRenderChildNodes'
 import { getNumericAttribute } from '../dom-utils'
 import { AppState } from '../store'
 import * as actions from '../store/answers/actions'
+import { RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../types/ExamAnswer'
 import AnswerToolbar from './AnswerToolbar'
 import { ExamContext } from './ExamContext'
 import { QuestionContext } from './QuestionContext'
 import RichTextAnswer, { AnswerError } from './RichTextAnswer'
 import { Score } from './Score'
-import { ExamComponentProps } from '../createRenderChildNodes'
-import { RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../types/ExamAnswer'
 
 interface Props extends ExamComponentProps {
   answer?: TextAnswerT | RichTextAnswerT
@@ -55,7 +55,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
     const { element, saveAnswer } = this.props
     const questionId = getNumericAttribute(element, 'question-id')!
     const displayNumber = element.getAttribute('display-number')!
-    const value = event.currentTarget.value
+    const value = event.currentTarget.value.trim()
     const answer: TextAnswerT = {
       type: 'text',
       questionId,
@@ -166,7 +166,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
           <>
             <textarea
               className={classNames('text-answer text-answer--multi-line', className)}
-              value={value}
+              defaultValue={value}
               onChange={this.onChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
@@ -191,7 +191,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
             <input
               type="text"
               className={classNames('text-answer text-answer--single-line', className)}
-              value={value}
+              defaultValue={value}
               onChange={this.onChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
