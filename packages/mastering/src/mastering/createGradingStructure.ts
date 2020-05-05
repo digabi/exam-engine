@@ -1,8 +1,3 @@
-import { Element } from 'libxmljs2'
-import _ from 'lodash'
-import { GenerateId } from '.'
-import { Answer, choiceAnswerOptionTypes, Exam, ns, Question } from './schema'
-import { getAttribute, getNumericAttribute, xpathOr } from './utils'
 import {
   ChoiceGroupChoice,
   ChoiceGroupOption,
@@ -11,6 +6,11 @@ import {
   GradingStructureQuestion,
   TextQuestion,
 } from '@digabi/exam-engine-core'
+import { Element } from 'libxmljs2'
+import _ from 'lodash'
+import { GenerateId } from '.'
+import { Answer, choiceAnswerOptionTypes, Exam, ns, Question } from './schema'
+import { getAttribute, getNumericAttribute, xpathOr } from './utils'
 
 export function createGradingStructure(exam: Exam, generateId: GenerateId): GradingStructure {
   const questions = _.chain(exam.topLevelQuestions)
@@ -18,17 +18,15 @@ export function createGradingStructure(exam: Exam, generateId: GenerateId): Grad
       const questionAnswers = collectAnswers(question)
       const questionDisplayNumber = getAttribute('display-number', question.element)
       return _.chain(questionAnswers)
-        .groupBy((answer) => answer.element.name())
-        .flatMap((answers, answerType): GradingStructureQuestion[] => {
-          switch (answerType) {
-            case 'text-answer':
-            case 'scored-text-answer':
-              return answers.map((a) => mkTextQuestion(a.element, answerType))
-            case 'choice-answer':
-            case 'dropdown-answer':
+        .groupBy(getQuestionType)
+        .flatMap((answers, questionType): GradingStructureQuestion[] => {
+          switch (questionType) {
+            case 'text':
+              return answers.map(mkTextQuestion)
+            case 'choice':
               return [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
             default:
-              throw new Error(`Bug: grading structure generation not implemented for ${answerType}`)
+              throw new Error(`Bug: grading structure generation not implemented for ${questionType}`)
           }
         })
         .value()
@@ -43,10 +41,26 @@ function collectAnswers(question: Question): Answer[] {
   return question.childQuestions.length ? _.flatMap(question.childQuestions, collectAnswers) : question.answers
 }
 
-function mkTextQuestion(answer: Element, type: 'text-answer' | 'scored-text-answer'): TextQuestion {
-  const id = getNumericAttribute('question-id', answer)
-  const displayNumber = getAttribute('display-number', answer)
-  const maxScore = getNumericAttribute('max-score', answer)
+function getQuestionType(answer: Answer): 'text' | 'choice' {
+  const answerType = answer.element.name()
+
+  switch (answerType) {
+    case 'text-answer':
+    case 'scored-text-answer':
+      return 'text'
+    case 'choice-answer':
+    case 'dropdown-answer':
+      return 'choice'
+    default:
+      throw new Error(`getQuestionType not implemented for ${answerType}`)
+  }
+}
+
+function mkTextQuestion(answer: Answer): TextQuestion {
+  const type = answer.element.name()
+  const id = getNumericAttribute('question-id', answer.element)
+  const displayNumber = getAttribute('display-number', answer.element)
+  const maxScore = getNumericAttribute('max-score', answer.element)
 
   const question = {
     id,
@@ -58,7 +72,7 @@ function mkTextQuestion(answer: Element, type: 'text-answer' | 'scored-text-answ
   if (type === 'text-answer') {
     return question
   } else {
-    const correctAnswers = answer
+    const correctAnswers = answer.element
       .find<Element>('./e:accepted-answer', ns)
       .map((e) => ({ text: e.text(), score: getNumericAttribute('score', e) }))
     return { ...question, correctAnswers }
