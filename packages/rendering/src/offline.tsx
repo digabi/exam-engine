@@ -32,5 +32,5 @@ render(
       restrictedAudioPlaybackStats: [],
     }}
   />,
-  document.body
+  document.getElementById('app')
 )
