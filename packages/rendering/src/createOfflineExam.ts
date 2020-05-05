@@ -123,7 +123,7 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[]) {
             .filter((e) => !e.textContent!.includes('NotoSans'))
             .forEach((e) => e.remove())
           // Remove rich-text-editor injected HTML.
-          document.body.querySelectorAll(':scope > :not(main)').forEach((e) => e.remove())
+          document.body.querySelectorAll(':scope > :not(#app)').forEach((e) => e.remove())
         })
         const prerenderedContent = await page.content()
         await fs.writeFile(htmlFile, prerenderedContent, 'utf-8')
