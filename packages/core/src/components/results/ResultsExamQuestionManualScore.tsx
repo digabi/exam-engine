@@ -33,7 +33,7 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
 
 function renderNormalizedScores(scores: Score, maxScore?: number) {
   const normalizedScores = [
-    scores.inspection && normalizeInspectionScore(scores.inspection),
+    scores.inspection && scores.inspection.score != null && normalizeInspectionScore(scores.inspection),
     ...(scores.censoring ? normalizeCensoringScores(scores.censoring) : []),
     scores.pregrading && normalizePregradingScore(scores.pregrading),
   ].filter(Boolean) as NormalizedScore[]
@@ -110,8 +110,14 @@ function normalizeCensoringScores(score: CensoringScore): NormalizedScore[] {
   }))
 }
 
-function normalizeInspectionScore(score: InspectionScore): NormalizedScore {
-  return { score: score.score, shortCode: score.shortCodes ? score.shortCodes.join(', ') : '', type: 'ta' }
+function normalizeInspectionScore(score: InspectionScore): NormalizedScore | null {
+  return score.score != null
+    ? {
+        score: score.score,
+        shortCode: score.shortCodes ? score.shortCodes.join(', ') : '',
+        type: 'ta',
+      }
+    : null
 }
 
 export default React.memo(ResultsExamQuestionManualScore)
