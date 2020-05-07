@@ -67,7 +67,7 @@
     "jquery": "^3.4.1",
     "lerna": "^3.19.0",
     "less": "^3.10.3",
-    "less-loader": "^5.0.0",
+    "less-loader": "^6.0.0",
     "less-plugin-glob": "^3.0.0",
     "libxmljs2": "^0.25.3",
     "lodash-es": "^4.17.15",
