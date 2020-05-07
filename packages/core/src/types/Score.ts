@@ -29,8 +29,8 @@ export interface CensoringScore {
 }
 
 export interface InspectionScore {
-  score: number
-  shortCodes: [string, string] | [string, string, string]
+  score: number | null
+  shortCodes: [string, string] | [string, string, string] | null
 }
 
 export interface Annotation {
