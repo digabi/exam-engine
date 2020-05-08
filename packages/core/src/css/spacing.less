@@ -1,4 +1,4 @@
-@baselineGridUnit: .5rem;
+@baselineGridUnit: 0.5rem;
 .e-exam {
   each(range(0,8), {
     .e-pad-@{value} {
@@ -53,5 +53,5 @@
       margin-top: (@value * @baselineGridUnit);
       margin-bottom: (@value * @baselineGridUnit);
     }
-  })
+  });
 }
