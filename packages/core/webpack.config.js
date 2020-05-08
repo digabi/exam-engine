@@ -4,15 +4,15 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 // Try to keep the bundle size under this threshold. Really, it should be much
 // smaller than that.
-const maxJsSize = 1024 * 1024
-const maxCssSize = 50 * 1024
+const maxJsSize = 970 * 1000
+const maxCssSize = 50 * 1000
 
-module.exports = function() {
+module.exports = function () {
   const plugins = [
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: '[name].css',
     }),
-    new OptimizeCssAssetsPlugin()
+    new OptimizeCssAssetsPlugin(),
   ]
 
   return {
@@ -22,7 +22,7 @@ module.exports = function() {
       filename: 'main-bundle.js',
       library: 'ExamBundle',
       libraryTarget: 'umd',
-      globalObject: 'this'
+      globalObject: 'this',
     },
     plugins,
     module: {
@@ -38,19 +38,19 @@ module.exports = function() {
               options: {
                 sourceMap: true,
                 plugins: [require('less-plugin-glob')],
-                paths: [path.resolve(__dirname, 'src')]
-              }
-            }
-          ]
+                paths: [path.resolve(__dirname, 'src')],
+              },
+            },
+          ],
         },
         {
           test: /\.(woff|woff2|otf|ttf|eot|svg|png|gif|jpg)$/,
           loader: 'file-loader',
           options: {
-            name: 'assets/[name].[ext]'
-          }
-        }
-      ]
+            name: 'assets/[name].[ext]',
+          },
+        },
+      ],
     },
     stats: 'errors-warnings',
     externals: {
@@ -58,13 +58,13 @@ module.exports = function() {
         root: 'React',
         commonjs2: 'react',
         commonjs: 'react',
-        amd: 'react'
-      }
+        amd: 'react',
+      },
     },
     performance: {
       maxAssetSize: maxJsSize,
       maxEntrypointSize: maxJsSize + maxCssSize,
-      hints: 'error'
-    }
+      hints: 'error',
+    },
   }
 }
