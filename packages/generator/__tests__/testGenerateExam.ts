@@ -1,4 +1,6 @@
 import {
+  choiceAnswer,
+  dropdownAnswer,
   GenerateAcceptedAnswer,
   GenerateChoiceAnswerOption,
   GenerateChoiceAnswerOptions,
@@ -9,6 +11,8 @@ import {
   GenerateScoredTextAnswerOptions,
   GenerateSectionOptions,
   GenerateTextAnswerOptions,
+  scoredTextAnswer,
+  textAnswer,
 } from '@digabi/exam-engine-generator'
 import { ns, parseExam } from '@digabi/exam-engine-mastering'
 import { formatISO } from 'date-fns'
@@ -18,7 +22,7 @@ import { Element } from 'libxmljs2'
 
 describe('generateExam()', () => {
   it('creates a basic exam when called with minimal arguments', () => {
-    const exam = generateAndParseExam([[]])
+    const exam = generateAndParseExam({ sections: [{ questions: [] }] })
     expect(wrap(exam.toString(false))).toMatchSnapshot()
   })
 
@@ -28,7 +32,7 @@ describe('generateExam()', () => {
     const date = '2020-03-01'
     const maxAnswers = 5
 
-    const exam = generateAndParseExam({ examCode, dayCode, date, maxAnswers, sections: [[]] })
+    const exam = generateAndParseExam({ examCode, dayCode, date, maxAnswers, sections: [{ questions: [] }] })
     const root = exam.root()!
 
     expect(getAttr(root, 'exam-code')).toEqual(examCode)
@@ -38,7 +42,7 @@ describe('generateExam()', () => {
   })
 
   it('creates a section for each entry in the sections array', () => {
-    const exam = generateAndParseExam([[], []])
+    const exam = generateAndParseExam({ sections: [{ questions: [] }, { questions: [] }] })
     expect(exam.find('//e:section', ns)).toHaveLength(2)
   })
 
@@ -46,7 +50,7 @@ describe('generateExam()', () => {
     const maxAnswers = 5
     const casForbidden = true
 
-    const exam = generateAndParseExam([{ maxAnswers, casForbidden, questions: [] }])
+    const exam = generateAndParseExam({ sections: [{ maxAnswers, casForbidden, questions: [] }] })
     const section = exam.get<Element>('//e:section', ns)!
 
     expect(getAttr(section, 'max-answers')).toEqual(String(maxAnswers))
@@ -54,20 +58,20 @@ describe('generateExam()', () => {
   })
 
   it('creates a question for each entry in the questions array', () => {
-    const exam = generateAndParseExam([[['text-answer'], ['text-answer']]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[textAnswer()], [textAnswer()]] }] })
 
     expect(exam.find('//e:section/e:question', ns)).toHaveLength(2)
     expect(exam.find('//e:section/e:question/e:text-answer', ns)).toHaveLength(2)
   })
 
   it('supports subquestions', () => {
-    const exam = generateAndParseExam([[[['text-answer', 'text-answer']]]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[[textAnswer(), textAnswer()]]] }] })
 
     expect(exam.find('//e:question/e:question[1]/e:text-answer', ns)).toHaveLength(2)
   })
 
   it('supports creating a text-answer with the default attributes', () => {
-    const exam = generateAndParseExam([[['text-answer']]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[textAnswer()]] }] })
     const answer = exam.get<Element>('//e:text-answer', ns)!
 
     expect(getAttr(answer, 'max-score')).toEqual('6')
@@ -77,7 +81,7 @@ describe('generateExam()', () => {
     const maxScore = 10
     const hint = 'Foo'
 
-    const exam = generateAndParseExam([[[{ name: 'text-answer', maxScore, hint }]]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[textAnswer({ maxScore, hint })]] }] })
     const answer = exam.get<Element>('//e:section/e:question/e:text-answer', ns)!
 
     expect(getAttr(answer, 'max-score')).toEqual(String(maxScore))
@@ -85,7 +89,7 @@ describe('generateExam()', () => {
   })
 
   it('supports creating a scored-text-answer with the default attributes', () => {
-    const exam = generateAndParseExam([[['scored-text-answer']]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[scoredTextAnswer()]] }] })
     const acceptedAnswer = exam.get<Element>('//e:section/e:question/e:scored-text-answer/e:accepted-answer', ns)!
 
     expect(acceptedAnswer.text()).toEqual('Oikea vaihtoehto')
@@ -100,7 +104,9 @@ describe('generateExam()', () => {
       { text: 'Baz', score: 2 },
     ]
 
-    const exam = generateAndParseExam([[[{ name: 'scored-text-answer', maxScore, hint, acceptedAnswers }]]])
+    const exam = generateAndParseExam({
+      sections: [{ questions: [[scoredTextAnswer({ maxScore, hint, acceptedAnswers })]] }],
+    })
 
     const answer = exam.get<Element>('//e:section/e:question/e:scored-text-answer', ns)!
 
@@ -114,7 +120,7 @@ describe('generateExam()', () => {
   })
 
   it('supports creating a choice-answer with the default attributes', () => {
-    const exam = generateAndParseExam([[['choice-answer']]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[choiceAnswer()]] }] })
     const options = exam
       .find<Element>('//e:section/e:question/e:choice-answer/e:choice-answer-option', ns)
       .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
@@ -132,7 +138,7 @@ describe('generateExam()', () => {
       { text: 'Baz', score: 2 },
     ]
 
-    const exam = generateAndParseExam([[[{ name: 'choice-answer', options: expected }]]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[choiceAnswer({ options: expected })]] }] })
     const options = exam
       .find<Element>('//e:section/e:question/e:choice-answer/e:choice-answer-option', ns)
       .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
@@ -141,7 +147,7 @@ describe('generateExam()', () => {
   })
 
   it('supports creating a dropdown-answer with the default attributes', () => {
-    const exam = generateAndParseExam([[['dropdown-answer']]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[dropdownAnswer()]] }] })
     const options = exam
       .find<Element>('//e:section/e:question/e:dropdown-answer/e:dropdown-answer-option', ns)
       .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
@@ -159,7 +165,7 @@ describe('generateExam()', () => {
       { text: 'Bar', score: 2 },
     ]
 
-    const exam = generateAndParseExam([[[{ name: 'dropdown-answer', options: expected }]]])
+    const exam = generateAndParseExam({ sections: [{ questions: [[dropdownAnswer({ options: expected })]] }] })
     const options = exam
       .find<Element>('//e:section/e:question/e:dropdown-answer/e:dropdown-answer-option', ns)
       .map((e) => ({ text: e.text(), score: Number(getAttr(e, 'score')) }))
@@ -217,33 +223,27 @@ describe('generateExam()', () => {
       options,
     })
     const answer: fc.Arbitrary<GenerateQuestionOptions> = fc.oneof(
-      fc.constant('text-answer' as const),
       textAnswer,
-      fc.constant('scored-text-answer' as const),
       scoredTextAnswer,
-      fc.constant('choice-answer' as const),
       choiceAnswer,
-      fc.constant('dropdown-answer' as const),
       dropdownAnswer
     )
     const question = fc.array(answer, 1, 10)
     const questions = fc.array(question, 1, 10)
-    const section: fc.Arbitrary<GenerateSectionOptions> = fc.oneof(
+    const section: fc.Arbitrary<GenerateSectionOptions> = fc.record({
+      maxAnswers: optional(maxAnswers),
+      casForbidden: optional(fc.boolean()),
       questions,
-      fc.record({ maxAnswers: optional(maxAnswers), casForbidden: optional(fc.boolean()), questions })
-    )
+    })
     const sections = fc.array(section, 1, 3)
-    const exam: fc.Arbitrary<GenerateExamOptions> = fc.oneof(
+    const exam: fc.Arbitrary<GenerateExamOptions> = fc.record({
+      date: optional(fc.date().map((d) => formatISO(d, { representation: 'date' }))),
+      examCode: optional(fc.constantFrom('EA', 'M', 'N')),
+      dayCode: optional(fc.constant('X')),
+      maxAnswers: optional(maxAnswers),
+      languages: optional(fc.set(fc.constantFrom('fi-FI', 'sv-FI'), 1, 2)),
       sections,
-      fc.record({
-        date: optional(fc.date().map((d) => formatISO(d, { representation: 'date' }))),
-        examCode: optional(fc.constantFrom('EA', 'M', 'N')),
-        dayCode: optional(fc.constant('X')),
-        maxAnswers: optional(maxAnswers),
-        languages: optional(fc.set(fc.constantFrom('fi-FI', 'sv-FI'), 1, 2)),
-        sections,
-      })
-    )
+    })
 
     fc.assert(
       fc.property(exam, (examOptions) => {
