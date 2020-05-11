@@ -1,6 +1,6 @@
 import * as libxml from 'libxmljs2'
 
-interface ExamOptions {
+export interface GenerateExamOptions {
   date?: string
   examCode?: string
   dayCode?: string
@@ -9,30 +9,17 @@ interface ExamOptions {
   sections: GenerateSectionOptions[]
 }
 
-export type GenerateExamOptions = GenerateSectionOptions[] | ExamOptions
-
-interface SectionOptions {
+export interface GenerateSectionOptions {
   maxAnswers?: number
   casForbidden?: boolean
   questions: GenerateQuestionOptions[][]
 }
 
-export type GenerateSectionOptions = GenerateQuestionOptions[][] | SectionOptions
-type QuestionOptions =
-  | QuestionOptions[]
-  | GenerateTextAnswerOptions
-  | GenerateScoredTextAnswerOptions
-  | GenerateChoiceAnswerOptions
-  | GenerateDropdownAnswerOptions
 export type GenerateQuestionOptions =
   | GenerateQuestionOptions[]
-  | 'text-answer'
   | GenerateTextAnswerOptions
-  | 'scored-text-answer'
   | GenerateScoredTextAnswerOptions
-  | 'choice-answer'
   | GenerateChoiceAnswerOptions
-  | 'dropdown-answer'
   | GenerateDropdownAnswerOptions
 
 interface TextAnswerBase {
@@ -75,11 +62,10 @@ export interface GenerateChoiceAnswerOption {
  * Generates an exam XML file (mostly for testing purposes) based on a
  * description of the exam structure.
  *
- * - An exam is an array of sections (and optional attributes)
- * - A section is an array of questions (and optional attributes).
- * - A question is an array of answers.
- * - An answer s either the name of the answer element (e.g. `'text-answer'`)
- *   or an object describing the answer.
+ * - An exam is an object containing the array of sections and optional attributes.
+ * - A section is object containing the array of questions and optional attributes.
+ * - A question is an array of answers or subquestions.
+ * - An answer is an object describing the answer.
  *
  * ```
  * generateExam({
@@ -88,13 +74,13 @@ export interface GenerateChoiceAnswerOption {
  *     {
  *       questions: [
  *         // Question 1 containing a single text-answer.
- *         ['text-answer'],
+ *         [textAnswer()],
  *         // Question 2 containing three choice-answers.
- *         ['choice-answer', 'choice-answer', 'choice-answer'],
+ *         [choiceAnswer(), choiceAnswer(), choiceAnswer()],
  *         // Question 3 containing subquestions
  *         [
  *            // Question 3.1, containing a single dropdown-answer
- *            ['dropdown-answer'],
+ *            [dropdownAnswer()],
  *         ]
  *       ]
  *     }
@@ -102,48 +88,59 @@ export interface GenerateChoiceAnswerOption {
  * })
  * ```
  *
- * As a shorthand, you can replace the exam object with a sections array and
- * the section object with a questions array. So the following are equivalent:
+ * You can customize the exam and section elements by providing some of the
+ * optional attributes.
  *
  * ```
- * generateExam({sections: [{questions: [['text-answer']]}]}) ≡ generateExam([[['text-answer']]])
+ * generateExam({
+ *   examCode: 'M',
+ *   date: '2020-03-18',
+ *   sections: [{
+ *     casForbidden: true,
+ *     maxAnswers: 5,
+ *     questions: […]
+ *   }, {
+ *     casForbidden: false,
+ *     maxAnswers: 5,
+ *     questions: […]
+ *   }]
+ * })
  * ```
  *
  * It is also possible to customize the answer elements. For example, if you
- * need a text-answer with a different max-score, you can use an object
- * describing the answer instead of a string containing the element name.
+ * need a text-answer with a different max-score, you can override the default
+ * attributes in the various fooAnswer-functions.
  *
  * ```
- * generateExam([[[{name: 'text-answer', maxScore: 10}]]])
+ * generateExam({ sections: [{ questions: [[textAnswer({ maxScore: 10 })]] }] })
  * ```
  */
 export function generateExam(options: GenerateExamOptions): string {
-  const opts = normalizeExamOptions(options)
   const doc = new libxml.Document()
   const exam = createElement(doc, 'exam', undefined, {
     xmlns: 'http://www.w3.org/1999/xhtml',
     'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
     'xsi:schemaLocation': 'http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd',
     'exam-schema-version': '0.1',
-    'exam-code': opts.examCode,
-    'day-code': opts.dayCode,
-    date: opts.date,
-    'max-answers': opts.maxAnswers,
+    'exam-code': options.examCode,
+    'day-code': options.dayCode,
+    date: options.date,
+    'max-answers': options.maxAnswers,
   })
   const languages = createElement(exam, 'languages')
-  for (const language of opts.languages ?? ['fi-FI']) {
+  for (const language of options.languages ?? ['fi-FI']) {
     createElement(languages, 'language', language)
   }
   createElement(exam, 'exam-title', 'Kokeen otsikko')
 
-  for (const section of opts.sections) {
-    addSection(exam, normalizeSectionOptions(section))
+  for (const section of options.sections) {
+    addSection(exam, section)
   }
 
   return doc.toString(true)
 }
 
-function addSection(exam: libxml.Element, options: SectionOptions): void {
+function addSection(exam: libxml.Element, options: GenerateSectionOptions): void {
   const section = createElement(exam, 'section', undefined, {
     'max-answers': options.maxAnswers,
     'cas-forbidden': options.casForbidden,
@@ -152,11 +149,11 @@ function addSection(exam: libxml.Element, options: SectionOptions): void {
   createElement(section, 'section-title', 'Osan otsikko')
 
   for (const question of options.questions) {
-    addQuestion(section, normalizeQuestionOptions(question))
+    addQuestion(section, question)
   }
 }
 
-function addQuestion(parent: libxml.Element, options: QuestionOptions): void {
+function addQuestion(parent: libxml.Element, options: GenerateQuestionOptions): void {
   if (Array.isArray(options)) {
     const question = createElement(parent, 'question')
     createElement(question, 'question-title', 'Kysymyksen otsikko')
@@ -207,50 +204,68 @@ function addChoiceAnswer(
   }
 }
 
-function normalizeExamOptions(options: GenerateExamOptions): ExamOptions {
-  return Array.isArray(options) ? { sections: options } : options
+export function textAnswer(options?: Partial<GenerateTextAnswerOptions>): GenerateTextAnswerOptions {
+  return {
+    name: 'text-answer',
+    maxScore: 6,
+    type: 'rich-text',
+    ...options,
+  }
 }
 
-function normalizeSectionOptions(options: GenerateSectionOptions): SectionOptions {
-  return Array.isArray(options) ? { questions: options } : options
+export function scoredTextAnswer(options?: Partial<GenerateScoredTextAnswerOptions>): GenerateScoredTextAnswerOptions {
+  return {
+    name: 'scored-text-answer',
+    hint: 'Vihje',
+    acceptedAnswers: [
+      {
+        text: 'Oikea vaihtoehto',
+        score: 3,
+      },
+    ],
+    ...options,
+  }
 }
 
-function normalizeQuestionOptions(options: GenerateQuestionOptions): QuestionOptions {
-  switch (options) {
-    case 'text-answer':
-      return { name: 'text-answer', maxScore: 6, type: 'rich-text' }
-    case 'scored-text-answer':
-      return {
-        name: 'scored-text-answer',
-        hint: 'Vihje',
-        acceptedAnswers: [
-          {
-            text: 'Oikea vaihtoehto',
-            score: 3,
-          },
-        ],
-      }
-    case 'choice-answer':
-    case 'dropdown-answer':
-      return {
-        name: options,
-        options: [
-          {
-            text: 'Oikea vaihtoehto',
-            score: 3,
-          },
-          {
-            text: 'Väärä vaihtoehto',
-            score: 0,
-          },
-          {
-            text: 'Väärä vaihtoehto',
-            score: 0,
-          },
-        ],
-      }
-    default:
-      return Array.isArray(options) ? options.map(normalizeQuestionOptions) : options
+export function choiceAnswer(options?: Partial<GenerateChoiceAnswerOptions>): GenerateChoiceAnswerOptions {
+  return {
+    name: 'choice-answer',
+    options: [
+      {
+        text: 'Oikea vaihtoehto',
+        score: 3,
+      },
+      {
+        text: 'Väärä vaihtoehto',
+        score: 0,
+      },
+      {
+        text: 'Väärä vaihtoehto',
+        score: 0,
+      },
+    ],
+    ...options,
+  }
+}
+
+export function dropdownAnswer(options?: Partial<GenerateDropdownAnswerOptions>): GenerateDropdownAnswerOptions {
+  return {
+    name: 'dropdown-answer',
+    options: [
+      {
+        text: 'Oikea vaihtoehto',
+        score: 3,
+      },
+      {
+        text: 'Väärä vaihtoehto',
+        score: 0,
+      },
+      {
+        text: 'Väärä vaihtoehto',
+        score: 0,
+      },
+    ],
+    ...options,
   }
 }
 
