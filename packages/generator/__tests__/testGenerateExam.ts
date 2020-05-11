@@ -26,19 +26,21 @@ describe('generateExam()', () => {
     expect(wrap(exam.toString(false))).toMatchSnapshot()
   })
 
-  it('supports exam-code, day-code, date & max-answers attributes', () => {
+  it('supports exam-specific attributes', () => {
     const examCode = 'A'
     const dayCode = 'X'
     const date = '2020-03-01'
     const maxAnswers = 5
+    const title = 'Otsikko'
 
-    const exam = generateAndParseExam({ examCode, dayCode, date, maxAnswers, sections: [{ questions: [] }] })
+    const exam = generateAndParseExam({ examCode, dayCode, date, maxAnswers, title, sections: [{ questions: [] }] })
     const root = exam.root()!
 
     expect(getAttr(root, 'exam-code')).toEqual(examCode)
     expect(getAttr(root, 'day-code')).toEqual(dayCode)
     expect(getAttr(root, 'date')).toEqual(date)
     expect(getAttr(root, 'max-answers')).toEqual(String(maxAnswers))
+    expect(root.get<Element>('//e:exam-title', ns)?.text()).toEqual(title)
   })
 
   it('creates a section for each entry in the sections array', () => {
@@ -242,6 +244,7 @@ describe('generateExam()', () => {
       dayCode: optional(fc.constant('X')),
       maxAnswers: optional(maxAnswers),
       languages: optional(fc.set(fc.constantFrom('fi-FI', 'sv-FI'), 1, 2)),
+      title: optional(fc.string()),
       sections,
     })
 
