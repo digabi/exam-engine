@@ -6,6 +6,7 @@ export interface GenerateExamOptions {
   dayCode?: string
   maxAnswers?: number
   languages?: string[]
+  title?: string
   sections: GenerateSectionOptions[]
 }
 
@@ -131,7 +132,7 @@ export function generateExam(options: GenerateExamOptions): string {
   for (const language of options.languages ?? ['fi-FI']) {
     createElement(languages, 'language', language)
   }
-  createElement(exam, 'exam-title', 'Kokeen otsikko')
+  createElement(exam, 'exam-title', options.title ?? 'Kokeen otsikko')
 
   for (const section of options.sections) {
     addSection(exam, section)
