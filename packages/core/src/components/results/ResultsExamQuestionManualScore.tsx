@@ -21,10 +21,11 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
   const { answers } = useContext(QuestionContext)
   const containerProps = { answers, displayNumber }
   const shortCode = scores?.censoring?.nonAnswerDetails?.shortCode
-
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
-      {!scores?.pregrading && !scores?.censoring && <NoPregrading maxScore={maxScore} />}
+      {scores?.pregrading?.score == null && (!scores?.censoring || scores?.censoring?.scores.length === 0) && (
+        <NoPregrading maxScore={maxScore} />
+      )}
       {scores && renderNormalizedScores(scores, maxScore)}
       {shortCode && <NonAnswer shortCode={shortCode} />}
     </ResultsExamQuestionScoresContainer>
