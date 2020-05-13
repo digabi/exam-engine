@@ -89,6 +89,44 @@ describe('<ResultsExamQuestionManualScore />', () => {
       }
       expect(renderWithContext(props, [{} as Element, {} as Element]).toJSON()).toMatchSnapshot()
     })
+
+    it('renders with NoPregrading when there are no scores', () => {
+      const props = {
+        ...defaultProps,
+        scores: _.pick(defaultScores, 'answerId', 'questionId'),
+      }
+      expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
+    })
+
+    it('renders with NoPregrading when there is pregrading data but no scores', () => {
+      const props = {
+        ...defaultProps,
+        scores: {
+          preGrading: { comment: 'comment' },
+          ..._.pick(defaultScores, 'answerId', 'questionId'),
+        },
+      }
+      expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
+    })
+
+    it('renders without NoPregrading when pregrading score is 0', () => {
+      const props = {
+        ...defaultProps,
+        scores: {
+          pregrading: { score: 0 },
+          ..._.pick(defaultScores, 'answerId', 'questionId'),
+        },
+      }
+      expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
+    })
+
+    it('renders without NoPregrading when there are scores', () => {
+      const props = {
+        ...defaultProps,
+        scores: _.pick(defaultScores, 'answerId', 'questionId', 'pregrading', 'censoring'),
+      }
+      expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
+    })
   })
 
   describe('sv-FI', () => {

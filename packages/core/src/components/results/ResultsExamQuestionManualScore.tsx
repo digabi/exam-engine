@@ -23,14 +23,15 @@ function ResultsExamQuestionManualScore({ scores, maxScore, displayNumber }: Res
   const shortCode = scores?.censoring?.nonAnswerDetails?.shortCode
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
-      {scores?.pregrading?.score == null && (!scores?.censoring || scores?.censoring?.scores.length === 0) && (
-        <NoPregrading maxScore={maxScore} />
-      )}
+      {noPregradingOrCensoringScore(scores) && <NoPregrading maxScore={maxScore} />}
       {scores && renderNormalizedScores(scores, maxScore)}
       {shortCode && <NonAnswer shortCode={shortCode} />}
     </ResultsExamQuestionScoresContainer>
   )
 }
+
+const noPregradingOrCensoringScore = (scores: Score | undefined): boolean =>
+  scores?.pregrading?.score == null && (!scores?.censoring || scores?.censoring?.scores.length === 0)
 
 function renderNormalizedScores(scores: Score, maxScore?: number) {
   const normalizedScores = [
