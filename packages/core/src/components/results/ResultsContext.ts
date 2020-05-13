@@ -84,7 +84,7 @@ export function calculateQuestionSumScore(
   const textQuestionScore = (questionId: number) => {
     const score = findScore(scores, questionId)
     return score
-      ? [score.inspection, score.censoring?.scores[0], score.pregrading, score.autograding].find(Boolean)?.score || 0
+      ? [score.inspection, score.censoring?.scores[0], score.autograding, score.pregrading].find(Boolean)?.score || 0
       : 0
   }
 
