@@ -37,8 +37,10 @@ module.exports = function () {
               loader: 'less-loader',
               options: {
                 sourceMap: true,
-                plugins: [require('less-plugin-glob')],
-                paths: [path.resolve(__dirname, 'src')],
+                lessOptions: {
+                  paths: [path.resolve(__dirname, 'src')],
+                  plugins: [require('less-plugin-glob')],
+                },
               },
             },
           ],
