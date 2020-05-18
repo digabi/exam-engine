@@ -29,8 +29,10 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
                 loader: require.resolve('less-loader'),
                 options: {
                   sourceMap: true,
-                  plugins: [require('less-plugin-glob')],
-                  paths: [path.resolve(__dirname, 'src')],
+                  lessOptions: {
+                    plugins: [require('less-plugin-glob')],
+                    paths: [path.resolve(__dirname, 'src')],
+                  },
                 },
               },
             ],
