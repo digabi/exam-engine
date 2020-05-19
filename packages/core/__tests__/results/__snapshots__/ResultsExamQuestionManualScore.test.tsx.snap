@@ -2,596 +2,640 @@
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders with NoPregrading when there are no scores 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
-  <span
-    className="e-result-scorecount-empty"
-  />
-   / 6 
-   p.
+  <div
+    className="e-result-scorecount-border-wrap"
+  >
+    <span
+      className="e-result-scorecount-empty"
+    />
+     / 6 
+     p.
+  </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders with NoPregrading when there is pregrading data but no scores 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
-  <span
-    className="e-result-scorecount-empty"
-  />
-   / 6 
-   p.
+  <div
+    className="e-result-scorecount-border-wrap"
+  >
+    <span
+      className="e-result-scorecount-empty"
+    />
+     / 6 
+     p.
+  </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders with displayNumber where there are more than one answer 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
-  <sup
-    className="e-result-scorecount-sup e-mrg-r-1"
-  >
-    1
-  </sup>
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <sup
+      className="e-result-scorecount-sup e-mrg-r-1"
     >
-      <b>
-        1
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      1
+    </sup>
+    <div
+      className="e-color-black"
     >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          1
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and one censor scores 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <div
+      className="e-color-black"
     >
-      <b>
-        4
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          4
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE3
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        1.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      SE3
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      1.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      1
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        1
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading and three censor scores 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <div
+      className="e-color-black"
     >
-      <b>
-        4
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          4
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE3
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        3.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      SE3
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        3
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE2
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        2.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      3.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        2
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE1
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        1.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      3
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE2
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      2.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      2
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE1
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      1.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      1
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        1
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading score 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <div
+      className="e-color-black"
     >
-      <b>
-        1
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          1
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders with pregrading, censor and inspection scores 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <div
+      className="e-color-black"
     >
-      <b>
-        5
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          5
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        IN1, IN2
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        ta
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      IN1, IN2
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        4
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE3
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        3.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      ta
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        3
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE2
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        2.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      4
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        2
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE1
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        1.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      SE3
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      3.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      3
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE2
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      2.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      2
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE1
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      1.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      1
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        1
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders without NoPregrading when pregrading score is 0 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <div
+      className="e-color-black"
     >
-      <b>
-        0
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          0
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders without NoPregrading when there are scores 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <div
+      className="e-color-black"
     >
-      <b>
-        4
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          4
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE3
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        3.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      SE3
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        3
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE2
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        2.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      3.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        2
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE1
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        1.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      3
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE2
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      2.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      2
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE1
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      1.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      1
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        1
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> fi-FI renders without score 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
-  <span
-    className="e-result-scorecount-empty"
-  />
-   / 6 
-   p.
+  <div
+    className="e-result-scorecount-border-wrap"
+  >
+    <span
+      className="e-result-scorecount-empty"
+    />
+     / 6 
+     p.
+  </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionManualScore /> sv-FI renders with pregrading, censor and inspection scores 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-color-black"
+    className="e-result-scorecount-border-wrap"
   >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+    <div
+      className="e-color-black"
     >
-      <b>
-        5
-      </b>
-       / 6
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap e-font-size-m"
+      >
+        <b>
+          5
+        </b>
+         / 6
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        IN1, IN2
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        ta
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      IN1, IN2
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        4
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE3
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        3.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      ta
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        3
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE2
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        2.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      4
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        2
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        SE1
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        1.s
+      </span>
+    </div>
+    <div
+      className="e-color-grey e-font-size-xs"
     >
-      SE3
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      3.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      3
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE2
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      2.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      2
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      SE1
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      1.s
-    </span>
-  </div>
-  <div
-    className="e-color-grey e-font-size-xs"
-  >
-    <span
-      className="e-mrg-r-1 e-nowrap e-nowrap"
-    >
-      1
-      
-       p.
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-    >
-      
-    </span>
-    <span
-      className="e-mrg-r-1 e-nowrap e-mrg-r-0"
-    >
-      va
-    </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-nowrap"
+      >
+        1
+        
+         p.
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
+      >
+        
+      </span>
+      <span
+        className="e-mrg-r-1 e-nowrap e-mrg-r-0"
+      >
+        va
+      </span>
+    </div>
   </div>
 </div>
 `;
