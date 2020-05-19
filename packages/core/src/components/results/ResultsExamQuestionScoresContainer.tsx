@@ -10,9 +10,13 @@ function ResultsExamQuestionScoresContainer({
   children: React.ReactNode
 }) {
   return (
-    <div className="e-result-scorecount e-float-right e-mrg-b-1">
-      {answers.length > 1 && displayNumber && <sup className="e-result-scorecount-sup e-mrg-r-1">{displayNumber}</sup>}
-      {children}
+    <div className="e-result-scorecount e-float-right">
+      <div className="e-result-scorecount-border-wrap">
+        {answers.length > 1 && displayNumber && (
+          <sup className="e-result-scorecount-sup e-mrg-r-1">{displayNumber}</sup>
+        )}
+        {children}
+      </div>
     </div>
   )
 }
