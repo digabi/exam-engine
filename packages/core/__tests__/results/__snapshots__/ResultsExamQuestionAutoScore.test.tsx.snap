@@ -2,47 +2,59 @@
 
 exports[`<ResultsExamQuestionAutoScore /> renders displayNumber number when there are more than one answer 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
-  <sup
-    className="e-result-scorecount-sup e-mrg-r-1"
+  <div
+    className="e-result-scorecount-border-wrap"
   >
-    1
-  </sup>
-  <b>
-    1
-  </b>
-   
-  / 3 
-   
-   p.
+    <sup
+      className="e-result-scorecount-sup e-mrg-r-1"
+    >
+      1
+    </sup>
+    <b>
+      1
+    </b>
+     
+    / 3 
+     
+     p.
+  </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionAutoScore /> renders with score 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
-  <b>
-    1
-  </b>
-   
-  / 3 
-   
-   p.
+  <div
+    className="e-result-scorecount-border-wrap"
+  >
+    <b>
+      1
+    </b>
+     
+    / 3 
+     
+     p.
+  </div>
 </div>
 `;
 
 exports[`<ResultsExamQuestionAutoScore /> renders without score 1`] = `
 <div
-  className="e-result-scorecount e-float-right e-mrg-b-1"
+  className="e-result-scorecount e-float-right"
 >
   <div
-    className="e-result-scorecount-empty"
-  />
-   
-  / 3 
-   
-   p.
+    className="e-result-scorecount-border-wrap"
+  >
+    <div
+      className="e-result-scorecount-empty"
+    />
+     
+    / 3 
+     
+     p.
+  </div>
 </div>
 `;
