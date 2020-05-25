@@ -34,7 +34,11 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
       }
       return (
         <>
-          <ResultsExamQuestionManualScore scores={answerScores} maxScore={maxScore} />
+          <ResultsExamQuestionManualScore
+            className="e-multiline-results-text-answer-score"
+            scores={answerScores}
+            maxScore={maxScore}
+          />
           <div className="answer e-multiline-results-text-answer">
             <div className="answer-text-container">
               {type === 'rich-text' ? (
