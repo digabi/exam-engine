@@ -1,19 +1,11 @@
 .e-result-scorecount {
-  position: relative;
-  left: 1rem;
-  margin: 0;
-  height: 0;
-  width: 0;
-  overflow: visible;
   clear: right;
-  white-space: nowrap;
-
-  .e-result-scorecount-border-wrap {
-    border-left: 1px solid #aaa;
-    padding-left: 1.5rem;
-  }
+  margin-right: -9rem;
+  width: 8rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid #aaa;
+  position: relative;
 }
-
 .e-exam .e-result-scorecount-sup {
   position: absolute;
   left: 0.25rem;
@@ -35,11 +27,7 @@
   border-bottom: 2px solid #333;
 }
 
+// If several questions are on same row, scores overlap next question. Hack to prevent it.
 table td .e-result-scorecount {
-  width: 8rem;
-  height: auto;
-  margin-bottom: 0.5rem;
-
-  // If several questions are on same row, scores overlap next question. Hack to prevent it.
   margin-right: 0;
 }
