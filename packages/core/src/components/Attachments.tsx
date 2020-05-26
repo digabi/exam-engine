@@ -14,8 +14,10 @@ import { withExamContext } from './ExamContext'
 import RenderChildNodes from './RenderChildNodes'
 import Section from './Section'
 import { withSectionContext } from './SectionContext'
+import RenderExamElements from './RenderExamElements'
 
 const renderChildNodes = createRenderChildNodes({
+  'audio-group': RenderExamElements,
   'external-material': AttachmentsExternalMaterial,
   'question-title': AttachmentsQuestionTitle,
   question: AttachmentsQuestion,
