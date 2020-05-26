@@ -10,6 +10,21 @@
   padding-left: 1.5rem;
 }
 
+// Special rendering for multi-line and rich-text answer scores. The pdf rendering
+// with annotations might break because the score component affects
+// the flow of the elements in an annotated rich-text answer, which might put the overlayed
+// annotation elements out-of-sync on page breaks.
+.e-result-scorecount-multiline-answer {
+  position: relative;
+  left: 1rem;
+  margin: 0;
+  height: 0;
+  width: 0;
+  overflow: visible;
+  clear: right;
+  white-space: nowrap;
+}
+
 .e-exam .e-result-scorecount-sup {
   position: absolute;
   left: 0.25rem;

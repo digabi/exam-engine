@@ -9,7 +9,7 @@ export interface ResultsExamQuestionManualScoreProps {
   scores?: Score
   maxScore?: number
   displayNumber?: string
-  className?: string
+  multilineAnswer?: boolean
 }
 
 interface NormalizedScore {
@@ -22,10 +22,10 @@ function ResultsExamQuestionManualScore({
   scores,
   maxScore,
   displayNumber,
-  className,
+  multilineAnswer,
 }: ResultsExamQuestionManualScoreProps) {
   const { answers } = useContext(QuestionContext)
-  const containerProps = { answers, displayNumber, className }
+  const containerProps = { answers, displayNumber, multilineAnswer }
   const shortCode = scores?.censoring?.nonAnswerDetails?.shortCode
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
