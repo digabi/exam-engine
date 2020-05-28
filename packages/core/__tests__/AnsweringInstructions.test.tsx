@@ -15,13 +15,13 @@ describe('<AnsweringInstructions />', () => {
 
   describe('question', () => {
     it('numerals', () => {
-      assertRendering({
+      expectRendering({
         maxAnswers: 1,
         type: 'question',
         childQuestions: mkQuestions(range(1, 10, '1.')),
       })
 
-      assertRendering({
+      expectRendering({
         maxAnswers: 5,
         type: 'question',
         childQuestions: mkQuestions(range(1, 10, '1.')),
@@ -29,7 +29,7 @@ describe('<AnsweringInstructions />', () => {
     })
 
     it('2 child questions and maxAnswers = 1', () => {
-      assertRendering({
+      expectRendering({
         maxAnswers: 1,
         type: 'question',
         childQuestions: mkQuestions(range(1, 2, '1.')),
@@ -37,7 +37,7 @@ describe('<AnsweringInstructions />', () => {
     })
 
     it('fallback', () => {
-      assertRendering({
+      expectRendering({
         maxAnswers: 11,
         type: 'question',
         childQuestions: mkQuestions(range(1, 12, '1.')),
@@ -47,13 +47,13 @@ describe('<AnsweringInstructions />', () => {
 
   describe('section', () => {
     it('numerals', () => {
-      assertRendering({
+      expectRendering({
         maxAnswers: 1,
         type: 'section',
         childQuestions: mkQuestions(range(1, 10)),
       })
 
-      assertRendering({
+      expectRendering({
         maxAnswers: 5,
         type: 'section',
         childQuestions: mkQuestions(range(1, 10)),
@@ -61,7 +61,7 @@ describe('<AnsweringInstructions />', () => {
     })
 
     it('2 child questions and maxAnswers = 1', () => {
-      assertRendering({
+      expectRendering({
         maxAnswers: 1,
         type: 'section',
         childQuestions: mkQuestions(range(1, 2)),
@@ -69,14 +69,14 @@ describe('<AnsweringInstructions />', () => {
     })
 
     it('fallback', () => {
-      assertRendering({
+      expectRendering({
         minAnswers: 2,
         maxAnswers: 5,
         type: 'section',
         childQuestions: mkQuestions(range(1, 12)),
       })
 
-      assertRendering({
+      expectRendering({
         maxAnswers: 11,
         type: 'section',
         childQuestions: mkQuestions(range(1, 12)),
@@ -88,7 +88,7 @@ describe('<AnsweringInstructions />', () => {
     return _.range(start, end + 1).map((n) => prefix + n)
   }
 
-  function assertRendering(props: AnsweringInstructionProps) {
+  function expectRendering(props: AnsweringInstructionProps) {
     const container = TestRenderer.create(
       <I18nextProvider i18n={i18n}>
         <AnsweringInstructions {...props} />

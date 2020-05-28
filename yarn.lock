@@ -880,10 +880,10 @@
     http-response-object "^3.0.1"
     parse-cache-control "^1.0.1"
 
-"@digabi/eslint-config@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-0.0.14.tgz#c8c2d275553d950982c345f61d37a1535714e19a"
-  integrity sha512-F41cf8lktzuN0D+qa9gh4ar+eg6kv14Y38oN+Fpv6wp7S3FSJe2hWYM11NSY7FTSf5uyaHz6TK/TTfnmo8xqGQ==
+"@digabi/eslint-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-0.1.0.tgz#5b745dd3653b71dea35ac213e6eb8378050ab163"
+  integrity sha512-pMhROu7rPcFLo5sbvyg5FYiFDeDtCr+XJWn/jotwS6t4Cvd46bm5+JKNeVJxeP6nA9vFdxL5Tg99PsdX1UqaTA==
 
 "@digabi/mathquill@^0.10.3":
   version "0.10.3"
@@ -2537,7 +2537,7 @@
     regexpp "^3.0.0"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@2.34.0":
+"@typescript-eslint/experimental-utils@2.34.0", "@typescript-eslint/experimental-utils@^2.5.0":
   version "2.34.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.34.0.tgz#d3524b644cdb40eebceca67f8cf3e4cc9c8f980f"
   integrity sha512-eS6FTkq+wuMJ+sgtuNTtcqavWXqsflWcfBnlYhg/nS4aZ1leewkXGbvBhaapn1q6qf4M71bsR1tez5JTRMuqwA==
@@ -5298,13 +5298,12 @@ eslint-plugin-import@^2.20.2:
     read-pkg-up "^2.0.0"
     resolve "^1.12.0"
 
-eslint-plugin-mocha@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-6.3.0.tgz#72bfd06a5c4323e17e30ef41cd726030e8cdb8fd"
-  integrity sha512-Cd2roo8caAyG21oKaaNTj7cqeYRWW1I2B5SfpKRp0Ip1gkfwoR1Ow0IGlPWnNjzywdF4n+kHL8/9vM6zCJUxdg==
+eslint-plugin-jest@^23.13.2:
+  version "23.13.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.13.2.tgz#7b7993b4e09be708c696b02555083ddefd7e4cc7"
+  integrity sha512-qZit+moTXTyZFNDqSIR88/L3rdBlTU7CuW6XmyErD2FfHEkdoLgThkRbiQjzgYnX6rfgLx3Ci4eJmF4Ui5v1Cw==
   dependencies:
-    eslint-utils "^2.0.0"
-    ramda "^0.27.0"
+    "@typescript-eslint/experimental-utils" "^2.5.0"
 
 eslint-plugin-prettier@^3.1.2:
   version "3.1.3"

@@ -6,11 +6,9 @@ const isInDebugMode = process.env.PUPPETEER_DEBUG === '1'
 
 export function initPuppeteer() {
   let browser: Browser
-  // eslint-disable-next-line mocha/no-top-level-hooks,mocha/no-hooks-for-single-case
   beforeAll(async () => {
     browser = await puppeteer.launch({ headless: !isInDebugMode })
   })
-  // eslint-disable-next-line mocha/no-top-level-hooks,mocha/no-hooks-for-single-case
   afterAll(async () => {
     await browser.close()
   })
@@ -70,7 +68,7 @@ export async function getTextContent(page: Page, selector: string) {
 }
 
 // TODO is there a prettier way?
-export async function assertElementDoesNotExist(page: Page, selector: string) {
+export async function expectElementNotToExist(page: Page, selector: string) {
   let thrown = false
   try {
     await page.$eval(selector, (e) => e)

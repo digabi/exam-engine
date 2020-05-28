@@ -20,14 +20,14 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
   })
 
   it('renders exam page without errors', async () => {
-    await assertRendersWithoutErrors(examHtmlFile)
+    await expectToRenderWithoutErrors(examHtmlFile)
   })
 
   it('renders attachment page without errors', async () => {
-    await assertRendersWithoutErrors(attachmentsHtmlFile)
+    await expectToRenderWithoutErrors(attachmentsHtmlFile)
   })
 
-  async function assertRendersWithoutErrors(filename: string) {
+  async function expectToRenderWithoutErrors(filename: string) {
     const requestErrors: string[] = []
     const pageErrors: Error[] = []
 

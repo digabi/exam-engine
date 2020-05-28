@@ -22,19 +22,19 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   it('hides questions of the first section after clicking enable CAS button', async () => {
     await loadExam(page, ctx.url)
 
-    await assertQuestionVisibility(true)
+    await expectQuestionToBeVisible(true)
     await clickToggleCas(true)
-    await assertQuestionVisibility(false)
+    await expectQuestionToBeVisible(false)
   })
 
   it('allows the user to cancel the operation', async () => {
     await clickToggleCas(false)
-    await assertQuestionVisibility(true)
+    await expectQuestionToBeVisible(true)
   })
 
   it('after waiting for the countdown to finish, it enables CAS software and locks answers for the first section', async () => {
     await clickToggleCas(true)
-    await assertQuestionVisibility(false)
+    await expectQuestionToBeVisible(false)
     await assertFirstSectionReturned()
   })
 
@@ -42,7 +42,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
     return page.click(allowed ? '#allow-cas' : '#allow-cas-cancelled')
   }
 
-  async function assertQuestionVisibility(visible: boolean) {
+  async function expectQuestionToBeVisible(visible: boolean) {
     await page.waitFor(
       (innerVisible) => {
         const element = document.getElementById('1')
