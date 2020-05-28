@@ -2,11 +2,6 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-// Try to keep the bundle size under this threshold. Really, it should be much
-// smaller than that.
-const maxJsSize = 980 * 1000
-const maxCssSize = 50 * 1000
-
 module.exports = function () {
   const plugins = [
     new MiniCssExtractPlugin({
@@ -64,9 +59,7 @@ module.exports = function () {
       },
     },
     performance: {
-      maxAssetSize: maxJsSize,
-      maxEntrypointSize: maxJsSize + maxCssSize,
-      hints: 'error',
+      hints: false,
     },
   }
 }
