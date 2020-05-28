@@ -9,7 +9,7 @@
     "node": ">= 10.0"
   },
   "devDependencies": {
-    "@digabi/eslint-config": "^0.0.14",
+    "@digabi/eslint-config": "^0.1.0",
     "@digabi/noto-sans": "^2.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
@@ -52,7 +52,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-jest": "^23.13.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "fast-check": "^1.24.1",

@@ -25,18 +25,18 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
     await loadExam(page, ctx.url)
 
     await focusAnswer(firstAnswerId)
-    await assertAnswerHintHighlighted(firstAnswerId)
+    await expectAnswerHintToBeHighlighted(firstAnswerId)
 
     await focusAnswer(secondAnswerId)
-    await assertAnswerHintHighlighted(secondAnswerId)
+    await expectAnswerHintToBeHighlighted(secondAnswerId)
   })
 
   it('focuses the answer when clicking a hint', async () => {
     await clickAnswerHint(firstAnswerId)
-    await assertAnswerHintFocused(firstAnswerId)
+    await expectAnswerHintToBeFocused(firstAnswerId)
 
     await clickAnswerHint(secondAnswerId)
-    await assertAnswerHintFocused(secondAnswerId)
+    await expectAnswerHintToBeFocused(secondAnswerId)
   })
 
   async function focusAnswer(questionId: QuestionId) {
@@ -47,11 +47,11 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
     await page.click(`.text-answer[data-question-id="${questionId}"]`)
   }
 
-  async function assertAnswerHintHighlighted(questionId: QuestionId) {
+  async function expectAnswerHintToBeHighlighted(questionId: QuestionId) {
     await page.waitForSelector(`.e-hints__hint--focused[data-question-id="${questionId}"]`)
   }
 
-  async function assertAnswerHintFocused(questionId: QuestionId) {
+  async function expectAnswerHintToBeFocused(questionId: QuestionId) {
     await page.waitForSelector(`.text-answer[data-question-id="${questionId}"]:focus`)
   }
 })

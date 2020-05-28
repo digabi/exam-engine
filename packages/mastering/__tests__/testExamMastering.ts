@@ -98,6 +98,6 @@ describe('Exam mastering', () => {
   }
 })
 
-export async function readFixture(filename: string): Promise<string> {
+async function readFixture(filename: string): Promise<string> {
   return fs.readFile(path.resolve(__dirname, 'fixtures', filename), 'utf-8')
 }
