@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Translation, useTranslation } from 'react-i18next'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
-import { findChildElement } from '../dom-utils'
+import { findChildElement, query, queryAncestors } from '../dom-utils'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
@@ -65,7 +65,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
 function TOCQuestion({ element }: ExamComponentProps) {
   const { attachmentsURL } = useContext(CommonExamContext)
   const { level, displayNumber, maxScore } = useContext(QuestionContext)
-  const hasExternalAttachments = findChildElement(element, 'external-material') != null
+  const externalMaterial = query(element, 'external-material')
   const questionTitle = findChildElement(element, 'question-title')
 
   return level === 0 ? (
@@ -76,9 +76,14 @@ function TOCQuestion({ element }: ExamComponentProps) {
             <a href={url('', { hash: displayNumber })}>{renderChildNodes(questionTitle)}</a>
           </span>
         )}
-        {hasExternalAttachments && (
+        {externalMaterial && (
           <span className="e-column e-column--narrow">
-            <a href={url(attachmentsURL, { hash: displayNumber })} target="attachments">
+            <a
+              href={url(attachmentsURL, {
+                hash: queryAncestors(externalMaterial, 'question')!.getAttribute('display-number')!,
+              })}
+              target="attachments"
+            >
               <Translation>{(t) => t('material')}</Translation>
             </a>
           </span>
