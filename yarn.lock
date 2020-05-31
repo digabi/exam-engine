@@ -8074,9 +8074,9 @@ levn@^0.3.0, levn@~0.3.0:
     type-check "~0.3.2"
 
 libxmljs2@^0.25.3:
-  version "0.25.3"
-  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.25.3.tgz#0e75785d21a07ade385d2d49cd0d8dd4e50bb396"
-  integrity sha512-85VM3tDOhfMrPAPAY5hQ0ngEsQBeH8fyrJgFZoFRVCwyJzkMpbpnTaeQwY1YaY6vl5b2cmtds+8juG+Hd7Fsng==
+  version "0.25.4"
+  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.25.4.tgz#3070300554354b8f500452065431a085b80289e8"
+  integrity sha512-94YgRz5hn416X5xP27WgVgxyG6Cj0kS+N/6bdBQvGT8q5x5qxQwFBdwHmhvfDugDeiXdBKZnMhIiduVb7bnwRQ==
   dependencies:
     bindings "~1.5.0"
     nan "~2.14.0"
