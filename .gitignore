@@ -78,3 +78,6 @@ eslint3.xml
 *.mex
 *.tsbuildinfo
 *transfer.zip
+
+# Webpack bundle stats
+packages/core/stats.json
