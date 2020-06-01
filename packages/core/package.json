@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "webpack -p",
+    "build:analyze": "webpack -p --profile --json --display normal > stats.json",
     "watch": "webpack -p --watch",
     "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
   },
