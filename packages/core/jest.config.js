@@ -2,9 +2,7 @@ const base = require('../../jest.base.config')
 
 module.exports = {
   ...base,
-  moduleNameMapper: {
-    '^lodash-es$': 'lodash'
-  },
+  transformIgnorePatterns: ['/node_modules/(?!(lodash-es|rich-text-editor))'],
   setupFilesAfterEnv: ['./jest.setup.js'],
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
 }
