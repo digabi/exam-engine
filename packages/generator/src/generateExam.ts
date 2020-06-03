@@ -13,11 +13,22 @@ export interface GenerateExamOptions {
 export interface GenerateSectionOptions {
   maxAnswers?: number
   casForbidden?: boolean
-  questions: GenerateQuestionOptions[][]
+  questions: GenerateQuestionOptions[]
 }
 
-export type GenerateQuestionOptions =
-  | GenerateQuestionOptions[]
+export interface GenerateParentQuestionOptions {
+  maxAnswers?: number
+  questions: GenerateQuestionOptions[]
+}
+
+export interface GenerateSubQuestionOptions {
+  maxAnswers?: number
+  answers: GenerateAnswerOptions[]
+}
+
+export type GenerateQuestionOptions = GenerateParentQuestionOptions | GenerateSubQuestionOptions
+
+export type GenerateAnswerOptions =
   | GenerateTextAnswerOptions
   | GenerateScoredTextAnswerOptions
   | GenerateChoiceAnswerOptions
@@ -155,20 +166,27 @@ function addSection(exam: libxml.Element, options: GenerateSectionOptions): void
 }
 
 function addQuestion(parent: libxml.Element, options: GenerateQuestionOptions): void {
-  if (Array.isArray(options)) {
-    const question = createElement(parent, 'question')
-    createElement(question, 'question-title', 'Kysymyksen otsikko')
-    for (const subquestionOptions of options) {
-      addQuestion(question, subquestionOptions)
+  const question = createElement(parent, 'question', undefined, { 'max-answers': options.maxAnswers })
+  createElement(question, 'question-title', 'Kysymyksen otsikko')
+
+  if ('questions' in options) {
+    for (const subQuestion of options.questions) {
+      addQuestion(question, subQuestion)
     }
   } else {
-    switch (options.name) {
-      case 'text-answer':
-      case 'scored-text-answer':
-        return addTextAnswer(parent, options)
-      case 'choice-answer':
-      case 'dropdown-answer':
-        return addChoiceAnswer(parent, options)
+    for (const answer of options.answers) {
+      switch (answer.name) {
+        case 'text-answer':
+        case 'scored-text-answer': {
+          addTextAnswer(question, answer)
+          break
+        }
+        case 'choice-answer':
+        case 'dropdown-answer': {
+          addChoiceAnswer(question, answer)
+          break
+        }
+      }
     }
   }
 }
