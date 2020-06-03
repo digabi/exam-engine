@@ -1,9 +1,46 @@
 import {
+  GenerateAnswerOptions,
   GenerateChoiceAnswerOptions,
   GenerateDropdownAnswerOptions,
+  GenerateQuestionOptions,
   GenerateScoredTextAnswerOptions,
   GenerateTextAnswerOptions,
 } from './generateExam'
+
+/**
+ * A shorthand version of the function for creating a question containing the specified answers.
+ *
+ * @param answers An array of answers.
+ * @example question([textAnswer()]) // Equivalent to question({ answers: [textAnswer()] })
+ */
+export function question(answers: GenerateAnswerOptions[]): GenerateQuestionOptions
+/**
+ * A shorthand version of the function for creating a question containing the specified child questions.
+ *
+ * @param questions An array of child questions.
+ * @example question([question(…)]) // Equivalent to question({ questions: [question(…)] })
+ */
+export function question(questions: GenerateQuestionOptions[]): GenerateQuestionOptions
+/**
+ * Create a question.
+ *
+ * @param options An object describing the structure of the question.
+ * @example question({ maxAnswers: 1, answers: [textAnswer(), textAnswer()] })
+ */
+export function question(options: GenerateQuestionOptions): GenerateQuestionOptions
+export function question(
+  args: GenerateQuestionOptions | GenerateAnswerOptions[] | GenerateQuestionOptions[]
+): GenerateQuestionOptions {
+  if (Array.isArray(args)) {
+    if ('answers' in args[0] || 'questions' in args[0]) {
+      return { questions: args as GenerateQuestionOptions[] }
+    } else {
+      return { answers: args as GenerateAnswerOptions[] }
+    }
+  } else {
+    return args
+  }
+}
 
 export function textAnswer(options?: Partial<GenerateTextAnswerOptions>): GenerateTextAnswerOptions {
   return {

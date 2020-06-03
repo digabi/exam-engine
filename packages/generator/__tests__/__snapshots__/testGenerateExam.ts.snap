@@ -9,6 +9,10 @@ exports[`generateExam() creates a basic exam when called with minimal arguments 
   <e:exam-title>Kokeen otsikko</e:exam-title>
   <e:section>
     <e:section-title>Osan otsikko</e:section-title>
+    <e:question>
+      <e:question-title>Kysymyksen otsikko</e:question-title>
+      <e:text-answer max-score="6" type="rich-text"/>
+    </e:question>
   </e:section>
 </e:exam>
 

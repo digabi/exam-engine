@@ -1,5 +1,5 @@
 import { listExams } from '@digabi/exam-engine-exams'
-import { choiceAnswer, dropdownAnswer, generateExam } from '@digabi/exam-engine-generator'
+import { choiceAnswer, dropdownAnswer, generateExam, question } from '@digabi/exam-engine-generator'
 import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import { wrap } from 'jest-snapshot-serializer-raw'
@@ -70,7 +70,7 @@ describe('Exam mastering', () => {
   })
 
   it('combines choice-answers and dropdown-answers to the same question in grading structure', async () => {
-    const xml = generateExam({ sections: [{ questions: [[choiceAnswer(), dropdownAnswer()]] }] })
+    const xml = generateExam({ sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }] })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
     expect(masteringResult.gradingStructure.questions).toMatchObject([
       {
