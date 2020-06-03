@@ -28,21 +28,35 @@ describe('generateExam()', () => {
     expect(wrap(exam.toString(false))).toMatchSnapshot()
   })
 
+  it('localizes titles if multi-language exam', () => {
+    const exam = generateAndParseExam({
+      languages: ['fi-FI', 'sv-FI'],
+      sections: [{ questions: [question([textAnswer()])] }],
+    })
+    expect(wrap(exam.toString(false))).toMatchSnapshot()
+  })
+
+  it('does not add a default title if the exam has an exam code', () => {
+    const examCode = 'EA'
+    const date = '2020-03-01'
+    const exam = generateAndParseExam({ examCode, date, sections: [{ questions: [] }] })
+
+    expect(exam.get<Element>('//e:exam-title', ns)).toBeUndefined()
+  })
+
   it('supports exam-specific attributes', () => {
     const examCode = 'A'
     const dayCode = 'X'
     const date = '2020-03-01'
     const maxAnswers = 5
-    const title = 'Otsikko'
 
-    const exam = generateAndParseExam({ examCode, dayCode, date, maxAnswers, title, sections: [{ questions: [] }] })
+    const exam = generateAndParseExam({ examCode, dayCode, date, maxAnswers, sections: [{ questions: [] }] })
     const root = exam.root()!
 
     expect(getAttr(root, 'exam-code')).toEqual(examCode)
     expect(getAttr(root, 'day-code')).toEqual(dayCode)
     expect(getAttr(root, 'date')).toEqual(date)
     expect(getAttr(root, 'max-answers')).toEqual(String(maxAnswers))
-    expect(root.get<Element>('//e:exam-title', ns)?.text()).toEqual(title)
   })
 
   it('creates a section for each entry in the sections array', () => {

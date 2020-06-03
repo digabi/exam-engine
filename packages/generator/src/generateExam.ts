@@ -1,12 +1,13 @@
 import * as libxml from 'libxmljs2'
 
+export type Language = 'fi-FI' | 'sv-FI'
+
 export interface GenerateExamOptions {
   date?: string
   examCode?: string
   dayCode?: string
   maxAnswers?: number
-  languages?: string[]
-  title?: string
+  languages?: Language[]
   sections: GenerateSectionOptions[]
 }
 
@@ -139,39 +140,46 @@ export function generateExam(options: GenerateExamOptions): string {
     date: options.date,
     'max-answers': options.maxAnswers,
   })
-  const languages = createElement(exam, 'languages')
-  for (const language of options.languages ?? ['fi-FI']) {
-    createElement(languages, 'language', language)
+  const languages = options.languages ?? ['fi-FI']
+  const languagesElement = createElement(exam, 'languages')
+  for (const language of languages) {
+    createElement(languagesElement, 'language', language)
   }
-  createElement(exam, 'exam-title', options.title ?? 'Kokeen otsikko')
+
+  if (!options.examCode) {
+    createLocalizedElement(exam, 'exam-title', languages, { 'fi-FI': 'Kokeen otsikko', 'sv-FI': 'Provets titel' })
+  }
 
   for (const section of options.sections) {
-    addSection(exam, section)
+    addSection(exam, languages, section)
   }
 
   return doc.toString(true)
 }
 
-function addSection(exam: libxml.Element, options: GenerateSectionOptions): void {
+function addSection(exam: libxml.Element, languages: Language[], options: GenerateSectionOptions): void {
   const section = createElement(exam, 'section', undefined, {
     'max-answers': options.maxAnswers,
     'cas-forbidden': options.casForbidden,
   })
 
-  createElement(section, 'section-title', 'Osan otsikko')
+  createLocalizedElement(section, 'section-title', languages, { 'fi-FI': 'Osan otsikko', 'sv-FI': 'Delens titel' })
 
   for (const question of options.questions) {
-    addQuestion(section, question)
+    addQuestion(section, languages, question)
   }
 }
 
-function addQuestion(parent: libxml.Element, options: GenerateQuestionOptions): void {
+function addQuestion(parent: libxml.Element, languages: Language[], options: GenerateQuestionOptions): void {
   const question = createElement(parent, 'question', undefined, { 'max-answers': options.maxAnswers })
-  createElement(question, 'question-title', 'Kysymyksen otsikko')
+  createLocalizedElement(question, 'question-title', languages, {
+    'fi-FI': 'Kysymyksen otsikko',
+    'sv-FI': 'Uppgiftens titel',
+  })
 
   if ('questions' in options) {
     for (const subQuestion of options.questions) {
-      addQuestion(question, subQuestion)
+      addQuestion(question, languages, subQuestion)
     }
   } else {
     for (const answer of options.answers) {
@@ -236,6 +244,27 @@ function createElement(
       .filter(([, value]) => value != null)
       .forEach(([name, value]) => element.attr(name, String(value)))
   }
+
+  return element
+}
+
+function createLocalizedElement(
+  parent: libxml.Element,
+  localName: string,
+  languages: Language[],
+  content: Record<Language, string>,
+  attrs?: Record<string, unknown>
+) {
+  if (languages.length === 1) {
+    const [language] = languages
+    return createElement(parent, localName, content[language], attrs)
+  }
+
+  const element = createElement(parent, localName, undefined, attrs)
+
+  Object.entries(content)
+    .filter(([language]) => languages.includes(language as Language))
+    .forEach(([lang, text]) => createElement(element, 'localization', text, { lang }))
 
   return element
 }
