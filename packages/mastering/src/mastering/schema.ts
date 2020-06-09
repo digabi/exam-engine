@@ -1,6 +1,6 @@
 import { Element } from 'libxmljs2'
 
-export const ns = { e: 'http://ylioppilastutkinto.fi/exam.xsd' }
+export const ns = { e: 'http://ylioppilastutkinto.fi/exam.xsd', xhtml: 'http://www.w3.org/1999/xhtml' }
 
 export const textAnswerTypes = ['text-answer', 'scored-text-answer'] as const
 export const choiceAnswerTypes = ['choice-answer', 'dropdown-answer'] as const

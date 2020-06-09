@@ -1,7 +1,7 @@
 import { GradingStructure } from '@digabi/exam-engine-core'
 import crypto from 'crypto'
 import { readFileSync } from 'fs'
-import { Document, Element, parseXml, SyntaxError } from 'libxmljs2'
+import { Document, Element, parseXml, SyntaxError, Text } from 'libxmljs2'
 import _ from 'lodash'
 import path from 'path'
 import { toRoman } from 'roman-numerals'
@@ -240,6 +240,7 @@ async function masterExamForLanguage(
 
   removeComments(root)
   removeCorrectAnswers(exam)
+  removeTableWhitespaceNodes(root)
 
   if (options.removeHiddenElements) {
     removeHiddenElements(root)
@@ -373,6 +374,19 @@ function removeCorrectAnswers(exam: Exam) {
       case 'scored-text-answer': {
         element.find('.//e:accepted-answer', ns).forEach((e) => e.remove())
       }
+    }
+  }
+}
+
+/**
+ * React doesn't like whitespace nodes inside table elements. To reduce noise
+ * in the browser console, remove them during mastering.
+ */
+function removeTableWhitespaceNodes(exam: Element) {
+  const tableElements = ['table', 'thead', 'tbody', 'tr'].map((e) => `self::xhtml:${e}`).join(' or ')
+  for (const textNode of exam.find<Text>(`//*[${tableElements}]/text()`, ns)) {
+    if (textNode.text().trim() === '') {
+      textNode.remove()
     }
   }
 }
