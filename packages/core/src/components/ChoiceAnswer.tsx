@@ -91,6 +91,7 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
         className={classNames('e-choice-answer', className, {
           'e-columns': direction === 'horizontal',
         })}
+        data-question-id={questionId}
       >
         {mapChildElements(element, (childElement) => {
           const optionId = childElement.getAttribute('option-id')!

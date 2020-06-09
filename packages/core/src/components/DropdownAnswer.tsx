@@ -87,7 +87,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           isOpen,
           selectedItem,
         }) => (
-          <span className={classNames('e-dropdown-answer e-normal')}>
+          <span className={classNames('e-dropdown-answer e-normal')} data-question-id={questionId}>
             <div
               className={classNames('e-dropdown-answer__toggle-button e-columns', {
                 'e-dropdown-answer__toggle-button--open': isOpen,
