@@ -4,6 +4,9 @@ import path from 'path'
 import { Page } from 'puppeteer'
 import tmp from 'tmp-promise'
 import { initPuppeteer } from './puppeteerUtils'
+import { toMatchImageSnapshot } from 'jest-image-snapshot'
+
+expect.extend({ toMatchImageSnapshot })
 
 describe('testOfflineGeneration.ts - Offline version generation', () => {
   const createPage = initPuppeteer()
@@ -13,7 +16,7 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
 
   beforeAll(async () => {
     const tmpdir = await tmp.dir().then((r) => r.path)
-    const [outputDirectory] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir)
+    const [outputDirectory] = await createOfflineExam(resolveExam('MexDocumentation/MexDocumentation.xml'), tmpdir)
     examHtmlFile = path.resolve(outputDirectory, 'index.html')
     attachmentsHtmlFile = path.resolve(outputDirectory, 'attachments/index.html')
     page = await createPage()
@@ -40,7 +43,11 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
     page.on('pageerror', (err) => pageErrors.push(err))
 
     await page.goto('file://' + filename, { waitUntil: 'networkidle0' })
+
     expect(requestErrors).toEqual([])
     expect(pageErrors).toEqual([])
+
+    const screenshot = await page.screenshot({ encoding: 'binary', fullPage: true })
+    expect(screenshot).toMatchImageSnapshot()
   }
 })
