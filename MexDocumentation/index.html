@@ -288,32 +288,7 @@
         <h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">1.1. </strong>Special characters as entities <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold" aria-label="0 points">0 p.</span></h4>
         <div class="exam-question-instruction e-mrg-b-2">
           <p>Certain characters requires escaping as entities in exam XML documents</p>
-          <table class="e-table">
-            <caption></caption>
-            <thead>
-              <tr>
-                <th>Character</th>
-                <th>Notation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>NBSP (non-breaking-space)</td><td><code>&amp;#xA0;</code></td>
-            </tr>
-            <tr>
-              <td>SHY ­ (soft-hyphen)</td><td><code>&amp;#173;</code></td>
-          </tr>
-          <tr>
-                  <td>&gt;</td><td><code>&amp;gt;</code></td>
-              </tr>
-              <tr>
-                  <td>&lt;</td><td><code>&amp;lt;</code></td>
-              </tr>
-              <tr>
-                  <td>&amp;</td><td><code>&amp;amp;</code></td>
-              </tr>
-            </tbody>
-          </table>
+          <table class="e-table"><caption></caption><thead><tr><th>Character</th><th>Notation</th></tr></thead><tbody><tr><td>NBSP (non-breaking-space)</td><td><code>&amp;#xA0;</code></td></tr><tr><td>SHY ­ (soft-hyphen)</td><td><code>&amp;#173;</code></td></tr><tr><td>&gt;</td><td><code>&amp;gt;</code></td></tr><tr><td>&lt;</td><td><code>&amp;lt;</code></td></tr><tr><td>&amp;</td><td><code>&amp;amp;</code></td></tr></tbody></table>
           <p>Notice, that e.g. <code>&amp;nbsp;</code> and <code>&amp;shy;</code> does not work.</p>
         </div>
       </div>
@@ -326,62 +301,7 @@
           Top-level exam element.
         </p>
       </div>
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>exam-schema-version</td>
-            <td>Version string</td>
-            <td>No</td>
-            <td>—</td>
-            <td>Schema version, only 0.1 for now</td>
-          </tr>
-          <tr>
-            <td>date</td>
-            <td>YYYY-MM-DD</td>
-            <td>No</td>
-            <td>—</td>
-            <td>Exam date</td>
-          </tr>
-          <tr>
-            <td>exam-code</td>
-            <td>exam code string</td>
-            <td>No</td>
-            <td>—</td>
-            <td>Exam code used for exam specific translations</td>
-          </tr>
-          <tr>
-            <td>day-code</td>
-            <td>exam day code string</td>
-            <td>No</td>
-            <td>—</td>
-            <td>Exam day code used for exam specific translations</td>
-          </tr>
-          <tr>
-            <td>exam-stylesheet</td>
-            <td>custom CSS stylesheet file name</td>
-            <td>No</td>
-            <td>—</td>
-            <td>CSS file with this name must exist in attachments directory</td>
-          </tr>
-          <tr>
-            <td>max-answers</td>
-            <td>Integer</td>
-            <td>No</td>
-            <td>No limit</td>
-            <td>Maximum number of questions student should answer</td>
-          </tr>
-        </tbody>
-      </table>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>exam-schema-version</td><td>Version string</td><td>No</td><td>—</td><td>Schema version, only 0.1 for now</td></tr><tr><td>date</td><td>YYYY-MM-DD</td><td>No</td><td>—</td><td>Exam date</td></tr><tr><td>exam-code</td><td>exam code string</td><td>No</td><td>—</td><td>Exam code used for exam specific translations</td></tr><tr><td>day-code</td><td>exam day code string</td><td>No</td><td>—</td><td>Exam day code used for exam specific translations</td></tr><tr><td>exam-stylesheet</td><td>custom CSS stylesheet file name</td><td>No</td><td>—</td><td>CSS file with this name must exist in attachments directory</td></tr><tr><td>max-answers</td><td>Integer</td><td>No</td><td>No limit</td><td>Maximum number of questions student should answer</td></tr></tbody></table>
       <p>
         <code>exam-code</code>
         and
@@ -585,56 +505,15 @@
         answers.
       </p>
 
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>max-score</td>
-            <td>Integer</td>
-            <td>Yes</td>
-            <td>—</td>
-            <td>Maximum score</td>
-          </tr>
-          <tr>
-            <td>type</td>
-            <td>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>max-score</td><td>Integer</td><td>Yes</td><td>—</td><td>Maximum score</td></tr><tr><td>type</td><td>
               <code>single-line | rich-text</code>
-            </td>
-            <td>No</td>
-            <td>
+            </td><td>No</td><td>
               <code>single-line</code>
-            </td>
-            <td>Type</td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-          <tr>
-            <td>max-images</td>
-            <td>Integer</td>
-            <td>No</td>
-            <td>50</td>
-            <td>
+            </td><td>Type</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr><tr><td>max-images</td><td>Integer</td><td>No</td><td>50</td><td>
               Maximum number of screenshots allowed (only for
               <code>rich-text</code>
               type answer)
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </td></tr></tbody></table>
 
       <h4>
         <code>single-line</code>
@@ -679,82 +558,21 @@
         <p>By default options are shuffled.</p>
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>
+      <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:choice-answer</code>
           )
-        </caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ordering</td>
-            <td>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>ordering</td><td>
               <code>random | fixed</code>
-            </td>
-            <td>No</td>
-            <td>random</td>
-            <td>Ordering of options</td>
-          </tr>
-          <tr>
-            <td>direction</td>
-            <td>
+            </td><td>No</td><td>random</td><td>Ordering of options</td></tr><tr><td>direction</td><td>
               <code>vertical | horizontal</code>
-            </td>
-            <td>No</td>
-            <td>vertical</td>
-            <td>Direction of options</td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+            </td><td>No</td><td>vertical</td><td>Direction of options</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
-      <table class="e-table e-width-full">
-        <caption>
+      <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:choice-answer-option</code>
           )
-        </caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>score</td>
-            <td>Integer</td>
-            <td>No</td>
-            <td>0</td>
-            <td>Score for option</td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>No</td><td>0</td><td>Score for option</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
       <h4>Examples</h4>
       <pre class="code">&lt;e:choice-answer&gt;
@@ -948,73 +766,19 @@
         </p>
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>
+      <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:dropdown-answer</code>
           )
-        </caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ordering</td>
-            <td>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>ordering</td><td>
               <code>random | fixed</code>
-            </td>
-            <td>No</td>
-            <td>random</td>
-            <td>Ordering of options</td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+            </td><td>No</td><td>random</td><td>Ordering of options</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
-      <table class="e-table e-width-full">
-        <caption>
+      <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:dropdown-answer-option</code>
           )
-        </caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>score</td>
-            <td>Integer</td>
-            <td>No</td>
-            <td>0</td>
-            <td>Score for option</td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>No</td><td>0</td><td>Score for option</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code">&lt;e:dropdown-answer&gt;
@@ -1051,64 +815,17 @@
         </div>
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>
+      <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:scored-text-answer</code>
           )
-        </caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>max-score</td>
-            <td>Integer</td>
-            <td>No</td>
-            <td>0</td>
-            <td>Maximum score</td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>max-score</td><td>Integer</td><td>No</td><td>0</td><td>Maximum score</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
-      <table class="e-table e-width-full">
-        <caption>
+      <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:accepted-answer</code>
           )
-        </caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>score</td>
-            <td>Integer</td>
-            <td>Yes</td>
-            <td>-</td>
-            <td>Score for answer</td>
-          </tr>
-        </tbody>
-      </table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>Yes</td><td>-</td><td>Score for answer</td></tr></tbody></table>
 
       <h4>
         Example of
@@ -1237,135 +954,18 @@
         </p>
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>name</td>
-            <td>String</td>
-            <td>No</td>
-            <td>–</td>
-            <td>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>String</td><td>No</td><td>–</td><td>
               Name of the material. Used only when material is linked to from
               <code>e:attachment-link</code>
               or
               <code>e:attachment-links</code>
               element.
-            </td>
-          </tr>
-          <tr>
-            <td>lang</td>
-            <td>String</td>
-            <td>No</td>
-            <td>–</td>
-            <td>Exam language code. Use when material should be included only in certain language version.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="e-table e-width-full">
-        <caption>
+            </td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when material should be included only in certain language version.
+            </td></tr></tbody></table>
+      <table class="e-table e-width-full"><caption>
           Sub-elements of
           <code>e:reference</code>
-        </caption>
-        <thead>
-          <tr>
-            <th>Element</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>author</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Author of the material</td>
-          </tr>
-          <tr>
-            <td>title</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>title of the material title</td>
-          </tr>
-          <tr>
-            <td>publisher</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Publisher</td>
-          </tr>
-          <tr>
-            <td>publication</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Reference to the original source, e.g. "Youtube service"</td>
-          </tr>
-          <tr>
-            <td>howpublished</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Release channel, e.g. "Genius web service"</td>
-          </tr>
-          <tr>
-            <td>url</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Internet address</td>
-          </tr>
-          <tr>
-            <td>publication-date</td>
-            <td>Date</td>
-            <td>No</td>
-            <td></td>
-            <td>Publication date, e.g. 2019-03-01 or 2019</td>
-          </tr>
-          <tr>
-            <td>reference-date</td>
-            <td>Date</td>
-            <td>No</td>
-            <td></td>
-            <td>Refernece date, e.g. 2019-05-01 or 2019</td>
-          </tr>
-          <tr>
-            <td>translator</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Name of the translator</td>
-          </tr>
-          <tr>
-            <td>modified-by</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Name of the modifier</td>
-          </tr>
-          <tr>
-            <td>note</td>
-            <td>String</td>
-            <td>No</td>
-            <td></td>
-            <td>Free text</td>
-          </tr>
-        </tbody>
-      </table>
+        </caption><thead><tr><th>Element</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>author</td><td>String</td><td>No</td><td></td><td>Author of the material</td></tr><tr><td>title</td><td>String</td><td>No</td><td></td><td>title of the material title</td></tr><tr><td>publisher</td><td>String</td><td>No</td><td></td><td>Publisher</td></tr><tr><td>publication</td><td>String</td><td>No</td><td></td><td>Reference to the original source, e.g. "Youtube service"</td></tr><tr><td>howpublished</td><td>String</td><td>No</td><td></td><td>Release channel, e.g. "Genius web service"</td></tr><tr><td>url</td><td>String</td><td>No</td><td></td><td>Internet address</td></tr><tr><td>publication-date</td><td>Date</td><td>No</td><td></td><td>Publication date, e.g. 2019-03-01 or 2019</td></tr><tr><td>reference-date</td><td>Date</td><td>No</td><td></td><td>Refernece date, e.g. 2019-05-01 or 2019</td></tr><tr><td>translator</td><td>String</td><td>No</td><td></td><td>Name of the translator</td></tr><tr><td>modified-by</td><td>String</td><td>No</td><td></td><td>Name of the modifier</td></tr><tr><td>note</td><td>String</td><td>No</td><td></td><td>Free text</td></tr></tbody></table>
       <h4>Example of internal material</h4>
       <pre class="code">&lt;e:attachment&gt;
   &lt;e:attachment-title&gt;Title&lt;/e:attachment-title&gt;
@@ -1458,42 +1058,8 @@
         HTML is allowed.
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>src</td>
-            <td>String</td>
-            <td>Yes</td>
-            <td>–</td>
-            <td>Filename of the image</td>
-          </tr>
-          <tr>
-            <td>lang</td>
-            <td>String</td>
-            <td>No</td>
-            <td>–</td>
-            <td>Exam language code. Use when image should be included only in certain language version.
-            </td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>String</td><td>Yes</td><td>–</td><td>Filename of the image</td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when image should be included only in certain language version.
+            </td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code">&lt;e:image src="example.jpg"&gt;Optional image title text&lt;/e:image&gt;</pre>
@@ -1519,28 +1085,8 @@
         </p>
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>lang</td>
-            <td>String</td>
-            <td>No</td>
-            <td>–</td>
-            <td>Exam language code. Use when image-overlay should be included only in a certain language version.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when image-overlay should be included only in a certain language version.
+            </td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code">&lt;e:image-overlay&gt;
@@ -1561,49 +1107,8 @@
           HTML is allowed.
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>src</td>
-            <td>String</td>
-            <td>Yes</td>
-            <td>–</td>
-            <td>Audio file name</td>
-          </tr>
-          <tr>
-            <td>times</td>
-            <td>Integer</td>
-            <td>No</td>
-            <td>∞</td>
-            <td>Maximum number of times the audio can be played by the examinee</td>
-          </tr>
-          <tr>
-            <td>lang</td>
-            <td>String</td>
-            <td>No</td>
-            <td>–</td>
-            <td>Exam language code. Use when audio should be included only in certain language version.
-            </td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>String</td><td>Yes</td><td>–</td><td>Audio file name</td></tr><tr><td>times</td><td>Integer</td><td>No</td><td>∞</td><td>Maximum number of times the audio can be played by the examinee</td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when audio should be included only in certain language version.
+            </td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code">&lt;e:audio src="example1.webm" times="2"&gt;Optional description&lt;/e:audio&gt;</pre>
@@ -1687,42 +1192,8 @@
           HTML is allowed.
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>src</td>
-            <td>String</td>
-            <td>Yes</td>
-            <td>–</td>
-            <td>Video file name</td>
-          </tr>
-          <tr>
-            <td>lang</td>
-            <td>String</td>
-            <td>No</td>
-            <td>–</td>
-            <td>Exam language code. Use when video should be included only in certain language version.
-            </td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>String</td><td>Yes</td><td>–</td><td>Video file name</td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when video should be included only in certain language version.
+            </td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code">&lt;e:video src="example1.webm" /&gt;</pre>
@@ -1739,42 +1210,8 @@
         HTML is allowed.
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>src</td>
-            <td>String</td>
-            <td>Yes</td>
-            <td>–</td>
-            <td>Filename</td>
-          </tr>
-          <tr>
-            <td>lang</td>
-            <td>String</td>
-            <td>No</td>
-            <td>–</td>
-            <td>Exam language code. Use when file should be included only in certain language version.
-            </td>
-          </tr>
-          <tr>
-            <td>class</td>
-            <td>CSS class</td>
-            <td>No</td>
-            <td>-</td>
-            <td>CSS class name</td>
-          </tr>
-        </tbody>
-      </table>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>String</td><td>Yes</td><td>–</td><td>Filename</td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when file should be included only in certain language version.
+            </td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
       <h4>Exmaple</h4>
       <pre class="code">&lt;e:file src="example1.webm"&gt;Text of the file link&lt;/e:file&gt;</pre>
@@ -1794,46 +1231,19 @@
         element.
       </div>
 
-      <table class="e-table e-width-full">
-        <caption>
+      <table class="e-table e-width-full"><caption>
           Element attributes
-        </caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ref</td>
-            <td>String</td>
-            <td>Yes</td>
-            <td>–</td>
-            <td>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>ref</td><td>String</td><td>Yes</td><td>–</td><td>
               Value of the linked
               <code>e:attachment</code>
               's
               <code>name</code>
               attribute.
-            </td>
-          </tr>
-          <tr>
-            <td>type</td>
-            <td>
+            </td></tr><tr><td>type</td><td>
               <code>long | short</code>
-            </td>
-            <td>No</td>
-            <td>
+            </td><td>No</td><td>
               <code>long</code>
-            </td>
-            <td>Type of the reference, see example below.</td>
-          </tr>
-        </tbody>
-      </table>
+            </td><td>Type of the reference, see example below.</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code">&lt;e:attachment-link ref="test-material" /&gt;
@@ -1938,54 +1348,15 @@
              <p>
                Notice that certain characters in formulas require special notation.
                  </p>
-                 <table class="e-table">
-                   <caption></caption>
-                   <thead>
-                     <tr>
-                       <th>Character</th>
-                       <th>Notation</th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr>
-                         <td>&gt;</td><td><code>&amp;gt;</code></td>
-                     </tr>
-                     <tr>
-                         <td>&lt;</td><td><code>&amp;lt;</code></td>
-                     </tr>
-                     <tr>
-                         <td>&amp;</td><td><code>&amp;amp;</code></td>
-                     </tr>
-                   </tbody>
-                 </table>
+                 <table class="e-table"><caption></caption><thead><tr><th>Character</th><th>Notation</th></tr></thead><tbody><tr><td>&gt;</td><td><code>&amp;gt;</code></td></tr><tr><td>&lt;</td><td><code>&amp;lt;</code></td></tr><tr><td>&amp;</td><td><code>&amp;amp;</code></td></tr></tbody></table>
                  <p>
                  For longer formulas also <code>&lt;e:formula&gt;&lt;![CDATA[ latex-code ]]&gt;&lt;/e:formula&gt;</code> may also be used. Inside a CDATA-block escaping is not required.
                </p>
-      <table class="e-table e-width-full">
-        <caption>Element attributes</caption>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Mandatory</th>
-            <th>Default value</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>mode</td>
-            <td>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>mode</td><td>
               <code>inline | display</code>
-            </td>
-            <td>No</td>
-            <td>
+            </td><td>No</td><td>
               <code>inline</code>
-            </td>
-            <td>Formula type</td>
-          </tr>
-        </tbody>
-      </table>
+            </td><td>Formula type</td></tr></tbody></table>
 
       <h4>
         Example of an
@@ -2228,98 +1599,48 @@
         <code>e-text-*</code>
         classes.
       </p>
-      <table class="e-table e-width-full">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
+      <table class="e-table e-width-full"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td>
               <code>e-text-center</code>
-            </td>
-            <td>
+            </td><td>
               <strong>Centers</strong>
               text
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-text-left</code>
-            </td>
-            <td>
+            </td><td>
               Aligns text to the
               <strong>left</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-text-right</code>
-            </td>
-            <td>
+            </td><td>
               Aligns text to the
               <strong>right</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-text-justify</code>
-            </td>
-            <td>
+            </td><td>
               <strong>Justifies</strong>
               text
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-text-top</code>
-            </td>
-            <td>
+            </td><td>
               Aligns text to the
               <strong>top</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-text-bottom</code>
-            </td>
-            <td>
+            </td><td>
               Aligns text to the
               <strong>bottom</strong>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </td></tr></tbody></table>
 
       <h3>Text helper classes</h3>
-      <table class="e-table e-width-full">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
+      <table class="e-table e-width-full"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td>
               <code>e-nowrap</code>
-            </td>
-            <td>Prevent line wrapping</td>
-          </tr>
-          <tr>
-            <td>
+            </td><td>Prevent line wrapping</td></tr><tr><td>
               <code>e-text-gap</code>
-            </td>
-            <td>
+            </td><td>
               Create underlined gap within
               <span class="e-text-gap">1.</span>
               text.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </td></tr></tbody></table>
 
       <h3>Quotes</h3>
       <p>
@@ -2463,86 +1784,44 @@
     <div class="exam-question e-mrg-b-8 e-clearfix" id="23">
       <h3 class="exam-question-title"><strong class="exam-question-title__display-number">23. </strong>Floating <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold" aria-label="0 points">0 p.</span></h3>
 
-      <table class="e-table e-width-full">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
+      <table class="e-table e-width-full"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td>
               <code>e-float-left</code>
-            </td>
-            <td>
+            </td><td>
               Floats element to the
               <strong>left</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-float-right</code>
-            </td>
-            <td>
+            </td><td>
               Floats element to the
               <strong>right</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-clearfix</code>
-            </td>
-            <td>Stops floating</td>
-          </tr>
-          <tr>
-            <td>
+            </td><td>Stops floating</td></tr><tr><td>
               <code>e-width-full</code>
-            </td>
-            <td>
+            </td><td>
               Sets element width to
               <strong>100%</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-width-threequarters</code>
-            </td>
-            <td>
+            </td><td>
               Sets element width to
               <strong>75%</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-width-half</code>
-            </td>
-            <td>
+            </td><td>
               Sets element width to
               <strong>50%</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-width-third</code>
-            </td>
-            <td>
+            </td><td>
               Sets element width to
               <strong>33%</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-width-quarter</code>
-            </td>
-            <td>
+            </td><td>
               Sets element width to
               <strong>25%</strong>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
+            </td></tr></tbody></table>
 
       <h3>Example</h3>
       <pre class="code">&lt;div class="e-clearfix"&gt;
@@ -2635,143 +1914,77 @@
         <p>You can use numbers 1 to 8.</p>
       </div>
 
-      <table class="e-table e-width-full">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
+      <table class="e-table e-width-full"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td>
               <code>e-pad-*</code>
-            </td>
-            <td>
+            </td><td>
               Padding to
               <strong>every direction</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-pad-l-*</code>
-            </td>
-            <td>
+            </td><td>
               Padding to the
               <strong>left</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-pad-r-*</code>
-            </td>
-            <td>
+            </td><td>
               Padding to the
               <strong>right</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-pad-l-*</code>
-            </td>
-            <td>
+            </td><td>
               Padding to the
               <strong>top</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-pad-b-*</code>
-            </td>
-            <td>
+            </td><td>
               Padding to the
               <strong>bottom</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-pad-x-*</code>
-            </td>
-            <td>
+            </td><td>
               Padding to the
               <strong>left and right</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-pad-y-*</code>
-            </td>
-            <td>
+            </td><td>
               Padding to the
               <strong>top and bottom</strong>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-mrg-*</code>
-            </td>
-            <td>
+            </td><td>
               Margin to
               <strong>every direction</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-mrg-l-*</code>
-            </td>
-            <td>
+            </td><td>
               Margin to the
               <strong>left</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-mrg-r-*</code>
-            </td>
-            <td>
+            </td><td>
               Margin to the
               <strong>right</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-mrg-t-*</code>
-            </td>
-            <td>
+            </td><td>
               Margin to the
               <strong>top</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-mrg-b-*</code>
-            </td>
-            <td>
+            </td><td>
               Margin to the
               <strong>bottom</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-mrg-x-*</code>
-            </td>
-            <td>
+            </td><td>
               Margin to the
               <strong>left and right</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </td></tr><tr><td>
               <code>e-mrg-y-*</code>
-            </td>
-            <td>
+            </td><td>
               Margin to the
               <strong>top and bottom</strong>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </td></tr></tbody></table>
 
       <pre class="code">&lt;div&gt;
   &lt;span class="e-pad-1"&gt;e-pad-1&lt;/span&gt;
@@ -2868,23 +2081,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</pre>
       <div class="example">
-        <table class="e-table e-width-full">
-          <caption>Table title</caption>
-          <thead>
-            <tr>
-              <th>First column</th>
-              <th>Second column</th>
-              <th>Third column</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td>
-              <td>Ipsum</td>
-              <td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="e-table e-width-full"><caption>Table title</caption><thead><tr><th>First column</th><th>Second column</th><th>Third column</th></tr></thead><tbody><tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td></tr></tbody></table>
       </div>
 
       <pre class="code">&lt;table class="e-table e-table--borderless e-width-full"&gt;
@@ -2905,23 +2102,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</pre>
       <div class="example">
-        <table class="e-table e-table--borderless e-width-full">
-          <caption>Table title</caption>
-          <thead>
-            <tr>
-              <th>First column</th>
-              <th>Second column</th>
-              <th>Third column</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td>
-              <td>Ipsum</td>
-              <td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="e-table e-table--borderless e-width-full"><caption>Table title</caption><thead><tr><th>First column</th><th>Second column</th><th>Third column</th></tr></thead><tbody><tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td></tr></tbody></table>
       </div>
 
       <pre class="code">&lt;table class="e-table e-table--borderless e-table--zebra e-width-full"&gt;
@@ -2957,38 +2138,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</pre>
       <div class="example">
-        <table class="e-table e-table--borderless e-table--zebra e-width-full">
-          <caption>Table title</caption>
-          <thead>
-            <tr>
-              <th>First column</th>
-              <th>Second column</th>
-              <th>Third column</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td>
-              <td>Ipsum</td>
-              <td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Ipsum</td>
-              <td>Dolor</td>
-              <td>Lorem</td>
-            </tr>
-            <tr>
-              <td>Dolor</td>
-              <td>Lorem</td>
-              <td>Ipsum</td>
-            </tr>
-            <tr>
-              <td>Lorem</td>
-              <td>Ipsum</td>
-              <td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="e-table e-table--borderless e-table--zebra e-width-full"><caption>Table title</caption><thead><tr><th>First column</th><th>Second column</th><th>Third column</th></tr></thead><tbody><tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td></tr><tr><td>Ipsum</td><td>Dolor</td><td>Lorem</td></tr><tr><td>Dolor</td><td>Lorem</td><td>Ipsum</td></tr><tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td></tr></tbody></table>
       </div>
 
       <p>
@@ -3017,23 +2167,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</pre>
       <div class="example">
-        <table class="e-table e-width-full">
-          <caption>Table title</caption>
-          <thead>
-            <tr>
-              <th class="e-pad-l-8">First column (padding to the left)</th>
-              <th class="e-text-center">Second column (centered)</th>
-              <th class="e-text-right">Third column (aligned to the right)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="e-pad-l-8">Lorem</td>
-              <td class="e-text-center">Ipsum</td>
-              <td class="e-text-right">Dolor</td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="e-table e-width-full"><caption>Table title</caption><thead><tr><th class="e-pad-l-8">First column (padding to the left)</th><th class="e-text-center">Second column (centered)</th><th class="e-text-right">Third column (aligned to the right)</th></tr></thead><tbody><tr><td class="e-pad-l-8">Lorem</td><td class="e-text-center">Ipsum</td><td class="e-text-right">Dolor</td></tr></tbody></table>
       </div>
 
       <p>
@@ -3050,92 +2184,7 @@
 &lt;/div&gt;</pre>
       <div class="example">
         <div class="e-scrollable-x">
-          <table class="e-table">
-            <thead>
-              <tr>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-              </tr>
-              <tr>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-              </tr>
-              <tr>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-              </tr>
-            </tbody>
-          </table>
+          <table class="e-table"><thead><tr><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th><th>Heading</th></tr></thead><tbody><tr><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td></tr><tr><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td></tr><tr><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td><td>Cell</td></tr></tbody></table>
         </div>
       </div>
 
