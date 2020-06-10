@@ -60,6 +60,11 @@ export function scoredTextAnswer(options?: Partial<GenerateScoredTextAnswerOptio
         text: 'Oikea vaihtoehto',
         score: 3,
       },
+      // The legacy exam generator expects this to be the correct answer. (ノಠ益ಠ)ノ彡┻━┻
+      {
+        text: 'lol',
+        score: 3,
+      },
     ],
     ...options,
   }
