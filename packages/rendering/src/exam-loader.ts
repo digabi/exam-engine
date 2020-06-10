@@ -1,4 +1,4 @@
-import { Attachment, getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
+import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import { SyntaxError } from 'libxmljs2'
 import _ from 'lodash'
@@ -6,9 +6,8 @@ import path from 'path'
 import * as uuid from 'uuid'
 import webpack from 'webpack'
 
-function stringifyModule(module: any, attachments: Attachment[] = []): string {
-  const imports = attachments.map((attachment) => `require('./attachments/${attachment.filename}')`).join('\n')
-  return imports + '\nmodule.exports = ' + JSON.stringify(module)
+function stringifyModule(module: any): string {
+  return '\nmodule.exports = ' + JSON.stringify(module)
 }
 
 export default async function (this: webpack.loader.LoaderContext, source: string) {
