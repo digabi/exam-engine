@@ -22,13 +22,13 @@ export default async function (this: webpack.loader.LoaderContext, source: strin
     const results = await masterExam(source, generateUuid, getMediaMetadata)
     const module = { original: source, results }
 
-    const attachments = _.chain(results)
-      .flatMap((r) => r.attachments)
-      .uniqWith(_.isEqual)
-      .value()
-    for (const attachment of attachments) {
-      await fs.access(resolveAttachment(attachment.filename))
-    }
+    await Promise.all(
+      _.chain(results)
+        .flatMap((exam) => exam.attachments)
+        .uniqBy((attachment) => attachment.filename)
+        .map((attachment) => fs.access(resolveAttachment(attachment.filename)))
+        .value()
+    )
 
     callback(null, stringifyModule(module))
   } catch (err) {
