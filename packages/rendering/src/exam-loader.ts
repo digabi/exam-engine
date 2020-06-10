@@ -32,7 +32,7 @@ export default async function (this: webpack.loader.LoaderContext, source: strin
 
     callback(null, stringifyModule(module))
   } catch (err) {
-    const isLibXmlError = Object.prototype.hasOwnProperty.call(err, 'domain')
+    const isLibXmlError = _.has(err, 'domain')
     const isParseError = isLibXmlError && err.domain === 1
 
     if (isParseError) {
