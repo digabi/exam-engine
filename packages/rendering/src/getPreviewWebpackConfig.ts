@@ -26,6 +26,9 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
           },
         }
       : {},
+    watchOptions: {
+      ignored: path.resolve('../../core/dist/main-bundle.js'),
+    },
     devServer: {
       overlay: {
         warnings: true,
