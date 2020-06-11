@@ -107,7 +107,6 @@ export const fi_FI = {
     'toc-section_*_*_*': 'Vastaa {{answerCount, range}} tehtävään.',
   },
   'answer-errors': {
-    'screenshot-limit-exceeded': 'Vastaukseen voi liittää enintään {{limit}} kuvaa.',
     'screenshot-too-big':
       'Ottamasi kuvakaappaus on liian iso. Ota uusi kuvakaappaus pienemmästä osasta näyttöä ja yritä uudelleen.',
     'screenshot-byte-limit-reached':

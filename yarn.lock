@@ -6567,7 +6567,6 @@ htmlparser2@^4.1.0:
 
 "http-basic@github:derhuerst/http-basic#8.2.0":
   version "8.2.0"
-  uid "0abee462a1e04a1cdada369b1a4d5b2d4698e3bc"
   resolved "https://codeload.github.com/derhuerst/http-basic/tar.gz/0abee462a1e04a1cdada369b1a4d5b2d4698e3bc"
   dependencies:
     caseless "^0.12.0"
