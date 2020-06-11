@@ -15,7 +15,6 @@ export interface AnswerError {
 interface Props {
   answer?: RichTextAnswerT
   className?: string
-  maxImages: number
   questionId: number
   onChange: (answerHTML: string, answerText: string) => void
   onError: (error: AnswerError) => void
@@ -36,7 +35,7 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
 
   componentDidMount() {
     const { current } = this.ref
-    const { answer, saveScreenshot, maxImages } = this.props
+    const { answer, saveScreenshot } = this.props
 
     if (current) {
       if (answer) {
@@ -52,8 +51,7 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
               saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err) => {
                 this.handleSaveError(err)
                 throw err // Rethrow error so rich-text-editor can handle it.
-              }),
-            limit: maxImages,
+              })
           },
         },
         _.after(2, this.handleChange) /* TODO: Why does r-t-e send a change event in the beginning? */
@@ -77,17 +75,10 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
   }
 
   handleChange = (data: any) => {
-    const { onChange, onError, maxImages } = this.props
+    const { onChange } = this.props
 
-    if (data.error) {
-      onError({
-        key: 'screenshot-limit-exceeded',
-        options: { limit: maxImages },
-      })
-    } else {
-      this.lastHTML = data.answerHTML
-      onChange(data.answerHTML, data.answerText)
-    }
+    this.lastHTML = data.answerHTML
+    onChange(data.answerHTML, data.answerText)
   }
 
   componentDidUpdate() {

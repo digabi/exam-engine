@@ -609,17 +609,6 @@
             <td>-</td>
             <td>CSS class name</td>
           </tr>
-          <tr>
-            <td>max-images</td>
-            <td>Integer</td>
-            <td>No</td>
-            <td>50</td>
-            <td>
-              Maximum number of screenshots allowed (only for
-              <code>rich-text</code>
-              type answer)
-            </td>
-          </tr>
         </tbody>
       </table>
 
@@ -639,15 +628,6 @@
       <pre class="code"><![CDATA[<e:text-answer type="rich-text" max-score="2" />]]></pre>
       <div class="example">
         <e:text-answer type="rich-text" max-score="2" />
-      </div>
-
-      <h4>
-        <code>rich-text</code>
-        answer example with screenshot limit
-      </h4>
-      <pre class="code"><![CDATA[<e:text-answer type="rich-text" max-score="2" max-images="10" />]]></pre>
-      <div class="example">
-        <e:text-answer type="rich-text" max-score="2" max-images="10" />
       </div>
     </e:question>
 

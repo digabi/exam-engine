@@ -16,7 +16,6 @@ interface Props extends ExamComponentProps {
   answer?: TextAnswerT | RichTextAnswerT
   answerBlurred: typeof actions.answerBlurred
   answerFocused: typeof actions.answerFocused
-  maxImages: number
   saveAnswer: typeof actions.saveAnswer
   selectAnswerVersion: typeof actions.selectAnswerVersion
   showAnswerHistory: boolean
@@ -121,7 +120,6 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       answer,
       className,
       element,
-      maxImages,
       selectAnswerVersion,
       showAnswerHistory,
       supportsAnswerHistory,
@@ -144,7 +142,6 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                   saveScreenshot={(data) => examServerApi.saveScreenshot(questionId!, data)}
                   onChange={this.onRichTextChange}
                   onError={this.onError}
-                  maxImages={maxImages}
                   questionId={questionId!}
                 />
               )}
@@ -217,14 +214,12 @@ function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
   const supportsAnswerHistory = state.answers.supportsAnswerHistory
   const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
-  const maxImages = getNumericAttribute(element, 'max-images')
 
   return {
     answer,
     showAnswerHistory,
     supportsAnswerHistory,
-    type,
-    maxImages: maxImages !== undefined ? maxImages : 50,
+    type
   }
 }
 
