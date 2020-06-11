@@ -104,7 +104,6 @@ export const sv_FI: Translations = {
     'toc-section_*_*_*': 'Besvara {{answerCount, range}} uppgifter.',
   },
   'answer-errors': {
-    'screenshot-limit-exceeded': 'Max {{limit}} bilder kan bifogas till svaret.',
     'screenshot-too-big':
       'Den skärmdump du tagit är för stor. Ta en ny skärmdump av en mindre del av skärmen och försök på nytt.',
     'screenshot-byte-limit-reached':
