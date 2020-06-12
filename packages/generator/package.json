@@ -11,5 +11,6 @@
     "@digabi/exam-engine-core": "13.0.0-alpha.0",
     "libxmljs2": "^0.26.0",
     "lodash": "^4.17.15"
-  }
+  },
+  "gitHead": "46dd79c33851d47d5f932ff94d55e1b70da64a57"
 }

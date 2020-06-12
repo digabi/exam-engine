@@ -40,5 +40,6 @@
     "webpack": "^4.41.2",
     "webpack-dev-server": "3.8.0",
     "webpack-merge": "^4.2.2"
-  }
+  },
+  "gitHead": "46dd79c33851d47d5f932ff94d55e1b70da64a57"
 }
