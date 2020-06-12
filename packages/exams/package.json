@@ -19,5 +19,6 @@
   },
   "dependencies": {
     "@digabi/exam-engine-mastering": "13.0.0-alpha.0"
-  }
+  },
+  "gitHead": "46dd79c33851d47d5f932ff94d55e1b70da64a57"
 }
