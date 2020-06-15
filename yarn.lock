@@ -5771,9 +5771,9 @@ fd-slicer@~1.1.0:
     pend "~1.2.0"
 
 ffmpeg-static@^4.0.1:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/ffmpeg-static/-/ffmpeg-static-4.2.2.tgz#29f23ac94d691d3f6a8d4229f8d3787a077209d9"
-  integrity sha512-0m07Lb7Wz91xw2g3vBzcrwhcm9D9kWWA/ZheWt6dOhIJrxanFVw1XUe9ewxF9RGBkcdt43UksrpJkL2gvl00Ew==
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/ffmpeg-static/-/ffmpeg-static-4.2.3.tgz#762dc4da2122d0ea4f3cc1ac86f9c017eae1eca1"
+  integrity sha512-zL2YkWdRFsPZvtmEM6t1Dw7VMIE+9Moy+WlbdoLbqB+Y52BPwANJIGMJ+/kdyxWULPa4UxFPBNJW5SSxi/ex/A==
   dependencies:
     "@derhuerst/http-basic" "^8.2.0"
     env-paths "^2.2.0"
