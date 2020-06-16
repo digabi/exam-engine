@@ -880,10 +880,10 @@
     http-response-object "^3.0.1"
     parse-cache-control "^1.0.1"
 
-"@digabi/eslint-config@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-0.1.0.tgz#5b745dd3653b71dea35ac213e6eb8378050ab163"
-  integrity sha512-pMhROu7rPcFLo5sbvyg5FYiFDeDtCr+XJWn/jotwS6t4Cvd46bm5+JKNeVJxeP6nA9vFdxL5Tg99PsdX1UqaTA==
+"@digabi/eslint-config@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-1.0.4.tgz#b997521d7528126cc601d933f6b19065061c5298"
+  integrity sha512-UohKgyMAFP6DuT7K9bis3+hoChN5D0aHfOncyeMq/U2RsZHcNTgoM4rrp2zkIOZO6woMmSd9z3YIuuFfi1MwQg==
 
 "@digabi/mathquill@^0.10.3":
   version "0.10.3"
