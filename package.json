@@ -89,7 +89,7 @@
     "redux-saga-test-plan": "^4.0.0-rc.3",
     "sanitize-html": "^1.22.1",
     "tmp-promise": "^3.0.2",
-    "ts-jest": "^25.0.0",
+    "ts-jest": "^26.1.0",
     "typesafe-actions": "^5.1.0",
     "typescript": "^3.7.3",
     "utility-types": "^3.10.0",
