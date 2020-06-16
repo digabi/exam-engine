@@ -173,14 +173,14 @@ $ npm login
 
 When publishing a prerelease, use:
 
-```
-$ env ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem yarn lerna publish --dist-tag next
+```bash
+$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem yarn lerna publish --dist-tag next
 ```
 
 With official releases you need to skip the `dist-tag` parameter:
 
-```
-$ env ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem yarn lerna publish
+```bash
+$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem yarn lerna publish
 ```
 
 The commands prompt you for details about the release: just running them does not publish
