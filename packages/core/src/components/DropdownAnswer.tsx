@@ -88,17 +88,17 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           selectedItem,
         }) => (
           <span className={classNames('e-dropdown-answer e-normal')} data-question-id={questionId}>
-            <div
-              className={classNames('e-dropdown-answer__toggle-button e-columns', {
+            <span
+              className={classNames('e-dropdown-answer__toggle-button e-block e-columns', {
                 'e-dropdown-answer__toggle-button--open': isOpen,
               })}
               tabIndex="0"
               {...getToggleButtonProps()}
             >
               <span className="e-dropdown-answer__label e-column e-pad-l-1 e-pad-r-4" {...getLabelProps()}>
-                <div className="e-ellipsis" ref={labelRef}>
+                <span className="e-ellipsis e-block" ref={labelRef}>
                   {selectedItem ? renderChildNodes(selectedItem) : NBSP}
-                </div>
+                </span>
               </span>
               <span
                 className={classNames(
@@ -107,8 +107,8 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               >
                 <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
               </span>
-            </div>
-            <div
+            </span>
+            <span
               {...getMenuProps(
                 {
                   className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
@@ -118,8 +118,8 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               )}
             >
               {items.map((item, i) => (
-                <div
-                  className={classNames('e-dropdown-answer__menu-item e-pad-l-1 e-pad-r-4', {
+                <span
+                  className={classNames('e-dropdown-answer__menu-item e-block e-pad-l-1 e-pad-r-4', {
                     'e-dropdown-answer__menu-item--selected': item === selectedItem,
                     'e-bg-color-off-white': highlightedIndex !== i,
                     'e-bg-color-lighterblue': highlightedIndex === i,
@@ -131,12 +131,12 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
                   })}
                 >
                   {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
-                  <div className={classNames('e-dropdown-answer__menu-item-inner', { 'e-nowrap': measuring })}>
+                  <span className={classNames('e-dropdown-answer__menu-item-inner e-block', { 'e-nowrap': measuring })}>
                     {item ? renderChildNodes(item) : NBSP}
-                  </div>
-                </div>
+                  </span>
+                </span>
               ))}
-            </div>
+            </span>
           </span>
         )}
       </Downshift>
