@@ -29,7 +29,7 @@ export default function ResponsiveMediaContainer({
   const maxWidth = width + (bordered ? borderedPaddingAndBorderPx : 0)
 
   return (
-    <figure
+    <span
       className={classNames(
         'responsive-media-container',
         { 'responsive-media-container--bordered': bordered },
@@ -39,15 +39,15 @@ export default function ResponsiveMediaContainer({
         maxWidth,
       }}
     >
-      <div
+      <span
         className="responsive-media-container__inner"
         style={{
           paddingBottom,
         }}
       >
         {children}
-      </div>
-      {caption && <figcaption className="e-color-darkgrey e-mrg-t-1 e-font-size-s e-light">{caption}</figcaption>}
-    </figure>
+      </span>
+      {caption && <span className="e-color-darkgrey e-block e-mrg-t-1 e-font-size-s e-light">{caption}</span>}
+    </span>
   )
 }
