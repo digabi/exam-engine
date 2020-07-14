@@ -32,6 +32,7 @@ const errorSvg = `<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
  * @param {string} formula
  * @param {string | null} mode
  * @param {boolean | undefined} throwOnLatexError
+ * @returns Promise<{ svg: string, mml: string }>
  */
 async function renderFormula(formula, mode, throwOnLatexError) {
   return mjAPI

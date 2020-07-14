@@ -2,7 +2,10 @@ import classNames from 'classnames'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-export function Score({ size = 'small', score }: { size?: 'inline' | 'small' | 'large'; score: number }) {
+export const Score: React.FunctionComponent<{ size?: 'inline' | 'small' | 'large'; score: number }> = ({
+  size = 'small',
+  score,
+}) => {
   const { t } = useTranslation()
   const Tag = size === 'inline' ? 'sup' : 'span'
   return (

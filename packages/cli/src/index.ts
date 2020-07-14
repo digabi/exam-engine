@@ -70,7 +70,7 @@ yargs
     },
     runCommand('./commands/create-mex')
   )
-  .check((argv: any) => {
+  .check((argv: { exam?: string }) => {
     if (argv.exam) {
       accessSync(argv.exam)
     }
@@ -104,13 +104,15 @@ function runCommand<T>(moduleName: string) {
   return async (args: T) => {
     const spinner = ora().start()
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
       const command = require(moduleName).default
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call
       const result = await command({ ...args, spinner })
       if (result) {
         spinner.succeed(result)
       }
     } catch (err) {
-      spinner.fail(err.stack)
+      spinner.fail((err as Error).stack)
       process.exit(1)
     } finally {
       spinner.stop()

@@ -7,8 +7,7 @@ import tmp from 'tmp-promise'
 import * as uuid from 'uuid'
 import webpack from 'webpack'
 import { getOfflineWebpackConfig } from './getOfflineWebpackConfig'
-
-const ffmpeg = require('ffmpeg-static')
+import ffmpeg from 'ffmpeg-static'
 
 export interface CreateOfflineExamOptions {
   /**
@@ -56,7 +55,7 @@ function getExamOutputDirectory(result: MasteringResult, examFile: string, outpu
   const { examCode, dayCode, date, language } = result
   const shortLanguageCode = language.replace(/-.*$/, '')
   const dirname = examCode
-    ? `${date && date + '_'}${examCode}${dayCode ? '_' + dayCode : ''}_${shortLanguageCode}`
+    ? `${date ? date + '_' : ''}${examCode}${dayCode ? '_' + dayCode : ''}_${shortLanguageCode}`
     : `${path.basename(path.dirname(examFile))}_${language}_offline`
   return path.resolve(outputDirectory, dirname)
 }

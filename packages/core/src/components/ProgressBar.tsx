@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useEffect, useRef, useState } from 'react'
 
-export default function ProgressBar({ duration, className }: { duration: number; className?: string }) {
+const ProgressBar: React.FunctionComponent<{ duration: number; className?: string }> = ({ duration, className }) => {
   const progressBarRef = useRef<HTMLDivElement>(null)
   const [animating, setAnimating] = useState(false)
   useEffect(() => {
@@ -18,8 +18,10 @@ export default function ProgressBar({ duration, className }: { duration: number;
     <div className={classNames('e-progress-bar', className)} ref={progressBarRef}>
       <div
         className={classNames('e-progress-bar__fill', { 'e-progress-bar__fill--animating': animating })}
-        style={{ transitionDuration: duration + 's' }}
+        style={{ transitionDuration: `${duration}s` }}
       />
     </div>
   )
 }
+
+export default ProgressBar

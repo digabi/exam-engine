@@ -10,22 +10,21 @@ export default class DocumentTitle extends React.PureComponent<DocumentTitleProp
     this.ref = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.updateTitle()
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(): void {
     this.updateTitle()
   }
 
-  updateTitle() {
+  updateTitle = (): void => {
     if (this.ref.current) {
-      const title = this.ref.current.textContent!
-      document.title = title
+      document.title = this.ref.current.textContent!
     }
   }
 
-  render() {
+  render(): React.ReactNode {
     return <h1 {...this.props} ref={this.ref} />
   }
 }

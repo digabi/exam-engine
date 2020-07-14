@@ -17,8 +17,10 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
   const audio = action.payload
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const playbackTimes: number | undefined =
       audio.restrictedAudioId != null ? yield select(getPlaybackTimes(audio.restrictedAudioId)) : undefined
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const response: AudioPlaybackResponse =
       playbackTimes != null && audio.restrictedAudioId != null
         ? yield call(examServerApi.playRestrictedAudio, audio.src, audio.restrictedAudioId, playbackTimes)
@@ -37,6 +39,7 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function* audioSaga(examServerApi: ExamServerAPI) {
   yield takeEvery('PLAY_AUDIO', performPlayAudio, examServerApi)
 }

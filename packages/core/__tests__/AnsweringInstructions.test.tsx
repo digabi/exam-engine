@@ -85,7 +85,7 @@ describe('<AnsweringInstructions />', () => {
   })
 
   function range(start: number, end: number, prefix = ''): string[] {
-    return _.range(start, end + 1).map((n) => prefix + n)
+    return _.range(start, end + 1).map((n) => `${prefix}${n}`)
   }
 
   function expectRendering(props: AnsweringInstructionProps) {

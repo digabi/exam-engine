@@ -16,7 +16,7 @@ const resources = {
   },
 }
 
-export function initI18n(lng: string) {
+export function initI18n(lng: string): typeof i18n {
   return i18n.createInstance(
     {
       resources,

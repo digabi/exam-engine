@@ -7,7 +7,7 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 
 function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level, maxAnswers, childQuestions } = useContext(QuestionContext)
-  const Tag = ('h' + Math.min(3 + level, 6)) as any
+  const Tag = `h${Math.min(3 + level, 6)}` as 'h3' | 'h4' | 'h5' | 'h6'
 
   return (
     <>

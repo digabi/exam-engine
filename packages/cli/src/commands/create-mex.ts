@@ -18,7 +18,7 @@ export default async function ({
   securityCodes?: string
   passphrase: string
   privateKey: string
-}) {
+}): Promise<void> {
   const attachmentsDir = path.resolve(path.dirname(exam), 'attachments')
   const resolveAttachment = (attachment: string) => path.resolve(attachmentsDir, attachment)
   const sourceXml = await fs.readFile(exam, 'utf-8')

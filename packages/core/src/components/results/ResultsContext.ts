@@ -62,7 +62,7 @@ export function calculateQuestionsTotalSumScore(
   gradingStructure: GradingStructure,
   scores: Score[],
   answersByQuestionId: Record<QuestionId, ExamAnswer>
-) {
+): number {
   return _.sum(
     topLevelQuestions.map((question) =>
       calculateQuestionSumScore(question, gradingStructure, scores, answersByQuestionId)
@@ -75,7 +75,7 @@ export function calculateQuestionSumScore(
   gradingStructure: GradingStructure,
   scores: Score[],
   answersById: Record<QuestionId, ExamAnswer>
-) {
+): number {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
     const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)
     return choice ? choice.options.find((o) => o.id === Number(scoredAnswer.value))!.score : 0

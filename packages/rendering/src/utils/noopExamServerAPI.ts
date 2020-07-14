@@ -1,6 +1,6 @@
 import { ExamServerAPI } from '@digabi/exam-engine-core'
 
-export default function noopExamServerApi(resolveAttachment: (s: string) => string) {
+export default function noopExamServerApi(resolveAttachment: (s: string) => string): ExamServerAPI {
   // Emulate real exam restricted audio playback by playing the audio files in a
   // HTML5 <audio> tag. The tag is made visible when starting playback and hidden
   // when playback finishes.

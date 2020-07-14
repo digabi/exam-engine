@@ -3,7 +3,9 @@ import { AppState } from '../store'
 import { ExamAnswer, QuestionId } from '../types/ExamAnswer'
 import { AudioPlaybackError, RestrictedAudioId, SaveState } from '../types/ExamServerAPI'
 
-export const getAudioState = (src: string, restrictedAudioId?: RestrictedAudioId) => (state: AppState) => {
+export const getAudioState = (src: string, restrictedAudioId?: RestrictedAudioId) => (
+  state: AppState
+): 'stopped' | 'playing' | 'other-playing' => {
   const { nowPlaying } = state.audio
 
   return nowPlaying == null
@@ -17,14 +19,17 @@ export const getAudioPlaybackError = (src: string, restrictedAudioId?: Restricte
   state: AppState
 ): AudioPlaybackError | undefined => state.audio.errors[restrictedAudioId != null ? restrictedAudioId : src]
 
-export const getDurationRemaining = (src: string, restrictedAudioId?: RestrictedAudioId) => (state: AppState) =>
+export const getDurationRemaining = (src: string, restrictedAudioId?: RestrictedAudioId) => (
+  state: AppState
+): number | undefined =>
   getAudioState(src, restrictedAudioId)(state) === 'playing' ? state.audio.nowPlaying!.durationRemaining : undefined
 
-export const getPlaybackTimes = (restrictedAudioId: RestrictedAudioId) => (state: AppState) =>
+export const getPlaybackTimes = (restrictedAudioId: RestrictedAudioId) => (state: AppState): number =>
   _.get(state.audio.playbackTimes, restrictedAudioId, 0)
 
-export const getPlaybackTimesRemaining = (restrictedAudioId: RestrictedAudioId, times: number) => (state: AppState) =>
-  times - getPlaybackTimes(restrictedAudioId)(state)
+export const getPlaybackTimesRemaining = (restrictedAudioId: RestrictedAudioId, times: number) => (
+  state: AppState
+): number => times - getPlaybackTimes(restrictedAudioId)(state)
 
 export const getGlobalSaveState = () => (state: AppState): SaveState => {
   const { serverQuestionIds, savedQuestionIds, answersById } = state.answers

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { ExamTranslations } from './fi-FI'
 
 export const FA: ExamTranslations = {

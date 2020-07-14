@@ -16,7 +16,7 @@ export default async function ({
   exam: string
   outdir?: string
   spinner: Ora
-}) {
+}): Promise<void> {
   const examDirname = path.dirname(exam)
   const xml = await fs.readFile(exam, 'utf-8')
   const resolveAttachment = (src: string) => path.resolve(examDirname, 'attachments', src)

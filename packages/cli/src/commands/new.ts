@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import { Ora } from 'ora'
 import path from 'path'
 
-export default async function ({ directory }: { directory: string; spinner: Ora }) {
+export default async function ({ directory }: { directory: string; spinner: Ora }): Promise<string> {
   const resolveExamFile = (...file: string[]) => path.resolve(directory, ...file)
 
   await assertDirectoryDoesNotExist(directory)
@@ -51,7 +51,7 @@ async function assertDirectoryDoesNotExist(directory: string) {
     await fs.access(directory)
     throw new Error(`${directory} already exists`)
   } catch (err) {
-    if (err.code !== 'ENOENT') {
+    if ((err as NodeJS.ErrnoException).code !== 'ENOENT') {
       throw err
     }
   }

@@ -1,4 +1,4 @@
-import { Element, Node } from 'libxmljs2'
+import { Element } from 'libxmljs2'
 import _ from 'lodash'
 
 type ElementPredicate = (e: Element) => boolean
@@ -12,7 +12,7 @@ function mkPredicate(query: Query) {
     : (e: Element) => query.includes(e.name())
 }
 
-export function queryAncestors(element: Element, query: Query) {
+export function queryAncestors(element: Element, query: Query): Element | undefined {
   let parent = element.parent()
   const predicate = mkPredicate(query)
   while (parent instanceof Element) {
@@ -23,21 +23,12 @@ export function queryAncestors(element: Element, query: Query) {
   }
 }
 
-export function byLocalName(...names: string[]) {
-  return (element: Element) => names.includes(element.name())
-}
+export const byLocalName = (...names: string[]) => (element: Element): boolean => names.includes(element.name())
 
-export function byAttribute(name: string, value: string) {
-  return (element: Element) => element.attr(name)?.value() === value
-}
+export const byAttribute = (name: string, value: string) => (element: Element): boolean =>
+  element.attr(name)?.value() === value
 
-export function hasAttribute(name: string) {
-  return (element: Element) => element.attr(name) != null
-}
-
-export function isElement(node: Node): node is Element {
-  return node instanceof Element
-}
+export const hasAttribute = (name: string) => (element: Element): boolean => element.attr(name) != null
 
 /**
  * Gets the value of an attribute from an XML element or returns a default
@@ -66,7 +57,7 @@ export function getNumericAttribute<T = undefined>(
 }
 
 /** Helper function for generating `(.//e:foo | .//e:bar | .//e:baz)`-like XPath selectors. */
-export function xpathOr(names: readonly string[]) {
+export function xpathOr(names: readonly string[]): string {
   return '(' + names.map((localName) => `.//e:${localName}`).join(' | ') + ')'
 }
 
@@ -78,8 +69,10 @@ function _getAttr<T, U>(
 ): T extends undefined ? U : T | U {
   const maybeValue = element.attr(name)?.value()
   if (maybeValue != null) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return transform(maybeValue) as any
   } else if (defaultValue !== undefined) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return defaultValue as any
   } else {
     throw new Error(`Bug: ${element.toString()} doesn't have a ${name} attribute and a default value was not supplied`)

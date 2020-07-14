@@ -42,15 +42,15 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
     }
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.resize()
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(): void {
     this.resize()
   }
 
-  onChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  onChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { element, saveAnswer } = this.props
     const questionId = getNumericAttribute(element, 'question-id')!
     const displayNumber = element.getAttribute('display-number')!
@@ -66,7 +66,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
     this.clearErrors()
   }
 
-  onRichTextChange = (answerHtml: string, answerText: string) => {
+  onRichTextChange = (answerHtml: string, answerText: string): void => {
     const { element, saveAnswer } = this.props
     const questionId = getNumericAttribute(element, 'question-id')!
     const displayNumber = element.getAttribute('display-number')!
@@ -81,41 +81,41 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
     this.clearErrors()
   }
 
-  onFocus = () => {
+  onFocus = (): void => {
     this.props.answerFocused(getNumericAttribute(this.props.element, 'question-id')!)
   }
 
-  onBlur = () => {
+  onBlur = (): void => {
     this.props.answerBlurred(getNumericAttribute(this.props.element, 'question-id')!)
   }
 
-  onError = (error: AnswerError) => {
+  onError = (error: AnswerError): void => {
     this.setState({
       error,
     })
   }
 
-  clearErrors = () => {
+  clearErrors = (): void => {
     this.setState({ error: null })
   }
 
-  resize() {
+  resize(): void {
     const { current } = this.ref
 
     if (current) {
       if (this.props.type === 'multi-line') {
         const { scrollX, scrollY } = window
         current.style.height = 'auto'
-        current.style.height = current.scrollHeight + borderHeightPx + 'px'
+        current.style.height = `${current.scrollHeight + borderHeightPx}px`
         window.scrollTo(scrollX, scrollY)
       } else if (this.props.type === 'single-line') {
         current.style.width = '0'
-        current.style.width = current.scrollWidth + borderWidthPx + 'px'
+        current.style.width = `${current.scrollWidth + borderWidthPx}px`
       }
     }
   }
 
-  render() {
+  render(): React.ReactNode {
     const {
       answer,
       className,

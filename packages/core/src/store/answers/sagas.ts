@@ -23,25 +23,30 @@ function* performSave(action: SaveAnswerAction, examServerApi: ExamServerAPI) {
   tasks.delete(answer.questionId)
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* answersSaga(examServerApi: ExamServerAPI) {
   // Approximate takeLatest, except grouped by question id.
   // https://redux-saga.js.org/docs/api/#takelatestpattern-saga-args
   while (true) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const action: SaveAnswerAction = yield take('SAVE_ANSWER')
     const existing = tasks.get(action.payload.questionId)
     if (existing) {
       yield cancel(existing)
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const task = yield fork(performSave, action, examServerApi)
     tasks.set(action.payload.questionId, task)
   }
 }
 
 function* answerHistorySaga(examServerApi: ExamServerAPI) {
-  while (true && examServerApi.selectAnswerVersion) {
+  while (examServerApi.selectAnswerVersion) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const action: SelectAnswerAction = yield take('SELECT_ANSWER_VERSION')
     const { questionId, questionText } = action.payload
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const maybeNewAnswer: ExamAnswer | undefined = yield call(
         examServerApi.selectAnswerVersion,
         questionId,
@@ -56,6 +61,7 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function* root(examServerApi: ExamServerAPI) {
   yield fork(answersSaga, examServerApi)
   yield fork(answerHistorySaga, examServerApi)

@@ -4,12 +4,12 @@ import React from 'react'
 import { CommonExamContext } from './CommonExamContext'
 import { Translations } from '../i18n/fi-FI'
 import { RichTextAnswer as RichTextAnswerT } from '../types/ExamAnswer'
-
-const richTextEditor = require('rich-text-editor/dist/rich-text-editor')
+import * as richTextEditor from 'rich-text-editor/dist/rich-text-editor'
+import { TOptions } from 'i18next'
 
 export interface AnswerError {
   key: keyof Translations['answer-errors']
-  options?: object
+  options?: TOptions
 }
 
 interface Props {
@@ -21,7 +21,7 @@ interface Props {
   saveScreenshot: (screenshot: Blob) => Promise<string>
 }
 
-export default class RichTextAnswer extends React.PureComponent<Props, {}> {
+export default class RichTextAnswer extends React.PureComponent<Props> {
   static contextType = CommonExamContext
   declare context: React.ContextType<typeof CommonExamContext>
   private ref: React.RefObject<HTMLDivElement>
@@ -33,7 +33,7 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
     this.lastHTML = this.props.answer ? this.props.answer.value : ''
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     const { current } = this.ref
     const { answer, saveScreenshot } = this.props
 
@@ -45,9 +45,9 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
       richTextEditor.makeRichText(
         current,
         {
-          locale: this.context.language.slice(0, 2).toUpperCase(),
+          locale: this.context.language.slice(0, 2).toUpperCase() as 'fi' | 'sv',
           screenshot: {
-            saver: ({ data, type }: any) =>
+            saver: ({ data, type }) =>
               saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err) => {
                 this.handleSaveError(err)
                 throw err // Rethrow error so rich-text-editor can handle it.
@@ -59,7 +59,7 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
     }
   }
 
-  handleSaveError = (err: any) => {
+  handleSaveError = (err: unknown): void => {
     const key = (() => {
       switch (_.get(err, 'response.status')) {
         case 409:
@@ -74,14 +74,14 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
     this.props.onError({ key })
   }
 
-  handleChange = (data: any) => {
+  handleChange = (data: { answerHTML: string; answerText: string }): void => {
     const { onChange } = this.props
 
     this.lastHTML = data.answerHTML
     onChange(data.answerHTML, data.answerText)
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(): void {
     const { current } = this.ref
 
     // Don't update element unless value has changed from last known value to prevent cursor jumping
@@ -90,7 +90,7 @@ export default class RichTextAnswer extends React.PureComponent<Props, {}> {
     }
   }
 
-  render() {
+  render(): React.ReactNode {
     const { className, questionId } = this.props
 
     return (

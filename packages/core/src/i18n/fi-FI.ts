@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { DeepPartial } from 'utility-types'
 
 export type Translations = typeof fi_FI

@@ -1,4 +1,4 @@
-import { END, eventChannel } from 'redux-saga'
+import { END, eventChannel, EventChannel } from 'redux-saga'
 import { call, cancelled, put, take } from 'redux-saga/effects'
 import { Action } from 'typesafe-actions'
 
@@ -17,12 +17,15 @@ const countdownChannel = (duration: number) =>
     return () => clearInterval(intervalId)
   })
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* countdown(duration: number, updateAction: (duration: number) => Action<any>) {
-  const channel = yield call(countdownChannel, duration)
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const channel: EventChannel<number> = yield call(countdownChannel, duration)
 
   try {
     while (true) {
-      const remaining = yield take(channel)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const remaining: number = yield take(channel)
       yield put(updateAction(remaining))
     }
   } finally {
