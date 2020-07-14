@@ -11,7 +11,7 @@ function stringifyModule(module: any, attachments: Attachment[] = []): string {
   return imports + '\nmodule.exports = ' + JSON.stringify(module)
 }
 
-export default async function (this: webpack.loader.LoaderContext, source: string) {
+export default async function (this: webpack.loader.LoaderContext, source: string): Promise<void> {
   const callback = this.async()!
   const baseDir = path.dirname(this.resourcePath)
   const resolveAttachment = (attachment: string) => path.resolve(baseDir, 'attachments', attachment)
@@ -33,21 +33,22 @@ export default async function (this: webpack.loader.LoaderContext, source: strin
 
     callback(null, stringifyModule(module))
   } catch (err) {
-    const isLibXmlError = Object.prototype.hasOwnProperty.call(err, 'domain')
-    const isParseError = isLibXmlError && err.domain === 1
+    if (isLibXmlError(err)) {
+      const isParseError = err.domain === 1
 
-    if (isParseError) {
-      // Let browser display the syntax error for now. libxmljs seems to return
-      // the _last_ parse error, which often is off by hundreds of lines.
-      callback(null, stringifyModule({ original: source, mastered: [] }))
-    } else if (isLibXmlError) {
-      // If it's not a parse error, it should be an XML validation error. In this case,
-      // show the offending line in the error message.
-      callback(beautifyError(err, source))
+      if (isParseError) {
+        callback(null, stringifyModule({ original: source, mastered: [] }))
+      } else {
+        callback(beautifyError(err, source))
+      }
     } else {
       callback(err)
     }
   }
+}
+
+function isLibXmlError(err: unknown): err is SyntaxError {
+  return Object.prototype.hasOwnProperty.call(err, 'domain')
 }
 
 function beautifyError(error: SyntaxError & Error, source: string) {
@@ -57,7 +58,7 @@ function beautifyError(error: SyntaxError & Error, source: string) {
   const offendingLine = sourceLines[line! - 1]
 
   error.message = `${message}
-Rivi ${line}, sarake ${column}:
+Rivi ${line!}, sarake ${column}:
 
 ${offendingLine}
 ${column > 0 ? '-'.repeat(column) + '^' : '^'.repeat(offendingLine.length)}

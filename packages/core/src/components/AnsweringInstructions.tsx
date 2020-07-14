@@ -26,7 +26,11 @@ function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }:
   return <>{t(possibleTranslationStrings, { answerCount, questions })}</>
 }
 
+function cartesian<A>(as: A[]): A[]
+function cartesian<A, B>(as: A[], bs: B[]): [A, B][]
+function cartesian<A, B, C>(as: A[], bs: B[], cs: C[]): [A, B, C][]
 function cartesian(...arrays: any[]): any[][] {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
   return arrays.reduce((a, b) => _.flatMap(a, (x) => b.map((y: any) => x.concat([y]))), [[]])
 }
 

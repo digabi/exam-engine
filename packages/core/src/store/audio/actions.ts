@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 import { action } from 'typesafe-actions'
 import { Audio } from './reducer'
 import { AudioPlaybackError } from '../../types/ExamServerAPI'

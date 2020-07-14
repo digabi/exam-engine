@@ -6,6 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { original, results }: { original: string; results: MasteringResult[] } = require(process.env.EXAM_FILENAME!)
 
 function Toolbar({

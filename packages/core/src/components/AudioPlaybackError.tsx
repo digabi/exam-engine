@@ -5,13 +5,9 @@ import ReactCSSTransitionReplace from 'react-css-transition-replace'
 import { useTranslation } from 'react-i18next'
 import { AudioPlaybackError } from '../types/ExamServerAPI'
 
-export default function AudioPlaybackError({
-  error,
-  children,
-}: {
+const AudioPlaybackError: React.FunctionComponent<{
   error?: AudioPlaybackError
-  children?: React.ReactNode
-}) {
+}> = ({ error, children }) => {
   const { t } = useTranslation()
 
   return (
@@ -27,3 +23,5 @@ export default function AudioPlaybackError({
     </ReactCSSTransitionReplace>
   )
 }
+
+export default AudioPlaybackError

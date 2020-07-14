@@ -137,7 +137,7 @@ function assertExamIsValid(doc: Document): Document {
  * exam XML files, since it sets libxmljs2 options that are necessary for
  * security purposes.
  */
-export function parseExam(xml: string, validate = false) {
+export function parseExam(xml: string, validate = false): Document {
   const doc = parseXml(xml, { noent: false, nonet: true })
   if (validate) {
     assertExamIsValid(doc)
@@ -236,6 +236,7 @@ async function masterExamForLanguage(
   await addMediaMetadata(attachments, getMediaMetadata)
 
   const gradingStructure = createGradingStructure(exam, generateId)
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const hvp = createHvp(doc, language)
 
   removeComments(root)
@@ -253,6 +254,7 @@ async function masterExamForLanguage(
     examCode: getAttribute('exam-code', root, null),
     examUuid: getAttribute('exam-uuid', root),
     gradingStructure,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     hvp,
     translation,
     language,
@@ -412,7 +414,7 @@ function addSectionNumbers(exam: Exam) {
 
 function addQuestionNumbers(exam: Exam) {
   function addQuestionNumber(question: Question, index: number, prefix = '') {
-    const displayNumber = (prefix ? prefix + '.' : '') + (index + 1)
+    const displayNumber = `${prefix ? prefix + '.' : ''}${index + 1}`
     question.element.attr('display-number', displayNumber)
     question.childQuestions.forEach((q, i) => addQuestionNumber(q, i, displayNumber))
   }
@@ -552,7 +554,7 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
       const options = answer.find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option', ns)
       const answerKey = String(options.length) + getAttribute('question-id', answer)
       const sortedOptions = _.sortBy(options, (option) =>
-        createHash(answerKey + options.indexOf(option) + multichoiceShuffleSecret)
+        createHash(answerKey + String(options.indexOf(option)) + multichoiceShuffleSecret)
       )
       for (const option of sortedOptions) {
         answer.addChild(option)
@@ -564,6 +566,7 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
   for (const formula of exam.find<Element>('//e:formula', ns)) {
     try {
       // Load render-formula lazily, since initializing mathjax-node is very expensive.
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
       const { svg, mml } = await require('./render-formula')(
         formula.text(),
         getAttribute('mode', formula, null),
@@ -572,7 +575,9 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
       formula.attr('svg', svg)
       formula.attr('mml', mml)
     } catch (errors) {
-      throw mkError(errors.join(', '), formula)
+      if (Array.isArray(errors) && errors.every(_.isString)) {
+        throw mkError(errors.join(', '), formula)
+      }
     }
   }
 }

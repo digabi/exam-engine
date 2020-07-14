@@ -6,6 +6,7 @@ import { ns } from './schema'
  *
  * @param {import("libxmljs2").Document} doc
  * @param {string} targetLanguage
+ * @returns string
  */
 export const createHvp = (doc, targetLanguage) => {
   const cleanString = (input) => input.trim().replace(/\s+/g, ' ')

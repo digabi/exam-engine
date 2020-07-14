@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import i18n from 'i18next'
 import * as _ from 'lodash-es'
 import { A_E } from './A_E'
@@ -54,7 +53,7 @@ const resources = {
   },
 }
 
-export function initI18n(language: string, examCode: string | null, dayCode: string | null) {
+export function initI18n(language: string, examCode: string | null, dayCode: string | null): typeof i18n {
   const namespace = examCode ? examCode + (dayCode ? `_${dayCode}` : '') : 'translation'
 
   return i18n.createInstance(
@@ -70,14 +69,17 @@ export function initI18n(language: string, examCode: string | null, dayCode: str
         format: (value, format) => {
           switch (format) {
             case 'range': {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
               const [start, end] = value
-              return start == null ? end : end == null ? start : start === end ? start : start + '–' + end
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/restrict-template-expressions
+              return start == null ? end : end == null ? start : start === end ? start : `${start}–${end}`
             }
             case 'first':
               return _.first(value)
             case 'last':
               return _.last(value)
             default:
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-return
               return value
           }
         },

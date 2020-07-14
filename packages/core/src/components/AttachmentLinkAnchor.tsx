@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AttachmentLinkAnchor = ({ children, href }: { children: React.ReactNode; href: string }) => (
+const AttachmentLinkAnchor: React.FunctionComponent<{ href: string }> = ({ children, href }) => (
   <a href={href} className="attachment-link e-nowrap" target="attachments">
     {children}
   </a>

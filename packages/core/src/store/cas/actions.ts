@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 import { action, deprecated } from 'typesafe-actions'
 const { createAction } = deprecated
 

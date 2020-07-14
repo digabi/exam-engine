@@ -14,6 +14,7 @@ export default function surround<K extends keyof JSX.IntrinsicElements>(
   const Wrapped = (componentProps: ExamComponentProps) => {
     // Can't seem to be able to limit the type to HTML elements that accept children.
     // So as a hack, type them as any inside the function to make the compiler happy.
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const TagAsAny = Tag as any
     return (
       <TagAsAny {...props}>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { Translations } from './fi-FI'
 
 export const sv_FI: Translations = {

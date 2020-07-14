@@ -49,7 +49,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
     // Force a re-measure if element changes or fonts are loaded after this
     // component has been rendered.
     const [, setFontsLoaded] = useState(fonts.loaded)
-    fonts.ready.then(() => setFontsLoaded(true))
+    fonts.ready.then(() => setFontsLoaded(true)).catch((err) => console.error(err))
 
     useEffect(() => setMeasuring(true), [element])
 
@@ -61,7 +61,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
 
         // Run the DOM mutations on the next frame to avoid layout trashing in exams with lots of dropdowns.
         const requestId = requestAnimationFrame(() => {
-          labelEl.style.width = preferredWidth + menuBorderWidthPx + roundingErrorCompensationPx + 'px'
+          labelEl.style.width = `${preferredWidth + menuBorderWidthPx + roundingErrorCompensationPx}px`
           setMeasuring(false)
         })
         return () => cancelAnimationFrame(requestId)

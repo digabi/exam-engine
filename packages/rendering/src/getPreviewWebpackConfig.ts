@@ -2,7 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import { RenderingOptions } from '.'
 import { getWebpackConfig } from './getWebpackConfig'
-const { mathSvgResponse } = require('rich-text-editor')
+import { mathSvgResponse } from 'rich-text-editor'
 
 export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions): webpack.Configuration {
   const isDev = process.env.npm_package_name === '@digabi/exam-engine-root'

@@ -23,7 +23,7 @@ function References(_props: ExamComponentProps) {
           const question = queryAncestors(reference, 'question')!
           const displayNumber = question.getAttribute('display-number')!
           return (
-            <li data-list-number={displayNumber} key={displayNumber + i}>
+            <li data-list-number={displayNumber} key={`${displayNumber}${i}`}>
               <Reference element={reference} renderChildNodes={renderChildNodes} />
             </li>
           )

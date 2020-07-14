@@ -17,15 +17,15 @@ interface ResponsiveMediaContainerProps {
  * finish loading, see https://www.perpetual-beta.org/weblog/responsive-images-without-browser-reflow.html for more
  * information.
  */
-export default function ResponsiveMediaContainer({
+const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainerProps> = ({
   bordered = false,
   className,
   children,
   height,
   width,
   caption,
-}: ResponsiveMediaContainerProps) {
-  const paddingBottom = (height / width) * 100 + '%'
+}) => {
+  const paddingBottom = `${(height / width) * 100}%`
   const maxWidth = width + (bordered ? borderedPaddingAndBorderPx : 0)
 
   return (
@@ -51,3 +51,5 @@ export default function ResponsiveMediaContainer({
     </span>
   )
 }
+
+export default ResponsiveMediaContainer

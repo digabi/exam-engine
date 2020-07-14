@@ -26,7 +26,7 @@ export async function createMex(
   answersPrivateKey: string,
   outputStream: NodeJS.WritableStream,
   json?: Buffer | null
-) {
+): Promise<void> {
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
     nodir: true,
@@ -88,7 +88,7 @@ export async function createMultiMex(
   loadSimulationConfiguration?: NodeJS.ReadableStream,
   ktpUpdate?: NodeJS.ReadableStream,
   koeUpdate?: NodeJS.ReadableStream
-) {
+): Promise<void> {
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
 

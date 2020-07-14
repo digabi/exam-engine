@@ -92,7 +92,7 @@ export function getNumericAttribute(element: Element, attributeName: string): nu
 
 export function mapChildNodes<T>(element: Element, fn: (childNode: ChildNode, index: number) => T): T[] {
   const length = element.childNodes.length
-  const result = new Array(length)
+  const result = new Array<T>(length)
   for (let i = 0; i < length; i++) {
     result[i] = fn(element.childNodes[i], i)
   }
@@ -108,6 +108,6 @@ export function mapChildElements<T>(element: Element, fn: (childElement: Element
   return result
 }
 
-export function findChildrenAnswers(element: Element) {
+export function findChildrenAnswers(element: Element): Element[] {
   return queryAll(element, ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'], true)
 }

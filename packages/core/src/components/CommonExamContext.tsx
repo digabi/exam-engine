@@ -17,7 +17,9 @@ export interface CommonExamContext {
 
 export const CommonExamContext = React.createContext({} as CommonExamContext)
 
-export function withCommonExamContext<P extends CommonExamProps>(Component: React.ComponentType<P>) {
+export function withCommonExamContext<P extends CommonExamProps>(
+  Component: React.ComponentType<P>
+): React.ComponentType<P> {
   return withContext<CommonExamContext, P>(
     CommonExamContext,
     ({ attachmentsURL, resolveAttachment, doc, language }) => {

@@ -12,7 +12,7 @@ export default async function ({
   outdir?: string
   media: boolean
   spinner: Ora
-}) {
+}): Promise<void> {
   spinner.start(`Creating offline versions for ${exam}...`)
   for (const directory of await createOfflineExam(exam, outdir, { mediaVersion: media })) {
     spinner.succeed(directory)

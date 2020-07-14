@@ -30,7 +30,7 @@ import ExamSectionTitle from './ExamSectionTitle'
 import ExternalMaterialList from './ExternalMaterialList'
 import File from './File'
 import Formula from './Formula'
-import mkHints from './Hints'
+import Hints from './Hints'
 import Image from './Image'
 import References from './References'
 import SaveIndicator from './SaveIndicator'
@@ -42,6 +42,7 @@ import Video from './Video'
 import { ExamAnswer } from '../types/ExamAnswer'
 import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
 import ImageOverlay from './ImageOverlay'
+import * as _ from 'lodash-es'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -89,10 +90,10 @@ const renderChildNodes = createRenderChildNodes({
   question: ExamQuestion,
   'question-instruction': ExamQuestionInstruction,
   'question-title': ExamQuestionTitle,
-  hints: mkHints({ stateful: true }),
+  hints: Hints,
   references: References,
   'scored-text-answer': TextAnswer,
-  'scored-text-answers': mkHints({ stateful: true }),
+  'scored-text-answers': Hints,
   'section-instruction': SectionInstruction,
   section: ExamSection,
   'section-title': ExamSectionTitle,
@@ -117,11 +118,11 @@ export class Exam extends PureComponent<ExamProps> {
     )
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     scrollToHash()
   }
 
-  render() {
+  render(): React.ReactNode {
     const { doc, language } = this.props
     const root = doc.documentElement
     const examTitle = findChildElement(root, 'exam-title')
@@ -131,7 +132,10 @@ export class Exam extends PureComponent<ExamProps> {
     const examStylesheet = root.getAttribute('exam-stylesheet')
 
     if (this.i18n.language !== language) {
-      this.i18n.changeLanguage(language)
+      this.i18n
+        .changeLanguage(language)
+        .then(_.noop)
+        .catch((err) => console.error(err))
     }
 
     return (

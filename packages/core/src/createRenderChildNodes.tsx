@@ -41,7 +41,7 @@ export function createRenderChildNodes(
       case ExamNamespaceURI:
         return renderExamElement(element, index)
       default:
-        throw new Error(`Unrecognized element: ${element}`)
+        throw new Error(`Unrecognized element: ${element.localName}`)
     }
   }
 
@@ -84,5 +84,5 @@ function htmlAttributes2props<T extends HTMLElement>(element: T, index: number):
 }
 
 function key(element: Element, index: number): string {
-  return element.localName + '-' + index
+  return `${element.localName}-${index}`
 }
