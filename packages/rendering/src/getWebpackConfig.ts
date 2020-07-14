@@ -1,10 +1,10 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path from 'path'
 import webpack from 'webpack'
-import webpackMerge from 'webpack-merge'
+import { merge } from 'webpack-merge'
 
 export function getWebpackConfig(configuration: webpack.Configuration): webpack.Configuration {
-  return webpackMerge(
+  return merge(
     {
       output: {
         filename: 'main-bundle.js',
