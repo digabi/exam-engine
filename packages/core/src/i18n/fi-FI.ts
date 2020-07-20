@@ -8,7 +8,7 @@ export const fi_FI = {
   'grading-total': 'Yhteensä',
   material: 'Aineisto',
   material_plural: 'Aineistot',
-  'attachments-page-title': 'aineisto',
+  'attachments-page-title': 'Aineisto:',
   'external-material-title': 'Aineisto',
   question: '{{displayNumber}}',
   part: 'Osa {{displayNumber}}:',

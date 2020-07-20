@@ -5,7 +5,7 @@ export const sv_FI: Translations = {
   'grading-total': 'Sammanlagt',
   material: 'Material',
   material_plural: 'Material',
-  'attachments-page-title': 'material',
+  'attachments-page-title': 'Material:',
   'external-material-title': 'Material',
   part: 'Del {{displayNumber}}:',
   question: '{{displayNumber}}',

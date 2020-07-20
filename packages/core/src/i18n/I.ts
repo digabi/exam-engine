@@ -4,7 +4,7 @@ export const I: ExamTranslations = {
   'exam-total': 'Iskos ohtsis',
   material: 'Amnâstuvah',
   'external-material-title': 'Amnâstuvah',
-  'attachments-page-title': 'amnâstuvah',
+  'attachments-page-title': 'Amnâstuvah:',
   part: 'Uási {{displayNumber}}:',
   points: '{{count}} č.',
   references: {
