@@ -5,6 +5,7 @@ import { queryAll, queryAncestors } from '../dom-utils'
 import { CommonExamContext } from './CommonExamContext'
 import Reference from './Reference'
 import Section from './Section'
+import { referencesTitleId } from './ids'
 
 const renderChildNodes = createRenderChildNodes({})
 function References(_props: ExamComponentProps) {
@@ -14,8 +15,8 @@ function References(_props: ExamComponentProps) {
   )
 
   return internalReferences.length > 0 ? (
-    <Section aria-labelledby="references-title">
-      <h2 id="references-title">
+    <Section aria-labelledby={referencesTitleId}>
+      <h2 id={referencesTitleId}>
         <Translation>{(t) => t('references.heading')}</Translation>
       </h2>
       <ol className="e-list-data e-color-darkgrey e-light">

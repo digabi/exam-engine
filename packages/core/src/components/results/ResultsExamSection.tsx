@@ -4,6 +4,7 @@ import Section from '../Section'
 import { SectionContext, withSectionContext } from '../SectionContext'
 import { ResultsContext } from './ResultsContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
+import { sectionTitleId } from '../ids'
 
 function ResultsExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber } = useContext(SectionContext)
@@ -14,7 +15,7 @@ function ResultsExamSection({ element, renderChildNodes }: ExamComponentProps) {
   })
 
   return containsAnswers ? (
-    <Section aria-labelledby={displayNumber + '-title'}>
+    <Section aria-labelledby={sectionTitleId(displayNumber)}>
       <div className="e-results-section-wrapper">{renderChildNodes(element)}</div>
     </Section>
   ) : null

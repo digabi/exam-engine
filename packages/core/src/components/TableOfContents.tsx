@@ -7,6 +7,7 @@ import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext, withSectionContext } from './SectionContext'
+import { tocTitleId } from './ids'
 
 function TOCSection({ element }: ExamComponentProps) {
   const { maxAnswers, minAnswers, displayNumber, childQuestions } = useContext(SectionContext)
@@ -105,8 +106,8 @@ function TableOfContents(_props: ExamComponentProps) {
   const { root, maxScore } = useContext(CommonExamContext)
 
   return (
-    <nav className="table-of-contents e-mrg-b-6" aria-labelledby="toc-title">
-      <h2 id="toc-title">
+    <nav className="table-of-contents e-mrg-b-6" aria-labelledby={tocTitleId}>
+      <h2 id={tocTitleId}>
         <Translation>{(t) => t('toc-heading')}</Translation>
       </h2>
       <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>

@@ -9,13 +9,14 @@ import ProgressBar from './ProgressBar'
 import Section from './Section'
 import { SectionContext, withSectionContext } from './SectionContext'
 import { ExamComponentProps } from '../createRenderChildNodes'
+import { sectionTitleId } from './ids'
 
 function ExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const casState = useSelector((state: AppState) => state.cas, shallowEqual)
   const { casForbidden, displayNumber } = useContext(SectionContext)
 
   return (
-    <Section className="exam-section" aria-labelledby={displayNumber + '-title'}>
+    <Section className="exam-section" aria-labelledby={sectionTitleId(displayNumber)}>
       {renderChildNodes(element)}
       {casForbidden && <CasControls {...casState} />}
     </Section>
