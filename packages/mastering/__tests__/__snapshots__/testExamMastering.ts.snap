@@ -56,7 +56,7 @@ Object {
 exports[`Exam mastering masters A_E.xml exam correctly: hvp 1`] = `
 FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe
 
-### Osa I:  (60 p.)
+### Osa 1:  (60 p.)
 
 #### 1. Digitaalinen arki (60 p.) 
 
@@ -219,7 +219,7 @@ exports[`Exam mastering masters A_E.xml exam correctly: xml 1`] = `
             </e:reference>
         </e:attachment>
     </e:external-material>
-    <e:section max-answers="1" display-number="I" max-score="60">
+    <e:section max-answers="1" display-number="1" max-score="60">
         <e:section-title/>
         <e:question display-number="1" max-score="60">
             <e:question-title>Digitaalinen arki</e:question-title>
@@ -328,7 +328,7 @@ Object {
 exports[`Exam mastering masters A_X.xml exam correctly: hvp 1`] = `
 FI – Äidinkieli ja kirjallisuus, lukutaidon koe
 
-### Osa I: Asia- ja mediatekstit (30 p.)
+### Osa 1: Asia- ja mediatekstit (30 p.)
 
 #### 1. Miten loremia myydään? (30 p.) 
 
@@ -342,7 +342,7 @@ FI – Äidinkieli ja kirjallisuus, lukutaidon koe
 #### 2. Puhe vastavalmistuneelle (30 p.) 
 
 
-### Osa II: Kaunokirjalliset ja muut fiktiiviset tekstit (30 p.)
+### Osa 2: Kaunokirjalliset ja muut fiktiiviset tekstit (30 p.)
 
 #### 3. Novelli eräästä perheestä (30 p.) 
 
@@ -383,7 +383,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
     </p>
   </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section max-answers="1" display-number="I" max-score="30">
+  <e:section max-answers="1" display-number="1" max-score="30">
     <e:section-title>Asia- ja mediatekstit</e:section-title>
     <e:question display-number="1" max-score="30">
       <e:question-title>Miten loremia myydään?</e:question-title>
@@ -526,7 +526,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
       <e:text-answer type="rich-text" max-score="30" display-number="2" question-id="3"/>
     </e:question>
   </e:section>
-  <e:section max-answers="1" display-number="II" max-score="30">
+  <e:section max-answers="1" display-number="2" max-score="30">
     <e:section-title>Kaunokirjalliset ja muut fiktiiviset tekstit</e:section-title>
     <e:question display-number="3" max-score="30">
       <e:question-title>Novelli eräästä perheestä</e:question-title>
@@ -1099,7 +1099,7 @@ Object {
 exports[`Exam mastering masters FF.xml exam correctly: hvp 1`] = `
 FI – Filosofia
 
-### Osa I: 20 p. tehtävät (100 p.)
+### Osa 1: 20 p. tehtävät (100 p.)
 
 #### 1. Kauneus on Katsojan silmässä (20 p.) 
 
@@ -1146,7 +1146,7 @@ FI – Filosofia
 6.3. Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen siitä, että kyseessä on lato. Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan. (8 p.) (tekstivastaus)
 
 
-### Osa II: 30 p. tehtävät (60 p.)
+### Osa 2: 30 p. tehtävät (60 p.)
 
 #### 7. Filosofiakäsitys Adipisicingin Loremissa (30 p.) 
 
@@ -1181,7 +1181,7 @@ FI – Filosofia
 exports[`Exam mastering masters FF.xml exam correctly: hvp 2`] = `
 SV – Filosofi
 
-### Del I: 20-poängsuppgifter (100 p.)
+### Del 1: 20-poängsuppgifter (100 p.)
 
 #### 1. Skönheten ligger i betraktarens ögon (20 p.) 
 
@@ -1228,7 +1228,7 @@ SV – Filosofi
 6.3. Henris son är blind. Vid den första ladan bildar han utifrån sin pappas beskrivning den sanna uppfattningen om att det är fråga om en lada. Har Henris son kunskap om att det är en lada? Motivera ditt svar och diskutera på ett mer allmänt plan under vilka förutsättningar kunskap kan bygga på ett ögonvittnes eller en kunskapsmässig auktoritets ord. (8 p.) (textsvar)
 
 
-### Del II: 30-poängsuppgifter (60 p.)
+### Del 2: 30-poängsuppgifter (60 p.)
 
 #### 7. Filosofiuppfattningen i Adipisicings Lorem (30 p.) 
 
@@ -1580,7 +1580,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
     
   </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section max-answers="5" display-number="I" max-score="100" min-answers="3">
+  <e:section max-answers="5" display-number="1" max-score="100" min-answers="3">
     <e:section-title>
       
         20 p. tehtävät
@@ -1917,7 +1917,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
       </e:question>
     </e:question>
   </e:section>
-  <e:section max-answers="2" display-number="II" max-score="60" min-answers="0">
+  <e:section max-answers="2" display-number="2" max-score="60" min-answers="0">
     <e:section-title>
       
         30 p. tehtävät
@@ -2552,7 +2552,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
     
   </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section max-answers="5" display-number="I" max-score="100" min-answers="3">
+  <e:section max-answers="5" display-number="1" max-score="100" min-answers="3">
     <e:section-title>
       
       
@@ -2889,7 +2889,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
       </e:question>
     </e:question>
   </e:section>
-  <e:section max-answers="2" display-number="II" max-score="60" min-answers="0">
+  <e:section max-answers="2" display-number="2" max-score="60" min-answers="0">
     <e:section-title>
       
       
@@ -4173,7 +4173,7 @@ Object {
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: hvp 1`] = `
 MEX format documentation
 
-### Osa I: Exam structure (0 p.)
+### Osa 1: Exam structure (0 p.)
 
 #### 1. XML structure (0 p.) 
 
@@ -4193,12 +4193,12 @@ MEX format documentation
 3.1. Example (0 p.) ()
 
 
-### Osa II: Sections (0 p.)
+### Osa 2: Sections (0 p.)
 
 #### 4. Example question title (0 p.) 
 
 
-### Osa III: Questions (0 p.)
+### Osa 3: Questions (0 p.)
 
 #### 5. Example question title (0 p.) 
 
@@ -4212,7 +4212,7 @@ MEX format documentation
 6.2. Second sub-question title (0 p.) ()
 
 
-### Osa IV: Answer types (16 p.)
+### Osa 4: Answer types (16 p.)
 
 #### 7. text-answer (4 p.) 
 
@@ -4244,7 +4244,7 @@ MEX format documentation
 - 10.5. dolores?
     - dolores (1 p.)
 
-### Osa V: Material (6 p.)
+### Osa 5: Material (6 p.)
 
 #### 11. attachment (0 p.) 
 
@@ -4285,7 +4285,7 @@ MEX format documentation
 #### 17. file (0 p.) 
 
 
-### Osa VI: Links to material (0 p.)
+### Osa 6: Links to material (0 p.)
 
 #### 18. attachment-link (0 p.) 
 
@@ -4293,12 +4293,12 @@ MEX format documentation
 #### 19. attachment-links (0 p.) 
 
 
-### Osa VII: Formulas (0 p.)
+### Osa 7: Formulas (0 p.)
 
 #### 20. Adding formulas (0 p.) 
 
 
-### Osa VIII: CSS styles (0 p.)
+### Osa 8: CSS styles (0 p.)
 
 #### 21. Typography (0 p.) 
 
@@ -4324,7 +4324,7 @@ MEX format documentation
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: hvp 2`] = `
 MEX format documentation
 
-### Del I: Exam structure (0 p.)
+### Del 1: Exam structure (0 p.)
 
 #### 1. XML structure (0 p.) 
 
@@ -4344,12 +4344,12 @@ MEX format documentation
 3.1. Example (0 p.) ()
 
 
-### Del II: Sections (0 p.)
+### Del 2: Sections (0 p.)
 
 #### 4. Example question title (0 p.) 
 
 
-### Del III: Questions (0 p.)
+### Del 3: Questions (0 p.)
 
 #### 5. Example question title (0 p.) 
 
@@ -4363,7 +4363,7 @@ MEX format documentation
 6.2. Second sub-question title (0 p.) ()
 
 
-### Del IV: Answer types (16 p.)
+### Del 4: Answer types (16 p.)
 
 #### 7. text-answer (4 p.) 
 
@@ -4395,7 +4395,7 @@ MEX format documentation
 - 10.5. dolores?
     - dolores (1 p.)
 
-### Del V: Material (6 p.)
+### Del 5: Material (6 p.)
 
 #### 11. attachment (0 p.) 
 
@@ -4436,7 +4436,7 @@ MEX format documentation
 #### 17. file (0 p.) 
 
 
-### Del VI: Links to material (0 p.)
+### Del 6: Links to material (0 p.)
 
 #### 18. attachment-link (0 p.) 
 
@@ -4444,12 +4444,12 @@ MEX format documentation
 #### 19. attachment-links (0 p.) 
 
 
-### Del VII: Formulas (0 p.)
+### Del 7: Formulas (0 p.)
 
 #### 20. Adding formulas (0 p.) 
 
 
-### Del VIII: CSS styles (0 p.)
+### Del 8: CSS styles (0 p.)
 
 #### 21. Typography (0 p.) 
 
@@ -4510,7 +4510,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:attachment>
 
   </e:external-material>
-  <e:section display-number="I" max-score="0">
+  <e:section display-number="1" max-score="0">
     <e:section-title>Exam structure</e:section-title>
     <e:question display-number="1" max-score="0">
       <e:question-title>XML structure</e:question-title>
@@ -4831,7 +4831,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section max-answers="1" display-number="II" max-score="0">
+  <e:section max-answers="1" display-number="2" max-score="0">
     <e:section-title>Sections</e:section-title>
     <e:section-instruction>
       <p>
@@ -4874,7 +4874,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="III" max-score="0">
+  <e:section display-number="3" max-score="0">
     <e:section-title>Questions</e:section-title>
     <e:section-instruction>
       <p>
@@ -4945,7 +4945,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="IV" max-score="16">
+  <e:section display-number="4" max-score="16">
     <e:section-title>Answer types</e:section-title>
     <e:question display-number="7" max-score="4">
       <e:question-title>text-answer</e:question-title>
@@ -5260,7 +5260,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="V" max-score="6">
+  <e:section display-number="5" max-score="6">
     <e:section-title>Material</e:section-title>
     <e:question display-number="11" max-score="0">
       <e:question-title>attachment</e:question-title>
@@ -5616,7 +5616,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="VI" max-score="0">
+  <e:section display-number="6" max-score="0">
     <e:section-title>Links to material</e:section-title>
     <e:question display-number="18" max-score="0">
       <e:question-title>attachment-link</e:question-title>
@@ -5686,7 +5686,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="VII" max-score="0">
+  <e:section display-number="7" max-score="0">
     <e:section-title>Formulas</e:section-title>
     <e:question display-number="20" max-score="0">
       <e:question-title>Adding formulas</e:question-title>
@@ -5739,7 +5739,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="VIII" max-score="0">
+  <e:section display-number="8" max-score="0">
     <e:section-title>CSS styles</e:section-title>
 
     <e:question display-number="21" max-score="0">
@@ -6547,7 +6547,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:attachment>
 
   </e:external-material>
-  <e:section display-number="I" max-score="0">
+  <e:section display-number="1" max-score="0">
     <e:section-title>Exam structure</e:section-title>
     <e:question display-number="1" max-score="0">
       <e:question-title>XML structure</e:question-title>
@@ -6868,7 +6868,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:question>
   </e:section>
 
-  <e:section max-answers="1" display-number="II" max-score="0">
+  <e:section max-answers="1" display-number="2" max-score="0">
     <e:section-title>Sections</e:section-title>
     <e:section-instruction>
       <p>
@@ -6911,7 +6911,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="III" max-score="0">
+  <e:section display-number="3" max-score="0">
     <e:section-title>Questions</e:section-title>
     <e:section-instruction>
       <p>
@@ -6982,7 +6982,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="IV" max-score="16">
+  <e:section display-number="4" max-score="16">
     <e:section-title>Answer types</e:section-title>
     <e:question display-number="7" max-score="4">
       <e:question-title>text-answer</e:question-title>
@@ -7297,7 +7297,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="V" max-score="6">
+  <e:section display-number="5" max-score="6">
     <e:section-title>Material</e:section-title>
     <e:question display-number="11" max-score="0">
       <e:question-title>attachment</e:question-title>
@@ -7653,7 +7653,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="VI" max-score="0">
+  <e:section display-number="6" max-score="0">
     <e:section-title>Links to material</e:section-title>
     <e:question display-number="18" max-score="0">
       <e:question-title>attachment-link</e:question-title>
@@ -7723,7 +7723,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="VII" max-score="0">
+  <e:section display-number="7" max-score="0">
     <e:section-title>Formulas</e:section-title>
     <e:question display-number="20" max-score="0">
       <e:question-title>Adding formulas</e:question-title>
@@ -7776,7 +7776,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="VIII" max-score="0">
+  <e:section display-number="8" max-score="0">
     <e:section-title>CSS styles</e:section-title>
 
     <e:question display-number="21" max-score="0">
@@ -9697,7 +9697,7 @@ Object {
 exports[`Exam mastering masters N.xml exam correctly: hvp 1`] = `
 FI – Matematiikka, lyhyt oppimäärä
 
-### Osa I: A-osa (48 p.)
+### Osa 1: A-osa (48 p.)
 
 #### 1. Lukujonot (12 p.) 
 
@@ -9777,7 +9777,7 @@ FI – Matematiikka, lyhyt oppimäärä
 #### 4. Numerotemppu (12 p.) 
 
 
-### Osa II: B1-osa (36 p.)
+### Osa 2: B1-osa (36 p.)
 
 #### 5. Akun varaus (12 p.) 
 
@@ -9806,7 +9806,7 @@ FI – Matematiikka, lyhyt oppimäärä
 9.2. 12-sivuinen noppa (12 p.) (tekstivastaus)
 
 
-### Osa III: B2-osa (36 p.)
+### Osa 3: B2-osa (36 p.)
 
 #### 10. Perheen keski-ikä (12 p.) 
 
@@ -9832,7 +9832,7 @@ FI – Matematiikka, lyhyt oppimäärä
 exports[`Exam mastering masters N.xml exam correctly: hvp 2`] = `
 SV – Matematik, kort lärokurs
 
-### Del I: Del A (48 p.)
+### Del 1: Del A (48 p.)
 
 #### 1. Talföljder (12 p.) 
 
@@ -9912,7 +9912,7 @@ SV – Matematik, kort lärokurs
 #### 4. Siffertrick (12 p.) 
 
 
-### Del II: Del B1 (36 p.)
+### Del 2: Del B1 (36 p.)
 
 #### 5. Laddningen i en ackumulator (12 p.) 
 
@@ -9941,7 +9941,7 @@ SV – Matematik, kort lärokurs
 9.2. 12-sidig tärning (12 p.) (textsvar)
 
 
-### Del III: Del B2 (36 p.)
+### Del 3: Del B2 (36 p.)
 
 #### 10. Medelåldern i en familj (12 p.) 
 
@@ -10434,7 +10434,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
     
     </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section cas-forbidden="true" display-number="I" max-score="48" max-answers="4" min-answers="4">
+  <e:section cas-forbidden="true" display-number="1" max-score="48" max-answers="4" min-answers="4">
     <e:section-title>
       A-osa  
       
@@ -10889,7 +10889,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="II" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="2" max-score="36" min-answers="3">
     <e:section-title>
       B1-osa
       
@@ -11070,7 +11070,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="III" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="3" max-score="36" min-answers="3">
     <e:section-title>
       B2-osa
       
@@ -11246,7 +11246,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
     
     </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section cas-forbidden="true" display-number="I" max-score="48" max-answers="4" min-answers="4">
+  <e:section cas-forbidden="true" display-number="1" max-score="48" max-answers="4" min-answers="4">
     <e:section-title>
         
       Del A
@@ -11701,7 +11701,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="II" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="2" max-score="36" min-answers="3">
     <e:section-title>
       
       Del B1
@@ -11882,7 +11882,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="III" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="3" max-score="36" min-answers="3">
     <e:section-title>
       
       Del B2
@@ -16231,7 +16231,7 @@ Object {
 exports[`Exam mastering masters SC.xml exam correctly: hvp 1`] = `
 FI – Saksa, lyhyt oppimäärä
 
-### Osa I: Hörverständnis (71 p.)
+### Osa 1: Hörverständnis (71 p.)
 
 #### 1. Picknick (21 p.) 
 
@@ -16351,7 +16351,7 @@ FI – Saksa, lyhyt oppimäärä
 
 - 7.3.4927.jpg Coffee Maker Neil https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn 2017-11-25 CC BY 2.0 (2 p.)
 
-### Osa II: Textverständnis (99 p.)
+### Osa 2: Textverständnis (99 p.)
 
 #### 8. Hausaufgaben (4 p.) 
 
@@ -16517,7 +16517,7 @@ FI – Saksa, lyhyt oppimäärä
 16.4. Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin perusteella lyhyesti suomeksi. (2 p.) (tekstivastaus)
 
 
-### Osa III: Struktur und Vokabular (30 p.)
+### Osa 3: Struktur und Vokabular (30 p.)
 
 #### 17. Auswahl-Antwort-Test (16 p.) 
 
@@ -16557,7 +16557,7 @@ FI – Saksa, lyhyt oppimäärä
 - 19.4. 7.4. kuvahttps://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda2019-11-25Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496Charles Edward MillerCC BY-SA 2.0
 
 
-### Osa IV: Schriftliche Produktion (99 p.)
+### Osa 4: Schriftliche Produktion (99 p.)
 
 #### 20. Kurze Schreibaufgabe (33 p.) 
 
@@ -16580,7 +16580,7 @@ FI – Saksa, lyhyt oppimäärä
 exports[`Exam mastering masters SC.xml exam correctly: hvp 2`] = `
 SV – Tyska, kort lärokurs
 
-### Del I: Hörverständnis (71 p.)
+### Del 1: Hörverständnis (71 p.)
 
 #### 1. Picknick (21 p.) 
 
@@ -16700,7 +16700,7 @@ SV – Tyska, kort lärokurs
 
 - 7.3.4927.jpg Coffee Maker Neil https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn 2017-11-25 CC BY 2.0 (2 p.)
 
-### Del II: Textverständnis (99 p.)
+### Del 2: Textverständnis (99 p.)
 
 #### 8. Hausaufgaben (4 p.) 
 
@@ -16866,7 +16866,7 @@ SV – Tyska, kort lärokurs
 16.4. Varför vill Hamburg övergå till det nya systemet? Svara kort på svenska på basis av hela texten. (2 p.) (textsvar)
 
 
-### Del III: Struktur und Vokabular (30 p.)
+### Del 3: Struktur und Vokabular (30 p.)
 
 #### 17. Auswahl-Antwort-Test (16 p.) 
 
@@ -16906,7 +16906,7 @@ SV – Tyska, kort lärokurs
 - 19.4. 7.4. kuvahttps://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda2019-11-25Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496Charles Edward MillerCC BY-SA 2.0
 
 
-### Del IV: Schriftliche Produktion (99 p.)
+### Del 4: Schriftliche Produktion (99 p.)
 
 #### 20. Kurze Schreibaufgabe (33 p.) 
 
@@ -17172,7 +17172,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
     
   </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section display-number="I" max-score="71">
+  <e:section display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
@@ -17786,7 +17786,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 
   </e:section>
 
-  <e:section display-number="II" max-score="99">
+  <e:section display-number="2" max-score="99">
     <e:section-title>Textverständnis</e:section-title>
 
     <e:question display-number="8" max-score="4">
@@ -18362,7 +18362,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 
   </e:section>
 
-  <e:section display-number="III" max-score="30">
+  <e:section display-number="3" max-score="30">
     <e:section-title>Struktur und Vokabular</e:section-title>
 
     <e:question display-number="17" max-score="16">
@@ -18591,7 +18591,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 
   </e:section>
 
-  <e:section display-number="IV" max-score="99">
+  <e:section display-number="4" max-score="99">
     <e:section-title>Schriftliche Produktion</e:section-title>
     <e:question max-answers="1" display-number="20" max-score="33">
       <e:question-title>Kurze Schreibaufgabe</e:question-title>
@@ -18735,7 +18735,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
     
   </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section display-number="I" max-score="71">
+  <e:section display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
@@ -19349,7 +19349,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
   </e:section>
 
-  <e:section display-number="II" max-score="99">
+  <e:section display-number="2" max-score="99">
     <e:section-title>Textverständnis</e:section-title>
 
     <e:question display-number="8" max-score="4">
@@ -19925,7 +19925,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
   </e:section>
 
-  <e:section display-number="III" max-score="30">
+  <e:section display-number="3" max-score="30">
     <e:section-title>Struktur und Vokabular</e:section-title>
 
     <e:question display-number="17" max-score="16">
@@ -20154,7 +20154,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
   </e:section>
 
-  <e:section display-number="IV" max-score="99">
+  <e:section display-number="4" max-score="99">
     <e:section-title>Schriftliche Produktion</e:section-title>
     <e:question max-answers="1" display-number="20" max-score="33">
       <e:question-title>Kurze Schreibaufgabe</e:question-title>
