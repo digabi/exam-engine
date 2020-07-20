@@ -43,6 +43,7 @@ import { ExamAnswer } from '../types/ExamAnswer'
 import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
 import ImageOverlay from './ImageOverlay'
 import * as _ from 'lodash-es'
+import { examTitleId } from './ids'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -146,8 +147,8 @@ export class Exam extends PureComponent<ExamProps> {
               <main className="e-exam" lang={language}>
                 <React.StrictMode />
                 {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-                <Section aria-labelledby="title">
-                  {examTitle && <DocumentTitle id="title">{renderChildNodes(examTitle)}</DocumentTitle>}
+                <Section aria-labelledby={examTitleId}>
+                  {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
                   {date && (
                     <p>
                       <strong>{dateTimeFormatter.format(date)}</strong>

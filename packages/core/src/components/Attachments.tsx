@@ -15,6 +15,7 @@ import RenderChildNodes from './RenderChildNodes'
 import Section from './Section'
 import { withSectionContext } from './SectionContext'
 import RenderExamElements from './RenderExamElements'
+import { examTitleId } from './ids'
 
 const renderChildNodes = createRenderChildNodes({
   'audio-group': RenderExamElements,
@@ -40,9 +41,9 @@ function Attachments(_props: ExamProps) {
       <main className="e-exam attachments">
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-        <Section aria-labelledby="title">
+        <Section aria-labelledby={examTitleId}>
           {examTitle && (
-            <DocumentTitle id="title">
+            <DocumentTitle id={examTitleId}>
               {renderChildNodes(examTitle)}
               {examTitle.textContent!.includes(',') ? '; ' : ', '}
               <Translation>{(t) => t('attachments-page-title').toLowerCase()}</Translation>
