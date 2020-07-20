@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { I18nextProvider, Translation } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
-import { findChildElement } from '../dom-utils'
+import { findChildElement, NBSP } from '../dom-utils'
 import { initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
 import AttachmentsExternalMaterial from './AttachmentsExternalMaterial'
@@ -33,7 +33,6 @@ function Attachments(_props: ExamProps) {
   const externalMaterial = findChildElement(root, 'external-material')
 
   const i18n = initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-
   useEffect(scrollToHash, [])
 
   return (
@@ -44,9 +43,9 @@ function Attachments(_props: ExamProps) {
         <Section aria-labelledby={examTitleId}>
           {examTitle && (
             <DocumentTitle id={examTitleId}>
+              <Translation>{(t) => t('attachments-page-title')}</Translation>
+              {NBSP}
               {renderChildNodes(examTitle)}
-              {examTitle.textContent!.includes(',') ? '; ' : ', '}
-              <Translation>{(t) => t('attachments-page-title').toLowerCase()}</Translation>
             </DocumentTitle>
           )}
           <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
