@@ -18,7 +18,6 @@
     "libxmljs2": "^0.26.0",
     "mathjax-node": "^2.1.1",
     "ramda": "^0.27.0",
-    "roman-numerals": "^0.3.2",
     "yazl": "^2.5.1"
   }
 }

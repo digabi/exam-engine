@@ -4,7 +4,6 @@ import { readFileSync } from 'fs'
 import { Document, Element, parseXml, SyntaxError, Text } from 'libxmljs2'
 import _ from 'lodash'
 import path from 'path'
-import { toRoman } from 'roman-numerals'
 import { initI18n } from '../i18n'
 import { createGradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
@@ -409,7 +408,7 @@ function applyLocalizations(exam: Element, language: string) {
 }
 
 function addSectionNumbers(exam: Exam) {
-  exam.sections.forEach((section, i) => section.element.attr('display-number', toRoman(i + 1)))
+  exam.sections.forEach((section, i) => section.element.attr('display-number', String(i + 1)))
 }
 
 function addQuestionNumbers(exam: Exam) {
