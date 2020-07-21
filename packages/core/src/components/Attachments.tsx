@@ -37,7 +37,7 @@ function Attachments(_props: ExamProps) {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <main className="e-exam attachments">
+      <main className="e-exam attachments" aria-labelledby={examTitleId}>
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
         <Section aria-labelledby={examTitleId}>

@@ -144,7 +144,7 @@ export class Exam extends PureComponent<ExamProps> {
         <I18nextProvider i18n={this.i18n}>
           <CommonExamContext.Consumer>
             {({ date, dateTimeFormatter, resolveAttachment }) => (
-              <main className="e-exam" lang={language}>
+              <main className="e-exam" lang={language} aria-labelledby={examTitleId}>
                 <React.StrictMode />
                 {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
                 <Section aria-labelledby={examTitleId}>
