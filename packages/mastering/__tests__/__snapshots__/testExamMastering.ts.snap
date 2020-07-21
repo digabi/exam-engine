@@ -391,7 +391,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
         Tutustu Ipsumin mainokseen <e:attachment-link ref="ipsumin-mainos"/>, jota on esitetty televisiossa 1990-luvulla.
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="ipsumin-mainos" display-number="1. A">
+        <e:attachment name="ipsumin-mainos" display-number="1.A">
           <e:attachment-title>Video: Ipsumin mainos</e:attachment-title>
           <e:video src="1.A.webm" width="999" height="999"/>
           <e:reference>
@@ -399,7 +399,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
             <e:howpublished>Deserunt sit nostrud aute reprehenderit</e:howpublished>
           </e:reference>
         </e:attachment>
-        <e:attachment name="ipsumin-mainos-kuulovammaisille" display-number="1. B">
+        <e:attachment name="ipsumin-mainos-kuulovammaisille" display-number="1.B">
           <e:attachment-title>Video: Ipsumin mainos (tekstitetty kuulovammaisia varten)</e:attachment-title>
           <e:video src="1.A_KV.webm" width="999" height="999"/>
           <e:reference>
@@ -432,7 +432,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
         ”Duis in est eiusmod”. Voit käyttää apuna kolumnin kirjoitettua versiota <e:attachment-link ref="duis-minimin-kolumni-teksti"/>. Vastauksen sopiva pituus on noin 5 000 merkkiä.
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="duis-minimin-kolumni-audio" display-number="2. A">
+        <e:attachment name="duis-minimin-kolumni-audio" display-number="2.A">
           <e:attachment-title>Äänitallenne: Duis Minimin kolumni</e:attachment-title>
           <e:audio src="2.A.ogg" duration="999"/>
           <e:reference>
@@ -444,7 +444,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
             <e:modified-by>YTL</e:modified-by>
           </e:reference>
         </e:attachment>
-        <e:attachment name="duis-minimin-kolumni-teksti" display-number="2. B">
+        <e:attachment name="duis-minimin-kolumni-teksti" display-number="2.B">
           <e:attachment-title>Kirjoitettu teksti: Duis Minimin kolumni</e:attachment-title>
           <p>
             <strong>Duis Minim: Nulla Consequat</strong>
@@ -535,7 +535,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
         Vastauksen sopiva pituus on noin 5 000 merkkiä.
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="deserunt-essen-novelli" display-number="3. A">
+        <e:attachment name="deserunt-essen-novelli" display-number="3.A">
           <e:attachment-title>Kirjoitettu teksti: Deserunt Essen novelli</e:attachment-title>
           <h2>Tempor reprehenderit</h2>
           <p>Est ad eu velit duis reprehenderit. Non commodo aute incididunt enim minim exercitation minim
@@ -579,7 +579,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
         sekä Deserunt Magnan runoon <e:attachment-link ref="deserunt-magnan-runo"/>.
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="sit-aute" display-number="4. A">
+        <e:attachment name="sit-aute" display-number="4.A">
           <e:attachment-title>Äänitallenne: Räppi Sit Aute esittäjinä Dolor ja Occaecat</e:attachment-title>
           <e:audio src="4.A.ogg" duration="999"/>
           <e:reference>
@@ -590,7 +590,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-09-17</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="sit-aute-sanoitus" display-number="4. B">
+        <e:attachment name="sit-aute-sanoitus" display-number="4.B">
           <e:attachment-title>Kirjoitettu teksti: Dolorin räpin sanoitus</e:attachment-title>
           <h4>Sit aute</h4>
           <p>Enim ea eiusmod aute ut nisi deserunt
@@ -689,7 +689,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-09-17</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="deserunt-magnan-runo" display-number="4. C">
+        <e:attachment name="deserunt-magnan-runo" display-number="4.C">
           <e:attachment-title>Kirjoitettu teksti: Deserunt Magnan runo</e:attachment-title>
           <p>Proident amet sunt
             <br/>
@@ -1665,7 +1665,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
       </e:question-instruction>
       <e:external-material>
 
-        <e:attachment name="3A" display-number="3. A">
+        <e:attachment name="3A" display-number="3.A">
           <e:attachment-title>
             Videokatkelma: Sunt cupidatat exercitation magna deserunt quis
             
@@ -1732,7 +1732,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="4A" display-number="4. A">
+        <e:attachment name="4A" display-number="4.A">
           <e:attachment-title>
             Uutiskatkelma: Consectetur cupidatat et non occaecat voluptate laboris
             
@@ -1767,7 +1767,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="4B" display-number="4. B">
+        <e:attachment name="4B" display-number="4.B">
           <e:attachment-title>
             Aliqua magna deserunt eu laboris nulla aliqua
             
@@ -1797,7 +1797,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="5A" display-number="5. A">
+        <e:attachment name="5A" display-number="5.A">
           <e:attachment-title>
             Videokatkelma: <em>Qui tempor</em>: Opettajat 1
             
@@ -1819,7 +1819,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:modified-by>YTL</e:modified-by>
           </e:reference>
         </e:attachment>
-        <e:attachment name="5B" display-number="5. B">
+        <e:attachment name="5B" display-number="5.B">
           <e:attachment-title>
             
               Tekstikatkelma: Dolore Mollit,
@@ -1945,7 +1945,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="7A" display-number="7. A">
+        <e:attachment name="7A" display-number="7.A">
           <e:attachment-title>
             Tekstikatkelma: Adipiscing, Lorem
             
@@ -2037,7 +2037,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="8A" display-number="8. A">
+        <e:attachment name="8A" display-number="8.A">
           <e:attachment-title>
             Tekstikatkelma: Magna nostrud ipsum commodo ex velit magna labore aliquip
               voluptate do irure.
@@ -2117,7 +2117,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-05-05</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8B" display-number="8. B">
+        <e:attachment name="8B" display-number="8.B">
           <e:attachment-title>
             Tekstikatkelma: Nulla non ea et eiusmod sunt esse proident exercitation
               eiusmod laborum amet ullamco ad.
@@ -2183,7 +2183,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8C" display-number="8. C">
+        <e:attachment name="8C" display-number="8.C">
           <e:attachment-title>
             Tekstikatkelma: Minim tempor elit sit ea id irure ullamco commodo proident ex
             
@@ -2255,7 +2255,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8D" display-number="8. D">
+        <e:attachment name="8D" display-number="8.D">
           <e:attachment-title>
             Tekstikatkelma: Pariatur occaecat est non aliquip cupidatat ad officia tempor
             
@@ -2294,7 +2294,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8E" display-number="8. E">
+        <e:attachment name="8E" display-number="8.E">
           <e:attachment-title>
             Tekstikatkelma: In tempor est et aute pariatur qui ullamco dolor duis
             
@@ -2352,7 +2352,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8F" display-number="8. F">
+        <e:attachment name="8F" display-number="8.F">
           <e:attachment-title>
             Tekstikatkelma: Reprehenderit amet excepteur esse quis dolor Lorem minim
             
@@ -2443,7 +2443,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="9A" display-number="9. A">
+        <e:attachment name="9A" display-number="9.A">
           <e:attachment-title>
             Videokatkelma: Incididunt id culpa ad deserunt dolor pariatur
             
@@ -2472,7 +2472,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             </e:translator>
           </e:reference>
         </e:attachment>
-        <e:attachment name="9B" display-number="9. B">
+        <e:attachment name="9B" display-number="9.B">
           <e:attachment-title>
             Videokatkelma: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
             
@@ -2634,7 +2634,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
       </e:question-instruction>
       <e:external-material>
 
-        <e:attachment name="3A" display-number="3. A">
+        <e:attachment name="3A" display-number="3.A">
           <e:attachment-title>
             
             Videoklipp: Sunt cupidatat exercitation magna deserunt quis
@@ -2704,7 +2704,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="4A" display-number="4. A">
+        <e:attachment name="4A" display-number="4.A">
           <e:attachment-title>
             
             Tidningsnyhet: Consectetur cupidatat et non occaecat voluptate laboris
@@ -2738,7 +2738,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="4B" display-number="4. B">
+        <e:attachment name="4B" display-number="4.B">
           <e:attachment-title>
             
             Aliqua magna deserunt eu laboris nulla aliqua
@@ -2768,7 +2768,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="5A" display-number="5. A">
+        <e:attachment name="5A" display-number="5.A">
           <e:attachment-title>
             
             Videoklipp: <em>Qui tempor</em>: Lärarna 1
@@ -2790,7 +2790,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:modified-by>YTL</e:modified-by>
           </e:reference>
         </e:attachment>
-        <e:attachment name="5B" display-number="5. B">
+        <e:attachment name="5B" display-number="5.B">
           <e:attachment-title>
             
             
@@ -2915,7 +2915,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="7A" display-number="7. A">
+        <e:attachment name="7A" display-number="7.A">
           <e:attachment-title>
             
             Textutdrag: Adipiscing, Lorem
@@ -3005,7 +3005,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="8A" display-number="8. A">
+        <e:attachment name="8A" display-number="8.A">
           <e:attachment-title>
             
             Textutdrag:Eu sit ut voluptate ullamco sint excepteur deserunt.
@@ -3051,7 +3051,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:reference-date>2017-05-05</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8B" display-number="8. B">
+        <e:attachment name="8B" display-number="8.B">
           <e:attachment-title>
             
             Textutdrag: Aliqua ullamco consequat anim proident.
@@ -3116,7 +3116,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8C" display-number="8. C">
+        <e:attachment name="8C" display-number="8.C">
           <e:attachment-title>
             
             Textutdrag: Aliquip pariatur occaecat nulla exercitation
@@ -3188,7 +3188,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8D" display-number="8. D">
+        <e:attachment name="8D" display-number="8.D">
           <e:attachment-title>
             
             Textutdrag: Consequat reprehenderit nulla quis voluptate reprehenderit fugiat
@@ -3227,7 +3227,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8E" display-number="8. E">
+        <e:attachment name="8E" display-number="8.E">
           <e:attachment-title>
             
             Textutdrag: Duis cillum dolor minim voluptate irure minim
@@ -3285,7 +3285,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <e:reference-date>2017-05-09</e:reference-date>
           </e:reference>
         </e:attachment>
-        <e:attachment name="8F" display-number="8. F">
+        <e:attachment name="8F" display-number="8.F">
           <e:attachment-title>
             
             Textutdrag: Velit occaecat in irure ea commodo id et do ut dolore incididunt
@@ -3378,7 +3378,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment name="9A" display-number="9. A">
+        <e:attachment name="9A" display-number="9.A">
           <e:attachment-title>
             
             Videoklipp: Incididunt id culpa ad deserunt dolor pariatur
@@ -3407,7 +3407,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             </e:translator>
           </e:reference>
         </e:attachment>
-        <e:attachment name="9B" display-number="9. B">
+        <e:attachment name="9B" display-number="9.B">
           <e:attachment-title>
             
             Videoklipp: Pariatur incididunt anim pariatur ipsum incididunt cupidatat
@@ -5378,7 +5378,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   </e:attachment>
 </e:external-material>]]></pre>
       <e:external-material>
-        <e:attachment name="test-material" display-number="11. A">
+        <e:attachment name="test-material" display-number="11.A">
           <e:attachment-title>Title 1</e:attachment-title>
           <p>...HTML code...</p>
           <e:image src="example.jpg" width="999" height="999"/>
@@ -5387,7 +5387,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
             <e:author>Matriculation examination board</e:author>
           </e:reference>
         </e:attachment>
-        <e:attachment name="another-test-material" display-number="11. B">
+        <e:attachment name="another-test-material" display-number="11.B">
           <e:attachment-title>Title 2</e:attachment-title>
           <e:video src="example1.webm" width="999" height="999"/>
           <e:reference>
@@ -7415,7 +7415,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
   </e:attachment>
 </e:external-material>]]></pre>
       <e:external-material>
-        <e:attachment name="test-material" display-number="11. A">
+        <e:attachment name="test-material" display-number="11.A">
           <e:attachment-title>Title 1</e:attachment-title>
           <p>...HTML code...</p>
           <e:image src="example.jpg" width="999" height="999"/>
@@ -7424,7 +7424,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 2`] = `
             <e:author>Matriculation examination board</e:author>
           </e:reference>
         </e:attachment>
-        <e:attachment name="another-test-material" display-number="11. B">
+        <e:attachment name="another-test-material" display-number="11.B">
           <e:attachment-title>Title 2</e:attachment-title>
           <e:video src="example1.webm" width="999" height="999"/>
           <e:reference>
@@ -10828,7 +10828,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
         
       </e:question-title>
       <e:external-material>
-        <e:attachment name="3A" display-number="3. A">
+        <e:attachment name="3A" display-number="3.A">
           <e:attachment-title>
             Kuva: Leikkauspisteet
             
@@ -10954,7 +10954,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
         
       </e:question-title>
       <e:external-material>
-        <e:attachment display-number="7. A">
+        <e:attachment display-number="7.A">
           <e:attachment-title>
             Tiedosto: Pörssikurssit
             
@@ -11031,7 +11031,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
         </p>
         
         <e:external-material>
-          <e:attachment name="91A" display-number="9.1. A">
+          <e:attachment name="91A" display-number="9.1.A">
             <e:attachment-title>
               Kuva: Suunnikas
               
@@ -11190,7 +11190,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
         
       </e:question-title>
       <e:external-material>
-        <e:attachment name="13A" display-number="13. A">
+        <e:attachment name="13A" display-number="13.A">
           <e:attachment-title>
             Taulukko: Suomen väestön rakenne
             
@@ -11640,7 +11640,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
         Parabel och linje
       </e:question-title>
       <e:external-material>
-        <e:attachment name="3A" display-number="3. A">
+        <e:attachment name="3A" display-number="3.A">
           <e:attachment-title>
             
             Figur: Skärningspunkter
@@ -11766,7 +11766,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
         Aktiehandel
       </e:question-title>
       <e:external-material>
-        <e:attachment display-number="7. A">
+        <e:attachment display-number="7.A">
           <e:attachment-title>
             
             Datafil: Börskurser
@@ -11843,7 +11843,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
         </p>
         
         <e:external-material>
-          <e:attachment name="91A" display-number="9.1. A">
+          <e:attachment name="91A" display-number="9.1.A">
             <e:attachment-title>
               
               Figur: Parallellogram
@@ -12002,7 +12002,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
         Finlands befolkningsstruktur
       </e:question-title>
       <e:external-material>
-        <e:attachment name="13A" display-number="13. A">
+        <e:attachment name="13A" display-number="13.A">
           <e:attachment-title>
             
             Tabell: Finlands befolkningsstruktur 
@@ -17484,7 +17484,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Katze (Video)</e:question-title>
       <e:question-instruction>Lesen Sie bitte zuerst die Anweisungen und Fragen und sehen Sie sich dann das Video an. Sie können sich das Video beliebig oft ansehen. Beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="5. A">
+        <e:attachment display-number="5.A">
           <e:attachment-title>Video: Katze</e:attachment-title>
           <e:video src="5.webm" width="999" height="999"/>
           <e:reference>
@@ -17793,7 +17793,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Hausaufgaben</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="8. A">
+        <e:attachment display-number="8.A">
           <e:attachment-title>Text: Whatsapp-Chat</e:attachment-title>
           <div class="kupla1"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was wir für morgen machen müssen?</div>
           <div class="kupla2"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal Tom. Hat eben doch Vorteile, wenn man mit seinem Bruder in derselben Klasse ist ...</div>
@@ -17846,7 +17846,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="9. A">
+        <e:attachment display-number="9.A">
           <e:attachment-title>Texte: Freitag der Dreizehnte</e:attachment-title>
           <p>
             <b>Text 1: Zeitungsartikel, Freitag den 13.3.2018</b>
@@ -17921,7 +17921,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Duis Minim?</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment name="zeugnis" display-number="10. A">
+        <e:attachment name="zeugnis" display-number="10.A">
           <e:attachment-title>Text: Duis Minim?</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -17977,7 +17977,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Excepteur cupidatat!</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="11. A">
+        <e:attachment display-number="11.A">
           <e:attachment-title>Text: Excepteur cupidatat!</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -18131,7 +18131,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Adipisicing voluptate</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="13. A">
+        <e:attachment display-number="13.A">
           <e:attachment-title>Text: Adipisicing voluptate</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -18178,7 +18178,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Ullamco</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="14. A">
+        <e:attachment display-number="14.A">
           <e:attachment-title>Text: Ullamco</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -18234,7 +18234,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Eiusmod</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="15. A">
+        <e:attachment display-number="15.A">
           <e:attachment-title>Text: Eiusmod</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -18308,7 +18308,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:question-title>Duis dolore</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="16. A">
+        <e:attachment display-number="16.A">
           <e:attachment-title>Text: Duis dolore</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -19047,7 +19047,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Katze (Video)</e:question-title>
       <e:question-instruction>Lesen Sie bitte zuerst die Anweisungen und Fragen und sehen Sie sich dann das Video an. Sie können sich das Video beliebig oft ansehen. Beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="5. A">
+        <e:attachment display-number="5.A">
           <e:attachment-title>Video: Katze</e:attachment-title>
           <e:video src="5.webm" width="999" height="999"/>
           <e:reference>
@@ -19356,7 +19356,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Hausaufgaben</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="8. A">
+        <e:attachment display-number="8.A">
           <e:attachment-title>Text: Whatsapp-Chat</e:attachment-title>
           <div class="kupla1"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was wir für morgen machen müssen?</div>
           <div class="kupla2"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal Tom. Hat eben doch Vorteile, wenn man mit seinem Bruder in derselben Klasse ist ...</div>
@@ -19409,7 +19409,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="9. A">
+        <e:attachment display-number="9.A">
           <e:attachment-title>Texte: Freitag der Dreizehnte</e:attachment-title>
           <p>
             <b>Text 1: Zeitungsartikel, Freitag den 13.3.2018</b>
@@ -19484,7 +19484,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Duis Minim?</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment name="zeugnis" display-number="10. A">
+        <e:attachment name="zeugnis" display-number="10.A">
           <e:attachment-title>Text: Duis Minim?</e:attachment-title>
           <p>
             
@@ -19540,7 +19540,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Excepteur cupidatat!</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="11. A">
+        <e:attachment display-number="11.A">
           <e:attachment-title>Text: Excepteur cupidatat!</e:attachment-title>
           <p>
             
@@ -19694,7 +19694,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Adipisicing voluptate</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="13. A">
+        <e:attachment display-number="13.A">
           <e:attachment-title>Text: Adipisicing voluptate</e:attachment-title>
           <p>
             
@@ -19741,7 +19741,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Ullamco</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="14. A">
+        <e:attachment display-number="14.A">
           <e:attachment-title>Text: Ullamco</e:attachment-title>
           <p>
             
@@ -19797,7 +19797,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Eiusmod</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="15. A">
+        <e:attachment display-number="15.A">
           <e:attachment-title>Text: Eiusmod</e:attachment-title>
           <p>
             
@@ -19871,7 +19871,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:question-title>Duis dolore</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="16. A">
+        <e:attachment display-number="16.A">
           <e:attachment-title>Text: Duis dolore</e:attachment-title>
           <p>
             
