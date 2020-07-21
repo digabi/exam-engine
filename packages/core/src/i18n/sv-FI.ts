@@ -15,6 +15,9 @@ export const sv_FI: Translations = {
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} poäng',
   'points-screen-reader_plural': '{{count}} poäng',
+  audio: {
+    play: '<<<Käännös puuttuu>>>',
+  },
   'audio-errors': {
     'already-accessed': 'Du har redan spelat denna inspelning. Uppdatera sidan',
     'already-playing': 'Lyssna först inspelningen till slut.',

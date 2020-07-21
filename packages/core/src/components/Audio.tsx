@@ -22,17 +22,18 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
       ? useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
       : undefined
   const { resolveAttachment } = useContext(CommonExamContext)
+  const labelId = `audio-label-${element.getAttribute('id')!}`
 
   return (
     <div className={classNames('audio e-columns e-columns--center-v e-mrg-b-2', className)}>
       {restrictedAudioId != null && times != null ? (
-        <RestrictedAudioPlayer {...{ src, restrictedAudioId, duration, times }} />
+        <RestrictedAudioPlayer {...{ src, restrictedAudioId, duration, times, labelId }} />
       ) : (
         <audio className="e-column e-column--narrow" preload="metadata" controls>
           <source src={resolveAttachment(src)} />
         </audio>
       )}
-      <div className="e-column">
+      <div className="e-column" id={labelId}>
         <AudioPlaybackError error={audioPlaybackError}>
           {element.hasChildNodes() && renderChildNodes(element)}
         </AudioPlaybackError>
