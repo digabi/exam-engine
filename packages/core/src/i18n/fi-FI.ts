@@ -18,6 +18,9 @@ export const fi_FI = {
   points_plural: '{{count}} p.',
   'points-screen-reader': '{{count}} piste',
   'points-screen-reader_plural': '{{count}} pistettä',
+  audio: {
+    play: 'Kuuntele äänite',
+  },
   'audio-errors': {
     'already-accessed': 'Olet jo toistanut tämän tallenteen. Päivitä sivu.',
     'already-playing': 'Kuuntele ensin äänite loppuun.',

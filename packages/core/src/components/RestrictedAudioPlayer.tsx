@@ -6,23 +6,28 @@ import { useDispatch, useSelector } from 'react-redux'
 import { playAudio } from '../store/audio/actions'
 import { getAudioState, getDurationRemaining, getPlaybackTimesRemaining } from '../store/selectors'
 import { RestrictedAudioId } from '../types/ExamServerAPI'
+import { useTranslation } from 'react-i18next'
 
 function RestrictedAudioPlayer({
   src,
   restrictedAudioId,
   duration,
   times,
+  labelId,
 }: {
   src: string
   restrictedAudioId: RestrictedAudioId
   duration: number
   times: number
+  labelId: string
 }) {
   const audioState = useSelector(getAudioState(src, restrictedAudioId))
   const durationRemaining = useSelector(getDurationRemaining(src, restrictedAudioId))
   const playbackTimesRemaining = useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
+  const { t } = useTranslation()
   const dispatch = useDispatch()
   const disabled = audioState !== 'stopped' || playbackTimesRemaining === 0
+  const remainingLabelId = `audio-remaining-${restrictedAudioId}`
 
   return (
     <div
@@ -37,10 +42,12 @@ function RestrictedAudioPlayer({
         })}
         disabled={disabled}
         onClick={() => audioState === 'stopped' && dispatch(playAudio({ src, restrictedAudioId, duration }))}
+        aria-describedby={[remainingLabelId, labelId].join(' ')}
+        aria-label={t('audio.play')}
       >
-        {audioState !== 'playing' && <FontAwesomeIcon icon={faPlay} fixedWidth aria-label="..." />}
+        {audioState !== 'playing' && <FontAwesomeIcon icon={faPlay} fixedWidth />}
       </button>
-      <span className="restricted-audio-player__duration e-column e-text-right">
+      <span className="restricted-audio-player__duration e-column e-text-right" id={remainingLabelId}>
         {formatDuration(durationRemaining != null ? durationRemaining : duration)}
       </span>
     </div>
