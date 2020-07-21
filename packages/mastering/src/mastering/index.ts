@@ -446,7 +446,7 @@ function addAttachmentNumbers(exam: Exam) {
     // attachments. This also makes the numbering less confusing for users,
     // since it will always start at "A".
     question.element.find<Element>('./e:external-material/e:attachment', ns).forEach((attachment, i) => {
-      const displayNumber = `${questionDisplayNumber}. ${alphabet[i]}`
+      const displayNumber = `${questionDisplayNumber}.${alphabet[i]}`
       attachment.attr('display-number', String(displayNumber))
     })
   }

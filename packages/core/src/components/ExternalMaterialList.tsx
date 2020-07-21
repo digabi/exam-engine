@@ -15,7 +15,7 @@ function Attachment({ element }: ExamComponentProps) {
   const { displayNumber } = useContext(AttachmentContext)
 
   return (
-    <li data-list-number={displayNumber} aria-label={displayNumber!.replace(' ', '')}>
+    <li data-list-number={displayNumber} aria-label={displayNumber!}>
       {renderChildNodes(element, RenderOptions.SkipHTML)}
     </li>
   )
