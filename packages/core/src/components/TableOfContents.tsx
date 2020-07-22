@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { Translation, useTranslation } from 'react-i18next'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
-import { findChildElement, query, queryAncestors } from '../dom-utils'
+import { findChildElement, NBSP, query, queryAncestors } from '../dom-utils'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext, withSectionContext } from './SectionContext'
-import { tocTitleId } from './ids'
+import { tocSectionTitleId, tocTitleId } from './ids'
 
 function TOCSection({ element }: ExamComponentProps) {
   const { maxAnswers, minAnswers, displayNumber, childQuestions } = useContext(SectionContext)
@@ -26,7 +26,12 @@ function TOCSection({ element }: ExamComponentProps) {
           }}
         />
       )}
-      <ol className="e-list-data e-pad-l-0">{renderChildNodes(element, RenderOptions.SkipHTML)}</ol>
+      <ol
+        className="e-list-data e-pad-l-0"
+        aria-labelledby={sectionTitle && tocSectionTitleId(sectionTitle.getAttribute('id')!)}
+      >
+        {renderChildNodes(element, RenderOptions.SkipHTML)}
+      </ol>
     </li>
   )
 }
@@ -43,12 +48,16 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
   const { numberOfSections } = useContext(CommonExamContext)
   const { t } = useTranslation()
   return (
-    <header>
-      {element.hasChildNodes() && (
-        <b>
-          {numberOfSections > 1 && t('part', { displayNumber })} {element && renderChildNodes(element)}
-        </b>
-      )}
+    <>
+      <header className="e-semibold" id={tocSectionTitleId(element.getAttribute('id')!)}>
+        {element.hasChildNodes() && (
+          <>
+            {numberOfSections > 1 && t('part', { displayNumber })}
+            {NBSP}
+            {renderChildNodes(element)}
+          </>
+        )}
+      </header>
       {maxAnswers != null && (
         <div>
           <AnsweringInstructions
@@ -59,7 +68,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
           />
         </div>
       )}
-    </header>
+    </>
   )
 }
 
