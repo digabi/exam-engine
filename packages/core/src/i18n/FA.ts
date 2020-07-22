@@ -6,8 +6,6 @@ export const FA: ExamTranslations = {
   material_plural: 'Documents',
   'external-material-title': 'Document',
   part: 'Partie {{displayNumber}} :',
-  'points-screen-reader': '{{count}} point',
-  'points-screen-reader_plural': '{{count}} points',
   references: {
     heading: 'Sources',
     source: "D'après",

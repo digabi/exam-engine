@@ -5,8 +5,6 @@ export const CA: ExamTranslations = {
   material: 'Aineisto',
   'external-material-title': 'Aineisto',
   part: 'Osa {{displayNumber}}:',
-  'points-screen-reader': '{{count}} piste',
-  'points-screen-reader_plural': '{{count}} pistettä',
   references: {
     heading: 'Lähteet',
     source: 'Lähde:',

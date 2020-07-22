@@ -6,8 +6,6 @@ export const VA: ExamTranslations = {
   material_plural: 'Материал',
   'external-material-title': 'Материал',
   part: 'Часть {{displayNumber}}:',
-  'points-screen-reader': '{{count}} баллов',
-  'points-screen-reader_plural': '{{count}} баллов',
   references: {
     heading: 'Источники',
     source: 'Источник',

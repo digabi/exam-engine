@@ -5,8 +5,6 @@ export const GC: ExamTranslations = {
   material: 'Material',
   'external-material-title': 'Material',
   part: 'Parte {{displayNumber}}:',
-  'points-screen-reader': '{{count}} pointo',
-  'points-screen-reader_plural': '{{count}} pointos',
   references: {
     heading: 'Fontes',
     source: 'Fonte:',

@@ -7,8 +7,6 @@ export const Z: ExamTranslations = {
   'attachments-page-title': 'Ávdnasat:',
   part: 'Oassi {{displayNumber}}:',
   points: '{{count}} č.',
-  'points-screen-reader': '{{count}} čuokkis',
-  'points-screen-reader_plural': '{{count}} čuoggá',
   references: {
     heading: 'Gáldut',
     source: 'Gáldu:',
