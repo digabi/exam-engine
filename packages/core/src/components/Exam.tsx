@@ -106,6 +106,7 @@ const renderChildNodes = createRenderChildNodes({
 export class Exam extends PureComponent<ExamProps> {
   private store: Store<AppState>
   private i18n: i18n
+  private cleanup?: () => void
 
   constructor(props: ExamProps) {
     super(props)
@@ -120,7 +121,13 @@ export class Exam extends PureComponent<ExamProps> {
   }
 
   componentDidMount(): void {
-    scrollToHash()
+    this.cleanup = scrollToHash()
+  }
+
+  componentWillUnmount(): void {
+    if (this.cleanup) {
+      this.cleanup()
+    }
   }
 
   render(): React.ReactNode {
