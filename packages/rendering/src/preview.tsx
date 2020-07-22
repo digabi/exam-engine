@@ -160,6 +160,7 @@ window.onload = async () => {
     </Toolbar>,
     app,
     () => {
+      app.removeAttribute('aria-busy')
       const maybeScrollY = localStorage.getItem(scrollKey)
       localStorage.removeItem(scrollKey)
       if (maybeScrollY) {
