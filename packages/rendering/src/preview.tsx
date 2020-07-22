@@ -26,7 +26,7 @@ function Toolbar({
 }) {
   return (
     <>
-      <ol className="toolbar">
+      <ol className="toolbar" aria-hidden="true">
         {languages.map((language) => (
           <ChangeLanguage language={language} key={language} />
         ))}
