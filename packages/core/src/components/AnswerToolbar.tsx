@@ -1,5 +1,5 @@
 import React from 'react'
-import { Translation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { findChildElement, NBSP, queryAncestors } from '../dom-utils'
 import * as actions from '../store/answers/actions'
 import { AnswerError } from './RichTextAnswer'
@@ -22,17 +22,17 @@ function AnswerToolbar({
   showAnswerHistory = false,
   supportsAnswerHistory = false,
 }: AnswerToolbarProps) {
+  const { t } = useTranslation()
+
   return (
     <div className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2">
       <div className="answer-toolbar__answer-length e-column e-column--narrow">
-        {answer && (answer.type === 'text' || answer.type === 'richText') ? (
-          <Translation>{(t) => t('answer-length', { count: answer.characterCount })}</Translation>
-        ) : (
-          NBSP
-        )}
+        {answer && (answer.type === 'text' || answer.type === 'richText')
+          ? t('answer-length', { count: answer.characterCount })
+          : NBSP}
       </div>
       <div className="answer-toolbar__errors e-column e-column--auto e-text-center">
-        {error && <Translation>{(t) => t(`answer-errors.${error.key}`, error.options)}</Translation>}
+        {error && <span role="alert">{t(`answer-errors.${error.key}`, error.options)}</span>}
       </div>
       <div className="answer-toolbar__history e-column e-column--narrow e-text-right">
         {supportsAnswerHistory && (
@@ -51,7 +51,7 @@ function AnswerToolbar({
                   }
                 }}
               >
-                <Translation>{(t) => t('previous-answer-versions')}</Translation>
+                {t('previous-answer-versions')}
               </button>
             ) : (
               NBSP
