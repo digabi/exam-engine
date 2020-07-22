@@ -13,8 +13,6 @@ export const sv_FI: Translations = {
   comment: 'Kommentar',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
-  'points-screen-reader': '{{count}} poäng',
-  'points-screen-reader_plural': '{{count}} poäng',
   audio: {
     play: '<<<Käännös puuttuu>>>',
   },

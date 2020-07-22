@@ -16,8 +16,6 @@ export const fi_FI = {
   comment: 'Kommentti',
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
-  'points-screen-reader': '{{count}} piste',
-  'points-screen-reader_plural': '{{count}} pistettä',
   audio: {
     play: 'Kuuntele äänite',
   },

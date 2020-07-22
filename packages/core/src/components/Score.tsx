@@ -15,7 +15,6 @@ export const Score: React.FunctionComponent<{ size?: 'inline' | 'small' | 'large
         'e-score--large e-font-size-l e-semibold': size === 'large',
         'e-score--inline e-font-size-xs': size === 'inline',
       })}
-      aria-label={t('points-screen-reader', { count: score })}
     >
       {t('points', { count: score })}
     </Tag>

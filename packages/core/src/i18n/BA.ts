@@ -5,8 +5,6 @@ export const BA: ExamTranslations = {
   material: 'Material',
   'external-material-title': 'Material',
   part: 'Del {{displayNumber}}:',
-  'points-screen-reader': '{{count}} poäng',
-  'points-screen-reader_plural': '{{count}} poäng',
   references: {
     heading: 'Källor',
     source: 'Källa:',

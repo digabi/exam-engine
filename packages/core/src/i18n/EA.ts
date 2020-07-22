@@ -5,8 +5,6 @@ export const EA: ExamTranslations = {
   material: 'Material',
   'external-material-title': 'Material',
   part: 'Part {{displayNumber}}:',
-  'points-screen-reader': '{{count}} point',
-  'points-screen-reader_plural': '{{count}} points',
   references: {
     heading: 'Sources',
     source: 'Source:',

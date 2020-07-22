@@ -5,8 +5,6 @@ export const TC: ExamTranslations = {
   material: 'Materiale',
   'external-material-title': 'Materiale',
   part: 'Parte {{displayNumber}}:',
-  'points-screen-reader': '{{count}} punto',
-  'points-screen-reader_plural': '{{count}} punti',
   references: {
     heading: 'Fonti',
     source: 'Fonte:',

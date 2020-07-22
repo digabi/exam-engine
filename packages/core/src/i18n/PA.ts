@@ -5,8 +5,6 @@ export const PA: ExamTranslations = {
   material: 'Material',
   'external-material-title': 'Material',
   part: 'Parte {{displayNumber}}:',
-  'points-screen-reader': '{{count}} punto',
-  'points-screen-reader_plural': '{{count}} puntos',
   references: {
     heading: 'Fuentes',
     source: 'Fuente:',
