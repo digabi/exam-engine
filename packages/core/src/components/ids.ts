@@ -12,4 +12,6 @@ export const externalMaterialListTitleId = (id: string): string => `external-mat
 
 export const tocSectionTitleId = (id: string): string => `toc-section-title-${id}`
 
+export const dropdownAnswerScoreId = (id: string): string => `dropdown-answer-score-${id}`
+
 export const tocTitleId = 'toc-title'

@@ -2,10 +2,13 @@ import classNames from 'classnames'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-export const Score: React.FunctionComponent<{ size?: 'inline' | 'small' | 'large'; score: number }> = ({
-  size = 'small',
-  score,
-}) => {
+export interface ScoreProps {
+  id?: string
+  size?: 'inline' | 'small' | 'large'
+  score: number
+}
+
+export const Score: React.FunctionComponent<ScoreProps> = ({ id, size = 'small', score }) => {
   const { t } = useTranslation()
   const Tag = size === 'inline' ? 'sup' : 'span'
   return (
@@ -15,6 +18,7 @@ export const Score: React.FunctionComponent<{ size?: 'inline' | 'small' | 'large
         'e-score--large e-font-size-l e-semibold': size === 'large',
         'e-score--inline e-font-size-xs': size === 'inline',
       })}
+      id={id}
     >
       {t('points', { count: score })}
     </Tag>
