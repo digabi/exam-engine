@@ -13,7 +13,7 @@ const AudioPlaybackError: React.FunctionComponent<{
   return (
     <ReactCSSTransitionReplace transitionName="e-crossfade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
       {error != null ? (
-        <div className="e-color-error">
+        <div className="e-color-error" role="alert">
           <FontAwesomeIcon icon={faExclamationTriangle} className="e-mrg-r-1" />
           {t(`audio-errors.${error}`)}
         </div>
