@@ -26,6 +26,10 @@ export const sv_FI: Translations = {
     play: 'Testa hörbarheten',
     volume: 'Du kan justera ljudvolymen uppe i högra hörnet av rutan.',
   },
+  'dropdown-answer': {
+    label: '<<<Käännös puuttuu>>>',
+    clear: '<<<Käännös puuttuu>>>',
+  },
   grading: {
     'pregrading-annotations': 'Preliminära bedömningens anteckningar',
     'censor-annotations': 'Censorns anteckningar',

@@ -29,6 +29,10 @@ export const fi_FI = {
     play: 'Testaa äänitteiden kuuluvuus',
     volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.',
   },
+  'dropdown-answer': {
+    label: 'Valitse oikea vaihtoehto',
+    clear: 'Poista valinta',
+  },
   grading: {
     'pregrading-annotations': 'Valmistavan arvostelun merkinnät',
     'censor-annotations': 'Sensorin merkinnät',

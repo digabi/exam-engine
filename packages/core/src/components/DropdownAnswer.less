@@ -35,7 +35,6 @@
       max-width: 100%;
       outline: none;
       min-height: 1.5rem;
-      user-select: none;
 
       // Draw the border in an absolutely positioned pseudo element. We need to
       // draw it separately, because we want the a 1px margin outside the border
@@ -82,11 +81,12 @@
       width: 100%;
       z-index: 1;
       border: 1px solid @colors[link];
-      transform: translateY(-2px);
+      top: calc(100% - 2px);
       // Toggle visibility via CSS due to MathJax. It is so slow to render new
       // formulas that we need to pre-render them before making the dropdown
       // menu visible.
       visibility: hidden;
+      outline: none;
 
       &--open {
         visibility: visible;
