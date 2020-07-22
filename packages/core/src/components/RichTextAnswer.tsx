@@ -98,6 +98,9 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
         ref={this.ref}
         className={classNames('text-answer text-answer--multi-line', className)}
         data-question-id={questionId}
+        role="textbox"
+        aria-multiline="true"
+        tabIndex={0}
       />
     )
   }
