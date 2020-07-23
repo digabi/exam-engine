@@ -27,9 +27,14 @@
         left: 0;
         transform: translateY(-100%);
         transition: transform 0.5s;
+        visibility: hidden;
       }
       .audio-player--visible {
         transform: translateY(0);
+        visibility: visible;
+      }
+      .audio-player--animating {
+        visibility: visible;
       }
     </style>
     <script src="/main-bundle.js"></script>
