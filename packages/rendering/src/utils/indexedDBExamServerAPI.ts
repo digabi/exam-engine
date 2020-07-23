@@ -23,8 +23,14 @@ export default function indexedDBExamServerAPI(
   audioPlayer.classList.add('audio-player')
   audioPlayer.controls = true
   audioPlayer.onended = () => {
+    audioPlayer.classList.add('audio-player--animating')
     audioPlayer.classList.remove('audio-player--visible')
   }
+
+  const animationFinished = () => audioPlayer.classList.remove('audio-player--animating')
+  audioPlayer.addEventListener('transitionend', animationFinished)
+  audioPlayer.addEventListener('transitioncancel', animationFinished)
+
   document.body.appendChild(audioPlayer)
 
   const examServerApi: ExamServerAPI = {
@@ -47,7 +53,7 @@ export default function indexedDBExamServerAPI(
 
       try {
         await audioPlayer.play()
-        audioPlayer.classList.add('audio-player--visible')
+        audioPlayer.classList.add('audio-player--visible', 'audio-player--animating')
         return 'ok'
       } catch (err) {
         console.error(err)

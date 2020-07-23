@@ -8,8 +8,14 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
   audioPlayer.classList.add('audio-player')
   audioPlayer.controls = true
   audioPlayer.onended = () => {
+    audioPlayer.classList.add('audio-player--animating')
     audioPlayer.classList.remove('audio-player--visible')
   }
+
+  const animationFinished = () => audioPlayer.classList.remove('audio-player--animating')
+  audioPlayer.addEventListener('transitionend', animationFinished)
+  audioPlayer.addEventListener('transitioncancel', animationFinished)
+
   document.body.appendChild(audioPlayer)
 
   const examServerAPI: ExamServerAPI = {
@@ -40,7 +46,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
 
       try {
         await audioPlayer.play()
-        audioPlayer.classList.add('audio-player--visible')
+        audioPlayer.classList.add('audio-player--visible', 'audio-player--animating')
         return 'ok'
       } catch (err) {
         console.error(err)
