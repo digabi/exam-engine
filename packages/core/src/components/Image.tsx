@@ -27,7 +27,13 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
         {queryAncestors(element, ['choice-answer', 'hint']) != null ? (
           <Img />
         ) : (
-          <a title={t('zoom-in')} href={imgUrl} target="original-picture" className="e-zoomable">
+          <a
+            title={t('zoom-in')}
+            href={imgUrl}
+            target="original-picture"
+            className="e-zoomable"
+            aria-hidden={caption == null}
+          >
             <Img />
           </a>
         )}
