@@ -4,7 +4,7 @@ import React, { useContext, useEffect } from 'react'
 import { I18nextProvider, useTranslation } from 'react-i18next'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
-import { initI18n } from '../../i18n'
+import { changeLanguage, initI18n } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
 import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
@@ -21,6 +21,7 @@ import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
 import ResultsTextAnswer from './ResultsTextAnswer'
+import { useCached } from '../../useCached'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -49,36 +50,35 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes,
 })
 
-function Results(_props: ResultsProps) {
-  const { language, root } = useContext(CommonExamContext)
+const Results: React.FunctionComponent<ResultsProps> = () => {
+  const { date, dateTimeFormatter, language, resolveAttachment, root } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')
-
   const examStylesheet = root.getAttribute('exam-stylesheet')
 
-  const i18n = initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
+  const examCode = root.getAttribute('exam-code')
+  const dayCode = root.getAttribute('day-code')
+  const i18n = useCached(() => initI18n(language, examCode, dayCode))
+  useEffect(changeLanguage(i18n, language))
+
   useEffect(scrollToHash, [])
 
   return (
     <I18nextProvider i18n={i18n}>
-      <CommonExamContext.Consumer>
-        {({ date, dateTimeFormatter, resolveAttachment }) => (
-          <main className="e-exam" lang={language}>
-            <React.StrictMode />
-            {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-            <div className="e-columns e-columns--bottom-v e-mrg-b-4">
-              {examTitle && (
-                <DocumentTitle id="title" className="e-column e-mrg-b-0">
-                  {renderChildNodes(examTitle)}
-                  {date && ', ' + dateTimeFormatter.format(date)}
-                </DocumentTitle>
-              )}
-              <ScoresAndFinalGrade />
-            </div>
-            {renderChildNodes(root)}
-          </main>
-        )}
-      </CommonExamContext.Consumer>
+      <main className="e-exam" lang={language}>
+        <React.StrictMode />
+        {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+        <div className="e-columns e-columns--bottom-v e-mrg-b-4">
+          {examTitle && (
+            <DocumentTitle id="title" className="e-column e-mrg-b-0">
+              {renderChildNodes(examTitle)}
+              {date && ', ' + dateTimeFormatter.format(date)}
+            </DocumentTitle>
+          )}
+          <ScoresAndFinalGrade />
+        </div>
+        {renderChildNodes(root)}
+      </main>
     </I18nextProvider>
   )
 }
