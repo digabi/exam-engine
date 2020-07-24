@@ -89,4 +89,10 @@ export function initI18n(language: string, examCode: string | null, dayCode: str
   )
 }
 
+export const changeLanguage = (_i18n: typeof i18n, language: string) => (): void => {
+  if (_i18n.language !== language) {
+    _i18n.changeLanguage(language).then(_.noop).catch(_.noop)
+  }
+}
+
 export default i18n

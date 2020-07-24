@@ -1,13 +1,10 @@
-import { i18n } from 'i18next'
-import React, { PureComponent } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
-import { Store } from 'redux'
 import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement } from '../dom-utils'
-import { initI18n } from '../i18n'
+import { changeLanguage, initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
-import { AppState } from '../store'
 import { initializeExamStore } from '../store/index'
 import AttachmentLink from './AttachmentLink'
 import AttachmentLinks from './AttachmentLinks'
@@ -42,8 +39,8 @@ import Video from './Video'
 import { ExamAnswer } from '../types/ExamAnswer'
 import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
 import ImageOverlay from './ImageOverlay'
-import * as _ from 'lodash-es'
 import { examTitleId } from './ids'
+import { useCached } from '../useCached'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -103,79 +100,54 @@ const renderChildNodes = createRenderChildNodes({
   'image-overlay': ImageOverlay,
 })
 
-export class Exam extends PureComponent<ExamProps> {
-  private store: Store<AppState>
-  private i18n: i18n
-  private cleanup?: () => void
+const Exam: React.FunctionComponent<ExamProps> = ({
+  casStatus,
+  answers,
+  restrictedAudioPlaybackStats,
+  examServerApi,
+}) => {
+  const { date, dateTimeFormatter, language, resolveAttachment, root } = useContext(CommonExamContext)
 
-  constructor(props: ExamProps) {
-    super(props)
-    const root = props.doc.documentElement
-    this.i18n = initI18n(props.language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
-    this.store = initializeExamStore(
-      props.casStatus,
-      props.answers,
-      props.restrictedAudioPlaybackStats,
-      props.examServerApi
-    )
-  }
+  const examTitle = findChildElement(root, 'exam-title')
+  const examInstruction = findChildElement(root, 'exam-instruction')
+  const tableOfContents = findChildElement(root, 'table-of-contents')
+  const externalMaterial = findChildElement(root, 'external-material')
+  const examStylesheet = root.getAttribute('exam-stylesheet')
 
-  componentDidMount(): void {
-    this.cleanup = scrollToHash()
-  }
+  const store = useCached(() => initializeExamStore(casStatus, answers, restrictedAudioPlaybackStats, examServerApi))
 
-  componentWillUnmount(): void {
-    if (this.cleanup) {
-      this.cleanup()
-    }
-  }
+  const examCode = root.getAttribute('exam-code')
+  const dayCode = root.getAttribute('day-code')
+  const i18n = useCached(() => initI18n(language, examCode, dayCode))
+  useEffect(changeLanguage(i18n, language))
 
-  render(): React.ReactNode {
-    const { doc, language } = this.props
-    const root = doc.documentElement
-    const examTitle = findChildElement(root, 'exam-title')
-    const examInstruction = findChildElement(root, 'exam-instruction')
-    const tableOfContents = findChildElement(root, 'table-of-contents')
-    const externalMaterial = findChildElement(root, 'external-material')
-    const examStylesheet = root.getAttribute('exam-stylesheet')
+  useEffect(scrollToHash, [])
 
-    if (this.i18n.language !== language) {
-      this.i18n
-        .changeLanguage(language)
-        .then(_.noop)
-        .catch((err) => console.error(err))
-    }
-
-    return (
-      <Provider store={this.store}>
-        <I18nextProvider i18n={this.i18n}>
-          <CommonExamContext.Consumer>
-            {({ date, dateTimeFormatter, resolveAttachment }) => (
-              <main className="e-exam" lang={language} aria-labelledby={examTitleId}>
-                <React.StrictMode />
-                {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-                <Section aria-labelledby={examTitleId}>
-                  {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-                  {date && (
-                    <p>
-                      <strong>{dateTimeFormatter.format(date)}</strong>
-                    </p>
-                  )}
-                  {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
-                  {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
-                  {externalMaterial && (
-                    <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                  )}
-                </Section>
-                {renderChildNodes(root)}
-                <SaveIndicator />
-              </main>
+  return (
+    <Provider store={store}>
+      <I18nextProvider i18n={i18n}>
+        <main className="e-exam" lang={language} aria-labelledby={examTitleId}>
+          <React.StrictMode />
+          {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+          <Section aria-labelledby={examTitleId}>
+            {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+            {date && (
+              <p>
+                <strong>{dateTimeFormatter.format(date)}</strong>
+              </p>
             )}
-          </CommonExamContext.Consumer>
-        </I18nextProvider>
-      </Provider>
-    )
-  }
+            {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+            {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
+            {externalMaterial && (
+              <ExternalMaterialList {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+            )}
+          </Section>
+          {renderChildNodes(root)}
+          <SaveIndicator />
+        </main>
+      </I18nextProvider>
+    </Provider>
+  )
 }
 
 export default React.memo(withExamContext(withCommonExamContext(Exam)))

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { I18nextProvider, Translation } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, NBSP } from '../dom-utils'
-import { initI18n } from '../i18n'
+import { changeLanguage, initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
 import AttachmentsExternalMaterial from './AttachmentsExternalMaterial'
 import AttachmentsQuestion from './AttachmentsQuestion'
@@ -16,6 +16,7 @@ import Section from './Section'
 import { withSectionContext } from './SectionContext'
 import RenderExamElements from './RenderExamElements'
 import { examTitleId } from './ids'
+import { useCached } from '../useCached'
 
 const renderChildNodes = createRenderChildNodes({
   'audio-group': RenderExamElements,
@@ -25,14 +26,18 @@ const renderChildNodes = createRenderChildNodes({
   section: withSectionContext(RenderChildNodes),
 })
 
-function Attachments(_props: ExamProps) {
+const Attachments: React.FunctionComponent<ExamProps> = () => {
   const { root, language, date, dateTimeFormatter, resolveAttachment } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')!
   const examStylesheet = root.getAttribute('exam-stylesheet')
   const externalMaterial = findChildElement(root, 'external-material')
 
-  const i18n = initI18n(language, root.getAttribute('exam-code'), root.getAttribute('day-code'))
+  const examCode = root.getAttribute('exam-code')
+  const dayCode = root.getAttribute('day-code')
+  const i18n = useCached(() => initI18n(language, examCode, dayCode))
+  useEffect(changeLanguage(i18n, language))
+
   useEffect(scrollToHash, [])
 
   return (
