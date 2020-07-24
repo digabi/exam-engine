@@ -6,8 +6,6 @@ export const sectionTitleId = (displayNumber: string): string => `section-title-
 
 export const questionTitleId = (displayNumber: string): string => `question-title-${displayNumber}`
 
-export const attachmentTitleId = (displayNumber: string): string => `attachment-title-${displayNumber}`
-
 export const externalMaterialListTitleId = (id: string): string => `external-material-list-title-${id}`
 
 export const tocSectionTitleId = (id: string): string => `toc-section-title-${id}`
