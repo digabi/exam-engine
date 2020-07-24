@@ -19,7 +19,7 @@ import { Score } from './Score'
 import { ExamComponentProps } from '../createRenderChildNodes'
 import { ChoiceAnswer as ChoiceAnswerT } from '../types/ExamAnswer'
 import { useTranslation } from 'react-i18next'
-import { dropdownAnswerScoreId } from './ids'
+import { answerScoreId } from '../ids'
 
 interface DropdownAnswerProps extends ExamComponentProps {
   saveAnswer: typeof actions.saveAnswer
@@ -92,7 +92,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   ) => any = getToggleButtonProps
 
   const { t } = useTranslation()
-  const scoreId = dropdownAnswerScoreId(element.getAttribute('id')!)
+  const scoreId = answerScoreId(element)
 
   return (
     <span className="e-nowrap">

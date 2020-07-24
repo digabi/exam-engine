@@ -1,6 +1,5 @@
 import * as _ from 'lodash-es'
 import { queryAll } from '../dom-utils'
-import { ExamNamespaceURI } from '../createRenderChildNodes'
 
 export default function parseExam(examXml: string, deterministicRendering = false): XMLDocument {
   const doc = new DOMParser().parseFromString(examXml, 'application/xml')
@@ -8,22 +7,6 @@ export default function parseExam(examXml: string, deterministicRendering = fals
     queryAll(doc.documentElement, ['choice-answer', 'dropdown-answer'])
       .filter((e) => e.getAttribute('ordering') !== 'fixed')
       .forEach((e) => randomizeChildElementOrder(e))
-  }
-
-  // Assign a global numeric id for each element in the exam. They are used to generate
-  // unique ids for assistive technologies, as an example.
-  const treeWalker = doc.createTreeWalker(doc.documentElement, NodeFilter.SHOW_ELEMENT, {
-    acceptNode(node: Node): number {
-      return (node as HTMLElement).namespaceURI === ExamNamespaceURI
-        ? NodeFilter.FILTER_ACCEPT
-        : NodeFilter.FILTER_REJECT
-    },
-  })
-  let currentElement: HTMLElement | null
-  let id = 0
-
-  while ((currentElement = treeWalker.nextNode() as HTMLElement | null)) {
-    currentElement.setAttribute('id', String(id++))
   }
 
   // The reference parts (e.g. author, title and so on) are displayed as inline

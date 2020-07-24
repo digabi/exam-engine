@@ -5,7 +5,7 @@ import { queryAll, queryAncestors } from '../dom-utils'
 import { CommonExamContext } from './CommonExamContext'
 import Reference from './Reference'
 import Section from './Section'
-import { referencesTitleId } from './ids'
+import { referencesTitleId } from '../ids'
 
 const renderChildNodes = createRenderChildNodes({})
 function References(_props: ExamComponentProps) {

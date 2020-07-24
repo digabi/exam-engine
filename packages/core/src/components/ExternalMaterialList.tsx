@@ -5,7 +5,7 @@ import { queryAncestors } from '../dom-utils'
 import { url } from '../url'
 import { AttachmentContext, withAttachmentContext } from './AttachmentContext'
 import { CommonExamContext } from './CommonExamContext'
-import { externalMaterialListTitleId } from './ids'
+import { externalMaterialListTitleId } from '../ids'
 
 const renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),
@@ -44,7 +44,7 @@ function ExternalMaterialList({ element, showTitle = true, forceRender = false }
   }
 
   const { t } = useTranslation()
-  const id = externalMaterialListTitleId(element.getAttribute('id')!)
+  const id = externalMaterialListTitleId(element)
 
   return (
     <div className="external-material-list e-mrg-b-4">

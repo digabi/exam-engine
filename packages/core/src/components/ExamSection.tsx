@@ -9,7 +9,7 @@ import ProgressBar from './ProgressBar'
 import Section from './Section'
 import { SectionContext, withSectionContext } from './SectionContext'
 import { ExamComponentProps } from '../createRenderChildNodes'
-import { sectionTitleId } from './ids'
+import { sectionTitleId } from '../ids'
 
 function ExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const casState = useSelector((state: AppState) => state.cas, shallowEqual)
