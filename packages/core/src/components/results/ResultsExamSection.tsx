@@ -4,7 +4,7 @@ import Section from '../Section'
 import { SectionContext, withSectionContext } from '../SectionContext'
 import { ResultsContext } from './ResultsContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { sectionTitleId } from '../ids'
+import { sectionTitleId } from '../../ids'
 
 function ResultsExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber } = useContext(SectionContext)

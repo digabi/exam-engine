@@ -15,7 +15,7 @@ import RenderChildNodes from './RenderChildNodes'
 import Section from './Section'
 import { withSectionContext } from './SectionContext'
 import RenderExamElements from './RenderExamElements'
-import { examTitleId } from './ids'
+import { examTitleId } from '../ids'
 import { useCached } from '../useCached'
 
 const renderChildNodes = createRenderChildNodes({

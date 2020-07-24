@@ -11,6 +11,7 @@ import { ExamContext } from './ExamContext'
 import { QuestionContext } from './QuestionContext'
 import RichTextAnswer, { AnswerError } from './RichTextAnswer'
 import { Score } from './Score'
+import { answerScoreId } from '../ids'
 
 interface Props extends ExamComponentProps {
   answer?: TextAnswerT | RichTextAnswerT
@@ -129,6 +130,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
     const questionId = getNumericAttribute(element, 'question-id')
     const maxScore = getNumericAttribute(element, 'max-score')!
     const value = answer && answer.value
+    const scoreId = answerScoreId(element)
 
     switch (type) {
       case 'rich-text':
@@ -194,9 +196,10 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
               onBlur={this.onBlur}
               ref={this.ref}
               data-question-id={questionId}
+              aria-describedby={scoreId}
             />
             <QuestionContext.Consumer>
-              {({ answers }) => answers.length > 1 && <Score score={maxScore} size="inline" />}
+              {({ answers }) => answers.length > 1 && <Score score={maxScore} size="inline" id={scoreId} />}
             </QuestionContext.Consumer>
           </span>
         )

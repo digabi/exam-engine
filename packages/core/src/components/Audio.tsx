@@ -8,6 +8,7 @@ import AudioPlaybackError from './AudioPlaybackError'
 import { CommonExamContext } from './CommonExamContext'
 import RestrictedAudioPlayer from './RestrictedAudioPlayer'
 import { ExamComponentProps } from '../createRenderChildNodes'
+import { audioLabelId } from '../ids'
 
 function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
   const src = element.getAttribute('src')!
@@ -22,7 +23,7 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
       ? useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
       : undefined
   const { resolveAttachment } = useContext(CommonExamContext)
-  const labelId = `audio-label-${element.getAttribute('id')!}`
+  const labelId = audioLabelId(element)
 
   return (
     <div className={classNames('audio e-columns e-columns--center-v e-mrg-b-2', className)}>

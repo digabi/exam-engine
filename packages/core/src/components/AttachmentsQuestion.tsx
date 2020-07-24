@@ -3,7 +3,7 @@ import { ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 import { findChildElement, parentElements } from '../dom-utils'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import Section from './Section'
-import { questionTitleId } from './ids'
+import { questionTitleId } from '../ids'
 
 function AttachmentsQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, hasExternalMaterial, level } = useContext(QuestionContext)

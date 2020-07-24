@@ -7,7 +7,7 @@ import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext, withSectionContext } from './SectionContext'
-import { tocSectionTitleId, tocTitleId } from './ids'
+import { tocSectionTitleId, tocTitleId } from '../ids'
 
 function TOCSection({ element }: ExamComponentProps) {
   const { maxAnswers, minAnswers, displayNumber, childQuestions } = useContext(SectionContext)
@@ -26,10 +26,7 @@ function TOCSection({ element }: ExamComponentProps) {
           }}
         />
       )}
-      <ol
-        className="e-list-data e-pad-l-0"
-        aria-labelledby={sectionTitle && tocSectionTitleId(sectionTitle.getAttribute('id')!)}
-      >
+      <ol className="e-list-data e-pad-l-0" aria-labelledby={sectionTitle && tocSectionTitleId(displayNumber)}>
         {renderChildNodes(element, RenderOptions.SkipHTML)}
       </ol>
     </li>
@@ -49,7 +46,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
   const { t } = useTranslation()
   return (
     <>
-      <header className="e-semibold" id={tocSectionTitleId(element.getAttribute('id')!)}>
+      <header className="e-semibold" id={tocSectionTitleId(displayNumber)}>
         {element.hasChildNodes() && (
           <>
             {numberOfSections > 1 && t('part', { displayNumber })}

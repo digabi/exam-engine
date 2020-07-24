@@ -39,7 +39,7 @@ import Video from './Video'
 import { ExamAnswer } from '../types/ExamAnswer'
 import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
 import ImageOverlay from './ImageOverlay'
-import { examTitleId } from './ids'
+import { examTitleId } from '../ids'
 import { useCached } from '../useCached'
 
 /** Props common to taking the exams and viewing results */
