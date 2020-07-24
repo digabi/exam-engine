@@ -4,6 +4,7 @@ import { getNumericAttribute, queryAncestors } from '../dom-utils'
 import { CommonExamContext } from './CommonExamContext'
 import ResponsiveMediaContainer from './ResponsiveMediaContainer'
 import { ExamComponentProps } from '../createRenderChildNodes'
+import { imageCaptionId } from './ids'
 
 function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const { t } = useTranslation()
@@ -12,7 +13,9 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const height = getNumericAttribute(element, 'height')!
   const caption = element.hasChildNodes() ? renderChildNodes(element) : undefined
   const imgUrl = useContext(CommonExamContext).resolveAttachment(src)
-  const Img = () => <img className="e-image" src={imgUrl} />
+  const captionId = caption != null ? imageCaptionId(element.getAttribute('id')!) : undefined
+  const Img = () => <img className="e-image" src={imgUrl} aria-labelledby={captionId} />
+
   return (
     <>
       <ResponsiveMediaContainer
@@ -21,6 +24,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           width,
           height,
           caption,
+          captionId,
           bordered: caption != null || queryAncestors(element, 'choice-answer') != null,
         }}
       >
