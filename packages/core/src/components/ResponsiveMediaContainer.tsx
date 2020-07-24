@@ -10,6 +10,7 @@ interface ResponsiveMediaContainerProps {
   height: number
   width: number
   caption?: React.ReactNode[]
+  captionId?: string
 }
 
 /**
@@ -24,6 +25,7 @@ const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainer
   height,
   width,
   caption,
+  captionId,
 }) => {
   const paddingBottom = `${(height / width) * 100}%`
   const maxWidth = width + (bordered ? borderedPaddingAndBorderPx : 0)
@@ -47,7 +49,11 @@ const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainer
       >
         {children}
       </span>
-      {caption && <span className="e-color-darkgrey e-block e-mrg-t-1 e-font-size-s e-light">{caption}</span>}
+      {caption && (
+        <span className="e-color-darkgrey e-block e-mrg-t-1 e-font-size-s e-light" id={captionId}>
+          {caption}
+        </span>
+      )}
     </span>
   )
 }
