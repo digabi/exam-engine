@@ -1,10 +1,10 @@
-name: "CI"
+name: 'CI'
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   test:
@@ -13,22 +13,44 @@ jobs:
       matrix:
         node-version: [10.x, 12.x, 14.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: yarn --frozen-lockfile
-    - run: npm rebuild full-icu
-    - run: yarn test -i --ci
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Restore cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ matrix.node-version }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ matrix.node-version }}-
+
+      - run: yarn --frozen-lockfile
+      - run: npm rebuild full-icu
+      - run: yarn test -i --ci
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+
+      - name: Restore cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ matrix.node-version }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ matrix.node-version }}-
+
       - run: yarn --frozen-lockfile
       - run: yarn lint
       - run: yarn run bundlewatch --config .bundlewatch.config.js
