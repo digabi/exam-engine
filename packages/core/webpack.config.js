@@ -20,6 +20,11 @@ module.exports = function () {
       globalObject: 'this',
     },
     plugins,
+    resolve: {
+      alias: {
+        jquery: 'jquery/dist/jquery.slim.min.js',
+      },
+    },
     module: {
       rules: [
         {
