@@ -1,5 +1,4 @@
-import { faEye } from '@fortawesome/free-solid-svg-icons/faEye'
-import { faEyeSlash } from '@fortawesome/free-solid-svg-icons/faEyeSlash'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
