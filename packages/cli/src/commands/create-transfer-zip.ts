@@ -8,7 +8,7 @@ import * as uuid from 'uuid'
 import yazl from 'yazl'
 import { examName } from '../utils'
 
-export default async function ({
+export default async function createTransferZip({
   exam,
   outdir = path.dirname(exam),
   spinner,

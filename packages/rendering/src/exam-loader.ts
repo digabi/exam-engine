@@ -11,7 +11,7 @@ function stringifyModule(module: any, attachments: Attachment[] = []): string {
   return imports + '\nmodule.exports = ' + JSON.stringify(module)
 }
 
-export default async function (this: webpack.loader.LoaderContext, source: string): Promise<void> {
+export default async function examLoader(this: webpack.loader.LoaderContext, source: string): Promise<void> {
   const callback = this.async()!
   const baseDir = path.dirname(this.resourcePath)
   const resolveAttachment = (attachment: string) => path.resolve(baseDir, 'attachments', attachment)

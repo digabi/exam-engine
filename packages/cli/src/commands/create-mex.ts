@@ -4,7 +4,7 @@ import path from 'path'
 import * as uuid from 'uuid'
 import { examName } from '../utils'
 
-export default async function ({
+export default async function createMexExam({
   exam,
   outdir = path.dirname(exam),
   nsaScripts,
