@@ -8,7 +8,7 @@ module.exports = {
   files: [
     {
       path: 'packages/core/dist/main-bundle.js',
-      maxSize: '890KB',
+      maxSize: '870KB',
     },
     {
       path: 'packages/core/dist/main.css',
