@@ -5,6 +5,9 @@
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
+  "sideEffects": [
+    "*.less"
+  ],
   "files": [
     "dist"
   ],

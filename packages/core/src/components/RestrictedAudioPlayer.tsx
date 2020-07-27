@@ -1,4 +1,4 @@
-import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import React from 'react'
