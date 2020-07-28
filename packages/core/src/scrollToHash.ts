@@ -15,8 +15,18 @@ export function scrollToHash(): () => void {
 function focusElement(element: HTMLElement) {
   // Make the element temporarily focusable for screen readers.
   element.setAttribute('tabindex', '-1')
-  element.focus()
-  element.removeAttribute('tabindex')
+  // We don't want to show an outline for our sighted users.
+  element.style.outline = 'none'
 
+  element.addEventListener(
+    'blur',
+    () => {
+      element.removeAttribute('tabindex')
+      element.style.outline = ''
+    },
+    { once: true }
+  )
+
+  element.focus()
   element.scrollIntoView()
 }
