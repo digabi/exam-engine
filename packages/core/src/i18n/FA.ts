@@ -12,7 +12,7 @@ export const FA: ExamTranslations = {
     date: 'Publié :',
     'reference-date': 'Téléchargement le',
     translator: 'Traduction :',
-    'modified-by': 'Adaptation :',
+    'modified-by': 'Modifications :',
   },
   'toc-heading': 'Sommaire',
 }
