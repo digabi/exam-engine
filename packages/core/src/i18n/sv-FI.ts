@@ -14,7 +14,7 @@ export const sv_FI: Translations = {
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   audio: {
-    play: '<<<Käännös puuttuu>>>',
+    play: 'Lyssna på inspelningen.',
   },
   'audio-errors': {
     'already-accessed': 'Du har redan spelat denna inspelning. Uppdatera sidan',
@@ -27,8 +27,8 @@ export const sv_FI: Translations = {
     volume: 'Du kan justera ljudvolymen uppe i högra hörnet av rutan.',
   },
   'dropdown-answer': {
-    label: '<<<Käännös puuttuu>>>',
-    clear: '<<<Käännös puuttuu>>>',
+    label: 'Välj det alternativ som passar bäst.',
+    clear: 'Avmarkera alternativet.',
   },
   grading: {
     'pregrading-annotations': 'Preliminära bedömningens anteckningar',
