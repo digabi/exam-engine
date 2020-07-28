@@ -17,12 +17,12 @@ export const fi_FI = {
   points: '{{count}} p.',
   points_plural: '{{count}} p.',
   audio: {
-    play: 'Kuuntele äänite',
+    play: 'Kuuntele äänite.',
   },
   'audio-errors': {
-    'already-accessed': 'Olet jo toistanut tämän tallenteen. Päivitä sivu.',
-    'already-playing': 'Kuuntele ensin äänite loppuun.',
-    'other-error': 'Tallenteen toistaminen epäonnistui, pyydä apua valvojalta.',
+    'already-accessed': 'Olet jo toistanut tämän äänitteen. Päivitä sivu.',
+    'already-playing': 'Kuuntele äänite ensin loppuun.',
+    'other-error': 'Äänitteen toistaminen epäonnistui, pyydä apua valvojalta.',
   },
   'audio-test': {
     instructions: 'Koe sisältää kuullunymmärtämisen tehtäviä.',
@@ -30,8 +30,8 @@ export const fi_FI = {
     volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.',
   },
   'dropdown-answer': {
-    label: 'Valitse oikea vaihtoehto',
-    clear: 'Poista valinta',
+    label: 'Valitse parhaiten sopiva vaihtoehto.',
+    clear: 'Poista valinta.',
   },
   grading: {
     'pregrading-annotations': 'Valmistavan arvostelun merkinnät',
