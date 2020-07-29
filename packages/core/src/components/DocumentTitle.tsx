@@ -1,30 +1,16 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 type DocumentTitleProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>
 
-export default class DocumentTitle extends React.PureComponent<DocumentTitleProps> {
-  private ref: React.RefObject<HTMLHeadingElement>
-
-  constructor(props: DocumentTitleProps) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount(): void {
-    this.updateTitle()
-  }
-
-  componentDidUpdate(): void {
-    this.updateTitle()
-  }
-
-  updateTitle = (): void => {
-    if (this.ref.current) {
-      document.title = this.ref.current.textContent!
+/** A helper component that sets document.title based on its contents. */
+const DocumentTitle: React.FunctionComponent<DocumentTitleProps> = (props) => {
+  const ref = useRef<HTMLHeadingElement>(null)
+  useEffect(() => {
+    if (ref.current) {
+      document.title = ref.current.textContent!
     }
-  }
-
-  render(): React.ReactNode {
-    return <h1 {...this.props} ref={this.ref} />
-  }
+  })
+  return <h1 {...props} ref={ref} />
 }
+
+export default React.memo(DocumentTitle)
