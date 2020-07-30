@@ -2,7 +2,7 @@
 
 import { action } from 'typesafe-actions'
 import { Audio } from './reducer'
-import { AudioPlaybackError } from '../../types/ExamServerAPI'
+import { AudioPlaybackError } from '../..'
 
 export const playAudio = (audio: Audio) => action('PLAY_AUDIO', audio)
 

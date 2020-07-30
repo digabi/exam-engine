@@ -6,7 +6,7 @@ import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { mapMaybe } from '../../utils'
 import { QuestionContext } from '../QuestionContext'
 import { findScore, ResultsContext } from './ResultsContext'
-import { Annotation, Score } from '../../types/Score'
+import { Annotation, Score } from '../..'
 
 interface AnnotationItem {
   numbering: string

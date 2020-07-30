@@ -5,7 +5,7 @@ import { ExamComponentProps, RenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
 import { AppState } from '../store'
-import { QuestionId } from '../types/ExamAnswer'
+import { QuestionId } from '..'
 
 const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const focusedQuestionId = useSelector((state: AppState) => state.answers.focusedQuestionId)

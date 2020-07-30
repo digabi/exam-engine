@@ -1,4 +1,4 @@
-import { ExamServerAPI } from '../src/types/ExamServerAPI'
+import { ExamServerAPI } from '../src'
 
 export const examServerApi: ExamServerAPI = {
   async getAnswers() {

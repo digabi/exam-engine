@@ -10,7 +10,7 @@ import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionManualScore from './ResultsExamQuestionManualScore'
 import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { TextAnswer } from '../../types/ExamAnswer'
+import { TextAnswer } from '../..'
 
 function ResultsTextAnswer({ element }: ExamComponentProps) {
   const { answers } = useContext(QuestionContext)

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
 import { action } from 'typesafe-actions'
-import { ExamAnswer, QuestionId } from '../../types/ExamAnswer'
+import { ExamAnswer, QuestionId } from '../..'
 
 export const saveAnswer = (answer: ExamAnswer) => action('SAVE_ANSWER', answer)
 

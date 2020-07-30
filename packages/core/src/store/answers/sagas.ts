@@ -1,8 +1,7 @@
 import { Task } from 'redux-saga'
 import { call, cancel, delay, fork, put, take } from 'redux-saga/effects'
 import { saveAnswer, saveAnswerFailed, saveAnswerSucceeded, selectAnswerVersion } from './actions'
-import { ExamAnswer } from '../../types/ExamAnswer'
-import { ExamServerAPI } from '../../types/ExamServerAPI'
+import { ExamAnswer, ExamServerAPI } from '../..'
 
 type SaveAnswerAction = ReturnType<typeof saveAnswer>
 type SelectAnswerAction = ReturnType<typeof selectAnswerVersion>

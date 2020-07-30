@@ -8,8 +8,7 @@ import audioReducer from './audio/reducer'
 import audioSaga from './audio/sagas'
 import casReducer from './cas/reducer'
 import casSaga from './cas/sagas'
-import { ExamAnswer } from '../types/ExamAnswer'
-import { ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../types/ExamServerAPI'
+import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '..'
 
 const rootReducer = combineReducers({
   answers: answersReducer,
