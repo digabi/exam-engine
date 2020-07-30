@@ -6,7 +6,7 @@
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "engines": {
-    "node": ">= 10.0"
+    "node": ">= 12.0"
   },
   "devDependencies": {
     "@digabi/eslint-config": "^0.1.0",
