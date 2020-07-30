@@ -30,7 +30,7 @@ export const getPlaybackTimesRemaining = (restrictedAudioId: RestrictedAudioId, 
   state: AppState
 ): number => times - getPlaybackTimes(restrictedAudioId)(state)
 
-export const getGlobalSaveState = () => (state: AppState): SaveState => {
+export const getSaveState = (state: AppState): SaveState => {
   const { serverQuestionIds, savedQuestionIds, answersById } = state.answers
 
   if (serverQuestionIds.size === 0) {
