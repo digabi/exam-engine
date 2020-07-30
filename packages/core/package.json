@@ -6,7 +6,7 @@
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "sideEffects": [
-    "*.less"
+    "*.less", "*.css"
   ],
   "files": [
     "dist"
