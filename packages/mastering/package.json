@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-mastering",
-  "version": "13.1.1",
+  "version": "13.1.2",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -9,7 +9,7 @@
     "schema"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "13.1.1",
+    "@digabi/exam-engine-core": "13.1.2",
     "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
     "glob": "^7.1.6",
