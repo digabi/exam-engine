@@ -2,7 +2,7 @@ import React from 'react'
 import { Translation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getGlobalSaveState } from '../store/selectors'
-import { SaveState } from '../types/ExamServerAPI'
+import { SaveState } from '..'
 
 function SaveIndicator() {
   const state: SaveState = useSelector(getGlobalSaveState())

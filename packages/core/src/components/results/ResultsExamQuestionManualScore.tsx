@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { Translation } from 'react-i18next'
 import { QuestionContext } from '../QuestionContext'
 import ResultsExamQuestionScoresContainer from './ResultsExamQuestionScoresContainer'
-import { CensoringScore, InspectionScore, PregradingScore, Score } from '../../types/Score'
+import { CensoringScore, InspectionScore, PregradingScore, Score } from '../..'
 
 export interface ResultsExamQuestionManualScoreProps {
   scores?: Score

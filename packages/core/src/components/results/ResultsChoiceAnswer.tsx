@@ -6,7 +6,7 @@ import ExamAttachment from '../ExamAttachment'
 import Image from '../Image'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
-import { QuestionId } from '../../types/ExamAnswer'
+import { QuestionId } from '../..'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId

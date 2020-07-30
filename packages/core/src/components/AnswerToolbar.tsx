@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { findChildElement, NBSP, queryAncestors } from '../dom-utils'
 import * as actions from '../store/answers/actions'
 import { AnswerError } from './RichTextAnswer'
-import { ExamAnswer } from '../types/ExamAnswer'
+import { ExamAnswer } from '..'
 
 interface AnswerToolbarProps {
   answer?: ExamAnswer

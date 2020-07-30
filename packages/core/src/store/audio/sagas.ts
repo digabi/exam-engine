@@ -9,7 +9,7 @@ import {
   showAudioError,
   updateRemaining,
 } from './actions'
-import { AudioPlaybackResponse, ExamServerAPI } from '../../types/ExamServerAPI'
+import { AudioPlaybackResponse, ExamServerAPI } from '../..'
 
 type PlayAudio = ReturnType<typeof playAudio>
 

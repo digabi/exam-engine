@@ -5,7 +5,7 @@ import { QuestionContext, withQuestionContext } from '../QuestionContext'
 import AnnotationList from './AnnotationList'
 import { ResultsContext } from './ResultsContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { ExamAnswer } from '../../types/ExamAnswer'
+import { ExamAnswer } from '../..'
 
 function ResultsExamQuestion({ element, renderChildNodes }: ExamComponentProps) {
   const { answersByQuestionId } = useContext(ResultsContext)

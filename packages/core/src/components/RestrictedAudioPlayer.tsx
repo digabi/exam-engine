@@ -5,7 +5,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { playAudio } from '../store/audio/actions'
 import { getAudioState, getDurationRemaining, getPlaybackTimesRemaining } from '../store/selectors'
-import { RestrictedAudioId } from '../types/ExamServerAPI'
+import { RestrictedAudioId } from '..'
 import { useTranslation } from 'react-i18next'
 
 function RestrictedAudioPlayer({

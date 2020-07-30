@@ -1,4 +1,4 @@
-import { Score } from '../../types/Score'
+import { Score } from '../..'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const getAnnotationAttributes = (answer?: Score) =>

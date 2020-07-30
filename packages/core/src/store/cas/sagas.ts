@@ -1,7 +1,7 @@
 import { call, put, race, take, takeLatest } from 'redux-saga/effects'
 import { countdown } from '../countdown'
 import { allowCas, allowCasCancelled, allowCasCountdown, allowCasSucceeded, updateCasRemaining } from './actions'
-import { CasStatus, ExamServerAPI } from '../../types/ExamServerAPI'
+import { CasStatus, ExamServerAPI } from '../..'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* performEnableCas(examServerApi: ExamServerAPI, { payload }: ReturnType<typeof allowCas>) {

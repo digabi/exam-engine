@@ -1,5 +1,4 @@
-import { Score } from '../../types/Score'
-import { GradingStructure } from '../../types/GradingStructure'
+import { GradingStructure, Score } from '../..'
 import React, { useContext, useEffect } from 'react'
 import { I18nextProvider, useTranslation } from 'react-i18next'
 import { createRenderChildNodes } from '../../createRenderChildNodes'

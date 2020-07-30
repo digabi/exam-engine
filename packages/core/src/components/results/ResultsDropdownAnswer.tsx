@@ -7,7 +7,7 @@ import { QuestionContext } from '../QuestionContext'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { ChoiceAnswer } from '../../types/ExamAnswer'
+import { ChoiceAnswer } from '../..'
 
 function ResultsDropdownAnswer({ element }: ExamComponentProps) {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)

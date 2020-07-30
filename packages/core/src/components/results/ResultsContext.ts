@@ -1,9 +1,15 @@
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import { ChoiceAnswer, ExamAnswer, QuestionId } from '../../types/ExamAnswer'
-import { ChoiceGroupChoice, ChoiceGroupQuestion, GradingStructure } from '../../types/GradingStructure'
-import { Score } from '../../types/Score'
+import {
+  ChoiceAnswer,
+  ChoiceGroupChoice,
+  ChoiceGroupQuestion,
+  ExamAnswer,
+  GradingStructure,
+  QuestionId,
+  Score,
+} from '../..'
 import { withContext } from '../withContext'
 import { ResultsProps } from './Results'
 

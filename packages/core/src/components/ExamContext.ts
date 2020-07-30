@@ -1,7 +1,7 @@
 import React from 'react'
 import { ExamProps } from './Exam'
 import { withContext } from './withContext'
-import { ExamServerAPI } from '../types/ExamServerAPI'
+import { ExamServerAPI } from '..'
 
 export interface ExamContext {
   casCountdownDuration: number
