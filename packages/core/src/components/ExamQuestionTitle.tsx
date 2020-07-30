@@ -5,8 +5,9 @@ import NotificationIcon from './NotificationIcon'
 import { QuestionContext } from './QuestionContext'
 import { Score } from './Score'
 import { ExamComponentProps } from '../createRenderChildNodes'
+import { formatQuestionDisplayNumber } from '../formatting'
 
-function ExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
+const ExamQuestionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)
   const Tag = `h${Math.min(3 + level, 6)}` as 'h3' | 'h4' | 'h5' | 'h6'
 
@@ -18,8 +19,7 @@ function ExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
             'exam-question-title__display-number--indented': level > 0,
           })}
         >
-          {displayNumber}
-          {'. '}
+          {formatQuestionDisplayNumber(displayNumber) + ' '}
         </strong>
         {renderChildNodes(element)} <Score score={maxScore} size={level === 0 ? 'large' : 'small'} />
       </Tag>

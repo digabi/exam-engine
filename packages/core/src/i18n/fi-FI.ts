@@ -10,7 +10,6 @@ export const fi_FI = {
   material_plural: 'Aineistot',
   'attachments-page-title': 'Aineisto:',
   'external-material-title': 'Aineisto',
-  question: '{{displayNumber}}',
   part: 'Osa {{displayNumber}}:',
   grade: 'Arvosana',
   comment: 'Kommentti',

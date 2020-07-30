@@ -6,6 +6,7 @@ import { CommonExamContext } from './CommonExamContext'
 import Reference from './Reference'
 import Section from './Section'
 import { referencesTitleId } from '../ids'
+import { formatQuestionDisplayNumber } from '../formatting'
 
 const renderChildNodes = createRenderChildNodes({})
 function References(_props: ExamComponentProps) {
@@ -24,7 +25,7 @@ function References(_props: ExamComponentProps) {
           const question = queryAncestors(reference, 'question')!
           const displayNumber = question.getAttribute('display-number')!
           return (
-            <li data-list-number={displayNumber} key={`${displayNumber}${i}`}>
+            <li data-list-number={formatQuestionDisplayNumber(displayNumber)} key={`${displayNumber}${i}`}>
               <Reference element={reference} renderChildNodes={renderChildNodes} />
             </li>
           )

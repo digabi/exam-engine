@@ -4,6 +4,7 @@ import AnsweringInstructions from '../AnsweringInstructions'
 import NotificationIcon from '../NotificationIcon'
 import { QuestionContext } from '../QuestionContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
+import { formatQuestionDisplayNumber } from '../../formatting'
 
 function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level, maxAnswers, childQuestions } = useContext(QuestionContext)
@@ -17,8 +18,7 @@ function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentPr
             'exam-question-title__display-number--indented': level > 0,
           })}
         >
-          {displayNumber}
-          {'. '}
+          {formatQuestionDisplayNumber(displayNumber) + ' '}
         </strong>
         {renderChildNodes(element)}
       </Tag>
