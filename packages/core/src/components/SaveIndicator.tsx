@@ -1,11 +1,11 @@
 import React from 'react'
 import { Translation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getGlobalSaveState } from '../store/selectors'
+import { getSaveState } from '../store/selectors'
 import { SaveState } from '..'
 
 function SaveIndicator() {
-  const state: SaveState = useSelector(getGlobalSaveState())
+  const state: SaveState = useSelector(getSaveState)
 
   if (state === 'initial') {
     return null
