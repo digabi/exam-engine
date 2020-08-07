@@ -83,7 +83,7 @@ interface ScoreRowProps {
 
 function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & NormalizedScore) {
   return (
-    <div className={latest ? 'e-color-black' : 'e-color-grey e-font-size-xs'}>
+    <div className={latest ? 'e-color-black' : 'e-color-darkgrey e-font-size-xs'}>
       <ScoreColumn className={classNames('e-nowrap', { 'e-font-size-m': latest })}>
         {latest ? <b>{score}</b> : score}
         {latest && maxScore ? ` / ${maxScore}` : ''}
