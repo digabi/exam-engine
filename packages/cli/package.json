@@ -14,7 +14,7 @@
     "@digabi/exam-engine-mastering": "13.1.2",
     "@digabi/exam-engine-rendering": "13.1.2",
     "lodash": "^4.17.15",
-    "ora": "^4.0.3",
+    "ora": "^5.0.0",
     "uuid": "^8.0.0",
     "yargs": "^15.0.2"
   }
