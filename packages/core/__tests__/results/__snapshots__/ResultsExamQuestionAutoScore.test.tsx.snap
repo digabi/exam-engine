@@ -8,6 +8,7 @@ exports[`<ResultsExamQuestionAutoScore /> renders displayNumber number when ther
     className="e-result-scorecount-border-wrap"
   >
     <sup
+      aria-hidden="true"
       className="e-result-scorecount-sup e-mrg-r-1"
     >
       1

@@ -116,4 +116,8 @@ export const fi_FI = {
       'Kokeesi kuvakaappauksille varattu tila on täyttynyt. (Voit viitata aineistokuviin suoraan ilman kuvakaappausta.)',
     'screenshot-upload-failed': 'Kuvan liittäminen ei onnistunut. Kokeile uudestaan.',
   },
+  'screen-reader': {
+    'answer-begin': '[Vastaus alkaa]',
+    'answer-end': '[Vastaus päättyy]',
+  },
 }

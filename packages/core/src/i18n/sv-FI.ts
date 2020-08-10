@@ -113,4 +113,8 @@ export const sv_FI: Translations = {
       'Minnesutrymmet för skärmdumpar är fullt. (Du kan referera till bilder i materialet direkt utan skärmdumpar.)',
     'screenshot-upload-failed': 'Bifogandet av skärmdumpen misslyckades. Försök på nytt.',
   },
+  'screen-reader': {
+    'answer-begin': '[Vastaus alkaa]',
+    'answer-end': '[Vastaus päättyy]',
+  },
 }
