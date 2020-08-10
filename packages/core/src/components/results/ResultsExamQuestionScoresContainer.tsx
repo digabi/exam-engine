@@ -20,7 +20,9 @@ function ResultsExamQuestionScoresContainer({
     >
       <div className="e-result-scorecount-border-wrap">
         {answers.length > 1 && displayNumber && (
-          <sup className="e-result-scorecount-sup e-mrg-r-1">{displayNumber}</sup>
+          <sup className="e-result-scorecount-sup e-mrg-r-1" aria-hidden="true">
+            {displayNumber}
+          </sup>
         )}
         {children}
       </div>
