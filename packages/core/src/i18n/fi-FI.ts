@@ -119,5 +119,6 @@ export const fi_FI = {
   'screen-reader': {
     'answer-begin': '[Vastaus alkaa]',
     'answer-end': '[Vastaus päättyy]',
+    'correct-answer': '[Oikea vastaus]',
   },
 }

@@ -7,6 +7,7 @@ import Image from '../Image'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 import { QuestionId } from '../..'
+import { useTranslation } from 'react-i18next'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -21,6 +22,7 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrect }: ChoiceAnswerOptionProps) {
+  const { t } = useTranslation()
   const className = element.getAttribute('class')
   const optionId = element.getAttribute('option-id')!
 
@@ -33,15 +35,19 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
       {renderChildNodes(element)}
     </div>
   )
-  const RadioInput = ({ narrow = false }: { narrow?: boolean }) => (
-    <input
-      type="radio"
-      className={classNames('e-radio-button', { 'e-column e-column--narrow': narrow })}
-      name={String(questionId)}
-      value={optionId}
-      checked={selected}
-      readOnly
-    />
+  const Content: React.FunctionComponent<{ narrow?: boolean }> = ({ narrow = false }) => (
+    <>
+      <input
+        type="radio"
+        className={classNames('e-radio-button', { 'e-column e-column--narrow': narrow })}
+        name={String(questionId)}
+        value={optionId}
+        checked={selected}
+        readOnly
+      />
+      {content}
+      {isCorrect && <span className="e-screen-reader-only">{t('screen-reader.correct-answer')}</span>}
+    </>
   )
 
   return direction === 'vertical' ? (
@@ -53,15 +59,13 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
             query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */,
         })}
       >
-        <RadioInput narrow />
-        {content}
+        <Content narrow />
       </label>
     </div>
   ) : (
     <div className="e-column e-mrg-b-1">
       <label className={classNames('e-block e-text-center', { 'e-correct-answer-bottom': isCorrect })}>
-        <RadioInput />
-        {content}
+        <Content />
       </label>
     </div>
   )
