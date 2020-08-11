@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["."],
+  "references": [
+    { "path": "../" },
+    { "path": "../../mastering" },
+    { "path": "../../exams" },
+    { "path": "../../generator" }
+  ]
+}
