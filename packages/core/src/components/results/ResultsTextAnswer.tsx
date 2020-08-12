@@ -11,6 +11,7 @@ import ResultsExamQuestionManualScore from './ResultsExamQuestionManualScore'
 import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { TextAnswer } from '../..'
+import { ScreenReaderOnly } from '../ScreenReaderOnly'
 
 function ResultsTextAnswer({ element }: ExamComponentProps) {
   const { answers } = useContext(QuestionContext)
@@ -36,13 +37,13 @@ function ResultsTextAnswer({ element }: ExamComponentProps) {
         <>
           <div className="answer e-multiline-results-text-answer">
             <div className="answer-text-container">
-              <span className="e-screen-reader-only">{t('screen-reader.answer-begin')}</span>
+              <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
               {type === 'rich-text' ? (
                 <div {...props} dangerouslySetInnerHTML={{ __html: value! }} />
               ) : (
                 <div {...props}>{value}</div>
               )}
-              <span className="e-screen-reader-only">{t('screen-reader.answer-end')}</span>
+              <ScreenReaderOnly>{t('screen-reader.answer-end')}</ScreenReaderOnly>
             </div>
           </div>
           <ResultsExamQuestionManualScore multilineAnswer={true} scores={answerScores} maxScore={maxScore} />
