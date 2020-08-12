@@ -8,6 +8,7 @@ import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsCo
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 import { QuestionId } from '../..'
 import { useTranslation } from 'react-i18next'
+import { ScreenReaderOnly } from '../ScreenReaderOnly'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -46,7 +47,7 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
         readOnly
       />
       {content}
-      {isCorrect && <span className="e-screen-reader-only">{t('screen-reader.correct-answer')}</span>}
+      {isCorrect && <ScreenReaderOnly>{t('screen-reader.correct-answer')}</ScreenReaderOnly>}
     </>
   )
 
