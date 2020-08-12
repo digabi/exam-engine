@@ -3,6 +3,7 @@ import { findChildElement } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
 import TextAnswerInput from './TextAnswerInput'
 import { ExamComponentProps } from '../createRenderChildNodes'
+import { ScreenReaderOnly } from './ScreenReaderOnly'
 
 function TextAnswer(props: ExamComponentProps) {
   const { element, renderChildNodes } = props
@@ -13,7 +14,7 @@ function TextAnswer(props: ExamComponentProps) {
   return hint ? (
     <label className="e-nowrap">
       <sup className="e-text-answer-display-number e-color-darkgrey">{shortDisplayNumber(displayNumber)}</sup>
-      <span className="e-screen-reader-only">{renderChildNodes(hint)}</span>
+      <ScreenReaderOnly>{renderChildNodes(hint)}</ScreenReaderOnly>
       {textAnswer}
     </label>
   ) : (
