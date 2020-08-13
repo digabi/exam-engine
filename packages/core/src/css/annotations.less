@@ -1,0 +1,28 @@
+.e-annotation-wrapper {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+.e-annotation {
+  &--pregrading {
+    background-color: rgba(241, 34, 40, 0.2);
+  }
+
+  &--censoring {
+    background-color: rgba(28, 135, 177, 0.2);
+  }
+
+  &--shape {
+    position: absolute;
+    min-width: 4px;
+    min-height: 4px;
+  }
+
+  &__index {
+    position: absolute;
+    top: -6px; // Half of the sup text height
+    right: 0;
+    text-shadow: 1px 1px @colors[off-white];
+  }
+}
