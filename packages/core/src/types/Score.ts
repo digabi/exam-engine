@@ -33,8 +33,34 @@ export interface InspectionScore {
   shortCodes: [string, string] | [string, string, string]
 }
 
-export interface Annotation {
+export interface LineAnnotation {
+  type: 'line'
+  attachmentIndex: number
+  message: string
+  x1: number
+  y1: number
+  x2: number
+  y2: number
+}
+
+export interface RectAnnotation {
+  type: 'rect'
+  attachmentIndex: number
+  message: string
+  x: number
+  y: number
+  width: number
+  height: number
+}
+
+export type ImageAnnotation = LineAnnotation | RectAnnotation
+
+export interface TextAnnotation {
+  /** Legacy exams don't have this property, so it's marked as optional. */
+  type?: 'text'
   startIndex: number
   length: number
   message: string
 }
+
+export type Annotation = TextAnnotation | ImageAnnotation

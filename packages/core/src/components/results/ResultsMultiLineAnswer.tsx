@@ -1,0 +1,35 @@
+import React, { useEffect, useRef } from 'react'
+import { ScreenReaderOnly } from '../ScreenReaderOnly'
+import { useTranslation } from 'react-i18next'
+import { renderAnnotations } from '../../renderAnnotations'
+import { Score } from '../..'
+
+export const ResultsMultiLineAnswer: React.FunctionComponent<{
+  type: 'rich-text' | 'multi-line'
+  value?: string
+  score?: Score
+}> = ({ type, score, value }) => {
+  const { t } = useTranslation()
+  const answerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (answerRef.current) {
+      renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], '#00f2')
+      renderAnnotations(answerRef.current, score?.censoring?.annotations ?? [], '#f002')
+    }
+  })
+
+  return (
+    <div className="e-multiline-results-text-answer">
+      <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
+      {type === 'rich-text' ? (
+        <div dangerouslySetInnerHTML={{ __html: value || '' }} ref={answerRef} />
+      ) : (
+        <div className="e-pre-wrap" ref={answerRef}>
+          {value}
+        </div>
+      )}
+      <ScreenReaderOnly>{t('screen-reader.answer-end')}</ScreenReaderOnly>
+    </div>
+  )
+}
