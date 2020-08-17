@@ -68,6 +68,7 @@ function SaveHvp({ hvp, hvpFilename }: { hvp: string; hvpFilename: string }) {
     </li>
   )
 }
+
 function SaveTranslation({ translation, translationFilename }: { translation: string; translationFilename: string }) {
   return (
     <li className="toolbar__item">
@@ -139,7 +140,31 @@ window.onload = async () => {
       {...{
         ...commonProps,
         gradingStructure,
-        scores: [],
+        scores: [
+          {
+            questionId: 2,
+            answerId: 0,
+            pregrading: {
+              score: 5,
+              annotations: [{ type: 'text', startIndex: 10, length: 10, message: 'Muuten hyvä, mutta kirjoitusvihre' }],
+            },
+            censoring: {
+              scores: [{ score: 6, shortCode: 'CEO' }],
+              annotations: [
+                { type: 'text', startIndex: 5, length: 10, message: 'Jes!' },
+                {
+                  type: 'rect',
+                  x: 0.25,
+                  y: 0.25,
+                  width: 0.5,
+                  height: 0.5,
+                  message: 'Kuva-arvoitus!',
+                  attachmentIndex: 0,
+                },
+              ],
+            },
+          },
+        ],
       }}
     />
   ) : (
