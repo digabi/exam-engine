@@ -1,5 +1,8 @@
 import { Annotation, ImageAnnotation, TextAnnotation } from './types/Score'
 
+// TODO: Lots of manual DOM manipulation here. Maybe we should have a few helper functions to make it easier?
+// I'm thinking at least some kind of `createElement(tagName, attrs, ...children)` function might be worth it.
+
 export function renderAnnotations(element: HTMLElement, annotations: Annotation[], backgroundColor: string): void {
   for (const annotation of annotations) {
     switch (annotation.type) {
@@ -13,8 +16,54 @@ export function renderAnnotations(element: HTMLElement, annotations: Annotation[
   }
 }
 
-function renderImageAnnotation(_element: HTMLElement, _annotation: ImageAnnotation, _backgroundColor: string): void {
-  return
+function renderImageAnnotation(element: HTMLElement, annotation: ImageAnnotation, backgroundColor: string): void {
+  const { attachmentIndex } = annotation
+  const image = element.querySelectorAll('img')[attachmentIndex]
+
+  const wrapper = getWrapper()
+  const shape = mkShape()
+  wrapper.appendChild(shape)
+
+  function getWrapper() {
+    const parent = image.parentElement!
+
+    if (parent instanceof HTMLSpanElement) {
+      return parent
+    }
+
+    const wrapper = document.createElement('span')
+    wrapper.style.cssText = 'display: inline-block; position: relative; max-width: 100%;'
+
+    parent.insertBefore(wrapper, image)
+    wrapper.appendChild(image)
+
+    return wrapper
+  }
+
+  function mkShape() {
+    const shape = document.createElement('span')
+    shape.title = annotation.message
+
+    const style = shape.style
+    style.cssText = `position: absolute; min-width: 4px; min-height: 4px;`
+    style.backgroundColor = backgroundColor
+
+    const pct = (n: number) => `${n * 100}%`
+
+    if (annotation.type === 'rect') {
+      style.left = pct(annotation.x)
+      style.top = pct(annotation.y)
+      style.right = pct(1 - (annotation.x + annotation.width))
+      style.bottom = pct(1 - (annotation.y + annotation.height))
+    } else {
+      style.left = pct(annotation.x1)
+      style.top = pct(annotation.y1)
+      style.right = pct(1 - annotation.x2)
+      style.bottom = pct(1 - annotation.y2)
+    }
+
+    return shape
+  }
 }
 
 function renderTextAnnotation(element: HTMLElement, annotation: TextAnnotation, backgroundColor: string): void {

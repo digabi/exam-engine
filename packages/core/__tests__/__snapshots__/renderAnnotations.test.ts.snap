@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renderAnnotations() renders both pregrading and censoring annotations 1`] = `<mark title="Opettaja" style="background-color: blue;"><mark title="Sensori" style="background-color: red;">Lorem ipsu</mark></mark>m dolor sit amet`;
+exports[`renderAnnotations() line annotation 1`] = `Lorem <span style="display: inline-block; position: relative; max-width: 100%;"><img src=""><span title="foo" style="position: absolute; min-width: 4px; min-height: 4px; background-color: red; left: 25%; top: 25%; right: 25%; bottom: 75%;"></span></span> ipsum dolor sit amet`;
 
-exports[`renderAnnotations() renders both pregrading and censoring annotations 2`] = `<mark title="Opettaja" style="background-color: blue;">Lorem<mark title="Sensori" style="background-color: red;"> ipsu</mark></mark><mark title="Sensori" style="background-color: red;">m dol</mark>or sit amet`;
+exports[`renderAnnotations() one text annotation 1`] = `<mark title="foo" style="background-color: red;">Lorem</mark> ipsum dolor sit amet`;
 
-exports[`renderAnnotations() renders simple text annotations 1`] = `<mark title="foo" style="background-color: red;">Lorem</mark> ipsum dolor sit amet`;
+exports[`renderAnnotations() rect annotation 1`] = `Lorem <span style="display: inline-block; position: relative; max-width: 100%;"><img src=""><span title="foo" style="position: absolute; min-width: 4px; min-height: 4px; background-color: red; left: 25%; top: 25%; right: 25%; bottom: 25%;"></span></span> ipsum dolor sit amet`;
 
-exports[`renderAnnotations() renders simple text annotations 2`] = `<mark title="foo" style="background-color: red;">Lorem</mark><mark title="bar" style="background-color: red;"> ipsu</mark>m dolor sit amet`;
+exports[`renderAnnotations() two text annotations with space in between 1`] = `<mark title="foo" style="background-color: red;">Lorem</mark> ipsu<mark title="bar" style="background-color: red;">m dol</mark>or sit amet`;
 
-exports[`renderAnnotations() renders simple text annotations 3`] = `<mark title="foo" style="background-color: red;">Lorem</mark> ipsu<mark title="bar" style="background-color: red;">m dol</mark>or sit amet`;
+exports[`renderAnnotations() two text annotations, side by side 1`] = `<mark title="foo" style="background-color: red;">Lorem</mark><mark title="bar" style="background-color: red;"> ipsu</mark>m dolor sit amet`;
