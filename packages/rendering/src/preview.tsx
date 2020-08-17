@@ -68,6 +68,7 @@ function SaveHvp({ hvp, hvpFilename }: { hvp: string; hvpFilename: string }) {
     </li>
   )
 }
+
 function SaveTranslation({ translation, translationFilename }: { translation: string; translationFilename: string }) {
   return (
     <li className="toolbar__item">

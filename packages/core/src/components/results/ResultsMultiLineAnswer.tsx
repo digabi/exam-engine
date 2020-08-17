@@ -14,8 +14,7 @@ export const ResultsMultiLineAnswer: React.FunctionComponent<{
 
   useEffect(() => {
     if (answerRef.current) {
-      renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], '#00f2')
-      renderAnnotations(answerRef.current, score?.censoring?.annotations ?? [], '#f002')
+      renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], score?.censoring?.annotations ?? [])
     }
   })
 

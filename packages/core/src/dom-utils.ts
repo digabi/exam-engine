@@ -1,4 +1,6 @@
 import { ExamNamespaceURI } from './createRenderChildNodes'
+import * as _ from 'lodash-es'
+
 export const NBSP = '\u00A0'
 
 export function parentElements(element: Element, selector?: Selector): Element[] {
@@ -110,4 +112,26 @@ export function mapChildElements<T>(element: Element, fn: (childElement: Element
 
 export function findChildrenAnswers(element: Element): Element[] {
   return queryAll(element, ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'], true)
+}
+
+export function createElement<K extends keyof HTMLElementTagNameMap>(
+  tagName: K,
+  properties?: Record<string, string> | null,
+  ...children: Array<string | ChildNode>
+): HTMLElementTagNameMap[K] {
+  const element = document.createElement(tagName)
+  setProperties(element, properties)
+  children.forEach((c) => element.appendChild(typeof c === 'string' ? new Text(c) : c))
+  return element
+}
+
+export function setProperties(element: HTMLElement, properties?: Record<string, string> | null): void {
+  _.forEach(properties, (v, k) => {
+    if (k === 'css') {
+      element.style.cssText = v
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      ;(element as any)[k] = v
+    }
+  })
 }

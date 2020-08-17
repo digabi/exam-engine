@@ -33,34 +33,49 @@ export interface InspectionScore {
   shortCodes: [string, string] | [string, string, string]
 }
 
-export interface LineAnnotation {
-  type: 'line'
-  attachmentIndex: number
+interface BaseAnnotation {
+  /** The message attached to the annotation */
   message: string
+}
+
+interface ShapeAnnotation extends BaseAnnotation {
+  /** A 0-indexed number describing which <img /> in the answer the annotation is attached to. */
+  attachmentIndex: number
+}
+
+export interface LineAnnotation extends ShapeAnnotation {
+  type: 'line'
+  /** Relative x-coordinate between 0 and 1. */
   x1: number
+  /** Relative y-coordinate between 0 and 1. */
   y1: number
+  /** Relative x-coordinate between 0 and 1. */
   x2: number
+  /** Relative y-coordinate between 0 and 1. */
   y2: number
 }
 
-export interface RectAnnotation {
+export interface RectAnnotation extends ShapeAnnotation {
   type: 'rect'
-  attachmentIndex: number
-  message: string
+  /** Relative x-coordinate between 0 and 1. */
   x: number
+  /** Relative y-coordinate between 0 and 1. */
   y: number
+  /** Relative width between 0 and 1. */
   width: number
+  /** Relative height between 0 and 1. */
   height: number
 }
 
 export type ImageAnnotation = LineAnnotation | RectAnnotation
 
-export interface TextAnnotation {
+export interface TextAnnotation extends BaseAnnotation {
   /** Legacy exams don't have this property, so it's marked as optional. */
   type?: 'text'
+  /** A zero-indexed index of the character where the annotation starts at. Images are counted as 1 character. */
   startIndex: number
+  /** The length of the annotation in characters. Images are counted as 1 character. */
   length: number
-  message: string
 }
 
 export type Annotation = TextAnnotation | ImageAnnotation

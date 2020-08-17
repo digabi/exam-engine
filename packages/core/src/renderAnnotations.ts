@@ -1,22 +1,36 @@
 import { Annotation, ImageAnnotation, TextAnnotation } from './types/Score'
+import { createElement } from './dom-utils'
+import classNames from 'classnames'
 
-// TODO: Lots of manual DOM manipulation here. Maybe we should have a few helper functions to make it easier?
-// I'm thinking at least some kind of `createElement(tagName, attrs, ...children)` function might be worth it.
+export function renderAnnotations(
+  element: HTMLElement,
+  pregradingAnnotations: Annotation[],
+  censoringAnnotations: Annotation[]
+): void {
+  const annotations = [...pregradingAnnotations, ...censoringAnnotations]
+  const annotationsWithMessages = annotations.filter((a) => a.message)
 
-export function renderAnnotations(element: HTMLElement, annotations: Annotation[], backgroundColor: string): void {
   for (const annotation of annotations) {
+    const type = pregradingAnnotations.includes(annotation) ? 'pregrading' : 'censoring'
+    const index = annotationsWithMessages.indexOf(annotation) + 1 || undefined
+
     switch (annotation.type) {
       case 'line':
       case 'rect':
-        renderImageAnnotation(element, annotation, backgroundColor)
+        renderImageAnnotation(element, annotation, type, index)
         break
       default:
-        renderTextAnnotation(element, annotation, backgroundColor)
+        renderTextAnnotation(element, annotation, type, index)
     }
   }
 }
 
-function renderImageAnnotation(element: HTMLElement, annotation: ImageAnnotation, backgroundColor: string): void {
+function renderImageAnnotation(
+  element: HTMLElement,
+  annotation: ImageAnnotation,
+  type: 'pregrading' | 'censoring',
+  index?: number
+): void {
   const { attachmentIndex } = annotation
   const image = element.querySelectorAll('img')[attachmentIndex]
 
@@ -31,9 +45,7 @@ function renderImageAnnotation(element: HTMLElement, annotation: ImageAnnotation
       return parent
     }
 
-    const wrapper = document.createElement('span')
-    wrapper.style.cssText = 'display: inline-block; position: relative; max-width: 100%;'
-
+    const wrapper = createElement('span', { className: 'e-annotation-wrapper' })
     parent.insertBefore(wrapper, image)
     wrapper.appendChild(image)
 
@@ -41,13 +53,15 @@ function renderImageAnnotation(element: HTMLElement, annotation: ImageAnnotation
   }
 
   function mkShape() {
-    const shape = document.createElement('span')
-    shape.title = annotation.message
+    const shape = createElement('mark', {
+      className: classNames('e-annotation e-annotation--shape', {
+        'e-annotation--pregrading': type === 'pregrading',
+        'e-annotation--censoring': type === 'censoring',
+      }),
+      title: annotation.message,
+    })
 
     const style = shape.style
-    style.cssText = `position: absolute; min-width: 4px; min-height: 4px;`
-    style.backgroundColor = backgroundColor
-
     const pct = (n: number) => `${n * 100}%`
 
     if (annotation.type === 'rect') {
@@ -62,11 +76,20 @@ function renderImageAnnotation(element: HTMLElement, annotation: ImageAnnotation
       style.bottom = pct(1 - annotation.y2)
     }
 
+    if (index) {
+      shape.appendChild(createElement('sup', { className: 'e-annotation__index' }, `${index})`))
+    }
+
     return shape
   }
 }
 
-function renderTextAnnotation(element: HTMLElement, annotation: TextAnnotation, backgroundColor: string): void {
+function renderTextAnnotation(
+  element: HTMLElement,
+  annotation: TextAnnotation,
+  type: 'pregrading' | 'censoring',
+  index?: number
+): void {
   const { startIndex, length: annotationLength } = annotation
   return go(element.childNodes[0], 0, annotationLength)
 
@@ -87,6 +110,8 @@ function renderTextAnnotation(element: HTMLElement, annotation: TextAnnotation, 
       // If we still have characters to mark, continue the process.
       if (stillRemaining > 0) {
         go(nextSibling(mark), currentIndex + annotationLength - stillRemaining, stillRemaining)
+      } else if (index) {
+        mark.appendChild(createElement('sup', null, `${index})`))
       }
     } else {
       if (node instanceof Text && currentIndex + length(node) > startIndex) {
@@ -115,9 +140,14 @@ function renderTextAnnotation(element: HTMLElement, annotation: TextAnnotation, 
   }
 
   function mkMark(node: ChildNode): HTMLElement {
-    const mark = document.createElement('mark')
-    mark.title = annotation.message
-    mark.style.backgroundColor = backgroundColor
+    const mark = createElement('mark', {
+      className: classNames('e-annotation', {
+        'e-annotation--pregrading': type === 'pregrading',
+        'e-annotation--censoring': type === 'censoring',
+      }),
+      title: annotation.message,
+    })
+
     node.parentElement!.insertBefore(mark, node)
     return mark
   }
