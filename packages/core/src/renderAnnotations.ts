@@ -101,17 +101,29 @@ function renderTextAnnotation(
     /* The remaining number of characters from the annotation to render. */
     remaining: number
   ): void {
-    if (!isMark(node) && currentIndex >= startIndex) {
+    if (!isMark(node) && !isSup(node) && currentIndex >= startIndex) {
       // We found the correct spot to start an annotation. So let's create a mark element.
-      const mark = mkMark(node)
-      // How many characters are left in the annotation to mark.
+      const mark = mkMark()
+      // Insert it before the node.
+      node.parentElement?.insertBefore(mark, node)
+      // Move the node and its next siblings inside the mark until the mark
+      // contains the required amount of content or we run out of sibling nodes.
+      // If the node is a Text node and it is too long for the annotation, we
+      // split it in two and move the first part inside the mark, leaving the
+      // rest in place.
       const stillRemaining = move(mark, node, remaining)
 
-      // If we still have characters to mark, continue the process.
+      // If we have run out of sibling nodes but still have characters to mark,
+      // create another mark at the next text node. This means that marks have
+      // been nested.
       if (stillRemaining > 0) {
         go(nextSibling(mark), currentIndex + annotationLength - stillRemaining, stillRemaining)
-      } else if (index) {
-        mark.appendChild(createElement('sup', null, `${index})`))
+      }
+      // We know that we're at the last mark of this annotation.
+      // Render the superscript index after it, if necessary.
+      else if (index) {
+        const sup = createElement('sup', null, `${index})`)
+        mark.parentElement!.insertBefore(sup, mark.nextSibling)
       }
     } else {
       if (node instanceof Text && currentIndex + length(node) > startIndex) {
@@ -127,6 +139,14 @@ function renderTextAnnotation(
     return node.nodeName === 'MARK'
   }
 
+  function isSup(node: ChildNode): node is HTMLElement {
+    return node.nodeName === 'SUP'
+  }
+
+  function isImg(node: ChildNode): node is HTMLImageElement {
+    return node.nodeName === 'IMG'
+  }
+
   function next(node: ChildNode): ChildNode {
     return isMark(node) ? node.childNodes[0] : nextSibling(node)
   }
@@ -136,24 +156,21 @@ function renderTextAnnotation(
   }
 
   function length(node: ChildNode): number {
-    return node instanceof Text ? node.length : node.nodeName === 'IMG' ? 1 : 0
+    return node instanceof Text ? node.length : isImg(node) ? 1 : 0
   }
 
-  function mkMark(node: ChildNode): HTMLElement {
-    const mark = createElement('mark', {
+  function mkMark(): HTMLElement {
+    return createElement('mark', {
       className: classNames('e-annotation', {
         'e-annotation--pregrading': type === 'pregrading',
         'e-annotation--censoring': type === 'censoring',
       }),
       title: annotation.message,
     })
-
-    node.parentElement!.insertBefore(mark, node)
-    return mark
   }
 
   function move(mark: HTMLElement, node: ChildNode | null, remaining: number): number {
-    if (node == null || isMark(node) || remaining === 0) {
+    if (!node || isMark(node) || remaining === 0) {
       return remaining
     }
 
