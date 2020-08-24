@@ -23,7 +23,8 @@
 
   &__index {
     position: absolute;
-    right: 0; // This is overridden by renderAnnotations, try to put a sensible default value here nonetheless.
+    right: 0;
+    transform: translateX(100%); // Move the superscript fully outside the box.
     top: 1px;
     text-shadow: 1px 1px @colors[off-white];
   }
