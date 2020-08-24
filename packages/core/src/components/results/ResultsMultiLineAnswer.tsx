@@ -19,7 +19,7 @@ export const ResultsMultiLineAnswer: React.FunctionComponent<{
   })
 
   return (
-    <div className="e-multiline-results-text-answer">
+    <div className="e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1">
       <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
       {type === 'rich-text' ? (
         <div dangerouslySetInnerHTML={{ __html: value || '' }} ref={answerRef} />
