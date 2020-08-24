@@ -2,14 +2,14 @@
 
 exports[`renderAnnotations() line annotation 1`] = `Lorem <span class="e-annotation-wrapper"><img src=""><mark class="e-annotation e-annotation--shape e-annotation--pregrading" title="foo" style="left: 25%; top: 25%; right: 25%; bottom: 75%;"><sup class="e-annotation__index">1)</sup></mark></span> ipsum dolor sit amet`;
 
-exports[`renderAnnotations() one text annotation 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem</mark><sup>1)</sup> ipsum dolor sit amet`;
+exports[`renderAnnotations() one text annotation 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem<sup class="e-annotation__index">1)</sup></mark> ipsum dolor sit amet`;
 
-exports[`renderAnnotations() overlapping pregrading and censoring annotations 1`] = `<mark class="e-annotation e-annotation--censoring" title="bar">Lorem</mark><mark class="e-annotation e-annotation--pregrading" title="foo"><mark class="e-annotation e-annotation--censoring" title="bar"> ipsu</mark><sup>2)</sup>m dol</mark><sup>1)</sup>or sit amet`;
+exports[`renderAnnotations() overlapping pregrading and censoring annotations 1`] = `<mark class="e-annotation e-annotation--censoring" title="bar">Lorem</mark><mark class="e-annotation e-annotation--pregrading" title="foo"><mark class="e-annotation e-annotation--censoring" title="bar"> ipsu<sup class="e-annotation__index">2)</sup></mark>m dol<sup class="e-annotation__index">1)</sup></mark>or sit amet`;
 
 exports[`renderAnnotations() rect annotation 1`] = `Lorem <span class="e-annotation-wrapper"><img src=""><mark class="e-annotation e-annotation--shape e-annotation--pregrading" title="foo" style="left: 25%; top: 25%; right: 25%; bottom: 25%;"><sup class="e-annotation__index">1)</sup></mark></span> ipsum dolor sit amet`;
 
-exports[`renderAnnotations() text annotation through an image 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem <img src=""> ip</mark><sup>1)</sup>sum dolor sit amet`;
+exports[`renderAnnotations() text annotation through an image 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem <img src=""> ip<sup class="e-annotation__index">1)</sup></mark>sum dolor sit amet`;
 
-exports[`renderAnnotations() two text annotations with space in between 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem</mark><sup>1)</sup> ipsu<mark class="e-annotation e-annotation--pregrading" title="bar">m dol</mark><sup>2)</sup>or sit amet`;
+exports[`renderAnnotations() two text annotations with space in between 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem<sup class="e-annotation__index">1)</sup></mark> ipsu<mark class="e-annotation e-annotation--pregrading" title="bar">m dol<sup class="e-annotation__index">2)</sup></mark>or sit amet`;
 
-exports[`renderAnnotations() two text annotations, side by side 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem</mark><sup>1)</sup><mark class="e-annotation e-annotation--pregrading" title="bar"> ipsu</mark><sup>2)</sup>m dolor sit amet`;
+exports[`renderAnnotations() two text annotations, side by side 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem<sup class="e-annotation__index">1)</sup></mark><mark class="e-annotation e-annotation--pregrading" title="bar"> ipsu<sup class="e-annotation__index">2)</sup></mark>m dolor sit amet`;
