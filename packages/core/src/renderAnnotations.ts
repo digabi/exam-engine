@@ -101,7 +101,7 @@ function renderTextAnnotation(
     /* The remaining number of characters from the annotation to render. */
     remaining: number
   ): void {
-    if (!isMark(node) && !isSup(node) && currentIndex >= startIndex) {
+    if (!isMark(node) && !isSup(node) && !isBr(node) && currentIndex >= startIndex) {
       // We found the correct spot to start an annotation. So let's create a mark element.
       const mark = mkMark()
       // Insert it before the node.
@@ -132,6 +132,10 @@ function renderTextAnnotation(
 
       go(next(node), currentIndex + length(node), remaining)
     }
+  }
+
+  function isBr(node: ChildNode): node is HTMLBRElement {
+    return node.nodeName === 'BR'
   }
 
   function isMark(node: ChildNode): node is HTMLElement {
