@@ -53,7 +53,7 @@ function renderImageAnnotation(
   }
 
   function mkShape() {
-    const shape = createElement('mark', {
+    const mark = createElement('mark', {
       className: classNames('e-annotation e-annotation--shape', {
         'e-annotation--pregrading': type === 'pregrading',
         'e-annotation--censoring': type === 'censoring',
@@ -61,7 +61,7 @@ function renderImageAnnotation(
       title: annotation.message,
     })
 
-    const style = shape.style
+    const style = mark.style
     const pct = (n: number) => `${n * 100}%`
 
     if (annotation.type === 'rect') {
@@ -77,10 +77,10 @@ function renderImageAnnotation(
     }
 
     if (index) {
-      shape.appendChild(createElement('sup', { className: 'e-annotation__index' }, `${index})`))
+      createSup(mark, index)
     }
 
-    return shape
+    return mark
   }
 }
 
@@ -122,8 +122,7 @@ function renderTextAnnotation(
       // We know that we're at the last mark of this annotation.
       // Render the superscript index after it, if necessary.
       else if (index) {
-        const sup = createElement('sup', null, `${index})`)
-        mark.parentElement!.insertBefore(sup, mark.nextSibling)
+        createSup(mark, index)
       }
     } else {
       if (node instanceof Text && currentIndex + length(node) > startIndex) {
@@ -183,4 +182,14 @@ function renderTextAnnotation(
     mark.appendChild(node)
     return move(mark, nextSibling, remaining - length(node))
   }
+}
+
+function createSup(parent: Element, index: number) {
+  const sup = createElement('sup', { className: 'e-annotation__index' }, `${index})`)
+  parent.appendChild(sup)
+  const width = sup.clientWidth
+  // Write the new property in a rAF to avoid n reflows.
+  requestAnimationFrame(() => {
+    sup.style.right = `-${width + 4}px`
+  })
 }

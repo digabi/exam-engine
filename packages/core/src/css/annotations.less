@@ -5,6 +5,8 @@
 }
 
 .e-annotation {
+  position: relative; // The index is positioned absolutely with respect to this element.
+
   &--pregrading {
     background-color: rgba(241, 34, 40, 0.2);
   }
@@ -21,8 +23,8 @@
 
   &__index {
     position: absolute;
-    top: -6px; // Half of the sup text height
-    right: 0;
+    right: 0; // This is overridden by renderAnnotations, try to put a sensible default value here nonetheless.
+    top: 1px;
     text-shadow: 1px 1px @colors[off-white];
   }
 }
