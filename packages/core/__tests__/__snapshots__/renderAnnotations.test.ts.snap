@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renderAnnotations() annotation starts after <br /> tags 1`] = `<br><mark class="e-annotation e-annotation--pregrading" title="foo">Lorem<sup class="e-annotation__index">1)</sup></mark> ipsum dolor sit amet`;
+
 exports[`renderAnnotations() line annotation 1`] = `Lorem <span class="e-annotation-wrapper"><img src=""><mark class="e-annotation e-annotation--shape e-annotation--pregrading" title="foo" style="left: 25%; top: 25%; right: 25%; bottom: 75%;"><sup class="e-annotation__index">1)</sup></mark></span> ipsum dolor sit amet`;
 
 exports[`renderAnnotations() one text annotation 1`] = `<mark class="e-annotation e-annotation--pregrading" title="foo">Lorem<sup class="e-annotation__index">1)</sup></mark> ipsum dolor sit amet`;

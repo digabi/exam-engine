@@ -71,6 +71,22 @@ describe('renderAnnotations()', () => {
     ).toMatchSnapshot()
   })
 
+  it('annotation starts after <br /> tags', () => {
+    expect(
+      render(
+        '<br />Lorem ipsum dolor sit amet',
+        [
+          {
+            startIndex: 0,
+            length: 5,
+            message: 'foo',
+          },
+        ],
+        []
+      )
+    ).toMatchSnapshot()
+  })
+
   it('rect annotation', () => {
     expect(
       render(
