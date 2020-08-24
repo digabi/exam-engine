@@ -77,7 +77,7 @@ function renderImageAnnotation(
     }
 
     if (index) {
-      createSup(mark, index)
+      mark.appendChild(createSup(index))
     }
 
     return mark
@@ -122,7 +122,7 @@ function renderTextAnnotation(
       // We know that we're at the last mark of this annotation.
       // Render the superscript index after it, if necessary.
       else if (index) {
-        createSup(mark, index)
+        mark.appendChild(createSup(index))
       }
     } else {
       if (node instanceof Text && currentIndex + length(node) > startIndex) {
@@ -184,12 +184,6 @@ function renderTextAnnotation(
   }
 }
 
-function createSup(parent: Element, index: number) {
-  const sup = createElement('sup', { className: 'e-annotation__index' }, `${index})`)
-  parent.appendChild(sup)
-  const width = sup.clientWidth
-  // Write the new property in a rAF to avoid n reflows.
-  requestAnimationFrame(() => {
-    sup.style.right = `-${width + 4}px`
-  })
+function createSup(index: number) {
+  return createElement('sup', { className: 'e-annotation__index' }, `${index})`)
 }
