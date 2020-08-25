@@ -114,8 +114,8 @@ export const sv_FI: Translations = {
     'screenshot-upload-failed': 'Bifogandet av skärmdumpen misslyckades. Försök på nytt.',
   },
   'screen-reader': {
-    'answer-begin': '<<<Käännös puuttuu>>>',
-    'answer-end': '<<<Käännös puuttuu>>>',
+    'answer-begin': 'Svaret börjar',
+    'answer-end': 'Svaret avslutar',
     'correct-answer': '<<<Käännös puuttuu>>>',
   },
 }
