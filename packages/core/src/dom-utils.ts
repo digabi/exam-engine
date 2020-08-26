@@ -129,6 +129,8 @@ export function setProperties(element: HTMLElement, properties?: Record<string, 
   _.forEach(properties, (v, k) => {
     if (k === 'css') {
       element.style.cssText = v
+    } else if (k.startsWith('data-')) {
+      element.setAttribute(k, v)
     } else {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       ;(element as any)[k] = v
