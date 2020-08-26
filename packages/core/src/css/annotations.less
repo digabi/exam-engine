@@ -22,10 +22,23 @@
   }
 
   &__index {
+    text-shadow: 1px 1px @colors[off-white];
+  }
+
+  &__index--text {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: attr(data-content);
+      white-space: nowrap;
+    }
+  }
+
+  &__index--shape {
     position: absolute;
     right: 0;
-    transform: translateX(100%); // Move the superscript fully outside the box.
-    top: -0.25rem;
-    text-shadow: 1px 1px @colors[off-white];
+    top: -0.5rem;
+    transform: translateX(100%);
   }
 }
