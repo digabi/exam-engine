@@ -10,7 +10,6 @@
     "ee": "./dist/index.js"
   },
   "dependencies": {
-    "@digabi/exam-engine-exams": "13.1.3",
     "@digabi/exam-engine-mastering": "13.1.3",
     "@digabi/exam-engine-rendering": "13.1.3",
     "lodash": "^4.17.15",
