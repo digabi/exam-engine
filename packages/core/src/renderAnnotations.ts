@@ -77,7 +77,7 @@ function renderImageAnnotation(
     }
 
     if (index) {
-      mark.appendChild(createSup(index))
+      mark.appendChild(createSup(index, 'shape'))
     }
 
     return mark
@@ -122,7 +122,7 @@ function renderTextAnnotation(
       // We know that we're at the last mark of this annotation.
       // Render the superscript index after it, if necessary.
       else if (index) {
-        mark.appendChild(createSup(index))
+        mark.appendChild(createSup(index, 'text'))
       }
     } else {
       if (node instanceof Text && currentIndex + length(node) > startIndex) {
@@ -188,6 +188,15 @@ function renderTextAnnotation(
   }
 }
 
-function createSup(index: number) {
-  return createElement('sup', { className: 'e-annotation__index' }, `${index})`)
+function createSup(index: number, type: 'text' | 'shape') {
+  const content = `${index})`
+  const children = type === 'text' ? [] : content
+  return createElement(
+    'sup',
+    {
+      className: `e-annotation__index e-annotation__index--${type}`,
+      'data-content': content,
+    },
+    ...children
+  )
 }
