@@ -6,13 +6,7 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "A_E",
-    "A_X",
-    "EA",
-    "FF",
-    "N",
-    "MexDocumentation",
-    "SC"
+    "*/*.mex"
   ],
   "scripts": {
     "prepublishOnly": "find . -name '*.xml' -print0 | xargs -0 -n 1 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k \"${ANSWERS_PRIVATE_KEY:?must be set}\" "
