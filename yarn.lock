@@ -11564,9 +11564,9 @@ sane@^4.0.3:
     walker "~1.0.5"
 
 sanitize-html@^1.22.1:
-  version "1.27.3"
-  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-1.27.3.tgz#dc7419b075f96737055c98764aea40c42d978df9"
-  integrity sha512-79tcPlgJ3fuK0/TtUCIBdPeQSvktTSTJP9O/dzrteaO98qw5UV6CATh3ZyPjUzv1LtNjHDlhbq9XOXiKf0zA1w==
+  version "1.27.4"
+  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-1.27.4.tgz#3864e7562fc708cefabcb0d51bbacde3411504cb"
+  integrity sha512-VvY1hxVvMXzSos/LzqeBl9/KYu3mkEOtl5NMwz6jER318dSHDCig0AOjZOtnoCwAC3HMs9LhfWkPCmQGttb4ng==
   dependencies:
     htmlparser2 "^4.1.0"
     lodash "^4.17.15"
