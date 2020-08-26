@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
+        exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-stylesheet="hvp.css">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+    <e:language>sv-FI</e:language>
+  </e:languages>
+  <e:exam-instruction>
+    <e:localization lang="fi-FI">
+      <h2>HYVÄN VASTAUKSEN PIIRTEITÄ</h2>
+      <p>Tutkintoaineen sensorikokous on hyväksynyt seuraavat hyvän vastauksen piirteet.</p>
+
+      <h3>Filosofiasta ja sen arvioinnista lukion opetussuunnitelman perusteissa</h3>
+
+      <p>Ylioppilastutkintolautakunta on päättänyt, että syksyn 2017 tutkintokerrasta kevään 2020 tutkintokertaan
+        asti ylioppilaskoe voidaan suorittaa sekä vuoden 2003 että vuoden 2015 lukion opetussuunnitelman perusteiden
+        pohjalta. Filosofian jaos on pyrkinyt laatimaan teh- tävät siten, että syksyn 2018 kokeessa kaikkiin
+        tehtäviin voi vastata kumman tahansa perus- teiden mukaan laaditun opetussuunnitelman pohjalta.
+      </p>
+
+      <p>Vuoden 2015 lukion opetussuunnitelman uudistus oli pääosin päivitys. Esimerkiksi filosofias- sa kurssien
+        määrä tai sisältö ei ratkaisevasti muuttunut. Filosofian opetuksen tavoitteissa tapahtui muutos. Uusissa
+        perusteissa ajattelun taitoja korostetaan enemmän kuin aiemmis- sa. Vastaavasti yleissivistäviä perustietoja
+        filosofian historiasta ja sen nykysuuntauksista ko- rostettiin enemmän vuoden 2003 opetussuunnitelman
+        perusteissa. Tästä seuraa jonkinastei- sia eroja arviointiin, mutta molemmat tekijät ovat mukana molemmissa
+        perusteissa, joten kyse on ennen kaikkea painotuksesta. Ero vaikuttaa parhaisiin pisteisiin. Kiitettävissä ja
+        huip- pupisteiden vastauksissa painottuu lukion opetussuunnitelman 2003 (LOPS03) pohjalta sy- vällinen
+        filosofian perinteen tuntemus. Lukion opetussuunnitelman perusteiden 2015 (LOPS15) pohjalta taas painottuu oma
+        johdonmukainen ja luova ajattelu. Hyvän vastauksen piirteissä, esimerkiksi filosofian arviointia ohjaavassa
+        taulukossa, nämä molemmat osaamis- alueet on otettu huomioon.
+      </p>
+
+      <p>Molemmat opetussuunnitelman perusteet määrittävät lukion filosofian luonteen ja arvioin- nin lähtökohdat
+        pitkälle yhtenevästi: Filosofinen ajattelu tarkastelee käsitteellisesti ja järki- peräisesti koko
+        todellisuutta ja eri tapoja hahmottaa sitä. Filosofiassa arviointi kohdistuu ajattelun taitojen ja keskeisten
+        käsitteiden hallintaan sekä kykyyn ilmaista filosofista ajatte- lua.
+      </p>
+      <h3>Bloomin taksonomia ohjaamassa digitaalisen reaaliaineen kokeen tehtävien laadintaa</h3>
+
+      <p>Reaaliaineen digitaalisen ylioppilaskokeen tehtävien vaikeustasoissa on otettu huomioon Bloomin kognitiivisia
+        oppimistavoitteita koskeva taksonomia sekä Andersonin ja Krathwohlin siitä kehittämä muunnelma. Niiden
+        perusteella tehtävässä vaadittavaa kognitiivista prosessia arvioidaan kuusiportaisella hierarkkisella
+        asteikolla: muistaa / palauttaa mieleen, ymmär- tää/käsittää, soveltaa, analysoida, arvioida ja luoda
+        (syntetisoida). Kaksi ylintä tasoa ovat taksonomioissa eri järjestyksessä.
+      </p>
+
+      <p>Ylioppilastutkintolautakunta on ryhmitellyt tehtävät vaativuustason mukaan neljään luok- kaan. Muistamista
+        ja käsittämistä vaativat tehtävät on jaettu suljettuihin (A) ja avoimiin (B) tehtäviin. Esimerkiksi
+        monivalintatehtävät kuuluvat luokkaan A ja määrittelytehtävät luok- kaan B. Vaativammat tasot on myös
+        ryhmitelty kahteen luokkaan C ja D. D-tason tehtäviin voi kuulua luova elementti, joka lisää tehtävän
+        vaativuutta, koska se edellyttää kykyä sovel- taa, kehitellä tai muuntaa lukion opetussuunnitelman
+        perusteissa määriteltyä osaamista myös sellaiselle alueelle, jota ei ole käsitelty lukiossa.
+        Vaihtoehtoisesti D-tasolla ovat tarkas- teltavana erityisen laajat, monipuoliset sekä mahdollisesti
+        uudentyyppiset aineistot ja niiden yhdistelmät.
+      </p>
+
+      <h3>Filosofian ylioppilaskokeen vastausten arviointi</h3>
+      <p>Filosofia on yleistä, abstraktia ajattelua. Siksi siinä pelkkä asian ymmärtäminen voi usein olla hyvin
+        vaativa suoritus. Tämän takia yllä mainittuja Bloomin taksonomian luokituksia ei pidä filosofian
+        arvioinnissa pitää kaavamaisen hierarkkisina. Tiedollisen osaamisen eri ulottuvuu- det ovat filosofiassa
+        lähes poikkeuksetta limittäisiä, vaikka määrittelyä, kuvailua ja selittämis- tä vaativat tehtävän
+        osiot ovat pääsääntöisesti suppeampia kuin erittelyä, pohdintaa ja arvi- ointia vaativat.
+      </p>
+
+      <p>Filosofinen ajattelu voidaan yleensä jäsentää sarjana avoimia kysymyksiä ja niihin annettuina vastauksina.
+        Tästä johtuen filosofian kokeessa arvioidaan yhtäältä kokelaan kykyä hahmot- taa filosofisia kysymyksiä,
+        toisaalta hänen kykyään ymmärtää ja arvioida vastauksia niihin. Mikäli tehtävässä pyydetään
+        arvioimaan jotakin filosofista väitettä, olennainen osa vastausta on tarkastella, mihin kysymykseen kyseinen
+        väite vastaa. Kun kokelas on hahmottanut oikein taustalla olevan filosofisen kysymyksen, hänellä on selkeä
+        lähtökohta arvioida väitteen pe- rusteita ja osoittaa mahdollisia vaihtoehtoisia vastauksia kysymykseen.
+      </p>
+      <p>Ylioppilaskokeessa arvioitava filosofinen ajattelu kommunikoidaan kielellisesti. Siksi arvioin- nissa tulee
+        kiinnittää huomiota myös ajattelun esittämiseen monella tasolla tekstin kirjalli- sesta vaikuttavuudesta
+        kappalejakoon. Kyse ei kuitenkaan ole äidinkielen tehtävästä, ja hyvä kirjallinen esitys on hyvän
+        filosofian vastauksen tunnusmerkki vain siinä määrin kuin se il- mentää hyvää filosofista ajattelua.
+        Hyvä filosofinen vastaus on läpi ajateltu. Se tarkoittaa vastauksessa useita eri piirteitä. Tärkeimmät
+        niistä ovat vastauksen osuvuus, eheys ja va- kuuttavuus.
+      </p>
+
+      <p>Vastauksen osuvuus eli sen relevanssi ja asiaankuuluvuus on hyvän vastauksen ydin. Hyvät tiedot ja ymmärrys
+        sekä johdonmukainen argumentaatio eivät tuota edes hyväksyttävää vastausta, jos ne eivät vastaa
+        tehtävään. Tämän vuoksi osuvuus on alla listatuista ulottu- vuuksista tärkein. Yksi osuvan vastauksen
+        piirteistä on, että se on selkeä. Filosofisessa ajatte- lussa kysymykset ja vastaukset on pystyttävä
+        muotoilemaan selvästi.
+      </p>
+
+      <p>Vastauksen eheys liittyy vastauksen rakenteeseen. Rakennetta on filosofiassa perinteisesti arvioitu ns.
+        SOLO-mallilla (Structure of the Observed Learning Outcome). Sen roolia filosofian arvioinnissa on täsmennetty
+        arvioimalla mallin mukaan vastausten eheyttä ja tuomalla osu- vuus ja vakuuttavuus eheyden rinnalle
+        arviointikriteereiksi. Kokelaan kyky jäsentää käsitteel- lisesti ongelmia ja ratkaisuja sekä tunnistaa ja
+        arvioida perusteluja ilmenee vastauksen joh- donmukaisuutena ja moniulotteisuutena.
+      </p>
+
+      <p>Vastauksen vakuuttavuus tarkoittaa filosofiassa ennen kaikkea argumentaation hyvää laatua. Sen ytimessä ovat
+        filosofisesti hyväksyttävät lähtökohdat sekä riittävä yhteys väitteiden ja perustelujen välillä.
+      </p>
+
+      <p>Hyvä filosofinen ajattelu näkyy käsitteiden ja teorioiden osaamisessa ja käytössä sekä ilmiö- kentän
+        hallinnassa. Niiden lisäksi asiaan vaikuttavat vastauksen osuvuus, eheys ja vakuutta- vuus. Tiedollisen
+        osaamisen tapaan myös arvioinnin muut ulottuvuudet ovat filosofiassa lä- hes poikkeuksetta osittain
+        päällekkäisiä silloin, kun vastaus täyttää relevanssin minimivaati- mukset eli osuu tehtävänantoon.
+        Vastaus voi olla tiedolliselta osaamistasoltaan hyvä, mutta ajattelun esittämistapa saattaa olla heikkoa tai
+        toisin päin. Ulottuvuudet eivät kuitenkaan ole täysin riippumattomia toisistaan, koska esitystapa,
+        käsitteiden käyttö ja ilmiökentän hallinta liittyvät yhteen.
+      </p>
+
+      <p>
+        Filosofian tehtävien luonteen vuoksi vastauksen kypsyyttä koskevat seikat ovat erityisen tär- keässä
+        asemassa. Ylioppilastutkintolautakunta on antanut kypsyyden osoittamisesta ohjeet reaaliaineiden digitaalisten
+        kokeiden määräyksissä (https://www.ylioppilastutkinto.fi/images/
+        tiedostot/reaaliaineiden_digitaalisten_kokeiden_maaraykset_2017.pdf). On hyvä huomata, että määräysten
+        mukaan epäolennaisten näkökohtien käsittely heikentää vastauksen arvoa.
+      </p>
+
+      <p>Alla oleva taulukko voi auttaa filosofian ylioppilaskokeen vastausten arviointia osuvuuden, eheyden ja
+        vakuuttavuuden näkökulmista. Nämä ja vastauksen sisältöön liittyvät seikat muodostavat yhden
+        kokonaisarvion, joka esitetään tehtävänosasta annettavalla pistemääräl- lä.
+      </p>
+      <h3>Filosofian digitaalisen ylioppilaskokeen uudet pistemäärät</h3>
+      <p>
+        Filosofian kokeessa on yhdeksän tehtävää, joista kokelaan tulee vastata viiteen. Koe on kak- siosainen.
+        Osassa I on kuusi A-, B- tai C-tason tehtävää. Kustakin tehtävästä saa 0–20 pistet- tä. Osassa II on
+        kolme D-tason tehtävää, joista saa 0–30 pistettä kustakin. Osan I tehtävistä voi vastata 3:sta 5:een ja
+        osan II tehtävistä 0:sta 2:een. Kokeen maksimipistemäärä on 120. Sen saavuttaminen edellyttää, että
+        kokelas vastaa kolmeen osan I tehtävään ja kahteen osan II tehtävään.
+        Filosofian koe 28.9.2018 Hyvän vastauksen piirteitä
+        Aiemmin filosofian hyvän vastauksen piirteiden pisteohjeissa on mainittu kaksi erillistä arvi- oinnin
+        kiintopistettä. Ne ovat olleet ”hyvä vastaus”, jolla on tarkoitettu kolmen pisteen kuu- desta eli 50 %:n
+        pistemäärän saavuttamista, ja ”kiitettävä vastaus”, jolla on tarkoitettu viiden pisteen kuudesta eli reilun
+        80 %:n pistemäärän saavuttamista. Tehtäväosioissa, joista anne- taan 6 pistettä, sovelletaan edelleen
+        samaa asteikkoa, vaikka 6 pisteen osuus arvosanan ko- konaispistemäärästä on pienentynyt noin kolmannekseen
+        verrattuna paperiseen kokeeseen. Pistemäärän kasvaessa useammat ennalta määritellyt arviointikohdat
+        helpottavat arviointia. Jos tehtävästä tai sen osasta annettava pistemäärä on 8 tai enemmän, käytetään
+        kolmea kiintopistettä: 25–30 %, 50–60 % ja 75–80 %. Jos tehtävästä tai sen osasta annetaan yli 10 pistettä,
+        on esitetty myös luonnehdinta huippupisteistä. Sen tarkoituksena on tuoda esiin seikkoja, jotka helpottavat
+        vastauksen sijoittamista ylimmän pisteluokan (75–100 %) sisällä.
+      </p>
+      <h3>Tehtäväkohtaiset pisteitysohjeet</h3>
+      <p>Koska filosofian kokeessa arvioidaan kokelaiden omaa filosofista ajattelua, vastaukset voivat avautua moniin
+        suuntiin lähes kaikissa tehtävissä. Sen vuoksi hyvän vastauksen piirteiden kuvaukset ovat aina vain suuntaa
+        antavia. Samasta syystä hyvän vastauksen piirteissä esitel- lään tehtävään liittyviä filosofisia
+        seikkoja laajasti ja osin myös lukiokurssien ulkopuolelta. Tarkoituksena on antaa vastauksia arvosteleville
+        opettajille lisävihjeitä siitä, millaiset filosofi- set pohdinnat voivat perustellusti kuulua vastaukseen.
+        Lukiokursseihin liittyvät ja kokelaiden osaamiselta vaadittavat seikat on mainittu pisteitysohjeiden kohdalla.
+        Näissä osioissa on hyvin suppeasti huomioitu yllä olevassa taulukossa mainittuja osuvuuden, eheyden ja va-
+        kuuttavuuden ulottuvuuksia. Arvioinnissa on kuitenkin osiokohtaisesti syytä tarkastella niin sisällöllisiä
+        kuin yllä olevaan taulukkoon liittyviä ulottuvuuksia.
+      </p>
+      <p>Tehtäviin liittyy erilaisia aineistoja. Kussakin tehtävän osiossa on ilmoitettu, miten aineistoa
+        käytetään. Jos aineiston käyttöä ei ohjeisteta tai se ohjeistetaan vapaaehtoisena, esimerkiksi ”voit
+        käyttää hyväksesi aineistoa”, kyseessä on virikeaineisto. Tällöin aineiston käyttämättä
+        jättäminen on hyväksyttävää eikä vähennä pisteitä. On toki hyvä huomata, että aineisto täl-
+        laisissakin tehtävissä antaa informaatiota ja että vastauksen tulee sisältää vastaava moni- puolisuus.
+        Jos osiossa kehotetaan käyttämään aineistoa ja näin ei ole tehty, vähennetään aina vähintään yksi
+        piste ja vastaus voi nousta korkeintaan 75 %:iin osion maksimipistemää- rästä. Aineiston käytöstä
+        voidaan antaa myös yksityiskohtaisempia ohjeita, joissa esimerkiksi kehotetaan erittelemään tai
+        vertailemaan aineistoa tai etsimään sieltä joitain erityisiä piirtei- tä kuten argumentteja. Tällöin
+        ohjeistuksen noudattamatta jättämisestä seuraava suora pis- tevähennys on useimmiten suurempi.
+      </p>
+      <p>Tehtäväosiot jakautuvat kahteen luokkaan. Kun osiosta annetaan 10 pistettä tai enemmän, se arvostellaan
+        esseemuotoisena vastauksena, ellei tehtävänannossa erikseen muuta ilmoi- teta. Esseemuotoisella vastauksella
+        tarkoitetaan vastausta, jossa on esseen rakenne: alussa aiheen, ongelman tai väitteen napakka esittely,
+        keskiosassa asian monipuolinen käsittely ja lopussa käsittelyyn perustuvat johtopäätökset. Mikäli
+        osiosta annetaan vähemmän kuin 10 pistettä, vastauksen ei tarvitse olla muodoltaan essee. Alle 10 pisteen
+        osioissa käytetään merkkimäärärajoituksia. Kyse on enimmäispituudesta. Siten merkkimäärän
+        alittaminen ei vähennä pisteitä, mikäli vastauksen asiasisältö on riittävä. Huomattava merkkimäärän
+        ylit- täminen vähentää pisteitä. Merkkimäärältään rajoitetuissa tehtävissä voi menettää
+        enintään 2 pistettä merkkimäärän huomattavasta ylityksestä. 25–50 prosentin ylitys aiheuttaa 1 pis-
+        teen vähennyksen, yli 50 prosentin ylitys 2 pisteen vähennyksen. Vähennys ei voi olla kuiten- kaan
+        enempää kuin 50 prosenttia tehtäväosion maksimipistemäärästä. Tämän lisäksi vähen- netään
+        luonnollisesti pisteitä, jos vastaus ei pysy asiassa
+      </p>
+    </e:localization>
+  </e:exam-instruction>
+  <e:section max-answers="5">
+    <e:section-title>
+      <e:localization lang="fi-FI">
+        20 p. tehtävät
+      </e:localization>
+    </e:section-title>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">
+          Kauneus on Katsojan silmässä
+        </e:localization>
+      </e:question-title>
+      <e:localization lang="fi-FI">
+        <p>Opetussuunnitelman perusteissa tehtävä liittyy kurssiin Johdatus filosofiseen ajatteluun (FI1). Vuoden 2015
+          opetussuunnitelman (LOPS15) kurssilla on kohta ”objektiivinen ja subjek- tiivinen”. Vuoden 2003
+          opetussuunnitelman (LOPS03) perusteissa kurssilla on kohta, jossa tarkastellaan kauneutta arvona. LOPS03:ssa
+          kurssista Filosofinen etiikka (FI2) löytyy rajoite- tumpana kohta ”arvojen ja normien objektiivisuus ja
+          subjektiivisuus”.
+        </p>
+        <p>Kauneus on yksi länsimaisen filosofian klassisista kiinnostuksen kohteista. Se on ennen kaik- kea aisteihin
+          liittyvä arvo. Siksi kauneus on arvo, jossa arvioivan subjektin rooli korostuu eri- tyisen paljon. Sanonta
+          kauneus on katsojan silmässä korottaa tämän subjektin roolin äärim- milleen. Tällainen näkemys
+          kauneudesta on luonnollisesti kiistanalainen, mutta toisaalta on selvää, että kauneuden kokemisessa on
+          subjektiivisia eroja. Länsimaisessa filosofiassa 1700- luvulla tapahtui siirtymä objektiivisesta
+          subjektiivisempaan kauneuskäsitykseen. Useat mer- kittävimmistä kauneuden teorioista ovat tavalla tai
+          toisella – esimerkiksi intersubjektiivisuu- den avulla – pyrkineet selittämään, miksi kauneus tuntuu
+          vaativan yhtä aikaa sekä objektiivi- suutta että subjektiivisuutta.
+        </p>
+        <p>Platonin (427–347 eaa.) kauneutta koskevan filosofoinnin voi ehkä sanoa yhdistävän rak- kautta ja
+          kaipausta korostavan teeman mystiseen teemaan, jossa kauneus toimii johdatuk- sena ylimaalliseen (”Kun
+          ihmistä on rakkauden mysteereissä opastettu näin pitkälle, ja hän on aste asteelta oikealla tavalla
+          tutustunut kauneuteen, hän odottamatta havaitsee jotakin, joka on kuvaamattoman kaunista”, Pidot, 210e).
+          Aristoteles (384–322 eaa.) puolestaan edus- taa klassista käsitystä, joka korostaa symmetriaa ja
+          kokonaisuuden harmonisuutta (”Kauniin pääasiallisimmat muodot ovat järjestys, symmetria ja
+          määräytyneisyys”, Metafysiikka, XIII 3, 1078a36). Kauneuden aistimielihyvää korostavan suuntauksen
+          pääedustajana antiikissa voi pitää Aristipposta (n. 435–366 eaa.). Hänellä tähän liittyi myöhemminkin
+          suosittu ajatus kauneudesta sopivuutena ja tarkoituksenmukaisuutena. Lähes päinvastainen on Kantin
+          (1724–1804) ajatus kauneudesta olennaisesti pyyteettömänä (intressittömänä) asiana, joka tuottaa
+          universaalisti subjektiivista mielihyvää. Näiden ajatusten lisäksi filosofian historiassa on esiintynyt
+          monia muita näkemyksiä kauneudesta. Osa niistä on yhdistelmiä edellä maini- tuista.
+        </p>
+      </e:localization>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="sv-FI">
+            Det sägs att skönheten ligger i betraktarens ögon. Beskriv kort vilket slag av uppfattning om skönhet ett
+            sådant skönhetsbegrepp representerar. Namnge uppfattningen.
+          </e:localization>
+        </e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            Kyse on kokijaa korostavasta subjektiivisesta käsityksestä.
+            <br/>
+            1 pisteen vastauksessa kokelas kuvailee käsitystä oikein tai nimeää sen subjektiiviseksi.
+            <br/>
+            2 pisteen vastauksessa hän tekee molemmat.
+            <br/>
+            Relativismi voidaan hyväksyä oikeaksi kuvaukseksi, jos ja vain jos kokelas osaa rajata suhteel- lisuuden
+            yksilöön.
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="2"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            Päinvastainen, objektiivinen käsitys korostaa kohteen merkitystä kauneudessa.
+            <br/>
+            1 pisteen vastauksessa kokelas kuvailee käsitystä oikein tai nimeää sen objektiiviseksi. 2 pisteen
+            vastauksessa hän tekee molemmat.
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="2"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            Kokelas voi kuvailla millaisia hyvänsä kauniita asioita. Arvioinnissa olennaista on kyky perus- tellen
+            määrittää kohde kauniiksi. Lähtökohtaisesti kokelas saa kummastakin valitsemastaan esimerkistä 0–3
+            pistettä. 2 pistettä esimerkistä edellyttää, että kohteen kauneutta on kuvat- tu ja perusteltu, miksi
+            se on kaunis.
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="6"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            <p>Joitain kauneutta koskevia filosofisia teorioita on yllä listattu lyhyesti. Niiden tuntemus on
+              luonnollisesti ansio, mutta kokelas pääsee pitkälle erittelemällä valitsemiaan esimerkkejä ja
+              yleistämällä niistä. Subjektiivisuus ja objektiivisuus ovat tehtävänannon pohjalta seikkoja, joita
+              on syytä tarkastella omakohtaisessa pohdinnassa ainakin silloin, kun siinä ei viitata mi- hinkään
+              filosofisiin teorioihin kauneudesta.
+            </p>
+
+            <p>Vastaus kohtaan 1.4. on essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuudet
+              tulee ottaa huomioon.
+            </p>
+            <p>3 pisteen vastauksessa kokelas kuvailee jollain lailla yleistettäviä kauneuden piirteitä.</p>
+            <p>5 pisteen vastauksessa kokelas pohtii kauneutta abstraktille ja käsitteelliselle filosofiselle tasolle
+              nousevalla tavalla.
+            </p>
+            <p>8 pisteen vastauksessa kokelaan pohdinta on kattavaa ja johdonmukaista. Tyypillistä tälle tasolle
+              yltäville vastauksille on, että niissä pystytään jollain tavalla lähestymään filosofian
+              perinteessä kauneudesta käytyjä keskusteluja tai analysoidaan erityisen ansiokkaasti subjek- tiivisen
+              ja objektiivisen painoarvoa niin yleisesti kuin valituissa esimerkkitapauksissakin.
+            </p>
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="10"/>
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Moraali ja tavat</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>LOPS15:ssä tehtävä liittyy kurssin Etiikka (FI2) kohtaan ”moraalin luonne normijärjestelmänä ja sen
+            ero juridisiin ja tapanormeihin perustuviin järjestelmiin”. LOPS03:ssa tehtävä liittyy kurssin
+            Filosofinen etiikka (FI2) kohtaan ”moraalisia arvoja ja normeja koskevien vakaumus- ten erilaiset perustat,
+            moraalin suhde oikeuteen ja uskontoon”.
+          </p>
+          <p>Tehtävän ytimessä on moraalisuuden tunnistaminen, tapojen käsittely voi olla arkitajuista. Tehtävän
+            muotoilussa on otettu huomioon, että on moraalirelativistisia ajattelijoita, kuten Edvard Westermarck
+            (1862–1939), jotka eivät usko, että on olemassa yleispäteviä kaikkia moraalisia toimijoita rajoittavia
+            normeja. Yleensä tällaisetkin ajattelijat hyväksyvät, että yh- teisöjen käyttäytymistä
+            säätelevissä koodeissa moraaliset normit voidaan erottaa esimerkiksi juridisista, uskonnollisista ja
+            tapanormeista. Tähän erotteluun on joitain poikkeuksia lähinnä silloin, kun esimerkiksi yhteisön
+            sisäinen yhteenkuuluvuus tai sitoutuminen johonkin käytös- normistoon on niin tiukkaa, ettei se juuri
+            salli rationaalista pohdintaa. Jos kokelas valitsee tarkasteltavakseen tällaisen yhteisön, alla olevat
+            tarkastelut eivät välttämättä sovellu vas- tauksen arviointiin. Tällöin hyvässä vastauksessa on
+            kuitenkin ymmärrettävä valinnan poik- keuksellisuus.
+          </p>
+          <p>Moraalille tunnusomaista on, että se säätelee käyttäytymistä, joka vaikuttaa muihin. Vaiku- tus voi
+            olla myös välillistä, kuten esimerkiksi useissa tapauksissa yksityisellä päihteiden käy- töllä.
+            Joskus vaaditaan myös, että moraaliset normit ottavat huomioon kaikkien asianosais- ten edut ja intressit.
+            Tässä mielessä esimerkiksi syrjimiseen liittyvät käytännöt ovat tyypilli- sesti moraalisia ja
+            ruokailuvälineisiin liittyvät eivät ole.
+          </p>
+          <p>Filosofian koe 28.9.2018 Hyvän vastauksen piirteitä</p>
+          <p>Moraalin tunnuspiirteinä on joskus esitetty olevan preskriptiivisyys eli kehottavuus tai käske- vyys,
+            universaalisuus eli yleisyys, autonomisuus eli itsenäisyys ja ylivertaisuus. Myös tapa- normit ovat
+            preskriptiivisiä, joten tehtävässä relevantteja erotteluperusteita ovat kolme muuta.
+          </p>
+          <p>Moraalin yleisyys tarkoittaa sitä, että moraalinormit pätevät kaikille. Moraalista käytöstä
+            vaaditaan samalla lailla kaikilta moraalisilta toimijoilta eli moraaliagenteilta, eikä niissä viita- ta
+            erityistapauksiin. Tapanormeissa ei ole vastaavaa yleispätevyyttä. Immanuel Kantia (1724–1804) seuraten
+            yleispätevyyteen on liitetty vaatimus moraalinormien universalisoin- nin eli yleistämisen
+            mahdollisuudesta. Normi ei ole moraalinen, jollei voida vaatia, että se koskee kaikkia moraalisia
+            toimijoita kaikissa samanlaisissa tilanteissa, jollei vahvempi moraa- linen normi sitä estä.
+          </p>
+          <p>Moraalin autonomia tarkoittaa sitä, että moraali ei riipu muista elämänpiireistä tai palaudu niihin.
+            Tapanormit voivat vaihdella esimerkiksi arjen ja juhlan välillä, moraalinormit eivät.
+          </p>
+          <p>Moraalin ylivertaisuus tarkoittaa, että moraali on tärkeintä ihmiselle. Jos tapanormit ja mo-
+            raalinormit ovat ristiriidassa, tapanormien pitäisi antaa periksi. Esimerkiksi naisten asettami- nen
+            miehiä alempaan asemaan on väärin, mutta monien yhteisöjen tapanormit ohjaavat siihen. Kuten tämäkin
+            esimerkki paljastaa, moraalin ylivertaisuus on moraalin luonteeseen kuuluva käsitteellinen ominaisuus, ei
+            empiirinen tosiseikka. Arkielämässä moraalinormien ylivertaisuus jää helposti esimerkiksi
+            taloudellisten näkökohtien alle. Moraalin ylivertaisuu- den vaatimus on kuitenkin hyvin perusteltu.
+            Inhimillinen toiminta perustuu normien noudat- tamiseen, esimerkiksi kielellisessä kommunikaatiossa täytyy
+            noudattaa joitain normeja. Normien noudattaminen voi perustua pakkoon tai lievemmin sanktioihin, kuten
+            juridisissa normeissa, tottumukseen tai valittuun sitoutumiseen. Kykyä viimeksi mainitun kaltaiseen
+            vapaaehtoiseen sitoutumiseen, joka on luonteeltaan moraalinen, voi pitää ihmisarvon perus- tavana
+            lähteenä. Moraalin ylivertaisuus voidaan toki haastaa teoreettisestikin. David Hume (1711–1776) on
+            esittänyt, että hengenhädässä moraali ei toimi normina ja äärimmäisessä yltäkylläisyydessä sitä
+            ei tarvita. Jotkut voivat argumentoida myös, että pelastuminen uskon- nollisessa mielessä on tärkeämpi
+            arvo kuin mikään inhimillinen, moraali mukaan lukien.
+          </p>
+          <p>5 pisteen vastauksessa kokelas kuvailee ymmärrettävästi moraali- ja tapanormeja valitse- massaan
+            yhteisössä ja pystyy tekemään niiden välille jonkinlaisen eron.
+          </p>
+          <p>10 pisteen vastauksessa kokelaan pohdinnassa esiintyy joitain perusteltuja moraalin tunnus- piirteitä ja
+            tältä pohjalta moraalin ja tapojen erojen pohdinta valitussa yhteisössä on joh- donmukaista.
+          </p>
+          <p>15 pisteen vastauksessa kokelaan pohdinnassa esiintyvät moraalin tunnuspiirteet ja moraalin ja tapojen
+            erojen pohdinta valitussa yhteisössä on monipuolista.
+          </p>
+          <p>Tyypillistä huippupisteiden vastauksille on, että niissä pystytään hyödyntämään filosofian
+            perinteessä moraalin luonteesta käytyjä keskusteluja tai yllä esitetyt moraalin tunnuspiirteet ja
+            valitun yhteisön ominaislaatu on kattavasti ja syvällisesti otettu huomioon erottelussa.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="20"/>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">
+          Ykseys ja muutos
+        </e:localization>
+      </e:question-title>
+      <p>LOPS15:ssa tehtävä liittyy kurssin Johdatus filosofiseen ajatteluun (FI1) kohtaan ”filosofisen ajattelun
+        luonne” ja ”johdonmukaisen argumentaation ja pätevän päättelyn perusteet” sekä kurssin Tieto, tiede ja
+        todellisuus (FI4) kohtaan ”olemassaolon kysymyksiä: muutos ja pysy- vyys”. LOPS03:ssa tehtävä liittyy kurssin
+        Tiedon ja todellisuuden filosofia (FI3) kohtaan ”me- tafysiikan keskeisiä kysymyksiä ja käsitteitä”.
+      </p>
+      <p>Elealainen Parmenides vaikutti 400-luvun alussa eaa. Hän kirjoitti heksametrimuotoisen ope- tusrunon, josta
+        suuri osa on säilynyt. Runon tulkinta on vaikeaa, mutta on selvää, että Par- menides puolusti jollain tavoin
+        sekä muuttumattomuutta että ykseysajattelua. Elealainen Zenon (n. 490–420 eaa.) oli Parmenideen oppilas, joka
+        puolusti hänen ajatuksiaan esittämil- lään paradokseilla. Platon, Aristoteles ja useat myöhemmätkin
+        filosofit nykyaikaan asti ovat pitäneet molempia suuressa arvossa filosofisen argumentaation kehittäjinä.
+      </p>
+      <e:question-instruction>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Aineiston pohjalta Parmenideen lähtökohtana on olevan ja erityisesti ajan ykseys. Jos kaik- keus on yksi,
+            se ei voi muuttua, koska se tulisi silloin joksikin toiseksi eli ei-kaikkeudeksi, itse asiassa ei-olevaksi.
+            Videokatkelma korostaa erityisesti kaikkien ajan hetkien ykseyttä, joskin Parmenideen väitteet jäävät
+            siinä varsin kevyesti perustelluiksi. Parmenides itse perusteli näkemystään paljon enemmän. Yksi hänen
+            helposti ymmärrettävistä perusteluistaan on ei- olemassaolon kieltäminen (”ei-oleva ei ole”), josta
+            seuraa ajatus, että tyhjästä ei synny mi- tään.
+          </p>
+          <p>Vastauksella on merkkimäärärajoitus eikä sitä tarvitse arvioida esseenä.</p>
+          <p>2 pisteen vastauksessa kokelas esittää jonkin näkökohdan siitä, miksi muutos on Parme- nideen mukaan
+            mahdotonta.
+          </p>
+          <p>4 pisteen vastauksessa kokelas esittää ymmärrettävästi, miten olevan tai ajan ykseydestä seuraa
+            liikkeen mahdottomuus. Viittaaminen Parmenideen ajatuksiin, jotka eivät esiinny aineistossa, on ansio,
+            mutta sitä ei edellytetä täysiin pisteisiin.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="5"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Zenonin paradoksien tavoitteena on paljastaa ristiriitoja, jotka seuraavat oletuksesta, että liike ja/tai
+            moneus ovat olemassa. Kuten videokatkelmassa selvästi esitetään, Zenonin para- doksit siis puolustavat
+            Parmenideen monistista filosofiaa eli ykseysajattelua. Tämä tapahtuu johtamalla ristiriitaisia tai
+            ilmeisen mahdottomia tuloksia liikkeen olemassaoloa tukevista oletuksista, jotka täytyy siksi hylätä.
+          </p>
+          <p>Paradoksien yhteinen lähtökohta on ykseysajattelun vastakohta, että liike on mahdollista ja että aika
+            (tai matkan osalta ulottuvuus) on jaettavissa useampaan osaan. Periaatteessa osia voi olla äärellinen tai
+            ääretön määrä. Äärellinen määrä jakamattomia ajan hetkiä on kuiten- kin hyvin epäuskottava
+            ajatus, vaikka nuoli-paradoksin voi ehkä jäsentää myös tältä pohjalta. Luontevin tulkinta aineistossa
+            olevien paradoksien asetelmasta on, että aika/ulottuvuus koostuu äärettömästä määrästä
+            hetkiä/pisteitä. Paradoksi seuraa siitä, että näiden het- kien/pisteiden mitta on joko nolla tai
+            poikkeaa jonkin verran nollasta.
+          </p>
+          <p>Aineiston ensimmäinen paradoksi – perinteisessä muodossaan Akhilleus ja kilpikonna – joh- taa
+            paradoksiin, jos hetkien/pisteiden mitta eroaa nollasta. Ääretön määrä mitaltaan nollas- ta poikkeavia
+            pisteitä/hetkiä tuottaa nyt äärettömän pitkän ajan/ulottuvuuden ja mitään etumatkaa ei koskaan voi
+            saada kiinni, koska se on tosiasiassa ääretön. Nuoli-paradoksi puo- lestaan seuraa siitä, jos
+            hetkien/pisteiden mitta on nolla. Silloin niissä ei voi tapahtua liikettä. Mutta koska kaikki aika koostuu
+            vain hetkistä, joissa nuoli ei liiku, nuoli ei liiku lainkaan.
+          </p>
+          <p>Joskus paradoksit on jaettu myös siten, että osa kohdistuu aikaan ja/tai ulottuvuuteen, joka on jatkuva
+            ja osa aikaan ja/tai ulottuvuuteen, joka on epäjatkuva eli diskreetti. Erottelu voi luontevasti tulla esiin
+            myös aineiston paradoksien tulkinnassa. Aineiston ensimmäinen Akhil- leus ja kilpikonna -paradoksi voidaan
+            tällöin liittää jatkuvaan malliin, jossa jokaisen pisteen tai hetken välistä löytyy uusi.
+            Nuoli-paradoksi puolestaan voitaisiin kuvata epäjatkuvalla mal- lilla. Videoaineistossa paradoksit
+            vaikuttavat jäsentyvän enemmän edellisessä kappaleessa esitetyn ja helpommin ymmärrettävän
+            pisteen/hetken mittaa koskevan vastakkainasettelun pohjalta. Kokelas voi kuitenkin tarkastella valitsemaansa
+            paradoksia myös jatkuvuuden ja epäjatkuvuuden näkökulmasta. Muitakin vaihtoehtoisia tulkintalinjoja on
+            esitetty.
+          </p>
+          <p>Gottfried Leibniz (1646–1716) ja Isaac Newton (1642–1726) kehittivät differentiaali- ja in-
+            tegraalilaskennan, joka tavallaan ratkaisee tehtävän paradoksit, joskin asian matemaattisen täsmällinen
+            muotoilu vaati vielä ainakin Augustin Cauchyn (1789–1857) sarjojen sup- penemista ja Karl Weierstrassin
+            (1815–1897) raja-arvoa koskevan työn. Filosofialle tyypilli- sesti Zenonin ongelmana voi pitää
+            poissulkevaa vastakkainasettelua, että matka tai aika on joko nolla tai poikkeaa tietyn verran nollasta.
+            Lukion matematiikastakin tutun raja-arvon käsitteen avulla voidaan sanoa, että luku poikkeaa
+            mielivaltaisen vähän nollasta.
+          </p>
+          <p>Tarkasta muotoilusta riippuen Zenonin paradokseista voi löytää muitakin ongelmia. Esimer- kiksi, kuten
+            1900-luvun filosofit Bertrand Russellin (1872–1970) johdolla ovat huomautta- neet, Zenonin paradoksit
+            ratkaisevan matematiikan kehittäminen on vain osaratkaisu. On toinen asia, noudattaako fysikaalinen maailma
+            reaalilukujen matematiikkaa. Tässä palataan Zenonin alkuperäiseen tavoitteeseen puolustaa Parmenideen
+            käsitystä, että todellisuus on ykseys.
+          </p>
+          <p>Zenonin mukaan paradoksit osoittavat, että moneuden ja liikkeen mahdollistava käsitteistö johtaa
+            ristiriitaan. Tämä kyseenalaistaa aistitodellisuuden luotettavuuden ja perustavuuden, ei välttämättä
+            sen olemassaoloa. Parmenideen opetusrunossa on itse asiassa ykseysajattelua korostavan , ns. Totuuden tien,
+            lisäksi osa, ns. Luulon tie, jossa hän kuvailee moninaisuuden ja liikkeen hyväksyvien ihmisten maailmaa.
+            Vieläkään ei ymmärretä, miten Parmenides ajat- teli osien yhdistyvän kokonaisuudeksi. Selitykset,
+            jotka pelkän aistihavainnon perusteella kiistävät Parmenideen monismin tai Zenonin paradoksien
+            painoarvon, eivät kuitenkaan näy- tä tavoittavan koko argumentaatiota. Tällaisia tulkintoja on toki
+            filosofian historiassakin an- tiikista asti esitetty. Zenonin tuki Parmenideen monismille on joka
+            tapauksessa kahtalainen: yhtäältä moneuden ja liikkeen hyväksyvä käsitteistö pyritään osoittamaan
+            ristiriitaiseksi, toisaalta sitä vahvasti tukevien aistihavaintojen luotettavuus kyseenalaistetaan.
+          </p>
+          <p>Vastaus kohtaan 3.2. on essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuudet
+            tulee ottaa huomioon.
+          </p>
+          <p>4 pisteen vastauksessa kokelas pystyy jonkinlaista ymmärrystä osoittaen kuvailemaan valit- semansa
+            paradoksin rakenteen tai sen, miten paradoksi tukee Parmenideen monismia.
+          </p>
+          <p>8 pisteen vastauksessa kokelas tekee molemmat.</p>
+          <p>12 pisteen vastauksessa kokelaan paradoksia koskeva selitys on johdonmukainen ja kuvaa osuvasti, millaisen
+            ongelman Zenonin argumentti tuo esiin liikkeen ja moneuden käsitteessä. Lisäksi kokelas selittää
+            paradoksin Parmenideen monismille antamaa tukea.
+          </p>
+          <p>Tyypillistä huippupisteiden vastauksille on, että niissä pystytään jollain tavalla hyödyntä- mään
+            Parmenideen ajattelusta tai Zenonin paradokseista käytyjä keskusteluja tai johdonmu- kaisesti, tarkasti ja
+            kattavasti erittelemään yksi Zenonin paradokseista ja kuvailemaan sen suhde Parmenideen filosofiaan.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="15"/>
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Lihan syöminen</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>LOPS15:ssä tehtävä liittyy kurssin Etiikka (FI2) kohtiin ”eläimiä koskevia eettisiä kysymyksiä” ja
+            ”moraali ja soveltava etiikka”. Jälkimmäinen kohta löytyy myös LOPS03:n kurssista Filoso- finen etiikka
+            (FI2). Etenkin LOPS03:ssa tehtävällä on yhtymäkohtia myös kurssiin Yhteiskun- tafilosofia (FI3/FI4).
+          </p>
+          <p>Lihansyönnin oikeuttamista on kenties helpointa lähestyä tukeutumalla biologiaan, traditi- oon tai
+            valinnanvapauteen. Biologiassa ihminen määritellään yleensä sekasyöjäksi ja run- saasti proteiinia
+            sisältävä liha tarjoaa ihmiselle ravitsevaa ravintoa. Tämä deskriptiivinen väi- te ei tosin vielä ole
+            lihansyönnin oikeuttava argumentti. Se vaatii lisäperustelun, että ihmisen on hyvä, luonnollista tai
+            tarpeellista hankkia proteiini lihasta. Voidaan esimerkiksi esittää, että lihan korvaaminen on liian
+            vaikeaa tai että se on tarpeetonta, koska siinä ei ole mitään pahaa. Edellistä argumenttia vastaan voi
+            esittää näkemyksen, jonka mukaan ihminen – aina- kin nykyaikaisissa kehittyneissä yhteiskunnissa –
+            pystyy hyvin pitkälle valitsemaan ravinton- sa. Näin ihminen voi tulla toimeen ja elää terveellisesti
+            ilman eläinperäistä ravintoa. Kysymys siitä, mitä pahaa eläinten syönnissä on, liittyy yhtäältä
+            eläinten tappamiseen, toisaalta teura- seläinten kasvattamiseen ja kohteluun.
+          </p>
+          <p>Ihmisen vapaudelle päättää lihan syönnistä voidaan hakea filosofisia argumentteja esimer- kiksi
+            liberalistisesta tai konservatiivisesta traditiosta. Edellisessä korostetaan ihmisen vapaut- ta päättää
+            omaa elämäänsä koskevista kysymyksistä ruokavalio mukaan lukien. Jälkimmäi- sessä oletetaan, että
+            lihaa on ennenkin syöty, ja korostetaan sitä, että näin menetellen ihmi- set ovat ennenkin selvinneet.
+            Lihansyöntiä puolustettaessa traditioon tukeutuen olisi argu- mentteja kehiteltäessä hyvä ottaa
+            huomioon pelkän ”näin on aina tehty”-argumentin on- gelmallisuus. Esimerkiksi suomalaisessa yhteiskunnassa
+            on jo tehty useita muutoksia kohti terveellisempiä ja turvallisempia elämäntapoja – monipuolisempi
+            ruokavalio, turvavyöt, eri- laiset tupakointikiellot ja pyöräilykypärät ovat tuskin huonontaneet
+            ihmisten keskimääräistä elämän laatua.
+          </p>
+          <p>Lihansyönnin oikeutuksen kieltävän näkemyksen luonnollisimmat lähtökohdat ovat eettisesti eläinten
+            oikeudet sekä yhteiskuntafilosofisesti ympäristölle haitalliset vaikutukset. Jälkim- mäiset voivat
+            liittyä ensisijaisesti lihantuotannon yleisesti raskaaseen ympäristökuormituk- seen, kuten
+            kasvihuonekaasuihin, mutta siinä voidaan tarkastella myös erityisempiä kysy- myksiä. Nämä liittyvät
+            usein teuraseläinten huonoon kohteluun ja elinoloihin sekä epäeetti- seen eläinravinnon kierrätykseen.
+            Eläinten oikeuksista puhutaan usein silloinkin, kun tarkasti ottaen ei puhuta oikeusetiikasta vaan
+            eläinten epäeettisen kohtelun rajoittamisesta vaikkapa seuraus- tai hyve-eettisin perustein. Eläinten
+            eettistä kohtelua käsiteltäessä voidaan tukeu- tua filosofian perinteessä esitettyihin argumentteihin
+            mutta tätä ei edellytetä, vaan johdon- mukaisilla ja hyvin perustelluilla argumenteilla voi yltää
+            huippupisteisiin.
+          </p>
+          <p>Jo Antiikin Kreikassa lihansyönnin oikeutus oli filosofisen väittelyn aihe ja sieltä on peräisin
+            kenties ensimmäinen kasvissyönnille rationaalisia perusteluja länsimaisessa perinteessä esit- tänyt
+            kirja, Plutarkhoksen (n. 45–125 jaa.) Lihansyönnistä. Hänen mukaansa eläimillä on ais- tit, sielu ja
+            järki eikä niitä saa surmata kuin välttämättömyyden pakosta. Muuten lihansyönti on pelkkää turhan
+            nautinnon tavoittelua ja hybristä (ylimielisyyttä). Uudella ajalla Descarte- sin (1596–1650) näkemykset
+            eläimistä monimutkaisina koneina ovat heikentäneet eläinten eettistä asemaa filosofian perinteessä.
+          </p>
+          <p>Nykyaikaisen keskustelun klassikko on utilitaristi Peter Singer (s. 1946), joka pitää kykyä ko- kea
+            kärsimystä eettisen arvion perustana. Singerin näkemyksen mukaan ei ole olemassa mo- raalisia perusteita
+            olla antamatta eläinten intresseille samankaltaista painoarvoa kuin ihmis- ten intresseille. Hän kutsuu
+            rasismiin verrattavaksi spesismiksi eli lajisorroksi sitä, että ihmi- sille myönnetään eettisiä
+            oikeuksia vain heidän lajinsa perusteella. Eri eläinlajien osalta kär- simyksen kokemisen määrittely
+            voi kuitenkin muuttua vaikeaksi, kun niiden hermoston ra- kenne poikkeaa riittävästi ihmisen vastaavasta.
+            Nisäkkäät ja linnut, ehkä myös jotkin kalat ja matelijat, saattavat kokea samalla tavoin kuin ihmiset,
+            mutta entä hyönteiset? Suomalaises- sa keskustelussa eläinten oikeuksien ja luonnon itseisarvon tunnetuin
+            puolustaja on toden- näköisesti Pentti Linkola, joka korostaa ihmisten toiminnan yleisesti ottaen
+            haitallisia vaiku- tuksia koko maapallolle.
+          </p>
+          <p>Aineistossa verrataan Aasiaa ja Eurooppaa, mikä johdattelee luontevasti erilaisiin kulttuuri-
+            relativistisiin argumentteihin. Kulttuurirelativismin pohjalta perusvastaus on, että kukin kult- tuuri
+            määrittelee itse, mitä eläimiä syödään eikä yleispätevää vastausta ole. Sinänsä kulttuu- rien
+            erilaisia käytäntöjä voi luultavasti käyttää sekä lihansyöntiä tukevien että sitä vastusta- vien
+            argumenttien lähtökohtana. On hyvä huomata, että eri kulttuureissa se, mitä eläimiä on sallittua
+            syödä, vaihtelee. Kuten koiran syöminen meille, myös hevosen tai poron syöminen voi olla toisesta
+            kulttuurista tulevalle järkyttävää. Ajankohtainen uusi kysymys Suomessa on hyönteisten, erityisesti
+            sirkkojen, syöminen, jonka osalta lainsäädäntö on vapautunut vuo- den 2018 alusta.
+          </p>
+          <p>Tehtävänannossa kysytään lihansyönnin oikeutusta sekä yleisellä tasolla että tiettyihin lajei- hin
+            kohdistuen. Aineistoon liittyvä eri lajien mahdollisesti erilainen kohtelu liittyy suorimmin kotieläimiin.
+            Ne ovat nykyään yleensä lemmikkejä, joita pidetään lähinnä ihmisten tunteita ja henkistä
+            hyvinvointia korostavista syistä, vaikka maatiloilla sekä erilaisissa palvelutehtävissä, kuten sokeita
+            auttamassa, on edelleen myös hyötykotieläimiä. Lemmikit koetaan perheenjä- seniksi ja niihin
+            kohdistuvat moraaliset toimintaohjeet monilla ihmisillä poikkeavat jyrkästi teuras- ja villieläimiin
+            sovellettavista ohjeista. Kotieläimet eivät kuitenkaan rajoitu koiriin ja kissoihin, vaan löytyy myös
+            esimerkiksi minipossuja sekä terraariosta ja akvaariosta myös muita kuin nisäkkäitä.
+          </p>
+          <p>On vaikeaa luokitella eläinlajeja sen mukaan, miten ne kokevat kipua, tai sen mukaan, missä määrin ne
+            ovat kotieläimiä. Helppoa ei ole myöskään kolmannen ja ehkä yleisimmän eläin- ten erilaisen kohtelun
+            mittarin eli älykkyyden käyttäminen. Älykkyyttä, tietoisuutta ja kykyä symboliseen kielelliseen
+            kommunikaatioon on usein pidetty ihmisen erikoispiirteinä, joiden on katsottu oikeuttavan muiden eläinten
+            hyötykäytön ja syömisen. Eläinten älykkyys ja sen kärkisijojen jakautuminen muille kuin perinteisille
+            kotieläimille on kuitenkin viimeisen sadan vuoden aikana muuttanut paljon eri eläimiä koskevaa ajattelua.
+            Eläinten kokemusmaailman jäsentämisessä myös erilaiset tavat aistia, kuten lepakoiden kaikuluotaus,
+            mutkistavat luokit- telua.
+          </p>
+          <p>5 pisteen vastauksessa kokelas esittelee erilaisia näkökohtia lihan – ja erityisesti eri eläinla- jien –
+            syömisen puolesta ja sitä vastaan.
+          </p>
+          <p>10 pisteen vastauksessa kokelas esittää asiasta jonkinlaisen käsitteelliselle filosofiselle tasolle
+            nousevan arvion, jossa on hyödynnetty aineistoa ja ainakin asian eettinen tai yhteiskuntafi- losofinen
+            ulottuvuus on otettu selkeästi huomioon.
+          </p>
+          <p>15 pisteen vastauksessa kokelaan arvio on kattava ja johdonmukainen. Siinä otetaan huomi- oon sekä
+            eettisiä että muita filosofisia seikkoja ja arvioidaan, vaikuttavatko eläinlajien erot lihan syömisen
+            oikeutukseen.
+          </p>
+          <p>Tyypillistä huippupisteiden vastauksille on, että niissä pystytään jollain tavalla hyödyntä- mään
+            filosofian perinteessä aihepiiristä käytyjä keskusteluja tai monipuolisesti, johdonmu- kaisesti ja
+            kattavasti esittämään koko laajaa ilmiökenttää koskeva arvio.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="20"/>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Valta opettajainhuoneessa</e:localization>
+        <e:localization lang="sv-FI">Makt i lärarrummet</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>Tehtävä liittyy LOPS15:n kurssin Yhteiskuntafilosofia (FI3) kohtiin ”vallan käsite ja muodot, vallan
+            oikeuttaminen” ja ”oikeudenmukaisuuden eri muodot, niiden perusteleminen ja so- veltaminen”. LOPS03:n
+            vastaavalla kurssilla on kohdat ”vallan oikeuttaminen” ja ”yhteiskun- nallinen oikeudenmukaisuus”.
+          </p>
+          <p>Vastauksen lähtökohta on videokatkelman tapahtumien analyysissa. Asetelma liittyy tyypilli- seen
+            työpaikan arkiseen ja pienimuotoiseen vallankäyttöön. Koska kyseessä on koulu ja esi- mies on rehtori,
+            hän vastaa opettajien lisäksi myös oppilaiden ja opiskelijoiden vapaiden myöntämisestä, mikä voi
+            tuoda asetelmaan omakohtaisuutta.
+          </p>
+          <p>Työpaikan perinteisessä asetelmassa valta usein mielletään asemaan liittyväksi oikeudeksi tehdä
+            päätöksiä. Opettajat eivät kuitenkaan tyydy rehtorin virka-aseman perusteella teke- mään
+            päätökseen, vaan koetun epäoikeudenmukaisuuden takia pyrkivät kamppailemaan asiasta. ”Porukassa
+            sanomalla” muodostuu strateginen suhdeverkko, jossa esimiehen valta voidaan haastaa. Keskustelun aikana
+            strateginen tilanne kuitenkin muuttuu, mikä näkyy esi- merkiksi Kirstin reaktiossa ja Eevin
+            jännittyneessä puheessa. Annika ja Paula vaihtavat ase- maa, luopuvat mahdollisesti riskialttiista
+            protestoinnista ja jättävät Eevin yksin. Varsinkin, kun Eevi itse asiassa oli Annikan asialla, tällainen
+            käyttäytyminen vaikuttaa erittäin epäoi- keudenmukaiselta. Valta-asetelmat ja ”ongelma” muuttuvat ja
+            jatkossa ”Eevi on ongelma”.
+          </p>
+          <p>Taustalla on asetelma, jossa eri työntekijöitä on kohdeltu eri tavoin, vaikka videokatkelmassa annetaan
+            ymmärtää, että asianmukaisia erotteluperusteita ei ole. Tällöin rikotaan Aristote- leen
+            määrittelemää oikeudenmukaisuuden muodollista periaatetta: Samanlaisia on kohdel- tava samalla tavoin,
+            erilaisia eri tavoin. ”Esimies”-sanan käyttö ja se, että edunsaaja on ni- meltään Tuomo, voivat tässä
+            vihjata myös sukupuolten välisiin valta-asetelmiin epäoikeu- denmukaisuuden taustalla. Vallan käsitteen
+            lisäksi tehtävässä on syytä eritellä oikeudenmu- kaisuuden käsitettä.
+          </p>
+          <p>5 pisteen vastauksessa kokelas kuvailee vallankäyttöä ja sen oikeudenmukaisuutta videokat- kelmassa.
+            Vaihtoehtoisesti hän erittelee vallankäyttöä tai arvioi sen oikeudenmukaisuutta.
+          </p>
+          <p>10 pisteen vastauksessa kokelas erittelee vallankäyttöä ja arvioi sen oikeudenmukaisuutta
+            videokatkelmassa. Erittely on johdonmukaista ja joko hyödyntää Foucault’n tekstiä tai käyt- tää
+            täsmällisesti määriteltyjä vallan ja oikeudenmukaisuuden käsitteitä.
+          </p>
+          <p>15 pisteen vastauksessa kokelaan erittely on käsitteellisesti tarkkaa ja arvio on monipuoli- nen.</p>
+          <p>Tyypillistä huippupisteiden vastauksille on, että niissä pystytään hyödyntämään filosofian
+            perinteessä vallan ja oikeudenmukaisuuden käsitteistä käytyjä keskusteluja, esimerkiksi erit-
+            telemällä Foucault’n näkemystä ja soveltamalla sitä videokatkelman erittelyyn.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:text-answer type="rich-text" max-score="20"/>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Tiedon kriteerit</e:localization>
+      </e:question-title>
+      <p>LOPS15:ssä tehtävä liittyy kurssin Tieto, tiede ja todellisuus (FI4) kohtaan ”tiedon oikeutta- minen”.
+        LOPS03:ssä tehtävä liittyy kurssin Tiedon ja todellisuuden filosofia (FI3) samaan koh- taan sekä kurssin
+        Johdatus filosofiseen ajatteluun (FI1) kohtaan ”tietoa ja tietämistä koskevia filosofisia perusnäkemyksiä”.
+      </p>
+      <p>Tehtävä nojaa ennen kaikkea tiedon klassiseen määritelmään ja sille esitettyyn kritiikkiin. Tehtävän
+        kohdassa 6.3. tiedon määritelmää sovelletaan toisen käden tietoon. Klassisen mää- ritelmän mukaan tieto
+        on perusteltu tai oikeutettu tosi uskomus. Uskomuksen perustelu vaatii tiedon subjektin aktiivista toimintaa,
+        mutta uskomus voi olla esimerkiksi syntytapansa nojalla oikeutettu, vaikkei subjekti olisi sen oikeutuksesta
+        tietoinen. Kokelaan ei edellytetä tekevän erottelua perustellun ja oikeutetun uskomuksen välillä, mutta
+        hyvä vastaus on kui- tenkin käsitteellisesti johdonmukainen. Tehtävän kolmea tapausta on luontevinta
+        tarkastella klassisen määritelmän valossa, mutta hyvän vastauksen voi rakentaa myös jonkin muun ta-
+        pauksiin soveltuvan tiedon määritelmän valossa.
+      </p>
+      <p>
+        <strong>Tehtävän kaikissa osissa on merkkimäärärajoitus eikä vastauksia tarvitse arvostella essei- nä.
+        </strong>
+      </p>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Kysymykseen on perusteltua vastata myöntävästi. Perustelun ydinosan voi muodostaa huo- mio, että Henri
+            on muodostanut oikeutetun toden uskomuksen, joka täyttää tiedon klassi- sessa määritelmässä annetut
+            yleiset ehdot. Lisäksi vastauksessa tulee perustella, miksi Hen- rin tosi uskomus on oikeutettu. Tämän
+            voi tehdä viittaamalla Henrin erinomaiseen näköky- kyyn ja toteamalla, että moitteeton näkökyky on
+            luotettava uskomusten lähde hyvissä ha- vainto-olosuhteissa. Mikäli olosuhteet olisivat epäsuotuisat
+            tarkoille havainnoille, ei usko- musta voitaisi pitää oikeutettuna.
+          </p>
+          <p>Kysymykseen voi vastata myös kieltävästi, vaikkakin silloin on vaarana ajautua epämielek- kään
+            tiukkaan tiedon määrittelyyn. Siinä tapauksessa kokelaan on osoitettava, miksi Henrin oikeutettu tosi
+            uskomus ei muodosta tietoa. Kokelas voi esittää, että tiedon klassinen määri- telmä ei anna
+            riittäviä ehtoja tiedolle ja näin ollen Henrin oikeutettu tosi uskomus ei täytä näitä ehtoja.
+            Vastauksessa kokelaan tulee hahmotella ainakin yksi lisäehto, jolla tiedon klas- sista määritelmää
+            voitaisiin täydentää. Vaihtoehtoisesti kokelas voi perustaa vastauksensa jollekin muulle tiedon
+            määritelmälle.
+          </p>
+          <p>3 pisteen vastauksessa kokelas esittää vastaukselleen yhden osuvan perustelun.</p>
+          <p>5 pisteen vastauksessa kokelas perustelee vastaustaan johdonmukaisesti ottamalla huomi- oon sekä tiedon
+            määritelmän että Henrin uskomuksen oikeutuksen.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="6"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Kysymykseen on perusteltua vastata kieltävästi. Vaikka Henri on käyttänyt erinomaista nä- kökykyä
+            toden uskomuksensa muodostamiseen, ei tämä riitä oikeuttamaan uskomusta ky- seisessä tapauksessa eikä
+            uskomus täytä näin tiedon ehtoja. Näin on siksi, että Henri olisi uskonut näkemänsä kohteen olevan
+            lato siinäkin tapauksessa, että hänen katseensa olisi kohdistunut kulissiin. Henrin tosi uskomus perustuu
+            siis tehtävän tapauksessa hyvään on- neen. Vaikka tiedon klassisen määritelmän perustelu- tai
+            oikeutusehdon voi nähdä pyrkivän rajaamaan tällaiset tapaukset tiedon ulkopuolelle, tätä
+            määritelmää on kritisoitu siitä, että se epäonnistuu tässä rajauksessa. Kokelaan ei kuitenkaan
+            edellytetä tuntevan tätä kritiikkiä (Gettier-paradokseja). Vaihtoehtoisesti kokelas voi tarkastella
+            tapausta jonkin muun tiedon määritelmän valossa. Siinäkin tapauksessa keskeistä on pohtia, miten hyvä
+            onni voi kumota toden uskomuksen oikeutuksen.
+          </p>
+          <p>3 pisteen vastauksessa kokelas esittää vastaukselleen yhden osuvan perustelun.</p>
+          <p>5 pisteen vastauksessa kokelas perustelee vastaustaan johdonmukaisesti ja monipuolisesti ottamalla huomioon
+            sekä tiedon määritelmän että hyvän onnen uskomuksen oikeutuksen kumoavana tekijänä.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="6"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Kysymykseen voi vastata perustellusti niin myöntävästi kuin kieltävästikin. Kokelas voi osit- tain
+            nojata vastauksessaan kohdassa 6.1. antamaansa vastaukseen. Mikäli hän on perustel- lut, että Henrillä
+            on tietoa, hän voi esittää, että myös Henrin pojalla on tietoa. Tälle luontevin peruste on se, että
+            silminnäkijä tai tiedollinen auktoriteetti voi tietyin edellytyksin olla tiedon lähde. Vastauksessa tulee
+            tällöin perustella, millä ehdoilla Henri kelpaa silminnäkijätodista- jaksi. Tässä tapauksessa ei
+            riitä, että Henrillä on erinomainen näkökyky ja että hän kykenee sen varassa muodostamaan
+            oikeutettuja tosia uskomuksia. On myös vaadittava, että hän välittää luotettavasti oikeutetut todet
+            uskomuksensa pojalleen. Toisin sanoen Henrin pojalla ei pidä olla perusteita uskoa, että hänen isänsä
+            voi johtaa häntä harhaan. Mikäli kokelas kat- soo, että tämän ehdon täyttyminen ei ole selvää
+            kyseisessä tapauksessa, hän voi vastata kysymykseen kieltävästi. Mikäli kokelas on kohdassa 6.1.
+            perustellut, että Henrillä ei ole tie- toa, hänen on johdonmukaista antaa kieltävä vastaus myös
+            kohdassa 6.3. Sekin tulee perus- tella esimerkiksi huomauttamalla, ettei tosi uskomus voi muuttua tiedoksi,
+            kun se välitetään henkilöltä toiselle.
+          </p>
+          <p>Kokelaan tulee liittää perustelunsa yleisempään pohdintaan siitä, millä edellytyksillä tieto voi
+            perustua silminnäkijän tai tiedollisen auktoriteetin sanaan. Tässä on perusteltua tarkastella
+            silminnäkijöiden tai tiedollisen auktoriteetin luotettavuutta tiedon lähteenä. Voi todeta, että
+            silminnäkijälausunnot eivät ole luotettavia, jos todistaja on ollut tapahtumapaikalla voimak- kaan
+            tunnekuohun vallassa tai myöhemmät kokemukset ovat päässeet värittämään hänen muistojaan. Sitä
+            vastoin esimerkiksi opettajat tiedollisina auktoriteetteina ovat yleensä luo- tettavia, koska he ovat
+            alansa asiantuntijoita. Näin ollen on mahdollista sanoa, että opiskelija voi tietää opettajansa
+            asiantuntemuksen nojalla, että kolmion kulmien summa on 180 astet- ta, vaikka hän ei itse osaisi todistaa
+            lausetta. Tässäkin tapauksessa on kuitenkin perusteltua vaatia, että opiskelijalla ei ole perusteita
+            uskoa opettajan erehtyneen tässä asiassa.
+          </p>
+          <p>2 pisteen vastauksessa kokelas esittää vastaukselleen yhden osuvan perustelun tai tekee jonkin
+            asiaankuuluvan huomion tiedon perustumisesta silminnäkijän tai tiedollisen auktori- teetin sanaan.
+          </p>
+          <p>4 pisteen vastauksessa kokelas esittää vastaukselleen yhden osuvan perustelun ja tekee jon- kin
+            asiaankuuluvan huomion tiedon perustumisesta silminnäkijän tai tiedollisen auktoritee- tin sanaan.
+          </p>
+          <p>6 pisteen vastauksessa kokelas perustelee vastaustaan johdonmukaisesti ja osaa liittää pe- rustelunsa
+            yleisempään pohdintaan siitä, millä edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen
+            auktoriteetin sanaan.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="8"/>
+      </e:question>
+    </e:question>
+  </e:section>
+  <e:section max-answers="2">
+    <e:section-title>
+      <e:localization lang="fi-FI">
+        30 p. tehtävät
+      </e:localization>
+      <e:localization lang="sv-FI">
+        30-poängsuppgifter
+      </e:localization>
+    </e:section-title>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Filosofiakäsitys Adipisicingin
+          <em>Loremissa</em>
+        </e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>LOPS15:ssa tehtävä liittyy kurssin Johdatus filosofiseen ajatteluun (FI1) kohtaan ”mitä filoso- fia on,
+            filosofisten kysymysten ja filosofisen ajattelun luonne filosofian perinteessä ja ajan- kohtaisiin
+            ongelmiin sovellettuna”. LOPS03:ssa on samassa kurssissa suurin piirtein vastaava kohta ”mitä filosofia on,
+            filosofisten kysymysten luonne ja niiden suhde käytännöllisiin, tie- teellisiin ja uskonnollisiin
+            kysymyksiin”.
+          </p>
+          <p>Wittgensteinin Tractatuksessa esittämä käsitys filosofiasta liittyy loogiseen positivismiin eli
+            loogiseen empirismiin. Suuntauksessa ajatellaan, että kaikki mielekkäät tosiasiaväitteet pitää voida
+            todentaa havainnoin. Siksi luonnontieteen uskotaan kuvaavan koko todellisuutta. Filo- sofialla ei tuossa
+            kuvauksessa ole juuri sijaa, ja sen tehtäväksi jää kielen kritiikki ja käsitteiden selventäminen.
+            Filosofia on toimintaa, eikä se luo teorioita. Perinteinen metafysiikka osoite- taan mielettömäksi.
+            Tehtävän johdanto kuitenkin osoittaa, että Wittgenstein uskoi filosofian onnistuvan tuottamaan ainakin
+            joitakin tosia metafyysisiä väitteitä.
+          </p>
+          <p>Wittgensteinin mukaan filosofia on kielen selventämistä ja sen kritiikkiä. Tämä on aineiston selkeä
+            pääväite. Siihen liittyy kaksi muuta väitettä. Ensiksikin Wittgenstein toteaa, että useimmat
+            filosofiset ongelmat ovat näennäisiä ja johtuvat vain kielen väärinkäytöstä. Toisek- si hän
+            esittää, ettei metafyysisillä väitteillä ole merkitystä.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>
+        </e:question-title>
+        <e:question-instruction>
+          <p>Tekstikatkelman kuvaaminen omin sanoin saa olla pitkälti vain numeroidusta ja aforistisesta tyylistä
+            luopumista. Tekstin muoto ja sisältö on kuitenkin melko vaativaa, ja kun tehtävänan- tona on asian
+            kuvaaminen omin sanoin, on tavoitteena saada selville, onko kokelas ymmär- tänyt tekstin.
+          </p>
+          <p>Wittgenstein pyrki Tractatuksessa raivaamaan tilaa tärkeäksi kokemalleen loogiselle ja käsit-
+            teelliselle tutkimukselle. Loogisen empirismin kontekstissa tämä tila kuitenkin jää kapeaksi. Niinpä
+            Wittgensteinin päätyy kuuluisaan tikasmetaforaansa: ”6.54 Lauseeni selventävät si- ten, että se, joka
+            minut ymmärtää, huomaa lopulta lauseitteni olevan mielettömiä, noustu- aan niitä pitkin — niiden
+            päällä — niiden yläpuolelle. (Hänen on niin sanoakseni heitettävä pois tikkaat kiivettyään niillä
+            ylös.) Hänen on voitettava nämä lauseet, sen jälkeen hän näkee maailman oikein.” Ja tätä seuraavaan
+            Tractatuksen vielä kuuluisampaan viimeiseen virkkee- seen: ”Mistä ei voi puhua, siitä on vaiettava.”
+            Tätä voi pitää Wittgensteinin filosofiakäsityk- sen huonona puolena. Hän siis käänsi kokonaan
+            selkänsä perinteiselle filosofialle, jonka tuot- tamien ideoiden varaan esimerkiksi demokraattiset
+            yhteiskunnat on pitkälti rakennettu. Hy- viä puolia ovat esimerkiksi selkeys ja yhteensopivuus
+            tietynlaisen positivistisen ja ehkä myös yleisemmin luonnontieteellisen maailmankuvan kanssa.
+          </p>
+          <p>Vastaus kohtaan 7.1. on essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuudet
+            tulee ottaa huomioon.
+          </p>
+          <p>4 pisteen vastauksessa kokelas onnistuu kuvaamaan joitain seikkoja tekstikatkelmassa esiin- tyvästä
+            filosofiakäsityksestä sekä esittämään jonkinlaisen huomion, joka on Tractatuksen filosofiakäsityksen
+            arvioinnin kannalta osuva.
+          </p>
+          <p>8 pisteen vastauksessa kokelas kuvailee oikeansuuntaisesti tekstikatkelmassa esiintyviä väit- teitä
+            filosofian luonteesta. Lisäksi hän arvioi melko osuvasti yhtä hyvää ja yhtä huonoa puol- ta.
+            Vaihtoehtoisesti hän arvioi osuvasti vain toista puolta, mutta tuo esille useamman asi- aankuuluvan
+            näkökohdan.
+          </p>
+          <p>12 pisteen vastauksessa kokelas kuvailee tekstikatkelman sisällön oikein sekä arvioi moni- puolisesti ja
+            johdonmukaisesti Tractatuksen filosofiakäsitystä.
+          </p>
+          <p>Huippupisteiden vastauksessa kokelas osoittaa syvällistä ymmärtämystä Tractatuksen filoso-
+            fiakäsityksestä sekä sen heikkouksista ja vahvuuksista.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="15"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Wittgensteinin Tractatuksessa vastustamaa metafysiikkaa edusti käytännössä lähes koko Tractatusta
+            edeltänyt filosofian perinne. Siten melkein mikä tahansa perinteinen filosofiakä- sitys, jonka mukaan
+            käsitteellisen analyysin avulla tai muulla tavoin puhtaan ajattelun kei- noin voidaan aidosti tavoittaa
+            todellisuus, muodostaa jyrkän kontrastin Wittgensteinin nä- kemyksen kanssa. Filosofiakäsityksiä voidaan
+            luokitella myös monella muulla tavalla, esimer- kiksi sen mukaan, kuinka paljon ne korostavat filosofian
+            harjoittamista. Tässä suhteessa Wittgensteinin käsityksellä filosofiasta nimenomaan aktiviteettina on
+            mielenkiintoisia yhty- mäkohtia esimerkiksi antiikin filosofiaan.
+          </p>
+          <p>Wittgensteinin käsityksen lähisukulainen on tavallaan John Locken käsitys filosofiasta. Siinä
+            ajatellaan filosofian olevan ikään kuin tieteiden aputyöläinen. Todellisuus saadaan selville
+            tieteellisellä tutkimuksella, ja filosofian tehtävä on raivata tämän tieteellisen tutkimuksen esteet
+            pois. Erona on esimerkiksi, että Locke ei painota kieltä samalla tavoin kuin Wittgen- stein
+            Tractatuksessa. Toinen sukulaiskäsitys on Wittgensteinin myöhemmässä filosofiassa korostuva
+            terapeuttinen filosofiakäsitys, jonka tavoitteena on, että pystytään lopettamaan filosofointi ja
+            ryntäily päin kielen rajoja. Tractatukseen verrattuna filosofian menetelmät ja käsitys filosofiasta
+            näyttäytyvät esimerkiksi Filosofisissa tutkimuksissa monipuolisempina. Yhteistä on kuitenkin
+            aktiviteetin korostaminen, kielen kritiikki ja pyrkimys filosofisten on- gelmien hävittämiseen.
+          </p>
+          <p>Vastaus kohtaan 7.2. on essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuudet
+            tulee ottaa huomioon.
+          </p>
+          <p>4 pisteen vastauksessa kokelas onnistuu esittelemään yhden vaihtoehtoisen käsityksen filo- sofiasta ja
+            vähintään implisiittisesti vertaamaan sitä Tractatuksessa esitettyyn käsitykseen.
+          </p>
+          <p>8 pisteen vastauksessa kokelas esittelee yhden vaihtoehtoisen käsityksen filosofiasta ja ver- taa sitä
+            Tractatuksessa esitettyyn käsitykseen, esimerkiksi loogisen positivismin metafysiikan kritiikkiin tai
+            tieto-oppiin, kielen kritiikkiin tai ajatukseen filosofiasta toimintana.
+          </p>
+          <p>12 pisteen vastauksessa kokelas esittää johdonmukaisesti ja monipuolisesti yhden vaihtoeh- toisen
+            käsityksen filosofiasta ja vertaa sitä Tractatuksessa esitettyyn käsitykseen useiden ulottuvuuksien
+            osalta.
+          </p>
+          <p>Huippupisteiden vastaukselle on tyypillistä filosofian perinteen tuntemus ja filosofisesti olennaisten
+            seikkojen analysointi ja arviointi filosofiakäsityksissä.
+          </p>
+
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="15"/>
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Eutanasia</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>LOPS15:ssä tehtävä liittyy kurssin Etiikka (FI2) kohtaan ”moraali ja – – soveltava etiikka” ja ”etiikka
+            ja yksilön moraaliset ratkaisut: ihmissuhteet ja elämänvalinnat”. Edellinen kohta löytyy myös LOPS03:n
+            kurssista Filosofinen etiikka (FI2), jossa toinen tehtävään liittyvä kohta on ”filosofinen etiikka ja
+            kysymys hyvästä elämästä”. Olennaisessa roolissa ovat lisäksi argu- mentaatiota koskevat kohdat, jotka
+            LOPS15:ssä ovat kurssilla Johdatus filosofiseen ajatte- luun (FI1) ja LOPS03:ssa kurssilla Tiedon ja
+            todellisuuden filosofia (FI3). Molemmissa kurs- seissa tehtävällä on yhtymäkohtia myös kurssiin
+            Yhteiskuntafilosofia (FI3/FI4).
+          </p>
+          <p>Eutanasia-aloite hyvän kuoleman puolesta löytyy osoitteesta https://www.kansalaisaloite.fi
+            /fi/aloite/2212.
+          </p>
+          <p>Eutanasia viittaa tarkoituksella suoritettuun toisen, parantumattomasti sairaan ihmisen kuo- leman
+            tuottamiseen. Eutanasiasta ei voida puhua, jos kuolema tapahtuu kuolevan tahdon vastaisesti. Yleensä
+            eutanasian tavoitteena on kuolevan henkilön sietämättömän kärsimyk- sen lopettaminen ja siinä
+            edellytetään kuolevan vapaaehtoista, toistuvaa ja oikeustoimikel- poista pyyntöä.
+          </p>
+          <p>Avustettuun kuolemaan liittyy käsitteellisiä erotteluja. Eutanasialla tarkoitetaan lääkärin tai muun
+            hoitohenkilökunnan suorittamaa kuoleman tuottamista. Avustettuja itsemurhia on kahdenlaisia. Väljemmässä
+            muodossa itsemurhaa saa avustaa loppuun asti. Lievemmässä muodossa kuolevalle voidaan hankkia itsemurhassa
+            tarvittavat lääkkeet, mutta hänen on itse otettava ne. Sairauden parantamiseen tähtäävän hoidon
+            lopettamista kutsutaan joskus har- haanjohtavasti passiiviseksi eutanasiaksi.
+          </p>
+          <p>Palliatiivisella eli oireenmukaisella hoidolla tarkoitetaan potilaan aktiivista kokonaisvaltaista hoitoa
+            silloin, kun kuolemaan johtava tai henkeä uhkaava sairaus aiheuttaa kärsimystä tai heikentää hänen
+            elämänlaatuaan. Palliatiivinen hoito ei siis tähtää sairauden parantamiseen vaan jäljellä olevan
+            elämän mahdollisimman hyvään laatuun. Riittävällä kipulääkityksellä on siinä merkittävä rooli.
+            Saattohoidoksi kutsutaan palliatiivisen hoidon viimeistä vaihetta. Pal- liatiivinen sedaatio tarkoittaa
+            kuolevan potilaan rauhoittamista alentamalla tarkoituksellises- ti hänen tajunnantasoaan. Sillä ei pyritä
+            jouduttamaan kuolemaa vaan nukuttamaan potilas kuolemaan asti.
+          </p>
+          <p>Eutanasiaa koskeva julkinen keskustelu tuo esiin hyvin monenlaisia näkökulmia. Eettisten kannanottojen
+            lisäksi mukana on uskonnollisia, käytännöllisiä ja yhteiskunnallisia. Kirjoituk- set ovat usein hyvin
+            tunnevaltaisia. Edes varsinaisista faktoista koskien sitä, mitä tapahtuu eutanasian sallineissa maissa tai
+            edes Suomessa, ei olla yksimielisiä. Vielä vähemmän siitä, mitä tulevaisuudessa voi tapahtua. Siksi
+            argumentaation arvioiminen voi olla vaikeaa ja ko- kelailla on varsin vapaat kädet.
+          </p>
+          <p>Yhteisenä lähtökohtana lienee ihmisarvo. Siitä voi toisaalta päätyä ihmisen hengen riistämi- sen
+            kieltoon tai vaihtoehtoisesti ihmisen itsemääräämisoikeuden tai kärsimyksen minimoi- misen
+            kunnioittamiseen. Huomionarvoista on myös, että samankaltaiset tilannekuvaukset voivat johtaa
+            päinvastaisiin kantoihin, kuten esimerkiksi johtopäätös elämän traagisen vai- keutumisen seurauksista
+            Kalle Könkkölän ja Lääkärin kirjoituksissa.
+          </p>
+          <p>Tehtäväosioissa 8.1. ja 8.2. on huomattava, että yhdessä aineistossa voi olla useampia argu- mentteja.
+            Kokelas saa kuitenkin tulkita yhden aineiston yhtenäiseksi argumentiksi.
+          </p>
+
+        </e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Eutanasian laillistamisen puolustajien ongelmana on, että väärinkäytösten estämiseksi euta- nasian
+            lailliselle sallimiselle halutaan tiukat kriteerit. Tällöin itsemääräämisoikeutta ja sietä-
+            mättömien kärsimysten estämistä korostavat perustelut vaativat lisäehtoja, jotka mutkista- vat
+            argumentaatiota. Kahden pääargumentin yhdistäminen ei myöskään ole aivan helppoa, koska
+            itsemääräämisoikeuden pitäisi olla myös ihmisillä, joilla ei ole sietämättömiä kipuja.
+          </p>
+          <p>Laillistamista puolustavia kirjoituksia ovat Lääkärin, Omaisen ja Puusan. Myös muista artikke- leista
+            voi toki silti löytyä jollain tulkinnalla laillistamista puolustavia argumentteja. Vastaus kohtaan 8.1. on
+            essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuu- det tulee ottaa huomioon.
+          </p>
+          <p>3 pisteen vastauksessa kokelas esittelee kaksi eutanasian laillistamista puolustavaa argu- menttia.
+            Vaihtoehtoisesti hän erittelee ansiokkaasti yhden puolustavan argumentin sekä sen ansiot ja heikkoudet.
+          </p>
+          <p>5 pisteen vastauksessa kokelas esittelee kaksi eutanasian laillistamista puolustavaa argu- menttia sekä
+            erittelee ne ja niiden ansiot ja heikkoudet ainakin siinä määrin, että voi esittää arvion niiden
+            keskinäisestä hyvyydestä.
+          </p>
+          <p>8 pisteen vastauksessa kokelaan erittely on tarkkaa ja monipuolista ja argumenttien vaikut- tavuusero hyvin
+            perusteltu.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="10"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Eutanasian laillistamisen vastustajien argumenteissa esiintyy runsaasti ns. kaltevia pintoja (myös kalteva
+            taso, liukas pinta tai viettävä rinne, engl. slippery slope). Vaikka tällaista argu- mentointia
+            pidetään usein filosofiassa rakenteellisesti ongelmallisena, eutanasiakeskustelus- sa niin ei
+            välttämättä ole. Kriittinen kysymys on, kuinka hyvin laillistamisen oletettu (negatii- vinen) seuraus on
+            perusteltu.
+          </p>
+          <p>Laillistamista vastustavia kirjoituksia ovat Jäschken ja Kylänpään, Räsäsen ja Könkkölän. Myös
+            muista artikkeleista voi toki silti löytyä jollain tulkinnalla vastustavia argumentteja. Vastaus kohtaan
+            8.2. on essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuudet tulee ottaa
+            huomioon.
+          </p>
+          <p>3 pisteen vastauksessa kokelas esittelee kaksi eutanasian laillistamista vastustavaa argu- menttia.
+            Vaihtoehtoisesti hän erittelee ansiokkaasti yhden vastustavan argumentin sekä sen ansiot ja heikkoudet.
+          </p>
+          <p>5 pisteen vastauksessa kokelas esittelee kaksi eutanasian laillistamista vastustavaa argu- menttia sekä
+            erittelee ne ja niiden ansiot ja heikkoudet ainakin siinä määrin, että voi esittää arvion niiden
+            keskinäisestä hyvyydestä.
+          </p>
+          <p>8 pisteen vastauksessa kokelaan erittely on tarkkaa ja monipuolista ja argumenttien vaikut- tavuusero hyvin
+            perusteltu.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="10"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Tämä kohta tarjoaa kokelaalle mahdollisuuden esittää omia argumentteja, joita ei ole aineis- tossa.
+            Sitä ei kuitenkaan edellytetä, vaan aineistossa esiintyvien argumenttien harkittu ja käsitteelliselle
+            filosofiselle tasolle nouseva vertailu ja arviointi riittävät täysiin pisteisiin, jos niillä on
+            onnistuttu johdonmukaisesti perustelemaan oma kanta. Vastaus kohtaan 8.3. on essee, jonka pisteityksessä
+            kaikki yllä mainitun arviointitaulukon ulottuvuudet tulee ottaa huomioon.
+          </p>
+          <p>3 pisteen vastauksessa kokelas esittää oman jollain lailla perustelun kantansa eutanasian
+            laillistamisesta.
+          </p>
+          <p>5 pisteen vastauksessa kokelas perustelee johdonmukaisesti kantansa eutanasian laillistami- sesta.</p>
+          <p>8 pisteen vastauksessa kokelaan argumentit ottavat kattavasti kantaa aineistossa esitettyihin näkökohtiin
+            ja muodostavat johdonmukaisen kokonaisuuden.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="10"/>
+      </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Tieteelliset mallit</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <p>LOPS15:ssä tehtävä liittyy kurssin Tieto, tiede ja todellisuus (FI4) kohtaan ”tieteellisen tutki- muksen
+          luonne ja menetelmät, tieteellinen päättely; ilmiön, tutkimusaineiston, mallin ja teorian käsitteet sekä
+          niiden keskinäinen suhde”. LOPS03:ssa tehtävä liittyy kurssin Tiedon ja todellisuuden filosofia (FI3)
+          kohtaan ”tieteellisen tutkimuksen luonne ja sen metodologisia peruskäsitteitä”.
+        </p>
+        <p>Tieteenfilosofinen näkökulma voi merkitä melko yleisluontoista tieteellisen tutkimuksen luonteen ja
+          menetelmien tai tieteellisen päättelyn, esimerkiksi mallien käytön abstraktia ja
+          käsitteellistä analyysia. Kokelas voi hyvin käyttää käsitteistöä, jota ei ole opiskeltu filosofian
+          (vaan muilla lukion) kursseilla. Tieteenfilosofinen osaaminen lukiossa vaatii usein filosofialle tyypillisesti
+          oman tietämättömyyden tunnustamista ja aitoa tieteidenvälisyyttä. Erityisesti LOPS15 korostaa filosofian
+          syntetisoivaa ja oppiainerajat ylittävää roolia myös varsinaisen tieteenfilosofian ulkopuolella
+          (”Filosofian opiskelu – – auttaa näkemään, miten eri tieteen- alojen ja ajatteluperinteiden käsitykset
+          rakentuvat ja eroavat toisistaan”, ”tiedon ja argu- mentaation luonne eri tiedonaloilla: miten väitteitä
+          muodostetaan, koetellaan ja perustel- laan joissain lukion oppiaineissa”).
+        </p>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>
+        </e:question-title>
+        <e:question-instruction>
+          <p>Aineistossa esiin tulevia tieteenfilosofisia oppeja ovat esimerkiksi verismi, jonka mukaan tie- de
+            tavoittelee totuutta, ja instrumentalismi, jonka mukaan tiede tähtää vain toimiviin mal- leihin ja
+            teorioihin. Videokatkelmissa esiintyvät henkilöt eivät ole filosofeja vaan tieteenteki- jöitä, jotka
+            pyrkivät pääosin opetustarkoituksessa kertomaan, mistä heidän toiminnassaan on kyse. Siksi selkeiden
+            tieteenfilosofisten kannanottojen löytäminen on vaikeaa. Suuri osa lausumista voidaan tulkita verisminä,
+            jossa tiede nähdään totuuden tavoitteluna, (”ei etsitä lopullisia luonnonlakeja vaan yritetään saada
+            lisää tietoa maailmasta”, ”fysiikan lakien ja pla- neettamme materiaalien säätelemien kehittyneiden ja
+            ennustuskykyisten mallien rakenta- minen”, ”sellaisten kokonaisselitysten rakentaminen, jotka sopivat
+            havaintoihimme mutta ylittävät sen, mitä voimme yksittäisissä tilanteissa havaita”). Toisen
+            videokatkelman viimei- nen kommentti ”tieteessä ei ole kyse totuuden vaan toimivien mallien
+            löytämisestä” on kui- tenkin selkeän instrumentaalinen ja useat muutkin kommentit, myös yllä
+            verismistä olevat esimerkit, voidaan tulkita instrumentalistisesti.
+          </p>
+          <p>Aineistossa korostuvia tieteellistä toimintaa kuvailevia piirteitä ovat esimerkiksi seuraavat:
+            testaaminen, verifiointi ja falsifikointi (”arvataan, lasketaan seuraukset ja verrataan todelli- suuteen”),
+            empirismi ja kokeellisuus (”kaikki alkaa havainnoista tai kokeista, koska (luon- non)tiede perustuu
+            fyysiseen maailmaan”), havainnot ylittävien matemaattisten ja tietoko- nemallien rakentaminen (”jotkut
+            mallin ilmiöt ylittävät sen mitä voimme kokonaan havaita”) sekä yritys ja erehdys (”tehdään koe, joka
+            epäonnistuu, ja yritetään ymmärtää, miksi niin kävi”).
+          </p>
+          <p>Vastaus kohtaan 9.1. on essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuudet
+            tulee ottaa huomioon.
+          </p>
+          <p>3 pisteen vastauksessa kokelas esittelee jollain tavoin tieteenfilosofisesti videokatkelmista valitsemansa
+            kuvauksen tieteellisestä toiminnasta.
+          </p>
+          <p>5 pisteen vastauksessa kokelas erittelee tieteenfilosofisesti videokatkelmista valitsemaansa kuvausta
+            tieteellisestä toiminnasta.
+          </p>
+          <p>8 pisteen vastauksessa kokelaan erittely on tarkkaa ja monipuolista ja tyypillisesti hyödyntää suurinta
+            osaa yllä esitetyistä tieteenfilosofisista käsitteistä.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="10"/>
+      </e:question>
+      <e:question>
+        <e:question-title/>
+        <e:question-instruction>
+          <p>Mallit voivat olla todella monenlaisia. Vaikka aineisto ja esimerkiksi tehtävä 7 saattavat joh- taa
+            ajattelemaan, että filosofia ei ole tiede, malleja voi hakea myös filosofiasta, jossa niitä on runsaasti
+            tarjolla. Lukion tieteenfilosofiassa malliksi usein kutsutaan Hempelin–Oppenheimin peittävän lain mallia
+            eli deduktiivis-nomologista tieteellisen selittämisen mallia. Malleiksi kuitenkin kelpaavat monet muutkin
+            filosofiset ajatuskokonaisuudet, vaikkei termiä malli käy- tettäisikään. Esimerkiksi Platonilta voisi
+            tulla kyseeseen vaikkapa järjen johtama harmoninen kokonaisuus mallina oikeamielisestä sielusta ja
+            analogisesti oikeudenmukaisesta yhteiskun- nasta.
+          </p>
+          <p>Videoaineisto kannustaa valitsemaan dna-mallin biologiasta tai jonkinlaisen maapallon tieto- konemallin.
+            Toki kartat ovat yksinkertaisempi maantieteeseen perustuva malli. Vahva fy- siikan painotus voi johtaa
+            esimerkiksi Bohrin atomimalliin tai sitä karkeasti rakenteellisesti muistuttavaan kopernikaaniseen
+            aurinkokuntamalliin. Muina vaihtoehtoina ovat esimerkiksi psykologiasta Freudin malli tiedostamattoman
+            toiminnasta tai kysynnän ja tarjonnan hin- nanmuodostusta säätelevä malli yhteiskuntaopista.
+          </p>
+          <p>Esimerkinomaisesti peittävän lain mallia koskevaan selitykseen voisi kuulua seuraavat piir- teet: Mallin
+            tehtävänä on esittää, miten ilmiö selitetään tieteellisesti. Elementit ovat alkueh- dot, luonnonlait
+            (tai lainomaiset säännönmukaisuudet) ja selittävä päätelmä, joka on loogi- nen deduktio. Kun kyse on
+            filosofiasta, kaikki nuo käsitteet ovat abstrakteja ja siten jossain määrin teoreettisia. 1900-luvun
+            puolivälin tienoilla mallilla oli autoritatiivinen tieteenfiloso- finen asema luonnontieteissä. Alusta
+            lähtien peittävän lain mallin deduktiivinen luonne oli kuitenkin kritiikin kohteena eikä vastannut
+            sitä, mitä tieteessä tapahtui. Mallia on pyritty laajentamaan mm. induktiivisen päättelyn paremmin
+            huomioon ottavaan suuntaan. Viimeis- tään Kuhnin teoksesta Tieteellisten vallankumousten rakenne (1962,
+            suom. 1995) lähtien mallin asema on heikentynyt ratkaisevasti. Tähän on liittynyt siirtymä
+            normatiivisesta tie- teenfilosofiasta, jossa filosofit yrittivät sanoa tieteilijöille, mitä pitäisi
+            tehdä, nöyrempään ja deskriptiivisempään tieteenfilosofiaan, jossa yritetään ymmärtää
+            käsitteellisellä tasolla, mitä tieteessä tapahtuu.
+          </p>
+          <p>Vastaus kohtaan 9.2. on essee, jonka pisteityksessä kaikki yllä mainitun arviointitaulukon ulottuvuudet
+            tulee ottaa huomioon.
+          </p>
+          <p>5 pisteen vastauksessa kokelas esittelee tieteellisen mallin ja kuvaa sen rakennetta tavalla, joka
+            ilmentää jonkinlaista tieteenfilosofista ymmärrystä siitä, mitä tieteellinen malli on.
+          </p>
+          <p>10 pisteen vastauksessa kokelas selittää valitsemansa tieteellisen mallin rakenteen ja vähin- tään
+            yhden sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofi- sesti.
+          </p>
+          <p>15 pisteen vastauksessa kokelaan ymmärrys mallista on selkeää ja sen tieteenfilosofisen merkityksen
+            arviointi monipuolista ja johdonmukaista.
+          </p>
+          <p>Huippupisteiden vastauksessa kokelas osoittaa syvällistä ymmärtämystä mallista sekä tie-
+            teenfilosofisen ajattelun ja käsitteistön kattavaa hallintaa.
+          </p>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="20"/>
+      </e:question>
+    </e:question>
+  </e:section>
+</e:exam>
