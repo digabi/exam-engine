@@ -20,7 +20,12 @@
 .e-dropdown-answer__toggle-icon,
 .downshift-0-item-0,
 .e-dropdown-answer button,
-span[aria-label]
+span[aria-label],
+.e-radio-button,
+.e-cas-controls
 {
   display: none !important;
+}
+.e-choice-answer-option {
+  display: list-item;
 }
