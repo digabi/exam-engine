@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "14.0.0",
+  "version": "14.1.0-alpha.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -13,8 +13,8 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
-    "@digabi/exam-engine-core": "14.0.0",
-    "@digabi/exam-engine-mastering": "14.0.0",
+    "@digabi/exam-engine-core": "14.1.0-alpha.0",
+    "@digabi/exam-engine-mastering": "14.1.0-alpha.0",
     "babel-loader": "^8.0.6",
     "child-process-promise": "^2.2.1",
     "css-loader": "^4.0.0",
