@@ -11,7 +11,7 @@ module.exports = function () {
   ]
 
   return {
-    entry: path.resolve(__dirname, 'dist/index.js'),
+    entry: path.resolve(__dirname, 'dist/main.js'),
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'main-bundle.js',
