@@ -1,4 +1,5 @@
-import { Attachments, Exam, Results, parseExam } from '@digabi/exam-engine-core'
+import { Attachments, Exam, parseExam } from '@digabi/exam-engine-core'
+import Results from '@digabi/exam-engine-core/dist/components/results/Results'
 import '@digabi/exam-engine-core/dist/main.css'
 import { MasteringResult } from '@digabi/exam-engine-mastering'
 import Cookie from 'js-cookie'
