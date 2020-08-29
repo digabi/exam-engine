@@ -21,7 +21,20 @@ yargs
     },
     runCommand('./commands/new')
   )
-  .command(['preview [exam]', 'start'], 'Preview an exam', addExamArgs, runCommand('./commands/preview'))
+  .command(
+      ['preview [exam] [options]', 'start'],
+      'Preview an exam',
+      (argv) => {
+        addExamArgs(argv)
+        argv.option('port', {
+          alias: 'p',
+          description: 'The port to use in the preview HTTP server',
+          type: 'number',
+          default: 0,
+        })
+      },
+      runCommand('./commands/preview')
+  )
   .command(
     'create-transfer-zip [exam] [options]',
     'Create a transfer zip that can be imported to Oma Abitti',
