@@ -7,11 +7,11 @@ export default async function preview({
   spinner,
 }: {
   exam: string
-  port: number
+  port?: number
   spinner: Ora
 }): Promise<string> {
   spinner.start(`Previewing ${exam}...`)
-  const ctx = await previewExam(exam, { openFirefox: true, usePort: port })
+  const ctx = await previewExam(exam, { openFirefox: true, port: port })
   spinner.info(`Server is running at ${ctx.url}`)
   return `Press Ctrl-C to stop`
 }

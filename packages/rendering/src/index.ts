@@ -1,7 +1,7 @@
 export interface RenderingOptions {
   casCountdownDurationSeconds?: number
   openFirefox?: boolean
-  usePort?: number
+  port?: number
 }
 
 export * from './createOfflineExam'
