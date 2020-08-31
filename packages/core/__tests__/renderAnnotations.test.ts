@@ -126,6 +126,41 @@ describe('renderAnnotations()', () => {
       )
     ).toMatchSnapshot()
   })
+
+  it('checks the length of annotated images correctly in the text annotation code', () => {
+    expect(
+      render(
+        `Lorem <img src="" /> ipsum dolor <img src="" /> sit amet`,
+        [
+          {
+            type: 'rect',
+            attachmentIndex: 0,
+            message: 'First image annotation',
+            x: 0,
+            y: 0,
+            width: 1,
+            height: 1,
+          },
+          {
+            type: 'rect',
+            attachmentIndex: 1,
+            message: 'First image annotation',
+            x: 0,
+            y: 0,
+            width: 1,
+            height: 1,
+          },
+          {
+            type: 'text',
+            startIndex: 25,
+            message: 'Text annotation',
+            length: 5,
+          },
+        ],
+        []
+      )
+    ).toMatchSnapshot()
+  })
 })
 
 function createAnswer(html: string) {
