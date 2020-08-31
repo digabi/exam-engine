@@ -126,6 +126,57 @@ describe('renderAnnotations()', () => {
       )
     ).toMatchSnapshot()
   })
+
+  it('checks the length of annotated images correctly in the text annotation code', () => {
+    expect(
+      render(
+        `Lorem <img src="" /> ipsum dolor <img src="" /> sit amet`,
+        [
+          {
+            type: 'rect',
+            attachmentIndex: 0,
+            message: 'First image annotation',
+            x: 0,
+            y: 0,
+            width: 1,
+            height: 1,
+          },
+          {
+            type: 'rect',
+            attachmentIndex: 1,
+            message: 'First image annotation',
+            x: 0,
+            y: 0,
+            width: 1,
+            height: 1,
+          },
+          {
+            type: 'text',
+            startIndex: 25,
+            message: 'Text annotation',
+            length: 5,
+          },
+        ],
+        []
+      )
+    ).toMatchSnapshot()
+  })
+
+  it('throws an error if the answer is too short for the annotations', () => {
+    expect(() =>
+      render(
+        'Lorem ipsum dolor sit amet',
+        [
+          {
+            startIndex: 5,
+            length: 999,
+            message: 'Boom!',
+          },
+        ],
+        []
+      )
+    ).toThrow(new Error('Bug: the answer seems to be too short for the current set of annotations.'))
+  })
 })
 
 function createAnswer(html: string) {
