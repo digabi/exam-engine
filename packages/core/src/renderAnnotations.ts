@@ -85,13 +85,13 @@ function renderImageAnnotation(
 }
 
 function renderTextAnnotation(
-  element: HTMLElement,
+  rootElement: HTMLElement,
   annotation: TextAnnotation,
   type: 'pregrading' | 'censoring',
   index?: number
 ): void {
   const { startIndex, length: annotationLength } = annotation
-  return go(element.childNodes[0], 0, annotationLength)
+  return go(rootElement.childNodes[0], 0, annotationLength)
 
   function go(
     /* The current node in the answer HTML. */
@@ -146,8 +146,10 @@ function renderTextAnnotation(
     return node.nodeName === 'SUP'
   }
 
-  function isImg(node: ChildNode): node is HTMLImageElement {
-    return node.nodeName === 'IMG'
+  function isImage(node: ChildNode): node is HTMLImageElement | HTMLSpanElement {
+    // If we've already added an image annotation to the image, it will be wrapped
+    // in a <span> element.
+    return node.nodeName === 'IMG' || node.nodeName === 'SPAN'
   }
 
   function next(node: ChildNode): ChildNode {
@@ -155,11 +157,26 @@ function renderTextAnnotation(
   }
 
   function nextSibling(node: ChildNode): ChildNode {
-    return node.nextSibling || nextSibling(node.parentElement!)
+    const sibling = node.nextSibling
+
+    if (sibling) {
+      return sibling
+    }
+
+    const parent = node.parentElement
+
+    // If we encounter the root element, we've run out of text to annotate. This
+    // could be a bug in the annotation code or perhaps the annotations are invalid.
+    // To err on the side of caution, throw an exception in this case.
+    if (parent === null || parent === rootElement) {
+      throw new Error('Bug: the answer seems to be too short for the current set of annotations.')
+    }
+
+    return nextSibling(parent)
   }
 
   function length(node: ChildNode): number {
-    return node instanceof Text ? node.length : isImg(node) ? 1 : 0
+    return node instanceof Text ? node.length : isImage(node) ? 1 : 0
   }
 
   function mkMark(): HTMLElement {
