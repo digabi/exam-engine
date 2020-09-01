@@ -28,9 +28,8 @@ yargs
       addExamArgs(argv)
       argv.option('port', {
         alias: 'p',
-        description: 'The port to use in the preview HTTP server',
+        description: 'The HTTP port to use',
         type: 'number',
-        default: 0,
       })
     },
     runCommand('./commands/preview')

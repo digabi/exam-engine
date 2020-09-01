@@ -39,7 +39,6 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
       quiet: true,
       contentBase: [path.resolve(__dirname, '../public'), path.dirname(examFilename)],
       historyApiFallback: true,
-      port: options.port ?? 0,
       before: (app) => app.get('/math.svg', mathSvgResponse),
     },
   })
