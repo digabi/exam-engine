@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { ExamComponentProps, RenderChildNodes } from '../createRenderChildNodes'
-import { findChildElement, getNumericAttribute, NBSP, queryAll } from '../dom-utils'
+import { findChildElement, getNumericAttribute, queryAll } from '../dom-utils'
 import { shortDisplayNumber } from '../shortDisplayNumber'
 import { AppState } from '../store'
 import { QuestionId } from '..'
@@ -54,9 +54,7 @@ function Hint({
       }}
       data-question-id={questionId}
     >
-      {shortDisplayNumber(displayNumber)}
-      {NBSP}
-      {renderChildNodes(hint)}
+      {shortDisplayNumber(displayNumber)} {renderChildNodes(hint)}
     </p>
   )
 }
