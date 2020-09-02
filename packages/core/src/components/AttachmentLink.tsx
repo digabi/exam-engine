@@ -6,26 +6,30 @@ import AttachmentLinkAnchor from './AttachmentLinkAnchor'
 import { CommonExamContext } from './CommonExamContext'
 import { ExamComponentProps } from '../createRenderChildNodes'
 
-function AttachmentLink({ element }: ExamComponentProps) {
-  const name = element.getAttribute('ref')!
-  const { root } = useContext(CommonExamContext)
-  const { attachmentsURL } = useContext(CommonExamContext)
-  const attachment = query(root, (el) => el.localName === 'attachment' && el.getAttribute('name') === name)!
-  const displayNumber = attachment.getAttribute('display-number')!
-  const isShort = element.getAttribute('type') === 'short'
-  const href = url(attachmentsURL, { hash: displayNumber })
+const mkAttachmentLink = (type: 'link' | 'plain'): React.FunctionComponent<ExamComponentProps> => {
+  const AttachmentLink: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
+    const name = element.getAttribute('ref')!
+    const { root } = useContext(CommonExamContext)
+    const { attachmentsURL } = useContext(CommonExamContext)
+    const attachment = query(root, (el) => el.localName === 'attachment' && el.getAttribute('name') === name)!
+    const displayNumber = attachment.getAttribute('display-number')!
+    const isShort = element.getAttribute('type') === 'short'
+    const href = url(attachmentsURL, { hash: displayNumber })
 
-  return isShort ? (
-    <AttachmentLinkAnchor href={href}>{displayNumber}</AttachmentLinkAnchor>
-  ) : (
-    <>
-      {'('}
-      <AttachmentLinkAnchor href={href}>
-        <Translation>{(t) => t('material').toLowerCase()}</Translation> {displayNumber}
-      </AttachmentLinkAnchor>
-      {')'}
-    </>
-  )
+    return isShort ? (
+      <AttachmentLinkAnchor {...{ href, type }}>{displayNumber}</AttachmentLinkAnchor>
+    ) : (
+      <>
+        {'('}
+        <AttachmentLinkAnchor {...{ href, type }}>
+          <Translation>{(t) => t('material').toLowerCase()}</Translation> {displayNumber}
+        </AttachmentLinkAnchor>
+        {')'}
+      </>
+    )
+  }
+
+  return React.memo(AttachmentLink)
 }
 
-export default React.memo(AttachmentLink)
+export default mkAttachmentLink

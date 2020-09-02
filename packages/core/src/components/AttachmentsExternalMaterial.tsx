@@ -1,8 +1,8 @@
 import React from 'react'
 import { createRenderChildNodes, ExamComponentProps } from '../createRenderChildNodes'
 import { queryAncestors } from '../dom-utils'
-import AttachmentLink from './AttachmentLink'
-import AttachmentLinks from './AttachmentLinks'
+import mkAttachmentLink from './AttachmentLink'
+import mkAttachmentLinks from './AttachmentLinks'
 import AttachmentsAttachment from './AttachmentsAttachment'
 import AttachmentsAttachmentTitle from './AttachmentsAttachmentTitle'
 import Audio from './Audio'
@@ -16,8 +16,8 @@ import Video from './Video'
 import ImageOverlay from './ImageOverlay'
 
 const renderChildNodes = createRenderChildNodes({
-  'attachment-link': AttachmentLink,
-  'attachment-links': AttachmentLinks,
+  'attachment-link': mkAttachmentLink('link'),
+  'attachment-links': mkAttachmentLinks('link'),
   'attachment-title': AttachmentsAttachmentTitle,
   attachment: AttachmentsAttachment,
   audio: Audio,
