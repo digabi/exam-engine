@@ -21,6 +21,8 @@ import ResultsExamSection from './ResultsExamSection'
 import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
 import ResultsTextAnswer from './ResultsTextAnswer'
 import { useCached } from '../../useCached'
+import mkAttachmentLink from '../AttachmentLink'
+import mkAttachmentLinks from '../AttachmentLinks'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -34,6 +36,8 @@ export interface ResultsProps extends CommonExamProps {
 
 const renderChildNodes = createRenderChildNodes({
   attachment: RenderChildNodes,
+  'attachment-link': mkAttachmentLink('plain'),
+  'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
   'choice-answer': ResultsChoiceAnswer,
   'dropdown-answer': ResultsDropdownAnswer,

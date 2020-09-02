@@ -6,8 +6,8 @@ import { findChildElement } from '../dom-utils'
 import { changeLanguage, initI18n } from '../i18n'
 import { scrollToHash } from '../scrollToHash'
 import { initializeExamStore } from '../store'
-import AttachmentLink from './AttachmentLink'
-import AttachmentLinks from './AttachmentLinks'
+import mkAttachmentLink from './AttachmentLink'
+import mkAttachmentLinks from './AttachmentLinks'
 import Audio from './Audio'
 import AudioGroup from './AudioGroup'
 import AudioTest from './AudioTest'
@@ -72,8 +72,8 @@ export interface ExamProps extends CommonExamProps {
 
 const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
-  'attachment-link': AttachmentLink,
-  'attachment-links': AttachmentLinks,
+  'attachment-link': mkAttachmentLink('link'),
+  'attachment-links': mkAttachmentLinks('link'),
   audio: Audio,
   'audio-group': AudioGroup,
   'audio-test': AudioTest,
