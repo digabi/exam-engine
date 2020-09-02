@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Translation, useTranslation } from 'react-i18next'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
-import { findChildElement, NBSP, query, queryAncestors } from '../dom-utils'
+import { findChildElement, query, queryAncestors } from '../dom-utils'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
@@ -49,9 +49,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
       <header className="e-semibold" id={tocSectionTitleId(displayNumber)}>
         {element.hasChildNodes() && (
           <>
-            {numberOfSections > 1 && t('part', { displayNumber })}
-            {NBSP}
-            {renderChildNodes(element)}
+            {numberOfSections > 1 && t('part', { displayNumber })} {renderChildNodes(element)}
           </>
         )}
       </header>
