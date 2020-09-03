@@ -222,7 +222,7 @@
         <e:localization lang="sv-FI">Sex trianglar</e:localization>
       </e:question-title>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:question-title>
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option score="1">
             <e:formula>a^2+b^2=c^2</e:formula>
@@ -230,14 +230,14 @@
         </e:choice-answer>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Kirjoita vastauskenttään sivun <e:formula>x</e:formula> pituus.</e:question-title>
         <e:localization lang="fi-FI">
           8
           <e:text-answer max-score="1"/>
         </e:localization>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:question-title>
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option score="1">
             <e:formula>\alpha+\beta+\gamma=180^\circ</e:formula>
@@ -245,14 +245,14 @@
         </e:choice-answer>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus.</e:question-title>
         <e:localization lang="fi-FI">
           45
           <e:text-answer max-score="1"/>
         </e:localization>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:question-title>
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option score="1">
             <e:formula>\tan \alpha = \frac ab</e:formula>
@@ -260,14 +260,14 @@
         </e:choice-answer>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus asteen tarkkuudella.</e:question-title>
         <e:localization lang="fi-FI">
           56
           <e:text-answer max-score="1"/>
         </e:localization>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:question-title>
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option score="1">
             <e:formula>\alpha+\beta+\gamma=180^\circ</e:formula>
@@ -275,14 +275,14 @@
         </e:choice-answer>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus.</e:question-title>
         <e:localization lang="fi-FI">
           30
           <e:text-answer max-score="1"/>
         </e:localization>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:question-title>
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option score="1">
             <e:formula>\sin \alpha = \frac ac</e:formula>
@@ -290,12 +290,12 @@
         </e:choice-answer>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Kirjoita vastauskenttään sivun <e:formula>x</e:formula> pituus.</e:question-title>
         10
         <e:text-answer max-score="1"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Valitse kolmion osalta tilanteeseen parhaiten soveltuva kaava.</e:question-title>
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option score="1">
             <e:formula>\cos \alpha = \frac bc</e:formula>
@@ -303,7 +303,7 @@
         </e:choice-answer>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Kirjoita vastauskenttään kulman <e:formula>\theta</e:formula> suuruus asteen tarkkuudella.</e:question-title>
         54
         <e:text-answer max-score="1"/>
       </e:question>
@@ -540,7 +540,7 @@
       <e:question-instruction>
       </e:question-instruction>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua.</e:question-title>
         <e:question-instruction>
           Kuva, esimerkiksi
           <br/>
@@ -588,7 +588,7 @@
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Laske pisteiden A ja B välinen etäisyys.</e:question-title>
         <e:question-instruction>
           <table class="e-table e-table--borderless e-table--zebra e-width-full">
             <tbody>
@@ -772,7 +772,7 @@
       </e:question-title>
       <e:question-instruction/>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Vektorit</e:question-title>
         <e:question-instruction>
           <table class="e-table e-table--borderless e-table--zebra e-width-full">
             <tbody>
@@ -800,7 +800,7 @@
         <e:text-answer type="rich-text" max-score="12"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>12-sivuinen noppa</e:question-title>
         <e:question-instruction>
           <table class="e-table e-table--borderless e-table--zebra e-width-full">
             <tbody>
@@ -1057,7 +1057,7 @@
         <e:localization lang="sv-FI">Förhållande mellan storheter</e:localization>
       </e:question-title>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Marmeladilevy</e:question-title>
         <e:question-instruction>
           <table class="e-table e-table--borderless e-table--zebra e-width-full">
             <tbody>
@@ -1131,7 +1131,7 @@
         <e:text-answer type="rich-text" max-score="4"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Lassi Lounastaja</e:question-title>
         <e:question-instruction>
           <table class="e-table e-table--borderless e-table--zebra e-width-full">
             <tbody>
@@ -1164,7 +1164,7 @@
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Musiikkikappale</e:question-title>
         <e:question-instruction>
           <table class="e-table e-table--borderless e-table--zebra e-width-full">
             <tbody>
