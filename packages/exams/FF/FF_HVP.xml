@@ -218,10 +218,8 @@
       </e:localization>
       <e:question>
         <e:question-title>
-          <e:localization lang="sv-FI">
-            Det sägs att skönheten ligger i betraktarens ögon. Beskriv kort vilket slag av uppfattning om skönhet ett
-            sådant skönhetsbegrepp representerar. Namnge uppfattningen.
-          </e:localization>
+          Sanotaan, että kauneus on katsojan silmässä. Kuvaile lyhyesti, millaista käsitystä kauneudesta sanonta
+          edustaa. Nimeä käsitys.
         </e:question-title>
         <e:question-instruction>
           <e:localization lang="fi-FI">
@@ -238,7 +236,7 @@
         <e:text-answer type="rich-text" max-score="2"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>            Sanotaan, että kauneus on katsojan silmässä. Nimeä ja kuvaile lyhyesti päinvastainen käsitys kauneudesta.</e:question-title>
         <e:question-instruction>
           <e:localization lang="fi-FI">
             Päinvastainen, objektiivinen käsitys korostaa kohteen merkitystä kauneudessa.
@@ -250,7 +248,7 @@
         <e:text-answer type="rich-text" max-score="2"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>            Valitse kaksi esimerkkiä kauniista asioista ja perustele lyhyesti, miksi ne ovat kauniita.</e:question-title>
         <e:question-instruction>
           <e:localization lang="fi-FI">
             Kokelas voi kuvailla millaisia hyvänsä kauniita asioita. Arvioinnissa olennaista on kyky perus- tellen
@@ -262,7 +260,7 @@
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>            Pohdi, mitä kauneus on. Käytä apunasi kohdassa 1.3. antamiasi esimerkkejä.</e:question-title>
         <e:question-instruction>
           <e:localization lang="fi-FI">
             <p>Joitain kauneutta koskevia filosofisia teorioita on yllä listattu lyhyesti. Niiden tuntemus on
@@ -384,7 +382,8 @@
       <e:question-instruction>
       </e:question-instruction>
       <e:question>
-        <e:question-title/>
+        <e:question-title>            Selitä, miksi muutos on Proidentin mukaan mahdotonta. Hyödynnä vastauksessasi videokatkelmaa
+        </e:question-title>
         <e:question-instruction>
           <p>Aineiston pohjalta Parmenideen lähtökohtana on olevan ja erityisesti ajan ykseys. Jos kaik- keus on yksi,
             se ei voi muuttua, koska se tulisi silloin joksikin toiseksi eli ei-kaikkeudeksi, itse asiassa ei-olevaksi.
@@ -405,7 +404,13 @@
         <e:text-answer type="rich-text" max-score="5"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>
+
+          Videokatkelmassa
+          3A
+          esitellään kaksi Veniamin paradoksia. Erittele toinen niistä ja kuvaile sen suhde Proidentin filosofiaan.
+
+        </e:question-title>
         <e:question-instruction>
           <p>Zenonin paradoksien tavoitteena on paljastaa ristiriitoja, jotka seuraavat oletuksesta, että liike ja/tai
             moneus ovat olemassa. Kuten videokatkelmassa selvästi esitetään, Zenonin para- doksit siis puolustavat
@@ -658,7 +663,15 @@
         </strong>
       </p>
       <e:question>
-        <e:question-title/>
+        <e:question-title>
+          Henri ajaa vähän eteenpäin ja saapuu peltoalueelle, jolla on oikeiden latojen joukossa pahvisia
+          latokulisseja, jotka erehdyttäisivät ketä tahansa. Henri näkee kuitenkin oikean ladon ja sanoo taas
+          pojalleen: ”Tuollakin on lato”. Jos hän olisi sattunut kohdistamaan katseensa pelkkään kulissiin, hän olisi
+          uskonut senkin olevan lato.
+          <br />
+          <br />
+          Onko Henrillä tietoa siitä, että hänen näkemänsä kohde on lato? Perustele vastauksesi.
+        </e:question-title>
         <e:question-instruction>
           <p>Kysymykseen on perusteltua vastata myöntävästi. Perustelun ydinosan voi muodostaa huo- mio, että Henri
             on muodostanut oikeutetun toden uskomuksen, joka täyttää tiedon klassi- sessa määritelmässä annetut
@@ -683,7 +696,14 @@
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>
+          Henrin poika on sokea. Hän muodostaa ensimmäisen ladon kohdalla isänsä kertomuksen nojalla toden uskomuksen
+          siitä, että kyseessä on lato.
+          <br />
+          <br />
+          Onko Henrin pojalla tietoa siitä, että kyseessä on lato? Perustele vastauksesi ja pohdi yleisemminkin, millä
+          edellytyksillä tieto voi perustua silminnäkijän tai tiedollisen auktoriteetin sanaan.
+        </e:question-title>
         <e:question-instruction>
           <p>Kysymykseen on perusteltua vastata kieltävästi. Vaikka Henri on käyttänyt erinomaista nä- kökykyä
             toden uskomuksensa muodostamiseen, ei tämä riitä oikeuttamaan uskomusta ky- seisessä tapauksessa eikä
@@ -704,7 +724,9 @@
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Filosofiakäsitys Adipisicingin
+          <em>Loremissa</em>
+        </e:question-title>
         <e:question-instruction>
           <p>Kysymykseen voi vastata perustellusti niin myöntävästi kuin kieltävästikin. Kokelas voi osit- tain
             nojata vastauksessaan kohdassa 6.1. antamaansa vastaukseen. Mikäli hän on perustel- lut, että Henrillä
@@ -786,6 +808,11 @@
       </e:question-instruction>
       <e:question>
         <e:question-title>
+
+          Kuvaile omin sanoin tekstikatkelmassa
+          7A
+          esitettyä käsitystä filosofiasta ja arvioi käsityksen hyviä ja huonoja puolia.
+
         </e:question-title>
         <e:question-instruction>
           <p>Tekstikatkelman kuvaaminen omin sanoin saa olla pitkälti vain numeroidusta ja aforistisesta tyylistä
@@ -826,7 +853,13 @@
         <e:text-answer type="rich-text" max-score="15"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>
+
+          Esitä jokin toinen käsitys filosofiasta ja vertaa sitä
+          <em>Loremissa</em>
+          esitettyyn.
+
+        </e:question-title>
         <e:question-instruction>
           <p>Wittgensteinin Tractatuksessa vastustamaa metafysiikkaa edusti käytännössä lähes koko Tractatusta
             edeltänyt filosofian perinne. Siten melkein mikä tahansa perinteinen filosofiakä- sitys, jonka mukaan
@@ -923,7 +956,17 @@
         </e:localization>
       </e:question-instruction>
       <e:question>
-        <e:question-title/>
+        <e:question-title>
+          Valitse tekstikatkelmista
+            8A
+            8B
+            8C
+            8D
+            8E
+            8F
+          kaksi eutanasiaa puolustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana.
+          Erittele argumentit sekä niiden ansiot ja puutteet.
+        </e:question-title>
         <e:question-instruction>
           <p>Eutanasian laillistamisen puolustajien ongelmana on, että väärinkäytösten estämiseksi euta- nasian
             lailliselle sallimiselle halutaan tiukat kriteerit. Tällöin itsemääräämisoikeutta ja sietä-
@@ -949,7 +992,19 @@
         <e:text-answer type="rich-text" max-score="10"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>
+
+          Valitse tekstikatkelmista
+            8A
+            8B
+            8C
+            8D
+            8E
+            8F
+          kaksi eutanasiaa vastustavaa argumenttia, joista toista pidät enemmän ja toista vähemmän vakuuttavana.
+          Erittele argumentit sekä niiden ansiot ja puutteet.
+
+        </e:question-title>
         <e:question-instruction>
           <p>Eutanasian laillistamisen vastustajien argumenteissa esiintyy runsaasti ns. kaltevia pintoja (myös kalteva
             taso, liukas pinta tai viettävä rinne, engl. slippery slope). Vaikka tällaista argu- mentointia
@@ -976,7 +1031,7 @@
         <e:text-answer type="rich-text" max-score="10"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>Esitä oma perusteltu kantasi eutanasian laillistamisesta.</e:question-title>
         <e:question-instruction>
           <p>Tämä kohta tarjoaa kokelaalle mahdollisuuden esittää omia argumentteja, joita ei ole aineis- tossa.
             Sitä ei kuitenkaan edellytetä, vaan aineistossa esiintyvien argumenttien harkittu ja käsitteelliselle
@@ -1018,6 +1073,13 @@
       </e:question-instruction>
       <e:question>
         <e:question-title>
+
+          Valitse videokatkelmista
+            9A
+            9B
+
+          yksi kuvaus tieteellisestä toiminnasta ja erittele sitä tieteenfilosofian näkökulmasta.
+
         </e:question-title>
         <e:question-instruction>
           <p>Aineistossa esiin tulevia tieteenfilosofisia oppeja ovat esimerkiksi verismi, jonka mukaan tie- de
@@ -1056,7 +1118,10 @@
         <e:text-answer type="rich-text" max-score="10"/>
       </e:question>
       <e:question>
-        <e:question-title/>
+        <e:question-title>
+          Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi aineesta. Selitä sen rakenne ja
+          vähintään yksi sen teoreettisista käsitteistä sekä arvioi mallia ja sen merkitystä tieteenfilosofisesti.
+        </e:question-title>
         <e:question-instruction>
           <p>Mallit voivat olla todella monenlaisia. Vaikka aineisto ja esimerkiksi tehtävä 7 saattavat joh- taa
             ajattelemaan, että filosofia ei ole tiede, malleja voi hakea myös filosofiasta, jossa niitä on runsaasti
