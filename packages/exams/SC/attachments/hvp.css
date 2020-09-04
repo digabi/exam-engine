@@ -1,0 +1,44 @@
+.text-answer,
+.answer-toolbar,
+.notification--inline,
+.e-exam .e-section:last-child {
+  display: none !important;
+}
+.e-exam .e-dropdown-answer__menu {
+  visibility: visible !important;
+  position: relative !important;
+  border: none !important;
+  top: unset;
+  display: list-item;
+  margin-left: 1rem;
+}
+
+.e-exam .e-dropdown-answer__toggle-button::after {
+  border:none !important;
+  position:relative !important;
+}
+.e-dropdown-answer__toggle-icon,
+.downshift-0-item-0,
+.e-dropdown-answer button,
+span[aria-label],
+.e-radio-button,
+.e-cas-controls,
+.e-audio-group--separator,
+.audio,
+.external-material-list
+{
+  display: none !important;
+}
+.e-choice-answer-option {
+  display: list-item;
+}
+.e-choice-answer .e-text-center {
+  text-align: left;
+}
+.e-exam .exam-instruction {
+  padding: 0;
+  background: none;
+  border: none;
+  margin-bottom: 1rem;
+
+}

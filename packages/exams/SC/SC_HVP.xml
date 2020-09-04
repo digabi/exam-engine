@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd"
+        exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="hvp.css">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+    <e:language>sv-FI</e:language>
+  </e:languages>
+  <e:exam-instruction>
+    <e:localization lang="fi-FI">
+      <h2>Hyvän vastauksen piirteitä</h2>
+      <div class="e-box">
+      Lopullisista hyvän vastauksen piirteistä ilmenevät perusteet, joiden mukaan
+      koesuorituksen lopullinen arvostelu on suoritettu. Tieto siitä, miten arvosteluperusteita on sovellettu kokelaan
+      koesuoritukseen, muodostuu kokelaan koesuorituksestaan saamista pisteistä, lopullisista hyvän vastauksen
+      piirteistä ja lautakunnan määräyksissä ja ohjeissa annetuista arvostelua koskevista määräyksistä. Lopulliset hyvän
+      vastauksen piirteet eivät välttämättä sisällä ja kuvaa tehtävien kaikkia hyväksyttyjä vastausvaihtoehtoja tai
+      hyväksytyn vastauksen kaikkia hyväksyttyjä yksityiskohia. Koesuorituksessa mahdollisesi olevat arvostelumerkinnät
+      katsotaan muisiinpanoluonteisiksi, eivätkä ne tai niiden puuttuminen näin ollen suoraan kerro arvosteluperusteiden
+      soveltamisesta koesuoritukseen. <br/><br/>Täydet pisteet voi saada vain vastaus, joka ei sisällä väärää ietoa.<br/><br/>Koesuorituksia
+      ei saa kopioida. Ne ovat salassa pidettäviä asiakirjoja.<br/><br/>Tehtävien 23–24 arvioitavat piirteet on kuvattu
+      kriteeritaulukossa, joka on Ylioppilastutkinto-lautakunnan antamissa toisen koimaisen kielen ja vieraiden kielten
+      kokeita koskevissa
+      määräyksissä.https://www.ylioppilastutkinto.fi/images/sivuston_iedostot/Ohjeet/Koekohtaiset/sahkoiset_kielikokeet_maaraykset_30.11.2017_fi.pdf
+      </div>
+      <br/>
+      Avovastausten arvostelusta:
+      <br/>
+      <br/>
+      <p>Sensorikunnan linjaus väärän tedon asemasta vastauksessa<br/>Täydet pisteet voi saada vain vastaus, joka ei
+      sisällä väärää tetoa. Mikäli vastauksessa on vaadittavat elementt (täysien pisteiden vastaus), mutta siinä on
+        lisäksi väärää tetoa, vähennetään yksi piste.</p>
+    </e:localization>
+    <e:localization lang="sv-FI">
+      <p>
+        Provet består av fyra delar: hörförståelse, läsförståelse, ordförråd och strukturer samt skriftlig framställning.
+      </p>
+      <p>
+        Du kan göra uppgifterna i valfri ordning. Följ de uppgiftsspecifika svarsanvisningarna. Du kan ändra dina svar när som helst under provet. Reservera cirka 1 timme för hörförståelseuppgifterna.
+      </p>
+      <p>
+        Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
+      </p>
+      <p>
+      Lycka till i provet!
+      </p>
+    </e:localization>
+  </e:exam-instruction>
+  <e:section>
+    <e:section-title>Hörverständnis</e:section-title>
+
+
+    <e:question>
+      <e:question-title>Picknick</e:question-title>
+      <e:audio-group>
+        <e:attachment>
+          <e:attachment-title>1. audio</e:attachment-title>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Sie meint, dass dort zu viele Leute sind</e:choice-answer-option>
+          </e:choice-answer>
+        </e:question>
+      </e:audio-group>
+      <e:audio-group>
+        <e:question>
+          <e:question-title>
+            <e:localization lang="fi-FI">Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.</e:localization>
+            <e:localization lang="sv-FI">Vad har Niklas för program under det inkommande veckoslutet, och hur påverkar det picknicken? Skriv ett kort svar på svenska.</e:localization>
+          </e:question-title>
+          <e:text-answer type="rich-text" max-score="6"/>
+          <e:audio src="1.2.ogg" times="1">Hören Sie den Abschnitt für die Frage 1.2.</e:audio>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Warum werden die Vier am See nicht grillen?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Das Wetter ist so heiß und trocken</e:choice-answer-option>
+          </e:choice-answer>
+        </e:question>
+        <e:question>
+          <e:question-title>Was wird Alina mitbringen?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Etwas Süßes</e:choice-answer-option>
+          </e:choice-answer>
+          <e:audio src="1.3_1.4.ogg" times="1">Hören Sie den Abschnitt für die Fragen 1.3. und 1.4.</e:audio>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>
+            <e:localization lang="fi-FI">Mitä Paula kertoo eväistään, ja mitä muuta hän ottaa mukaan? Kirjoita vastauksesi lyhyesti suomeksi.</e:localization>
+            <e:localization lang="sv-FI">Vad berättar Paula om sin matsäck, och vad annat tar hon med sig? Skriv ett kort svar på svenska.</e:localization>
+          </e:question-title>
+          <e:text-answer type="rich-text" max-score="6"/>
+          <e:audio src="1.5.ogg" times="1">Hören Sie den Abschnitt für die Frage 1.5.</e:audio>
+        </e:question>
+      </e:audio-group>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Alltagssituationen</e:question-title>
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Was sagt Toni weiter?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">... vielleicht ein anderes Mal.</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>2.1. audio</e:attachment-title>
+            <e:audio src="2.1.ogg" times="1">Hören Sie den Abschnitt für die Frage 2.1.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Was sagt Toni weiter?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">... ich habe natürlich nichts dagegen.</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>2.2. audio</e:attachment-title>
+            <e:audio src="2.2.ogg" times="1">Hören Sie den Abschnitt für die Frage 2.2.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Was sagt Toni weiter?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">... Jetzt bin ich sauer.</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>2.3. audio</e:attachment-title>
+            <e:audio src="2.3.ogg" times="1">Hören Sie den Abschnitt für die Frage 2.3.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Was sagt Toni weiter?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">... Einverstanden!</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>2.4. audio</e:attachment-title>
+            <e:audio src="2.4.ogg" times="1">Hören Sie den Abschnitt für die Frage 2.4.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Heimat</e:question-title>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Was ist für Shari Heimat?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Verwandte und Freunde</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>3.1. audio</e:attachment-title>
+            <e:audio src="3.1.ogg" times="2">Hören Sie den Abschnitt für die Frage 3.1.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Wie fühlte Leon sich im Urlaub?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Er fühlte sich dort sehr wohl</e:choice-answer-option>
+          </e:choice-answer>
+        </e:question>
+        <e:question>
+          <e:question-title>Was sagt Leon über seine Zukunftspläne?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Er möchte am liebsten in der Heimatstadt bleiben</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>3.2.–3.3. audio</e:attachment-title>
+            <e:audio src="3.2_3.3.ogg" times="2">Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Was mag Larena an ihrem Heimatdorf?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Sie kennt sich dort gut aus</e:choice-answer-option>
+          </e:choice-answer>
+        </e:question>
+        <e:question>
+          <e:question-title>Was erlebte Larena während des Sprachkurses?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="3">Sie machte mit den New Yorkern gute Erfahrungen</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>3.4.–3.5. audio</e:attachment-title>
+            <e:audio src="3.4_3.5.ogg" times="2">Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+
+        </e:question>
+      </e:audio-group>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Gesucht!</e:question-title>
+      <e:question-instruction>
+
+      </e:question-instruction>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welche Farbe hat die Katze?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="2">Sie ist schwarz-grau</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>4.1. audio</e:attachment-title>
+            <e:audio src="4.1.ogg" times="2">Hören Sie den Abschnitt für die Frage 4.1.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Wer kann gestern gegen 12 Uhr etwas gesehen haben?</e:question-title>
+          <e:choice-answer>
+            <e:choice-answer-option score="2">Studenten in der Mittagspause</e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>4.2. audio</e:attachment-title>
+            <e:audio src="4.2.ogg" times="2">Hören Sie den Abschnitt für die Frage 4.2.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Katze (Video)</e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Video: Katze</e:attachment-title>
+          <e:video src="5.webm" />
+          <e:reference>
+            <e:publisher>ARD</e:publisher>
+            <e:publication>1 LIVE</e:publication>
+            <e:publication-date>2016-03-19</e:publication-date>
+            <e:title>Video: Das geheime Leben der Katzen</e:title>
+            <e:author>Jessica Krauß</e:author>
+            <e:author>Ulrike Neubecker</e:author>
+            <e:url>https://www.daserste.de/information/wissen-kultur/w-wie-wissen/videos/das-geheime-leben-der-katzen-100.html</e:url>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+            <e:reference-date>2017-03-15</e:reference-date>
+            <e:howpublished>CC BY-NC-ND 3.0 DE</e:howpublished>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti suomeksi.</e:localization>
+          <e:localization lang="sv-FI">Hur länge är katterna under GPS-övervakning? Skriv ditt svar kort på svenska.</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="3"/>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was macht Kater Felix nachts?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Er rennt sehr weite Strecken</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was kann die nächste Studie zeigen?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Wie Katzen auf andere Katzen reagieren</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Termine</e:question-title>
+
+      <e:audio-group>
+        <e:attachment>
+          <e:attachment-title>6. audio</e:attachment-title>
+          <e:audio src="6.ogg" times="1">Hören Sie den Text zuerst als Ganzes.</e:audio>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welche Zeit passt Lars am besten?</e:question-title>
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="2">Montag, 15.00 Uhr</e:choice-answer-option>
+          </e:choice-answer>
+          <e:audio src="6.1.ogg" times="1">Hören Sie den Abschnitt für die Frage 6.1.</e:audio>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welche Zeit passt Katarina am besten?</e:question-title>
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="2">Dienstag, 13.00 Uhr</e:choice-answer-option>
+          </e:choice-answer>
+          <e:audio src="6.2.ogg" times="1">Hören Sie den Abschnitt für die Frage 6.2.</e:audio>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welche Zeit passt Marit am besten?</e:question-title>
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="2">Montag, 16.00 Uhr</e:choice-answer-option>
+          </e:choice-answer>
+          <e:audio src="6.3.ogg" times="1">Hören Sie den Abschnitt für die Frage 6.3.</e:audio>
+        </e:question>
+      </e:audio-group>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Wissenstest für Hobbyköche</e:question-title>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welches Bild passt?</e:question-title>
+          <e:choice-answer direction="horizontal">
+            <e:choice-answer-option score="2">
+              <e:attachment>
+                <e:attachment-title>7.1.4327.jpg</e:attachment-title>
+                <e:image src="7.1.4327.jpg"/>
+                <e:reference>
+                  <e:author>jules</e:author>
+                  <e:title>potato rosti</e:title>
+                  <e:url>https://www.flickr.com/photos/stone-soup/8569922071/in/photolist-e4i6g6-nocssw-x5ori3-e4oJeY-e4i8Ri-4D8G9u-e24NHj-33fS7F-6HvgkU-75GeTy-7iUPmd-4FFwVi-dqunPE-3Nqnu-6wqyjV-s2WmAj-23cQif3-fkFoYC-8Pwmi-e9jasF-dLQZCD-7AhHSj-o2Khg-tT2w75-arPW7x-aCXiDQ-sTdS2-amq8dg-dqu8KL-FJfoSA-dXTn3T-dPXtqo-5vMFob-e2wy3b-EgP2Cp-bdhxx4-amsVE3-pHSbhj-RMRTUq-5jkEdn-9WE8Ar-bxjRLt-7AUApb-aCbrmQ-aFi22G-nCUiLM-rc6Zp7-bEMyN1-bEMxbE-9a5UJK</e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>7.1. audio</e:attachment-title>
+            <e:audio src="7.1.ogg" times="2">Hören Sie den Abschnitt für die Frage 7.1.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welches Bild passt?</e:question-title>
+          <e:choice-answer direction="horizontal">
+            <e:choice-answer-option score="2">
+              <e:attachment>
+                <e:attachment-title>7.2.7291.jpg</e:attachment-title>
+                <e:image src="7.2.7291.jpg"/>
+                <e:reference>
+                  <e:author>Marco Verch</e:author>
+                  <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
+                  <e:url>https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc</e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>7.2. audio</e:attachment-title>
+            <e:audio src="7.2.ogg" times="2">Hören Sie den Abschnitt für die Frage 7.2.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welches Bild passt?</e:question-title>
+          <e:choice-answer direction="horizontal">
+            <e:choice-answer-option score="2">
+              <e:attachment>
+                <e:attachment-title>7.3.4927.jpg</e:attachment-title>
+                <e:image src="7.3.4927.jpg"/>
+                <e:reference>
+                  <e:title>Coffee Maker</e:title>
+                  <e:author>Neil</e:author>
+                  <e:url>https://www.flickr.com/photos/cog_sinister/6210435813/in/photolist-asN7cx-dZwfxN-fk2a3h-3a1uFs-7MM7bo-d1iFHh-U2LiuJ-24CRt7M-58U7dA-EnDRrG-bwEUvX-2hQ8pPh-2hPVnKu-2hQb6ZB-2hPPp82-2hPDkJC-2hPyFBe-2hQ9ugb-2hQdX44-2hQ2Zrt-2hPNJSd-2hxYxhq-2hQaNVD-2hQc9Su-2hQbwkv-7aTKza-aAaVS-5PzBRb-k1mDda-82x8hk-7thdQ7-fk28R7-dWNiCv-7tdgde-6mavoJ-6mavoE-mh4j84-4CNzKG-bx3GXK-d8z3im-5ZuL4g-8FCDbh-d9EzoF-juaxEY-bp2t7M-eJEKL-BSotM-LHiYc-4CJjYF-ayJNAn</e:url>
+                  <e:reference-date>2017-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>7.3. audio</e:attachment-title>
+            <e:audio src="7.3.ogg" times="2">Hören Sie den Abschnitt für die Frage 7.3.</e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+    </e:question>
+
+  </e:section>
+
+  <e:section>
+    <e:section-title>Textverständnis</e:section-title>
+
+    <e:question>
+      <e:question-title>Hausaufgaben</e:question-title>
+      <e:question-instruction></e:question-instruction>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Text: Whatsapp-Chat</e:attachment-title>
+          <div class="kupla1"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was wir für morgen machen müssen?</div>
+          <div class="kupla2"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal Tom. Hat eben doch Vorteile, wenn man mit seinem Bruder in derselben Klasse ist ...</div>
+          <div class="kupla1"><b>Maren</b>: Okay. Aber frag bitte schnell! Ich muss nachher noch zum Schwimmen.</div>
+          <div class="kupla2"><b>Kevin</b>: Für morgen haben wir: Mathe, Seite 76, Aufgaben 6, 7, 8 und in Geschichte den Inhalt der letzten Stunde wiederholen, und in Chemie machen wir doch im Moment nur die Experimente.</div>
+          <div class="kupla1"><b>Maren</b>: Mathe für morgen? Das kann nicht sein! Morgen haben wir kein Mathe! Und Geschichte!? So ein Pech! Ich habe mein Geschichtsbuch in der Schule vergessen.</div>
+          <div class="kupla2"><b>Kevin</b>: Stimmt ja! Morgen fällt Mathe aus. Ich kann die Seiten vom Geschichtsbuch fotografieren und dir schicken. Okay?</div>
+          <div class="kupla1"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen doch nicht ganz frei, aber ist ja nicht so viel … ;)</div>
+          <div class="kupla2"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!</div>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Welche Hausaufgaben wird Maren für morgen machen?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Geschichte</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Freitag der Dreizehnte</e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Texte: Freitag der Dreizehnte</e:attachment-title>
+          <p>
+            <b>Text 1: Zeitungsartikel, Freitag den 13.3.2018</b>
+            <br/>
+            Am vergangenen Mittwoch war ein 57-jähriger Mann gegen 17.30 Uhr in einem Supermarkt einkaufen. Er hatte sein Auto, einen silberfarbenen Mercedes, auf dem großen Parkplatz direkt vor dem Supermarkt abgestellt. Nach dem Einkauf kehrte er zum Auto zurück. Das Auto war nicht verschlossen. Er setzte sich ins Auto, legte seine Geldbörse auf den Beifahrersitz neben sich und wollte wegfahren. Da merkte er jedoch, dass er einen Fehler gemacht hatte: Er saß in einem fremden Auto. Sein eigenes Auto stand direkt hinter ihm. Er blieb ganz ruhig und wartete auf die Fahrerin des Autos. Als sie kam, erklärte er ihr alles und entschuldigte sich. Dann fuhr er nach Hause. Erst zu Hause bemerkte er, dass er seine Geldbörse nicht bei sich hatte. Weil er den Namen oder die Adresse der Autobesitzerin nicht kannte, hofft er nun, dass die Frau sich bei ihm meldet. Im Auto hat er 200 Euro Bargeld vergessen und seine Fahrerlaubnis.
+          </p>
+          <p>
+            <b>Text 2: Ein Leser der Zeitung erzählt seinem Freund:</b>
+            <br/>
+            „Ich habe gerade in der Zeitung etwas Komisches gelesen: Heute ist doch Freitag, der Dreizehnte aber schon vorgestern hat ein Mann richtig Pech gehabt. Er hat nämlich ein fremdes Auto mit seinem eigenen Auto verwechselt. Er war wohl einkaufen und hatte vorher sein metallblaues Auto in einer kleinen Straße in der Nähe vom Supermarkt geparkt. Als er dann vom Einkauf zurückkam, hat er sich in seinen Wagen gesetzt und wollte losfahren. Da hat er auf einmal sein eigenes Auto gegenüber auf der anderen Straßenseite gesehen. Er saß also im falschen Auto. Er war dann total aufgeregt und ist in seiner Panik ganz schnell mit seinem eigenen Auto weggefahren. Tja, als er zu Hause ankam, hatte er seine Geldbörse nicht mehr bei sich. Er hatte sie im fremden Auto auf dem Platz neben sich vergessen. In der Geldbörse waren vier Fünfzig-Euro-Scheine und außerdem auch noch sein Führerschein. Nun hofft der Mann, dass der Besitzer des Autos Kontakt zu ihm aufnimmt, wenn er die Geldbörse findet.“
+          </p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>An welchem Tag es passiert ist</e:question-title>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Welche Farbe die Autos hatten</e:question-title>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Wo im Auto der Mann etwas vergessen hatte</e:question-title>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Wo der Mann sein Auto geparkt hatte</e:question-title>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was der Mann machte, nachdem er seinen Fehler bemerkt hatte</e:question-title>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was alles in der Geldbörse war</e:question-title>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Duis Minim?</e:question-title>
+      <e:external-material>
+        <e:attachment name="zeugnis">
+          <e:attachment-title>Text: Duis Minim?</e:attachment-title>
+          <p>
+            <e:localization lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</e:localization>
+            <e:localization lang="sv-FI">Materialet avlägsnat på grund av upphovsrättsskäl.</e:localization>
+          </p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>Wie begründet der Sohn seine Bitte?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Er wird anders behandelt als andere Schüler</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä siitä isän mielestä seuraa?</e:localization>
+          <e:localization lang="sv-FI">Vad anser sonen att är dåligt med mormors sätt att ge pengar för betyget, och vad anser pappan att det leder till?</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6"/>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Excepteur cupidatat!</e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Text: Excepteur cupidatat!</e:attachment-title>
+          <p>
+            <e:localization lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</e:localization>
+            <e:localization lang="sv-FI">Materialet avlägsnat på grund av upphovsrättsskäl.</e:localization>
+          </p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>Was mag Proident besonders an seinem Job?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Die Arbeit bietet viel Abwechslung</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella.</e:localization>
+          <e:localization lang="sv-FI">Fyll i luckorna enligt det understrukna stället i stycket „Voluptate voluptate“.</e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä, <e:text-answer max-score="3"/>, sekä siitä, miten <e:text-answer max-score="3"/> ja miten retki suunnitellaan.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          I utbildningen lär man sig bland annat mycket om naturen, vädret, <e:text-answer max-score="3"/>, hur man <e:text-answer max-score="3"/> och hur man planerar en tur.
+        </e:localization>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Wie ist Proidents Arbeit als Lorem und Ipsum organisiert?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Er arbeitet einige Monate sehr viel und dann mal sehr wenig</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was bedeutet es, dass Proident für seine Gäste verantwortlich ist?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Er muss manchmal das Tempo der Wanderung verlangsamen</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was machen viele Lorem und Ipsum, um finanziell klarzukommen?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Wendungen</e:question-title>
+      <e:dropdown-answer ordering="fixed">
+        <e:dropdown-answer-option score="2">Vielen Dank im Voraus!</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option score="2">Und ob!</e:dropdown-answer-option>
+        </e:dropdown-answer>
+      <br/>
+        <e:dropdown-answer ordering="fixed">
+          <e:dropdown-answer-option score="2">Warum immer ich?</e:dropdown-answer-option>
+        </e:dropdown-answer>
+    </e:question>
+
+    <e:question>
+      <e:question-title>Adipisicing voluptate</e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Text: Adipisicing voluptate</e:attachment-title>
+          <p>
+            <e:localization lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</e:localization>
+            <e:localization lang="sv-FI">Materialet avlägsnat på grund av upphovsrättsskäl.</e:localization>
+          </p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>Wann bekommt man bei Flugverspätung <b>kein</b> Essen?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Wann bezahlt Lorem Ipsum Telefonate?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös järjestää? Kirjoita vastauksesi lyhyesti suomeksi.</e:localization>
+          <e:localization lang="sv-FI">När erbjuder flygbolaget hotellinkvartering, och vad arrangerar det i så fall också? Skriv ditt svar kort på svenska.</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4"/>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Ullamco</e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Text: Ullamco</e:attachment-title>
+          <p>
+            <e:localization lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</e:localization>
+            <e:localization lang="sv-FI">Materialet avlägsnat på grund av upphovsrättsskäl.</e:localization>
+          </p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>Was erlebten die Ullamco?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class="e-nowrap">(2 asiaa)</span> Kirjoita vastauksesi lyhyesti suomeksi.</e:localization>
+          <e:localization lang="sv-FI">Vad gjorde det särskilt besvärligt att ta sig från det ena flygplanet till det andra? <span class="e-nowrap">(2 saker)</span> Skriv ditt svar kort på svenska.</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4"/>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Welche weitere Ullamco hatte die Ullamco?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Ein unerwartetes Abenteuer</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Eiusmod</e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Text: Eiusmod</e:attachment-title>
+          <p>
+            <e:localization lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</e:localization>
+            <e:localization lang="sv-FI">Materialet avlägsnat på grund av upphovsrättsskäl.</e:localization>
+          </p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi.</e:localization>
+          <e:localization lang="sv-FI">Vad berättar ett postkort enligt Lorem Ipsum om avsändaren, och hur motiverar han sin åsikt? Skriv ditt svar kort på svenska.</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4"/>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Wie sind die beliebtesten Postkarten?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Sie finden solche Karten auf Reisen gut</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was ärgert die Kartenverkäufer?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Es ist wahr, dass die Karten nicht mehr so beliebt sind</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Wann könnte es die Postkarte schwer haben?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="3">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question>
+      <e:question-title>Duis dolore</e:question-title>
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Text: Duis dolore</e:attachment-title>
+          <p>
+            <e:localization lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</e:localization>
+            <e:localization lang="sv-FI">Materialet avlägsnat på grund av upphovsrättsskäl.</e:localization>
+          </p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>Wie reagieren viele Kunden auf die Einwegbecher?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was könnte im neuen System zum Problem werden?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Es ist für das Verhalten der Kunden nicht flexibel genug</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Was will Lorem Ipsum erreichen?</e:question-title>
+        <e:choice-answer>
+          <e:choice-answer-option score="2">Die Kunden stärker zur Rückgabe der Becher zu motivieren</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin perusteella lyhyesti suomeksi.</e:localization>
+          <e:localization lang="sv-FI">Varför vill Hamburg övergå till det nya systemet? Svara kort på svenska på basis av hela texten.</e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="2"/>
+      </e:question>
+
+    </e:question>
+
+  </e:section>
+
+  <e:section>
+    <e:section-title>Struktur und Vokabular</e:section-title>
+
+    <e:question>
+      <e:question-title>Auswahl-Antwort-Test</e:question-title>
+      <h4>Max und Moritz, Vorwort</h4>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">muß</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">bösen</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">von</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">hießen</e:dropdown-answer-option>
+        <e:dropdown-answer-option score="1">heißen</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">Die</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">zum</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">darüber</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">sich</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">dazu</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">Tiere</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">stehlen</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">Das</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">auch</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">Als</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">ein</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+      <e:dropdown-answer>
+        <e:dropdown-answer-option score="1">sie</e:dropdown-answer-option>
+      </e:dropdown-answer>
+      <br/>
+    </e:question>
+
+    <e:question>
+      <e:question-title>Umformung</e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Tehtävässä vaaditaan muunnoksilta kieliopillista ja oikeinkirjoituksen oikeellisuutta. Kuitenkaan väärästä välimerkistä tai sen puuttumisesta ei ole vähennetty pisteitä.</e:localization>
+        <e:localization lang="sv-FI">Skriv om ställena så att du till varje mening lägger till det modala hjälpverbet i parentesen.</e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>Willst du am Samstag mit ins Kino kommen?</e:question-title>
+        <e:question-instruction>
+          Vastauksessa on hyväksytty myös ”mitkommen”-verbin käyttö. Esim. ”Willst du am Samstag ins Kino mitkommen?” ja
+          myös esim. ”Willst du am Samstag mit mir ins Kino mitkommen?”.<br/>- Esimerkkejä:<br/>Willst du am Samstag mit ins Kino
+          kommen? 2 p.<br/>Willst du ins Kino am Samstag mitkommen? 1 p. (sanajärjestys)<br/>Will du am Samstag mit ins Kino
+          kommen? 1 p. (verbin taivutus)<br/>willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä
+          puuttuvasta kysymysmerkistä)<br/>Will du am Samstag mit ins Kino gehen? 0 p. (verbin taivutus, ”gehen”)<br/>Wollen du am
+          Samstag ins Kino mitgekommen 0 p
+        </e:question-instruction>
+        <e:text-answer max-score="2"/>
+      </e:question>
+      <e:question>
+        <e:question-title>weil ich zuerst Mama fragen muss</e:question-title>
+        <e:question-instruction>
+          esimerkkejä:<br/>weil ich zuerst Mama fragen muss. 2 p.Weil ich zuerst Mama fragen muss. 1 p. (iso alkukirjain)
+          <br/>weil ich Mama zuerst fragen muss. 1 p. (sanajärjestys)
+          <br/>weil müsse ich zuerst Mama fragen 0 p. (verbin taivutus, sanajärjestys)<br/>weil ich müsse zuerst Mama frage 0 p.
+        </e:question-instruction>
+        <e:text-answer max-score="2"/>
+      </e:question>
+<!--      <e:scored-text-answer><e:accepted-answer score="2">Willst du am Samstag mit ins Kino kommen</e:accepted-answer></e:scored-text-answer>-->
+<!--      <e:scored-text-answer><e:accepted-answer score="2">weil ich zuerst Mama fragen muss</e:accepted-answer></e:scored-text-answer>-->
+    </e:question>
+
+    <e:question>
+      <e:question-title>Dialog</e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Tehtävän 22. ohjeistuksessa on virhe, jonka seurauksena hyväksytään kohdissa 22.2. ja 22.4. myös tehtävän 23. materiaaliin viittaavat vastaukset.Virheet, jotka eivät kuulu äännettäessä, eivät vie pisteitä.Pisteitys:3 pistettä<br/>– Vastaus on täysin ilanteeseen sopiva, ja sisältö ja kieliasu ovat virheettömiä.2 pistettä (jokin seuraavista)<br/>– Vastaus on ilanteeseen sopiva ja kielellisesi virheetön, mutta sisällöltään puutteellinen.<br/>– Vastaus on ilanteeseen sopiva ja sisällöltään virheetön, mutta kielellisesi puutteellinen.<br/>– Vastaus on kielellisesi ja sisällöllisesi virheetön, mutta ei täysin ilanteeseen sopiva.1 pistettä (jokin seuraavista)<br/>– Vastauksessa on kielellisiä ja sisällöllisiä puutteita, mutta se sopii ilanteeseen.<br/>– Vastaus on sisällöltään ja sävyltään puutteellinen, mutta kielellisesi virheetön.<br/>– Vastaus on kielellisesi virheellinen ja ilanteeseen sopimaton, mutta asiasisältö välittyy.- Tehtävät 22.2 ja 22.4. vastauksen pituus on 2-4 sanaa: enintään 1 p.0 pistettä<br/>– Vastaus on täysin sopimaton ilanteeseen, ja/tai sen kieliasu ja sisältö ovat erittäin puutteellisia.- Tehtävät 22.2 ja 22.4. vastauksen pituus on 1 sana 0 p.</e:localization>
+        <e:localization lang="sv-FI">I den här uppgiften finns det två korta dialoger. Båda består av en fråga och ett svar. Ställ frågorna på tyska (1. och 3.). Besvara dem på tyska med hjälp av bilderna (2. och 4.). I punkterna 2. och 4. ska svaret vara 5–15 ord långt.</e:localization>
+      </e:question-instruction>
+      <e:attachment>
+        <e:attachment-title>7. teksti</e:attachment-title>
+        <br/>
+        <e:hints>
+          <h4>Dialog 1</h4>
+          <p>
+            Tim sitzt am Küchentisch. Sein großer Bruder Jan kommt in die Küche.
+          </p>
+          <p>
+            Tim fragt: <e:scored-text-answer max-score="2"><e:hint><e:localization lang="fi-FI">Voitko auttaa minua?</e:localization><e:localization lang="sv-FI">Kan du hjälpa mig?</e:localization></e:hint></e:scored-text-answer>
+            <br/>
+            Jan: Ja, klar. Was ist denn?
+            <br/>
+            Tim antwortet: <e:scored-text-answer max-score="3"><e:hint><e:attachment><e:attachment-title>7.2. kuva</e:attachment-title><e:image src="7.2.jpg"/><e:reference><e:url>https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a</e:url><e:title>math final</e:title><e:author>Elise Forest</e:author><e:howpublished>CC BY-NC-ND 2.0</e:howpublished><e:reference-date>2019-11-25</e:reference-date></e:reference></e:attachment></e:hint></e:scored-text-answer>
+          </p>
+          <br/>
+          <h4>Dialog 2</h4>
+          <p>
+            Früh am Morgen kommt die Mutter ins Kinderzimmer und weckt Anna auf.
+          </p>
+          <p>
+            Anna fragt: <e:scored-text-answer max-score="2"><e:hint><e:localization lang="fi-FI">Millainen sää tänään on?</e:localization><e:localization lang="sv-FI">Hurdant väder är det idag?</e:localization></e:hint></e:scored-text-answer>
+            <br/>
+            Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet: <e:scored-text-answer max-score="3"><e:hint><e:attachment><e:attachment-title>7.4. kuva</e:attachment-title><e:image src="7.4.jpg"/><e:reference><e:url>https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda</e:url><e:reference-date>2019-11-25</e:reference-date><e:title>Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496</e:title><e:author>Charles Edward Miller</e:author><e:howpublished>CC BY-SA 2.0</e:howpublished></e:reference></e:attachment></e:hint></e:scored-text-answer>
+          </p>
+        </e:hints>
+        <e:reference>
+          <e:author>
+            <e:localization lang="fi-FI">YTL</e:localization>
+            <e:localization lang="sv-FI">SEN</e:localization>
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:question>
+
+  </e:section>
+
+  <e:section>
+    <e:section-title>Schriftliche Produktion</e:section-title>
+    <e:question max-answers="1">
+      <e:question-title>Kurze Schreibaufgabe</e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>
+            Valitse seuraavista kohdista <b>vain toinen</b>, johon vastaat saksaksi.
+          </p>
+          <p>
+            Kirjoitussuorituksen pituus: 160–240 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään.
+          </p>
+          <p>
+            Jätä toinen vastauskenttä tyhjäksi.
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+            Välj av följande punkter <b>bara den ena</b>, som du besvarar på tyska.
+          </p>
+          <p>
+            Skrivprestationens längd: 160–240 tecken. Mellanslag och radbyten räknas inte in i teckenantalet.
+          </p>
+          <p>
+            Lämna det andra svarsfältet tomt.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Din vän är lite sjuk. Fråga i ett WhatsApp-meddelande om du kan hjälpa vännen på något sätt och gör ett förslag.
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="33"/>
+      </e:question>
+      <e:question>
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Du har kommit långt med förberedelserna för din grillfest men du har glömt att bjuda in den tyska utbyteseleven på din klass. Skriv i sista minuten ett textmeddelande med en inbjudan till hen och berätta också vad hen kan ha med sig till festen.
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="33"/>
+      </e:question>
+    </e:question>
+
+    <e:question max-answers="1">
+      <e:question-title>Lange Schreibaufgabe</e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          <p>
+            Valitse seuraavista kohdista <b>vain toinen</b>, johon vastaat saksaksi.
+          </p>
+          <p>
+            Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään.
+          </p>
+          <p>
+            Jätä toinen vastauskenttä tyhjäksi.
+          </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+            Välj av följande punkter <b>bara den ena</b>, som du besvarar på tyska.
+          </p>
+          <p>
+            Skrivprestationens längd: 300–450 tecken. Mellanslag och radbyten räknas inte in i teckenantalet.
+          </p>
+          <p>
+            Lämna det andra svarsfältet tomt.
+          </p>
+        </e:localization>
+      </e:question-instruction>
+
+      <e:question>
+        <e:question-title>Lange Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            Ystäväsi haluaa tietää, miten kesälomasi sujui. Kirjoita hänelle lomakuviesi avulla, mitä matkalla tapahtui.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Din vän vill veta hur du har haft det under semestern. Skriv till hen och berätta med hjälp av dina semesterbilder om vad som hände under resan.
+          </e:localization>
+        </e:question-instruction>
+        <p>
+          <e:attachment>
+            <e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title>
+            <e:image src="24.1.jpg"/>
+            <e:reference>
+              <e:author>Riik@mctr</e:author>
+              <e:title>Manchester Airport (EGCC)</e:title>
+              <e:url>https://www.flickr.com/photos/riikkeary/48887383951/in/photolist-2hu1C3c-PKLHCd-EeEdwT-2gkPu6W-P3e4QT-JgAdC5-NbRGcz-NcTTNk-LVtizH-8yZcMv-Drad5A-2ahQHWu-LVthK6-6VEGAg-6VJLew-29bqzwJ-2aztA8B-HV25ti-22GPdfj-2fRNRnC-cQ9YYq-86sim-Wfcorb-2gyha9j-6g1Wku-2htZ3SD-277TxNV-NbzgNr-EeEd9t-XfaGG5-5wqZ6g-2hPjtVN-2gCAYBa-FvMntq-22yohM3-Y5Ag4G-2h8kmhc-2gyha2f-2hHXtzN-2af6nPJ-DuY1pD-2hJTqGH-JaRwDj-QAUqAK-PAfBfy-gxJoJ1-NheHgK-o3qrds-HqnLf2-2aztAdg</e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+            <e:reference>
+              <e:author>Jonathan Pearson</e:author>
+              <e:title>boy racers</e:title>
+              <e:url>https://www.flickr.com/photos/jpgpearson/19589151028/in/photolist-vR2w8f-8K8cyR-5JqYZp-5JvfgY-avXAB-p9FDL1-hrNHmo-2gZf9-9jwK-5JqYKM-5q6K2N-edv3o-5JveZ5-kiCvw-aGhST-5JqYAn-Fkc7g-dF6gAv-5JveXm-5JqYYH-2huzoFM-5JveH1-6kXvwg-5mRiER-tXN4S9-avbFkR-2ZkL3-jPWTS-ciGDdb-4cwvdo-J887D-4DTo2-aveo1U-fve2FU-5e9mk9-4Tomw-J88iR-4cwo67-9BnCgP-bPnii8-otV72-aveoSU-J88Yi-dzcPPT-Qq94TL-avbHWa-6m2EuN-4mPejB-5JveRh-f64UA8</e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+            <e:reference>
+              <e:author>Conal Gallagher</e:author>
+              <e:title>Bicycle</e:title>
+              <e:url>https://www.flickr.com/photos/conalg/13929485086/in/photolist-ndUfBY-5Nihze-egRLhZ-dqiRkT-njvDDT-4oGgE-dqiSxr-dqiSkt-4XEtWw-bmb8K-DRgS2z-ewdvhp-24E1jnA-7eKYFk-eUzcBm-ccNu1C-qWH3YT-dqiZfN-oBuymS-dqiRZa-APopNz-h3KDEM-axiQ2z-g8Bktb-4rnK9J-NFcq-rxHBQ-6Mw4d5-c3RrMY-dqiRDB-aXZ3Qk-rtCqGn-7RTBd1-azuPeP-dqj3AF-53hN4q-7MvQKH-iCGZH-vKvFz-e7zHs-81xh6Y-5t4bXx-s54FqX-nqoeWh-9mdaE-AL6QNw-6C8kVT-5RpTZc-aDaCHN-6Cctny</e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+            <e:reference>
+              <e:author>Wonder Woman</e:author>
+              <e:title>Alexandra</e:title>
+              <e:url>https://www.flickr.com/photos/zamerzla/28623180177/in/photolist-SsppBA-4KrF7c-Q8AVgo-vwSEYi-2cXMWck-E1XfwB-JQiQXv-AGeL5V-h4Cf5i-SKAjUC-U7pTTw-RJSnqw-28UuR81-HNqoJG-2bN4CHs-XQAYND-2e7GFPu-VfFJcf-2bedGoa-2ckJhGu-24sAaK3-2aTLnGw-2dMyokb-PtbzSU-FYKk91-PtaNkm-BaTHKd-FSRkfF-ZAPzsP-E7kuSh-UtV741-21r8xzM-UC83Hv-NjSv39-KBkhfv-2eCtwHr-PpCzzL-2cuyVWz-5R5Z1b-843VCn-2dZCoHX-SSuPSA-Hp9GxQ-Go2Ah1-xKh4cU-29zGKha-23nmc6W-MorGx6-GVaNjr-29QybwX</e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+          </e:attachment>
+        </p>
+        <e:text-answer type="rich-text" max-score="66"/>
+      </e:question>
+
+      <e:question>
+        <e:question-title>Lange Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <e:localization lang="fi-FI">
+            Eräs isä on lähettänyt tekstin keskustelupalstalle <e:attachment-link ref="zeugnis" />. Hän pyytää mielipiteitä siitä, kumpi on oikeassa – hän vai poika. Vastaa palstalla isälle. Perustele näkemyksesi.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            En pappa har skickat in texten till en diskussionsspalt <e:attachment-link ref="zeugnis" />. Han ber om åsikter om vem som har rätt – han eller hans son. Skriv ett svar till pappan i spalten. Motivera din åsikt.
+          </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="66"/>
+      </e:question>
+
+    </e:question>
+
+  </e:section>
+
+</e:exam>
