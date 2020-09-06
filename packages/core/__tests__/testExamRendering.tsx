@@ -14,41 +14,39 @@ import { ResultsProps } from '../src/components/results/Results'
 import { examServerApi } from './examServerApi'
 import { generateAnswers } from '@digabi/exam-engine-generator'
 
-for (const exam of listExams()) {
-  describe(path.basename(exam), () => {
-    const resolveAttachment = (filename: string) => path.resolve(path.dirname(exam), 'attachments', filename)
+describe.each(listExams().map((exam) => [path.basename(exam), exam]))('%s', (_basename, exam) => {
+  const resolveAttachment = (filename: string) => path.resolve(path.dirname(exam), 'attachments', filename)
 
-    it('renders properly', async () => {
-      const source = await fs.readFile(exam, 'utf-8')
-      const results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment))
-      for (const { xml, language, gradingStructure } of results) {
-        const doc = parseExam(xml, true)
-        const commonProps: CommonExamProps = {
-          doc,
-          answers: [],
-          attachmentsURL: '/attachments',
-          resolveAttachment: (filename: string) => `/attachments/${encodeURIComponent(filename)}`,
-          language,
-        }
-        const examProps: ExamProps = {
-          ...commonProps,
-          casStatus: 'forbidden',
-          examServerApi,
-          restrictedAudioPlaybackStats: [],
-        }
-        const resultsProps: ResultsProps = {
-          ...commonProps,
-          gradingStructure,
-          answers: generateAnswers(gradingStructure),
-          scores: mkScores(gradingStructure),
-        }
-        expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
-        expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
-        expect(create(<Results {...resultsProps} />).toJSON()).toMatchSnapshot('<Results />')
+  it('renders properly', async () => {
+    const source = await fs.readFile(exam, 'utf-8')
+    const results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment))
+    for (const { xml, language, gradingStructure } of results) {
+      const doc = parseExam(xml, true)
+      const commonProps: CommonExamProps = {
+        doc,
+        answers: [],
+        attachmentsURL: '/attachments',
+        resolveAttachment: (filename: string) => `/attachments/${encodeURIComponent(filename)}`,
+        language,
       }
-    })
+      const examProps: ExamProps = {
+        ...commonProps,
+        casStatus: 'forbidden',
+        examServerApi,
+        restrictedAudioPlaybackStats: [],
+      }
+      const resultsProps: ResultsProps = {
+        ...commonProps,
+        gradingStructure,
+        answers: generateAnswers(gradingStructure),
+        scores: mkScores(gradingStructure),
+      }
+      expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
+      expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
+      expect(create(<Results {...resultsProps} />).toJSON()).toMatchSnapshot('<Results />')
+    }
   })
-}
+})
 
 function mkScores(gradingStructure: GradingStructure) {
   return gradingStructure.questions
