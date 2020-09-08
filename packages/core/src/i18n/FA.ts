@@ -8,7 +8,7 @@ export const FA: ExamTranslations = {
   part: 'Partie {{displayNumber}} :',
   references: {
     heading: 'Sources',
-    source: "D'après",
+    source: 'Source :',
     date: 'Publié :',
     'reference-date': 'Téléchargement le',
     translator: 'Traduction :',
