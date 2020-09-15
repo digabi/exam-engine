@@ -9,7 +9,7 @@
     "node": ">= 12.0"
   },
   "devDependencies": {
-    "@digabi/eslint-config": "^0.1.0",
+    "@digabi/eslint-config": "^1.0.4",
     "@types/child-process-promise": "^2.2.1",
     "@types/classnames": "^2.2.8",
     "@types/ffmpeg-static": "^3.0.0",
@@ -47,6 +47,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^24.0.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "fast-check": "^2.0.0",
     "file-loader": "^6.0.0",
@@ -62,8 +63,6 @@
     "less-plugin-glob": "^3.0.0",
     "mini-css-extract-plugin": "^0.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.5.0",
     "prettier": "^2.0.4",
     "puppeteer": "^5.0.0",
     "tmp-promise": "^3.0.2",

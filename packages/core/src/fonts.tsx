@@ -7,6 +7,7 @@ export const ready = Promise.all([
   new FontFaceObserver('Noto Sans', { weight: 400 }).load(), // Regular
   new FontFaceObserver('Noto Sans', { weight: 600 }).load(), // Semibold
 ])
+  // eslint-disable-next-line promise/always-return
   .then(() => {
     loaded = true
   })

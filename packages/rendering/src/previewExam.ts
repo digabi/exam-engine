@@ -23,7 +23,7 @@ export async function previewExam(examFile: string, options: RenderingOptions = 
       } else {
         const addressInfo = httpServer.address() as AddressInfo
         const url = `http://localhost:${addressInfo.port}`
-        const close = () => new Promise<void>((resolveClose) => webpackDevServer.close(resolveClose))
+        const close = () => new Promise<void>((resolve) => webpackDevServer.close(resolve))
         resolve({ url, close })
       }
     })
