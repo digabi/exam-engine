@@ -1,22 +1,10 @@
 import { ExamServerAPI } from '../src'
 
 export const examServerApi: ExamServerAPI = {
-  async getAnswers() {
-    return []
-  },
-  async setCasStatus(casStatus) {
-    return casStatus
-  },
-  async saveAnswer() {
-    return
-  },
-  async saveScreenshot() {
-    return 'ok'
-  },
-  async playAudio() {
-    return 'ok'
-  },
-  async playRestrictedAudio() {
-    return 'ok'
-  },
+  getAnswers: () => Promise.resolve([]),
+  setCasStatus: (casStatus) => Promise.resolve(casStatus),
+  saveAnswer: () => Promise.resolve(),
+  saveScreenshot: () => Promise.resolve('ok'),
+  playAudio: () => Promise.resolve('ok'),
+  playRestrictedAudio: () => Promise.resolve('ok'),
 }

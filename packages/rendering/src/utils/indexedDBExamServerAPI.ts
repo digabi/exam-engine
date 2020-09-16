@@ -34,13 +34,9 @@ export default function indexedDBExamServerAPI(
   document.body.appendChild(audioPlayer)
 
   const examServerApi: ExamServerAPI = {
-    async setCasStatus(casStatus) {
-      return casStatus
-    },
-    async getAnswers() {
-      return db.answer.where({ examUuid }).toArray()
-    },
-    async saveAnswer(answer) {
+    setCasStatus: (casStatus) => Promise.resolve(casStatus),
+    getAnswers: () => db.answer.where({ examUuid }).toArray(),
+    saveAnswer: async (answer) => {
       if (answer.value === '') {
         const { questionId } = answer
         await db.answer.where({ examUuid, questionId }).delete()

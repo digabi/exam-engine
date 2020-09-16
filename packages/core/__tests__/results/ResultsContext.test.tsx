@@ -60,8 +60,8 @@ const answersByQuestionId = keyBy(answers, 'questionId')
 const testExam = 'SC.xml'
 const language = 'fi-FI'
 
-const getMediaMetadata: GetMediaMetadata = async (__, type) =>
-  type === 'audio' ? { duration: 999 } : { width: 999, height: 999 }
+const getMediaMetadata: GetMediaMetadata = (__, type) =>
+  Promise.resolve(type === 'audio' ? { duration: 999 } : { width: 999, height: 999 })
 
 const exam = listExams().find((e) => e.includes(testExam))
 if (exam == null) {
