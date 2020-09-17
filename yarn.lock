@@ -899,9 +899,9 @@
     parse-cache-control "^1.0.1"
 
 "@digabi/eslint-config@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-1.0.4.tgz#b997521d7528126cc601d933f6b19065061c5298"
-  integrity sha512-UohKgyMAFP6DuT7K9bis3+hoChN5D0aHfOncyeMq/U2RsZHcNTgoM4rrp2zkIOZO6woMmSd9z3YIuuFfi1MwQg==
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-1.0.6.tgz#e88be058d3cc3ed779b338f7b32c66d6cc87cb99"
+  integrity sha512-wjApj6RqQXYY9Fr/+WPmmiwpkrdMu97/l+lGYV9gEyXbGd18s/zNKWHHcsVMXRfNn+84BooJwY5i8iJje7CfnA==
 
 "@digabi/mathquill@^0.10.3":
   version "0.10.3"

@@ -34,7 +34,7 @@ const errorSvg = `<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
  * @param {boolean | undefined} throwOnLatexError
  * @returns Promise<{ svg: string, mml: string }>
  */
-async function renderFormula(formula, mode, throwOnLatexError) {
+function renderFormula(formula, mode, throwOnLatexError) {
   return mjAPI
     .typeset({
       math: formula,
@@ -43,7 +43,7 @@ async function renderFormula(formula, mode, throwOnLatexError) {
       svg: true,
       ex: 9, // Noto Sans 16px
     })
-    .catch(async (errors) => {
+    .catch((errors) => {
       if (throwOnLatexError) {
         throw errors
       } else {
