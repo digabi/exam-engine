@@ -6823,9 +6823,9 @@ html-escaper@^2.0.0:
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
 html-inline-css-webpack-plugin@^1.8.0:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/html-inline-css-webpack-plugin/-/html-inline-css-webpack-plugin-1.8.1.tgz#8c0af5b2fec3cd91e054c14d54c6688a8be9c156"
-  integrity sha512-j5+l24Ke1mO0HI+8icUntqIiSKihlJraQkMdL4Iw8LNKdd+1Vf50zs26yLsddsa664ZQWXr3RwlV4lRDW21U5w==
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/html-inline-css-webpack-plugin/-/html-inline-css-webpack-plugin-1.9.0.tgz#b857d45dc9737583245cbcd5ee0cbda5984b29bf"
+  integrity sha512-Wx9AlJGoDvfdRlc9JE4eN9Udlr02ExCLNHSofaazQy+eHyjgp/Rz6cjaJkuWv3MAS9uitWW00WcGWrfxsTD6hg==
   dependencies:
     lodash "^4.17.15"
 
