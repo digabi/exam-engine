@@ -61,6 +61,5 @@ module.exports = function () {
     performance: {
       hints: false,
     },
-    node: false,
   }
 }
