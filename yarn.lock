@@ -8489,9 +8489,9 @@ levn@~0.3.0:
     type-check "~0.3.2"
 
 libxmljs2@^0.26.0:
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.26.1.tgz#447a7f05142028c10a947388a108aa0fa9005263"
-  integrity sha512-7qPFyQEVSsYGR3iNKcpJOPSB7tJCJ9uT07mXohWGk66Z+JuEmoiNU3GsndRPOWK5Cmo2QGNlC4d8cVPTDCJItA==
+  version "0.26.3"
+  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.26.3.tgz#1057506f253214622a75106406dba6f429d9e0b3"
+  integrity sha512-gEIHrcfKB6P8AidCCd1TMrffwoDkIx7hFV9IGVDaj4UwkQ2L47dVbhr2jLMU1g0t0+j39RGPrXN7/UXfi4OQgQ==
   dependencies:
     "@marudor/node-pre-gyp" "^0.16.1"
     bindings "~1.5.0"
