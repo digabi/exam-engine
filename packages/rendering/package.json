@@ -17,7 +17,7 @@
     "@digabi/exam-engine-mastering": "14.1.2",
     "babel-loader": "^8.0.6",
     "child-process-promise": "^2.2.1",
-    "css-loader": "^4.0.0",
+    "css-loader": "^5.0.0",
     "dexie": "^3.0.0",
     "ffmpeg-static": "^4.0.1",
     "file-loader": "^6.0.0",
