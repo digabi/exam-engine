@@ -2403,9 +2403,9 @@
   integrity sha512-FwI9gX75FgVBJ7ywgnq/P7tw+/o1GUbtP0KzbtusLigAOgIgNISRK0ZPl4qertvXSIE8YbsVJueQ90cDt9YYyw==
 
 "@types/mini-css-extract-plugin@^1.0.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/mini-css-extract-plugin/-/mini-css-extract-plugin-1.2.0.tgz#83cf931fcdc009c22673c186e9fc2636ea6a5e08"
-  integrity sha512-X9BKNpY7Rcy9rELks/wu88DS1FfbGnM9ZccxPRXF2TOAksiIeefWj0CaVMYGufhFbMNH5M9JygsB96rlYYsKTA==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/mini-css-extract-plugin/-/mini-css-extract-plugin-1.2.1.tgz#f43fb28a411e89fc3c258b25d66bd9345dc71395"
+  integrity sha512-4/cdB1GdB9va4v/K7ivBVqNrcELjVbkgivEtqBjp/z54pqn1AYRHvQ0v97WOZgz/ilMXzG1aGM+3C1DRxp3XZw==
   dependencies:
     "@types/webpack" "*"
 
