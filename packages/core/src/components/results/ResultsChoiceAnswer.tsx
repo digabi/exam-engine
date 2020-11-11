@@ -1,9 +1,7 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { createRenderChildNodes, ExamComponentProps } from '../../createRenderChildNodes'
+import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
-import ExamAttachment from '../ExamAttachment'
-import Image from '../Image'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
 import { QuestionId } from '../..'
@@ -17,12 +15,14 @@ interface ChoiceAnswerOptionProps extends ExamComponentProps {
   isCorrect: boolean
 }
 
-const renderChildNodes = createRenderChildNodes({
-  attachment: ExamAttachment,
-  image: Image,
-})
-
-function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrect }: ChoiceAnswerOptionProps) {
+function ChoiceAnswerOption({
+  renderChildNodes,
+  selected,
+  element,
+  questionId,
+  direction,
+  isCorrect,
+}: ChoiceAnswerOptionProps) {
   const { t } = useTranslation()
   const className = element.getAttribute('class')
   const optionId = element.getAttribute('option-id')!
@@ -72,7 +72,7 @@ function ChoiceAnswerOption({ selected, element, questionId, direction, isCorrec
   )
 }
 
-function ResultsChoiceAnswer({ element }: ExamComponentProps) {
+function ResultsChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = answersByQuestionId[questionId]
