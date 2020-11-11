@@ -34,7 +34,7 @@ export async function delay(millis: number): Promise<void> {
 // Normally unused, but very useful for debugging
 export async function halt(page: Page): Promise<void> {
   console.error('Test execution halted')
-  await page.waitFor(2000000) // 2 million milliseconds should be enough for everybody
+  await page.waitForTimeout(2000000) // 2 million milliseconds should be enough for everybody
 }
 
 export async function getInnerText(page: Page, selector: string): Promise<string> {

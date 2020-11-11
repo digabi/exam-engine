@@ -43,7 +43,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   }
 
   async function expectQuestionToBeVisible(visible: boolean) {
-    await page.waitFor(
+    await page.waitForFunction(
       (innerVisible) => {
         const element = document.getElementById('1')
         return innerVisible ? element != null : element == null
@@ -54,7 +54,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   }
 
   async function assertFirstSectionReturned() {
-    await page.waitFor(() => {
+    await page.waitForFunction(() => {
       const maybeNotification = document.querySelector('.e-cas-controls .notification')
       if (maybeNotification) {
         return maybeNotification.textContent!.trim() === 'A-osa palautettu'
