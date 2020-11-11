@@ -1,17 +1,23 @@
-import { GradingStructure, Score } from '../..'
 import React, { useContext, useEffect } from 'react'
 import { I18nextProvider, useTranslation } from 'react-i18next'
+import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
-import { findChildElement } from '../../dom-utils'
+import { findChildElement, queryAncestors } from '../../dom-utils'
 import { changeLanguage, initI18n } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
+import { useCached } from '../../useCached'
+import mkAttachmentLink from '../AttachmentLink'
+import mkAttachmentLinks from '../AttachmentLinks'
 import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
 import { CommonExamProps } from '../Exam'
+import ExamAttachment from '../ExamAttachment'
 import ExamQuestionInstruction from '../ExamQuestionInstruction'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
+import Image from '../Image'
 import RenderChildNodes from '../RenderChildNodes'
+import { renderIf } from '../RenderIf'
 import ResultsChoiceAnswer from './ResultsChoiceAnswer'
 import { ResultsContext, withResultsContext } from './ResultsContext'
 import ResultsDropdownAnswer from './ResultsDropdownAnswer'
@@ -20,9 +26,6 @@ import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
 import ResultsExamSection from './ResultsExamSection'
 import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
 import ResultsTextAnswer from './ResultsTextAnswer'
-import { useCached } from '../../useCached'
-import mkAttachmentLink from '../AttachmentLink'
-import mkAttachmentLinks from '../AttachmentLinks'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -35,7 +38,7 @@ export interface ResultsProps extends CommonExamProps {
 }
 
 const renderChildNodes = createRenderChildNodes({
-  attachment: RenderChildNodes,
+  attachment: ExamAttachment,
   'attachment-link': mkAttachmentLink('plain'),
   'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
@@ -44,6 +47,7 @@ const renderChildNodes = createRenderChildNodes({
   formula: Formula,
   question: ResultsExamQuestion,
   hints: RenderChildNodes,
+  image: renderIf(({ element }) => queryAncestors(element, 'choice-answer') != null)(Image),
   'question-instruction': ExamQuestionInstruction,
   'question-title': ResultsExamQuestionTitle,
   section: ResultsExamSection,
