@@ -11,7 +11,6 @@ import mkAttachmentLinks from '../AttachmentLinks'
 import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
 import { CommonExamProps } from '../Exam'
-import ExamAttachment from '../ExamAttachment'
 import ExamQuestionInstruction from '../ExamQuestionInstruction'
 import ExamSectionTitle from '../ExamSectionTitle'
 import Formula from '../Formula'
@@ -38,7 +37,7 @@ export interface ResultsProps extends CommonExamProps {
 }
 
 const renderChildNodes = createRenderChildNodes({
-  attachment: ExamAttachment,
+  attachment: RenderChildNodes,
   'attachment-link': mkAttachmentLink('plain'),
   'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
