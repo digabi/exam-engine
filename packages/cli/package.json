@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-cli",
-  "version": "14.1.4",
+  "version": "14.1.5",
   "main": "index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -10,8 +10,8 @@
     "ee": "./dist/index.js"
   },
   "dependencies": {
-    "@digabi/exam-engine-mastering": "14.1.4",
-    "@digabi/exam-engine-rendering": "14.1.4",
+    "@digabi/exam-engine-mastering": "14.1.5",
+    "@digabi/exam-engine-rendering": "14.1.5",
     "lodash": "^4.17.15",
     "ora": "^5.0.0",
     "uuid": "^8.0.0",
