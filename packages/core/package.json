@@ -48,7 +48,7 @@
     "react-dom": "16.x",
     "react-i18next": "^11.2.5",
     "react-redux": "^7.1.3",
-    "react-test-renderer": "16.x",
+    "react-test-renderer": "17.x",
     "redux": "^4.0.1",
     "redux-saga": "^1.1.3",
     "redux-saga-test-plan": "^4.0.0-rc.3",
