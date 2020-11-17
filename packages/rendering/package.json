@@ -33,7 +33,7 @@
     "postcss-loader": "^4.0.1",
     "postcss-preset-env": "^6.7.0",
     "puppeteer": "^5.0.0",
-    "react": "16.x",
+    "react": "17.x",
     "react-dom": "17.x",
     "rich-text-editor": "^6.0.3",
     "tmp-promise": "^3.0.2",
