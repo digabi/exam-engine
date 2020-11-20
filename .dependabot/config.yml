@@ -7,4 +7,4 @@ update_configs:
     automerged_updates:
       - match:
           dependency_type: 'all'
-          update_type: 'all'
+          update_type: 'in_range'
