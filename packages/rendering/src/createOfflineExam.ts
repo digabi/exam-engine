@@ -62,7 +62,7 @@ function getExamOutputDirectory(result: MasteringResult, examFile: string, outpu
 
 async function runWebpack(result: MasteringResult, examOutputDirectory: string, options: CreateOfflineExamOptions) {
   const config = getOfflineWebpackConfig(result, examOutputDirectory, options)
-  await new Promise<string>((resolve, reject) => {
+  await new Promise<string | void>((resolve, reject) => {
     webpack(config, (err, stats) => {
       if (err || stats.hasErrors()) {
         reject(err || stats.toString({ colors: true }))
