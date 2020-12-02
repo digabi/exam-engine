@@ -612,7 +612,8 @@ function parseAnswer(element: Element, question: Element) {
 
 function parseQuestion(question: Element): Question {
   const childQuestions = question
-    .find<Element>('.//e:question[ancestor::e:question[1][self::*]]', ns)
+    .find<Element>('.//e:question', ns)
+    .filter((childQuestion) => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
   if (childQuestions.length) {
     return { element: question, childQuestions, answers: [] }
