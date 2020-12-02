@@ -1,5 +1,5 @@
 import { listExams } from '@digabi/exam-engine-exams'
-import { choiceAnswer, dropdownAnswer, generateExam, question } from '@digabi/exam-engine-generator'
+import { choiceAnswer, dropdownAnswer, generateExam, question, textAnswer } from '@digabi/exam-engine-generator'
 import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import { wrap } from 'jest-snapshot-serializer-raw'
@@ -82,6 +82,22 @@ describe('Exam mastering', () => {
         ],
       },
     ])
+  })
+
+  it('supports arbitrarily nested questions', async () => {
+    const xml = generateExam({
+      sections: [
+        {
+          questions: [
+            question([question([textAnswer()]), question([textAnswer()])]),
+            question([question([question([textAnswer()]), question([textAnswer()])])]),
+            question([question([question([question([textAnswer()]), question([textAnswer()])])])]),
+          ],
+        },
+      ],
+    })
+    const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
+    expect(wrap(masteringResult.xml)).toMatchSnapshot('xml')
   })
 
   for (const exam of listExams()) {

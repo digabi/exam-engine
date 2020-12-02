@@ -20275,3 +20275,57 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 <e:exam-footer><p class="e-text-center e-semibold">Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.</p></e:exam-footer></e:exam>
 
 `;
+
+exports[`Exam mastering supports arbitrarily nested questions: xml 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="36">
+  
+  <e:exam-title>Kokeen otsikko</e:exam-title>
+  <e:section display-number="1" max-score="36">
+    <e:section-title>Osan otsikko</e:section-title>
+    <e:question display-number="1" max-score="12">
+      <e:question-title>Kysymyksen otsikko</e:question-title>
+      <e:question display-number="1.1" max-score="6">
+        <e:question-title>Kysymyksen otsikko</e:question-title>
+        <e:text-answer max-score="6" type="rich-text" display-number="1.1" question-id="1"/>
+      </e:question>
+      <e:question display-number="1.2" max-score="6">
+        <e:question-title>Kysymyksen otsikko</e:question-title>
+        <e:text-answer max-score="6" type="rich-text" display-number="1.2" question-id="2"/>
+      </e:question>
+    </e:question>
+    <e:question display-number="2" max-score="12">
+      <e:question-title>Kysymyksen otsikko</e:question-title>
+      <e:question display-number="2.1" max-score="12">
+        <e:question-title>Kysymyksen otsikko</e:question-title>
+        <e:question display-number="2.1.1" max-score="6">
+          <e:question-title>Kysymyksen otsikko</e:question-title>
+          <e:text-answer max-score="6" type="rich-text" display-number="2.1.1" question-id="3"/>
+        </e:question>
+        <e:question display-number="2.1.2" max-score="6">
+          <e:question-title>Kysymyksen otsikko</e:question-title>
+          <e:text-answer max-score="6" type="rich-text" display-number="2.1.2" question-id="4"/>
+        </e:question>
+      </e:question>
+    </e:question>
+    <e:question display-number="3" max-score="12">
+      <e:question-title>Kysymyksen otsikko</e:question-title>
+      <e:question display-number="3.1" max-score="12">
+        <e:question-title>Kysymyksen otsikko</e:question-title>
+        <e:question display-number="3.1.1" max-score="12">
+          <e:question-title>Kysymyksen otsikko</e:question-title>
+          <e:question display-number="3.1.1.1" max-score="6">
+            <e:question-title>Kysymyksen otsikko</e:question-title>
+            <e:text-answer max-score="6" type="rich-text" display-number="3.1.1.1" question-id="5"/>
+          </e:question>
+          <e:question display-number="3.1.1.2" max-score="6">
+            <e:question-title>Kysymyksen otsikko</e:question-title>
+            <e:text-answer max-score="6" type="rich-text" display-number="3.1.1.2" question-id="6"/>
+          </e:question>
+        </e:question>
+      </e:question>
+    </e:question>
+  </e:section>
+</e:exam>
+
+`;
