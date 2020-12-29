@@ -24,7 +24,7 @@
     "html-inline-css-webpack-plugin": "^1.8.0",
     "html-webpack-plugin": "^4.0.3",
     "js-cookie": "^2.2.1",
-    "less": "^3.10.3",
+    "less": "^4.0.0",
     "less-loader": "^7.0.0",
     "less-plugin-glob": "^3.0.0",
     "mini-css-extract-plugin": "^1.0.0",
