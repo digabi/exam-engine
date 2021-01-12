@@ -13,6 +13,7 @@ interface ChoiceAnswerOptionProps extends ExamComponentProps {
   selected: boolean
   onSelect: (event: React.ChangeEvent<HTMLInputElement>) => void
   direction: string
+  value: string
 }
 
 function ChoiceAnswerOption({
@@ -22,9 +23,10 @@ function ChoiceAnswerOption({
   questionId,
   onSelect,
   direction,
+  value,
 }: ChoiceAnswerOptionProps) {
   const className = element.getAttribute('class')
-  const optionId = element.getAttribute('option-id')!
+
   const content = (
     <div
       className={classNames('e-choice-answer-option e-column', className, {
@@ -48,7 +50,7 @@ function ChoiceAnswerOption({
           className="e-radio-button e-column e-column--narrow"
           name={String(questionId)}
           onChange={onSelect}
-          value={optionId}
+          value={value}
           checked={selected}
         />
         {content}
@@ -62,7 +64,7 @@ function ChoiceAnswerOption({
           className="e-radio-button"
           name={String(questionId)}
           onChange={onSelect}
-          value={optionId}
+          value={value}
           checked={selected}
         />
         {content}
@@ -95,7 +97,9 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
       >
         {mapChildElements(element, (childElement) => {
           const optionId = childElement.getAttribute('option-id')!
-          const selected = answer != null && answer.value === optionId
+          const isNoAnswer = childElement.getAttribute('type') === 'no-answer'
+          const value = isNoAnswer ? '' : optionId
+          const selected = answer != null && answer.value === value
 
           return (
             <ChoiceAnswerOption
@@ -107,6 +111,7 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
                 key: optionId,
                 direction,
                 selected,
+                value,
               }}
             />
           )

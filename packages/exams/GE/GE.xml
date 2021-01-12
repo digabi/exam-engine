@@ -1,0 +1,1572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5">
+  <e:languages>
+    <e:language>fi-FI</e:language>
+    <e:language>sv-FI</e:language>
+  </e:languages>
+
+  <e:exam-instruction>
+    <e:localization lang="fi-FI">
+      <p>
+        Koe koostuu yhdeksästä tehtävästä, joista vastataan viiteen. Tehtävät on jaettu kolmeen osaan. Osassa I on yksi kaikille pakollinen 20 pisteen tehtävä. Osassa II on neljä 20 pisteen tehtävää, joista vastataan kahteen. Osassa III on neljä 30 pisteen tehtävää, joista vastataan kahteen. Kokeen maksimipistemäärä on 120. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen.
+      </p>
+      <p>
+        Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+      </p>
+    </e:localization>
+    <e:localization lang="sv-FI">
+      <p>
+        Provet består av nio uppgifter av vilka fem ska besvaras. Uppgifterna är indelade i tre delar. Del I omfattar en 20-poängsuppgift som är obligatorisk för alla. Del II omfattar fyra 20-poängsuppgifter av vilka två ska besvaras. Del III omfattar fyra 30-poängsuppgifter av vilka två ska besvaras. Det maximala antalet poäng i provet är 120. Om du vill kan du skapa figurer, diagram eller tabeller som stöd för svaret och bifoga en skärmdump av dem till vilket textsvar som helst.
+      </p>
+      <p>
+        Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
+      </p>
+    </e:localization>
+  </e:exam-instruction>
+  <e:table-of-contents />
+  <e:section max-answers="1">
+    <e:section-title>
+      <e:localization lang="fi-FI">
+        20 pisteen tehtävä
+      </e:localization>
+      <e:localization lang="sv-FI">
+        20-poängsuppgift
+      </e:localization>
+    </e:section-title>
+
+    <!-- 1 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">
+          Väittämiä maantieteen eri osa-alueilta
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Påståenden om olika delområden inom geografin
+        </e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Valitse kustakin kohdasta 1.1.–1.10. väittämä, joka on
+          <b>virheellinen</b>
+          . Virheellisiä väittämiä on kussakin tehtäväkohdassa vain yksi. Oikeasta valinnasta saat kaksi pistettä, väärästä valinnasta sinulta vähennetään yksi piste. Vastaamatta jättämisestä annetaan nolla pistettä.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Välj för respektive moment 1.1.–1.10. det påstående som är
+          <b>falskt</b>
+          . I varje uppgiftsmoment finns endast ett påstående som är falskt. För rätt alternativ får du två poäng, väljer du fel alternativ dras en poäng av. Om du väljer att inte svara ges noll poäng.
+        </e:localization>
+      </e:question-instruction>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Eroosio
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Erosion
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Virtaava vesi on maapallon merkittävin eroosiovoima.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Ilmastonmuutoksen seurauksena sään ääri-ilmiöt yleistyvät ja eroosio voimistuu.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Kaikkein kuivimmilla alueilla eroosiota ei tapahdu juuri lainkaan.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Ihminen on omilla toimillaan voimistanut eroosiota maapallolla.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Flödande vatten är den mest betydande erosionskraften på jorden.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Som en konsekvens av klimatförändringen blir extrema väderfenomen vanligare och erosionen kraftigare.</e:choice-answer-option>
+            <e:choice-answer-option score="2">I de allra torraste områdena förekommer knappt någon erosion överhuvudtaget.</e:choice-answer-option>
+            <e:choice-answer-option score="-1"> Människans agerande har lett till kraftigare erosion på jorden.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Pakolaisuus ja siirtolaisuus
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Flyktingskap och migration
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Pakolainen on ihminen, joka joutuu pakenemaan kotiseudultaan vainon vuoksi.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Turvapaikanhakijalla tarkoitetaan ihmistä, joka pyytää oleskelulupaa ja suojelua toisesta maasta.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Siirtolaisuus on vapaaehtoista muuttamista toiseen maahan esimerkiksi paremman toimeentulon saamiseksi.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Ympäristöpakolaisella tarkoitetaan ihmistä, joka jää kriisialueelta paettuaan sen välittömään lähiympäristöön pakolaisleirille.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">En flykting är en person som tvingas fly från sin hembygd på grund av förföljelse.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">En asylsökande är en person som begär uppehållstillstånd och skydd i ett annat land.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Migration innebär att en person frivilligt flyttar till ett annat land, till exempel för att uppnå bättre försörjningsmöjligheter.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Miljöflykting syftar på en person som efter att ha flytt från ett krisområde blir kvar på ett flyktingläger i krisområdets närmiljö.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Sade
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Regn
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Konvektiosade syntyy, kun aurinko lämmittää voimakkaasti maanpintaa, jolloin ilmamassa kohoaa ja kosteus tiivistyy sateeksi.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Orografinen sade syntyy, kun kostea ilmamassa joutuu kohoamaan rannikon tai vuoriston takia, jolloin se jäähtyy ja sen kosteus tiivistyy sateeksi.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Konvektiosateet ovat yleisimpiä maapallon kylmillä alueilla ja Suomessa talvisaikaan.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Vuoriston ylittänyt ilmamassa yleensä kuivuu ja lämpenee.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Konvektionsregn uppstår när solen intensivt värmer jordens yta vilket gör att en luftmassa stiger och fukt kondenseras till regn.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Orografiskt regn uppstår när en fuktig luftmassa är tvungen att stiga på grund av en kust eller en bergskedja, vilket gör att luftmassan kyls ner och fukt kondenseras till regn.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Konvektionsregn är vanligast i de kalla områdena på jorden och i Finland vintertid.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">En luftmassa som har överskridit en bergskedja brukar bli torrare och varmare.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Maapallon rakenne
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Jordens uppbyggnad
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="2">Litosfääri on sula kerros Maan ytimen ja kuoren välissä.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Mereinen kuori on mantereista kuorta ohuempi.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Maan ydin voidaan jakaa kiinteään sisäytimeen ja sulaan ulkoytimeen.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Sulan kiviaineksen liikkeet Maan ytimessä aiheuttavat voimakkaita sähkövirtoja, jotka saavat aikaan magneettikentän.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="2">Litosfären är ett smält skikt mellan jordens kärna och skorpan.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Jordskorpan under hav är tunnare än den kontinentala skorpan.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Jordens kärna kan delas upp i den fasta inre kärnan och den smälta yttre kärnan.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Cirkulationen av smält stenmaterial i jordens kärna ger upphov till starka elektriska strömmar som genererar ett magnetfält.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Biomit
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Biom
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Sademetsiä esiintyy sekä tropiikissa että subtropiikissa alueilla, joilla sataa runsaasti.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Vuorenrinnettä noustaessa voidaan havaita samantyyppisiä kasvillisuusvyöhykkeitä kuin merenpinnan tasossa napoja kohti kuljettaessa.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Savannien kasvillisuus kärsii kuivuudesta läpi vuoden.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Lauhkeille lehtimetsille on tyypillistä, että lehtipuut pudottavat lehtensä talveksi.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Regnskogar förekommer både i tropikerna och i subtropiska områden där det regnar mycket.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Då man rör sig uppför en bergssluttning kan man observera samma typer av vegetationszoner som då man rör sig mot polerna på havsnivå.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Vegetationen på savanner lider av torka året om.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Det är typiskt för tempererade lövskogar att lövträden fäller sina löv till vintern.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Uusiutumattomat energianlähteet
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Icke-förnybara energikällor
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Ydinvoima kuuluu uusiutumattomiin energianlähteisiin.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Öljy ja kivihiili tuottavat palaessaan happamoittavia päästöjä, kuten rikin oksideja.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Nesteytetty maakaasu ei tuota palaessaan kasvihuonekaasupäästöjä.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Turvetta syntyy hyvin hitaasti, joten se lasketaan uusiutumattomiin energianlähteisiin.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Kärnkraft hör till de icke-förnybara energikällorna.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Förbränning av olja och kol orsakar försurande utsläpp, såsom svaveloxider.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Förbränning av flytande naturgas ger inte upphov till utsläpp av växthusgaser.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Torv uppstår mycket långsamt och räknas därför som en icke-förnybar energikälla.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Väestönkasvu
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Befolkningstillväxt
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="2">Väestöllisen muuntumisen mallin toisessa vaiheessa väestönkasvu on pysähtynyt.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Väestöpyramideista voidaan päätellä väestöllisen muuntumisen mallin vaiheita.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Maapallon väkiluku on kasvanut voimakkaasti viimeisten sadan vuoden aikana.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Väestönkasvu on nopeinta kehittyvissä maissa, erityisesti Afrikan alueella.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="2">I den andra fasen av den demografiska transitionsmodellen har befolkningstillväxten upphört.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Med befolkningspyramider kan man fastställa skeden i den demografiska transitionsmodellen.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Jordens befolkning har vuxit kraftigt under de senaste 100 åren.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Befolkningstillväxten är snabbast i utvecklingsländerna, särskilt i Afrika.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Satelliittikuvia ja kaukokartoitusta
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Satellitbilder och fjärrkartering
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Kaukokartoitus perustuu heijastuksiin maapallon pinnasta ja niiden havainnointiin.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Kaukokartoituksessa satelliittien seismografeilla tutkitaan ilmakehän ominaisuuksia.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Laserkeilauksessa mittauslaite lähettää mitattavaan kohteeseen lasersäteitä.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Kaukokartoituksen avulla voidaan tutkia myös valtameriä ja niiden ominaisuuksia.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Fjärrkartering bygger på reflektioner från jordens yta och observation av dem.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Inom fjärrkartering undersöks atmosfärens egenskaper med hjälp av satelliternas seismografer.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Laserskanning bygger på laserstrålar som mätinstrumentet sänder mot målet.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Fjärrkartering kan också användas för att undersöka världshaven och deras egenskaper.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Kartan korkeuskäyrät
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Höjdkurvor på en karta
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Kartan korkeuskäyrien avulla nähdään, mihin suuntaan rinne viettää.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Kartan korkeuskäyrien avulla nähdään rinteen jyrkkyys.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Kartan korkeuskäyrien avulla voidaan piirtää korkeusprofiili.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Kartan korkeuskäyrät kääntyvät Coriolis-ilmiön takia eteläisellä pallonpuoliskolla aina oikealle.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Med hjälp av höjdkurvorna på en karta ser man åt vilket håll en sluttning lutar.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Med hjälp av höjdkurvorna på en karta ser man hur brant en sluttning är.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Med hjälp av höjdkurvorna på en karta kan man rita en höjdprofil.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Höjdkurvorna på en karta svänger alltid till höger på södra halvklotet på grund av corioliseffekten.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Paikkatieto ja kartat
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Geodata och kartor
+          </e:localization>
+        </e:question-title>
+        <e:localization lang="fi-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Karttaprojektion avulla maapallon kaareva pinta kuvataan tasona.</e:choice-answer-option>
+            <e:choice-answer-option score="2">Kartta on aina mittakaavassa suurennettu kuva maapallon pinnasta.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Koordinaatiston avulla pisteen sijainti kartalla voidaan ilmoittaa kahden akselin (x, y) lukuarvoina.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Paikkatieto sisältää sekä sijaintitietoa että ominaisuustietoa.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <e:choice-answer ordering="fixed">
+            <e:choice-answer-option score="-1">Med hjälp av en kartprojektion avbildas jordens välvda yta som ett plan.</e:choice-answer-option>
+            <e:choice-answer-option score="2">En karta är alltid en avbildning av jordens yta i förstorad skala.</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Med hjälp av ett koordinatsystem kan positionen för en punkt på kartan anges med talvärden på två axlar (x, y).</e:choice-answer-option>
+            <e:choice-answer-option score="-1">Geodata innehåller både lägesdata och attributdata.</e:choice-answer-option>
+            <e:choice-answer-option score="0" type="no-answer">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        </e:localization>
+      </e:question>
+    </e:question>
+  </e:section>
+
+
+  <e:section max-answers="2">
+    <e:section-title>
+      <e:localization lang="fi-FI">
+        20 pisteen tehtävät
+      </e:localization>
+      <e:localization lang="sv-FI">
+        20-poängsuppgifter
+      </e:localization>
+    </e:section-title>
+
+    <!-- 2 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Olympialaiset ja ympäristö
+        </e:localization>
+        <e:localization lang="sv-FI">Olympiska spelen och miljön
+        </e:localization>
+      </e:question-title>
+
+      <e:question-instruction>
+        <e:localization lang="fi-FI">Vuoden 2021 kesäolympialaisten järjestäjäkaupunkina toimii Japanin Tokio.</e:localization>
+        <e:localization lang="sv-FI">De olympiska sommarspelen 2021 arrangeras av Tokyo i Japan.</e:localization>
+      </e:question-instruction>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Olympialaisilla on monia vaikutuksia ympäristöön. Pohdi Tokion olympiakisojen ympäristövaikutuksia järjestäjäkaupunki Tokioon sekä globaalilla tasolla.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            De olympiska spelen har många konsekvenser för miljön. Diskutera miljöpåverkan som de olympiska spelen i Tokyo har i arrangörsstaden Tokyo och på en global nivå.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Miten olympialaisten haitallisia ympäristövaikutuksia voidaan vähentää? Tarkastele ratkaisukeinoja haittojen vähentämiseksi sekä järjestäjäkaupunki Tokion että yksittäisen matkailijan kannalta.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Hur kan man minska på de negativa miljökonsekvenserna av de olympiska spelen? Diskutera lösningar för att minska skadorna ur både arrangörsstaden Tokyos och en enskild resenärs perspektiv.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" />
+      </e:question>
+    </e:question>
+
+    <!-- 3 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Kylmyyden vaikutukset maaperään ja kallioperään</e:localization>
+        <e:localization lang="sv-FI">Köldens inverkan på jordtäcket och berggrunden</e:localization>
+      </e:question-title>
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Talvisin sekä maaperässä että kallioperässä oleva vesi saattaa jäätyä. Maaperässä olevaa jäätynyttä vettä nimitetään roudaksi. Ikiroudaksi
+          <e:attachment-link type="long" ref="3A" />
+          puolestaan kutsutaan ilmiötä, jossa maaperä on ollut jäätyneenä vähintään kaksi vuotta yhtäjaksoisesti eli myös kesän ajan. Ikiroutaa esiintyy lähinnä arktisilla alueilla, joilla on talvisin riittävän kylmä.
+        </e:localization>
+        <e:localization lang="sv-FI">
+          På vintern kan vattnet i både jordtäcket och berggrunden frysa. Fruset vatten som förekommer i jordtäcket kallas tjäle. Permafrost
+          <e:attachment-link type="long" ref="3A" />
+          kallas däremot fenomenet då vatten i jordtäcket varit fruset oavbrutet i minst två år, det vill säga också över sommaren. Permafrost förekommer främst i arktiska områden som är tillräckligt kalla under vintern.
+        </e:localization>
+      </e:question-instruction>
+
+      <e:external-material>
+        <e:attachment name="3A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kuva: Ikiroutaa Alaskassa
+              </e:localization>
+            <e:localization lang="sv-FI">Bild: Permafrost i Alaska
+              </e:localization>
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Benjamin Jones</e:author>
+            <e:title>U.S. Geological Survey</e:title>
+            <e:url>https://www.flickr.com/photos/usgeologicalsurvey/32682616471/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Miten maa- ja kallioperässä esiintyvä jää muuttaa maanpinnan muotoja? Käytä vastauksessasi maantieteellisiä käsitteitä.</e:localization>
+          <e:localization lang="sv-FI">Hur förändras jordytans former av is som förekommer i jordtäcket och berggrunden? Använd geografiska begrepp i ditt svar.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Selitä, miten routa vaikuttaa ihmistoimintaan.</e:localization>
+          <e:localization lang="sv-FI">Förklara hur tjälen påverkar mänsklig aktivitet.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Ilmastonmuutos sulattaa ikiroutaa. Pohdi, minkälaisia vaikutuksia ikiroudan häviämisellä on ympäristölle ja mitä seurauksia sillä on ihmiselle.</e:localization>
+          <e:localization lang="sv-FI">Klimatförändringen får permafrosten att smälta. Diskutera hurdana effekter försvinnandet av permafrosten har för miljön och vilka följder det har för människan.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" />
+      </e:question>
+    </e:question>
+
+    <!-- 4 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Köyhyys</e:localization>
+        <e:localization lang="sv-FI">Fattigdom</e:localization>
+      </e:question-title>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+              Mitä tarkoitetaan suhteellisella köyhyydellä?
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Vad menas med relativ fattigdom?
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="2" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+              Kuvaile köyhyyden alueellisia eroja globaalilla tasolla. Kuvaa kaksi keskeistä syytä näihin eroihin.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Redogör för de regionala skillnaderna i fattigdom på global nivå. Beskriv två centrala orsaker till skillnaderna.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+              Kuvaile köyhyyden alueellisia eroja Suomessa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Redogör för de regionala skillnaderna i fattigdom i Finland. Beskriv två centrala orsaker till skillnaderna.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+              Kuvaile köyhyyden alueellisia eroja valitsemassasi ja nimeämässäsi suomalaisessa kunnassa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Välj och namnge en finländsk kommun och redogör för de regionala skillnaderna i fattigdom i den. Beskriv två centrala orsaker till skillnaderna.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+    </e:question>
+
+    <!-- 5 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Pyörällä Afrikan halki </e:localization>
+        <e:localization lang="sv-FI">På cykel genom Afrika</e:localization>
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="5A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Afrikan kartta ja reittivaihtoehdot
+            </e:localization>
+            <e:localization lang="sv-FI">Karta: Karta över Afrika och ruttalternativ
+            </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:author>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Ebolariski Afrikassa
+              </e:localization>
+            <e:localization lang="sv-FI">Karta: Risk för Ebola i Afrika
+              </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <p>Karttaan merkityillä alueilla on todennäköistä, että lepakot kantavat ebolavirusta.</p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>I områdena utmärkta på kartan är det sannolikt att fladdermöss bär på ebolaviruset.</p>
+          </e:localization>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Pigott ym. 2014. eLife 2014:3</e:localization>
+              <e:localization lang="sv-FI">Pigott m.fl. 2014. eLife 2014:3</e:localization>
+            </e:author>
+            <e:url>https://elifesciences.org/articles/04395</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5C">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Keskilämpötilat Afrikassa
+                </e:localization>
+            <e:localization lang="sv-FI">Karta: Medeltemperaturer i Afrika
+                </e:localization>
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Paaijmans ym. 2010. PNAS 107, 15135-15139</e:localization>
+              <e:localization lang="sv-FI">Paaijmans m.fl. 2010. PNAS 107, 15135-15139</e:localization>
+            </e:author>
+            <e:url>https://www.pnas.org/content/107/34/15135</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5D">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Ulkoministeriön matkustustiedotteet Afrikalle
+                  </e:localization>
+            <e:localization lang="sv-FI">Karta: Utrikesministeriets resemeddelanden för Afrika
+                  </e:localization>
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Suomen ulkoministeriö, matkustustiedotteet</e:localization>
+              <e:localization lang="sv-FI">Finlands utrikesministerium, resemeddelanden</e:localization>
+            </e:author>
+            <e:url>https://um.fi/matkustustiedotteet-a-o</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:note>
+              <e:localization lang="fi-FI">Karttaesitys: YTL</e:localization>
+              <e:localization lang="sv-FI">Kartpresentation: SEN</e:localization>
+            </e:note>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question-instruction>
+        <e:localization lang="fi-FI">
+          Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä. 
+        </e:localization>
+        <e:localization lang="sv-FI">
+          Du planerar en cykeltur över hela den afrikanska kontinenten från Tunisiens huvudstad Tunis till Kapstaden i Sydafrika. Resan startar i början av februari och målet är att nå Kapstaden före slutet av juni.
+        </e:localization>
+      </e:question-instruction>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Tutustu aineistoihin
+            <e:attachment-links type="short">
+              <e:attachment-link ref="5A" />
+              <e:attachment-link ref="5B" />
+              <e:attachment-link ref="5C" />
+              <e:attachment-link ref="5D" />
+            </e:attachment-links>
+            ja valitse aineistossa
+            <e:attachment-link type="short" ref="5A" />
+            esitetyistä kolmesta reittivaihtoehdosta mielestäsi paras. Perustele valintasi arvioimalla eri reittien hyviä ja huonoja puolia. Hyödynnä vastauksessasi kaikkia aineistoja.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Studera materialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="5A" />
+              <e:attachment-link ref="5B" />
+              <e:attachment-link ref="5C" />
+              <e:attachment-link ref="5D" />
+            </e:attachment-links>
+            och välj det ruttalternativ som du anser vara bäst av de tre rutter som presenteras i material
+            <e:attachment-link type="short" ref="5A" />
+            . Motivera ditt val genom att utvärdera de olika rutternas fördelar och nackdelar. Utnyttja allt material i ditt svar.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+                Kuvaile, minkälaisia maisematyyppejä ja minkälaisia alueellisia riskejä pyöräilijä kohtaa valitsemallasi reitillä. Etene kuvauksessasi reitin suuntaisesti.
+              </e:localization>
+          <e:localization lang="sv-FI">
+                Beskriv hurdana landskapstyper och regionala risker cyklisten står inför på den rutt du valt. Beskrivningen ska följa rutten i den riktning resan går.
+              </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" />
+      </e:question>
+    </e:question>
+
+  </e:section>
+  <e:section max-answers="2">
+    <e:section-title>
+      <e:localization lang="fi-FI">
+        30 pisteen tehtävät
+      </e:localization>
+      <e:localization lang="sv-FI">
+        30-poängsuppgifter
+      </e:localization>
+    </e:section-title>
+
+    <!-- 6 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Tulivuoret ja supertulivuoret
+        </e:localization>
+        <e:localization lang="sv-FI">Vulkaner och supervulkaner
+        </e:localization>
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="6A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Taulukko: Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä 150 viime vuoden ajalta
+              </e:localization>
+            <e:localization lang="sv-FI">Tabell: De kraftigaste vulkanutbrotten och deras offerantal de senaste 150 åren
+              </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <table class="e-table e-width-full">
+              <thead>
+                <tr>
+                  <th colspan="4">Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä viimeisten 150 vuoden ajalta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Tulivuori</th>
+                  <th class="e-text-center">Vuosi</th>
+                  <th class="e-text-center">VEI -indeksi</th>
+                  <th class="e-text-center">Uhrimäärä</th>
+                </tr>
+                <tr>
+                  <td>Krakatau</td>
+                  <td class="e-text-center">1883</td>
+                  <td class="e-text-center">6</td>
+                  <td class="e-text-center">36417</td>
+                </tr>
+                <tr>
+                  <td>Mount Tarawera</td>
+                  <td class="e-text-center">1886</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">108</td>
+                </tr>
+                <tr>
+                  <td>Mount Bandai</td>
+                  <td class="e-text-center">1888</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">447</td>
+                </tr>
+                <tr>
+                  <td>Mount Pelée</td>
+                  <td class="e-text-center">1902</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">33000</td>
+                </tr>
+                <tr>
+                  <td>Santa María</td>
+                  <td class="e-text-center">1902</td>
+                  <td class="e-text-center">6</td>
+                  <td class="e-text-center">6000</td>
+                </tr>
+                <tr>
+                  <td>La Soufrière</td>
+                  <td class="e-text-center">1902</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">1680</td>
+                </tr>
+                <tr>
+                  <td>Kelud</td>
+                  <td class="e-text-center">1919</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">5000</td>
+                </tr>
+                <tr>
+                  <td>Rabaul caldera</td>
+                  <td class="e-text-center">1937</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">507</td>
+                </tr>
+                <tr>
+                  <td>Mount Vesuvius</td>
+                  <td class="e-text-center">1944</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">20</td>
+                </tr>
+                <tr>
+                  <td>Mount Lamington</td>
+                  <td class="e-text-center">1951</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">2942</td>
+                </tr>
+                <tr>
+                  <td>Mount Agung</td>
+                  <td class="e-text-center">1963</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">1584</td>
+                </tr>
+                <tr>
+                  <td>Mount St. Helens</td>
+                  <td class="e-text-center">1980</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">57</td>
+                </tr>
+                <tr>
+                  <td>El Chichón</td>
+                  <td class="e-text-center">1982</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">3500</td>
+                </tr>
+                <tr>
+                  <td>Nevado del Ruiz</td>
+                  <td class="e-text-center">1985</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">23000</td>
+                </tr>
+                <tr>
+                  <td>Mount Pinatubo</td>
+                  <td class="e-text-center">1991</td>
+                  <td class="e-text-center">6</td>
+                  <td class="e-text-center">847</td>
+                </tr>
+                <tr>
+                  <td>Soufriere Hills Volcano</td>
+                  <td class="e-text-center">1997</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">19</td>
+                </tr>
+                <tr>
+                  <td>Nyiragongo</td>
+                  <td class="e-text-center">2002</td>
+                  <td class="e-text-center">1</td>
+                  <td class="e-text-center">147</td>
+                </tr>
+                <tr>
+                  <td>Mount Merapi</td>
+                  <td class="e-text-center">2010</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">353</td>
+                </tr>
+                <tr>
+                  <td>Nabro</td>
+                  <td class="e-text-center">2011</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">31</td>
+                </tr>
+                <tr>
+                  <td>Mount Ontake</td>
+                  <td class="e-text-center">2014</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">63</td>
+                </tr>
+                <tr>
+                  <td>Kelud</td>
+                  <td class="e-text-center">2014</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">2</td>
+                </tr>
+                <tr>
+                  <td>Anak Krakatau</td>
+                  <td class="e-text-center">2018</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">426</td>
+                </tr>
+                <tr>
+                  <td>Volcán de Fuego</td>
+                  <td class="e-text-center">2018</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">190</td>
+                </tr>
+              </tbody>
+            </table>
+          </e:localization>
+
+          <e:localization lang="sv-FI">
+            <table class="e-table e-width-full">
+              <thead>
+                <tr>
+                  <th colspan="4">De kraftigaste vulkanutbrotten och deras offerantal de senaste 150 åren</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Vulkan</th>
+                  <th class="e-text-center">År</th>
+                  <th class="e-text-center">VEI -skala</th>
+                  <th class="e-text-center">Antal offer</th>
+                </tr>
+                <tr>
+                  <td>Krakatau</td>
+                  <td class="e-text-center">1883</td>
+                  <td class="e-text-center">6</td>
+                  <td class="e-text-center">36417</td>
+                </tr>
+                <tr>
+                  <td>Mount Tarawera</td>
+                  <td class="e-text-center">1886</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">108</td>
+                </tr>
+                <tr>
+                  <td>Mount Bandai</td>
+                  <td class="e-text-center">1888</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">447</td>
+                </tr>
+                <tr>
+                  <td>Mount Pelée</td>
+                  <td class="e-text-center">1902</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">33000</td>
+                </tr>
+                <tr>
+                  <td>Santa María</td>
+                  <td class="e-text-center">1902</td>
+                  <td class="e-text-center">6</td>
+                  <td class="e-text-center">6000</td>
+                </tr>
+                <tr>
+                  <td>La Soufrière</td>
+                  <td class="e-text-center">1902</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">1680</td>
+                </tr>
+                <tr>
+                  <td>Kelud</td>
+                  <td class="e-text-center">1919</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">5000</td>
+                </tr>
+                <tr>
+                  <td>Rabaul caldera</td>
+                  <td class="e-text-center">1937</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">507</td>
+                </tr>
+                <tr>
+                  <td>Mount Vesuvius</td>
+                  <td class="e-text-center">1944</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">20</td>
+                </tr>
+                <tr>
+                  <td>Mount Lamington</td>
+                  <td class="e-text-center">1951</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">2942</td>
+                </tr>
+                <tr>
+                  <td>Mount Agung</td>
+                  <td class="e-text-center">1963</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">1584</td>
+                </tr>
+                <tr>
+                  <td>Mount St. Helens</td>
+                  <td class="e-text-center">1980</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">57</td>
+                </tr>
+                <tr>
+                  <td>El Chichón</td>
+                  <td class="e-text-center">1982</td>
+                  <td class="e-text-center">5</td>
+                  <td class="e-text-center">3500</td>
+                </tr>
+                <tr>
+                  <td>Nevado del Ruiz</td>
+                  <td class="e-text-center">1985</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">23000</td>
+                </tr>
+                <tr>
+                  <td>Mount Pinatubo</td>
+                  <td class="e-text-center">1991</td>
+                  <td class="e-text-center">6</td>
+                  <td class="e-text-center">847</td>
+                </tr>
+                <tr>
+                  <td>Soufriere Hills Volcano</td>
+                  <td class="e-text-center">1997</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">19</td>
+                </tr>
+                <tr>
+                  <td>Nyiragongo</td>
+                  <td class="e-text-center">2002</td>
+                  <td class="e-text-center">1</td>
+                  <td class="e-text-center">147</td>
+                </tr>
+                <tr>
+                  <td>Mount Merapi</td>
+                  <td class="e-text-center">2010</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">353</td>
+                </tr>
+                <tr>
+                  <td>Nabro</td>
+                  <td class="e-text-center">2011</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">31</td>
+                </tr>
+                <tr>
+                  <td>Mount Ontake</td>
+                  <td class="e-text-center">2014</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">63</td>
+                </tr>
+                <tr>
+                  <td>Kelud</td>
+                  <td class="e-text-center">2014</td>
+                  <td class="e-text-center">4</td>
+                  <td class="e-text-center">2</td>
+                </tr>
+                <tr>
+                  <td>Anak Krakatau</td>
+                  <td class="e-text-center">2018</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">426</td>
+                </tr>
+                <tr>
+                  <td>Volcán de Fuego</td>
+                  <td class="e-text-center">2018</td>
+                  <td class="e-text-center">3</td>
+                  <td class="e-text-center">190</td>
+                </tr>
+              </tbody>
+            </table>
+          </e:localization>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Wikipedia</e:localization>
+              <e:localization lang="sv-FI">Wikipedia</e:localization>
+            </e:author>
+            <e:url>https://en.wikipedia.org/wiki/List_of_large_volcanic_eruptions_in_the_21st_century</e:url>
+            <e:reference-date>2019-08-26</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="6B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’) 
+                </e:localization>
+            <e:localization lang="sv-FI">Video: Vulkanön Anak Krakatau (’Krakataus barn’) som uppstått till följd av nya utbrott i Krakatau
+                </e:localization>
+          </e:attachment-title>
+
+          <e:localization lang="fi-FI">
+            <p>Video kestää 40 sekuntia.</p>
+          </e:localization>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:localization lang="sv-FI">
+            <p>Videon är 40 sekunder lång.</p>
+          </e:localization>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Martin Rietze</e:author>
+            <e:title>Krakatau at night</e:title>
+            <e:publication>
+              <e:localization lang="fi-FI">Youtube-videopalvelu</e:localization>
+              <e:localization lang="sv-FI">Videotjänsten Youtube</e:localization>
+            </e:publication>
+            <e:url>https://www.youtube.com/watch?v=9Plj4b79cwg</e:url>
+            <e:publication-date>2018-11-05</e:publication-date>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Mitä tarkoitetaan supertulivuorella? Mainitse myös ainakin yksi alueellinen esimerkki.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Vad menas med supervulkan? Nämn åtminstone ett regionalt exempel.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Jos supertulivuori purkautuisi Yhdysvalloissa tai Euroopassa nyt, millaisia vaikutuksia purkauksella todennäköisesti olisi?
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Hurdana följder skulle ett utbrott av en supervulkan sannolikt ha om det skedde nu i USA eller Europa?
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Tee taulukko kymmenestä eniten uhreja aiheuttaneesta tulivuorenpurkauksesta
+            <e:attachment-link type="long" ref="6A" />
+            ja järjestä kyseiset purkaukset uhrimäärän mukaan suuruusjärjestykseen. Ota tekemästäsi taulukosta kuvakaappaus ja liitä se vastauskenttään. Laske myös kymmenen eniten uhreja aiheuttaneen purkauksen uhrimäärän summa ja keskiarvo. Kirjoita myös laskutoimitusten tulokset vastauskenttään.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Gör en tabell över de tio vulkanutbrott som orsakat flest dödsoffer
+            <e:attachment-link type="long" ref="6A" />
+            och ordna dem i storleksordning enligt antalet offer. Ta en skärmdump av din tabell och klistra in den i svarsfältet. Räkna också ut summan och medelvärdet för antalet offer i de tio vulkanutbrotten som orsakat flest dödsoffer. Skriv även uträkningarnas resultat i svarsfältet.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+                Miksi tulivuorenpurkauksiin kuolleiden ihmisten määrä on useimmissa tulivuorenpurkauksissa melko pieni verrattuna purkauksen voimakkuuteen?
+              </e:localization>
+          <e:localization lang="sv-FI">
+                Varför är antalet döda i de flesta vulkanutbrotten ganska litet i relation till utbrottens intensitet?
+              </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Indonesiassa sijaitsevan Krakatau-tulivuoren
+            <e:attachment-link type="long" ref="6B" />
+            purkaus vuonna 1883 aiheutti ihmiskunnan kirjoitetun historian ajan kovimman äänen. Ihmisiä kuuroutui 65 kilometrin päässä tulivuoresta, ja ääni kuului voimakkaana ainakin
+            <span class="e-nowrap">5 000</span>
+            kilometrin päähän. Perustele, miksi kyseinen alue on vulkaaninen.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Krakatauvulkanens utbrott i Indonesien
+            <e:attachment-link type="long" ref="6B" />
+            1883 orsakade det kraftigaste ljudet i mänsklighetens skrivna historia. Människor tappade hörseln 65 kilometer från vulkanen, och ljudet hördes kraftigt åtminstone
+            <span class="e-nowrap">5 000</span>
+            kilometer från vulkanen. Motivera varför området i fråga är vulkaniskt.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+
+    </e:question>
+
+    <!-- 7 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Kesäajasta luopumisen vaikutukset </e:localization>
+        <e:localization lang="sv-FI">Följderna av att avskaffa sommartid</e:localization>
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="7A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Euroopan aikavyöhykkeet
+            </e:localization>
+            <e:localization lang="sv-FI">Karta: Tidszoner i Europa
+            </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Jenni Virtanen</e:author>
+            <e:title>
+              <e:localization lang="fi-FI">Suuret lupaukset vesittyivät: Kellojen siirtelyn lopettamisesta ei välttämättä tule mitään</e:localization>
+              <e:localization lang="sv-FI">Suuret lupaukset vesittyivät: Kellojen siirtelyn lopettamisesta ei välttämättä tule mitään [Tomma löften: Eventuellt blir det inget av förslaget att sluta ställa om klockorna]</e:localization>
+            </e:title>
+            <e:publisher>
+              <e:localization lang="fi-FI">Helsingin Sanomat</e:localization>
+              <e:localization lang="sv-FI">Dagstidningen Helsingin Sanomat</e:localization>
+            </e:publisher>
+            <e:url>https://www.hs.fi/ulkomaat/art-2000006197722.html</e:url>
+            <e:publication-date>2019-08-08</e:publication-date>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Piirrä kuva tai kuvia, joissa esität, mistä vuodenaikojen sekä vuorokaudenaikojen vaihtelu maapallolla aiheutuu. Käytä kuvassa tarvittaessa nuolia ja lyhyitä selittäviä tekstejä. Liitä kuva tai kuvat vastauskenttään.</e:localization>
+          <e:localization lang="sv-FI">Rita en eller flera bilder som förklarar vad som orsakar dygns- och årstidsväxlingarna på jorden. Använd vid behov pilar och korta förklaringstexter tillsammans med bilden. Bifoga bilden eller bilderna till svarsfältet.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Selitä periaate, jonka mukaan maapallo on jaettu aikavyöhykkeisiin.
+          </e:localization>
+          <e:localization lang="sv-FI">Förklara principen enligt vilken jordklotet är uppdelat i tidszoner.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Jos kesäaikaan siirtymisestä luovutaan Euroopan unionissa, Suomi voi valita pysyväksi kellonajakseen aikavyöhykkeen UTC+1, UTC+2 tai UTC+3 mukaisen ajan. Miten vaihtoehdot eroavat toisistaan valoisan ajan ajoittumisen suhteen eri vuodenaikoina Etelä- ja Pohjois-Suomessa?</e:localization>
+          <e:localization lang="sv-FI">Om man avskaffar sommartid i Europeiska unionen kan Finland välja en permanent tid enligt tidszon UTC+1, UTC+2 eller UTC+3. Hur skiljer sig alternativen från varandra med tanke på hur den ljusa tiden infaller i södra och norra Finland under olika årstider?
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" />
+      </e:question>
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Oletetaan, että kesäaikaan siirtymisestä luovutaan koko Euroopan unionin alueella. Mikä on oma mielipiteesi Suomelle parhaiten soveltuvasta pysyvästä aikavyöhykkeestä? Perustele mielipiteesi ja arvioi valitsemasi aikavyöhykkeen etuja ja haittoja ihmistoiminnan näkökulmasta. Voit käyttää apunasi kuvaa
+            <e:attachment-link type="short" ref="7A" />
+            .
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Vi antar att man avskaffar sommartid i hela Europeiska unionen. Vad anser du att är den lämpligaste permanenta tidszonen för Finland? Motivera din åsikt och utvärdera fördelarna och nackdelarna med den tidszon du valt med tanke på mänsklig aktivitet. Du kan använda bild
+            <e:attachment-link type="short" ref="7A" />
+            som hjälp.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" />
+      </e:question>
+    </e:question>
+
+    <!-- 8 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Kaupungistumisen sosiaaliset riskit</e:localization>
+        <e:localization lang="sv-FI">Sociala risker med urbanisering</e:localization>
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="8A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Korkeakoulututkinnon suorittaneiden osuus yli 25-vuotiaasta väestöstä prosentteina Washingtonin kaupungin alueella vuonna 2000
+            </e:localization>
+            <e:localization lang="sv-FI">Karta: Andelen personer med högskoleexamen av populationen äldre än 25 år i staden Washington år 2000
+            </e:localization>
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999 
+            </e:localization>
+            <e:localization lang="sv-FI">Karta: Invånarnas årliga medelinkomst i staden Washington 1999
+            </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8C">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kartta: Väkivaltarikollisuuden keskittyminen Washingtonin kaupungin alueella vuosina 2006–2008
+            </e:localization>
+            <e:localization lang="sv-FI">Karta: Koncentrationen av våldsbrott i staden Washington mellan 2006 och 2008
+            </e:localization>
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8D">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Karttojen päällekkäistarkastelu: Washingtonin kaupunki
+              </e:localization>
+            <e:localization lang="sv-FI">Analys av överlappande kartor: Staden Washington
+              </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:translator>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Määrittele lyhyesti käsitteet kaupungistuminen (eli urbanisaatio) ja esikaupungistuminen (eli suburbanisaatio).</e:localization>
+          <e:localization lang="sv-FI">Definiera kort begreppen urbanisering och suburbanisering.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Analysoi oheisten karttojen
+            <e:attachment-links>
+              <e:attachment-link ref="8A" />
+              <e:attachment-link ref="8B" />
+              <e:attachment-link ref="8C" />
+              <e:attachment-link ref="8D" />
+            </e:attachment-links>
+            avulla väestön alueellisia eroja Yhdysvaltojen pääkaupungissa Washingtonissa. Pohdi kaupungistumiseen liittyviä sosiaalisia riskejä aineistossa näkyvällä alueella.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Använd de bifogade kartorna
+            <e:attachment-links>
+              <e:attachment-link ref="8A" />
+              <e:attachment-link ref="8B" />
+              <e:attachment-link ref="8C" />
+              <e:attachment-link ref="8D" />
+            </e:attachment-links>
+            för att analysera de regionala befolkningsskillnaderna i Förenta staternas huvudstad Washington. Diskutera de sociala risker som är förknippade med urbanisering i det område som presenteras i materialet.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="12" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Valitse aineistosta yksi asuinalue, jota alat kehittää. Rajaa alue valitsemaasi karttaan ja liitä kuvakaappaus siitä vastauskenttään. Laadi kaupunkisuunnittelijoille kolme lyhyttä toimenpide-ehdotusta, joiden avulla kyseisen alueen sosiaalisia riskejä voitaisiin vähentää.</e:localization>
+          <e:localization lang="sv-FI">Välj ur materialet ett bostadsområde som du ska utveckla. Avgränsa området på kartan du valt och klistra in en skärmdump av området i svarsfältet. Utarbeta tre korta förslag till åtgärder för att minska de sociala riskerna i området. Dina förslag ska kunna presenteras för en stadsplanerare.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">Pohdi, miten sosiaaliset ongelmat voivat näkyä syksyn presidentinvaaleissa Yhdysvalloissa.</e:localization>
+          <e:localization lang="sv-FI">Diskutera hur sociala problem kan synas i höstens presidentval i USA.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" />
+      </e:question>
+    </e:question>
+
+    <!-- 9 -->
+    <e:question>
+      <e:question-title>
+        <e:localization lang="fi-FI">Maisema ja maankäyttö</e:localization>
+        <e:localization lang="sv-FI">Landskap och markanvändning</e:localization>
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="9A">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kuva: Viikki, Helsinki</e:localization>
+            <e:localization lang="sv-FI">Bild: Vik, Helsingfors
+            </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Maanmittauslaitos</e:localization>
+              <e:localization lang="sv-FI">Lantmäteriverket</e:localization>
+            </e:author>
+            <e:url>http://vanhatpainetutkartat.maanmittauslaitos.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9B">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kuva: Viikki, Helsinki</e:localization>
+            <e:localization lang="sv-FI">Bild: Vik, Helsingfors
+            </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Helsingin kaupunki</e:localization>
+              <e:localization lang="sv-FI">Helsingfors stad</e:localization>
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9C">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kuva: Viikki, Helsinki</e:localization>
+            <e:localization lang="sv-FI">Bild: Vik, Helsingfors
+            </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Helsingin kaupunki</e:localization>
+              <e:localization lang="sv-FI">Helsingfors stad</e:localization>
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9D">
+          <e:attachment-title>
+            <e:localization lang="fi-FI">Kuvien päällekkäistarkastelu: Viikki, Helsinki</e:localization>
+            <e:localization lang="sv-FI">Överlappande bilder: Vik, Helsingfors
+              </e:localization>
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Maanmittauslaitos</e:localization>
+              <e:localization lang="sv-FI">Lantmäteriverket</e:localization>
+            </e:author>
+            <e:url>http://vanhatpainetutkartat.maanmittauslaitos.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+
+          <e:reference>
+            <e:author>
+              <e:localization lang="fi-FI">Helsingin kaupunki</e:localization>
+              <e:localization lang="sv-FI">Helsingfors stad</e:localization>
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              <e:localization lang="fi-FI">YTL</e:localization>
+              <e:localization lang="sv-FI">SEN</e:localization>
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Tutustu paikkatietoaineistoihin
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+              <e:attachment-link ref="9C" />
+              <e:attachment-link ref="9D" />
+            </e:attachment-links>
+            ja niissä näkyvään maiseman muutokseen. Luettele aineistot
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+              <e:attachment-link ref="9C" />
+            </e:attachment-links>
+            aikajärjestyksessä vanhimmasta nuorimpaan. Merkitse kuvaan (tai kuviin) yhteensä kolme erityyppistä maiseman muutosta ja liitä kuvakaappaus (tai kaappaukset) vastaukseesi. Nimeä kukin muutos ja kuvaile sitä lyhyesti.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Studera geodatamaterialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+              <e:attachment-link ref="9C" />
+              <e:attachment-link ref="9D" />
+            </e:attachment-links>
+            och förändringen av landskapet som går att observera i materialet. Lista materialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+              <e:attachment-link ref="9C" />
+            </e:attachment-links>
+            i kronologisk ordning från det äldsta till det yngsta. Märk ut sammanlagt tre olika typer av landskapsförändringar på bilden (eller bilderna) och bifoga en skärmdump (eller skärmdumpar) av den (eller dem) till ditt svar. Namnge varje förändring och beskriv den kortfattat.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="12" />
+      </e:question>
+
+      <e:question>
+        <e:question-title>
+          <e:localization lang="fi-FI">
+            Vertaile aineistojen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+              <e:attachment-link ref="9C" />
+              <e:attachment-link ref="9D" />
+            </e:attachment-links>
+            perusteella, millaista alueen maankäyttö on ollut kyseisinä kolmena kuvissa näkyvänä aikana. Analysoi, mitkä tekijät ovat vaikuttaneet maankäytön muuttumiseen.
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Jämför utifrån materialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A" />
+              <e:attachment-link ref="9B" />
+              <e:attachment-link ref="9C" />
+              <e:attachment-link ref="9D" />
+            </e:attachment-links>
+            hur markanvändning sett ut i området under de tidsperioder som de tre bilderna representerar. Analysera vilka faktorer som bidragit till förändringen i markanvändningen.
+          </e:localization>
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="18" />
+      </e:question>
+    </e:question>
+
+  </e:section>
+</e:exam>
