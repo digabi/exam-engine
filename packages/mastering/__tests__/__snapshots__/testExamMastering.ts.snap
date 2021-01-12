@@ -3468,6 +3468,3952 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
 
 `;
 
+exports[`Exam mastering masters GE.xml exam correctly 1`] = `
+Object {
+  "attachments": Array [],
+  "date": "2020-09-17",
+  "dayCode": null,
+  "examCode": "GE",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": Object {
+    "questions": Array [
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "1.1",
+            "id": 1,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 37,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 38,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 39,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 40,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 41,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.2",
+            "id": 2,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 42,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 43,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 44,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 45,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 46,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.3",
+            "id": 3,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 47,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 48,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 49,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 50,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 51,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.4",
+            "id": 4,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 52,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 53,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 54,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 55,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 56,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.5",
+            "id": 5,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 57,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 58,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 59,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 60,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 61,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.6",
+            "id": 6,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 62,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 63,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 64,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 65,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 66,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.7",
+            "id": 7,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 67,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 68,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 69,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 70,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 71,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.8",
+            "id": 8,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 72,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 73,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 74,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 75,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 76,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.9",
+            "id": 9,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 77,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 78,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 79,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 80,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 81,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.10",
+            "id": 10,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 82,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 83,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 84,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 85,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 86,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1",
+        "id": 87,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "2.1",
+        "id": 11,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "2.2",
+        "id": 12,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "3.1",
+        "id": 13,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "3.2",
+        "id": 14,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "3.3",
+        "id": 15,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.1",
+        "id": 16,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.2",
+        "id": 17,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.3",
+        "id": 18,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.4",
+        "id": 19,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5.1",
+        "id": 20,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5.2",
+        "id": 21,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.1",
+        "id": 22,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.2",
+        "id": 23,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.3",
+        "id": 24,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.4",
+        "id": 25,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.5",
+        "id": 26,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.1",
+        "id": 27,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.2",
+        "id": 28,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.3",
+        "id": 29,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.4",
+        "id": 30,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.1",
+        "id": 31,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.2",
+        "id": 32,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.3",
+        "id": 33,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.4",
+        "id": 34,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "9.1",
+        "id": 35,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "9.2",
+        "id": 36,
+        "maxScore": 18,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "fi-FI",
+  "title": "FI – Maantiede",
+  "type": "normal",
+}
+`;
+
+exports[`Exam mastering masters GE.xml exam correctly 2`] = `
+Object {
+  "attachments": Array [],
+  "date": "2020-09-17",
+  "dayCode": null,
+  "examCode": "GE",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": Object {
+    "questions": Array [
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "1.1",
+            "id": 1,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 37,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 38,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 39,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 40,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 41,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.2",
+            "id": 2,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 42,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 43,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 44,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 45,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 46,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.3",
+            "id": 3,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 47,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 48,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 49,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 50,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 51,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.4",
+            "id": 4,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 52,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 53,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 54,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 55,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 56,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.5",
+            "id": 5,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 57,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 58,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 59,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 60,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 61,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.6",
+            "id": 6,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 62,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 63,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 64,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 65,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 66,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.7",
+            "id": 7,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 67,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 68,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 69,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 70,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 71,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.8",
+            "id": 8,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 72,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 73,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 74,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 75,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 76,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.9",
+            "id": 9,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 77,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 78,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 79,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 80,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 81,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "1.10",
+            "id": 10,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 82,
+                "score": -1,
+              },
+              Object {
+                "correct": true,
+                "id": 83,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 84,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 85,
+                "score": -1,
+              },
+              Object {
+                "correct": false,
+                "id": 86,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1",
+        "id": 87,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "2.1",
+        "id": 11,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "2.2",
+        "id": 12,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "3.1",
+        "id": 13,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "3.2",
+        "id": 14,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "3.3",
+        "id": 15,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.1",
+        "id": 16,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.2",
+        "id": 17,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.3",
+        "id": 18,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.4",
+        "id": 19,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5.1",
+        "id": 20,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "5.2",
+        "id": 21,
+        "maxScore": 10,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.1",
+        "id": 22,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.2",
+        "id": 23,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.3",
+        "id": 24,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.4",
+        "id": 25,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "6.5",
+        "id": 26,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.1",
+        "id": 27,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.2",
+        "id": 28,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.3",
+        "id": 29,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "7.4",
+        "id": 30,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.1",
+        "id": 31,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.2",
+        "id": 32,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.3",
+        "id": 33,
+        "maxScore": 8,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "8.4",
+        "id": 34,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "9.1",
+        "id": 35,
+        "maxScore": 12,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "9.2",
+        "id": 36,
+        "maxScore": 18,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "sv-FI",
+  "title": "SV – Geografi",
+  "type": "normal",
+}
+`;
+
+exports[`Exam mastering masters GE.xml exam correctly: hvp 1`] = `
+FI – Maantiede
+
+### Osa 1: 20 pisteen tehtävä (20 p.)
+
+#### 1. Väittämiä maantieteen eri osa-alueilta (20 p.) 
+
+
+1.1. Eroosio (2 p.) (monivalintavastaus)
+
+- Virtaava vesi on maapallon merkittävin eroosiovoima. (-1 p.)
+- Ilmastonmuutoksen seurauksena sään ääri-ilmiöt yleistyvät ja eroosio voimistuu. (-1 p.)
+- Kaikkein kuivimmilla alueilla eroosiota ei tapahdu juuri lainkaan. (2 p.)
+- Ihminen on omilla toimillaan voimistanut eroosiota maapallolla. (-1 p.)
+- En vastaa. (0 p.)
+
+1.2. Pakolaisuus ja siirtolaisuus (2 p.) (monivalintavastaus)
+
+- Pakolainen on ihminen, joka joutuu pakenemaan kotiseudultaan vainon vuoksi. (-1 p.)
+- Turvapaikanhakijalla tarkoitetaan ihmistä, joka pyytää oleskelulupaa ja suojelua toisesta maasta. (-1 p.)
+- Siirtolaisuus on vapaaehtoista muuttamista toiseen maahan esimerkiksi paremman toimeentulon saamiseksi. (-1 p.)
+- Ympäristöpakolaisella tarkoitetaan ihmistä, joka jää kriisialueelta paettuaan sen välittömään lähiympäristöön pakolaisleirille. (2 p.)
+- En vastaa. (0 p.)
+
+1.3. Sade (2 p.) (monivalintavastaus)
+
+- Konvektiosade syntyy, kun aurinko lämmittää voimakkaasti maanpintaa, jolloin ilmamassa kohoaa ja kosteus tiivistyy sateeksi. (-1 p.)
+- Orografinen sade syntyy, kun kostea ilmamassa joutuu kohoamaan rannikon tai vuoriston takia, jolloin se jäähtyy ja sen kosteus tiivistyy sateeksi. (-1 p.)
+- Konvektiosateet ovat yleisimpiä maapallon kylmillä alueilla ja Suomessa talvisaikaan. (2 p.)
+- Vuoriston ylittänyt ilmamassa yleensä kuivuu ja lämpenee. (-1 p.)
+- En vastaa. (0 p.)
+
+1.4. Maapallon rakenne (2 p.) (monivalintavastaus)
+
+- Litosfääri on sula kerros Maan ytimen ja kuoren välissä. (2 p.)
+- Mereinen kuori on mantereista kuorta ohuempi. (-1 p.)
+- Maan ydin voidaan jakaa kiinteään sisäytimeen ja sulaan ulkoytimeen. (-1 p.)
+- Sulan kiviaineksen liikkeet Maan ytimessä aiheuttavat voimakkaita sähkövirtoja, jotka saavat aikaan magneettikentän. (-1 p.)
+- En vastaa. (0 p.)
+
+1.5. Biomit (2 p.) (monivalintavastaus)
+
+- Sademetsiä esiintyy sekä tropiikissa että subtropiikissa alueilla, joilla sataa runsaasti. (-1 p.)
+- Vuorenrinnettä noustaessa voidaan havaita samantyyppisiä kasvillisuusvyöhykkeitä kuin merenpinnan tasossa napoja kohti kuljettaessa. (-1 p.)
+- Savannien kasvillisuus kärsii kuivuudesta läpi vuoden. (2 p.)
+- Lauhkeille lehtimetsille on tyypillistä, että lehtipuut pudottavat lehtensä talveksi. (-1 p.)
+- En vastaa. (0 p.)
+
+1.6. Uusiutumattomat energianlähteet (2 p.) (monivalintavastaus)
+
+- Ydinvoima kuuluu uusiutumattomiin energianlähteisiin. (-1 p.)
+- Öljy ja kivihiili tuottavat palaessaan happamoittavia päästöjä, kuten rikin oksideja. (-1 p.)
+- Nesteytetty maakaasu ei tuota palaessaan kasvihuonekaasupäästöjä. (2 p.)
+- Turvetta syntyy hyvin hitaasti, joten se lasketaan uusiutumattomiin energianlähteisiin. (-1 p.)
+- En vastaa. (0 p.)
+
+1.7. Väestönkasvu (2 p.) (monivalintavastaus)
+
+- Väestöllisen muuntumisen mallin toisessa vaiheessa väestönkasvu on pysähtynyt. (2 p.)
+- Väestöpyramideista voidaan päätellä väestöllisen muuntumisen mallin vaiheita. (-1 p.)
+- Maapallon väkiluku on kasvanut voimakkaasti viimeisten sadan vuoden aikana. (-1 p.)
+- Väestönkasvu on nopeinta kehittyvissä maissa, erityisesti Afrikan alueella. (-1 p.)
+- En vastaa. (0 p.)
+
+1.8. Satelliittikuvia ja kaukokartoitusta (2 p.) (monivalintavastaus)
+
+- Kaukokartoitus perustuu heijastuksiin maapallon pinnasta ja niiden havainnointiin. (-1 p.)
+- Kaukokartoituksessa satelliittien seismografeilla tutkitaan ilmakehän ominaisuuksia. (2 p.)
+- Laserkeilauksessa mittauslaite lähettää mitattavaan kohteeseen lasersäteitä. (-1 p.)
+- Kaukokartoituksen avulla voidaan tutkia myös valtameriä ja niiden ominaisuuksia. (-1 p.)
+- En vastaa. (0 p.)
+
+1.9. Kartan korkeuskäyrät (2 p.) (monivalintavastaus)
+
+- Kartan korkeuskäyrien avulla nähdään, mihin suuntaan rinne viettää. (-1 p.)
+- Kartan korkeuskäyrien avulla nähdään rinteen jyrkkyys. (-1 p.)
+- Kartan korkeuskäyrien avulla voidaan piirtää korkeusprofiili. (-1 p.)
+- Kartan korkeuskäyrät kääntyvät Coriolis-ilmiön takia eteläisellä pallonpuoliskolla aina oikealle. (2 p.)
+- En vastaa. (0 p.)
+
+1.10. Paikkatieto ja kartat (2 p.) (monivalintavastaus)
+
+- Karttaprojektion avulla maapallon kaareva pinta kuvataan tasona. (-1 p.)
+- Kartta on aina mittakaavassa suurennettu kuva maapallon pinnasta. (2 p.)
+- Koordinaatiston avulla pisteen sijainti kartalla voidaan ilmoittaa kahden akselin (x, y) lukuarvoina. (-1 p.)
+- Paikkatieto sisältää sekä sijaintitietoa että ominaisuustietoa. (-1 p.)
+- En vastaa. (0 p.)
+
+### Osa 2: 20 pisteen tehtävät (40 p.)
+
+#### 2. Olympialaiset ja ympäristö (20 p.) 
+
+
+2.1. Olympialaisilla on monia vaikutuksia ympäristöön. Pohdi Tokion olympiakisojen ympäristövaikutuksia järjestäjäkaupunki Tokioon sekä globaalilla tasolla. (10 p.) (tekstivastaus)
+
+
+2.2. Miten olympialaisten haitallisia ympäristövaikutuksia voidaan vähentää? Tarkastele ratkaisukeinoja haittojen vähentämiseksi sekä järjestäjäkaupunki Tokion että yksittäisen matkailijan kannalta. (10 p.) (tekstivastaus)
+
+
+#### 3. Kylmyyden vaikutukset maaperään ja kallioperään (20 p.) 
+
+
+3.1. Miten maa- ja kallioperässä esiintyvä jää muuttaa maanpinnan muotoja? Käytä vastauksessasi maantieteellisiä käsitteitä. (4 p.) (tekstivastaus)
+
+
+3.2. Selitä, miten routa vaikuttaa ihmistoimintaan. (8 p.) (tekstivastaus)
+
+
+3.3. Ilmastonmuutos sulattaa ikiroutaa. Pohdi, minkälaisia vaikutuksia ikiroudan häviämisellä on ympäristölle ja mitä seurauksia sillä on ihmiselle. (8 p.) (tekstivastaus)
+
+
+#### 4. Köyhyys (20 p.) 
+
+
+4.1. Mitä tarkoitetaan suhteellisella köyhyydellä? (2 p.) (tekstivastaus)
+
+
+4.2. Kuvaile köyhyyden alueellisia eroja globaalilla tasolla. Kuvaa kaksi keskeistä syytä näihin eroihin. (6 p.) (tekstivastaus)
+
+
+4.3. Kuvaile köyhyyden alueellisia eroja Suomessa. Kuvaa kaksi keskeistä syytä näihin eroihin. (6 p.) (tekstivastaus)
+
+
+4.4. Kuvaile köyhyyden alueellisia eroja valitsemassasi ja nimeämässäsi suomalaisessa kunnassa. Kuvaa kaksi keskeistä syytä näihin eroihin. (6 p.) (tekstivastaus)
+
+
+#### 5. Pyörällä Afrikan halki (20 p.) 
+
+
+5.1. Tutustu aineistoihin ja valitse aineistossa esitetyistä kolmesta reittivaihtoehdosta mielestäsi paras. Perustele valintasi arvioimalla eri reittien hyviä ja huonoja puolia. Hyödynnä vastauksessasi kaikkia aineistoja. (10 p.) (tekstivastaus)
+
+
+5.2. Kuvaile, minkälaisia maisematyyppejä ja minkälaisia alueellisia riskejä pyöräilijä kohtaa valitsemallasi reitillä. Etene kuvauksessasi reitin suuntaisesti. (10 p.) (tekstivastaus)
+
+
+### Osa 3: 30 pisteen tehtävät (60 p.)
+
+#### 6. Tulivuoret ja supertulivuoret (30 p.) 
+
+
+6.1. Mitä tarkoitetaan supertulivuorella? Mainitse myös ainakin yksi alueellinen esimerkki. (4 p.) (tekstivastaus)
+
+
+6.2. Jos supertulivuori purkautuisi Yhdysvalloissa tai Euroopassa nyt, millaisia vaikutuksia purkauksella todennäköisesti olisi? (8 p.) (tekstivastaus)
+
+
+6.3. Tee taulukko kymmenestä eniten uhreja aiheuttaneesta tulivuorenpurkauksesta ja järjestä kyseiset purkaukset uhrimäärän mukaan suuruusjärjestykseen. Ota tekemästäsi taulukosta kuvakaappaus ja liitä se vastauskenttään. Laske myös kymmenen eniten uhreja aiheuttaneen purkauksen uhrimäärän summa ja keskiarvo. Kirjoita myös laskutoimitusten tulokset vastauskenttään. (6 p.) (tekstivastaus)
+
+
+6.4. Miksi tulivuorenpurkauksiin kuolleiden ihmisten määrä on useimmissa tulivuorenpurkauksissa melko pieni verrattuna purkauksen voimakkuuteen? (6 p.) (tekstivastaus)
+
+
+6.5. Indonesiassa sijaitsevan Krakatau-tulivuoren purkaus vuonna 1883 aiheutti ihmiskunnan kirjoitetun historian ajan kovimman äänen. Ihmisiä kuuroutui 65 kilometrin päässä tulivuoresta, ja ääni kuului voimakkaana ainakin 5 000 kilometrin päähän. Perustele, miksi kyseinen alue on vulkaaninen. (6 p.) (tekstivastaus)
+
+
+#### 7. Kesäajasta luopumisen vaikutukset (30 p.) 
+
+
+7.1. Piirrä kuva tai kuvia, joissa esität, mistä vuodenaikojen sekä vuorokaudenaikojen vaihtelu maapallolla aiheutuu. Käytä kuvassa tarvittaessa nuolia ja lyhyitä selittäviä tekstejä. Liitä kuva tai kuvat vastauskenttään. (8 p.) (tekstivastaus)
+
+
+7.2. Selitä periaate, jonka mukaan maapallo on jaettu aikavyöhykkeisiin. (6 p.) (tekstivastaus)
+
+
+7.3. Jos kesäaikaan siirtymisestä luovutaan Euroopan unionissa, Suomi voi valita pysyväksi kellonajakseen aikavyöhykkeen UTC+1, UTC+2 tai UTC+3 mukaisen ajan. Miten vaihtoehdot eroavat toisistaan valoisan ajan ajoittumisen suhteen eri vuodenaikoina Etelä- ja Pohjois-Suomessa? (8 p.) (tekstivastaus)
+
+
+7.4. Oletetaan, että kesäaikaan siirtymisestä luovutaan koko Euroopan unionin alueella. Mikä on oma mielipiteesi Suomelle parhaiten soveltuvasta pysyvästä aikavyöhykkeestä? Perustele mielipiteesi ja arvioi valitsemasi aikavyöhykkeen etuja ja haittoja ihmistoiminnan näkökulmasta. Voit käyttää apunasi kuvaa . (8 p.) (tekstivastaus)
+
+
+#### 8. Kaupungistumisen sosiaaliset riskit (30 p.) 
+
+
+8.1. Määrittele lyhyesti käsitteet kaupungistuminen (eli urbanisaatio) ja esikaupungistuminen (eli suburbanisaatio). (4 p.) (tekstivastaus)
+
+
+8.2. Analysoi oheisten karttojen avulla väestön alueellisia eroja Yhdysvaltojen pääkaupungissa Washingtonissa. Pohdi kaupungistumiseen liittyviä sosiaalisia riskejä aineistossa näkyvällä alueella. (12 p.) (tekstivastaus)
+
+
+8.3. Valitse aineistosta yksi asuinalue, jota alat kehittää. Rajaa alue valitsemaasi karttaan ja liitä kuvakaappaus siitä vastauskenttään. Laadi kaupunkisuunnittelijoille kolme lyhyttä toimenpide-ehdotusta, joiden avulla kyseisen alueen sosiaalisia riskejä voitaisiin vähentää. (8 p.) (tekstivastaus)
+
+
+8.4. Pohdi, miten sosiaaliset ongelmat voivat näkyä syksyn presidentinvaaleissa Yhdysvalloissa. (6 p.) (tekstivastaus)
+
+
+#### 9. Maisema ja maankäyttö (30 p.) 
+
+
+9.1. Tutustu paikkatietoaineistoihin ja niissä näkyvään maiseman muutokseen. Luettele aineistot aikajärjestyksessä vanhimmasta nuorimpaan. Merkitse kuvaan (tai kuviin) yhteensä kolme erityyppistä maiseman muutosta ja liitä kuvakaappaus (tai kaappaukset) vastaukseesi. Nimeä kukin muutos ja kuvaile sitä lyhyesti. (12 p.) (tekstivastaus)
+
+
+9.2. Vertaile aineistojen perusteella, millaista alueen maankäyttö on ollut kyseisinä kolmena kuvissa näkyvänä aikana. Analysoi, mitkä tekijät ovat vaikuttaneet maankäytön muuttumiseen. (18 p.) (tekstivastaus)
+`;
+
+exports[`Exam mastering masters GE.xml exam correctly: hvp 2`] = `
+SV – Geografi
+
+### Del 1: 20-poängsuppgift (20 p.)
+
+#### 1. Påståenden om olika delområden inom geografin (20 p.) 
+
+
+1.1. Erosion (2 p.) (flervalssvar)
+
+- Flödande vatten är den mest betydande erosionskraften på jorden. (-1 p.)
+- Som en konsekvens av klimatförändringen blir extrema väderfenomen vanligare och erosionen kraftigare. (-1 p.)
+- I de allra torraste områdena förekommer knappt någon erosion överhuvudtaget. (2 p.)
+- Människans agerande har lett till kraftigare erosion på jorden. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+1.2. Flyktingskap och migration (2 p.) (flervalssvar)
+
+- En flykting är en person som tvingas fly från sin hembygd på grund av förföljelse. (-1 p.)
+- En asylsökande är en person som begär uppehållstillstånd och skydd i ett annat land. (-1 p.)
+- Migration innebär att en person frivilligt flyttar till ett annat land, till exempel för att uppnå bättre försörjningsmöjligheter. (-1 p.)
+- Miljöflykting syftar på en person som efter att ha flytt från ett krisområde blir kvar på ett flyktingläger i krisområdets närmiljö. (2 p.)
+- Jag svarar inte. (0 p.)
+
+1.3. Regn (2 p.) (flervalssvar)
+
+- Konvektionsregn uppstår när solen intensivt värmer jordens yta vilket gör att en luftmassa stiger och fukt kondenseras till regn. (-1 p.)
+- Orografiskt regn uppstår när en fuktig luftmassa är tvungen att stiga på grund av en kust eller en bergskedja, vilket gör att luftmassan kyls ner och fukt kondenseras till regn. (-1 p.)
+- Konvektionsregn är vanligast i de kalla områdena på jorden och i Finland vintertid. (2 p.)
+- En luftmassa som har överskridit en bergskedja brukar bli torrare och varmare. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+1.4. Jordens uppbyggnad (2 p.) (flervalssvar)
+
+- Litosfären är ett smält skikt mellan jordens kärna och skorpan. (2 p.)
+- Jordskorpan under hav är tunnare än den kontinentala skorpan. (-1 p.)
+- Jordens kärna kan delas upp i den fasta inre kärnan och den smälta yttre kärnan. (-1 p.)
+- Cirkulationen av smält stenmaterial i jordens kärna ger upphov till starka elektriska strömmar som genererar ett magnetfält. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+1.5. Biom (2 p.) (flervalssvar)
+
+- Regnskogar förekommer både i tropikerna och i subtropiska områden där det regnar mycket. (-1 p.)
+- Då man rör sig uppför en bergssluttning kan man observera samma typer av vegetationszoner som då man rör sig mot polerna på havsnivå. (-1 p.)
+- Vegetationen på savanner lider av torka året om. (2 p.)
+- Det är typiskt för tempererade lövskogar att lövträden fäller sina löv till vintern. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+1.6. Icke-förnybara energikällor (2 p.) (flervalssvar)
+
+- Kärnkraft hör till de icke-förnybara energikällorna. (-1 p.)
+- Förbränning av olja och kol orsakar försurande utsläpp, såsom svaveloxider. (-1 p.)
+- Förbränning av flytande naturgas ger inte upphov till utsläpp av växthusgaser. (2 p.)
+- Torv uppstår mycket långsamt och räknas därför som en icke-förnybar energikälla. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+1.7. Befolkningstillväxt (2 p.) (flervalssvar)
+
+- I den andra fasen av den demografiska transitionsmodellen har befolkningstillväxten upphört. (2 p.)
+- Med befolkningspyramider kan man fastställa skeden i den demografiska transitionsmodellen. (-1 p.)
+- Jordens befolkning har vuxit kraftigt under de senaste 100 åren. (-1 p.)
+- Befolkningstillväxten är snabbast i utvecklingsländerna, särskilt i Afrika. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+1.8. Satellitbilder och fjärrkartering (2 p.) (flervalssvar)
+
+- Fjärrkartering bygger på reflektioner från jordens yta och observation av dem. (-1 p.)
+- Inom fjärrkartering undersöks atmosfärens egenskaper med hjälp av satelliternas seismografer. (2 p.)
+- Laserskanning bygger på laserstrålar som mätinstrumentet sänder mot målet. (-1 p.)
+- Fjärrkartering kan också användas för att undersöka världshaven och deras egenskaper. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+1.9. Höjdkurvor på en karta (2 p.) (flervalssvar)
+
+- Med hjälp av höjdkurvorna på en karta ser man åt vilket håll en sluttning lutar. (-1 p.)
+- Med hjälp av höjdkurvorna på en karta ser man hur brant en sluttning är. (-1 p.)
+- Med hjälp av höjdkurvorna på en karta kan man rita en höjdprofil. (-1 p.)
+- Höjdkurvorna på en karta svänger alltid till höger på södra halvklotet på grund av corioliseffekten. (2 p.)
+- Jag svarar inte. (0 p.)
+
+1.10. Geodata och kartor (2 p.) (flervalssvar)
+
+- Med hjälp av en kartprojektion avbildas jordens välvda yta som ett plan. (-1 p.)
+- En karta är alltid en avbildning av jordens yta i förstorad skala. (2 p.)
+- Med hjälp av ett koordinatsystem kan positionen för en punkt på kartan anges med talvärden på två axlar (x, y). (-1 p.)
+- Geodata innehåller både lägesdata och attributdata. (-1 p.)
+- Jag svarar inte. (0 p.)
+
+### Del 2: 20-poängsuppgifter (40 p.)
+
+#### 2. Olympiska spelen och miljön (20 p.) 
+
+
+2.1. De olympiska spelen har många konsekvenser för miljön. Diskutera miljöpåverkan som de olympiska spelen i Tokyo har i arrangörsstaden Tokyo och på en global nivå. (10 p.) (textsvar)
+
+
+2.2. Hur kan man minska på de negativa miljökonsekvenserna av de olympiska spelen? Diskutera lösningar för att minska skadorna ur både arrangörsstaden Tokyos och en enskild resenärs perspektiv. (10 p.) (textsvar)
+
+
+#### 3. Köldens inverkan på jordtäcket och berggrunden (20 p.) 
+
+
+3.1. Hur förändras jordytans former av is som förekommer i jordtäcket och berggrunden? Använd geografiska begrepp i ditt svar. (4 p.) (textsvar)
+
+
+3.2. Förklara hur tjälen påverkar mänsklig aktivitet. (8 p.) (textsvar)
+
+
+3.3. Klimatförändringen får permafrosten att smälta. Diskutera hurdana effekter försvinnandet av permafrosten har för miljön och vilka följder det har för människan. (8 p.) (textsvar)
+
+
+#### 4. Fattigdom (20 p.) 
+
+
+4.1. Vad menas med relativ fattigdom? (2 p.) (textsvar)
+
+
+4.2. Redogör för de regionala skillnaderna i fattigdom på global nivå. Beskriv två centrala orsaker till skillnaderna. (6 p.) (textsvar)
+
+
+4.3. Redogör för de regionala skillnaderna i fattigdom i Finland. Beskriv två centrala orsaker till skillnaderna. (6 p.) (textsvar)
+
+
+4.4. Välj och namnge en finländsk kommun och redogör för de regionala skillnaderna i fattigdom i den. Beskriv två centrala orsaker till skillnaderna. (6 p.) (textsvar)
+
+
+#### 5. På cykel genom Afrika (20 p.) 
+
+
+5.1. Studera materialen och välj det ruttalternativ som du anser vara bäst av de tre rutter som presenteras i material . Motivera ditt val genom att utvärdera de olika rutternas fördelar och nackdelar. Utnyttja allt material i ditt svar. (10 p.) (textsvar)
+
+
+5.2. Beskriv hurdana landskapstyper och regionala risker cyklisten står inför på den rutt du valt. Beskrivningen ska följa rutten i den riktning resan går. (10 p.) (textsvar)
+
+
+### Del 3: 30-poängsuppgifter (60 p.)
+
+#### 6. Vulkaner och supervulkaner (30 p.) 
+
+
+6.1. Vad menas med supervulkan? Nämn åtminstone ett regionalt exempel. (4 p.) (textsvar)
+
+
+6.2. Hurdana följder skulle ett utbrott av en supervulkan sannolikt ha om det skedde nu i USA eller Europa? (8 p.) (textsvar)
+
+
+6.3. Gör en tabell över de tio vulkanutbrott som orsakat flest dödsoffer och ordna dem i storleksordning enligt antalet offer. Ta en skärmdump av din tabell och klistra in den i svarsfältet. Räkna också ut summan och medelvärdet för antalet offer i de tio vulkanutbrotten som orsakat flest dödsoffer. Skriv även uträkningarnas resultat i svarsfältet. (6 p.) (textsvar)
+
+
+6.4. Varför är antalet döda i de flesta vulkanutbrotten ganska litet i relation till utbrottens intensitet? (6 p.) (textsvar)
+
+
+6.5. Krakatauvulkanens utbrott i Indonesien 1883 orsakade det kraftigaste ljudet i mänsklighetens skrivna historia. Människor tappade hörseln 65 kilometer från vulkanen, och ljudet hördes kraftigt åtminstone 5 000 kilometer från vulkanen. Motivera varför området i fråga är vulkaniskt. (6 p.) (textsvar)
+
+
+#### 7. Följderna av att avskaffa sommartid (30 p.) 
+
+
+7.1. Rita en eller flera bilder som förklarar vad som orsakar dygns- och årstidsväxlingarna på jorden. Använd vid behov pilar och korta förklaringstexter tillsammans med bilden. Bifoga bilden eller bilderna till svarsfältet. (8 p.) (textsvar)
+
+
+7.2. Förklara principen enligt vilken jordklotet är uppdelat i tidszoner. (6 p.) (textsvar)
+
+
+7.3. Om man avskaffar sommartid i Europeiska unionen kan Finland välja en permanent tid enligt tidszon UTC+1, UTC+2 eller UTC+3. Hur skiljer sig alternativen från varandra med tanke på hur den ljusa tiden infaller i södra och norra Finland under olika årstider? (8 p.) (textsvar)
+
+
+7.4. Vi antar att man avskaffar sommartid i hela Europeiska unionen. Vad anser du att är den lämpligaste permanenta tidszonen för Finland? Motivera din åsikt och utvärdera fördelarna och nackdelarna med den tidszon du valt med tanke på mänsklig aktivitet. Du kan använda bild som hjälp. (8 p.) (textsvar)
+
+
+#### 8. Sociala risker med urbanisering (30 p.) 
+
+
+8.1. Definiera kort begreppen urbanisering och suburbanisering. (4 p.) (textsvar)
+
+
+8.2. Använd de bifogade kartorna för att analysera de regionala befolkningsskillnaderna i Förenta staternas huvudstad Washington. Diskutera de sociala risker som är förknippade med urbanisering i det område som presenteras i materialet. (12 p.) (textsvar)
+
+
+8.3. Välj ur materialet ett bostadsområde som du ska utveckla. Avgränsa området på kartan du valt och klistra in en skärmdump av området i svarsfältet. Utarbeta tre korta förslag till åtgärder för att minska de sociala riskerna i området. Dina förslag ska kunna presenteras för en stadsplanerare. (8 p.) (textsvar)
+
+
+8.4. Diskutera hur sociala problem kan synas i höstens presidentval i USA. (6 p.) (textsvar)
+
+
+#### 9. Landskap och markanvändning (30 p.) 
+
+
+9.1. Studera geodatamaterialen och förändringen av landskapet som går att observera i materialet. Lista materialen i kronologisk ordning från det äldsta till det yngsta. Märk ut sammanlagt tre olika typer av landskapsförändringar på bilden (eller bilderna) och bifoga en skärmdump (eller skärmdumpar) av den (eller dem) till ditt svar. Namnge varje förändring och beskriv den kortfattat. (12 p.) (textsvar)
+
+
+9.2. Jämför utifrån materialen hur markanvändning sett ut i området under de tidsperioder som de tre bilderna representerar. Analysera vilka faktorer som bidragit till förändringen i markanvändningen. (18 p.) (textsvar)
+`;
+
+exports[`Exam mastering masters GE.xml exam correctly: translation 1`] = `
+Koe koostuu yhdeksästä tehtävästä, joista vastataan viiteen. Tehtävät on jaettu kolmeen osaan. Osassa I on yksi kaikille pakollinen 20 pisteen tehtävä. Osassa II on neljä 20 pisteen tehtävää, joista vastataan kahteen. Osassa III on neljä 30 pisteen tehtävää, joista vastataan kahteen. Kokeen maksimipistemäärä on 120. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+
+20 pisteen tehtävä
+
+Väittämiä maantieteen eri osa-alueilta
+
+Valitse kustakin kohdasta 1.1.–1.10. väittämä, joka on virheellinen . Virheellisiä väittämiä on kussakin tehtäväkohdassa vain yksi. Oikeasta valinnasta saat kaksi pistettä, väärästä valinnasta sinulta vähennetään yksi piste. Vastaamatta jättämisestä annetaan nolla pistettä.
+
+Eroosio
+
+Virtaava vesi on maapallon merkittävin eroosiovoima. Ilmastonmuutoksen seurauksena sään ääri-ilmiöt yleistyvät ja eroosio voimistuu. Kaikkein kuivimmilla alueilla eroosiota ei tapahdu juuri lainkaan. Ihminen on omilla toimillaan voimistanut eroosiota maapallolla. En vastaa.
+
+Pakolaisuus ja siirtolaisuus
+
+Pakolainen on ihminen, joka joutuu pakenemaan kotiseudultaan vainon vuoksi. Turvapaikanhakijalla tarkoitetaan ihmistä, joka pyytää oleskelulupaa ja suojelua toisesta maasta. Siirtolaisuus on vapaaehtoista muuttamista toiseen maahan esimerkiksi paremman toimeentulon saamiseksi. Ympäristöpakolaisella tarkoitetaan ihmistä, joka jää kriisialueelta paettuaan sen välittömään lähiympäristöön pakolaisleirille. En vastaa.
+
+Sade
+
+Konvektiosade syntyy, kun aurinko lämmittää voimakkaasti maanpintaa, jolloin ilmamassa kohoaa ja kosteus tiivistyy sateeksi. Orografinen sade syntyy, kun kostea ilmamassa joutuu kohoamaan rannikon tai vuoriston takia, jolloin se jäähtyy ja sen kosteus tiivistyy sateeksi. Konvektiosateet ovat yleisimpiä maapallon kylmillä alueilla ja Suomessa talvisaikaan. Vuoriston ylittänyt ilmamassa yleensä kuivuu ja lämpenee. En vastaa.
+
+Maapallon rakenne
+
+Litosfääri on sula kerros Maan ytimen ja kuoren välissä. Mereinen kuori on mantereista kuorta ohuempi. Maan ydin voidaan jakaa kiinteään sisäytimeen ja sulaan ulkoytimeen. Sulan kiviaineksen liikkeet Maan ytimessä aiheuttavat voimakkaita sähkövirtoja, jotka saavat aikaan magneettikentän. En vastaa.
+
+Biomit
+
+Sademetsiä esiintyy sekä tropiikissa että subtropiikissa alueilla, joilla sataa runsaasti. Vuorenrinnettä noustaessa voidaan havaita samantyyppisiä kasvillisuusvyöhykkeitä kuin merenpinnan tasossa napoja kohti kuljettaessa. Savannien kasvillisuus kärsii kuivuudesta läpi vuoden. Lauhkeille lehtimetsille on tyypillistä, että lehtipuut pudottavat lehtensä talveksi. En vastaa.
+
+Uusiutumattomat energianlähteet
+
+Ydinvoima kuuluu uusiutumattomiin energianlähteisiin. Öljy ja kivihiili tuottavat palaessaan happamoittavia päästöjä, kuten rikin oksideja. Nesteytetty maakaasu ei tuota palaessaan kasvihuonekaasupäästöjä. Turvetta syntyy hyvin hitaasti, joten se lasketaan uusiutumattomiin energianlähteisiin. En vastaa.
+
+Väestönkasvu
+
+Väestöllisen muuntumisen mallin toisessa vaiheessa väestönkasvu on pysähtynyt. Väestöpyramideista voidaan päätellä väestöllisen muuntumisen mallin vaiheita. Maapallon väkiluku on kasvanut voimakkaasti viimeisten sadan vuoden aikana. Väestönkasvu on nopeinta kehittyvissä maissa, erityisesti Afrikan alueella. En vastaa.
+
+Satelliittikuvia ja kaukokartoitusta
+
+Kaukokartoitus perustuu heijastuksiin maapallon pinnasta ja niiden havainnointiin. Kaukokartoituksessa satelliittien seismografeilla tutkitaan ilmakehän ominaisuuksia. Laserkeilauksessa mittauslaite lähettää mitattavaan kohteeseen lasersäteitä. Kaukokartoituksen avulla voidaan tutkia myös valtameriä ja niiden ominaisuuksia. En vastaa.
+
+Kartan korkeuskäyrät
+
+Kartan korkeuskäyrien avulla nähdään, mihin suuntaan rinne viettää. Kartan korkeuskäyrien avulla nähdään rinteen jyrkkyys. Kartan korkeuskäyrien avulla voidaan piirtää korkeusprofiili. Kartan korkeuskäyrät kääntyvät Coriolis-ilmiön takia eteläisellä pallonpuoliskolla aina oikealle. En vastaa.
+
+Paikkatieto ja kartat
+
+Karttaprojektion avulla maapallon kaareva pinta kuvataan tasona. Kartta on aina mittakaavassa suurennettu kuva maapallon pinnasta. Koordinaatiston avulla pisteen sijainti kartalla voidaan ilmoittaa kahden akselin (x, y) lukuarvoina. Paikkatieto sisältää sekä sijaintitietoa että ominaisuustietoa. En vastaa.
+
+20 pisteen tehtävät
+
+Olympialaiset ja ympäristö
+
+Vuoden 2021 kesäolympialaisten järjestäjäkaupunkina toimii Japanin Tokio.
+
+Olympialaisilla on monia vaikutuksia ympäristöön. Pohdi Tokion olympiakisojen ympäristövaikutuksia järjestäjäkaupunki Tokioon sekä globaalilla tasolla.
+
+Miten olympialaisten haitallisia ympäristövaikutuksia voidaan vähentää? Tarkastele ratkaisukeinoja haittojen vähentämiseksi sekä järjestäjäkaupunki Tokion että yksittäisen matkailijan kannalta.
+
+Kylmyyden vaikutukset maaperään ja kallioperään
+
+Talvisin sekä maaperässä että kallioperässä oleva vesi saattaa jäätyä. Maaperässä olevaa jäätynyttä vettä nimitetään roudaksi. Ikiroudaksi puolestaan kutsutaan ilmiötä, jossa maaperä on ollut jäätyneenä vähintään kaksi vuotta yhtäjaksoisesti eli myös kesän ajan. Ikiroutaa esiintyy lähinnä arktisilla alueilla, joilla on talvisin riittävän kylmä.
+
+Kuva: Ikiroutaa Alaskassa
+
+Miten maa- ja kallioperässä esiintyvä jää muuttaa maanpinnan muotoja? Käytä vastauksessasi maantieteellisiä käsitteitä.
+
+Selitä, miten routa vaikuttaa ihmistoimintaan.
+
+Ilmastonmuutos sulattaa ikiroutaa. Pohdi, minkälaisia vaikutuksia ikiroudan häviämisellä on ympäristölle ja mitä seurauksia sillä on ihmiselle.
+
+Köyhyys
+
+Mitä tarkoitetaan suhteellisella köyhyydellä?
+
+Kuvaile köyhyyden alueellisia eroja globaalilla tasolla. Kuvaa kaksi keskeistä syytä näihin eroihin.
+
+Kuvaile köyhyyden alueellisia eroja Suomessa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+
+Kuvaile köyhyyden alueellisia eroja valitsemassasi ja nimeämässäsi suomalaisessa kunnassa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+
+Pyörällä Afrikan halki
+
+Kartta: Afrikan kartta ja reittivaihtoehdot
+
+YTL
+
+YTL
+
+Kartta: Ebolariski Afrikassa
+
+Karttaan merkityillä alueilla on todennäköistä, että lepakot kantavat ebolavirusta.
+
+Pigott ym. 2014. eLife 2014:3
+
+YTL
+
+Kartta: Keskilämpötilat Afrikassa
+
+Paaijmans ym. 2010. PNAS 107, 15135-15139
+
+YTL
+
+YTL
+
+Kartta: Ulkoministeriön matkustustiedotteet Afrikalle
+
+Suomen ulkoministeriö, matkustustiedotteet
+
+YTL
+
+Karttaesitys: YTL
+
+Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä.
+
+Tutustu aineistoihin ja valitse aineistossa esitetyistä kolmesta reittivaihtoehdosta mielestäsi paras. Perustele valintasi arvioimalla eri reittien hyviä ja huonoja puolia. Hyödynnä vastauksessasi kaikkia aineistoja.
+
+Kuvaile, minkälaisia maisematyyppejä ja minkälaisia alueellisia riskejä pyöräilijä kohtaa valitsemallasi reitillä. Etene kuvauksessasi reitin suuntaisesti.
+
+30 pisteen tehtävät
+
+Tulivuoret ja supertulivuoret
+
+Taulukko: Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä 150 viime vuoden ajalta
+
+Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä viimeisten 150 vuoden ajalta Tulivuori Vuosi VEI -indeksi Uhrimäärä Krakatau 1883 6 36417 Mount Tarawera 1886 5 108 Mount Bandai 1888 4 447 Mount Pelée 1902 4 33000 Santa María 1902 6 6000 La Soufrière 1902 4 1680 Kelud 1919 4 5000 Rabaul caldera 1937 4 507 Mount Vesuvius 1944 3 20 Mount Lamington 1951 4 2942 Mount Agung 1963 5 1584 Mount St. Helens 1980 5 57 El Chichón 1982 5 3500 Nevado del Ruiz 1985 3 23000 Mount Pinatubo 1991 6 847 Soufriere Hills Volcano 1997 4 19 Nyiragongo 2002 1 147 Mount Merapi 2010 4 353 Nabro 2011 4 31 Mount Ontake 2014 3 63 Kelud 2014 4 2 Anak Krakatau 2018 3 426 Volcán de Fuego 2018 3 190
+
+Wikipedia
+
+YTL
+
+YTL
+
+Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’)
+
+Video kestää 40 sekuntia.
+
+Youtube-videopalvelu
+
+YTL
+
+Mitä tarkoitetaan supertulivuorella? Mainitse myös ainakin yksi alueellinen esimerkki.
+
+Jos supertulivuori purkautuisi Yhdysvalloissa tai Euroopassa nyt, millaisia vaikutuksia purkauksella todennäköisesti olisi?
+
+Tee taulukko kymmenestä eniten uhreja aiheuttaneesta tulivuorenpurkauksesta ja järjestä kyseiset purkaukset uhrimäärän mukaan suuruusjärjestykseen. Ota tekemästäsi taulukosta kuvakaappaus ja liitä se vastauskenttään. Laske myös kymmenen eniten uhreja aiheuttaneen purkauksen uhrimäärän summa ja keskiarvo. Kirjoita myös laskutoimitusten tulokset vastauskenttään.
+
+Miksi tulivuorenpurkauksiin kuolleiden ihmisten määrä on useimmissa tulivuorenpurkauksissa melko pieni verrattuna purkauksen voimakkuuteen?
+
+Indonesiassa sijaitsevan Krakatau-tulivuoren purkaus vuonna 1883 aiheutti ihmiskunnan kirjoitetun historian ajan kovimman äänen. Ihmisiä kuuroutui 65 kilometrin päässä tulivuoresta, ja ääni kuului voimakkaana ainakin 5 000 kilometrin päähän. Perustele, miksi kyseinen alue on vulkaaninen.
+
+Kesäajasta luopumisen vaikutukset
+
+Kartta: Euroopan aikavyöhykkeet
+
+Suuret lupaukset vesittyivät: Kellojen siirtelyn lopettamisesta ei välttämättä tule mitään
+
+Helsingin Sanomat
+
+YTL
+
+YTL
+
+Piirrä kuva tai kuvia, joissa esität, mistä vuodenaikojen sekä vuorokaudenaikojen vaihtelu maapallolla aiheutuu. Käytä kuvassa tarvittaessa nuolia ja lyhyitä selittäviä tekstejä. Liitä kuva tai kuvat vastauskenttään.
+
+Selitä periaate, jonka mukaan maapallo on jaettu aikavyöhykkeisiin.
+
+Jos kesäaikaan siirtymisestä luovutaan Euroopan unionissa, Suomi voi valita pysyväksi kellonajakseen aikavyöhykkeen UTC+1, UTC+2 tai UTC+3 mukaisen ajan. Miten vaihtoehdot eroavat toisistaan valoisan ajan ajoittumisen suhteen eri vuodenaikoina Etelä- ja Pohjois-Suomessa?
+
+Oletetaan, että kesäaikaan siirtymisestä luovutaan koko Euroopan unionin alueella. Mikä on oma mielipiteesi Suomelle parhaiten soveltuvasta pysyvästä aikavyöhykkeestä? Perustele mielipiteesi ja arvioi valitsemasi aikavyöhykkeen etuja ja haittoja ihmistoiminnan näkökulmasta. Voit käyttää apunasi kuvaa .
+
+Kaupungistumisen sosiaaliset riskit
+
+Kartta: Korkeakoulututkinnon suorittaneiden osuus yli 25-vuotiaasta väestöstä prosentteina Washingtonin kaupungin alueella vuonna 2000
+
+YTL
+
+YTL
+
+Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999
+
+YTL
+
+YTL
+
+Kartta: Väkivaltarikollisuuden keskittyminen Washingtonin kaupungin alueella vuosina 2006–2008
+
+YTL
+
+YTL
+
+Karttojen päällekkäistarkastelu: Washingtonin kaupunki
+
+YTL
+
+YTL
+
+Määrittele lyhyesti käsitteet kaupungistuminen (eli urbanisaatio) ja esikaupungistuminen (eli suburbanisaatio).
+
+Analysoi oheisten karttojen avulla väestön alueellisia eroja Yhdysvaltojen pääkaupungissa Washingtonissa. Pohdi kaupungistumiseen liittyviä sosiaalisia riskejä aineistossa näkyvällä alueella.
+
+Valitse aineistosta yksi asuinalue, jota alat kehittää. Rajaa alue valitsemaasi karttaan ja liitä kuvakaappaus siitä vastauskenttään. Laadi kaupunkisuunnittelijoille kolme lyhyttä toimenpide-ehdotusta, joiden avulla kyseisen alueen sosiaalisia riskejä voitaisiin vähentää.
+
+Pohdi, miten sosiaaliset ongelmat voivat näkyä syksyn presidentinvaaleissa Yhdysvalloissa.
+
+Maisema ja maankäyttö
+
+Kuva: Viikki, Helsinki
+
+Maanmittauslaitos
+
+YTL
+
+Kuva: Viikki, Helsinki
+
+Helsingin kaupunki
+
+YTL
+
+Kuva: Viikki, Helsinki
+
+Helsingin kaupunki
+
+YTL
+
+Kuvien päällekkäistarkastelu: Viikki, Helsinki
+
+Maanmittauslaitos
+
+YTL
+
+Helsingin kaupunki
+
+YTL
+
+Tutustu paikkatietoaineistoihin ja niissä näkyvään maiseman muutokseen. Luettele aineistot aikajärjestyksessä vanhimmasta nuorimpaan. Merkitse kuvaan (tai kuviin) yhteensä kolme erityyppistä maiseman muutosta ja liitä kuvakaappaus (tai kaappaukset) vastaukseesi. Nimeä kukin muutos ja kuvaile sitä lyhyesti.
+
+Vertaile aineistojen perusteella, millaista alueen maankäyttö on ollut kyseisinä kolmena kuvissa näkyvänä aikana. Analysoi, mitkä tekijät ovat vaikuttaneet maankäytön muuttumiseen.
+`;
+
+exports[`Exam mastering masters GE.xml exam correctly: translation 2`] = `
+Koe koostuu yhdeksästä tehtävästä, joista vastataan viiteen. Tehtävät on jaettu kolmeen osaan. Osassa I on yksi kaikille pakollinen 20 pisteen tehtävä. Osassa II on neljä 20 pisteen tehtävää, joista vastataan kahteen. Osassa III on neljä 30 pisteen tehtävää, joista vastataan kahteen. Kokeen maksimipistemäärä on 120. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+
+20 pisteen tehtävä
+
+Väittämiä maantieteen eri osa-alueilta
+
+Valitse kustakin kohdasta 1.1.–1.10. väittämä, joka on virheellinen . Virheellisiä väittämiä on kussakin tehtäväkohdassa vain yksi. Oikeasta valinnasta saat kaksi pistettä, väärästä valinnasta sinulta vähennetään yksi piste. Vastaamatta jättämisestä annetaan nolla pistettä.
+
+Eroosio
+
+Virtaava vesi on maapallon merkittävin eroosiovoima. Ilmastonmuutoksen seurauksena sään ääri-ilmiöt yleistyvät ja eroosio voimistuu. Kaikkein kuivimmilla alueilla eroosiota ei tapahdu juuri lainkaan. Ihminen on omilla toimillaan voimistanut eroosiota maapallolla. En vastaa.
+
+Pakolaisuus ja siirtolaisuus
+
+Pakolainen on ihminen, joka joutuu pakenemaan kotiseudultaan vainon vuoksi. Turvapaikanhakijalla tarkoitetaan ihmistä, joka pyytää oleskelulupaa ja suojelua toisesta maasta. Siirtolaisuus on vapaaehtoista muuttamista toiseen maahan esimerkiksi paremman toimeentulon saamiseksi. Ympäristöpakolaisella tarkoitetaan ihmistä, joka jää kriisialueelta paettuaan sen välittömään lähiympäristöön pakolaisleirille. En vastaa.
+
+Sade
+
+Konvektiosade syntyy, kun aurinko lämmittää voimakkaasti maanpintaa, jolloin ilmamassa kohoaa ja kosteus tiivistyy sateeksi. Orografinen sade syntyy, kun kostea ilmamassa joutuu kohoamaan rannikon tai vuoriston takia, jolloin se jäähtyy ja sen kosteus tiivistyy sateeksi. Konvektiosateet ovat yleisimpiä maapallon kylmillä alueilla ja Suomessa talvisaikaan. Vuoriston ylittänyt ilmamassa yleensä kuivuu ja lämpenee. En vastaa.
+
+Maapallon rakenne
+
+Litosfääri on sula kerros Maan ytimen ja kuoren välissä. Mereinen kuori on mantereista kuorta ohuempi. Maan ydin voidaan jakaa kiinteään sisäytimeen ja sulaan ulkoytimeen. Sulan kiviaineksen liikkeet Maan ytimessä aiheuttavat voimakkaita sähkövirtoja, jotka saavat aikaan magneettikentän. En vastaa.
+
+Biomit
+
+Sademetsiä esiintyy sekä tropiikissa että subtropiikissa alueilla, joilla sataa runsaasti. Vuorenrinnettä noustaessa voidaan havaita samantyyppisiä kasvillisuusvyöhykkeitä kuin merenpinnan tasossa napoja kohti kuljettaessa. Savannien kasvillisuus kärsii kuivuudesta läpi vuoden. Lauhkeille lehtimetsille on tyypillistä, että lehtipuut pudottavat lehtensä talveksi. En vastaa.
+
+Uusiutumattomat energianlähteet
+
+Ydinvoima kuuluu uusiutumattomiin energianlähteisiin. Öljy ja kivihiili tuottavat palaessaan happamoittavia päästöjä, kuten rikin oksideja. Nesteytetty maakaasu ei tuota palaessaan kasvihuonekaasupäästöjä. Turvetta syntyy hyvin hitaasti, joten se lasketaan uusiutumattomiin energianlähteisiin. En vastaa.
+
+Väestönkasvu
+
+Väestöllisen muuntumisen mallin toisessa vaiheessa väestönkasvu on pysähtynyt. Väestöpyramideista voidaan päätellä väestöllisen muuntumisen mallin vaiheita. Maapallon väkiluku on kasvanut voimakkaasti viimeisten sadan vuoden aikana. Väestönkasvu on nopeinta kehittyvissä maissa, erityisesti Afrikan alueella. En vastaa.
+
+Satelliittikuvia ja kaukokartoitusta
+
+Kaukokartoitus perustuu heijastuksiin maapallon pinnasta ja niiden havainnointiin. Kaukokartoituksessa satelliittien seismografeilla tutkitaan ilmakehän ominaisuuksia. Laserkeilauksessa mittauslaite lähettää mitattavaan kohteeseen lasersäteitä. Kaukokartoituksen avulla voidaan tutkia myös valtameriä ja niiden ominaisuuksia. En vastaa.
+
+Kartan korkeuskäyrät
+
+Kartan korkeuskäyrien avulla nähdään, mihin suuntaan rinne viettää. Kartan korkeuskäyrien avulla nähdään rinteen jyrkkyys. Kartan korkeuskäyrien avulla voidaan piirtää korkeusprofiili. Kartan korkeuskäyrät kääntyvät Coriolis-ilmiön takia eteläisellä pallonpuoliskolla aina oikealle. En vastaa.
+
+Paikkatieto ja kartat
+
+Karttaprojektion avulla maapallon kaareva pinta kuvataan tasona. Kartta on aina mittakaavassa suurennettu kuva maapallon pinnasta. Koordinaatiston avulla pisteen sijainti kartalla voidaan ilmoittaa kahden akselin (x, y) lukuarvoina. Paikkatieto sisältää sekä sijaintitietoa että ominaisuustietoa. En vastaa.
+
+20 pisteen tehtävät
+
+Olympialaiset ja ympäristö
+
+Vuoden 2021 kesäolympialaisten järjestäjäkaupunkina toimii Japanin Tokio.
+
+Olympialaisilla on monia vaikutuksia ympäristöön. Pohdi Tokion olympiakisojen ympäristövaikutuksia järjestäjäkaupunki Tokioon sekä globaalilla tasolla.
+
+Miten olympialaisten haitallisia ympäristövaikutuksia voidaan vähentää? Tarkastele ratkaisukeinoja haittojen vähentämiseksi sekä järjestäjäkaupunki Tokion että yksittäisen matkailijan kannalta.
+
+Kylmyyden vaikutukset maaperään ja kallioperään
+
+Talvisin sekä maaperässä että kallioperässä oleva vesi saattaa jäätyä. Maaperässä olevaa jäätynyttä vettä nimitetään roudaksi. Ikiroudaksi puolestaan kutsutaan ilmiötä, jossa maaperä on ollut jäätyneenä vähintään kaksi vuotta yhtäjaksoisesti eli myös kesän ajan. Ikiroutaa esiintyy lähinnä arktisilla alueilla, joilla on talvisin riittävän kylmä.
+
+Kuva: Ikiroutaa Alaskassa
+
+Miten maa- ja kallioperässä esiintyvä jää muuttaa maanpinnan muotoja? Käytä vastauksessasi maantieteellisiä käsitteitä.
+
+Selitä, miten routa vaikuttaa ihmistoimintaan.
+
+Ilmastonmuutos sulattaa ikiroutaa. Pohdi, minkälaisia vaikutuksia ikiroudan häviämisellä on ympäristölle ja mitä seurauksia sillä on ihmiselle.
+
+Köyhyys
+
+Mitä tarkoitetaan suhteellisella köyhyydellä?
+
+Kuvaile köyhyyden alueellisia eroja globaalilla tasolla. Kuvaa kaksi keskeistä syytä näihin eroihin.
+
+Kuvaile köyhyyden alueellisia eroja Suomessa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+
+Kuvaile köyhyyden alueellisia eroja valitsemassasi ja nimeämässäsi suomalaisessa kunnassa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+
+Pyörällä Afrikan halki
+
+Kartta: Afrikan kartta ja reittivaihtoehdot
+
+YTL
+
+YTL
+
+Kartta: Ebolariski Afrikassa
+
+Karttaan merkityillä alueilla on todennäköistä, että lepakot kantavat ebolavirusta.
+
+Pigott ym. 2014. eLife 2014:3
+
+YTL
+
+Kartta: Keskilämpötilat Afrikassa
+
+Paaijmans ym. 2010. PNAS 107, 15135-15139
+
+YTL
+
+YTL
+
+Kartta: Ulkoministeriön matkustustiedotteet Afrikalle
+
+Suomen ulkoministeriö, matkustustiedotteet
+
+YTL
+
+Karttaesitys: YTL
+
+Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä.
+
+Tutustu aineistoihin ja valitse aineistossa esitetyistä kolmesta reittivaihtoehdosta mielestäsi paras. Perustele valintasi arvioimalla eri reittien hyviä ja huonoja puolia. Hyödynnä vastauksessasi kaikkia aineistoja.
+
+Kuvaile, minkälaisia maisematyyppejä ja minkälaisia alueellisia riskejä pyöräilijä kohtaa valitsemallasi reitillä. Etene kuvauksessasi reitin suuntaisesti.
+
+30 pisteen tehtävät
+
+Tulivuoret ja supertulivuoret
+
+Taulukko: Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä 150 viime vuoden ajalta
+
+Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä viimeisten 150 vuoden ajalta Tulivuori Vuosi VEI -indeksi Uhrimäärä Krakatau 1883 6 36417 Mount Tarawera 1886 5 108 Mount Bandai 1888 4 447 Mount Pelée 1902 4 33000 Santa María 1902 6 6000 La Soufrière 1902 4 1680 Kelud 1919 4 5000 Rabaul caldera 1937 4 507 Mount Vesuvius 1944 3 20 Mount Lamington 1951 4 2942 Mount Agung 1963 5 1584 Mount St. Helens 1980 5 57 El Chichón 1982 5 3500 Nevado del Ruiz 1985 3 23000 Mount Pinatubo 1991 6 847 Soufriere Hills Volcano 1997 4 19 Nyiragongo 2002 1 147 Mount Merapi 2010 4 353 Nabro 2011 4 31 Mount Ontake 2014 3 63 Kelud 2014 4 2 Anak Krakatau 2018 3 426 Volcán de Fuego 2018 3 190
+
+Wikipedia
+
+YTL
+
+YTL
+
+Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’)
+
+Video kestää 40 sekuntia.
+
+Youtube-videopalvelu
+
+YTL
+
+Mitä tarkoitetaan supertulivuorella? Mainitse myös ainakin yksi alueellinen esimerkki.
+
+Jos supertulivuori purkautuisi Yhdysvalloissa tai Euroopassa nyt, millaisia vaikutuksia purkauksella todennäköisesti olisi?
+
+Tee taulukko kymmenestä eniten uhreja aiheuttaneesta tulivuorenpurkauksesta ja järjestä kyseiset purkaukset uhrimäärän mukaan suuruusjärjestykseen. Ota tekemästäsi taulukosta kuvakaappaus ja liitä se vastauskenttään. Laske myös kymmenen eniten uhreja aiheuttaneen purkauksen uhrimäärän summa ja keskiarvo. Kirjoita myös laskutoimitusten tulokset vastauskenttään.
+
+Miksi tulivuorenpurkauksiin kuolleiden ihmisten määrä on useimmissa tulivuorenpurkauksissa melko pieni verrattuna purkauksen voimakkuuteen?
+
+Indonesiassa sijaitsevan Krakatau-tulivuoren purkaus vuonna 1883 aiheutti ihmiskunnan kirjoitetun historian ajan kovimman äänen. Ihmisiä kuuroutui 65 kilometrin päässä tulivuoresta, ja ääni kuului voimakkaana ainakin 5 000 kilometrin päähän. Perustele, miksi kyseinen alue on vulkaaninen.
+
+Kesäajasta luopumisen vaikutukset
+
+Kartta: Euroopan aikavyöhykkeet
+
+Suuret lupaukset vesittyivät: Kellojen siirtelyn lopettamisesta ei välttämättä tule mitään
+
+Helsingin Sanomat
+
+YTL
+
+YTL
+
+Piirrä kuva tai kuvia, joissa esität, mistä vuodenaikojen sekä vuorokaudenaikojen vaihtelu maapallolla aiheutuu. Käytä kuvassa tarvittaessa nuolia ja lyhyitä selittäviä tekstejä. Liitä kuva tai kuvat vastauskenttään.
+
+Selitä periaate, jonka mukaan maapallo on jaettu aikavyöhykkeisiin.
+
+Jos kesäaikaan siirtymisestä luovutaan Euroopan unionissa, Suomi voi valita pysyväksi kellonajakseen aikavyöhykkeen UTC+1, UTC+2 tai UTC+3 mukaisen ajan. Miten vaihtoehdot eroavat toisistaan valoisan ajan ajoittumisen suhteen eri vuodenaikoina Etelä- ja Pohjois-Suomessa?
+
+Oletetaan, että kesäaikaan siirtymisestä luovutaan koko Euroopan unionin alueella. Mikä on oma mielipiteesi Suomelle parhaiten soveltuvasta pysyvästä aikavyöhykkeestä? Perustele mielipiteesi ja arvioi valitsemasi aikavyöhykkeen etuja ja haittoja ihmistoiminnan näkökulmasta. Voit käyttää apunasi kuvaa .
+
+Kaupungistumisen sosiaaliset riskit
+
+Kartta: Korkeakoulututkinnon suorittaneiden osuus yli 25-vuotiaasta väestöstä prosentteina Washingtonin kaupungin alueella vuonna 2000
+
+YTL
+
+YTL
+
+Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999
+
+YTL
+
+YTL
+
+Kartta: Väkivaltarikollisuuden keskittyminen Washingtonin kaupungin alueella vuosina 2006–2008
+
+YTL
+
+YTL
+
+Karttojen päällekkäistarkastelu: Washingtonin kaupunki
+
+YTL
+
+YTL
+
+Määrittele lyhyesti käsitteet kaupungistuminen (eli urbanisaatio) ja esikaupungistuminen (eli suburbanisaatio).
+
+Analysoi oheisten karttojen avulla väestön alueellisia eroja Yhdysvaltojen pääkaupungissa Washingtonissa. Pohdi kaupungistumiseen liittyviä sosiaalisia riskejä aineistossa näkyvällä alueella.
+
+Valitse aineistosta yksi asuinalue, jota alat kehittää. Rajaa alue valitsemaasi karttaan ja liitä kuvakaappaus siitä vastauskenttään. Laadi kaupunkisuunnittelijoille kolme lyhyttä toimenpide-ehdotusta, joiden avulla kyseisen alueen sosiaalisia riskejä voitaisiin vähentää.
+
+Pohdi, miten sosiaaliset ongelmat voivat näkyä syksyn presidentinvaaleissa Yhdysvalloissa.
+
+Maisema ja maankäyttö
+
+Kuva: Viikki, Helsinki
+
+Maanmittauslaitos
+
+YTL
+
+Kuva: Viikki, Helsinki
+
+Helsingin kaupunki
+
+YTL
+
+Kuva: Viikki, Helsinki
+
+Helsingin kaupunki
+
+YTL
+
+Kuvien päällekkäistarkastelu: Viikki, Helsinki
+
+Maanmittauslaitos
+
+YTL
+
+Helsingin kaupunki
+
+YTL
+
+Tutustu paikkatietoaineistoihin ja niissä näkyvään maiseman muutokseen. Luettele aineistot aikajärjestyksessä vanhimmasta nuorimpaan. Merkitse kuvaan (tai kuviin) yhteensä kolme erityyppistä maiseman muutosta ja liitä kuvakaappaus (tai kaappaukset) vastaukseesi. Nimeä kukin muutos ja kuvaile sitä lyhyesti.
+
+Vertaile aineistojen perusteella, millaista alueen maankäyttö on ollut kyseisinä kolmena kuvissa näkyvänä aikana. Analysoi, mitkä tekijät ovat vaikuttaneet maankäytön muuttumiseen.
+`;
+
+exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>FI – Maantiede</e:exam-title>
+  
+
+  <e:exam-instruction>
+    
+      <p>
+        Koe koostuu yhdeksästä tehtävästä, joista vastataan viiteen. Tehtävät on jaettu kolmeen osaan. Osassa I on yksi kaikille pakollinen 20 pisteen tehtävä. Osassa II on neljä 20 pisteen tehtävää, joista vastataan kahteen. Osassa III on neljä 30 pisteen tehtävää, joista vastataan kahteen. Kokeen maksimipistemäärä on 120. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen.
+      </p>
+      <p>
+        Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+      </p>
+    
+    
+  </e:exam-instruction>
+  <e:table-of-contents/>
+  <e:section max-answers="1" display-number="1" max-score="20" min-answers="1">
+    <e:section-title>
+      
+        20 pisteen tehtävä
+      
+      
+    </e:section-title>
+
+    
+    <e:question display-number="1" max-score="20">
+      <e:question-title>
+        
+          Väittämiä maantieteen eri osa-alueilta
+        
+        
+      </e:question-title>
+      <e:question-instruction>
+        
+          Valitse kustakin kohdasta 1.1.–1.10. väittämä, joka on
+          <b>virheellinen</b>
+          . Virheellisiä väittämiä on kussakin tehtäväkohdassa vain yksi. Oikeasta valinnasta saat kaksi pistettä, väärästä valinnasta sinulta vähennetään yksi piste. Vastaamatta jättämisestä annetaan nolla pistettä.
+        
+        
+      </e:question-instruction>
+      <e:question display-number="1.1" max-score="2">
+        <e:question-title>
+          
+            Eroosio
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.1" question-id="1" max-score="2">
+            <e:choice-answer-option option-id="37">Virtaava vesi on maapallon merkittävin eroosiovoima.</e:choice-answer-option>
+            <e:choice-answer-option option-id="38">Ilmastonmuutoksen seurauksena sään ääri-ilmiöt yleistyvät ja eroosio voimistuu.</e:choice-answer-option>
+            <e:choice-answer-option option-id="39">Kaikkein kuivimmilla alueilla eroosiota ei tapahdu juuri lainkaan.</e:choice-answer-option>
+            <e:choice-answer-option option-id="40">Ihminen on omilla toimillaan voimistanut eroosiota maapallolla.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="41">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.2" max-score="2">
+        <e:question-title>
+          
+            Pakolaisuus ja siirtolaisuus
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.2" question-id="2" max-score="2">
+            <e:choice-answer-option option-id="42">Pakolainen on ihminen, joka joutuu pakenemaan kotiseudultaan vainon vuoksi.</e:choice-answer-option>
+            <e:choice-answer-option option-id="43">Turvapaikanhakijalla tarkoitetaan ihmistä, joka pyytää oleskelulupaa ja suojelua toisesta maasta.</e:choice-answer-option>
+            <e:choice-answer-option option-id="44">Siirtolaisuus on vapaaehtoista muuttamista toiseen maahan esimerkiksi paremman toimeentulon saamiseksi.</e:choice-answer-option>
+            <e:choice-answer-option option-id="45">Ympäristöpakolaisella tarkoitetaan ihmistä, joka jää kriisialueelta paettuaan sen välittömään lähiympäristöön pakolaisleirille.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="46">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.3" max-score="2">
+        <e:question-title>
+          
+            Sade
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.3" question-id="3" max-score="2">
+            <e:choice-answer-option option-id="47">Konvektiosade syntyy, kun aurinko lämmittää voimakkaasti maanpintaa, jolloin ilmamassa kohoaa ja kosteus tiivistyy sateeksi.</e:choice-answer-option>
+            <e:choice-answer-option option-id="48">Orografinen sade syntyy, kun kostea ilmamassa joutuu kohoamaan rannikon tai vuoriston takia, jolloin se jäähtyy ja sen kosteus tiivistyy sateeksi.</e:choice-answer-option>
+            <e:choice-answer-option option-id="49">Konvektiosateet ovat yleisimpiä maapallon kylmillä alueilla ja Suomessa talvisaikaan.</e:choice-answer-option>
+            <e:choice-answer-option option-id="50">Vuoriston ylittänyt ilmamassa yleensä kuivuu ja lämpenee.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="51">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.4" max-score="2">
+        <e:question-title>
+          
+            Maapallon rakenne
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.4" question-id="4" max-score="2">
+            <e:choice-answer-option option-id="52">Litosfääri on sula kerros Maan ytimen ja kuoren välissä.</e:choice-answer-option>
+            <e:choice-answer-option option-id="53">Mereinen kuori on mantereista kuorta ohuempi.</e:choice-answer-option>
+            <e:choice-answer-option option-id="54">Maan ydin voidaan jakaa kiinteään sisäytimeen ja sulaan ulkoytimeen.</e:choice-answer-option>
+            <e:choice-answer-option option-id="55">Sulan kiviaineksen liikkeet Maan ytimessä aiheuttavat voimakkaita sähkövirtoja, jotka saavat aikaan magneettikentän.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="56">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.5" max-score="2">
+        <e:question-title>
+          
+            Biomit
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.5" question-id="5" max-score="2">
+            <e:choice-answer-option option-id="57">Sademetsiä esiintyy sekä tropiikissa että subtropiikissa alueilla, joilla sataa runsaasti.</e:choice-answer-option>
+            <e:choice-answer-option option-id="58">Vuorenrinnettä noustaessa voidaan havaita samantyyppisiä kasvillisuusvyöhykkeitä kuin merenpinnan tasossa napoja kohti kuljettaessa.</e:choice-answer-option>
+            <e:choice-answer-option option-id="59">Savannien kasvillisuus kärsii kuivuudesta läpi vuoden.</e:choice-answer-option>
+            <e:choice-answer-option option-id="60">Lauhkeille lehtimetsille on tyypillistä, että lehtipuut pudottavat lehtensä talveksi.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="61">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.6" max-score="2">
+        <e:question-title>
+          
+            Uusiutumattomat energianlähteet
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.6" question-id="6" max-score="2">
+            <e:choice-answer-option option-id="62">Ydinvoima kuuluu uusiutumattomiin energianlähteisiin.</e:choice-answer-option>
+            <e:choice-answer-option option-id="63">Öljy ja kivihiili tuottavat palaessaan happamoittavia päästöjä, kuten rikin oksideja.</e:choice-answer-option>
+            <e:choice-answer-option option-id="64">Nesteytetty maakaasu ei tuota palaessaan kasvihuonekaasupäästöjä.</e:choice-answer-option>
+            <e:choice-answer-option option-id="65">Turvetta syntyy hyvin hitaasti, joten se lasketaan uusiutumattomiin energianlähteisiin.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="66">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.7" max-score="2">
+        <e:question-title>
+          
+            Väestönkasvu
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.7" question-id="7" max-score="2">
+            <e:choice-answer-option option-id="67">Väestöllisen muuntumisen mallin toisessa vaiheessa väestönkasvu on pysähtynyt.</e:choice-answer-option>
+            <e:choice-answer-option option-id="68">Väestöpyramideista voidaan päätellä väestöllisen muuntumisen mallin vaiheita.</e:choice-answer-option>
+            <e:choice-answer-option option-id="69">Maapallon väkiluku on kasvanut voimakkaasti viimeisten sadan vuoden aikana.</e:choice-answer-option>
+            <e:choice-answer-option option-id="70">Väestönkasvu on nopeinta kehittyvissä maissa, erityisesti Afrikan alueella.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="71">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.8" max-score="2">
+        <e:question-title>
+          
+            Satelliittikuvia ja kaukokartoitusta
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.8" question-id="8" max-score="2">
+            <e:choice-answer-option option-id="72">Kaukokartoitus perustuu heijastuksiin maapallon pinnasta ja niiden havainnointiin.</e:choice-answer-option>
+            <e:choice-answer-option option-id="73">Kaukokartoituksessa satelliittien seismografeilla tutkitaan ilmakehän ominaisuuksia.</e:choice-answer-option>
+            <e:choice-answer-option option-id="74">Laserkeilauksessa mittauslaite lähettää mitattavaan kohteeseen lasersäteitä.</e:choice-answer-option>
+            <e:choice-answer-option option-id="75">Kaukokartoituksen avulla voidaan tutkia myös valtameriä ja niiden ominaisuuksia.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="76">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.9" max-score="2">
+        <e:question-title>
+          
+            Kartan korkeuskäyrät
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.9" question-id="9" max-score="2">
+            <e:choice-answer-option option-id="77">Kartan korkeuskäyrien avulla nähdään, mihin suuntaan rinne viettää.</e:choice-answer-option>
+            <e:choice-answer-option option-id="78">Kartan korkeuskäyrien avulla nähdään rinteen jyrkkyys.</e:choice-answer-option>
+            <e:choice-answer-option option-id="79">Kartan korkeuskäyrien avulla voidaan piirtää korkeusprofiili.</e:choice-answer-option>
+            <e:choice-answer-option option-id="80">Kartan korkeuskäyrät kääntyvät Coriolis-ilmiön takia eteläisellä pallonpuoliskolla aina oikealle.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="81">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+      <e:question display-number="1.10" max-score="2">
+        <e:question-title>
+          
+            Paikkatieto ja kartat
+          
+          
+        </e:question-title>
+        
+          <e:choice-answer ordering="fixed" display-number="1.10" question-id="10" max-score="2">
+            <e:choice-answer-option option-id="82">Karttaprojektion avulla maapallon kaareva pinta kuvataan tasona.</e:choice-answer-option>
+            <e:choice-answer-option option-id="83">Kartta on aina mittakaavassa suurennettu kuva maapallon pinnasta.</e:choice-answer-option>
+            <e:choice-answer-option option-id="84">Koordinaatiston avulla pisteen sijainti kartalla voidaan ilmoittaa kahden akselin (x, y) lukuarvoina.</e:choice-answer-option>
+            <e:choice-answer-option option-id="85">Paikkatieto sisältää sekä sijaintitietoa että ominaisuustietoa.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="86">En vastaa.</e:choice-answer-option>
+          </e:choice-answer>
+        
+        
+      </e:question>
+    </e:question>
+  </e:section>
+
+
+  <e:section max-answers="2" display-number="2" max-score="40" min-answers="2">
+    <e:section-title>
+      
+        20 pisteen tehtävät
+      
+      
+    </e:section-title>
+
+    
+    <e:question display-number="2" max-score="20">
+      <e:question-title>
+        Olympialaiset ja ympäristö
+        
+        
+      </e:question-title>
+
+      <e:question-instruction>
+        Vuoden 2021 kesäolympialaisten järjestäjäkaupunkina toimii Japanin Tokio.
+        
+      </e:question-instruction>
+
+      <e:question display-number="2.1" max-score="10">
+        <e:question-title>
+          
+            Olympialaisilla on monia vaikutuksia ympäristöön. Pohdi Tokion olympiakisojen ympäristövaikutuksia järjestäjäkaupunki Tokioon sekä globaalilla tasolla.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="2.1" question-id="11"/>
+      </e:question>
+      <e:question display-number="2.2" max-score="10">
+        <e:question-title>
+          
+            Miten olympialaisten haitallisia ympäristövaikutuksia voidaan vähentää? Tarkastele ratkaisukeinoja haittojen vähentämiseksi sekä järjestäjäkaupunki Tokion että yksittäisen matkailijan kannalta.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="2.2" question-id="12"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="3" max-score="20">
+      <e:question-title>
+        Kylmyyden vaikutukset maaperään ja kallioperään
+        
+      </e:question-title>
+      <e:question-instruction>
+        
+          Talvisin sekä maaperässä että kallioperässä oleva vesi saattaa jäätyä. Maaperässä olevaa jäätynyttä vettä nimitetään roudaksi. Ikiroudaksi
+          <e:attachment-link type="long" ref="3A"/>
+          puolestaan kutsutaan ilmiötä, jossa maaperä on ollut jäätyneenä vähintään kaksi vuotta yhtäjaksoisesti eli myös kesän ajan. Ikiroutaa esiintyy lähinnä arktisilla alueilla, joilla on talvisin riittävän kylmä.
+        
+        
+      </e:question-instruction>
+
+      <e:external-material>
+        <e:attachment name="3A" display-number="3.A">
+          <e:attachment-title>
+            Kuva: Ikiroutaa Alaskassa
+              
+            
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Benjamin Jones</e:author>
+            <e:title>U.S. Geological Survey</e:title>
+            <e:url>https://www.flickr.com/photos/usgeologicalsurvey/32682616471/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="3.1" max-score="4">
+        <e:question-title>
+          Miten maa- ja kallioperässä esiintyvä jää muuttaa maanpinnan muotoja? Käytä vastauksessasi maantieteellisiä käsitteitä.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="3.1" question-id="13"/>
+      </e:question>
+
+      <e:question display-number="3.2" max-score="8">
+        <e:question-title>
+          Selitä, miten routa vaikuttaa ihmistoimintaan.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="3.2" question-id="14"/>
+      </e:question>
+
+      <e:question display-number="3.3" max-score="8">
+        <e:question-title>
+          Ilmastonmuutos sulattaa ikiroutaa. Pohdi, minkälaisia vaikutuksia ikiroudan häviämisellä on ympäristölle ja mitä seurauksia sillä on ihmiselle.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="3.3" question-id="15"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="4" max-score="20">
+      <e:question-title>
+        Köyhyys
+        
+      </e:question-title>
+
+      <e:question display-number="4.1" max-score="2">
+        <e:question-title>
+          
+              Mitä tarkoitetaan suhteellisella köyhyydellä?
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="2" display-number="4.1" question-id="16"/>
+      </e:question>
+
+      <e:question display-number="4.2" max-score="6">
+        <e:question-title>
+          
+              Kuvaile köyhyyden alueellisia eroja globaalilla tasolla. Kuvaa kaksi keskeistä syytä näihin eroihin.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="4.2" question-id="17"/>
+      </e:question>
+
+      <e:question display-number="4.3" max-score="6">
+        <e:question-title>
+          
+              Kuvaile köyhyyden alueellisia eroja Suomessa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="4.3" question-id="18"/>
+      </e:question>
+
+      <e:question display-number="4.4" max-score="6">
+        <e:question-title>
+          
+              Kuvaile köyhyyden alueellisia eroja valitsemassasi ja nimeämässäsi suomalaisessa kunnassa. Kuvaa kaksi keskeistä syytä näihin eroihin.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="4.4" question-id="19"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="5" max-score="20">
+      <e:question-title>
+        Pyörällä Afrikan halki 
+        
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="5A" display-number="5.A">
+          <e:attachment-title>
+            Kartta: Afrikan kartta ja reittivaihtoehdot
+            
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              YTL
+              
+            </e:author>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5B" display-number="5.B">
+          <e:attachment-title>
+            Kartta: Ebolariski Afrikassa
+              
+            
+          </e:attachment-title>
+
+          
+            <p>Karttaan merkityillä alueilla on todennäköistä, että lepakot kantavat ebolavirusta.</p>
+          
+          
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              Pigott ym. 2014. eLife 2014:3
+              
+            </e:author>
+            <e:url>https://elifesciences.org/articles/04395</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5C" display-number="5.C">
+          <e:attachment-title>
+            Kartta: Keskilämpötilat Afrikassa
+                
+            
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              Paaijmans ym. 2010. PNAS 107, 15135-15139
+              
+            </e:author>
+            <e:url>https://www.pnas.org/content/107/34/15135</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5D" display-number="5.D">
+          <e:attachment-title>
+            Kartta: Ulkoministeriön matkustustiedotteet Afrikalle
+                  
+            
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              Suomen ulkoministeriö, matkustustiedotteet
+              
+            </e:author>
+            <e:url>https://um.fi/matkustustiedotteet-a-o</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:note>
+              Karttaesitys: YTL
+              
+            </e:note>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question-instruction>
+        
+          Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä. 
+        
+        
+      </e:question-instruction>
+
+      <e:question display-number="5.1" max-score="10">
+        <e:question-title>
+          
+            Tutustu aineistoihin
+            <e:attachment-links type="short">
+              <e:attachment-link ref="5A"/>
+              <e:attachment-link ref="5B"/>
+              <e:attachment-link ref="5C"/>
+              <e:attachment-link ref="5D"/>
+            </e:attachment-links>
+            ja valitse aineistossa
+            <e:attachment-link type="short" ref="5A"/>
+            esitetyistä kolmesta reittivaihtoehdosta mielestäsi paras. Perustele valintasi arvioimalla eri reittien hyviä ja huonoja puolia. Hyödynnä vastauksessasi kaikkia aineistoja.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="5.1" question-id="20"/>
+      </e:question>
+
+      <e:question display-number="5.2" max-score="10">
+        <e:question-title>
+          
+                Kuvaile, minkälaisia maisematyyppejä ja minkälaisia alueellisia riskejä pyöräilijä kohtaa valitsemallasi reitillä. Etene kuvauksessasi reitin suuntaisesti.
+              
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="5.2" question-id="21"/>
+      </e:question>
+    </e:question>
+
+  </e:section>
+  <e:section max-answers="2" display-number="3" max-score="60" min-answers="2">
+    <e:section-title>
+      
+        30 pisteen tehtävät
+      
+      
+    </e:section-title>
+
+    
+    <e:question display-number="6" max-score="30">
+      <e:question-title>
+        Tulivuoret ja supertulivuoret
+        
+        
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="6A" display-number="6.A">
+          <e:attachment-title>
+            Taulukko: Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä 150 viime vuoden ajalta
+              
+            
+          </e:attachment-title>
+
+          
+            <table class="e-table e-width-full"><thead><tr><th colspan="4">Voimakkaimmat tulivuorenpurkaukset ja niiden uhrimäärä viimeisten 150 vuoden ajalta</th></tr></thead><tbody><tr><th>Tulivuori</th><th class="e-text-center">Vuosi</th><th class="e-text-center">VEI -indeksi</th><th class="e-text-center">Uhrimäärä</th></tr><tr><td>Krakatau</td><td class="e-text-center">1883</td><td class="e-text-center">6</td><td class="e-text-center">36417</td></tr><tr><td>Mount Tarawera</td><td class="e-text-center">1886</td><td class="e-text-center">5</td><td class="e-text-center">108</td></tr><tr><td>Mount Bandai</td><td class="e-text-center">1888</td><td class="e-text-center">4</td><td class="e-text-center">447</td></tr><tr><td>Mount Pelée</td><td class="e-text-center">1902</td><td class="e-text-center">4</td><td class="e-text-center">33000</td></tr><tr><td>Santa María</td><td class="e-text-center">1902</td><td class="e-text-center">6</td><td class="e-text-center">6000</td></tr><tr><td>La Soufrière</td><td class="e-text-center">1902</td><td class="e-text-center">4</td><td class="e-text-center">1680</td></tr><tr><td>Kelud</td><td class="e-text-center">1919</td><td class="e-text-center">4</td><td class="e-text-center">5000</td></tr><tr><td>Rabaul caldera</td><td class="e-text-center">1937</td><td class="e-text-center">4</td><td class="e-text-center">507</td></tr><tr><td>Mount Vesuvius</td><td class="e-text-center">1944</td><td class="e-text-center">3</td><td class="e-text-center">20</td></tr><tr><td>Mount Lamington</td><td class="e-text-center">1951</td><td class="e-text-center">4</td><td class="e-text-center">2942</td></tr><tr><td>Mount Agung</td><td class="e-text-center">1963</td><td class="e-text-center">5</td><td class="e-text-center">1584</td></tr><tr><td>Mount St. Helens</td><td class="e-text-center">1980</td><td class="e-text-center">5</td><td class="e-text-center">57</td></tr><tr><td>El Chichón</td><td class="e-text-center">1982</td><td class="e-text-center">5</td><td class="e-text-center">3500</td></tr><tr><td>Nevado del Ruiz</td><td class="e-text-center">1985</td><td class="e-text-center">3</td><td class="e-text-center">23000</td></tr><tr><td>Mount Pinatubo</td><td class="e-text-center">1991</td><td class="e-text-center">6</td><td class="e-text-center">847</td></tr><tr><td>Soufriere Hills Volcano</td><td class="e-text-center">1997</td><td class="e-text-center">4</td><td class="e-text-center">19</td></tr><tr><td>Nyiragongo</td><td class="e-text-center">2002</td><td class="e-text-center">1</td><td class="e-text-center">147</td></tr><tr><td>Mount Merapi</td><td class="e-text-center">2010</td><td class="e-text-center">4</td><td class="e-text-center">353</td></tr><tr><td>Nabro</td><td class="e-text-center">2011</td><td class="e-text-center">4</td><td class="e-text-center">31</td></tr><tr><td>Mount Ontake</td><td class="e-text-center">2014</td><td class="e-text-center">3</td><td class="e-text-center">63</td></tr><tr><td>Kelud</td><td class="e-text-center">2014</td><td class="e-text-center">4</td><td class="e-text-center">2</td></tr><tr><td>Anak Krakatau</td><td class="e-text-center">2018</td><td class="e-text-center">3</td><td class="e-text-center">426</td></tr><tr><td>Volcán de Fuego</td><td class="e-text-center">2018</td><td class="e-text-center">3</td><td class="e-text-center">190</td></tr></tbody></table>
+          
+
+          
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              Wikipedia
+              
+            </e:author>
+            <e:url>https://en.wikipedia.org/wiki/List_of_large_volcanic_eruptions_in_the_21st_century</e:url>
+            <e:reference-date>2019-08-26</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="6B" display-number="6.B">
+          <e:attachment-title>
+            Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’) 
+                
+            
+          </e:attachment-title>
+
+          
+            <p>Video kestää 40 sekuntia.</p>
+          
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Martin Rietze</e:author>
+            <e:title>Krakatau at night</e:title>
+            <e:publication>
+              Youtube-videopalvelu
+              
+            </e:publication>
+            <e:url>https://www.youtube.com/watch?v=9Plj4b79cwg</e:url>
+            <e:publication-date>2018-11-05</e:publication-date>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="6.1" max-score="4">
+        <e:question-title>
+          
+            Mitä tarkoitetaan supertulivuorella? Mainitse myös ainakin yksi alueellinen esimerkki.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="6.1" question-id="22"/>
+      </e:question>
+
+      <e:question display-number="6.2" max-score="8">
+        <e:question-title>
+          
+            Jos supertulivuori purkautuisi Yhdysvalloissa tai Euroopassa nyt, millaisia vaikutuksia purkauksella todennäköisesti olisi?
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="6.2" question-id="23"/>
+      </e:question>
+
+      <e:question display-number="6.3" max-score="6">
+        <e:question-title>
+          
+            Tee taulukko kymmenestä eniten uhreja aiheuttaneesta tulivuorenpurkauksesta
+            <e:attachment-link type="long" ref="6A"/>
+            ja järjestä kyseiset purkaukset uhrimäärän mukaan suuruusjärjestykseen. Ota tekemästäsi taulukosta kuvakaappaus ja liitä se vastauskenttään. Laske myös kymmenen eniten uhreja aiheuttaneen purkauksen uhrimäärän summa ja keskiarvo. Kirjoita myös laskutoimitusten tulokset vastauskenttään.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="6.3" question-id="24"/>
+      </e:question>
+
+      <e:question display-number="6.4" max-score="6">
+        <e:question-title>
+          
+                Miksi tulivuorenpurkauksiin kuolleiden ihmisten määrä on useimmissa tulivuorenpurkauksissa melko pieni verrattuna purkauksen voimakkuuteen?
+              
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="6.4" question-id="25"/>
+      </e:question>
+
+      <e:question display-number="6.5" max-score="6">
+        <e:question-title>
+          
+            Indonesiassa sijaitsevan Krakatau-tulivuoren
+            <e:attachment-link type="long" ref="6B"/>
+            purkaus vuonna 1883 aiheutti ihmiskunnan kirjoitetun historian ajan kovimman äänen. Ihmisiä kuuroutui 65 kilometrin päässä tulivuoresta, ja ääni kuului voimakkaana ainakin
+            <span class="e-nowrap">5 000</span>
+            kilometrin päähän. Perustele, miksi kyseinen alue on vulkaaninen.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="6.5" question-id="26"/>
+      </e:question>
+
+    </e:question>
+
+    
+    <e:question display-number="7" max-score="30">
+      <e:question-title>
+        Kesäajasta luopumisen vaikutukset 
+        
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="7A" display-number="7.A">
+          <e:attachment-title>
+            Kartta: Euroopan aikavyöhykkeet
+            
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Jenni Virtanen</e:author>
+            <e:title>
+              Suuret lupaukset vesittyivät: Kellojen siirtelyn lopettamisesta ei välttämättä tule mitään
+              
+            </e:title>
+            <e:publisher>
+              Helsingin Sanomat
+              
+            </e:publisher>
+            <e:url>https://www.hs.fi/ulkomaat/art-2000006197722.html</e:url>
+            <e:publication-date>2019-08-08</e:publication-date>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="7.1" max-score="8">
+        <e:question-title>
+          Piirrä kuva tai kuvia, joissa esität, mistä vuodenaikojen sekä vuorokaudenaikojen vaihtelu maapallolla aiheutuu. Käytä kuvassa tarvittaessa nuolia ja lyhyitä selittäviä tekstejä. Liitä kuva tai kuvat vastauskenttään.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="7.1" question-id="27"/>
+      </e:question>
+
+      <e:question display-number="7.2" max-score="6">
+        <e:question-title>
+          Selitä periaate, jonka mukaan maapallo on jaettu aikavyöhykkeisiin.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="7.2" question-id="28"/>
+      </e:question>
+      <e:question display-number="7.3" max-score="8">
+        <e:question-title>
+          Jos kesäaikaan siirtymisestä luovutaan Euroopan unionissa, Suomi voi valita pysyväksi kellonajakseen aikavyöhykkeen UTC+1, UTC+2 tai UTC+3 mukaisen ajan. Miten vaihtoehdot eroavat toisistaan valoisan ajan ajoittumisen suhteen eri vuodenaikoina Etelä- ja Pohjois-Suomessa?
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="7.3" question-id="29"/>
+      </e:question>
+      <e:question display-number="7.4" max-score="8">
+        <e:question-title>
+          
+            Oletetaan, että kesäaikaan siirtymisestä luovutaan koko Euroopan unionin alueella. Mikä on oma mielipiteesi Suomelle parhaiten soveltuvasta pysyvästä aikavyöhykkeestä? Perustele mielipiteesi ja arvioi valitsemasi aikavyöhykkeen etuja ja haittoja ihmistoiminnan näkökulmasta. Voit käyttää apunasi kuvaa
+            <e:attachment-link type="short" ref="7A"/>
+            .
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="7.4" question-id="30"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="8" max-score="30">
+      <e:question-title>
+        Kaupungistumisen sosiaaliset riskit
+        
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="8A" display-number="8.A">
+          <e:attachment-title>
+            Kartta: Korkeakoulututkinnon suorittaneiden osuus yli 25-vuotiaasta väestöstä prosentteina Washingtonin kaupungin alueella vuonna 2000
+            
+            
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8B" display-number="8.B">
+          <e:attachment-title>
+            Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999 
+            
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8C" display-number="8.C">
+          <e:attachment-title>
+            Kartta: Väkivaltarikollisuuden keskittyminen Washingtonin kaupungin alueella vuosina 2006–2008
+            
+            
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8D" display-number="8.D">
+          <e:attachment-title>
+            Karttojen päällekkäistarkastelu: Washingtonin kaupunki
+              
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              YTL
+              
+            </e:translator>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="8.1" max-score="4">
+        <e:question-title>
+          Määrittele lyhyesti käsitteet kaupungistuminen (eli urbanisaatio) ja esikaupungistuminen (eli suburbanisaatio).
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="8.1" question-id="31"/>
+      </e:question>
+
+      <e:question display-number="8.2" max-score="12">
+        <e:question-title>
+          
+            Analysoi oheisten karttojen
+            <e:attachment-links>
+              <e:attachment-link ref="8A"/>
+              <e:attachment-link ref="8B"/>
+              <e:attachment-link ref="8C"/>
+              <e:attachment-link ref="8D"/>
+            </e:attachment-links>
+            avulla väestön alueellisia eroja Yhdysvaltojen pääkaupungissa Washingtonissa. Pohdi kaupungistumiseen liittyviä sosiaalisia riskejä aineistossa näkyvällä alueella.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="12" display-number="8.2" question-id="32"/>
+      </e:question>
+
+      <e:question display-number="8.3" max-score="8">
+        <e:question-title>
+          Valitse aineistosta yksi asuinalue, jota alat kehittää. Rajaa alue valitsemaasi karttaan ja liitä kuvakaappaus siitä vastauskenttään. Laadi kaupunkisuunnittelijoille kolme lyhyttä toimenpide-ehdotusta, joiden avulla kyseisen alueen sosiaalisia riskejä voitaisiin vähentää.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="8.3" question-id="33"/>
+      </e:question>
+
+      <e:question display-number="8.4" max-score="6">
+        <e:question-title>
+          Pohdi, miten sosiaaliset ongelmat voivat näkyä syksyn presidentinvaaleissa Yhdysvalloissa.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="8.4" question-id="34"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="9" max-score="30">
+      <e:question-title>
+        Maisema ja maankäyttö
+        
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="9A" display-number="9.A">
+          <e:attachment-title>
+            Kuva: Viikki, Helsinki
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              Maanmittauslaitos
+              
+            </e:author>
+            <e:url>http://vanhatpainetutkartat.maanmittauslaitos.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9B" display-number="9.B">
+          <e:attachment-title>
+            Kuva: Viikki, Helsinki
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              Helsingin kaupunki
+              
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9C" display-number="9.C">
+          <e:attachment-title>
+            Kuva: Viikki, Helsinki
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              Helsingin kaupunki
+              
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9D" display-number="9.D">
+          <e:attachment-title>
+            Kuvien päällekkäistarkastelu: Viikki, Helsinki
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              Maanmittauslaitos
+              
+            </e:author>
+            <e:url>http://vanhatpainetutkartat.maanmittauslaitos.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+
+          <e:reference>
+            <e:author>
+              Helsingin kaupunki
+              
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              YTL
+              
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="9.1" max-score="12">
+        <e:question-title>
+          
+            Tutustu paikkatietoaineistoihin
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
+            </e:attachment-links>
+            ja niissä näkyvään maiseman muutokseen. Luettele aineistot
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+            </e:attachment-links>
+            aikajärjestyksessä vanhimmasta nuorimpaan. Merkitse kuvaan (tai kuviin) yhteensä kolme erityyppistä maiseman muutosta ja liitä kuvakaappaus (tai kaappaukset) vastaukseesi. Nimeä kukin muutos ja kuvaile sitä lyhyesti.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="12" display-number="9.1" question-id="35"/>
+      </e:question>
+
+      <e:question display-number="9.2" max-score="18">
+        <e:question-title>
+          
+            Vertaile aineistojen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
+            </e:attachment-links>
+            perusteella, millaista alueen maankäyttö on ollut kyseisinä kolmena kuvissa näkyvänä aikana. Analysoi, mitkä tekijät ovat vaikuttaneet maankäytön muuttumiseen.
+          
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="18" display-number="9.2" question-id="36"/>
+      </e:question>
+    </e:question>
+
+  </e:section>
+<e:exam-footer><p class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
+
+`;
+
+exports[`Exam mastering masters GE.xml exam correctly: xml 2`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" max-score="120"><e:exam-title>SV – Geografi</e:exam-title>
+  
+
+  <e:exam-instruction>
+    
+    
+      <p>
+        Provet består av nio uppgifter av vilka fem ska besvaras. Uppgifterna är indelade i tre delar. Del I omfattar en 20-poängsuppgift som är obligatorisk för alla. Del II omfattar fyra 20-poängsuppgifter av vilka två ska besvaras. Del III omfattar fyra 30-poängsuppgifter av vilka två ska besvaras. Det maximala antalet poäng i provet är 120. Om du vill kan du skapa figurer, diagram eller tabeller som stöd för svaret och bifoga en skärmdump av dem till vilket textsvar som helst.
+      </p>
+      <p>
+        Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.
+      </p>
+    
+  </e:exam-instruction>
+  <e:table-of-contents/>
+  <e:section max-answers="1" display-number="1" max-score="20" min-answers="1">
+    <e:section-title>
+      
+      
+        20-poängsuppgift
+      
+    </e:section-title>
+
+    
+    <e:question display-number="1" max-score="20">
+      <e:question-title>
+        
+        
+          Påståenden om olika delområden inom geografin
+        
+      </e:question-title>
+      <e:question-instruction>
+        
+        
+          Välj för respektive moment 1.1.–1.10. det påstående som är
+          <b>falskt</b>
+          . I varje uppgiftsmoment finns endast ett påstående som är falskt. För rätt alternativ får du två poäng, väljer du fel alternativ dras en poäng av. Om du väljer att inte svara ges noll poäng.
+        
+      </e:question-instruction>
+      <e:question display-number="1.1" max-score="2">
+        <e:question-title>
+          
+          
+            Erosion
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.1" question-id="1" max-score="2">
+            <e:choice-answer-option option-id="37">Flödande vatten är den mest betydande erosionskraften på jorden.</e:choice-answer-option>
+            <e:choice-answer-option option-id="38">Som en konsekvens av klimatförändringen blir extrema väderfenomen vanligare och erosionen kraftigare.</e:choice-answer-option>
+            <e:choice-answer-option option-id="39">I de allra torraste områdena förekommer knappt någon erosion överhuvudtaget.</e:choice-answer-option>
+            <e:choice-answer-option option-id="40"> Människans agerande har lett till kraftigare erosion på jorden.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="41">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.2" max-score="2">
+        <e:question-title>
+          
+          
+            Flyktingskap och migration
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.2" question-id="2" max-score="2">
+            <e:choice-answer-option option-id="42">En flykting är en person som tvingas fly från sin hembygd på grund av förföljelse.</e:choice-answer-option>
+            <e:choice-answer-option option-id="43">En asylsökande är en person som begär uppehållstillstånd och skydd i ett annat land.</e:choice-answer-option>
+            <e:choice-answer-option option-id="44">Migration innebär att en person frivilligt flyttar till ett annat land, till exempel för att uppnå bättre försörjningsmöjligheter.</e:choice-answer-option>
+            <e:choice-answer-option option-id="45">Miljöflykting syftar på en person som efter att ha flytt från ett krisområde blir kvar på ett flyktingläger i krisområdets närmiljö.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="46">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.3" max-score="2">
+        <e:question-title>
+          
+          
+            Regn
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.3" question-id="3" max-score="2">
+            <e:choice-answer-option option-id="47">Konvektionsregn uppstår när solen intensivt värmer jordens yta vilket gör att en luftmassa stiger och fukt kondenseras till regn.</e:choice-answer-option>
+            <e:choice-answer-option option-id="48">Orografiskt regn uppstår när en fuktig luftmassa är tvungen att stiga på grund av en kust eller en bergskedja, vilket gör att luftmassan kyls ner och fukt kondenseras till regn.</e:choice-answer-option>
+            <e:choice-answer-option option-id="49">Konvektionsregn är vanligast i de kalla områdena på jorden och i Finland vintertid.</e:choice-answer-option>
+            <e:choice-answer-option option-id="50">En luftmassa som har överskridit en bergskedja brukar bli torrare och varmare.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="51">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.4" max-score="2">
+        <e:question-title>
+          
+          
+            Jordens uppbyggnad
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.4" question-id="4" max-score="2">
+            <e:choice-answer-option option-id="52">Litosfären är ett smält skikt mellan jordens kärna och skorpan.</e:choice-answer-option>
+            <e:choice-answer-option option-id="53">Jordskorpan under hav är tunnare än den kontinentala skorpan.</e:choice-answer-option>
+            <e:choice-answer-option option-id="54">Jordens kärna kan delas upp i den fasta inre kärnan och den smälta yttre kärnan.</e:choice-answer-option>
+            <e:choice-answer-option option-id="55">Cirkulationen av smält stenmaterial i jordens kärna ger upphov till starka elektriska strömmar som genererar ett magnetfält.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="56">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.5" max-score="2">
+        <e:question-title>
+          
+          
+            Biom
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.5" question-id="5" max-score="2">
+            <e:choice-answer-option option-id="57">Regnskogar förekommer både i tropikerna och i subtropiska områden där det regnar mycket.</e:choice-answer-option>
+            <e:choice-answer-option option-id="58">Då man rör sig uppför en bergssluttning kan man observera samma typer av vegetationszoner som då man rör sig mot polerna på havsnivå.</e:choice-answer-option>
+            <e:choice-answer-option option-id="59">Vegetationen på savanner lider av torka året om.</e:choice-answer-option>
+            <e:choice-answer-option option-id="60">Det är typiskt för tempererade lövskogar att lövträden fäller sina löv till vintern.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="61">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.6" max-score="2">
+        <e:question-title>
+          
+          
+            Icke-förnybara energikällor
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.6" question-id="6" max-score="2">
+            <e:choice-answer-option option-id="62">Kärnkraft hör till de icke-förnybara energikällorna.</e:choice-answer-option>
+            <e:choice-answer-option option-id="63">Förbränning av olja och kol orsakar försurande utsläpp, såsom svaveloxider.</e:choice-answer-option>
+            <e:choice-answer-option option-id="64">Förbränning av flytande naturgas ger inte upphov till utsläpp av växthusgaser.</e:choice-answer-option>
+            <e:choice-answer-option option-id="65">Torv uppstår mycket långsamt och räknas därför som en icke-förnybar energikälla.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="66">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.7" max-score="2">
+        <e:question-title>
+          
+          
+            Befolkningstillväxt
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.7" question-id="7" max-score="2">
+            <e:choice-answer-option option-id="67">I den andra fasen av den demografiska transitionsmodellen har befolkningstillväxten upphört.</e:choice-answer-option>
+            <e:choice-answer-option option-id="68">Med befolkningspyramider kan man fastställa skeden i den demografiska transitionsmodellen.</e:choice-answer-option>
+            <e:choice-answer-option option-id="69">Jordens befolkning har vuxit kraftigt under de senaste 100 åren.</e:choice-answer-option>
+            <e:choice-answer-option option-id="70">Befolkningstillväxten är snabbast i utvecklingsländerna, särskilt i Afrika.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="71">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.8" max-score="2">
+        <e:question-title>
+          
+          
+            Satellitbilder och fjärrkartering
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.8" question-id="8" max-score="2">
+            <e:choice-answer-option option-id="72">Fjärrkartering bygger på reflektioner från jordens yta och observation av dem.</e:choice-answer-option>
+            <e:choice-answer-option option-id="73">Inom fjärrkartering undersöks atmosfärens egenskaper med hjälp av satelliternas seismografer.</e:choice-answer-option>
+            <e:choice-answer-option option-id="74">Laserskanning bygger på laserstrålar som mätinstrumentet sänder mot målet.</e:choice-answer-option>
+            <e:choice-answer-option option-id="75">Fjärrkartering kan också användas för att undersöka världshaven och deras egenskaper.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="76">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.9" max-score="2">
+        <e:question-title>
+          
+          
+            Höjdkurvor på en karta
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.9" question-id="9" max-score="2">
+            <e:choice-answer-option option-id="77">Med hjälp av höjdkurvorna på en karta ser man åt vilket håll en sluttning lutar.</e:choice-answer-option>
+            <e:choice-answer-option option-id="78">Med hjälp av höjdkurvorna på en karta ser man hur brant en sluttning är.</e:choice-answer-option>
+            <e:choice-answer-option option-id="79">Med hjälp av höjdkurvorna på en karta kan man rita en höjdprofil.</e:choice-answer-option>
+            <e:choice-answer-option option-id="80">Höjdkurvorna på en karta svänger alltid till höger på södra halvklotet på grund av corioliseffekten.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="81">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+      <e:question display-number="1.10" max-score="2">
+        <e:question-title>
+          
+          
+            Geodata och kartor
+          
+        </e:question-title>
+        
+        
+          <e:choice-answer ordering="fixed" display-number="1.10" question-id="10" max-score="2">
+            <e:choice-answer-option option-id="82">Med hjälp av en kartprojektion avbildas jordens välvda yta som ett plan.</e:choice-answer-option>
+            <e:choice-answer-option option-id="83">En karta är alltid en avbildning av jordens yta i förstorad skala.</e:choice-answer-option>
+            <e:choice-answer-option option-id="84">Med hjälp av ett koordinatsystem kan positionen för en punkt på kartan anges med talvärden på två axlar (x, y).</e:choice-answer-option>
+            <e:choice-answer-option option-id="85">Geodata innehåller både lägesdata och attributdata.</e:choice-answer-option>
+            <e:choice-answer-option type="no-answer" option-id="86">Jag svarar inte.</e:choice-answer-option>
+          </e:choice-answer>
+        
+      </e:question>
+    </e:question>
+  </e:section>
+
+
+  <e:section max-answers="2" display-number="2" max-score="40" min-answers="2">
+    <e:section-title>
+      
+      
+        20-poängsuppgifter
+      
+    </e:section-title>
+
+    
+    <e:question display-number="2" max-score="20">
+      <e:question-title>
+        
+        Olympiska spelen och miljön
+        
+      </e:question-title>
+
+      <e:question-instruction>
+        
+        De olympiska sommarspelen 2021 arrangeras av Tokyo i Japan.
+      </e:question-instruction>
+
+      <e:question display-number="2.1" max-score="10">
+        <e:question-title>
+          
+          
+            De olympiska spelen har många konsekvenser för miljön. Diskutera miljöpåverkan som de olympiska spelen i Tokyo har i arrangörsstaden Tokyo och på en global nivå.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="2.1" question-id="11"/>
+      </e:question>
+      <e:question display-number="2.2" max-score="10">
+        <e:question-title>
+          
+          
+            Hur kan man minska på de negativa miljökonsekvenserna av de olympiska spelen? Diskutera lösningar för att minska skadorna ur både arrangörsstaden Tokyos och en enskild resenärs perspektiv.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="2.2" question-id="12"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="3" max-score="20">
+      <e:question-title>
+        
+        Köldens inverkan på jordtäcket och berggrunden
+      </e:question-title>
+      <e:question-instruction>
+        
+        
+          På vintern kan vattnet i både jordtäcket och berggrunden frysa. Fruset vatten som förekommer i jordtäcket kallas tjäle. Permafrost
+          <e:attachment-link type="long" ref="3A"/>
+          kallas däremot fenomenet då vatten i jordtäcket varit fruset oavbrutet i minst två år, det vill säga också över sommaren. Permafrost förekommer främst i arktiska områden som är tillräckligt kalla under vintern.
+        
+      </e:question-instruction>
+
+      <e:external-material>
+        <e:attachment name="3A" display-number="3.A">
+          <e:attachment-title>
+            
+            Bild: Permafrost i Alaska
+              
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Benjamin Jones</e:author>
+            <e:title>U.S. Geological Survey</e:title>
+            <e:url>https://www.flickr.com/photos/usgeologicalsurvey/32682616471/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="3.1" max-score="4">
+        <e:question-title>
+          
+          Hur förändras jordytans former av is som förekommer i jordtäcket och berggrunden? Använd geografiska begrepp i ditt svar.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="3.1" question-id="13"/>
+      </e:question>
+
+      <e:question display-number="3.2" max-score="8">
+        <e:question-title>
+          
+          Förklara hur tjälen påverkar mänsklig aktivitet.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="3.2" question-id="14"/>
+      </e:question>
+
+      <e:question display-number="3.3" max-score="8">
+        <e:question-title>
+          
+          Klimatförändringen får permafrosten att smälta. Diskutera hurdana effekter försvinnandet av permafrosten har för miljön och vilka följder det har för människan.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="3.3" question-id="15"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="4" max-score="20">
+      <e:question-title>
+        
+        Fattigdom
+      </e:question-title>
+
+      <e:question display-number="4.1" max-score="2">
+        <e:question-title>
+          
+          
+            Vad menas med relativ fattigdom?
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="2" display-number="4.1" question-id="16"/>
+      </e:question>
+
+      <e:question display-number="4.2" max-score="6">
+        <e:question-title>
+          
+          
+            Redogör för de regionala skillnaderna i fattigdom på global nivå. Beskriv två centrala orsaker till skillnaderna.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="4.2" question-id="17"/>
+      </e:question>
+
+      <e:question display-number="4.3" max-score="6">
+        <e:question-title>
+          
+          
+            Redogör för de regionala skillnaderna i fattigdom i Finland. Beskriv två centrala orsaker till skillnaderna.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="4.3" question-id="18"/>
+      </e:question>
+
+      <e:question display-number="4.4" max-score="6">
+        <e:question-title>
+          
+          
+            Välj och namnge en finländsk kommun och redogör för de regionala skillnaderna i fattigdom i den. Beskriv två centrala orsaker till skillnaderna.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="4.4" question-id="19"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="5" max-score="20">
+      <e:question-title>
+        
+        På cykel genom Afrika
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="5A" display-number="5.A">
+          <e:attachment-title>
+            
+            Karta: Karta över Afrika och ruttalternativ
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              
+              SEN
+            </e:author>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5B" display-number="5.B">
+          <e:attachment-title>
+            
+            Karta: Risk för Ebola i Afrika
+              
+          </e:attachment-title>
+
+          
+          
+            <p>I områdena utmärkta på kartan är det sannolikt att fladdermöss bär på ebolaviruset.</p>
+          
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              
+              Pigott m.fl. 2014. eLife 2014:3
+            </e:author>
+            <e:url>https://elifesciences.org/articles/04395</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5C" display-number="5.C">
+          <e:attachment-title>
+            
+            Karta: Medeltemperaturer i Afrika
+                
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              
+              Paaijmans m.fl. 2010. PNAS 107, 15135-15139
+            </e:author>
+            <e:url>https://www.pnas.org/content/107/34/15135</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="5D" display-number="5.D">
+          <e:attachment-title>
+            
+            Karta: Utrikesministeriets resemeddelanden för Afrika
+                  
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>
+              
+              Finlands utrikesministerium, resemeddelanden
+            </e:author>
+            <e:url>https://um.fi/matkustustiedotteet-a-o</e:url>
+            <e:reference-date>2019-09-15</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:note>
+              
+              Kartpresentation: SEN
+            </e:note>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question-instruction>
+        
+        
+          Du planerar en cykeltur över hela den afrikanska kontinenten från Tunisiens huvudstad Tunis till Kapstaden i Sydafrika. Resan startar i början av februari och målet är att nå Kapstaden före slutet av juni.
+        
+      </e:question-instruction>
+
+      <e:question display-number="5.1" max-score="10">
+        <e:question-title>
+          
+          
+            Studera materialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="5A"/>
+              <e:attachment-link ref="5B"/>
+              <e:attachment-link ref="5C"/>
+              <e:attachment-link ref="5D"/>
+            </e:attachment-links>
+            och välj det ruttalternativ som du anser vara bäst av de tre rutter som presenteras i material
+            <e:attachment-link type="short" ref="5A"/>
+            . Motivera ditt val genom att utvärdera de olika rutternas fördelar och nackdelar. Utnyttja allt material i ditt svar.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="5.1" question-id="20"/>
+      </e:question>
+
+      <e:question display-number="5.2" max-score="10">
+        <e:question-title>
+          
+          
+                Beskriv hurdana landskapstyper och regionala risker cyklisten står inför på den rutt du valt. Beskrivningen ska följa rutten i den riktning resan går.
+              
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="10" display-number="5.2" question-id="21"/>
+      </e:question>
+    </e:question>
+
+  </e:section>
+  <e:section max-answers="2" display-number="3" max-score="60" min-answers="2">
+    <e:section-title>
+      
+      
+        30-poängsuppgifter
+      
+    </e:section-title>
+
+    
+    <e:question display-number="6" max-score="30">
+      <e:question-title>
+        
+        Vulkaner och supervulkaner
+        
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="6A" display-number="6.A">
+          <e:attachment-title>
+            
+            Tabell: De kraftigaste vulkanutbrotten och deras offerantal de senaste 150 åren
+              
+          </e:attachment-title>
+
+          
+
+          
+            <table class="e-table e-width-full"><thead><tr><th colspan="4">De kraftigaste vulkanutbrotten och deras offerantal de senaste 150 åren</th></tr></thead><tbody><tr><th>Vulkan</th><th class="e-text-center">År</th><th class="e-text-center">VEI -skala</th><th class="e-text-center">Antal offer</th></tr><tr><td>Krakatau</td><td class="e-text-center">1883</td><td class="e-text-center">6</td><td class="e-text-center">36417</td></tr><tr><td>Mount Tarawera</td><td class="e-text-center">1886</td><td class="e-text-center">5</td><td class="e-text-center">108</td></tr><tr><td>Mount Bandai</td><td class="e-text-center">1888</td><td class="e-text-center">4</td><td class="e-text-center">447</td></tr><tr><td>Mount Pelée</td><td class="e-text-center">1902</td><td class="e-text-center">4</td><td class="e-text-center">33000</td></tr><tr><td>Santa María</td><td class="e-text-center">1902</td><td class="e-text-center">6</td><td class="e-text-center">6000</td></tr><tr><td>La Soufrière</td><td class="e-text-center">1902</td><td class="e-text-center">4</td><td class="e-text-center">1680</td></tr><tr><td>Kelud</td><td class="e-text-center">1919</td><td class="e-text-center">4</td><td class="e-text-center">5000</td></tr><tr><td>Rabaul caldera</td><td class="e-text-center">1937</td><td class="e-text-center">4</td><td class="e-text-center">507</td></tr><tr><td>Mount Vesuvius</td><td class="e-text-center">1944</td><td class="e-text-center">3</td><td class="e-text-center">20</td></tr><tr><td>Mount Lamington</td><td class="e-text-center">1951</td><td class="e-text-center">4</td><td class="e-text-center">2942</td></tr><tr><td>Mount Agung</td><td class="e-text-center">1963</td><td class="e-text-center">5</td><td class="e-text-center">1584</td></tr><tr><td>Mount St. Helens</td><td class="e-text-center">1980</td><td class="e-text-center">5</td><td class="e-text-center">57</td></tr><tr><td>El Chichón</td><td class="e-text-center">1982</td><td class="e-text-center">5</td><td class="e-text-center">3500</td></tr><tr><td>Nevado del Ruiz</td><td class="e-text-center">1985</td><td class="e-text-center">3</td><td class="e-text-center">23000</td></tr><tr><td>Mount Pinatubo</td><td class="e-text-center">1991</td><td class="e-text-center">6</td><td class="e-text-center">847</td></tr><tr><td>Soufriere Hills Volcano</td><td class="e-text-center">1997</td><td class="e-text-center">4</td><td class="e-text-center">19</td></tr><tr><td>Nyiragongo</td><td class="e-text-center">2002</td><td class="e-text-center">1</td><td class="e-text-center">147</td></tr><tr><td>Mount Merapi</td><td class="e-text-center">2010</td><td class="e-text-center">4</td><td class="e-text-center">353</td></tr><tr><td>Nabro</td><td class="e-text-center">2011</td><td class="e-text-center">4</td><td class="e-text-center">31</td></tr><tr><td>Mount Ontake</td><td class="e-text-center">2014</td><td class="e-text-center">3</td><td class="e-text-center">63</td></tr><tr><td>Kelud</td><td class="e-text-center">2014</td><td class="e-text-center">4</td><td class="e-text-center">2</td></tr><tr><td>Anak Krakatau</td><td class="e-text-center">2018</td><td class="e-text-center">3</td><td class="e-text-center">426</td></tr><tr><td>Volcán de Fuego</td><td class="e-text-center">2018</td><td class="e-text-center">3</td><td class="e-text-center">190</td></tr></tbody></table>
+          
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              
+              Wikipedia
+            </e:author>
+            <e:url>https://en.wikipedia.org/wiki/List_of_large_volcanic_eruptions_in_the_21st_century</e:url>
+            <e:reference-date>2019-08-26</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="6B" display-number="6.B">
+          <e:attachment-title>
+            
+            Video: Vulkanön Anak Krakatau (’Krakataus barn’) som uppstått till följd av nya utbrott i Krakatau
+                
+          </e:attachment-title>
+
+          
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          
+            <p>Videon är 40 sekunder lång.</p>
+          
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Martin Rietze</e:author>
+            <e:title>Krakatau at night</e:title>
+            <e:publication>
+              
+              Videotjänsten Youtube
+            </e:publication>
+            <e:url>https://www.youtube.com/watch?v=9Plj4b79cwg</e:url>
+            <e:publication-date>2018-11-05</e:publication-date>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="6.1" max-score="4">
+        <e:question-title>
+          
+          
+            Vad menas med supervulkan? Nämn åtminstone ett regionalt exempel.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="6.1" question-id="22"/>
+      </e:question>
+
+      <e:question display-number="6.2" max-score="8">
+        <e:question-title>
+          
+          
+            Hurdana följder skulle ett utbrott av en supervulkan sannolikt ha om det skedde nu i USA eller Europa?
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="6.2" question-id="23"/>
+      </e:question>
+
+      <e:question display-number="6.3" max-score="6">
+        <e:question-title>
+          
+          
+            Gör en tabell över de tio vulkanutbrott som orsakat flest dödsoffer
+            <e:attachment-link type="long" ref="6A"/>
+            och ordna dem i storleksordning enligt antalet offer. Ta en skärmdump av din tabell och klistra in den i svarsfältet. Räkna också ut summan och medelvärdet för antalet offer i de tio vulkanutbrotten som orsakat flest dödsoffer. Skriv även uträkningarnas resultat i svarsfältet.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="6.3" question-id="24"/>
+      </e:question>
+
+      <e:question display-number="6.4" max-score="6">
+        <e:question-title>
+          
+          
+                Varför är antalet döda i de flesta vulkanutbrotten ganska litet i relation till utbrottens intensitet?
+              
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="6.4" question-id="25"/>
+      </e:question>
+
+      <e:question display-number="6.5" max-score="6">
+        <e:question-title>
+          
+          
+            Krakatauvulkanens utbrott i Indonesien
+            <e:attachment-link type="long" ref="6B"/>
+            1883 orsakade det kraftigaste ljudet i mänsklighetens skrivna historia. Människor tappade hörseln 65 kilometer från vulkanen, och ljudet hördes kraftigt åtminstone
+            <span class="e-nowrap">5 000</span>
+            kilometer från vulkanen. Motivera varför området i fråga är vulkaniskt.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="6.5" question-id="26"/>
+      </e:question>
+
+    </e:question>
+
+    
+    <e:question display-number="7" max-score="30">
+      <e:question-title>
+        
+        Följderna av att avskaffa sommartid
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="7A" display-number="7.A">
+          <e:attachment-title>
+            
+            Karta: Tidszoner i Europa
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Jenni Virtanen</e:author>
+            <e:title>
+              
+              Suuret lupaukset vesittyivät: Kellojen siirtelyn lopettamisesta ei välttämättä tule mitään [Tomma löften: Eventuellt blir det inget av förslaget att sluta ställa om klockorna]
+            </e:title>
+            <e:publisher>
+              
+              Dagstidningen Helsingin Sanomat
+            </e:publisher>
+            <e:url>https://www.hs.fi/ulkomaat/art-2000006197722.html</e:url>
+            <e:publication-date>2019-08-08</e:publication-date>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="7.1" max-score="8">
+        <e:question-title>
+          
+          Rita en eller flera bilder som förklarar vad som orsakar dygns- och årstidsväxlingarna på jorden. Använd vid behov pilar och korta förklaringstexter tillsammans med bilden. Bifoga bilden eller bilderna till svarsfältet.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="7.1" question-id="27"/>
+      </e:question>
+
+      <e:question display-number="7.2" max-score="6">
+        <e:question-title>
+          
+          Förklara principen enligt vilken jordklotet är uppdelat i tidszoner.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="7.2" question-id="28"/>
+      </e:question>
+      <e:question display-number="7.3" max-score="8">
+        <e:question-title>
+          
+          Om man avskaffar sommartid i Europeiska unionen kan Finland välja en permanent tid enligt tidszon UTC+1, UTC+2 eller UTC+3. Hur skiljer sig alternativen från varandra med tanke på hur den ljusa tiden infaller i södra och norra Finland under olika årstider?
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="7.3" question-id="29"/>
+      </e:question>
+      <e:question display-number="7.4" max-score="8">
+        <e:question-title>
+          
+          
+            Vi antar att man avskaffar sommartid i hela Europeiska unionen. Vad anser du att är den lämpligaste permanenta tidszonen för Finland? Motivera din åsikt och utvärdera fördelarna och nackdelarna med den tidszon du valt med tanke på mänsklig aktivitet. Du kan använda bild
+            <e:attachment-link type="short" ref="7A"/>
+            som hjälp.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="7.4" question-id="30"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="8" max-score="30">
+      <e:question-title>
+        
+        Sociala risker med urbanisering
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="8A" display-number="8.A">
+          <e:attachment-title>
+            
+            Karta: Andelen personer med högskoleexamen av populationen äldre än 25 år i staden Washington år 2000
+            
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8B" display-number="8.B">
+          <e:attachment-title>
+            
+            Karta: Invånarnas årliga medelinkomst i staden Washington 1999
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8C" display-number="8.C">
+          <e:attachment-title>
+            
+            Karta: Koncentrationen av våldsbrott i staden Washington mellan 2006 och 2008
+            
+          </e:attachment-title>
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="8D" display-number="8.D">
+          <e:attachment-title>
+            
+            Analys av överlappande kartor: Staden Washington
+              
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>Bill Rankin</e:author>
+            <e:url>http://www.radicalcartography.net/index.html?billrankin</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:translator>
+              
+              SEN
+            </e:translator>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="8.1" max-score="4">
+        <e:question-title>
+          
+          Definiera kort begreppen urbanisering och suburbanisering.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="8.1" question-id="31"/>
+      </e:question>
+
+      <e:question display-number="8.2" max-score="12">
+        <e:question-title>
+          
+          
+            Använd de bifogade kartorna
+            <e:attachment-links>
+              <e:attachment-link ref="8A"/>
+              <e:attachment-link ref="8B"/>
+              <e:attachment-link ref="8C"/>
+              <e:attachment-link ref="8D"/>
+            </e:attachment-links>
+            för att analysera de regionala befolkningsskillnaderna i Förenta staternas huvudstad Washington. Diskutera de sociala risker som är förknippade med urbanisering i det område som presenteras i materialet.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="12" display-number="8.2" question-id="32"/>
+      </e:question>
+
+      <e:question display-number="8.3" max-score="8">
+        <e:question-title>
+          
+          Välj ur materialet ett bostadsområde som du ska utveckla. Avgränsa området på kartan du valt och klistra in en skärmdump av området i svarsfältet. Utarbeta tre korta förslag till åtgärder för att minska de sociala riskerna i området. Dina förslag ska kunna presenteras för en stadsplanerare.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="8" display-number="8.3" question-id="33"/>
+      </e:question>
+
+      <e:question display-number="8.4" max-score="6">
+        <e:question-title>
+          
+          Diskutera hur sociala problem kan synas i höstens presidentval i USA.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="8.4" question-id="34"/>
+      </e:question>
+    </e:question>
+
+    
+    <e:question display-number="9" max-score="30">
+      <e:question-title>
+        
+        Landskap och markanvändning
+      </e:question-title>
+
+      <e:external-material>
+        <e:attachment name="9A" display-number="9.A">
+          <e:attachment-title>
+            
+            Bild: Vik, Helsingfors
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              
+              Lantmäteriverket
+            </e:author>
+            <e:url>http://vanhatpainetutkartat.maanmittauslaitos.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9B" display-number="9.B">
+          <e:attachment-title>
+            
+            Bild: Vik, Helsingfors
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              
+              Helsingfors stad
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9C" display-number="9.C">
+          <e:attachment-title>
+            
+            Bild: Vik, Helsingfors
+            
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              
+              Helsingfors stad
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+
+        <e:attachment name="9D" display-number="9.D">
+          <e:attachment-title>
+            
+            Överlappande bilder: Vik, Helsingfors
+              
+          </e:attachment-title>
+
+          <p>Aineisto poistettu tekijänoikeussyistä.</p>
+
+          <e:reference>
+            <e:author>
+              
+              Lantmäteriverket
+            </e:author>
+            <e:url>http://vanhatpainetutkartat.maanmittauslaitos.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+
+          <e:reference>
+            <e:author>
+              
+              Helsingfors stad
+            </e:author>
+            <e:url>https://kartta.hel.fi/</e:url>
+            <e:reference-date>2019-09-30</e:reference-date>
+            <e:modified-by>
+              
+              SEN
+            </e:modified-by>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="9.1" max-score="12">
+        <e:question-title>
+          
+          
+            Studera geodatamaterialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
+            </e:attachment-links>
+            och förändringen av landskapet som går att observera i materialet. Lista materialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+            </e:attachment-links>
+            i kronologisk ordning från det äldsta till det yngsta. Märk ut sammanlagt tre olika typer av landskapsförändringar på bilden (eller bilderna) och bifoga en skärmdump (eller skärmdumpar) av den (eller dem) till ditt svar. Namnge varje förändring och beskriv den kortfattat.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="12" display-number="9.1" question-id="35"/>
+      </e:question>
+
+      <e:question display-number="9.2" max-score="18">
+        <e:question-title>
+          
+          
+            Jämför utifrån materialen
+            <e:attachment-links type="short">
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
+            </e:attachment-links>
+            hur markanvändning sett ut i området under de tidsperioder som de tre bilderna representerar. Analysera vilka faktorer som bidragit till förändringen i markanvändningen.
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="18" display-number="9.2" question-id="36"/>
+      </e:question>
+    </e:question>
+
+  </e:section>
+<e:exam-footer><p class="e-text-center e-semibold">Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.</p></e:exam-footer></e:exam>
+
+`;
+
 exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
 Object {
   "attachments": Array [
