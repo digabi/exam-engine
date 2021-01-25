@@ -49,18 +49,13 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
       <header className="e-semibold" id={tocSectionTitleId(displayNumber)}>
         {element.hasChildNodes() && (
           <>
-            {numberOfSections > 1 && t('part', { displayNumber })} {renderChildNodes(element)}
+            {numberOfSections > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
           </>
         )}
       </header>
       {maxAnswers != null && (
         <div>
-          <AnsweringInstructions
-            maxAnswers={maxAnswers}
-            minAnswers={minAnswers}
-            childQuestions={childQuestions}
-            type="toc-section"
-          />
+          <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, type: 'toc-section' }} />
         </div>
       )}
     </>

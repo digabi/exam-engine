@@ -5,7 +5,7 @@ export const I: ExamTranslations = {
   material: 'Amnâstuvah',
   'external-material-title': 'Amnâstuvah',
   'attachments-page-title': 'Amnâstuvah:',
-  part: 'Uási {{displayNumber}}:',
+  section: 'Uási {{displayNumber}}:',
   points: '{{count}} č.',
   references: {
     source: 'Käldee:',

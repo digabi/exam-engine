@@ -40,6 +40,8 @@ import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackSta
 import ImageOverlay from './ImageOverlay'
 import { examTitleId } from '../ids'
 import { useCached } from '../useCached'
+import { parseExamStructure } from '../parser/parseExamStructure'
+import ErrorIndicator from './ErrorIndicator'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -100,6 +102,7 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 const Exam: React.FunctionComponent<ExamProps> = ({
+  doc,
   casStatus,
   answers,
   restrictedAudioPlaybackStats,
@@ -113,7 +116,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const externalMaterial = findChildElement(root, 'external-material')
   const examStylesheet = root.getAttribute('exam-stylesheet')
 
-  const store = useCached(() => initializeExamStore(casStatus, answers, restrictedAudioPlaybackStats, examServerApi))
+  const store = useCached(() =>
+    initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
+  )
 
   const examCode = root.getAttribute('exam-code')
   const dayCode = root.getAttribute('day-code')
@@ -142,7 +147,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             )}
           </Section>
           {renderChildNodes(root)}
-          <SaveIndicator />
+          <div className="e-footer">
+            <ErrorIndicator />
+            <SaveIndicator />
+          </div>
         </main>
       </I18nextProvider>
     </Provider>

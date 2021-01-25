@@ -4,7 +4,7 @@ export const SA: ExamTranslations = {
   'exam-total': 'Die Prüfung insgesamt',
   material: 'Materialien',
   'external-material-title': 'Materialien',
-  part: 'Teil {{displayNumber}}:',
+  section: 'Teil {{displayNumber}}:',
   references: {
     heading: 'Quellen',
     source: 'Quelle:',

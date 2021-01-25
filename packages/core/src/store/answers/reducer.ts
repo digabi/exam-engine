@@ -1,6 +1,8 @@
 import { ActionType } from 'typesafe-actions'
 import * as actions from './actions'
 import { ExamAnswer, QuestionId } from '../..'
+import { ExtraAnswer, validateAnswers } from '../../validateAnswers'
+import { RootElement } from '../../parser/parseExamStructure'
 
 type AnswersAction = ActionType<typeof actions>
 
@@ -24,14 +26,30 @@ export interface AnswersState {
    * feature. For now, only the real ktp has implemented it. it.
    */
   supportsAnswerHistory: boolean
+  /**
+   * The simplified structure of the exam (only sections, questions and answers)
+   * that we use for validation purposes.
+   */
+  examStructure: RootElement
+  /**
+   * An array of warning messages about extra answers that the user has input.
+   * Used by the ErrorIndicator component.
+   */
+  extraAnswers: ExtraAnswer[]
 }
 
 const initialState: AnswersState = {
   answersById: {},
+  examStructure: {
+    name: 'exam',
+    attributes: {},
+    childNodes: [],
+  },
   focusedQuestionId: null,
   supportsAnswerHistory: false,
   serverQuestionIds: new Set(),
   savedQuestionIds: new Set(),
+  extraAnswers: [],
 }
 
 export default function answersReducer(state: AnswersState = initialState, action: AnswersAction): AnswersState {
@@ -49,7 +67,8 @@ export default function answersReducer(state: AnswersState = initialState, actio
       const { questionId } = action.payload
       const savedQuestionIds = setAdd(state.savedQuestionIds, questionId)
       const serverQuestionIds = setAdd(state.serverQuestionIds, questionId)
-      return { ...state, serverQuestionIds, savedQuestionIds }
+      const extraAnswers = validateAnswers(state.examStructure, state.answersById)
+      return { ...state, serverQuestionIds, savedQuestionIds, extraAnswers }
     }
     case 'ANSWER_FOCUSED': {
       const questionId = action.payload

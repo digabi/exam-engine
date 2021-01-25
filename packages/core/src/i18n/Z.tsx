@@ -5,7 +5,7 @@ export const Z: ExamTranslations = {
   material: 'Ávdnasat',
   'external-material-title': 'Ávdnasat',
   'attachments-page-title': 'Ávdnasat:',
-  part: 'Oassi {{displayNumber}}:',
+  section: 'Oassi {{displayNumber}}:',
   points: '{{count}} č.',
   references: {
     heading: 'Gáldut',

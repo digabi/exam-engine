@@ -5,7 +5,7 @@ export const FA: ExamTranslations = {
   material: 'Document',
   material_plural: 'Documents',
   'external-material-title': 'Document',
-  part: 'Partie {{displayNumber}} :',
+  section: 'Partie {{displayNumber}} :',
   references: {
     heading: 'Sources',
     source: 'Source :',
