@@ -4,7 +4,7 @@ export const CA: ExamTranslations = {
   'exam-total': 'Koe yhteensä',
   material: 'Aineisto',
   'external-material-title': 'Aineisto',
-  part: 'Osa {{displayNumber}}:',
+  section: 'Osa {{displayNumber}}:',
   references: {
     heading: 'Lähteet',
     source: 'Lähde:',

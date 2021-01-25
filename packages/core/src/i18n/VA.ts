@@ -5,7 +5,7 @@ export const VA: ExamTranslations = {
   material: 'Материал',
   material_plural: 'Материал',
   'external-material-title': 'Материал',
-  part: 'Часть {{displayNumber}}:',
+  section: 'Часть {{displayNumber}}:',
   references: {
     heading: 'Источники',
     source: 'Источник',

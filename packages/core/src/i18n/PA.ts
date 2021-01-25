@@ -4,7 +4,7 @@ export const PA: ExamTranslations = {
   'exam-total': 'Puntuación total',
   material: 'Material',
   'external-material-title': 'Material',
-  part: 'Parte {{displayNumber}}:',
+  section: 'Parte {{displayNumber}}:',
   references: {
     heading: 'Fuentes',
     source: 'Fuente:',

@@ -16,18 +16,13 @@ function ExamSectionTitle({ element, renderChildNodes }: ExamComponentProps) {
     <>
       {element.hasChildNodes() && (
         <h2 className="exam-section-title" id={sectionTitleId(displayNumber)}>
-          {numberOfSections > 1 && t('part', { displayNumber })} {renderChildNodes(element)}
+          {numberOfSections > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
         </h2>
       )}
       {maxAnswers != null && (
         <span className="notification notification--inline">
           <NotificationIcon />
-          <AnsweringInstructions
-            maxAnswers={maxAnswers}
-            minAnswers={minAnswers}
-            childQuestions={childQuestions}
-            type="section"
-          />
+          <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, type: 'section' }} />
         </span>
       )}
     </>

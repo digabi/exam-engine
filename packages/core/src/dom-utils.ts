@@ -86,6 +86,9 @@ export function findChildElement(element: Element, selector: Selector): Element 
     }
   }
 }
+export function getAttribute(element: Element, attributeName: string): string | undefined {
+  return element.getAttribute(attributeName) ?? undefined
+}
 
 export function getNumericAttribute(element: Element, attributeName: string): number | undefined {
   const maybeValue = element.getAttribute(attributeName)

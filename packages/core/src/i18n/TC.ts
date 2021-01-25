@@ -4,7 +4,7 @@ export const TC: ExamTranslations = {
   'exam-total': 'Punteggio complessivo',
   material: 'Materiale',
   'external-material-title': 'Materiale',
-  part: 'Parte {{displayNumber}}:',
+  section: 'Parte {{displayNumber}}:',
   references: {
     heading: 'Fonti',
     source: 'Fonte:',

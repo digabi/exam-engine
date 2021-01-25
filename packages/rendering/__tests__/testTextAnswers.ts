@@ -1,7 +1,7 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
-import { expectElementNotToExist, delay, getTextContent, initPuppeteer, loadExam } from './puppeteerUtils'
+import { delay, expectElementNotToExist, getTextContent, initPuppeteer, loadExam } from './puppeteerUtils'
 
 describe('testTextAnswers.ts — Text answer interactions', () => {
   const createPage = initPuppeteer()
@@ -52,10 +52,24 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await expectToBeSaved()
   })
 
-  const type = (text: string) => page.type('.text-answer', text)
+  it('updates the error indicator after a delay when too many answers', async () => {
+    await loadExam(page, ctx.url)
+    await expectErrorIndicatorNotToExist()
+    await type('oikea vastaus', 1)
+    await type('oikea vastaus 2', 2)
+    await type('kokeilu', 3)
+    await delay(2000)
+    const errorText = await getTextContent(page, '.error-indicator')
+    expect(errorText).toEqual('Osa 1: Vastaa joko tehtävään 1 tai 2.')
+    await clearInput(3)
+    await delay(2000)
+    await expectErrorIndicatorNotToExist()
+  })
 
-  async function clearInput() {
-    await page.click('.text-answer', { clickCount: 3 })
+  const type = (text: string, index = 1) => page.type(`.text-answer[data-question-id="${index}"]`, text)
+
+  async function clearInput(index = 1) {
+    await page.click(`.text-answer[data-question-id="${index}"]`, { clickCount: 3 })
     await page.keyboard.press('Backspace')
   }
 
@@ -70,4 +84,6 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   const expectNotToBeSaved = () => expectElementNotToExist(page, '.save-indicator-text--saved')
 
   const expectSaveIndicatorNotToExist = () => expectElementNotToExist(page, '.save-indicator')
+
+  const expectErrorIndicatorNotToExist = () => expectElementNotToExist(page, '.error-indicator')
 })

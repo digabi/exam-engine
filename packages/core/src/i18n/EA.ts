@@ -4,7 +4,7 @@ export const EA: ExamTranslations = {
   'exam-total': 'Total points for the exam',
   material: 'Material',
   'external-material-title': 'Material',
-  part: 'Part {{displayNumber}}:',
+  section: 'Part {{displayNumber}}:',
   references: {
     heading: 'Sources',
     source: 'Source:',

@@ -4,7 +4,7 @@ export const BA: ExamTranslations = {
   'exam-total': 'Provet sammanlagt',
   material: 'Material',
   'external-material-title': 'Material',
-  part: 'Del {{displayNumber}}:',
+  section: 'Del {{displayNumber}}:',
   references: {
     heading: 'Källor',
     source: 'Källa:',

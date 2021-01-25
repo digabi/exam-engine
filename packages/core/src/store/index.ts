@@ -9,6 +9,8 @@ import audioSaga from './audio/sagas'
 import casReducer from './cas/reducer'
 import casSaga from './cas/sagas'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '..'
+import { RootElement } from '../parser/parseExamStructure'
+import { validateAnswers } from '../validateAnswers'
 
 const rootReducer = combineReducers({
   answers: answersReducer,
@@ -25,6 +27,7 @@ function* rootSaga(examServerApi: ExamServerAPI) {
 export type AppState = ReturnType<typeof rootReducer>
 
 export function initializeExamStore(
+  examStructure: RootElement,
   casStatus: InitialCasStatus,
   initialAnswers: ExamAnswer[],
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[],
@@ -32,13 +35,16 @@ export function initializeExamStore(
 ): Store<AppState> {
   const initialQuestionIds = new Set(_.map(initialAnswers, 'questionId'))
   const playbackTimes = _.mapValues(_.keyBy(restrictedAudioPlaybackStats, 'restrictedAudioId'), 'times')
+  const answersById = _.keyBy(initialAnswers, 'questionId')
   const initialState: AppState = {
     answers: {
-      answersById: _.keyBy(initialAnswers, 'questionId'),
+      answersById,
       focusedQuestionId: null,
       serverQuestionIds: initialQuestionIds,
       supportsAnswerHistory: typeof examServerApi.selectAnswerVersion === 'function',
       savedQuestionIds: initialQuestionIds,
+      examStructure,
+      extraAnswers: validateAnswers(examStructure, answersById),
     },
     audio: {
       errors: {},

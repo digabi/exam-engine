@@ -1,18 +1,22 @@
 import * as _ from 'lodash-es'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-
 export interface AnsweringInstructionProps {
   maxAnswers: number
-  childQuestions: Element[]
-  type: 'question' | 'section' | 'toc-section'
+  /** Child questions as either raw Elements from the XML or just display numbers. */
+  childQuestions: (string | Element)[]
+  type: 'exam' | 'question' | 'section' | 'toc-section'
   minAnswers?: number
 }
 
 function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }: AnsweringInstructionProps) {
+  const childDisplayNumbers = childQuestions.map((question) =>
+    _.isString(question) ? question : question.getAttribute('display-number')!
+  )
+
   const { t } = useTranslation()
   const possibleTranslationStrings = cartesian(
-    [childQuestions.length, '*'],
+    [childDisplayNumbers.length, '*'],
     [maxAnswers, '*'],
     [minAnswers != null ? minAnswers : maxAnswers, '*']
   ).map(
@@ -20,9 +24,7 @@ function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }:
       `answering-instructions.${type}_${childQuestionCount}_${minAnswerCount}_${maxAnswerCount}`
   )
   const answerCount = [minAnswers, maxAnswers]
-  const questions = [_.first(childQuestions)!, _.last(childQuestions)!].map(
-    (question) => question.getAttribute('display-number')!
-  )
+  const questions = [_.first(childDisplayNumbers)!, _.last(childDisplayNumbers)!]
   return <>{t(possibleTranslationStrings, { answerCount, questions })}</>
 }
 

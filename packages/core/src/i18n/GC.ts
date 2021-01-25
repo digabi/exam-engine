@@ -4,7 +4,7 @@ export const GC: ExamTranslations = {
   'exam-total': 'Totalidade da pontuação',
   material: 'Material',
   'external-material-title': 'Material',
-  part: 'Parte {{displayNumber}}:',
+  section: 'Parte {{displayNumber}}:',
   references: {
     heading: 'Fontes',
     source: 'Fonte:',

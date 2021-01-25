@@ -25,7 +25,7 @@ function ResultsExamQuestionTitle({ element, renderChildNodes }: ExamComponentPr
       {maxAnswers != null && childQuestions.length > 0 && (
         <p className="e-italic">
           <NotificationIcon />
-          <AnsweringInstructions maxAnswers={maxAnswers} childQuestions={childQuestions} type="question" />
+          <AnsweringInstructions {...{ maxAnswers, childQuestions, type: 'question' }} />
         </p>
       )}
     </>

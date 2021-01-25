@@ -1,23 +1,16 @@
 .save-indicator {
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  display: inline-block;
   background: white;
-  font-size: 11px;
-  padding: 2px 8px;
-  box-sizing: content-box;
-  line-height: 16px;
   border-radius: 8px 0 0 0;
   opacity: 0.8;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
   color: @colors[darkgrey];
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 500;
   z-index: 1;
+  vertical-align: bottom;
 
   .save-indicator-text {
     opacity: 1;
-    transition: 0.3s all;
+    transition: 0.3s opacity;
 
     &--saving {
       opacity: 0;
