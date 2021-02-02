@@ -826,7 +826,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -5178,12 +5178,13 @@ dom-converter@^0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.3.1:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
-  integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
+dom-helpers@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.2.0.tgz#57fd054c5f8f34c52a3eeffdb7e7e93cd357d95b"
+  integrity sha512-Ru5o9+V8CpunKnz5LGgWXkmrH/20cGKwcHwS4m73zIvs54CN9epEmT/HLqFJW3kXpakAFkEdzgy1hzlJe3E4OQ==
   dependencies:
-    "@babel/runtime" "^7.1.2"
+    "@babel/runtime" "^7.8.7"
+    csstype "^3.0.2"
 
 dom-serializer@0:
   version "0.2.2"
@@ -11072,11 +11073,11 @@ rc@^1.2.8:
     strip-json-comments "~2.0.1"
 
 react-css-transition-replace@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/react-css-transition-replace/-/react-css-transition-replace-4.0.2.tgz#a2076f2e0dbd25cec9ac7950d2bf15044d329eeb"
-  integrity sha512-ed5KXvCwEcmvee40NpDQjTvg7t8tmKHc/2rKbd4p+0Pe0uEC/5/sH3Nd1SW32hSnpoMzfaXBlpW7D5paRNwfHw==
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-css-transition-replace/-/react-css-transition-replace-4.0.4.tgz#08dece706f94da23dba49a687dd8860027f13448"
+  integrity sha512-kAr2Tcnw1QAb/r+QfkK1NkuDiTKkrJlyPziDWq7WmlRwKAmgGCWe9RC9Nv+pPVWXTUxqqIskfw+Qh+T/4wE9sw==
   dependencies:
-    dom-helpers "^3.3.1"
+    dom-helpers "^5.2.0"
     prop-types "^15.7.2"
 
 react-dom@^16.14.0:
