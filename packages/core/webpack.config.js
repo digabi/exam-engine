@@ -1,6 +1,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = function () {
   const plugins = [
@@ -60,6 +61,18 @@ module.exports = function () {
     },
     performance: {
       hints: false,
+    },
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true,
+          terserOptions: {
+            compress: { passes: 2 },
+          },
+        }),
+      ],
     },
   }
 }
