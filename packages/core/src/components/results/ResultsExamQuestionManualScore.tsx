@@ -27,17 +27,20 @@ function ResultsExamQuestionManualScore({
   const { answers } = useContext(QuestionContext)
   const containerProps = { answers, displayNumber, multilineAnswer }
   const shortCode = scores?.censoring?.nonAnswerDetails?.shortCode
+
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
-      {noPregradingOrCensoringScore(scores) && <NoPregrading maxScore={maxScore} />}
-      {scores && renderNormalizedScores(scores, maxScore)}
-      {shortCode && <NonAnswer shortCode={shortCode} />}
+      {scores?.pregrading?.score == null && !scores?.censoring?.scores?.length ? (
+        <NoPregrading {...{ maxScore }} />
+      ) : (
+        <>
+          {renderNormalizedScores(scores, maxScore)}
+          {shortCode && <NonAnswer shortCode={shortCode} />}
+        </>
+      )}
     </ResultsExamQuestionScoresContainer>
   )
 }
-
-const noPregradingOrCensoringScore = (scores: Score | undefined): boolean =>
-  scores?.pregrading?.score == null && (!scores?.censoring || scores?.censoring?.scores.length === 0)
 
 function renderNormalizedScores(scores: Score, maxScore?: number) {
   const normalizedScores = [
