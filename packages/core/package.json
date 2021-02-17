@@ -19,7 +19,7 @@
     "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
   },
   "peerDependencies": {
-    "react": "^16.14.0"
+    "react": "^17.0.1"
   },
   "devDependencies": {
     "@digabi/noto-sans": "^2.1.0",
@@ -43,7 +43,7 @@
     "postcss": "^8.0.5",
     "postcss-loader": "^4.0.1",
     "postcss-preset-env": "^6.7.0",
-    "react": "^16.14.0",
+    "react": "^17.0.1",
     "react-css-transition-replace": "^4.0.2",
     "react-dom": "^16.14.0",
     "react-i18next": "^11.2.5",
