@@ -1,6 +1,6 @@
 export interface RenderingOptions {
   casCountdownDurationSeconds?: number
-  openFirefox?: boolean
+  openBrowser?: boolean
   port?: number
 }
 
