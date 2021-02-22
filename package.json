@@ -41,7 +41,7 @@
     "bundlewatch": "^0.3.0",
     "concurrently": "^6.0.0",
     "eslint": "^7.4.0",
-    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^24.0.0",
     "eslint-plugin-prettier": "^3.1.2",
