@@ -1,7 +1,7 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { createOfflineExam } from '@digabi/exam-engine-rendering'
 import path from 'path'
-import { Page } from 'puppeteer'
+import { Page, HTTPRequest } from 'puppeteer'
 import tmp from 'tmp-promise'
 import { initPuppeteer } from './puppeteerUtils'
 
@@ -31,7 +31,8 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
     const requestErrors: string[] = []
     const pageErrors: Error[] = []
 
-    page.on('requestfailed', (req) => {
+    // FIXME: Remove explicit type after Puppeteer's types have improved.
+    page.on('requestfailed', (req: HTTPRequest) => {
       const errorText = req.failure()!.errorText
       if (errorText !== 'net::ERR_ABORTED') {
         requestErrors.push(req.url())
