@@ -1,7 +1,7 @@
 import { MasteringResult } from '@digabi/exam-engine-mastering'
 import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import path from 'path'
 import webpack from 'webpack'
 import { CreateOfflineExamOptions } from './createOfflineExam'
@@ -17,7 +17,7 @@ export function getOfflineWebpackConfig(
   return getWebpackConfig({
     mode,
     devtool: false,
-    entry: [require.resolve('@babel/polyfill'), path.resolve(__dirname, 'offline.js')],
+    entry: [require.resolve('@babel/polyfill/noConflict'), path.resolve(__dirname, 'offline.js')],
     output: {
       path: outputDirectory,
     },
@@ -37,11 +37,11 @@ export function getOfflineWebpackConfig(
                   require.resolve('@babel/preset-env'),
                   {
                     targets: {
-                      chrome: '70',
-                      firefox: '60',
-                      edge: '18',
-                      safari: '12',
-                      ios: '12',
+                      chrome: '80',
+                      firefox: '78',
+                      edge: '79',
+                      safari: '13',
+                      ios: '13',
                     },
                   },
                 ],
@@ -58,20 +58,19 @@ export function getOfflineWebpackConfig(
         'process.env.EXAM_LANGUAGE': JSON.stringify(result.language),
         'process.env.MEDIA_VERSION': JSON.stringify(options.mediaVersion),
       }),
-      new OptimizeCssAssetsPlugin(),
+      new CssMinimizerPlugin(),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#e0f4fe',
-        scriptSrc: 'main-bundle.js',
       }),
       new HtmlWebpackPlugin({
         filename: 'attachments/index.html',
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
+        publicPath: '../',
         backgroundColor: '#f0f0f0',
-        scriptSrc: '../main-bundle.js',
       }),
       new HTMLInlineCSSWebpackPlugin(),
     ],

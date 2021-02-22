@@ -1,23 +1,27 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = function () {
   const plugins = [
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new OptimizeCssAssetsPlugin(),
+    new CssMinimizerPlugin(),
   ]
 
   return {
     entry: path.resolve(__dirname, 'dist/index.js'),
     output: {
       path: path.resolve(__dirname, 'dist'),
+      publicPath: '',
       filename: 'main-bundle.js',
       library: 'ExamBundle',
       libraryTarget: 'umd',
       globalObject: 'this',
+    },
+    resolve: {
+      fallback: { path: false },
     },
     plugins,
     module: {
@@ -34,7 +38,6 @@ module.exports = function () {
                 sourceMap: true,
                 lessOptions: {
                   paths: [path.resolve(__dirname, 'src')],
-                  plugins: [require('less-plugin-glob')],
                 },
               },
             },

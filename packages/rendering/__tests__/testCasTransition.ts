@@ -44,7 +44,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
 
   async function expectQuestionToBeVisible(visible: boolean) {
     await page.waitForFunction(
-      (innerVisible) => {
+      (innerVisible: boolean) => {
         const element = document.getElementById('1')
         return innerVisible ? element != null : element == null
       },

@@ -64,8 +64,8 @@ async function runWebpack(result: MasteringResult, examOutputDirectory: string, 
   const config = getOfflineWebpackConfig(result, examOutputDirectory, options)
   await new Promise<string | void>((resolve, reject) => {
     webpack(config, (err, stats) => {
-      if (err || stats.hasErrors()) {
-        reject(err || stats.toString({ colors: true }))
+      if (err || stats?.hasErrors()) {
+        reject(err || stats?.toString({ colors: true }))
       } else {
         resolve()
       }
@@ -110,7 +110,8 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[]) {
         path.resolve(examOutputDirectory, 'index.html'),
         path.resolve(examOutputDirectory, 'attachments/index.html'),
       ]) {
-        await page.goto('file://' + htmlFile, { waitUntil: 'networkidle0' })
+        await page.goto('file://' + htmlFile)
+        await page.waitForSelector('.e-exam')
         await page.evaluate(() => {
           // Fix asset path on attachments page.
           if (location.pathname.includes('attachments/index.html')) {

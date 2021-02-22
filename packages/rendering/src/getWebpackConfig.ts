@@ -7,9 +7,11 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
   return merge(
     {
       output: {
+        publicPath: '',
         filename: 'main-bundle.js',
       },
       resolve: {
+        fallback: { path: false },
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
       plugins: [
@@ -30,7 +32,6 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
                 options: {
                   sourceMap: true,
                   lessOptions: {
-                    plugins: [require('less-plugin-glob')],
                     paths: [path.resolve(__dirname, 'src')],
                   },
                 },

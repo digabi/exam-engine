@@ -13,10 +13,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack -p",
-    "build:analyze": "webpack -p --profile --json --display normal > stats.json",
-    "watch": "webpack -p --watch",
-    "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
+    "build": "webpack --mode production",
+    "build:analyze": "webpack --mode production --profile --json --display normal > stats.json",
+    "watch": "webpack --mode production --watch",
+    "prepublishOnly": "webpack --mode -production && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
   },
   "peerDependencies": {
     "react": "^16.14.0"
@@ -28,6 +28,7 @@
     "@fortawesome/react-fontawesome": "^0.1.7",
     "classnames": "^2.2.6",
     "css-loader": "^5.0.0",
+    "css-minimizer-webpack-plugin": "^1.2.0",
     "date-fns": "^2.8.1",
     "downshift": "^6.0.0",
     "file-loader": "^6.1.0",
@@ -35,13 +36,11 @@
     "i18next": "^19.0.1",
     "jquery": "^3.4.1",
     "less": "^4.1.0",
-    "less-loader": "^7.0.0",
-    "less-plugin-glob": "^3.0.0",
+    "less-loader": "^8.0.0",
     "lodash-es": "^4.17.15",
     "mini-css-extract-plugin": "^1.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss": "^8.0.5",
-    "postcss-loader": "^4.0.1",
+    "postcss-loader": "^5.0.0",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.14.0",
     "react-css-transition-replace": "^4.0.2",
@@ -56,8 +55,8 @@
     "sanitize-html": "^2.0.0",
     "typesafe-actions": "^5.1.0",
     "utility-types": "^3.10.0",
-    "webpack": "^4.41.3",
+    "webpack": "^5.23.0",
     "webpack-bundle-analyzer": "^4.1.0",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^4.5.0"
   }
 }
