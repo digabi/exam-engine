@@ -39,15 +39,15 @@ function renderFormula(formula, mode, throwOnLatexError) {
     .typeset({
       math: formula,
       format: mode === 'display' ? 'TeX' : 'inline-TeX',
-      mml: true,
       svg: true,
       ex: 9, // Noto Sans 16px
     })
+    .then((result) => result.svg)
     .catch((errors) => {
       if (throwOnLatexError) {
         throw errors
       } else {
-        return { svg: errorSvg, mml: '' }
+        return errorSvg
       }
     })
 }
