@@ -35,7 +35,7 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
         warnings: true,
         errors: true,
       },
-      open: options.openFirefox ? 'firefox' : undefined,
+      open: options.openBrowser,
       clientLogLevel: 'silent',
       noInfo: true,
       contentBase: [path.resolve(__dirname, '../public'), path.dirname(examFilename)],
