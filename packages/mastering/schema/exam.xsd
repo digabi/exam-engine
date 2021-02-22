@@ -301,6 +301,11 @@
       <xs:simpleContent>
         <xs:extension base="xs:string">
           <xs:attribute name="mode" type="e:formula-mode" default="inline" />
+          <xs:attribute name="assistive-title" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Assistive title for screen readers. Defaults to the LaTeX source code of the formula.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
