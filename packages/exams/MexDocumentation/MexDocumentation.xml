@@ -1815,33 +1815,17 @@
           <code>display</code>
           ).
         </p>
+        <p>
+          By default, the
+          <e:formula>\LaTeX</e:formula>
+          source code of the
+          formula is displayed for screen readers. If you want to provide an
+          alternative screen reader representation of the formula, use the
+          <code>assistive-title</code>
+          attribute.
+        </p>
       </e:question-instruction>
-             <p>
-               Notice that certain characters in formulas require special notation.
-                 </p>
-                 <table class="e-table">
-                   <caption></caption>
-                   <thead>
-                     <tr>
-                       <th>Character</th>
-                       <th>Notation</th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr>
-                         <td>&gt;</td><td><code>&amp;gt;</code></td>
-                     </tr>
-                     <tr>
-                         <td>&lt;</td><td><code>&amp;lt;</code></td>
-                     </tr>
-                     <tr>
-                         <td>&amp;</td><td><code>&amp;amp;</code></td>
-                     </tr>
-                   </tbody>
-                 </table>
-                 <p>
-                 For longer formulas also <code><![CDATA[<e:formula>]]>&lt;![CDATA[ latex-code ]]&gt;<![CDATA[</e:formula>]]></code> may also be used. Inside a CDATA-block escaping is not required.
-               </p>
+
       <table class="e-table e-width-full">
         <caption>Element attributes</caption>
         <thead>
@@ -1865,8 +1849,63 @@
             </td>
             <td>Formula type</td>
           </tr>
+          <tr>
+            <td>assistive-title</td>
+            <td>String</td>
+            <td>No</td>
+            <td>
+              The
+              <e:formula>\LaTeX</e:formula>
+              source code of the formula
+            </td>
+            <td>An alternative assistive title that describes the equation
+            for screen readers, perhaps using AsciiMath or Unicode
+            notation</td>
+          </tr>
         </tbody>
       </table>
+
+      <p>
+        Notice that certain characters in formulas require special notation.
+      </p>
+      <table class="e-table">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th>Character</th>
+            <th>Notation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&gt;</td>
+            <td>
+              <code>&amp;gt;</code>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>
+              <code>&amp;lt;</code>
+            </td>
+          </tr>
+          <tr>
+            <td>&amp;</td>
+            <td>
+              <code>&amp;amp;</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        For longer formulas also
+        <code>
+          <![CDATA[<e:formula>]]>
+          &lt;![CDATA[ latex-code ]]&gt;
+          <![CDATA[</e:formula>]]>
+        </code>
+        may also be used. Inside a CDATA-block escaping is not required.
+      </p>
 
       <h4>
         Example of an
