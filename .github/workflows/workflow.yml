@@ -69,4 +69,3 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PRESET: DEPENDABOT_MINOR
-          MERGE_METHOD: REBASE
