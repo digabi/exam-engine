@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Merge me!
-        uses: ridedott/merge-me-action@v2.1.7
+        uses: ridedott/merge-me-action@v2.2.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PRESET: DEPENDABOT_MINOR
