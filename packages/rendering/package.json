@@ -32,7 +32,7 @@
     "postcss": "^8.0.5",
     "postcss-loader": "^4.0.1",
     "postcss-preset-env": "^6.7.0",
-    "puppeteer": "^7.0.0",
+    "puppeteer": "^8.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "rich-text-editor": "^6.0.3",
