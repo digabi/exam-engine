@@ -5,6 +5,7 @@ import { Document, Element, parseXml, SyntaxError, Text } from 'libxmljs2'
 import _ from 'lodash'
 import path from 'path'
 import { initI18n } from '../i18n'
+import { currentExamSchemaVersion } from '../migrations'
 import { createGradingStructure } from './createGradingStructure'
 import { createHvp } from './createHvp'
 import { createTranslationFile } from './createTranslationFile'
@@ -95,7 +96,17 @@ function assertExamIsValid(doc: Document): Document {
   if (!doc.validate(schema)) {
     // The Exam and XHTML schemas import each other, which causes libxml to add some extra warnings as error messages.
     // Filter them out, they aren't interesting.
-    throw doc.validationErrors.find((err) => err.level! > 1)
+    const error = doc.validationErrors.find((err) => err.level! > 1)!
+
+    if (error.message.includes(`is not an element of the set {'${currentExamSchemaVersion}'}.`)) {
+      // Throw a more user-friendly error if exam-schema-version doesn't match.
+      error.message = `This exam uses an outdated schema. Use the \`ee migrate\` tool to convert it to the current schema.
+
+    $ ee migrate path/to/exam.xml
+`
+    }
+
+    throw error
   }
 
   for (const answer of doc.find<Element>(xpathOr(answerTypes), ns)) {

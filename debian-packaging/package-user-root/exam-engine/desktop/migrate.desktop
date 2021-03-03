@@ -1,0 +1,6 @@
+[Desktop Entry]
+Comment=
+Terminal=true
+Name=Päivitä koe
+Exec=bash -c "ee migrate `dirname %k`/*.xml"
+Type=Application
