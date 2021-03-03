@@ -5,6 +5,7 @@ import { promises as fs } from 'fs'
 import { wrap } from 'jest-snapshot-serializer-raw'
 import _ from 'lodash'
 import path from 'path'
+import { readFixture } from './fixtures'
 
 const generateUuid: GenerateUuid = () => '00000000-0000-0000-0000-000000000000'
 const getMediaMetadata: GetMediaMetadata = async (__, type) =>
@@ -113,7 +114,3 @@ describe('Exam mastering', () => {
     })
   }
 })
-
-async function readFixture(filename: string): Promise<string> {
-  return fs.readFile(path.resolve(__dirname, 'fixtures', filename), 'utf-8')
-}
