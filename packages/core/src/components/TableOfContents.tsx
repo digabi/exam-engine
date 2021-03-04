@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
-import { Translation, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 import { findChildElement, query, queryAncestors } from '../dom-utils'
+import { tocSectionTitleId, tocTitleId } from '../ids'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
 import { CommonExamContext } from './CommonExamContext'
 import { QuestionContext, withQuestionContext } from './QuestionContext'
 import { SectionContext, withSectionContext } from './SectionContext'
-import { tocSectionTitleId, tocTitleId } from '../ids'
 
 function TOCSection({ element }: ExamComponentProps) {
   const { maxAnswers, minAnswers, displayNumber, childQuestions } = useContext(SectionContext)
@@ -65,6 +65,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
 function TOCQuestion({ element }: ExamComponentProps) {
   const { attachmentsURL } = useContext(CommonExamContext)
   const { level, displayNumber, maxScore } = useContext(QuestionContext)
+  const { t } = useTranslation()
   const externalMaterial = query(element, 'external-material')
   const questionTitle = findChildElement(element, 'question-title')
 
@@ -84,12 +85,12 @@ function TOCQuestion({ element }: ExamComponentProps) {
               })}
               target="attachments"
             >
-              <Translation>{(t) => t('material')}</Translation>
+              {t('material')}
             </a>
           </span>
         )}
         <span className="e-column e-column--narrow table-of-contents--score-column">
-          <Translation>{(t) => t('points', { count: maxScore })}</Translation>
+          {t('points', { count: maxScore })}
         </span>
       </div>
     </li>
@@ -103,19 +104,16 @@ const renderChildNodes = createRenderChildNodes({
 
 function TableOfContents(_props: ExamComponentProps) {
   const { root, maxScore } = useContext(CommonExamContext)
+  const { t } = useTranslation()
 
   return (
     <nav className="table-of-contents e-mrg-b-6" aria-labelledby={tocTitleId}>
-      <h2 id={tocTitleId}>
-        <Translation>{(t) => t('toc-heading')}</Translation>
-      </h2>
+      <h2 id={tocTitleId}>{t('toc-heading')}</h2>
       <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
       <div className="e-columns">
-        <strong className="e-column">
-          <Translation>{(t) => t('exam-total')}</Translation>
-        </strong>
+        <strong className="e-column">{t('exam-total')}</strong>
         <strong className="e-column e-column--narrow table-of-contents--score-column">
-          <Translation>{(t) => t('points', { count: maxScore })}</Translation>
+          {t('points', { count: maxScore })}
         </strong>
       </div>
     </nav>
