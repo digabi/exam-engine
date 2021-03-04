@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
+import { QuestionId } from '../..'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
+import { useExamTranslation } from '../../i18n'
+import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
-import { QuestionId } from '../..'
-import { useTranslation } from 'react-i18next'
-import { ScreenReaderOnly } from '../ScreenReaderOnly'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -23,7 +23,7 @@ function ChoiceAnswerOption({
   direction,
   isCorrect,
 }: ChoiceAnswerOptionProps) {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const className = element.getAttribute('class')
   const optionId = element.getAttribute('option-id')!
 

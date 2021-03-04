@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 import { queryAncestors } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
+import { externalMaterialListTitleId } from '../ids'
 import { url } from '../url'
 import { AttachmentContext, withAttachmentContext } from './AttachmentContext'
 import { CommonExamContext } from './CommonExamContext'
-import { externalMaterialListTitleId } from '../ids'
 
 const renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),
@@ -43,7 +43,7 @@ function ExternalMaterialList({ element, showTitle = true, forceRender = false }
     return null
   }
 
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const id = externalMaterialListTitleId(element)
 
   return (

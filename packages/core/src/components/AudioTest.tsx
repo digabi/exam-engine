@@ -1,18 +1,18 @@
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
+import { ExamComponentProps } from '../createRenderChildNodes'
 import { getNumericAttribute, NBSP } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
 import { playAudio } from '../store/audio/actions'
 import { getAudioPlaybackError, getAudioState } from '../store/selectors'
 import AudioPlaybackError from './AudioPlaybackError'
-import { ExamComponentProps } from '../createRenderChildNodes'
 
 function AudioTest({ element }: ExamComponentProps) {
   const src = element.getAttribute('src')!
   const duration = getNumericAttribute(element, 'duration')!
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const audioState = useSelector(getAudioState(src))
   const audioPlaybackError = useSelector(getAudioPlaybackError(src))
   const dispatch = useDispatch()

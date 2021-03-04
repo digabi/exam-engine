@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { AppState } from '../store'
-import AnsweringInstructions from './AnsweringInstructions'
-import { ExtraAnswer } from '../validateAnswers'
-import { CommonExamContext } from './CommonExamContext'
 import { findChildElement } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
+import { AppState } from '../store'
+import { ExtraAnswer } from '../validateAnswers'
+import AnsweringInstructions from './AnsweringInstructions'
+import { CommonExamContext } from './CommonExamContext'
 
 const ErrorIndicator: React.FunctionComponent = () => {
   const extraAnswers = useSelector((state: AppState) => state.answers.extraAnswers)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
 
   return extraAnswers.length > 0 ? (
     <div
@@ -26,7 +26,9 @@ const ErrorIndicator: React.FunctionComponent = () => {
           const { displayNumber, type } = extraAnswer
           return (
             <div key={type + displayNumber}>
-              {type !== 'exam' ? t(extraAnswer.type, { displayNumber }) || <FallbackTitle {...extraAnswer} /> : ''}{' '}
+              {type !== 'exam' && type !== 'toc-section'
+                ? t(type, { displayNumber }) || <FallbackTitle {...extraAnswer} />
+                : ''}{' '}
               {<AnsweringInstructions {...extraAnswer} />}
             </div>
           )

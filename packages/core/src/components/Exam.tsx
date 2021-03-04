@@ -1,11 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
+import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '..'
 import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement } from '../dom-utils'
-import { changeLanguage, initI18n } from '../i18n'
+import { initI18n } from '../i18n'
+import { examTitleId } from '../ids'
+import { parseExamStructure } from '../parser/parseExamStructure'
 import { scrollToHash } from '../scrollToHash'
 import { initializeExamStore } from '../store'
+import { useCached } from '../useCached'
 import mkAttachmentLink from './AttachmentLink'
 import mkAttachmentLinks from './AttachmentLinks'
 import Audio from './Audio'
@@ -15,6 +19,7 @@ import ChoiceAnswer from './ChoiceAnswer'
 import { CommonExamContext, withCommonExamContext } from './CommonExamContext'
 import DocumentTitle from './DocumentTitle'
 import DropdownAnswer from './DropdownAnswer'
+import ErrorIndicator from './ErrorIndicator'
 import ExamAttachment from './ExamAttachment'
 import { withExamContext } from './ExamContext'
 import ExamFooter from './ExamFooter'
@@ -29,6 +34,7 @@ import File from './File'
 import Formula from './Formula'
 import Hints from './Hints'
 import Image from './Image'
+import ImageOverlay from './ImageOverlay'
 import References from './References'
 import SaveIndicator from './SaveIndicator'
 import Section from './Section'
@@ -36,12 +42,6 @@ import SectionInstruction from './SectionInstruction'
 import TableOfContents from './TableOfContents'
 import TextAnswer from './TextAnswer'
 import Video from './Video'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '..'
-import ImageOverlay from './ImageOverlay'
-import { examTitleId } from '../ids'
-import { useCached } from '../useCached'
-import { parseExamStructure } from '../parser/parseExamStructure'
-import ErrorIndicator from './ErrorIndicator'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -123,7 +123,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const examCode = root.getAttribute('exam-code')
   const dayCode = root.getAttribute('day-code')
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
-  useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
 

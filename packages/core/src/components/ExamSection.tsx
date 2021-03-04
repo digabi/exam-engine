@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { ExamComponentProps } from '../createRenderChildNodes'
+import { useExamTranslation } from '../i18n'
+import { sectionTitleId } from '../ids'
 import { AppState } from '../store'
 import { allowCas, allowCasCancelled } from '../store/cas/actions'
 import { CasState } from '../store/cas/reducer'
@@ -8,8 +10,6 @@ import { ExamContext } from './ExamContext'
 import ProgressBar from './ProgressBar'
 import Section from './Section'
 import { SectionContext, withSectionContext } from './SectionContext'
-import { ExamComponentProps } from '../createRenderChildNodes'
-import { sectionTitleId } from '../ids'
 
 function ExamSection({ element, renderChildNodes }: ExamComponentProps) {
   const casState = useSelector((state: AppState) => state.cas, shallowEqual)
@@ -25,7 +25,7 @@ function ExamSection({ element, renderChildNodes }: ExamComponentProps) {
 
 function CasControls(props: CasState) {
   const dispatch = useDispatch()
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const { casCountdownDuration } = useContext(ExamContext)
 
   return (

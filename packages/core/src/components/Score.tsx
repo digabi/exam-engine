@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useExamTranslation } from '../i18n'
 
 export interface ScoreProps {
   id?: string
@@ -9,7 +9,7 @@ export interface ScoreProps {
 }
 
 export const Score: React.FunctionComponent<ScoreProps> = ({ id, size = 'small', score }) => {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const Tag = size === 'inline' ? 'sup' : 'span'
   return (
     <Tag

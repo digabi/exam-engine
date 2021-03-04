@@ -1,15 +1,15 @@
 import React, { useLayoutEffect, useRef } from 'react'
-import { ScreenReaderOnly } from '../ScreenReaderOnly'
-import { useTranslation } from 'react-i18next'
-import { renderAnnotations } from '../../renderAnnotations'
 import { Score } from '../..'
+import { useExamTranslation } from '../../i18n'
+import { renderAnnotations } from '../../renderAnnotations'
+import { ScreenReaderOnly } from '../ScreenReaderOnly'
 
 export const ResultsMultiLineAnswer: React.FunctionComponent<{
   type: 'rich-text' | 'multi-line'
   value?: string
   score?: Score
 }> = ({ type, score, value }) => {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const answerRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {

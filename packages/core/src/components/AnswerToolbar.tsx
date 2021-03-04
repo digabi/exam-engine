@@ -1,9 +1,9 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { ExamAnswer } from '..'
 import { findChildElement, NBSP, queryAncestors } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
 import * as actions from '../store/answers/actions'
 import { AnswerError } from './RichTextAnswer'
-import { ExamAnswer } from '..'
 
 interface AnswerToolbarProps {
   answer?: ExamAnswer
@@ -22,7 +22,7 @@ function AnswerToolbar({
   showAnswerHistory = false,
   supportsAnswerHistory = false,
 }: AnswerToolbarProps) {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
 
   return (
     <div className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2">
@@ -32,7 +32,7 @@ function AnswerToolbar({
           : NBSP}
       </div>
       <div className="answer-toolbar__errors e-column e-column--auto e-text-center">
-        {error && <span role="alert">{t(`answer-errors.${error.key}`, error.options)}</span>}
+        {error && <span role="alert">{t(`answer-errors.${error.key}` as const, error.options)}</span>}
       </div>
       <div className="answer-toolbar__history e-column e-column--narrow e-text-right">
         {supportsAnswerHistory && (

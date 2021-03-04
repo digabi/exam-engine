@@ -10,16 +10,16 @@ import {
 import * as _ from 'lodash-es'
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { connect } from 'react-redux'
+import { ExamComponentProps } from '../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, mapChildElements, NBSP } from '../dom-utils'
 import * as fonts from '../fonts'
+import { useExamTranslation } from '../i18n'
+import { answerScoreId } from '../ids'
 import { AppState } from '../store'
 import * as actions from '../store/answers/actions'
+import { ChoiceAnswer as ChoiceAnswerT } from '../types/ExamAnswer'
 import { QuestionContext } from './QuestionContext'
 import { Score } from './Score'
-import { ExamComponentProps } from '../createRenderChildNodes'
-import { ChoiceAnswer as ChoiceAnswerT } from '../types/ExamAnswer'
-import { useTranslation } from 'react-i18next'
-import { answerScoreId } from '../ids'
 
 interface DropdownAnswerProps extends ExamComponentProps {
   saveAnswer: typeof actions.saveAnswer
@@ -91,7 +91,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
     extraOptions?: GetPropsCommonOptions
   ) => any = getToggleButtonProps
 
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const scoreId = answerScoreId(element)
 
   return (
@@ -115,7 +115,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               {selectedItem ? (
                 renderChildNodes(selectedItem)
               ) : (
-                <span aria-label={t('dropdown-answer.label')}>{NBSP}</span>
+                <span aria-label={t.raw('dropdown-answer.label')}>{NBSP}</span>
               )}
             </span>
           </span>
@@ -151,7 +151,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
             >
               {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
               <span className={classNames('e-dropdown-answer__menu-item-inner e-block', { 'e-nowrap': measuring })}>
-                {item ? renderChildNodes(item) : <span aria-label={t('dropdown-answer.clear')}>{NBSP}</span>}
+                {item ? renderChildNodes(item) : <span aria-label={t.raw('dropdown-answer.clear')}>{NBSP}</span>}
               </span>
             </span>
           ))}

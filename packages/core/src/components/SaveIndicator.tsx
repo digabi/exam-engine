@@ -1,13 +1,13 @@
-import React from 'react'
 import classNames from 'classnames'
-import { useTranslation } from 'react-i18next'
+import React from 'react'
 import { useSelector } from 'react-redux'
-import { getSaveState } from '../store/selectors'
 import { SaveState } from '..'
+import { useExamTranslation } from '../i18n'
+import { getSaveState } from '../store/selectors'
 
 function SaveIndicator() {
   const state: SaveState = useSelector(getSaveState)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
 
   if (state === 'initial') {
     return null

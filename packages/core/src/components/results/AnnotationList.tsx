@@ -1,12 +1,12 @@
 import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Annotation, Score } from '../..'
 import { getNumericAttribute } from '../../dom-utils'
+import { useExamTranslation } from '../../i18n'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { mapMaybe } from '../../utils'
 import { QuestionContext } from '../QuestionContext'
 import { findScore, ResultsContext } from './ResultsContext'
-import { Annotation, Score } from '../..'
 
 interface AnnotationItem {
   numbering: string
@@ -14,7 +14,7 @@ interface AnnotationItem {
 }
 
 interface AnnotationListProps {
-  i18nTitleKey?: string
+  i18nTitleKey?: 'grading.pregrading-annotations' | 'grading.censor-annotations'
   annotations?: AnnotationItem[]
 }
 
@@ -25,7 +25,7 @@ const getPrefix = (answers: Element[], answer: Element) =>
   answers.length > 1 ? shortDisplayNumber(answer.getAttribute('display-number')!) : ''
 
 const AnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListProps) => {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
 
   return annotations ? (
     <>

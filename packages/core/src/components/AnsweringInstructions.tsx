@@ -1,6 +1,6 @@
 import * as _ from 'lodash-es'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useExamTranslation } from '../i18n'
 export interface AnsweringInstructionProps {
   maxAnswers: number
   /** Child questions as either raw Elements from the XML or just display numbers. */
@@ -14,8 +14,8 @@ function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }:
     _.isString(question) ? question : question.getAttribute('display-number')!
   )
 
-  const { t } = useTranslation()
-  const possibleTranslationStrings = cartesian(
+  const { t } = useExamTranslation()
+  const possibleTranslationStrings: any[] = cartesian(
     [childDisplayNumbers.length, '*'],
     [maxAnswers, '*'],
     [minAnswers != null ? minAnswers : maxAnswers, '*']

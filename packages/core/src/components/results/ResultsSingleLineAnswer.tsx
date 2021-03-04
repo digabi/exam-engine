@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import { Score } from '../..'
-import { useTranslation } from 'react-i18next'
-import { ScreenReaderOnly } from '../ScreenReaderOnly'
+import { useExamTranslation } from '../../i18n'
 import { renderAnnotations } from '../../renderAnnotations'
+import { ScreenReaderOnly } from '../ScreenReaderOnly'
 
 function ResultsSingleLineAnswer({
   displayNumber,
@@ -16,7 +16,7 @@ function ResultsSingleLineAnswer({
   value: string | undefined
   children: React.ReactNode
 }) {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const answerRef = useRef<HTMLSpanElement>(null)
 
   useLayoutEffect(() => {
