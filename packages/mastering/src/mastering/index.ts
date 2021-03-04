@@ -370,7 +370,12 @@ function addYoCustomizations(exam: Element, language: string) {
     const title = i18n.t(key, { ns: 'exam-title' })
     if (title) {
       const firstChild = exam.child(0) as Element
-      firstChild.addPrevSibling(exam.node('exam-title', title).namespace(ns.e))
+      firstChild.addPrevSibling(
+        exam
+          .node('exam-title')
+          .namespace(ns.e)
+          .addChild(exam.node('span', title).attr('lang', language).namespace(ns.xhtml))
+      )
     } else {
       throw new Error(`No exam title defined for ${examCode}`)
     }
@@ -379,7 +384,12 @@ function addYoCustomizations(exam: Element, language: string) {
   const examFooter = exam.get('./e:exam-footer', ns)
   if (!examFooter) {
     const footerText = i18n.t([key, 'default'], { ns: 'exam-footer' })
-    exam.node('exam-footer').namespace(ns.e).node('p', footerText).attr('class', 'e-text-center e-semibold')
+    exam
+      .node('exam-footer')
+      .namespace(ns.e)
+      .node('p', footerText)
+      .attr('lang', language)
+      .attr('class', 'e-text-center e-semibold')
   }
 }
 

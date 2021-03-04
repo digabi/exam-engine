@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { RestrictedAudioId } from '..'
+import { useExamTranslation } from '../i18n'
 import { playAudio } from '../store/audio/actions'
 import { getAudioState, getDurationRemaining, getPlaybackTimesRemaining } from '../store/selectors'
-import { RestrictedAudioId } from '..'
-import { useTranslation } from 'react-i18next'
 
 function RestrictedAudioPlayer({
   src,
@@ -24,7 +24,7 @@ function RestrictedAudioPlayer({
   const audioState = useSelector(getAudioState(src, restrictedAudioId))
   const durationRemaining = useSelector(getDurationRemaining(src, restrictedAudioId))
   const playbackTimesRemaining = useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
-  const { t } = useTranslation()
+  const { i18n, t } = useExamTranslation()
   const dispatch = useDispatch()
   const disabled = audioState !== 'stopped' || playbackTimesRemaining === 0
   const remainingLabelId = `audio-remaining-${restrictedAudioId}`
@@ -35,6 +35,7 @@ function RestrictedAudioPlayer({
         'restricted-audio-player e-column e-column--narrow e-columns e-columns--inline e-columns--center-v e-pad-1',
         { 'restricted-audio-player--disabled': disabled }
       )}
+      lang={i18n.language}
     >
       <button
         className={classNames('restricted-audio-player__play e-column e-column--narrow', {
@@ -43,7 +44,7 @@ function RestrictedAudioPlayer({
         disabled={disabled}
         onClick={() => audioState === 'stopped' && dispatch(playAudio({ src, restrictedAudioId, duration }))}
         aria-describedby={[remainingLabelId, labelId].join(' ')}
-        aria-label={t('audio.play')}
+        aria-label={t.raw('audio.play')}
       >
         {audioState !== 'playing' && <FontAwesomeIcon icon={faPlay} fixedWidth />}
       </button>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useExamTranslation } from '../../i18n'
 import { QuestionContext } from '../QuestionContext'
 import ResultsExamQuestionScoresContainer from './ResultsExamQuestionScoresContainer'
 
@@ -11,7 +11,7 @@ export interface ResultsExamQuestionAutoScoreProps {
 
 function ResultsExamQuestionAutoScore({ score, maxScore, displayNumber }: ResultsExamQuestionAutoScoreProps) {
   const { answers } = useContext(QuestionContext)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const containerProps = { answers, displayNumber }
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>

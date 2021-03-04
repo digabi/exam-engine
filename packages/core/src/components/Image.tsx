@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
+import { ExamComponentProps } from '../createRenderChildNodes'
 import { getNumericAttribute, queryAncestors } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
+import { imageCaptionId } from '../ids'
 import { CommonExamContext } from './CommonExamContext'
 import ResponsiveMediaContainer from './ResponsiveMediaContainer'
-import { ExamComponentProps } from '../createRenderChildNodes'
-import { imageCaptionId } from '../ids'
 
 function Image({ element, className, renderChildNodes }: ExamComponentProps) {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const src = element.getAttribute('src')!
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
@@ -32,7 +32,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           <Img />
         ) : (
           <a
-            title={t('zoom-in')}
+            title={t.raw('zoom-in')}
             href={imgUrl}
             target="original-picture"
             className="e-zoomable"

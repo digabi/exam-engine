@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
-import { I18nextProvider, useTranslation } from 'react-i18next'
+import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement, queryAncestors } from '../../dom-utils'
-import { changeLanguage, initI18n } from '../../i18n'
+import { initI18n, useExamTranslation } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
 import { useCached } from '../../useCached'
 import mkAttachmentLink from '../AttachmentLink'
@@ -65,7 +65,6 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
   const examCode = root.getAttribute('exam-code')
   const dayCode = root.getAttribute('day-code')
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
-  useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
 
@@ -91,7 +90,7 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
 
 function ScoresAndFinalGrade() {
   const { gradingText, totalScore } = useContext(ResultsContext)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
 
   return (
     <div className="e-column--narrow">

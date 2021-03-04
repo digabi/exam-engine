@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../createRenderChildNodes'
 import { findChildElement, query, queryAncestors } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
 import { tocSectionTitleId, tocTitleId } from '../ids'
 import { url } from '../url'
 import AnsweringInstructions from './AnsweringInstructions'
@@ -43,7 +43,7 @@ export interface TOCSectionTitleProps {
 
 function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, childQuestions }: TOCSectionTitleProps) {
   const { numberOfSections } = useContext(CommonExamContext)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   return (
     <>
       <header className="e-semibold" id={tocSectionTitleId(displayNumber)}>
@@ -65,7 +65,7 @@ function TOCSectionTitle({ element, displayNumber, minAnswers, maxAnswers, child
 function TOCQuestion({ element }: ExamComponentProps) {
   const { attachmentsURL } = useContext(CommonExamContext)
   const { level, displayNumber, maxScore } = useContext(QuestionContext)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const externalMaterial = query(element, 'external-material')
   const questionTitle = findChildElement(element, 'question-title')
 
@@ -104,7 +104,7 @@ const renderChildNodes = createRenderChildNodes({
 
 function TableOfContents(_props: ExamComponentProps) {
   const { root, maxScore } = useContext(CommonExamContext)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
 
   return (
     <nav className="table-of-contents e-mrg-b-6" aria-labelledby={tocTitleId}>

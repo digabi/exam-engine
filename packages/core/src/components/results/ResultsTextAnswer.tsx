@@ -1,20 +1,20 @@
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
+import { TextAnswer } from '../..'
+import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute } from '../../dom-utils'
+import { useExamTranslation } from '../../i18n'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { QuestionContext } from '../QuestionContext'
 import { findScore, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionManualScore from './ResultsExamQuestionManualScore'
-import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
-import { ExamComponentProps } from '../../createRenderChildNodes'
-import { TextAnswer } from '../..'
 import { ResultsMultiLineAnswer } from './ResultsMultiLineAnswer'
+import ResultsSingleLineAnswer from './ResultsSingleLineAnswer'
 
 function ResultsTextAnswer({ element }: ExamComponentProps) {
   const { answers } = useContext(QuestionContext)
   const { answersByQuestionId, scores } = useContext(ResultsContext)
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const questionId = getNumericAttribute(element, 'question-id')!
   const maxScore = getNumericAttribute(element, 'max-score')!
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
+import { ExamComponentProps } from '../createRenderChildNodes'
 import { findChildElement, NBSP } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
 import { CommonExamContext } from './CommonExamContext'
 import RenderChildNodes from './RenderChildNodes'
-import { ExamComponentProps } from '../createRenderChildNodes'
 
 function Reference({ element, renderChildNodes }: ExamComponentProps) {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   function renderWith(localName: string, Component: React.ComponentType<ExamComponentProps>) {
     const childElement = findChildElement(element, localName)
     return childElement && <Component {...{ element: childElement, renderChildNodes, key: childElement.localName }} />
@@ -14,7 +14,11 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
 
   function renderWithPrefix(
     localName: string,
-    translationKey: string,
+    translationKey:
+      | 'references.date'
+      | 'references.reference-date'
+      | 'references.translator'
+      | 'references.modified-by',
     Component: React.ComponentType<ExamComponentProps>
   ) {
     const childElement = findChildElement(element, localName)

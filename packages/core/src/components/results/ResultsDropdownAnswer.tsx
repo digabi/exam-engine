@@ -1,19 +1,19 @@
 import classNames from 'classnames'
+import * as _ from 'lodash-es'
 import React, { ReactNode, useContext } from 'react'
+import { ChoiceAnswer } from '../..'
+import { ExamComponentProps } from '../../createRenderChildNodes'
 import { findChildElement, getNumericAttribute } from '../../dom-utils'
+import { useExamTranslation } from '../../i18n'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
+import { intersperse } from '../../utils'
 import { QuestionContext } from '../QuestionContext'
+import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from './ResultsContext'
 import ResultsExamQuestionAutoScore from './ResultsExamQuestionAutoScore'
-import { ExamComponentProps } from '../../createRenderChildNodes'
-import { ChoiceAnswer } from '../..'
-import { useTranslation } from 'react-i18next'
-import { ScreenReaderOnly } from '../ScreenReaderOnly'
-import { intersperse } from '../../utils'
-import * as _ from 'lodash-es'
 
 function ResultsDropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const { answers } = useContext(QuestionContext)
   const questionId = getNumericAttribute(element, 'question-id')!

@@ -1,21 +1,21 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { ExamComponentProps } from '../createRenderChildNodes'
 import { getNumericAttribute } from '../dom-utils'
+import { useExamTranslation } from '../i18n'
+import { audioLabelId } from '../ids'
 import { getAudioPlaybackError, getPlaybackTimesRemaining } from '../store/selectors'
 import AudioPlaybackError from './AudioPlaybackError'
 import { CommonExamContext } from './CommonExamContext'
 import RestrictedAudioPlayer from './RestrictedAudioPlayer'
-import { ExamComponentProps } from '../createRenderChildNodes'
-import { audioLabelId } from '../ids'
 
 function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
   const src = element.getAttribute('src')!
   const restrictedAudioId = getNumericAttribute(element, 'restricted-audio-id')
   const times = getNumericAttribute(element, 'times')
   const duration = getNumericAttribute(element, 'duration')!
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const audioPlaybackError =
     times != null && restrictedAudioId != null ? useSelector(getAudioPlaybackError(src, restrictedAudioId)) : undefined
   const playbackTimesRemaining =

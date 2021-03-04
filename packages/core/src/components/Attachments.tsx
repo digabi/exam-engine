@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react'
-import { I18nextProvider, useTranslation } from 'react-i18next'
+import { I18nextProvider } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, NBSP } from '../dom-utils'
-import { changeLanguage, initI18n } from '../i18n'
+import { initI18n, useExamTranslation } from '../i18n'
 import { examTitleId } from '../ids'
 import { scrollToHash } from '../scrollToHash'
 import { useCached } from '../useCached'
@@ -36,7 +36,6 @@ const Attachments: React.FunctionComponent<ExamProps> = () => {
   const examCode = root.getAttribute('exam-code')
   const dayCode = root.getAttribute('day-code')
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
-  useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
 
@@ -64,9 +63,10 @@ const Attachments: React.FunctionComponent<ExamProps> = () => {
   )
 }
 
+// Wrap to a separate component, since we can't use translation hooks in the root component.
 export const AttachmentsPageTitle: React.FunctionComponent = () => {
-  const { t } = useTranslation()
-  return t('attachments-page-title')
+  const { t } = useExamTranslation()
+  return <>{t('attachments-page-title')}</>
 }
 
 export default React.memo(withExamContext(withCommonExamContext(Attachments)))
