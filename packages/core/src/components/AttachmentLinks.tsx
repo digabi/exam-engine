@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
-import { Translation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
+import { ExamComponentProps } from '../createRenderChildNodes'
 import { mapChildElements, query } from '../dom-utils'
 import { url } from '../url'
 import AttachmentLinkAnchor from './AttachmentLinkAnchor'
 import { CommonExamContext } from './CommonExamContext'
-import { ExamComponentProps } from '../createRenderChildNodes'
 
 const mkAttachmentLinks = (type: 'link' | 'plain'): React.FunctionComponent<ExamComponentProps> => {
   const AttachmentLinks: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { root, attachmentsURL } = useContext(CommonExamContext)
+    const { t } = useTranslation()
     const displayNumbers = mapChildElements(element, (attachmentLink) => {
       const name = attachmentLink.getAttribute('ref')!
       const attachment = query(root, (el) => el.localName === 'attachment' && el.getAttribute('name') === name)!
@@ -33,7 +34,7 @@ const mkAttachmentLinks = (type: 'link' | 'plain'): React.FunctionComponent<Exam
       <>
         {'('}
         <AttachmentLinkAnchor {...{ href, type }}>
-          <Translation>{(t) => t('material', { count }).toLowerCase()}</Translation> {displayNumbersString}
+          {t('material', { count }).toLowerCase()} {displayNumbersString}
         </AttachmentLinkAnchor>
         {')'}
       </>

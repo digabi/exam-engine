@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { Translation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
+import { CensoringScore, InspectionScore, PregradingScore, Score } from '../..'
 import { QuestionContext } from '../QuestionContext'
 import ResultsExamQuestionScoresContainer from './ResultsExamQuestionScoresContainer'
-import { CensoringScore, InspectionScore, PregradingScore, Score } from '../..'
 
 export interface ResultsExamQuestionManualScoreProps {
   scores?: Score
@@ -57,11 +57,12 @@ interface NoPregradingProps {
 }
 
 function NoPregrading({ maxScore }: NoPregradingProps) {
+  const { t } = useTranslation()
   return (
     <>
       <span className="e-result-scorecount-empty" />
       {maxScore && ` / ${maxScore} `}
-      <Translation>{(t) => t('points')}</Translation>
+      {t('points')}
     </>
   )
 }
@@ -85,6 +86,8 @@ interface ScoreRowProps {
 }
 
 function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & NormalizedScore) {
+  const { t } = useTranslation()
+
   return (
     <div className={latest ? 'e-color-black' : 'e-color-darkgrey e-font-size-xs'}>
       <ScoreColumn className={classNames('e-nowrap', { 'e-font-size-m': latest })}>
@@ -93,9 +96,7 @@ function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & 
         {` p.`}
       </ScoreColumn>
       <ScoreColumn className="e-result-scorecount-shortcode">{shortCode}</ScoreColumn>
-      <ScoreColumn className="e-mrg-r-0">
-        <Translation>{(t) => t(type)}</Translation>
-      </ScoreColumn>
+      <ScoreColumn className="e-mrg-r-0">{t(type)}</ScoreColumn>
     </div>
   )
 }

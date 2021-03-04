@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from 'react'
-import { I18nextProvider, Translation } from 'react-i18next'
+import { I18nextProvider, useTranslation } from 'react-i18next'
 import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement, NBSP } from '../dom-utils'
 import { changeLanguage, initI18n } from '../i18n'
+import { examTitleId } from '../ids'
 import { scrollToHash } from '../scrollToHash'
+import { useCached } from '../useCached'
 import AttachmentsExternalMaterial from './AttachmentsExternalMaterial'
 import AttachmentsQuestion from './AttachmentsQuestion'
 import AttachmentsQuestionTitle from './AttachmentsQuestionTitle'
@@ -12,11 +14,9 @@ import DocumentTitle from './DocumentTitle'
 import { ExamProps } from './Exam'
 import { withExamContext } from './ExamContext'
 import RenderChildNodes from './RenderChildNodes'
+import RenderExamElements from './RenderExamElements'
 import Section from './Section'
 import { withSectionContext } from './SectionContext'
-import RenderExamElements from './RenderExamElements'
-import { examTitleId } from '../ids'
-import { useCached } from '../useCached'
 
 const renderChildNodes = createRenderChildNodes({
   'audio-group': RenderExamElements,
@@ -48,7 +48,7 @@ const Attachments: React.FunctionComponent<ExamProps> = () => {
         <Section aria-labelledby={examTitleId}>
           {examTitle && (
             <DocumentTitle id={examTitleId}>
-              <Translation>{(t) => t('attachments-page-title')}</Translation>
+              <AttachmentsPageTitle />
               {NBSP}
               {renderChildNodes(examTitle)}
             </DocumentTitle>
@@ -62,6 +62,11 @@ const Attachments: React.FunctionComponent<ExamProps> = () => {
       </main>
     </I18nextProvider>
   )
+}
+
+export const AttachmentsPageTitle: React.FunctionComponent = () => {
+  const { t } = useTranslation()
+  return t('attachments-page-title')
 }
 
 export default React.memo(withExamContext(withCommonExamContext(Attachments)))
