@@ -4,7 +4,6 @@ export const sv_FI: Translations = {
   'exam-total': 'Provet sammanlagt',
   'grading-total': 'Sammanlagt',
   material: 'Material',
-  material_plural: 'Material',
   'attachments-page-title': 'Material:',
   'external-material-title': 'Material',
   section: 'Del {{displayNumber}}:',
@@ -12,7 +11,6 @@ export const sv_FI: Translations = {
   grade: 'Vitsord',
   comment: 'Kommentar',
   points: '{{count}} p.',
-  points_plural: '{{count}} p.',
   audio: {
     play: 'Lyssna på inspelningen.',
   },
@@ -60,7 +58,6 @@ export const sv_FI: Translations = {
   'too-many-answers': 'TODO',
   'listen-times-remaining': '{{count}} lyssningsgång kvar.',
   'listen-times-remaining_plural': '{{count}} lyssningsgånger kvar.',
-  'answer-length_plural': 'Svarets längd: {{count}} tecken.',
   'answer-length': 'Svarets längd: {{count}} tecken.',
   'previous-answer-versions': 'Tidigare utkast till svar',
   'zoom-in': 'Förstora bilden',

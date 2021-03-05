@@ -3,7 +3,6 @@ import { ExamTranslations } from './fi-FI'
 export const VA: ExamTranslations = {
   'exam-total': 'Весь экзамен',
   material: 'Материал',
-  material_plural: 'Материал',
   'external-material-title': 'Материал',
   section: 'Часть {{displayNumber}}:',
   references: {
