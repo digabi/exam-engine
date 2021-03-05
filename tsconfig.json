@@ -21,10 +21,14 @@
   "files": [],
   "references": [
     { "path": "./packages/core" },
+    { "path": "./packages/core/__tests__" },
     { "path": "./packages/exams" },
     { "path": "./packages/generator" },
+    { "path": "./packages/generator/__tests__" },
     { "path": "./packages/mastering" },
+    { "path": "./packages/mastering/__tests__" },
     { "path": "./packages/rendering" },
+    { "path": "./packages/rendering/__tests__" },
     { "path": "./packages/cli" }
   ]
 }
