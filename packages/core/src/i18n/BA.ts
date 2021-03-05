@@ -1,17 +1,12 @@
+import * as _ from 'lodash-es'
 import { ExamTranslations } from './fi-FI'
+import { sv_FI } from './sv-FI'
 
-export const BA: ExamTranslations = {
-  'exam-total': 'Provet sammanlagt',
-  material: 'Material',
-  'external-material-title': 'Material',
-  section: 'Del {{displayNumber}}:',
-  references: {
-    heading: 'Källor',
-    source: 'Källa:',
-    date: 'Publicerad:',
-    'reference-date': 'Hämtad:',
-    translator: 'Översättning:',
-    'modified-by': 'Bearbetning:',
-  },
-  'toc-heading': 'Innehåll',
-}
+export const BA: ExamTranslations = _.pick(sv_FI, [
+  'exam-total',
+  'material',
+  'external-material-title',
+  'section',
+  'references',
+  'toc-heading',
+])
