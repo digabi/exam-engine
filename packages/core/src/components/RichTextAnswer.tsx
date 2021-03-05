@@ -1,14 +1,13 @@
 import classNames from 'classnames'
+import { TOptions } from 'i18next'
 import * as _ from 'lodash-es'
 import React from 'react'
-import { CommonExamContext } from './CommonExamContext'
-import { Translations } from '../i18n/fi-FI'
-import { RichTextAnswer as RichTextAnswerT } from '../types/ExamAnswer'
 import * as richTextEditor from 'rich-text-editor/dist/rich-text-editor'
-import { TOptions } from 'i18next'
+import { RichTextAnswer as RichTextAnswerT } from '../types/ExamAnswer'
+import { CommonExamContext } from './CommonExamContext'
 
 export interface AnswerError {
-  key: keyof Translations['answer-errors']
+  key: 'screenshot-too-big' | 'screenshot-byte-limit-reached' | 'screenshot-upload-failed'
   options?: TOptions
 }
 
