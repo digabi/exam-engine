@@ -31,7 +31,7 @@ jobs:
 
       - run: yarn --frozen-lockfile
       - run: npm rebuild full-icu
-      - run: yarn test -i --ci
+      - run: yarn test --ci
 
   lint:
     runs-on: ubuntu-latest
