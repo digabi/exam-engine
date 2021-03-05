@@ -29,7 +29,7 @@ export function* countdown(duration: number, updateAction: (duration: number) =>
       yield put(updateAction(remaining))
     }
   } finally {
-    if (yield cancelled()) {
+    if ((yield cancelled()) as boolean) {
       channel.close()
     }
   }

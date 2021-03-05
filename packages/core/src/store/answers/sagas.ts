@@ -1,7 +1,7 @@
 import { Task } from 'redux-saga'
 import { call, cancel, delay, fork, put, take } from 'redux-saga/effects'
-import { saveAnswer, saveAnswerFailed, saveAnswerSucceeded, selectAnswerVersion } from './actions'
 import { ExamAnswer, ExamServerAPI } from '../..'
+import { saveAnswer, saveAnswerFailed, saveAnswerSucceeded, selectAnswerVersion } from './actions'
 
 type SaveAnswerAction = ReturnType<typeof saveAnswer>
 type SelectAnswerAction = ReturnType<typeof selectAnswerVersion>
@@ -34,7 +34,7 @@ export function* answersSaga(examServerApi: ExamServerAPI) {
       yield cancel(existing)
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const task = yield fork(performSave, action, examServerApi)
+    const task: Task = yield fork(performSave, action, examServerApi)
     tasks.set(action.payload.questionId, task)
   }
 }
