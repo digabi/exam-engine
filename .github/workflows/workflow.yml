@@ -48,9 +48,9 @@ jobs:
         with:
           path: |
             **/node_modules
-          key: ${{ matrix.node-version }}-${{ hashFiles('yarn.lock') }}
+          key: 14.x-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ matrix.node-version }}-
+            14.x-
 
       - run: yarn --frozen-lockfile
       - run: yarn lint
