@@ -38,6 +38,11 @@
       <xs:field xpath="@lang" />
     </xs:keyref>
 
+    <xs:keyref name="hide-in-keyref" refer="e:language-key">
+      <xs:selector xpath=".//e:*" />
+      <xs:field xpath="@hide-in" />
+    </xs:keyref>
+
     <xs:keyref name="attachment-link-keyref" refer="e:attachment-unique">
       <xs:selector xpath=".//e:attachment-link" />
       <xs:field xpath="@ref" />
@@ -47,6 +52,10 @@
 
   <xs:attributeGroup name="localizable">
     <xs:attribute name="lang" type="xs:language" />
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="temp-hidden">
+    <xs:attribute name="hide-in" type="xs:language" />
   </xs:attributeGroup>
 
   <xs:attributeGroup name="stylable">
@@ -117,6 +126,7 @@
       </xs:sequence>
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
       <xs:attribute name="cas-forbidden" type="xs:boolean" default="false" />
+      <xs:attributeGroup ref="e:temp-hidden" />
     </xs:complexType>
   </xs:element>
 
@@ -132,6 +142,7 @@
         </xs:choice>
       </xs:sequence>
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
+      <xs:attributeGroup ref="e:temp-hidden" />
     </xs:complexType>
   </xs:element>
 
