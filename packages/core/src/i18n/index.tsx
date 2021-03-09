@@ -1,4 +1,4 @@
-import i18n, { TFunctionKeys, TOptions } from 'i18next'
+import i18n, { PostProcessorModule, TFunctionKeys, TOptions } from 'i18next'
 import * as _ from 'lodash-es'
 import React from 'react'
 // eslint-disable-next-line no-restricted-imports
@@ -66,37 +66,43 @@ declare module 'react-i18next' {
 export function initI18n(language: string, examCode: string | null, dayCode: string | null): typeof i18n {
   const namespace = examCode ? examCode + (dayCode ? `_${dayCode}` : '') : 'translation'
 
-  return i18n.createInstance(
-    {
-      resources,
-      lng: language,
-      fallbackLng: 'fi-FI',
-      debug: false,
-      defaultNS: namespace,
-      fallbackNS: 'translation',
-      interpolation: {
-        escapeValue: false,
-        format: (value, format) => {
-          switch (format) {
-            case 'range': {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              const [start, end] = value
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/restrict-template-expressions
-              return start == null ? end : end == null ? start : start === end ? start : `${start}–${end}`
+  return i18n
+    .use<PostProcessorModule>({
+      type: 'postProcessor',
+      name: 'lowercase',
+      process: (value, _key, options) => value.toLocaleLowerCase(options.lng),
+    })
+    .createInstance(
+      {
+        resources,
+        lng: language,
+        fallbackLng: 'fi-FI',
+        debug: false,
+        defaultNS: namespace,
+        fallbackNS: 'translation',
+        interpolation: {
+          escapeValue: false,
+          format: (value, format) => {
+            switch (format) {
+              case 'range': {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                const [start, end] = value
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/restrict-template-expressions
+                return start == null ? end : end == null ? start : start === end ? start : `${start}–${end}`
+              }
+              case 'first':
+                return _.first(value)
+              case 'last':
+                return _.last(value)
+              default:
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+                return value
             }
-            case 'first':
-              return _.first(value)
-            case 'last':
-              return _.last(value)
-            default:
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-              return value
-          }
+          },
         },
       },
-    },
-    _.noop
-  )
+      _.noop
+    )
 }
 
 export function useExamTranslation() {

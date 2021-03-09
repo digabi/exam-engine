@@ -34,7 +34,7 @@ const mkAttachmentLinks = (type: 'link' | 'plain'): React.FunctionComponent<Exam
       <>
         {'('}
         <AttachmentLinkAnchor {...{ href, type }}>
-          {t.raw('material', { count }).toLowerCase()} {displayNumbersString}
+          {t('material', { count, postProcess: 'lowercase' })} {displayNumbersString}
         </AttachmentLinkAnchor>
         {')'}
       </>
