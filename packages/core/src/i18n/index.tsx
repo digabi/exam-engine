@@ -85,9 +85,7 @@ export function initI18n(language: string, examCode: string | null, dayCode: str
           format: (value, format) => {
             switch (format) {
               case 'range': {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                const [start, end] = value
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/restrict-template-expressions
+                const [start, end] = value as [string, string]
                 return start == null ? end : end == null ? start : start === end ? start : `${start}–${end}`
               }
               case 'first':
