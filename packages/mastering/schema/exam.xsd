@@ -169,6 +169,7 @@
       </xs:sequence>
       <xs:attribute name="name" type="xs:NMTOKEN" />
       <xs:attribute name="lang" type="xs:language" />
+      <xs:attributeGroup ref="e:temp-hidden" />
     </xs:complexType>
   </xs:element>
 
