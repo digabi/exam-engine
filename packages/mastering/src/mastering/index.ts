@@ -243,7 +243,7 @@ async function masterExamForLanguage(
   removeTableWhitespaceNodes(root)
 
   if (options.removeHiddenElements) {
-    removeHiddenElements(root)
+    removeHiddenElements(root, language)
   }
 
   return {
@@ -339,8 +339,9 @@ function removeComments(exam: Element) {
   exam.find('//comment()').forEach((e) => e.remove())
 }
 
-function removeHiddenElements(exam: Element) {
+function removeHiddenElements(exam: Element, language: string) {
   exam.find('//e:*[@hidden=true()]', ns).forEach((e) => e.remove())
+  exam.find(`//e:*[@hide-in and @hide-in='${language}']`, ns).forEach((e) => e.remove())
 }
 
 function updateMaxScoresToAnswers(exam: Exam) {
