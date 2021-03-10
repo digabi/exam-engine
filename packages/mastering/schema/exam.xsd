@@ -344,7 +344,7 @@
         <xs:element name="hint" minOccurs="0" type="e:Flow" />
       </xs:sequence>
       <xs:attribute name="type" type="e:text-answer-type" default="single-line" />
-      <xs:attribute name="max-score" type="xs:positiveInteger" use="required" />
+      <xs:attribute name="max-score" type="xs:nonNegativeInteger" use="required" />
       <xs:attributeGroup ref="e:stylable" />
     </xs:complexType>
   </xs:element>
