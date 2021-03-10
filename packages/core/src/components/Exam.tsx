@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '..'
 import { createRenderChildNodes } from '../createRenderChildNodes'
 import { findChildElement } from '../dom-utils'
-import { initI18n } from '../i18n'
+import { changeLanguage, initI18n } from '../i18n'
 import { examTitleId } from '../ids'
 import { parseExamStructure } from '../parser/parseExamStructure'
 import { scrollToHash } from '../scrollToHash'
@@ -123,6 +123,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const examCode = root.getAttribute('exam-code')
   const dayCode = root.getAttribute('day-code')
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
+  useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
 
