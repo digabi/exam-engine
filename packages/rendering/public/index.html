@@ -6,20 +6,38 @@
     <style type="text/css">
       body {
         margin: 0;
-        padding: 0 1rem;
+        padding: 0;
       }
       .toolbar {
+        font-size: 1rem;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        margin-bottom: 2rem;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+      .toolbar_inner {
         max-width: 65rem;
-        margin: 1rem auto;
-        padding: 0;
+        padding: 0.5rem;
+        margin: 0 auto;
+        box-sizing: border-box;
         list-style: none;
         font-family: 'Noto Sans', 'sans-serif';
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+      }
+      .toolbar__item button {
+        font-size: 0.875rem;
+        font-family: 'Noto Sans', 'sans-serif';
       }
       .toolbar__item + .toolbar__item {
-        padding-left: 0.25rem;
+        padding-left: 0.5rem;
+      }
+      .toolbar__item--exam-version + .toolbar__item:not(.toolbar__item--exam-version) {
+        margin-left: auto;
       }
       .audio-player {
         position: fixed;

@@ -3,7 +3,7 @@ import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement, queryAncestors } from '../../dom-utils'
-import { initI18n, useExamTranslation } from '../../i18n'
+import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
 import { useCached } from '../../useCached'
 import mkAttachmentLink from '../AttachmentLink'
@@ -65,6 +65,7 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
   const examCode = root.getAttribute('exam-code')
   const dayCode = root.getAttribute('day-code')
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
+  useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
 

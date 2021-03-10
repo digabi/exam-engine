@@ -37,6 +37,7 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
       },
       open: options.openBrowser,
       clientLogLevel: 'silent',
+      stats: 'errors-only',
       noInfo: true,
       contentBase: [path.resolve(__dirname, '../public'), path.dirname(examFilename)],
       historyApiFallback: true,
