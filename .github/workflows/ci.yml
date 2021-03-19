@@ -58,14 +58,3 @@ jobs:
         env:
           BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
           CI_COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
-
-  merge-pr:
-    name: Merge Pull Request
-    needs: [test, lint]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Merge me!
-        uses: ridedott/merge-me-action@v2.2.21
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PRESET: DEPENDABOT_MINOR
