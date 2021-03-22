@@ -63,6 +63,7 @@
     "uuid": "^8.0.0"
   },
   "scripts": {
+    "bundlewatch": "bundlewatch --config .bundlewatch.config.js",
     "start": "node packages/cli/dist/start.js",
     "build": "tsc --build && yarn workspace @digabi/exam-engine-core build",
     "build:analyze": "tsc --build && yarn workspace @digabi/exam-engine-core build:analyze && webpack-bundle-analyzer packages/core/stats.json packages/core/dist",
