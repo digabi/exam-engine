@@ -4,15 +4,14 @@ module.exports = {
   ci: {
     trackBranches: [currentBranch],
   },
-  defaultCompression: 'none',
   files: [
     {
       path: 'packages/core/dist/main-bundle.js',
-      maxSize: '864KB',
+      maxSize: '262KB',
     },
     {
       path: 'packages/core/dist/main.css',
-      maxSize: '45KB',
+      maxSize: '9KB',
     },
   ],
 }
