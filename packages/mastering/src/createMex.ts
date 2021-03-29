@@ -25,7 +25,9 @@ export async function createMex(
   passphrase: string,
   answersPrivateKey: string,
   outputStream: NodeJS.WritableStream,
-  json?: Buffer | null
+  json?: Buffer | null,
+  ktpUpdate?: NodeJS.ReadableStream,
+  koeUpdate?: NodeJS.ReadableStream
 ): Promise<void> {
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
@@ -50,6 +52,12 @@ export async function createMex(
   encryptAndSign(zipFile, 'nsa.zip', keyAndIv, answersPrivateKey, nsaScripts)
   if (securityCodes) {
     encryptAndSign(zipFile, 'security-codes.json', keyAndIv, answersPrivateKey, securityCodes)
+  }
+  if (ktpUpdate) {
+    encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, ktpUpdate)
+  }
+  if (koeUpdate) {
+    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdate)
   }
   encryptAndSignFiles(
     zipFile,
