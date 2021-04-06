@@ -58,6 +58,7 @@ export async function createMex(
   }
   if (koeUpdate) {
     encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdate)
+    sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdate)
   }
   encryptAndSignFiles(
     zipFile,
@@ -120,6 +121,7 @@ export async function createMultiMex(
   }
   if (koeUpdate) {
     encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdate)
+    sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdate)
   }
 
   zipFile.outputStream.pipe(outputStream)
@@ -155,10 +157,13 @@ function encryptAndSign(
   const encryptedPassthrough = new PassThrough()
   encrypted.pipe(encryptedPassthrough)
 
-  const signer = signWithSHA256AndRSA(encrypted, answersPrivateKey)
-
   zipFile.addReadStream(encryptedPassthrough, `${filename}.bin`)
-  zipFile.addReadStream(signer, `${filename}.bin.sig`)
+  sign(zipFile, `${filename}.bin`, answersPrivateKey, input)
+}
+
+function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, input: NodeJS.ReadableStream): void {
+  const signer = signWithSHA256AndRSA(input, answersPrivateKey)
+  zipFile.addReadStream(signer, `${filename}.sig`)
 }
 
 function toStream(buffer: Buffer): Readable {
