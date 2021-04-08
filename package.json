@@ -13,6 +13,7 @@
     "@swc-node/jest": "^1.1.1",
     "@types/child-process-promise": "^2.2.1",
     "@types/classnames": "^2.2.8",
+    "@types/cloneable-readable": "^2.0.0",
     "@types/ffmpeg-static": "^3.0.0",
     "@types/ffprobe-static": "^2.0.0",
     "@types/fontfaceobserver": "^0.0.6",
