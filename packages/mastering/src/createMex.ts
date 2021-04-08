@@ -6,7 +6,7 @@ import yazl, { ZipFile } from 'yazl'
 import { createAES256EncryptStreamWithIv, deriveAES256KeyAndIv, KeyAndIv, signWithSHA256AndRSA } from './crypto-utils'
 import cloneable from 'cloneable-readable'
 
-interface ExamFile {
+export interface ExamFile {
   /** A relative filename (e.g. "foo.mp3"). This should be the same filename than in the exam XML. */
   filename: string
   /** A ReadableStream of the file contents */

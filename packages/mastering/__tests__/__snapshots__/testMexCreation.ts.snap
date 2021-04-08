@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mex exam package creation with createMex creates a mex with koe-update.zip 1`] = `
+Array [
+  Object {
+    "fileName": "exam.xml.bin",
+    "uncompressedSize": 8,
+  },
+  Object {
+    "fileName": "exam.xml.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "nsa.zip.bin",
+    "uncompressedSize": 16,
+  },
+  Object {
+    "fileName": "nsa.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "koe-update.zip.bin",
+    "uncompressedSize": 19,
+  },
+  Object {
+    "fileName": "koe-update.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "koe-update.zip.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "rendering.zip.bin",
+    "uncompressedSize": 0,
+  },
+  Object {
+    "fileName": "rendering.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "attachments.zip.bin",
+    "uncompressedSize": 22,
+  },
+  Object {
+    "fileName": "attachments.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+]
+`;
+
+exports[`Mex exam package creation with createMex creates a minimal mex 1`] = `
+Array [
+  Object {
+    "fileName": "exam.xml.bin",
+    "uncompressedSize": 8,
+  },
+  Object {
+    "fileName": "exam.xml.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "nsa.zip.bin",
+    "uncompressedSize": 16,
+  },
+  Object {
+    "fileName": "nsa.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "rendering.zip.bin",
+    "uncompressedSize": 0,
+  },
+  Object {
+    "fileName": "rendering.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "attachments.zip.bin",
+    "uncompressedSize": 22,
+  },
+  Object {
+    "fileName": "attachments.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+]
+`;
+
+exports[`Mex exam package creation with createMultiMex creates a minimal multimex 1`] = `
+Array [
+  Object {
+    "fileName": "exam_a.mex",
+    "uncompressedSize": 11,
+  },
+  Object {
+    "fileName": "exam_b.mex",
+    "uncompressedSize": 11,
+  },
+  Object {
+    "fileName": "nsa.zip.bin",
+    "uncompressedSize": 16,
+  },
+  Object {
+    "fileName": "nsa.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "security-codes.json.bin",
+    "uncompressedSize": 19,
+  },
+  Object {
+    "fileName": "security-codes.json.bin.sig",
+    "uncompressedSize": 88,
+  },
+]
+`;
+
+exports[`Mex exam package creation with createMultiMex creates a multimex with koe-update.zip 1`] = `
+Array [
+  Object {
+    "fileName": "exam_a.mex",
+    "uncompressedSize": 11,
+  },
+  Object {
+    "fileName": "exam_b.mex",
+    "uncompressedSize": 11,
+  },
+  Object {
+    "fileName": "nsa.zip.bin",
+    "uncompressedSize": 16,
+  },
+  Object {
+    "fileName": "nsa.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "security-codes.json.bin",
+    "uncompressedSize": 19,
+  },
+  Object {
+    "fileName": "security-codes.json.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "koe-update.zip.bin",
+    "uncompressedSize": 19,
+  },
+  Object {
+    "fileName": "koe-update.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+  Object {
+    "fileName": "koe-update.zip.sig",
+    "uncompressedSize": 88,
+  },
+]
+`;
