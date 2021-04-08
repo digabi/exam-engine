@@ -1,9 +1,10 @@
 import fs from 'fs'
 import glob from 'glob-promise'
 import path from 'path'
-import { PassThrough, Readable } from 'stream'
+import { Readable } from 'stream'
 import yazl, { ZipFile } from 'yazl'
 import { createAES256EncryptStreamWithIv, deriveAES256KeyAndIv, KeyAndIv, signWithSHA256AndRSA } from './crypto-utils'
+import cloneable from 'cloneable-readable'
 
 interface ExamFile {
   /** A relative filename (e.g. "foo.mp3"). This should be the same filename than in the exam XML. */
@@ -57,8 +58,9 @@ export async function createMex(
     encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, ktpUpdate)
   }
   if (koeUpdate) {
-    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdate)
-    sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdate)
+    const koeUpdateCloneable = cloneable(koeUpdate as Readable)
+    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdateCloneable.clone())
+    sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdateCloneable)
   }
   encryptAndSignFiles(
     zipFile,
@@ -120,8 +122,9 @@ export async function createMultiMex(
     encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, ktpUpdate)
   }
   if (koeUpdate) {
-    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdate)
-    sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdate)
+    const koeUpdateCloneable = cloneable(koeUpdate as Readable)
+    encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdateCloneable.clone())
+    sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdateCloneable)
   }
 
   zipFile.outputStream.pipe(outputStream)
@@ -153,12 +156,11 @@ function encryptAndSign(
   answersPrivateKey: string,
   input: NodeJS.ReadableStream
 ): void {
-  const encrypted = input.pipe(createAES256EncryptStreamWithIv(keyAndIv))
-  const encryptedPassthrough = new PassThrough()
-  encrypted.pipe(encryptedPassthrough)
+  const cloneableInput = cloneable(input as Readable)
+  const encrypted = cloneableInput.clone().pipe(createAES256EncryptStreamWithIv(keyAndIv))
 
-  zipFile.addReadStream(encryptedPassthrough, `${filename}.bin`)
-  sign(zipFile, `${filename}.bin`, answersPrivateKey, input)
+  zipFile.addReadStream(encrypted, `${filename}.bin`)
+  sign(zipFile, `${filename}.bin`, answersPrivateKey, cloneableInput)
 }
 
 function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, input: NodeJS.ReadableStream): void {
