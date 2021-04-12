@@ -1,7 +1,7 @@
 import fs from 'fs'
 import glob from 'glob-promise'
 import path from 'path'
-import { Readable } from 'stream'
+import { Readable, Writable } from 'stream'
 import yazl, { ZipFile } from 'yazl'
 import { createAES256EncryptStreamWithIv, deriveAES256KeyAndIv, KeyAndIv, signWithSHA256AndRSA } from './crypto-utils'
 import cloneable from 'cloneable-readable'
@@ -10,7 +10,7 @@ export interface ExamFile {
   /** A relative filename (e.g. "foo.mp3"). This should be the same filename than in the exam XML. */
   filename: string
   /** A ReadableStream of the file contents */
-  contents: NodeJS.ReadableStream
+  contents: Readable
 }
 
 export interface AttachmentFile extends ExamFile {
@@ -21,14 +21,14 @@ export interface AttachmentFile extends ExamFile {
 export async function createMex(
   xml: string,
   attachments: AttachmentFile[],
-  nsaScripts: NodeJS.ReadableStream,
-  securityCodes: NodeJS.ReadableStream | null,
+  nsaScripts: Readable,
+  securityCodes: Readable | null,
   passphrase: string,
   answersPrivateKey: string,
-  outputStream: NodeJS.WritableStream,
+  outputStream: Writable,
   json?: Buffer | null,
-  ktpUpdate?: NodeJS.ReadableStream,
-  koeUpdate?: NodeJS.ReadableStream
+  ktpUpdate?: Readable,
+  koeUpdate?: Readable
 ): Promise<void> {
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
@@ -58,7 +58,7 @@ export async function createMex(
     encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, ktpUpdate)
   }
   if (koeUpdate) {
-    const koeUpdateCloneable = cloneable(koeUpdate as Readable)
+    const koeUpdateCloneable = cloneable(koeUpdate)
     encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdateCloneable.clone())
     sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdateCloneable)
   }
@@ -91,14 +91,14 @@ export async function createMex(
 
 export async function createMultiMex(
   exams: ExamFile[],
-  nsaScripts: NodeJS.ReadableStream,
-  securityCodes: NodeJS.ReadableStream,
+  nsaScripts: Readable,
+  securityCodes: Readable,
   passphrase: string,
   answersPrivateKey: string,
-  outputStream: NodeJS.WritableStream,
-  loadSimulationConfiguration?: NodeJS.ReadableStream,
-  ktpUpdate?: NodeJS.ReadableStream,
-  koeUpdate?: NodeJS.ReadableStream
+  outputStream: Writable,
+  loadSimulationConfiguration?: Readable,
+  ktpUpdate?: Readable,
+  koeUpdate?: Readable
 ): Promise<void> {
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
@@ -122,7 +122,7 @@ export async function createMultiMex(
     encryptAndSign(zipFile, 'ktp-update.zip', keyAndIv, answersPrivateKey, ktpUpdate)
   }
   if (koeUpdate) {
-    const koeUpdateCloneable = cloneable(koeUpdate as Readable)
+    const koeUpdateCloneable = cloneable(koeUpdate)
     encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdateCloneable.clone())
     sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdateCloneable)
   }
@@ -146,7 +146,7 @@ function encryptAndSignFiles(
   }
   innerZipFile.end()
 
-  encryptAndSign(zipFile, filename, keyAndIv, answersPrivateKey, innerZipFile.outputStream)
+  encryptAndSign(zipFile, filename, keyAndIv, answersPrivateKey, new Readable().wrap(innerZipFile.outputStream))
 }
 
 function encryptAndSign(
@@ -154,16 +154,16 @@ function encryptAndSign(
   filename: string,
   keyAndIv: KeyAndIv,
   answersPrivateKey: string,
-  input: NodeJS.ReadableStream
+  input: Readable
 ): void {
-  const cloneableInput = cloneable(input as Readable)
+  const cloneableInput = cloneable(input)
   const encrypted = cloneableInput.clone().pipe(createAES256EncryptStreamWithIv(keyAndIv))
 
   zipFile.addReadStream(encrypted, `${filename}.bin`)
   sign(zipFile, `${filename}.bin`, answersPrivateKey, cloneableInput)
 }
 
-function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, input: NodeJS.ReadableStream): void {
+function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, input: Readable): void {
   const signer = signWithSHA256AndRSA(input, answersPrivateKey)
   zipFile.addReadStream(signer, `${filename}.sig`)
 }
@@ -175,7 +175,7 @@ function toStream(buffer: Buffer): Readable {
   return readable
 }
 
-function streamToPromise(stream: NodeJS.WritableStream): Promise<void> {
+function streamToPromise(stream: Writable): Promise<void> {
   return new Promise((resolve, reject) => {
     stream.on('finish', resolve)
     stream.on('error', reject)

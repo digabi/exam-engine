@@ -11,8 +11,8 @@ interface InterestingEntryMetadata {
 
 describe('Mex exam package creation', () => {
   let privateKey: string
-  let nsaScripts: NodeJS.ReadableStream
-  let securityCodes: NodeJS.ReadableStream
+  let nsaScripts: Readable
+  let securityCodes: Readable
   let exams: ExamFile[]
 
   beforeAll(async () => {
@@ -60,7 +60,7 @@ describe('Mex exam package creation', () => {
   }
 
   describe('with createMex', () => {
-    async function expectCorrectMexIsCreated(koeUpdate?: NodeJS.ReadableStream) {
+    async function expectCorrectMexIsCreated(koeUpdate?: Readable) {
       const { mexStream, mexBuffers } = getMexStreamAndBuffers()
       await createMex(
         xml,
@@ -91,7 +91,7 @@ describe('Mex exam package creation', () => {
   })
 
   describe('with createMultiMex', () => {
-    async function expectCorrectMultiMexIsCreated(koeUpdate?: NodeJS.ReadableStream) {
+    async function expectCorrectMultiMexIsCreated(koeUpdate?: Readable) {
       const { mexStream, mexBuffers } = getMexStreamAndBuffers()
       await createMultiMex(
         exams,
