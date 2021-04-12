@@ -1,10 +1,13 @@
 import fs from 'fs'
 import glob from 'glob-promise'
 import path from 'path'
-import { Readable, Writable } from 'stream'
+import stream, { Readable, Writable } from 'stream'
 import yazl, { ZipFile } from 'yazl'
 import { createAES256EncryptStreamWithIv, deriveAES256KeyAndIv, KeyAndIv, signWithSHA256AndRSA } from './crypto-utils'
 import cloneable from 'cloneable-readable'
+import { promisify } from 'util'
+
+const pipeline = promisify(stream.pipeline)
 
 export interface ExamFile {
   /** A relative filename (e.g. "foo.mp3"). This should be the same filename than in the exam XML. */
@@ -83,10 +86,9 @@ export async function createMex(
     }))
   )
 
-  zipFile.outputStream.pipe(outputStream)
+  const promise = pipeline(zipFile.outputStream, outputStream)
   zipFile.end()
-
-  return streamToPromise(outputStream)
+  await promise
 }
 
 export async function createMultiMex(
@@ -127,10 +129,9 @@ export async function createMultiMex(
     sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdateCloneable)
   }
 
-  zipFile.outputStream.pipe(outputStream)
+  const promise = pipeline(zipFile.outputStream, outputStream)
   zipFile.end()
-
-  return streamToPromise(outputStream)
+  await promise
 }
 
 function encryptAndSignFiles(
@@ -173,11 +174,4 @@ function toStream(buffer: Buffer): Readable {
   readable.push(buffer)
   readable.push(null)
   return readable
-}
-
-function streamToPromise(stream: Writable): Promise<void> {
-  return new Promise((resolve, reject) => {
-    stream.on('finish', resolve)
-    stream.on('error', reject)
-  })
 }
