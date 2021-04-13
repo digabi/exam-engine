@@ -49,7 +49,7 @@ Array [
 ]
 `;
 
-exports[`Mex exam package creation with createMex creates a minimal mex 1`] = `
+exports[`Mex exam package creation with createMex creates a minimal mex with verifyable exam.xml signature 1`] = `
 Array [
   Object {
     "fileName": "exam.xml.bin",
