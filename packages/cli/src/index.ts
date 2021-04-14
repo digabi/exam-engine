@@ -78,6 +78,14 @@ yargs
           description: 'The security codes (in JSON format)',
           coerce: resolveFile,
         })
+        .option('ktp-update', {
+          description: 'ktp-update.zip',
+          coerce: resolveFile,
+        })
+        .option('koe-update', {
+          description: 'koe-update.zip',
+          coerce: resolveFile,
+        })
         .demandOption(['private-key', 'passphrase', 'nsa-scripts'])
     },
     runCommand('./commands/create-mex')
