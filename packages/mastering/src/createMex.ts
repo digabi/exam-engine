@@ -157,11 +157,10 @@ function encryptAndSign(
   answersPrivateKey: string,
   input: Readable
 ): void {
-  const cloneableInput = cloneable(input)
-  const encrypted = cloneableInput.clone().pipe(createAES256EncryptStreamWithIv(keyAndIv))
+  const encrypted = cloneable(input.pipe(createAES256EncryptStreamWithIv(keyAndIv)))
 
-  zipFile.addReadStream(encrypted, `${filename}.bin`)
-  sign(zipFile, `${filename}.bin`, answersPrivateKey, cloneableInput)
+  zipFile.addReadStream(encrypted.clone(), `${filename}.bin`)
+  sign(zipFile, `${filename}.bin`, answersPrivateKey, encrypted)
 }
 
 function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, input: Readable): void {
