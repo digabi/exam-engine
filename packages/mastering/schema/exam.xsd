@@ -6,7 +6,7 @@
   <xs:element name="exam">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="e:languages" />
+        <xs:element ref="e:exam-versions" />
         <xs:element name="exam-title" type="e:Flow" minOccurs="0" />
         <xs:element name="exam-instruction" type="e:Flow" minOccurs="0" />
         <xs:element ref="e:table-of-contents" minOccurs="0" />
@@ -21,22 +21,19 @@
       <xs:attribute name="day-code" type="xs:string" />
       <xs:attribute name="exam-stylesheet" type="xs:string" />
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
+      <xs:attribute name="lang" type="xs:language" />
     </xs:complexType>
 
-    <xs:key name="language-key">
-      <xs:selector xpath=".//e:language" />
-      <xs:field xpath="." />
+    <xs:key name="exam-version-key">
+      <xs:selector xpath=".//e:exam-version" />
+      <xs:field xpath="@lang" />
+      <xs:field xpath="@exam-type" />
     </xs:key>
 
     <xs:unique name="attachment-unique">
       <xs:selector xpath=".//e:attachment" />
       <xs:field xpath="@name" />
     </xs:unique>
-
-    <xs:keyref name="lang-keyref" refer="e:language-key">
-      <xs:selector xpath=".//e:*" />
-      <xs:field xpath="@lang" />
-    </xs:keyref>
 
     <xs:keyref name="attachment-link-keyref" refer="e:attachment-unique">
       <xs:selector xpath=".//e:attachment-link" />
@@ -46,7 +43,19 @@
   </xs:element>
 
   <xs:attributeGroup name="localizable">
-    <xs:attribute name="lang" type="xs:language" />
+    <xs:attribute name="lang" type="e:exam-language-type">
+      <xs:annotation>
+        <xs:documentation>The exam language.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="exam-type" type="e:exam-type">
+      <xs:annotation>
+        <xs:documentation>
+          You may want to create separate versions of the exam for students with disabilities. If not
+          specified, the contents are used in all exam versions for this language.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:attributeGroup>
 
   <xs:attributeGroup name="stylable">
@@ -63,7 +72,7 @@
 
   <xs:simpleType name="exam-schema-version">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="0.1" />
+      <xs:enumeration value="0.2" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -81,11 +90,53 @@
     <xs:attributeGroup ref="e:hidable" />
   </xs:complexType>
 
-  <xs:element name="languages">
+  <xs:simpleType name="exam-language-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="fi-FI">
+        <xs:annotation>
+          <xs:documentation>Finnish</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sv-FI">
+        <xs:annotation>
+          <xs:documentation>Swedish</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="exam-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="normal">
+        <xs:annotation>
+          <xs:documentation>A version of the exam designed for students without any disabilities.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="visually-impaired">
+        <xs:annotation>
+          <xs:documentation>A version of the exam designed for visually impaired students.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hearing-impaired">
+        <xs:annotation>
+          <xs:documentation>A version of the exam designed for hearing impaired students.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="exam-versions">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="language" type="xs:language" maxOccurs="unbounded" />
+        <xs:element ref="e:exam-version" maxOccurs="unbounded" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="exam-version">
+    <xs:complexType>
+      <xs:attribute name="lang" type="e:exam-language-type" use="required" />
+      <xs:attribute name="exam-type" type="e:exam-type" default="normal" />
     </xs:complexType>
   </xs:element>
 
@@ -94,7 +145,7 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:group ref="xhtml:xhtml.Flow.mix" />
       </xs:choice>
-      <xs:attribute name="lang" type="xs:language" use="required" />
+      <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
 
@@ -117,6 +168,7 @@
       </xs:sequence>
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
       <xs:attribute name="cas-forbidden" type="xs:boolean" default="false" />
+      <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
 
@@ -132,6 +184,7 @@
         </xs:choice>
       </xs:sequence>
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
+      <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
 
@@ -157,7 +210,7 @@
         <xs:element ref="e:reference" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="name" type="xs:NMTOKEN" />
-      <xs:attribute name="lang" type="xs:language" />
+      <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
 

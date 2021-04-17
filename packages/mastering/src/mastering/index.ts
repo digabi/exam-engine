@@ -48,7 +48,7 @@ interface AudioMetadata {
   duration: number
 }
 
-export type ExamType = 'normal' | 'visually-impaired' | 'scanner'
+export type ExamType = 'normal' | 'visually-impaired' | 'hearing-impaired'
 
 export type GenerateUuid = (metadata?: {
   examCode: string
@@ -188,20 +188,24 @@ export async function masterExam(
   options?: MasteringOptions
 ): Promise<MasteringResult[]> {
   const doc = parseExam(xml, true)
-  const languages = doc.find('//e:languages/e:language/text()', ns).map(String)
+  const examVersions = doc.find<Element>('./e:exam-versions/e:exam-version', ns).map((examVersion) => ({
+    language: getAttribute('lang', examVersion),
+    type: getAttribute('exam-type', examVersion, 'normal') as ExamType,
+  }))
   const memoizedGetMediaMetadata = _.memoize(getMediaMetadata, _.join)
   const optionsWithDefaults = { ...defaultOptions, ...options }
 
   return Promise.all(
-    languages.map((language) =>
-      masterExamForLanguage(parseExam(xml), language, generateUuid, memoizedGetMediaMetadata, optionsWithDefaults)
+    examVersions.map(({ language, type }) =>
+      masterExamVersion(parseExam(xml), language, type, generateUuid, memoizedGetMediaMetadata, optionsWithDefaults)
     )
   )
 }
 
-async function masterExamForLanguage(
+async function masterExamVersion(
   doc: Document,
   language: string,
+  type: ExamType,
   generateUuid: GenerateUuid,
   getMediaMetadata: GetMediaMetadata,
   options: MasteringOptions
@@ -209,10 +213,9 @@ async function masterExamForLanguage(
   const root = doc.root()!
   const generateId = mkGenerateId()
   const translation = createTranslationFile(doc)
-  const type = 'normal'
 
-  await addExamUuid(root, generateUuid, language, type)
-  applyLocalizations(root, language)
+  await addExamMetadata(root, generateUuid, language, type)
+  applyLocalizations(root, language, type)
 
   const exam = parseExamStructure(root)
   const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
@@ -294,12 +297,19 @@ function collectAttachments(exam: Element, attachments: Element[]): Attachment[]
   )
 }
 
-async function addExamUuid(exam: Element, generateUuid: GenerateUuid, language: string, type: ExamType) {
+async function addExamMetadata(exam: Element, generateUuid: GenerateUuid, language: string, type: ExamType) {
   const examCode = getAttribute('exam-code', exam, null)
   const date = getAttribute('date', exam, null)
   const metadata = examCode != null && date != null ? { examCode, date, language, type } : undefined
   const examUuid = await generateUuid(metadata)
-  exam.attr('exam-uuid', examUuid)
+
+  exam
+    .attr('exam-uuid', examUuid)
+    .attr('exam-lang', language)
+    .attr('exam-type', type)
+    // From the point of view of the exam server, the schema version hasn't
+    // changed, so we don't have to update it in the mastered XML (yet, anyway).
+    .attr('exam-schema-version', '0.1')
 }
 
 function addYoCustomizations(exam: Element, language: string) {
@@ -313,25 +323,52 @@ function addYoCustomizations(exam: Element, language: string) {
   const dayCode = getAttribute('day-code', exam, null)
   const key = dayCode ? examCode + '_' + dayCode : examCode
 
-  const examTitle = exam.get('//e:exam-title', ns)
+  const examLang = getAttribute('lang', exam, null)
+  if (!examLang) {
+    const subjectLanguages: Record<string, string> = {
+      BA: 'sv-FI',
+      BB: 'sv_FI',
+      CA: 'fi-FI',
+      CB: 'fi-FI',
+      EA: 'en-GB',
+      EC: 'en-GB',
+      FA: 'fr-FR',
+      FC: 'fr-FR',
+      GC: 'pt-PT',
+      L1: 'la',
+      L7: 'la',
+      PA: 'es-ES',
+      PC: 'es-ES',
+      SA: 'de-DE',
+      SC: 'de-DE',
+      TC: 'it-IT',
+      IC: 'smn-FI',
+      DC: 'sme-FI',
+      QC: 'sms-FI',
+      VA: 'ru-RU',
+      VC: 'ru-RU',
+    }
+    const maybeLang = subjectLanguages[key]
+    if (maybeLang) {
+      exam.attr('lang', maybeLang)
+    }
+  }
+
+  const examTitle = exam.get('./e:exam-title', ns)
   if (!examTitle) {
     const title = i18n.t(key, { ns: 'exam-title' })
     if (title) {
       const firstChild = exam.child(0) as Element
-      firstChild.addPrevSibling(exam.node('exam-title', title).namespace(ns.e)) // TODO: Remove cast when libxmljs2 typings are fixed.
+      firstChild.addPrevSibling(exam.node('exam-title', title).namespace(ns.e))
     } else {
       throw new Error(`No exam title defined for ${examCode}`)
     }
   }
 
-  const examFooter = exam.get('//e:exam-footer', ns)
+  const examFooter = exam.get('./e:exam-footer', ns)
   if (!examFooter) {
     const footerText = i18n.t([key, 'default'], { ns: 'exam-footer' })
-    exam
-      .node('exam-footer')
-      .namespace(ns.e) // TODO: Remove cast when libxmljs2 typings are fixed
-      .node('p', footerText)
-      .attr('class', 'e-text-center e-semibold')
+    exam.node('exam-footer').namespace(ns.e).node('p', footerText).attr('class', 'e-text-center e-semibold')
   }
 }
 
@@ -392,19 +429,23 @@ function removeTableWhitespaceNodes(exam: Element) {
   }
 }
 
-function applyLocalizations(exam: Element, language: string) {
-  exam.find('.//e:languages', ns).forEach((e) => e.remove())
+function applyLocalizations(exam: Element, language: string, type: ExamType) {
+  exam.get('./e:exam-versions', ns)?.remove()
 
   for (const localization of exam.find<Element>('//e:localization', ns)) {
-    if (getAttribute('lang', localization) === language) {
-      for (const childNode of localization.childNodes()) {
-        localization.addPrevSibling(childNode)
-      }
+    if (
+      getAttribute('lang', localization, language) !== language ||
+      getAttribute('exam-type', localization, type) !== type
+    ) {
+      localization.remove()
+    } else {
+      localization.name('span').namespace(ns.xhtml).attr('exam-type')?.remove()
     }
-    localization.remove()
   }
 
-  exam.find(`//e:*[@lang and @lang!='${language}']`, ns).forEach((element) => element.remove())
+  exam
+    .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and @exam-type!='${type}')]`, ns)
+    .forEach((element) => element.remove())
 }
 
 function addSectionNumbers(exam: Exam) {

@@ -134,16 +134,16 @@ export function generateExam(options: GenerateExamOptions): string {
     xmlns: 'http://www.w3.org/1999/xhtml',
     'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
     'xsi:schemaLocation': 'http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd',
-    'exam-schema-version': '0.1',
+    'exam-schema-version': '0.2',
     'exam-code': options.examCode,
     'day-code': options.dayCode,
     date: options.date,
     'max-answers': options.maxAnswers,
   })
   const languages = options.languages ?? ['fi-FI']
-  const languagesElement = createElement(exam, 'languages')
+  const examVersionsElement = createElement(exam, 'exam-versions')
   for (const language of languages) {
-    createElement(languagesElement, 'language', language)
+    createElement(examVersionsElement, 'exam-version', undefined, { lang: language })
   }
 
   if (!options.examCode) {

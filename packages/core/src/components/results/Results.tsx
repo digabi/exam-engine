@@ -57,7 +57,7 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 const Results: React.FunctionComponent<ResultsProps> = () => {
-  const { date, dateTimeFormatter, language, resolveAttachment, root } = useContext(CommonExamContext)
+  const { date, dateTimeFormatter, language, resolveAttachment, root, subjectLanguage } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')
   const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -71,7 +71,7 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <main className="e-exam" lang={language}>
+      <main className="e-exam" lang={subjectLanguage}>
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">

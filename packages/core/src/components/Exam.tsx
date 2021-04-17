@@ -53,8 +53,8 @@ export interface CommonExamProps {
   resolveAttachment: (filename: string) => string
   /** The exam XML */
   doc: XMLDocument
-  /** The language of the user interface */
-  language: string
+  /** @deprecated Not used anymore */
+  language?: string
 }
 
 /** Props related to taking the exam, 'executing' it */
@@ -108,7 +108,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   restrictedAudioPlaybackStats,
   examServerApi,
 }) => {
-  const { date, dateTimeFormatter, language, resolveAttachment, root } = useContext(CommonExamContext)
+  const { date, dateTimeFormatter, language, resolveAttachment, root, subjectLanguage } = useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')
   const examInstruction = findChildElement(root, 'exam-instruction')
@@ -130,7 +130,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <main className="e-exam" lang={language} aria-labelledby={examTitleId}>
+        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId}>
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
           <Section aria-labelledby={examTitleId}>
