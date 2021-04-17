@@ -12,7 +12,7 @@ import ffmpeg from 'ffmpeg-static'
 export interface CreateOfflineExamOptions {
   /**
    * Create a media version of the exam. This will encode video and audio files
-   * as x264/mp3 and not remove hidden references from the exam.
+   * as x264/mp3.
    */
   mediaVersion?: boolean
 }
@@ -31,7 +31,7 @@ export async function createOfflineExam(
   const source = await fs.readFile(examFile, 'utf-8')
   const examOutputDirectories: string[] = []
   const results = await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
-    removeHiddenElements: !opts.mediaVersion,
+    removeHiddenElements: false,
   })
   const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then((d) => d.path)
 

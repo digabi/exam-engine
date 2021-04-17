@@ -20,7 +20,7 @@ export default async function examLoader(this: webpack.loader.LoaderContext, sou
   const generateUuid = () => UUID
 
   try {
-    const results = await masterExam(source, generateUuid, getMediaMetadata)
+    const results = await masterExam(source, generateUuid, getMediaMetadata, { removeHiddenElements: false })
     const module = { original: source, results }
 
     const attachments = _.chain(results)

@@ -95,6 +95,10 @@ export function getNumericAttribute(element: Element, attributeName: string): nu
   return maybeValue != null ? Number(maybeValue) : undefined
 }
 
+export function getBooleanAttribute(element: Element, attributeName: string): boolean {
+  return getAttribute(element, attributeName) === 'true'
+}
+
 export function mapChildNodes<T>(element: Element, fn: (childNode: ChildNode, index: number) => T): T[] {
   const length = element.childNodes.length
   const result = new Array<T>(length)

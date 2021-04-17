@@ -1,15 +1,23 @@
 import React, { useContext } from 'react'
 import { ExamComponentProps } from '../createRenderChildNodes'
-import { findChildElement, NBSP } from '../dom-utils'
+import { findChildElement, getBooleanAttribute, NBSP } from '../dom-utils'
 import { useExamTranslation } from '../i18n'
 import { CommonExamContext } from './CommonExamContext'
 import RenderChildNodes from './RenderChildNodes'
+import classNames from 'classnames'
 
 function Reference({ element, renderChildNodes }: ExamComponentProps) {
   const { t } = useExamTranslation()
   function renderWith(localName: string, Component: React.ComponentType<ExamComponentProps>) {
     const childElement = findChildElement(element, localName)
-    return childElement && <Component {...{ element: childElement, renderChildNodes, key: childElement.localName }} />
+    if (childElement) {
+      const key = childElement.localName
+      const content = <Component {...{ element: childElement, renderChildNodes, key }} />
+      if (content) {
+        const isHidden = getBooleanAttribute(childElement, 'hidden')
+        return isHidden ? <del key={key}>{content}</del> : content
+      }
+    }
   }
 
   function renderWithPrefix(
@@ -33,7 +41,7 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
   }
 
   return (
-    <span className="e-break-word">
+    <span className={classNames('e-break-word', { 'e-line-through': getBooleanAttribute(element, 'hidden') })}>
       {t('references.source')}
       {NBSP}
       {intersperse('. ', [
