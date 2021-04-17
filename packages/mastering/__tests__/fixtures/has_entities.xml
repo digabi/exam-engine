@@ -5,10 +5,10 @@
     ]>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd exam.xsd"
-        exam-schema-version="0.1" date="2018-09-29" exam-code="FF" exam-stylesheet="custom.css">
-  <e:languages>
-    <e:language>fi-FI</e:language>
-  </e:languages>
+        exam-schema-version="0.2" date="2018-09-29" exam-code="FF" exam-stylesheet="custom.css">
+  <e:exam-versions>
+      <e:exam-version lang="fi-FI" />
+  </e:exam-versions>
   <e:exam-title>&foo;</e:exam-title>
   <e:exam-instruction>&foo;</e:exam-instruction>
   <e:section>

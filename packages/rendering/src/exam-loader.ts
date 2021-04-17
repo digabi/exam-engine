@@ -27,9 +27,7 @@ export default async function examLoader(this: webpack.loader.LoaderContext, sou
       .flatMap((r) => r.attachments)
       .uniqWith(_.isEqual)
       .value()
-    for (const attachment of attachments) {
-      await fs.access(resolveAttachment(attachment.filename))
-    }
+    await Promise.all(attachments.map((attachment) => fs.access(resolveAttachment(attachment.filename))))
 
     callback(null, stringifyModule(module))
   } catch (err) {

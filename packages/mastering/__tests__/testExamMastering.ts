@@ -21,7 +21,7 @@ describe('Exam mastering', () => {
   it('validates the XML against a schema', async () => {
     const xml = await readFixture('does_not_validate.xml')
     return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
-      "Element '{http://ylioppilastutkinto.fi/exam.xsd}exam-title': This element is not expected. Expected is ( {http://ylioppilastutkinto.fi/exam.xsd}languages ).\n"
+      "Element '{http://ylioppilastutkinto.fi/exam.xsd}exam-title': This element is not expected. Expected is ( {http://ylioppilastutkinto.fi/exam.xsd}exam-versions ).\n"
     )
   })
 

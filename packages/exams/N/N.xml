@@ -2,11 +2,11 @@
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://www.w3.org/1999/xhtml"
         xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
-        exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10">
-  <e:languages>
-    <e:language>fi-FI</e:language>
-    <e:language>sv-FI</e:language>
-  </e:languages>
+        exam-schema-version="0.2" date="2019-09-24" exam-code="N" max-answers="10">
+  <e:exam-versions>
+    <e:exam-version lang="fi-FI" />
+    <e:exam-version lang="sv-FI" />
+  </e:exam-versions>
   <e:exam-instruction>
     <e:localization lang="fi-FI">
       <p>
