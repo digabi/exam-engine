@@ -64,7 +64,7 @@ export type GetMediaMetadata = (
   type: 'image' | 'video' | 'audio'
 ) => Promise<ImageMetadata | VideoMetadata | AudioMetadata>
 
-interface MasteringOptions {
+export interface MasteringOptions {
   /**
    * A secret salt-like value used in shuffling multi choice answers
    * deterministically. This value should be kept secret, otherwise an attacker
