@@ -48,13 +48,13 @@ Object {
     ],
   },
   "language": "fi-FI",
-  "title": "FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe",
+  "title": "Äidinkieli ja kirjallisuus, kirjoitustaidon koe",
   "type": "normal",
 }
 `;
 
 exports[`Exam mastering masters A_E.xml exam correctly: hvp 1`] = `
-FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe
+Äidinkieli ja kirjallisuus, kirjoitustaidon koe
 
 ### Osa 1:  (60 p.)
 
@@ -80,7 +80,7 @@ exports[`Exam mastering masters A_E.xml exam correctly: translation 1`] = ``;
 
 exports[`Exam mastering masters A_E.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="E" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="E" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">Äidinkieli ja kirjallisuus, kirjoitustaidon koe</span></e:exam-title>
     
     <e:exam-instruction>
         <p>Kirjoitustaidon kokeessa kirjoitetaan yksi pohtiva tai kantaa
@@ -320,13 +320,13 @@ Object {
     ],
   },
   "language": "fi-FI",
-  "title": "FI – Äidinkieli ja kirjallisuus, lukutaidon koe",
+  "title": "Äidinkieli ja kirjallisuus, lukutaidon koe",
   "type": "normal",
 }
 `;
 
 exports[`Exam mastering masters A_X.xml exam correctly: hvp 1`] = `
-FI – Äidinkieli ja kirjallisuus, lukutaidon koe
+Äidinkieli ja kirjallisuus, lukutaidon koe
 
 ### Osa 1: Asia- ja mediatekstit (30 p.)
 
@@ -360,7 +360,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: translation 1`] = ``;
 
 exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">FI – Äidinkieli ja kirjallisuus, lukutaidon koe</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">Äidinkieli ja kirjallisuus, lukutaidon koe</span></e:exam-title>
   
   <e:exam-instruction>
     <p>Lukutaidon kokeessa vastataan kahteen tehtävään, joista toinen on osasta I ja toinen osasta II. Kummassakin
@@ -935,7 +935,7 @@ Object {
     ],
   },
   "language": "fi-FI",
-  "title": "FI – Filosofia",
+  "title": "Filosofia",
   "type": "normal",
 }
 `;
@@ -1091,13 +1091,13 @@ Object {
     ],
   },
   "language": "sv-FI",
-  "title": "SV – Filosofi",
+  "title": "Filosofi",
   "type": "normal",
 }
 `;
 
 exports[`Exam mastering masters FF.xml exam correctly: hvp 1`] = `
-FI – Filosofia
+Filosofia
 
 ### Osa 1: 20 p. tehtävät (100 p.)
 
@@ -1179,7 +1179,7 @@ FI – Filosofia
 `;
 
 exports[`Exam mastering masters FF.xml exam correctly: hvp 2`] = `
-SV – Filosofi
+Filosofi
 
 ### Del 1: 20-poängsuppgifter (100 p.)
 
@@ -1562,7 +1562,7 @@ Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi ain
 
 exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Filosofia</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">Filosofia</span></e:exam-title>
   
   <e:exam-instruction>
     <span lang="fi-FI">
@@ -2535,7 +2535,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Filosofi</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">Filosofi</span></e:exam-title>
   
   <e:exam-instruction>
     
@@ -3963,7 +3963,7 @@ Object {
     ],
   },
   "language": "fi-FI",
-  "title": "FI – Maantiede",
+  "title": "Maantiede",
   "type": "normal",
 }
 `;
@@ -4463,13 +4463,13 @@ Object {
     ],
   },
   "language": "sv-FI",
-  "title": "SV – Geografi",
+  "title": "Geografi",
   "type": "normal",
 }
 `;
 
 exports[`Exam mastering masters GE.xml exam correctly: hvp 1`] = `
-FI – Maantiede
+Maantiede
 
 ### Osa 1: 20 pisteen tehtävä (20 p.)
 
@@ -4663,7 +4663,7 @@ FI – Maantiede
 `;
 
 exports[`Exam mastering masters GE.xml exam correctly: hvp 2`] = `
-SV – Geografi
+Geografi
 
 ### Del 1: 20-poängsuppgift (20 p.)
 
@@ -5338,7 +5338,7 @@ Vertaile aineistojen perusteella, millaista alueen maankäyttö on ollut kyseisi
 
 exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Maantiede</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">Maantiede</span></e:exam-title>
   
 
   <e:exam-instruction>
@@ -6371,7 +6371,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters GE.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Geografi</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">Geografi</span></e:exam-title>
   
 
   <e:exam-instruction>
@@ -13121,7 +13121,7 @@ Object {
     ],
   },
   "language": "fi-FI",
-  "title": "FI – Matematiikka, lyhyt oppimäärä",
+  "title": "Matematiikka, lyhyt oppimäärä",
   "type": "normal",
 }
 `;
@@ -13693,13 +13693,13 @@ Object {
     ],
   },
   "language": "sv-FI",
-  "title": "SV – Matematik, kort lärokurs",
+  "title": "Matematik, kort lärokurs",
   "type": "normal",
 }
 `;
 
 exports[`Exam mastering masters N.xml exam correctly: hvp 1`] = `
-FI – Matematiikka, lyhyt oppimäärä
+Matematiikka, lyhyt oppimäärä
 
 ### Osa 1: A-osa (48 p.)
 
@@ -13834,7 +13834,7 @@ FI – Matematiikka, lyhyt oppimäärä
 `;
 
 exports[`Exam mastering masters N.xml exam correctly: hvp 2`] = `
-SV – Matematik, kort lärokurs
+Matematik, kort lärokurs
 
 ### Del 1: Del A (48 p.)
 
@@ -14418,7 +14418,7 @@ Aineistossa on esitetty Suomen väestön rakenne. Laske 15–64-vuotiaiden asukk
 
 exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Matematiikka, lyhyt oppimäärä</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">Matematiikka, lyhyt oppimäärä</span></e:exam-title>
   
   <e:exam-instruction>
     <span lang="fi-FI">
@@ -15230,7 +15230,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Matematik, kort lärokurs</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2019-09-24" exam-code="N" max-answers="10" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">Matematik, kort lärokurs</span></e:exam-title>
   
   <e:exam-instruction>
     
@@ -18131,7 +18131,7 @@ Object {
     ],
   },
   "language": "fi-FI",
-  "title": "FI – Saksa, lyhyt oppimäärä",
+  "title": "Saksa, lyhyt oppimäärä",
   "type": "normal",
 }
 `;
@@ -20227,13 +20227,13 @@ Object {
     ],
   },
   "language": "sv-FI",
-  "title": "SV – Tyska, kort lärokurs",
+  "title": "Tyska, kort lärokurs",
   "type": "normal",
 }
 `;
 
 exports[`Exam mastering masters SC.xml exam correctly: hvp 1`] = `
-FI – Saksa, lyhyt oppimäärä
+Saksa, lyhyt oppimäärä
 
 ### Osa 1: Hörverständnis (71 p.)
 
@@ -20582,7 +20582,7 @@ FI – Saksa, lyhyt oppimäärä
 `;
 
 exports[`Exam mastering masters SC.xml exam correctly: hvp 2`] = `
-SV – Tyska, kort lärokurs
+Tyska, kort lärokurs
 
 ### Del 1: Hörverständnis (71 p.)
 
@@ -21156,7 +21156,7 @@ Eräs isä on lähettänyt tekstin keskustelupalstalle . Hän pyytää mielipite
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="fi-FI">Saksa, lyhyt oppimäärä</span></e:exam-title>
   
   <e:exam-instruction>
     <span lang="fi-FI">
@@ -22719,7 +22719,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="sv-FI">SV – Tyska, kort lärokurs</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="sv-FI">Tyska, kort lärokurs</span></e:exam-title>
   
   <e:exam-instruction>
     
