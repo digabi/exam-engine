@@ -101,6 +101,29 @@ describe('Exam mastering', () => {
     expect(wrap(masteringResult.xml)).toMatchSnapshot('xml')
   })
 
+  it('adds a suffix to exam title for special exams', async () => {
+    const xml = generateExam({
+      examCode: 'EA',
+      examVersions: [
+        { language: 'fi-FI', type: 'normal' },
+        { language: 'fi-FI', type: 'visually-impaired' },
+        { language: 'fi-FI', type: 'hearing-impaired' },
+      ],
+      sections: [
+        {
+          questions: [question([textAnswer()])],
+        },
+      ],
+    })
+    const masteringResults = await masterExam(xml, generateUuid, getMediaMetadata)
+    const titles = masteringResults.map((r) => r.title)
+    expect(titles).toEqual([
+      'FI – Englanti, pitkä oppimäärä',
+      'FI – Englanti, pitkä oppimäärä; näkövammaiset kokelaat',
+      'FI – Englanti, pitkä oppimäärä; kuulovammaiset kokelaat',
+    ])
+  })
+
   for (const exam of listExams()) {
     it(`masters ${path.basename(exam)} exam correctly`, async () => {
       const source = await fs.readFile(exam, 'utf-8')

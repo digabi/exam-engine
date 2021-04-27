@@ -2,12 +2,17 @@ import * as libxml from 'libxmljs2'
 
 export type Language = 'fi-FI' | 'sv-FI'
 
+export interface ExamVersion {
+  language: Language
+  type?: 'normal' | 'visually-impaired' | 'hearing-impaired'
+}
+
 export interface GenerateExamOptions {
   date?: string
   examCode?: string
   dayCode?: string
   maxAnswers?: number
-  languages?: Language[]
+  examVersions?: ExamVersion[]
   sections: GenerateSectionOptions[]
 }
 
@@ -140,10 +145,12 @@ export function generateExam(options: GenerateExamOptions): string {
     date: options.date,
     'max-answers': options.maxAnswers,
   })
-  const languages = options.languages ?? ['fi-FI']
+  const examVersions = options.examVersions ?? [{ language: 'fi-FI' }]
+  const languages = examVersions.map((v) => v.language)
   const examVersionsElement = createElement(exam, 'exam-versions')
-  for (const language of languages) {
-    createElement(examVersionsElement, 'exam-version', undefined, { lang: language })
+
+  for (const { language, type } of examVersions) {
+    createElement(examVersionsElement, 'exam-version', undefined, { lang: language, 'exam-type': type })
   }
 
   if (!options.examCode) {

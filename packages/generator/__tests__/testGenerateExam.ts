@@ -30,7 +30,7 @@ describe('generateExam()', () => {
 
   it('localizes titles if multi-language exam', () => {
     const exam = generateAndParseExam({
-      languages: ['fi-FI', 'sv-FI'],
+      examVersions: [{ language: 'fi-FI' }, { language: 'sv-FI' }],
       sections: [{ questions: [question([textAnswer()])] }],
     })
     expect(wrap(exam.toString(false))).toMatchSnapshot()
