@@ -31,8 +31,9 @@ export default async function createMexExam({
   const results = await masterExam(sourceXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
   await fs.mkdir(outdir, { recursive: true })
 
-  for (const { language, xml, attachments } of results) {
-    const outputFilename = `${examName(exam)}_${language}.mex`
+  for (const { language, xml, attachments, type } of results) {
+    const suffix = type === 'normal' ? '' : type === 'visually-impaired' ? '_vi' : '_hi'
+    const outputFilename = `${examName(exam)}_${language}${suffix}.mex`
     await createMex(
       xml,
       attachments.map(({ filename, restricted }) => ({
