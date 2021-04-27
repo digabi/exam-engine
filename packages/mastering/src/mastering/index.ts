@@ -231,7 +231,7 @@ async function masterExamVersion(
   const exam = parseExamStructure(root)
   const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
 
-  addYoCustomizations(root, language)
+  addYoCustomizations(root, language, type)
   addSectionNumbers(exam)
   addQuestionNumbers(exam)
   addAnswerNumbers(exam)
@@ -323,9 +323,10 @@ async function addExamMetadata(exam: Element, generateUuid: GenerateUuid, langua
     .attr('exam-schema-version', '0.1')
 }
 
-function addYoCustomizations(exam: Element, language: string) {
+function addYoCustomizations(exam: Element, language: string, type: ExamType) {
   const examCode = getAttribute('exam-code', exam, null)
 
+  // If the exam doesn't have an exam code, it is not an YO exam.
   if (!examCode) {
     return
   }
@@ -369,12 +370,14 @@ function addYoCustomizations(exam: Element, language: string) {
   if (!examTitle) {
     const title = i18n.t(key, { ns: 'exam-title' })
     if (title) {
+      const suffix = i18n.t(type, { ns: 'exam-title', defaultValue: '' })
+      const fullTitle = suffix ? (title.includes(',') ? title + '; ' + suffix : title + ', ' + suffix) : title
       const firstChild = exam.child(0) as Element
       firstChild.addPrevSibling(
         exam
           .node('exam-title')
           .namespace(ns.e)
-          .addChild(exam.node('span', title).attr('lang', language).namespace(ns.xhtml))
+          .addChild(exam.node('span', fullTitle).attr('lang', language).namespace(ns.xhtml))
       )
     } else {
       throw new Error(`No exam title defined for ${examCode}`)
