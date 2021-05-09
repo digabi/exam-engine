@@ -2,33 +2,37 @@ import * as _ from 'lodash-es'
 import { AppState } from '.'
 import { AudioPlaybackError, ExamAnswer, QuestionId, RestrictedAudioId, SaveState } from '..'
 
-export const getAudioState = (src: string, restrictedAudioId?: RestrictedAudioId) => (
-  state: AppState
-): 'stopped' | 'playing' | 'other-playing' => {
-  const { nowPlaying } = state.audio
+export const getAudioState =
+  (src: string, restrictedAudioId?: RestrictedAudioId) =>
+  (state: AppState): 'stopped' | 'playing' | 'other-playing' => {
+    const { nowPlaying } = state.audio
 
-  return nowPlaying == null
-    ? 'stopped'
-    : nowPlaying.audio.restrictedAudioId === restrictedAudioId && nowPlaying.audio.src === src
-    ? 'playing'
-    : 'other-playing'
-}
+    return nowPlaying == null
+      ? 'stopped'
+      : nowPlaying.audio.restrictedAudioId === restrictedAudioId && nowPlaying.audio.src === src
+      ? 'playing'
+      : 'other-playing'
+  }
 
-export const getAudioPlaybackError = (src: string, restrictedAudioId?: RestrictedAudioId) => (
-  state: AppState
-): AudioPlaybackError | undefined => state.audio.errors[restrictedAudioId != null ? restrictedAudioId : src]
+export const getAudioPlaybackError =
+  (src: string, restrictedAudioId?: RestrictedAudioId) =>
+  (state: AppState): AudioPlaybackError | undefined =>
+    state.audio.errors[restrictedAudioId != null ? restrictedAudioId : src]
 
-export const getDurationRemaining = (src: string, restrictedAudioId?: RestrictedAudioId) => (
-  state: AppState
-): number | undefined =>
-  getAudioState(src, restrictedAudioId)(state) === 'playing' ? state.audio.nowPlaying!.durationRemaining : undefined
+export const getDurationRemaining =
+  (src: string, restrictedAudioId?: RestrictedAudioId) =>
+  (state: AppState): number | undefined =>
+    getAudioState(src, restrictedAudioId)(state) === 'playing' ? state.audio.nowPlaying!.durationRemaining : undefined
 
-export const getPlaybackTimes = (restrictedAudioId: RestrictedAudioId) => (state: AppState): number =>
-  _.get(state.audio.playbackTimes, restrictedAudioId, 0)
+export const getPlaybackTimes =
+  (restrictedAudioId: RestrictedAudioId) =>
+  (state: AppState): number =>
+    _.get(state.audio.playbackTimes, restrictedAudioId, 0)
 
-export const getPlaybackTimesRemaining = (restrictedAudioId: RestrictedAudioId, times: number) => (
-  state: AppState
-): number => times - getPlaybackTimes(restrictedAudioId)(state)
+export const getPlaybackTimesRemaining =
+  (restrictedAudioId: RestrictedAudioId, times: number) =>
+  (state: AppState): number =>
+    times - getPlaybackTimes(restrictedAudioId)(state)
 
 export const getSaveState = (state: AppState): SaveState => {
   const { serverQuestionIds, savedQuestionIds, answersById } = state.answers

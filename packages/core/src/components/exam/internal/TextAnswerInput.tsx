@@ -117,15 +117,8 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
   }
 
   render(): React.ReactNode {
-    const {
-      answer,
-      className,
-      element,
-      selectAnswerVersion,
-      showAnswerHistory,
-      supportsAnswerHistory,
-      type,
-    } = this.props
+    const { answer, className, element, selectAnswerVersion, showAnswerHistory, supportsAnswerHistory, type } =
+      this.props
     const { error } = this.state
     const questionId = getNumericAttribute(element, 'question-id')
     const maxScore = getNumericAttribute(element, 'max-score')!

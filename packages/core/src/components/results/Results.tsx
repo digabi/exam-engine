@@ -57,9 +57,8 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 const Results: React.FunctionComponent<ResultsProps> = () => {
-  const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } = useContext(
-    CommonExamContext
-  )
+  const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
+    useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')
   const examStylesheet = root.getAttribute('exam-stylesheet')

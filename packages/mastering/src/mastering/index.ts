@@ -647,7 +647,7 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
 
 /** Creates an error object with line number information. */
 function mkError(message: string, element: Element): SyntaxError {
-  const err = (new Error(message) as any) as SyntaxError
+  const err = new Error(message) as any as SyntaxError
   err.domain = 999
   err.line = element.line() // FIXME: libxmljs2 typings don't define `element.line()` right now.
   err.column = 0

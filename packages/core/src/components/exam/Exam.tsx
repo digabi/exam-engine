@@ -111,9 +111,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   restrictedAudioPlaybackStats,
   examServerApi,
 }) => {
-  const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } = useContext(
-    CommonExamContext
-  )
+  const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
+    useContext(CommonExamContext)
 
   const examTitle = findChildElement(root, 'exam-title')
   const examInstruction = findChildElement(root, 'exam-instruction')

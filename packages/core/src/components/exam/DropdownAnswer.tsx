@@ -82,10 +82,8 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
   })
 
   // Until the typings are fixed at https://github.com/downshift-js/downshift/pull/1123/files
-  const getMenuPropsFixed: (
-    options?: UseSelectGetMenuPropsOptions,
-    extraOptions?: GetPropsCommonOptions
-  ) => any = getMenuProps
+  const getMenuPropsFixed: (options?: UseSelectGetMenuPropsOptions, extraOptions?: GetPropsCommonOptions) => any =
+    getMenuProps
   const getToggleButtonPropsFixed: (
     options?: UseSelectGetToggleButtonPropsOptions,
     extraOptions?: GetPropsCommonOptions
