@@ -23,12 +23,20 @@ export function queryAncestors(element: Element, query: Query): Element | undefi
   }
 }
 
-export const byLocalName = (...names: string[]) => (element: Element): boolean => names.includes(element.name())
+export const byLocalName =
+  (...names: string[]) =>
+  (element: Element): boolean =>
+    names.includes(element.name())
 
-export const byAttribute = (name: string, value: string) => (element: Element): boolean =>
-  element.attr(name)?.value() === value
+export const byAttribute =
+  (name: string, value: string) =>
+  (element: Element): boolean =>
+    element.attr(name)?.value() === value
 
-export const hasAttribute = (name: string) => (element: Element): boolean => element.attr(name) != null
+export const hasAttribute =
+  (name: string) =>
+  (element: Element): boolean =>
+    element.attr(name) != null
 
 /**
  * Gets the value of an attribute from an XML element or returns a default

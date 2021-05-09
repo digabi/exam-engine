@@ -109,7 +109,9 @@ function mkChoiceGroupQuestion(
   return { id: generateId(), displayNumber: questionDisplayNumber, type: 'choicegroup', choices }
 }
 
-const getDigit = (digit: number) => (question: GradingStructureQuestion): number =>
-  Number(question.displayNumber.split('.')[digit]) || -1
+const getDigit =
+  (digit: number) =>
+  (question: GradingStructureQuestion): number =>
+    Number(question.displayNumber.split('.')[digit]) || -1
 
 const displayNumberDigits = [getDigit(0), getDigit(1), getDigit(2), getDigit(3), getDigit(4)]
