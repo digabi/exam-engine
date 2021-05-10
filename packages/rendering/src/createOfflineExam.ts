@@ -36,7 +36,7 @@ export async function createOfflineExam(
   const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then((d) => d.path)
 
   for (const result of results) {
-    const examOutputDirectory = getExamOutputDirectory(result, examFile, outputDirectory)
+    const examOutputDirectory = getExamOutputDirectory(result, outputDirectory)
     await runWebpack(result, examOutputDirectory, opts)
 
     for (const attachment of result.attachments) {
@@ -51,12 +51,11 @@ export async function createOfflineExam(
   return examOutputDirectories
 }
 
-function getExamOutputDirectory(result: MasteringResult, examFile: string, outputDirectory: string) {
-  const { examCode, dayCode, date, language } = result
-  const shortLanguageCode = language.replace(/-.*$/, '')
-  const dirname = examCode
-    ? `${date ? date + '_' : ''}${examCode}${dayCode ? '_' + dayCode : ''}_${shortLanguageCode}`
-    : `${path.basename(path.dirname(examFile))}_${language}_offline`
+function getExamOutputDirectory(result: MasteringResult, outputDirectory: string) {
+  const { examCode, dayCode, date, language, type } = result
+  const shortLanguageCode = language.split('-')[0]
+  const examType = type === 'visually-impaired' ? 'vi' : type === 'hearing-impaired' ? 'hi' : ''
+  const dirname = [date, examCode, dayCode, shortLanguageCode, examType].filter(Boolean).join('_')
   return path.resolve(outputDirectory, dirname)
 }
 
