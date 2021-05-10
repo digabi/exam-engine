@@ -9,7 +9,7 @@ export const FA: ExamTranslations = {
   references: {
     heading: 'Sources',
     source: 'Source :',
-    date: 'Publié :',
+    date: 'Publication le',
     'reference-date': 'Téléchargement le',
     translator: 'Traduction :',
     'modified-by': 'Modifications :',
