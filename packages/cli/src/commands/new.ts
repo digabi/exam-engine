@@ -20,10 +20,10 @@ export default async function newExam({ directory }: { directory: string; spinne
 }
 
 const exam = `<?xml version="1.0" encoding="utf-8" ?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1">
-    <e:languages>
-        <e:language>fi-FI</e:language>
-    </e:languages>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.2">
+    <e:exam-versions>
+        <e:exam-version lang="fi-FI" />
+    </e:exam-versions>
 
     <e:exam-title>Exam title</e:exam-title>
 
