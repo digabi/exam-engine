@@ -1,4 +1,4 @@
-import { getMediaMetadataFromLocalFile, masterExam, ns, parseExam } from '@digabi/exam-engine-mastering'
+import { ExamType, getMediaMetadataFromLocalFile, masterExam, ns, parseExam } from '@digabi/exam-engine-mastering'
 import { createReadStream, createWriteStream, promises as fs } from 'fs'
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
@@ -25,12 +25,14 @@ export default async function createTransferZip({
 
   // Hack: Do the exam localization before mastering to work around abitti
   // not supporting multi-language exams.
-  const doc = parseExam(xml)
-  const languages = doc.find('//e:languages/e:language/text()', ns).map(String)
-  for (const language of languages) {
-    const localizedXml = localize(xml, language)
+  const doc = parseExam(xml, true)
+  for (const examVersion of doc.find<Element>('./e:exam-versions/e:exam-version', ns)) {
+    const type = (examVersion.attr('exam-type')?.value() ?? 'normal') as ExamType
+    const language = examVersion.attr('lang')?.value()!
+    const localizedXml = localize(xml, language, type)
     const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
-    const outputFilename = path.resolve(outdir, `${examName(exam)}_${language}_transfer.zip`)
+    const typeSuffix = type === 'visually-impaired' ? '_vi' : type === 'hearing-impaired' ? '_hi' : ''
+    const outputFilename = path.resolve(outdir, `${examName(exam)}_${language}${typeSuffix}_transfer.zip`)
 
     const zipFile = new yazl.ZipFile()
     zipFile.addBuffer(Buffer.from(localizedXml), 'exam.xml')
@@ -55,25 +57,29 @@ export default async function createTransferZip({
   }
 }
 
-function localize(xml: string, language: string): string {
+function localize(xml: string, language: string, type: ExamType): string {
   const doc = parseExam(xml)
 
-  doc.find<Element>('.//e:language', ns).forEach((element) => {
-    if (element.text() !== language) {
+  doc.find<Element>('.//e:e-exam-version', ns).forEach((element) => {
+    if (getAttribute(element, 'lang') !== language || getAttribute(element, 'exam-type', 'normal') !== type) {
       element.remove()
     }
   })
 
   doc.find<Element>('//e:localization', ns).forEach((element) => {
-    if (element.attr('lang')?.value() === language) {
-      for (const childNode of element.childNodes()) {
-        element.addPrevSibling(childNode)
-      }
+    if (getAttribute(element, 'lang', language) === language && getAttribute(element, 'exam-type', 'normal') === type) {
+      for (const childNode of element.childNodes()) element.addPrevSibling(childNode)
     }
+
     element.remove()
   })
 
   doc.find<Element>(`//e:*[@lang and @lang!='${language}']`, ns).forEach((element) => element.remove())
+  doc.find<Element>(`//e:*[@exam-type and @exam-type!='${type}']`, ns).forEach((element) => element.remove())
 
   return doc.toString(false)
+}
+
+function getAttribute<T extends string>(element: Element, localName: string, defaultValue?: T) {
+  return element.attr(localName)?.value() ?? defaultValue
 }
