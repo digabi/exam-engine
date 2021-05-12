@@ -4,7 +4,7 @@ import { GetMediaMetadata, masterExam, MasteringResult } from '@digabi/exam-engi
 import { promises as fs } from 'fs'
 import { keyBy } from 'lodash-es'
 import { ExamAnswer, Score } from '../../src'
-import { calculateQuestionsTotalSumScore, calculateQuestionSumScore } from '../../src/components/results/ResultsContext'
+import { calculateQuestionsTotalSumScore, calculateQuestionSumScore } from '../../src/components/context/ResultsContext'
 import { queryAll } from '../../src/dom-utils'
 
 const allScores: Score[] = [

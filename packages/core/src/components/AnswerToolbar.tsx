@@ -3,7 +3,7 @@ import { ExamAnswer } from '..'
 import { findChildElement, NBSP, queryAncestors } from '../dom-utils'
 import { useExamTranslation } from '../i18n'
 import * as actions from '../store/answers/actions'
-import { AnswerError } from './RichTextAnswer'
+import { AnswerError } from './exam/RichTextAnswer'
 
 interface AnswerToolbarProps {
   answer?: ExamAnswer

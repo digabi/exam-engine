@@ -2,13 +2,11 @@ import * as i18next from 'i18next'
 import React from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { create } from 'react-test-renderer'
-import { QuestionContext } from '../../src/components/QuestionContext'
-import ResultsExamQuestionAutoScore, {
-  ResultsExamQuestionAutoScoreProps,
-} from '../../src/components/results/ResultsExamQuestionAutoScore'
+import { QuestionContext } from '../../src/components/context/QuestionContext'
+import QuestionAutoScore, { QuestionAutoScoreProps } from '../../src/components/results/internal/QuestionAutoScore'
 import { initI18n } from '../../src/i18n'
 
-describe('<ResultsExamQuestionAutoScore />', () => {
+describe('<QuestionAutoScore />', () => {
   let i18n: i18next.i18n
 
   beforeAll(() => {
@@ -52,11 +50,11 @@ describe('<ResultsExamQuestionAutoScore />', () => {
     childQuestions: [],
   }
 
-  function renderWithContext(props: ResultsExamQuestionAutoScoreProps, answers: Element[]) {
+  function renderWithContext(props: QuestionAutoScoreProps, answers: Element[]) {
     return create(
       <QuestionContext.Provider value={{ ...contextProps, answers }}>
         <I18nextProvider i18n={i18n}>
-          <ResultsExamQuestionAutoScore {...props} />
+          <QuestionAutoScore {...props} />
         </I18nextProvider>
       </QuestionContext.Provider>
     )
