@@ -15,6 +15,7 @@
     "@babel/runtime": "^7.8.7",
     "@digabi/exam-engine-core": "16.0.1",
     "@digabi/exam-engine-mastering": "16.0.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "babel-loader": "^8.0.6",
     "child-process-promise": "^2.2.1",
     "css-loader": "^5.0.0",
