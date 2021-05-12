@@ -23,7 +23,9 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
           alias: {
             '@digabi/exam-engine-core$': path.resolve(__dirname, '../../core/dist/index.js'),
             '@digabi/exam-engine-core/dist/main.css$': path.resolve(__dirname, '../../core/src/css/main.less'),
-            '@digabi/exam-engine-core/dist': path.resolve(__dirname, '../../core/dist'),
+            '@digabi/exam-engine-core/dist/attachments/Attachments': path.resolve(__dirname, '../../core/dist'),
+            '@digabi/exam-engine-core/dist/exam/Exam': path.resolve(__dirname, '../../core/dist'),
+            '@digabi/exam-engine-core/dist/results/Results': path.resolve(__dirname, '../../core/dist'),
           },
         }
       : {},

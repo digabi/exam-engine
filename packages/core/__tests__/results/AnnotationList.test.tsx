@@ -4,9 +4,9 @@ import React from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { create } from 'react-test-renderer'
 import { Score } from '../../src'
-import { QuestionContext } from '../../src/components/QuestionContext'
-import AnnotationList from '../../src/components/results/AnnotationList'
-import { ResultsContext } from '../../src/components/results/ResultsContext'
+import { QuestionContext } from '../../src/components/context/QuestionContext'
+import AnnotationList from '../../src/components/results/internal/AnnotationList'
+import { ResultsContext } from '../../src/components/context/ResultsContext'
 import { initI18n } from '../../src/i18n'
 
 function mkTextAnswer(questionId: number, displayNumber: string, maxScore: number): Element {

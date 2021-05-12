@@ -4,10 +4,10 @@ import React from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { create } from 'react-test-renderer'
 import { Score } from '../../src'
-import { QuestionContext } from '../../src/components/QuestionContext'
-import ResultsExamQuestionManualScore, {
-  ResultsExamQuestionManualScoreProps,
-} from '../../src/components/results/ResultsExamQuestionManualScore'
+import { QuestionContext } from '../../src/components/context/QuestionContext'
+import QuestionManualScore, {
+  QuestionManualScoreProps,
+} from '../../src/components/results/internal/QuestionManualScore'
 import { initI18n } from '../../src/i18n'
 
 const defaultProps = {
@@ -31,7 +31,7 @@ const defaultScores: Score = {
   inspection: { score: 5, shortCodes: ['IN1', 'IN2'] },
 }
 
-describe('<ResultsExamQuestionManualScore />', () => {
+describe('<QuestionManualScore />', () => {
   let i18n: i18next.i18n
 
   describe('fi-FI', () => {
@@ -150,11 +150,11 @@ describe('<ResultsExamQuestionManualScore />', () => {
     childQuestions: [],
   }
 
-  function renderWithContext(props: ResultsExamQuestionManualScoreProps, answers: Element[]) {
+  function renderWithContext(props: QuestionManualScoreProps, answers: Element[]) {
     return create(
       <QuestionContext.Provider value={{ ...contextProps, answers }}>
         <I18nextProvider i18n={i18n}>
-          <ResultsExamQuestionManualScore {...props} />
+          <QuestionManualScore {...props} />
         </I18nextProvider>
       </QuestionContext.Provider>
     )

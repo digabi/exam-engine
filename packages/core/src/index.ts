@@ -1,6 +1,6 @@
 import '../src/css/main.less'
-import Attachments from './components/Attachments'
-import Exam from './components/Exam'
+import Attachments from './components/attachments/Attachments'
+import Exam from './components/exam/Exam'
 import Results from './components/results/Results'
 import parseExam from './parser/parseExam'
 

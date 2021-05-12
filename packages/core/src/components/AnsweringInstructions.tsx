@@ -28,12 +28,18 @@ function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }:
   return <>{t(possibleTranslationStrings, { answerCount, questions })}</>
 }
 
-function cartesian<A>(as: A[]): A[]
-function cartesian<A, B>(as: A[], bs: B[]): [A, B][]
-function cartesian<A, B, C>(as: A[], bs: B[], cs: C[]): [A, B, C][]
-function cartesian(...arrays: any[]): any[][] {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
-  return arrays.reduce((a, b) => _.flatMap(a, (x) => b.map((y: any) => x.concat([y]))), [[]])
+function cartesian<A, B, C>(as: readonly A[], bs: readonly B[], cs: readonly C[]): [A, B, C][] {
+  const result: [A, B, C][] = []
+
+  for (const a of as) {
+    for (const b of bs) {
+      for (const c of cs) {
+        result.push([a, b, c])
+      }
+    }
+  }
+
+  return result
 }
 
 export default React.memo(AnsweringInstructions)

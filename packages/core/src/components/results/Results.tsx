@@ -6,25 +6,25 @@ import { findChildElement, queryAncestors } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { scrollToHash } from '../../scrollToHash'
 import { useCached } from '../../useCached'
-import mkAttachmentLink from '../AttachmentLink'
-import mkAttachmentLinks from '../AttachmentLinks'
-import { CommonExamContext, withCommonExamContext } from '../CommonExamContext'
+import mkAttachmentLink from '../shared/AttachmentLink'
+import mkAttachmentLinks from '../shared/AttachmentLinks'
+import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
-import { CommonExamProps } from '../Exam'
-import ExamQuestionInstruction from '../ExamQuestionInstruction'
-import ExamSectionTitle from '../ExamSectionTitle'
-import Formula from '../Formula'
-import Image from '../Image'
+import { CommonExamProps } from '../exam/Exam'
+import ExamQuestionInstruction from '../exam/QuestionInstruction'
+import ExamSectionTitle from '../exam/SectionTitle'
+import Formula from '../shared/Formula'
+import Image from '../shared/Image'
 import RenderChildNodes from '../RenderChildNodes'
 import { renderIf } from '../RenderIf'
-import ResultsChoiceAnswer from './ResultsChoiceAnswer'
-import { ResultsContext, withResultsContext } from './ResultsContext'
-import ResultsDropdownAnswer from './ResultsDropdownAnswer'
-import ResultsExamQuestion from './ResultsExamQuestion'
-import ResultsExamQuestionTitle from './ResultsExamQuestionTitle'
-import ResultsExamSection from './ResultsExamSection'
-import ResultsScoredTextAnswer from './ResultsScoredTextAnswer'
-import ResultsTextAnswer from './ResultsTextAnswer'
+import ResultsChoiceAnswer from './ChoiceAnswer'
+import { ResultsContext, withResultsContext } from '../context/ResultsContext'
+import DropdownAnswer from './DropdownAnswer'
+import Question from './Question'
+import QuestionTitle from './QuestionTitle'
+import Section from './Section'
+import ScoredTextAnswer from './ScoredTextAnswer'
+import TextAnswer from './TextAnswer'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -42,17 +42,17 @@ const renderChildNodes = createRenderChildNodes({
   'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
   'choice-answer': ResultsChoiceAnswer,
-  'dropdown-answer': ResultsDropdownAnswer,
+  'dropdown-answer': DropdownAnswer,
   formula: Formula,
-  question: ResultsExamQuestion,
+  question: Question,
   hints: RenderChildNodes,
   image: renderIf(({ element }) => queryAncestors(element, 'choice-answer') != null)(Image),
   'question-instruction': ExamQuestionInstruction,
-  'question-title': ResultsExamQuestionTitle,
-  section: ResultsExamSection,
+  'question-title': QuestionTitle,
+  section: Section,
   'section-title': ExamSectionTitle,
-  'text-answer': ResultsTextAnswer,
-  'scored-text-answer': ResultsScoredTextAnswer,
+  'text-answer': TextAnswer,
+  'scored-text-answer': ScoredTextAnswer,
   'scored-text-answers': RenderChildNodes,
 })
 
