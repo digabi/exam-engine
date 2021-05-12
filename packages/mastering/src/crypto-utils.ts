@@ -43,5 +43,5 @@ export function deriveAES256KeyAndIv(password: string): KeyAndIv {
 }
 
 function asBuffer(val: string | Buffer): Buffer {
-  return Buffer.isBuffer(val) ? val : new Buffer(val, 'base64')
+  return Buffer.isBuffer(val) ? val : Buffer.from(val, 'base64')
 }
