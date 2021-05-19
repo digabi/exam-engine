@@ -27,14 +27,14 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 const Attachments: React.FunctionComponent<ExamProps> = () => {
-  const { root, language, date, dateTimeFormatter, resolveAttachment, subjectLanguage } = useContext(CommonExamContext)
+  const { root, language, date, dateTimeFormatter, dayCode, examCode, resolveAttachment, subjectLanguage } = useContext(
+    CommonExamContext
+  )
 
   const examTitle = findChildElement(root, 'exam-title')!
   const examStylesheet = root.getAttribute('exam-stylesheet')
   const externalMaterial = findChildElement(root, 'external-material')
 
-  const examCode = root.getAttribute('exam-code')
-  const dayCode = root.getAttribute('day-code')
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
 

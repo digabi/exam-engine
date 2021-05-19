@@ -56,7 +56,7 @@ describe('<AnnotationList />', () => {
 
   describe('fi-FI', () => {
     beforeAll(() => {
-      i18n = initI18n('fi-FI', null, null)
+      i18n = initI18n('fi-FI')
     })
 
     it('renders empty without score', () => {
@@ -146,7 +146,7 @@ describe('<AnnotationList />', () => {
 
   describe('sv-FI', () => {
     it('renders with pregrading and censoring annotations', () => {
-      i18n = initI18n('sv-FI', null, null)
+      i18n = initI18n('sv-FI')
       const resultsProps = {
         scores: [defaultScores],
       }

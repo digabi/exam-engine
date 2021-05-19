@@ -10,7 +10,7 @@ describe('<AnsweringInstructions />', () => {
   let i18n: i18next.i18n
 
   beforeAll(() => {
-    i18n = initI18n('fi-FI', null, null)
+    i18n = initI18n('fi-FI')
   })
 
   describe('question', () => {
