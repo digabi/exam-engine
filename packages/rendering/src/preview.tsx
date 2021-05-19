@@ -1,11 +1,19 @@
-import { Attachments, Exam, Results, parseExam, ExamAnswer, ExamServerAPI } from '@digabi/exam-engine-core'
+import {
+  Attachments,
+  Exam,
+  Results,
+  GradingInstructions,
+  parseExam,
+  ExamAnswer,
+  ExamServerAPI,
+} from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { ExamType, MasteringResult } from '@digabi/exam-engine-mastering'
 import React, { useEffect, useMemo } from 'react'
 import ReactDOM from 'react-dom'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 import createRouter from 'router5'
-import { RouterProvider, useRoute, useRouter } from 'react-router5'
+import { Link, RouterProvider, useRoute, useRouter } from 'react-router5'
 import browserPlugin from 'router5-plugin-browser'
 
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }
@@ -17,8 +25,9 @@ interface RouteParams {
 
 const routes = [
   { name: 'attachments', path: '/:language/:type/attachments' },
+  { name: 'grading-instructions', path: '/:language/:type/grading-instructions' },
+  { name: 'exam', path: '/:language/:type/exam' },
   { name: 'results', path: '/:language/:type/results' },
-  { name: 'exam', path: '/:language/:type' },
 ]
 
 const router = createRouter(routes, {
@@ -41,33 +50,22 @@ const findExam = (params: RouteParams): MasteringResult => {
 }
 
 const ChangeExamVersion: React.FunctionComponent<RouteParams> = ({ language, type }) => {
-  const router = useRouter()
   const { route } = useRoute()
+  const title = `${language === 'fi-FI' ? '🇫🇮 FI' : '🇸🇪 SV'} ${
+    type === 'normal' ? '' : type === 'visually-impaired' ? 'NV' : 'KV'
+  }`
   return (
     <li className="toolbar__item toolbar__item--exam-version">
-      <button onClick={() => router.navigate(route.name, { ...route.params, language, type })}>
-        {language === 'fi-FI' ? '🇫🇮' : '🇸🇪'} {language === 'fi-FI' ? 'Suomi' : 'Ruotsi'}{' '}
-        {type === 'normal' ? '' : type === 'visually-impaired' ? '(Näkövammaiset)' : '(Kuulovammaiset)'}
-      </button>
+      {route.params.language === language && route.params.type === type ? (
+        <span className="toolbar__item__selected">{title}</span>
+      ) : (
+        <Link routeName={route.name} routeParams={{ ...route.params, language, type }}>
+          {title}
+        </Link>
+      )}
     </li>
   )
 }
-
-const SaveHvp: React.FunctionComponent<{ hvp: string; hvpFilename: string }> = ({ hvp, hvpFilename }) => (
-  <li className="toolbar__item">
-    <button
-      onClick={() => {
-        const blob = new Blob([hvp], { type: 'text/markdown' })
-        const link = document.createElement('a')
-        link.href = URL.createObjectURL(blob)
-        link.download = hvpFilename
-        link.click()
-      }}
-    >
-      Tallenna HVP
-    </button>
-  </li>
-)
 
 const SaveTranslation: React.FunctionComponent<{ translation: string; translationFilename: string }> = ({
   translation,
@@ -88,31 +86,35 @@ const SaveTranslation: React.FunctionComponent<{ translation: string; translatio
   </li>
 )
 
-const ResultsNavigation: React.FunctionComponent = () => {
-  const router = useRouter()
+const NavigateTo: React.FunctionComponent<{ routeName: string; title: string }> = ({ routeName, title }) => {
   const { route } = useRoute()
-  const txt = route.name === 'exam' ? 'Tulossivu' : 'Kokeen suoritus'
   return (
     <li className="toolbar__item">
-      <button onClick={() => router.navigate(route.name === 'exam' ? 'results' : 'exam', route.params)}>{txt}</button>
+      {route.name === routeName ? (
+        <span className="toolbar__item__selected">{title}</span>
+      ) : (
+        <Link routeName={routeName} routeParams={route.params}>
+          {title}
+        </Link>
+      )}
     </li>
   )
 }
 
 const Toolbar: React.FunctionComponent<{
-  hvp: string
-  hvpFilename: string
   translation: string
   translationFilename: string
-}> = ({ hvp, hvpFilename, translation, translationFilename }) => (
+}> = ({ translation, translationFilename }) => (
   <div className="toolbar">
     <ol className="toolbar_inner" aria-hidden="true">
       {results.map(({ language, type }) => (
         <ChangeExamVersion {...{ language, type }} key={language + type} />
       ))}
-      <SaveHvp {...{ hvp, hvpFilename }} />
       <SaveTranslation {...{ translation, translationFilename }} />
-      <ResultsNavigation />
+      <NavigateTo routeName="exam" title="Koe" />
+      <NavigateTo routeName="attachments" title="Aineisto" />
+      <NavigateTo routeName="results" title="Suorituskopio" />
+      <NavigateTo routeName="grading-instructions" title="HVP" />
     </ol>
   </div>
 )
@@ -126,7 +128,7 @@ const App: React.FunctionComponent<{
   const { route } = useRoute()
   const { language, type } = route.params as RouteParams
 
-  const { xml, hvp, translation, examCode, dayCode, gradingStructure } = findExam({ language, type })
+  const { xml, translation, examCode, gradingStructure } = findExam({ language, type })
   const doc = useMemo(() => parseExam(xml, true), [xml])
 
   useEffect(() => {
@@ -134,7 +136,6 @@ const App: React.FunctionComponent<{
   }, [route.name])
 
   const attachmentsURL = router.buildPath('attachments', route.params)
-  const hvpFilename = examCode ? `${examCode}${dayCode ? '_' + dayCode : ''}_${language}.md` : 'hvp.md'
   const translationFilename = examCode ? `${examCode}_kaannokset.txt` : 'kaannokset.txt'
 
   const commonProps = {
@@ -158,11 +159,13 @@ const App: React.FunctionComponent<{
 
   return (
     <>
-      <Toolbar {...{ hvp, hvpFilename, translation, translationFilename }} />
+      <Toolbar {...{ translation, translationFilename }} />
       {route.name === 'results' ? (
         <Results {...resultsProps} />
       ) : route.name === 'attachments' ? (
         <Attachments {...examProps} />
+      ) : route.name === 'grading-instructions' ? (
+        <GradingInstructions {...commonProps} />
       ) : (
         <Exam {...examProps} />
       )}
