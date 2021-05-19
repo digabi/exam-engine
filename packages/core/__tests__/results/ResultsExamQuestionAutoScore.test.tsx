@@ -10,7 +10,7 @@ describe('<QuestionAutoScore />', () => {
   let i18n: i18next.i18n
 
   beforeAll(() => {
-    i18n = initI18n('fi-FI', null, null)
+    i18n = initI18n('fi-FI')
   })
 
   it('renders without score', () => {

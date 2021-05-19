@@ -57,13 +57,13 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 const Results: React.FunctionComponent<ResultsProps> = () => {
-  const { date, dateTimeFormatter, language, resolveAttachment, root, subjectLanguage } = useContext(CommonExamContext)
+  const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } = useContext(
+    CommonExamContext
+  )
 
   const examTitle = findChildElement(root, 'exam-title')
   const examStylesheet = root.getAttribute('exam-stylesheet')
 
-  const examCode = root.getAttribute('exam-code')
-  const dayCode = root.getAttribute('day-code')
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
 

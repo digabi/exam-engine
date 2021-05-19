@@ -36,7 +36,7 @@ describe('<QuestionManualScore />', () => {
 
   describe('fi-FI', () => {
     beforeAll(() => {
-      i18n = initI18n('fi-FI', null, null)
+      i18n = initI18n('fi-FI')
     })
 
     it('renders without score', () => {
@@ -131,7 +131,7 @@ describe('<QuestionManualScore />', () => {
 
   describe('sv-FI', () => {
     it('renders with pregrading, censor and inspection scores', () => {
-      i18n = initI18n('fi-SV', null, null)
+      i18n = initI18n('fi-SV')
       const props = {
         ...defaultProps,
         scores: defaultScores,

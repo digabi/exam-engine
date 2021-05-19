@@ -63,7 +63,7 @@ declare module 'react-i18next' {
   interface Resources extends ExamEngineI18nResources {}
 }
 
-export function initI18n(language: string, examCode: string | null, dayCode: string | null): typeof i18n {
+export function initI18n(language: string, examCode?: string, dayCode?: string): typeof i18n {
   const namespace = examCode ? examCode + (dayCode ? `_${dayCode}` : '') : 'translation'
 
   return i18n

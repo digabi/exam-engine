@@ -1,5 +1,5 @@
 import React from 'react'
-import { getNumericAttribute, queryAll } from '../../dom-utils'
+import { getAttribute, getNumericAttribute, queryAll } from '../../dom-utils'
 import { CommonExamProps } from '../exam/Exam'
 import { withContext } from './withContext'
 
@@ -7,6 +7,8 @@ export interface CommonExamContext {
   attachmentsURL: string
   date?: Date
   dateTimeFormatter: Intl.DateTimeFormat
+  dayCode?: string
+  examCode?: string
   /** The language of the exam. */
   language: string
   /** The language of the subject matter. Differs from the language in foreign language exams. */
@@ -25,14 +27,16 @@ export function withCommonExamContext<P extends CommonExamProps>(
 ): React.ComponentType<P> {
   return withContext<CommonExamContext, P>(CommonExamContext, ({ attachmentsURL, resolveAttachment, doc }) => {
     const root = doc.documentElement
-    const maybeDate = root.getAttribute('date')
-    const language = root.getAttribute('exam-lang')!
-    const subjectLanguage = root.getAttribute('lang') || language
+    const maybeDate = getAttribute(root, 'date')
+    const language = getAttribute(root, 'exam-lang')!
+    const subjectLanguage = getAttribute(root, 'lang') || language
 
     return {
       attachmentsURL,
       date: maybeDate ? new Date(maybeDate) : undefined,
       dateTimeFormatter: new Intl.DateTimeFormat('fi-FI', { timeZone: 'UTC' }),
+      dayCode: getAttribute(root, 'day-code'),
+      examCode: getAttribute(root, 'exam-code'),
       language,
       subjectLanguage,
       maxAnswers: getNumericAttribute(root, 'max-answers'),
