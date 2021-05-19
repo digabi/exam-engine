@@ -18,12 +18,14 @@ export const fi_FI = {
   material_plural: 'Aineistot',
   'attachments-page-title': 'Aineisto:',
   'external-material-title': 'Aineisto',
+  'grading-instructions-page-title': 'Hyvän vastauksen piirteet:',
   section: 'Osa {{displayNumber}}:',
   question: 'Tehtävä {{displayNumber}}:',
   grade: 'Arvosana',
   comment: 'Kommentti',
   points: '{{count}} p.',
   audio: {
+    transcription: 'Äänite:',
     play: 'Kuuntele äänite.',
   },
   'audio-errors': {

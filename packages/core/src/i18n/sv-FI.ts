@@ -6,12 +6,14 @@ export const sv_FI: Translations = {
   material: 'Material',
   'attachments-page-title': 'Material:',
   'external-material-title': 'Material',
+  'grading-instructions-page-title': 'Hyvän vastauksen piirteet:',
   section: 'Del {{displayNumber}}:',
   question: 'Uppgift {{displayNumber}}:',
   grade: 'Vitsord',
   comment: 'Kommentar',
   points: '{{count}} p.',
   audio: {
+    transcription: 'Inspelningen:',
     play: 'Lyssna på inspelningen.',
   },
   'audio-errors': {

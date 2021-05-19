@@ -14,6 +14,7 @@ import Reference from '../shared/Reference'
 import surround from '../surround'
 import Video from '../shared/Video'
 import ImageOverlay from '../shared/ImageOverlay'
+import RenderChildNodes from '../RenderChildNodes'
 
 const renderChildNodes = createRenderChildNodes({
   'attachment-link': mkAttachmentLink('link'),
@@ -21,8 +22,10 @@ const renderChildNodes = createRenderChildNodes({
   'attachment-title': AttachmentTitle,
   attachment: Attachment,
   audio: Audio,
+  'audio-title': RenderChildNodes,
   file: File,
   image: Image,
+  'image-title': RenderChildNodes,
   video: Video,
   formula: Formula,
   reference: surround(Reference, 'div', { className: 'e-color-darkgrey e-mrg-y-2 e-font-size-s e-light' }),

@@ -1,5 +1,6 @@
 import { parseExam, migrateExam } from '@digabi/exam-engine-mastering'
 import { readFixture } from './fixtures'
+import { wrap } from 'jest-snapshot-serializer-raw'
 
 describe('Exam migrations', () => {
   it('migrates an old exam to the current schema', async () => {
@@ -7,7 +8,7 @@ describe('Exam migrations', () => {
     const doc = parseExam(xml, false)
     migrateExam(doc)
 
-    expect(doc.toString(false)).toMatchSnapshot()
+    expect(wrap(doc.toString(false))).toMatchSnapshot()
   })
 
   it('does nothing if the exam already is in the latest schema', async () => {

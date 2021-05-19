@@ -31,7 +31,7 @@ export async function createOfflineExam(
   const source = await fs.readFile(examFile, 'utf-8')
   const examOutputDirectories: string[] = []
   const results = await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
-    removeHiddenElements: false,
+    removeCorrectAnswers: false,
   })
   const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then((d) => d.path)
 

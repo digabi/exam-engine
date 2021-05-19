@@ -39,9 +39,10 @@ import References from '../shared/References'
 import SaveIndicator from './internal/SaveIndicator'
 import SectionElement from '../SectionElement'
 import SectionInstruction from './SectionInstruction'
-import TableOfContents from './TableOfContents'
+import { mkTableOfContents } from '../shared/TableOfContents'
 import TextAnswer from './TextAnswer'
 import Video from '../shared/Video'
+import RenderChildNodes from '../RenderChildNodes'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -77,6 +78,7 @@ const renderChildNodes = createRenderChildNodes({
   'attachment-link': mkAttachmentLink('link'),
   'attachment-links': mkAttachmentLinks('link'),
   audio: Audio,
+  'audio-title': RenderChildNodes,
   'audio-group': AudioGroup,
   'audio-test': AudioTest,
   'choice-answer': ChoiceAnswer,
@@ -86,6 +88,7 @@ const renderChildNodes = createRenderChildNodes({
   file: File,
   formula: Formula,
   image: Image,
+  'image-title': RenderChildNodes,
   question: Question,
   'question-instruction': QuestionInstruction,
   'question-title': QuestionTitle,
@@ -120,6 +123,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const store = useCached(() =>
     initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
+  )
+  const TableOfContents = useCached(() =>
+    mkTableOfContents({ showAttachmentLinks: true, showAnsweringInstructions: true })
   )
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))

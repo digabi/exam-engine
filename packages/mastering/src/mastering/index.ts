@@ -7,7 +7,6 @@ import path from 'path'
 import { initI18n } from '../i18n'
 import { currentExamSchemaVersion } from '../migrations'
 import { createGradingStructure } from './createGradingStructure'
-import { createHvp } from './createHvp'
 import { createTranslationFile } from './createTranslationFile'
 import {
   Answer,
@@ -75,10 +74,10 @@ export interface MasteringOptions {
    */
   multiChoiceShuffleSecret?: string
   /**
-   * Remove elements with the `hidden` attribute set to `true` from the mastered
-   * XML.
+   * Remove elements that reveal correct answers to the student. By default, this is set to true, but in some contexts
+   * (such as when generating grading instructions) we want to preserve more content in the XML.
    */
-  removeHiddenElements?: boolean
+  removeCorrectAnswers?: boolean
   /**
    * Throws an error if encountering an invalid LaTeX formula in an
    * `<e:formula>…</e:formula>` element.
@@ -88,7 +87,7 @@ export interface MasteringOptions {
 
 const defaultOptions = {
   multiChoiceShuffleSecret: 'tJXjzAhY3dT4B26aikG2tPmPRlWRTKXF5eVpOR2eDFz3Aj4a3FHF1jB3tswVWPhc',
-  removeHiddenElements: true,
+  removeCorrectAnswers: true,
   throwOnLatexError: true,
 }
 
@@ -173,8 +172,6 @@ export interface MasteringResult {
   examUuid: string
   /** The data structure used by Abitti to grade this exam version. */
   gradingStructure: GradingStructure
-  /** Hyvän vastauksen piirteet for this exam. Only used in YO exams. */
-  hvp: string
   /** Strings in the exam to be sent to the translator. */
   translation: string
   /** The language of this exam version. Defined in the `<e:languages>` element of the XML. */
@@ -249,15 +246,14 @@ async function masterExamVersion(
   await addMediaMetadata(attachments, getMediaMetadata)
 
   const gradingStructure = createGradingStructure(exam, generateId)
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const hvp = createHvp(doc, language)
 
   removeComments(root)
-  removeCorrectAnswers(exam)
   removeTableWhitespaceNodes(root)
 
-  if (options.removeHiddenElements) {
+  if (options.removeCorrectAnswers) {
+    removeCorrectAnswers(exam)
     removeHiddenElements(root)
+    removeHvpMetadata(root)
   }
 
   return {
@@ -267,8 +263,6 @@ async function masterExamVersion(
     examCode: getAttribute('exam-code', root, null),
     examUuid: getAttribute('exam-uuid', root),
     gradingStructure,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    hvp,
     translation,
     language,
     title: root.get<Element>('//e:exam-title', ns)?.text().trim() ?? null,
@@ -402,6 +396,12 @@ function removeComments(exam: Element) {
 
 function removeHiddenElements(exam: Element) {
   exam.find('//e:*[@hidden=true()]', ns).forEach((e) => e.remove())
+}
+
+function removeHvpMetadata(exam: Element) {
+  exam
+    .find(xpathOr(['exam-grading-instruction', 'question-grading-instruction', 'answer-grading-instruction']), ns)
+    .forEach((e) => e.remove())
 }
 
 function updateMaxScoresToAnswers(exam: Exam) {

@@ -9,6 +9,7 @@
         <xs:element ref="e:exam-versions" />
         <xs:element name="exam-title" type="e:Flow" minOccurs="0" />
         <xs:element name="exam-instruction" type="e:Flow" minOccurs="0" />
+        <xs:element name="exam-grading-instruction" type="e:Flow" minOccurs="0" />
         <xs:element ref="e:table-of-contents" minOccurs="0" />
         <xs:element ref="e:external-material" minOccurs="0" />
         <xs:element ref="e:section" maxOccurs="unbounded" />
@@ -72,7 +73,7 @@
 
   <xs:simpleType name="exam-schema-version">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="0.2" />
+      <xs:enumeration value="0.3" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -178,6 +179,7 @@
         <xs:element name="question-title" type="e:Flow" />
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element name="question-instruction" type="e:Flow" />
+          <xs:element name="question-grading-instruction" type="e:Flow" />
           <xs:element ref="e:external-material" />
           <xs:group ref="xhtml:xhtml.Flow.mix" />
           <xs:element ref="e:question" />
@@ -239,10 +241,10 @@
   </xs:element>
 
   <xs:element name="image">
-    <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:group ref="xhtml:xhtml.Flow.mix" />
-      </xs:choice>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="image-title" type="e:Flow" minOccurs="0" />
+      </xs:sequence>
       <xs:attributeGroup ref="e:sourcable" />
       <xs:attributeGroup ref="e:localizable" />
       <xs:attributeGroup ref="e:stylable" />
@@ -275,10 +277,11 @@
   </xs:element>
 
   <xs:element name="audio">
-    <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:group ref="xhtml:xhtml.Flow.mix" />
-      </xs:choice>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="audio-title" type="e:Flow" minOccurs="0" />
+        <xs:element name="audio-transcription" type="e:Flow" minOccurs="0" />
+      </xs:sequence>
       <xs:attributeGroup ref="e:sourcable" />
       <xs:attribute name="times" type="xs:positiveInteger" />
       <xs:attributeGroup ref="e:localizable" />
@@ -388,6 +391,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="hint" minOccurs="0" type="e:Flow" />
+        <xs:element name="answer-grading-instruction" minOccurs="0" type="e:Flow" />
       </xs:sequence>
       <xs:attribute name="type" type="e:text-answer-type" default="single-line" />
       <xs:attribute name="max-score" type="xs:positiveInteger" use="required" />
@@ -430,6 +434,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="hint" minOccurs="0" type="e:Flow" />
+        <xs:element name="answer-grading-instruction" minOccurs="0" type="e:Flow" />
         <xs:element ref="e:accepted-answer" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="type" type="e:text-answer-type" default="single-line" />

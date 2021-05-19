@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.2" date="2018-09-19"
-        exam-code="A" day-code="X">
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.3" date="2018-09-19" exam-code="A" day-code="X">
   <e:exam-versions>
-    <e:exam-version lang="fi-FI" />
+    <e:exam-version lang="fi-FI"/>
   </e:exam-versions>
   <e:exam-instruction>
     <p>Lukutaidon kokeessa vastataan kahteen tehtävään, joista toinen on osasta I ja toinen osasta II. Kummassakin
@@ -26,18 +23,18 @@
       teksti lopuksi vastaustilaan.
     </p>
   </e:exam-instruction>
-  <e:table-of-contents />
+  <e:table-of-contents/>
   <e:section max-answers="1">
     <e:section-title>Asia- ja mediatekstit</e:section-title>
     <e:question>
       <e:question-title>Miten loremia myydään?</e:question-title>
       <e:question-instruction>
-        Tutustu Ipsumin mainokseen <e:attachment-link ref="ipsumin-mainos" />, jota on esitetty televisiossa 1990-luvulla.
+        Tutustu Ipsumin mainokseen <e:attachment-link ref="ipsumin-mainos"/>, jota on esitetty televisiossa 1990-luvulla.
       </e:question-instruction>
       <e:external-material>
         <e:attachment name="ipsumin-mainos">
           <e:attachment-title>Video: Ipsumin mainos</e:attachment-title>
-          <e:video src="1.A.webm" />
+          <e:video src="1.A.webm"/>
           <e:reference>
             <e:author>Sunt Dolore</e:author>
             <e:howpublished>Deserunt sit nostrud aute reprehenderit</e:howpublished>
@@ -45,7 +42,7 @@
         </e:attachment>
         <e:attachment name="ipsumin-mainos-kuulovammaisille">
           <e:attachment-title>Video: Ipsumin mainos (tekstitetty kuulovammaisia varten)</e:attachment-title>
-          <e:video src="1.A_KV.webm" />
+          <e:video src="1.A_KV.webm"/>
           <e:reference>
             <e:author>Sunt Dolore</e:author>
             <e:howpublished>Deserunt sit nostrud aute reprehenderit</e:howpublished>
@@ -55,32 +52,30 @@
       <e:question>
         <e:question-title>
           Analysoi mainoksessa
-          <e:attachment-link ref="ipsumin-mainos" />
+          <e:attachment-link ref="ipsumin-mainos"/>
           käytettyjä mainonnan keinoja. Vastauksen sopiva pituus on noin 3 500 merkkiä.
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="18" />
+        <e:text-answer type="rich-text" max-score="18"/>
       </e:question>
       <e:question>
         <e:question-title>
           Analysoi mainoksen
-          <e:attachment-link ref="ipsumin-mainos" />
+          <e:attachment-link ref="ipsumin-mainos"/>
           nais- ja mieskuvaa. Vastauksen sopiva pituus on noin 2 000 merkkiä.
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="12" />
+        <e:text-answer type="rich-text" max-score="12"/>
       </e:question>
     </e:question>
     <e:question>
       <e:question-title>Puhe vastavalmistuneelle</e:question-title>
       <e:question-instruction>
-        Kuuntele Duis Minimin radiossa esittämä kolumni Nulla Consequat <e:attachment-link
-          ref="duis-minimin-kolumni-audio" />. Analysoi ja arvioi kolumniin sisältyvää puhetta, joka alkaa sanoilla
-        ”Duis in est eiusmod”. Voit käyttää apuna kolumnin kirjoitettua versiota <e:attachment-link
-          ref="duis-minimin-kolumni-teksti" />. Vastauksen sopiva pituus on noin 5 000 merkkiä.
+        Kuuntele Duis Minimin radiossa esittämä kolumni Nulla Consequat <e:attachment-link ref="duis-minimin-kolumni-audio"/>. Analysoi ja arvioi kolumniin sisältyvää puhetta, joka alkaa sanoilla
+        ”Duis in est eiusmod”. Voit käyttää apuna kolumnin kirjoitettua versiota <e:attachment-link ref="duis-minimin-kolumni-teksti"/>. Vastauksen sopiva pituus on noin 5 000 merkkiä.
       </e:question-instruction>
       <e:external-material>
         <e:attachment name="duis-minimin-kolumni-audio">
           <e:attachment-title>Äänitallenne: Duis Minimin kolumni</e:attachment-title>
-          <e:audio src="2.A.ogg" />
+          <e:audio src="2.A.ogg"/>
           <e:reference>
             <e:author>Duis Minim</e:author>
             <e:publisher>Laborum nulla</e:publisher>
@@ -169,7 +164,7 @@
           </e:reference>
         </e:attachment>
       </e:external-material>
-      <e:text-answer type="rich-text" max-score="30" />
+      <e:text-answer type="rich-text" max-score="30"/>
     </e:question>
   </e:section>
   <e:section max-answers="1">
@@ -177,7 +172,7 @@
     <e:question>
       <e:question-title>Novelli eräästä perheestä</e:question-title>
       <e:question-instruction>
-        Analysoi ja tulkitse Deserunt Essen novellia Tempor reprehenderit <e:attachment-link ref="deserunt-essen-novelli" />.
+        Analysoi ja tulkitse Deserunt Essen novellia Tempor reprehenderit <e:attachment-link ref="deserunt-essen-novelli"/>.
         Vastauksen sopiva pituus on noin 5 000 merkkiä.
       </e:question-instruction>
       <e:external-material>
@@ -213,21 +208,21 @@
           </e:reference>
         </e:attachment>
       </e:external-material>
-      <e:text-answer type="rich-text" max-score="30" />
+      <e:text-answer type="rich-text" max-score="30"/>
     </e:question>
     <e:question>
       <e:question-title>Räppi ja runo</e:question-title>
       <e:question-instruction>
         Kuuntele Dolorin räppi
-        <e:attachment-link ref="sit-aute" />
+        <e:attachment-link ref="sit-aute"/>
         ja tutustu sen sanoitukseen
-        <e:attachment-link ref="sit-aute-sanoitus" />
-        sekä Deserunt Magnan runoon <e:attachment-link ref="deserunt-magnan-runo" />.
+        <e:attachment-link ref="sit-aute-sanoitus"/>
+        sekä Deserunt Magnan runoon <e:attachment-link ref="deserunt-magnan-runo"/>.
       </e:question-instruction>
       <e:external-material>
         <e:attachment name="sit-aute">
           <e:attachment-title>Äänitallenne: Räppi Sit Aute esittäjinä Dolor ja Occaecat</e:attachment-title>
-          <e:audio src="4.A.ogg" />
+          <e:audio src="4.A.ogg"/>
           <e:reference>
             <e:author>Voluptate Voluptate, Fugiat Tempor ea Voluptate Qui (Dolor)</e:author>
             <e:howpublished>Nostrud-sivusto</e:howpublished>
@@ -240,91 +235,91 @@
           <e:attachment-title>Kirjoitettu teksti: Dolorin räpin sanoitus</e:attachment-title>
           <h4>Sit aute</h4>
           <p>Enim ea eiusmod aute ut nisi deserunt
-            <br />
+            <br/>
             tempor anim veniam velit
-            <br />
+            <br/>
             Cillum officia laborum eiusmod commodo
-            <br />
+            <br/>
             elit ea et anim labore
-            <br />
+            <br/>
             Voluptate elit do reprehenderit?
-            <br />
+            <br/>
             Deserunt ut tempor nostrud cillum labore
-            <br />
+            <br/>
             Ex cupidatat consequat elit ex
-            <br />
+            <br/>
             Aliqua amet eu et quis eiusmod
-            <br />
+            <br/>
             Magna enim proident.
-            <br />
+            <br/>
             Aliquip elit enim dolor mollit
-            <br />
+            <br/>
             culpa nostrud proident in aliquip
-            <br />
+            <br/>
             mollit.Ea id do sunt cillum dolore
-            <br />
+            <br/>
             irure occaecat sint
-            <br />
+            <br/>
             Adipisicing voluptate magna
-            <br />
+            <br/>
             Incididunt velit labore adipisicing
-            <br />
+            <br/>
             Et in dolore dolore esse.
           </p>
           <p>Aliquip pariatur nulla deserunt cupidatat
-            <br />
+            <br/>
             qui sit magna. Sint quis ullam
-            <br />
+            <br/>
             co excepteur cupidatat Lorem est ven
-            <br />
+            <br/>
             <em>iam magna ipsum exercitation commodo...</em>
-            <br />
+            <br/>
             Incididunt cillum mollit nisi laborum duis.
-            <br />
+            <br/>
             Occaecat qui Lorem amet excepteur.
           </p>
           <p>officia voluptate cupidatat ullamco
-            <br />
+            <br/>
             cupidatat cupidatat occaecat proident tempor consequat.
-            <br />
+            <br/>
             Ullamco do Lorem qui nulla do et sunt velit
-            <br />
+            <br/>
             elit laboris ex velit do sint.
-            <br />
+            <br/>
             Consequat ad est occaecat aliquip
-            <br />
+            <br/>
             sit culpa dolore aute occaecat esse.
-            <br />
+            <br/>
             Ipsum veniam eiusmod sunt
-            <br />
+            <br/>
             elit proident incididunt ex do deserunt.
-            <br />
+            <br/>
             Aliquip voluptate anim nostrud sunt consequat dolor.
-            <br />
+            <br/>
             Nulla nostrud Lorem magna Lorem tempor
-            <br />
+            <br/>
             in do nisi exercitation mollit consequat.
-            <br />
+            <br/>
             llamco commodo consectetur enim reprehenderit occaecat.
-            <br />
+            <br/>
             Adipisicing eu deserunt consequat
-            <br />
+            <br/>
             non sunt in. Reprehenderit fugiat est
-            <br />
+            <br/>
             duis pariatur ex laboris quis elit eiusmod
-            <br />
+            <br/>
             fugiat. Tempor ex mollit
           </p>
           <p>aliquip duis amet eiusmod
-            <br />
+            <br/>
             aute proident tempor ut ad anim.
-            <br />
+            <br/>
             Nulla ut sit non irure dolor
-            <br />
+            <br/>
             minim dolore duis. Officia...
-            <br />
+            <br/>
             qui amet consectetur sunt.
-            <br />
+            <br/>
             qui amet consectetur sunt. qui amet consectetur sunt.
           </p>
           <e:reference>
@@ -338,56 +333,56 @@
         <e:attachment name="deserunt-magnan-runo">
           <e:attachment-title>Kirjoitettu teksti: Deserunt Magnan runo</e:attachment-title>
           <p>Proident amet sunt
-            <br />
+            <br/>
             incididunt elit commodo enim
-            <br />
+            <br/>
             excepteur ullamco qui incididunt
-            <br />
+            <br/>
             et proident nostrud. Irure
           </p>
           <p>nostrud tempor do mollit
-            <br />
+            <br/>
             ullamco proident
-            <br />
+            <br/>
             reprehenderit ut proident
           </p>
           <p>dolor ad velit. Ullamco labore
-            <br />
+            <br/>
             ipsum commodo esse commodo mollit
-            <br />
+            <br/>
             n exercitation pariatur. Sit
-            <br />
+            <br/>
             iconsectetur anim proident
-            <br />
+            <br/>
             commodo quis laborum
           </p>
           <p>ad veniam quis. Non laboris
-            <br />
+            <br/>
             voluptate deserunt laboris
-            <br />
+            <br/>
             Lorem amet do proident mollit.
-            <br />
+            <br/>
             Irure consequat est
           </p>
           <p>ad labore. Ullamco proident
-            <br />
+            <br/>
             qui duis aliquip ut duis consequat.
-            <br />
+            <br/>
             Consequat et aliquip elit officia
           </p>
           <p>aliquip incididunt eiusmod sint:
-            <br />
+            <br/>
             tempor velit,
-            <br />
+            <br/>
             Consequat est voluptate,
-            <br />
+            <br/>
             laborum eu incididunt
           </p>
           <p>enim dolor id velit</p>
           <p>cillum mollit
-            <br />
+            <br/>
             proident, ex elit
-            <br />
+            <br/>
             dolore sint.
           </p>
           <e:reference>
@@ -404,25 +399,25 @@
         <e:question-title>
           Poimi Dolorin räpistä
           <e:attachment-links>
-            <e:attachment-link ref="sit-aute" />
-            <e:attachment-link ref="sit-aute-sanoitus" />
+            <e:attachment-link ref="sit-aute"/>
+            <e:attachment-link ref="sit-aute-sanoitus"/>
           </e:attachment-links>
           runoudelle tyypillisiä piirteitä ja anna niistä esimerkit. Vastauksen sopiva pituus on noin 2 000 merkkiä
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="12" />
+        <e:text-answer type="rich-text" max-score="12"/>
       </e:question>
       <e:question>
         <e:question-title>
           Vertaile Dolorin räpin
           <e:attachment-links>
-            <e:attachment-link ref="sit-aute" />
-            <e:attachment-link ref="sit-aute-sanoitus" />
+            <e:attachment-link ref="sit-aute"/>
+            <e:attachment-link ref="sit-aute-sanoitus"/>
           </e:attachment-links>
           ja Deserunt Magnan runon
-          <e:attachment-link ref="deserunt-magnan-runo" />
+          <e:attachment-link ref="deserunt-magnan-runo"/>
           sisältämiä ikääntymisen kuvauksia. Vastauksen sopiva pituus on noin 3 500 merkkiä.
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="18" />
+        <e:text-answer type="rich-text" max-score="18"/>
       </e:question>
     </e:question>
   </e:section>

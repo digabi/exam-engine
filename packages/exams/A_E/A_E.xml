@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.2" date="2018-09-19" exam-code="A" day-code="E">
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.3" date="2018-09-19" exam-code="A" day-code="E">
     <e:exam-versions>
-        <e:exam-version lang="fi-FI" />
+        <e:exam-version lang="fi-FI"/>
     </e:exam-versions>
     <e:exam-instruction>
         <p>Kirjoitustaidon kokeessa kirjoitetaan yksi pohtiva tai kantaa
@@ -33,7 +33,7 @@
         olisi helppo käsitellä. Voit tehdä merkintöjä odt-tiedostoihin
         suoraan ja pdf-tiedostoihin Okular-ohjelman avulla.</p>
     </e:exam-instruction>
-    <e:table-of-contents />
+    <e:table-of-contents/>
     <e:external-material>
         <e:attachment>
             <e:attachment-title>
@@ -141,35 +141,35 @@
         </e:attachment>
     </e:external-material>
     <e:section max-answers="1">
-        <e:section-title />
+        <e:section-title/>
         <e:question>
             <e:question-title>Digitaalinen arki</e:question-title>
-            <e:text-answer type="rich-text" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60"/>
         </e:question>
 
         <e:question>
             <e:question-title>Sosiaaliset suhteet someaikana</e:question-title>
-            <e:text-answer type="rich-text" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60"/>
         </e:question>
 
         <e:question>
             <e:question-title>Elämää ilman sosiaalista mediaa?</e:question-title>
-            <e:text-answer type="rich-text" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60"/>
         </e:question>
 
         <e:question>
             <e:question-title>Osallistumisen tai itsensä ilmaisemisen uusia tapoja digiaikana</e:question-title>
-            <e:text-answer type="rich-text" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60"/>
         </e:question>
 
         <e:question>
             <e:question-title>Eri ihmisryhmät sosiaalisen median käyttäjinä</e:question-title>
-            <e:text-answer type="rich-text" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60"/>
         </e:question>
 
         <e:question>
             <e:question-title>Sosiaalisen median edut ja haitat</e:question-title>
-            <e:text-answer type="rich-text" max-score="60" />
+            <e:text-answer type="rich-text" max-score="60"/>
         </e:question>
     </e:section>
 </e:exam>
