@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.2" date="2020-09-17" exam-code="GE" max-answers="5">
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.3" date="2020-09-17" exam-code="GE" max-answers="5">
   <e:exam-versions>
-    <e:exam-version lang="fi-FI" />
-    <e:exam-version lang="sv-FI" />
+    <e:exam-version lang="fi-FI"/>
+    <e:exam-version lang="sv-FI"/>
   </e:exam-versions>
 
   <e:exam-instruction>
@@ -23,7 +23,7 @@
       </p>
     </e:localization>
   </e:exam-instruction>
-  <e:table-of-contents />
+  <e:table-of-contents/>
   <e:section max-answers="1">
     <e:section-title>
       <e:localization lang="fi-FI">
@@ -373,7 +373,7 @@
             De olympiska spelen har många konsekvenser för miljön. Diskutera miljöpåverkan som de olympiska spelen i Tokyo har i arrangörsstaden Tokyo och på en global nivå.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10"/>
       </e:question>
       <e:question>
         <e:question-title>
@@ -384,7 +384,7 @@
             Hur kan man minska på de negativa miljökonsekvenserna av de olympiska spelen? Diskutera lösningar för att minska skadorna ur både arrangörsstaden Tokyos och en enskild resenärs perspektiv.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10"/>
       </e:question>
     </e:question>
 
@@ -397,12 +397,12 @@
       <e:question-instruction>
         <e:localization lang="fi-FI">
           Talvisin sekä maaperässä että kallioperässä oleva vesi saattaa jäätyä. Maaperässä olevaa jäätynyttä vettä nimitetään roudaksi. Ikiroudaksi
-          <e:attachment-link type="long" ref="3A" />
+          <e:attachment-link type="long" ref="3A"/>
           puolestaan kutsutaan ilmiötä, jossa maaperä on ollut jäätyneenä vähintään kaksi vuotta yhtäjaksoisesti eli myös kesän ajan. Ikiroutaa esiintyy lähinnä arktisilla alueilla, joilla on talvisin riittävän kylmä.
         </e:localization>
         <e:localization lang="sv-FI">
           På vintern kan vattnet i både jordtäcket och berggrunden frysa. Fruset vatten som förekommer i jordtäcket kallas tjäle. Permafrost
-          <e:attachment-link type="long" ref="3A" />
+          <e:attachment-link type="long" ref="3A"/>
           kallas däremot fenomenet då vatten i jordtäcket varit fruset oavbrutet i minst två år, det vill säga också över sommaren. Permafrost förekommer främst i arktiska områden som är tillräckligt kalla under vintern.
         </e:localization>
       </e:question-instruction>
@@ -431,7 +431,7 @@
           <e:localization lang="sv-FI">Hur förändras jordytans former av is som förekommer i jordtäcket och berggrunden? Använd geografiska begrepp i ditt svar.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" />
+        <e:text-answer type="rich-text" max-score="4"/>
       </e:question>
 
       <e:question>
@@ -440,7 +440,7 @@
           <e:localization lang="sv-FI">Förklara hur tjälen påverkar mänsklig aktivitet.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8"/>
       </e:question>
 
       <e:question>
@@ -449,7 +449,7 @@
           <e:localization lang="sv-FI">Klimatförändringen får permafrosten att smälta. Diskutera hurdana effekter försvinnandet av permafrosten har för miljön och vilka följder det har för människan.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8"/>
       </e:question>
     </e:question>
 
@@ -469,7 +469,7 @@
             Vad menas med relativ fattigdom?
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="2" />
+        <e:text-answer type="rich-text" max-score="2"/>
       </e:question>
 
       <e:question>
@@ -481,7 +481,7 @@
             Redogör för de regionala skillnaderna i fattigdom på global nivå. Beskriv två centrala orsaker till skillnaderna.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
 
       <e:question>
@@ -493,7 +493,7 @@
             Redogör för de regionala skillnaderna i fattigdom i Finland. Beskriv två centrala orsaker till skillnaderna.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
 
       <e:question>
@@ -505,7 +505,7 @@
             Välj och namnge en finländsk kommun och redogör för de regionala skillnaderna i fattigdom i den. Beskriv två centrala orsaker till skillnaderna.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
     </e:question>
 
@@ -635,29 +635,29 @@
           <e:localization lang="fi-FI">
             Tutustu aineistoihin
             <e:attachment-links type="short">
-              <e:attachment-link ref="5A" />
-              <e:attachment-link ref="5B" />
-              <e:attachment-link ref="5C" />
-              <e:attachment-link ref="5D" />
+              <e:attachment-link ref="5A"/>
+              <e:attachment-link ref="5B"/>
+              <e:attachment-link ref="5C"/>
+              <e:attachment-link ref="5D"/>
             </e:attachment-links>
             ja valitse aineistossa
-            <e:attachment-link type="short" ref="5A" />
+            <e:attachment-link type="short" ref="5A"/>
             esitetyistä kolmesta reittivaihtoehdosta mielestäsi paras. Perustele valintasi arvioimalla eri reittien hyviä ja huonoja puolia. Hyödynnä vastauksessasi kaikkia aineistoja.
           </e:localization>
           <e:localization lang="sv-FI">
             Studera materialen
             <e:attachment-links type="short">
-              <e:attachment-link ref="5A" />
-              <e:attachment-link ref="5B" />
-              <e:attachment-link ref="5C" />
-              <e:attachment-link ref="5D" />
+              <e:attachment-link ref="5A"/>
+              <e:attachment-link ref="5B"/>
+              <e:attachment-link ref="5C"/>
+              <e:attachment-link ref="5D"/>
             </e:attachment-links>
             och välj det ruttalternativ som du anser vara bäst av de tre rutter som presenteras i material
-            <e:attachment-link type="short" ref="5A" />
+            <e:attachment-link type="short" ref="5A"/>
             . Motivera ditt val genom att utvärdera de olika rutternas fördelar och nackdelar. Utnyttja allt material i ditt svar.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10"/>
       </e:question>
 
       <e:question>
@@ -669,7 +669,7 @@
                 Beskriv hurdana landskapstyper och regionala risker cyklisten står inför på den rutt du valt. Beskrivningen ska följa rutten i den riktning resan går.
               </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="10" />
+        <e:text-answer type="rich-text" max-score="10"/>
       </e:question>
     </e:question>
 
@@ -1079,7 +1079,7 @@
             Vad menas med supervulkan? Nämn åtminstone ett regionalt exempel.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" />
+        <e:text-answer type="rich-text" max-score="4"/>
       </e:question>
 
       <e:question>
@@ -1091,23 +1091,23 @@
             Hurdana följder skulle ett utbrott av en supervulkan sannolikt ha om det skedde nu i USA eller Europa?
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8"/>
       </e:question>
 
       <e:question>
         <e:question-title>
           <e:localization lang="fi-FI">
             Tee taulukko kymmenestä eniten uhreja aiheuttaneesta tulivuorenpurkauksesta
-            <e:attachment-link type="long" ref="6A" />
+            <e:attachment-link type="long" ref="6A"/>
             ja järjestä kyseiset purkaukset uhrimäärän mukaan suuruusjärjestykseen. Ota tekemästäsi taulukosta kuvakaappaus ja liitä se vastauskenttään. Laske myös kymmenen eniten uhreja aiheuttaneen purkauksen uhrimäärän summa ja keskiarvo. Kirjoita myös laskutoimitusten tulokset vastauskenttään.
           </e:localization>
           <e:localization lang="sv-FI">
             Gör en tabell över de tio vulkanutbrott som orsakat flest dödsoffer
-            <e:attachment-link type="long" ref="6A" />
+            <e:attachment-link type="long" ref="6A"/>
             och ordna dem i storleksordning enligt antalet offer. Ta en skärmdump av din tabell och klistra in den i svarsfältet. Räkna också ut summan och medelvärdet för antalet offer i de tio vulkanutbrotten som orsakat flest dödsoffer. Skriv även uträkningarnas resultat i svarsfältet.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
 
       <e:question>
@@ -1119,27 +1119,27 @@
                 Varför är antalet döda i de flesta vulkanutbrotten ganska litet i relation till utbrottens intensitet?
               </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
 
       <e:question>
         <e:question-title>
           <e:localization lang="fi-FI">
             Indonesiassa sijaitsevan Krakatau-tulivuoren
-            <e:attachment-link type="long" ref="6B" />
+            <e:attachment-link type="long" ref="6B"/>
             purkaus vuonna 1883 aiheutti ihmiskunnan kirjoitetun historian ajan kovimman äänen. Ihmisiä kuuroutui 65 kilometrin päässä tulivuoresta, ja ääni kuului voimakkaana ainakin
             <span class="e-nowrap">5 000</span>
             kilometrin päähän. Perustele, miksi kyseinen alue on vulkaaninen.
           </e:localization>
           <e:localization lang="sv-FI">
             Krakatauvulkanens utbrott i Indonesien
-            <e:attachment-link type="long" ref="6B" />
+            <e:attachment-link type="long" ref="6B"/>
             1883 orsakade det kraftigaste ljudet i mänsklighetens skrivna historia. Människor tappade hörseln 65 kilometer från vulkanen, och ljudet hördes kraftigt åtminstone
             <span class="e-nowrap">5 000</span>
             kilometer från vulkanen. Motivera varför området i fråga är vulkaniskt.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
 
     </e:question>
@@ -1193,7 +1193,7 @@
           <e:localization lang="sv-FI">Rita en eller flera bilder som förklarar vad som orsakar dygns- och årstidsväxlingarna på jorden. Använd vid behov pilar och korta förklaringstexter tillsammans med bilden. Bifoga bilden eller bilderna till svarsfältet.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8"/>
       </e:question>
 
       <e:question>
@@ -1203,7 +1203,7 @@
           <e:localization lang="sv-FI">Förklara principen enligt vilken jordklotet är uppdelat i tidszoner.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
         <e:question-title>
@@ -1211,22 +1211,22 @@
           <e:localization lang="sv-FI">Om man avskaffar sommartid i Europeiska unionen kan Finland välja en permanent tid enligt tidszon UTC+1, UTC+2 eller UTC+3. Hur skiljer sig alternativen från varandra med tanke på hur den ljusa tiden infaller i södra och norra Finland under olika årstider?
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8"/>
       </e:question>
       <e:question>
         <e:question-title>
           <e:localization lang="fi-FI">
             Oletetaan, että kesäaikaan siirtymisestä luovutaan koko Euroopan unionin alueella. Mikä on oma mielipiteesi Suomelle parhaiten soveltuvasta pysyvästä aikavyöhykkeestä? Perustele mielipiteesi ja arvioi valitsemasi aikavyöhykkeen etuja ja haittoja ihmistoiminnan näkökulmasta. Voit käyttää apunasi kuvaa
-            <e:attachment-link type="short" ref="7A" />
+            <e:attachment-link type="short" ref="7A"/>
             .
           </e:localization>
           <e:localization lang="sv-FI">
             Vi antar att man avskaffar sommartid i hela Europeiska unionen. Vad anser du att är den lämpligaste permanenta tidszonen för Finland? Motivera din åsikt och utvärdera fördelarna och nackdelarna med den tidszon du valt med tanke på mänsklig aktivitet. Du kan använda bild
-            <e:attachment-link type="short" ref="7A" />
+            <e:attachment-link type="short" ref="7A"/>
             som hjälp.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8"/>
       </e:question>
     </e:question>
 
@@ -1341,7 +1341,7 @@
           <e:localization lang="sv-FI">Definiera kort begreppen urbanisering och suburbanisering.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" />
+        <e:text-answer type="rich-text" max-score="4"/>
       </e:question>
 
       <e:question>
@@ -1349,25 +1349,25 @@
           <e:localization lang="fi-FI">
             Analysoi oheisten karttojen
             <e:attachment-links>
-              <e:attachment-link ref="8A" />
-              <e:attachment-link ref="8B" />
-              <e:attachment-link ref="8C" />
-              <e:attachment-link ref="8D" />
+              <e:attachment-link ref="8A"/>
+              <e:attachment-link ref="8B"/>
+              <e:attachment-link ref="8C"/>
+              <e:attachment-link ref="8D"/>
             </e:attachment-links>
             avulla väestön alueellisia eroja Yhdysvaltojen pääkaupungissa Washingtonissa. Pohdi kaupungistumiseen liittyviä sosiaalisia riskejä aineistossa näkyvällä alueella.
           </e:localization>
           <e:localization lang="sv-FI">
             Använd de bifogade kartorna
             <e:attachment-links>
-              <e:attachment-link ref="8A" />
-              <e:attachment-link ref="8B" />
-              <e:attachment-link ref="8C" />
-              <e:attachment-link ref="8D" />
+              <e:attachment-link ref="8A"/>
+              <e:attachment-link ref="8B"/>
+              <e:attachment-link ref="8C"/>
+              <e:attachment-link ref="8D"/>
             </e:attachment-links>
             för att analysera de regionala befolkningsskillnaderna i Förenta staternas huvudstad Washington. Diskutera de sociala risker som är förknippade med urbanisering i det område som presenteras i materialet.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="12" />
+        <e:text-answer type="rich-text" max-score="12"/>
       </e:question>
 
       <e:question>
@@ -1376,7 +1376,7 @@
           <e:localization lang="sv-FI">Välj ur materialet ett bostadsområde som du ska utveckla. Avgränsa området på kartan du valt och klistra in en skärmdump av området i svarsfältet. Utarbeta tre korta förslag till åtgärder för att minska de sociala riskerna i området. Dina förslag ska kunna presenteras för en stadsplanerare.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="8" />
+        <e:text-answer type="rich-text" max-score="8"/>
       </e:question>
 
       <e:question>
@@ -1385,7 +1385,7 @@
           <e:localization lang="sv-FI">Diskutera hur sociala problem kan synas i höstens presidentval i USA.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" />
+        <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
     </e:question>
 
@@ -1508,37 +1508,37 @@
           <e:localization lang="fi-FI">
             Tutustu paikkatietoaineistoihin
             <e:attachment-links type="short">
-              <e:attachment-link ref="9A" />
-              <e:attachment-link ref="9B" />
-              <e:attachment-link ref="9C" />
-              <e:attachment-link ref="9D" />
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
             </e:attachment-links>
             ja niissä näkyvään maiseman muutokseen. Luettele aineistot
             <e:attachment-links type="short">
-              <e:attachment-link ref="9A" />
-              <e:attachment-link ref="9B" />
-              <e:attachment-link ref="9C" />
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
             </e:attachment-links>
             aikajärjestyksessä vanhimmasta nuorimpaan. Merkitse kuvaan (tai kuviin) yhteensä kolme erityyppistä maiseman muutosta ja liitä kuvakaappaus (tai kaappaukset) vastaukseesi. Nimeä kukin muutos ja kuvaile sitä lyhyesti.
           </e:localization>
           <e:localization lang="sv-FI">
             Studera geodatamaterialen
             <e:attachment-links type="short">
-              <e:attachment-link ref="9A" />
-              <e:attachment-link ref="9B" />
-              <e:attachment-link ref="9C" />
-              <e:attachment-link ref="9D" />
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
             </e:attachment-links>
             och förändringen av landskapet som går att observera i materialet. Lista materialen
             <e:attachment-links type="short">
-              <e:attachment-link ref="9A" />
-              <e:attachment-link ref="9B" />
-              <e:attachment-link ref="9C" />
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
             </e:attachment-links>
             i kronologisk ordning från det äldsta till det yngsta. Märk ut sammanlagt tre olika typer av landskapsförändringar på bilden (eller bilderna) och bifoga en skärmdump (eller skärmdumpar) av den (eller dem) till ditt svar. Namnge varje förändring och beskriv den kortfattat.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="12" />
+        <e:text-answer type="rich-text" max-score="12"/>
       </e:question>
 
       <e:question>
@@ -1546,25 +1546,25 @@
           <e:localization lang="fi-FI">
             Vertaile aineistojen
             <e:attachment-links type="short">
-              <e:attachment-link ref="9A" />
-              <e:attachment-link ref="9B" />
-              <e:attachment-link ref="9C" />
-              <e:attachment-link ref="9D" />
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
             </e:attachment-links>
             perusteella, millaista alueen maankäyttö on ollut kyseisinä kolmena kuvissa näkyvänä aikana. Analysoi, mitkä tekijät ovat vaikuttaneet maankäytön muuttumiseen.
           </e:localization>
           <e:localization lang="sv-FI">
             Jämför utifrån materialen
             <e:attachment-links type="short">
-              <e:attachment-link ref="9A" />
-              <e:attachment-link ref="9B" />
-              <e:attachment-link ref="9C" />
-              <e:attachment-link ref="9D" />
+              <e:attachment-link ref="9A"/>
+              <e:attachment-link ref="9B"/>
+              <e:attachment-link ref="9C"/>
+              <e:attachment-link ref="9D"/>
             </e:attachment-links>
             hur markanvändning sett ut i området under de tidsperioder som de tre bilderna representerar. Analysera vilka faktorer som bidragit till förändringen i markanvändningen.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="18" />
+        <e:text-answer type="rich-text" max-score="18"/>
       </e:question>
     </e:question>
 

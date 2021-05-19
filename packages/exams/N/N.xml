@@ -1,17 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://www.w3.org/1999/xhtml"
-        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
-        exam-schema-version="0.2" date="2019-09-24" exam-code="N" max-answers="10">
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.3" date="2019-09-24" exam-code="N" max-answers="10">
   <e:exam-versions>
-    <e:exam-version lang="fi-FI" />
-    <e:exam-version lang="sv-FI" />
+    <e:exam-version lang="fi-FI"/>
+    <e:exam-version lang="sv-FI"/>
   </e:exam-versions>
   <e:exam-instruction>
     <e:localization lang="fi-FI">
       <p>
         Koe koostuu 13 tehtävästä, joista vastataan kymmeneen. Tehtävät on jaettu kolmeen osaan. A-osassa on neljä kaikille pakollista tehtävää. B1-osassa on viisi tehtävää, joista vastataan kolmeen. B2-osassa on neljä tehtävää, joista vastataan kolmeen. Kaikki tehtävät arvostellaan pistein 0–12, joten kokeen maksimipistemäärä on 120.
-      </p>  
+      </p>
       <p>
         A-osassa saat käyttää taulukkokirjaa ja koejärjestelmän tarjoamia perusohjelmia. A-osa palautetaan tehtävän 4 jäljessä olevalla painikkeella. Tämän jälkeen A-osan vastauksia ei voi enää muokata. A-osan palauttamisen jälkeen kaikki koejärjestelmän ohjelmat ovat käytettävissäsi. Lisäksi saat käyttöön oman laskimesi. Voit vastata B-osien tehtäviin myös ennen A-osan palauttamista.
       </p>
@@ -20,12 +17,12 @@
       </p>
       <p>
           Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
-      </p>      
+      </p>
     </e:localization>
     <e:localization lang="sv-FI">
       <p>
         Provet består av 13 uppgifter, av vilka tio uppgifter ska lösas. Uppgifterna är indelade i tre delar. Del A består av fyra uppgifter som är obligatoriska för alla. Del B1 består av fem uppgifter av vilka tre ska lösas. Del B2 består av fyra uppgifter av vilka tre ska lösas. Alla uppgifter bedöms med 0–12 poäng, vilket betyder att provets maximala antal poäng är 120.
-      </p>    
+      </p>
       <p>
         I del A får du använda tabellbok och de basprogram som ingår i provsystemet. Del A återlämnas med hjälp av tryckknappen efter uppgift 4. Efter detta kan svaren i del A inte längre redigeras och alla program i provsystemet kan användas. Dessutom kan du använda din egen räknare. Du kan även lösa uppgifterna i B-delarna innan du lämnat in del A.
       </p>
@@ -37,10 +34,81 @@
       </p>
     </e:localization>
     </e:exam-instruction>
-  <e:table-of-contents />
+  <e:exam-grading-instruction>
+    <p>Lopullisista hyvän vastauksen piirteistä ilmenevät perusteet, joiden mukaan koesuorituksen lo-pullinen
+      arvostelu on suoritettu. Tieto siitä, miten arvosteluperusteita on sovellettu kokelaan koe-suoritukseen,
+      muodostuu kokelaan koesuorituksestaan saamista pisteistä, lopullisista hyvän vas-tauksen piirteistä ja
+      lautakunnan määräyksissä ja ohjeissa annetuista arvostelua koskevista mää-räyksistä. Lopulliset hyvän vastauksen
+      piirteet eivät välttämättä sisällä ja kuvaa tehtävien kaikkia hyväksyttyjä vastausvaihtoehtoja tai hyväksytyn
+      vastauksen kaikkia hyväksyttyjä yksityiskohtia. Koesuorituksessa mahdollisesti olevat arvostelumerkinnät
+      katsotaan muistiinpanoluonteisiksi, eivätkä ne tai niiden puuttuminen näin ollen suoraan kerro
+      arvosteluperusteiden soveltamisesta koesuoritukseen
+    </p>
+    <p>Hyvästä suorituksesta näkyy, miten vastaukseen on päädytty. Ratkaisussa on oltava tarvittavat laskut tai muut
+      riittävät perustelut sekä lopputulos. Arvioinnissa kiinnitetään huomiota kokonaisuuteen, ja ratkaisu pyritään
+      arvioimaan kolmiosaisesti: alku, välivaiheet ja lopputulos. Laskuvirheet, jotka eivät olennaisesti muuta
+      tehtävän luonnetta, eivät alenna pistemäärää merkittävästi. Sen sijaan tehtävän luonnetta muuttavat lasku- ja
+      mallinnusvirheet saattavat alentaa pistemäärää huomattavasti.
+    </p>
+    <p>Laskin on kokeen apuväline, jonka rooli arvioidaan tehtäväkohtaisesti. Jos ratkaisussa on käytetty symbolista
+      laskinta, sen on käytävä ilmi suorituksesta. Analysointia vaativien tehtävien ratkaisemi-sessa pelkkä laskimella
+      saatu vastaus ei riitä ilman muita perusteluja. Sen sijaan laskimesta saatu tulos yleensä riittää
+      rutiinitehtävissä ja laajempien tehtävien rutiiniosissa. Tällaisia ovat esimerkiksi lausekkeiden muokkaaminen,
+      yhtälöiden ratkaiseminen sekä funktioiden derivointi ja integrointi.
+    </p>
+    <h2>Miten pisteytysohjeita luetaan</h2>
+    <ul>
+      <li>Ne kohdat, joissa pitää olla tehty oikea asia oikealle objektille, on merkittytällä värillä.
+        Tällöinratkaisussa pitää siis olla sama luku/lauseke/tms. Tällä merkinnällä ei ole vaikutusta muoto-seikkoihin
+        ja sieventämiseen tai tarkkuuteen, vaan niihin pätee samat säännöt kuin muutenkin.Muissa kohdissa pisteet saa
+        myös, kun tekee oikean asian oikein, mahdollisesti virheelliselle,mutta oikean tyyppiselle objektille (esim.
+        aiempi virhe siirtyy eteenpäin).
+      </li>
+      <li>Rivin useat pisteet on erotettu /-merkillä. Epäselvissä tapauksissa on suluissa eritelty, mistäosasta saa
+        mitäkin pisteitä.
+      </li>
+      <li>Erittelyä ei ole, jos rivillä on saman verran laskuja kuin pisteitä, tällöin yksi piste laskua kohden.</li>
+      <li>Jos rivillä on yksi lasku ja siihen liittyvä sanallinen perustelu, niin puolet pisteistä (pyöristettynäylös)
+        saa laskusta ja loput perusteluista.
+      </li>
+      <li>Jos rivillä on vain yksi lasku tai kaava ja useampi piste, saa osapisteitä riittävän hyvästäyrittämisestä
+        (esim. derivaatan laskeminen osittain oikein).
+      </li>
+      <li>Rivillä suluissa oleva lasku tai perustelu on lisätietoa, eikä sitä vaadita.</li>
+    </ul>
+    <p>Seuraavat vähennykset ovat tehtäväkohtaiseen pisteohjeeseen toissijaisia. Yhteen kohtaan voi so-veltaa useaa
+      vähennystä, mutta ansaittuja pisteitä ei voi menettää.
+    </p>
+    <ul>
+      <li>Vastaus oikein, muttei pyydetyssä muodossa (esim. tarkkuus, yksikkö)−1p.</li>
+      <li>Vastaus sieventämättä loppuun asti sievennystehtävässä (esim.e1,ln(e)tai40)−2p.</li>
+      <li>Vastaus sieventämättä muussa tehtävässä (esim.e1,ln(e)tai40)−1p.</li>
+      <li>Ilmeiset näppäilyvirheet esityksessä (esim.x=2,y04), tai näppäilyvirheet, jotka korjataanheti seuraavalla
+        rivillä−0p.
+      </li>
+      <li>Vastauksessa kopiointivirhe−1p.</li>
+      <li>Välipyöristyksessä ei yhtä enemmän merkitseviä numeroita kuin vastauksessa−1p.</li>
+    </ul>
+    <p>Seuraavat vähennykset ovat tehtäväkohtaiseen pisteohjeeseen toissijaisia. Yhteen kohtaan voi soveltaauseaa
+      vähennystä, mutta kutakin korkeintaan kerran.
+    </p>
+    <ul>
+      <li>Matemaattisesti puutteellinen merkintä (esim. puuttuvat sulut, mutta laskettu oikein; =-merkinketjutus,
+        m2ilman m). Huom.! Tilanteesta riippuen epästandardi merkintä voidaan hyväksyäselitettynä.−1p.
+      </li>
+      <li>Ratkaisusta puuttuu oleellisia selityksiä (lukija joutuu arvaamaan, mitä ratkaisussa esiintyvätluvut
+        tarkoittavat) TAI perustelut ja johtopäätökset on esitetty täysin irrallisina (lukija joutuuyhdistelemään eri
+        puolilla ratkaisua olevia lauseita)−1p.
+      </li>
+      <li>Ratkaisussa merkittävästi ylimääräistä tekstiä/laskuja (lukija joutuu päättelemään, miten an-netuista
+        tiedoista muodostuu ratkaisu)−1p.
+      </li>
+    </ul>
+  </e:exam-grading-instruction>
+  <e:table-of-contents/>
   <e:section cas-forbidden="true">
     <e:section-title>
-      <e:localization lang="fi-FI">A-osa</e:localization>  
+      <e:localization lang="fi-FI">A-osa</e:localization>
       <e:localization lang="sv-FI">Del A</e:localization>
     </e:section-title>
     <e:section-instruction>
@@ -49,16 +117,16 @@
     </e:section-instruction>
     <e:question>
       <e:question-title>
-        <e:localization lang="fi-FI">Lukujonot</e:localization>  
+        <e:localization lang="fi-FI">Lukujonot</e:localization>
         <e:localization lang="sv-FI"> Talföljder</e:localization>
       </e:question-title>
       <e:question-instruction>
-        <e:localization lang="fi-FI">Alla on annettu eräiden lukujonojen yleisten termien lausekkeet. Valitse kunkin jonon alasvetovalikosta, onko jono aritmeettinen, geometrinen, kumpaakin vai ei kumpaakaan tyyppiä.</e:localization>  
+        <e:localization lang="fi-FI">Alla on annettu eräiden lukujonojen yleisten termien lausekkeet. Valitse kunkin jonon alasvetovalikosta, onko jono aritmeettinen, geometrinen, kumpaakin vai ei kumpaakaan tyyppiä.</e:localization>
         <e:localization lang="sv-FI">Formlerna för de allmänna elementen till vissa talföljder är givna nedan. Välj i rullgardinsmenyn om talföljden är aritmetisk, geometrisk, både och eller av varkendera typen.</e:localization>
       </e:question-instruction>
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>
           <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
         </e:question-title>
         <p>
@@ -66,26 +134,26 @@
         </p>
         <e:dropdown-answer ordering="fixed">
           <e:dropdown-answer-option score="2">
-            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>
             <e:localization lang="sv-FI">aritmetisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="fi-FI">geometrinen</e:localization>
             <e:localization lang="sv-FI">geometrisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="fi-FI">kumpaakin</e:localization>
             <e:localization lang="sv-FI">både och</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>
             <e:localization lang="sv-FI">varkendera</e:localization>
           </e:dropdown-answer-option>
         </e:dropdown-answer>
       </e:question>
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>
           <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
         </e:question-title>
         <p>
@@ -93,127 +161,127 @@
         </p>
         <e:dropdown-answer ordering="fixed">
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>
             <e:localization lang="sv-FI">aritmetisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="fi-FI">geometrinen</e:localization>
             <e:localization lang="sv-FI">geometrisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="fi-FI">kumpaakin</e:localization>
             <e:localization lang="sv-FI">både och</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option score="2">
-            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>
             <e:localization lang="sv-FI">varkendera</e:localization>
           </e:dropdown-answer-option>
         </e:dropdown-answer>
       </e:question>
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
-          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>   
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
         </e:question-title>
         <p>
           <e:formula>c_n=7^{n+1}</e:formula>
         </p>
         <e:dropdown-answer ordering="fixed">
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>
             <e:localization lang="sv-FI">aritmetisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option score="2">
-            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="fi-FI">geometrinen</e:localization>
             <e:localization lang="sv-FI">geometrisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="fi-FI">kumpaakin</e:localization>
             <e:localization lang="sv-FI">både och</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>
             <e:localization lang="sv-FI">varkendera</e:localization>
           </e:dropdown-answer-option>
         </e:dropdown-answer>
       </e:question>
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
-          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>   
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
         </e:question-title>
         <p>
           <e:formula>d_n=5</e:formula>
         </p>
         <e:dropdown-answer ordering="fixed">
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>
             <e:localization lang="sv-FI">aritmetisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="fi-FI">geometrinen</e:localization>
             <e:localization lang="sv-FI">geometrisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option score="2">
-            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="fi-FI">kumpaakin</e:localization>
             <e:localization lang="sv-FI">både och</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>
             <e:localization lang="sv-FI">varkendera</e:localization>
           </e:dropdown-answer-option>
         </e:dropdown-answer>
       </e:question>
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
-          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>       
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
         </e:question-title>
         <p>
           <e:formula>e_n=2019-1/n</e:formula>
         </p>
         <e:dropdown-answer ordering="fixed">
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>
             <e:localization lang="sv-FI">aritmetisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="fi-FI">geometrinen</e:localization>
             <e:localization lang="sv-FI">geometrisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="fi-FI">kumpaakin</e:localization>
             <e:localization lang="sv-FI">både och</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option score="2">
-            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>
             <e:localization lang="sv-FI">varkendera</e:localization>
           </e:dropdown-answer-option>
         </e:dropdown-answer>
       </e:question>
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>  
-          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>       
+          <e:localization lang="fi-FI">Mitä tyyppiä lukujono on?</e:localization>
+          <e:localization lang="sv-FI">Av vilken typ är talföljden?</e:localization>
         </e:question-title>
         <p>
           <e:formula>f_n=3-9n</e:formula>
         </p>
         <e:dropdown-answer ordering="fixed">
           <e:dropdown-answer-option score="2">
-            <e:localization lang="fi-FI">aritmeettinen</e:localization>  
+            <e:localization lang="fi-FI">aritmeettinen</e:localization>
             <e:localization lang="sv-FI">aritmetisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">geometrinen</e:localization>  
+            <e:localization lang="fi-FI">geometrinen</e:localization>
             <e:localization lang="sv-FI">geometrisk</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">kumpaakin</e:localization>  
+            <e:localization lang="fi-FI">kumpaakin</e:localization>
             <e:localization lang="sv-FI">både och</e:localization>
           </e:dropdown-answer-option>
           <e:dropdown-answer-option>
-            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>  
+            <e:localization lang="fi-FI">ei kumpaakaan</e:localization>
             <e:localization lang="sv-FI">varkendera</e:localization>
           </e:dropdown-answer-option>
         </e:dropdown-answer>
@@ -228,7 +296,7 @@
         <e:localization lang="fi-FI">
           <p>
             Alla on esitetty kuusi kolmiota, joista on annettu joitakin tietoja. Tarkoituksena on ratkaista sivu <e:formula>x</e:formula> tai kulma <e:formula>\theta</e:formula>.
-          </p>    
+          </p>
           <p>
             Valitse kunkin kolmion osalta tilanteeseen parhaiten soveltuva kaava ja kirjoita vastauskenttään sivun <e:formula>x</e:formula> pituus tai kulman <e:formula>\theta</e:formula> suuruus asteen tarkkuudella. Älä perustele tämän tehtävän vastauksia. Tässä tehtävässä ei voi käyttää kaavaeditoria. Kunkin vastauksen maksimipituus on 10 merkkiä.
           </p>
@@ -236,10 +304,10 @@
         <e:localization lang="sv-FI">
           <p>
             Nedan är sex trianglar och någon information om dem givna. Avsikten är att bestämma sidan <e:formula>x</e:formula> eller vinkeln <e:formula>\theta</e:formula>.
-          </p>    
+          </p>
           <p>
             Välj för varje triangel den mest lämpliga formeln och skriv i svarsfältet in längden på sidan <e:formula>x</e:formula> eller storleken på vinkeln <e:formula>\theta</e:formula> med en grads noggrannhet. Motivera inte svaren i denna uppgift. I denna uppgift kan du inte använda formeleditorn. Maximilängden för varje svar är 10 tecken.
-          </p>  
+          </p>
         </e:localization>
       </e:question-instruction>
       <e:question>
@@ -257,7 +325,7 @@
             </e:author>
           </e:reference>
         </e:attachment>
-        
+
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option score="1"><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
@@ -293,14 +361,14 @@
             </e:author>
           </e:reference>
         </e:attachment>
-        
+
         <e:choice-answer ordering="fixed">
           <e:choice-answer-option><e:formula>a^2+b^2=c^2</e:formula></e:choice-answer-option>
           <e:choice-answer-option score="1"><e:formula>\alpha+\beta+\gamma=180^\circ</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
-        </e:choice-answer>        
+        </e:choice-answer>
       </e:question>
       <e:question>
         <e:question-title>
@@ -331,7 +399,7 @@
           <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
           <e:choice-answer-option score="1"><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
-        </e:choice-answer>        
+        </e:choice-answer>
       </e:question>
       <e:question>
         <e:question-title>
@@ -362,7 +430,7 @@
           <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
-        </e:choice-answer>        
+        </e:choice-answer>
       </e:question>
       <e:question>
         <e:question-title>
@@ -393,7 +461,7 @@
           <e:choice-answer-option score="1"><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
-        </e:choice-answer> 
+        </e:choice-answer>
       </e:question>
       <e:question>
         <e:question-title>
@@ -424,7 +492,7 @@
           <e:choice-answer-option><e:formula>\sin \alpha = \frac ac</e:formula></e:choice-answer-option>
           <e:choice-answer-option score="1"><e:formula>\cos \alpha = \frac bc</e:formula></e:choice-answer-option>
           <e:choice-answer-option><e:formula>\tan \alpha = \frac ab</e:formula></e:choice-answer-option>
-        </e:choice-answer>        
+        </e:choice-answer>
       </e:question>
       <e:question>
         <e:question-title>
@@ -463,6 +531,49 @@
           I figur <e:attachment-link ref="3A" type="short"/> är parabeln <e:formula>y=4x^2</e:formula> och en rät linje inritade. Bestäm grafiskt linjens ekvation. Bestäm skärningspunkten <e:formula>P</e:formula> genom beräkning med hjälp av linjens och parabelns ekvationer.
         </e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>
+        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+          <tbody>
+            <tr>
+              <td>
+                <e:formula>y = x + 3</e:formula>
+                / perustelut (kulmakerroin+piste tai 2 pistettä
+              </td>
+              <td>2 + 1</td>
+            </tr>
+            <tr>
+              <td>Jos edellisellä rivillä puuttuu <e:formula>y =, x-</e:formula>kerroin tai vakio on väärin, niin
+                jokaisesta
+              </td>
+              <td>-1</td>
+            </tr>
+            <tr>
+              <td>Sijoittamalla paraabelin yhtälöön <e:formula>(y = 4x^2)</e:formula> TAI yhtälöpari
+                <e:formula>{y= x+3,y=4x^2} / x+3=4x^2</e:formula>
+              </td>
+              <td>1 + 1</td>
+            </tr>
+            <tr>
+              <td>Ratkaistaan
+                <e:formula>4x^2-x-3=0:</e:formula>
+                <br/>
+                <e:formula>x=\frac{1}{2\cdot4}\left(1\pm\sqrt{1-4\cdot4\cdot\left(-3\right)}\right)\</e:formula>
+                / valitaan - merkki /
+                <e:formula>x=-\frac{3}{4}</e:formula>
+                <br/>
+                <e:formula>y=\frac{9}{4}</e:formula>
+                / leikkauspiste on <e:formula>(-\frac{3}{4},\frac{9}{4})</e:formula> TAI
+                <e:formula>(-0,75;2,25)</e:formula>
+              </td>
+              <td>1 + 1</td>
+            </tr>
+            <tr>
+              <td>Vastaus sieventämättä</td>
+              <td>-1</td>
+            </tr>
+          </tbody>
+        </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
 
@@ -523,6 +634,77 @@
           </p>
         </e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>
+        <table class="e-table e-width-full e-table--borderless e-table--zebra">
+          <tbody>
+            <tr>
+              <td>Laskettu Alman tapauksessa, että tulee 319 TAI jokin toinen esimerkki ali 100- vuotiaasta
+              </td>
+              <td>(2)</td>
+            </tr>
+            <tr>
+              <td>• Laskettu yksi esimerkki yli 100-vuotiaasta</td>
+              <td>(2)</td>
+            </tr>
+            <tr>
+              <td>Sanallinen johtopäätös (että tulos on muotoa 100x + y) ja siten toimii vain alle 100-vuotiaille
+              </td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>• Tarkasteltu esimerkeissä tai algebrallisesti erikseen tapauksia, joissa syntymä- päivä on jo
+                ollut ja että syntymäpäivä ei ole vielä ollut
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Algebrallinen perustelu
+                <br/>
+                Merkitään alkuperäistä valittua lukua muuttujalla x ja henkilön ikää muuttujalla y. Muodostetaan
+                algebrallinen lauseke eri kohtien ohjeiden mukaisesti:
+                <br/>
+              </td>
+              <td/>
+            </tr>
+            <tr>
+              <td>(b) 2x</td>
+              <td>(1)</td>
+            </tr>
+            <tr>
+              <td>(c) 2x+5</td>
+              <td>(1)</td>
+            </tr>
+            <tr>
+              <td>(d) 100x + 250</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>(e) 100x + 2018 + j, missä j on 0 (tapaus ii) tai 1 (tapaus i).</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Syntymävuosi riippuu iästä y ja siitä, onko tänä vuonna jo ollut syntymäpäivä. Syntymävuosi
+                on 2018 − y + j. Tapausten i ja ii tarkastelun voi tehdä myös ilman ” j ”-muuttujaa.
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>(f) 100x + y (tästä jatkuu yllä mainittuun sanalliseen perusteluun)</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>Algebrallinen päättely ilman sen tarkastelua, onko syntymäpäivä ollut vai tulossa</td>
+              <td class="e-nowrap">max 10</td>
+            </tr>
+            <tr>
+              <td>Jos on laskenut kohtien (a)–(d) tulokset kaikilla luvun valinnoilla (350, 450, . . . , 1150), näistä
+                kohdista (Huom.! Voi olla osa myös täydellistä ratkaisua, jolloin täydet pisteet.)
+              </td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
 
@@ -547,6 +729,88 @@
         <e:localization lang="fi-FI">Akun varausta kuvaa malli <e:formula>a \cdot q^{t}</e:formula>, kun <e:formula>t</e:formula> on aika tunneissa, <e:formula>a=100</e:formula> C ja <e:formula>q=0{,}877</e:formula> Mikä on akun varauksen puoliintumisaika?</e:localization>
         <e:localization lang="sv-FI">Laddningen i en ackumulator följer modellen <e:formula>a \cdot q^{t}</e:formula>, då <e:formula>t</e:formula> är tiden i timmar, <e:formula>a=100</e:formula> C och <e:formula>q=0{,}877</e:formula>. Vilken är halveringstiden för ackumulatorns laddning?</e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>
+        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+          <tbody>
+            <tr>
+              <td>Puoliintumisaika <e:formula>T</e:formula> kertoo, kuinka kauan kestää, että puolet akun alkuperäisestä
+                varauksesta on jäljellä TAI <e:formula>50C</e:formula> TAI
+                <e:formula>\frac12a</e:formula>
+              </td>
+              <td>(2)</td>
+            </tr>
+            <tr>
+              <td>Se saadaan kaavasta <e:formula>a\cdot q^T = \frac12 a</e:formula>.
+              </td>
+              <td>(2)</td>
+            </tr>
+            <tr>
+              <td>
+                <e:formula>(0,877)^T = 0,5</e:formula>
+                TAI
+                <e:formula>100 (0,877)^T =50</e:formula>
+              </td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>
+                <e:formula>T=5,28119\ldots</e:formula>
+              </td>
+              <td>(2)</td>
+            </tr>
+            <tr>
+              <td>
+                <e:formula>\approx 5,3</e:formula>
+                (tuntia) (tai 5 tuntia ja 17 minuuttia).
+              </td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Kysytyn luvun vastaluku</td>
+              <td>1/kohta</td>
+            </tr>
+            <tr>
+              <td>
+                <e:formula>100 (0,877)^T =0,5</e:formula>
+                kaavasta ja sen ratkaisusta
+              </td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>
+                <e:formula>(0,88)^T =0,5</e:formula>
+                TAI
+                <e:formula>(0,8777)^T =0,5</e:formula>
+              </td>
+              <td>max 10</td>
+            </tr>
+            <tr>
+              <td>Käytetty kaavaa <e:formula>aq^T=\frac12aq</e:formula>, ilman että <e:formula>T</e:formula>:stä on
+                vähennetty 1 lopuksi
+              </td>
+              <td>max 8</td>
+            </tr>
+            <tr>
+              <td>Ensimmäiset 2+2 pistettä ja viimeiset 2 p voi saada kuvaajalla (kuvaaja <e:formula>y=a q^T</e:formula> voi
+                korvata yhtälön)
+              </td>
+              <td/>
+            </tr>
+            <tr>
+              <td>Taulukointi (pelkästään kokonaisluvuilla, loppuu lukuun 5)</td>
+              <td>max 4</td>
+            </tr>
+            <tr>
+              <td>Taulukointi (pelkästään kokonaisluvuilla, 5 ja 6 mukana)</td>
+              <td>max 6</td>
+            </tr>
+            <tr>
+              <td>Taulukointi (täsmällisesti perustellen, eli mukana ainakin kohdat 4,5 ja 5,5 sekä monotonisuus)</td>
+              <td>max 12</td>
+            </tr>
+          </tbody>
+        </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
 
@@ -588,6 +852,46 @@
           <e:localization lang="fi-FI">Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua.</e:localization>
           <e:localization lang="sv-FI">Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram och bildkapningsverktyget.</e:localization>
         </e:question-title>
+        <e:question-grading-instruction>
+          <table class="e-table e-table--borderless e-table--zebra e-width-full">
+            <tbody>
+              <tr>
+                <td>Kolmen janan murtoviiva (ei kaikki samalla suoralla)</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  • Merkitty pisteet <e:formula>A</e:formula> ja <e:formula>B</e:formula> oikein
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  Jokainen käännös on oikealle, ja näyttää noin 90 asteelta
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  Ensimmäinen ja kolmas sivu yhdensuuntaiset
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  Koukku-muoto
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  Janat oikean pituisia TAI suunnilleen oikeanmittaiset, ja pituudet ilmoittettu lukuina
+                </td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
@@ -595,6 +899,78 @@
           <e:localization lang="fi-FI">Laske pisteiden A ja B välinen etäisyys.</e:localization>
           <e:localization lang="sv-FI">Beräkna avståndet mellan punkterna A och B.</e:localization>
         </e:question-title>
+        <e:question-grading-instruction>
+          <table class="e-table e-table--borderless e-table--zebra e-width-full">
+            <tbody>
+
+              <tr>
+                <td>
+                  Täydennetty suorakulmainen kolmio tai selitetty se sanallisesti
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  Saatu kateettien pituuksiksi 4 ja 5
+                </td>
+                <td>1+1</td>
+              </tr>
+              <tr>
+                <td>
+                  Sijoitettu luvut Pythagoraan lauseeseen
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  <e:formula>\sqrt{25+16}=6,403\ldots \approx 6,4</e:formula>
+                  (m).
+                </td>
+                <td>1+1</td>
+              </tr>
+              <tr>
+                <td>
+                  TAI
+                </td>
+                <td/>
+              </tr>
+              <tr>
+                <td>
+                  annettu jotkin (myös väärät) koordinaatit pisteille <e:formula>A</e:formula> ja
+                  <e:formula>B</e:formula>
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  koordinaatit pisteille <e:formula>A</e:formula> ja <e:formula>B</e:formula> näkyvissä, <e:formula>
+                  x</e:formula>- ja <e:formula>y</e:formula>-erotukset oikein (ei välttämättä
+                  näkyvissä)
+                </td>
+                <td>1+1</td>
+              </tr>
+              <tr>
+                <td>
+                  laskut (TAI käytetty käsky näkyy) ja tulos
+                  <e:formula>6,4</e:formula>
+                </td>
+                <td>2+1</td>
+              </tr>
+              <tr>
+                <td>
+                  6.1.-kohdan pisteet väärin (tehtävän luonne ei muutu)
+                </td>
+                <td>max 4</td>
+              </tr>
+              <tr>
+                <td>
+                  Pelkkä vastaus
+                </td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
     </e:question>
@@ -625,7 +1001,7 @@
             <br/>
             <e:file src="7Afi.tns">TI Nspire</e:file>
 	        <br/>
-            <e:file src="7Afi.mrv">Marvin Sketch</e:file>	  
+            <e:file src="7Afi.mrv">Marvin Sketch</e:file>
           </e:localization>
           <e:localization lang="sv-FI">
             <e:file src="7Asv.ods">LibreOffice Calc</e:file>
@@ -636,9 +1012,9 @@
             <br/>
             <e:file src="7Asv.vcp">Casio ClassPad Manager</e:file>
             <br/>
-            <e:file src="7Asv.tns">TI Nspire</e:file>  
+            <e:file src="7Asv.tns">TI Nspire</e:file>
 	        <br/>
-            <e:file src="7Asv.mrv">Marvin Sketch</e:file>	  
+            <e:file src="7Asv.mrv">Marvin Sketch</e:file>
           </e:localization>
           <e:reference>
             <e:author>
@@ -666,6 +1042,49 @@
           </p>
          </e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+        <tbody>
+
+          <tr>
+            <td>B-osakeen hinta 3e/oikean välityspalkkion jälkeen (996e)/332 B-osaketta</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>B-osakeen hinta 2,5e/oikean välityspalkkion jälkeen (822e)/ C hinta 6e/ joten 137 C-osaketta</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>C-osakeen hinta 7e/oikean välityspalkkion jälkeen (951e)/ A hinta 3e ja joten 317 A-osaketta</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>C-osakeen hinta 2,8e/oikean välityspalkkion jälkeen 883,60 euroa</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>
+              Osakkeiden hinnoista voi saada max 3 p., ellei ratkaisusta
+              ilmene myös miten hinta vaikuttaa määrään. Tätä sovelletaan, jos ratkaisussa on esimerkiksi
+              pelkkä taulukko hinnoista, tai määriä on laskettu mallilla <e:formula>3\cdot 996=2988</e:formula> B-osaketta,
+              tms.
+            </td>
+            <td/>
+          </tr>
+          <tr>
+            <td>Välityspalkkio puuttuu/otettu kaikki palkkiot lopussa</td>
+            <td class="e-nowrap">max 8</td>
+          </tr>
+          <tr>
+            <td>Välityspalkkio joka kohdassa 4e</td>
+            <td class="e-nowrap">max 9</td>
+          </tr>
+          <tr>
+            <td>Alkupääoma 1004</td>
+            <td class="e-nowrap">max 12</td>
+          </tr>
+        </tbody>
+      </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
 
@@ -678,6 +1097,48 @@
         <e:localization lang="fi-FI">Tarkastellaan polynomia <e:formula>p(x)=x^3+5x</e:formula> ja sen kuvaajan tangenttia pisteessä <e:formula>(1, 6)</e:formula>. Määritä derivaatan avulla tämän tangentin yhtälö.</e:localization>
         <e:localization lang="sv-FI">Vi undersöker polynomet <e:formula>p(x)=x^3+5x</e:formula> och tangenten till polynomets graf i punkten <e:formula>(1, 6)</e:formula>. Bestäm med hjälp av derivatan ekvationen för denna tangent.</e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+        <tbody>
+
+          <tr>
+            <td>• Kulmakertoimen ja derivaatan yhteys ilmenee</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td><e:formula>p'(x) = 3x^2+5</e:formula>/ joten <e:formula>p'(1)=8</e:formula>.
+            </td>
+            <td>2+2</td>
+          </tr>
+          <tr>
+            <td>• Pisteen <e:formula>(1,\, 6)</e:formula> kautta kulkevan suoran yhtälö on muotoa
+              <e:formula>y-6=k(x-1)</e:formula>
+            </td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Sijoitettu <e:formula>k</e:formula>:n paikalle <e:formula>p'(1)</e:formula>:n arvo
+            </td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td><e:formula>y=8x-2</e:formula>.
+            </td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1 ja 6 väärin päin</td>
+            <td class="e-nowrap">max 9</td>
+          </tr>
+          <tr>
+            <td>Jos <e:formula>y=8x-2</e:formula> ilmestyy ilman, että se on yhdistetty
+              derivaattaan, niin pisteet pelkästään derivaatta-rivistä
+              (Erityisesti pelkkä vastaus 0 p)
+            </td>
+            <td class="e-nowrap">max 4</td>
+          </tr>
+        </tbody>
+      </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
 
@@ -699,7 +1160,7 @@
           <e:localization lang="fi-FI">(Vanha opetussuunnitelma, ennen 1.8.2016 lukion aloittaneet)</e:localization>
           <e:localization lang="sv-FI">(Gamla läroplanen, de som påbörjat gymnasiet före 1.8.2016)</e:localization>
         </p>
-        
+
         <e:external-material>
           <e:attachment name="91A">
             <e:attachment-title>
@@ -719,6 +1180,29 @@
           <e:localization lang="fi-FI">Kuvassa <e:attachment-link ref="91A" type="short"/> on suunnikas. Esitä vektorit <e:formula>\overline{AE}</e:formula> ja <e:formula>\overline{BD}</e:formula> vektorien <e:formula>\overline{a} = \overline{AB}</e:formula> ja <e:formula>\overline{b} = \overline{AD}</e:formula> avulla lausuttuina, kun piste <e:formula>E</e:formula> on janan <e:formula>CD</e:formula> keskipiste.</e:localization>
           <e:localization lang="sv-FI">Bilden <e:attachment-link ref="91A" type="short"/> föreställer en parallellogram. Uttryck vektorerna <e:formula>\overline{AE}</e:formula> och <e:formula>\overline{BD}</e:formula> med hjälp av vektorerna <e:formula>\overline{a} = \overline{AB}</e:formula> och <e:formula>\overline{b} = \overline{AD}</e:formula>, då punkten <e:formula>E</e:formula> är mittpunkt på sträckan <e:formula>CD</e:formula>.</e:localization>
         </e:question-instruction>
+        <e:question-grading-instruction>          <table class="e-table e-table--borderless e-table--zebra e-width-full">
+          <tbody>
+
+            <tr>
+              <td>
+                <e:formula>\overline{AE = \overline b + \frac12 \overline a}</e:formula>,
+              </td>
+              <td class="e-nowrap">4</td>
+            </tr>
+            <tr>
+              <td>koska <e:formula>DC=AB</e:formula> ja <e:formula>AE=AD+\frac12DC</e:formula> TAI muu perustelu esim.
+                suunnikas
+              </td>
+              <td class="e-nowrap">(2)+2</td>
+            </tr>
+            <tr>
+              <td><e:formula>\overline{BD = \overline b - \overline a}</e:formula>,
+              </td>
+              <td class="e-nowrap">4</td>
+            </tr>
+          </tbody>
+        </table>
+        </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="12"/>
       </e:question>
       <e:question>
@@ -734,6 +1218,69 @@
           <e:localization lang="fi-FI">Heitetään kahta 12-sivuista noppaa, joiden silmäluvut ovat 1, 2, ..., 12. Laske tulosten summan odotusarvo ja keskihajonta esimerkiksi taulukkolaskentaohjelman avulla.</e:localization>
           <e:localization lang="sv-FI">Vi kastar två tolvsidiga tärningar, vilkas ögontal är 1, 2, ..., 12. Beräkna väntevärde och standardavvikelse för ögontalens summa till exempel med hjälp av ett kalkylprogram.</e:localization>
         </e:question-instruction>
+        <e:question-grading-instruction>
+          <table class="e-table e-table--borderless e-table--zebra e-width-full">
+            <tbody>
+
+              <tr>
+                <td>Yhden nopanheiton odotusarvo on <e:formula>\frac{13}2</e:formula>.
+                </td>
+                <td class="e-nowrap">3</td>
+              </tr>
+              <tr>
+                <td>Summan odotusarvo on siten
+                  <e:formula>2\cdot \frac{13}2 = 13</e:formula>
+                </td>
+                <td class="e-nowrap">3</td>
+              </tr>
+              <tr>
+                <td>Yhden nopanheiton varianssi
+                  <e:formula>\frac{143}{12}</e:formula>
+                </td>
+                <td class="e-nowrap">2</td>
+              </tr>
+              <tr>
+                <td>ja varianssi <e:formula>2\cdot \frac{143}{12}=\frac{143}6</e:formula>,
+                  josta edelleen keskihajonta <e:formula>\sqrt{143/6} \approx 4,88193\ldots</e:formula>.
+                </td>
+                <td class="e-nowrap">2+2</td>
+              </tr>
+              <tr>
+                <td>
+                  TAI
+                </td>
+                <td class="e-nowrap"/>
+              </tr>
+              <tr>
+                <td>
+                  <e:formula>12\times 12</e:formula>
+                  taulukko
+                </td>
+                <td class="e-nowrap">4</td>
+              </tr>
+              <tr>
+                <td>Odotusarvo 13 ja selvitys, millä käskyllä/menetelmällä tuotettu</td>
+                <td class="e-nowrap">2+2</td>
+              </tr>
+              <tr>
+                <td>Keskihajonta 4,88193\ldots ja selvitys, millä käskyllä/menetelmällä tuotettu</td>
+                <td class="e-nowrap">2+2</td>
+              </tr>
+              <tr>
+                <td>Otoskeskihajonta (<e:formula>\approx 4,899</e:formula>)
+                </td>
+                <td class="e-nowrap">max 12</td>
+              </tr>
+              <tr>
+                <td>
+                  <e:formula>12\times 12 = 144</e:formula>
+                  (alkeistapausta)
+                </td>
+                <td class="e-nowrap">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="12"/>
       </e:question>
     </e:question>
@@ -773,6 +1320,92 @@
           </p>
         </e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+        <tbody>
+
+          <tr>
+            <td>Koska kaikki perheenjäsenet vanhenevat, niin keski-ikä on pienimmillään,
+              kun Matti ja Maija menivät naimisiin tai heti jonkun lapsen syntymän jälkeen.
+            </td>
+            <td class="e-nowrap">2</td>
+          </tr>
+          <tr>
+            <td>Iät kun he menivät naimisiin: 23 ja 21.</td>
+            <td class="e-nowrap"/>
+          </tr>
+          <tr>
+            <td>(Keskiarvo: 22)</td>
+            <td class="e-nowrap"/>
+          </tr>
+          <tr>
+            <td>Jokin keskiarvo laskettu oikein</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Iät kun ensimmäinen lapsi syntyy: 25, 23 ja 0.</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Keskiarvo: 16</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Iät kun toinen lapsi syntyy: 29, 27, 4 ja 0.</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Keskiarvo: 15</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Iät kun kolmas lapsi syntyy: 33, 31, 8, 4 ja 0.</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Keskiarvo: 15,2</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Iät kun neljäs lapsi syntyy: 37, 35, 12, 8, 4 ja 0.</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Keskiarvo: 16</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Keski-ikä on siis pienimmillään 15 vuotta, kun toinen lapsi syntyy.</td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Ensimmäiset 2 pistettä joko aukikirjoitettu tai
+              ilmenee siitä, että laskettu vain yllä esitetyt iät.
+            </td>
+            <td class="e-nowrap"/>
+          </tr>
+          <tr>
+            <td>Taulukoitu kaikki kokonaislukuarvot ilman mainintaa, että
+              neljännen lapsen syntymän jälkeen keskiarvo aina kasvaa
+            </td>
+            <td class="e-nowrap">max 10</td>
+          </tr>
+          <tr>
+            <td>Vain oikeat keskiarvot ja oikea vastaus</td>
+            <td class="e-nowrap">2</td>
+          </tr>
+          <tr>
+            <td>Tyyppivirhe: keskiarvot laskettu <e:formula>n-1</e:formula>:llä kun
+              yksi numero on 0 ⇒ 4 keskiarvoa väärin
+            </td>
+            <td class="e-nowrap">max 8</td>
+          </tr>
+          <tr>
+            <td>Tyyppivirhe: lapsi syntyy 1-vuotiaana ⇒ 4 luetteloa väärin</td>
+            <td class="e-nowrap">max 8</td>
+          </tr>
+        </tbody>
+      </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
 
@@ -791,7 +1424,7 @@
           <p>
             Ilpo yrittää päästä helpolla ja tarjoaa luvulle <e:formula>\sqrt 5</e:formula> arviota <e:formula>x_2</e:formula>. Simo puolestaan päättää käyttää arviota <e:formula>x_4</e:formula>. Vertaa arvioita <e:formula>x_2</e:formula> ja <e:formula>x_4</e:formula> laskimen antamaan luvun <e:formula>\sqrt 5</e:formula> likiarvoon.
           </p>
-          <p>            
+          <p>
             Kuinka monta prosenttia liian suuria Ilpon ja Simon arviot ovat?
           </p>
         </e:localization>
@@ -804,11 +1437,85 @@
           <p>
             Ivar försöker komma lätt undan och föreslår uppskattningen <e:formula>x_2</e:formula> för talet <e:formula>\sqrt 5</e:formula>. Simon beslutar sig i stället för att använda uppskattningen <e:formula>x_4</e:formula>. Jämför uppskattningarna <e:formula>x_2</e:formula> och <e:formula>x_4</e:formula> med det närmevärde på <e:formula>\sqrt 5</e:formula> som räknaren ger.
           </p>
-          <p>            
+          <p>
             Hur många procent för stora är Ivars och Simons uppskattningar?
           </p>
         </e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+        <tbody>
+
+          <tr>
+            <td>
+              <e:formula>x_2=\frac12(3+\frac 53) = \frac73 = 2,333\ldots</e:formula>
+            </td>
+            <td class="e-nowrap">2</td>
+          </tr>
+          <tr>
+            <td>
+              <e:formula>x_2/\sqrt{5} = 1,043498389499\ldots</e:formula>
+            </td>
+            <td class="e-nowrap">1+1</td>
+          </tr>
+          <tr>
+            <td>eli Ilpon tulos on <e:formula>4,3</e:formula> prosenttia liian suuri.
+            </td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>%\riip edellä mainitut operaatiot suoritettu riittävällä tarkkuudella
+              %ja vastaus välillä 1--8 prosenttia.
+            </td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>
+              <e:formula>x_3=\frac{47}{21}=2,238095\ldots</e:formula>
+            </td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>
+              <e:formula>x_4=\frac{2207}{987} =2,236068\ldots</e:formula>
+            </td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>
+              <e:formula>x_4/\sqrt{5} = 1,000000410606\ldots</e:formula>
+            </td>
+            <td class="e-nowrap">1+1</td>
+          </tr>
+          <tr>
+            <td>eli Simon tulos on <e:formula>0,000041</e:formula> prosenttia liian suuri.
+            </td>
+            <td class="e-nowrap">2</td>
+          </tr>
+          <tr>
+            <td>• Edellä mainitut operaatiot suoritettu riittävällä tarkkuudella
+              ja vastaus välillä 0,000001--0,0001 prosenttia. Tarkkuuspisteen voi saada,
+              vaikka vertailu olisi väärin päin.
+            </td>
+            <td class="e-nowrap">1</td>
+          </tr>
+          <tr>
+            <td>Jos <e:formula>x_n</e:formula> väärin (esim. <e:formula>x_n=n</e:formula>), voi saada
+              vielä pisteet oikein päin tehdystä vertailusta <e:formula>x_2/\sqrt{5}</e:formula> ja
+              <e:formula>
+                x_4/\sqrt{5}
+              </e:formula>
+            </td>
+            <td class="e-nowrap">max 2</td>
+          </tr>
+          <tr>
+            <td>Riittää kun <e:formula>x_n</e:formula>:lle näkyy joko murtoluku tai desimaaliluku, molempia
+              ei vaadita
+            </td>
+            <td class="e-nowrap"/>
+          </tr>
+        </tbody>
+      </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
 
@@ -826,7 +1533,7 @@
           <e:localization lang="fi-FI">
             <p>
               Tasapaksusta marmeladilevystä leikataan herkkupaloja isolla ja pienellä ympyränmuotoisella muotilla. Ison muotin halkaisija on kaksi kertaa niin suuri kuin pienen. Namuska on tottunut syömään kolme isoa marmeladipalaa.
-            </p>  
+            </p>
             <p>
               Kuinka monta pientä palaa hänen pitäisi syödä saadakseen yhtä paljon marmeladia?
             </p>
@@ -840,6 +1547,76 @@
             </p>
           </e:localization>
         </e:question-instruction>
+        <e:question-grading-instruction>
+          <table class="e-table e-table--borderless e-table--zebra e-width-full">
+            <tbody>
+
+              <tr>
+                <td>Marmeladipalan tilavuus on verrannollinen säteen neliöön.</td>
+                <td class="e-nowrap">1</td>
+              </tr>
+              <tr>
+                <td>Kun säde puolittuu, niin tilavuus pienenee neljäsosaan alkuperäisestä.</td>
+                <td class="e-nowrap">2</td>
+              </tr>
+              <tr>
+                <td>Yhtä paljon marmeladia saa syömällä nelinkertaisen määrän eli 12 pientä
+                  palaa.
+                </td>
+                <td class="e-nowrap">1</td>
+              </tr>
+              <tr>
+                <td>TAI</td>
+                <td class="e-nowrap"/>
+              </tr>
+              <tr>
+                <td>Pienen palan säde <e:formula>r</e:formula> ja tilavuus
+                  <e:formula>\pi r^2h</e:formula>
+                </td>
+                <td class="e-nowrap">1</td>
+              </tr>
+              <tr>
+                <td>Ison palan säde <e:formula>2r</e:formula> ja tilavuus
+                  <e:formula>4\pi r^2h</e:formula>
+                </td>
+                <td class="e-nowrap">2</td>
+              </tr>
+              <tr>
+                <td>
+                  <e:formula>3\cdot 4\pi r^2h /(\pi r^2h) = 12</e:formula>
+                </td>
+                <td class="e-nowrap">1</td>
+              </tr>
+              <tr>
+                <td>Käytetty kiinteitä lukuarvoja (<e:formula>r</e:formula>, <e:formula>h</e:formula> tai molemmat)
+                </td>
+                <td class="e-nowrap">-1</td>
+              </tr>
+              <tr>
+                <td>
+                  Perunan tilavuus on verrannollinen halkaisijan kolmanteen potenssiin.
+                </td>
+                <td class="e-nowrap">1</td>
+              </tr>
+              <tr>
+                <td>Kun halkaisija on 0,6-kertainen, niin tilavuus pienenee <e:formula>(0,6)^3</e:formula>-osaan
+                  alkuperäisestä.
+                </td>
+                <td class="e-nowrap">3</td>
+              </tr>
+              <tr>
+                <td>Yhtä paljon perunaa saa syömällä noin 9 ja yksi neljäsosa pientä
+                  perunaa TAI 9 TAI 10.
+                </td>
+                <td class="e-nowrap">2</td>
+              </tr>
+              <tr>
+                <td>Käytetty tiettyä muotoa (ja sädettä) esim. palloa</td>
+                <td class="e-nowrap">max 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="4"/>
       </e:question>
       <e:question>
@@ -851,7 +1628,7 @@
           <e:localization lang="fi-FI">
             <p>
               Lassi Lounastaja on tottunut syömään lounaallaan kaksi isoa perunaa. Eräänä päivänä tarjolla on pieniä perunoita, joiden halkaisija on vain <e:formula>60</e:formula> prosenttia ison perunan halkaisijasta. Kaikki perunat ovat yhdenmuotoisia.
-            </p>  
+            </p>
             <p>
               Kuinka monta pikkuperunaa Lassin pitäisi syödä saadakseen saman verran perunaa?
             </p>
@@ -865,6 +1642,34 @@
             </p>
           </e:localization>
         </e:question-instruction>
+        <e:question-grading-instruction>          <table class="e-table e-table--borderless e-table--zebra e-width-full">
+          <tbody>
+
+            <tr>
+              <td>
+                Perunan tilavuus on verrannollinen halkaisijan kolmanteen potenssiin.
+              </td>
+              <td class="e-nowrap">1</td>
+            </tr>
+            <tr>
+              <td>Kun halkaisija on 0,6-kertainen, niin tilavuus pienenee <e:formula>(0,6)^3</e:formula>-osaan
+                alkuperäisestä.
+              </td>
+              <td class="e-nowrap">3</td>
+            </tr>
+            <tr>
+              <td>Yhtä paljon perunaa saa syömällä noin 9 ja yksi neljäsosa pientä
+                perunaa TAI 9 TAI 10.
+              </td>
+              <td class="e-nowrap">2</td>
+            </tr>
+            <tr>
+              <td>Käytetty tiettyä muotoa (ja sädettä) esim. palloa</td>
+              <td class="e-nowrap">max 4</td>
+            </tr>
+          </tbody>
+        </table>
+        </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
       <e:question>
@@ -890,6 +1695,37 @@
             </p>
           </e:localization>
         </e:question-instruction>
+        <e:question-grading-instruction>
+          <table class="e-table e-table--borderless e-table--zebra e-width-full">
+            <tbody>
+
+              <tr>
+                <td>Musiikkikappaleen esitysaika ei riipu kuoron koosta (se
+                  on verrannollinen kuoron koon nollanteen potenssiin).
+                </td>
+                <td class="e-nowrap">1</td>
+              </tr>
+              <tr>
+                <td>Aikaa kuluu siten noin 7 minuuttia ja 40 sekuntia.</td>
+                <td class="e-nowrap">1</td>
+              </tr>
+              <tr>
+                <td>TAI</td>
+                <td class="e-nowrap"/>
+              </tr>
+              <tr>
+                <td>Muu järkevä perustelu, joka voi johtaa myös muuhun esityspituuteen</td>
+                <td class="e-nowrap">max 2</td>
+              </tr>
+              <tr>
+                <td>
+                  Tyyppivirhe: suora verrannollisuus (ellei muita ansioita)
+                </td>
+                <td class="e-nowrap">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="2"/>
       </e:question>
     </e:question>
@@ -906,7 +1742,7 @@
             <e:localization lang="sv-FI">Tabell: Finlands befolkningsstruktur </e:localization>
           </e:attachment-title>
           <e:localization lang="fi-FI">
-            <p>Avaa aineisto LibreOffice Calc -ohjelmaan napsauttamalla alla olevaa linkkiä.</p>  
+            <p>Avaa aineisto LibreOffice Calc -ohjelmaan napsauttamalla alla olevaa linkkiä.</p>
             <e:file src="13Afi.ods">LibreOffice Calc</e:file>
           </e:localization>
           <e:localization lang="sv-FI">
@@ -927,10 +1763,93 @@
         <e:localization lang="fi-FI">Aineistossa <e:attachment-link ref="13A" type="short"/> on esitetty Suomen väestön rakenne. Laske 15–64-vuotiaiden asukkaiden lukumäärät vuosina 1900, 1950, 1990, 2000, 2010 ja 2016. Sovita laskemaasi aineistoon lineaarinen malli <e:formula>f(x)</e:formula> ja toisen asteen polynomi <e:formula>g(x)</e:formula> Ennusta molempien mallien avulla Suomen 15–64-vuotiaiden lukumäärät vuosina 2035 ja 2350 ja pohdi ennusteiden mielekkyyttä.</e:localization>
         <e:localization lang="sv-FI">I material <e:attachment-link ref="13A" type="short"/> presenteras Finlands befolkningsstruktur. Beräkna antalet 15–64-åriga invånare åren 1900, 1950, 1990, 2000, 2010 och 2016. Anpassa en linjär modell <e:formula>f(x)</e:formula> och ett polynom av andra graden <e:formula>g(x)</e:formula> till ditt material. Gör med hjälp av båda modellerna en prognos för antalet 15–64-åringar åren 2035 och 2350 samt diskutera hur förnuftiga prognoserna är.</e:localization>
       </e:question-instruction>
+      <e:question-grading-instruction>
+        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+          <tbody>
+
+            <tr>
+              <td>15--64-vuotiaiden määrät saadaan kertomalla väkiluku vastaavalla
+                prosenttiosuudella (liite rivi 9).
+              </td>
+              <td class="e-nowrap">2</td>
+            </tr>
+            <tr>
+              <td>Mallien sovituksen voi tehdä esimerkiksi taulukkolaskentaohjelmalla (liite):</td>
+              <td class="e-nowrap"/>
+            </tr>
+            <tr>
+              <td>Lineaarinen malli on <e:formula>y=17,33x-31\,290</e:formula> (tuhatta ihmistä).
+              </td>
+              <td class="e-nowrap">2</td>
+            </tr>
+            <tr>
+              <td>Toisen asteen malli on <e:formula>y=-0,06702x^2 + 279,3x-288\,200</e:formula> (tuhatta ihmistä).
+              </td>
+              <td class="e-nowrap">3</td>
+            </tr>
+            <tr>
+              <td>Toisen asteen mallilla on varmasti parempi selitysaste, sillä
+                %se sisältää myös kaikki ne mahdollisuudet, jotka lineaarisessa mallissa on.
+                (Siten pelkän selitysasteen avulla ei voida päätellä, kumpi malli on parempi.)
+              </td>
+              <td class="e-nowrap">2</td>
+            </tr>
+            <tr>
+              <td>Lineaarisen mallin ennusteet vuosille 2035 ja 2350 ovat
+                <e:formula>3\,988\,000</e:formula>
+                ja <e:formula>9\,449\,000</e:formula>.
+              </td>
+              <td class="e-nowrap">1</td>
+            </tr>
+            <tr>
+              <td>Toisen asteen mallin ennusteet vuosille 2035 ja 2350 ovat
+                <e:formula>3\,730\,000</e:formula>
+                ja <e:formula>-699\,900</e:formula>.
+              </td>
+              <td class="e-nowrap">1</td>
+            </tr>
+            <tr>
+              <td>Kummankin mallin ennuste vuodelle 2035 vaikuttaa mielekkäältä TAI järkevä
+                perustelu, miksi toinen malli on vuonna 2035 parempi
+              </td>
+              <td class="e-nowrap">1</td>
+            </tr>
+            <tr>
+              <td>Lineaarisen mallin ennuste vuodelle 2350 vaikuttaa suurelta TAI mahdolliselta</td>
+              <td class="e-nowrap">1</td>
+            </tr>
+            <tr>
+              <td>Toisen asteen mallin ennuste vuodelle 2350 on ilmeisen järjetön, sillä
+                ihmisten lukumäärä ei voi olla negatiivinen.
+              </td>
+              <td class="e-nowrap">1</td>
+            </tr>
+            <tr>
+              <td>https://www.ylioppilastutkinto.fi/images/sivuston_tiedostot/Hyv_vast_piirt/FI_2019_S/n13_fi.ods</td>
+              <td class="e-nowrap"/>
+            </tr>
+            <tr>
+              <td>
+                Yksikkö (tuhat ihmistä) puuttuu, ensimmäisestä rivistä max 1 p., jälkimmäisistä
+                5 rivistä max 4 p.
+              </td>
+              <td class="e-nowrap">max 10</td>
+            </tr>
+            <tr>
+              <td>Jos malli on sovitettu vähän väärin, <e:formula>-1</e:formula> p. per malli
+              </td>
+              <td class="e-nowrap"/>
+            </tr>
+            <tr>
+              <td>Jos malli näkyy ainoastaan kuvassa ilman lausekkeita, <e:formula>-1</e:formula> p. per malli
+              </td>
+              <td class="e-nowrap"/>
+            </tr>
+          </tbody>
+        </table>
+      </e:question-grading-instruction>
       <e:text-answer type="rich-text" max-score="12"/>
     </e:question>
-
   </e:section>
-
-  <e:references />
+  <e:references/>
 </e:exam>

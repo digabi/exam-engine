@@ -8,5 +8,14 @@
     <e:exam-instruction />
     <e:section>
         <e:section-title />
+        <e:question>
+            <e:question-title></e:question-title>
+            <e:audio src="1.ogg">
+                Audio file <em>description</em>
+            </e:audio>
+            <e:image src="1.jpg">
+                Audio file <em>description</em>
+            </e:image>
+        </e:question>
     </e:section>
 </e:exam>

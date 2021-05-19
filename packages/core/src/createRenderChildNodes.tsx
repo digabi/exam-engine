@@ -12,7 +12,7 @@ export interface ExamComponentProps {
   renderChildNodes: RenderChildNodes
 }
 
-export enum RenderOptions {
+export const enum RenderOptions {
   RenderHTML,
   SkipHTML,
 }

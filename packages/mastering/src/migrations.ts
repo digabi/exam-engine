@@ -1,13 +1,15 @@
 import { Document } from 'libxmljs2'
-import { migrateFrom01To02 } from './migrations/migrateFrom01To02'
 import compareVersions from 'compare-versions'
+import { migrateFrom01To02 } from './migrations/migrateFrom01To02'
+import { migrateFrom02To03 } from './migrations/migrateFrom02To03'
 
 type Migration = (doc: Document) => void
 
 const noop: Migration = () => {}
 const migrations: Record<string, Migration> = {
   '0.1': migrateFrom01To02,
-  '0.2': noop,
+  '0.2': migrateFrom02To03,
+  '0.3': noop,
 }
 const supportedVersions = Object.keys(migrations)
 
@@ -29,7 +31,7 @@ This version of exam-engine supports exams with the following exam schema versio
   }
 
   for (const [migrationVersion, migrate] of Object.entries(migrations)) {
-    if (compareVersions.compare(examSchemaVersion, migrationVersion, '>=')) {
+    if (compareVersions.compare(migrationVersion, examSchemaVersion, '>')) {
       migrate(doc)
     }
   }

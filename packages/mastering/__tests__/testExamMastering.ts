@@ -130,9 +130,8 @@ describe('Exam mastering', () => {
       const results = await masterExam(source, generateUuid, getMediaMetadata)
       for (const result of results) {
         expect(wrap(result.xml)).toMatchSnapshot('xml')
-        expect(wrap(result.hvp)).toMatchSnapshot('hvp')
         expect(wrap(result.translation)).toMatchSnapshot('translation')
-        expect(_.omit(result, 'xml', 'hvp', 'translation')).toMatchSnapshot()
+        expect(_.omit(result, 'xml', 'translation')).toMatchSnapshot()
       }
     })
   }

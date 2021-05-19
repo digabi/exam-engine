@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.2" date="2018-09-29" exam-code="EA" exam-stylesheet="custom.css">
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.3" date="2018-09-29" exam-code="EA" exam-stylesheet="custom.css">
   <!-- Comment  -->
   <e:exam-versions>
-    <e:exam-version lang="fi-FI" />
-    <e:exam-version lang="sv-FI" />
+    <e:exam-version lang="fi-FI"/>
+    <e:exam-version lang="sv-FI"/>
   </e:exam-versions>
   <e:exam-title>MEX format documentation</e:exam-title>
   <e:exam-instruction>
@@ -20,7 +20,7 @@
       . These are documented in warning boxes like this.
     </div>
   </e:exam-instruction>
-  <e:table-of-contents />
+  <e:table-of-contents/>
   <e:external-material>
     <e:attachment>
       <e:attachment-title>Exam-specific external material title</e:attachment-title>
@@ -271,7 +271,7 @@
         <e:question-instruction>
           <p>Certain characters requires escaping as entities in exam XML documents</p>
           <table class="e-table">
-            <caption></caption>
+            <caption/>
             <thead>
               <tr>
                 <th>Character</th>
@@ -283,7 +283,7 @@
                 <td>NBSP (non-breaking-space)</td><td><code>&amp;#xA0;</code></td>
             </tr>
             <tr>
-              <td>SHY &#173; (soft-hyphen)</td><td><code>&amp;#173;</code></td>
+              <td>SHY ­ (soft-hyphen)</td><td><code>&amp;#173;</code></td>
           </tr>
           <tr>
                   <td>&gt;</td><td><code>&amp;gt;</code></td>
@@ -381,7 +381,7 @@
       </div>
       <e:question>
         <e:question-title>Example</e:question-title>
-        <h4></h4>
+        <h4/>
         <pre class="code"><![CDATA[<e:exam
   xmlns:e="http://ylioppilastutkinto.fi/exam.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -406,7 +406,7 @@
       </e:question-instruction>
       <e:question>
         <e:question-title>Example</e:question-title>
-        <h4></h4>
+        <h4/>
         <pre class="code"><![CDATA[<e:languages>
   <e:language>fi-FI</e:language>
   <e:language>sv-FI</e:language>
@@ -618,7 +618,7 @@
       </h4>
       <pre class="code"><![CDATA[<e:text-answer max-score="2" />]]></pre>
       <div class="example">
-        <e:text-answer max-score="2" />
+        <e:text-answer max-score="2"/>
       </div>
 
       <h4>
@@ -627,7 +627,7 @@
       </h4>
       <pre class="code"><![CDATA[<e:text-answer type="rich-text" max-score="2" />]]></pre>
       <div class="example">
-        <e:text-answer type="rich-text" max-score="2" />
+        <e:text-answer type="rich-text" max-score="2"/>
       </div>
     </e:question>
 
@@ -784,19 +784,19 @@
       <div class="example">
         <e:choice-answer direction="horizontal">
           <e:choice-answer-option>
-            <e:image src="example_small.jpg" />
+            <e:image src="example_small.jpg"/>
           </e:choice-answer-option>
           <e:choice-answer-option>
-            <e:image src="example.jpg" />
+            <e:image src="example.jpg"/>
           </e:choice-answer-option>
           <e:choice-answer-option>
-            <e:image src="example.jpg" />
+            <e:image src="example.jpg"/>
           </e:choice-answer-option>
           <e:choice-answer-option>
-            <e:image src="example_high.jpg" />
+            <e:image src="example_high.jpg"/>
           </e:choice-answer-option>
           <e:choice-answer-option>
-            <e:image src="example.jpg" />
+            <e:image src="example.jpg"/>
           </e:choice-answer-option>
         </e:choice-answer>
       </div>
@@ -1060,7 +1060,7 @@
       <div class="example">
         <e:formula>\frac{4{\pi}}{2}</e:formula>
         simplified:
-        <e:scored-text-answer max-score="3" />
+        <e:scored-text-answer max-score="3"/>
       </div>
     </e:question>
   </e:section>
@@ -1153,77 +1153,77 @@
             <td>author</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Author of the material</td>
           </tr>
           <tr>
             <td>title</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>title of the material title</td>
           </tr>
           <tr>
             <td>publisher</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Publisher</td>
           </tr>
           <tr>
             <td>publication</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Reference to the original source, e.g. "Youtube service"</td>
           </tr>
           <tr>
             <td>howpublished</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Release channel, e.g. "Genius web service"</td>
           </tr>
           <tr>
             <td>url</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Internet address</td>
           </tr>
           <tr>
             <td>publication-date</td>
             <td>Date</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Publication date, e.g. 2019-03-01 or 2019</td>
           </tr>
           <tr>
             <td>reference-date</td>
             <td>Date</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Refernece date, e.g. 2019-05-01 or 2019</td>
           </tr>
           <tr>
             <td>translator</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Name of the translator</td>
           </tr>
           <tr>
             <td>modified-by</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Name of the modifier</td>
           </tr>
           <tr>
             <td>note</td>
             <td>String</td>
             <td>No</td>
-            <td></td>
+            <td/>
             <td>Free text</td>
           </tr>
         </tbody>
@@ -1252,7 +1252,7 @@
         <e:attachment>
           <e:attachment-title>Title</e:attachment-title>
           <p>...HTML code...</p>
-          <e:image src="example.jpg" />
+          <e:image src="example.jpg"/>
           <p>...More HTML code...</p>
           <e:reference>
             <e:author>Dolor Tempor</e:author>
@@ -1303,7 +1303,7 @@
         <e:attachment name="test-material">
           <e:attachment-title>Title 1</e:attachment-title>
           <p>...HTML code...</p>
-          <e:image src="example.jpg" />
+          <e:image src="example.jpg"/>
           <p>...More HTML code...</p>
           <e:reference>
             <e:author>Matriculation examination board</e:author>
@@ -1311,7 +1311,7 @@
         </e:attachment>
         <e:attachment name="another-test-material">
           <e:attachment-title>Title 2</e:attachment-title>
-          <e:video src="example1.webm" />
+          <e:video src="example1.webm"/>
           <e:reference>
             <e:author>Dolor Tempor</e:author>
             <e:title>Qui ullamco non ut proident sit incididunt adipisicing</e:title>
@@ -1394,9 +1394,13 @@
       </table>
 
       <h4>Example</h4>
-      <pre class="code"><![CDATA[<e:image src="example.jpg">Optional image title text</e:image>]]></pre>
+      <pre class="code"><![CDATA[<e:image src="example.jpg">
+  <e:image-title>Optional image title text</e:image-title>
+</e:image>]]></pre>
       <div class="example">
-        <e:image src="example.jpg">Optional image title text</e:image>
+        <e:image src="example.jpg">
+          <e:image-title>Optional image title text</e:image-title>
+        </e:image>
       </div>
     </e:question>
     <e:question>
@@ -1442,15 +1446,27 @@
 
       <h4>Example</h4>
       <pre class="code"><![CDATA[<e:image-overlay>
-  <e:image src="map-example-1.jpg">Topographic Map</e:image>
-  <e:image src="map-example-2.jpg">Public Transport Map</e:image>
-  <e:image src="map-example-3.jpg">Bike Lanes Map</e:image>
+  <e:image src="map-example-1.jpg">
+    <e:image-title>Topographic Map</e:image-title>
+  </e:image>
+  <e:image src="map-example-2.jpg">
+    <e:image-title>Public Transport Map
+  </e:image>
+  <e:image src="map-example-3.jpg">
+    <e:image-title>Bike Lanes Map<e:image-title>
+  </e:image>
 </e:image-overlay>]]></pre>
       <div class="example">
         <e:image-overlay>
-          <e:image src="map-example-1.jpg">Topographic Map</e:image>
-          <e:image src="map-example-2.jpg">Public Transport Map</e:image>
-          <e:image src="map-example-3.jpg">Bike Lanes Map</e:image>
+          <e:image src="map-example-1.jpg">
+            <e:image-title>Topographic Map</e:image-title>
+          </e:image>
+          <e:image src="map-example-2.jpg">
+            <e:image-title>Public Transport Map</e:image-title>
+          </e:image>
+          <e:image src="map-example-3.jpg">
+            <e:image-title>Bike Lanes Map</e:image-title>
+          </e:image>
         </e:image-overlay>
         <p>Example maps © OpenStreetMap contributors</p>
       </div>
@@ -1508,9 +1524,11 @@
       </table>
 
       <h4>Example</h4>
-      <pre class="code"><![CDATA[<e:audio src="example1.webm" times="2">Optional description</e:audio>]]></pre>
+      <pre class="code"><![CDATA[<e:audio src="example1.webm" times="2">
+  <e:audio-title>Optional description</e:audio-title>
+</e:audio>]]></pre>
       <div class="example">
-        <e:audio src="example1.webm" times="2">Optional description</e:audio>
+        <e:audio src="example1.webm" times="2"><e:audio-title>Optional description</e:audio-title></e:audio>
       </div>
     </e:question>
     <e:question>
@@ -1522,7 +1540,9 @@
       </e:question-instruction>
       <h4>Example</h4>
       <pre class="code"><![CDATA[<e:audio-group>
-  <e:audio src="example1.webm" times="2">The whole recording</e:audio>
+  <e:audio src="example1.webm" times="2">
+    <e:audio-title>The whole recording<e:audio-title>
+  </e:audio>
 </e:audio-group>
 <e:audio-group>
   <e:question>
@@ -1543,7 +1563,9 @@
       <e:choice-answer-option score="-1">Sit</e:choice-answer-option>
     </e:choice-answer>
   </e:question>
-  <e:audio src="example2.webm" times="2">The passage related to questions 11.1. and 11.2.</e:audio>
+  <e:audio src="example2.webm" times="2">
+    <e:audio-title>The passage related to questions 11.1. and 11.2.</e:audio-title>
+  </e:audio>
 </e:audio-group>
 <e:audio-group>
   <e:question>
@@ -1555,11 +1577,13 @@
       <e:choice-answer-option score="-1">Sit</e:choice-answer-option>
     </e:choice-answer>
   </e:question>
-  <e:audio src="example3.webm" times="2">The passage related to question 11.3.</e:audio>
+  <e:audio src="example3.webm" times="2">
+    <e:audio-title>The passage related to question 11.3.<e:audio-title>
+  </e:audio>
 </e:audio-group>]]></pre>
       <div class="example">
         <e:audio-group>
-          <e:audio src="example1.webm" times="2">The whole recording</e:audio>
+          <e:audio src="example1.webm" times="2"><e:audio-title>The whole recording</e:audio-title></e:audio>
         </e:audio-group>
         <e:audio-group>
           <e:question>
@@ -1580,7 +1604,7 @@
               <e:choice-answer-option score="-1">Sit</e:choice-answer-option>
             </e:choice-answer>
           </e:question>
-          <e:audio src="example2.webm" times="2">The passage related to the two sub-questions immediately above.</e:audio>
+          <e:audio src="example2.webm" times="2"><e:audio-title>The passage related to the two sub-questions immediately above.</e:audio-title></e:audio>
         </e:audio-group>
         <e:audio-group>
           <e:question>
@@ -1592,7 +1616,7 @@
               <e:choice-answer-option score="-1">Sit</e:choice-answer-option>
             </e:choice-answer>
           </e:question>
-          <e:audio src="example3.webm" times="2">The passage related to the sub-question immediately above.</e:audio>
+          <e:audio src="example3.webm" times="2"><e:audio-title>The passage related to the sub-question immediately above.</e:audio-title></e:audio>
         </e:audio-group>
       </div>
     </e:question>
@@ -1644,7 +1668,7 @@
       <h4>Example</h4>
       <pre class="code"><![CDATA[<e:video src="example1.webm" />]]></pre>
       <div class="example">
-        <e:video src="example1.webm" />
+        <e:video src="example1.webm"/>
       </div>
     </e:question>
 
@@ -1758,11 +1782,11 @@
       <div class="example">
         <code>long</code>
         type reference:
-        <e:attachment-link ref="test-material" />
-        <br />
+        <e:attachment-link ref="test-material"/>
+        <br/>
         <code>short</code>
         type reference:
-        <e:attachment-link ref="another-test-material" type="short" />
+        <e:attachment-link ref="another-test-material" type="short"/>
       </div>
 
     </e:question>
@@ -1786,13 +1810,13 @@
 </e:attachment-links>]]></pre>
       <div class="example">
         <e:attachment-links>
-          <e:attachment-link ref="test-material" />
-          <e:attachment-link ref="another-test-material" />
+          <e:attachment-link ref="test-material"/>
+          <e:attachment-link ref="another-test-material"/>
         </e:attachment-links>
-        <br />
+        <br/>
         <e:attachment-links type="short">
-          <e:attachment-link ref="test-material" />
-          <e:attachment-link ref="another-test-material" />
+          <e:attachment-link ref="test-material"/>
+          <e:attachment-link ref="another-test-material"/>
         </e:attachment-links>
       </div>
     </e:question>
@@ -1869,7 +1893,7 @@
         Notice that certain characters in formulas require special notation.
       </p>
       <table class="e-table">
-        <caption></caption>
+        <caption/>
         <thead>
           <tr>
             <th>Character</th>
@@ -1953,7 +1977,7 @@
         <h6>h6. Title (16px, semibold)</h6>
       </div>
 
-      <br />
+      <br/>
 
       <h3>Text size</h3>
       <p>
@@ -2337,11 +2361,11 @@
 </div>]]></pre>
       <div class="example">
         <div class="e-clearfix">
-          <e:image src="example.jpg" class="e-width-half e-mrg-r-2 e-float-left" />
+          <e:image src="example.jpg" class="e-width-half e-mrg-r-2 e-float-left"/>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="e-clearfix">
-          <e:image src="example.jpg" class="e-width-third e-mrg-l-2 e-float-right" />
+          <e:image src="example.jpg" class="e-width-third e-mrg-l-2 e-float-right"/>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
@@ -2381,7 +2405,7 @@
   voluptas tempora accusamus voluptate culpa!
 </p>]]></pre>
       <div class="example e-clearfix">
-        <e:image src="example.jpg" class="e-illustration-right e-width-third" />
+        <e:image src="example.jpg" class="e-illustration-right e-width-third"/>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
           dolores quam facere vel cum eos enim eaque soluta? Ullam doloribus
@@ -3011,7 +3035,7 @@
     </e:question>
   </e:section>
 
-  <e:references />
+  <e:references/>
   <e:exam-footer>
     <p>
       For more information about using this format, see
