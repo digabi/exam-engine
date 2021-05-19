@@ -20,8 +20,9 @@
         z-index: 1;
       }
       .toolbar_inner {
+        font-size: .9rem;
         max-width: 65rem;
-        padding: 0.5rem;
+        padding: 0.2rem;
         margin: 0 auto;
         box-sizing: border-box;
         list-style: none;
@@ -29,12 +30,29 @@
         display: flex;
         flex-direction: row;
       }
-      .toolbar__item button {
-        font-size: 0.875rem;
-        font-family: 'Noto Sans', 'sans-serif';
+      .toolbar_inner a {
+        text-decoration: none;
+        color: #307f99;
       }
-      .toolbar__item + .toolbar__item {
-        padding-left: 0.5rem;
+      .toolbar_inner a:hover {
+        text-decoration: underline;
+      }
+      .toolbar__item {
+        margin: 0 .7rem;
+      }
+      .toolbar__item button {
+        font-size: 0.8rem;
+        font-family: 'Noto Sans', 'sans-serif';
+        background-color: #307f99;
+        color: #fefefe;
+        margin: 0;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .toolbar__item__selected {
+        border-bottom: 3px solid;
       }
       .toolbar__item--exam-version + .toolbar__item:not(.toolbar__item--exam-version) {
         margin-left: auto;
