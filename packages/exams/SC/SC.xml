@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://www.w3.org/1999/xhtml"
-        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd"
+        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
         exam-schema-version="0.2" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css">
   <e:exam-versions>
     <e:exam-version lang="fi-FI" />

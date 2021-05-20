@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.2" date="2020-09-17" exam-code="GE" max-answers="5">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.2" date="2020-09-17" exam-code="GE" max-answers="5">
   <e:exam-versions>
     <e:exam-version lang="fi-FI" />
     <e:exam-version lang="sv-FI" />
@@ -623,7 +623,7 @@
 
       <e:question-instruction>
         <e:localization lang="fi-FI">
-          Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä. 
+          Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä.
         </e:localization>
         <e:localization lang="sv-FI">
           Du planerar en cykeltur över hela den afrikanska kontinenten från Tunisiens huvudstad Tunis till Kapstaden i Sydafrika. Resan startar i början av februari och målet är att nå Kapstaden före slutet av juni.
@@ -1036,7 +1036,7 @@
 
         <e:attachment name="6B">
           <e:attachment-title>
-            <e:localization lang="fi-FI">Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’) 
+            <e:localization lang="fi-FI">Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’)
                 </e:localization>
             <e:localization lang="sv-FI">Video: Vulkanön Anak Krakatau (’Krakataus barn’) som uppstått till följd av nya utbrott i Krakatau
                 </e:localization>
@@ -1263,7 +1263,7 @@
 
         <e:attachment name="8B">
           <e:attachment-title>
-            <e:localization lang="fi-FI">Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999 
+            <e:localization lang="fi-FI">Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999
             </e:localization>
             <e:localization lang="sv-FI">Karta: Invånarnas årliga medelinkomst i staden Washington 1999
             </e:localization>
