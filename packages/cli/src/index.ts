@@ -6,7 +6,7 @@ import yargs from 'yargs'
 import { resolveExam, resolveFile } from './utils'
 
 /* eslint-disable @typescript-eslint/no-misused-promises */
-yargs
+void yargs
   .usage('Usage: $0 <command> [options]')
   .command(
     'new <directory>',
