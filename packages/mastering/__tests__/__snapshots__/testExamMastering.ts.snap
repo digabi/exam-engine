@@ -5338,7 +5338,7 @@ Vertaile aineistojen perusteella, millaista alueen maankäyttö on ollut kyseisi
 
 exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Maantiede</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Maantiede</span></e:exam-title>
   
 
   <e:exam-instruction>
@@ -5815,7 +5815,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 
       <e:question-instruction>
         <span lang="fi-FI">
-          Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä. 
+          Suunnittelet polkupyöräretkeä koko Afrikan mantereen halki Tunisian pääkaupungista Tunisista Etelä-Afrikan Kapkaupunkiin. Matkaan lähdetään helmikuun alussa, ja tavoitteena on saavuttaa Kapkaupunki kesäkuun loppuun mennessä.
         </span>
         
       </e:question-instruction>
@@ -5903,7 +5903,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 
         <e:attachment name="6B" display-number="6.B">
           <e:attachment-title>
-            <span lang="fi-FI">Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’) 
+            <span lang="fi-FI">Video: Krakataun uusien purkauksien muodostama tulivuorisaari Anak Krakatau (’Krakataun lapsi’)
                 </span>
             
           </e:attachment-title>
@@ -6102,7 +6102,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 
         <e:attachment name="8B" display-number="8.B">
           <e:attachment-title>
-            <span lang="fi-FI">Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999 
+            <span lang="fi-FI">Kartta: Asukkaiden vuosittaiset keskitulot Washingtonin kaupungin alueella vuonna 1999
             </span>
             
           </e:attachment-title>
@@ -6371,7 +6371,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters GE.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Geografi</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Geografi</span></e:exam-title>
   
 
   <e:exam-instruction>
@@ -21156,7 +21156,7 @@ Eräs isä on lähettänyt tekstin keskustelupalstalle . Hän pyytää mielipite
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></e:exam-title>
   
   <e:exam-instruction>
     <span lang="fi-FI">
@@ -22719,7 +22719,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="sv-FI">SV – Tyska, kort lärokurs</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="sv-FI">SV – Tyska, kort lärokurs</span></e:exam-title>
   
   <e:exam-instruction>
     
