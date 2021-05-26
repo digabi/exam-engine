@@ -107,6 +107,7 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[]) {
     for (const examOutputDirectory of examOutputDirectories) {
       for (const htmlFile of [
         path.resolve(examOutputDirectory, 'index.html'),
+        path.resolve(examOutputDirectory, 'grading-instructions.html'),
         path.resolve(examOutputDirectory, 'attachments/index.html'),
       ]) {
         await page.goto('file://' + htmlFile, { waitUntil: 'networkidle0' })
