@@ -1,4 +1,4 @@
-import { Attachments, Exam, ExamAnswer, parseExam } from '@digabi/exam-engine-core'
+import { Attachments, Exam, GradingInstructions, ExamAnswer, parseExam } from '@digabi/exam-engine-core'
 import React from 'react'
 import { render } from 'react-dom'
 import '../public/offline.less'
@@ -10,14 +10,18 @@ const isMediaVersion = !!process.env.MEDIA_VERSION
 
 const doc = parseExam(exam, true)
 const answers: ExamAnswer[] = []
-const isExamPage = !location.pathname.includes('/attachments')
-const attachmentsURL = isExamPage ? 'attachments/index.html' : ''
+const isAttachmentsPage = location.pathname.includes('attachments/')
+const attachmentsURL = isAttachmentsPage ? 'attachments/index.html' : ''
 const resolveAttachment = (filename: string) => {
   const actualFilename = !isMediaVersion ? filename : filename.replace(/\.webm$/, '.mp4').replace(/\.ogg$/, '.mp3')
-  return (isExamPage ? 'attachments/' : '') + encodeURIComponent(actualFilename)
+  return (!isAttachmentsPage ? 'attachments/' : '') + encodeURIComponent(actualFilename)
 }
 const examServerApi = noopExamServerAPI(resolveAttachment)
-const Root = isExamPage ? Exam : Attachments
+const Root = isAttachmentsPage
+  ? Attachments
+  : location.pathname.includes('grading-instructions.html')
+  ? GradingInstructions
+  : Exam
 
 render(
   <Root

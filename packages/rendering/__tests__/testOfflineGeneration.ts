@@ -10,12 +10,14 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
   let page: Page
   let examHtmlFile: string
   let attachmentsHtmlFile: string
+  let gradingInstructionHtmlFile: string
 
   beforeAll(async () => {
     const tmpdir = await tmp.dir().then((r) => r.path)
     const [outputDirectory] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir)
     examHtmlFile = path.resolve(outputDirectory, 'index.html')
     attachmentsHtmlFile = path.resolve(outputDirectory, 'attachments/index.html')
+    gradingInstructionHtmlFile = path.resolve(outputDirectory, 'attachments/index.html')
     page = await createPage()
   })
 
@@ -25,6 +27,10 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
 
   it('renders attachment page without errors', async () => {
     await expectToRenderWithoutErrors(attachmentsHtmlFile)
+  })
+
+  it('renders grading instruction page without errors', async () => {
+    await expectToRenderWithoutErrors(gradingInstructionHtmlFile)
   })
 
   async function expectToRenderWithoutErrors(filename: string) {
