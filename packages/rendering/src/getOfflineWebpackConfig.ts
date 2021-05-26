@@ -67,6 +67,13 @@ export function getOfflineWebpackConfig(
         scriptSrc: 'main-bundle.js',
       }),
       new HtmlWebpackPlugin({
+        filename: 'grading-instructions.html',
+        template: path.resolve(__dirname, '../public/offline.html'),
+        title: result.title!,
+        backgroundColor: '#e0f4fe',
+        scriptSrc: '../main-bundle.js',
+      }),
+      new HtmlWebpackPlugin({
         filename: 'attachments/index.html',
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
