@@ -28,7 +28,7 @@
     "less-loader": "^7.0.0",
     "less-plugin-glob": "^3.0.0",
     "mini-css-extract-plugin": "^1.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "optimize-css-assets-webpack-plugin": "^6.0.0",
     "postcss": "^8.0.5",
     "postcss-loader": "^4.0.1",
     "postcss-preset-env": "^6.7.0",
