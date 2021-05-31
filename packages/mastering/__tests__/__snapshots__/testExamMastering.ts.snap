@@ -13906,7 +13906,9 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
       </e:question-instruction>
       <e:question display-number="6.1" max-score="6">
         <e:question-title>
-          <span lang="fi-FI">Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua.</span>
+          <span lang="fi-FI">Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja
+            kuvakaappaustyökalua.
+          </span>
           
         </e:question-title>
         
@@ -14733,7 +14735,9 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
       <e:question display-number="6.1" max-score="6">
         <e:question-title>
           
-          <span lang="sv-FI">Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram och bildkapningsverktyget.</span>
+          <span lang="sv-FI">Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram
+            och bildkapningsverktyget.
+          </span>
         </e:question-title>
         
         <e:text-answer type="rich-text" max-score="6" display-number="6.1" question-id="22"/>

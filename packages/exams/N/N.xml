@@ -532,26 +532,28 @@
         </e:localization>
       </e:question-instruction>
       <e:question-grading-instruction>
-        <table class="e-table e-table--borderless e-table--zebra e-width-full">
+        <table class="e-table e-table--borderless  e-width-full">
           <tbody>
             <tr>
               <td>
                 <e:formula>y = x + 3</e:formula>
                 / perustelut (kulmakerroin+piste tai 2 pistettä
               </td>
-              <td>2 + 1</td>
+              <td>
+                <span class="e-score e-semibold e-font-size-s">2 + 1 p.</span>
+              </td>
             </tr>
             <tr>
               <td>Jos edellisellä rivillä puuttuu <e:formula>y =, x-</e:formula>kerroin tai vakio on väärin, niin
                 jokaisesta
               </td>
-              <td>-1</td>
+              <td><span class="e-score e-semibold e-font-size-s">-1 p.</span></td>
             </tr>
             <tr>
               <td>Sijoittamalla paraabelin yhtälöön <e:formula>(y = 4x^2)</e:formula> TAI yhtälöpari
                 <e:formula>{y= x+3,y=4x^2} / x+3=4x^2</e:formula>
               </td>
-              <td>1 + 1</td>
+              <td><span class="e-score e-semibold e-font-size-s">1 + 1 p.</span></td>
             </tr>
             <tr>
               <td>Ratkaistaan
@@ -565,11 +567,11 @@
                 / leikkauspiste on <e:formula>(-\frac{3}{4},\frac{9}{4})</e:formula> TAI
                 <e:formula>(-0,75;2,25)</e:formula>
               </td>
-              <td>1 + 1</td>
+              <td><span class="e-score e-semibold e-font-size-s">1 + 1 p.</span></td>
             </tr>
             <tr>
               <td>Vastaus sieventämättä</td>
-              <td>-1</td>
+              <td><span class="e-score e-semibold e-font-size-s">-1 p.</span></td>
             </tr>
           </tbody>
         </table>
@@ -849,48 +851,36 @@
       </e:question-instruction>
       <e:question>
         <e:question-title>
-          <e:localization lang="fi-FI">Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja kuvakaappaustyökalua.</e:localization>
-          <e:localization lang="sv-FI">Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram och bildkapningsverktyget.</e:localization>
+          <e:localization lang="fi-FI">Esitä oppilaan kulkema reitti käyttämällä sopivaa piirto-ohjelmaa ja
+            kuvakaappaustyökalua.
+          </e:localization>
+          <e:localization lang="sv-FI">Framställ den rutt som eleven rör sig genom att använda ett lämpligt ritprogram
+            och bildkapningsverktyget.
+          </e:localization>
         </e:question-title>
         <e:question-grading-instruction>
-          <table class="e-table e-table--borderless e-table--zebra e-width-full">
-            <tbody>
-              <tr>
-                <td>Kolmen janan murtoviiva (ei kaikki samalla suoralla)</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>
-                  • Merkitty pisteet <e:formula>A</e:formula> ja <e:formula>B</e:formula> oikein
-                </td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>
-                  Jokainen käännös on oikealle, ja näyttää noin 90 asteelta
-                </td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>
-                  Ensimmäinen ja kolmas sivu yhdensuuntaiset
-                </td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>
-                  Koukku-muoto
-                </td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>
-                  Janat oikean pituisia TAI suunnilleen oikeanmittaiset, ja pituudet ilmoittettu lukuina
-                </td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>Kolmen janan murtoviiva (ei kaikki samalla suoralla)
+            <span class="e-score e-semibold e-font-size-s">1 p.</span>
+          </p>
+          <p>Merkitty pisteet <e:formula>A</e:formula> ja <e:formula>B</e:formula> oikein
+            <span class="e-score e-semibold e-font-size-s">1 p.</span>
+          </p>
+          <p>
+            Jokainen käännös on oikealle, ja näyttää noin 90 asteelta
+            <span class="e-score e-semibold e-font-size-s">1 p.</span>
+          </p>
+          <p>
+            Ensimmäinen ja kolmas sivu yhdensuuntaiset
+            <span class="e-score e-semibold e-font-size-s">1 p.</span>
+          </p>
+          <p>
+            Koukku-muoto
+            <span class="e-score e-semibold e-font-size-s">1 p.</span>
+          </p>
+          <p>
+            Janat oikean pituisia TAI suunnilleen oikeanmittaiset, ja pituudet ilmoittettu lukuina
+            <span class="e-score e-semibold e-font-size-s">1 p.</span>
+          </p>
         </e:question-grading-instruction>
         <e:text-answer type="rich-text" max-score="6"/>
       </e:question>
