@@ -237,6 +237,10 @@ async function masterExamVersion(
     shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
   }
   addAttachmentNumbers(exam)
+  if (type === 'hearing-impaired') {
+    exam.sections[0].element.remove()
+    exam.sections.shift()
+  }
   updateMaxScoresToAnswers(exam)
   countMaxScores(exam)
   countSectionMaxAndMinAnswers(exam)
