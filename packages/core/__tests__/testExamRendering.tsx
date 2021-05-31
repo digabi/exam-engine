@@ -1,4 +1,12 @@
-import { Exam, Attachments, Results, GradingStructure, Score, TextQuestion } from '@digabi/exam-engine-core'
+import {
+  Exam,
+  Attachments,
+  Results,
+  GradingInstructions,
+  GradingStructure,
+  Score,
+  TextQuestion,
+} from '@digabi/exam-engine-core'
 import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
 import { listExams } from '@digabi/exam-engine-exams'
 import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
@@ -16,7 +24,9 @@ describe.each(listExams().map((exam) => [path.basename(exam), exam]))('%s', (_ba
 
   it('renders properly', async () => {
     const source = await fs.readFile(exam, 'utf-8')
-    const results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment))
+    const results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment), {
+      removeCorrectAnswers: false,
+    })
     for (const { xml, language, gradingStructure } of results) {
       const doc = parseExam(xml, true)
       const commonProps: CommonExamProps = {
@@ -41,6 +51,7 @@ describe.each(listExams().map((exam) => [path.basename(exam), exam]))('%s', (_ba
       expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
       expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
       expect(create(<Results {...resultsProps} />).toJSON()).toMatchSnapshot('<Results />')
+      expect(create(<GradingInstructions {...commonProps} />).toJSON()).toMatchSnapshot('<GradingInstructions />')
     }
   })
 })
