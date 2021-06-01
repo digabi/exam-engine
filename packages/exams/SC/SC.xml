@@ -117,7 +117,16 @@
             </e:localization>
           </e:question-title>
           <e:text-answer type="rich-text" max-score="6"/>
-          <e:audio src="1.2.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title></e:audio>
+          <e:audio src="1.2.ogg" times="1">
+            <e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title>
+            <e:audio-transcription>
+              [Pling]Alina: Was meinst du denn, Niklas? Du sagst ja gar nichts![Pling]Niklas: Hallo! Ich haƩe mein Handy
+              auf lautlos gestellt und gar nicht mitbekommen, worüber ihr diskuƟert.Also, am kommenden Wochenende
+              bekomme ich von meinen Verwandten aus den Niederlanden Besuch.Könnte schon zum Picknick kommen. Würde dann
+              aber meine Cousine mitbringen ... Wäre das ok?[Pling]Paula: Ja klar, super! Ist immer schön, neue Leute zu
+              treffen.
+            </e:audio-transcription>
+          </e:audio>
         </e:question>
       </e:audio-group>
 
@@ -152,7 +161,14 @@
             </e:localization>
           </e:question-title>
           <e:text-answer type="rich-text" max-score="6"/>
-          <e:audio src="1.5.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title></e:audio>
+          <e:audio src="1.5.ogg" times="1">
+            <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
+            <e:audio-transcription>
+              Paula: Also abgemacht! Am Sonntag um 14.00 Uhr am See. Ich denke mir für euch eine Überraschung
+              aus.Verrate noch nicht, was ich koche. Um Campingstühle kümmere ich mich auch. Da brauchen wir nicht
+              aufder Erde zu sitzen. Bis dann! Kommt biƩe nicht zu spät!
+            </e:audio-transcription>
+          </e:audio>
         </e:question>
       </e:audio-group>
 
