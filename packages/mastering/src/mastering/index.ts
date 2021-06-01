@@ -400,7 +400,15 @@ function removeHiddenElements(exam: Element) {
 
 function removeHvpMetadata(exam: Element) {
   exam
-    .find(xpathOr(['exam-grading-instruction', 'question-grading-instruction', 'answer-grading-instruction']), ns)
+    .find(
+      xpathOr([
+        'exam-grading-instruction',
+        'question-grading-instruction',
+        'answer-grading-instruction',
+        'audio-transcription',
+      ]),
+      ns
+    )
     .forEach((e) => e.remove())
 }
 
