@@ -120,11 +120,23 @@
           <e:audio src="1.2.ogg" times="1">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title>
             <e:audio-transcription>
-              [Pling]Alina: Was meinst du denn, Niklas? Du sagst ja gar nichts![Pling]Niklas: Hallo! Ich haƩe mein Handy
-              auf lautlos gestellt und gar nicht mitbekommen, worüber ihr diskuƟert.Also, am kommenden Wochenende
-              bekomme ich von meinen Verwandten aus den Niederlanden Besuch.Könnte schon zum Picknick kommen. Würde dann
-              aber meine Cousine mitbringen ... Wäre das ok?[Pling]Paula: Ja klar, super! Ist immer schön, neue Leute zu
-              treffen.
+              <p>
+                [Pling]
+                <br />
+                Alina: Was meinst du denn, Niklas? Du sagst ja gar nichts!
+              </p>
+              <p>
+                [Pling]
+                <br />
+                Niklas: Hallo! Ich haƩe mein Handy auf lautlos gestellt und gar nicht mitbekommen, worüber ihr
+                diskuƟert. Also, am kommenden Wochenende bekomme ich von meinen Verwandten aus den Niederlanden
+                Besuch.Könnte schon zum Picknick kommen. Würde dann aber meine Cousine mitbringen ... Wäre das ok?
+              </p>
+              <p>
+                [Pling]
+                <br />
+                Paula: Ja klar, super! Ist immer schön, neue Leute zu treffen.
+              </p>
             </e:audio-transcription>
           </e:audio>
         </e:question>
