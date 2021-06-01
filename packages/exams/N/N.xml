@@ -1407,10 +1407,8 @@
       <e:question-instruction>
         <e:localization lang="fi-FI">
           <p>Opiskelijoiden tehtävänä on määrittää lävistäjän pituus sellaiselle suorakulmiolle, jonka sivujen pituudet ovat <e:formula>1</e:formula> ja <e:formula>2</e:formula>. Käytössä on kuitenkin vain laskin, jolla voi laskea yhteen-, vähennys-, kerto- ja jakolaskuja, mutta ei neliöjuuria. Opiskelijat tietävät, että luvun <e:formula>5</e:formula> neliöjuurelle voi määrittää likiarvoja seuraavan jonon avulla:</p>
-          <p class="e-text-center">
-            <e:formula mode="display">x_1 = 3,</e:formula>
-            <e:formula mode="display">x_{n+1} = \frac{1}{2}\left(x_n + \frac{5}{x_n}\right), n\ge 1.</e:formula>
-          </p>
+          <e:formula mode="display">x_1 = 3,</e:formula>
+          <e:formula mode="display">x_{n+1} = \frac{1}{2}\left(x_n + \frac{5}{x_n}\right), n\ge 1.</e:formula>
           <p>
             Ilpo yrittää päästä helpolla ja tarjoaa luvulle <e:formula>\sqrt 5</e:formula> arviota <e:formula>x_2</e:formula>. Simo puolestaan päättää käyttää arviota <e:formula>x_4</e:formula>. Vertaa arvioita <e:formula>x_2</e:formula> ja <e:formula>x_4</e:formula> laskimen antamaan luvun <e:formula>\sqrt 5</e:formula> likiarvoon.
           </p>
@@ -1420,10 +1418,8 @@
         </e:localization>
         <e:localization lang="sv-FI">
           <p>En grupp studerande har som uppgift att bestämma diagonalens längd i en rektangel, vars sidor har längderna <e:formula>1</e:formula> och <e:formula>2</e:formula>. De får emellertid endast använda en räknare med vilken det går att beräkna addition, subtraktion, multiplikation och division, men inte kvadratrot. Studerandena vet att det går att bestämma närmevärden för kvadratroten av talet <e:formula>5</e:formula> med följande talföljd:</p>
-          <p class="e-text-center">
-            <e:formula mode="display">x_1 = 3,</e:formula>
-            <e:formula mode="display">x_{n+1} = \frac{1}{2}\left(x_n + \frac{5}{x_n}\right), n\ge 1.</e:formula>
-          </p>
+          <e:formula mode="display">x_1 = 3,</e:formula>
+          <e:formula mode="display">x_{n+1} = \frac{1}{2}\left(x_n + \frac{5}{x_n}\right), n\ge 1.</e:formula>
           <p>
             Ivar försöker komma lätt undan och föreslår uppskattningen <e:formula>x_2</e:formula> för talet <e:formula>\sqrt 5</e:formula>. Simon beslutar sig i stället för att använda uppskattningen <e:formula>x_4</e:formula>. Jämför uppskattningarna <e:formula>x_2</e:formula> och <e:formula>x_4</e:formula> med det närmevärde på <e:formula>\sqrt 5</e:formula> som räknaren ger.
           </p>

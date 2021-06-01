@@ -11,7 +11,7 @@ function Formula({ element, className }: ExamComponentProps) {
   return (
     <>
       <span
-        className={classNames('e-formula', { 'e-block': isDisplayFormula }, className)}
+        className={classNames('e-formula', { 'e-block e-text-center': isDisplayFormula }, className)}
         dangerouslySetInnerHTML={{ __html: svg }}
         aria-hidden="true"
       />
