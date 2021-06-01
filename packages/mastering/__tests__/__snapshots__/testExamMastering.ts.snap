@@ -17116,7 +17116,7 @@ Object {
         "correctAnswers": Array [
           Object {
             "score": 2,
-            "text": "Wie ist das WeƩer heute?",
+            "text": "Wie ist das Wetter heute?",
           },
           Object {
             "score": 2,
@@ -19260,7 +19260,7 @@ Object {
         "correctAnswers": Array [
           Object {
             "score": 2,
-            "text": "Wie ist das WeƩer heute?",
+            "text": "Wie ist das Wetter heute?",
           },
           Object {
             "score": 2,
@@ -19619,7 +19619,9 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </span>
             
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" display-number="1.2" question-id="2"/>
+          <e:text-answer type="rich-text" max-score="6" display-number="1.2" question-id="2">
+            
+          </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title>
             
@@ -19655,6 +19657,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </span>
             
           </e:question-title>
+          
           <e:text-answer type="rich-text" max-score="6" display-number="1.5" question-id="5"/>
           <e:audio src="1.5.ogg" times="1" restricted-audio-id="4" duration="999">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
@@ -21419,7 +21422,9 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               det picknicken? Skriv ett kort svar på svenska.
             </span>
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" display-number="1.2" question-id="2"/>
+          <e:text-answer type="rich-text" max-score="6" display-number="1.2" question-id="2">
+            
+          </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title>
             
@@ -21455,6 +21460,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               kort svar på svenska.
             </span>
           </e:question-title>
+          
           <e:text-answer type="rich-text" max-score="6" display-number="1.5" question-id="5"/>
           <e:audio src="1.5.ogg" times="1" restricted-audio-id="4" duration="999">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>

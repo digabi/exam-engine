@@ -116,7 +116,17 @@
               det picknicken? Skriv ett kort svar på svenska.
             </e:localization>
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6"/>
+          <e:text-answer type="rich-text" max-score="6">
+            <e:answer-grading-instruction>
+              <p>Hänen sukulaisensa tulevat vierailulle (3 p.).</p>
+              <p>Hänen serkkunsa tulee mukaan (3 p.).</p>
+
+              <p>
+                Alkuosassa hyväksytään sekä yksikkö että monikko eli sukulainen/sukulaiset.Jälkiosassa hyväksytään sekä
+                yksikkö että monikko eli serkku/serkut. Ei hyväksytä: sukulaiset tulevat mukaan piknikille
+              </p>
+            </e:answer-grading-instruction>
+          </e:text-answer>
           <e:audio src="1.2.ogg" times="1">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title>
             <e:audio-transcription>
@@ -128,7 +138,7 @@
               <p>
                 [Pling]
                 <br />
-                Niklas: Hallo! Ich haƩe mein Handy auf lautlos gestellt und gar nicht mitbekommen, worüber ihr
+                Niklas: Hallo! Ich hatte mein Handy auf lautlos gestellt und gar nicht mitbekommen, worüber ihr
                 diskuƟert. Also, am kommenden Wochenende bekomme ich von meinen Verwandten aus den Niederlanden
                 Besuch.Könnte schon zum Picknick kommen. Würde dann aber meine Cousine mitbringen ... Wäre das ok?
               </p>
@@ -172,13 +182,18 @@
               kort svar på svenska.
             </e:localization>
           </e:question-title>
+          <e:question-grading-instruction>
+            <p>Ne ovat yllätys / Hän ei halua paljastaa [vielä], mitä tuo mukanaan (3p.).</p>
+            <p>Retkituolit//leirituolit/tuolit (3p.).</p>
+            <p>Jälkiosaan hyväksytään sekä yksikkö että monikko: retkituolit/retkituolin.</p>
+          </e:question-grading-instruction>
           <e:text-answer type="rich-text" max-score="6"/>
           <e:audio src="1.5.ogg" times="1">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
             <e:audio-transcription>
               Paula: Also abgemacht! Am Sonntag um 14.00 Uhr am See. Ich denke mir für euch eine Überraschung
               aus.Verrate noch nicht, was ich koche. Um Campingstühle kümmere ich mich auch. Da brauchen wir nicht
-              aufder Erde zu sitzen. Bis dann! Kommt biƩe nicht zu spät!
+              aufder Erde zu sitzen. Bis dann! Kommt bitte nicht zu spät!
             </e:audio-transcription>
           </e:audio>
         </e:question>
@@ -1772,7 +1787,7 @@
                 <e:localization lang="fi-FI">Millainen sää tänään on?</e:localization>
                 <e:localization lang="sv-FI">Hurdant väder är det idag?</e:localization>
               </e:hint>
-              <e:accepted-answer score="2">Wie ist das WeƩer heute?</e:accepted-answer>
+              <e:accepted-answer score="2">Wie ist das Wetter heute?</e:accepted-answer>
               <e:accepted-answer score="2">Was ist heute für Wetter?</e:accepted-answer>
               <e:accepted-answer score="2">Was für ein Wetter ist heute?</e:accepted-answer>
             </e:scored-text-answer>
