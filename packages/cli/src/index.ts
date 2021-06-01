@@ -115,6 +115,7 @@ function addExamAndOutdirArgs(argv: yargs.Argv) {
   addExamArgs(argv)
   argv.option('outdir', {
     alias: 'o',
+    default: process.cwd(),
     description: 'The output directory',
     type: 'string',
     coerce: resolveFile,
