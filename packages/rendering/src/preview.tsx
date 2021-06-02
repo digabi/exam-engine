@@ -132,6 +132,10 @@ const App: React.FunctionComponent<{
   const doc = useMemo(() => parseExam(xml, true), [xml])
 
   useEffect(() => {
+    document.documentElement.lang = language
+  }, [language])
+
+  useEffect(() => {
     document.body.style.backgroundColor = route.name === 'attachments' ? '#f0f0f0' : '#e0f4fe'
   }, [route.name])
 

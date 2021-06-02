@@ -61,6 +61,7 @@ export function getOfflineWebpackConfig(
       new OptimizeCssAssetsPlugin(),
       new HtmlWebpackPlugin({
         filename: 'index.html',
+        language: result.language,
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#e0f4fe',
@@ -68,6 +69,7 @@ export function getOfflineWebpackConfig(
       }),
       new HtmlWebpackPlugin({
         filename: 'grading-instructions.html',
+        language: result.language,
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#e0f4fe',
@@ -75,6 +77,7 @@ export function getOfflineWebpackConfig(
       }),
       new HtmlWebpackPlugin({
         filename: 'attachments/index.html',
+        language: result.language,
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#f0f0f0',
