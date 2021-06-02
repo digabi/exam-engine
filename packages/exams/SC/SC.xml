@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.3" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.3" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css">
   <e:exam-versions>
     <e:exam-version lang="fi-FI"/>
     <e:exam-version lang="sv-FI"/>
@@ -118,13 +118,28 @@
           </e:question-title>
           <e:text-answer type="rich-text" max-score="6">
             <e:answer-grading-instruction>
-              <p>Hänen sukulaisensa tulevat vierailulle (3 p.).</p>
-              <p>Hänen serkkunsa tulee mukaan (3 p.).</p>
-
-              <p>
-                Alkuosassa hyväksytään sekä yksikkö että monikko eli sukulainen/sukulaiset.Jälkiosassa hyväksytään sekä
-                yksikkö että monikko eli serkku/serkut. Ei hyväksytä: sukulaiset tulevat mukaan piknikille
-              </p>
+              <e:localization lang="fi-FI">
+                <p>Hänen sukulaisensa tulevat vierailulle (3/0 p.).</p>
+                <p>Hänen serkkunsa tulee mukaan (3/0 p.).</p>
+                <p>
+                  Alkuosassa hyväksytään sekä yksikkö että monikko eli sukulainen/sukulaiset.
+                  <br/>
+                  Jälkiosassa hyväksytään sekä yksikkö että monikko eli serkku/serkut.
+                  <br/>
+                  Ei hyväksytä: sukulaiset tulevat mukaan piknikille.
+                </p>
+              </e:localization>
+              <e:localization lang="sv-FI">
+                <p>Hans släktingar kommer på besök (3/0 p.).</p>
+                <p>Hans kusin kommer med (3/0 p.).</p>
+                <p>
+                  I den inledande delen godkänns både singularis och pluralis, det vill säga släkting/släktingar.
+                  <br/>
+                  I den senare delen godkänns både singularis och pluralis, det vill säga kusin/kusiner.
+                  <br/>
+                  Godkänns inte: släktingar kommer med på picknicken.
+                </p>
+              </e:localization>
             </e:answer-grading-instruction>
           </e:text-answer>
           <e:audio src="1.2.ogg" times="1">
@@ -183,16 +198,23 @@
             </e:localization>
           </e:question-title>
           <e:question-grading-instruction>
-            <p>Ne ovat yllätys / Hän ei halua paljastaa [vielä], mitä tuo mukanaan (3p.).</p>
-            <p>Retkituolit//leirituolit/tuolit (3p.).</p>
-            <p>Jälkiosaan hyväksytään sekä yksikkö että monikko: retkituolit/retkituolin.</p>
+            <e:localization lang="fi-FI">
+              <p>Ne ovat yllätys / Hän ei halua paljastaa [vielä], mitä tuo mukanaan (3/0 p.).</p>
+              <p>Retkituolit/leirituolit/tuolit (3/0 p.).</p>
+              <p>Jälkiosaan hyväksytään sekä yksikkö että monikko: retkituolit/retkituolin.</p>  
+            </e:localization>
+            <e:localization lang="sv-FI">
+              <p>Den är en överraskning / Han vill inte [ännu] avslöja vad han har med sig (3/0 p.)</p>
+              <p>Campingstolar/lägerstolar/stolar (3/0 p.).</p>
+              <p>I den senare delen godkänns både singularis och pluralis: en campingstol/campingstolar.</p>
+            </e:localization>
           </e:question-grading-instruction>
           <e:text-answer type="rich-text" max-score="6"/>
           <e:audio src="1.5.ogg" times="1">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
             <e:audio-transcription>
               Paula: Also abgemacht! Am Sonntag um 14.00 Uhr am See. Ich denke mir für euch eine Überraschung
-              aus.Verrate noch nicht, was ich koche. Um Campingstühle kümmere ich mich auch. Da brauchen wir nicht
+              aus. Verrate noch nicht, was ich koche. Um Campingstühle kümmere ich mich auch. Da brauchen wir nicht
               aufder Erde zu sitzen. Bis dann! Kommt bitte nicht zu spät!
             </e:audio-transcription>
           </e:audio>
@@ -477,6 +499,17 @@
           </e:localization>
         </e:question-title>
         <e:text-answer type="rich-text" max-score="3"/>
+        <e:question-grading-instruction>
+          <e:localization lang="fi-FI">
+            <p>14 päivää / 2 viikkoa (3/0 p.)</p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>14 dagar / 2 veckor (3/0 p.)</p>
+          </e:localization>
+          TÄHÄN PITÄISI SIIS SAADA LITTERAATIO KUTEN AUDIOISSA:
+          <br/>
+          Das Experiment läuft vierzehn Tage. Kamerafallen überwachen die Ausgänge der Häuser. So können die Wissenschaftler die Katzen rund um die Uhr im Blick behalten.
+        </e:question-grading-instruction>
       </e:question>
 
       <e:question>
@@ -984,6 +1017,18 @@
           </e:localization>
         </e:question-title>
         <e:text-answer type="rich-text" max-score="6"/>
+        <e:question-grading-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0&#160;p.)
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              Mormodern skulle ge pengar i alla fall (3/0 p.). Det stärker inte studiemotivationen / Det är inte motiverande / Det minskar motivationen / Det förstör motivationen (3/0&#160;p.)
+            </p>
+          </e:localization>
+        </e:question-grading-instruction>
       </e:question>
 
       <e:question>
@@ -1045,7 +1090,7 @@
           </e:localization>
         </e:question-title>
         <e:localization lang="fi-FI">
-          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3"/>, sekä siitä, miten
+          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3" />, sekä siitä, miten
           <e:text-answer max-score="3"/>
           ja miten retki suunnitellaan.
         </e:localization>
@@ -1054,6 +1099,30 @@
           <e:text-answer max-score="3"/>
           och hur man planerar en tur.
         </e:localization>
+        <e:question-grading-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              turvallisuudesta [vuorella/vuorilla] (3/0 p.)
+            </p>
+            <p>
+              kiipeilyköysiä/-valjaita/köysiä/kiipeilyvaljaita/valjaita/kiipeilyvarusteita/kiipeilytarvikkeita käytetään (3/0&#160;p.)
+            </p>
+            <p>
+              Alkuosassa ei hyväksytty: varmuudesta vuorilla.
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              säkerheten [på berget / i bergen] (3/0 p.)
+            </p>
+            <p>
+              använder klätterrep/-selar/rep/klättersälar/selar/klättringsutrustning (3/0 p.)
+            </p>
+            <p>
+              I den inledande delen godkänns inte: om säkerhet i bergen.
+            </p>
+          </e:localization>
+        </e:question-grading-instruction>
       </e:question>
 
       <e:question>
@@ -1227,6 +1296,24 @@
           </e:localization>
         </e:question-title>
         <e:text-answer type="rich-text" max-score="4"/>
+        <e:question-grading-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              Jos asiakas ei pääse perille saman päivän aikana / jos asiakkaan matka viivästyy yön yli (2/0&#160;p.)
+            </p>
+            <p>
+              Kuljetukset hotelliin (2/0 p.)
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              Om kunden inte kommer fram samma dag / om kundens resa försenas över natten (2/0&#160;p.)
+            </p>
+            <p>
+              Transport till hotellet (2/0 p.)
+            </p>
+          </e:localization>
+        </e:question-grading-instruction>
       </e:question>
 
     </e:question>
@@ -1269,6 +1356,24 @@
           </e:localization>
         </e:question-title>
         <e:text-answer type="rich-text" max-score="4"/>
+        <e:question-grading-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              Oli kylmä (2/0 p.).
+            </p>
+            <p>
+              Lentokentällä oli vain yhdet [siirrettävät] portaat (2/0 p.).
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              Det var kallt (2/0 p.).
+            </p>
+            <p>
+              Det fanns bara en [flyttbar] trappa på flygfältet (2/0 p.).
+            </p>
+          </e:localization>
+        </e:question-grading-instruction>
       </e:question>
 
       <e:question>
@@ -1322,6 +1427,24 @@
           </e:localization>
         </e:question-title>
         <e:text-answer type="rich-text" max-score="4"/>
+        <e:question-grading-instruction>
+          <e:localization lang="fi-FI">
+            <p>
+              Lähettäjä arvostaa vastaanottajaa (2/0 p.).
+            </p>
+            <p>
+              Hän on valmis käyttämään aikaansa [kortin kirjoittamiseen/lähettämiseen] (2/0 p.)
+            </p>
+          </e:localization>
+          <e:localization lang="sv-FI">
+            <p>
+              Avsändaren uppskattar mottagaren (2/0 p.).
+            </p>
+            <p>
+              Hen är beredd att offra sin tid [på att skriva/skicka kortet]. (2/0 p.)
+            </p>
+          </e:localization>
+        </e:question-grading-instruction>
       </e:question>
 
       <e:question>
@@ -1432,6 +1555,14 @@
           </e:localization>
         </e:question-title>
         <e:text-answer type="rich-text" max-score="2"/>
+        <e:question-grading-instruction>
+          <e:localization lang="fi-FI">
+            Kaupunki haluaa vähentä kertakäyttömukien määrää. (2/0 p.)
+          </e:localization>
+          <e:localization lang="sv-FI">
+            Staden vill minska antalet engångsmuggar (2/0 p.)
+          </e:localization>
+        </e:question-grading-instruction>
       </e:question>
 
     </e:question>
@@ -1626,8 +1757,8 @@
         </e:localization>
       </e:question-instruction>
       <e:question-grading-instruction>
-        Tehtävässä vaaditaan muunnoksilta kieliopillista ja oikeinkirjoituksen oikeellisuutta. Kuitenkaan väärästä
-        välimerkistä tai sen puuttumisesta ei ole vähennetty pisteitä.
+        <e:localization lang="fi-FI">Tehtävässä vaaditaan muunnoksilta kieliopillista ja oikeinkirjoituksen oikeellisuutta. Kuitenkaan väärästä välimerkistä tai sen puuttumisesta ei ole vähennetty pisteitä.</e:localization>
+        <e:localization lang="sv-FI">I uppgiften krävs att omformningarna är grammatiskt korrekta och rättstavade. För fel skiljetecken eller saknat skiljetecken har inget poängavdrag gjorts.</e:localization>
       </e:question-grading-instruction>
       <br/>
       <e:attachment>
@@ -1648,11 +1779,44 @@
               <e:scored-text-answer>
                 <e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint>
                 <e:answer-grading-instruction>
-                  Vastauksessa on hyväksytty myös ”mitkommen”-verbin käyttö. Esim. ”Willst du am Samstag ins Kino
-                  mitkommen?” ja
-                  myös esim. ”Willst du am Samstag mit mir ins Kino mitkommen?”.<br/>
-                  Will du am Samstag mit ins Kino gehen? 0 p. (verbin taivutus, ”gehen”)<br/>Wollen du am
-                  Samstag ins Kino mitgekommen 0 p
+                  <e:localization lang="fi-FI">
+                    <p>
+                      Vastauksessa on hyväksytty myös ”mitkommen”-verbin käyttö. Esim. ”Willst du am Samstag ins Kino mitkommen?” ja myös esim. ”Willst du am Samstag mit mir ins Kino mitkommen?”.
+                      <br/>
+                      Esimerkkejä:
+                      <br/>
+                      Willst du am Samstag mit ins Kino kommen? 2 p.
+                      <br/>
+                      Willst du ins Kino am Samstag mitkommen? 1 p. (sanajärjestys)
+                      <br/>
+                      Will du am Samstag mit ins Kino kommen 1 p. (verbin taivutus)
+                      <br/>
+                      willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)
+                      <br/>
+                      Will du am Samstag mit ins Kino gehen? 0 p. (verbin taivutus, ”gehen”)
+                      <br/>
+                      Wollen du am Samstag ins Kino mitgekommen 0 p.
+                    </p>                      
+                  </e:localization>
+                  <e:localization lang="sv-FI">
+                    <p>
+                      I svaret har också användningen av verbet ”mitkommen” godkänts. T.ex. ”Willst du am Samstag ins Kino mitkommen?” och också exempelvis ”Willst du am Samstag mit mir ins Kino mitkommen?”.
+                      <br/>
+                      Exempel:
+                      <br/>
+                      Willst du am Samstag mit ins Kino kommen? 2 p.
+                      <br/>
+                      Willst du ins Kino am Samstag mitkommen? 1 p. (ordföljd)
+                      <br/>
+                      Will du am Samstag mit ins Kino kommen 1 p. (verbböjning)
+                      <br/>
+                      willst du am Samstag mit ins Kino kommen 1 p. (liten begynnelsebokstav, inget avdrag för avsaknad av frågetecken)
+                      <br/>
+                      Will du am Samstag mit ins Kino gehen? 0 p. (verbböjning, ”gehen”)
+                      <br/>
+                      Wollen du am Samstag ins Kino mitgekommen 0 p.
+                    </p>    
+                  </e:localization>
                 </e:answer-grading-instruction>
                 <e:accepted-answer score="2">Willst du am Samstag mit ins Kino kommen?</e:accepted-answer>
                 <e:accepted-answer score="1">Willst du ins Kino am Samstag mitkommen? (sanajärjestys)</e:accepted-answer>
@@ -1669,11 +1833,36 @@
               <e:scored-text-answer>
                 <e:hint>weil ich zuerst Mama frage (müssen)</e:hint>
                 <e:answer-grading-instruction>
-                  esimerkkejä:<br/>weil ich zuerst Mama fragen muss. 2 p.Weil ich zuerst Mama fragen muss. 1 p. (iso
-                  alkukirjain)
-                  <br/>weil ich Mama zuerst fragen muss. 1 p. (sanajärjestys)
-                  <br/>weil müsse ich zuerst Mama fragen 0 p. (verbin taivutus, sanajärjestys)<br/>weil ich müsse zuerst
-                  Mama frage 0 p.
+                  <e:localization lang="fi-FI">
+                    <p>
+                      esimerkkejä:
+                      <br/>
+                      weil ich zuerst Mama fragen muss. 2 p.
+                      <br/>
+                      Weil ich zuerst Mama fragen muss. 1 p. (iso alkukirjain)
+                      <br/>
+                      weil ich Mama zuerst fragen muss. 1 p. (sanajärjestys)
+                      <br/>
+                      weil müsse ich zuerst Mama fragen 0 p. (verbin taivutus, sanajärjestys)
+                      <br/>
+                      weil ich müsse zuerst Mama frage 0 p.
+                    </p>
+                  </e:localization>
+                  <e:localization lang="sv-FI">
+                    <p>
+                      exempel:
+                      <br/>
+                      weil ich zuerst Mama fragen muss. 2 p.
+                      <br/>
+                      Weil ich zuerst Mama fragen muss. 1 p. (stor begynnelsebokstav)
+                      <br/>
+                      weil ich Mama zuerst fragen muss. 1 p. (ordföljd)
+                      <br/>
+                      weil müsse ich zuerst Mama fragen 0 p. (verbböjning, ordföljd)
+                      <br/>
+                      weil ich müsse zuerst Mama frage 0 p.
+                    </p>
+                  </e:localization>
                 </e:answer-grading-instruction>
                 <e:accepted-answer score="2">weil ich zuerst Mama fragen muss</e:accepted-answer>
               </e:scored-text-answer>
@@ -1707,32 +1896,66 @@
         </e:localization>
       </e:question-instruction>
       <e:question-grading-instruction>
-        <p>Tehtävän ohjeistuksessa on virhe, jonka seurauksena hyväksytään kohdissa 2. ja 4. myös tehtävän 23.
-          materiaaliin viittaavat vastaukset.
-        </p>
-        <p>Virheet, jotka eivät kuulu äännettäessä, eivät vie pisteitä.</p>
-        <h3>Pisteitys:</h3>
-        <h4>3 pistettä</h4>
-        <ul>
-          <li>Vastaus on täysin ilanteeseen sopiva, ja sisältö ja kieliasu ovat virheettömiä.2 pistettä (jokin
-            seuraavista)</li>
-          <li>Vastaus on ilanteeseen sopiva ja kielellisesi virheetön, mutta sisällöltään puutteellinen.</li>
-          <li>Vastaus on ilanteeseen sopiva ja sisällöltään virheetön, mutta kielellisesi puutteellinen.</li>
-          <li>Vastaus on kielellisesi ja sisällöllisesi virheetön, mutta ei täysin ilanteeseen sopiva.</li>
-        </ul>
-        <h4>1 pistettä (jokin seuraavista)</h4>
-        <ul>
-          <li>Vastauksessa on kielellisiä ja sisällöllisiä puutteita, mutta se sopii ilanteeseen.</li>
-          <li>Vastaus on sisällöltään ja sävyltään puutteellinen, mutta kielellisesi virheetön.</li>
-          <li>Vastaus on kielellisesi virheellinen ja ilanteeseen sopimaton, mutta asiasisältö välittyy.</li>
-          <li>Tehtävät 22.2 ja 22.4. vastauksen pituus on 2-4 sanaa: enintään 1 p.</li>
-        </ul>
-          <h4>0 pistettä</h4>
-        <ul>
-          <li>Vastaus on täysin sopimaton ilanteeseen, ja/tai sen kieliasu ja sisältö
-            ovat erittäin puutteellisia.</li>
-          <li>Tehtävät 22.2 ja 22.4. vastauksen pituus on 1 sana 0 p.</li>
-        </ul>
+        <e:localization lang="fi-FI">
+          <p>
+            Tehtävän ohjeistuksessa on virhe, jonka seurauksena hyväksytään kohdissa 2. ja 4. myös tehtävän 23. materiaaliin viittaavat vastaukset.
+          </p>
+          <p>Virheet, jotka eivät kuulu äännettäessä, eivät vie pisteitä.</p>
+          <h3>Pisteitys:</h3>
+          <h4>3 pistettä</h4>
+          <ul>
+            <li>Vastaus on täysin ilanteeseen sopiva, ja sisältö ja kieliasu ovat virheettömiä.2 pistettä (jokin
+              seuraavista)</li>
+          </ul>
+          <h4>2 pistettä (jokin seuraavista)</h4>
+          <ul>
+            <li>Vastaus on ilanteeseen sopiva ja kielellisesi virheetön, mutta sisällöltään puutteellinen.</li>
+            <li>Vastaus on ilanteeseen sopiva ja sisällöltään virheetön, mutta kielellisesi puutteellinen.</li>
+            <li>Vastaus on kielellisesi ja sisällöllisesi virheetön, mutta ei täysin ilanteeseen sopiva.</li>
+          </ul>
+          <h4>1 pistettä (jokin seuraavista)</h4>
+          <ul>
+            <li>Vastauksessa on kielellisiä ja sisällöllisiä puutteita, mutta se sopii tilanteeseen.</li>
+            <li>Vastaus on sisällöltään ja sävyltään puutteellinen, mutta kielellisesi virheetön.</li>
+            <li>Vastaus on kielellisesi virheellinen ja ilanteeseen sopimaton, mutta asiasisältö välittyy.</li>
+            <li>Tehtävät 22.2 ja 22.4. vastauksen pituus on 2-4 sanaa: enintään 1 p.</li>
+          </ul>
+            <h4>0 pistettä</h4>
+          <ul>
+            <li>Vastaus on täysin sopimaton ilanteeseen, ja/tai sen kieliasu ja sisältö
+              ovat erittäin puutteellisia.</li>
+            <li>Tehtävät 22.2 ja 22.4. vastauksen pituus on 1 sana 0 p.</li>
+          </ul>  
+        </e:localization>
+        <e:localization lang="sv-FI">
+          <p>
+            I anvisningarna för uppgift 22. finns ett fel och därför godkänns i moment 22.2 och 22.4 också svar som hänvisar till materialet som hänvisar till materialet för uppgift 23.
+          </p>
+          <p>Fel som inte hörs i uttalet get inte poängavdrag</p>
+          <h3>Poängsättning</h3>
+          <h4>3 poäng</h4>
+          <ul>
+            <li>Svaret passar situationen exakt och innehållet och språkdräkten är felfria</li>
+          </ul>
+          <h4>2 poäng (någon av följande)</h4>
+          <ul>
+            <li>Svaret passar situationen och är språkligt felfritt men bristfälligt till sitt innehåll.</li>
+            <li>Svaret passar situationen och är felfritt till sitt innehåll men språkligt bristfälligt.</li>
+            <li>Svaret är språkligt och innehållsligt felfritt, men passar inte till situationen exakt.</li>
+          </ul>
+          <h4>1 poäng (någon av följande)</h4>
+          <ul>
+            <li>Svaret har språkliga och innehållsliga brister, men det passar situationen väl.</li>
+            <li>Svaret är bristfälligt till sitt innehåll och sin ton, men det är språkligt felfritt.</li>
+            <li>Svaret är språkligt felaktigt och olämpligt för situationen, men sakinnehållet förmedlas.</li>
+            <li>Svarets längd för uppgifterna 22.2 och 22.4 är 2–4 ord: max 1 p.</li>
+          </ul>
+            <h4>0 poäng</h4>
+          <ul>
+            <li>Svaret är helt olämpligt för situationen, och/eller dess språkdräkt och innehåll är mycket bristfälliga.</li>
+            <li>Svarets längd för uppgifterna 22.2 och 22.4 är 1 ord 0 p.</li>
+          </ul>  
+        </e:localization>
       </e:question-grading-instruction>
       <e:attachment>
         <e:attachment-title>7. teksti</e:attachment-title>
