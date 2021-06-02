@@ -31,7 +31,7 @@ This version of exam-engine supports exams with the following exam schema versio
   }
 
   for (const [migrationVersion, migrate] of Object.entries(migrations)) {
-    if (compareVersions.compare(migrationVersion, examSchemaVersion, '>')) {
+    if (compareVersions.compare(migrationVersion, examSchemaVersion, '>=')) {
       migrate(doc)
     }
   }
