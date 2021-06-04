@@ -12,7 +12,7 @@ function Video({ element, className }: ExamComponentProps) {
 
   return (
     <ResponsiveMediaContainer {...{ className, width, height }}>
-      <video className="video" preload="metadata" controls>
+      <video className="video" preload="metadata" controls controlsList="nodownload" disablePictureInPicture>
         <source src={resolveAttachment(src)} />
       </video>
     </ResponsiveMediaContainer>
