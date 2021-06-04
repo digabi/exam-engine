@@ -33,8 +33,13 @@ function CasControls(props: CasState) {
       {props.casStatus === 'forbidden' ? (
         <div className="e-text-center">
           <hr className="e-exam-separator" />
-          <p>{t('cas.forbidden.infoText')}</p>
-          <button className="e-button" id="allow-cas" onClick={() => dispatch(allowCas(casCountdownDuration))}>
+          <p id="e-cas-controls-description">{t('cas.forbidden.infoText')}</p>
+          <button
+            className="e-button"
+            id="allow-cas"
+            onClick={() => dispatch(allowCas(casCountdownDuration))}
+            aria-describedby="e-cas-controls-description"
+          >
             {t('cas.forbidden.buttonText')}
           </button>
         </div>
@@ -44,9 +49,16 @@ function CasControls(props: CasState) {
           ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.scrollIntoView()}
         >
           <hr className="e-exam-separator" />
-          <p>{t('cas.allowing.infoText')}</p>
+          <p id="e-cas-controls-description">{t('cas.allowing.infoText')}</p>
           <ProgressBar className="e-mrg-b-2" duration={casCountdownDuration} />
-          <button className="e-button" id="allow-cas-cancelled" onClick={() => dispatch(allowCasCancelled())}>
+          <button
+            className="e-button"
+            id="allow-cas-cancelled"
+            onClick={() => dispatch(allowCasCancelled())}
+            ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.focus()}
+            aria-describedby="e-cas-controls-description"
+            aria-live="assertive"
+          >
             {t('cas.allowing.buttonText', { count: props.durationRemaining })}
           </button>
         </div>
