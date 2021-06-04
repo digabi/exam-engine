@@ -49,7 +49,7 @@ export const sv_FI: Translations = {
     },
     allowing: {
       infoText: 'Svaren i A-delen låses. Du får tillgång till de blockerade räknarprogrammen om en stund.',
-      buttonText: 'Avbryt ({{count}}s)',
+      buttonText: 'Avbryt ({{count}} s)',
     },
     allowed: {
       infoText: 'Del A returnerad',
