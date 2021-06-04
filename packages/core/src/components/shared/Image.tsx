@@ -14,7 +14,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const caption = renderChildNodes(element)
   const imgUrl = useContext(CommonExamContext).resolveAttachment(src)
   const captionId = caption.length > 0 ? imageCaptionId(element) : undefined
-  const Img = () => <img className="e-image" src={imgUrl} aria-labelledby={captionId} />
+  const image = <img className="e-image" src={imgUrl} alt="" aria-labelledby={captionId} />
 
   return (
     <>
@@ -29,7 +29,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
         }}
       >
         {queryAncestors(element, ['choice-answer', 'hint']) != null ? (
-          <Img />
+          image
         ) : (
           <a
             title={t.raw('zoom-in')}
@@ -38,7 +38,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
             className="e-zoomable"
             aria-hidden={caption.length === 0}
           >
-            <Img />
+            {image}
           </a>
         )}
       </ResponsiveMediaContainer>
