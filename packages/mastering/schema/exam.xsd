@@ -340,6 +340,7 @@
     <xs:simpleContent>
       <xs:extension base="e:date">
         <xs:attributeGroup ref="e:localizable" />
+        <xs:attributeGroup ref="e:hidable" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
