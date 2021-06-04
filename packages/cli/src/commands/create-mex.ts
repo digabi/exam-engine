@@ -20,8 +20,8 @@ export default async function createMexExam({
   securityCodes?: string
   passphrase: string
   privateKey: string
-  ktpUpdate: string
-  koeUpdate: string
+  ktpUpdate?: string
+  koeUpdate?: string
 }): Promise<void> {
   const attachmentsDir = path.resolve(path.dirname(exam), 'attachments')
   const resolveAttachment = (attachment: string) => path.resolve(attachmentsDir, attachment)

@@ -5,6 +5,9 @@ import ora = require('ora')
 import yargs from 'yargs'
 import { resolveExam, resolveFile } from './utils'
 
+const maybe = <T, U>(fn: (value: T) => U) => (maybeValue: T | undefined) =>
+  maybeValue === undefined ? maybeValue : fn(maybeValue)
+
 /* eslint-disable @typescript-eslint/no-misused-promises */
 void yargs
   .usage('Usage: $0 <command> [options]')
@@ -76,15 +79,15 @@ void yargs
         .option('security-codes', {
           alias: 's',
           description: 'The security codes (in JSON format)',
-          coerce: resolveFile,
+          coerce: maybe(resolveFile),
         })
         .option('ktp-update', {
           description: 'ktp-update.zip',
-          coerce: resolveFile,
+          coerce: maybe(resolveFile),
         })
         .option('koe-update', {
           description: 'koe-update.zip',
-          coerce: resolveFile,
+          coerce: maybe(resolveFile),
         })
         .demandOption(['private-key', 'passphrase', 'nsa-scripts'])
     },
@@ -101,8 +104,6 @@ void yargs
   .strict()
   .wrap(yargs.terminalWidth()).argv
 
-/* eslint-enable @typescript-eslint/no-misused-promises */
-
 function addExamArgs(yargv: yargs.Argv) {
   yargv.positional('exam', {
     description: 'The path to an exam XML file or the directory containing it.',
@@ -116,7 +117,7 @@ function addExamAndOutdirArgs(argv: yargs.Argv) {
   argv.option('outdir', {
     alias: 'o',
     description: 'The output directory',
-    coerce: resolveFile,
+    coerce: maybe(resolveFile),
   })
 }
 
