@@ -5,8 +5,10 @@ import ora = require('ora')
 import yargs from 'yargs'
 import { resolveExam, resolveFile } from './utils'
 
-const maybe = <T, U>(fn: (value: T) => U) => (maybeValue: T | undefined) =>
-  maybeValue === undefined ? maybeValue : fn(maybeValue)
+const maybe =
+  <T, U>(fn: (value: T) => U) =>
+  (maybeValue: T | undefined) =>
+    maybeValue === undefined ? maybeValue : fn(maybeValue)
 
 /* eslint-disable @typescript-eslint/no-misused-promises */
 void yargs
