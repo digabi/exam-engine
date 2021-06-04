@@ -30,7 +30,7 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
       {restrictedAudioId != null && times != null ? (
         <RestrictedAudioPlayer {...{ src, restrictedAudioId, duration, times, labelId }} />
       ) : (
-        <audio className="e-column e-column--narrow" preload="metadata" controls>
+        <audio className="e-column e-column--narrow" aria-describedby={labelId} preload="metadata" controls>
           <source src={resolveAttachment(src)} />
         </audio>
       )}
