@@ -26,7 +26,7 @@ const ProgressBar: React.FunctionComponent<{ duration: number; durationRemaining
         role="progressbar"
         aria-valuemax={duration}
         aria-valuemin={0}
-        aria-valuenow={durationRemaining}
+        aria-valuenow={duration - durationRemaining}
       />
     </div>
   )
