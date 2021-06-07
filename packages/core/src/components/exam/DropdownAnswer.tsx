@@ -1,12 +1,7 @@
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
-import {
-  GetPropsCommonOptions,
-  useSelect,
-  UseSelectGetMenuPropsOptions,
-  UseSelectGetToggleButtonPropsOptions,
-} from 'downshift'
+import { useSelect } from 'downshift'
 import * as _ from 'lodash-es'
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { connect } from 'react-redux'
@@ -81,14 +76,6 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
     initialSelectedItem: currentlySelectedItem,
   })
 
-  // Until the typings are fixed at https://github.com/downshift-js/downshift/pull/1123/files
-  const getMenuPropsFixed: (options?: UseSelectGetMenuPropsOptions, extraOptions?: GetPropsCommonOptions) => any =
-    getMenuProps
-  const getToggleButtonPropsFixed: (
-    options?: UseSelectGetToggleButtonPropsOptions,
-    extraOptions?: GetPropsCommonOptions
-  ) => any = getToggleButtonProps
-
   const { t } = useExamTranslation()
   const scoreId = answerScoreId(element)
 
@@ -99,7 +86,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           className={classNames('e-dropdown-answer__toggle-button e-button-plain e-columns', {
             'e-dropdown-answer__toggle-button--open': isOpen,
           })}
-          {...getToggleButtonPropsFixed(
+          {...getToggleButtonProps(
             {
               'aria-describedby': scoreId,
               // The label text is inside the button, so we don't want an aria-labelledby attribute.
@@ -126,7 +113,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           </span>
         </button>
         <span
-          {...getMenuPropsFixed(
+          {...getMenuProps(
             {
               className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
               ref: menuRef,
