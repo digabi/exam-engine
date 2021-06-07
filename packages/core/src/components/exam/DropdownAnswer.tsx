@@ -116,6 +116,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           {...getMenuProps(
             {
               className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
+              'aria-labelledby': undefined,
               ref: menuRef,
             },
             { suppressRefError: !runningInBrowser }
