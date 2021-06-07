@@ -61,7 +61,6 @@ function CasControls(props: CasState) {
             onClick={() => dispatch(allowCasCancelled())}
             ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.focus()}
             aria-describedby="e-cas-controls-allowing-description"
-            aria-live="assertive"
           >
             {t('cas.allowing.cancel', { count: props.durationRemaining })}
           </button>
