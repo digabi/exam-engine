@@ -38,7 +38,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
             target="original-picture"
             className="e-zoomable"
             aria-hidden={!hasCaption}
-            tabIndex={!hasCaption ? -1 : undefined}
+            tabIndex={-1}
           >
             {image}
           </a>
