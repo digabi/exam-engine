@@ -61,7 +61,7 @@ export const fi_FI = {
     },
     allowing: {
       infoText: 'A-osan vastaukset lukitaan. Saat estetyt laskinohjelmat käyttöösi hetken kuluttua.',
-      cancel: 'Peruuta',
+      cancel: 'Peruuta ({{count}} s)',
     },
     allowed: {
       infoText: 'A-osa palautettu',
