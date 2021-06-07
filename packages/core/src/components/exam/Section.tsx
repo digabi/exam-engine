@@ -47,19 +47,22 @@ function CasControls(props: CasState) {
         <div
           className="e-text-center"
           ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.scrollIntoView()}
+          aria-live="assertive"
         >
           <hr className="e-exam-separator" />
           <p id="e-cas-controls-description">{t('cas.allowing.infoText')}</p>
-          <ProgressBar className="e-mrg-b-2" duration={casCountdownDuration} />
+          <ProgressBar
+            className="e-mrg-b-2"
+            duration={casCountdownDuration}
+            durationRemaining={props.durationRemaining}
+          />
           <button
             className="e-button"
             id="allow-cas-cancelled"
             onClick={() => dispatch(allowCasCancelled())}
             ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.focus()}
-            aria-describedby="e-cas-controls-description"
-            aria-live="assertive"
           >
-            {t('cas.allowing.buttonText', { count: props.durationRemaining })}
+            {t('cas.allowing.cancel')} <span aria-live="polite">({props.durationRemaining} s)</span>
           </button>
         </div>
       ) : (
