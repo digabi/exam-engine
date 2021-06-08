@@ -11,7 +11,7 @@ const isMediaVersion = !!process.env.MEDIA_VERSION
 const doc = parseExam(exam, true)
 const answers: ExamAnswer[] = []
 const isAttachmentsPage = location.pathname.includes('attachments/')
-const attachmentsURL = isAttachmentsPage ? 'attachments/index.html' : ''
+const attachmentsURL = isAttachmentsPage ? '' : 'attachments/index.html'
 const resolveAttachment = (filename: string) => {
   const actualFilename = !isMediaVersion ? filename : filename.replace(/\.webm$/, '.mp4').replace(/\.ogg$/, '.mp3')
   return (!isAttachmentsPage ? 'attachments/' : '') + encodeURIComponent(actualFilename)
