@@ -15,7 +15,6 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
 
   afterAll(async () => {
     await ctx.close()
-    await page.close()
   })
 
   it('selects no answer by default', async () => {
