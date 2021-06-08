@@ -2,5 +2,5 @@
 Comment=
 Terminal=true
 Name=Päivitä koe
-Exec=bash -c "ee migrate `dirname %k`/*.xml"
+Exec=bash -c "ee migrate `dirname %k`/*.xml; read -n 1 -s -p 'Valmis!'"
 Type=Application
