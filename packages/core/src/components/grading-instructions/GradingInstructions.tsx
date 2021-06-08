@@ -45,16 +45,25 @@ const renderChildNodes = createRenderChildNodes({
   formula: renderIf(
     ({ element }) =>
       queryAncestors(element, [
+        'answer-grading-instruction',
         'choice-answer',
         'dropdown-answer',
-        'question-title',
-        'question-grading-instruction',
-        'answer-grading-instruction',
         'exam-grading-instruction',
+        'question-grading-instruction',
+        'question-title',
       ]) != null
   )(Formula),
   hints: RenderExamElements,
-  image: renderIf(({ element }) => queryAncestors(element, ['choice-answer', 'scored-text-answer']) != null)(Image),
+  image: renderIf(
+    ({ element }) =>
+      queryAncestors(element, [
+        'answer-grading-instruction',
+        'choice-answer',
+        'exam-grading-instruction',
+        'question-grading-instruction',
+        'scored-text-answer',
+      ]) != null
+  )(Image),
   question: Question,
   'question-title': QuestionTitle,
   'question-grading-instruction': AnswerGradingInstruction,
