@@ -127,7 +127,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
               className={classNames('e-dropdown-answer__menu-item e-block e-pad-l-1 e-pad-r-4', {
                 'e-dropdown-answer__menu-item--selected': item === selectedItem,
                 'e-bg-color-off-white': highlightedIndex !== i,
-                'e-bg-color-lighterblue': highlightedIndex === i,
+                'e-bg-color-link e-color-off-white': highlightedIndex === i,
               })}
               key={i}
               {...getItemProps({
