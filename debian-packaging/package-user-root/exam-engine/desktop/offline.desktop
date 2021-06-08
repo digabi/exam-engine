@@ -1,6 +1,6 @@
 [Desktop Entry]
 Comment=
 Terminal=true
-Name=Tee offline (mex)
+Name=Tee offline
 Exec=bash -c "ee create-offline `dirname %k`/*.xml; read -n 1 -s -p 'Valmis!'"
 Type=Application
