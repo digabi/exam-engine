@@ -66,7 +66,11 @@ function Italic({ element, renderChildNodes }: ExamComponentProps) {
 }
 
 function Link({ element, renderChildNodes }: ExamComponentProps) {
-  return <a href={element.textContent!}>{renderChildNodes(element)}</a>
+  return (
+    <a href={element.textContent!} target="_blank">
+      {renderChildNodes(element)}
+    </a>
+  )
 }
 
 function AsDate({ element }: ExamComponentProps) {
