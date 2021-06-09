@@ -1,21 +1,26 @@
+import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { getNumericAttribute, queryAncestors } from '../../dom-utils'
+import { getAttribute, getNumericAttribute, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { imageCaptionId } from '../../ids'
 import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
 
 function Image({ element, className, renderChildNodes }: ExamComponentProps) {
+  const { resolveAttachment } = useContext(CommonExamContext)
   const { t } = useExamTranslation()
-  const src = element.getAttribute('src')!
+
+  const src = getAttribute(element, 'src')!
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
+
   const caption = renderChildNodes(element)
-  const imgUrl = useContext(CommonExamContext).resolveAttachment(src)
-  const captionId = caption.length > 0 ? imageCaptionId(element) : undefined
+  const hasCaption = caption.some(_.isObjectLike)
+  const captionId = hasCaption ? imageCaptionId(element) : undefined
+
+  const imgUrl = resolveAttachment(src)
   const image = <img className="e-image" src={imgUrl} alt="" aria-labelledby={captionId} />
-  const hasCaption = caption.length > 0
 
   return (
     <>
@@ -24,7 +29,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           className,
           width,
           height,
-          caption: hasCaption ? caption : undefined,
+          caption,
           captionId,
           bordered: hasCaption || queryAncestors(element, 'choice-answer') != null,
         }}
