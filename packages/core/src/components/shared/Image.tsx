@@ -15,8 +15,9 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
 
-  const caption = renderChildNodes(element)
-  const hasCaption = caption.some(_.isObjectLike)
+  const children = renderChildNodes(element)
+  const hasCaption = children.some(_.isObjectLike)
+  const caption = hasCaption ? children : undefined
   const captionId = hasCaption ? imageCaptionId(element) : undefined
 
   const imgUrl = resolveAttachment(src)

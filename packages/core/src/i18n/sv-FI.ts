@@ -12,8 +12,8 @@ export const sv_FI: Translations = {
   grade: 'Vitsord',
   comment: 'Kommentar',
   points: '{{count}} p.',
+  recording: 'Inspelningen',
   audio: {
-    transcription: 'Inspelningen:',
     play: 'Lyssna på inspelningen.',
   },
   'audio-errors': {

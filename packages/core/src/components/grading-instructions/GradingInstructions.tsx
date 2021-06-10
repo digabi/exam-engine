@@ -25,23 +25,20 @@ import { mkTableOfContents } from '../shared/TableOfContents'
 import AnswerGradingInstruction from './AnswerGradingInstruction'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
-import Audio from './Audio'
-import AudioTitle from './AudioTitle'
-import RenderChildNodes from '../RenderChildNodes'
+import Recording from './Recording'
 
 const renderChildNodes = createRenderChildNodes({
   'accepted-answer': AutogradedAnswerOption,
   attachment: RenderExamElements,
   'attachment-link': mkAttachmentLink('plain'),
   'attachment-links': mkAttachmentLinks('plain'),
-  audio: Audio,
-  'audio-title': AudioTitle,
-  'audio-transcription': RenderChildNodes,
+  audio: Recording,
   'audio-group': RenderExamElements,
   'choice-answer': AutogradedAnswer,
   'choice-answer-option': AutogradedAnswerOption,
   'dropdown-answer': AutogradedAnswer,
   'dropdown-answer-option': AutogradedAnswerOption,
+  'external-material': RenderExamElements,
   formula: renderIf(
     ({ element }) =>
       queryAncestors(element, [
@@ -71,6 +68,7 @@ const renderChildNodes = createRenderChildNodes({
   'text-answer': AutogradedAnswer,
   section: Section,
   'section-title': SectionTitle,
+  video: Recording,
 })
 
 const GradingInstructions: React.FunctionComponent<CommonExamProps> = ({ doc }) => {

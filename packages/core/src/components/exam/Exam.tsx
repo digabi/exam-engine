@@ -101,6 +101,7 @@ const renderChildNodes = createRenderChildNodes({
   'section-title': SectionTitle,
   'text-answer': TextAnswer,
   video: Video,
+  'video-title': RenderChildNodes,
   'image-overlay': ImageOverlay,
 })
 

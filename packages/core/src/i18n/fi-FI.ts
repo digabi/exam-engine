@@ -24,8 +24,8 @@ export const fi_FI = {
   grade: 'Arvosana',
   comment: 'Kommentti',
   points: '{{count}} p.',
+  recording: 'Tallenne',
   audio: {
-    transcription: 'Äänite:',
     play: 'Kuuntele äänite.',
   },
   'audio-errors': {

@@ -35,6 +35,8 @@ export const answerScoreId = byElementId('answer-score')
 
 export const imageCaptionId = byElementId('image-caption')
 
+export const videoCaptionId = byElementId('video-caption')
+
 export const audioLabelId = byElementId('audio-label')
 
 export const tocTitleId = 'toc-title'

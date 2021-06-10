@@ -19962,7 +19962,12 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:external-material>
         <e:attachment display-number="5.A">
           <e:attachment-title>Video: Katze</e:attachment-title>
-          <e:video src="5.webm" width="999" height="999"/>
+          <e:video src="5.webm" width="999" height="999">
+            <e:video-transcription>
+              Das Experiment läuft vierzehn Tage. Kamerafallen überwachen die Ausgänge der Häuser.
+              So können die Wissenschaftler die Katzen rund um die Uhr im Blick behalten.
+            </e:video-transcription>
+          </e:video>
           <e:reference>
             <e:publisher>ARD</e:publisher>
             <e:publication>1 LIVE</e:publication>
@@ -21772,7 +21777,12 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:external-material>
         <e:attachment display-number="5.A">
           <e:attachment-title>Video: Katze</e:attachment-title>
-          <e:video src="5.webm" width="999" height="999"/>
+          <e:video src="5.webm" width="999" height="999">
+            <e:video-transcription>
+              Das Experiment läuft vierzehn Tage. Kamerafallen überwachen die Ausgänge der Häuser.
+              So können die Wissenschaftler die Katzen rund um die Uhr im Blick behalten.
+            </e:video-transcription>
+          </e:video>
           <e:reference>
             <e:publisher>ARD</e:publisher>
             <e:publication>1 LIVE</e:publication>

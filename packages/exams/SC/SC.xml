@@ -201,7 +201,7 @@
             <e:localization lang="fi-FI">
               <p>Ne ovat yllätys / Hän ei halua paljastaa [vielä], mitä tuo mukanaan (3/0 p.).</p>
               <p>Retkituolit/leirituolit/tuolit (3/0 p.).</p>
-              <p>Jälkiosaan hyväksytään sekä yksikkö että monikko: retkituolit/retkituolin.</p>  
+              <p>Jälkiosaan hyväksytään sekä yksikkö että monikko: retkituolit/retkituolin.</p>
             </e:localization>
             <e:localization lang="sv-FI">
               <p>Den är en överraskning / Han vill inte [ännu] avslöja vad han har med sig (3/0 p.)</p>
@@ -469,7 +469,12 @@
       <e:external-material>
         <e:attachment>
           <e:attachment-title>Video: Katze</e:attachment-title>
-          <e:video src="5.webm"/>
+          <e:video src="5.webm">
+            <e:video-transcription>
+              Das Experiment läuft vierzehn Tage. Kamerafallen überwachen die Ausgänge der Häuser.
+              So können die Wissenschaftler die Katzen rund um die Uhr im Blick behalten.
+            </e:video-transcription>
+          </e:video>
           <e:reference>
             <e:publisher>ARD</e:publisher>
             <e:publication>1 LIVE</e:publication>
@@ -506,9 +511,6 @@
           <e:localization lang="sv-FI">
             <p>14 dagar / 2 veckor (3/0 p.)</p>
           </e:localization>
-          TÄHÄN PITÄISI SIIS SAADA LITTERAATIO KUTEN AUDIOISSA:
-          <br/>
-          Das Experiment läuft vierzehn Tage. Kamerafallen überwachen die Ausgänge der Häuser. So können die Wissenschaftler die Katzen rund um die Uhr im Blick behalten.
         </e:question-grading-instruction>
       </e:question>
 
@@ -1796,7 +1798,7 @@
                       Will du am Samstag mit ins Kino gehen? 0 p. (verbin taivutus, ”gehen”)
                       <br/>
                       Wollen du am Samstag ins Kino mitgekommen 0 p.
-                    </p>                      
+                    </p>
                   </e:localization>
                   <e:localization lang="sv-FI">
                     <p>
@@ -1815,7 +1817,7 @@
                       Will du am Samstag mit ins Kino gehen? 0 p. (verbböjning, ”gehen”)
                       <br/>
                       Wollen du am Samstag ins Kino mitgekommen 0 p.
-                    </p>    
+                    </p>
                   </e:localization>
                 </e:answer-grading-instruction>
                 <e:accepted-answer score="2">Willst du am Samstag mit ins Kino kommen?</e:accepted-answer>
@@ -1925,7 +1927,7 @@
             <li>Vastaus on täysin sopimaton ilanteeseen, ja/tai sen kieliasu ja sisältö
               ovat erittäin puutteellisia.</li>
             <li>Tehtävät 22.2 ja 22.4. vastauksen pituus on 1 sana 0 p.</li>
-          </ul>  
+          </ul>
         </e:localization>
         <e:localization lang="sv-FI">
           <p>
@@ -1954,7 +1956,7 @@
           <ul>
             <li>Svaret är helt olämpligt för situationen, och/eller dess språkdräkt och innehåll är mycket bristfälliga.</li>
             <li>Svarets längd för uppgifterna 22.2 och 22.4 är 1 ord 0 p.</li>
-          </ul>  
+          </ul>
         </e:localization>
       </e:question-grading-instruction>
       <e:attachment>

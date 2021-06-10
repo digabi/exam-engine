@@ -262,7 +262,10 @@
 
   <xs:element name="video">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element name="video-title" type="e:Flow" minOccurs="0" />
+        <xs:element name="video-transcription" type="e:Flow" minOccurs="0" />
+      </xs:sequence>
       <xs:attributeGroup ref="e:sourcable" />
       <xs:attributeGroup ref="e:localizable" />
       <xs:attributeGroup ref="e:stylable" />
