@@ -631,6 +631,10 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
       for (const option of sortedOptions) {
         answer.addChild(option)
       }
+
+      // A no-answer option should always be the last
+      const noAnswerOption = options.find((option) => getAttribute('type', option, 'normal') === 'no-answer')
+      if (noAnswerOption) answer.addChild(noAnswerOption)
     })
 }
 

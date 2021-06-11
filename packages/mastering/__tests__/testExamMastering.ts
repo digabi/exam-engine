@@ -101,6 +101,12 @@ describe('Exam mastering', () => {
     expect(wrap(masteringResult.xml)).toMatchSnapshot('xml')
   })
 
+  it('shuffles choice answers but keeps no-answer options last', async () => {
+    const xml = await readFixture('choice_answer_with_no_answer.xml')
+    const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
+    expect(wrap(masteringResult.xml)).toMatchSnapshot()
+  })
+
   it('adds a suffix to exam title for special exams', async () => {
     const xml = generateExam({
       examCode: 'EA',

@@ -23230,6 +23230,28 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
 `;
 
+exports[`Exam mastering shuffles choice answers but keeps no-answer options last 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">
+  
+  <e:exam-title/>
+  <e:exam-instruction/>
+  <e:section display-number="1" max-score="0">
+    <e:section-title/>
+    <e:question display-number="1" max-score="0">
+      <e:question-title/>
+      <e:choice-answer display-number="1" question-id="1" max-score="0">
+        
+        
+        
+        
+      <e:choice-answer-option option-id="2">A</e:choice-answer-option><e:choice-answer-option option-id="3">C</e:choice-answer-option><e:choice-answer-option option-id="4">B</e:choice-answer-option><e:choice-answer-option type="no-answer" option-id="5">En vastaa</e:choice-answer-option></e:choice-answer>
+    </e:question>
+  </e:section>
+<e:exam-footer><p lang="fi-FI" class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
+
+`;
+
 exports[`Exam mastering supports arbitrarily nested questions: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="36">

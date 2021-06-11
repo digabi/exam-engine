@@ -1,12 +1,12 @@
 import * as _ from 'lodash-es'
-import { queryAll } from '../dom-utils'
+import { findChildElement, getAttribute, queryAll } from '../dom-utils'
 
 export default function parseExam(examXml: string, deterministicRendering = false): XMLDocument {
   const doc = new DOMParser().parseFromString(examXml, 'application/xml')
   if (!deterministicRendering) {
     queryAll(doc.documentElement, ['choice-answer', 'dropdown-answer'])
-      .filter((e) => e.getAttribute('ordering') !== 'fixed')
-      .forEach((e) => randomizeChildElementOrder(e))
+      .filter((e) => getAttribute(e, 'ordering') !== 'fixed')
+      .forEach(randomizeOptions)
   }
 
   // The reference parts (e.g. author, title and so on) are displayed as inline
@@ -21,11 +21,15 @@ export default function parseExam(examXml: string, deterministicRendering = fals
   return doc
 }
 
-function randomizeChildElementOrder(elem: Element) {
+function randomizeOptions(elem: Element) {
   for (let i = elem.children.length; i > 0; i--) {
     const j = Math.floor(Math.random() * i)
     elem.appendChild(elem.children[j])
   }
+
+  // A no-answer option should always be the last
+  const noAnswerOption = findChildElement(elem, (option) => getAttribute(option, 'type') === 'no-answer')
+  if (noAnswerOption) elem.appendChild(noAnswerOption)
 }
 
 function trimWhitespace(element: Element) {
