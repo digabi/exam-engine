@@ -3,6 +3,7 @@
   <e:exam-versions>
     <e:exam-version lang="fi-FI"/>
     <e:exam-version lang="sv-FI"/>
+    <e:exam-version lang="fi-FI" exam-type="hearing-impaired"/>
   </e:exam-versions>
   <e:exam-instruction>
     <e:localization lang="fi-FI">
