@@ -225,22 +225,32 @@ async function masterExamVersion(
   await addExamMetadata(root, generateUuid, language, type)
   applyLocalizations(root, language, type)
 
-  const exam = parseExamStructure(root)
+  let exam = parseExamStructure(root)
   const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
 
   addYoCustomizations(root, language, type)
   addSectionNumbers(exam)
   addQuestionNumbers(exam)
   addAnswerNumbers(exam)
-  addQuestionIds(exam, generateId)
-  if (options.multiChoiceShuffleSecret) {
-    shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
-  }
   addAttachmentNumbers(exam)
+
+  addQuestionIds(exam, generateId)
+  // Perform shuffling before adding answer options ids, so the student can't guess the original order.
+  if (options.multiChoiceShuffleSecret) shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
+  addAnswerOptionIds(exam, generateId)
+
+  // This is bit of a hack. For hearing impaired exams, we want to delete the first section after the basic exam
+  // structure has been set set up. This way the the questions in the hearing impaired exam are numbered in the same
+  // manner than the normal exam and the grading structure is a subset of the normal grading structure.
+  if (type === 'hearing-impaired') {
+    exam.sections[0]?.element?.remove()
+    exam = parseExamStructure(root)
+  }
+
   updateMaxScoresToAnswers(exam)
   countMaxScores(exam)
   countSectionMaxAndMinAnswers(exam)
-  addAnswerOptionIds(exam, generateId)
+
   addRestrictedAudioMetadata(attachments)
   await renderFormulas(root, options.throwOnLatexError)
   await addMediaMetadata(attachments, getMediaMetadata)
@@ -668,12 +678,18 @@ function mkError(message: string, element: Element): SyntaxError {
 
 function parseExamStructure(element: Element): Exam {
   const sections = element.find<Element>('//e:section', ns).map(parseSection)
-  const topLevelQuestions = _.flatMap(sections, (s) => s.questions)
-  const collectAnswers = (q: Question): Answer[] =>
-    q.answers.length ? q.answers : _.flatMap(q.childQuestions, collectAnswers)
-  const answers = _.flatMap(topLevelQuestions, collectAnswers)
-  const collectQuestions = (q: Question): Question[] => [q, ..._.flatMap(q.childQuestions, collectQuestions)]
-  const questions = _.flatMap(topLevelQuestions, collectQuestions)
+  const topLevelQuestions = sections.flatMap((s) => s.questions)
+  const questions: Question[] = []
+  const answers: Answer[] = []
+
+  const collect = (question: Question) => {
+    questions.push(question)
+    if (question.answers.length) answers.push(...question.answers)
+    else question.childQuestions.forEach(collect)
+  }
+
+  topLevelQuestions.forEach(collect)
+
   return { element, sections, questions, topLevelQuestions, answers }
 }
 
