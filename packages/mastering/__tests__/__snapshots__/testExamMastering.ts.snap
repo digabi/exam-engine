@@ -6906,11 +6906,11 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
 Object {
   "attachments": Array [
     Object {
-      "filename": "example_small.jpg",
+      "filename": "example.jpg",
       "restricted": false,
     },
     Object {
-      "filename": "example.jpg",
+      "filename": "example_small.jpg",
       "restricted": false,
     },
     Object {
@@ -7257,11 +7257,11 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 2`] = `
 Object {
   "attachments": Array [
     Object {
-      "filename": "example_small.jpg",
+      "filename": "example.jpg",
       "restricted": false,
     },
     Object {
-      "filename": "example.jpg",
+      "filename": "example_small.jpg",
       "restricted": false,
     },
     Object {
@@ -15116,7 +15116,7 @@ Object {
       "restricted": true,
     },
     Object {
-      "filename": "7.1.0478.jpg",
+      "filename": "7.1.7279.jpg",
       "restricted": false,
     },
     Object {
@@ -15124,7 +15124,7 @@ Object {
       "restricted": false,
     },
     Object {
-      "filename": "7.1.7279.jpg",
+      "filename": "7.1.0478.jpg",
       "restricted": false,
     },
     Object {
@@ -15132,11 +15132,11 @@ Object {
       "restricted": true,
     },
     Object {
-      "filename": "7.2.1617.jpg",
+      "filename": "7.2.7276.jpg",
       "restricted": false,
     },
     Object {
-      "filename": "7.2.7276.jpg",
+      "filename": "7.2.1617.jpg",
       "restricted": false,
     },
     Object {
@@ -15148,15 +15148,15 @@ Object {
       "restricted": true,
     },
     Object {
-      "filename": "7.3.4375.jpg",
-      "restricted": false,
-    },
-    Object {
       "filename": "7.3.4927.jpg",
       "restricted": false,
     },
     Object {
       "filename": "7.3.7459.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "7.3.4375.jpg",
       "restricted": false,
     },
     Object {
@@ -17260,7 +17260,7 @@ Object {
       "restricted": true,
     },
     Object {
-      "filename": "7.1.0478.jpg",
+      "filename": "7.1.7279.jpg",
       "restricted": false,
     },
     Object {
@@ -17268,7 +17268,7 @@ Object {
       "restricted": false,
     },
     Object {
-      "filename": "7.1.7279.jpg",
+      "filename": "7.1.0478.jpg",
       "restricted": false,
     },
     Object {
@@ -17276,11 +17276,11 @@ Object {
       "restricted": true,
     },
     Object {
-      "filename": "7.2.1617.jpg",
+      "filename": "7.2.7276.jpg",
       "restricted": false,
     },
     Object {
-      "filename": "7.2.7276.jpg",
+      "filename": "7.2.1617.jpg",
       "restricted": false,
     },
     Object {
@@ -17292,15 +17292,15 @@ Object {
       "restricted": true,
     },
     Object {
-      "filename": "7.3.4375.jpg",
-      "restricted": false,
-    },
-    Object {
       "filename": "7.3.4927.jpg",
       "restricted": false,
     },
     Object {
       "filename": "7.3.7459.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "7.3.4375.jpg",
       "restricted": false,
     },
     Object {
@@ -19320,6 +19320,1396 @@ Object {
 }
 `;
 
+exports[`Exam mastering masters SC.xml exam correctly 3`] = `
+Object {
+  "attachments": Array [
+    Object {
+      "filename": "maxmoritz.png",
+      "restricted": false,
+    },
+    Object {
+      "filename": "7.2.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "7.4.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "24.1.jpg",
+      "restricted": false,
+    },
+    Object {
+      "filename": "custom.css",
+      "restricted": false,
+    },
+  ],
+  "date": "1970-01-01",
+  "dayCode": null,
+  "examCode": "SC",
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": Object {
+    "questions": Array [
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "8.1",
+            "id": 26,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 172,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 173,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 174,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "8.2",
+            "id": 27,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 175,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 176,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 177,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "8",
+        "id": 328,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "9.1",
+            "id": 28,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 178,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 179,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "9.2",
+            "id": 29,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 180,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 181,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "9.3",
+            "id": 30,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 182,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 183,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "9.4",
+            "id": 31,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 184,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 185,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "9.5",
+            "id": 32,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 186,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 187,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "9.6",
+            "id": 33,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 188,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 189,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "9",
+        "id": 329,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "10.1",
+            "id": 34,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 190,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 191,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 192,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "10.3",
+            "id": 36,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 193,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 194,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 195,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "10.4",
+            "id": 37,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 196,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 197,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 198,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "10",
+        "id": 330,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "10.2",
+        "id": 35,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "11.1",
+            "id": 38,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 199,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 200,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 201,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "11.3",
+            "id": 41,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 202,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 203,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 204,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "11.4",
+            "id": 42,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 205,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 206,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 207,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "11.5",
+            "id": 43,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 208,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 209,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 210,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "11.6",
+            "id": 44,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 211,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 212,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 213,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "11",
+        "id": 331,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "11.2.1",
+        "id": 39,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "11.2.2",
+        "id": 40,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "12.1",
+            "id": 45,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 214,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 215,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 216,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 217,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 218,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 219,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 220,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 221,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 222,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "12.2",
+            "id": 46,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 223,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 224,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 225,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 226,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 227,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 228,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 229,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 230,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 231,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "12.3",
+            "id": 47,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 232,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 233,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 234,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 235,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 236,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 237,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 238,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 239,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 240,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "12",
+        "id": 332,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "13.1",
+            "id": 48,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 241,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 242,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 243,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "13.2",
+            "id": 49,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 244,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 245,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 246,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "13",
+        "id": 333,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "13.3",
+        "id": 50,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "14.1",
+            "id": 51,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 247,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 248,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 249,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "14.3",
+            "id": 53,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 250,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 251,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 252,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "14.4",
+            "id": 54,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 253,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 254,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 255,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "14",
+        "id": 334,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "14.2",
+        "id": 52,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "15.2",
+            "id": 56,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 256,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 257,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 258,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "15.3",
+            "id": 57,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 259,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 260,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 261,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "15.4",
+            "id": 58,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 262,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 263,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 264,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "15.5",
+            "id": 59,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 265,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 266,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 267,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "15.6",
+            "id": 60,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 268,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 269,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 270,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "15",
+        "id": 335,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "15.1",
+        "id": 55,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "16.1",
+            "id": 61,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 271,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 272,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 273,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "16.2",
+            "id": 62,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 274,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 275,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 276,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "16.3",
+            "id": 63,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 277,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 278,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 279,
+                "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "16",
+        "id": 336,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "16.4",
+        "id": 64,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "17.1",
+            "id": 65,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 280,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 281,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 282,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.2",
+            "id": 66,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 283,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 284,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 285,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.3",
+            "id": 67,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 286,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 287,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 288,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.4",
+            "id": 68,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 289,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 290,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 291,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.5",
+            "id": 69,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 292,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 293,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 294,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.6",
+            "id": 70,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 295,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 296,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 297,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.7",
+            "id": 71,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 298,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 299,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 300,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.8",
+            "id": 72,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 301,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 302,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 303,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.9",
+            "id": 73,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 304,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 305,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 306,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.10",
+            "id": 74,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 307,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 308,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 309,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.11",
+            "id": 75,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 310,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 311,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 312,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.12",
+            "id": 76,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 313,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 314,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 315,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.13",
+            "id": 77,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 316,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 317,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 318,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.14",
+            "id": 78,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 319,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 320,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 321,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.15",
+            "id": 79,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 322,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 323,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 324,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+          Object {
+            "displayNumber": "17.16",
+            "id": 80,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 325,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 326,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 327,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "17",
+        "id": 337,
+        "type": "choicegroup",
+      },
+      Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "Willst du am Samstag mit ins Kino kommen?",
+          },
+          Object {
+            "score": 1,
+            "text": "Willst du ins Kino am Samstag mitkommen? (sanajärjestys)",
+          },
+          Object {
+            "score": 1,
+            "text": "Will du am Samstag mit ins Kino kommen? (verbin taivutus)",
+          },
+          Object {
+            "score": 1,
+            "text": "willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)",
+          },
+        ],
+        "displayNumber": "18.1",
+        "id": 81,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "weil ich zuerst Mama fragen muss",
+          },
+        ],
+        "displayNumber": "18.2",
+        "id": 82,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "Kannst du mir helfen?",
+          },
+        ],
+        "displayNumber": "19.1",
+        "id": 83,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 3,
+            "text": "Mathe ist immer so schwierig.",
+          },
+          Object {
+            "score": 3,
+            "text": "Was soll man hier machen? Ich verstehe nichts!",
+          },
+        ],
+        "displayNumber": "19.2",
+        "id": 84,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 2,
+            "text": "Wie ist das Wetter heute?",
+          },
+          Object {
+            "score": 2,
+            "text": "Was ist heute für Wetter?",
+          },
+          Object {
+            "score": 2,
+            "text": "Was für ein Wetter ist heute?",
+          },
+        ],
+        "displayNumber": "19.3",
+        "id": 85,
+        "maxScore": 2,
+        "type": "text",
+      },
+      Object {
+        "correctAnswers": Array [
+          Object {
+            "score": 3,
+            "text": "Du brauchst einen Regenschirm, denn es regnet stark.",
+          },
+          Object {
+            "score": 3,
+            "text": "Heute ist sehr schlechtes Wetter",
+          },
+        ],
+        "displayNumber": "19.4",
+        "id": 86,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "20.1",
+        "id": 87,
+        "maxScore": 33,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "20.2",
+        "id": 88,
+        "maxScore": 33,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "21.1",
+        "id": 89,
+        "maxScore": 66,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "21.2",
+        "id": 90,
+        "maxScore": 66,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "fi-FI",
+  "title": "FI – Saksa, lyhyt oppimäärä; kuulovammaiset kokelaat",
+  "type": "hearing-impaired",
+}
+`;
+
 exports[`Exam mastering masters SC.xml exam correctly: translation 1`] = `
 Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen tuottaminen. Voit tehdä tehtävät haluamassasi järjestyksessä. Noudata tehtäväkohtaisia vastaamisohjeita. Voit muuttaa antamiasi vastauksia koska tahansa kokeen aikana. Varaa aikaa kuullunymmärtämistehtävien tekemiseen yhteensä noin 1 tunti. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi. Onnea kokeeseen!
 
@@ -19459,6 +20849,144 @@ Eräs isä on lähettänyt tekstin keskustelupalstalle. Hän pyytää mielipitei
 `;
 
 exports[`Exam mastering masters SC.xml exam correctly: translation 2`] = `
+Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen tuottaminen. Voit tehdä tehtävät haluamassasi järjestyksessä. Noudata tehtäväkohtaisia vastaamisohjeita. Voit muuttaa antamiasi vastauksia koska tahansa kokeen aikana. Varaa aikaa kuullunymmärtämistehtävien tekemiseen yhteensä noin 1 tunti. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi. Onnea kokeeseen!
+
+YTL
+
+Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Hänen sukulaisensa tulevat vierailulle (3/0 p.). Hänen serkkunsa tulee mukaan (3/0 p.). Alkuosassa hyväksytään sekä yksikkö että monikko eli sukulainen/sukulaiset. Jälkiosassa hyväksytään sekä yksikkö että monikko eli serkku/serkut. Ei hyväksytä: sukulaiset tulevat mukaan piknikille.
+
+Mitä Paula kertoo eväistään, ja mitä muuta hän ottaa mukaan? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Ne ovat yllätys / Hän ei halua paljastaa [vielä], mitä tuo mukanaan (3/0 p.). Retkituolit/leirituolit/tuolit (3/0 p.). Jälkiosaan hyväksytään sekä yksikkö että monikko: retkituolit/retkituolin.
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti suomeksi.
+
+14 päivää / 2 viikkoa (3/0 p.)
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+YTL
+
+Seuraavat tekstit kuvaavat samaa tapahtumaa kahdesta eri näkökulmasta. Niissä on kuitenkin joitakin eroja. Mitä sanomalehtiartikkelin yksityiskohtia lehden lukija muistaa oikein (Richtig), ja mitä väärin (Falsch)?
+
+YTL
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä siitä isän mielestä seuraa?
+
+Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan perusteella.
+
+Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,, sekä siitä, miten ja miten retki suunnitellaan.
+
+turvallisuudesta [vuorella/vuorilla] (3/0 p.) kiipeilyköysiä/-valjaita/köysiä/kiipeilyvaljaita/valjaita/kiipeilyvarusteita/kiipeilytarvikkeita käytetään (3/0 p.) Alkuosassa ei hyväksytty: varmuudesta vuorilla.
+
+Lue alla olevat kolme pikaviestiä ja valitse kuhunkin aukkoon parhaiten sopiva ilmaisu.
+
+YTL
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös järjestää? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Jos asiakas ei pääse perille saman päivän aikana / jos asiakkaan matka viivästyy yön yli (2/0 p.) Kuljetukset hotelliin (2/0 p.)
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? (2 asiaa) Kirjoita vastauksesi lyhyesti suomeksi.
+
+Oli kylmä (2/0 p.). Lentokentällä oli vain yhdet [siirrettävät] portaat (2/0 p.).
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi.
+
+Lähettäjä arvostaa vastaanottajaa (2/0 p.). Hän on valmis käyttämään aikaansa [kortin kirjoittamiseen/lähettämiseen] (2/0 p.)
+
+Aineisto poistettu tekijänoikeussyistä.
+
+YTL
+
+Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin perusteella lyhyesti suomeksi.
+
+Kaupunki haluaa vähentä kertakäyttömukien määrää. (2/0 p.)
+
+Kirjoita kohdat kokonaan uudelleen siten, että lisäät kuhunkin lauseeseen sulkeissa annetun modaaliapuverbin.
+
+Tehtävässä vaaditaan muunnoksilta kieliopillista ja oikeinkirjoituksen oikeellisuutta. Kuitenkaan väärästä välimerkistä tai sen puuttumisesta ei ole vähennetty pisteitä.
+
+Vastauksessa on hyväksytty myös ”mitkommen”-verbin käyttö. Esim. ”Willst du am Samstag ins Kino mitkommen?” ja myös esim. ”Willst du am Samstag mit mir ins Kino mitkommen?”. Esimerkkejä: Willst du am Samstag mit ins Kino kommen? 2 p. Willst du ins Kino am Samstag mitkommen? 1 p. (sanajärjestys) Will du am Samstag mit ins Kino kommen 1 p. (verbin taivutus) willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä) Will du am Samstag mit ins Kino gehen? 0 p. (verbin taivutus, ”gehen”) Wollen du am Samstag ins Kino mitgekommen 0 p.
+
+esimerkkejä: weil ich zuerst Mama fragen muss. 2 p. Weil ich zuerst Mama fragen muss. 1 p. (iso alkukirjain) weil ich Mama zuerst fragen muss. 1 p. (sanajärjestys) weil müsse ich zuerst Mama fragen 0 p. (verbin taivutus, sanajärjestys) weil ich müsse zuerst Mama frage 0 p.
+
+YTL
+
+Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä ja yhdestä vastauksesta. Esitä kysymykset saksaksi (1. ja 3.). Vastaa niihin saksaksi valokuvien avulla (2. ja 4.). Kohdissa 2. ja 4. vastauksen on oltava 5–15 sanan mittainen.
+
+Tehtävän ohjeistuksessa on virhe, jonka seurauksena hyväksytään kohdissa 2. ja 4. myös tehtävän 23. materiaaliin viittaavat vastaukset. Virheet, jotka eivät kuulu äännettäessä, eivät vie pisteitä. Pisteitys: 3 pistettä Vastaus on täysin ilanteeseen sopiva, ja sisältö ja kieliasu ovat virheettömiä.2 pistettä (jokin seuraavista) 2 pistettä (jokin seuraavista) Vastaus on ilanteeseen sopiva ja kielellisesi virheetön, mutta sisällöltään puutteellinen. Vastaus on ilanteeseen sopiva ja sisällöltään virheetön, mutta kielellisesi puutteellinen. Vastaus on kielellisesi ja sisällöllisesi virheetön, mutta ei täysin ilanteeseen sopiva. 1 pistettä (jokin seuraavista) Vastauksessa on kielellisiä ja sisällöllisiä puutteita, mutta se sopii tilanteeseen. Vastaus on sisällöltään ja sävyltään puutteellinen, mutta kielellisesi virheetön. Vastaus on kielellisesi virheellinen ja ilanteeseen sopimaton, mutta asiasisältö välittyy. Tehtävät 22.2 ja 22.4. vastauksen pituus on 2-4 sanaa: enintään 1 p. 0 pistettä Vastaus on täysin sopimaton ilanteeseen, ja/tai sen kieliasu ja sisältö ovat erittäin puutteellisia. Tehtävät 22.2 ja 22.4. vastauksen pituus on 1 sana 0 p.
+
+Voitko auttaa minua?
+
+Millainen sää tänään on?
+
+YTL
+
+Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 160–240 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
+
+Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
+
+Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
+
+Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
+
+Ystäväsi haluaa tietää, miten kesälomasi sujui. Kirjoita hänelle lomakuviesi avulla, mitä matkalla tapahtui.
+
+Eräs isä on lähettänyt tekstin keskustelupalstalle. Hän pyytää mielipiteitä siitä, kumpi on oikeassa – hän vai poika. Vastaa palstalla isälle. Perustele näkemyksesi.
+`;
+
+exports[`Exam mastering masters SC.xml exam correctly: translation 3`] = `
 Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen tuottaminen. Voit tehdä tehtävät haluamassasi järjestyksessä. Noudata tehtäväkohtaisia vastaamisohjeita. Voit muuttaa antamiasi vastauksia koska tahansa kokeen aikana. Varaa aikaa kuullunymmärtämistehtävien tekemiseen yhteensä noin 1 tunti. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi. Onnea kokeeseen!
 
 YTL
@@ -23227,6 +24755,1152 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
   <e:references/>
 <e:exam-footer><p lang="sv-FI" class="e-text-center e-semibold">Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.</p></e:exam-footer></e:exam>
+
+`;
+
+exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" lang="de-DE" max-score="228"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä; kuulovammaiset kokelaat</span></e:exam-title>
+  
+  <e:exam-instruction>
+    <span lang="fi-FI">
+      <p>
+        Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
+        tuottaminen.
+      </p>
+      <p>
+        Voit tehdä tehtävät haluamassasi järjestyksessä. Noudata tehtäväkohtaisia vastaamisohjeita. Voit muuttaa
+        antamiasi vastauksia koska tahansa kokeen aikana. Varaa aikaa kuullunymmärtämistehtävien tekemiseen yhteensä
+        noin 1 tunti.
+      </p>
+      <p>
+        Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää
+        arvosteltavaksi.
+      </p>
+      <p>
+        Onnea kokeeseen!
+      </p>
+    </span>
+    
+  </e:exam-instruction>
+  
+  <e:table-of-contents/>
+  
+
+  <e:section display-number="2" max-score="99">
+    <e:section-title>Textverständnis</e:section-title>
+
+    <e:question display-number="8" max-score="4">
+      <e:question-title>Hausaufgaben</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.
+      </e:question-instruction>
+      <e:external-material>
+        <e:attachment display-number="8.A">
+          <e:attachment-title>Text: Whatsapp-Chat</e:attachment-title>
+          <div class="kupla1"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was
+            wir für morgen machen müssen?
+          </div>
+          <div class="kupla2"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal
+            Tom. Hat eben doch Vorteile, wenn man mit seinem Bruder in derselben Klasse ist ...
+          </div>
+          <div class="kupla1"><b>Maren</b>: Okay. Aber frag bitte schnell! Ich muss nachher noch zum Schwimmen.
+          </div>
+          <div class="kupla2"><b>Kevin</b>: Für morgen haben wir: Mathe, Seite 76, Aufgaben 6, 7, 8 und in Geschichte
+            den Inhalt der letzten Stunde wiederholen, und in Chemie machen wir doch im Moment nur die Experimente.
+          </div>
+          <div class="kupla1"><b>Maren</b>: Mathe für morgen? Das kann nicht sein! Morgen haben wir kein Mathe! Und
+            Geschichte!? So ein Pech! Ich habe mein Geschichtsbuch in der Schule vergessen.
+          </div>
+          <div class="kupla2"><b>Kevin</b>: Stimmt ja! Morgen fällt Mathe aus. Ich kann die Seiten vom Geschichtsbuch
+            fotografieren und dir schicken. Okay?
+          </div>
+          <div class="kupla1"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen
+            doch nicht ganz frei, aber ist ja nicht so viel … ;)
+          </div>
+          <div class="kupla2"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!
+          </div>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="8.1" max-score="2">
+        <e:question-title>Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat?</e:question-title>
+        <e:choice-answer display-number="8.1" question-id="26" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="172">Sie hat ihre Notizen in der Schule</e:choice-answer-option><e:choice-answer-option option-id="173">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option><e:choice-answer-option option-id="174">Sie war nicht im Unterricht</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="8.2" max-score="2">
+        <e:question-title>Welche Hausaufgaben wird Maren für morgen machen?</e:question-title>
+        <e:choice-answer display-number="8.2" question-id="27" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="175">Mathe</e:choice-answer-option><e:choice-answer-option option-id="176">Chemie</e:choice-answer-option><e:choice-answer-option option-id="177">Geschichte</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question display-number="9" max-score="6">
+      <e:question-title>Freitag der Dreizehnte</e:question-title>
+      <e:question-instruction>
+        <p>
+          Lesen Sie den folgenden Text und beantworten Sie die Fragen.
+        </p>
+        <span lang="fi-FI">
+          <p>
+            Seuraavat tekstit kuvaavat samaa tapahtumaa kahdesta eri näkökulmasta. Niissä on kuitenkin joitakin eroja.
+            Mitä sanomalehtiartikkelin yksityiskohtia lehden lukija muistaa oikein (Richtig), ja mitä väärin (Falsch)?
+          </p>
+        </span>
+        
+      </e:question-instruction>
+      <e:external-material>
+        <e:attachment display-number="9.A">
+          <e:attachment-title>Texte: Freitag der Dreizehnte</e:attachment-title>
+          <p>
+            <b>Text 1: Zeitungsartikel, Freitag den 13.3.2018</b>
+            <br/>
+            Am vergangenen Mittwoch war ein 57-jähriger Mann gegen 17.30 Uhr in einem Supermarkt einkaufen. Er hatte
+            sein Auto, einen silberfarbenen Mercedes, auf dem großen Parkplatz direkt vor dem Supermarkt abgestellt.
+            Nach dem Einkauf kehrte er zum Auto zurück. Das Auto war nicht verschlossen. Er setzte sich ins Auto, legte
+            seine Geldbörse auf den Beifahrersitz neben sich und wollte wegfahren. Da merkte er jedoch, dass er einen
+            Fehler gemacht hatte: Er saß in einem fremden Auto. Sein eigenes Auto stand direkt hinter ihm. Er blieb ganz
+            ruhig und wartete auf die Fahrerin des Autos. Als sie kam, erklärte er ihr alles und entschuldigte sich.
+            Dann fuhr er nach Hause. Erst zu Hause bemerkte er, dass er seine Geldbörse nicht bei sich hatte. Weil er
+            den Namen oder die Adresse der Autobesitzerin nicht kannte, hofft er nun, dass die Frau sich bei ihm meldet.
+            Im Auto hat er 200 Euro Bargeld vergessen und seine Fahrerlaubnis.
+          </p>
+          <p>
+            <b>Text 2: Ein Leser der Zeitung erzählt seinem Freund:</b>
+            <br/>
+            „Ich habe gerade in der Zeitung etwas Komisches gelesen: Heute ist doch Freitag, der Dreizehnte aber schon
+            vorgestern hat ein Mann richtig Pech gehabt. Er hat nämlich ein fremdes Auto mit seinem eigenen Auto
+            verwechselt. Er war wohl einkaufen und hatte vorher sein metallblaues Auto in einer kleinen Straße in der
+            Nähe vom Supermarkt geparkt. Als er dann vom Einkauf zurückkam, hat er sich in seinen Wagen gesetzt und
+            wollte losfahren. Da hat er auf einmal sein eigenes Auto gegenüber auf der anderen Straßenseite gesehen. Er
+            saß also im falschen Auto. Er war dann total aufgeregt und ist in seiner Panik ganz schnell mit seinem
+            eigenen Auto weggefahren. Tja, als er zu Hause ankam, hatte er seine Geldbörse nicht mehr bei sich. Er hatte
+            sie im fremden Auto auf dem Platz neben sich vergessen. In der Geldbörse waren vier Fünfzig-Euro-Scheine und
+            außerdem auch noch sein Führerschein. Nun hofft der Mann, dass der Besitzer des Autos Kontakt zu ihm
+            aufnimmt, wenn er die Geldbörse findet.“
+          </p>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="9.1" max-score="1">
+        <e:question-title>An welchem Tag es passiert ist</e:question-title>
+        <e:choice-answer ordering="fixed" display-number="9.1" question-id="28" max-score="1">
+          <e:choice-answer-option option-id="178">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="179">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question display-number="9.2" max-score="1">
+        <e:question-title>Welche Farbe die Autos hatten</e:question-title>
+        <e:choice-answer ordering="fixed" display-number="9.2" question-id="29" max-score="1">
+          <e:choice-answer-option option-id="180">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="181">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question display-number="9.3" max-score="1">
+        <e:question-title>Wo im Auto der Mann etwas vergessen hatte</e:question-title>
+        <e:choice-answer ordering="fixed" display-number="9.3" question-id="30" max-score="1">
+          <e:choice-answer-option option-id="182">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="183">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question display-number="9.4" max-score="1">
+        <e:question-title>Wo der Mann sein Auto geparkt hatte</e:question-title>
+        <e:choice-answer ordering="fixed" display-number="9.4" question-id="31" max-score="1">
+          <e:choice-answer-option option-id="184">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="185">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question display-number="9.5" max-score="1">
+        <e:question-title>Was der Mann machte, nachdem er seinen Fehler bemerkt hatte</e:question-title>
+        <e:choice-answer ordering="fixed" display-number="9.5" question-id="32" max-score="1">
+          <e:choice-answer-option option-id="186">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="187">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+      <e:question display-number="9.6" max-score="1">
+        <e:question-title>Was alles in der Geldbörse war</e:question-title>
+        <e:choice-answer ordering="fixed" display-number="9.6" question-id="33" max-score="1">
+          <e:choice-answer-option option-id="188">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="189">Falsch</e:choice-answer-option>
+        </e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question display-number="10" max-score="15">
+      <e:question-title>Duis Minim?</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
+      <e:external-material>
+        <e:attachment name="zeugnis" display-number="10.A">
+          <e:attachment-title>Text: Duis Minim?</e:attachment-title>
+          <p>
+            <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
+            
+          </p>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="10.1" max-score="3">
+        <e:question-title>Wie begründet der Sohn seine Bitte?</e:question-title>
+        <e:choice-answer display-number="10.1" question-id="34" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="190">Er hat seine Leistungen verbessert</e:choice-answer-option><e:choice-answer-option option-id="191">Er möchte eine Urlaubsreise machen</e:choice-answer-option><e:choice-answer-option option-id="192">Er wird anders behandelt als andere Schüler</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="10.2" max-score="6">
+        <e:question-title>
+          <span lang="fi-FI">Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä
+            siitä isän mielestä seuraa?
+          </span>
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="6" display-number="10.2" question-id="35"/>
+        
+      </e:question>
+
+      <e:question display-number="10.3" max-score="3">
+        <e:question-title>Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“?
+        </e:question-title>
+        <e:choice-answer display-number="10.3" question-id="36" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="193">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option><e:choice-answer-option option-id="194">Dass der Vater kaum versteht, was dem Sohn wichtig ist</e:choice-answer-option><e:choice-answer-option option-id="195">Dass der Vater versucht, den Sohn streng zu erziehen</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="10.4" max-score="3">
+        <e:question-title>Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen?</e:question-title>
+        <e:choice-answer display-number="10.4" question-id="37" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="196">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option><e:choice-answer-option option-id="197">Weil beide zu unterschiedlichen Zeiten zu Hause sind</e:choice-answer-option><e:choice-answer-option option-id="198">Weil der Vater so viel von zu Hause weg ist</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question display-number="11" max-score="20">
+      <e:question-title>Excepteur cupidatat!</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
+      <e:external-material>
+        <e:attachment display-number="11.A">
+          <e:attachment-title>Text: Excepteur cupidatat!</e:attachment-title>
+          <p>
+            <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
+            
+          </p>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="11.1" max-score="3">
+        <e:question-title>Was mag Proident besonders an seinem Job?</e:question-title>
+        <e:choice-answer display-number="11.1" question-id="38" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="199">Die Arbeit bietet viel Abwechslung</e:choice-answer-option><e:choice-answer-option option-id="200">Seine Sportlerkarriere profitiert davon</e:choice-answer-option><e:choice-answer-option option-id="201">Er kann seine eigenen Grenzen austesten</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="11.2" max-score="6">
+        <e:question-title>
+          <span lang="fi-FI">Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan
+            perusteella.
+          </span>
+          
+        </e:question-title>
+        <span lang="fi-FI">
+          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3" display-number="11.2.1" question-id="39"/>, sekä siitä, miten
+          <e:text-answer max-score="3" display-number="11.2.2" question-id="40"/>
+          ja miten retki suunnitellaan.
+        </span>
+        
+        
+      </e:question>
+
+      <e:question display-number="11.3" max-score="2">
+        <e:question-title>Wie ist Proidents Arbeit als Lorem und Ipsum organisiert?</e:question-title>
+        <e:choice-answer display-number="11.3" question-id="41" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="202">Er macht eine lange Wanderung und sitzt danach im Büro</e:choice-answer-option><e:choice-answer-option option-id="203">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
+          </e:choice-answer-option><e:choice-answer-option option-id="204">Er hat eine Woche Arbeit und dann eine Woche frei</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="11.4" max-score="3">
+        <e:question-title>Was bedeutet es, dass Proident für seine Gäste verantwortlich ist?</e:question-title>
+        <e:choice-answer display-number="11.4" question-id="42" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="205">Er muss bei der Planung auch unrealistische Wünsche berücksichtigen
+          </e:choice-answer-option><e:choice-answer-option option-id="206">Er muss seinen Kunden ein unvergessliches Erlebnis bieten</e:choice-answer-option><e:choice-answer-option option-id="207">Er muss manchmal das Tempo der Wanderung verlangsamen
+          </e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="11.5" max-score="3">
+        <e:question-title>Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext?</e:question-title>
+        <e:choice-answer display-number="11.5" question-id="43" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="208">Es ist Proident gelungen, seine Kunden zu beschützen</e:choice-answer-option><e:choice-answer-option option-id="209">Es ist unnötig, die Gefahren der Touren zu übertreiben</e:choice-answer-option><e:choice-answer-option option-id="210">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="11.6" max-score="3">
+        <e:question-title>Was machen viele Lorem und Ipsum, um finanziell klarzukommen?</e:question-title>
+        <e:choice-answer display-number="11.6" question-id="44" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="211">Sie suchen sich später einen neuen Beruf</e:choice-answer-option><e:choice-answer-option option-id="212">Sie machen oft viele Überstunden</e:choice-answer-option><e:choice-answer-option option-id="213">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question display-number="12" max-score="6">
+      <e:question-title>Wendungen</e:question-title>
+      <e:question-instruction>
+        <span lang="fi-FI">Lue alla olevat kolme pikaviestiä ja valitse kuhunkin aukkoon parhaiten sopiva
+          ilmaisu.
+        </span>
+        
+      </e:question-instruction>
+      <e:attachment>
+        <e:attachment-title>Wendungen-teksti</e:attachment-title>
+        <br/>
+        <h4>Emma</h4>
+        <p>Emma: Mama, tust du mir einen Gefallen? Ich warte gerade im Café Sonnenschein auf Tim. Ich will hier mit ihm
+          für die Geografieprüfung lernen, aber ich habe mein Buch zu Hause vergessen. Kannst du es mir bringen?
+          <e:dropdown-answer ordering="fixed" display-number="12.1" question-id="45" max-score="2">
+            <e:dropdown-answer-option option-id="214">Nichts zu danken!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="215">Macht nichts!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="216">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="217">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="218">Gern, bitte!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="219">Hast du was?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="220">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="221">Aber ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="222">Wie war‘s?</e:dropdown-answer-option>
+          </e:dropdown-answer>
+        </p>
+        <br/>
+        <h4>Hannah</h4>
+        <p>
+          Hannah: Rate mal, wen ich heute im Bus gesehen habe!
+          <br/>
+          Antonia: Ihn!? Das kann doch nicht sein.
+          <br/>
+          Hannah: Doch. Magst du ihn überhaupt noch?
+          <br/>
+          Antonia: Ja sehr! Und wollte er denn wissen, was ich jetzt so mache?
+          <br/>
+          Hannah:
+          <e:dropdown-answer ordering="fixed" display-number="12.2" question-id="46" max-score="2">
+            <e:dropdown-answer-option option-id="223">Nichts zu danken!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="224">Macht nichts!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="225">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="226">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="227">Gern, bitte!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="228">Hast du was?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="229">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="230">Aber ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="231">Wie war‘s?</e:dropdown-answer-option>
+          </e:dropdown-answer>
+          Er hat nur von dir geredet.
+        </p>
+        <br/>
+        <h4>Jonas</h4>
+        <p>
+          Jonas: Wer kann heute den Basketball mitbringen? Kevin?
+          <br/>
+          Lukas: Nee, er kommt heute gar nicht. Und Florian und ich kommen direkt von der Arbeit.
+          <br/>
+          Jonas: Ich glaub, dann muss ich schon wieder den Ball mitbringen. Ach, Mist!
+          <e:dropdown-answer ordering="fixed" display-number="12.3" question-id="47" max-score="2">
+            <e:dropdown-answer-option option-id="232">Nichts zu danken!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="233">Macht nichts!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="234">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="235">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="236">Gern, bitte!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="237">Hast du was?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="238">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="239">Aber ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="240">Wie war‘s?</e:dropdown-answer-option>
+          </e:dropdown-answer>
+        </p>
+        <e:reference>
+          <e:author>
+            <span lang="fi-FI">YTL</span>
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:question>
+
+    <e:question display-number="13" max-score="8">
+      <e:question-title>Adipisicing voluptate</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
+      <e:external-material>
+        <e:attachment display-number="13.A">
+          <e:attachment-title>Text: Adipisicing voluptate</e:attachment-title>
+          <p>
+            <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
+            
+          </p>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="13.1" max-score="2">
+        <e:question-title>Wann bekommt man bei Flugverspätung <b>kein</b> Essen?
+        </e:question-title>
+        <e:choice-answer display-number="13.1" question-id="48" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="241">Bei Verspätung unter 5 Stunden</e:choice-answer-option><e:choice-answer-option option-id="242">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option><e:choice-answer-option option-id="243">Bei Buchung eines anderen Fluges</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="13.2" max-score="2">
+        <e:question-title>Wann bezahlt Lorem Ipsum Telefonate?</e:question-title>
+        <e:choice-answer display-number="13.2" question-id="49" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="244">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option><e:choice-answer-option option-id="245">Nur wenn man im Hotel übernachtet</e:choice-answer-option><e:choice-answer-option option-id="246">Nur wenn man Verwandte anrufen möchte</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="13.3" max-score="4">
+        <e:question-title>
+          <span lang="fi-FI">Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös
+            järjestää? Kirjoita vastauksesi lyhyesti suomeksi.
+          </span>
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="13.3" question-id="50"/>
+        
+      </e:question>
+
+    </e:question>
+
+    <e:question display-number="14" max-score="13">
+      <e:question-title>Ullamco</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
+      <e:external-material>
+        <e:attachment display-number="14.A">
+          <e:attachment-title>Text: Ullamco</e:attachment-title>
+          <p>
+            <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
+            
+          </p>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="14.1" max-score="3">
+        <e:question-title>Was erlebten die Ullamco?</e:question-title>
+        <e:choice-answer display-number="14.1" question-id="51" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="247">Eine unerwartet frühzeitige Ullamco am Ullamco</e:choice-answer-option><e:choice-answer-option option-id="248">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option><e:choice-answer-option option-id="249">Eine gelungene Ullamco auf dem Ullamco</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="14.2" max-score="4">
+        <e:question-title>
+          <span lang="fi-FI">Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class="e-nowrap">(2 asiaa)
+          </span> Kirjoita vastauksesi lyhyesti suomeksi.
+          </span>
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="14.2" question-id="52"/>
+        
+      </e:question>
+
+      <e:question display-number="14.3" max-score="3">
+        <e:question-title>Welche weitere Ullamco hatte die Ullamco?</e:question-title>
+        <e:choice-answer display-number="14.3" question-id="53" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="250">Ein Ullamco brachte die Fluggäste von Ullamco nach Ullamco</e:choice-answer-option><e:choice-answer-option option-id="251">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
+          </e:choice-answer-option><e:choice-answer-option option-id="252">Die Ullamco mussten noch in Ullamco übernachten</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="14.4" max-score="3">
+        <e:question-title>Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext?
+        </e:question-title>
+        <e:choice-answer display-number="14.4" question-id="54" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="253">Ein gefährlicher Unfall</e:choice-answer-option><e:choice-answer-option option-id="254">Ein anstrengendes Experiment</e:choice-answer-option><e:choice-answer-option option-id="255">Ein unerwartetes Abenteuer</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question display-number="15" max-score="19">
+      <e:question-title>Eiusmod</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
+      <e:external-material>
+        <e:attachment display-number="15.A">
+          <e:attachment-title>Text: Eiusmod</e:attachment-title>
+          <p>
+            <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
+            
+          </p>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="15.1" max-score="4">
+        <e:question-title>
+          <span lang="fi-FI">Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän
+            perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi.
+          </span>
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="4" display-number="15.1" question-id="55"/>
+        
+      </e:question>
+
+      <e:question display-number="15.2" max-score="3">
+        <e:question-title>Wie sind die beliebtesten Postkarten?</e:question-title>
+        <e:choice-answer display-number="15.2" question-id="56" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="256">Sie lassen den Urlaub beeindruckend erscheinen</e:choice-answer-option><e:choice-answer-option option-id="257">Sie kombinieren meist Text und Bilder</e:choice-answer-option><e:choice-answer-option option-id="258">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="15.3" max-score="3">
+        <e:question-title>Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen?</e:question-title>
+        <e:choice-answer display-number="15.3" question-id="57" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="259">Sie finden solche Karten auf Reisen gut</e:choice-answer-option><e:choice-answer-option option-id="260">Sie halten diese Karten nicht mehr für modern</e:choice-answer-option><e:choice-answer-option option-id="261">Sie sind besonders stolz auf die Berliner Postkarten</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="15.4" max-score="3">
+        <e:question-title>Was ärgert die Kartenverkäufer?</e:question-title>
+        <e:choice-answer display-number="15.4" question-id="58" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="262">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option><e:choice-answer-option option-id="263">Männer senden und empfangen fast keine Postkarten</e:choice-answer-option><e:choice-answer-option option-id="264">Nur erwachsene Frauen interessieren sich für die Karten</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="15.5" max-score="3">
+        <e:question-title>Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext?</e:question-title>
+        <e:choice-answer display-number="15.5" question-id="59" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="265">Es ist wahr, dass die Karten nicht mehr so beliebt sind
+          </e:choice-answer-option><e:choice-answer-option option-id="266">Man weiß, dass die Postkarte irgendwann sterben wird</e:choice-answer-option><e:choice-answer-option option-id="267">Ipsum mag die Fragen des Interviewers nicht</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="15.6" max-score="3">
+        <e:question-title>Wann könnte es die Postkarte schwer haben?</e:question-title>
+        <e:choice-answer display-number="15.6" question-id="60" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="268">Wenn die Smartphones immer billiger und attraktiver werden</e:choice-answer-option><e:choice-answer-option option-id="269">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
+          </e:choice-answer-option><e:choice-answer-option option-id="270">Wenn man in der Familie keine Postkarten mehr verschickt</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+    </e:question>
+
+    <e:question display-number="16" max-score="8">
+      <e:question-title>Duis dolore</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
+      <e:external-material>
+        <e:attachment display-number="16.A">
+          <e:attachment-title>Text: Duis dolore</e:attachment-title>
+          <p>
+            <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
+            
+          </p>
+          <e:reference>
+            <e:author>
+              <span lang="fi-FI">YTL</span>
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:external-material>
+
+      <e:question display-number="16.1" max-score="2">
+        <e:question-title>Wie reagieren viele Kunden auf die Einwegbecher?</e:question-title>
+        <e:choice-answer display-number="16.1" question-id="61" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="271">Sie entscheiden, keine Einwegbecher mehr zu verwenden</e:choice-answer-option><e:choice-answer-option option-id="272">Sie benutzen die Einwegbecher, ohne darüber nachzudenken</e:choice-answer-option><e:choice-answer-option option-id="273">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
+          </e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="16.2" max-score="2">
+        <e:question-title>Was könnte im neuen System zum Problem werden?</e:question-title>
+        <e:choice-answer display-number="16.2" question-id="62" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="274">Es bringt das jetzige System der Pfandflaschen durcheinander</e:choice-answer-option><e:choice-answer-option option-id="275">Es lohnt sich nicht außerhalb des Stadtzentrums</e:choice-answer-option><e:choice-answer-option option-id="276">Es ist für das Verhalten der Kunden nicht flexibel genug
+          </e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="16.3" max-score="2">
+        <e:question-title>Was will Lorem Ipsum erreichen?</e:question-title>
+        <e:choice-answer display-number="16.3" question-id="63" max-score="2">
+          
+          
+          
+        <e:choice-answer-option option-id="277">Die Finanzierung für das neue System zu sichern</e:choice-answer-option><e:choice-answer-option option-id="278">Mit anderen Städten effektiv zusammenzuarbeiten</e:choice-answer-option><e:choice-answer-option option-id="279">Die Kunden stärker zur Rückgabe der Becher zu motivieren
+          </e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="16.4" max-score="2">
+        <e:question-title>
+          <span lang="fi-FI">Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin
+            perusteella lyhyesti suomeksi.
+          </span>
+          
+        </e:question-title>
+        <e:text-answer type="rich-text" max-score="2" display-number="16.4" question-id="64"/>
+        
+      </e:question>
+
+    </e:question>
+
+  </e:section>
+
+  <e:section display-number="3" max-score="30">
+    <e:section-title>Struktur und Vokabular</e:section-title>
+
+    <e:question display-number="17" max-score="16">
+      <e:question-title>Auswahl-Antwort-Test</e:question-title>
+      <e:question-instruction>Lesen Sie den folgenden Text und wählen Sie jeweils auf der Drop-Down-Liste die in den
+        Textzusammenhang am besten passende Antwortalternative aus.
+      </e:question-instruction>
+      <e:attachment>
+        <e:attachment-title>Auswahl-kuva</e:attachment-title>
+        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right" width="999" height="999"/>
+        <e:reference>
+          <e:title>Max und Moritz</e:title>
+          <e:author>Wilhelm Busch</e:author>
+          <e:publication-date>1865</e:publication-date>
+          <e:url>https://de.wikisource.org/wiki/Max_und_Moritz</e:url>
+          <e:howpublished>public domain</e:howpublished>
+          <e:reference-date>2018-05-15</e:reference-date>
+        </e:reference>
+      </e:attachment>
+      <br/>
+      <e:attachment>
+        <e:attachment-title>Auswahl-teksti</e:attachment-title>
+        <h4>Max und Moritz, Vorwort</h4>
+        <p>
+          Ach, was
+          <e:dropdown-answer display-number="17.1" question-id="65" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="280">kann</e:dropdown-answer-option><e:dropdown-answer-option option-id="281">muß</e:dropdown-answer-option><e:dropdown-answer-option option-id="282">darf</e:dropdown-answer-option></e:dropdown-answer>
+          man oft von
+          <e:dropdown-answer display-number="17.2" question-id="66" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="283">gelben</e:dropdown-answer-option><e:dropdown-answer-option option-id="284">bösen</e:dropdown-answer-option><e:dropdown-answer-option option-id="285">netten</e:dropdown-answer-option></e:dropdown-answer>
+          <br/>
+          Kindern hören oder lesen!!
+          <br/>
+          Wie zum Beispiel hier
+          <e:dropdown-answer display-number="17.3" question-id="67" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="286">nach</e:dropdown-answer-option><e:dropdown-answer-option option-id="287">von</e:dropdown-answer-option><e:dropdown-answer-option option-id="288">zu</e:dropdown-answer-option></e:dropdown-answer>
+          diesen,
+          <br/>
+          Welche Max und Moritz
+          <span class="e-nowrap">
+            <e:dropdown-answer display-number="17.4" question-id="68" max-score="1">
+              
+              
+              
+            <e:dropdown-answer-option option-id="289">hießen</e:dropdown-answer-option><e:dropdown-answer-option option-id="290">sind</e:dropdown-answer-option><e:dropdown-answer-option option-id="291">heißen</e:dropdown-answer-option></e:dropdown-answer>
+            ;
+          </span>
+          <br/>
+          <span class="e-nowrap">
+            <e:dropdown-answer display-number="17.5" question-id="69" max-score="1">
+              
+              
+              
+            <e:dropdown-answer-option option-id="292">Das</e:dropdown-answer-option><e:dropdown-answer-option option-id="293">Der</e:dropdown-answer-option><e:dropdown-answer-option option-id="294">Die</e:dropdown-answer-option></e:dropdown-answer>
+            ,
+          </span>
+          anstatt durch weise Lehren
+          <br/>
+          Sich
+          <e:dropdown-answer display-number="17.6" question-id="70" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="295">zum</e:dropdown-answer-option><e:dropdown-answer-option option-id="296">zur</e:dropdown-answer-option><e:dropdown-answer-option option-id="297">zu den</e:dropdown-answer-option></e:dropdown-answer>
+          Guten zu bekehren,
+          <br/>
+          Oftmals noch
+          <e:dropdown-answer display-number="17.7" question-id="71" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="298">darüber</e:dropdown-answer-option><e:dropdown-answer-option option-id="299">danach</e:dropdown-answer-option><e:dropdown-answer-option option-id="300">dazu</e:dropdown-answer-option></e:dropdown-answer>
+          lachten
+          <br/>
+          Und
+          <e:dropdown-answer display-number="17.8" question-id="72" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="301">sich</e:dropdown-answer-option><e:dropdown-answer-option option-id="302">mich</e:dropdown-answer-option><e:dropdown-answer-option option-id="303">dich</e:dropdown-answer-option></e:dropdown-answer>
+          heimlich lustig machten. –
+          <br/>
+          – Ja, zur Übeltätigkeit,
+          <br/>
+          Ja,
+          <e:dropdown-answer display-number="17.9" question-id="73" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="304">danach</e:dropdown-answer-option><e:dropdown-answer-option option-id="305">dazu</e:dropdown-answer-option><e:dropdown-answer-option option-id="306">darüber</e:dropdown-answer-option></e:dropdown-answer>
+          ist man bereit! –
+          <br/>
+          – Menschen necken,
+          <e:dropdown-answer display-number="17.10" question-id="74" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="307">Bücher</e:dropdown-answer-option><e:dropdown-answer-option option-id="308">Computer</e:dropdown-answer-option><e:dropdown-answer-option option-id="309">Tiere</e:dropdown-answer-option></e:dropdown-answer>
+          quälen,
+          <br/>
+          Äpfel, Birnen, Zwetschen
+          <e:dropdown-answer display-number="17.11" question-id="75" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="310">schlehten</e:dropdown-answer-option><e:dropdown-answer-option option-id="311">stählen</e:dropdown-answer-option><e:dropdown-answer-option option-id="312">stehlen</e:dropdown-answer-option></e:dropdown-answer>
+          – –
+          <br/>
+          <e:dropdown-answer display-number="17.12" question-id="76" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="313">Das</e:dropdown-answer-option><e:dropdown-answer-option option-id="314">Der</e:dropdown-answer-option><e:dropdown-answer-option option-id="315">Die</e:dropdown-answer-option></e:dropdown-answer>
+          ist freilich angenehmer
+          <br/>
+          Und dazu
+          <e:dropdown-answer display-number="17.13" question-id="77" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="316">auch</e:dropdown-answer-option><e:dropdown-answer-option option-id="317">euch</e:dropdown-answer-option><e:dropdown-answer-option option-id="318">doch</e:dropdown-answer-option></e:dropdown-answer>
+          viel bequemer,
+          <br/>
+          <e:dropdown-answer display-number="17.14" question-id="78" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="319">Als</e:dropdown-answer-option><e:dropdown-answer-option option-id="320">Wenn</e:dropdown-answer-option><e:dropdown-answer-option option-id="321">Wann</e:dropdown-answer-option></e:dropdown-answer>
+          in Kirche oder Schule
+          <br/>
+          Festzusitzen auf dem Stuhle. –
+          <br/>
+          – Aber wehe, wehe, wehe!
+          <br/>
+          Wenn ich, auf das Ende sehe!! –
+          <br/>
+          – Ach, das war
+          <e:dropdown-answer display-number="17.15" question-id="79" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="322">ein</e:dropdown-answer-option><e:dropdown-answer-option option-id="323">eines</e:dropdown-answer-option><e:dropdown-answer-option option-id="324">eine</e:dropdown-answer-option></e:dropdown-answer>
+          schlimmes Ding,
+          <br/>
+          Wie es Max und Moritz ging.
+          <br/>
+          – Drum ist hier, was
+          <e:dropdown-answer display-number="17.16" question-id="80" max-score="1">
+            
+            
+            
+          <e:dropdown-answer-option option-id="325">es</e:dropdown-answer-option><e:dropdown-answer-option option-id="326">sie</e:dropdown-answer-option><e:dropdown-answer-option option-id="327">er</e:dropdown-answer-option></e:dropdown-answer>
+          getrieben,
+          <br/>
+          Abgemalt und aufgeschrieben.
+        </p>
+        <e:reference>
+          <e:title>Max und Moritz</e:title>
+          <e:author>Wilhelm Busch</e:author>
+          <e:publication-date>1865</e:publication-date>
+          <e:url>https://de.wikisource.org/wiki/Max_und_Moritz</e:url>
+          <e:howpublished>public domain</e:howpublished>
+          <e:reference-date>2018-05-15</e:reference-date>
+        </e:reference>
+      </e:attachment>
+    </e:question>
+
+    <e:question display-number="18" max-score="4">
+      <e:question-title>Umformung</e:question-title>
+      <e:question-instruction>
+        <span lang="fi-FI">Kirjoita kohdat kokonaan uudelleen siten, että lisäät kuhunkin lauseeseen sulkeissa
+          annetun modaaliapuverbin.
+        </span>
+        
+      </e:question-instruction>
+      
+      <br/>
+      <e:attachment>
+        <e:attachment-title>6. teksti</e:attachment-title>
+        <e:hints>
+          <p>
+            <b>Felix:</b>
+            Hallo Anna! Machen wir am Wochenende etwas zusammen?
+          </p>
+          <p>
+            <b>Anna:</b>
+            Gute Idee! Aber am Sonntag mache ich schon mit meiner Schwester eine Fahrradtour zum Tiergarten.
+          </p>
+          <p>
+            <b>Felix:</b>
+            Ach so. Aber Samstag?
+            <span class="e-nowrap">
+              <e:scored-text-answer display-number="18.1" question-id="81" max-score="2">
+                <e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint>
+                
+                
+                
+                
+                
+              </e:scored-text-answer>
+              ?
+            </span>
+          </p>
+          <p>
+            <b>Anna:</b>
+            Ja, gerne! Aber ich sage dir erst morgen Bescheid,
+            <span class="e-nowrap">
+              <e:scored-text-answer display-number="18.2" question-id="82" max-score="2">
+                <e:hint>weil ich zuerst Mama frage (müssen)</e:hint>
+                
+                
+              </e:scored-text-answer>
+              .
+            </span>
+          </p>
+          <p>
+            <b>Felix:</b>
+            Gut, melde dich dann!
+          </p>
+        </e:hints>
+        <e:reference>
+          <e:author>
+            <span lang="fi-FI">YTL</span>
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:question>
+
+    <e:question display-number="19" max-score="10">
+      <e:question-title>Dialog</e:question-title>
+      <e:question-instruction>
+        <span lang="fi-FI">Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä
+          ja yhdestä vastauksesta. Esitä kysymykset saksaksi (1. ja 3.). Vastaa niihin saksaksi valokuvien avulla (2. ja
+          4.). Kohdissa 2. ja 4. vastauksen on oltava 5–15 sanan mittainen.
+        </span>
+        
+      </e:question-instruction>
+      
+      <e:attachment>
+        <e:attachment-title>7. teksti</e:attachment-title>
+        <br/>
+        <e:hints>
+          <h4>Dialog 1</h4>
+          <p>
+            Tim sitzt am Küchentisch. Sein großer Bruder Jan kommt in die Küche.
+          </p>
+          <p>
+            Tim fragt: 
+            <e:scored-text-answer max-score="2" display-number="19.1" question-id="83">
+              <e:hint>
+                <span lang="fi-FI">Voitko auttaa minua?</span>
+                
+              </e:hint>
+              
+            </e:scored-text-answer>
+            <br/>
+            Jan: Ja, klar. Was ist denn?
+            <br/>
+            Tim antwortet:
+            <e:scored-text-answer max-score="3" display-number="19.2" question-id="84">
+              <e:hint>
+                <e:attachment>
+                  <e:attachment-title>7.2. kuva</e:attachment-title>
+                  <e:image src="7.2.jpg" width="999" height="999"/>
+                  <e:reference>
+                    <e:url>
+                      https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a
+                    </e:url>
+                    <e:title>math final</e:title>
+                    <e:author>Elise Forest</e:author>
+                    <e:howpublished>CC BY-NC-ND 2.0</e:howpublished>
+                    <e:reference-date>2019-11-25</e:reference-date>
+                  </e:reference>
+                </e:attachment>
+              </e:hint>
+              
+              
+            </e:scored-text-answer>
+          </p>
+          <br/>
+          <h4>Dialog 2</h4>
+          <p>
+            Früh am Morgen kommt die Mutter ins Kinderzimmer und weckt Anna auf.
+          </p>
+          <p>
+            Anna fragt:
+            <e:scored-text-answer max-score="2" display-number="19.3" question-id="85">
+              <e:hint>
+                <span lang="fi-FI">Millainen sää tänään on?</span>
+                
+              </e:hint>
+              
+              
+              
+            </e:scored-text-answer>
+            <br/>
+            Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet:
+            <e:scored-text-answer max-score="3" display-number="19.4" question-id="86">
+              <e:hint>
+                <e:attachment>
+                  <e:attachment-title>7.4. kuva</e:attachment-title>
+                  <e:image src="7.4.jpg" width="999" height="999"/>
+                  <e:reference>
+                    <e:url>
+                      https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda
+                    </e:url>
+                    <e:reference-date>2019-11-25</e:reference-date>
+                    <e:title>Heavy Thunderstorm and Downpour Downtown Chicago Illinois 5-14-18 1496</e:title>
+                    <e:author>Charles Edward Miller</e:author>
+                    <e:howpublished>CC BY-SA 2.0</e:howpublished>
+                  </e:reference>
+                </e:attachment>
+              </e:hint>
+              
+              
+            </e:scored-text-answer>
+          </p>
+        </e:hints>
+        <e:reference>
+          <e:author>
+            <span lang="fi-FI">YTL</span>
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:question>
+
+  </e:section>
+
+  <e:section display-number="4" max-score="99">
+    <e:section-title>Schriftliche Produktion</e:section-title>
+    <e:question max-answers="1" display-number="20" max-score="33">
+      <e:question-title>Kurze Schreibaufgabe</e:question-title>
+      <e:question-instruction>
+        <span lang="fi-FI">
+          <p>
+            Valitse seuraavista kohdista <b>vain toinen</b>, johon vastaat saksaksi.
+          </p>
+          <p>
+            Kirjoitussuorituksen pituus: 160–240 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään.
+          </p>
+          <p>
+            Jätä toinen vastauskenttä tyhjäksi.
+          </p>
+        </span>
+        
+      </e:question-instruction>
+      <e:question display-number="20.1" max-score="33">
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <span lang="fi-FI">
+            Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
+          </span>
+          
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="33" display-number="20.1" question-id="87"/>
+      </e:question>
+      <e:question display-number="20.2" max-score="33">
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <span lang="fi-FI">
+            Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
+            vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
+            voisi tuoda mukanaan juhliin.
+          </span>
+          
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="33" display-number="20.2" question-id="88"/>
+      </e:question>
+    </e:question>
+
+    <e:question max-answers="1" display-number="21" max-score="66">
+      <e:question-title>Lange Schreibaufgabe</e:question-title>
+      <e:question-instruction>
+        <span lang="fi-FI">
+          <p>
+            Valitse seuraavista kohdista <b>vain toinen</b>, johon vastaat saksaksi.
+          </p>
+          <p>
+            Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään.
+          </p>
+          <p>
+            Jätä toinen vastauskenttä tyhjäksi.
+          </p>
+        </span>
+        
+      </e:question-instruction>
+
+      <e:question display-number="21.1" max-score="66">
+        <e:question-title>Lange Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <span lang="fi-FI">
+            Ystäväsi haluaa tietää, miten kesälomasi sujui. Kirjoita hänelle lomakuviesi avulla, mitä matkalla tapahtui.
+          </span>
+          
+        </e:question-instruction>
+        <p>
+          <e:attachment>
+            <e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title>
+            <e:image src="24.1.jpg" width="999" height="999"/>
+            <e:reference>
+              <e:author>Riik@mctr</e:author>
+              <e:title>Manchester Airport (EGCC)</e:title>
+              <e:url>
+                https://www.flickr.com/photos/riikkeary/48887383951/in/photolist-2hu1C3c-PKLHCd-EeEdwT-2gkPu6W-P3e4QT-JgAdC5-NbRGcz-NcTTNk-LVtizH-8yZcMv-Drad5A-2ahQHWu-LVthK6-6VEGAg-6VJLew-29bqzwJ-2aztA8B-HV25ti-22GPdfj-2fRNRnC-cQ9YYq-86sim-Wfcorb-2gyha9j-6g1Wku-2htZ3SD-277TxNV-NbzgNr-EeEd9t-XfaGG5-5wqZ6g-2hPjtVN-2gCAYBa-FvMntq-22yohM3-Y5Ag4G-2h8kmhc-2gyha2f-2hHXtzN-2af6nPJ-DuY1pD-2hJTqGH-JaRwDj-QAUqAK-PAfBfy-gxJoJ1-NheHgK-o3qrds-HqnLf2-2aztAdg
+              </e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+            <e:reference>
+              <e:author>Jonathan Pearson</e:author>
+              <e:title>boy racers</e:title>
+              <e:url>
+                https://www.flickr.com/photos/jpgpearson/19589151028/in/photolist-vR2w8f-8K8cyR-5JqYZp-5JvfgY-avXAB-p9FDL1-hrNHmo-2gZf9-9jwK-5JqYKM-5q6K2N-edv3o-5JveZ5-kiCvw-aGhST-5JqYAn-Fkc7g-dF6gAv-5JveXm-5JqYYH-2huzoFM-5JveH1-6kXvwg-5mRiER-tXN4S9-avbFkR-2ZkL3-jPWTS-ciGDdb-4cwvdo-J887D-4DTo2-aveo1U-fve2FU-5e9mk9-4Tomw-J88iR-4cwo67-9BnCgP-bPnii8-otV72-aveoSU-J88Yi-dzcPPT-Qq94TL-avbHWa-6m2EuN-4mPejB-5JveRh-f64UA8
+              </e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+            <e:reference>
+              <e:author>Conal Gallagher</e:author>
+              <e:title>Bicycle</e:title>
+              <e:url>
+                https://www.flickr.com/photos/conalg/13929485086/in/photolist-ndUfBY-5Nihze-egRLhZ-dqiRkT-njvDDT-4oGgE-dqiSxr-dqiSkt-4XEtWw-bmb8K-DRgS2z-ewdvhp-24E1jnA-7eKYFk-eUzcBm-ccNu1C-qWH3YT-dqiZfN-oBuymS-dqiRZa-APopNz-h3KDEM-axiQ2z-g8Bktb-4rnK9J-NFcq-rxHBQ-6Mw4d5-c3RrMY-dqiRDB-aXZ3Qk-rtCqGn-7RTBd1-azuPeP-dqj3AF-53hN4q-7MvQKH-iCGZH-vKvFz-e7zHs-81xh6Y-5t4bXx-s54FqX-nqoeWh-9mdaE-AL6QNw-6C8kVT-5RpTZc-aDaCHN-6Cctny
+              </e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+            <e:reference>
+              <e:author>Wonder Woman</e:author>
+              <e:title>Alexandra</e:title>
+              <e:url>
+                https://www.flickr.com/photos/zamerzla/28623180177/in/photolist-SsppBA-4KrF7c-Q8AVgo-vwSEYi-2cXMWck-E1XfwB-JQiQXv-AGeL5V-h4Cf5i-SKAjUC-U7pTTw-RJSnqw-28UuR81-HNqoJG-2bN4CHs-XQAYND-2e7GFPu-VfFJcf-2bedGoa-2ckJhGu-24sAaK3-2aTLnGw-2dMyokb-PtbzSU-FYKk91-PtaNkm-BaTHKd-FSRkfF-ZAPzsP-E7kuSh-UtV741-21r8xzM-UC83Hv-NjSv39-KBkhfv-2eCtwHr-PpCzzL-2cuyVWz-5R5Z1b-843VCn-2dZCoHX-SSuPSA-Hp9GxQ-Go2Ah1-xKh4cU-29zGKha-23nmc6W-MorGx6-GVaNjr-29QybwX
+              </e:url>
+              <e:howpublished>CC BY 2.0</e:howpublished>
+              <e:reference-date>2019-11-25</e:reference-date>
+            </e:reference>
+          </e:attachment>
+        </p>
+        <e:text-answer type="rich-text" max-score="66" display-number="21.1" question-id="89"/>
+      </e:question>
+
+      <e:question display-number="21.2" max-score="66">
+        <e:question-title>Lange Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+          <span lang="fi-FI">
+            Eräs isä on lähettänyt tekstin keskustelupalstalle<e:attachment-link ref="zeugnis"/>. Hän pyytää
+            mielipiteitä siitä, kumpi on oikeassa – hän vai poika. Vastaa palstalla isälle. Perustele näkemyksesi.
+          </span>
+          
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="66" display-number="21.2" question-id="90"/>
+      </e:question>
+
+    </e:question>
+
+  </e:section>
+
+  <e:references/>
+<e:exam-footer><p lang="fi-FI" class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
 
 `;
 

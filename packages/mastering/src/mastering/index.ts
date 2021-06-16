@@ -226,7 +226,6 @@ async function masterExamVersion(
   applyLocalizations(root, language, type)
 
   let exam = parseExamStructure(root)
-  const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
 
   addYoCustomizations(root, language, type)
   addSectionNumbers(exam)
@@ -251,10 +250,6 @@ async function masterExamVersion(
   countMaxScores(exam)
   countSectionMaxAndMinAnswers(exam)
 
-  addRestrictedAudioMetadata(attachments)
-  await renderFormulas(root, options.throwOnLatexError)
-  await addMediaMetadata(attachments, getMediaMetadata)
-
   const gradingStructure = createGradingStructure(exam, generateId)
 
   removeComments(root)
@@ -265,6 +260,11 @@ async function masterExamVersion(
     removeHiddenElements(root)
     removeHvpMetadata(root)
   }
+
+  const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
+  addRestrictedAudioMetadata(attachments)
+  await renderFormulas(root, options.throwOnLatexError)
+  await addMediaMetadata(attachments, getMediaMetadata)
 
   return {
     attachments: collectAttachments(root, attachments),
