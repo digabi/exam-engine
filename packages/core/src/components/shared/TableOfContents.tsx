@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
-import { findChildElement } from '../../dom-utils'
+import { findChildElement, getAttribute, query, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { tocSectionTitleId, tocTitleId } from '../../ids'
 import { url } from '../../url'
@@ -54,55 +54,42 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
   }
 
   const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
-    const { level, displayNumber, maxScore } = useContext(QuestionContext)
+    const { attachmentsURL } = useContext(CommonExamContext)
+    const { displayNumber, maxScore } = useContext(QuestionContext)
     const { t } = useExamTranslation()
 
-    return level === 0 ? (
+    const questionTitle = findChildElement(element, 'question-title')!
+    const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
+
+    return (
       <li data-list-number={displayNumber + '.'}>
         <div className="e-columns">
-          {renderChildNodes(element, RenderOptions.SkipHTML)}
+          <span className="e-column">
+            <a href={url('', { hash: displayNumber })}>{renderChildNodes(questionTitle)}</a>
+          </span>
+          {externalMaterial && (
+            <span className="e-column e-column--narrow">
+              <a
+                href={url(attachmentsURL, {
+                  hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number'),
+                })}
+                target="attachments"
+              >
+                {t('material')}
+              </a>
+            </span>
+          )}
           <span className="e-column e-column--narrow table-of-contents--score-column">
             {t('points', { count: maxScore })}
           </span>
         </div>
       </li>
-    ) : (
-      <>{renderChildNodes(element, RenderOptions.SkipHTML)}</>
     )
-  }
-
-  const TOCQuestionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
-    const { displayNumber, level } = useContext(QuestionContext)
-
-    return level === 0 ? (
-      <span className="e-column">
-        <a href={url('', { hash: displayNumber })}>{renderChildNodes(element)}</a>
-      </span>
-    ) : null
-  }
-
-  const TOCExternalMaterial: React.FunctionComponent<ExamComponentProps> = () => {
-    const { attachmentsURL } = useContext(CommonExamContext)
-    const { displayNumber } = useContext(QuestionContext)
-    const { t } = useExamTranslation()
-
-    // If the external material is not within a question (A_E exam).
-    if (!displayNumber) return null
-
-    return showAttachmentLinks ? (
-      <span className="e-column e-column--narrow">
-        <a href={url(attachmentsURL, { hash: displayNumber })} target="attachments">
-          {t('material')}
-        </a>
-      </span>
-    ) : null
   }
 
   const renderChildNodes = createRenderChildNodes({
     section: withSectionContext(TOCSection),
     question: withQuestionContext(TOCQuestion),
-    'question-title': TOCQuestionTitle,
-    'external-material': TOCExternalMaterial,
   })
 
   const TableOfContents: React.FunctionComponent<ExamComponentProps> = () => {
