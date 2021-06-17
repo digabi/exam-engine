@@ -225,7 +225,7 @@ async function masterExamVersion(
   await addExamMetadata(root, generateUuid, language, type)
   applyLocalizations(root, language, type)
 
-  let exam = parseExamStructure(root)
+  const exam = parseExamStructure(root)
 
   addYoCustomizations(root, language, type)
   addSectionNumbers(exam)
@@ -238,19 +238,16 @@ async function masterExamVersion(
   if (options.multiChoiceShuffleSecret) shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
   addAnswerOptionIds(exam, generateId)
 
-  // This is bit of a hack. For hearing impaired exams, we want to delete the first section after the basic exam
-  // structure has been set set up. This way the the questions in the hearing impaired exam are numbered in the same
-  // manner than the normal exam and the grading structure is a subset of the normal grading structure.
-  if (type === 'hearing-impaired') {
-    exam.sections[0]?.element?.remove()
-    exam = parseExamStructure(root)
-  }
-
   updateMaxScoresToAnswers(exam)
   countMaxScores(exam)
   countSectionMaxAndMinAnswers(exam)
 
   const gradingStructure = createGradingStructure(exam, generateId)
+
+  // This is bit of a hack. For hearing impaired exams, we want to delete the first section after the basic exam
+  // structure has been set set up. This way the the questions in the hearing impaired exam are numbered in the same
+  // manner than the normal exam and the grading structure is equal to the the normal grading structure.
+  if (type === 'hearing-impaired') exam.sections[0]?.element?.remove()
 
   removeComments(root)
   removeTableWhitespaceNodes(root)
