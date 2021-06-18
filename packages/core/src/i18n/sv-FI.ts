@@ -6,7 +6,7 @@ export const sv_FI: Translations = {
   material: 'Material',
   'attachments-page-title': 'Material:',
   'external-material-title': 'Material',
-  'grading-instructions-page-title': 'Hyvän vastauksen piirteet:',
+  'grading-instructions-page-title': 'Beskrivningar av goda svar:',
   section: 'Del {{displayNumber}}:',
   question: 'Uppgift {{displayNumber}}:',
   grade: 'Vitsord',
