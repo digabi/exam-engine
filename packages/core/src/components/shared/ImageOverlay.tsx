@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import * as _ from 'lodash-es'
 import React, { useContext, useState } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { getNumericAttribute, mapChildElements } from '../../dom-utils'
+import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
 
@@ -54,9 +54,11 @@ interface SliderProps extends ExamComponentProps {
 }
 
 function Slider({ opacity, setOpacity, element, renderChildNodes }: SliderProps) {
+  const title = findChildElement(element, 'image-title')
+
   return (
     <div className="e-columns e-columns--center-v e-mrg-b-1">
-      <div className="e-column e-text-right e-mrg-r-1">{renderChildNodes(element)}</div>
+      <div className="e-column e-text-right e-mrg-r-1">{title && renderChildNodes(title)}</div>
       <FontAwesomeIcon icon={faEyeSlash} className="e-mrg-r-1 e-pointer" onClick={() => setOpacity(0)} />
       <input
         type="range"

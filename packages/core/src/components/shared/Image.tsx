@@ -1,11 +1,11 @@
-import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { getAttribute, getNumericAttribute, queryAncestors } from '../../dom-utils'
+import { findChildElement, getAttribute, getNumericAttribute, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { imageCaptionId } from '../../ids'
 import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
+import { isWhitespace } from '../../utils'
 
 function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const { resolveAttachment } = useContext(CommonExamContext)
@@ -15,8 +15,9 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
 
-  const children = renderChildNodes(element)
-  const hasCaption = children.some(_.isObjectLike)
+  const title = findChildElement(element, 'image-title')
+  const children = title && renderChildNodes(title)
+  const hasCaption = children != null && !children.every(isWhitespace)
   const caption = hasCaption ? children : undefined
   const captionId = hasCaption ? imageCaptionId(element) : undefined
 

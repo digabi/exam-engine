@@ -2,7 +2,8 @@ import React from 'react'
 import { ExamComponentProps } from '../createRenderChildNodes'
 
 function RenderChildNodes({ element, renderChildNodes }: ExamComponentProps) {
-  return <>{renderChildNodes(element)}</>
+  const children = renderChildNodes(element)
+  return children.length === 0 ? null : <>{children}</>
 }
 
-export default React.memo(RenderChildNodes)
+export default RenderChildNodes

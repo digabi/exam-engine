@@ -1,10 +1,11 @@
 import * as _ from 'lodash-es'
 import React, { useContext } from 'react'
-import { getAttribute, getNumericAttribute } from '../../dom-utils'
+import { findChildElement, getAttribute, getNumericAttribute } from '../../dom-utils'
 import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { videoCaptionId } from '../../ids'
+import { isWhitespace } from '../../utils'
 
 function Video({ element, renderChildNodes, className }: ExamComponentProps) {
   const { resolveAttachment } = useContext(CommonExamContext)
@@ -13,8 +14,9 @@ function Video({ element, renderChildNodes, className }: ExamComponentProps) {
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
 
-  const children = renderChildNodes(element)
-  const hasCaption = children.some(_.isObjectLike)
+  const title = findChildElement(element, 'video-title')
+  const children = title && renderChildNodes(title)
+  const hasCaption = children != null && !children.every(isWhitespace)
   const caption = hasCaption ? children : undefined
   const captionId = hasCaption ? videoCaptionId(element) : undefined
 

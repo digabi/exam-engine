@@ -88,7 +88,6 @@ const renderChildNodes = createRenderChildNodes({
   file: File,
   formula: Formula,
   image: Image,
-  'image-title': RenderChildNodes,
   question: Question,
   'question-instruction': QuestionInstruction,
   'question-title': QuestionTitle,
@@ -101,7 +100,6 @@ const renderChildNodes = createRenderChildNodes({
   'section-title': SectionTitle,
   'text-answer': TextAnswer,
   video: Video,
-  'video-title': RenderChildNodes,
   'image-overlay': ImageOverlay,
 })
 

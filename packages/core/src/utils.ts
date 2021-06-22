@@ -1,3 +1,5 @@
+import React from 'react'
+
 /**
  * Maps an array, skipping the value if `fn` returns `undefined`.
  *
@@ -33,4 +35,8 @@ export function intersperse<T>(separator: T, array: T[]): T[] {
   result[result.length - 1] = array[array.length - 1]
 
   return result
+}
+
+export function isWhitespace(node: React.ReactNode) {
+  return typeof node === 'string' && node.trim().length === 0
 }
