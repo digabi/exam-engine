@@ -1,6 +1,6 @@
 import React from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { getNumericAttribute } from '../../dom-utils'
+import { getNumericAttribute, NBSP } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 
 const AutogradedAnswerOption: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
@@ -11,7 +11,8 @@ const AutogradedAnswerOption: React.FunctionComponent<ExamComponentProps> = ({ e
 
   return (
     <li>
-      {renderChildNodes(element)} ({t('points', { count: score })})
+      {renderChildNodes(element)}
+      {NBSP}({t('points', { count: score })})
     </li>
   )
 }
