@@ -2537,9 +2537,9 @@
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
 "@types/loader-utils@^2.0.0":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@types/loader-utils/-/loader-utils-2.0.2.tgz#2999dc2a3330b3ac0b2eaa9e01328b3484ef1112"
-  integrity sha512-y3UaQ1rIkp2Nzv67Wa/MS7GJM958CDyWkMmnFneTRcWKlaSPreESrwruQ2WhEapQHCV6HJ2Pj62k0BB7mtQNHw==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@types/loader-utils/-/loader-utils-2.0.3.tgz#fbc2337358f8f4a7dc532ac0a3646c74275edf2d"
+  integrity sha512-sDXXzZnTLXgdso54/iOpAFSDgqhVXabCvwGAt77Agadh/Xk0QYgOk520r3tpOouI098gyqGIFywx8Op1voc3vQ==
   dependencies:
     "@types/node" "*"
     "@types/webpack" "^4"
