@@ -1363,7 +1363,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section max-answers="5" display-number="1" max-score="100" min-answers="3">
+  <e:section max-answers="5" display-number="1" min-answers="3" max-score="100">
     <e:section-title>
       <span lang="fi-FI">
         20 p. tehtävät
@@ -1714,7 +1714,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
       </e:question>
     </e:question>
   </e:section>
-  <e:section max-answers="2" display-number="2" max-score="60" min-answers="0">
+  <e:section max-answers="2" display-number="2" min-answers="0" max-score="60">
     <e:section-title>
       <span lang="fi-FI">
         30 p. tehtävät
@@ -2382,7 +2382,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section max-answers="5" display-number="1" max-score="100" min-answers="3">
+  <e:section max-answers="5" display-number="1" min-answers="3" max-score="100">
     <e:section-title>
       
       <span lang="sv-FI">
@@ -2734,7 +2734,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
       </e:question>
     </e:question>
   </e:section>
-  <e:section max-answers="2" display-number="2" max-score="60" min-answers="0">
+  <e:section max-answers="2" display-number="2" min-answers="0" max-score="60">
     <e:section-title>
       
       <span lang="sv-FI">
@@ -4841,7 +4841,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
     
   </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section max-answers="1" display-number="1" max-score="20" min-answers="1">
+  <e:section max-answers="1" display-number="1" min-answers="1" max-score="20">
     <e:section-title>
       <span lang="fi-FI">
         20 pisteen tehtävä
@@ -5049,7 +5049,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
   </e:section>
 
 
-  <e:section max-answers="2" display-number="2" max-score="40" min-answers="2">
+  <e:section max-answers="2" display-number="2" min-answers="2" max-score="40">
     <e:section-title>
       <span lang="fi-FI">
         20 pisteen tehtävät
@@ -5339,7 +5339,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
     </e:question>
 
   </e:section>
-  <e:section max-answers="2" display-number="3" max-score="60" min-answers="2">
+  <e:section max-answers="2" display-number="3" min-answers="2" max-score="60">
     <e:section-title>
       <span lang="fi-FI">
         30 pisteen tehtävät
@@ -5874,7 +5874,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 2`] = `
     </span>
   </e:exam-instruction>
   <e:table-of-contents/>
-  <e:section max-answers="1" display-number="1" max-score="20" min-answers="1">
+  <e:section max-answers="1" display-number="1" min-answers="1" max-score="20">
     <e:section-title>
       
       <span lang="sv-FI">
@@ -6082,7 +6082,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 2`] = `
   </e:section>
 
 
-  <e:section max-answers="2" display-number="2" max-score="40" min-answers="2">
+  <e:section max-answers="2" display-number="2" min-answers="2" max-score="40">
     <e:section-title>
       
       <span lang="sv-FI">
@@ -6375,7 +6375,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 2`] = `
     </e:question>
 
   </e:section>
-  <e:section max-answers="2" display-number="3" max-score="60" min-answers="2">
+  <e:section max-answers="2" display-number="3" min-answers="2" max-score="60">
     <e:section-title>
       
       <span lang="sv-FI">
@@ -13403,7 +13403,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
     </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section cas-forbidden="true" display-number="1" max-score="48" max-answers="4" min-answers="4">
+  <e:section cas-forbidden="true" display-number="1" max-answers="4" min-answers="4" max-score="48">
     <e:section-title>
       <span lang="fi-FI">A-osa</span>
       
@@ -13860,7 +13860,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="2" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="2" min-answers="3" max-score="36">
     <e:section-title>
       <span lang="fi-FI">B1-osa</span>
       
@@ -14050,7 +14050,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="3" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="3" min-answers="3" max-score="36">
     <e:section-title>
       <span lang="fi-FI">B2-osa</span>
       
@@ -14229,7 +14229,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
     </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section cas-forbidden="true" display-number="1" max-score="48" max-answers="4" min-answers="4">
+  <e:section cas-forbidden="true" display-number="1" max-answers="4" min-answers="4" max-score="48">
     <e:section-title>
       
       <span lang="sv-FI">Del A</span>
@@ -14686,7 +14686,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="2" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="2" min-answers="3" max-score="36">
     <e:section-title>
       
       <span lang="sv-FI">Del B1</span>
@@ -14876,7 +14876,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 
   </e:section>
 
-  <e:section cas-forbidden="false" max-answers="3" display-number="3" max-score="36" min-answers="3">
+  <e:section cas-forbidden="false" max-answers="3" display-number="3" min-answers="3" max-score="36">
     <e:section-title>
       
       <span lang="sv-FI">Del B2</span>
@@ -25386,7 +25386,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" lang="de-DE" max-score="299"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä; kuulovammaiset kokelaat</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" lang="de-DE" max-score="228"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä; kuulovammaiset kokelaat</span></e:exam-title>
   
   <e:exam-instruction>
     <span lang="fi-FI">
