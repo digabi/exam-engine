@@ -620,11 +620,10 @@
         </p>
         <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
       </e:question-instruction>
-
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer >
+          <e:choice-answer>
             <e:choice-answer-option>
               Fried Potatoes
             </e:choice-answer-option>
@@ -647,11 +646,10 @@
           </e:attachment>
         </e:question>
       </e:audio-group>
-
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer >
+          <e:choice-answer>
             <e:choice-answer-option>
               Aaron Headly
             </e:choice-answer-option>
@@ -674,11 +672,10 @@
           </e:attachment>
         </e:question>
       </e:audio-group>
-
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer >
+          <e:choice-answer>
             <e:choice-answer-option>
               Coffee By The Cup @ Madeline's
             </e:choice-answer-option>
@@ -714,7 +711,7 @@
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer >
+          <e:choice-answer>
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.1.0478.jpg</e:attachment-title>
