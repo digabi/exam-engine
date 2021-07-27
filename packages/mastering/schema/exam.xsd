@@ -57,6 +57,14 @@
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="not-exam-type" type="e:exam-type">
+      <xs:annotation>
+        <xs:documentation>
+          You may want to create separate versions of the exam for students with disabilities. If not
+          specified, the contents are used in all exam versions for this language. This is the negation
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:attributeGroup>
 
   <xs:attributeGroup name="stylable">

@@ -6,6 +6,7 @@
     <e:exam-version lang="fi-FI"/>
     <e:exam-version lang="sv-FI"/>
     <e:exam-version lang="fi-FI" exam-type="hearing-impaired"/>
+    <e:exam-version lang="fi-FI" exam-type="visually-impaired"/>
   </e:exam-versions>
   <e:exam-instruction>
     <e:localization lang="fi-FI">
@@ -611,8 +612,7 @@
       </e:audio-group>
 
     </e:question>
-
-    <e:question>
+    <e:question exam-type="visually-impaired">
       <e:question-title>Wissenstest für Hobbyköche</e:question-title>
       <e:question-instruction>
         <p>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile. Beantworten Sie die
@@ -624,7 +624,97 @@
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer direction="horizontal">
+          <e:choice-answer >
+            <e:choice-answer-option>
+              Fried Potatoes
+            </e:choice-answer-option>
+            <e:choice-answer-option score="2">
+              potato rosti
+            </e:choice-answer-option>
+            <e:choice-answer-option>
+              mashed potatoes for perogies
+            </e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>7.1. audio</e:attachment-title>
+            <e:audio src="7.1.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.1.</e:audio-title></e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welches Bild passt?</e:question-title>
+          <e:choice-answer >
+            <e:choice-answer-option>
+              Aaron Headly
+            </e:choice-answer-option>
+            <e:choice-answer-option>
+              Scrambled Eggs
+            </e:choice-answer-option>
+            <e:choice-answer-option score="2">
+              Die Ebene lag über dem Spiegelei in der Pfanne
+            </e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>7.2. audio</e:attachment-title>
+            <e:audio src="7.2.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.2.</e:audio-title></e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welches Bild passt?</e:question-title>
+          <e:choice-answer >
+            <e:choice-answer-option>
+              Coffee By The Cup @ Madeline's
+            </e:choice-answer-option>
+            <e:choice-answer-option score="2">
+              Coffee Maker
+            </e:choice-answer-option>
+            <e:choice-answer-option>
+              Man using the French Press to make coffee
+            </e:choice-answer-option>
+          </e:choice-answer>
+          <e:attachment>
+            <e:attachment-title>7.3. audio</e:attachment-title>
+            <e:audio src="7.3.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.3.</e:audio-title></e:audio>
+            <e:reference>
+              <e:author>
+                <e:localization lang="fi-FI">YTL</e:localization>
+                <e:localization lang="sv-FI">SEN</e:localization>
+              </e:author>
+            </e:reference>
+          </e:attachment>
+        </e:question>
+      </e:audio-group>
+    </e:question>
+    <e:question not-exam-type="visually-impaired">
+      <e:question-title>Wissenstest für Hobbyköche</e:question-title>
+      <e:question-instruction>
+        <p>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile. Beantworten Sie die
+          Fragen.
+        </p>
+        <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
+      </e:question-instruction>
+
+      <e:audio-group>
+        <e:question>
+          <e:question-title>Welches Bild passt?</e:question-title>
+          <e:choice-answer >
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.1.0478.jpg</e:attachment-title>

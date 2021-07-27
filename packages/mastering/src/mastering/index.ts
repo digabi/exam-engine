@@ -486,7 +486,10 @@ function applyLocalizations(exam: Element, language: string, type: ExamType) {
   }
 
   exam
-    .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and @exam-type!='${type}')]`, ns)
+    .find(
+      `//e:*[(@lang and @lang!='${language}') or (@exam-type and @exam-type!='${type}') or (@not-exam-type and @not-exam-type='${type}')]`,
+      ns
+    )
     .forEach((element) => element.remove())
 }
 
