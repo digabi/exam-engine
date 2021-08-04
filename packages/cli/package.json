@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-cli",
-  "version": "16.1.1-alpha.0",
+  "version": "16.1.1-16.1.1-alpha.0.0",
   "main": "index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -10,11 +10,12 @@
     "ee": "./dist/index.js"
   },
   "dependencies": {
-    "@digabi/exam-engine-mastering": "16.1.1-alpha.0",
-    "@digabi/exam-engine-rendering": "16.1.1-alpha.0",
+    "@digabi/exam-engine-mastering": "16.1.1-16.1.1-alpha.0.0",
+    "@digabi/exam-engine-rendering": "16.1.1-16.1.1-alpha.0.0",
     "lodash": "^4.17.15",
     "ora": "^5.0.0",
     "uuid": "^8.0.0",
     "yargs": "^17.0.1"
-  }
+  },
+  "gitHead": "135fe5df1cd806bc266f8b2b6f05312e03c4a0f4"
 }
