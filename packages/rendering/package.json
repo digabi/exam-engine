@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "16.1.1-16.1.1-alpha.0.0",
+  "version": "16.1.1-16.1.1-alpha.0.1",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -13,8 +13,8 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
-    "@digabi/exam-engine-core": "16.1.1-16.1.1-alpha.0.0",
-    "@digabi/exam-engine-mastering": "16.1.1-16.1.1-alpha.0.0",
+    "@digabi/exam-engine-core": "16.1.1-16.1.1-alpha.0.1",
+    "@digabi/exam-engine-mastering": "16.1.1-16.1.1-alpha.0.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "babel-loader": "^8.0.6",
     "child-process-promise": "^2.2.1",
@@ -45,5 +45,5 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9"
   },
-  "gitHead": "135fe5df1cd806bc266f8b2b6f05312e03c4a0f4"
+  "gitHead": "097dcd0a0113404ff7d0231bb007e009a91d2004"
 }

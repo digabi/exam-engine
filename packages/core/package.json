@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "16.1.1-16.1.1-alpha.0.0",
+  "version": "16.1.1-16.1.1-alpha.0.1",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
@@ -60,5 +60,5 @@
     "webpack-bundle-analyzer": "^4.1.0",
     "webpack-cli": "^3.3.10"
   },
-  "gitHead": "135fe5df1cd806bc266f8b2b6f05312e03c4a0f4"
+  "gitHead": "097dcd0a0113404ff7d0231bb007e009a91d2004"
 }
