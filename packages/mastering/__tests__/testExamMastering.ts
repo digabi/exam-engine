@@ -125,8 +125,8 @@ describe('Exam mastering', () => {
     const titles = masteringResults.map((r) => r.title)
     expect(titles).toEqual([
       'FI – Englanti, pitkä oppimäärä',
-      'FI – Englanti, pitkä oppimäärä; näkövammaiset kokelaat',
-      'FI – Englanti, pitkä oppimäärä; kuulovammaiset kokelaat',
+      'FI – Englanti, pitkä oppimäärä (näkövammaiset)',
+      'FI – Englanti, pitkä oppimäärä (kuulovammaiset)',
     ])
   })
 

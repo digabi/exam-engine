@@ -374,7 +374,7 @@ function addYoCustomizations(exam: Element, language: string, type: ExamType) {
     const title = i18n.t(key, { ns: 'exam-title' })
     if (title) {
       const suffix = i18n.t(type, { ns: 'exam-title', defaultValue: '' })
-      const fullTitle = suffix ? (title.includes(',') ? title + '; ' + suffix : title + ', ' + suffix) : title
+      const fullTitle = title + (suffix ? ' ' + suffix : '')
       const firstChild = exam.child(0) as Element
       firstChild.addPrevSibling(
         exam
