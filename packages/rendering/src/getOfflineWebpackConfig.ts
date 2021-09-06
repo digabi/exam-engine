@@ -73,7 +73,7 @@ export function getOfflineWebpackConfig(
         template: path.resolve(__dirname, '../public/offline.html'),
         title: result.title!,
         backgroundColor: '#e0f4fe',
-        scriptSrc: '../main-bundle.js',
+        scriptSrc: 'main-bundle.js',
       }),
       new HtmlWebpackPlugin({
         filename: 'attachments/index.html',
