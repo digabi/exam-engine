@@ -8,6 +8,7 @@ import { I18nextProvider } from 'react-i18next'
 import Section from './Section'
 import SectionTitle from './SectionTitle'
 import Question from './Question'
+import File from '../shared/File'
 import ExamGradingInstruction from './ExamGradingInstruction'
 import AutogradedAnswer from './AutogradedAnswer'
 import Image from '../shared/Image'
@@ -27,6 +28,19 @@ import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Recording from './Recording'
 
+const renderIfWithinGradingInstructionContent = renderIf(
+  ({ element }) =>
+    queryAncestors(element, [
+      'answer-grading-instruction',
+      'choice-answer-option',
+      'dropdown-answer-option',
+      'exam-grading-instruction',
+      'question-grading-instruction',
+      'hint',
+      'question-title',
+    ]) != null
+)
+
 const renderChildNodes = createRenderChildNodes({
   'accepted-answer': AutogradedAnswerOption,
   attachment: RenderExamElements,
@@ -39,28 +53,10 @@ const renderChildNodes = createRenderChildNodes({
   'dropdown-answer': AutogradedAnswer,
   'dropdown-answer-option': AutogradedAnswerOption,
   'external-material': RenderExamElements,
-  formula: renderIf(
-    ({ element }) =>
-      queryAncestors(element, [
-        'answer-grading-instruction',
-        'choice-answer',
-        'dropdown-answer',
-        'exam-grading-instruction',
-        'question-grading-instruction',
-        'question-title',
-      ]) != null
-  )(Formula),
+  file: renderIfWithinGradingInstructionContent(File),
+  formula: renderIfWithinGradingInstructionContent(Formula),
   hints: RenderExamElements,
-  image: renderIf(
-    ({ element }) =>
-      queryAncestors(element, [
-        'answer-grading-instruction',
-        'choice-answer',
-        'exam-grading-instruction',
-        'question-grading-instruction',
-        'scored-text-answer',
-      ]) != null
-  )(Image),
+  image: renderIfWithinGradingInstructionContent(Image),
   question: Question,
   'question-title': QuestionTitle,
   'question-grading-instruction': AnswerGradingInstruction,
