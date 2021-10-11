@@ -3,10 +3,9 @@ import { DeepPartial } from 'utility-types'
 /** A helper type for type-safe i18next translations. */
 type ExtractTranslations<T> = {
   [K in keyof T as K extends `${string}_plural` ? never : K]: ExtractTranslations<T[K]>
-} &
-  {
-    [K in keyof T as K extends `${string}_plural` ? never : T[K] extends string ? `${K & string}_plural` : never]?: T[K]
-  }
+} & {
+  [K in keyof T as K extends `${string}_plural` ? never : T[K] extends string ? `${K & string}_plural` : never]?: T[K]
+}
 
 export type Translations = ExtractTranslations<typeof fi_FI>
 export type ExamTranslations = DeepPartial<Translations>
