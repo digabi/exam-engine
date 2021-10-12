@@ -96,8 +96,8 @@ void yargs
     runCommand('./commands/create-mex')
   )
   .command('migrate [exam]', 'Convert an exam to the latest schema.', addExamArgs, runCommand('./commands/migrate'))
-  .check((argv: { exam?: string }) => {
-    if (argv.exam) {
+  .check((argv) => {
+    if (typeof argv.exam === 'string') {
       accessSync(argv.exam)
     }
     return true

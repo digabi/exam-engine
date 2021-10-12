@@ -40,7 +40,7 @@ export default async function examLoader(this: webpack.loader.LoaderContext, sou
         callback(beautifyError(err, source))
       }
     } else {
-      callback(err)
+      callback(err instanceof Error ? err : new Error(`Unknown error occurred: ${String(err)}`))
     }
   }
 }
