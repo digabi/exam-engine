@@ -1,12 +1,10 @@
 import classNames from 'classnames'
-import * as _ from 'lodash-es'
-import React, { ReactNode, useContext } from 'react'
+import React, { useContext } from 'react'
 import { ChoiceAnswer } from '../..'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { findChildElement, getNumericAttribute } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
-import { intersperse } from '../../utils'
 import { QuestionContext } from '../context/QuestionContext'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from '../context/ResultsContext'
@@ -56,7 +54,12 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
         </span>
         {!isAnswerCorrect && (
           <span className="e-dropdown-answer__correct" aria-hidden={true}>
-            {intersperse(', ', _.flatMap<Element, ReactNode>(correctOptions, _.unary(renderChildNodes)))}
+            {correctOptions.map((correctOption, i) => (
+              <React.Fragment key={i}>
+                {renderChildNodes(correctOption)}
+                {i < correctOptions.length - 1 && ', '}
+              </React.Fragment>
+            ))}
           </span>
         )}
         {scoreValue != null && (
