@@ -147,7 +147,7 @@
   dependencies:
     "@babel/types" "^7.16.0"
 
-"@babel/helper-module-imports@^7.12.13", "@babel/helper-module-imports@^7.15.4", "@babel/helper-module-imports@^7.16.0":
+"@babel/helper-module-imports@^7.12.13", "@babel/helper-module-imports@^7.16.0":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.16.0.tgz#90538e60b672ecf1b448f5f4f5433d37e79a3ec3"
   integrity sha512-kkH7sWzKPq0xt3H1n+ghb4xEMP8k0U7XV3kkB+ZGy69kDk2ySFW1qPi06sjKzFY3t1j6XbJSqr4mF9L7CYVyhg==
@@ -930,7 +930,7 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/types@^7.0.0", "@babel/types@^7.15.4", "@babel/types@^7.16.0", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.4":
+"@babel/types@^7.0.0", "@babel/types@^7.16.0", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.4":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.16.0.tgz#db3b313804f96aadd0b776c4823e127ad67289ba"
   integrity sha512-PJgg/k3SdLsGb3hhisFvtLOw5ts113klrpLuIPtCJIU+BB24fqq6lf8RWqKJEjzqXR9AEH1rIb5XTqwBHB+kQg==
@@ -8823,7 +8823,7 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-klona@^2.0.3, klona@^2.0.4:
+klona@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.4.tgz#7bb1e3affb0cb8624547ef7e8f6708ea2e39dfc0"
   integrity sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
@@ -11309,7 +11309,7 @@ postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.27, postcss@^7.0.
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.0.2, postcss@^8.0.5, postcss@^8.2.1, postcss@^8.2.15:
+postcss@^8.0.5, postcss@^8.2.1, postcss@^8.2.15, postcss@^8.3.11:
   version "8.3.11"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.11.tgz#c3beca7ea811cd5e1c4a3ec6d2e7599ef1f8f858"
   integrity sha512-hCmlUAIlUiav8Xdqw3Io4LcpA1DOt7h3LSTAC4G6JGHFFaWzI6qvFt9oilvl8BmkbBRX1IhM90ZAmpk68zccQA==
@@ -12273,17 +12273,16 @@ safe-regex@^1.1.0:
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
 sanitize-html@^2.0.0:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-2.5.2.tgz#fd7892340e7fc9afd5722200929258808c578784"
-  integrity sha512-sJ1rO2YixFIqs2kIcEUb6PTrCjvz8DMq1XqWWuy0kjgjrn58GNLK1DKSIRybFZDO1WNgsEgD+WiEzTEYS8xEug==
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-2.5.3.tgz#91aa3dc760b072cdf92f9c6973747569b1ba1cd8"
+  integrity sha512-DGATXd1fs/Rm287/i5FBKVYSBBUL0iAaztOA1/RFhEs4yqo39/X52i/q/CwsfCUG5cilmXSBmnQmyWfnKhBlOg==
   dependencies:
     deepmerge "^4.2.2"
     escape-string-regexp "^4.0.0"
     htmlparser2 "^6.0.0"
     is-plain-object "^5.0.0"
-    klona "^2.0.3"
     parse-srcset "^1.0.2"
-    postcss "^8.0.2"
+    postcss "^8.3.11"
 
 sax@^1.2.4:
   version "1.2.4"
