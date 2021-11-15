@@ -2295,9 +2295,9 @@
     "@swc/core" "^1.2.104"
 
 "@swc-node/jest@^1.1.1":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@swc-node/jest/-/jest-1.4.0.tgz#efecb67b68109c8f5c7d73190e678141391d54d4"
-  integrity sha512-fPdv7L/EFQ0VHQCBO9WC7NrzEZsVQrO3OZW5pX4W2ahLOfRvjd8dw/QKIREuvwWtuvfFFg+knRXKqj88Qq8mHg==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@swc-node/jest/-/jest-1.4.1.tgz#0d1b4250660f103adedcdc75c34a0a12af05db02"
+  integrity sha512-Rv1Pt8T+kbj2QYB5uzOgKGTfbVXswa5VV5Es/RM42mu3qy2LerAW0J7mhttFDBGTvtN/ztTjcCpS601+vgULmg==
   dependencies:
     "@node-rs/xxhash" "^1.0.0"
     "@swc-node/core" "^1.8.0"
