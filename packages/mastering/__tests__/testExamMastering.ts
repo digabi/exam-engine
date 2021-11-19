@@ -47,6 +47,13 @@ describe('Exam mastering', () => {
     )
   })
 
+  it('validates that a scored-text-answer must have either a max-score attribute or an accepted-answer', async () => {
+    const xml = await readFixture('accepted_answer_without_score.xml')
+    return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+      'A scored-text-answer element must contain either a max-score attribute or contain accepted-answers'
+    )
+  })
+
   it('calls generateUuid with exam metadata if it is an yo exam', async () => {
     const xml = await readFixture('minimal_yo_exam.xml')
     const spy = jest.fn(generateUuid)
