@@ -54,6 +54,13 @@ describe('Exam mastering', () => {
     )
   })
 
+  it('validates that the max-score of a scored-text-answer is not smaller than the score of its accepted-answer', async () => {
+    const xml = await readFixture('accepted_answer_with_too_high_score.xml')
+    return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+      'The max-score of a scored-text-answer cannot be smaller than the score of some of its accepted-answers'
+    )
+  })
+
   it('calls generateUuid with exam metadata if it is an yo exam', async () => {
     const xml = await readFixture('minimal_yo_exam.xml')
     const spy = jest.fn(generateUuid)
