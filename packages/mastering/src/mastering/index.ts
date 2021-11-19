@@ -129,10 +129,19 @@ function assertExamIsValid(doc: Document): Document {
 
     // Ensure that scored-text-answer has either max-score or accepted-answers.
     if (answer.name() === 'scored-text-answer') {
-      const maxScore = answer.attr('max-score')
-      if (maxScore == null && answer.get('./e:accepted-answer', ns) == null) {
+      const maxScore = getNumericAttribute('max-score', answer, null)
+      const acceptedAnswers = answer.find<Element>('./e:accepted-answer', ns)
+      if (maxScore == null && acceptedAnswers.length === 0) {
         throw mkError(
           'A scored-text-answer element must contain either a max-score attribute or contain accepted-answers',
+          answer
+        )
+      } else if (
+        maxScore != null &&
+        acceptedAnswers.some((acceptedAnswer) => getNumericAttribute('score', acceptedAnswer) > maxScore)
+      ) {
+        throw mkError(
+          'The max-score of a scored-text-answer cannot be smaller than the score of some of its accepted-answers',
           answer
         )
       }
