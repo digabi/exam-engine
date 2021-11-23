@@ -5,14 +5,14 @@ export const FA: ExamTranslations = {
   material: 'Document',
   material_plural: 'Documents',
   'external-material-title': 'Document',
-  section: 'Partie {{displayNumber}}&#160;:',
+  section: 'Partie {{displayNumber}}\u00A0:',
   references: {
     heading: 'Sources',
-    source: 'Source&#160;:',
+    source: 'Source\u00A0:',
     date: 'Publication le',
     'reference-date': 'Téléchargement le',
-    translator: 'Traduction&#160;:',
-    'modified-by': 'Modifications&#160;:',
+    translator: 'Traduction\u00A0:',
+    'modified-by': 'Modifications\u00A0:',
   },
   'toc-heading': 'Sommaire',
 }
