@@ -148,6 +148,20 @@ function assertExamIsValid(doc: Document): Document {
     }
   }
 
+  const root = doc.root()!
+  const examCode = getAttribute('exam-code', root, '')
+  const dayCode = getAttribute('day-code', root, '')
+  const examCodesRequiringDayCode = ['A', 'O']
+  if (dayCode) {
+    if (!examCodesRequiringDayCode.includes(examCode)) {
+      throw mkError(`Invalid exam-code ${examCode} for day-code ${dayCode}`, doc.root()!)
+    }
+  } else {
+    if (examCodesRequiringDayCode.includes(examCode)) {
+      throw mkError(`Invalid empty day-code for exam-code ${examCode}`, doc.root()!)
+    }
+  }
+
   return doc
 }
 /**

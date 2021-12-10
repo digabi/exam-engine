@@ -278,7 +278,6 @@ describe('generateExam()', () => {
     const exam: fc.Arbitrary<GenerateExamOptions> = fc.record({
       date: optional(fc.date().map((d) => formatISO(d, { representation: 'date' }))),
       examCode: optional(fc.constantFrom('EA', 'M', 'N')),
-      dayCode: optional(fc.constant('X')),
       maxAnswers: optional(maxAnswers),
       languages: optional(fc.set(fc.constantFrom('fi-FI' as const, 'sv-FI' as const), 1, 2)),
       title: optional(fc.string()),

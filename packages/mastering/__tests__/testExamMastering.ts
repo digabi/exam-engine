@@ -12,11 +12,31 @@ const getMediaMetadata: GetMediaMetadata = async (__, type) =>
   Promise.resolve(type === 'audio' ? { duration: 999 } : { width: 999, height: 999 })
 
 describe('Exam mastering', () => {
-  it('throws an error if XML is invalid', async () => {
-    const xml = await readFixture('not_xml.xml')
-    return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
-      "Start tag expected, '<' not found\n"
-    )
+  describe('throws an error if', () => {
+    it('XML is invalid', async () => {
+      const xml = await readFixture('not_xml.xml')
+      return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+        "Start tag expected, '<' not found\n"
+      )
+    })
+    it('XML has invalid exam code', async () => {
+      const xml = await readFixture('invalid_exam_code.xml')
+      return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+        'Invalid exam-code BI for day-code X'
+      )
+    })
+    it('XML has invalid day code', async () => {
+      const xml = await readFixture('invalid_day_code.xml')
+      return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+        "The value 'Z' is not an element of the set"
+      )
+    })
+    it('XML has invalid empty day code', async () => {
+      const xml = await readFixture('invalid_empty_day_code.xml')
+      return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+        'Invalid empty day-code for exam-code A'
+      )
+    })
   })
 
   it('validates the XML against a schema', async () => {
