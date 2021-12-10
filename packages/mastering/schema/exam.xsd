@@ -18,8 +18,8 @@
       </xs:sequence>
       <xs:attribute name="exam-schema-version" type="e:exam-schema-version" />
       <xs:attribute name="date" type="xs:date" />
-      <xs:attribute name="exam-code" type="xs:string" />
-      <xs:attribute name="day-code" type="xs:string" />
+      <xs:attribute name="exam-code" type="e:exam-code" />
+      <xs:attribute name="day-code" type="e:day-code" />
       <xs:attribute name="exam-stylesheet" type="xs:string" />
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
       <xs:attribute name="lang" type="xs:language" />
@@ -74,6 +74,61 @@
   <xs:simpleType name="exam-schema-version">
     <xs:restriction base="xs:string">
       <xs:enumeration value="0.3" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="exam-code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A5" />
+      <xs:enumeration value="A" />
+      <xs:enumeration value="BA" />
+      <xs:enumeration value="BB" />
+      <xs:enumeration value="BI" />
+      <xs:enumeration value="DC" />
+      <xs:enumeration value="EA" />
+      <xs:enumeration value="EC" />
+      <xs:enumeration value="ET" />
+      <xs:enumeration value="FA" />
+      <xs:enumeration value="FC" />
+      <xs:enumeration value="FF" />
+      <xs:enumeration value="FY" />
+      <xs:enumeration value="GC" />
+      <xs:enumeration value="GE" />
+      <xs:enumeration value="HI" />
+      <xs:enumeration value="I" />
+      <xs:enumeration value="IC" />
+      <xs:enumeration value="KE" />
+      <xs:enumeration value="L1" />
+      <xs:enumeration value="L7" />
+      <xs:enumeration value="M" />
+      <xs:enumeration value="N" />
+      <xs:enumeration value="PA" />
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="PS" />
+      <xs:enumeration value="QC" />
+      <xs:enumeration value="SA" />
+      <xs:enumeration value="SC" />
+      <xs:enumeration value="TC" />
+      <xs:enumeration value="TE" />
+      <xs:enumeration value="UE" />
+      <xs:enumeration value="UO" />
+      <xs:enumeration value="VA" />
+      <xs:enumeration value="VC" />
+      <xs:enumeration value="W" />
+      <xs:enumeration value="YH" />
+      <xs:enumeration value="Z" />
+      <!-- only Swedish codes -->
+      <xs:enumeration value="CA" />
+      <xs:enumeration value="CB" />
+      <xs:enumeration value="O5" />
+      <xs:enumeration value="O" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="day-code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="E" />
+      <xs:enumeration value="X" />
     </xs:restriction>
   </xs:simpleType>
 

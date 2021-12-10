@@ -139,6 +139,19 @@ function assertExamIsValid(doc: Document): Document {
     }
   }
 
+  const examCode = doc.find<Element>('string(/e:exam/@exam-code)', ns).toString()
+  const dayCode = doc.find<Element>('string(/e:exam/@day-code)', ns).toString()
+  const examCodesRequiringDayCode = ['A', 'O']
+  if (dayCode) {
+    if (!examCodesRequiringDayCode.includes(examCode)) {
+      throw mkError(`Invalid exam-code ${examCode} for day-code ${dayCode}`, doc.root()!)
+    }
+  } else {
+    if (examCodesRequiringDayCode.includes(examCode)) {
+      throw mkError(`Invalid empty day-code for exam-code ${examCode}`, doc.root()!)
+    }
+  }
+
   return doc
 }
 /**
