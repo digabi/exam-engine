@@ -42,7 +42,7 @@
     "optimize-css-assets-webpack-plugin": "^6.0.0",
     "postcss": "^8.0.5",
     "postcss-loader": "^4.0.1",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^7.0.2",
     "react": "^16.14.0",
     "react-css-transition-replace": "^4.0.2",
     "react-dom": "^16.14.0",
