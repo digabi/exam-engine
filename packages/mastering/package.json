@@ -11,7 +11,7 @@
   "dependencies": {
     "@digabi/exam-engine-core": "16.1.4",
     "cloneable-readable": "^2.1.0",
-    "compare-versions": "^3.6.0",
+    "compare-versions": "^4.1.2",
     "ffprobe": "^1.1.0",
     "ffprobe-static": "^3.0.0",
     "glob": "^7.1.6",
