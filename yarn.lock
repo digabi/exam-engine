@@ -12104,6 +12104,15 @@ rich-text-editor@^6.0.3:
     jquery "^3.3.1"
     mathjax-node "^2.1.1"
 
+rich-text-editor@^6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-6.0.5.tgz#0fbad5fc59cfbe032e8634c61845d0c749b1146e"
+  integrity sha512-vFEQnl1iGvVua3Ml9hHTU9ZX7J+dhLt1mVKOZrfFhtHkmLZK/Jaqrfa6QNrakXCB0XkY0iJaWgeUO3LCt7XRgg==
+  dependencies:
+    "@digabi/mathquill" "^0.10.5"
+    jquery "^3.3.1"
+    mathjax-node "^2.1.1"
+
 rimraf@3.0.2, rimraf@^3.0.0, rimraf@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
