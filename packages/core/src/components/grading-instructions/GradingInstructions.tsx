@@ -41,11 +41,15 @@ const renderIfWithinGradingInstructionContent = renderIf(
     ]) != null
 )
 
+const renderIfNotWithinExternalMaterial = renderIf(
+  ({ element }) => queryAncestors(element, ['external-material']) == null
+)
+
 const renderChildNodes = createRenderChildNodes({
   'accepted-answer': AutogradedAnswerOption,
   attachment: RenderExamElements,
-  'attachment-link': mkAttachmentLink('plain'),
-  'attachment-links': mkAttachmentLinks('plain'),
+  'attachment-link': renderIfNotWithinExternalMaterial(mkAttachmentLink('plain')),
+  'attachment-links': renderIfNotWithinExternalMaterial(mkAttachmentLinks('plain')),
   audio: Recording,
   'audio-group': RenderExamElements,
   'choice-answer': AutogradedAnswer,
