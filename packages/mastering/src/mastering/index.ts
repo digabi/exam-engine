@@ -499,7 +499,7 @@ function applyLocalizations(exam: Element, language: string, type: ExamType) {
   for (const localization of exam.find<Element>('//e:localization', ns)) {
     if (
       getAttribute('lang', localization, language) !== language ||
-      getAttribute('exam-type', localization, type) !== type ||
+      !getAttribute('exam-type', localization, type).includes(type) ||
       localization.childNodes().every((c) => c instanceof Text && c.text().trim().length === 0)
     ) {
       localization.remove()
@@ -509,7 +509,7 @@ function applyLocalizations(exam: Element, language: string, type: ExamType) {
   }
 
   exam
-    .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and @exam-type!='${type}')]`, ns)
+    .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}')))]`, ns)
     .forEach((element) => element.remove())
 }
 

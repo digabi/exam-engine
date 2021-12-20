@@ -26605,3 +26605,90 @@ exports[`Exam mastering supports arbitrarily nested questions: xml 1`] = `
 </e:exam>
 
 `;
+
+exports[`Exam mastering supports multiple exam-type attributes: hearing-impaired 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" max-score="0">
+  
+  <e:exam-instruction>
+    
+    <span>
+      Tekstiä kuulovammaisten kokeeseen.
+    </span>
+  </e:exam-instruction>
+  <e:table-of-contents/>
+  
+  <e:section display-number="2" max-score="0">
+    <e:section-title>Kirjalliset tehtävät</e:section-title>
+    <e:question exam-type="normal hearing-impaired" display-number="3" max-score="0">
+      <e:question-title>Kirjallinen tehtävä</e:question-title>
+    </e:question>
+    
+  </e:section>
+</e:exam>
+
+`;
+
+exports[`Exam mastering supports multiple exam-type attributes: normal 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">
+  
+  <e:exam-instruction>
+    <span>
+      Tekstiä tavalliseen ja näkövammaisten kokeeseen.
+    </span>
+    
+  </e:exam-instruction>
+  <e:table-of-contents/>
+  <e:section display-number="1" max-score="0">
+    <e:section-title>Kuuntelutehtävät</e:section-title>
+    <e:question display-number="1" max-score="0">
+      <e:question-title>Kaikille yhteinen tehtävä</e:question-title>
+    </e:question>
+    <e:question exam-type="normal hearing-impaired" display-number="2" max-score="0">
+      <e:question-title>Kuuntelutehtävä</e:question-title>
+    </e:question>
+    
+  </e:section>
+  <e:section display-number="2" max-score="0">
+    <e:section-title>Kirjalliset tehtävät</e:section-title>
+    <e:question exam-type="normal hearing-impaired" display-number="3" max-score="0">
+      <e:question-title>Kirjallinen tehtävä</e:question-title>
+    </e:question>
+    
+  </e:section>
+</e:exam>
+
+`;
+
+exports[`Exam mastering supports multiple exam-type attributes: visually-impaired 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="0">
+  
+  <e:exam-instruction>
+    <span>
+      Tekstiä tavalliseen ja näkövammaisten kokeeseen.
+    </span>
+    
+  </e:exam-instruction>
+  <e:table-of-contents/>
+  <e:section display-number="1" max-score="0">
+    <e:section-title>Kuuntelutehtävät</e:section-title>
+    <e:question display-number="1" max-score="0">
+      <e:question-title>Kaikille yhteinen tehtävä</e:question-title>
+    </e:question>
+    
+    <e:question exam-type="visually-impaired" display-number="2" max-score="0">
+      <e:question-title>Näkövammaisten korvaava kuuntelutehtävä</e:question-title>
+    </e:question>
+  </e:section>
+  <e:section display-number="2" max-score="0">
+    <e:section-title>Kirjalliset tehtävät</e:section-title>
+    
+    <e:question exam-type="visually-impaired" display-number="3" max-score="0">
+      <e:question-title>Näkövammaisten korvaava kirjallinen tehtävä</e:question-title>
+    </e:question>
+  </e:section>
+</e:exam>
+
+`;
