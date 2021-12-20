@@ -49,7 +49,7 @@
         <xs:documentation>The exam language.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="exam-type" type="e:exam-type">
+    <xs:attribute name="exam-type" type="e:exam-type-list">
       <xs:annotation>
         <xs:documentation>
           You may want to create separate versions of the exam for students with disabilities. If not
@@ -178,6 +178,15 @@
           <xs:documentation>A version of the exam designed for hearing impaired students.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="exam-type-list">
+    <xs:restriction>
+      <xs:simpleType>
+        <xs:list itemType="e:exam-type" />
+      </xs:simpleType>
+      <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
 

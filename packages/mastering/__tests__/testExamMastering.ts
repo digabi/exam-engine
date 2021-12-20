@@ -104,6 +104,15 @@ describe('Exam mastering', () => {
     ])
   })
 
+  it('supports multiple exam-type attributes', async () => {
+    const xml = await readFixture('multiple_exam_types.xml')
+    const masteringResults = await masterExam(xml, generateUuid, getMediaMetadata)
+
+    for (const masteringResult of masteringResults) {
+      expect(wrap(masteringResult.xml)).toMatchSnapshot(masteringResult.type)
+    }
+  })
+
   it('combines choice-answers and dropdown-answers to the same question in grading structure', async () => {
     const xml = generateExam({ sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }] })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
