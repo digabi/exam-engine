@@ -2539,9 +2539,9 @@
     "@types/serve-static" "*"
 
 "@types/ffmpeg-static@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/ffmpeg-static/-/ffmpeg-static-3.0.0.tgz#723c2349da9e095cfa0ee6e6c1d5d4c87bb76933"
-  integrity sha512-JTwV8fFQYUgp8VLUKLd8zHfhFOoTTszMlofnWINAZYWSd/iR2ZZHJsWanUhBG4+c8QPfWE8P7t3nAjSxTNjevQ==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/ffmpeg-static/-/ffmpeg-static-3.0.1.tgz#1003f003624bcd2f569b56185a62dcbacd935c39"
+  integrity sha512-hEJdQMv/g1olk9qTiWqh23BfbKsDKE6Tc7DilNJWF1MgZsU9fYOPKrgQ448vfT7aP2Yt5re9vgJDVv9TXEoTyQ==
 
 "@types/ffprobe-static@^2.0.0":
   version "2.0.1"
