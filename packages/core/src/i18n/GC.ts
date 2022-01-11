@@ -9,7 +9,7 @@ export const GC: ExamTranslations = {
     heading: 'Fontes',
     source: 'Fonte:',
     date: 'Publicado:',
-    'reference-date': 'Acesso em.',
+    'reference-date': 'Acedido:',
     translator: 'Tradução:',
     'modified-by': 'Adaptação:',
   },
