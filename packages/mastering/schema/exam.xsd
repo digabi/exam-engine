@@ -459,7 +459,7 @@
   <xs:element name="text-answer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="hint" minOccurs="0" type="e:Flow" />
+        <xs:element name="hint" minOccurs="0" type="e:LocalizableFlow" />
         <xs:element name="answer-grading-instruction" minOccurs="0" type="e:Flow" />
       </xs:sequence>
       <xs:attribute name="type" type="e:text-answer-type" default="single-line" />
@@ -502,7 +502,7 @@
   <xs:element name="scored-text-answer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="hint" minOccurs="0" type="e:Flow" />
+        <xs:element name="hint" minOccurs="0" type="e:LocalizableFlow" />
         <xs:element name="answer-grading-instruction" minOccurs="0" type="e:Flow" />
         <xs:element ref="e:accepted-answer" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
