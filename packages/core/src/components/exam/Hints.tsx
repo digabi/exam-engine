@@ -13,7 +13,7 @@ const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChi
     (answer) => findChildElement(answer, 'hint') != null
   )
 
-  return (
+  return answersWithHints.length > 0 ? (
     <div className="e-columns">
       <div className="e-column e-column--8">{renderChildNodes(element)}</div>
       {/* Intentionally not semantically correct, so we don't have to do any
@@ -25,6 +25,8 @@ const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChi
         ))}
       </div>
     </div>
+  ) : (
+    <>renderChildNodes(element)</>
   )
 }
 
