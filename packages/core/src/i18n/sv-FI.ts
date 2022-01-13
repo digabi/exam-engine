@@ -61,6 +61,9 @@ export const sv_FI: Translations = {
   'listen-times-remaining': '{{count}} lyssningsgång kvar.',
   'listen-times-remaining_plural': '{{count}} lyssningsgånger kvar.',
   'answer-length': 'Svarets längd: {{count}} tecken.',
+  'answer-length-with-max-length': 'Svarets längd: {{count}} / {{maxLength}} tecken.',
+  'max-length-info':
+    'Svaret får inte överskrida {{count}} tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.',
   'previous-answer-versions': 'Tidigare utkast till svar',
   'zoom-in': 'Förstora bilden',
   /**
@@ -124,6 +127,7 @@ export const sv_FI: Translations = {
     'screenshot-byte-limit-reached':
       'Minnesutrymmet för skärmdumpar är fullt. (Du kan referera till bilder i materialet direkt utan skärmdumpar.)',
     'screenshot-upload-failed': 'Bifogandet av skärmdumpen misslyckades. Försök på nytt.',
+    'answer-too-long': 'Svaret är för långt.',
   },
   'screen-reader': {
     'answer-begin': '[Svaret börjar]',

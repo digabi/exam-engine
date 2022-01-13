@@ -22,7 +22,7 @@ function SectionTitle({ element, renderChildNodes }: ExamComponentProps) {
       {maxAnswers != null && (
         <span className="notification notification--inline">
           <NotificationIcon />
-          <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, type: 'section' }} />
+          <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'section' }} />
         </span>
       )}
     </>

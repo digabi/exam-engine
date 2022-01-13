@@ -15,8 +15,8 @@ beforeAll(async () => {
     sections: [
       {
         questions: [
-          question([textAnswer()]),
-          question({ questions: [question([textAnswer()]), question([textAnswer()])] }),
+          question([textAnswer({ maxLength: 3 })]),
+          question({ questions: [question([textAnswer({ maxLength: 3 })]), question([textAnswer()])] }),
         ],
       },
       {
@@ -39,7 +39,37 @@ beforeAll(async () => {
   gradingStructure = masteringResult.gradingStructure
 })
 
-describe('validateAnswers.ts', () => {
+describe('Answer length validation', () => {
+  it('returns an error if answer is too long', () => {
+    expect(validateAnswers(examStructure, answerQuestionsWithText('too long', '1'))).toEqual([
+      {
+        displayNumber: '1',
+        type: 'AnswerTooLong',
+        characterCount: 8,
+      },
+    ])
+  })
+  it('returns multiple errors if multiple answers are too long', () => {
+    expect(validateAnswers(examStructure, answerQuestionsWithText('too long', '1', '2.1'))).toEqual([
+      {
+        displayNumber: '1',
+        type: 'AnswerTooLong',
+        characterCount: 8,
+      },
+      {
+        displayNumber: '2.1',
+        type: 'AnswerTooLong',
+        characterCount: 8,
+      },
+    ])
+  })
+
+  it('does not return errors if answer is short enough', () => {
+    expect(validateAnswers(examStructure, answerQuestionsWithText('ok', '1'))).toEqual([])
+  })
+})
+
+describe('Extra answers validation', () => {
   it('returns an empty array if answer combinations are valid, nonempty if invalid', () => {
     const allAnswerCombinations = subsets(['1', '2.1', '2.2', '3', '4.1', '4.2'])
     const validAnswerCombinations = [
@@ -90,7 +120,8 @@ describe('validateAnswers.ts', () => {
         displayNumber: '4',
         maxAnswers: 1,
         minAnswers: undefined,
-        type: 'question',
+        elementType: 'question',
+        type: 'ExtraAnswer',
       },
     ])
   })
@@ -102,7 +133,8 @@ describe('validateAnswers.ts', () => {
         displayNumber: '2',
         maxAnswers: 1,
         minAnswers: 0,
-        type: 'section',
+        elementType: 'section',
+        type: 'ExtraAnswer',
       },
     ])
   })
@@ -114,7 +146,8 @@ describe('validateAnswers.ts', () => {
         displayNumber: '',
         maxAnswers: 2,
         minAnswers: undefined,
-        type: 'exam',
+        elementType: 'exam',
+        type: 'ExtraAnswer',
       },
     ])
   })
@@ -126,14 +159,16 @@ describe('validateAnswers.ts', () => {
         displayNumber: '',
         maxAnswers: 2,
         minAnswers: undefined,
-        type: 'exam',
+        elementType: 'exam',
+        type: 'ExtraAnswer',
       },
       {
         childQuestions: ['3', '4'],
         displayNumber: '2',
         maxAnswers: 1,
         minAnswers: 0,
-        type: 'section',
+        elementType: 'section',
+        type: 'ExtraAnswer',
       },
     ])
   })
@@ -145,35 +180,42 @@ describe('validateAnswers.ts', () => {
         displayNumber: '',
         maxAnswers: 2,
         minAnswers: undefined,
-        type: 'exam',
+        elementType: 'exam',
+        type: 'ExtraAnswer',
       },
       {
         childQuestions: ['3', '4'],
         displayNumber: '2',
         maxAnswers: 1,
         minAnswers: 0,
-        type: 'section',
+        elementType: 'section',
+        type: 'ExtraAnswer',
       },
       {
         childQuestions: ['4.1', '4.2'],
         displayNumber: '4',
         maxAnswers: 1,
         minAnswers: undefined,
-        type: 'question',
+        elementType: 'question',
+        type: 'ExtraAnswer',
       },
     ])
   })
 })
 
 const answerQuestions = (...displayNumbers: string[]): Record<number, ExamAnswer> => {
+  return answerQuestionsWithText('foo', ...displayNumbers)
+}
+
+const answerQuestionsWithText = (text: string, ...displayNumbers: string[]): Record<number, ExamAnswer> => {
   const findQuestionId = (displayNumber: string) =>
     gradingStructure.questions.find((q) => q.displayNumber === displayNumber)!.id
 
   const createAnswer = (questionId: number): ExamAnswer => ({
     questionId,
     type: 'text',
-    value: 'foo',
-    characterCount: 3,
+    value: text,
+    characterCount: text.length,
   })
 
   const questionIds = displayNumbers.map(findQuestionId)

@@ -44,7 +44,7 @@ export function initializeExamStore(
       supportsAnswerHistory: typeof examServerApi.selectAnswerVersion === 'function',
       savedQuestionIds: initialQuestionIds,
       examStructure,
-      extraAnswers: validateAnswers(examStructure, answersById),
+      validationErrors: validateAnswers(examStructure, answersById),
     },
     audio: {
       errors: {},

@@ -5,15 +5,36 @@ import { useSelector } from 'react-redux'
 import { findChildElement } from '../../../dom-utils'
 import { useExamTranslation } from '../../../i18n'
 import { AppState } from '../../../store'
-import { ExtraAnswer } from '../../../validateAnswers'
+import { AnswerTooLong, ExtraAnswer } from '../../../validateAnswers'
 import AnsweringInstructions from '../../AnsweringInstructions'
 import { CommonExamContext } from '../../context/CommonExamContext'
 
-const ErrorIndicator: React.FunctionComponent = () => {
-  const extraAnswers = useSelector((state: AppState) => state.answers.extraAnswers)
+const ExtraAnswerError: React.FunctionComponent<ExtraAnswer> = (props) => {
   const { t } = useExamTranslation()
+  const { displayNumber, elementType } = props
+  return (
+    <div>
+      {elementType !== 'exam' && elementType !== 'toc-section'
+        ? t(elementType, { displayNumber }) || <FallbackTitle {...props} />
+        : ''}{' '}
+      {<AnsweringInstructions {...props} />}
+    </div>
+  )
+}
 
-  return extraAnswers.length > 0 ? (
+const AnswerTooLongError: React.FunctionComponent<AnswerTooLong> = ({ displayNumber, characterCount }) => {
+  const { t } = useExamTranslation()
+  return (
+    <div>
+      {t('question', { displayNumber })} {t('answer-errors.answer-too-long', { count: characterCount })}
+    </div>
+  )
+}
+
+const ErrorIndicator: React.FunctionComponent = () => {
+  const validationErrors = useSelector((state: AppState) => state.answers.validationErrors)
+
+  return validationErrors.length > 0 ? (
     <div
       className="error-indicator e-columns e-columns--inline e-bg-color-error e-color-off-white e-font-size-xs e-pad-1 e-mrg-r-1"
       role="alert"
@@ -22,28 +43,26 @@ const ErrorIndicator: React.FunctionComponent = () => {
         <FontAwesomeIcon size="lg" icon={faExclamationTriangle} fixedWidth className="e-mrg-r-1" />
       </div>
       <div className="e-column e-column--gapless">
-        {extraAnswers.map((extraAnswer) => {
-          const { displayNumber, type } = extraAnswer
-          return (
-            <div key={type + displayNumber}>
-              {type !== 'exam' && type !== 'toc-section'
-                ? t(type, { displayNumber }) || <FallbackTitle {...extraAnswer} />
-                : ''}{' '}
-              {<AnsweringInstructions {...extraAnswer} />}
-            </div>
-          )
+        {validationErrors.map((validationError) => {
+          const key = validationError.type + validationError.displayNumber
+          switch (validationError.type) {
+            case 'ExtraAnswer':
+              return <ExtraAnswerError {...{ ...validationError, key }} />
+            default:
+              return <AnswerTooLongError {...{ ...validationError, key }} />
+          }
         })}
       </div>
     </div>
   ) : null
 }
 
-const FallbackTitle: React.FunctionComponent<ExtraAnswer> = ({ type, displayNumber }) => {
+const FallbackTitle: React.FunctionComponent<ExtraAnswer> = ({ elementType, displayNumber }) => {
   // Hack. M/N exams have set the section translation title to an empty string,
   // so they can hide the "Osa 1:" text within the exam. In these cases, display
   // the text content of the corresponding <e:section-title> instead. Hopefully
   // we can delete this code on some day. 💩
-  if (type === 'section') {
+  if (elementType === 'section') {
     const { root } = useContext(CommonExamContext)
     const section = findChildElement(
       root,

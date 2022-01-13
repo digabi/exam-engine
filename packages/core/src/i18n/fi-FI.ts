@@ -73,6 +73,8 @@ export const fi_FI = {
   'listen-times-remaining_plural': '{{count}} kuuntelukertaa jäljellä.',
   'answer-length': 'Vastauksen pituus: {{count}} merkki.',
   'answer-length_plural': 'Vastauksen pituus: {{count}} merkkiä.',
+  'answer-length-with-max-length': 'Vastauksen pituus: {{count}} / {{maxLength}} merkkiä.',
+  'max-length-info': 'Vastauksen pituus on enintään {{count}} merkkiä. Ylityksestä seuraa pistevähennys.',
   'previous-answer-versions': 'Aiemmat vastausluonnokset',
   'zoom-in': 'Suurenna kuva',
   /**
@@ -136,6 +138,7 @@ export const fi_FI = {
     'screenshot-byte-limit-reached':
       'Kokeesi kuvakaappauksille varattu tila on täyttynyt. (Voit viitata aineistokuviin suoraan ilman kuvakaappausta.)',
     'screenshot-upload-failed': 'Kuvan liittäminen ei onnistunut. Kokeile uudestaan.',
+    'answer-too-long': 'Vastaus on liian pitkä.',
   },
   'screen-reader': {
     'answer-begin': '[Vastaus alkaa]',

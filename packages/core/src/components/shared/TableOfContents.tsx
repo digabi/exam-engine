@@ -25,7 +25,7 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
         )}
         {showAnsweringInstructions && maxAnswers != null && (
           <div>
-            <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, type: 'toc-section' }} />
+            <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
           </div>
         )}
       </>

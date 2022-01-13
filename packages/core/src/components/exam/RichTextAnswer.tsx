@@ -6,7 +6,7 @@ import * as richTextEditor from 'rich-text-editor/dist/rich-text-editor'
 import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
 
-export interface AnswerError {
+export interface ScreenshotError {
   key: 'screenshot-too-big' | 'screenshot-byte-limit-reached' | 'screenshot-upload-failed'
   options?: TOptions
 }
@@ -15,8 +15,9 @@ interface Props {
   answer?: RichTextAnswerT
   className?: string
   questionId: number
+  invalid: boolean
   onChange: (answerHTML: string, answerText: string) => void
-  onError: (error: AnswerError) => void
+  onError: (error: ScreenshotError) => void
   saveScreenshot: (screenshot: Blob) => Promise<string>
 }
 
@@ -90,7 +91,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
   }
 
   render(): React.ReactNode {
-    const { className, questionId } = this.props
+    const { className, questionId, invalid } = this.props
 
     return (
       <div
@@ -99,6 +100,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
         data-question-id={questionId}
         role="textbox"
         aria-multiline="true"
+        aria-invalid={invalid}
         tabIndex={0}
       />
     )

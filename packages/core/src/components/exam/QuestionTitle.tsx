@@ -26,7 +26,7 @@ const QuestionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, r
       {maxAnswers != null && childQuestions.length > 0 && (
         <p className="e-italic">
           <NotificationIcon />
-          <AnsweringInstructions {...{ maxAnswers, childQuestions, type: 'question' }} />
+          <AnsweringInstructions {...{ maxAnswers, childQuestions, elementType: 'question' }} />
         </p>
       )}
     </>

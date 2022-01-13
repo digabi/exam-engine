@@ -17,13 +17,13 @@ describe('<AnsweringInstructions />', () => {
     it('numerals', () => {
       expectRendering({
         maxAnswers: 1,
-        type: 'question',
+        elementType: 'question',
         childQuestions: mkQuestions(range(1, 10, '1.')),
       })
 
       expectRendering({
         maxAnswers: 5,
-        type: 'question',
+        elementType: 'question',
         childQuestions: mkQuestions(range(1, 10, '1.')),
       })
     })
@@ -31,7 +31,7 @@ describe('<AnsweringInstructions />', () => {
     it('2 child questions and maxAnswers = 1', () => {
       expectRendering({
         maxAnswers: 1,
-        type: 'question',
+        elementType: 'question',
         childQuestions: mkQuestions(range(1, 2, '1.')),
       })
     })
@@ -39,7 +39,7 @@ describe('<AnsweringInstructions />', () => {
     it('fallback', () => {
       expectRendering({
         maxAnswers: 11,
-        type: 'question',
+        elementType: 'question',
         childQuestions: mkQuestions(range(1, 12, '1.')),
       })
     })
@@ -49,13 +49,13 @@ describe('<AnsweringInstructions />', () => {
     it('numerals', () => {
       expectRendering({
         maxAnswers: 1,
-        type: 'section',
+        elementType: 'section',
         childQuestions: mkQuestions(range(1, 10)),
       })
 
       expectRendering({
         maxAnswers: 5,
-        type: 'section',
+        elementType: 'section',
         childQuestions: mkQuestions(range(1, 10)),
       })
     })
@@ -63,7 +63,7 @@ describe('<AnsweringInstructions />', () => {
     it('2 child questions and maxAnswers = 1', () => {
       expectRendering({
         maxAnswers: 1,
-        type: 'section',
+        elementType: 'section',
         childQuestions: mkQuestions(range(1, 2)),
       })
     })
@@ -72,13 +72,13 @@ describe('<AnsweringInstructions />', () => {
       expectRendering({
         minAnswers: 2,
         maxAnswers: 5,
-        type: 'section',
+        elementType: 'section',
         childQuestions: mkQuestions(range(1, 12)),
       })
 
       expectRendering({
         maxAnswers: 11,
-        type: 'section',
+        elementType: 'section',
         childQuestions: mkQuestions(range(1, 12)),
       })
     })
