@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import { AppState } from '../../store'
 import * as actions from '../../store/answers/actions'
-import AnswerToolbar from '../AnswerToolbar'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { ChoiceAnswer as ChoiceAnswerT, QuestionId } from '../../types/ExamAnswer'
 
@@ -117,12 +116,6 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
           )
         })}
       </div>
-      <AnswerToolbar
-        {...{
-          answer,
-          element,
-        }}
-      />
     </>
   )
 }
