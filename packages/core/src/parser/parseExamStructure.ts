@@ -34,6 +34,7 @@ export interface TextAnswerElement extends BaseElement {
   attributes: {
     displayNumber: string
     questionId: number
+    maxLength?: number
   }
 }
 
@@ -61,14 +62,9 @@ export interface DropdownAnswerElement extends BaseElement {
   }
 }
 
-export type ExamElement =
-  | RootElement
-  | SectionElement
-  | QuestionElement
-  | TextAnswerElement
-  | ScoredTextAnswerElement
-  | ChoiceAnswerElement
-  | DropdownAnswerElement
+export type ExamElement = RootElement | SectionElement | QuestionElement | AnswerElement
+
+export type AnswerElement = TextAnswerElement | ScoredTextAnswerElement | ChoiceAnswerElement | DropdownAnswerElement
 
 export function parseExamStructure(doc: XMLDocument): RootElement {
   const root = doc.documentElement
@@ -98,12 +94,11 @@ function parseQuestion(question: Element): QuestionElement {
   })
 }
 
-function parseAnswer(
-  answer: Element
-): TextAnswerElement | ScoredTextAnswerElement | ChoiceAnswerElement | DropdownAnswerElement {
+function parseAnswer(answer: Element): AnswerElement {
   const attributes = {
     displayNumber: getAttribute(answer, 'display-number')!,
     questionId: getNumericAttribute(answer, 'question-id')!,
+    maxLength: getNumericAttribute(answer, 'max-length'),
   }
   return parseElement(answer, [], attributes)
 }

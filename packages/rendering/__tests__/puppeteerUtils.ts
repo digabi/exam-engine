@@ -66,14 +66,3 @@ export async function getTextContent(page: Page, selector: string): Promise<stri
     }
   })
 }
-
-// TODO is there a prettier way?
-export async function expectElementNotToExist(page: Page, selector: string): Promise<void> {
-  let thrown = false
-  try {
-    await page.$eval(selector, (e) => e)
-  } catch (expected) {
-    thrown = true
-  }
-  expect(thrown).toBe(true)
-}

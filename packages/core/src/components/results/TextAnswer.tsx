@@ -7,6 +7,7 @@ import { shortDisplayNumber } from '../../shortDisplayNumber'
 import AnswerToolbar from '../AnswerToolbar'
 import { QuestionContext } from '../context/QuestionContext'
 import { findScore, ResultsContext } from '../context/ResultsContext'
+import AnswerLengthInfo from '../shared/AnswerLengthInfo'
 import ResultsExamQuestionManualScore from './internal/QuestionManualScore'
 import { MultiLineAnswer } from './MultiLineAnswer'
 import ResultsSingleLineAnswer from './SingleLineAnswer'
@@ -23,12 +24,14 @@ function TextAnswer({ element }: ExamComponentProps) {
   const score = findScore(scores, questionId)
   const comment = score?.pregrading?.comment
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
+  const maxLength = getNumericAttribute(element, 'max-length')
 
   switch (type) {
     case 'rich-text':
     case 'multi-line': {
       return (
         <>
+          {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
           <ResultsExamQuestionManualScore multilineAnswer={true} scores={score} maxScore={maxScore} />
           <MultiLineAnswer {...{ type, value, score }} />
           <AnswerToolbar

@@ -2063,18 +2063,12 @@
             Valitse seuraavista kohdista <b>vain toinen</b>, johon vastaat saksaksi.
           </p>
           <p>
-            Kirjoitussuorituksen pituus: 160–240 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään.
-          </p>
-          <p>
             Jätä toinen vastauskenttä tyhjäksi.
           </p>
         </e:localization>
         <e:localization lang="sv-FI">
           <p>
             Välj av följande punkter <b>bara den ena</b>, som du besvarar på tyska.
-          </p>
-          <p>
-            Skrivprestationens längd: 160–240 tecken. Mellanslag och radbyten räknas inte in i teckenantalet.
           </p>
           <p>
             Lämna det andra svarsfältet tomt.
@@ -2092,7 +2086,7 @@
             förslag.
           </e:localization>
         </e:question-instruction>
-        <e:text-answer type="rich-text" max-score="33"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240"/>
       </e:question>
       <e:question>
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
@@ -2108,7 +2102,7 @@
             också vad hen kan ha med sig till festen.
           </e:localization>
         </e:question-instruction>
-        <e:text-answer type="rich-text" max-score="33"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240"/>
       </e:question>
     </e:question>
 

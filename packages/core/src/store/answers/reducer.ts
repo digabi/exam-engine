@@ -1,7 +1,7 @@
 import { ActionType } from 'typesafe-actions'
 import * as actions from './actions'
 import { ExamAnswer, QuestionId } from '../..'
-import { ExtraAnswer, validateAnswers } from '../../validateAnswers'
+import { validateAnswers, ValidationError } from '../../validateAnswers'
 import { RootElement } from '../../parser/parseExamStructure'
 
 type AnswersAction = ActionType<typeof actions>
@@ -32,10 +32,9 @@ export interface AnswersState {
    */
   examStructure: RootElement
   /**
-   * An array of warning messages about extra answers that the user has input.
-   * Used by the ErrorIndicator component.
+   * An array of warning messages about answers that the user has input.
    */
-  extraAnswers: ExtraAnswer[]
+  validationErrors: ValidationError[]
 }
 
 const initialState: AnswersState = {
@@ -49,7 +48,7 @@ const initialState: AnswersState = {
   supportsAnswerHistory: false,
   serverQuestionIds: new Set(),
   savedQuestionIds: new Set(),
-  extraAnswers: [],
+  validationErrors: [],
 }
 
 export default function answersReducer(state: AnswersState = initialState, action: AnswersAction): AnswersState {
@@ -67,8 +66,8 @@ export default function answersReducer(state: AnswersState = initialState, actio
       const { questionId } = action.payload
       const savedQuestionIds = setAdd(state.savedQuestionIds, questionId)
       const serverQuestionIds = setAdd(state.serverQuestionIds, questionId)
-      const extraAnswers = validateAnswers(state.examStructure, state.answersById)
-      return { ...state, serverQuestionIds, savedQuestionIds, extraAnswers }
+      const validationErrors = validateAnswers(state.examStructure, state.answersById)
+      return { ...state, serverQuestionIds, savedQuestionIds, validationErrors }
     }
     case 'ANSWER_FOCUSED': {
       const questionId = action.payload

@@ -5,11 +5,11 @@ export interface AnsweringInstructionProps {
   maxAnswers: number
   /** Child questions as either raw Elements from the XML or just display numbers. */
   childQuestions: (string | Element)[]
-  type: 'exam' | 'question' | 'section' | 'toc-section'
+  elementType: 'exam' | 'question' | 'section' | 'toc-section'
   minAnswers?: number
 }
 
-function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }: AnsweringInstructionProps) {
+function AnsweringInstructions({ maxAnswers, minAnswers, elementType, childQuestions }: AnsweringInstructionProps) {
   const childDisplayNumbers = childQuestions.map((question) =>
     _.isString(question) ? question : question.getAttribute('display-number')!
   )
@@ -21,7 +21,7 @@ function AnsweringInstructions({ maxAnswers, minAnswers, type, childQuestions }:
     [minAnswers != null ? minAnswers : maxAnswers, '*']
   ).map(
     ([childQuestionCount, maxAnswerCount, minAnswerCount]) =>
-      `answering-instructions.${type}_${childQuestionCount}_${minAnswerCount}_${maxAnswerCount}`
+      `answering-instructions.${elementType}_${childQuestionCount}_${minAnswerCount}_${maxAnswerCount}`
   )
   const answerCount = [minAnswers, maxAnswers]
   const questions = [_.first(childDisplayNumbers)!, _.last(childDisplayNumbers)!]

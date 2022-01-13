@@ -3,14 +3,65 @@ import { ExamAnswer, QuestionId } from './types/ExamAnswer'
 import * as _ from 'lodash-es'
 import { AnsweringInstructionProps } from './components/AnsweringInstructions'
 
+export type ValidationError = ExtraAnswer | AnswerTooLong
+
+export interface AnswerTooLong {
+  type: 'AnswerTooLong'
+  displayNumber: string
+  characterCount: number
+}
+
 export interface ExtraAnswer extends AnsweringInstructionProps {
+  type: 'ExtraAnswer'
   displayNumber: string
 }
 
-export function validateAnswers(
+function reduceExam<T>(
+  examStructure: RootElement,
+  reducer: (accumulator: T, element: ExamElement) => T,
+  initialValue: T
+) {
+  function go(accumulator: T, element: ExamElement): T {
+    return element.childNodes.reduce(go, reducer(accumulator, element))
+  }
+
+  return go(initialValue, examStructure)
+}
+
+function validateAnswerLength(
   examStructure: RootElement,
   answersById: Record<QuestionId, ExamAnswer>
-): ExtraAnswer[] {
+): ValidationError[] {
+  return reduceExam(
+    examStructure,
+    (errors, element) => {
+      if (element.name === 'text-answer' && element.attributes.maxLength != null) {
+        const maybeAnswer = answersById[element.attributes.questionId]
+        if (maybeAnswer?.type === 'richText' || maybeAnswer?.type === 'text') {
+          return maybeAnswer.characterCount > element.attributes.maxLength
+            ? [
+                ...errors,
+                {
+                  type: 'AnswerTooLong',
+                  displayNumber: element.attributes.displayNumber,
+                  characterCount: maybeAnswer.characterCount,
+                },
+              ]
+            : errors
+        }
+        return errors
+      } else {
+        return errors
+      }
+    },
+    [] as ValidationError[]
+  )
+}
+
+function validateExtraAnswers(
+  examStructure: RootElement,
+  answersById: Record<QuestionId, ExamAnswer>
+): ValidationError[] {
   // A recursive function that that calculates the answer count at each level
   // (answerCount) and carries around an array of extra answers
   function go(element: ExamElement): { answerCount: number; displayNumber: string; extraAnswers: ExtraAnswer[] } {
@@ -40,12 +91,13 @@ export function validateAnswers(
           answerCount > maxAnswers
             ? [
                 {
-                  type: element.name,
+                  type: 'ExtraAnswer',
+                  elementType: element.name,
                   displayNumber,
                   childQuestions: children.map((v) => v.displayNumber),
                   maxAnswers,
                   minAnswers,
-                },
+                } as ExtraAnswer,
                 ...childExtraAnswers,
               ]
             : childExtraAnswers
@@ -66,4 +118,13 @@ export function validateAnswers(
   }
 
   return go(examStructure).extraAnswers
+}
+
+export function validateAnswers(
+  examStructure: RootElement,
+  answersById: Record<QuestionId, ExamAnswer>
+): ValidationError[] {
+  return _.flatMap([validateAnswerLength, validateExtraAnswers], (validationFn) =>
+    validationFn(examStructure, answersById)
+  )
 }

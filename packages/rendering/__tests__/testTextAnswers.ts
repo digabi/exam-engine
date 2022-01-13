@@ -1,7 +1,7 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
-import { delay, expectElementNotToExist, getTextContent, initPuppeteer, loadExam } from './puppeteerUtils'
+import { getTextContent, initPuppeteer, loadExam } from './puppeteerUtils'
 
 describe('testTextAnswers.ts — Text answer interactions', () => {
   const createPage = initPuppeteer()
@@ -9,7 +9,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   let ctx: PreviewContext
 
   beforeAll(async () => {
-    ctx = await previewExam(resolveExam('A_X/A_X.xml'))
+    ctx = await previewExam(resolveExam('SC/SC.xml'))
     page = await createPage()
   })
 
@@ -40,50 +40,62 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
 
     await type('moi')
     await expectNotToBeSaved()
-    await delay(2000)
     await expectToBeSaved()
 
     await type(' kaikille')
     await expectNotToBeSaved()
-    await delay(2000)
     await expectToBeSaved()
 
     await loadExam(page, ctx.url)
     await expectToBeSaved()
   })
 
-  it('updates the error indicator after a delay when too many answers', async () => {
+  it('shows the error indicator when too many answers', async () => {
     await loadExam(page, ctx.url)
-    await expectErrorIndicatorNotToExist()
-    await type('oikea vastaus', 1)
-    await type('oikea vastaus 2', 2)
-    await type('kokeilu', 3)
-    await delay(2000)
-    const errorText = await getTextContent(page, '.error-indicator')
-    expect(errorText).toEqual('Osa 1: Vastaa joko tehtävään 1 tai 2.')
-    await clearInput(3)
-    await delay(2000)
-    await expectErrorIndicatorNotToExist()
+    await expectErrorIndicatorToDisappear()
+    await type('oikea vastaus', 87)
+    await type('oikea vastaus 2', 88)
+    await expectErrorIndicator('Tehtävä 20: Vastaa joko kohtaan 20.1 tai 20.2.')
+    await clearInput(88)
+    await expectErrorIndicatorToDisappear()
   })
 
-  const type = (text: string, index = 1) => page.type(`.text-answer[data-question-id="${index}"]`, text)
+  it('shows the error indicator when answer is too long', async () => {
+    await loadExam(page, ctx.url)
+    await expectErrorIndicatorToDisappear()
+    await type('o'.repeat(241), 87)
+    await expectErrorIndicator('Tehtävä 20.1: Vastaus on liian pitkä.')
+  })
 
-  async function clearInput(index = 1) {
-    await page.click(`.text-answer[data-question-id="${index}"]`, { clickCount: 3 })
+  const expectErrorIndicator = async (text: string) => {
+    await page.waitForFunction(
+      (text: string) => {
+        const errorIndicator = document.querySelector<HTMLDivElement>('.error-indicator')
+        return errorIndicator?.innerText.trim() === text
+      },
+      {},
+      text
+    )
+  }
+
+  const type = (text: string, questionId = 87) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
+
+  async function clearInput(questionId = 87) {
+    await page.click(`.text-answer[data-question-id="${questionId}"]`, { clickCount: 3 })
     await page.keyboard.press('Backspace')
   }
 
-  async function expectCharacterCountToBe(expectedCount: number) {
-    const text = await getTextContent(page, '.answer-toolbar__answer-length')
+  async function expectCharacterCountToBe(expectedCount: number, questionId = 87) {
+    const text = await getTextContent(page, `.text-answer[data-question-id="${questionId}"] ~ .answer-toolbar`)
     const count = Number(/\d+/.exec(text))
     expect(count).toEqual(expectedCount)
   }
 
-  const expectToBeSaved = () => page.$eval('.save-indicator-text--saved', (e) => e)
+  const expectToBeSaved = () => page.waitForSelector('.save-indicator-text--saved')
 
-  const expectNotToBeSaved = () => expectElementNotToExist(page, '.save-indicator-text--saved')
+  const expectNotToBeSaved = () => page.waitForSelector('.save-indicator-text--saved', { hidden: true })
 
-  const expectSaveIndicatorNotToExist = () => expectElementNotToExist(page, '.save-indicator')
+  const expectSaveIndicatorNotToExist = () => page.waitForSelector('.save-indicator', { hidden: true })
 
-  const expectErrorIndicatorNotToExist = () => expectElementNotToExist(page, '.error-indicator')
+  const expectErrorIndicatorToDisappear = () => page.waitForSelector('.error-indicator', { hidden: true })
 })

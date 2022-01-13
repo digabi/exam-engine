@@ -2,16 +2,18 @@ import classNames from 'classnames'
 import React from 'react'
 import { connect } from 'react-redux'
 import { ExamComponentProps } from '../../../createRenderChildNodes'
-import { getNumericAttribute } from '../../../dom-utils'
+import { getAttribute, getNumericAttribute } from '../../../dom-utils'
 import { AppState } from '../../../store'
 import * as actions from '../../../store/answers/actions'
 import { RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../../../types/ExamAnswer'
 import AnswerToolbar from '../../AnswerToolbar'
 import { ExamContext } from '../../context/ExamContext'
 import { QuestionContext } from '../../context/QuestionContext'
-import RichTextAnswer, { AnswerError } from '../RichTextAnswer'
+import RichTextAnswer, { ScreenshotError } from '../RichTextAnswer'
 import { Score } from '../../shared/Score'
 import { answerScoreId } from '../../../ids'
+import { AnswerTooLong } from '../../../validateAnswers'
+import AnswerLengthInfo from '../../shared/AnswerLengthInfo'
 
 interface Props extends ExamComponentProps {
   answer?: TextAnswerT | RichTextAnswerT
@@ -22,13 +24,14 @@ interface Props extends ExamComponentProps {
   showAnswerHistory: boolean
   supportsAnswerHistory: boolean
   type: 'rich-text' | 'multi-line' | 'single-line'
+  validationError?: AnswerTooLong
 }
 
 const borderWidthPx = 2
 const borderHeightPx = 1
 
 interface State {
-  error: AnswerError | null
+  screenshotError?: ScreenshotError
 }
 
 export class TextAnswerInput extends React.PureComponent<Props, State> {
@@ -36,11 +39,8 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
 
   constructor(props: Props) {
     super(props)
-
+    this.state = {}
     this.ref = React.createRef()
-    this.state = {
-      error: null,
-    }
   }
 
   componentDidMount(): void {
@@ -90,14 +90,14 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
     this.props.answerBlurred(getNumericAttribute(this.props.element, 'question-id')!)
   }
 
-  onError = (error: AnswerError): void => {
+  onError = (screenshotError: ScreenshotError): void => {
     this.setState({
-      error,
+      screenshotError,
     })
   }
 
   clearErrors = (): void => {
-    this.setState({ error: null })
+    this.setState({ screenshotError: undefined })
   }
 
   resize(): void {
@@ -117,18 +117,29 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
   }
 
   render(): React.ReactNode {
-    const { answer, className, element, selectAnswerVersion, showAnswerHistory, supportsAnswerHistory, type } =
-      this.props
-    const { error } = this.state
+    const {
+      answer,
+      className,
+      element,
+      selectAnswerVersion,
+      showAnswerHistory,
+      supportsAnswerHistory,
+      type,
+      validationError,
+    } = this.props
+    const { screenshotError } = this.state
     const questionId = getNumericAttribute(element, 'question-id')
     const maxScore = getNumericAttribute(element, 'max-score')!
     const value = answer && answer.value
     const scoreId = answerScoreId(element)
+    const maxLength = getNumericAttribute(element, 'max-length')
+    const invalid = validationError != null
 
     switch (type) {
       case 'rich-text':
         return (
           <>
+            {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
             <ExamContext.Consumer>
               {({ examServerApi }) => (
                 <RichTextAnswer
@@ -138,6 +149,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                   onChange={this.onRichTextChange}
                   onError={this.onError}
                   questionId={questionId!}
+                  invalid={invalid}
                 />
               )}
             </ExamContext.Consumer>
@@ -148,7 +160,8 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                 selectAnswerVersion,
                 showAnswerHistory,
                 supportsAnswerHistory,
-                error,
+                screenshotError,
+                validationError,
               }}
             />
           </>
@@ -156,6 +169,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       case 'multi-line':
         return (
           <>
+            {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
             <textarea
               className={classNames('text-answer text-answer--multi-line', className)}
               defaultValue={value}
@@ -164,6 +178,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
               onBlur={this.onBlur}
               ref={this.ref}
               data-question-id={questionId}
+              aria-invalid={invalid}
             />
             <AnswerToolbar
               {...{
@@ -172,6 +187,8 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                 selectAnswerVersion,
                 showAnswerHistory,
                 supportsAnswerHistory,
+                screenshotError,
+                validationError,
               }}
             />
           </>
@@ -207,15 +224,20 @@ export function getCharacterCount(answerText: string): number {
 function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
   const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
   const questionId = getNumericAttribute(element, 'question-id')!
+  const displayNumber = getAttribute(element, 'display-number')
   const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
   const supportsAnswerHistory = state.answers.supportsAnswerHistory
   const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
+  const validationError = state.answers.validationErrors.find(
+    (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
+  )
 
   return {
     answer,
     showAnswerHistory,
     supportsAnswerHistory,
     type,
+    validationError,
   }
 }
 

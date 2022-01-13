@@ -1,13 +1,16 @@
 import React from 'react'
-import { ExamAnswer } from '..'
-import { findChildElement, NBSP, queryAncestors } from '../dom-utils'
+import classNames from 'classnames'
+import { TextAnswer, RichTextAnswer } from '..'
+import { findChildElement, getNumericAttribute, NBSP, queryAncestors } from '../dom-utils'
 import { useExamTranslation } from '../i18n'
 import * as actions from '../store/answers/actions'
-import { AnswerError } from './exam/RichTextAnswer'
+import { AnswerTooLong } from '../validateAnswers'
+import { ScreenshotError } from './exam/RichTextAnswer'
 
 interface AnswerToolbarProps {
-  answer?: ExamAnswer
-  error?: AnswerError | null
+  answer?: TextAnswer | RichTextAnswer
+  screenshotError?: ScreenshotError
+  validationError?: AnswerTooLong
   element: Element
   selectAnswerVersion?: typeof actions.selectAnswerVersion
   showAnswerHistory?: boolean
@@ -17,22 +20,35 @@ interface AnswerToolbarProps {
 function AnswerToolbar({
   answer,
   element,
-  error,
+  screenshotError,
+  validationError,
   selectAnswerVersion,
   showAnswerHistory = false,
   supportsAnswerHistory = false,
 }: AnswerToolbarProps) {
   const { t } = useExamTranslation()
-
+  const answerLength = answer?.characterCount
+  const maxLength = getNumericAttribute(element, 'max-length')
   return (
     <div className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2">
-      <div className="answer-toolbar__answer-length e-column e-column--narrow">
-        {answer && (answer.type === 'text' || answer.type === 'richText')
-          ? t('answer-length', { count: answer.characterCount })
+      <div
+        className={classNames('answer-toolbar__answer-length e-column', { 'e-color-error': validationError != null })}
+      >
+        {answer != null
+          ? t(maxLength != null ? 'answer-length-with-max-length' : 'answer-length', {
+              count: answerLength,
+              maxLength: maxLength,
+            })
           : NBSP}
-      </div>
-      <div className="answer-toolbar__errors e-column e-column--auto e-text-center">
-        {error && <span role="alert">{t(`answer-errors.${error.key}` as const, error.options)}</span>}
+        {screenshotError ? (
+          <span className="e-color-error" role="alert">
+            {' '}
+            {t(`answer-errors.${screenshotError.key}` as const, screenshotError.options)}
+          </span>
+        ) : validationError ? (
+          // We don't use an alert role here because ErrorIndicator already displays the same error message wrapped in an alert role
+          <span> {t(`answer-errors.answer-too-long`, { count: validationError.characterCount })}</span>
+        ) : null}
       </div>
       <div className="answer-toolbar__history e-column e-column--narrow e-text-right">
         {supportsAnswerHistory && (

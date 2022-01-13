@@ -592,6 +592,13 @@
             <td>Maximum score</td>
           </tr>
           <tr>
+            <td>max-length</td>
+            <td>Integer</td>
+            <td>Yes</td>
+            <td>—</td>
+            <td>Maximum answer length. Works only for <code>rich-text</code> answers. It won't prevent student from entering an answer that is too long but warns the student about it.</td>
+          </tr>
+          <tr>
             <td>type</td>
             <td>
               <code>single-line | rich-text</code>
@@ -629,6 +636,16 @@
       <div class="example">
         <e:text-answer type="rich-text" max-score="2"/>
       </div>
+
+      <h4>
+        <code>rich-text</code>
+        answer with maximum length
+      </h4>
+      <pre class="code"><![CDATA[<e:text-answer type="rich-text" max-score="2" max-length="20" />]]></pre>
+      <div class="example">
+        <e:text-answer type="rich-text" max-score="2" max-length="20"/>
+      </div>
+
     </e:question>
 
     <e:question>

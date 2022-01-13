@@ -48,11 +48,13 @@ interface TextAnswerBase {
 export interface GenerateTextAnswerOptions extends TextAnswerBase {
   name: 'text-answer'
   maxScore: number
+  maxLength?: number
 }
 
 export interface GenerateScoredTextAnswerOptions extends TextAnswerBase {
   name: 'scored-text-answer'
   maxScore?: number
+  maxLength?: number
   acceptedAnswers?: GenerateAcceptedAnswer[]
 }
 
@@ -212,6 +214,7 @@ function addTextAnswer(
 ): void {
   const answer = createElement(question, options.name, undefined, {
     'max-score': options.maxScore,
+    'max-length': options.maxLength,
     type: options.type,
   })
 
