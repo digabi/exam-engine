@@ -11924,19 +11924,10 @@ rgba-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/rgba-regex/-/rgba-regex-1.0.0.tgz#43374e2e2ca0968b0ef1523460b7d730ff22eeb3"
   integrity sha1-QzdOLiyglosO8VI0YLfXMP8i7rM=
 
-rich-text-editor@^6.0.3:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-6.0.4.tgz#bd83160737e898795690188d911849b19f1a785f"
-  integrity sha512-Ke6RAaiTn/WpaiukirhycXQ4Q1iIyKlH3/4lCEUbKGRrrvBFgVp88a6D5ZWdrRvedOgsoAKBr2JTqUvEzEMdBg==
-  dependencies:
-    "@digabi/mathquill" "^0.10.5"
-    jquery "^3.3.1"
-    mathjax-node "^2.1.1"
-
-rich-text-editor@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-6.0.5.tgz#0fbad5fc59cfbe032e8634c61845d0c749b1146e"
-  integrity sha512-vFEQnl1iGvVua3Ml9hHTU9ZX7J+dhLt1mVKOZrfFhtHkmLZK/Jaqrfa6QNrakXCB0XkY0iJaWgeUO3LCt7XRgg==
+rich-text-editor@^6.0.3, rich-text-editor@^6.0.5:
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-6.0.6.tgz#704e17571d30b858a14dbdb1af97f535f09e092e"
+  integrity sha512-OlOC+6COehRoari+VRc1U3stAmT/y5uCqQuoGm/q3YVWXgVGZRiGnyna2fsYsgzsiUtJebKceQA3qXhcFTCtnQ==
   dependencies:
     "@digabi/mathquill" "^0.10.5"
     jquery "^3.3.1"
