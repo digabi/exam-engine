@@ -148,6 +148,7 @@ describe('<QuestionManualScore />', () => {
     maxScore: 2,
     level: 2,
     childQuestions: [],
+    questionLabelIds: '',
   }
 
   function renderWithContext(props: QuestionManualScoreProps, answers: Element[]) {

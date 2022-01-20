@@ -162,6 +162,7 @@ describe('<AnnotationList />', () => {
     maxScore: 2,
     level: 2,
     childQuestions: [],
+    questionLabelIds: '',
   }
 
   const resultsContextDefaults: ResultsContext = {

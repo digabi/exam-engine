@@ -6,14 +6,16 @@ import { QuestionContext } from '../context/QuestionContext'
 import { Score } from '../shared/Score'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { formatQuestionDisplayNumber } from '../../formatting'
+import { questionTitleId } from '../../ids'
 
 const QuestionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { displayNumber, maxScore, level, maxAnswers, childQuestions } = useContext(QuestionContext)
   const Tag = `h${Math.min(3 + level, 6)}` as 'h3' | 'h4' | 'h5' | 'h6'
+  const id = questionTitleId(displayNumber)
 
   return (
     <>
-      <Tag className={classNames('exam-question-title', { 'e-normal e-font-size-m': level > 0 })}>
+      <Tag id={id} className={classNames('exam-question-title', { 'e-normal e-font-size-m': level > 0 })}>
         <strong
           className={classNames('exam-question-title__display-number', {
             'exam-question-title__display-number--indented': level > 0,

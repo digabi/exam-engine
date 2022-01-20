@@ -48,6 +48,7 @@ describe('<QuestionAutoScore />', () => {
     maxScore: 2,
     level: 2,
     childQuestions: [],
+    questionLabelIds: '',
   }
 
   function renderWithContext(props: QuestionAutoScoreProps, answers: Element[]) {

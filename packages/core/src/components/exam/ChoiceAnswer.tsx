@@ -1,11 +1,12 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { useContext } from 'react'
 import { connect } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
 import { AppState } from '../../store'
 import * as actions from '../../store/answers/actions'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { ChoiceAnswer as ChoiceAnswerT, QuestionId } from '../../types/ExamAnswer'
+import { QuestionContext } from '../context/QuestionContext'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -78,6 +79,7 @@ interface ChoiceAnswerProps extends ExamComponentProps {
 }
 
 function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceAnswerProps) {
+  const { questionLabelIds } = useContext(QuestionContext)
   const questionId = getNumericAttribute(element, 'question-id')!
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')
@@ -93,6 +95,8 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
           'e-columns': direction === 'horizontal',
         })}
         data-question-id={questionId}
+        role="radiogroup"
+        aria-labelledby={questionLabelIds}
       >
         {mapChildElements(element, (childElement) => {
           const optionId = childElement.getAttribute('option-id')!

@@ -27,6 +27,8 @@ export const sectionTitleId = byDisplayNumber('section-title')
 
 export const questionTitleId = byDisplayNumber('question-title')
 
+export const questionInstructionId = byElementId('question-instruction')
+
 export const externalMaterialListTitleId = byElementId('external-material-list-title')
 
 export const tocSectionTitleId = byDisplayNumber('toc-section-title')
