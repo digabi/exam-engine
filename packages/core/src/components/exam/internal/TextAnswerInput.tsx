@@ -11,7 +11,7 @@ import { ExamContext } from '../../context/ExamContext'
 import { QuestionContext } from '../../context/QuestionContext'
 import RichTextAnswer, { ScreenshotError } from '../RichTextAnswer'
 import { Score } from '../../shared/Score'
-import { answerScoreId } from '../../../ids'
+import { answerLengthInfoId, answerScoreId } from '../../../ids'
 import { AnswerTooLong } from '../../../validateAnswers'
 import AnswerLengthInfo from '../../shared/AnswerLengthInfo'
 
@@ -141,7 +141,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       case 'rich-text':
         return (
           <>
-            {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
+            {maxLength != null && <AnswerLengthInfo {...{ maxLength, id: answerLengthInfoId(element) }} />}
             <ExamContext.Consumer>
               {({ examServerApi }) => (
                 <RichTextAnswer
