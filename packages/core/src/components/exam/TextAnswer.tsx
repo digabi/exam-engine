@@ -5,13 +5,17 @@ import TextAnswerInput from './internal/TextAnswerInput'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import { QuestionContext } from '../context/QuestionContext'
+import { answerLengthInfoId } from '../../ids'
 
 function TextAnswer(props: ExamComponentProps) {
   const { element, renderChildNodes } = props
   const { questionLabelIds } = useContext(QuestionContext)
   const displayNumber = element.getAttribute('display-number')!
   const hint = findChildElement(element, 'hint')
-  const textAnswer = <TextAnswerInput {...{ ...props, labelledBy: questionLabelIds }} />
+  const labelledBy = element.hasAttribute('max-length')
+    ? questionLabelIds + ' ' + answerLengthInfoId(element)
+    : questionLabelIds
+  const textAnswer = <TextAnswerInput {...{ ...props, labelledBy }} />
 
   return hint ? (
     <label className="e-nowrap">

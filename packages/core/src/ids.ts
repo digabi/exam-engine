@@ -29,6 +29,8 @@ export const questionTitleId = byDisplayNumber('question-title')
 
 export const questionInstructionId = byElementId('question-instruction')
 
+export const answerLengthInfoId = byElementId('answer-length-info')
+
 export const externalMaterialListTitleId = byElementId('external-material-list-title')
 
 export const tocSectionTitleId = byDisplayNumber('toc-section-title')
