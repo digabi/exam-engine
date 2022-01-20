@@ -65,7 +65,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
     })
   }
   const items: Item[] = [noAnswer, ...element.children]
-  const { answers } = useContext(QuestionContext)
+  const { answers, questionLabelIds } = useContext(QuestionContext)
   const { getItemProps, getMenuProps, getToggleButtonProps, highlightedIndex, isOpen, selectedItem } = useSelect({
     items,
     itemToString: (item) => (item ? item.textContent! : ''),
@@ -89,8 +89,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
           {...getToggleButtonProps(
             {
               'aria-describedby': scoreId,
-              // The label text is inside the button, so we don't want an aria-labelledby attribute.
-              'aria-labelledby': undefined,
+              'aria-labelledby': questionLabelIds,
             },
             { suppressRefError: !runningInBrowser }
           )}

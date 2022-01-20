@@ -25,6 +25,7 @@ interface Props extends ExamComponentProps {
   supportsAnswerHistory: boolean
   type: 'rich-text' | 'multi-line' | 'single-line'
   validationError?: AnswerTooLong
+  labelledBy: string
 }
 
 const borderWidthPx = 2
@@ -126,6 +127,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       supportsAnswerHistory,
       type,
       validationError,
+      labelledBy,
     } = this.props
     const { screenshotError } = this.state
     const questionId = getNumericAttribute(element, 'question-id')
@@ -150,6 +152,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                   onError={this.onError}
                   questionId={questionId!}
                   invalid={invalid}
+                  labelledBy={labelledBy}
                 />
               )}
             </ExamContext.Consumer>
@@ -179,6 +182,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
               ref={this.ref}
               data-question-id={questionId}
               aria-invalid={invalid}
+              aria-labelledby={labelledBy}
             />
             <AnswerToolbar
               {...{
@@ -207,6 +211,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
               ref={this.ref}
               data-question-id={questionId}
               aria-describedby={scoreId}
+              aria-labelledby={labelledBy}
             />
             <QuestionContext.Consumer>
               {({ answers }) => answers.length > 1 && <Score score={maxScore} size="inline" id={scoreId} />}
