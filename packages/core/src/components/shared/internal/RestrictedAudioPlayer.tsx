@@ -24,10 +24,13 @@ function RestrictedAudioPlayer({
   const audioState = useSelector(getAudioState(src, restrictedAudioId))
   const durationRemaining = useSelector(getDurationRemaining(src, restrictedAudioId))
   const playbackTimesRemaining = useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
-  const { i18n, t } = useExamTranslation()
+  const { i18n } = useExamTranslation()
   const dispatch = useDispatch()
-  const disabled = audioState !== 'stopped' || playbackTimesRemaining === 0
+  const playing = audioState === 'playing'
+  const stopped = audioState === 'stopped'
+  const disabled = !stopped || playbackTimesRemaining === 0
   const remainingLabelId = `audio-remaining-${restrictedAudioId}`
+  const labels = playing ? [] : [remainingLabelId, labelId]
 
   return (
     <div
@@ -39,17 +42,16 @@ function RestrictedAudioPlayer({
     >
       <button
         className={classNames('restricted-audio-player__play e-column e-column--narrow', {
-          'restricted-audio-player__play--playing': audioState === 'playing',
+          'restricted-audio-player__play--playing': playing,
         })}
         disabled={disabled}
-        onClick={() => audioState === 'stopped' && dispatch(playAudio({ src, restrictedAudioId, duration }))}
-        aria-describedby={[remainingLabelId, labelId].join(' ')}
-        aria-label={t.raw('audio.play')}
+        onClick={() => stopped && dispatch(playAudio({ src, restrictedAudioId, duration }))}
+        aria-labelledby={labels.join(' ')}
       >
-        {audioState !== 'playing' && <FontAwesomeIcon icon={faPlay} fixedWidth />}
+        {!playing && <FontAwesomeIcon icon={faPlay} fixedWidth />}
       </button>
       <span className="restricted-audio-player__duration e-column e-text-right" id={remainingLabelId}>
-        {formatDuration(durationRemaining != null ? durationRemaining : duration)}
+        {formatDuration(durationRemaining ?? duration)}
       </span>
     </div>
   )

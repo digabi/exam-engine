@@ -24,9 +24,6 @@ export const fi_FI = {
   comment: 'Kommentti',
   points: '{{count}} p.',
   recording: 'Tallenne',
-  audio: {
-    play: 'Kuuntele äänite.',
-  },
   'audio-errors': {
     'already-accessed': 'Olet jo toistanut tämän äänitteen. Päivitä sivu.',
     'already-playing': 'Kuuntele äänite ensin loppuun.',
