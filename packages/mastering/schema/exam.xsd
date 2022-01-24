@@ -465,6 +465,11 @@
       <xs:attribute name="type" type="e:text-answer-type" default="single-line" />
       <xs:attribute name="max-score" type="xs:positiveInteger" use="required" />
       <xs:attribute name="max-length" type="xs:positiveInteger" />
+      <xs:attribute name="use-language-of-instruction" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation>Whether the student should answer the question in the language of instruction (typically the mother tongue) instead of the subject language. This attribute controls the HTML lang attribute of the input element, so a screen reader will read the answer using the correct language. Used only in secondary language exams. </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
       <xs:attributeGroup ref="e:stylable" />
     </xs:complexType>
   </xs:element>
@@ -510,6 +515,7 @@
       <xs:attribute name="type" type="e:text-answer-type" default="single-line" />
       <xs:attribute name="max-score" type="xs:positiveInteger" />
       <xs:attributeGroup ref="e:stylable" />
+      <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
 
