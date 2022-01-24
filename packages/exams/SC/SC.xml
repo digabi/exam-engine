@@ -119,7 +119,7 @@
               det picknicken? Skriv ett kort svar på svenska.
             </e:localization>
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true">
             <e:answer-grading-instruction>
               <e:localization lang="fi-FI">
                 <p>Hänen sukulaisensa tulevat vierailulle (3/0 p.).</p>
@@ -212,7 +212,7 @@
               <p>I den senare delen godkänns både singularis och pluralis: en campingstol/campingstolar.</p>
             </e:localization>
           </e:question-grading-instruction>
-          <e:text-answer type="rich-text" max-score="6"/>
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true"/>
           <e:audio src="1.5.ogg" times="1">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
             <e:audio-transcription>
@@ -506,7 +506,7 @@
           <e:localization lang="sv-FI">Hur länge är katterna under GPS-övervakning? Skriv ditt svar kort på svenska.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="3"/>
+        <e:text-answer type="rich-text" max-score="3" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             <p>14 päivää / 2 viikkoa (3/0 p.)</p>
@@ -1300,7 +1300,7 @@
             också? Skriv ditt svar kort på svenska.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             <p>
@@ -1360,7 +1360,7 @@
             andra? <span class="e-nowrap">(2 saker)</span> Skriv ditt svar kort på svenska.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             <p>
@@ -1431,7 +1431,7 @@
             sin åsikt? Skriv ditt svar kort på svenska.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             <p>
@@ -1559,7 +1559,7 @@
             av hela texten.
           </e:localization>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="2"/>
+        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             Kaupunki haluaa vähentä kertakäyttömukien määrää. (2/0 p.)
