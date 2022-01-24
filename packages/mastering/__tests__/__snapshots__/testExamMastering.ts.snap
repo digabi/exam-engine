@@ -21853,7 +21853,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </span>
             
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" display-number="1.2" question-id="2">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" display-number="1.2" question-id="2">
             
           </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">
@@ -21892,7 +21892,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
           </e:question-title>
           
-          <e:text-answer type="rich-text" max-score="6" display-number="1.5" question-id="5"/>
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" display-number="1.5" question-id="5"/>
           <e:audio src="1.5.ogg" times="1" restricted-audio-id="4" duration="999">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
             
@@ -22181,7 +22181,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="3" display-number="5.1" question-id="17"/>
+        <e:text-answer type="rich-text" max-score="3" use-language-of-instruction="true" display-number="5.1" question-id="17"/>
         
       </e:question>
 
@@ -22916,7 +22916,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="13.3" question-id="50"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="13.3" question-id="50"/>
         
       </e:question>
 
@@ -22957,7 +22957,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="14.2" question-id="52"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="14.2" question-id="52"/>
         
       </e:question>
 
@@ -23009,7 +23009,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="15.1" question-id="55"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="15.1" question-id="55"/>
         
       </e:question>
 
@@ -23118,7 +23118,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="2" display-number="16.4" question-id="64"/>
+        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true" display-number="16.4" question-id="64"/>
         
       </e:question>
 
@@ -23665,7 +23665,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               det picknicken? Skriv ett kort svar på svenska.
             </span>
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" display-number="1.2" question-id="2">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" display-number="1.2" question-id="2">
             
           </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">
@@ -23704,7 +23704,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </span>
           </e:question-title>
           
-          <e:text-answer type="rich-text" max-score="6" display-number="1.5" question-id="5"/>
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" display-number="1.5" question-id="5"/>
           <e:audio src="1.5.ogg" times="1" restricted-audio-id="4" duration="999">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
             
@@ -23992,7 +23992,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <span lang="sv-FI">Hur länge är katterna under GPS-övervakning? Skriv ditt svar kort på svenska.
           </span>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="3" display-number="5.1" question-id="17"/>
+        <e:text-answer type="rich-text" max-score="3" use-language-of-instruction="true" display-number="5.1" question-id="17"/>
         
       </e:question>
 
@@ -24728,7 +24728,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             också? Skriv ditt svar kort på svenska.
           </span>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="13.3" question-id="50"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="13.3" question-id="50"/>
         
       </e:question>
 
@@ -24769,7 +24769,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             andra? <span class="e-nowrap">(2 saker)</span> Skriv ditt svar kort på svenska.
           </span>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="14.2" question-id="52"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="14.2" question-id="52"/>
         
       </e:question>
 
@@ -24821,7 +24821,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             sin åsikt? Skriv ditt svar kort på svenska.
           </span>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="15.1" question-id="55"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="15.1" question-id="55"/>
         
       </e:question>
 
@@ -24930,7 +24930,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             av hela texten.
           </span>
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="2" display-number="16.4" question-id="64"/>
+        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true" display-number="16.4" question-id="64"/>
         
       </e:question>
 
@@ -25873,7 +25873,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="13.3" question-id="50"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="13.3" question-id="50"/>
         
       </e:question>
 
@@ -25914,7 +25914,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="14.2" question-id="52"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="14.2" question-id="52"/>
         
       </e:question>
 
@@ -25966,7 +25966,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" display-number="15.1" question-id="55"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="15.1" question-id="55"/>
         
       </e:question>
 
@@ -26075,7 +26075,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="2" display-number="16.4" question-id="64"/>
+        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true" display-number="16.4" question-id="64"/>
         
       </e:question>
 
