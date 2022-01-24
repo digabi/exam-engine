@@ -20,6 +20,7 @@ interface Props {
   onError: (error: ScreenshotError) => void
   saveScreenshot: (screenshot: Blob) => Promise<string>
   labelledBy: string
+  lang?: string
 }
 
 export default class RichTextAnswer extends React.PureComponent<Props> {
@@ -92,7 +93,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
   }
 
   render(): React.ReactNode {
-    const { className, questionId, invalid, labelledBy } = this.props
+    const { className, questionId, invalid, lang, labelledBy } = this.props
 
     return (
       <div
@@ -103,6 +104,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
         aria-multiline="true"
         aria-invalid={invalid}
         tabIndex={0}
+        lang={lang}
         aria-labelledby={labelledBy}
       />
     )

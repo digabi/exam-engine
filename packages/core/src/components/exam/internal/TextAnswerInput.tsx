@@ -26,6 +26,7 @@ interface Props extends ExamComponentProps {
   type: 'rich-text' | 'multi-line' | 'single-line'
   validationError?: AnswerTooLong
   labelledBy: string
+  lang?: string
 }
 
 const borderWidthPx = 2
@@ -128,6 +129,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
       type,
       validationError,
       labelledBy,
+      lang,
     } = this.props
     const { screenshotError } = this.state
     const questionId = getNumericAttribute(element, 'question-id')
@@ -151,6 +153,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
                   onChange={this.onRichTextChange}
                   onError={this.onError}
                   questionId={questionId!}
+                  lang={lang}
                   invalid={invalid}
                   labelledBy={labelledBy}
                 />
@@ -181,6 +184,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
               onBlur={this.onBlur}
               ref={this.ref}
               data-question-id={questionId}
+              lang={lang}
               aria-invalid={invalid}
               aria-labelledby={labelledBy}
             />
@@ -210,6 +214,7 @@ export class TextAnswerInput extends React.PureComponent<Props, State> {
               onBlur={this.onBlur}
               ref={this.ref}
               data-question-id={questionId}
+              lang={lang}
               aria-describedby={scoreId}
               aria-labelledby={labelledBy}
             />

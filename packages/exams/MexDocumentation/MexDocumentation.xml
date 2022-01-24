@@ -599,6 +599,13 @@
             <td>Maximum answer length. Works only for <code>rich-text</code> answers. It won't prevent student from entering an answer that is too long but warns the student about it.</td>
           </tr>
           <tr>
+            <td class="e-nowrap">use-language-of-instruction</td>
+            <td>Boolean</td>
+            <td>No</td>
+            <td>false</td>
+            <td>Whether the student should answer the question in the language of instruction (typically the mother tongue) or the subject language. This attribute controls the HTML lang attribute of the input element, so a screen reader will read the answer using the correct language. Used only in secondary language exams.</td>
+          </tr>
+          <tr>
             <td>type</td>
             <td>
               <code>single-line | rich-text</code>
