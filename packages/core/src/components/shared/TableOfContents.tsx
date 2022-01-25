@@ -13,14 +13,14 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
   const { showAttachmentLinks, showAnsweringInstructions } = options
 
   const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
-    const { numberOfSections } = useContext(CommonExamContext)
+    const { sections } = useContext(CommonExamContext)
     const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
     const { t } = useExamTranslation()
     return (
       <>
         {element.hasChildNodes() && (
           <header className="e-semibold" id={tocSectionTitleId(displayNumber)}>
-            {numberOfSections > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
+            {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
           </header>
         )}
         {showAnsweringInstructions && maxAnswers != null && (
