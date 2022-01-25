@@ -13,9 +13,6 @@ export const sv_FI: Translations = {
   comment: 'Kommentar',
   points: '{{count}} p.',
   recording: 'Inspelningen',
-  audio: {
-    play: 'Lyssna på inspelningen.',
-  },
   'audio-errors': {
     'already-accessed': 'Du har redan spelat denna inspelning. Uppdatera sidan',
     'already-playing': 'Lyssna först inspelningen till slut.',
