@@ -10,15 +10,29 @@ import { ExamContext } from '../context/ExamContext'
 import ProgressBar from './internal/ProgressBar'
 import SectionElement from '../SectionElement'
 import { SectionContext, withSectionContext } from '../context/SectionContext'
+import { CommonExamContext } from '../context/CommonExamContext'
+import * as _ from 'lodash-es'
+
+function LastSectionNote() {
+  const { t } = useExamTranslation()
+  return (
+    <p>
+      <em>{t('end-of-exam')}</em>
+    </p>
+  )
+}
 
 function Section({ element, renderChildNodes }: ExamComponentProps) {
   const casState = useSelector((state: AppState) => state.cas, shallowEqual)
   const { casForbidden, displayNumber } = useContext(SectionContext)
+  const { sections } = useContext(CommonExamContext)
+  const lastSection = element === _.last(sections)
 
   return (
     <SectionElement className="exam-section" aria-labelledby={sectionTitleId(displayNumber)}>
       {renderChildNodes(element)}
       {casForbidden && <CasControls {...casState} />}
+      {lastSection && <LastSectionNote />}
     </SectionElement>
   )
 }

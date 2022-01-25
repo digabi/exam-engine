@@ -63,6 +63,7 @@ export const sv_FI: Translations = {
     'Svaret får inte överskrida {{count}} tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.',
   'previous-answer-versions': 'Tidigare utkast till svar',
   'zoom-in': 'Förstora bilden',
+  'end-of-exam': 'Uppgifterna i provet slutar här.',
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.

@@ -8,7 +8,7 @@ import NotificationIcon from '../NotificationIcon'
 import { SectionContext } from '../context/SectionContext'
 
 function SectionTitle({ element, renderChildNodes }: ExamComponentProps) {
-  const { numberOfSections } = useContext(CommonExamContext)
+  const { sections } = useContext(CommonExamContext)
   const { displayNumber, minAnswers, maxAnswers, childQuestions } = useContext(SectionContext)
   const { t } = useExamTranslation()
 
@@ -16,7 +16,7 @@ function SectionTitle({ element, renderChildNodes }: ExamComponentProps) {
     <>
       {element.hasChildNodes() && (
         <h2 className="exam-section-title" id={sectionTitleId(displayNumber)}>
-          {numberOfSections > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
+          {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
         </h2>
       )}
       {maxAnswers != null && (

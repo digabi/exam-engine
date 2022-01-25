@@ -15,7 +15,7 @@ export interface CommonExamContext {
   subjectLanguage: string
   maxAnswers?: number
   maxScore?: number
-  numberOfSections: number
+  sections: Element[]
   resolveAttachment: (filename: string) => string
   root: Element
 }
@@ -41,7 +41,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
       subjectLanguage,
       maxAnswers: getNumericAttribute(root, 'max-answers'),
       maxScore: getNumericAttribute(root, 'max-score'),
-      numberOfSections: queryAll(root, 'section').length,
+      sections: queryAll(root, 'section'),
       resolveAttachment,
       root,
     }

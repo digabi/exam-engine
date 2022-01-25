@@ -6,7 +6,7 @@ import { useExamTranslation } from '../../i18n'
 import { sectionTitleId } from '../../ids'
 
 const SectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
-  const { numberOfSections } = useContext(CommonExamContext)
+  const { sections } = useContext(CommonExamContext)
   const { displayNumber } = useContext(SectionContext)
   const { t } = useExamTranslation()
 
@@ -14,7 +14,7 @@ const SectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, re
     <>
       {element.hasChildNodes() && (
         <h2 className="e-grading-instructions-section-title" id={sectionTitleId(displayNumber)}>
-          {numberOfSections > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
+          {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
         </h2>
       )}
     </>
