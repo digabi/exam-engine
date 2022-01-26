@@ -37,7 +37,6 @@ function AnswerToolbar({
         {answer != null
           ? t(maxLength != null ? 'answer-length-with-max-length' : 'answer-length', {
               count: answerLength,
-              maxLength: maxLength,
             })
           : NBSP}
         {screenshotError ? (

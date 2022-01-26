@@ -2,13 +2,18 @@ import React from 'react'
 import { useExamTranslation } from '../../i18n'
 import NotificationIcon from '../NotificationIcon'
 
-const AnswerLengthInfo: React.FunctionComponent<{ maxLength: number; id?: string }> = ({ maxLength, id }) => {
+const AnswerLengthInfo: React.FunctionComponent<{ minLength?: number; maxLength: number; id?: string }> = ({
+  minLength,
+  maxLength,
+  id,
+}) => {
   const { t } = useExamTranslation()
+  const answerLength = [minLength, maxLength]
 
   return (
     <p id={id} className="e-answer-length-info">
       <NotificationIcon />
-      <em>{t('max-length-info', { count: maxLength })}</em>
+      <em>{t('answer-length-info', { answerLength })}</em>
     </p>
   )
 }

@@ -464,6 +464,7 @@
       </xs:sequence>
       <xs:attribute name="type" type="e:text-answer-type" default="single-line" />
       <xs:attribute name="max-score" type="xs:positiveInteger" use="required" />
+      <xs:attribute name="min-length" type="xs:positiveInteger" />
       <xs:attribute name="max-length" type="xs:positiveInteger" />
       <xs:attribute name="use-language-of-instruction" type="xs:boolean" default="false">
         <xs:annotation>

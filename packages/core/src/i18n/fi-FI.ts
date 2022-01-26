@@ -71,7 +71,8 @@ export const fi_FI = {
   'answer-length': 'Vastauksen pituus: {{count}} merkki.',
   'answer-length_plural': 'Vastauksen pituus: {{count}} merkkiä.',
   'answer-length-with-max-length': 'Vastauksen pituus: {{count}} / {{maxLength}} merkkiä.',
-  'max-length-info': 'Vastauksen pituus on enintään {{count}} merkkiä. Ylityksestä seuraa pistevähennys.',
+  'answer-length-info':
+    'Vastauksen pituus on enintään {{answerLength, range}} merkkiä. Ylityksestä seuraa pistevähennys.',
   'previous-answer-versions': 'Aiemmat vastausluonnokset',
   'zoom-in': 'Suurenna kuva',
   'end-of-exam': 'Kokeen tehtävät loppuvat tähän.',

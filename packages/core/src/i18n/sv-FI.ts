@@ -59,8 +59,8 @@ export const sv_FI: Translations = {
   'listen-times-remaining_plural': '{{count}} lyssningsgånger kvar.',
   'answer-length': 'Svarets längd: {{count}} tecken.',
   'answer-length-with-max-length': 'Svarets längd: {{count}} / {{maxLength}} tecken.',
-  'max-length-info':
-    'Svaret får inte överskrida {{count}} tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.',
+  'answer-length-info':
+    'Svaret får inte överskrida {{answerLength, range}} tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.',
   'previous-answer-versions': 'Tidigare utkast till svar',
   'zoom-in': 'Förstora bilden',
   'end-of-exam': 'Uppgifterna i provet slutar här.',
