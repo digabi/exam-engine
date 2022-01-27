@@ -89,38 +89,36 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
   }
 
   return (
-    <>
-      <div
-        className={classNames('e-choice-answer e-mrg-b-4', className, {
-          'e-columns': direction === 'horizontal',
-        })}
-        data-question-id={questionId}
-        role="radiogroup"
-        aria-labelledby={questionLabelIds}
-      >
-        {mapChildElements(element, (childElement) => {
-          const optionId = childElement.getAttribute('option-id')!
-          const isNoAnswer = childElement.getAttribute('type') === 'no-answer'
-          const value = isNoAnswer ? '' : optionId
-          const selected = answer != null && answer.value === value
+    <div
+      className={classNames('e-choice-answer e-mrg-b-4', className, {
+        'e-columns': direction === 'horizontal',
+      })}
+      data-question-id={questionId}
+      role="radiogroup"
+      aria-labelledby={questionLabelIds}
+    >
+      {mapChildElements(element, (childElement) => {
+        const optionId = childElement.getAttribute('option-id')!
+        const isNoAnswer = childElement.getAttribute('type') === 'no-answer'
+        const value = isNoAnswer ? '' : optionId
+        const selected = answer != null && answer.value === value
 
-          return (
-            <ChoiceAnswerOption
-              {...{
-                element: childElement,
-                onSelect,
-                renderChildNodes,
-                questionId,
-                key: optionId,
-                direction,
-                selected,
-                value,
-              }}
-            />
-          )
-        })}
-      </div>
-    </>
+        return (
+          <ChoiceAnswerOption
+            {...{
+              element: childElement,
+              onSelect,
+              renderChildNodes,
+              questionId,
+              key: optionId,
+              direction,
+              selected,
+              value,
+            }}
+          />
+        )
+      })}
+    </div>
   )
 }
 
