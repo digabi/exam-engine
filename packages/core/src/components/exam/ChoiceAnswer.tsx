@@ -91,7 +91,7 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
   return (
     <>
       <div
-        className={classNames('e-choice-answer', className, {
+        className={classNames('e-choice-answer e-mrg-b-4', className, {
           'e-columns': direction === 'horizontal',
         })}
         data-question-id={questionId}
