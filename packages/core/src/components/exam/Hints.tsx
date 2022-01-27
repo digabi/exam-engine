@@ -26,7 +26,7 @@ const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChi
       </div>
     </div>
   ) : (
-    <>renderChildNodes(element)</>
+    <>{renderChildNodes(element)}</>
   )
 }
 
