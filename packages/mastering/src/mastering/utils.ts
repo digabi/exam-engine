@@ -43,12 +43,8 @@ export const hasAttribute =
  * value. If the attribute doesn't exist and a default value isn't provided, it
  * will throw an Error.
  */
-export function getAttribute<T = undefined>(
-  name: string,
-  element: Element,
-  defaultValue?: T
-): T extends undefined ? string : string | T {
-  return _getAttr(element, name, String, defaultValue)
+export function getAttribute<T = string>(name: string, element: Element, defaultValue?: T): string | T {
+  return arguments.length > 2 ? _getAttr(element, name, String, defaultValue) : _getAttr(element, name, String)
 }
 
 /**
@@ -56,12 +52,8 @@ export function getAttribute<T = undefined>(
  * returns a default value. If the attribute doesn't exist and a default value
  * isn't provided, it will throw an Error.
  */
-export function getNumericAttribute<T = undefined>(
-  name: string,
-  element: Element,
-  defaultValue?: T
-): T extends undefined ? number : number | T {
-  return _getAttr(element, name, Number, defaultValue)
+export function getNumericAttribute<T = number>(name: string, element: Element, defaultValue?: T): number | T {
+  return arguments.length > 2 ? _getAttr(element, name, Number, defaultValue) : _getAttr(element, name, Number)
 }
 
 /** Helper function for generating `(.//e:foo | .//e:bar | .//e:baz)`-like XPath selectors. */
@@ -69,19 +61,12 @@ export function xpathOr(names: readonly string[]): string {
   return '(' + names.map((localName) => `.//e:${localName}`).join(' | ') + ')'
 }
 
-function _getAttr<T, U>(
-  element: Element,
-  name: string,
-  transform: (value: string) => U,
-  defaultValue?: T
-): T extends undefined ? U : T | U {
+function _getAttr<T, U>(element: Element, name: string, transform: (value: string) => T, defaultValue?: U): T | U {
   const maybeValue = element.attr(name)?.value()
   if (maybeValue != null) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return transform(maybeValue) as any
-  } else if (defaultValue !== undefined) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return defaultValue as any
+    return transform(maybeValue)
+  } else if (arguments.length > 3) {
+    return defaultValue as U
   } else {
     throw new Error(`Bug: ${element.toString()} doesn't have a ${name} attribute and a default value was not supplied`)
   }
