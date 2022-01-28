@@ -9,6 +9,7 @@ export interface TextQuestion {
   id: number
   displayNumber: string
   maxScore: number
+  maxLength?: number
   /**
    * A tentative list of answers that will be accepted. Usually this is not the
    * final list, since additional answers will be accepted during grading.
