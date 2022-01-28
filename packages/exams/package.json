@@ -9,7 +9,7 @@
     "*/*.mex"
   ],
   "scripts": {
-    "prepublishOnly": "find . -name '*.xml' -print0 | xargs -0 -n 1 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k \"${ANSWERS_PRIVATE_KEY:?must be set}\" "
+    "prepublishOnly": "find . -name '*.mex' -delete && find . -name '*.xml' -print0 | xargs -0 -n1 -P4 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k \"${ANSWERS_PRIVATE_KEY:?must be set}\" "
   },
   "dependencies": {
     "@digabi/exam-engine-mastering": "16.2.2"
