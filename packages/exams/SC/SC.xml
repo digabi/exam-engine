@@ -492,7 +492,8 @@
               <e:localization lang="fi-FI">YTL</e:localization>
               <e:localization lang="sv-FI">SEN</e:localization>
             </e:modified-by>
-            <e:reference-date>2017-03-15</e:reference-date>
+            <!-- The following reference-date intentionally has some extra whitespace to test whitespace handling. -->
+            <e:reference-date> 2017-03-15</e:reference-date>
             <e:howpublished>CC BY-NC-ND 3.0 DE</e:howpublished>
           </e:reference>
         </e:attachment>

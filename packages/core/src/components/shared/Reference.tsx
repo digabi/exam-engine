@@ -78,7 +78,8 @@ function AsDate({ element }: ExamComponentProps) {
   if (/^[0-9]{4}$/.test(textContent)) {
     return <>{textContent}</>
   } else {
-    const date = new Date(textContent)
+    // The XML tag might contain leading or trailing whitespace, which breaks Date parsing.
+    const date = new Date(textContent.trim())
     const { dateTimeFormatter } = useContext(CommonExamContext)
     return <>{dateTimeFormatter.format(date)}</>
   }

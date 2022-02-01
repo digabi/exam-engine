@@ -19708,7 +19708,8 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
               <span lang="fi-FI">YTL</span>
               
             </e:modified-by>
-            <e:reference-date>2017-03-15</e:reference-date>
+            
+            <e:reference-date> 2017-03-15</e:reference-date>
             <e:howpublished>CC BY-NC-ND 3.0 DE</e:howpublished>
           </e:reference>
         </e:attachment>
@@ -21520,7 +21521,8 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               
               <span lang="sv-FI">SEN</span>
             </e:modified-by>
-            <e:reference-date>2017-03-15</e:reference-date>
+            
+            <e:reference-date> 2017-03-15</e:reference-date>
             <e:howpublished>CC BY-NC-ND 3.0 DE</e:howpublished>
           </e:reference>
         </e:attachment>
