@@ -2,7 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-module.exports = function () {
+module.exports = function (_env, argv) {
   const plugins = [
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -11,6 +11,7 @@ module.exports = function () {
   ]
 
   return {
+    devtool: argv.mode === 'production' ? 'source-map' : 'inline-source-map',
     entry: path.resolve(__dirname, 'dist/index.js'),
     output: {
       path: path.resolve(__dirname, 'dist'),
