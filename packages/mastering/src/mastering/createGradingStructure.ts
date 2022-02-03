@@ -61,12 +61,14 @@ function mkTextQuestion(answer: Answer): TextQuestion {
   const id = getNumericAttribute('question-id', answer.element)
   const displayNumber = getAttribute('display-number', answer.element)
   const maxScore = getNumericAttribute('max-score', answer.element)
+  const maxLength = getNumericAttribute('max-length', answer.element, undefined)
 
   const question = {
     id,
     displayNumber,
     maxScore,
     type: 'text' as const,
+    ...(maxLength && { maxLength }),
   }
 
   if (type === 'text-answer') {

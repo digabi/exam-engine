@@ -6971,6 +6971,7 @@ Object {
       Object {
         "displayNumber": "7.3",
         "id": 3,
+        "maxLength": 20,
         "maxScore": 2,
         "type": "text",
       },
@@ -14719,12 +14720,14 @@ Object {
       Object {
         "displayNumber": "20.1",
         "id": 87,
+        "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
       Object {
         "displayNumber": "20.2",
         "id": 88,
+        "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
@@ -16863,12 +16866,14 @@ Object {
       Object {
         "displayNumber": "20.1",
         "id": 87,
+        "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
       Object {
         "displayNumber": "20.2",
         "id": 88,
+        "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
@@ -18879,12 +18884,14 @@ Object {
       Object {
         "displayNumber": "20.1",
         "id": 87,
+        "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
       Object {
         "displayNumber": "20.2",
         "id": 88,
+        "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
