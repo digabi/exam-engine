@@ -1,13 +1,12 @@
 import classNames from 'classnames'
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { AppState } from '../../store'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext } from '../context/SectionContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 
 function Question({ element, renderChildNodes }: ExamComponentProps) {
-  const casStatus = useSelector((state: AppState) => state.cas.casStatus)
+  const casStatus = useSelector((state) => state.cas.casStatus)
   const { casForbidden } = useContext(SectionContext)
   const { displayNumber, level } = useContext(QuestionContext)
 
