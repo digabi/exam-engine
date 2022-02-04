@@ -1,10 +1,8 @@
 import classNames from 'classnames'
-import React from 'react'
-import { connect } from 'react-redux'
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { ExamComponentProps } from '../../../createRenderChildNodes'
-import { getAttribute, getNumericAttribute } from '../../../dom-utils'
-import { AppState } from '../../../store'
-import * as actions from '../../../store/answers/actions'
+import { getAttribute, getBooleanAttribute, getNumericAttribute } from '../../../dom-utils'
 import { RichTextAnswer as RichTextAnswerT, TextAnswer as TextAnswerT } from '../../../types/ExamAnswer'
 import AnswerToolbar from '../../AnswerToolbar'
 import { ExamContext } from '../../context/ExamContext'
@@ -14,216 +12,179 @@ import { Score } from '../../shared/Score'
 import { answerLengthInfoId, answerScoreId } from '../../../ids'
 import { AnswerTooLong } from '../../../validateAnswers'
 import AnswerLengthInfo from '../../shared/AnswerLengthInfo'
-
-interface Props extends ExamComponentProps {
-  answer?: TextAnswerT | RichTextAnswerT
-  answerBlurred: typeof actions.answerBlurred
-  answerFocused: typeof actions.answerFocused
-  saveAnswer: typeof actions.saveAnswer
-  selectAnswerVersion: typeof actions.selectAnswerVersion
-  showAnswerHistory: boolean
-  supportsAnswerHistory: boolean
-  type: 'rich-text' | 'multi-line' | 'single-line'
-  validationError?: AnswerTooLong
-  labelledBy: string
-  lang?: string
-}
+import { CommonExamContext } from '../../context/CommonExamContext'
+import { answerBlurred, answerFocused, saveAnswer, selectAnswerVersion } from '../../../store/answers/actions'
 
 const borderWidthPx = 2
 const borderHeightPx = 1
 
-interface State {
-  screenshotError?: ScreenshotError
-}
+const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element, className }) => {
+  const type = getAttribute(element, 'type')!
+  const questionId = getNumericAttribute(element, 'question-id')!
+  const displayNumber = getAttribute(element, 'display-number')!
+  const maxScore = getNumericAttribute(element, 'max-score')!
+  const useLanguageOfInstruction = getBooleanAttribute(element, 'use-language-of-instruction')
+  const maxLength = getNumericAttribute(element, 'max-length')
 
-export class TextAnswerInput extends React.PureComponent<Props, State> {
-  private ref: React.RefObject<HTMLInputElement & HTMLTextAreaElement>
+  const { language } = useContext(CommonExamContext)
+  const { questionLabelIds, answers } = useContext(QuestionContext)
+  const { examServerApi } = useContext(ExamContext)
 
-  constructor(props: Props) {
-    super(props)
-    this.state = {}
-    this.ref = React.createRef()
-  }
+  const [screenshotError, setScreenshotError] = useState<ScreenshotError>()
+  const { answer, supportsAnswerHistory, showAnswerHistory, validationError } = useSelector((state) => {
+    const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
+    const supportsAnswerHistory = state.answers.supportsAnswerHistory
+    const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
+    const validationError = state.answers.validationErrors.find(
+      (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
+    )
+    return { answer, supportsAnswerHistory, showAnswerHistory, validationError }
+  })
 
-  componentDidMount(): void {
-    this.resize()
-  }
+  const dispatch = useDispatch()
+  const ref = useRef<HTMLInputElement & HTMLTextAreaElement>(null)
 
-  componentDidUpdate(): void {
-    this.resize()
-  }
+  const value = answer && answer.value
+  const scoreId = answerScoreId(element)
+  const invalid = validationError != null
+  const lang = useLanguageOfInstruction ? language : undefined
+  const labelledBy = element.hasAttribute('max-length')
+    ? questionLabelIds + ' ' + answerLengthInfoId(element)
+    : questionLabelIds
 
-  onChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-    const { element, saveAnswer } = this.props
-    const questionId = getNumericAttribute(element, 'question-id')!
-    const displayNumber = element.getAttribute('display-number')!
-    const value = event.currentTarget.value.trim()
-    const answer: TextAnswerT = {
-      type: 'text',
-      questionId,
-      value,
-      characterCount: getCharacterCount(value),
-      displayNumber,
-    }
-    saveAnswer(answer)
-    this.clearErrors()
-  }
-
-  onRichTextChange = (answerHtml: string, answerText: string): void => {
-    const { element, saveAnswer } = this.props
-    const questionId = getNumericAttribute(element, 'question-id')!
-    const displayNumber = element.getAttribute('display-number')!
-    const answer: RichTextAnswerT = {
-      type: 'richText',
-      questionId,
-      value: answerHtml,
-      characterCount: getCharacterCount(answerText),
-      displayNumber,
-    }
-    saveAnswer(answer)
-    this.clearErrors()
-  }
-
-  onFocus = (): void => {
-    this.props.answerFocused(getNumericAttribute(this.props.element, 'question-id')!)
-  }
-
-  onBlur = (): void => {
-    this.props.answerBlurred(getNumericAttribute(this.props.element, 'question-id')!)
-  }
-
-  onError = (screenshotError: ScreenshotError): void => {
-    this.setState({
-      screenshotError,
-    })
-  }
-
-  clearErrors = (): void => {
-    this.setState({ screenshotError: undefined })
-  }
-
-  resize(): void {
-    const { current } = this.ref
+  useEffect(() => {
+    const { current } = ref
 
     if (current) {
-      if (this.props.type === 'multi-line') {
+      if (type === 'multi-line') {
         const { scrollX, scrollY } = window
         current.style.height = 'auto'
         current.style.height = `${current.scrollHeight + borderHeightPx}px`
         window.scrollTo(scrollX, scrollY)
-      } else if (this.props.type === 'single-line') {
+      } else if (type === 'single-line') {
         current.style.width = '0'
         current.style.width = `${current.scrollWidth + borderWidthPx}px`
       }
     }
-  }
+  })
 
-  render(): React.ReactNode {
-    const {
-      answer,
-      className,
-      element,
-      selectAnswerVersion,
-      showAnswerHistory,
-      supportsAnswerHistory,
-      type,
-      validationError,
-      labelledBy,
-      lang,
-    } = this.props
-    const { screenshotError } = this.state
-    const questionId = getNumericAttribute(element, 'question-id')
-    const maxScore = getNumericAttribute(element, 'max-score')!
-    const value = answer && answer.value
-    const scoreId = answerScoreId(element)
-    const maxLength = getNumericAttribute(element, 'max-length')
-    const invalid = validationError != null
+  const onChange = useCallback<React.ChangeEventHandler<HTMLTextAreaElement & HTMLInputElement>>(
+    (event) => {
+      const value = event.currentTarget.value.trim()
+      const answer: TextAnswerT = {
+        type: 'text',
+        questionId,
+        value,
+        characterCount: getCharacterCount(value),
+        displayNumber,
+      }
+      dispatch(saveAnswer(answer))
+      setScreenshotError(undefined)
+    },
+    [questionId, displayNumber]
+  )
 
-    switch (type) {
-      case 'rich-text':
-        return (
-          <>
-            {maxLength != null && <AnswerLengthInfo {...{ maxLength, id: answerLengthInfoId(element) }} />}
-            <ExamContext.Consumer>
-              {({ examServerApi }) => (
-                <RichTextAnswer
-                  answer={answer as RichTextAnswerT}
-                  className={classNames('text-answer text-answer--rich-text', className)}
-                  saveScreenshot={(data) => examServerApi.saveScreenshot(questionId!, data)}
-                  onChange={this.onRichTextChange}
-                  onError={this.onError}
-                  questionId={questionId!}
-                  lang={lang}
-                  invalid={invalid}
-                  labelledBy={labelledBy}
-                />
-              )}
-            </ExamContext.Consumer>
-            <AnswerToolbar
-              {...{
-                answer,
-                element,
-                selectAnswerVersion,
-                showAnswerHistory,
-                supportsAnswerHistory,
-                screenshotError,
-                validationError,
-              }}
-            />
-          </>
-        )
-      case 'multi-line':
-        return (
-          <>
-            {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
-            <textarea
-              className={classNames('text-answer text-answer--multi-line', className)}
-              defaultValue={value}
-              onChange={this.onChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              ref={this.ref}
-              data-question-id={questionId}
-              lang={lang}
-              aria-invalid={invalid}
-              aria-labelledby={labelledBy}
-            />
-            <AnswerToolbar
-              {...{
-                answer,
-                element,
-                selectAnswerVersion,
-                showAnswerHistory,
-                supportsAnswerHistory,
-                screenshotError,
-                validationError,
-              }}
-            />
-          </>
-        )
-      case 'single-line':
-      default:
-        return (
-          <span className="e-nowrap">
-            <input
-              type="text"
-              className={classNames('text-answer text-answer--single-line', className)}
-              defaultValue={value}
-              onChange={this.onChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              ref={this.ref}
-              data-question-id={questionId}
-              lang={lang}
-              aria-describedby={scoreId}
-              aria-labelledby={labelledBy}
-            />
-            <QuestionContext.Consumer>
-              {({ answers }) => answers.length > 1 && <Score score={maxScore} size="inline" id={scoreId} />}
-            </QuestionContext.Consumer>
-          </span>
-        )
-    }
+  const onRichTextChange = useCallback(
+    (answerHtml: string, answerText: string) => {
+      const answer: RichTextAnswerT = {
+        type: 'richText',
+        questionId,
+        value: answerHtml,
+        characterCount: getCharacterCount(answerText),
+        displayNumber,
+      }
+      dispatch(saveAnswer(answer))
+      setScreenshotError(undefined)
+    },
+    [questionId, displayNumber]
+  )
+
+  const onError = useCallback(() => (screenshotError: ScreenshotError) => setScreenshotError(screenshotError), [])
+  const onFocus = useCallback(() => dispatch(answerFocused(questionId)), [questionId])
+  const onBlur = useCallback(() => dispatch(answerBlurred(questionId)), [questionId])
+  const wrappedSelectAnswerVersion = useCallback<typeof selectAnswerVersion>(
+    (questionId, questionText) => dispatch(selectAnswerVersion(questionId, questionText)),
+    []
+  )
+
+  switch (type) {
+    case 'rich-text':
+      return (
+        <>
+          {maxLength != null && <AnswerLengthInfo {...{ maxLength, id: answerLengthInfoId(element) }} />}
+          <RichTextAnswer
+            answer={answer as RichTextAnswerT}
+            className={classNames('text-answer text-answer--rich-text', className)}
+            saveScreenshot={(data) => examServerApi.saveScreenshot(questionId, data)}
+            onChange={onRichTextChange}
+            onError={onError}
+            questionId={questionId}
+            lang={lang}
+            invalid={invalid}
+            labelledBy={labelledBy}
+          />
+          <AnswerToolbar
+            {...{
+              answer,
+              element,
+              selectAnswerVersion: wrappedSelectAnswerVersion,
+              showAnswerHistory,
+              supportsAnswerHistory,
+              screenshotError,
+              validationError,
+            }}
+          />
+        </>
+      )
+    case 'multi-line':
+      return (
+        <>
+          {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
+          <textarea
+            className={classNames('text-answer text-answer--multi-line', className)}
+            defaultValue={value}
+            onChange={onChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            ref={ref}
+            data-question-id={questionId}
+            lang={lang}
+            aria-invalid={invalid}
+            aria-labelledby={labelledBy}
+          />
+          <AnswerToolbar
+            {...{
+              answer,
+              element,
+              selectAnswerVersion: wrappedSelectAnswerVersion,
+              showAnswerHistory,
+              supportsAnswerHistory,
+              screenshotError,
+              validationError,
+            }}
+          />
+        </>
+      )
+    case 'single-line':
+    default:
+      return (
+        <span className="e-nowrap">
+          <input
+            type="text"
+            className={classNames('text-answer text-answer--single-line', className)}
+            defaultValue={value}
+            onChange={onChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            ref={ref}
+            data-question-id={questionId}
+            lang={lang}
+            aria-describedby={scoreId}
+            aria-labelledby={labelledBy}
+          />
+          {answers.length > 1 && <Score score={maxScore} size="inline" id={scoreId} />}
+        </span>
+      )
   }
 }
 
@@ -231,29 +192,4 @@ export function getCharacterCount(answerText: string): number {
   return answerText.replace(/\s/g, '').length
 }
 
-function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
-  const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const displayNumber = getAttribute(element, 'display-number')
-  const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
-  const supportsAnswerHistory = state.answers.supportsAnswerHistory
-  const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
-  const validationError = state.answers.validationErrors.find(
-    (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
-  )
-
-  return {
-    answer,
-    showAnswerHistory,
-    supportsAnswerHistory,
-    type,
-    validationError,
-  }
-}
-
-export default connect(mapStateToProps, {
-  saveAnswer: actions.saveAnswer,
-  selectAnswerVersion: actions.selectAnswerVersion,
-  answerFocused: actions.answerFocused,
-  answerBlurred: actions.answerBlurred,
-})(TextAnswerInput)
+export default React.memo(TextAnswerInput)

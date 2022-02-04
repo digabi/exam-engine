@@ -1,12 +1,11 @@
 import classNames from 'classnames'
-import React, { useContext } from 'react'
-import { connect } from 'react-redux'
+import React, { useCallback, useContext } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { getNumericAttribute, mapChildElements, query } from '../../dom-utils'
-import { AppState } from '../../store'
-import * as actions from '../../store/answers/actions'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { ChoiceAnswer as ChoiceAnswerT, QuestionId } from '../../types/ExamAnswer'
 import { QuestionContext } from '../context/QuestionContext'
+import { saveAnswer } from '../../store/answers/actions'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -16,7 +15,7 @@ interface ChoiceAnswerOptionProps extends ExamComponentProps {
   value: string
 }
 
-function ChoiceAnswerOption({
+const ChoiceAnswerOption = ({
   selected,
   element,
   renderChildNodes,
@@ -24,7 +23,7 @@ function ChoiceAnswerOption({
   onSelect,
   direction,
   value,
-}: ChoiceAnswerOptionProps) {
+}: ChoiceAnswerOptionProps) => {
   const className = element.getAttribute('class')
 
   const content = (
@@ -73,20 +72,21 @@ function ChoiceAnswerOption({
   )
 }
 
-interface ChoiceAnswerProps extends ExamComponentProps {
-  answer?: ChoiceAnswerT
-  saveAnswer: typeof actions.saveAnswer
-}
-
-function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceAnswerProps) {
-  const { questionLabelIds } = useContext(QuestionContext)
+const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const questionId = getNumericAttribute(element, 'question-id')!
+  const displayNumber = element.getAttribute('display-number')!
   const direction = element.getAttribute('direction') || 'vertical'
   const className = element.getAttribute('class')
-  const displayNumber = element.getAttribute('display-number')!
-  const onSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
-    saveAnswer({ type: 'choice', questionId, value: event.currentTarget.value, displayNumber })
-  }
+
+  const { questionLabelIds } = useContext(QuestionContext)
+  const answer = useSelector((state) => state.answers.answersById[questionId] as ChoiceAnswerT | undefined)
+  const dispatch = useDispatch()
+  const onSelect = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
+    (event) => {
+      dispatch(saveAnswer({ type: 'choice', questionId, value: event.currentTarget.value, displayNumber }))
+    },
+    [questionId, displayNumber]
+  )
 
   return (
     <div
@@ -122,12 +122,4 @@ function ChoiceAnswer({ answer, saveAnswer, element, renderChildNodes }: ChoiceA
   )
 }
 
-function mapStateToProps(state: AppState, { element }: ExamComponentProps) {
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = state.answers.answersById[questionId] as ChoiceAnswerT | undefined
-  return { answer }
-}
-
-export default connect(mapStateToProps, {
-  saveAnswer: actions.saveAnswer,
-})(ChoiceAnswer)
+export default React.memo(ChoiceAnswer)

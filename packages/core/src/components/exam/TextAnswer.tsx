@@ -1,25 +1,15 @@
-import React, { useContext } from 'react'
-import { findChildElement, getBooleanAttribute } from '../../dom-utils'
+import React from 'react'
+import { findChildElement } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import TextAnswerInput from './internal/TextAnswerInput'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
-import { QuestionContext } from '../context/QuestionContext'
-import { answerLengthInfoId } from '../../ids'
-import { CommonExamContext } from '../context/CommonExamContext'
 
 function TextAnswer(props: ExamComponentProps) {
   const { element, renderChildNodes } = props
-  const { language } = useContext(CommonExamContext)
-  const { questionLabelIds } = useContext(QuestionContext)
   const displayNumber = element.getAttribute('display-number')!
   const hint = findChildElement(element, 'hint')
-  const useLanguageOfInstruction = getBooleanAttribute(element, 'use-language-of-instruction')
-  const lang = useLanguageOfInstruction ? language : undefined
-  const labelledBy = element.hasAttribute('max-length')
-    ? questionLabelIds + ' ' + answerLengthInfoId(element)
-    : questionLabelIds
-  const textAnswer = <TextAnswerInput {...{ ...props, lang, labelledBy }} />
+  const textAnswer = <TextAnswerInput {...props} />
 
   return hint ? (
     <label className="e-nowrap">
