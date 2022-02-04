@@ -7966,7 +7966,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           Element attributes (
           <code>e:scored-text-answer</code>
           )
-        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>max-score</td><td>Integer</td><td>No</td><td>0</td><td>Maximum score</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>max-score</td><td>Integer</td><td>No</td><td>0</td><td>Maximum score</td></tr><tr><td class="e-nowrap">use-language-of-instruction</td><td>Boolean</td><td>No</td><td>false</td><td>Whether the student should answer the question in the language of instruction (typically the mother tongue) or the subject language. This attribute controls the HTML lang attribute of the input element, so a screen reader will read the answer using the correct language. Used only in secondary language exams.</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
       <table class="e-table e-width-full"><caption>
           Element attributes (
