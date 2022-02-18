@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import { TOptions } from 'i18next'
 import * as _ from 'lodash-es'
 import React from 'react'
-import * as richTextEditor from 'rich-text-editor/dist/rich-text-editor'
 import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
+import { makeRichText } from 'rich-text-editor'
 
 export interface ScreenshotError {
   key: 'screenshot-too-big' | 'screenshot-byte-limit-reached' | 'screenshot-upload-failed'
@@ -44,19 +44,17 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
         current.innerHTML = answer.value
       }
 
-      richTextEditor.makeRichText(
+      makeRichText(
         current,
         {
-          locale: this.context.language.slice(0, 2).toUpperCase() as 'fi' | 'sv',
-          screenshot: {
-            saver: ({ data, type }) =>
-              saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err) => {
-                this.handleSaveError(err)
-                throw err // Rethrow error so rich-text-editor can handle it.
-              }),
-          },
+          locale: this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV',
+          screenshotSaver: ({ data, type }: { data: Buffer; type: string }) =>
+            saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err) => {
+              this.handleSaveError(err)
+              throw err // Rethrow error so rich-text-editor can handle it.
+            }),
         },
-        _.after(2, this.handleChange) /* TODO: Why does r-t-e send a change event in the beginning? */
+        this.handleChange
       )
     }
   }
