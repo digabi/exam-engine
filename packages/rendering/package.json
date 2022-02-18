@@ -36,7 +36,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router5": "^8.0.1",
-    "rich-text-editor": "^7.0.0-3",
+    "rich-text-editor": "^7.0.0-4",
     "router5": "^8.0.1",
     "router5-plugin-browser": "^8.0.1",
     "tmp-promise": "^3.0.2",
@@ -45,5 +45,5 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9"
   },
-  "gitHead": "097dcd0a0113404ff7d0231bb007e009a91d2004"
+  "gitHead": "2cb7257bd95a009401bcd172e638ff718336f58b"
 }
