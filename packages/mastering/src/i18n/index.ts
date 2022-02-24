@@ -19,6 +19,7 @@ const resources = {
 export function initI18n(lng: string): typeof i18n {
   return i18n.createInstance(
     {
+      compatibilityJSON: 'v3',
       resources,
       lng,
       fallbackLng: 'fi-FI',
