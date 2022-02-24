@@ -147,7 +147,7 @@ function encryptAndSignFiles(
   }
   innerZipFile.end()
 
-  encryptAndSign(zipFile, filename, keyAndIv, answersPrivateKey, new Readable().wrap(innerZipFile.outputStream))
+  encryptAndSign(zipFile, filename, keyAndIv, answersPrivateKey, innerZipFile.outputStream as Readable)
 }
 
 function encryptAndSign(
