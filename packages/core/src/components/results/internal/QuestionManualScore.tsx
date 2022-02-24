@@ -57,7 +57,7 @@ function NoPregrading({ maxScore }: NoPregradingProps) {
     <>
       <span className="e-result-scorecount-empty" />
       {maxScore && ` / ${maxScore} `}
-      {t('points')}
+      {t('points', { count: '' as any as number })}
     </>
   )
 }
