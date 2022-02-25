@@ -15,7 +15,6 @@
     "@types/classnames": "^2.2.8",
     "@types/cloneable-readable": "^2.0.0",
     "@types/ffmpeg-static": "^3.0.0",
-    "@types/ffprobe-static": "^2.0.0",
     "@types/fontfaceobserver": "^2.1.0",
     "@types/html-webpack-plugin": "^3.2.1",
     "@types/jest": "^27.4.0",
