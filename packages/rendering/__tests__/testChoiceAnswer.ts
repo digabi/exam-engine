@@ -27,11 +27,11 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
 
     await setChoiceAnswer(page, 1, '91')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toEqual('91')
+    expect(await getRadioButtonValue(page, 1)).toBe('91')
 
     await setChoiceAnswer(page, 1, '93')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toEqual('93')
+    expect(await getRadioButtonValue(page, 1)).toBe('93')
   })
 })
 
