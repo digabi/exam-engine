@@ -96,7 +96,7 @@ describe('generateExam()', () => {
     const exam = generateAndParseExam({ sections: [{ questions: [question([textAnswer()])] }] })
     const answer = exam.get<Element>('//e:text-answer', ns)!
 
-    expect(getAttr(answer, 'max-score')).toEqual('6')
+    expect(getAttr(answer, 'max-score')).toBe('6')
   })
 
   it('supports text-answer attributes', () => {
@@ -114,8 +114,8 @@ describe('generateExam()', () => {
     const exam = generateAndParseExam({ sections: [{ questions: [question([scoredTextAnswer()])] }] })
     const acceptedAnswer = exam.get<Element>('//e:section/e:question/e:scored-text-answer/e:accepted-answer', ns)!
 
-    expect(acceptedAnswer.text()).toEqual('Oikea vaihtoehto')
-    expect(getAttr(acceptedAnswer, 'score')).toEqual('3')
+    expect(acceptedAnswer.text()).toBe('Oikea vaihtoehto')
+    expect(getAttr(acceptedAnswer, 'score')).toBe('3')
   })
 
   it('supports scored-text-answer attributes', () => {
