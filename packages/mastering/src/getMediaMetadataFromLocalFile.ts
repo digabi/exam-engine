@@ -1,5 +1,5 @@
 import ffprobe from 'ffprobe'
-import ffprobeStatic from 'ffprobe-static'
+import ffprobeStatic from '@ffprobe-installer/ffprobe'
 
 interface ImageMetadata {
   width: number
