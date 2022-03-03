@@ -4,11 +4,10 @@ import { useSelector } from 'react-redux'
 import { ExamComponentProps, RenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, queryAll } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
-import { AppState } from '../../store'
 import { QuestionId } from '../../index'
 
 const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
-  const focusedQuestionId = useSelector((state: AppState) => state.answers.focusedQuestionId)
+  const focusedQuestionId = useSelector((state) => state.answers.focusedQuestionId)
   const answersWithHints = queryAll(element, ['text-answer', 'scored-text-answer']).filter(
     (answer) => findChildElement(answer, 'hint') != null
   )

@@ -4,7 +4,6 @@ import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { findChildElement } from '../../../dom-utils'
 import { useExamTranslation } from '../../../i18n'
-import { AppState } from '../../../store'
 import { AnswerTooLong, ExtraAnswer } from '../../../validateAnswers'
 import AnsweringInstructions from '../../AnsweringInstructions'
 import { CommonExamContext } from '../../context/CommonExamContext'
@@ -32,7 +31,7 @@ const AnswerTooLongError: React.FunctionComponent<AnswerTooLong> = ({ displayNum
 }
 
 const ErrorIndicator: React.FunctionComponent = () => {
-  const validationErrors = useSelector((state: AppState) => state.answers.validationErrors)
+  const validationErrors = useSelector((state) => state.answers.validationErrors)
 
   return validationErrors.length > 0 ? (
     <div

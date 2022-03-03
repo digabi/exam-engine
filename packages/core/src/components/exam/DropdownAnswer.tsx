@@ -4,22 +4,16 @@ import classNames from 'classnames'
 import { useSelect } from 'downshift'
 import * as _ from 'lodash-es'
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, mapChildElements, NBSP } from '../../dom-utils'
 import * as fonts from '../../fonts'
 import { useExamTranslation } from '../../i18n'
 import { answerScoreId } from '../../ids'
-import { AppState } from '../../store'
-import * as actions from '../../store/answers/actions'
 import { ChoiceAnswer as ChoiceAnswerT } from '../../types/ExamAnswer'
 import { QuestionContext } from '../context/QuestionContext'
 import { Score } from '../shared/Score'
-
-interface DropdownAnswerProps extends ExamComponentProps {
-  saveAnswer: typeof actions.saveAnswer
-  answer?: ChoiceAnswerT
-}
+import { saveAnswer } from '../../store/answers/actions'
 
 const menuBorderWidthPx = 2
 const roundingErrorCompensationPx = 1
@@ -28,9 +22,12 @@ const runningInBrowser = !navigator.userAgent.includes('jsdom/')
 
 type Item = Element | typeof noAnswer
 
-function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: DropdownAnswerProps) {
+const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const questionId = getNumericAttribute(element, 'question-id')!
   const maxScore = getNumericAttribute(element, 'max-score')!
+
+  const answer = useSelector((state) => state.answers.answersById[questionId] as ChoiceAnswerT | undefined)
+  const dispatch = useDispatch()
   const displayNumber = element.getAttribute('display-number')!
   const currentlySelectedItem =
     answer &&
@@ -71,7 +68,7 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
     itemToString: (item) => (item ? item.textContent! : ''),
     onSelectedItemChange: ({ selectedItem }) => {
       const value = selectedItem ? selectedItem.getAttribute('option-id')! : ''
-      saveAnswer({ type: 'choice', questionId, value, displayNumber })
+      dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))
     },
     initialSelectedItem: currentlySelectedItem,
   })
@@ -146,12 +143,5 @@ function DropdownAnswer({ element, renderChildNodes, saveAnswer, answer }: Dropd
     </span>
   )
 }
-function mapStateToprops(state: AppState, { element }: ExamComponentProps) {
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const answer = state.answers.answersById[questionId] as ChoiceAnswerT | undefined
-  return { answer }
-}
 
-export default connect(mapStateToprops, {
-  saveAnswer: actions.saveAnswer,
-})(DropdownAnswer)
+export default React.memo(DropdownAnswer)

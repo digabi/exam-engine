@@ -26,6 +26,18 @@ function* rootSaga(examServerApi: ExamServerAPI) {
 
 export type AppState = ReturnType<typeof rootReducer>
 
+// Ensure we can use useSelector and such with nicer type inference. Without this change, each use site of
+// useSelector must explicitly type the state parameter, e.g.
+//
+// const foo = useSelector((state: AppState) => state.foo)
+//
+// With this change, the state type is inferred.
+//
+// const foo = useSelector((state) => state.foo)
+declare module 'react-redux' {
+  interface DefaultRootState extends AppState {}
+}
+
 export function initializeExamStore(
   examStructure: RootElement,
   casStatus: InitialCasStatus,

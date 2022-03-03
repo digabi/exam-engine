@@ -3,7 +3,6 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { useExamTranslation } from '../../i18n'
 import { sectionTitleId } from '../../ids'
-import { AppState } from '../../store'
 import { allowCas, allowCasCancelled } from '../../store/cas/actions'
 import { CasState } from '../../store/cas/reducer'
 import { ExamContext } from '../context/ExamContext'
@@ -23,7 +22,7 @@ function LastSectionNote() {
 }
 
 function Section({ element, renderChildNodes }: ExamComponentProps) {
-  const casState = useSelector((state: AppState) => state.cas, shallowEqual)
+  const casState = useSelector((state) => state.cas, shallowEqual)
   const { casForbidden, displayNumber } = useContext(SectionContext)
   const { sections } = useContext(CommonExamContext)
   const lastSection = element === _.last(sections)
