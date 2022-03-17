@@ -13,10 +13,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack -p",
-    "build:analyze": "webpack -p --profile --json --display normal > stats.json",
+    "build": "webpack --mode=production",
+    "build:analyze": "webpack --mode=production --profile --json --display normal > stats.json",
     "watch": "webpack -d --watch",
-    "prepublishOnly": "webpack -p && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
+    "prepublishOnly": "webpack --mode=production && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
   },
   "peerDependencies": {
     "react": "^17.0.2"
