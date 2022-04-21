@@ -3,8 +3,9 @@ import webpack from 'webpack'
 import { RenderingOptions } from '.'
 import { getWebpackConfig } from './getWebpackConfig'
 import { mathSvgResponse } from 'rich-text-editor/server/mathSvg'
+import WebpackDevServer from 'webpack-dev-server'
 
-export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions): webpack.Configuration {
+export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions) {
   const isDev = process.env.npm_package_name === '@digabi/exam-engine-root'
 
   return getWebpackConfig({
@@ -33,17 +34,27 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
       ignored: path.resolve('../../core/dist/main-bundle.js'),
     },
     devServer: {
-      overlay: {
-        warnings: true,
-        errors: true,
-      },
       open: options.openBrowser,
-      clientLogLevel: 'silent',
-      stats: 'errors-only',
-      noInfo: true,
-      contentBase: [path.resolve(__dirname, '../public'), path.dirname(examFilename)],
+      client: {
+        logging: 'none',
+        overlay: {
+          warnings: true,
+          errors: true,
+        },
+      },
+      devMiddleware: {
+        stats: 'errors-only',
+      },
+      static: [
+        {
+          directory: path.resolve(__dirname, '../public'),
+        },
+        { directory: path.dirname(examFilename) },
+      ],
       historyApiFallback: true,
-      before: (app) => app.get('/math.svg', mathSvgResponse),
+      onBeforeSetupMiddleware: (devServer: WebpackDevServer) => {
+        devServer.app?.get('/math.svg', mathSvgResponse)
+      },
     },
   })
 }

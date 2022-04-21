@@ -3,7 +3,7 @@ import path from 'path'
 import webpack from 'webpack'
 import { merge } from 'webpack-merge'
 
-export function getWebpackConfig(configuration: webpack.Configuration): webpack.Configuration {
+export function getWebpackConfig(configuration: webpack.Configuration) {
   return merge(
     {
       output: {
