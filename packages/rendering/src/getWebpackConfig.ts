@@ -30,7 +30,6 @@ export function getWebpackConfig(configuration: webpack.Configuration): webpack.
                 options: {
                   sourceMap: true,
                   lessOptions: {
-                    plugins: [require('less-plugin-glob')],
                     paths: [path.resolve(__dirname, 'src')],
                   },
                 },
