@@ -4,15 +4,17 @@ import { SyntaxError } from 'libxmljs2'
 import _ from 'lodash'
 import path from 'path'
 import * as uuid from 'uuid'
-import webpack from 'webpack'
 
 function stringifyModule(module: any, attachments: Attachment[] = []): string {
   const imports = attachments.map((attachment) => `require('./attachments/${attachment.filename}')`).join('\n')
   return imports + '\nmodule.exports = ' + JSON.stringify(module)
 }
 
-export default async function examLoader(this: webpack.loader.LoaderContext, source: string): Promise<void> {
-  const callback = this.async()!
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default async function examLoader(this: any, source: string): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+  const callback: <T>(error: unknown, value?: T) => void = this.async()!
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   const baseDir = path.dirname(this.resourcePath)
   const resolveAttachment = (attachment: string) => path.resolve(baseDir, 'attachments', attachment)
   const getMediaMetadata = getMediaMetadataFromLocalFile(resolveAttachment)
