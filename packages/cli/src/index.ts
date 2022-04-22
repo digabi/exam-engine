@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { accessSync } from 'fs'
-import ora = require('ora')
+import ora from 'ora'
 import yargs from 'yargs'
 import { resolveExam, resolveFile } from './utils'
 
