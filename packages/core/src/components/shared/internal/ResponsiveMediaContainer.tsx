@@ -50,7 +50,7 @@ const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainer
         {children}
       </span>
       {caption && (
-        <span className="e-color-darkgrey e-block e-mrg-t-1 e-font-size-s e-light" id={captionId}>
+        <span className="e-block e-mrg-t-1 e-font-size-s e-light" id={captionId}>
           {caption}
         </span>
       )}

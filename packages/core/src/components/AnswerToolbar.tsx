@@ -30,7 +30,7 @@ function AnswerToolbar({
   const answerLength = answer?.characterCount
   const maxLength = getNumericAttribute(element, 'max-length')
   return (
-    <div className="answer-toolbar e-font-size-xs e-color-darkgrey e-columns e-mrg-b-2">
+    <div className="answer-toolbar e-font-size-xs e-columns e-mrg-b-2">
       <div
         className={classNames('answer-toolbar__answer-length e-column', { 'e-color-error': validationError != null })}
       >
