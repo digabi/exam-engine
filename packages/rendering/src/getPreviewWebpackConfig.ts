@@ -52,8 +52,9 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
         { directory: path.dirname(examFilename) },
       ],
       historyApiFallback: true,
-      onBeforeSetupMiddleware: (devServer: WebpackDevServer) => {
+      setupMiddlewares: (middlewares: WebpackDevServer.Middleware[], devServer: WebpackDevServer) => {
         devServer.app?.get('/math.svg', mathSvgResponse)
+        return middlewares
       },
     },
   })
