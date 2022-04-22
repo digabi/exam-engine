@@ -1,9 +1,9 @@
 import { AddressInfo } from 'net'
 import webpack from 'webpack'
-import WebpackDevServer from 'webpack-dev-server'
 import { RenderingOptions } from '.'
 import { getPreviewWebpackConfig } from './getPreviewWebpackConfig'
 import * as net from 'net'
+import Server from 'webpack-dev-server'
 
 export type CloseFunction = () => Promise<unknown>
 
@@ -16,15 +16,15 @@ export async function previewExam(examFile: string, options: RenderingOptions = 
   const config = getPreviewWebpackConfig(examFile, options)
   const compiler = webpack(config)
   const devServer = config.devServer!
-  const webpackDevServer = new WebpackDevServer(compiler, devServer)
+  const webpackDevServer: Server = new Server({ ...devServer, port: options.port ?? 0, host: 'localhost' }, compiler)
   return new Promise((resolve, reject) => {
-    webpackDevServer.listen(options.port ?? 0, 'localhost', (err) => {
+    webpackDevServer.startCallback((err) => {
       if (err) {
         reject(err)
       } else {
         const addressInfo = (webpackDevServer.server as net.Server).address() as AddressInfo
         const url = `http://localhost:${addressInfo.port}`
-        const close = () => new Promise((resolve) => webpackDevServer.close(resolve))
+        const close = () => webpackDevServer.stop()
         resolve({ url, close })
       }
     })
