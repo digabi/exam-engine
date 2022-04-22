@@ -1,4 +1,3 @@
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import { useSelect } from 'downshift'
@@ -14,6 +13,7 @@ import { ChoiceAnswer as ChoiceAnswerT } from '../../types/ExamAnswer'
 import { QuestionContext } from '../context/QuestionContext'
 import { Score } from '../shared/Score'
 import { saveAnswer } from '../../store/answers/actions'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const menuBorderWidthPx = 2
 const roundingErrorCompensationPx = 1
@@ -105,7 +105,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
               'e-dropdown-answer__toggle-icon e-text-center e-column e-column--narrow e-column--gapless e-color-link'
             )}
           >
-            <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+            <FontAwesomeIcon icon={solid(isOpen ? 'chevron-up' : 'chevron-down')} />
           </span>
         </button>
         <span

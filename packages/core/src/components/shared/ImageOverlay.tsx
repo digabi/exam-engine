@@ -1,4 +1,3 @@
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import * as _ from 'lodash-es'
@@ -7,6 +6,7 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 import { findChildElement, getNumericAttribute, mapChildElements } from '../../dom-utils'
 import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function ImageOverlay({ element, renderChildNodes }: ExamComponentProps) {
   const [opacities, setOpacities] = useState<number[]>(() => _.times(element.children.length, (i) => (i === 0 ? 1 : 0)))
@@ -59,7 +59,7 @@ function Slider({ opacity, setOpacity, element, renderChildNodes }: SliderProps)
   return (
     <div className="e-columns e-columns--center-v e-mrg-b-1">
       <div className="e-column e-text-right e-mrg-r-1">{title && renderChildNodes(title)}</div>
-      <FontAwesomeIcon icon={faEyeSlash} className="e-mrg-r-1 e-pointer" onClick={() => setOpacity(0)} />
+      <FontAwesomeIcon icon={solid('eye-slash')} className="e-mrg-r-1 e-pointer" onClick={() => setOpacity(0)} />
       <input
         type="range"
         min={0}
@@ -68,7 +68,7 @@ function Slider({ opacity, setOpacity, element, renderChildNodes }: SliderProps)
         value={opacity}
         onChange={(e) => setOpacity(Number(e.target.value))}
       />
-      <FontAwesomeIcon icon={faEye} className="e-mrg-l-1 e-pointer" onClick={() => setOpacity(1)} />
+      <FontAwesomeIcon icon={solid('eye')} className="e-mrg-l-1 e-pointer" onClick={() => setOpacity(1)} />
     </div>
   )
 }

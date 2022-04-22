@@ -1,4 +1,3 @@
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
@@ -7,6 +6,7 @@ import { useExamTranslation } from '../../../i18n'
 import { AnswerTooLong, ExtraAnswer } from '../../../validateAnswers'
 import AnsweringInstructions from '../../AnsweringInstructions'
 import { CommonExamContext } from '../../context/CommonExamContext'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const ExtraAnswerError: React.FunctionComponent<ExtraAnswer> = (props) => {
   const { t } = useExamTranslation()
@@ -39,7 +39,7 @@ const ErrorIndicator: React.FunctionComponent = () => {
       role="alert"
     >
       <div className="e-column e-column--narrow">
-        <FontAwesomeIcon size="lg" icon={faExclamationTriangle} fixedWidth className="e-mrg-r-1" />
+        <FontAwesomeIcon size="lg" icon={solid('triangle-exclamation')} fixedWidth className="e-mrg-r-1" />
       </div>
       <div className="e-column e-column--gapless">
         {validationErrors.map((validationError) => {

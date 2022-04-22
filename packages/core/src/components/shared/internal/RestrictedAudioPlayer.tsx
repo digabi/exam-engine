@@ -1,4 +1,3 @@
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import React from 'react'
@@ -7,6 +6,7 @@ import { RestrictedAudioId } from '../../../index'
 import { useExamTranslation } from '../../../i18n'
 import { playAudio } from '../../../store/audio/actions'
 import { getAudioState, getDurationRemaining, getPlaybackTimesRemaining } from '../../../store/selectors'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function RestrictedAudioPlayer({
   src,
@@ -48,7 +48,7 @@ function RestrictedAudioPlayer({
         onClick={() => stopped && dispatch(playAudio({ src, restrictedAudioId, duration }))}
         aria-labelledby={labels.join(' ')}
       >
-        {!playing && <FontAwesomeIcon icon={faPlay} fixedWidth />}
+        {!playing && <FontAwesomeIcon icon={solid('play')} fixedWidth />}
       </button>
       <span className="restricted-audio-player__duration e-column e-text-right" id={remainingLabelId}>
         {formatDuration(durationRemaining ?? duration)}

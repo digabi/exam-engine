@@ -1,4 +1,3 @@
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,6 +7,7 @@ import { useExamTranslation } from '../../i18n'
 import { playAudio } from '../../store/audio/actions'
 import { getAudioPlaybackError, getAudioState } from '../../store/selectors'
 import AudioPlaybackError from './internal/AudioPlaybackError'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function AudioTest({ element }: ExamComponentProps) {
   const src = element.getAttribute('src')!
@@ -27,7 +27,7 @@ function AudioTest({ element }: ExamComponentProps) {
             disabled={audioState !== 'stopped'}
             onClick={() => audioState === 'stopped' && dispatch(playAudio({ src, duration }))}
           >
-            <FontAwesomeIcon className="e-mrg-r-1" icon={faPlay} fixedWidth />
+            <FontAwesomeIcon className="e-mrg-r-1" icon={solid('play')} fixedWidth />
             {t('audio-test.play')}
           </button>
         </div>
