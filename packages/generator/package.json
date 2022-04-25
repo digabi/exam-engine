@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "@digabi/exam-engine-core": "16.4.8",
-    "libxmljs2": "^0.29.0",
+    "libxmljs2": "^0.30.1",
     "lodash": "^4.17.15"
   },
   "gitHead": "2cb7257bd95a009401bcd172e638ff718336f58b"
