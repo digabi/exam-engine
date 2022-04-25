@@ -13,7 +13,7 @@ interface AudioMetadata {
 export const getMediaMetadataFromLocalFile =
   (resolveAttachment: (filename: string) => string) =>
   async (src: string, type: 'video' | 'audio' | 'image'): Promise<ImageMetadata | AudioMetadata> => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
     const parseWebmDuration = (s: any) => parseFloat(s.tags.DURATION.replace(/:/g, ''))
     const path = resolveAttachment(src)
 
@@ -28,7 +28,7 @@ export const getMediaMetadataFromLocalFile =
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       return { width, height }
     } else if (type === 'audio') {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
       const duration = Math.round(stream.duration || parseWebmDuration(stream))
       return { duration }
     } else {
