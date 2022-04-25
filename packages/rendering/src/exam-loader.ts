@@ -14,7 +14,7 @@ function stringifyModule(module: any, attachments: Attachment[] = []): string {
 export default async function examLoader(this: any, source: string): Promise<void> {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   const callback: <T>(error: unknown, value?: T) => void = this.async()!
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
   const baseDir = path.dirname(this.resourcePath)
   const resolveAttachment = (attachment: string) => path.resolve(baseDir, 'attachments', attachment)
   const getMediaMetadata = getMediaMetadataFromLocalFile(resolveAttachment)

@@ -68,7 +68,7 @@ export function initializeExamStore(
   const sagaMiddleware = createSagaMiddleware()
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
   const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-call
   const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(sagaMiddleware)))
   sagaMiddleware.run(rootSaga, examServerApi)
 

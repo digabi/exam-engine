@@ -676,11 +676,11 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
     try {
       // Load render-formula lazily, since initializing mathjax-node is very expensive.
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
-      const svg = await require('./render-formula')(
+      const svg = (await require('./render-formula')(
         formula.text(),
         getAttribute('mode', formula, null),
         throwOnLatexError
-      )
+      )) as string
       formula.attr('svg', svg)
     } catch (errors) {
       if (Array.isArray(errors) && errors.every(_.isString)) {

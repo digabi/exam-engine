@@ -132,6 +132,7 @@ function runCommand<T>(moduleName: string) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call
       const result = await command({ ...args, spinner })
       if (result) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         spinner.succeed(result)
       }
     } catch (err) {

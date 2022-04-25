@@ -46,7 +46,7 @@ describe('Mex exam package creation', () => {
   function getMexStreamAndBuffers() {
     const mexStream = new PassThrough()
     const mexBuffers: Buffer[] = []
-    mexStream.on('data', (data) => {
+    mexStream.on('data', (data: Buffer) => {
       mexBuffers.push(data)
     })
     return { mexStream, mexBuffers }
@@ -141,7 +141,7 @@ async function readResource(filename: string): Promise<string> {
 function toBuffer(stream: Readable): Promise<Buffer> {
   return new Promise((resolve) => {
     const buffers: Buffer[] = []
-    stream.on('data', (d) => buffers.push(d))
+    stream.on('data', (d: Buffer) => buffers.push(d))
     stream.on('end', () => resolve(Buffer.concat(buffers)))
   })
 }

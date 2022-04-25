@@ -14,6 +14,7 @@ describe('performEnableCas', () => {
     it(`calls setCasStatus with 'allowing', performs the countdown and calls setCasStatus with 'allowed'`, async () => {
       const setCasStatus = jest.fn((casStatus: CasStatus) => Promise.resolve(casStatus))
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
         .put(allowCasCountdown(2))
         .put(updateCasRemaining(1))
@@ -30,6 +31,7 @@ describe('performEnableCas', () => {
     it(`skips the countdown and calls setCasStatus with 'allowed'`, async () => {
       const setCasStatus = jest.fn(() => Promise.resolve('allowed'))
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
         .put(allowCasSucceeded())
         .run(false)
@@ -43,6 +45,7 @@ describe('performEnableCas', () => {
     it(`calls setCasStatus with 'forbidden' if the user cancels the countdown`, async () => {
       const setCasStatus = jest.fn((casStatus: CasStatus) => Promise.resolve(casStatus))
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
         .put(allowCasCountdown(2))
         .put(updateCasRemaining(1))
@@ -61,6 +64,7 @@ describe('performEnableCas', () => {
         .mockImplementationOnce(() => Promise.resolve('allowing'))
         .mockImplementationOnce(() => Promise.resolve('allowed'))
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
         .put(allowCasCountdown(2))
         .put(updateCasRemaining(1))
@@ -80,6 +84,7 @@ describe('performEnableCas', () => {
         .mockImplementationOnce(() => Promise.resolve('allowing'))
         .mockImplementationOnce(() => Promise.resolve('forbidden'))
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
         .put(allowCasCountdown(2))
         .put(updateCasRemaining(1))

@@ -84,15 +84,16 @@ export function initI18n(language: string, examCode?: string, dayCode?: string):
         interpolation: {
           escapeValue: false,
           format: (value, format) => {
+            const val = value as [string, string]
             switch (format) {
               case 'range': {
-                const [start, end] = value as [string, string]
+                const [start, end] = val
                 return start == null ? end : end == null ? start : start === end ? start : `${start}–${end}`
               }
               case 'first':
-                return _.first(value)
+                return _.first(val)
               case 'last':
-                return _.last(value)
+                return _.last(val)
               default:
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-return
                 return value
