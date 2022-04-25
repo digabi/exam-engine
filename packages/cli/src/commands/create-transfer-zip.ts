@@ -61,13 +61,16 @@ function localize(xml: string, language: string, type: ExamType): string {
   const doc = parseExam(xml)
 
   doc.find<Element>('.//e:e-exam-version', ns).forEach((element) => {
-    if (getAttribute(element, 'lang') !== language || getAttribute(element, 'exam-type', 'normal') !== type) {
+    if (getAttribute(element, 'lang') !== language || !getAttribute(element, 'exam-type', 'normal')?.includes(type)) {
       element.remove()
     }
   })
 
   doc.find<Element>('//e:localization', ns).forEach((element) => {
-    if (getAttribute(element, 'lang', language) === language && getAttribute(element, 'exam-type', 'normal') === type) {
+    if (
+      getAttribute(element, 'lang', language) === language &&
+      getAttribute(element, 'exam-type', 'normal')?.includes(type)
+    ) {
       for (const childNode of element.childNodes()) element.addPrevSibling(childNode)
     }
 
@@ -75,7 +78,9 @@ function localize(xml: string, language: string, type: ExamType): string {
   })
 
   doc.find<Element>(`//e:*[@lang and @lang!='${language}']`, ns).forEach((element) => element.remove())
-  doc.find<Element>(`//e:*[@exam-type and @exam-type!='${type}']`, ns).forEach((element) => element.remove())
+  doc
+    .find<Element>(`//e:*[@exam-type and not(contains(@exam-type, '${type}'))]`, ns)
+    .forEach((element) => element.remove())
 
   return doc.toString(false)
 }
