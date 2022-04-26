@@ -1,0 +1,12 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": { "outDir": "../dist/__tests__" },
+  "include": ["."],
+  "references": [
+    { "path": "../" },
+    { "path": "../../exams" },
+    { "path": "../../core" },
+    { "path": "../../generator" },
+    { "path": "../../mastering" }
+  ]
+}
