@@ -125,7 +125,7 @@ function addExamAndOutdirArgs(argv: yargs.Argv) {
 
 function runCommand<T>(moduleName: string) {
   return async (args: T) => {
-    const spinner = ora().start()
+    const spinner = ora({ stream: process.stdout }).start()
     try {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
       const command = require(moduleName).default
