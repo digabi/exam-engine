@@ -2,6 +2,7 @@ import * as childPromise from 'child_process'
 import { promisify } from 'util'
 import yauzl from 'yauzl-promise'
 import * as Stream from 'stream'
+import * as fs from 'fs/promises'
 
 const execAsync = promisify(childPromise.exec)
 
@@ -50,6 +51,24 @@ Options:
     expect(entries).toEqual(['exam.xml', 'attachments.zip'])
     expect(attachmentNames).toMatchSnapshot()
     expect(examXml).toMatchSnapshot()
+  })
+  it('creates offline', async () => {
+    const output = await exec('yarn ee create-offline packages/exams/SC/SC.xml')
+    const dir = process.cwd()
+    expect(output.replaceAll('[32m✔[39m', '✔')).toContain(`- Creating offline versions for ${dir}/packages/exams/SC/SC.xml...
+✔ ${dir}/packages/exams/SC/1970-01-01_SC_fi
+✔ ${dir}/packages/exams/SC/1970-01-01_SC_sv
+✔ ${dir}/packages/exams/SC/1970-01-01_SC_fi_hi`)
+    const index = await fs.readFile(`${dir}/packages/exams/SC/1970-01-01_SC_fi/index.html`, { encoding: 'utf8' })
+    const gradingInstructions = await fs.readFile(
+      `${dir}/packages/exams/SC/1970-01-01_SC_fi/grading-instructions.html`,
+      { encoding: 'utf8' }
+    )
+    expect(index.replace(/(width: )(\d+)(px)/g, '$199$3')).toMatchSnapshot()
+    expect(gradingInstructions.replace(/(width: )(\d+)(px)/g, '$199$3')).toMatchSnapshot()
+    expect(await fs.readdir(`${dir}/packages/exams/SC/1970-01-01_SC_fi`)).toMatchSnapshot()
+    expect(await fs.readdir(`${dir}/packages/exams/SC/1970-01-01_SC_fi/assets`)).toMatchSnapshot()
+    expect(await fs.readdir(`${dir}/packages/exams/SC/1970-01-01_SC_fi/attachments`)).toMatchSnapshot()
   })
 })
 
