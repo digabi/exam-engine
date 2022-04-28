@@ -25,8 +25,17 @@ describe('ee create-offline', () => {
     })
     expect(index.replace(/(width: )(\d+)(px)/g, '$199$3')).toMatchSnapshot()
     expect(gradingInstructions.replace(/(width: )(\d+)(px)/g, '$199$3')).toMatchSnapshot()
-    expect(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi`)).toMatchSnapshot()
-    expect(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/assets`)).toMatchSnapshot()
-    expect(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/attachments`)).toMatchSnapshot()
+    expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi`))).toEqual([
+      'assets',
+      'attachments',
+      'grading-instructions.html',
+      'index.html',
+      'main-bundle.js',
+    ])
+    expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/assets`))).toMatchSnapshot()
+    expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/attachments`))).toMatchSnapshot()
   })
+  function filterFileList(fileList: Array<string>): Array<string> {
+    return fileList.filter((fileName) => fileName !== '.DS_Store')
+  }
 })
