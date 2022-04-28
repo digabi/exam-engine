@@ -27,6 +27,7 @@ import AnswerGradingInstruction from './AnswerGradingInstruction'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Recording from './Recording'
+import QuestionInstruction from '../exam/QuestionInstruction'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -38,6 +39,7 @@ const renderIfWithinGradingInstructionContent = renderIf(
       'question-grading-instruction',
       'hint',
       'question-title',
+      'question-instruction',
     ]) != null
 )
 
@@ -63,6 +65,7 @@ const renderChildNodes = createRenderChildNodes({
   image: renderIfWithinGradingInstructionContent(Image),
   question: Question,
   'question-title': QuestionTitle,
+  'question-instruction': QuestionInstruction,
   'question-grading-instruction': AnswerGradingInstruction,
   'scored-text-answer': AutogradedAnswer,
   'text-answer': AutogradedAnswer,
