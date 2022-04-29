@@ -23,10 +23,19 @@ Options:
   --help     Show help  [boolean]
   --version  Show version number  [boolean]`)
   })
+  it('creates new exam skeleton', async () => {
+    await fs.rm('new_exam', { recursive: true, force: true })
+    const output = await exec('yarn ee new new_exam')
+    const list = await fs.readdir('new_exam')
+    const newExam = await fs.readFile('new_exam/exam.xml', { encoding: 'utf8' })
+    expect(list).toEqual(['attachments', 'exam.xml'])
+    expect(newExam).toMatchSnapshot()
+    expect(stripColorCodes(output)).toContain(`✔ new_exam`)
+  })
   it('creates transfer.zip', async () => {
     const output = await exec('yarn ee create-transfer-zip packages/exams/SC/SC.xml')
     const dir = process.cwd()
-    expect(output.replaceAll('[32m✔[39m', '✔')).toContain(`- Creating a transfer zips for ${dir}/packages/exams/SC/SC.xml...
+    expect(stripColorCodes(output)).toContain(`- Creating a transfer zips for ${dir}/packages/exams/SC/SC.xml...
 ✔ ${dir}/packages/exams/SC/SC_fi-FI_transfer.zip
 ✔ ${dir}/packages/exams/SC/SC_sv-FI_transfer.zip
 ✔ ${dir}/packages/exams/SC/SC_fi-FI_hi_transfer.zip`)
@@ -102,4 +111,8 @@ const exec = async (cmd: string) => {
   } catch ({ stderr, stdout }) {
     return String(stdout) + String(stderr)
   }
+}
+
+function stripColorCodes(output: string) {
+  return output.replaceAll('[32m✔[39m', '✔')
 }
