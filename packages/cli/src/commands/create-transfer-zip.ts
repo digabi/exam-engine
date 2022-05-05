@@ -20,7 +20,6 @@ export default async function createTransferZip({
   const examDirname = path.dirname(exam)
   const xml = await fs.readFile(exam, 'utf-8')
   const resolveAttachment = (src: string) => path.resolve(examDirname, 'attachments', src)
-
   spinner.start(`Creating a transfer zips for ${exam}...`)
 
   // Hack: Do the exam localization before mastering to work around abitti
@@ -60,7 +59,7 @@ export default async function createTransferZip({
 function localize(xml: string, language: string, type: ExamType): string {
   const doc = parseExam(xml)
 
-  doc.find<Element>('.//e:e-exam-version', ns).forEach((element) => {
+  doc.find<Element>('.//e:exam-version', ns).forEach((element) => {
     if (getAttribute(element, 'lang') !== language || !getAttribute(element, 'exam-type', 'normal')?.includes(type)) {
       element.remove()
     }
@@ -69,9 +68,11 @@ function localize(xml: string, language: string, type: ExamType): string {
   doc.find<Element>('//e:localization', ns).forEach((element) => {
     if (
       getAttribute(element, 'lang', language) === language &&
-      getAttribute(element, 'exam-type', 'normal')?.includes(type)
+      getAttribute(element, 'exam-type', type)?.includes(type)
     ) {
-      for (const childNode of element.childNodes()) element.addPrevSibling(childNode)
+      for (const childNode of element.childNodes()) {
+        element.addPrevSibling(childNode)
+      }
     }
 
     element.remove()
