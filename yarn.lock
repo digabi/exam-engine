@@ -2493,9 +2493,9 @@
     "@swc/core" "^1.2.172"
 
 "@swc-node/jest@^1.1.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@swc-node/jest/-/jest-1.5.1.tgz#2c9b9689696abc2fdd0ce1a09dd2c7fa8db2b2ec"
-  integrity sha512-3kJhJQ9ljC7btH2v6JdSyH2vilCpRdTbRzt1fKOwfSLl4AHKuVQaTg1wJ5w+dbVVlJ0YpByoFpjyLCeju75uog==
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@swc-node/jest/-/jest-1.5.2.tgz#18b11a200f24ca3dfef53c0b02cbc458ea00cedd"
+  integrity sha512-08cvl+5jaAsG6qdTVvXteEUm0aypukRU+RY+EVCajtzPaoFGz2eEIvvRa888FMkaAVwF6e/iX6QSIUiUhoOa0Q==
   dependencies:
     "@node-rs/xxhash" "^1.2.0"
     "@swc-node/core" "^1.9.0"
