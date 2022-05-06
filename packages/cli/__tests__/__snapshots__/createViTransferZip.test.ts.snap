@@ -1,0 +1,2710 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ee create-transfer-zip creates normal transfer zip 1`] = `
+Array [
+  "13A.jpg",
+]
+`;
+
+exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
+"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>
+<e:exam xmlns:e=\\"http://ylioppilastutkinto.fi/exam.xsd\\" xmlns=\\"http://www.w3.org/1999/xhtml\\" xmlns:xsi=\\"http://www.w3.org/2001/XMLSchema-instance\\" xsi:schemaLocation=\\"http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd\\" exam-schema-version=\\"0.3\\" date=\\"2022-03-23\\" exam-code=\\"N\\">
+<e:exam-versions>
+  <e:exam-version lang=\\"fi-FI\\"/>
+  
+  
+</e:exam-versions>
+
+<e:exam-instruction>
+  
+    <p>
+      Koe koostuu 13 tehtävästä, joista vastataan kymmeneen. Tehtävät on jaettu kolmeen osaan. A-osassa on neljä kaikille pakollista tehtävää. B1-osassa on viisi tehtävää, joista vastataan kolmeen. B2-osassa on neljä tehtävää, joista vastataan kolmeen. Kaikki tehtävät arvostellaan pistein 0–12, joten kokeen maksimipistemäärä on 120.
+    </p>
+
+    
+    <p>
+      A-osassa saat käyttää koejärjestelmässä olevaa taulukkokirjaa ja perusohjelmia. A-osa palautetaan tehtävän 4 jälkeen olevalla painikkeella. Tämän jälkeen A-osan vastauksia ei voi enää muokata. A-osan palauttamisen jälkeen kaikki koejärjestelmän ohjelmat ovat käytettävissäsi. Voit vastata B-osien tehtäviin myös ennen A-osan palauttamista.
+    </p>
+  
+
+    
+
+    <p>
+      Useimmissa tehtävissä kaikkien osatehtävien vastaukset kirjoitetaan samaan vastauskenttään. Jaottele vastauksesi osatehtävien mukaisesti. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen.
+    </p>
+    <p>
+      Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+    </p>
+  
+
+  
+  
+</e:exam-instruction>
+
+<e:exam-grading-instruction>
+  
+    <p>Alustavat hyvän vastauksen piirteet 23.3.2022</p>
+    <p>
+      Alustavat hyvän vastauksen piirteet on suuntaa-antava kuvaus kokeen tehtäviin odotetuista vastauksista ja tarkoitettu ensisijaisesti tueksi alustavaa arvostelua varten. Alustavat hyvän vastauksen piirteet eivät välttämättä sisällä ja kuvaa tehtävien kaikkia hyväksyttyjä vastauksia. Alustavat hyvän vastauksen piirteet eivät ole osa Ylioppilastutkintolautakunnan yleisissä määräyksissä ja ohjeissa tarkoitettua tietoa siitä, miten arvosteluperusteita on sovellettu yksittäisen kokelaan koesuoritukseen. Alustavat hyvän vastauksen piirteet eivät sido Ylioppilastutkintolautakuntaa lopullisen arvostelun perusteiden laadinnassa.
+    </p>
+    <p>
+      Hyvästä suorituksesta näkyy, miten vastaukseen on päädytty. Ratkaisussa on oltava tarvittavat laskut tai muut riittävät perustelut sekä lopputulos. Arvioinnissa kiinnitetään huomiota kokonaisuuteen, ja ratkaisu pyritään arvioimaan kolmiosaisesti: alku, välivaiheet ja lopputulos. Laskuvirheet, jotka eivät olennaisesti muuta tehtävän luonnetta, eivät alenna pistemäärää merkittävästi. Sen sijaan tehtävän luonnetta muuttavat lasku- ja mallinnusvirheet saattavat alentaa pistemäärää huomattavasti.
+    </p>
+    <p>
+      Matemaattiset ohjelmistot ovat kokeen apuvälineitä, joiden roolit arvioidaan tehtäväkohtaisesti. Jos ratkaisussa on käytetty ohjelmistoja, sen on käytävä ilmi suorituksesta. Analysointia vaativien tehtävien ratkaisemisessa pelkkä ohjelmistolla saatu vastaus ei riitä ilman muita perusteluja. Sen sijaan ohjelmasta saatu tulos yleensä riittää rutiinitehtävissä ja laajempien tehtävien rutiiniosissa. Tällaisia ovat esimerkiksi lausekkeiden muokkaaminen, yhtälöiden ratkaiseminen sekä funktioiden derivointi ja integrointi.</p>
+  
+  
+</e:exam-grading-instruction>
+<e:table-of-contents/>
+<e:section max-answers=\\"4\\" cas-forbidden=\\"true\\">
+  <e:section-title>
+
+    
+      A-osa
+    
+    
+  </e:section-title>
+
+  <!-- 1 -->
+  <e:question>
+	<e:question-title>
+		Peruslaskuja
+    
+	</e:question-title>
+	<e:question-instruction>
+		
+			<p>Kirjoita tämän tehtävän vastauskenttiin pelkät laskujen lopputulokset ilman välivaiheita ja perusteluja. Jokaisen kohdan vastaus on kokonaisluku. </p>
+			<p>Tehtävässä ei voi käyttää kuvakaappauksia eikä kaavaeditoria. Kunkin vastauksen maksimipituus on 5 merkkiä. Vastaukset arvostellaan tietokoneavusteisesti, ja ohjeiden noudattamatta jättäminen voi johtaa pistevähennyksiin. Jokaisesta kohdasta voi saada 2 pistettä.</p>
+    
+    
+	</e:question-instruction>
+<e:question-grading-instruction>
+  
+    Tämä tehtävä arvostellaan lautakunnassa keskitetysti, eikä opettajan tarvitse tehdä alustavaa arvostelua. Keskitetysti arvosteltavan vastauksen pisteet päivittyvät arvostelupalveluun lopullisen arvostelun edetessä.
+  
+  
+</e:question-grading-instruction>
+	<e:question>
+		<e:question-title>
+			
+        Lausekkeen <e:formula assistive-title=\\"(-9) *(42 -35)\\">(-9)\\\\cdot (42-35)</e:formula> arvo on 
+      
+		</e:question-title>
+			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">–63</e:accepted-answer></e:scored-text-answer></p>
+  </e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Funktion <e:formula assistive-title=\\"f(x) =4 x -12\\">f(x)=4x-12</e:formula> nollakohta on 
+      
+		</e:question-title>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">3</e:accepted-answer></e:scored-text-answer></p></e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Suora kulkee pisteiden <e:formula assistive-title=\\"A =(1, 15)\\">A = (1, 15)</e:formula> ja <e:formula assistive-title=\\"B =(7, 81)\\">B = (7, 81)</e:formula> kautta.
+				Suoran kulmakerroin on 
+        
+		</e:question-title>
+			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">11</e:accepted-answer></e:scored-text-answer></p>
+    </e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Lausekkeen <e:formula assistive-title=\\"6^3 *2^(-2)\\">6^3\\\\cdot 2^{-2}</e:formula> arvo on 
+      
+		</e:question-title>
+			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">54</e:accepted-answer></e:scored-text-answer></p>
+    </e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Geometrinen lukujono alkaa luvuilla <e:formula assistive-title=\\"a_1 =256,\\">a_1=256,</e:formula> <e:formula assistive-title=\\"a_2 =128\\">a_2=128</e:formula> ja <e:formula assistive-title=\\"a_3 =64.\\">a_3=64.</e:formula> Lukujonon viides
+				jäsen on 
+        
+		</e:question-title>
+			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">16</e:accepted-answer></e:scored-text-answer></p>
+		</e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Yhtälön <e:formula assistive-title=\\"2^(2 x -5) =8\\">2^{2x-5}=8</e:formula> ratkaisu on 
+      
+		</e:question-title>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">4</e:accepted-answer></e:scored-text-answer></p>
+		</e:question>
+  </e:question>
+
+  <!-- 2 -->
+  <e:question>
+    <e:question-title>
+      Useita ratkaisutapoja
+      
+    </e:question-title>
+    <e:question-instruction>
+        
+          <p>Yhtälöitä ratkaistaessa käytetään usein osittelulakia esimerkiksi silloin, kun kerrotaan sulut auki;
+          </p><p class=\\"e-text-center\\"><e:formula mode=\\"display\\" assistive-title=\\"4 *(x +1) =4 x +4\\">4(x+1)=4x+4</e:formula></p><p>
+          on esimerkki sulkujen aukikertomisesta.</p>
+          <p/><ol>
+          <li><p>
+          Ratkaise yhtälö <e:formula assistive-title=\\"12 *(x -7) =24\\">12(x-7)=24</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6 p.)</b>
+          </p></li>
+          <li><p>
+          Ratkaise yhtälö <e:formula assistive-title=\\"(2 x +1) *(x -6) =0\\">(2x+1)(x-6)=0</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6 p.)</b>
+          </p></li></ol>
+          <p>
+          </p>
+        
+        
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Osittelulailla:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Kerrotaan vasemmalta puolelta sulut auki: <e:formula>12(x-7)=12x-84,</e:formula> jolloin yhtälö muuttuu muotoon <e:formula>12x-84=24.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>12x=84+24=108,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>eli <e:formula>x=9.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Ilman osittelulakia:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Jaetaan puolittain luvulla <e:formula>12,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>jolloin yhtälö muuttuu muotoon <e:formula>x-7=2.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>x=9.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Ilman osittelulakia:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Tulon nollasäännöllä <e:formula>2x+1=0</e:formula> tai <e:formula>x-6=0.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>x=-\\\\frac{1}{2}</e:formula> tai <e:formula>x=6.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1+1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Osittelulailla:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Kerrotaan auki: <e:formula>2x^2-11x-6=0.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Käytetään toisen asteen yhtälön ratkaisukaavaa: <e:formula>x=\\\\frac{11\\\\pm\\\\sqrt{(-11)^2-4\\\\cdot 2\\\\cdot (-6)}}{2\\\\cdot 2}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>x=-\\\\frac{1}{2}</e:formula> tai <e:formula>x=6.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+  <!-- 3 -->
+  <e:question>
+    <e:question-title>
+      Sisään ja ympäri piirretyt ympyrät
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <ol>
+          <li><p>
+          Neliön sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0 cm.
+          Määritä neliön kaikkien kärkien kautta kulkevan ympyrän säde 0,1 cm:n tarkkuudella. <b>(6 p.)</b>
+          </p></li>
+          <li><p>
+          Tasasivuisen kolmion sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0 cm.
+          Määritä kolmion kaikkien kärkien kautta kulkevan ympyrän säde 0,1 cm:n tarkkuudella. <b>(6 p.)</b>
+          </p></li></ol>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Kysytty pituus on puolet neliön lävistäjän pituudesta.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Neliön sivun pituus on <e:formula>12.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Lävistäjän pituus on siis <e:formula>12\\\\cdot \\\\sqrt{2},</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>eli kysytty pituus on <e:formula>\\\\frac{12\\\\sqrt{2}}{2}\\\\approx 8{,}5</e:formula> (cm).
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Alkupiste: Piirretty tilanteesta kuva.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Tasasivuisen kolmion sisään piirretyn ympyrän säde on <e:formula>r</e:formula> ja kolmion sivu on <e:formula>x.</e:formula> Tällöin <e:formula>r=\\\\frac{x\\\\sqrt{3}}{6}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Kolmion ympäri piirretyn ympyrän säde taas on <e:formula>R=\\\\frac{x\\\\sqrt{3}}{3}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>R=2r,</e:formula> joten <span class=\\"e-nowrap\\"><e:formula>R=2\\\\cdot 6{,}0=12{,}0</e:formula> (cm).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>TAI
+              </td>
+              <td class=\\"e-text-right\\"/>
+            </tr>
+            <tr>
+              <td>Piirretään jana sisään piirretyn ympyrän keskipisteestä ympyrän ja kolmion sivuamispisteeseen, ja toinen jana keskipisteestä kolmion kärkeen.
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Näin syntyy suorakulmainen kolmio, jonka muiden kulmien suuruudet ovat <e:formula>30^{\\\\circ}</e:formula> ja <e:formula>60^{\\\\circ}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Koska säde on 6,0 (cm), niin muistikolmion perusteella kolmion hypotenuusan pituus on <span class=\\"e-nowrap\\"><e:formula>2\\\\cdot 6{,}0 = 12{,}0</e:formula> (cm).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Tämä on myös kysytyn ympyrän säde.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Alkupiste: Piirretty tilanteesta
+                kuva.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 4 -->
+    <e:question>
+      <e:question-title>
+        Frekvenssitaulukko
+        
+      </e:question-title>
+
+      <e:external-material>
+      <e:attachment name=\\"4A\\">
+        <e:attachment-title>
+          Taulukko: Koirien selän pituus
+          
+        </e:attachment-title>
+
+        
+          <table class=\\"e-table e-width-half\\">
+            <thead>
+              <tr>
+                <th>Pituus (cm)</th>
+                <th>Lukumäärä</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>42</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>43</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>44</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>45</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>46</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>47</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>48</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        
+
+        <e:reference>
+          <e:author>
+            YTL
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:external-material>
+
+      <e:question-instruction>
+        
+          <p>
+            Taulukossa <e:attachment-link type=\\"short\\" ref=\\"4A\\"/> on esitetty aineisto beagle-koirien selän pituudesta.
+            </p><ol>
+            <li><p>
+            Mikä on aineiston tyyppiarvo eli moodi? <b>(2 p.)</b>
+            </p></li>
+            <li><p>
+            Kuinka monta koiraa aineistoon sisältyy? <b>(2 p.)</b>
+            </p></li>
+            <li><p>
+            Mikä on aineiston koirien selän pituuden keskiarvo? <b>(8 p.)</b>
+            </p></li></ol>
+      
+
+      
+  </e:question-instruction>
+
+  <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Moodi on <e:formula>47</e:formula> (cm).
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Aineistossa on <e:formula>1+0+8+7+4+11+3=34</e:formula> koiraa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Keskiarvo: <e:formula>\\\\frac{1\\\\cdot 42+0\\\\cdot 43+8\\\\cdot 44+7\\\\cdot 45+4\\\\cdot 46+11\\\\cdot 47+3\\\\cdot 48}{34}</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+            </tr>
+            <tr>
+              <td><e:formula> = \\\\frac{1554}{34} </e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">(2 p.)</span></td>
+            </tr>
+            <tr>
+              <td><e:formula>\\\\approx 46</e:formula> TAI <e:formula>45{,}7</e:formula> TAI <span class=\\"e-nowrap\\"><e:formula>45\\\\frac{12}{17}</e:formula> (cm).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+    </e:question>
+
+</e:section>
+<e:section max-answers=\\"3\\">
+  <e:section-title>
+    
+      B1-osa
+    
+    
+  </e:section-title>
+
+<!-- 5 -->
+<e:question>
+  <e:question-title>
+    Päivämatkan pituus
+    
+  </e:question-title>
+
+  <e:question-instruction>
+    
+      <p>Aku ja Aulis ovat pitkällä vaelluksella. Käveltyään eräänä päivänä kolmasosan päivämatkastaan he päättävät kävellä vielä 7 km ennen lounastaukoa. Lounaan jälkeen he huomaavat, että jäljellä on puolet aiotusta päivämatkasta. Kuinka pitkä aiottu päivämatka on?</p>
+    
+
+    
+  </e:question-instruction>
+
+  <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+    <e:answer-grading-instruction>
+    
+      <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+        <tbody>
+          <tr>
+            <td>Olkoon päivämatka <e:formula>x.</e:formula>
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+          </tr>
+          <tr>
+            <td>Nyt <e:formula>\\\\frac{x}{3}+7+\\\\frac{x}{2}=x</e:formula> TAI <e:formula>\\\\frac{x}{3}+7=\\\\frac{x}{2}.</e:formula>
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">6 p.</span></td>
+          </tr>
+          <tr>
+            <td>Tällöin <e:formula>7=\\\\frac{x}{6},</e:formula>
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">(3 p.)</span></td>
+          </tr>
+          <tr>
+            <td>joten <e:formula>x=42</e:formula> (km).
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+          </tr>
+          <tr>
+            <td>TAI
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+          </tr>
+          <tr>
+            <td>Vastaus 42 (km)
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+          </tr>
+          <tr>
+            <td>Tarkistettu laskuin, että tehtävän ehto toteutuu.
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+          </tr>
+          <tr>
+            <td>Osoitettu, ettei tehtävällä ole muita ratkaisuja.
+            </td>
+            <td class=\\"e-text-right\\">4 p.</td>
+          </tr>
+        </tbody>
+      </table>
+    
+
+    
+  </e:answer-grading-instruction>
+</e:text-answer>
+</e:question>
+
+<!-- 6 -->
+  <e:question>
+    <e:question-title>
+      Voiton tavoittelu
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <p>Tarkastellaan jällenmyyjän tekemää voittoa. Yksinkertaisuuden vuoksi tehtävässä ei oteta verotusta huomioon.</p>
+        <ol>
+          <li><p>
+          Jälleenmyyjä maksoi takista tukkukauppiaalle 120 euroa. Takki ei mennyt kaupaksi, joten jälleenmyyjä alensi hintaa 10 %:a. Mikä takin myyntihinnan pitää olla, jotta 10 %:n alennuksen jälkeen jälleenmyyjä tekee 20 %:a voittoa? <b>(6 p.)</b>
+          </p></li>
+          <li><p>
+          Jälleenmyyjä maksoi juhlakengistä tukkukauppiaalle 140 euroa ja asetti kenkien hinnaksi 199 euroa.
+          Kengät eivät kuitenkaan menneet kaupaksi tähän hintaan, joten jälleenmyyjä päätti alentaa hintaa.
+          Mikä on suurin mahdollinen alennusprosentti, jos hän haluaa tehdä vähintään 20 %:a voittoa ja alennusprosentin pitää olla kokonaisluku? <b>(6 p.)</b>
+          </p></li></ol>
+    
+
+    
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Jotta myynnillä saa <e:formula>20</e:formula> prosenttia voittoa, tulee myyntihinnan olla <e:formula>1{,}2\\\\cdot 120=144</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Jotta myyjä voi antaa <e:formula>10</e:formula> prosenttia alennusta myyntihinnasta <e:formula>x,</e:formula> tulee myyntihinnan toteuttaa yhtälö <e:formula>0{,}9x= 144,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>eli myyntihinnan on oltava <e:formula>160</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Jotta myyjä saa voittoa <e:formula>20</e:formula> prosenttia, tulee myyntihinnan olla <e:formula>1{,}2\\\\cdot 140=168</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>Alennusprosentin <e:formula>x</e:formula> on toteutettava ehto <e:formula>\\\\left(1-\\\\frac{x}{100}\\\\right)199\\\\geq 168,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>eli <e:formula>x\\\\leq 15{,}577889\\\\dots </e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Suurin mahdollinen alennusprosentti on siis <e:formula>15.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>TAI
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Jotta myyjä saa voittoa <e:formula>20</e:formula> prosenttia, tulee myyntihinnan olla <e:formula>1{,}2\\\\cdot 140=168</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Suurin mahdollinen alennusprosentti on <e:formula>15</e:formula> koska
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>kun alennusprosentti on 15, on hinta <e:formula>0{,}85\\\\cdot 199 = 169{,}15 &gt; 168</e:formula> ja
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>kun alennusprosentti on 16, on hinta <e:formula>0{,}84\\\\cdot 199 = 167{,}16 &lt; 168.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 7 -->
+    <e:question>
+      <e:question-title>
+        Taloudellisempi auto
+        
+      </e:question-title>
+
+      <e:external-material>
+      <e:attachment name=\\"7A\\">
+        <e:attachment-title>
+            Taulukko: Autojen tiedot
+            
+        </e:attachment-title>
+
+        
+				<p>
+				Sähköauto:
+				</p><ul>
+				<li><p>
+				Hinta 25 000 euroa
+				</p></li>
+				<li><p>
+				Sähkö 30 euroa kuukaudessa
+				</p></li>
+				<li><p>
+				Muut kulut 800 euroa vuodessa
+				</p></li>
+				<li><p>
+				Auton arvo alenee 8 % vuodessa
+				</p></li></ul>
+				<p/>
+				<p>Polttomoottoriauto:
+				</p><ul>
+				<li><p>
+				Hinta 12 000 euroa
+				</p></li>
+				<li><p>
+				Polttoaine 150 euroa kuukaudessa
+				</p></li>
+				<li><p>
+				Muut kulut 1 200 euroa vuodessa
+				</p></li>
+				<li><p>
+				Auton arvo alenee 12 % vuodessa
+				</p></li></ul>
+				<p/>
+				<p>Muita kuluja ovat esimerkiksi vakuutus, vero, katsastus ja huolto.
+				</p>
+
+        
+
+        <e:reference>
+          <e:author>
+            YTL
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:external-material>
+
+    <e:question-instruction>
+		  
+			  <p>Matti aikoo ostaa joko sähkö- tai polttomoottoriauton. Hän vertailee vaihtoehtoja taulukon <e:attachment-link type=\\"short\\" ref=\\"7A\\"/> arvioiden perusteella.</p>
+			  <p>Matti tarvitsee auton koko hinnan suuruisen tasalyhennyslainan. Lainan vuosikorko on 2,4 % (jolloin kuukausikorko on 0,2 %) ja lyhennys 200 euroa kuukaudessa.</p>
+			  <p>Laske autojen arvot ja jäljellä olevien lainojen määrät viiden vuoden kuluttua. Laske myös autojen käyttökustannukset ja lainojen korkokustannukset viiden vuoden aikana. Kumpi vaihtoehto olisi ollut viiden vuoden käytön jälkeen taloudellisempi valinta? Tehtävässä ei tarvitse ottaa huomioon rahan arvon muutosta, eli inflaatiota tai deflaatiota.</p>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Sähköauton kulut:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Sähkö: <e:formula>30\\\\cdot 12\\\\cdot 5=1\\\\,800.</e:formula> (Kaikki hinnat euroissa.)
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Muut kulut: <e:formula>800\\\\cdot 5=4\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Auton arvo <e:formula>5</e:formula> vuoden jälkeen: <e:formula>(1-0{,}08)^5\\\\cdot 25\\\\,000
+                \\\\approx 16\\\\,500.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Korko lasketaan aina jäljellä olevan lainan määrästä, joka tasalyhennyslainassa vähenee tasaisesti. Siispä <e:formula>n</e:formula> kuukauden jälkeen lainaa on jäljellä <e:formula>25\\\\,000-n\\\\cdot 200.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Korkokertymä viideltä vuodelta on siis <e:formula>\\\\sum_{n=0}^{5\\\\cdot 12-1}0{,}002\\\\cdot (25\\\\,000-n\\\\cdot 200)=2\\\\,292.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Polttomoottoriauto:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Bensiini: <e:formula>150\\\\cdot 12\\\\cdot 5=9\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Muut kulut: <e:formula>1\\\\,200\\\\cdot 5=6\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Auton arvo <e:formula>5</e:formula> vuoden jälkeen: <e:formula>(1-0{,}12)^5\\\\cdot 12\\\\,000\\\\approx
+                6\\\\,300.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Korko lasketaan aina jäljellä olevan lainan määrästä, joka tasalyhennyslainassa vähenee tasaisesti. Siispä <e:formula>n</e:formula> kuukauden jälkeen lainaa on jäljellä <e:formula>12\\\\,000-n\\\\cdot 200.</e:formula> Laina saadaan siis maksettua tasan viidessä vuodessa kokonaisuudessaan.
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Korkokertymä viideltä vuodelta on siis <e:formula>\\\\sum_{n=0}^{5\\\\cdot 12-1}0,002\\\\cdot (12\\\\,000-n\\\\cdot 200)\\\\approx 732.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Sähköauton kokonaiskustannukset ovat olleet noin <e:formula>1\\\\,800+4\\\\,000+2\\\\,292\\\\approx 8\\\\,100,</e:formula> ja auton jäljellä oleva arvo (eli esim. myyntihinta) on noin <e:formula>16\\\\,500.</e:formula> Polttomoottoriauton kustannukset ovat <e:formula>9\\\\,000+6\\\\,000+732\\\\approx 15\\\\,700,</e:formula> ja jäljellä oleva arvo <e:formula>6\\\\,300.</e:formula> Siispä sähköauto on ollut taloudellisempi valinta.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 8 -->
+    <e:question>
+      <e:question-title>
+        Suurin arvo
+        
+      </e:question-title>
+
+      <e:question-instruction>
+        
+          <p>Lukuun 10 lisätään erään positiivisen luvun neliön ja kuution erotus. Määritä derivaatan avulla suurin mahdollinen arvo, joka näin voidaan saada.</p>
+        
+
+        
+      </e:question-instruction>
+      <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+        <e:answer-grading-instruction>
+        
+          <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+            <tbody>
+              <tr>
+                <td>Maksimoidaan funktio <e:formula>f(x)=10+x^2-x^3,</e:formula> kun <e:formula>x</e:formula> on positiivinen.
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Derivoidaan lauseke: <e:formula>f'(x)=2x-3x^2.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Derivaatta on nolla, jos <e:formula>x(2-3x)=0,</e:formula> eli <e:formula>x=0</e:formula> tai <e:formula>x=\\\\frac{2}{3}.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Lasketaan <e:formula>f'(1/3)=1/3</e:formula> ja <e:formula>f'(1)=-1,</e:formula> joten kuvaajan muoto positiivisilla luvuilla on <e:formula>+|-.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Maksimi saavutetaan siis, kun <e:formula>x=\\\\frac{2}{3},</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>jolloin suurin arvo on <e:formula>f(\\\\frac 23)=10\\\\frac4{27}.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        
+      </e:answer-grading-instruction>
+    </e:text-answer>
+    </e:question>
+
+  <!-- 9 -->
+      <e:question>
+        <e:question-title>
+          Monivalintakoe
+          
+        </e:question-title>
+
+        <e:question-instruction>
+          
+            <p>
+              Kokeessa on 10 monivalintatehtävää. Jokaisessa tehtävässä on neljä vaihtoehtoa, joista vain yksi on oikein. Oikeasta vastauksesta saa 3 pistettä ja väärästä saa –1 pistettä.
+              Lopuksi pisteet lasketaan yhteen, ja jos summa on negatiivinen, se muutetaan pistemääräksi nolla. </p>
+              <p/><ol>
+              <li><p>
+              Eräs opiskelija ei osaa vastata yhteenkään tehtävään tietojensa pohjalta, ja hän vastaa kaikkiin tehtäviin arvaamalla. Millä todennäköisyydellä hän saa kokeesta nolla pistettä? <b>(6 p.)</b>
+              </p></li>
+              <li><p>
+              Toinen opiskelija pystyy sulkemaan jokaisesta tehtävästä pois yhden väärän vastausvaihtoehdon,
+              ja hän vastaa kaikkiin tehtäviin arvaamalla jäljellä olevista vaihtoehdoista.
+              Millä todennäköisyydellä hän saa kokeesta täydet pisteet? <b>(6 p.)</b>
+              </p></li></ol>
+          
+
+        
+        </e:question-instruction>
+
+        <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+          <e:answer-grading-instruction>
+          
+            <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+              <tbody>
+                <tr>
+                  <td>Opiskelija saa <e:formula>0</e:formula> pistettä, jos hänellä on oikein korkeintaan <e:formula>2</e:formula> tehtävää.
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+                </tr>
+                <tr>
+                  <td>(Binomitodennäköisyyden kaavan avulla) saadaan todennäköisyydeksi<br/> <e:formula>\\\\left(\\\\frac{3}{4}\\\\right)^{10}+\\\\binom{10}{1}\\\\left(\\\\frac{3}{4}\\\\right)^{9}\\\\left(\\\\frac{1}{4}\\\\right)^{1}+\\\\binom{10}{2}\\\\left(\\\\frac{3}{4}\\\\right)^{8}\\\\left(\\\\frac{1}{4}\\\\right)^{2} = 0{,}52559\\\\ldots \\\\approx 0{,}53.</e:formula>
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+                </tr>
+              </tbody>
+            </table><hr class=\\"e-mrg-b-2\\"/>
+            <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+              <tbody>
+                <tr>
+                  <td>Todennäköisyys sille, että opiskelija saa tehtävän oikein on nyt <e:formula>\\\\frac{1}{3}.</e:formula>
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">(2 p.)</span></td>
+                </tr>
+                <tr>
+                  <td>Todennäköisyys saada kaikki oikein on siis <e:formula>\\\\left(\\\\frac{1}{3}\\\\right)^{10}
+                    =\\\\frac{1}{59\\\\,049}\\\\ (\\\\approx 0{,}000017).</e:formula>
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+                </tr>
+              </tbody>
+            </table>
+          
+
+          
+        </e:answer-grading-instruction>
+      </e:text-answer>
+      </e:question>
+</e:section>
+
+
+<e:section max-answers=\\"3\\">
+  <e:section-title>
+
+    
+        B2-osa
+      
+      
+  </e:section-title>
+
+ <!-- 10 -->
+    <e:question>
+      <e:question-title>
+        Lukujono
+        
+      </e:question-title>
+
+      <e:question-instruction>
+        
+          <p>Lukujono alkaa luvuilla 4 ja 9. Kuinka moni lukujonon jäsen on pienempi kuin 1 000, jos lukujono on</p>
+          <ol>
+            <li><p>
+            aritmeettinen <b>(6 p.)</b>
+            </p></li>
+            <li><p>
+            geometrinen? <b>(6 p.)</b>
+            </p></li>
+          </ol>
+      
+
+      
+      </e:question-instruction>
+
+      <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+        <e:answer-grading-instruction>
+        
+          <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+            <tbody>
+              <tr>
+                <td>Kahden peräkkäisen lukujonon jäsenen erotus on <e:formula>9-4=5.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>Yleinen lauseke on siis <e:formula>a_n=4+5(n-1),</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>joka on pienempi kuin <e:formula>1\\\\,000,</e:formula> kun <e:formula>4+5(n-1)&lt;1\\\\,000,</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>eli <e:formula>n&lt;\\\\frac{1\\\\,000-4}{5}+1=200{,}2,</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>joten <e:formula>200</e:formula> jäsentä on pienempiä kuin <e:formula>1\\\\,000.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+            </tbody>
+          </table><hr class=\\"e-mrg-b-2\\"/>
+          <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+            <tbody>
+              <tr>
+                <td>Kahden peräkkäisen lukujonon jäsenen suhde on <e:formula>\\\\frac{9}{4}.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\">1 p.</td>
+              </tr>
+              <tr>
+                <td>Yleinen lauseke on siis <e:formula>a_n=4\\\\cdot \\\\left(\\\\frac{9}{4}\\\\right)^{n-1},</e:formula>
+                </td>
+                <td class=\\"e-text-right\\">2 p.</td>
+              </tr>
+              <tr>
+                <td>joka on pienempi kuin <e:formula>1\\\\,000,</e:formula> kun <e:formula>4\\\\cdot
+                  \\\\left(\\\\frac{9}{4}\\\\right)^{n-1}&lt;1\\\\,000.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>eli <e:formula>n-1&lt;\\\\frac{\\\\ln(250)}{\\\\ln (9/4)}\\\\approx 6{,}8.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\">1 p.</td>
+              </tr>
+              <tr>
+                <td>Siispä <e:formula>7</e:formula> jäsentä on pienempiä kuin <e:formula>1\\\\,000.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>TAI
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+              </tr>
+              <tr>
+                <td>Jonon jäsenet kokonaisluvuiksi pyöristettyinä ovat <e:formula>4,</e:formula> <e:formula>9,</e:formula> <e:formula>20,</e:formula> <e:formula>41,</e:formula> <e:formula>103,</e:formula> <e:formula>204,</e:formula> <e:formula>519,</e:formula> <e:formula>1168,</e:formula> <e:formula>\\\\ldots</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+              </tr>
+              <tr>
+                <td>Siispä <e:formula>7</e:formula> jäsentä on pienempiä kuin <e:formula>1\\\\,000,</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>koska jono on kasvava.
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        
+      </e:answer-grading-instruction>
+    </e:text-answer>
+    </e:question>
+
+  <!-- 11 -->
+  <e:question>
+    <e:question-title>
+      Virustartunnat
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <p>Syksyllä 2020 koronaviruspandemian toisen aallon alkuvaiheessa Suomessa raportoitiin edeltävien kahden viikon (14 vuorokauden) aikana havaittujien tartuntatapausten lukumääriä. Tämä lukumäärä oli 7. syyskuuta 389 ja kaksi viikkoa myöhemmin 21. syyskuuta 719 koronavirustartuntaa. (Lähde: www.hs.fi. Luettu 21.9.2020.) Oletetaan, että havaittujen tartuntojen määrä noudattaa eksponentiaalista mallia.</p>
+        <ol>
+          <li><p>
+          Kuinka monta koronavirustartuntaa havaittiin mallin mukaan päivämäärää 8.1.2021 edeltävällä kahden viikon jaksolla? Tammikuun 8. päivä on 140 vuorokautta päivämäärän 21.9.2020 jälkeen. <b>(4 p.)</b>
+          </p></li>
+          <li><p>
+          Merkitään muuttujalla <e:formula assistive-title=\\"t\\">t</e:formula> aikaa vuorokausina niin, että päivämäärä 7.9.2020 vastaa arvoa <e:formula assistive-title=\\"t =0.\\">t=0.</e:formula>
+          Eksponentiaalisen mallin mukaan edeltävän kahden viikon aikana havaittujen tapausten lukumäärälle <e:formula assistive-title=\\"k\\">k</e:formula> pätee <e:formula assistive-title=\\"k =a *2^(b t).\\">k=a \\\\cdot 2^{bt}.</e:formula> Määritä vakiot <e:formula assistive-title=\\"a\\">a</e:formula> ja <e:formula assistive-title=\\"b.\\">b.</e:formula> <b>(4 p.)</b>
+          </p></li>
+          <li><p>
+          Pohdi syitä sille, miksi tässä tehtävässä käytetty malli ei ole hyvä ennuste tartuntamäärien kehitykselle pitkällä aikavälillä. <b>(4 p.)</b>
+          </p></li></ol>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Kyseessä on eksponentiaalinen malli, jonka kerroin saadaan kahden peräkkäisen jakson osamääränä: <e:formula>\\\\frac{719}{389}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>140 päivää vastaa kymmentä kahden viikon jaksoa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Tartuntoja on siis <e:formula>\\\\left(\\\\frac{719}{389}\\\\right)^{10}\\\\cdot 389= 181\\\\,026,\\\\ldots\\\\approx 181\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Voi käyttää myös päiväkohtaista kantalukua <e:formula>\\\\left(\\\\frac{719}{389}\\\\right)^{1/14}</e:formula> ja eksponenttia 140.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Koska syyskuun 7. päivä vastaa arvoa <e:formula>t=0,</e:formula> saadaan yhtälö <e:formula>389=a\\\\cdot 2^{b\\\\cdot 0}=a.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Tehdään toinen yhtälö syyskuun 21. päivän perusteella: <e:formula>719=389\\\\cdot 2^{b\\\\cdot 14}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>Yhtälön ratkaisu: <e:formula>b\\\\approx 0{,}063.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Eksponentiaalinen malli kasvaa rajatta, mutta Suomessa on alle 6 miljoonaa asukasta. Rajoitustoimet (joita väistämättä tällaisessa tilanteessa otetaan käyttöön, kuten otettiinkin) ja rokotukset hidastavat epidemian etenemistä. Tartunta myös antaa melko monelle sairastuneelle joksikin aikaa immuniteetin, jolloin tartuntaa ei voi saada nopeasti uudestaan. Siksi potentiaalisesti tartunnan saavien joukko pienenee.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+  <!-- 12 -->
+  <e:question>
+    <e:question-title>
+      Myyntitulojen maksimointi
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <p>Tuotteen nykyinen hinta on 60 euroa. Kauppias arvioi, että tällä hinnalla tuotetta myydään 1 000 kappaletta. Myyntituloja kasvattaakseen kauppias päättää muuttaa tuotteen hintaa. Vastaavan tuotteen myynnistä kertyneen kokemuksen perusteella kauppias arvioi, että jokainen euro, jolla tuotteen hinta nousee, vähentää myyntiä kymmenellä kappaleella. Vastaavasti jokainen euro, jolla tuotteen hintaa laskee, kasvattaa myyntiä kymmenellä kappaleella.
+          </p><ol>
+          <li><p>
+          Kuinka suuret myyntitulot ovat, jos tuotteen hinta on 55 euroa? <b>(2 p.)</b>
+          </p></li>
+          <li><p>
+          Muodosta myyntituloja mallintava funktio <e:formula assistive-title=\\"f(x),\\">f(x),</e:formula> kun <e:formula assistive-title=\\"x\\">x</e:formula> on tuotteen
+          hinnan muutos, ja laske sen derivaatta <e:formula assistive-title=\\"f’(x).\\">f'(x).</e:formula> <b>(5 p.)</b>
+          </p></li>
+          <li><p>
+          Määritä se tuotteen hinta, jolla saadaan suurimmat mahdolliset myyntitulot. <b>(5 p.)</b>
+          </p></li></ol>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td><e:formula>(1\\\\,000+(60-55)\\\\cdot 10)\\\\cdot 55 =57\\\\,750</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td><e:formula>f(x)=(60+x)(1\\\\,000-10x)=-10x^2+400x+60\\\\,000</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">3 p.</span></td>
+            </tr>
+            <tr>
+              <td><e:formula>f'(x)= -20x+400.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Derivaatta on nolla, kun <e:formula>x=20.</e:formula> Koska <e:formula>f'(0)=400</e:formula> ja <e:formula>f'(40)=-400,</e:formula> on kuvaajan muoto <e:formula>+|-.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">3 p.</span></td>
+            </tr>
+            <tr>
+              <td>Myyntitulo on siis suurin, kun tuotteen hinta on <e:formula>60+20=80</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 13 -->
+  <e:question>
+    <e:question-title>
+      Kuutioista monitahokkaita
+      
+    </e:question-title>
+
+    <e:external-material exam-type=\\"normal\\">
+      <e:attachment name=\\"13A\\">
+        <e:attachment-title>
+            Kuva: Puuveistokset
+            
+        </e:attachment-title>
+
+        <e:image src=\\"13A.jpg\\" class=\\"e-width-threequarters\\"/>
+
+        <e:reference>
+          <e:author>
+            YTL
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:external-material>
+
+    <e:question-instruction>
+      
+        <p>
+          Puisen kuution särmän pituus on 2,0 cm. Tarkastellaan kahta monitahokasta, jotka saadaan sahaamalla pois kuutioiden nurkista pyramidin muotoiset kappaleet, alla kuvatuilla tavoilla, ks. kuva <e:attachment-link type=\\"short\\" ref=\\"13A\\"/>.
+          </p><ol>
+          <li><p>
+          Piirretään kuution tahkoihin janat, jotka yhdistävät vierekkäisten särmien keskipisteet. Poistetaan kuution nurkista pyramidit, joiden pohjasärminä ovat piirretyt janat. Määritä näin saadun monitahokkaan tilavuus. <b>(6 p.)</b>
+          </p></li>
+          <li><p>
+          Piirretään kuution tahkoihin sellaiset janat, joiden päätepisteet ovat vierekkäisillä särmillä niin, että tahkoihin muodostuu säännöllinen 8-kulmio.
+          Poistetaan kuution nurkista pyramidit, joiden pohjasärminä ovat piirretyt janat. Määritä näin saadun monitahokkaan pinta-ala. <b>(6 p.)</b>
+          </p></li></ol>
+      
+
+      
+
+      
+    </e:question-instruction>
+
+  <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+    <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Kuution alkuperäinen tilavuus on <e:formula>8.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                1 p.
+                </span></td>
+            </tr>
+            <tr>
+              <td>Kuutiosta poistetaan <e:formula>8</e:formula> pyramidia (kärkien lukumäärä).
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Pyramidin pohja on tasasivuinen kolmio, joka sivun pituus on <e:formula>\\\\sqrt{2}</e:formula> ja pinta-ala <e:formula>\\\\frac{1}{2}\\\\cdot (\\\\sqrt{2})^2\\\\cdot \\\\frac{\\\\sqrt{3}}{2}=\\\\frac{\\\\sqrt{3}}{2}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                1 p.
+                </span></td>
+            </tr>
+            <tr>
+              <td>Pyramidin sivut ovat suorakulmaisia kolmioita, joiden sivut ovat <e:formula>1,</e:formula> <e:formula>1,</e:formula> <e:formula>\\\\sqrt{2}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                1 p.
+                </span></td>
+            </tr>
+            <tr>
+              <td>Pyramidin huippu on tasasivuisen kolmion keskipisteen yläpuolella. Tarkastellaan suorakulmaista kolmiota, jonka toinen kateetti on pyramidin korkeus, hypotenuusa sivukolmion korkeus <e:formula>\\\\frac{1}{\\\\sqrt{2}}</e:formula> ja toinen kateetin pituus on keskipisteen etäisyys tasasivuisen kolmion sivusta <e:formula>\\\\frac{1}{\\\\sqrt{6}}.</e:formula> Pythagoraan lauseella kateetin pituus on siis <e:formula>\\\\sqrt{\\\\big(\\\\frac{1}{\\\\sqrt{2}}\\\\big)^2-\\\\big(\\\\frac{1}{\\\\sqrt{6}}\\\\big)^2}=\\\\sqrt{\\\\frac12-\\\\frac{1}{6}}=\\\\frac{1}{\\\\sqrt{3}}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                1 p.
+                </span></td>
+            </tr>
+            <tr>
+              <td>Yhden pyramidin tilavuus on siis <e:formula>\\\\frac{1}{3}\\\\cdot \\\\frac{1}{\\\\sqrt{3}}\\\\cdot \\\\frac{\\\\sqrt{3}}{2}=\\\\frac{1}{6}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                1 p.
+                </span></td>
+            </tr>
+            <tr>
+              <td>Koko kappaleen tilavuus on siis <span class=\\"e-nowrap\\"><e:formula>8-8\\\\cdot \\\\frac{1}{6}=6\\\\frac{2}{3}\\\\approx 6{,}7</e:formula> (cm<e:formula>^3</e:formula>).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                1 p.
+                </span></td>
+            </tr>
+            <tr>
+              <td>Pyramidin tilavuuden voi laskea myös kartiona, jonka pohjan pinta-ala on <e:formula>\\\\frac12 \\\\cdot 1\\\\cdot 1</e:formula> ja korkeus on <e:formula>1.</e:formula> Tällöin tilavuus on <e:formula>\\\\frac13\\\\cdot \\\\frac12 = \\\\frac1{6}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Tarkastellaan tahkoa, joka on neliö. Tahkolla on kahdeksankulmio ja kulmista poistetaan suorakulmaiset kolmiot.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Jos kulmien suorakulmaisten kolmioiden kateetit ovat <e:formula>x</e:formula> ja <e:formula>x,</e:formula> niin hypotenuusa on <e:formula>2-2x,</e:formula> jolloin <e:formula>2-2x=\\\\sqrt{2}x,</e:formula> eli <e:formula>x=\\\\frac{2}{2+\\\\sqrt{2}}=2-\\\\sqrt2.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Kahdeksankulmion ala on <e:formula>4-4\\\\cdot \\\\frac{1}{2} (2-\\\\sqrt{2})^2=4-2(2-\\\\sqrt{2})^2.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Kuutiosta poistettuun nurkkaan muodostuvan tasasivuisen kolmion sivun pituus on <e:formula>2-2x</e:formula> ja sen pinta-ala on <e:formula>\\\\frac{1}{2}\\\\cdot \\\\frac{\\\\sqrt{3}}{2}(2-2x)^2=3(\\\\sqrt{2}-1)^2.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Koko kappaleen ala on <span class=\\"e-nowrap\\"><e:formula>6(4-2(2-\\\\sqrt{2})^2)+8\\\\cdot \\\\sqrt{3}(\\\\sqrt{2}-1)^2\\\\approx 22{,}25\\\\ldots\\\\approx
+                22</e:formula> (cm<e:formula>^2</e:formula>).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Tehtävän voi ratkaista myös ohjelmistolla.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+</e:section>
+</e:exam>
+"
+`;
+
+exports[`ee create-transfer-zip creates vi transfer zip 1`] = `Array []`;
+
+exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
+"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>
+<e:exam xmlns:e=\\"http://ylioppilastutkinto.fi/exam.xsd\\" xmlns=\\"http://www.w3.org/1999/xhtml\\" xmlns:xsi=\\"http://www.w3.org/2001/XMLSchema-instance\\" xsi:schemaLocation=\\"http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd\\" exam-schema-version=\\"0.3\\" date=\\"2022-03-23\\" exam-code=\\"N\\">
+<e:exam-versions>
+  
+  
+  <e:exam-version lang=\\"fi-FI\\" exam-type=\\"visually-impaired\\"/>
+</e:exam-versions>
+
+<e:exam-instruction>
+  
+    <p>
+      Koe koostuu 13 tehtävästä, joista vastataan kymmeneen. Tehtävät on jaettu kolmeen osaan. A-osassa on neljä kaikille pakollista tehtävää. B1-osassa on viisi tehtävää, joista vastataan kolmeen. B2-osassa on neljä tehtävää, joista vastataan kolmeen. Kaikki tehtävät arvostellaan pistein 0–12, joten kokeen maksimipistemäärä on 120.
+    </p>
+
+    
+
+    
+    <p>
+      A-osa palautetaan tehtävän 4 jälkeen olevalla painikkeella. Tämän jälkeen A-osan vastauksia ei voi enää muokata. Voit vastata B-osien tehtäviin myös ennen A-osan palauttamista. Kokeessa saat käyttää koejärjestelmässä olevia aineistoja sekä sinulle erityisjärjestelypäätöksessä myönnettyjä ohjelmia.
+    </p>
+    
+
+    <p>
+      Useimmissa tehtävissä kaikkien osatehtävien vastaukset kirjoitetaan samaan vastauskenttään. Jaottele vastauksesi osatehtävien mukaisesti. Halutessasi voit tuottaa vastausten tueksi piirroksia, kaavioita tai taulukoita ja liittää niistä kuvakaappauksen mihin tahansa tekstivastaukseen.
+    </p>
+    <p>
+      Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+    </p>
+  
+
+  
+    <h5>Ruudunlukuohjelmalla käytettyjä merkintöjä</h5>
+    <p>
+      ^ potenssin tai yläindeksin merkki<br/>
+      _ alaindeksin merkki<br/>
+      * kertomerkki<br/>
+    </p>
+  
+  
+</e:exam-instruction>
+
+<e:exam-grading-instruction>
+  
+    <p>Alustavat hyvän vastauksen piirteet 23.3.2022</p>
+    <p>
+      Alustavat hyvän vastauksen piirteet on suuntaa-antava kuvaus kokeen tehtäviin odotetuista vastauksista ja tarkoitettu ensisijaisesti tueksi alustavaa arvostelua varten. Alustavat hyvän vastauksen piirteet eivät välttämättä sisällä ja kuvaa tehtävien kaikkia hyväksyttyjä vastauksia. Alustavat hyvän vastauksen piirteet eivät ole osa Ylioppilastutkintolautakunnan yleisissä määräyksissä ja ohjeissa tarkoitettua tietoa siitä, miten arvosteluperusteita on sovellettu yksittäisen kokelaan koesuoritukseen. Alustavat hyvän vastauksen piirteet eivät sido Ylioppilastutkintolautakuntaa lopullisen arvostelun perusteiden laadinnassa.
+    </p>
+    <p>
+      Hyvästä suorituksesta näkyy, miten vastaukseen on päädytty. Ratkaisussa on oltava tarvittavat laskut tai muut riittävät perustelut sekä lopputulos. Arvioinnissa kiinnitetään huomiota kokonaisuuteen, ja ratkaisu pyritään arvioimaan kolmiosaisesti: alku, välivaiheet ja lopputulos. Laskuvirheet, jotka eivät olennaisesti muuta tehtävän luonnetta, eivät alenna pistemäärää merkittävästi. Sen sijaan tehtävän luonnetta muuttavat lasku- ja mallinnusvirheet saattavat alentaa pistemäärää huomattavasti.
+    </p>
+    <p>
+      Matemaattiset ohjelmistot ovat kokeen apuvälineitä, joiden roolit arvioidaan tehtäväkohtaisesti. Jos ratkaisussa on käytetty ohjelmistoja, sen on käytävä ilmi suorituksesta. Analysointia vaativien tehtävien ratkaisemisessa pelkkä ohjelmistolla saatu vastaus ei riitä ilman muita perusteluja. Sen sijaan ohjelmasta saatu tulos yleensä riittää rutiinitehtävissä ja laajempien tehtävien rutiiniosissa. Tällaisia ovat esimerkiksi lausekkeiden muokkaaminen, yhtälöiden ratkaiseminen sekä funktioiden derivointi ja integrointi.</p>
+  
+  
+</e:exam-grading-instruction>
+<e:table-of-contents/>
+<e:section max-answers=\\"4\\" cas-forbidden=\\"true\\">
+  <e:section-title>
+
+    
+      A-osa
+    
+    
+  </e:section-title>
+
+  <!-- 1 -->
+  <e:question>
+	<e:question-title>
+		Peruslaskuja
+    
+	</e:question-title>
+	<e:question-instruction>
+		
+			<p>Kirjoita tämän tehtävän vastauskenttiin pelkät laskujen lopputulokset ilman välivaiheita ja perusteluja. Jokaisen kohdan vastaus on kokonaisluku. </p>
+			<p>Tehtävässä ei voi käyttää kuvakaappauksia eikä kaavaeditoria. Kunkin vastauksen maksimipituus on 5 merkkiä. Vastaukset arvostellaan tietokoneavusteisesti, ja ohjeiden noudattamatta jättäminen voi johtaa pistevähennyksiin. Jokaisesta kohdasta voi saada 2 pistettä.</p>
+    
+    
+	</e:question-instruction>
+<e:question-grading-instruction>
+  
+    Tämä tehtävä arvostellaan lautakunnassa keskitetysti, eikä opettajan tarvitse tehdä alustavaa arvostelua. Keskitetysti arvosteltavan vastauksen pisteet päivittyvät arvostelupalveluun lopullisen arvostelun edetessä.
+  
+  
+</e:question-grading-instruction>
+	<e:question>
+		<e:question-title>
+			
+        Lausekkeen <e:formula assistive-title=\\"(-9) *(42 -35)\\">(-9)\\\\cdot (42-35)</e:formula> arvo on 
+      
+		</e:question-title>
+			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">–63</e:accepted-answer></e:scored-text-answer></p>
+  </e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Funktion <e:formula assistive-title=\\"f(x) =4 x -12\\">f(x)=4x-12</e:formula> nollakohta on 
+      
+		</e:question-title>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">3</e:accepted-answer></e:scored-text-answer></p></e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Suora kulkee pisteiden <e:formula assistive-title=\\"A =(1, 15)\\">A = (1, 15)</e:formula> ja <e:formula assistive-title=\\"B =(7, 81)\\">B = (7, 81)</e:formula> kautta.
+				Suoran kulmakerroin on 
+        
+		</e:question-title>
+			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">11</e:accepted-answer></e:scored-text-answer></p>
+    </e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Lausekkeen <e:formula assistive-title=\\"6^3 *2^(-2)\\">6^3\\\\cdot 2^{-2}</e:formula> arvo on 
+      
+		</e:question-title>
+			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">54</e:accepted-answer></e:scored-text-answer></p>
+    </e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Geometrinen lukujono alkaa luvuilla <e:formula assistive-title=\\"a_1 =256,\\">a_1=256,</e:formula> <e:formula assistive-title=\\"a_2 =128\\">a_2=128</e:formula> ja <e:formula assistive-title=\\"a_3 =64.\\">a_3=64.</e:formula> Lukujonon viides
+				jäsen on 
+        
+		</e:question-title>
+			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">16</e:accepted-answer></e:scored-text-answer></p>
+		</e:question>
+
+	<e:question>
+		<e:question-title>
+			
+        Yhtälön <e:formula assistive-title=\\"2^(2 x -5) =8\\">2^{2x-5}=8</e:formula> ratkaisu on 
+      
+		</e:question-title>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">4</e:accepted-answer></e:scored-text-answer></p>
+		</e:question>
+  </e:question>
+
+  <!-- 2 -->
+  <e:question>
+    <e:question-title>
+      Useita ratkaisutapoja
+      
+    </e:question-title>
+    <e:question-instruction>
+        
+          <p>Yhtälöitä ratkaistaessa käytetään usein osittelulakia esimerkiksi silloin, kun kerrotaan sulut auki;
+          </p><p class=\\"e-text-center\\"><e:formula mode=\\"display\\" assistive-title=\\"4 *(x +1) =4 x +4\\">4(x+1)=4x+4</e:formula></p><p>
+          on esimerkki sulkujen aukikertomisesta.</p>
+          <p/><ol>
+          <li><p>
+          Ratkaise yhtälö <e:formula assistive-title=\\"12 *(x -7) =24\\">12(x-7)=24</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6 p.)</b>
+          </p></li>
+          <li><p>
+          Ratkaise yhtälö <e:formula assistive-title=\\"(2 x +1) *(x -6) =0\\">(2x+1)(x-6)=0</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6 p.)</b>
+          </p></li></ol>
+          <p>
+          </p>
+        
+        
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Osittelulailla:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Kerrotaan vasemmalta puolelta sulut auki: <e:formula>12(x-7)=12x-84,</e:formula> jolloin yhtälö muuttuu muotoon <e:formula>12x-84=24.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>12x=84+24=108,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>eli <e:formula>x=9.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Ilman osittelulakia:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Jaetaan puolittain luvulla <e:formula>12,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>jolloin yhtälö muuttuu muotoon <e:formula>x-7=2.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>x=9.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Ilman osittelulakia:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Tulon nollasäännöllä <e:formula>2x+1=0</e:formula> tai <e:formula>x-6=0.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>x=-\\\\frac{1}{2}</e:formula> tai <e:formula>x=6.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1+1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Osittelulailla:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Kerrotaan auki: <e:formula>2x^2-11x-6=0.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Käytetään toisen asteen yhtälön ratkaisukaavaa: <e:formula>x=\\\\frac{11\\\\pm\\\\sqrt{(-11)^2-4\\\\cdot 2\\\\cdot (-6)}}{2\\\\cdot 2}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>x=-\\\\frac{1}{2}</e:formula> tai <e:formula>x=6.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+  <!-- 3 -->
+  <e:question>
+    <e:question-title>
+      Sisään ja ympäri piirretyt ympyrät
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <ol>
+          <li><p>
+          Neliön sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0 cm.
+          Määritä neliön kaikkien kärkien kautta kulkevan ympyrän säde 0,1 cm:n tarkkuudella. <b>(6 p.)</b>
+          </p></li>
+          <li><p>
+          Tasasivuisen kolmion sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0 cm.
+          Määritä kolmion kaikkien kärkien kautta kulkevan ympyrän säde 0,1 cm:n tarkkuudella. <b>(6 p.)</b>
+          </p></li></ol>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Kysytty pituus on puolet neliön lävistäjän pituudesta.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Neliön sivun pituus on <e:formula>12.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Lävistäjän pituus on siis <e:formula>12\\\\cdot \\\\sqrt{2},</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>eli kysytty pituus on <e:formula>\\\\frac{12\\\\sqrt{2}}{2}\\\\approx 8{,}5</e:formula> (cm).
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Alkupiste: Piirretty tilanteesta kuva.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Tasasivuisen kolmion sisään piirretyn ympyrän säde on <e:formula>r</e:formula> ja kolmion sivu on <e:formula>x.</e:formula> Tällöin <e:formula>r=\\\\frac{x\\\\sqrt{3}}{6}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Kolmion ympäri piirretyn ympyrän säde taas on <e:formula>R=\\\\frac{x\\\\sqrt{3}}{3}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>Siispä <e:formula>R=2r,</e:formula> joten <span class=\\"e-nowrap\\"><e:formula>R=2\\\\cdot 6{,}0=12{,}0</e:formula> (cm).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>TAI
+              </td>
+              <td class=\\"e-text-right\\"/>
+            </tr>
+            <tr>
+              <td>Piirretään jana sisään piirretyn ympyrän keskipisteestä ympyrän ja kolmion sivuamispisteeseen, ja toinen jana keskipisteestä kolmion kärkeen.
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Näin syntyy suorakulmainen kolmio, jonka muiden kulmien suuruudet ovat <e:formula>30^{\\\\circ}</e:formula> ja <e:formula>60^{\\\\circ}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Koska säde on 6,0 (cm), niin muistikolmion perusteella kolmion hypotenuusan pituus on <span class=\\"e-nowrap\\"><e:formula>2\\\\cdot 6{,}0 = 12{,}0</e:formula> (cm).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Tämä on myös kysytyn ympyrän säde.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Alkupiste: Piirretty tilanteesta
+                kuva.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 4 -->
+    <e:question>
+      <e:question-title>
+        Frekvenssitaulukko
+        
+      </e:question-title>
+
+      <e:external-material>
+      <e:attachment name=\\"4A\\">
+        <e:attachment-title>
+          Taulukko: Koirien selän pituus
+          
+        </e:attachment-title>
+
+        
+          <table class=\\"e-table e-width-half\\">
+            <thead>
+              <tr>
+                <th>Pituus (cm)</th>
+                <th>Lukumäärä</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>42</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>43</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>44</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>45</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>46</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>47</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>48</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        
+
+        <e:reference>
+          <e:author>
+            YTL
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:external-material>
+
+      <e:question-instruction>
+        
+          <p>
+            Taulukossa <e:attachment-link type=\\"short\\" ref=\\"4A\\"/> on esitetty aineisto beagle-koirien selän pituudesta.
+            </p><ol>
+            <li><p>
+            Mikä on aineiston tyyppiarvo eli moodi? <b>(2 p.)</b>
+            </p></li>
+            <li><p>
+            Kuinka monta koiraa aineistoon sisältyy? <b>(2 p.)</b>
+            </p></li>
+            <li><p>
+            Mikä on aineiston koirien selän pituuden keskiarvo? <b>(8 p.)</b>
+            </p></li></ol>
+      
+
+      
+  </e:question-instruction>
+
+  <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Moodi on <e:formula>47</e:formula> (cm).
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Aineistossa on <e:formula>1+0+8+7+4+11+3=34</e:formula> koiraa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Keskiarvo: <e:formula>\\\\frac{1\\\\cdot 42+0\\\\cdot 43+8\\\\cdot 44+7\\\\cdot 45+4\\\\cdot 46+11\\\\cdot 47+3\\\\cdot 48}{34}</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+            </tr>
+            <tr>
+              <td><e:formula> = \\\\frac{1554}{34} </e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">(2 p.)</span></td>
+            </tr>
+            <tr>
+              <td><e:formula>\\\\approx 46</e:formula> TAI <e:formula>45{,}7</e:formula> TAI <span class=\\"e-nowrap\\"><e:formula>45\\\\frac{12}{17}</e:formula> (cm).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+    </e:question>
+
+</e:section>
+<e:section max-answers=\\"3\\">
+  <e:section-title>
+    
+      B1-osa
+    
+    
+  </e:section-title>
+
+<!-- 5 -->
+<e:question>
+  <e:question-title>
+    Päivämatkan pituus
+    
+  </e:question-title>
+
+  <e:question-instruction>
+    
+      <p>Aku ja Aulis ovat pitkällä vaelluksella. Käveltyään eräänä päivänä kolmasosan päivämatkastaan he päättävät kävellä vielä 7 km ennen lounastaukoa. Lounaan jälkeen he huomaavat, että jäljellä on puolet aiotusta päivämatkasta. Kuinka pitkä aiottu päivämatka on?</p>
+    
+
+    
+  </e:question-instruction>
+
+  <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+    <e:answer-grading-instruction>
+    
+      <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+        <tbody>
+          <tr>
+            <td>Olkoon päivämatka <e:formula>x.</e:formula>
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+          </tr>
+          <tr>
+            <td>Nyt <e:formula>\\\\frac{x}{3}+7+\\\\frac{x}{2}=x</e:formula> TAI <e:formula>\\\\frac{x}{3}+7=\\\\frac{x}{2}.</e:formula>
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">6 p.</span></td>
+          </tr>
+          <tr>
+            <td>Tällöin <e:formula>7=\\\\frac{x}{6},</e:formula>
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">(3 p.)</span></td>
+          </tr>
+          <tr>
+            <td>joten <e:formula>x=42</e:formula> (km).
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+          </tr>
+          <tr>
+            <td>TAI
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+          </tr>
+          <tr>
+            <td>Vastaus 42 (km)
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+          </tr>
+          <tr>
+            <td>Tarkistettu laskuin, että tehtävän ehto toteutuu.
+            </td>
+            <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+          </tr>
+          <tr>
+            <td>Osoitettu, ettei tehtävällä ole muita ratkaisuja.
+            </td>
+            <td class=\\"e-text-right\\">4 p.</td>
+          </tr>
+        </tbody>
+      </table>
+    
+
+    
+  </e:answer-grading-instruction>
+</e:text-answer>
+</e:question>
+
+<!-- 6 -->
+  <e:question>
+    <e:question-title>
+      Voiton tavoittelu
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <p>Tarkastellaan jällenmyyjän tekemää voittoa. Yksinkertaisuuden vuoksi tehtävässä ei oteta verotusta huomioon.</p>
+        <ol>
+          <li><p>
+          Jälleenmyyjä maksoi takista tukkukauppiaalle 120 euroa. Takki ei mennyt kaupaksi, joten jälleenmyyjä alensi hintaa 10 %:a. Mikä takin myyntihinnan pitää olla, jotta 10 %:n alennuksen jälkeen jälleenmyyjä tekee 20 %:a voittoa? <b>(6 p.)</b>
+          </p></li>
+          <li><p>
+          Jälleenmyyjä maksoi juhlakengistä tukkukauppiaalle 140 euroa ja asetti kenkien hinnaksi 199 euroa.
+          Kengät eivät kuitenkaan menneet kaupaksi tähän hintaan, joten jälleenmyyjä päätti alentaa hintaa.
+          Mikä on suurin mahdollinen alennusprosentti, jos hän haluaa tehdä vähintään 20 %:a voittoa ja alennusprosentin pitää olla kokonaisluku? <b>(6 p.)</b>
+          </p></li></ol>
+    
+
+    
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Jotta myynnillä saa <e:formula>20</e:formula> prosenttia voittoa, tulee myyntihinnan olla <e:formula>1{,}2\\\\cdot 120=144</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Jotta myyjä voi antaa <e:formula>10</e:formula> prosenttia alennusta myyntihinnasta <e:formula>x,</e:formula> tulee myyntihinnan toteuttaa yhtälö <e:formula>0{,}9x= 144,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>eli myyntihinnan on oltava <e:formula>160</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Jotta myyjä saa voittoa <e:formula>20</e:formula> prosenttia, tulee myyntihinnan olla <e:formula>1{,}2\\\\cdot 140=168</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>Alennusprosentin <e:formula>x</e:formula> on toteutettava ehto <e:formula>\\\\left(1-\\\\frac{x}{100}\\\\right)199\\\\geq 168,</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>eli <e:formula>x\\\\leq 15{,}577889\\\\dots </e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Suurin mahdollinen alennusprosentti on siis <e:formula>15.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>TAI
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Jotta myyjä saa voittoa <e:formula>20</e:formula> prosenttia, tulee myyntihinnan olla <e:formula>1{,}2\\\\cdot 140=168</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Suurin mahdollinen alennusprosentti on <e:formula>15</e:formula> koska
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>kun alennusprosentti on 15, on hinta <e:formula>0{,}85\\\\cdot 199 = 169{,}15 &gt; 168</e:formula> ja
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>kun alennusprosentti on 16, on hinta <e:formula>0{,}84\\\\cdot 199 = 167{,}16 &lt; 168.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 7 -->
+    <e:question>
+      <e:question-title>
+        Taloudellisempi auto
+        
+      </e:question-title>
+
+      <e:external-material>
+      <e:attachment name=\\"7A\\">
+        <e:attachment-title>
+            Taulukko: Autojen tiedot
+            
+        </e:attachment-title>
+
+        
+				<p>
+				Sähköauto:
+				</p><ul>
+				<li><p>
+				Hinta 25.000 euroa
+				</p></li>
+				<li><p>
+				Sähkö 30 euroa kuukaudessa
+				</p></li>
+				<li><p>
+				Muut kulut 800 euroa vuodessa
+				</p></li>
+				<li><p>
+				Auton arvo alenee 8 % vuodessa
+				</p></li></ul>
+				<p/>
+				<p>Polttomoottoriauto:
+				</p><ul>
+				<li><p>
+				Hinta 12.000 euroa
+				</p></li>
+				<li><p>
+				Polttoaine 150 euroa kuukaudessa
+				</p></li>
+				<li><p>
+				Muut kulut 1200 euroa vuodessa
+				</p></li>
+				<li><p>
+				Auton arvo alenee 12 % vuodessa
+				</p></li></ul>
+				<p/>
+				<p>Muita kuluja ovat esimerkiksi vakuutus, vero, katsastus ja huolto.
+				</p>
+
+        
+
+        <e:reference>
+          <e:author>
+            YTL
+            
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:external-material>
+
+    <e:question-instruction>
+		  
+			  <p>Matti aikoo ostaa joko sähkö- tai polttomoottoriauton. Hän vertailee vaihtoehtoja taulukon <e:attachment-link type=\\"short\\" ref=\\"7A\\"/> arvioiden perusteella.</p>
+			  <p>Matti tarvitsee auton koko hinnan suuruisen tasalyhennyslainan. Lainan vuosikorko on 2,4 % (jolloin kuukausikorko on 0,2 %) ja lyhennys 200 euroa kuukaudessa.</p>
+			  <p>Laske autojen arvot ja jäljellä olevien lainojen määrät viiden vuoden kuluttua. Laske myös autojen käyttökustannukset ja lainojen korkokustannukset viiden vuoden aikana. Kumpi vaihtoehto olisi ollut viiden vuoden käytön jälkeen taloudellisempi valinta? Tehtävässä ei tarvitse ottaa huomioon rahan arvon muutosta, eli inflaatiota tai deflaatiota.</p>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Sähköauton kulut:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Sähkö: <e:formula>30\\\\cdot 12\\\\cdot 5=1\\\\,800.</e:formula> (Kaikki hinnat euroissa.)
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Muut kulut: <e:formula>800\\\\cdot 5=4\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Auton arvo <e:formula>5</e:formula> vuoden jälkeen: <e:formula>(1-0{,}08)^5\\\\cdot 25\\\\,000
+                \\\\approx 16\\\\,500.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Korko lasketaan aina jäljellä olevan lainan määrästä, joka tasalyhennyslainassa vähenee tasaisesti. Siispä <e:formula>n</e:formula> kuukauden jälkeen lainaa on jäljellä <e:formula>25\\\\,000-n\\\\cdot 200.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Korkokertymä viideltä vuodelta on siis <e:formula>\\\\sum_{n=0}^{5\\\\cdot 12-1}0{,}002\\\\cdot (25\\\\,000-n\\\\cdot 200)=2\\\\,292.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Polttomoottoriauto:
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Bensiini: <e:formula>150\\\\cdot 12\\\\cdot 5=9\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Muut kulut: <e:formula>1\\\\,200\\\\cdot 5=6\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Auton arvo <e:formula>5</e:formula> vuoden jälkeen: <e:formula>(1-0{,}12)^5\\\\cdot 12\\\\,000\\\\approx
+                6\\\\,300.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Korko lasketaan aina jäljellä olevan lainan määrästä, joka tasalyhennyslainassa vähenee tasaisesti. Siispä <e:formula>n</e:formula> kuukauden jälkeen lainaa on jäljellä <e:formula>12\\\\,000-n\\\\cdot 200.</e:formula> Laina saadaan siis maksettua tasan viidessä vuodessa kokonaisuudessaan.
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Korkokertymä viideltä vuodelta on siis <e:formula>\\\\sum_{n=0}^{5\\\\cdot 12-1}0,002\\\\cdot (12\\\\,000-n\\\\cdot 200)\\\\approx 732.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Sähköauton kokonaiskustannukset ovat olleet noin <e:formula>1\\\\,800+4\\\\,000+2\\\\,292\\\\approx 8\\\\,100,</e:formula> ja auton jäljellä oleva arvo (eli esim. myyntihinta) on noin <e:formula>16\\\\,500.</e:formula> Polttomoottoriauton kustannukset ovat <e:formula>9\\\\,000+6\\\\,000+732\\\\approx 15\\\\,700,</e:formula> ja jäljellä oleva arvo <e:formula>6\\\\,300.</e:formula> Siispä sähköauto on ollut taloudellisempi valinta.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 8 -->
+    <e:question>
+      <e:question-title>
+        Suurin arvo
+        
+      </e:question-title>
+
+      <e:question-instruction>
+        
+          <p>Lukuun 10 lisätään erään positiivisen luvun neliön ja kuution erotus. Määritä derivaatan avulla suurin mahdollinen arvo, joka näin voidaan saada.</p>
+        
+
+        
+      </e:question-instruction>
+      <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+        <e:answer-grading-instruction>
+        
+          <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+            <tbody>
+              <tr>
+                <td>Maksimoidaan funktio <e:formula>f(x)=10+x^2-x^3,</e:formula> kun <e:formula>x</e:formula> on positiivinen.
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Derivoidaan lauseke: <e:formula>f'(x)=2x-3x^2.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Derivaatta on nolla, jos <e:formula>x(2-3x)=0,</e:formula> eli <e:formula>x=0</e:formula> tai <e:formula>x=\\\\frac{2}{3}.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Lasketaan <e:formula>f'(1/3)=1/3</e:formula> ja <e:formula>f'(1)=-1,</e:formula> joten kuvaajan muoto positiivisilla luvuilla on <e:formula>+|-.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>Maksimi saavutetaan siis, kun <e:formula>x=\\\\frac{2}{3},</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>jolloin suurin arvo on <e:formula>f(\\\\frac 23)=10\\\\frac4{27}.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        
+      </e:answer-grading-instruction>
+    </e:text-answer>
+    </e:question>
+
+  <!-- 9 -->
+      <e:question>
+        <e:question-title>
+          Monivalintakoe
+          
+        </e:question-title>
+
+        <e:question-instruction>
+          
+            <p>
+              Kokeessa on 10 monivalintatehtävää. Jokaisessa tehtävässä on neljä vaihtoehtoa, joista vain yksi on oikein. Oikeasta vastauksesta saa 3 pistettä ja väärästä saa –1 pistettä.
+              Lopuksi pisteet lasketaan yhteen, ja jos summa on negatiivinen, se muutetaan pistemääräksi nolla. </p>
+              <p/><ol>
+              <li><p>
+              Eräs opiskelija ei osaa vastata yhteenkään tehtävään tietojensa pohjalta, ja hän vastaa kaikkiin tehtäviin arvaamalla. Millä todennäköisyydellä hän saa kokeesta nolla pistettä? <b>(6 p.)</b>
+              </p></li>
+              <li><p>
+              Toinen opiskelija pystyy sulkemaan jokaisesta tehtävästä pois yhden väärän vastausvaihtoehdon,
+              ja hän vastaa kaikkiin tehtäviin arvaamalla jäljellä olevista vaihtoehdoista.
+              Millä todennäköisyydellä hän saa kokeesta täydet pisteet? <b>(6 p.)</b>
+              </p></li></ol>
+          
+
+        
+        </e:question-instruction>
+
+        <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+          <e:answer-grading-instruction>
+          
+            <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+              <tbody>
+                <tr>
+                  <td>Opiskelija saa <e:formula>0</e:formula> pistettä, jos hänellä on oikein korkeintaan <e:formula>2</e:formula> tehtävää.
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+                </tr>
+                <tr>
+                  <td>(Binomitodennäköisyyden kaavan avulla) saadaan todennäköisyydeksi<br/> <e:formula>\\\\left(\\\\frac{3}{4}\\\\right)^{10}+\\\\binom{10}{1}\\\\left(\\\\frac{3}{4}\\\\right)^{9}\\\\left(\\\\frac{1}{4}\\\\right)^{1}+\\\\binom{10}{2}\\\\left(\\\\frac{3}{4}\\\\right)^{8}\\\\left(\\\\frac{1}{4}\\\\right)^{2} = 0{,}52559\\\\ldots \\\\approx 0{,}53.</e:formula>
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+                </tr>
+              </tbody>
+            </table><hr class=\\"e-mrg-b-2\\"/>
+            <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+              <tbody>
+                <tr>
+                  <td>Todennäköisyys sille, että opiskelija saa tehtävän oikein on nyt <e:formula>\\\\frac{1}{3}.</e:formula>
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">(2 p.)</span></td>
+                </tr>
+                <tr>
+                  <td>Todennäköisyys saada kaikki oikein on siis <e:formula>\\\\left(\\\\frac{1}{3}\\\\right)^{10}
+                    =\\\\frac{1}{59\\\\,049}\\\\ (\\\\approx 0{,}000017).</e:formula>
+                  </td>
+                  <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+                </tr>
+              </tbody>
+            </table>
+          
+
+          
+        </e:answer-grading-instruction>
+      </e:text-answer>
+      </e:question>
+</e:section>
+
+
+<e:section max-answers=\\"3\\">
+  <e:section-title>
+
+    
+        B2-osa
+      
+      
+  </e:section-title>
+
+ <!-- 10 -->
+    <e:question>
+      <e:question-title>
+        Lukujono
+        
+      </e:question-title>
+
+      <e:question-instruction>
+        
+          <p>Lukujono alkaa luvuilla 4 ja 9. Kuinka moni lukujonon jäsen on pienempi kuin 1000, jos lukujono on</p>
+          <ol>
+            <li><p>
+            aritmeettinen <b>(6 p.)</b>
+            </p></li>
+            <li><p>
+            geometrinen? <b>(6 p.)</b>
+            </p></li>
+          </ol>
+      
+
+      
+      </e:question-instruction>
+
+      <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+        <e:answer-grading-instruction>
+        
+          <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+            <tbody>
+              <tr>
+                <td>Kahden peräkkäisen lukujonon jäsenen erotus on <e:formula>9-4=5.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>Yleinen lauseke on siis <e:formula>a_n=4+5(n-1),</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+              </tr>
+              <tr>
+                <td>joka on pienempi kuin <e:formula>1\\\\,000,</e:formula> kun <e:formula>4+5(n-1)&lt;1\\\\,000,</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>eli <e:formula>n&lt;\\\\frac{1\\\\,000-4}{5}+1=200{,}2,</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>joten <e:formula>200</e:formula> jäsentä on pienempiä kuin <e:formula>1\\\\,000.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+            </tbody>
+          </table><hr class=\\"e-mrg-b-2\\"/>
+          <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+            <tbody>
+              <tr>
+                <td>Kahden peräkkäisen lukujonon jäsenen suhde on <e:formula>\\\\frac{9}{4}.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\">1 p.</td>
+              </tr>
+              <tr>
+                <td>Yleinen lauseke on siis <e:formula>a_n=4\\\\cdot \\\\left(\\\\frac{9}{4}\\\\right)^{n-1},</e:formula>
+                </td>
+                <td class=\\"e-text-right\\">2 p.</td>
+              </tr>
+              <tr>
+                <td>joka on pienempi kuin <e:formula>1\\\\,000,</e:formula> kun <e:formula>4\\\\cdot
+                  \\\\left(\\\\frac{9}{4}\\\\right)^{n-1}&lt;1\\\\,000.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>eli <e:formula>n-1&lt;\\\\frac{\\\\ln(250)}{\\\\ln (9/4)}\\\\approx 6{,}8.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\">1 p.</td>
+              </tr>
+              <tr>
+                <td>Siispä <e:formula>7</e:formula> jäsentä on pienempiä kuin <e:formula>1\\\\,000.</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>TAI
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+              </tr>
+              <tr>
+                <td>Jonon jäsenet kokonaisluvuiksi pyöristettyinä ovat <e:formula>4,</e:formula> <e:formula>9,</e:formula> <e:formula>20,</e:formula> <e:formula>41,</e:formula> <e:formula>103,</e:formula> <e:formula>204,</e:formula> <e:formula>519,</e:formula> <e:formula>1168,</e:formula> <e:formula>\\\\ldots</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+              </tr>
+              <tr>
+                <td>Siispä <e:formula>7</e:formula> jäsentä on pienempiä kuin <e:formula>1\\\\,000,</e:formula>
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+              <tr>
+                <td>koska jono on kasvava.
+                </td>
+                <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        
+      </e:answer-grading-instruction>
+    </e:text-answer>
+    </e:question>
+
+  <!-- 11 -->
+  <e:question>
+    <e:question-title>
+      Virustartunnat
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <p>Syksyllä 2020 koronaviruspandemian toisen aallon alkuvaiheessa Suomessa raportoitiin edeltävien kahden viikon (14 vuorokauden) aikana havaittujien tartuntatapausten lukumääriä. Tämä lukumäärä oli 7. syyskuuta 389 ja kaksi viikkoa myöhemmin 21. syyskuuta 719 koronavirustartuntaa. (Lähde: www.hs.fi. Luettu 21.9.2020.) Oletetaan, että havaittujen tartuntojen määrä noudattaa eksponentiaalista mallia.</p>
+        <ol>
+          <li><p>
+          Kuinka monta koronavirustartuntaa havaittiin mallin mukaan päivämäärää 8.1.2021 edeltävällä kahden viikon jaksolla? Tammikuun 8. päivä on 140 vuorokautta päivämäärän 21.9.2020 jälkeen. <b>(4 p.)</b>
+          </p></li>
+          <li><p>
+          Merkitään muuttujalla <e:formula assistive-title=\\"t\\">t</e:formula> aikaa vuorokausina niin, että päivämäärä 7.9.2020 vastaa arvoa <e:formula assistive-title=\\"t =0.\\">t=0.</e:formula>
+          Eksponentiaalisen mallin mukaan edeltävän kahden viikon aikana havaittujen tapausten lukumäärälle <e:formula assistive-title=\\"k\\">k</e:formula> pätee <e:formula assistive-title=\\"k =a *2^(b t).\\">k=a \\\\cdot 2^{bt}.</e:formula> Määritä vakiot <e:formula assistive-title=\\"a\\">a</e:formula> ja <e:formula assistive-title=\\"b.\\">b.</e:formula> <b>(4 p.)</b>
+          </p></li>
+          <li><p>
+          Pohdi syitä sille, miksi tässä tehtävässä käytetty malli ei ole hyvä ennuste tartuntamäärien kehitykselle pitkällä aikavälillä. <b>(4 p.)</b>
+          </p></li></ol>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Kyseessä on eksponentiaalinen malli, jonka kerroin saadaan kahden peräkkäisen jakson osamääränä: <e:formula>\\\\frac{719}{389}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>140 päivää vastaa kymmentä kahden viikon jaksoa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+            <tr>
+              <td>Tartuntoja on siis <e:formula>\\\\left(\\\\frac{719}{389}\\\\right)^{10}\\\\cdot 389= 181\\\\,026,\\\\ldots\\\\approx 181\\\\,000.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Voi käyttää myös päiväkohtaista kantalukua <e:formula>\\\\left(\\\\frac{719}{389}\\\\right)^{1/14}</e:formula> ja eksponenttia 140.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Koska syyskuun 7. päivä vastaa arvoa <e:formula>t=0,</e:formula> saadaan yhtälö <e:formula>389=a\\\\cdot 2^{b\\\\cdot 0}=a.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">1 p.</td>
+            </tr>
+            <tr>
+              <td>Tehdään toinen yhtälö syyskuun 21. päivän perusteella: <e:formula>719=389\\\\cdot 2^{b\\\\cdot 14}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\">2 p.</td>
+            </tr>
+            <tr>
+              <td>Yhtälön ratkaisu: <e:formula>b\\\\approx 0{,}063.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">1 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Eksponentiaalinen malli kasvaa rajatta, mutta Suomessa on alle 6 miljoonaa asukasta. Rajoitustoimet (joita väistämättä tällaisessa tilanteessa otetaan käyttöön, kuten otettiinkin) ja rokotukset hidastavat epidemian etenemistä. Tartunta myös antaa melko monelle sairastuneelle joksikin aikaa immuniteetin, jolloin tartuntaa ei voi saada nopeasti uudestaan. Siksi potentiaalisesti tartunnan saavien joukko pienenee.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">4 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+  <!-- 12 -->
+  <e:question>
+    <e:question-title>
+      Myyntitulojen maksimointi
+      
+    </e:question-title>
+
+    <e:question-instruction>
+      
+        <p>Tuotteen nykyinen hinta on 60 euroa. Kauppias arvioi, että tällä hinnalla tuotetta myydään 1000 kappaletta. Myyntituloja kasvattaakseen kauppias päättää muuttaa tuotteen hintaa. Vastaavan tuotteen myynnistä kertyneen kokemuksen perusteella kauppias arvioi, että jokainen euro, jolla tuotteen hinta nousee, vähentää myyntiä kymmenellä kappaleella. Vastaavasti jokainen euro, jolla tuotteen hintaa laskee, kasvattaa myyntiä kymmenellä kappaleella.
+          </p><ol>
+          <li><p>
+          Kuinka suuret myyntitulot ovat, jos tuotteen hinta on 55 euroa? <b>(2 p.)</b>
+          </p></li>
+          <li><p>
+          Muodosta myyntituloja mallintava funktio <e:formula assistive-title=\\"f(x),\\">f(x),</e:formula> kun <e:formula assistive-title=\\"x\\">x</e:formula> on tuotteen
+          hinnan muutos, ja laske sen derivaatta <e:formula assistive-title=\\"f’(x).\\">f'(x).</e:formula> <b>(5 p.)</b>
+          </p></li>
+          <li><p>
+          Määritä se tuotteen hinta, jolla saadaan suurimmat mahdolliset myyntitulot. <b>(5 p.)</b>
+          </p></li></ol>
+      
+
+      
+    </e:question-instruction>
+
+    <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+      <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td><e:formula>(1\\\\,000+(60-55)\\\\cdot 10)\\\\cdot 55 =57\\\\,750</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td><e:formula>f(x)=(60+x)(1\\\\,000-10x)=-10x^2+400x+60\\\\,000</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">3 p.</span></td>
+            </tr>
+            <tr>
+              <td><e:formula>f'(x)= -20x+400.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table><hr class=\\"e-mrg-b-2\\"/>
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Derivaatta on nolla, kun <e:formula>x=20.</e:formula> Koska <e:formula>f'(0)=400</e:formula> ja <e:formula>f'(40)=-400,</e:formula> on kuvaajan muoto <e:formula>+|-.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">3 p.</span></td>
+            </tr>
+            <tr>
+              <td>Myyntitulo on siis suurin, kun tuotteen hinta on <e:formula>60+20=80</e:formula> euroa.
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">2 p.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+<!-- 13 -->
+  <e:question>
+    <e:question-title>
+      Kuutioista monitahokkaita
+      
+    </e:question-title>
+
+    
+
+    <e:question-instruction>
+      
+
+      
+        <p>Puisen kuution särmän pituus on 2,0 cm. Piirretään kuution tahkoihin janat, jotka yhdistävät vierekkäisten särmien keskipisteet. Poistetaan kuution nurkista pyramidit, joiden pohjasärminä ovat piirretyt janat. Määritä näin saadun monitahokkaan tilavuus.</p>
+      
+
+      
+    </e:question-instruction>
+
+  <e:text-answer type=\\"rich-text\\" max-score=\\"12\\">
+    <e:answer-grading-instruction>
+      
+        <table class=\\"e-table e-width-full e-table--borderless e-table--zebra\\">
+          <tbody>
+            <tr>
+              <td>Kuution alkuperäinen tilavuus on <e:formula>8.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                
+                2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Kuutiosta poistetaan <e:formula>8</e:formula> pyramidia (kärkien lukumäärä).
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+            <tr>
+              <td>Pyramidin pohja on tasasivuinen kolmio, joka sivun pituus on <e:formula>\\\\sqrt{2}</e:formula> ja pinta-ala <e:formula>\\\\frac{1}{2}\\\\cdot (\\\\sqrt{2})^2\\\\cdot \\\\frac{\\\\sqrt{3}}{2}=\\\\frac{\\\\sqrt{3}}{2}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                
+                2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Pyramidin sivut ovat suorakulmaisia kolmioita, joiden sivut ovat <e:formula>1,</e:formula> <e:formula>1,</e:formula> <e:formula>\\\\sqrt{2}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                
+                2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Pyramidin huippu on tasasivuisen kolmion keskipisteen yläpuolella. Tarkastellaan suorakulmaista kolmiota, jonka toinen kateetti on pyramidin korkeus, hypotenuusa sivukolmion korkeus <e:formula>\\\\frac{1}{\\\\sqrt{2}}</e:formula> ja toinen kateetin pituus on keskipisteen etäisyys tasasivuisen kolmion sivusta <e:formula>\\\\frac{1}{\\\\sqrt{6}}.</e:formula> Pythagoraan lauseella kateetin pituus on siis <e:formula>\\\\sqrt{\\\\big(\\\\frac{1}{\\\\sqrt{2}}\\\\big)^2-\\\\big(\\\\frac{1}{\\\\sqrt{6}}\\\\big)^2}=\\\\sqrt{\\\\frac12-\\\\frac{1}{6}}=\\\\frac{1}{\\\\sqrt{3}}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                
+                2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Yhden pyramidin tilavuus on siis <e:formula>\\\\frac{1}{3}\\\\cdot \\\\frac{1}{\\\\sqrt{3}}\\\\cdot \\\\frac{\\\\sqrt{3}}{2}=\\\\frac{1}{6}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                
+                2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Koko kappaleen tilavuus on siis <span class=\\"e-nowrap\\"><e:formula>8-8\\\\cdot \\\\frac{1}{6}=6\\\\frac{2}{3}\\\\approx 6{,}7</e:formula> (cm<e:formula>^3</e:formula>).</span>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\">
+                
+                2 p.</span></td>
+            </tr>
+            <tr>
+              <td>Pyramidin tilavuuden voi laskea myös kartiona, jonka pohjan pinta-ala on <e:formula>\\\\frac12 \\\\cdot 1\\\\cdot 1</e:formula> ja korkeus on <e:formula>1.</e:formula> Tällöin tilavuus on <e:formula>\\\\frac13\\\\cdot \\\\frac12 = \\\\frac1{6}.</e:formula>
+              </td>
+              <td class=\\"e-text-right\\"><span class=\\"e-nowrap\\"/></td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      
+    </e:answer-grading-instruction>
+  </e:text-answer>
+  </e:question>
+
+</e:section>
+</e:exam>
+"
+`;
