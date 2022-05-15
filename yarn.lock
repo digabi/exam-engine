@@ -11053,9 +11053,9 @@ redent@^3.0.0:
     strip-indent "^3.0.0"
 
 redux-saga-test-plan@^4.0.0-rc.3:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/redux-saga-test-plan/-/redux-saga-test-plan-4.0.4.tgz#589e9ab584ee07b20818f4cb2389887ac9675f97"
-  integrity sha512-nN4QhLws9is7IVjkoeixFRUTfVGFKroJhaxlvE5vTzArkEm3A88h6fwNwyHQCQkvl5u5EKUuvLsdQOjdWw0Pzg==
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/redux-saga-test-plan/-/redux-saga-test-plan-4.0.5.tgz#bf98a7552176a8911f998ab3d80c6f79442fc6ae"
+  integrity sha512-phNx9h+50JXRzD5siADURrwT+ZJpLs1x5r3CRWa6HDwSZErIhH2WW/EnNAXeuM9TxYqY+ikjTWTYR6pDUyDC2g==
   dependencies:
     core-js "^2.4.1"
     fsm-iterator "^1.1.0"
