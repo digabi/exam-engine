@@ -1094,6 +1094,13 @@
   dependencies:
     jquery "^3.3.1"
 
+"@digabi/mathquill@^0.10.6":
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/@digabi/mathquill/-/mathquill-0.10.6.tgz#8fc632ec2d14b5e5c7fdd21f97e032a264d889fb"
+  integrity sha512-dsGLZxWLgJ0xj4lfUrl8Vs31+Qu79TrOqxkZnC3nZcZzKvTFVCZ+peRkxTfvpjJp5U1JDEl+7RdIsQKLQSFwOw==
+  dependencies:
+    jquery "^3.3.1"
+
 "@digabi/noto-sans@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@digabi/noto-sans/-/noto-sans-2.1.0.tgz#873c80428caca4deea1624c6d912195a09426969"
@@ -11364,6 +11371,16 @@ rich-text-editor@^7.0.1:
   integrity sha512-O3Q/CNaNPFFiC5LwS064XI9P+n1hbcckE/VdDact3ywMljWOZh+pFaKYVL/tNZMQoGl989Kip439zL3FRuzhoA==
   dependencies:
     "@digabi/mathquill" "^0.10.5"
+    "@types/express" "*"
+    jquery "^3.3.1"
+    mathjax-node "^2.1.1"
+
+rich-text-editor@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-7.0.2.tgz#f12b571c99e03d0e1a51c58ab9f5323242fb13e8"
+  integrity sha512-SqPufqm8xzxiR838YhviFO4qXKdZnQ/Af9OAdV3mLYyzSbXNxUlmMWKfoZ9A1RAWbvzTUIZp8XI/WDnyzs05mg==
+  dependencies:
+    "@digabi/mathquill" "^0.10.6"
     "@types/express" "*"
     jquery "^3.3.1"
     mathjax-node "^2.1.1"
