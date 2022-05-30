@@ -198,10 +198,10 @@ describe('generateExam()', () => {
   })
 
   it('creates valid exams', () => {
-    const maxScore = fc.integer(1, 10)
-    const score = fc.integer(-10, 10)
-    const positiveScore = fc.integer(1, 10)
-    const maxAnswers = fc.integer(1, 10)
+    const maxScore = fc.integer({ min: 1, max: 10 })
+    const score = fc.integer({ min: -10, max: 10 })
+    const positiveScore = fc.integer({ min: 1, max: 10 })
+    const maxAnswers = fc.integer({ min: 1, max: 10 })
     const type = fc.constantFrom('rich-text' as const, 'single-line' as const)
 
     const hint = fc.string()
@@ -213,8 +213,7 @@ describe('generateExam()', () => {
     })
     const acceptedAnswers: fc.Arbitrary<GenerateAcceptedAnswer[]> = fc.array(
       fc.record({ score: positiveScore, text: fc.string() }),
-      1,
-      3
+      { minLength: 1, maxLength: 3 }
     )
     const scoredTextAnswer: fc.Arbitrary<GenerateScoredTextAnswerOptions> = fc.oneof(
       fc.record({
@@ -235,8 +234,7 @@ describe('generateExam()', () => {
         score,
         text: fc.string(),
       }),
-      1,
-      10
+      { minLength: 1, maxLength: 10 }
     )
     const choiceAnswer: fc.Arbitrary<GenerateChoiceAnswerOptions> = fc.record({
       name: fc.constant('choice-answer' as const),
@@ -254,7 +252,7 @@ describe('generateExam()', () => {
     )
     const subQuestion: fc.Arbitrary<GenerateSubQuestionOptions> = fc.record({
       maxAnswers: optional(maxAnswers),
-      answers: fc.array(answer, 1, 10),
+      answers: fc.array(answer, { minLength: 1, maxLength: 10 }),
     })
     // Generate Subquestions with 75% probability.
     const question: fc.Memo<GenerateQuestionOptions> = fc.memo<GenerateQuestionOptions>((n) =>
@@ -265,21 +263,23 @@ describe('generateExam()', () => {
         ? subQuestion
         : fc.record({
             maxAnswers: optional(maxAnswers),
-            questions: fc.array(question(n - 1), 1, 5),
+            questions: fc.array(question(n - 1), { minLength: 1, maxLength: 5 }),
           })
     })
-    const questions = fc.array(question(2), 1, 5)
+    const questions = fc.array(question(2), { minLength: 1, maxLength: 5 })
     const section: fc.Arbitrary<GenerateSectionOptions> = fc.record({
       maxAnswers: optional(maxAnswers),
       casForbidden: optional(fc.boolean()),
       questions,
     })
-    const sections = fc.array(section, 1, 3)
+    const sections = fc.array(section, { minLength: 1, maxLength: 3 })
     const exam: fc.Arbitrary<GenerateExamOptions> = fc.record({
       date: optional(fc.date().map((d) => formatISO(d, { representation: 'date' }))),
       examCode: optional(fc.constantFrom('EA', 'M', 'N')),
       maxAnswers: optional(maxAnswers),
-      languages: optional(fc.set(fc.constantFrom('fi-FI' as const, 'sv-FI' as const), 1, 2)),
+      languages: optional(
+        fc.uniqueArray(fc.constantFrom('fi-FI' as const, 'sv-FI' as const), { minLength: 1, maxLength: 2 })
+      ),
       title: optional(fc.string()),
       sections,
     })
