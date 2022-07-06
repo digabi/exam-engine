@@ -1,10 +1,10 @@
 import React from 'react'
 
-const AttachmentLinkAnchor: React.FunctionComponent<{ href: string; type: 'link' | 'plain' }> = ({
-  children,
-  href,
-  type,
-}) =>
+const AttachmentLinkAnchor: React.FunctionComponent<{
+  href: string
+  type: 'link' | 'plain'
+  children: React.ReactNode
+}> = ({ children, href, type }) =>
   type === 'link' ? (
     <a href={href} className="attachment-link e-nowrap" target="attachments">
       {children}
