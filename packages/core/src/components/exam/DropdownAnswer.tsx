@@ -14,6 +14,7 @@ import { ChoiceAnswer as ChoiceAnswerT } from '../../types/ExamAnswer'
 import { QuestionContext } from '../context/QuestionContext'
 import { Score } from '../shared/Score'
 import { saveAnswer } from '../../store/answers/actions'
+import { AnswersState } from '../../store/answers/reducer'
 
 const menuBorderWidthPx = 2
 const roundingErrorCompensationPx = 1
@@ -26,7 +27,9 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   const questionId = getNumericAttribute(element, 'question-id')!
   const maxScore = getNumericAttribute(element, 'max-score')!
 
-  const answer = useSelector((state) => state.answers.answersById[questionId] as ChoiceAnswerT | undefined)
+  const answer = useSelector(
+    (state: { answers: AnswersState }) => state.answers.answersById[questionId] as ChoiceAnswerT | undefined
+  )
   const dispatch = useDispatch()
   const displayNumber = element.getAttribute('display-number')!
   const currentlySelectedItem =

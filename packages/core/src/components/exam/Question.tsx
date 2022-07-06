@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext } from '../context/SectionContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
+import { CasState } from '../../store/cas/reducer'
 
 function Question({ element, renderChildNodes }: ExamComponentProps) {
-  const casStatus = useSelector((state) => state.cas.casStatus)
+  const casStatus = useSelector((state: { cas: CasState }) => state.cas.casStatus)
   const { casForbidden } = useContext(SectionContext)
   const { displayNumber, level } = useContext(QuestionContext)
 
