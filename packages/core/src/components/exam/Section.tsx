@@ -22,7 +22,7 @@ function LastSectionNote() {
 }
 
 function Section({ element, renderChildNodes }: ExamComponentProps) {
-  const casState = useSelector((state) => state.cas, shallowEqual)
+  const casState = useSelector((state: { cas: CasState }) => state.cas, shallowEqual)
   const { casForbidden, displayNumber } = useContext(SectionContext)
   const { sections } = useContext(CommonExamContext)
   const lastSection = element === _.last(sections)

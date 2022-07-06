@@ -6,6 +6,7 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 import { ChoiceAnswer as ChoiceAnswerT, QuestionId } from '../../types/ExamAnswer'
 import { QuestionContext } from '../context/QuestionContext'
 import { saveAnswer } from '../../store/answers/actions'
+import { AnswersState } from '../../store/answers/reducer'
 
 interface ChoiceAnswerOptionProps extends ExamComponentProps {
   questionId: QuestionId
@@ -79,7 +80,9 @@ const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, re
   const className = element.getAttribute('class')
 
   const { questionLabelIds } = useContext(QuestionContext)
-  const answer = useSelector((state) => state.answers.answersById[questionId] as ChoiceAnswerT | undefined)
+  const answer = useSelector(
+    (state: { answers: AnswersState }) => state.answers.answersById[questionId] as ChoiceAnswerT | undefined
+  )
   const dispatch = useDispatch()
   const onSelect = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     (event) => {

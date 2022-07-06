@@ -14,6 +14,7 @@ import { AnswerTooLong } from '../../../validateAnswers'
 import AnswerLengthInfo from '../../shared/AnswerLengthInfo'
 import { CommonExamContext } from '../../context/CommonExamContext'
 import { answerBlurred, answerFocused, saveAnswer, selectAnswerVersion } from '../../../store/answers/actions'
+import { AnswersState } from '../../../store/answers/reducer'
 
 const borderWidthPx = 2
 const borderHeightPx = 1
@@ -31,15 +32,17 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
   const { examServerApi } = useContext(ExamContext)
 
   const [screenshotError, setScreenshotError] = useState<ScreenshotError>()
-  const { answer, supportsAnswerHistory, showAnswerHistory, validationError } = useSelector((state) => {
-    const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
-    const supportsAnswerHistory = state.answers.supportsAnswerHistory
-    const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
-    const validationError = state.answers.validationErrors.find(
-      (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
-    )
-    return { answer, supportsAnswerHistory, showAnswerHistory, validationError }
-  })
+  const { answer, supportsAnswerHistory, showAnswerHistory, validationError } = useSelector(
+    (state: { answers: AnswersState }) => {
+      const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
+      const supportsAnswerHistory = state.answers.supportsAnswerHistory
+      const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
+      const validationError = state.answers.validationErrors.find(
+        (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
+      )
+      return { answer, supportsAnswerHistory, showAnswerHistory, validationError }
+    }
+  )
 
   const dispatch = useDispatch()
   const ref = useRef<HTMLInputElement & HTMLTextAreaElement>(null)

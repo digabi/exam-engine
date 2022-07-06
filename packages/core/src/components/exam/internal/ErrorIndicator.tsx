@@ -7,6 +7,7 @@ import { useExamTranslation } from '../../../i18n'
 import { AnswerTooLong, ExtraAnswer } from '../../../validateAnswers'
 import AnsweringInstructions from '../../AnsweringInstructions'
 import { CommonExamContext } from '../../context/CommonExamContext'
+import { AnswersState } from '../../../store/answers/reducer'
 
 const ExtraAnswerError: React.FunctionComponent<ExtraAnswer> = (props) => {
   const { t } = useExamTranslation()
@@ -31,7 +32,7 @@ const AnswerTooLongError: React.FunctionComponent<AnswerTooLong> = ({ displayNum
 }
 
 const ErrorIndicator: React.FunctionComponent = () => {
-  const validationErrors = useSelector((state) => state.answers.validationErrors)
+  const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors)
 
   return validationErrors.length > 0 ? (
     <div
