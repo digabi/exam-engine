@@ -11639,9 +11639,9 @@ rgba-regex@^1.0.0:
   integrity sha1-QzdOLiyglosO8VI0YLfXMP8i7rM=
 
 rich-text-editor@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-7.1.0.tgz#11c5e7445455502b44aa97daad1872bdc60653bd"
-  integrity sha512-r2P+81UG/R7QJh2URwFSUEOEcEyiTAtKFvAfM6o21g+bDJDfiJszluPp2LUqLXrgsVCAhpNs1GXE7G42geeQUg==
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-7.1.1.tgz#5d61b666b5cc90f5a129bc93a4a91355fb353353"
+  integrity sha512-3THiqCcxQMpQRXt9m1i/45tXzO5bSGhMkm9IqwzLoDJ1XTkl/Cna5Usmn+BEPw75KW9734tTN1fmqVBWgZ9Wvw==
   dependencies:
     "@digabi/mathquill" "^0.10.6"
     "@types/express" "*"
