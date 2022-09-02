@@ -89,7 +89,8 @@ async function copyAttachment(
     try {
       await fs.copyFile(cachedFilename, newTarget)
     } catch (err) {
-      await spawn(ffmpeg, ['-i', source, '-c:v', 'libx264', '-c:a', 'libmp3lame', '-q:a', '4', cachedFilename])
+      ffmpeg &&
+        (await spawn(ffmpeg, ['-i', source, '-c:v', 'libx264', '-c:a', 'libmp3lame', '-q:a', '4', cachedFilename]))
       await fs.copyFile(cachedFilename, newTarget)
     }
   }
