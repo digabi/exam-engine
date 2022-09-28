@@ -3,7 +3,7 @@ import { getDisplayName } from '../../getDisplayName'
 
 export const withContext =
   <T, P>(Context: React.Context<T>, parse: (p: P) => T) =>
-  (Component: React.ComponentType<P>): React.ComponentType<P> => {
+  (Component: React.ComponentType<any>): React.ComponentType<any> => {
     const Wrapped = (props: P) => {
       const ctx = parse(props)
       return (
