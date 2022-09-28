@@ -129,7 +129,7 @@ function translate<TKeys extends TFunctionKeys>(
 ): string | JSX.Element {
   const translation = instance.t(key, options)
 
-  const namespace = instance.options.defaultNS!
+  const namespace = instance.options.defaultNS!.toString()
   const examHasCustomTranslations = namespace !== 'translation' && namespace in examSpecificTranslations
   const hasCustomTranslationForKey = examHasCustomTranslations && hasTranslation(instance, namespace, key)
   return hasCustomTranslationForKey || !examHasCustomTranslations ? (
