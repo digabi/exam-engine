@@ -11851,6 +11851,16 @@ rgba-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/rgba-regex/-/rgba-regex-1.0.0.tgz#43374e2e2ca0968b0ef1523460b7d730ff22eeb3"
   integrity sha1-QzdOLiyglosO8VI0YLfXMP8i7rM=
 
+"rich-text-editor@7.1.4-2 ":
+  version "7.1.4-2"
+  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-7.1.4-2.tgz#29ac67de503636760c23b350d574435c6d512806"
+  integrity sha512-iGOnet08EiPJ7sWimJG5RLrDDjXlTQ6pylx5Yyas17DuwhAPSl4Lem0G75ZnVXZ+MqjylID0iArUW1fakdwh2Q==
+  dependencies:
+    "@digabi/mathquill" "^0.10.6"
+    "@types/express" "*"
+    jquery "^3.3.1"
+    mathjax-node "^2.1.1"
+
 rich-text-editor@^7.1.3:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-7.1.3.tgz#66c07bdeb53fb8a5ff481d6819a621d4f45b9f09"
