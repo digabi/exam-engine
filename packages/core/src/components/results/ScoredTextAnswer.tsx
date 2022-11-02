@@ -16,10 +16,11 @@ function ScoredTextAnswer({ element }: ExamComponentProps) {
   const answer = answersByQuestionId[questionId] as TextAnswer | undefined
   const value = answer && answer.value
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const autogradingScore = findScore(scores, questionId)?.autograding
+  const score = findScore(scores, questionId)
+  const autogradingScore = score?.autograding
 
   return (
-    <ResultsSingleLineAnswer answers={answers} displayNumber={displayNumber} value={value}>
+    <ResultsSingleLineAnswer answers={answers} displayNumber={displayNumber} value={value} score={score}>
       <ResultsExamQuestionAutoScore
         score={autogradingScore?.score}
         maxScore={maxScore}
