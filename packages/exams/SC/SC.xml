@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml"
-        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
-        exam-schema-version="0.3" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.4" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css">
   <e:exam-versions>
     <e:exam-version lang="fi-FI"/>
     <e:exam-version lang="sv-FI"/>
@@ -150,19 +148,19 @@
             <e:audio-transcription>
               <p>
                 [Pling]
-                <br />
+                <br/>
                 Alina: Was meinst du denn, Niklas? Du sagst ja gar nichts!
               </p>
               <p>
                 [Pling]
-                <br />
+                <br/>
                 Niklas: Hallo! Ich hatte mein Handy auf lautlos gestellt und gar nicht mitbekommen, worüber ihr
                 diskuƟert. Also, am kommenden Wochenende bekomme ich von meinen Verwandten aus den Niederlanden
                 Besuch.Könnte schon zum Picknick kommen. Würde dann aber meine Cousine mitbringen ... Wäre das ok?
               </p>
               <p>
                 [Pling]
-                <br />
+                <br/>
                 Paula: Ja klar, super! Ist immer schön, neue Leute zu treffen.
               </p>
             </e:audio-transcription>
@@ -472,12 +470,8 @@
       <e:external-material>
         <e:attachment>
           <e:attachment-title>Video: Katze</e:attachment-title>
-          <e:video src="5.webm">
-            <e:video-transcription>
-              Das Experiment läuft vierzehn Tage. Kamerafallen überwachen die Ausgänge der Häuser.
-              So können die Wissenschaftler die Katzen rund um die Uhr im Blick behalten.
-            </e:video-transcription>
-          </e:video>
+          <e:audio src="1.ogg"><e:audio-title>Hören Sie den Text zuerst als Ganzes</e:audio-title></e:audio>
+          <e:audio src="1.2.ogg"><e:audio-title>Hören Sie den Text zuerst als Ganzes</e:audio-title></e:audio>
           <e:reference>
             <e:publisher>ARD</e:publisher>
             <e:publication>1 LIVE</e:publication>
@@ -900,6 +894,7 @@
         <e:attachment>
           <e:attachment-title>Texte: Freitag der Dreizehnte</e:attachment-title>
           <p>
+
             <b>Text 1: Zeitungsartikel, Freitag den 13.3.2018</b>
             <br/>
             Am vergangenen Mittwoch war ein 57-jähriger Mann gegen 17.30 Uhr in einem Supermarkt einkaufen. Er hatte
@@ -1026,12 +1021,12 @@
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             <p>
-              Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0&#160;p.)
+              Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
             </p>
           </e:localization>
           <e:localization lang="sv-FI">
             <p>
-              Mormodern skulle ge pengar i alla fall (3/0 p.). Det stärker inte studiemotivationen / Det är inte motiverande / Det minskar motivationen / Det förstör motivationen (3/0&#160;p.)
+              Mormodern skulle ge pengar i alla fall (3/0 p.). Det stärker inte studiemotivationen / Det är inte motiverande / Det minskar motivationen / Det förstör motivationen (3/0 p.)
             </p>
           </e:localization>
         </e:question-grading-instruction>
@@ -1096,7 +1091,7 @@
           </e:localization>
         </e:question-title>
         <e:localization lang="fi-FI">
-          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3" />, sekä siitä, miten
+          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3"/>, sekä siitä, miten
           <e:text-answer max-score="3"/>
           ja miten retki suunnitellaan.
         </e:localization>
@@ -1111,7 +1106,7 @@
               turvallisuudesta [vuorella/vuorilla] (3/0 p.)
             </p>
             <p>
-              kiipeilyköysiä/-valjaita/köysiä/kiipeilyvaljaita/valjaita/kiipeilyvarusteita/kiipeilytarvikkeita käytetään (3/0&#160;p.)
+              kiipeilyköysiä/-valjaita/köysiä/kiipeilyvaljaita/valjaita/kiipeilyvarusteita/kiipeilytarvikkeita käytetään (3/0 p.)
             </p>
             <p>
               Alkuosassa ei hyväksytty: varmuudesta vuorilla.
@@ -1305,7 +1300,7 @@
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             <p>
-              Jos asiakas ei pääse perille saman päivän aikana / jos asiakkaan matka viivästyy yön yli (2/0&#160;p.)
+              Jos asiakas ei pääse perille saman päivän aikana / jos asiakkaan matka viivästyy yön yli (2/0 p.)
             </p>
             <p>
               Kuljetukset hotelliin (2/0 p.)
@@ -1313,7 +1308,7 @@
           </e:localization>
           <e:localization lang="sv-FI">
             <p>
-              Om kunden inte kommer fram samma dag / om kundens resa försenas över natten (2/0&#160;p.)
+              Om kunden inte kommer fram samma dag / om kundens resa försenas över natten (2/0 p.)
             </p>
             <p>
               Transport till hotellet (2/0 p.)
