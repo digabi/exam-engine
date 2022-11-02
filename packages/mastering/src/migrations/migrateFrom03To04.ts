@@ -28,6 +28,9 @@ export function migrateFrom03To04(doc: Document) {
     const times = invalidAudioElement.attr('times')!
     times.remove()
   }
+  for (const multiLine of doc.find<Element>("//e:text-answer[@type='multi-line']", ns)) {
+    multiLine.attr('type', 'rich-text')
+  }
 
   doc.root()?.attr('exam-schema-version', '0.4')
 }
