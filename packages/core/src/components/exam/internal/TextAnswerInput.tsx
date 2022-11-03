@@ -17,7 +17,6 @@ import { answerBlurred, answerFocused, saveAnswer, selectAnswerVersion } from '.
 import { AnswersState } from '../../../store/answers/reducer'
 
 const borderWidthPx = 2
-const borderHeightPx = 1
 
 const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element, className }) => {
   const type = getAttribute(element, 'type')!
@@ -59,12 +58,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
     const { current } = ref
 
     if (current) {
-      if (type === 'multi-line') {
-        const { scrollX, scrollY } = window
-        current.style.height = 'auto'
-        current.style.height = `${current.scrollHeight + borderHeightPx}px`
-        window.scrollTo(scrollX, scrollY)
-      } else if (type === 'single-line') {
+      if (type === 'single-line') {
         current.style.width = '0'
         current.style.width = `${current.scrollWidth + borderWidthPx}px`
       }
@@ -125,35 +119,6 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
             lang={lang}
             invalid={invalid}
             labelledBy={labelledBy}
-          />
-          <AnswerToolbar
-            {...{
-              answer,
-              element,
-              selectAnswerVersion: wrappedSelectAnswerVersion,
-              showAnswerHistory,
-              supportsAnswerHistory,
-              screenshotError,
-              validationError,
-            }}
-          />
-        </>
-      )
-    case 'multi-line':
-      return (
-        <>
-          {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
-          <textarea
-            className={classNames('text-answer text-answer--multi-line', className)}
-            defaultValue={value}
-            onChange={onChange}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            ref={ref}
-            data-question-id={questionId}
-            lang={lang}
-            aria-invalid={invalid}
-            aria-labelledby={labelledBy}
           />
           <AnswerToolbar
             {...{
