@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.3" date="2022-03-23" exam-code="N">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.4" date="2022-03-23" exam-code="N">
 <e:exam-versions>
   <e:exam-version lang="fi-FI"/>
   <e:exam-version lang="sv-FI"/>
@@ -35,9 +35,9 @@
   <e:localization lang="fi-FI" exam-type="visually-impaired">
     <h5>Ruudunlukuohjelmalla käytettyjä merkintöjä</h5>
     <p>
-      ^ potenssin tai yläindeksin merkki<br></br>
-      _ alaindeksin merkki<br></br>
-      * kertomerkki<br></br>
+      ^ potenssin tai yläindeksin merkki<br/>
+      _ alaindeksin merkki<br/>
+      * kertomerkki<br/>
     </p>
   </e:localization>
   <e:localization lang="sv-FI">
@@ -120,9 +120,9 @@
 	<e:question>
 		<e:question-title>
 			<e:localization lang="fi-FI">
-        Lausekkeen <e:formula assistive-title="(-9) *(42 -35)">(-9)\cdot (42-35)</e:formula> arvo on&#x2003;</e:localization>
+        Lausekkeen <e:formula assistive-title="(-9) *(42 -35)">(-9)\cdot (42-35)</e:formula> arvo on </e:localization>
       <e:localization lang="sv-FI">
-        Värdet av uttrycket <e:formula>(-9)\cdot (42-35)</e:formula> är&#x2003;</e:localization>
+        Värdet av uttrycket <e:formula>(-9)\cdot (42-35)</e:formula> är </e:localization>
 		</e:question-title>
 			<p><e:scored-text-answer max-score="2"><e:accepted-answer score="2">–63</e:accepted-answer></e:scored-text-answer></p>
   </e:question>
@@ -130,9 +130,9 @@
 	<e:question>
 		<e:question-title>
 			<e:localization lang="fi-FI">
-        Funktion <e:formula assistive-title="f(x) =4 x -12">f(x)=4x-12</e:formula> nollakohta on&#x2003;</e:localization>
+        Funktion <e:formula assistive-title="f(x) =4 x -12">f(x)=4x-12</e:formula> nollakohta on </e:localization>
       <e:localization lang="sv-FI">
-        Nollstället till funktionen <e:formula>f(x)=4x-12</e:formula> är&#x2003;</e:localization>
+        Nollstället till funktionen <e:formula>f(x)=4x-12</e:formula> är </e:localization>
 		</e:question-title>
 			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">3</e:accepted-answer></e:scored-text-answer></p></e:question>
 
@@ -140,10 +140,10 @@
 		<e:question-title>
 			<e:localization lang="fi-FI">
         Suora kulkee pisteiden <e:formula assistive-title="A =(1, 15)">A = (1, 15)</e:formula> ja <e:formula assistive-title="B =(7, 81)">B = (7, 81)</e:formula> kautta.
-				Suoran kulmakerroin on&#x2003;</e:localization>
+				Suoran kulmakerroin on </e:localization>
         <e:localization lang="sv-FI">
         En rät linje går genom punkterna <e:formula>A = (1, 15)</e:formula> och <e:formula>B = (7, 81).</e:formula>
-				Linjens riktningskoefficient är&#x2003;</e:localization>
+				Linjens riktningskoefficient är </e:localization>
 		</e:question-title>
 			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">11</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
@@ -151,9 +151,9 @@
 	<e:question>
 		<e:question-title>
 			<e:localization lang="fi-FI">
-        Lausekkeen <e:formula assistive-title="6^3 *2^(-2)">6^3\cdot 2^{-2}</e:formula> arvo on&#x2003;</e:localization>
+        Lausekkeen <e:formula assistive-title="6^3 *2^(-2)">6^3\cdot 2^{-2}</e:formula> arvo on </e:localization>
       <e:localization lang="sv-FI">
-        Värdet av uttrycket <e:formula>6^3\cdot 2^{-2}</e:formula> är&#x2003;</e:localization>
+        Värdet av uttrycket <e:formula>6^3\cdot 2^{-2}</e:formula> är </e:localization>
 		</e:question-title>
 			<p><e:scored-text-answer max-score="2"><e:accepted-answer score="2">54</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
@@ -162,9 +162,9 @@
 		<e:question-title>
 			<e:localization lang="fi-FI">
         Geometrinen lukujono alkaa luvuilla <e:formula assistive-title="a_1 =256,">a_1=256,</e:formula> <e:formula assistive-title="a_2 =128">a_2=128</e:formula> ja <e:formula assistive-title="a_3 =64.">a_3=64.</e:formula> Lukujonon viides
-				jäsen on&#x2003;</e:localization>
+				jäsen on </e:localization>
         <e:localization lang="sv-FI">
-        En geometrisk talföljd börjar med talen  <e:formula>a_1=256,</e:formula> <e:formula>a_2=128</e:formula> och <e:formula>a_3=64.</e:formula> Talföljdens femte element är&#x2003;</e:localization>
+        En geometrisk talföljd börjar med talen  <e:formula>a_1=256,</e:formula> <e:formula>a_2=128</e:formula> och <e:formula>a_3=64.</e:formula> Talföljdens femte element är </e:localization>
 		</e:question-title>
 			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">16</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
@@ -172,9 +172,9 @@
 	<e:question>
 		<e:question-title>
 			<e:localization lang="fi-FI">
-        Yhtälön <e:formula assistive-title="2^(2 x -5) =8">2^{2x-5}=8</e:formula> ratkaisu on&#x2003;</e:localization>
+        Yhtälön <e:formula assistive-title="2^(2 x -5) =8">2^{2x-5}=8</e:formula> ratkaisu on </e:localization>
       <e:localization lang="sv-FI">
-        Lösningen till ekvationen <e:formula>2^{2x-5}=8</e:formula> är&#x2003;</e:localization>
+        Lösningen till ekvationen <e:formula>2^{2x-5}=8</e:formula> är </e:localization>
 		</e:question-title>
 			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">4</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
@@ -191,12 +191,12 @@
           <p>Yhtälöitä ratkaistaessa käytetään usein osittelulakia esimerkiksi silloin, kun kerrotaan sulut auki;
           </p><p class="e-text-center"><e:formula mode="display" assistive-title="4 *(x +1) =4 x +4">4(x+1)=4x+4</e:formula></p><p>
           on esimerkki sulkujen aukikertomisesta.</p>
-          <p></p><ol>
+          <p/><ol>
           <li><p>
-          Ratkaise yhtälö <e:formula assistive-title="12 *(x -7) =24">12(x-7)=24</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6&#160;p.)</b>
+          Ratkaise yhtälö <e:formula assistive-title="12 *(x -7) =24">12(x-7)=24</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6 p.)</b>
           </p></li>
           <li><p>
-          Ratkaise yhtälö <e:formula assistive-title="(2 x +1) *(x -6) =0">(2x+1)(x-6)=0</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6&#160;p.)</b>
+          Ratkaise yhtälö <e:formula assistive-title="(2 x +1) *(x -6) =0">(2x+1)(x-6)=0</e:formula> kahdella eri tavalla, joista toisessa käytetään osittelulakia ja toisessa ei käytetä. <b>(6 p.)</b>
           </p></li></ol>
           <p>
           </p>
@@ -207,12 +207,12 @@
             4(x+1)=4x+4
           </e:formula></p><p>
           är ett exempel på att avlägsna parenteser genom multiplikation.</p>
-          <p></p><ol>
+          <p/><ol>
           <li><p>
-          Lös ekvationen <e:formula>12(x-7)=24</e:formula> med två olika metoder, där du i den ena använder den distributiva lagen och i den andra inte använder lagen. <b>(6&#160;p.)</b>
+          Lös ekvationen <e:formula>12(x-7)=24</e:formula> med två olika metoder, där du i den ena använder den distributiva lagen och i den andra inte använder lagen. <b>(6 p.)</b>
           </p></li>
           <li><p>
-          Lös ekvationen <e:formula>(2x+1)(x-6)=0</e:formula> med två olika metoder, där du i den ena använder den distributiva lagen och i den andra inte använder lagen. <b>(6&#160;p.)</b>
+          Lös ekvationen <e:formula>(2x+1)(x-6)=0</e:formula> med två olika metoder, där du i den ena använder den distributiva lagen och i den andra inte använder lagen. <b>(6 p.)</b>
           </p></li></ol>
         </e:localization>
     </e:question-instruction>
@@ -225,7 +225,7 @@
             <tr>
               <td>Osittelulailla:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Kerrotaan vasemmalta puolelta sulut auki: <e:formula>12(x-7)=12x-84,</e:formula> jolloin yhtälö muuttuu muotoon <e:formula>12x-84=24.</e:formula>
@@ -245,7 +245,7 @@
             <tr>
               <td>Ilman osittelulakia:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Jaetaan puolittain luvulla <e:formula>12,</e:formula>
@@ -263,13 +263,13 @@
               <td class="e-text-right"><span class="e-nowrap">1 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
               <td>Ilman osittelulakia:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Tulon nollasäännöllä <e:formula>2x+1=0</e:formula> tai <e:formula>x-6=0.</e:formula>
@@ -284,7 +284,7 @@
             <tr>
               <td>Osittelulailla:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Kerrotaan auki: <e:formula>2x^2-11x-6=0.</e:formula>
@@ -311,7 +311,7 @@
             <tr>
               <td>Med distributiva lagen:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Vi multiplicerar ut parenteserna i vänstra ledet: <e:formula>12(x-7)=12x-84,</e:formula> varvid ekvationen omskrivs till formen <e:formula>12x-84=24.</e:formula>
@@ -331,7 +331,7 @@
             <tr>
               <td>Utan distributiva lagen:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Vi dividerar ledvis med talet <e:formula>12,</e:formula>
@@ -349,13 +349,13 @@
               <td class="e-text-right"><span class="e-nowrap">1 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
               <td>Utan distributiva lagen:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Nollregeln för en produkt ger <e:formula>2x+1=0</e:formula> eller <e:formula>x-6=0.</e:formula>
@@ -370,7 +370,7 @@
             <tr>
               <td>Med distributiva lagen:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Avlägsning av parenteser: <e:formula>2x^2-11x-6=0.</e:formula>
@@ -405,25 +405,25 @@
       <e:localization lang="fi-FI">
         <ol>
           <li><p>
-          Neliön sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0&#160;cm.
-          Määritä neliön kaikkien kärkien kautta kulkevan ympyrän säde 0,1&#160;cm:n tarkkuudella. <b>(6&#160;p.)</b>
+          Neliön sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0 cm.
+          Määritä neliön kaikkien kärkien kautta kulkevan ympyrän säde 0,1 cm:n tarkkuudella. <b>(6 p.)</b>
           </p></li>
           <li><p>
-          Tasasivuisen kolmion sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0&#160;cm.
-          Määritä kolmion kaikkien kärkien kautta kulkevan ympyrän säde 0,1&#160;cm:n tarkkuudella. <b>(6&#160;p.)</b>
+          Tasasivuisen kolmion sisään piirretään mahdollisimman suuri ympyrä. Ympyrän säde on 6,0 cm.
+          Määritä kolmion kaikkien kärkien kautta kulkevan ympyrän säde 0,1 cm:n tarkkuudella. <b>(6 p.)</b>
           </p></li></ol>
       </e:localization>
 
       <e:localization lang="sv-FI">
         <ol>
           <li><p>
-          En så stor cirkel som möjligt inskrivs i en kvadrat. Cirkelns radie är 6,0&#160;cm.
-          Bestäm radien på den cirkel som går genom kvadratens alla hörn med en noggrannhet på 0,1&#160;cm. <b>(6&#160;p.)</b>
+          En så stor cirkel som möjligt inskrivs i en kvadrat. Cirkelns radie är 6,0 cm.
+          Bestäm radien på den cirkel som går genom kvadratens alla hörn med en noggrannhet på 0,1 cm. <b>(6 p.)</b>
           </p></li>
           <li><p>
-          En så stor cirkel som möjligt inskrivs i en liksidig triangel. Cirkelns radie är 6,0&#160;cm.
-          Bestäm radien på den cirkel som går genom triangelns alla hörn med en noggrannhet på 0,1&#160;cm. <b>(6&#160;p.)</b></p>
-          <p></p></li></ol>
+          En så stor cirkel som möjligt inskrivs i en liksidig triangel. Cirkelns radie är 6,0 cm.
+          Bestäm radien på den cirkel som går genom triangelns alla hörn med en noggrannhet på 0,1 cm. <b>(6 p.)</b></p>
+          <p/></li></ol>
       </e:localization>
     </e:question-instruction>
 
@@ -455,10 +455,10 @@
             <tr>
               <td>Alkupiste: Piirretty tilanteesta kuva.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -479,7 +479,7 @@
             <tr>
               <td>TAI
               </td>
-              <td class="e-text-right"></td>
+              <td class="e-text-right"/>
             </tr>
             <tr>
               <td>Piirretään jana sisään piirretyn ympyrän keskipisteestä ympyrän ja kolmion sivuamispisteeseen, ja toinen jana keskipisteestä kolmion kärkeen.
@@ -505,7 +505,7 @@
               <td>Alkupiste: Piirretty tilanteesta
                 kuva.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
         </table>
@@ -537,10 +537,10 @@
             <tr>
               <td>Startpoäng: Examinanden har ritat en figur av situationen.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -561,7 +561,7 @@
             <tr>
               <td>ELLER
               </td>
-              <td class="e-text-right"></td>
+              <td class="e-text-right"/>
             </tr>
             <tr>
               <td>Man ritar en sträcka från den inskrivna cirkelns medelpunkt till tangeringspunkten mellan cirkeln och triangeln, och en annan sträcka från medelpunkten till triangelns hörn.
@@ -586,7 +586,7 @@
             <tr>
               <td>Startpoäng: Examinanden har ritat en figur av situationen.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
         </table>
@@ -706,13 +706,13 @@
             Taulukossa <e:attachment-link type="short" ref="4A"/> on esitetty aineisto beagle-koirien selän pituudesta.
             </p><ol>
             <li><p>
-            Mikä on aineiston tyyppiarvo eli moodi? <b>(2&#160;p.)</b>
+            Mikä on aineiston tyyppiarvo eli moodi? <b>(2 p.)</b>
             </p></li>
             <li><p>
-            Kuinka monta koiraa aineistoon sisältyy? <b>(2&#160;p.)</b>
+            Kuinka monta koiraa aineistoon sisältyy? <b>(2 p.)</b>
             </p></li>
             <li><p>
-            Mikä on aineiston koirien selän pituuden keskiarvo? <b>(8&#160;p.)</b>
+            Mikä on aineiston koirien selän pituuden keskiarvo? <b>(8 p.)</b>
             </p></li></ol>
       </e:localization>
 
@@ -721,13 +721,13 @@
           I tabell <e:attachment-link type="short" ref="4A"/> presenteras ett material för längden på ryggen på beagle-hundar.
           </p><ol>
           <li><p>
-          Vilket är materialets typvärde, dvs. modus? <b>(2&#160;p.)</b>
+          Vilket är materialets typvärde, dvs. modus? <b>(2 p.)</b>
           </p></li>
           <li><p>
-          Hur många hundar ingår i materialet? <b>(2&#160;p.)</b>
+          Hur många hundar ingår i materialet? <b>(2 p.)</b>
           </p></li>
           <li><p>
-          Vilket är medelvärdet av längderna på hundarnas ryggar? <b>(8&#160;p.)</b>
+          Vilket är medelvärdet av längderna på hundarnas ryggar? <b>(8 p.)</b>
           </p></li></ol>
     </e:localization>
   </e:question-instruction>
@@ -821,11 +821,11 @@
 
   <e:question-instruction>
     <e:localization lang="fi-FI">
-      <p>Aku ja Aulis ovat pitkällä vaelluksella. Käveltyään eräänä päivänä kolmasosan päivämatkastaan he päättävät kävellä vielä 7&#160;km ennen lounastaukoa. Lounaan jälkeen he huomaavat, että jäljellä on puolet aiotusta päivämatkasta. Kuinka pitkä aiottu päivämatka on?</p>
+      <p>Aku ja Aulis ovat pitkällä vaelluksella. Käveltyään eräänä päivänä kolmasosan päivämatkastaan he päättävät kävellä vielä 7 km ennen lounastaukoa. Lounaan jälkeen he huomaavat, että jäljellä on puolet aiotusta päivämatkasta. Kuinka pitkä aiottu päivämatka on?</p>
     </e:localization>
 
     <e:localization lang="sv-FI">
-    <p>Axel och Albin är på en lång vandring. Då de en dag har gått en tredjedel av sin dagsetapp beslutar de sig för att gå ytterligare 7&#160;km innan lunchpausen. Efter lunchen märker de att hälften av den planerade dagsetappen återstår. Hur lång är den planerade dagsetappen?</p>
+    <p>Axel och Albin är på en lång vandring. Då de en dag har gått en tredjedel av sin dagsetapp beslutar de sig för att gå ytterligare 7 km innan lunchpausen. Efter lunchen märker de att hälften av den planerade dagsetappen återstår. Hur lång är den planerade dagsetappen?</p>
     </e:localization>
   </e:question-instruction>
 
@@ -857,7 +857,7 @@
           <tr>
             <td>TAI
             </td>
-            <td class="e-text-right"><span class="e-nowrap"></span></td>
+            <td class="e-text-right"><span class="e-nowrap"/></td>
           </tr>
           <tr>
             <td>Vastaus 42 (km)
@@ -904,7 +904,7 @@
           <tr>
             <td>ELLER
             </td>
-            <td class="e-text-right"><span class="e-nowrap"></span></td>
+            <td class="e-text-right"><span class="e-nowrap"/></td>
           </tr>
           <tr>
             <td>Svaret 42 (km)
@@ -940,12 +940,12 @@
         <p>Tarkastellaan jällenmyyjän tekemää voittoa. Yksinkertaisuuden vuoksi tehtävässä ei oteta verotusta huomioon.</p>
         <ol>
           <li><p>
-          Jälleenmyyjä maksoi takista tukkukauppiaalle 120&#160;euroa. Takki ei mennyt kaupaksi, joten jälleenmyyjä alensi hintaa 10&#160;%:a. Mikä takin myyntihinnan pitää olla, jotta 10&#160;%:n alennuksen jälkeen jälleenmyyjä tekee 20&#160;%:a voittoa? <b>(6&#160;p.)</b>
+          Jälleenmyyjä maksoi takista tukkukauppiaalle 120 euroa. Takki ei mennyt kaupaksi, joten jälleenmyyjä alensi hintaa 10 %:a. Mikä takin myyntihinnan pitää olla, jotta 10 %:n alennuksen jälkeen jälleenmyyjä tekee 20 %:a voittoa? <b>(6 p.)</b>
           </p></li>
           <li><p>
-          Jälleenmyyjä maksoi juhlakengistä tukkukauppiaalle 140&#160;euroa ja asetti kenkien hinnaksi 199&#160;euroa.
+          Jälleenmyyjä maksoi juhlakengistä tukkukauppiaalle 140 euroa ja asetti kenkien hinnaksi 199 euroa.
           Kengät eivät kuitenkaan menneet kaupaksi tähän hintaan, joten jälleenmyyjä päätti alentaa hintaa.
-          Mikä on suurin mahdollinen alennusprosentti, jos hän haluaa tehdä vähintään 20&#160;%:a voittoa ja alennusprosentin pitää olla kokonaisluku? <b>(6&#160;p.)</b>
+          Mikä on suurin mahdollinen alennusprosentti, jos hän haluaa tehdä vähintään 20 %:a voittoa ja alennusprosentin pitää olla kokonaisluku? <b>(6 p.)</b>
           </p></li></ol>
     </e:localization>
 
@@ -953,10 +953,10 @@
       <p>Vi undersöker den vinst som en återförsäljare gör. För enkelhetens skull beaktas inte beskattningen i uppgiften.
 			</p><ol>
 			<li><p>
-			En återförsäljare betalade en partihandlare 120&#160;euro för en jacka. Jackan gick inte åt i försäljningen, så återförsäljaren sänkte priset med 10&#160;%. Vilket borde jackans försäljningspris vara för att återförsäljaren efter rabatten på 10&#160;% ska göra en vinst på 20&#160;%? <b>(6&#160;p.)</b>
+			En återförsäljare betalade en partihandlare 120 euro för en jacka. Jackan gick inte åt i försäljningen, så återförsäljaren sänkte priset med 10 %. Vilket borde jackans försäljningspris vara för att återförsäljaren efter rabatten på 10 % ska göra en vinst på 20 %? <b>(6 p.)</b>
 			</p></li>
 			<li><p>
-			En återförsäljare betalade en partihandlare 140&#160;euro för ett par festskor och satte priset 199 euro på skorna. Skorna gick dock inte åt till det priset, så återförsäljaren beslöt sig för att sänka priset. Vilken är den högsta möjliga rabattprocenten om hon vill göra en vinst på minst 20&#160;%  och rabattprocenten måste vara ett heltal? <b>(6&#160;p.)</b>
+			En återförsäljare betalade en partihandlare 140 euro för ett par festskor och satte priset 199 euro på skorna. Skorna gick dock inte åt till det priset, så återförsäljaren beslöt sig för att sänka priset. Vilken är den högsta möjliga rabattprocenten om hon vill göra en vinst på minst 20 %  och rabattprocenten måste vara ett heltal? <b>(6 p.)</b>
 			</p></li></ol>
   </e:localization>
     </e:question-instruction>
@@ -982,7 +982,7 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -1008,7 +1008,7 @@
             <tr>
               <td>TAI
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Jotta myyjä saa voittoa <e:formula>20</e:formula> prosenttia, tulee myyntihinnan olla <e:formula>1{,}2\cdot 140=168</e:formula> euroa.
@@ -1018,10 +1018,10 @@
             <tr>
               <td>Suurin mahdollinen alennusprosentti on <e:formula>15</e:formula> koska
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
-              <td>kun alennusprosentti on 15, on hinta <e:formula>0{,}85\cdot 199 = 169{,}15 > 168</e:formula> ja
+              <td>kun alennusprosentti on 15, on hinta <e:formula>0{,}85\cdot 199 = 169{,}15 &gt; 168</e:formula> ja
               </td>
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
@@ -1053,7 +1053,7 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -1079,7 +1079,7 @@
             <tr>
               <td>ELLER
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>För att återförsäljaren ska få en vinst på <e:formula>20</e:formula> procent måste försäljningspriset vara <e:formula>1{,}2\cdot 140=168</e:formula> euro.
@@ -1089,10 +1089,10 @@
             <tr>
               <td>Den största möjliga rabattprocenten är <e:formula>15</e:formula> eftersom
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
-              <td>då rabattprocenten är 15 är priset <e:formula>0{,}85\cdot 199 = 169{,}15 > 168</e:formula> och
+              <td>då rabattprocenten är 15 är priset <e:formula>0{,}85\cdot 199 = 169{,}15 &gt; 168</e:formula> och
               </td>
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
@@ -1138,7 +1138,7 @@
 				<li><p>
 				Auton arvo alenee 8 % vuodessa
 				</p></li></ul>
-				<p></p>
+				<p/>
 				<p>Polttomoottoriauto:
 				</p><ul>
 				<li><p>
@@ -1153,7 +1153,7 @@
 				<li><p>
 				Auton arvo alenee 12 % vuodessa
 				</p></li></ul>
-				<p></p>
+				<p/>
 				<p>Muita kuluja ovat esimerkiksi vakuutus, vero, katsastus ja huolto.
 				</p></e:localization>
 
@@ -1173,7 +1173,7 @@
 				<li><p>
 				Bilens värde minskar årligen med 8 %
 				</p></li></ul>
-				<p></p>
+				<p/>
 				<p>Bil med förbränningsmotor:
 				</p><ul>
 				<li><p>
@@ -1188,7 +1188,7 @@
 				<li><p>
 				Bilens värde minskar årligen med 12 %
 				</p></li></ul>
-				<p></p>
+				<p/>
 				<p>De övriga kostnaderna utgörs till exempel av försäkring, skatt, besiktning och service.
 				</p></e:localization>
 
@@ -1204,13 +1204,13 @@
     <e:question-instruction>
 		  <e:localization lang="fi-FI">
 			  <p>Matti aikoo ostaa joko sähkö- tai polttomoottoriauton. Hän vertailee vaihtoehtoja taulukon <e:attachment-link type="short" ref="7A"/> arvioiden perusteella.</p>
-			  <p>Matti tarvitsee auton koko hinnan suuruisen tasalyhennyslainan. Lainan vuosikorko on 2,4&#160;% (jolloin kuukausikorko on 0,2&#160;%) ja lyhennys 200 euroa kuukaudessa.</p>
+			  <p>Matti tarvitsee auton koko hinnan suuruisen tasalyhennyslainan. Lainan vuosikorko on 2,4 % (jolloin kuukausikorko on 0,2 %) ja lyhennys 200 euroa kuukaudessa.</p>
 			  <p>Laske autojen arvot ja jäljellä olevien lainojen määrät viiden vuoden kuluttua. Laske myös autojen käyttökustannukset ja lainojen korkokustannukset viiden vuoden aikana. Kumpi vaihtoehto olisi ollut viiden vuoden käytön jälkeen taloudellisempi valinta? Tehtävässä ei tarvitse ottaa huomioon rahan arvon muutosta, eli inflaatiota tai deflaatiota.</p>
       </e:localization>
 
       <e:localization lang="sv-FI">
         <p>Mats ska köpa en elbil eller en bil med förbränningsmotor. Han jämför alternativ utifrån uppskattningarna i tabell <e:attachment-link type="short" ref="7A"/>.</p>
-        <p>Mats behöver ett lån med jämn amortering för bilens fulla pris. Lånets årsränta är 2,4&#160;% (dvs. månadsräntan är 0,2&#160;%) och amorteringen är 200 euro per månad.</p>
+        <p>Mats behöver ett lån med jämn amortering för bilens fulla pris. Lånets årsränta är 2,4 % (dvs. månadsräntan är 0,2 %) och amorteringen är 200 euro per månad.</p>
         <p>Beräkna bilarnas värden och hur mycket som återstår av lånen efter fem år. Beräkna även användningskostnaderna för bilarna och räntekostnaderna för lånen under de fem åren. Vilket alternativ skulle ha varit mer ekonomiskt efter fem års användning? Du behöver inte beakta förändringen av pengarnas värde, dvs. inflationen eller deflationen, i den här uppgiften.</p>
       </e:localization>
     </e:question-instruction>
@@ -1223,7 +1223,7 @@
             <tr>
               <td>Sähköauton kulut:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Sähkö: <e:formula>30\cdot 12\cdot 5=1\,800.</e:formula> (Kaikki hinnat euroissa.)
@@ -1254,7 +1254,7 @@
             <tr>
               <td>Polttomoottoriauto:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Bensiini: <e:formula>150\cdot 12\cdot 5=9\,000.</e:formula>
@@ -1297,7 +1297,7 @@
             <tr>
               <td>Elbilens kostnader:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Elektricitet: <e:formula>30\cdot 12\cdot 5=1\,800.</e:formula> (Alla priser i euro.)
@@ -1328,7 +1328,7 @@
             <tr>
               <td>Bilen med förbränningsmotor:
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Bensin: <e:formula>150\cdot 12\cdot 5=9\,000.</e:formula>
@@ -1475,25 +1475,25 @@
             <p>
               Kokeessa on 10 monivalintatehtävää. Jokaisessa tehtävässä on neljä vaihtoehtoa, joista vain yksi on oikein. Oikeasta vastauksesta saa 3 pistettä ja väärästä saa –1 pistettä.
               Lopuksi pisteet lasketaan yhteen, ja jos summa on negatiivinen, se muutetaan pistemääräksi nolla. </p>
-              <p></p><ol>
+              <p/><ol>
               <li><p>
-              Eräs opiskelija ei osaa vastata yhteenkään tehtävään tietojensa pohjalta, ja hän vastaa kaikkiin tehtäviin arvaamalla. Millä todennäköisyydellä hän saa kokeesta nolla pistettä? <b>(6&#160;p.)</b>
+              Eräs opiskelija ei osaa vastata yhteenkään tehtävään tietojensa pohjalta, ja hän vastaa kaikkiin tehtäviin arvaamalla. Millä todennäköisyydellä hän saa kokeesta nolla pistettä? <b>(6 p.)</b>
               </p></li>
               <li><p>
               Toinen opiskelija pystyy sulkemaan jokaisesta tehtävästä pois yhden väärän vastausvaihtoehdon,
               ja hän vastaa kaikkiin tehtäviin arvaamalla jäljellä olevista vaihtoehdoista.
-              Millä todennäköisyydellä hän saa kokeesta täydet pisteet? <b>(6&#160;p.)</b>
+              Millä todennäköisyydellä hän saa kokeesta täydet pisteet? <b>(6 p.)</b>
               </p></li></ol>
           </e:localization>
 
         <e:localization lang="sv-FI">
           <p>Ett prov innehåller 10 flervalsuppgifter. I varje uppgift finns fyra svarsalternativ, av vilka endast ett är korrekt. För ett korrekt svar får man 3 poäng och för ett felaktigt svar får man –1 poäng. Till slut adderas poängen, och om summan är negativ så ändras den till poängsumman noll. </p>
-			    <p></p><ol>
+			    <p/><ol>
 			    <li><p>
-			    En studerande kan inte besvara någon av uppgifterna på basis av sina kunskaper och han besvarar alla uppgifter genom att gissa. Med vilken sannolikhet får han noll poäng i provet? <b>(6&#160;p.)</b>
+			    En studerande kan inte besvara någon av uppgifterna på basis av sina kunskaper och han besvarar alla uppgifter genom att gissa. Med vilken sannolikhet får han noll poäng i provet? <b>(6 p.)</b>
 			    </p></li>
 			    <li><p>
-			    En annan studerande klarar av att utesluta ett felaktigt svarsalternativ i varje uppgift, och hon besvarar alla uppgifter genom att gissa på något av de återstående alternativen. Med vilken sannolikhet får hon fulla poäng i provet? <b>(6&#160;p.)</b>
+			    En annan studerande klarar av att utesluta ett felaktigt svarsalternativ i varje uppgift, och hon besvarar alla uppgifter genom att gissa på något av de återstående alternativen. Med vilken sannolikhet får hon fulla poäng i provet? <b>(6 p.)</b>
 			    </p></li></ol>
         </e:localization>
         </e:question-instruction>
@@ -1509,12 +1509,12 @@
                   <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
                 </tr>
                 <tr>
-                  <td>(Binomitodennäköisyyden kaavan avulla) saadaan todennäköisyydeksi<br></br> <e:formula>\left(\frac{3}{4}\right)^{10}+\binom{10}{1}\left(\frac{3}{4}\right)^{9}\left(\frac{1}{4}\right)^{1}+\binom{10}{2}\left(\frac{3}{4}\right)^{8}\left(\frac{1}{4}\right)^{2} = 0{,}52559\ldots \approx 0{,}53.</e:formula>
+                  <td>(Binomitodennäköisyyden kaavan avulla) saadaan todennäköisyydeksi<br/> <e:formula>\left(\frac{3}{4}\right)^{10}+\binom{10}{1}\left(\frac{3}{4}\right)^{9}\left(\frac{1}{4}\right)^{1}+\binom{10}{2}\left(\frac{3}{4}\right)^{8}\left(\frac{1}{4}\right)^{2} = 0{,}52559\ldots \approx 0{,}53.</e:formula>
                   </td>
                   <td class="e-text-right"><span class="e-nowrap">4 p.</span></td>
                 </tr>
               </tbody>
-            </table><hr class="e-mrg-b-2"></hr>
+            </table><hr class="e-mrg-b-2"/>
             <table class="e-table e-width-full e-table--borderless e-table--zebra">
               <tbody>
                 <tr>
@@ -1541,12 +1541,12 @@
                   <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
                 </tr>
                 <tr>
-                  <td>(Med formeln för binomialsannolikhet) får vi sannolikheten<br></br> <e:formula>\left(\frac{3}{4}\right)^{10}+\binom{10}{1}\left(\frac{3}{4}\right)^{9}\left(\frac{1}{4}\right)^{1}+\binom{10}{2}\left(\frac{3}{4}\right)^{8}\left(\frac{1}{4}\right)^{2} = 0{,}52559\ldots \approx 0{,}53.</e:formula>
+                  <td>(Med formeln för binomialsannolikhet) får vi sannolikheten<br/> <e:formula>\left(\frac{3}{4}\right)^{10}+\binom{10}{1}\left(\frac{3}{4}\right)^{9}\left(\frac{1}{4}\right)^{1}+\binom{10}{2}\left(\frac{3}{4}\right)^{8}\left(\frac{1}{4}\right)^{2} = 0{,}52559\ldots \approx 0{,}53.</e:formula>
                   </td>
                   <td class="e-text-right"><span class="e-nowrap">4 p.</span></td>
                 </tr>
               </tbody>
-            </table><hr class="e-mrg-b-2"></hr>
+            </table><hr class="e-mrg-b-2"/>
             <table class="e-table e-width-full e-table--borderless e-table--zebra">
               <tbody>
                 <tr>
@@ -1589,25 +1589,25 @@
 
       <e:question-instruction>
         <e:localization lang="fi-FI">
-          <p>Lukujono alkaa luvuilla 4 ja 9. Kuinka moni lukujonon jäsen on pienempi kuin <e:localization lang="fi-FI" exam-type="normal">1&#8239;000,</e:localization><e:localization lang="fi-FI" exam-type="visually-impaired">1000,</e:localization> jos lukujono on</p>
+          <p>Lukujono alkaa luvuilla 4 ja 9. Kuinka moni lukujonon jäsen on pienempi kuin <e:localization lang="fi-FI" exam-type="normal">1 000,</e:localization><e:localization lang="fi-FI" exam-type="visually-impaired">1000,</e:localization> jos lukujono on</p>
           <ol>
             <li><p>
-            aritmeettinen <b>(6&#160;p.)</b>
+            aritmeettinen <b>(6 p.)</b>
             </p></li>
             <li><p>
-            geometrinen? <b>(6&#160;p.)</b>
+            geometrinen? <b>(6 p.)</b>
             </p></li>
           </ol>
       </e:localization>
 
       <e:localization lang="sv-FI">
-        <p>En talföljd börjar med talen 4 och 9. Hur många av talföljdens element är mindre än 1&#8239;000, om talföljden är
+        <p>En talföljd börjar med talen 4 och 9. Hur många av talföljdens element är mindre än 1 000, om talföljden är
         </p><ol>
         <li><p>
-        aritmetisk <b>(6&#160;p.)</b>
+        aritmetisk <b>(6 p.)</b>
         </p></li>
         <li><p>
-        geometrisk? <b>(6&#160;p.)</b>
+        geometrisk? <b>(6 p.)</b>
         </p></li></ol>
       </e:localization>
       </e:question-instruction>
@@ -1643,7 +1643,7 @@
                 <td class="e-text-right"><span class="e-nowrap">1 p.</span></td>
               </tr>
             </tbody>
-          </table><hr class="e-mrg-b-2"></hr>
+          </table><hr class="e-mrg-b-2"/>
           <table class="e-table e-width-full e-table--borderless e-table--zebra">
             <tbody>
               <tr>
@@ -1675,7 +1675,7 @@
               <tr>
                 <td>TAI
                 </td>
-                <td class="e-text-right"><span class="e-nowrap"></span></td>
+                <td class="e-text-right"><span class="e-nowrap"/></td>
               </tr>
               <tr>
                 <td>Jonon jäsenet kokonaisluvuiksi pyöristettyinä ovat <e:formula>4,</e:formula> <e:formula>9,</e:formula> <e:formula>20,</e:formula> <e:formula>41,</e:formula> <e:formula>103,</e:formula> <e:formula>204,</e:formula> <e:formula>519,</e:formula> <e:formula>1168,</e:formula> <e:formula>\ldots</e:formula>
@@ -1725,7 +1725,7 @@
                 <td class="e-text-right"><span class="e-nowrap">1 p.</span></td>
               </tr>
             </tbody>
-          </table><hr class="e-mrg-b-2"></hr>
+          </table><hr class="e-mrg-b-2"/>
           <table class="e-table e-width-full e-table--borderless e-table--zebra">
             <tbody>
               <tr>
@@ -1757,7 +1757,7 @@
               <tr>
                 <td>ELLER
                 </td>
-                <td class="e-text-right"><span class="e-nowrap"></span></td>
+                <td class="e-text-right"><span class="e-nowrap"/></td>
               </tr>
               <tr>
                 <td>Talföljdens element avrundade till hela tal är <e:formula>4,</e:formula> <e:formula>9,</e:formula> <e:formula>20,</e:formula> <e:formula>41,</e:formula> <e:formula>103,</e:formula> <e:formula>204,</e:formula> <e:formula>519,</e:formula> <e:formula>1168,</e:formula> <e:formula>\ldots</e:formula>
@@ -1793,29 +1793,29 @@
         <p>Syksyllä 2020 koronaviruspandemian toisen aallon alkuvaiheessa Suomessa raportoitiin edeltävien kahden viikon (14 vuorokauden) aikana havaittujien tartuntatapausten lukumääriä. Tämä lukumäärä oli 7. syyskuuta 389 ja kaksi viikkoa myöhemmin 21. syyskuuta 719 koronavirustartuntaa. (Lähde: www.hs.fi. Luettu 21.9.2020.) Oletetaan, että havaittujen tartuntojen määrä noudattaa eksponentiaalista mallia.</p>
         <ol>
           <li><p>
-          Kuinka monta koronavirustartuntaa havaittiin mallin mukaan päivämäärää 8.1.2021 edeltävällä kahden viikon jaksolla? Tammikuun 8. päivä on 140 vuorokautta päivämäärän 21.9.2020 jälkeen. <b>(4&#160;p.)</b>
+          Kuinka monta koronavirustartuntaa havaittiin mallin mukaan päivämäärää 8.1.2021 edeltävällä kahden viikon jaksolla? Tammikuun 8. päivä on 140 vuorokautta päivämäärän 21.9.2020 jälkeen. <b>(4 p.)</b>
           </p></li>
           <li><p>
           Merkitään muuttujalla <e:formula assistive-title="t">t</e:formula> aikaa vuorokausina niin, että päivämäärä 7.9.2020 vastaa arvoa <e:formula assistive-title="t =0.">t=0.</e:formula>
-          Eksponentiaalisen mallin mukaan edeltävän kahden viikon aikana havaittujen tapausten lukumäärälle <e:formula assistive-title="k">k</e:formula> pätee <e:formula assistive-title="k =a *2^(b t).">k=a \cdot 2^{bt}.</e:formula> Määritä vakiot <e:formula assistive-title="a">a</e:formula> ja <e:formula assistive-title="b.">b.</e:formula> <b>(4&#160;p.)</b>
+          Eksponentiaalisen mallin mukaan edeltävän kahden viikon aikana havaittujen tapausten lukumäärälle <e:formula assistive-title="k">k</e:formula> pätee <e:formula assistive-title="k =a *2^(b t).">k=a \cdot 2^{bt}.</e:formula> Määritä vakiot <e:formula assistive-title="a">a</e:formula> ja <e:formula assistive-title="b.">b.</e:formula> <b>(4 p.)</b>
           </p></li>
           <li><p>
-          Pohdi syitä sille, miksi tässä tehtävässä käytetty malli ei ole hyvä ennuste tartuntamäärien kehitykselle pitkällä aikavälillä. <b>(4&#160;p.)</b>
+          Pohdi syitä sille, miksi tässä tehtävässä käytetty malli ei ole hyvä ennuste tartuntamäärien kehitykselle pitkällä aikavälillä. <b>(4 p.)</b>
           </p></li></ol>
       </e:localization>
 
       <e:localization lang="sv-FI">
-        <p>Under coronaviruspandemins andra våg hösten 2020 rapporterades i Finland antalet smittfall under de föregående två veckorna (14&#160;dygn). Den 7 september var detta antal 389 medan antalet två veckor senare, den 21 september, var 719 fall av coronavirussmitta. (Källa: www.hs.fi. Hämtad 21.9.2020.) Vi antar att det observerade antalet smittfall följer en exponentiell modell.
+        <p>Under coronaviruspandemins andra våg hösten 2020 rapporterades i Finland antalet smittfall under de föregående två veckorna (14 dygn). Den 7 september var detta antal 389 medan antalet två veckor senare, den 21 september, var 719 fall av coronavirussmitta. (Källa: www.hs.fi. Hämtad 21.9.2020.) Vi antar att det observerade antalet smittfall följer en exponentiell modell.
           </p><ol>
           <li><p>
-          Hur många fall av coronavirussmitta observerades enligt modellen under den två veckor långa perioden före datumet 8.1.2021? Den 8 januari är 140 dygn efter datumet 21.9.2021. <b>(4&#160;p.)</b>
+          Hur många fall av coronavirussmitta observerades enligt modellen under den två veckor långa perioden före datumet 8.1.2021? Den 8 januari är 140 dygn efter datumet 21.9.2021. <b>(4 p.)</b>
           </p></li>
           <li><p>
           Vi betecknar antalet dygn med variabeln <e:formula>t</e:formula> så att datumet 7.9.2020 motsvarar värdet <e:formula>t=0.</e:formula>
-          Enligt den exponentiella modellen gäller för antalet observerade smittfall <e:formula>k</e:formula> under de föregående två veckorna formeln <e:formula>k=a \cdot 2^{bt}.</e:formula> Bestäm konstanterna <e:formula>a</e:formula> och <e:formula>b.</e:formula> <b>(4&#160;p.)</b>
+          Enligt den exponentiella modellen gäller för antalet observerade smittfall <e:formula>k</e:formula> under de föregående två veckorna formeln <e:formula>k=a \cdot 2^{bt}.</e:formula> Bestäm konstanterna <e:formula>a</e:formula> och <e:formula>b.</e:formula> <b>(4 p.)</b>
           </p></li>
           <li><p>
-          Diskutera orsakerna till att den modell som används i den här uppgiften inte utgör en bra prognos för utvecklingen av antalet smittfall i ett långt tidsperspektiv. <b>(4&#160;p.)</b>
+          Diskutera orsakerna till att den modell som används i den här uppgiften inte utgör en bra prognos för utvecklingen av antalet smittfall i ett långt tidsperspektiv. <b>(4 p.)</b>
           </p></li></ol>
       </e:localization>
     </e:question-instruction>
@@ -1843,10 +1843,10 @@
             <tr>
               <td>Voi käyttää myös päiväkohtaista kantalukua <e:formula>\left(\frac{719}{389}\right)^{1/14}</e:formula> ja eksponenttia 140.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -1865,7 +1865,7 @@
               <td class="e-text-right"><span class="e-nowrap">1 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -1898,10 +1898,10 @@
             <tr>
               <td>Man kan också använda den dagliga tillväxtfaktorn <e:formula>\left(\frac{719}{389}\right)^{1/14}</e:formula> och exponenten 140.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -1920,7 +1920,7 @@
               <td class="e-text-right"><span class="e-nowrap">1 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -1944,31 +1944,31 @@
 
     <e:question-instruction>
       <e:localization lang="fi-FI">
-        <p>Tuotteen nykyinen hinta on 60&#160;euroa. Kauppias arvioi, että tällä hinnalla tuotetta myydään <e:localization lang="fi-FI" exam-type="normal">1&#8239;000</e:localization><e:localization lang="fi-FI" exam-type="visually-impaired">1000</e:localization> kappaletta. Myyntituloja kasvattaakseen kauppias päättää muuttaa tuotteen hintaa. Vastaavan tuotteen myynnistä kertyneen kokemuksen perusteella kauppias arvioi, että jokainen euro, jolla tuotteen hinta nousee, vähentää myyntiä kymmenellä kappaleella. Vastaavasti jokainen euro, jolla tuotteen hintaa laskee, kasvattaa myyntiä kymmenellä kappaleella.
+        <p>Tuotteen nykyinen hinta on 60 euroa. Kauppias arvioi, että tällä hinnalla tuotetta myydään <e:localization lang="fi-FI" exam-type="normal">1 000</e:localization><e:localization lang="fi-FI" exam-type="visually-impaired">1000</e:localization> kappaletta. Myyntituloja kasvattaakseen kauppias päättää muuttaa tuotteen hintaa. Vastaavan tuotteen myynnistä kertyneen kokemuksen perusteella kauppias arvioi, että jokainen euro, jolla tuotteen hinta nousee, vähentää myyntiä kymmenellä kappaleella. Vastaavasti jokainen euro, jolla tuotteen hintaa laskee, kasvattaa myyntiä kymmenellä kappaleella.
           </p><ol>
           <li><p>
-          Kuinka suuret myyntitulot ovat, jos tuotteen hinta on 55&#160;euroa? <b>(2&#160;p.)</b>
+          Kuinka suuret myyntitulot ovat, jos tuotteen hinta on 55 euroa? <b>(2 p.)</b>
           </p></li>
           <li><p>
           Muodosta myyntituloja mallintava funktio <e:formula assistive-title="f(x),">f(x),</e:formula> kun <e:formula assistive-title="x">x</e:formula> on tuotteen
-          hinnan muutos, ja laske sen derivaatta <e:formula assistive-title="f’(x).">f&apos;(x).</e:formula> <b>(5&#160;p.)</b>
+          hinnan muutos, ja laske sen derivaatta <e:formula assistive-title="f’(x).">f'(x).</e:formula> <b>(5 p.)</b>
           </p></li>
           <li><p>
-          Määritä se tuotteen hinta, jolla saadaan suurimmat mahdolliset myyntitulot. <b>(5&#160;p.)</b>
+          Määritä se tuotteen hinta, jolla saadaan suurimmat mahdolliset myyntitulot. <b>(5 p.)</b>
           </p></li></ol>
       </e:localization>
 
       <e:localization lang="sv-FI">
-        <p>Det nuvarande priset för en produkt är 60&#160;euro. En köpman uppskattar att han med det priset säljer 1&#8239;000 stycken av produkten. För att höja försäljningsintäkterna bestämmer köpmannen sig för att ändra produktens pris. Utifrån erfarenheter från försäljning av en motsvarande produkt uppskattar köpmannen att för varje euro som priset höjs minskar försäljningen med tio stycken. På motsvarande sätt  ökar försäljningen av produkten med tio stycken för varje euro som priset sänks.
+        <p>Det nuvarande priset för en produkt är 60 euro. En köpman uppskattar att han med det priset säljer 1 000 stycken av produkten. För att höja försäljningsintäkterna bestämmer köpmannen sig för att ändra produktens pris. Utifrån erfarenheter från försäljning av en motsvarande produkt uppskattar köpmannen att för varje euro som priset höjs minskar försäljningen med tio stycken. På motsvarande sätt  ökar försäljningen av produkten med tio stycken för varje euro som priset sänks.
         </p><ol>
         <li><p>
-        Hur stora är försäljningsintäkterna om produktens pris är 55&#160;euro? <b>(2&#160;p.)</b>
+        Hur stora är försäljningsintäkterna om produktens pris är 55 euro? <b>(2 p.)</b>
         </p></li>
         <li><p>
-        Bilda en funktion <e:formula>f(x)</e:formula> som ger en modell av försäljningsintäkterna då <e:formula>x</e:formula> är förändringen av produktens pris, samt beräkna funktionens derivata <e:formula>f&apos;(x).</e:formula> <b>(5&#160;p.)</b>
+        Bilda en funktion <e:formula>f(x)</e:formula> som ger en modell av försäljningsintäkterna då <e:formula>x</e:formula> är förändringen av produktens pris, samt beräkna funktionens derivata <e:formula>f'(x).</e:formula> <b>(5 p.)</b>
         </p></li>
         <li><p>
-        Bestäm det pris på produkten för vilket de största möjliga försäljningsintäkterna uppnås. <b>(5&#160;p.)</b>
+        Bestäm det pris på produkten för vilket de största möjliga försäljningsintäkterna uppnås. <b>(5 p.)</b>
         </p></li></ol>
       </e:localization>
     </e:question-instruction>
@@ -1984,7 +1984,7 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -1998,7 +1998,7 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -2024,7 +2024,7 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -2038,7 +2038,7 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -2086,14 +2086,14 @@
     <e:question-instruction>
       <e:localization lang="fi-FI" exam-type="normal">
         <p>
-          Puisen kuution särmän pituus on 2,0&#160;cm. Tarkastellaan kahta monitahokasta, jotka saadaan sahaamalla pois kuutioiden nurkista pyramidin muotoiset kappaleet, alla kuvatuilla tavoilla, ks. kuva <e:attachment-link type="short" ref="13A"/>.
+          Puisen kuution särmän pituus on 2,0 cm. Tarkastellaan kahta monitahokasta, jotka saadaan sahaamalla pois kuutioiden nurkista pyramidin muotoiset kappaleet, alla kuvatuilla tavoilla, ks. kuva <e:attachment-link type="short" ref="13A"/>.
           </p><ol>
           <li><p>
-          Piirretään kuution tahkoihin janat, jotka yhdistävät vierekkäisten särmien keskipisteet. Poistetaan kuution nurkista pyramidit, joiden pohjasärminä ovat piirretyt janat. Määritä näin saadun monitahokkaan tilavuus. <b>(6&#160;p.)</b>
+          Piirretään kuution tahkoihin janat, jotka yhdistävät vierekkäisten särmien keskipisteet. Poistetaan kuution nurkista pyramidit, joiden pohjasärminä ovat piirretyt janat. Määritä näin saadun monitahokkaan tilavuus. <b>(6 p.)</b>
           </p></li>
           <li><p>
           Piirretään kuution tahkoihin sellaiset janat, joiden päätepisteet ovat vierekkäisillä särmillä niin, että tahkoihin muodostuu säännöllinen 8-kulmio.
-          Poistetaan kuution nurkista pyramidit, joiden pohjasärminä ovat piirretyt janat. Määritä näin saadun monitahokkaan pinta-ala. <b>(6&#160;p.)</b>
+          Poistetaan kuution nurkista pyramidit, joiden pohjasärminä ovat piirretyt janat. Määritä näin saadun monitahokkaan pinta-ala. <b>(6 p.)</b>
           </p></li></ol>
       </e:localization>
 
@@ -2103,16 +2103,16 @@
 
       <e:localization lang="sv-FI">
         <p>
-          Kanten på en träkub har längden 2,0&#160;cm. Vi granskar två polyedrar som vi får genom att såga bort pyramidformade kroppar från kubens hörn på de sätt som är beskrivna nedan, se figur <e:attachment-link type="short" ref="13A"/>.
+          Kanten på en träkub har längden 2,0 cm. Vi granskar två polyedrar som vi får genom att såga bort pyramidformade kroppar från kubens hörn på de sätt som är beskrivna nedan, se figur <e:attachment-link type="short" ref="13A"/>.
           </p><ol>
           <li><p>
-          På kubens sidoytor ritas sträckor, som förenar mittpunkterna på kanter som ligger bredvid varandra. Från kubens hörn avlägsnas pyramiderna, för vilka kanterna till basytan utgörs av de uppritade sträckorna. Bestäm volymen av den polyeder som vi får på detta sätt. <b>(6&#160;p.)</b>
+          På kubens sidoytor ritas sträckor, som förenar mittpunkterna på kanter som ligger bredvid varandra. Från kubens hörn avlägsnas pyramiderna, för vilka kanterna till basytan utgörs av de uppritade sträckorna. Bestäm volymen av den polyeder som vi får på detta sätt. <b>(6 p.)</b>
           </p></li>
           <li><p>
-          På kubens sidoytor ritas sådana sträckor, vilkas ändpunkter är belägna på kanter som ligger bredvid varandra, så att det bildas en regelbunden åttahörning på varje sidoyta. Från kubens hörn avlägsnas pyramiderna, för vilka kanterna till basytan utgörs av de uppritade sträckorna. Bestäm arean av den polyeder som vi får på detta sätt. <b>(6&#160;p.)</b>
+          På kubens sidoytor ritas sådana sträckor, vilkas ändpunkter är belägna på kanter som ligger bredvid varandra, så att det bildas en regelbunden åttahörning på varje sidoyta. Från kubens hörn avlägsnas pyramiderna, för vilka kanterna till basytan utgörs av de uppritade sträckorna. Bestäm arean av den polyeder som vi får på detta sätt. <b>(6 p.)</b>
           </p></li></ol>
     </e:localization>
-    </e:question-instruction><e:localization lang="fi-FI" exam-type="normal"></e:localization>
+    </e:question-instruction><e:localization lang="fi-FI" exam-type="normal"/>
 
   <e:text-answer type="rich-text" max-score="12">
     <e:answer-grading-instruction>
@@ -2129,7 +2129,7 @@
             <tr>
               <td>Kuutiosta poistetaan <e:formula>8</e:formula> pyramidia (kärkien lukumäärä).
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Pyramidin pohja on tasasivuinen kolmio, joka sivun pituus on <e:formula>\sqrt{2}</e:formula> ja pinta-ala <e:formula>\frac{1}{2}\cdot (\sqrt{2})^2\cdot \frac{\sqrt{3}}{2}=\frac{\sqrt{3}}{2}.</e:formula>
@@ -2169,10 +2169,10 @@
             <tr>
               <td>Pyramidin tilavuuden voi laskea myös kartiona, jonka pohjan pinta-ala on <e:formula>\frac12 \cdot 1\cdot 1</e:formula> ja korkeus on <e:formula>1.</e:formula> Tällöin tilavuus on <e:formula>\frac13\cdot \frac12 = \frac1{6}.</e:formula>
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
-        </table><e:localization lang="fi-FI" exam-type="normal"><hr class="e-mrg-b-2"></hr>
+        </table><e:localization lang="fi-FI" exam-type="normal"><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -2202,13 +2202,13 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
               <td>Tehtävän voi ratkaista myös ohjelmistolla.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
         </table></e:localization>
@@ -2225,7 +2225,7 @@
             <tr>
               <td>Från kuben avlägsnas <e:formula>8</e:formula> pyramider (antalet hörn).
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
             <tr>
               <td>Pyramidens botten är en liksidig triangel, vars sidas längd är <e:formula>\sqrt{2}</e:formula> och area <e:formula>\frac{1}{2}\cdot (\sqrt{2})^2\cdot \frac{\sqrt{3}}{2}=\frac{\sqrt{3}}{2}.</e:formula>
@@ -2255,10 +2255,10 @@
             <tr>
               <td>Pyramidens volym kan också beräknas som en kon, vars basyta har arean <e:formula>\frac12 \cdot 1\cdot 1</e:formula> och höjden <e:formula>1.</e:formula> Därmed är volymen <e:formula>\frac13\cdot \frac12 = \frac1{6}.</e:formula>
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
@@ -2288,13 +2288,13 @@
               <td class="e-text-right"><span class="e-nowrap">2 p.</span></td>
             </tr>
           </tbody>
-        </table><hr class="e-mrg-b-2"></hr>
+        </table><hr class="e-mrg-b-2"/>
         <table class="e-table e-width-full e-table--borderless e-table--zebra">
           <tbody>
             <tr>
               <td>Uppgiften kan också lösas med hjälp av programvara.
               </td>
-              <td class="e-text-right"><span class="e-nowrap"></span></td>
+              <td class="e-text-right"><span class="e-nowrap"/></td>
             </tr>
           </tbody>
         </table>
