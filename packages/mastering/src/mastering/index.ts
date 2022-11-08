@@ -162,6 +162,12 @@ function assertExamIsValid(doc: Document): Document {
     }
   }
 
+  // Ensure that audio tags have no times attribute when presented in external material
+  const audiosInExternalMaterialWithTimes = doc.find<Element>('//e:external-material//e:audio[@times]', ns)
+  if (audiosInExternalMaterialWithTimes.length > 0) {
+    throw mkError(`External material must not contain audio with times attribute`, audiosInExternalMaterialWithTimes[0])
+  }
+
   return doc
 }
 /**
