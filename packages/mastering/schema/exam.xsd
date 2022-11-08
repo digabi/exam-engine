@@ -477,7 +477,6 @@
   <xs:simpleType name="text-answer-type">
     <xs:restriction base="xs:string">
       <xs:enumeration value="single-line" />
-      <xs:enumeration value="multi-line" />
       <xs:enumeration value="rich-text" />
     </xs:restriction>
   </xs:simpleType>

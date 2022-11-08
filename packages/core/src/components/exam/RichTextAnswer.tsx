@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { TOptions } from 'i18next'
 import * as _ from 'lodash-es'
 import React from 'react'
@@ -96,7 +95,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
     return (
       <div
         ref={this.ref}
-        className={classNames('text-answer text-answer--multi-line', className)}
+        className={className}
         data-question-id={questionId}
         role="textbox"
         aria-multiline="true"

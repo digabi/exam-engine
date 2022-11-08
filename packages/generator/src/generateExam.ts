@@ -42,7 +42,7 @@ export type GenerateAnswerOptions =
 
 interface TextAnswerBase {
   hint?: string
-  type?: 'rich-text' | 'single-line' | 'multi-line'
+  type?: 'rich-text' | 'single-line'
 }
 
 export interface GenerateTextAnswerOptions extends TextAnswerBase {

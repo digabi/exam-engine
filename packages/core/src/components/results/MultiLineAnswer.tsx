@@ -5,7 +5,7 @@ import { renderAnnotations } from '../../renderAnnotations'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 
 export const MultiLineAnswer: React.FunctionComponent<{
-  type: 'rich-text' | 'multi-line'
+  type: 'rich-text'
   value?: string
   score?: Score
 }> = ({ type, score, value }) => {

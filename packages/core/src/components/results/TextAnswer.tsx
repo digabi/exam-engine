@@ -23,12 +23,11 @@ function TextAnswer({ element }: ExamComponentProps) {
   const displayNumber = answers.length > 1 ? shortDisplayNumber(element.getAttribute('display-number')!) : undefined
   const score = findScore(scores, questionId)
   const comment = score?.pregrading?.comment
-  const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'multi-line' | 'single-line'
+  const type = (element.getAttribute('type') || 'single-line') as 'rich-text' | 'single-line'
   const maxLength = getNumericAttribute(element, 'max-length')
 
   switch (type) {
-    case 'rich-text':
-    case 'multi-line': {
+    case 'rich-text': {
       return (
         <>
           {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
