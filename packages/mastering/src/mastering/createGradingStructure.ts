@@ -93,7 +93,6 @@ function mkChoiceGroupQuestion(answer: Answer, generateId: GenerateId): ChoiceGr
       const correct = score > 0 && score === maxScore
       return { id, score, correct }
     })
-
   const choice: ChoiceGroupChoice = {
     id: questionId,
     displayNumber,
