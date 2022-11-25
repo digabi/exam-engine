@@ -113,17 +113,21 @@ describe('Exam mastering', () => {
     }
   })
 
-  it('combines choice-answers and dropdown-answers to the same question in grading structure', async () => {
-    const xml = generateExam({ sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }] })
+  it('does not combine choice-answers and dropdown-answers to the same question in grading structure', async () => {
+    const xml = generateExam({
+      sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }],
+    })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
     expect(masteringResult.gradingStructure.questions).toMatchObject([
       {
         type: 'choicegroup',
-        displayNumber: '1',
-        choices: [
-          { type: 'choice', displayNumber: '1.1' },
-          { type: 'choice', displayNumber: '1.2' },
-        ],
+        displayNumber: '1.1',
+        choices: [{ type: 'choice', displayNumber: '1.1' }],
+      },
+      {
+        type: 'choicegroup',
+        displayNumber: '1.2',
+        choices: [{ type: 'choice', displayNumber: '1.2' }],
       },
     ])
   })

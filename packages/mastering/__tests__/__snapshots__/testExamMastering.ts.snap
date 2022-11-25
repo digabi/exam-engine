@@ -3387,6 +3387,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.1",
+        "id": 87,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.2",
             "id": 2,
@@ -3419,6 +3426,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.2",
+        "id": 88,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.3",
             "id": 3,
@@ -3451,6 +3465,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.3",
+        "id": 89,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.4",
             "id": 4,
@@ -3483,6 +3504,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.4",
+        "id": 90,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.5",
             "id": 5,
@@ -3515,6 +3543,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.5",
+        "id": 91,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.6",
             "id": 6,
@@ -3547,6 +3582,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.6",
+        "id": 92,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.7",
             "id": 7,
@@ -3579,6 +3621,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.7",
+        "id": 93,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.8",
             "id": 8,
@@ -3611,6 +3660,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.8",
+        "id": 94,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.9",
             "id": 9,
@@ -3643,6 +3699,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.9",
+        "id": 95,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.10",
             "id": 10,
@@ -3676,8 +3739,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "1",
-        "id": 87,
+        "displayNumber": "1.10",
+        "id": 96,
         "type": "choicegroup",
       },
       Object {
@@ -3887,6 +3950,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.1",
+        "id": 87,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.2",
             "id": 2,
@@ -3919,6 +3989,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.2",
+        "id": 88,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.3",
             "id": 3,
@@ -3951,6 +4028,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.3",
+        "id": 89,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.4",
             "id": 4,
@@ -3983,6 +4067,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.4",
+        "id": 90,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.5",
             "id": 5,
@@ -4015,6 +4106,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.5",
+        "id": 91,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.6",
             "id": 6,
@@ -4047,6 +4145,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.6",
+        "id": 92,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.7",
             "id": 7,
@@ -4079,6 +4184,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.7",
+        "id": 93,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.8",
             "id": 8,
@@ -4111,6 +4223,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.8",
+        "id": 94,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.9",
             "id": 9,
@@ -4143,6 +4262,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.9",
+        "id": 95,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.10",
             "id": 10,
@@ -4176,8 +4302,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "1",
-        "id": 87,
+        "displayNumber": "1.10",
+        "id": 96,
         "type": "choicegroup",
       },
       Object {
@@ -7004,6 +7130,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "8.1",
+        "id": 45,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "8.2",
             "id": 5,
@@ -7026,6 +7159,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "8.2",
+        "id": 46,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "8.3",
             "id": 6,
@@ -7059,8 +7199,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "8",
-        "id": 45,
+        "displayNumber": "8.3",
+        "id": 47,
         "type": "choicegroup",
       },
       Object {
@@ -7094,7 +7234,7 @@ Object {
           },
         ],
         "displayNumber": "9",
-        "id": 46,
+        "id": 48,
         "type": "choicegroup",
       },
       Object {
@@ -7193,6 +7333,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.1",
+        "id": 49,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.2",
             "id": 15,
@@ -7220,6 +7367,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.2",
+        "id": 50,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.3",
             "id": 16,
@@ -7248,8 +7402,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "15",
-        "id": 47,
+        "displayNumber": "15.3",
+        "id": 51,
         "type": "choicegroup",
       },
     ],
@@ -12198,6 +12352,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.1",
+        "id": 328,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "1.2",
+        "id": 2,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.3",
             "id": 3,
@@ -12220,6 +12387,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.3",
+        "id": 329,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.4",
             "id": 4,
@@ -12243,15 +12417,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "1",
-        "id": 328,
+        "displayNumber": "1.4",
+        "id": 330,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "1.2",
-        "id": 2,
-        "maxScore": 6,
-        "type": "text",
       },
       Object {
         "displayNumber": "1.5",
@@ -12283,6 +12451,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.1",
+        "id": 331,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.2",
             "id": 7,
@@ -12305,6 +12480,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.2",
+        "id": 332,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.3",
             "id": 8,
@@ -12327,6 +12509,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.3",
+        "id": 333,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.4",
             "id": 9,
@@ -12350,8 +12539,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "2",
-        "id": 329,
+        "displayNumber": "2.4",
+        "id": 334,
         "type": "choicegroup",
       },
       Object {
@@ -12378,6 +12567,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.1",
+        "id": 335,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.2",
             "id": 11,
@@ -12400,6 +12596,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.2",
+        "id": 336,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.3",
             "id": 12,
@@ -12422,6 +12625,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.3",
+        "id": 337,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.4",
             "id": 13,
@@ -12444,6 +12654,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.4",
+        "id": 338,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.5",
             "id": 14,
@@ -12467,8 +12684,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "3",
-        "id": 330,
+        "displayNumber": "3.5",
+        "id": 339,
         "type": "choicegroup",
       },
       Object {
@@ -12495,6 +12712,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "4.1",
+        "id": 340,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "4.2",
             "id": 16,
@@ -12518,9 +12742,15 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "4",
-        "id": 331,
+        "displayNumber": "4.2",
+        "id": 341,
         "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "5.1",
+        "id": 17,
+        "maxScore": 3,
+        "type": "text",
       },
       Object {
         "choices": Array [
@@ -12546,6 +12776,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "5.2",
+        "id": 342,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "5.3",
             "id": 19,
@@ -12569,15 +12806,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "5",
-        "id": 332,
+        "displayNumber": "5.3",
+        "id": 343,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "5.1",
-        "id": 17,
-        "maxScore": 3,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -12628,6 +12859,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "6.1",
+        "id": 344,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "6.2",
             "id": 21,
@@ -12675,6 +12913,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "6.2",
+        "id": 345,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "6.3",
             "id": 22,
@@ -12723,8 +12968,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "6",
-        "id": 333,
+        "displayNumber": "6.3",
+        "id": 346,
         "type": "choicegroup",
       },
       Object {
@@ -12751,6 +12996,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "7.1",
+        "id": 347,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "7.2",
             "id": 24,
@@ -12773,6 +13025,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "7.2",
+        "id": 348,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "7.3",
             "id": 25,
@@ -12796,8 +13055,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "7",
-        "id": 334,
+        "displayNumber": "7.3",
+        "id": 349,
         "type": "choicegroup",
       },
       Object {
@@ -12824,6 +13083,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "8.1",
+        "id": 350,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "8.2",
             "id": 27,
@@ -12847,8 +13113,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "8",
-        "id": 335,
+        "displayNumber": "8.2",
+        "id": 351,
         "type": "choicegroup",
       },
       Object {
@@ -12870,6 +13136,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.1",
+        "id": 352,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.2",
             "id": 29,
@@ -12887,6 +13160,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.2",
+        "id": 353,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.3",
             "id": 30,
@@ -12904,6 +13184,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.3",
+        "id": 354,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.4",
             "id": 31,
@@ -12921,6 +13208,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.4",
+        "id": 355,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.5",
             "id": 32,
@@ -12938,6 +13232,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.5",
+        "id": 356,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.6",
             "id": 33,
@@ -12956,8 +13257,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "9",
-        "id": 336,
+        "displayNumber": "9.6",
+        "id": 357,
         "type": "choicegroup",
       },
       Object {
@@ -12984,6 +13285,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "10.1",
+        "id": 358,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "10.2",
+        "id": 35,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "10.3",
             "id": 36,
@@ -13006,6 +13320,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "10.3",
+        "id": 359,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "10.4",
             "id": 37,
@@ -13029,15 +13350,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "10",
-        "id": 337,
+        "displayNumber": "10.4",
+        "id": 360,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "10.2",
-        "id": 35,
-        "maxScore": 6,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -13063,6 +13378,25 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.1",
+        "id": 361,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "11.2.1",
+        "id": 39,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "11.2.2",
+        "id": 40,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.3",
             "id": 41,
@@ -13085,6 +13419,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.3",
+        "id": 362,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.4",
             "id": 42,
@@ -13107,6 +13448,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.4",
+        "id": 363,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.5",
             "id": 43,
@@ -13129,6 +13477,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.5",
+        "id": 364,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.6",
             "id": 44,
@@ -13152,21 +13507,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "11",
-        "id": 338,
+        "displayNumber": "11.6",
+        "id": 365,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "11.2.1",
-        "id": 39,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "11.2.2",
-        "id": 40,
-        "maxScore": 3,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -13222,6 +13565,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "12.1",
+        "id": 366,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "12.2",
             "id": 46,
@@ -13274,6 +13624,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "12.2",
+        "id": 367,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "12.3",
             "id": 47,
@@ -13327,8 +13684,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "12",
-        "id": 339,
+        "displayNumber": "12.3",
+        "id": 368,
         "type": "choicegroup",
       },
       Object {
@@ -13355,6 +13712,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "13.1",
+        "id": 369,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "13.2",
             "id": 49,
@@ -13378,8 +13742,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "13",
-        "id": 340,
+        "displayNumber": "13.2",
+        "id": 370,
         "type": "choicegroup",
       },
       Object {
@@ -13412,6 +13776,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "14.1",
+        "id": 371,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "14.2",
+        "id": 52,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "14.3",
             "id": 53,
@@ -13434,6 +13811,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "14.3",
+        "id": 372,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "14.4",
             "id": 54,
@@ -13457,13 +13841,13 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "14",
-        "id": 341,
+        "displayNumber": "14.4",
+        "id": 373,
         "type": "choicegroup",
       },
       Object {
-        "displayNumber": "14.2",
-        "id": 52,
+        "displayNumber": "15.1",
+        "id": 55,
         "maxScore": 4,
         "type": "text",
       },
@@ -13491,6 +13875,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.2",
+        "id": 374,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.3",
             "id": 57,
@@ -13513,6 +13904,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.3",
+        "id": 375,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.4",
             "id": 58,
@@ -13535,6 +13933,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.4",
+        "id": 376,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.5",
             "id": 59,
@@ -13557,6 +13962,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.5",
+        "id": 377,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.6",
             "id": 60,
@@ -13580,15 +13992,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "15",
-        "id": 342,
+        "displayNumber": "15.6",
+        "id": 378,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "15.1",
-        "id": 55,
-        "maxScore": 4,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -13614,6 +14020,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "16.1",
+        "id": 379,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "16.2",
             "id": 62,
@@ -13636,6 +14049,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "16.2",
+        "id": 380,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "16.3",
             "id": 63,
@@ -13659,8 +14079,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "16",
-        "id": 343,
+        "displayNumber": "16.3",
+        "id": 381,
         "type": "choicegroup",
       },
       Object {
@@ -13693,6 +14113,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.1",
+        "id": 382,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.2",
             "id": 66,
@@ -13715,6 +14142,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.2",
+        "id": 383,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.3",
             "id": 67,
@@ -13737,6 +14171,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.3",
+        "id": 384,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.4",
             "id": 68,
@@ -13759,6 +14200,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.4",
+        "id": 385,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.5",
             "id": 69,
@@ -13781,6 +14229,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.5",
+        "id": 386,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.6",
             "id": 70,
@@ -13803,6 +14258,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.6",
+        "id": 387,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.7",
             "id": 71,
@@ -13825,6 +14287,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.7",
+        "id": 388,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.8",
             "id": 72,
@@ -13847,6 +14316,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.8",
+        "id": 389,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.9",
             "id": 73,
@@ -13869,6 +14345,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.9",
+        "id": 390,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.10",
             "id": 74,
@@ -13891,6 +14374,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.10",
+        "id": 391,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.11",
             "id": 75,
@@ -13913,6 +14403,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.11",
+        "id": 392,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.12",
             "id": 76,
@@ -13935,6 +14432,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.12",
+        "id": 393,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.13",
             "id": 77,
@@ -13957,6 +14461,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.13",
+        "id": 394,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.14",
             "id": 78,
@@ -13979,6 +14490,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.14",
+        "id": 395,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.15",
             "id": 79,
@@ -14001,6 +14519,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.15",
+        "id": 396,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.16",
             "id": 80,
@@ -14024,8 +14549,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "17",
-        "id": 344,
+        "displayNumber": "17.16",
+        "id": 397,
         "type": "choicegroup",
       },
       Object {
@@ -14344,6 +14869,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.1",
+        "id": 328,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "1.2",
+        "id": 2,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.3",
             "id": 3,
@@ -14366,6 +14904,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.3",
+        "id": 329,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.4",
             "id": 4,
@@ -14389,15 +14934,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "1",
-        "id": 328,
+        "displayNumber": "1.4",
+        "id": 330,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "1.2",
-        "id": 2,
-        "maxScore": 6,
-        "type": "text",
       },
       Object {
         "displayNumber": "1.5",
@@ -14429,6 +14968,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.1",
+        "id": 331,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.2",
             "id": 7,
@@ -14451,6 +14997,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.2",
+        "id": 332,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.3",
             "id": 8,
@@ -14473,6 +15026,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.3",
+        "id": 333,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.4",
             "id": 9,
@@ -14496,8 +15056,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "2",
-        "id": 329,
+        "displayNumber": "2.4",
+        "id": 334,
         "type": "choicegroup",
       },
       Object {
@@ -14524,6 +15084,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.1",
+        "id": 335,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.2",
             "id": 11,
@@ -14546,6 +15113,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.2",
+        "id": 336,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.3",
             "id": 12,
@@ -14568,6 +15142,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.3",
+        "id": 337,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.4",
             "id": 13,
@@ -14590,6 +15171,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.4",
+        "id": 338,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.5",
             "id": 14,
@@ -14613,8 +15201,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "3",
-        "id": 330,
+        "displayNumber": "3.5",
+        "id": 339,
         "type": "choicegroup",
       },
       Object {
@@ -14641,6 +15229,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "4.1",
+        "id": 340,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "4.2",
             "id": 16,
@@ -14664,9 +15259,15 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "4",
-        "id": 331,
+        "displayNumber": "4.2",
+        "id": 341,
         "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "5.1",
+        "id": 17,
+        "maxScore": 3,
+        "type": "text",
       },
       Object {
         "choices": Array [
@@ -14692,6 +15293,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "5.2",
+        "id": 342,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "5.3",
             "id": 19,
@@ -14715,15 +15323,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "5",
-        "id": 332,
+        "displayNumber": "5.3",
+        "id": 343,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "5.1",
-        "id": 17,
-        "maxScore": 3,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -14774,6 +15376,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "6.1",
+        "id": 344,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "6.2",
             "id": 21,
@@ -14821,6 +15430,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "6.2",
+        "id": 345,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "6.3",
             "id": 22,
@@ -14869,8 +15485,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "6",
-        "id": 333,
+        "displayNumber": "6.3",
+        "id": 346,
         "type": "choicegroup",
       },
       Object {
@@ -14897,6 +15513,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "7.1",
+        "id": 347,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "7.2",
             "id": 24,
@@ -14919,6 +15542,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "7.2",
+        "id": 348,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "7.3",
             "id": 25,
@@ -14942,8 +15572,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "7",
-        "id": 334,
+        "displayNumber": "7.3",
+        "id": 349,
         "type": "choicegroup",
       },
       Object {
@@ -14970,6 +15600,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "8.1",
+        "id": 350,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "8.2",
             "id": 27,
@@ -14993,8 +15630,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "8",
-        "id": 335,
+        "displayNumber": "8.2",
+        "id": 351,
         "type": "choicegroup",
       },
       Object {
@@ -15016,6 +15653,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.1",
+        "id": 352,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.2",
             "id": 29,
@@ -15033,6 +15677,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.2",
+        "id": 353,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.3",
             "id": 30,
@@ -15050,6 +15701,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.3",
+        "id": 354,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.4",
             "id": 31,
@@ -15067,6 +15725,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.4",
+        "id": 355,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.5",
             "id": 32,
@@ -15084,6 +15749,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.5",
+        "id": 356,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.6",
             "id": 33,
@@ -15102,8 +15774,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "9",
-        "id": 336,
+        "displayNumber": "9.6",
+        "id": 357,
         "type": "choicegroup",
       },
       Object {
@@ -15130,6 +15802,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "10.1",
+        "id": 358,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "10.2",
+        "id": 35,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "10.3",
             "id": 36,
@@ -15152,6 +15837,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "10.3",
+        "id": 359,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "10.4",
             "id": 37,
@@ -15175,15 +15867,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "10",
-        "id": 337,
+        "displayNumber": "10.4",
+        "id": 360,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "10.2",
-        "id": 35,
-        "maxScore": 6,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -15209,6 +15895,25 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.1",
+        "id": 361,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "11.2.1",
+        "id": 39,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "11.2.2",
+        "id": 40,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.3",
             "id": 41,
@@ -15231,6 +15936,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.3",
+        "id": 362,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.4",
             "id": 42,
@@ -15253,6 +15965,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.4",
+        "id": 363,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.5",
             "id": 43,
@@ -15275,6 +15994,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.5",
+        "id": 364,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.6",
             "id": 44,
@@ -15298,21 +16024,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "11",
-        "id": 338,
+        "displayNumber": "11.6",
+        "id": 365,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "11.2.1",
-        "id": 39,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "11.2.2",
-        "id": 40,
-        "maxScore": 3,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -15368,6 +16082,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "12.1",
+        "id": 366,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "12.2",
             "id": 46,
@@ -15420,6 +16141,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "12.2",
+        "id": 367,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "12.3",
             "id": 47,
@@ -15473,8 +16201,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "12",
-        "id": 339,
+        "displayNumber": "12.3",
+        "id": 368,
         "type": "choicegroup",
       },
       Object {
@@ -15501,6 +16229,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "13.1",
+        "id": 369,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "13.2",
             "id": 49,
@@ -15524,8 +16259,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "13",
-        "id": 340,
+        "displayNumber": "13.2",
+        "id": 370,
         "type": "choicegroup",
       },
       Object {
@@ -15558,6 +16293,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "14.1",
+        "id": 371,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "14.2",
+        "id": 52,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "14.3",
             "id": 53,
@@ -15580,6 +16328,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "14.3",
+        "id": 372,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "14.4",
             "id": 54,
@@ -15603,13 +16358,13 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "14",
-        "id": 341,
+        "displayNumber": "14.4",
+        "id": 373,
         "type": "choicegroup",
       },
       Object {
-        "displayNumber": "14.2",
-        "id": 52,
+        "displayNumber": "15.1",
+        "id": 55,
         "maxScore": 4,
         "type": "text",
       },
@@ -15637,6 +16392,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.2",
+        "id": 374,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.3",
             "id": 57,
@@ -15659,6 +16421,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.3",
+        "id": 375,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.4",
             "id": 58,
@@ -15681,6 +16450,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.4",
+        "id": 376,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.5",
             "id": 59,
@@ -15703,6 +16479,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.5",
+        "id": 377,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.6",
             "id": 60,
@@ -15726,15 +16509,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "15",
-        "id": 342,
+        "displayNumber": "15.6",
+        "id": 378,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "15.1",
-        "id": 55,
-        "maxScore": 4,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -15760,6 +16537,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "16.1",
+        "id": 379,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "16.2",
             "id": 62,
@@ -15782,6 +16566,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "16.2",
+        "id": 380,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "16.3",
             "id": 63,
@@ -15805,8 +16596,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "16",
-        "id": 343,
+        "displayNumber": "16.3",
+        "id": 381,
         "type": "choicegroup",
       },
       Object {
@@ -15839,6 +16630,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.1",
+        "id": 382,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.2",
             "id": 66,
@@ -15861,6 +16659,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.2",
+        "id": 383,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.3",
             "id": 67,
@@ -15883,6 +16688,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.3",
+        "id": 384,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.4",
             "id": 68,
@@ -15905,6 +16717,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.4",
+        "id": 385,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.5",
             "id": 69,
@@ -15927,6 +16746,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.5",
+        "id": 386,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.6",
             "id": 70,
@@ -15949,6 +16775,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.6",
+        "id": 387,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.7",
             "id": 71,
@@ -15971,6 +16804,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.7",
+        "id": 388,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.8",
             "id": 72,
@@ -15993,6 +16833,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.8",
+        "id": 389,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.9",
             "id": 73,
@@ -16015,6 +16862,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.9",
+        "id": 390,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.10",
             "id": 74,
@@ -16037,6 +16891,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.10",
+        "id": 391,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.11",
             "id": 75,
@@ -16059,6 +16920,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.11",
+        "id": 392,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.12",
             "id": 76,
@@ -16081,6 +16949,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.12",
+        "id": 393,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.13",
             "id": 77,
@@ -16103,6 +16978,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.13",
+        "id": 394,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.14",
             "id": 78,
@@ -16125,6 +17007,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.14",
+        "id": 395,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.15",
             "id": 79,
@@ -16147,6 +17036,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.15",
+        "id": 396,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.16",
             "id": 80,
@@ -16170,8 +17066,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "17",
-        "id": 344,
+        "displayNumber": "17.16",
+        "id": 397,
         "type": "choicegroup",
       },
       Object {
@@ -16362,6 +17258,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.1",
+        "id": 328,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "1.2",
+        "id": 2,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.3",
             "id": 3,
@@ -16384,6 +17293,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "1.3",
+        "id": 329,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "1.4",
             "id": 4,
@@ -16407,15 +17323,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "1",
-        "id": 328,
+        "displayNumber": "1.4",
+        "id": 330,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "1.2",
-        "id": 2,
-        "maxScore": 6,
-        "type": "text",
       },
       Object {
         "displayNumber": "1.5",
@@ -16447,6 +17357,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.1",
+        "id": 331,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.2",
             "id": 7,
@@ -16469,6 +17386,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.2",
+        "id": 332,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.3",
             "id": 8,
@@ -16491,6 +17415,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "2.3",
+        "id": 333,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "2.4",
             "id": 9,
@@ -16514,8 +17445,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "2",
-        "id": 329,
+        "displayNumber": "2.4",
+        "id": 334,
         "type": "choicegroup",
       },
       Object {
@@ -16542,6 +17473,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.1",
+        "id": 335,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.2",
             "id": 11,
@@ -16564,6 +17502,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.2",
+        "id": 336,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.3",
             "id": 12,
@@ -16586,6 +17531,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.3",
+        "id": 337,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.4",
             "id": 13,
@@ -16608,6 +17560,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "3.4",
+        "id": 338,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "3.5",
             "id": 14,
@@ -16631,8 +17590,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "3",
-        "id": 330,
+        "displayNumber": "3.5",
+        "id": 339,
         "type": "choicegroup",
       },
       Object {
@@ -16659,6 +17618,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "4.1",
+        "id": 340,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "4.2",
             "id": 16,
@@ -16682,9 +17648,15 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "4",
-        "id": 331,
+        "displayNumber": "4.2",
+        "id": 341,
         "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "5.1",
+        "id": 17,
+        "maxScore": 3,
+        "type": "text",
       },
       Object {
         "choices": Array [
@@ -16710,6 +17682,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "5.2",
+        "id": 342,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "5.3",
             "id": 19,
@@ -16733,15 +17712,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "5",
-        "id": 332,
+        "displayNumber": "5.3",
+        "id": 343,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "5.1",
-        "id": 17,
-        "maxScore": 3,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -16792,6 +17765,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "6.1",
+        "id": 344,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "6.2",
             "id": 21,
@@ -16839,6 +17819,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "6.2",
+        "id": 345,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "6.3",
             "id": 22,
@@ -16887,8 +17874,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "6",
-        "id": 333,
+        "displayNumber": "6.3",
+        "id": 346,
         "type": "choicegroup",
       },
       Object {
@@ -16915,6 +17902,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "7.1",
+        "id": 347,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "7.2",
             "id": 24,
@@ -16937,6 +17931,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "7.2",
+        "id": 348,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "7.3",
             "id": 25,
@@ -16960,8 +17961,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "7",
-        "id": 334,
+        "displayNumber": "7.3",
+        "id": 349,
         "type": "choicegroup",
       },
       Object {
@@ -16988,6 +17989,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "8.1",
+        "id": 350,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "8.2",
             "id": 27,
@@ -17011,8 +18019,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "8",
-        "id": 335,
+        "displayNumber": "8.2",
+        "id": 351,
         "type": "choicegroup",
       },
       Object {
@@ -17034,6 +18042,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.1",
+        "id": 352,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.2",
             "id": 29,
@@ -17051,6 +18066,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.2",
+        "id": 353,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.3",
             "id": 30,
@@ -17068,6 +18090,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.3",
+        "id": 354,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.4",
             "id": 31,
@@ -17085,6 +18114,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.4",
+        "id": 355,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.5",
             "id": 32,
@@ -17102,6 +18138,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "9.5",
+        "id": 356,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "9.6",
             "id": 33,
@@ -17120,8 +18163,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "9",
-        "id": 336,
+        "displayNumber": "9.6",
+        "id": 357,
         "type": "choicegroup",
       },
       Object {
@@ -17148,6 +18191,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "10.1",
+        "id": 358,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "10.2",
+        "id": 35,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "10.3",
             "id": 36,
@@ -17170,6 +18226,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "10.3",
+        "id": 359,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "10.4",
             "id": 37,
@@ -17193,15 +18256,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "10",
-        "id": 337,
+        "displayNumber": "10.4",
+        "id": 360,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "10.2",
-        "id": 35,
-        "maxScore": 6,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -17227,6 +18284,25 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.1",
+        "id": 361,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "11.2.1",
+        "id": 39,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "11.2.2",
+        "id": 40,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.3",
             "id": 41,
@@ -17249,6 +18325,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.3",
+        "id": 362,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.4",
             "id": 42,
@@ -17271,6 +18354,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.4",
+        "id": 363,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.5",
             "id": 43,
@@ -17293,6 +18383,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "11.5",
+        "id": 364,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "11.6",
             "id": 44,
@@ -17316,21 +18413,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "11",
-        "id": 338,
+        "displayNumber": "11.6",
+        "id": 365,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "11.2.1",
-        "id": 39,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "11.2.2",
-        "id": 40,
-        "maxScore": 3,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -17386,6 +18471,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "12.1",
+        "id": 366,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "12.2",
             "id": 46,
@@ -17438,6 +18530,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "12.2",
+        "id": 367,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "12.3",
             "id": 47,
@@ -17491,8 +18590,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "12",
-        "id": 339,
+        "displayNumber": "12.3",
+        "id": 368,
         "type": "choicegroup",
       },
       Object {
@@ -17519,6 +18618,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "13.1",
+        "id": 369,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "13.2",
             "id": 49,
@@ -17542,8 +18648,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "13",
-        "id": 340,
+        "displayNumber": "13.2",
+        "id": 370,
         "type": "choicegroup",
       },
       Object {
@@ -17576,6 +18682,19 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "14.1",
+        "id": 371,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "14.2",
+        "id": 52,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "14.3",
             "id": 53,
@@ -17598,6 +18717,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "14.3",
+        "id": 372,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "14.4",
             "id": 54,
@@ -17621,13 +18747,13 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "14",
-        "id": 341,
+        "displayNumber": "14.4",
+        "id": 373,
         "type": "choicegroup",
       },
       Object {
-        "displayNumber": "14.2",
-        "id": 52,
+        "displayNumber": "15.1",
+        "id": 55,
         "maxScore": 4,
         "type": "text",
       },
@@ -17655,6 +18781,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.2",
+        "id": 374,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.3",
             "id": 57,
@@ -17677,6 +18810,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.3",
+        "id": 375,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.4",
             "id": 58,
@@ -17699,6 +18839,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.4",
+        "id": 376,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.5",
             "id": 59,
@@ -17721,6 +18868,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "15.5",
+        "id": 377,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "15.6",
             "id": 60,
@@ -17744,15 +18898,9 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "15",
-        "id": 342,
+        "displayNumber": "15.6",
+        "id": 378,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "15.1",
-        "id": 55,
-        "maxScore": 4,
-        "type": "text",
       },
       Object {
         "choices": Array [
@@ -17778,6 +18926,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "16.1",
+        "id": 379,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "16.2",
             "id": 62,
@@ -17800,6 +18955,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "16.2",
+        "id": 380,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "16.3",
             "id": 63,
@@ -17823,8 +18985,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "16",
-        "id": 343,
+        "displayNumber": "16.3",
+        "id": 381,
         "type": "choicegroup",
       },
       Object {
@@ -17857,6 +19019,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.1",
+        "id": 382,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.2",
             "id": 66,
@@ -17879,6 +19048,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.2",
+        "id": 383,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.3",
             "id": 67,
@@ -17901,6 +19077,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.3",
+        "id": 384,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.4",
             "id": 68,
@@ -17923,6 +19106,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.4",
+        "id": 385,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.5",
             "id": 69,
@@ -17945,6 +19135,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.5",
+        "id": 386,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.6",
             "id": 70,
@@ -17967,6 +19164,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.6",
+        "id": 387,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.7",
             "id": 71,
@@ -17989,6 +19193,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.7",
+        "id": 388,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.8",
             "id": 72,
@@ -18011,6 +19222,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.8",
+        "id": 389,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.9",
             "id": 73,
@@ -18033,6 +19251,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.9",
+        "id": 390,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.10",
             "id": 74,
@@ -18055,6 +19280,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.10",
+        "id": 391,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.11",
             "id": 75,
@@ -18077,6 +19309,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.11",
+        "id": 392,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.12",
             "id": 76,
@@ -18099,6 +19338,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.12",
+        "id": 393,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.13",
             "id": 77,
@@ -18121,6 +19367,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.13",
+        "id": 394,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.14",
             "id": 78,
@@ -18143,6 +19396,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.14",
+        "id": 395,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.15",
             "id": 79,
@@ -18165,6 +19425,13 @@ Object {
             ],
             "type": "choice",
           },
+        ],
+        "displayNumber": "17.15",
+        "id": 396,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
           Object {
             "displayNumber": "17.16",
             "id": 80,
@@ -18188,8 +19455,8 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "17",
-        "id": 344,
+        "displayNumber": "17.16",
+        "id": 397,
         "type": "choicegroup",
       },
       Object {
