@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-exams",
-  "version": "18.0.0-alpha.0",
+  "version": "18.0.1-alpha.0",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "prepublishOnly": "find . -name '*.mex' -delete && find . -name '*.xml' -print0 | xargs -0 -n1 -P4 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k \"${ANSWERS_PRIVATE_KEY:?must be set}\" "
   },
   "dependencies": {
-    "@digabi/exam-engine-mastering": "18.0.0-alpha.0"
+    "@digabi/exam-engine-mastering": "18.0.1-alpha.0"
   },
   "gitHead": "c133a9dece6f62388abb3d7b66a470fac4048021"
 }
