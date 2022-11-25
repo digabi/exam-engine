@@ -16,7 +16,6 @@ export function createGradingStructure(exam: Exam, generateId: GenerateId): Grad
   const questions = _.chain(exam.topLevelQuestions)
     .flatMap((question) => {
       const questionAnswers = collectAnswers(question)
-      const questionDisplayNumber = getAttribute('display-number', question.element)
       return _.chain(questionAnswers)
         .groupBy(getQuestionType)
         .flatMap((answers, questionType): GradingStructureQuestion[] => {
@@ -24,7 +23,7 @@ export function createGradingStructure(exam: Exam, generateId: GenerateId): Grad
             case 'text':
               return answers.map(mkTextQuestion)
             case 'choice':
-              return [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
+              return answers.map((answer) => mkChoiceGroupQuestion(answer, generateId))
             default:
               throw new Error(`Bug: grading structure generation not implemented for ${questionType}`)
           }
@@ -81,34 +80,28 @@ function mkTextQuestion(answer: Answer): TextQuestion {
   }
 }
 
-function mkChoiceGroupQuestion(
-  answers: Answer[],
-  questionDisplayNumber: string,
-  generateId: GenerateId
-): ChoiceGroupQuestion {
-  const choices: ChoiceGroupChoice[] = answers.map((answer) => {
-    const questionId = getNumericAttribute('question-id', answer.element)
-    const displayNumber = getAttribute('display-number', answer.element)
-    const maxScore = getNumericAttribute('max-score', answer.element)
+function mkChoiceGroupQuestion(answer: Answer, generateId: GenerateId): ChoiceGroupQuestion {
+  const questionId = getNumericAttribute('question-id', answer.element)
+  const displayNumber = getAttribute('display-number', answer.element)
+  const maxScore = getNumericAttribute('max-score', answer.element)
 
-    const options: ChoiceGroupOption[] = answer.element
-      .find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
-      .map((option) => {
-        const id = getNumericAttribute('option-id', option)
-        const score = getNumericAttribute('score', option, 0)
-        const correct = score > 0 && score === maxScore
-        return { id, score, correct }
-      })
+  const options: ChoiceGroupOption[] = answer.element
+    .find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
+    .map((option) => {
+      const id = getNumericAttribute('option-id', option)
+      const score = getNumericAttribute('score', option, 0)
+      const correct = score > 0 && score === maxScore
+      return { id, score, correct }
+    })
 
-    return {
-      id: questionId,
-      displayNumber,
-      type: 'choice',
-      options,
-    }
-  })
+  const choice: ChoiceGroupChoice = {
+    id: questionId,
+    displayNumber,
+    type: 'choice',
+    options,
+  }
 
-  return { id: generateId(), displayNumber: questionDisplayNumber, type: 'choicegroup', choices }
+  return { id: generateId(), displayNumber: displayNumber, type: 'choicegroup', choices: [choice] }
 }
 
 const getDigit =
