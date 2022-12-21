@@ -14,7 +14,7 @@
   "HI": "SV – Historia",
   "KE": "SV – Kemi",
   "L1": "SV – Latin, kort lärokurs",
-  "L7": "SV – Latin, längre lärokurs",
+  "L7": "SV – Latin, utvidgad kort lärokurs",
   "M": "SV – Matematik, lång lärokurs",
   "N": "SV – Matematik, kort lärokurs",
   "O5": "SV – Svenska som andraspråk och litteratur",
@@ -32,6 +32,13 @@
   "VA": "SV – Ryska, lång lärokurs",
   "VC": "SV – Ryska, kort lärokurs",
   "YH": "SV – Samhällslära",
+  "W":  "Jieʹnnǩiõll da ǩeʹrjjlažvuõtt, sääʹmǩiõll",
+  "Z":  "Eatnigiella ja girjjálašvuohta, davvisámegiella",
+  "I":  "Eenikielâ já kirjálâšvuotâ, anarâškielâ",
+  "DC": "SV – Nordsamiska, kort lärokurs",
+  "QC": "SV – Skoltsamiska, kort lärokurs",
+  "IC": "SV – Enaresamiska, kort lärokurs",
+
   "hearing-impaired": "(hörselskadade)",
   "visually-impaired": "(synskadade)"
 }
