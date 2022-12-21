@@ -132,6 +132,18 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="section-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="H" />
+      <xs:enumeration value="T" />
+      <xs:enumeration value="D" />
+      <xs:enumeration value="E" />
+      <xs:enumeration value="X" />
+      <xs:enumeration value="A" />
+      <xs:enumeration value="B" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:complexType name="Flow" mixed="true">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:group ref="xhtml:xhtml.Flow.mix" />
@@ -233,6 +245,7 @@
       </xs:sequence>
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
       <xs:attribute name="cas-forbidden" type="xs:boolean" default="false" />
+      <xs:attribute name="type" type="e:section-type" />
       <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
