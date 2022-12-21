@@ -245,7 +245,13 @@
       </xs:sequence>
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
       <xs:attribute name="cas-forbidden" type="xs:boolean" default="false" />
-      <xs:attribute name="type" type="e:section-type" />
+      <xs:attribute name="type" type="e:section-type">
+        <xs:annotation>
+          <xs:documentation>
+            YTL specific type code that is only used in packaging exams for matriculation examination. Use 'H' to denote hearing section of the exam. The other options have more cosmetic effect on exam packaging. This attribute does not have effect on how sections are displayed in the exam.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
       <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
