@@ -16,7 +16,7 @@
     "@digabi/exam-engine-core": "18.0.0",
     "@digabi/exam-engine-mastering": "18.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^9.1.0",
     "child-process-promise": "^2.2.1",
     "css-loader": "^5.0.0",
     "css-minimizer-webpack-plugin": "^1.x",
