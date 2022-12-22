@@ -19,6 +19,7 @@ export interface GenerateExamOptions {
 export interface GenerateSectionOptions {
   maxAnswers?: number
   casForbidden?: boolean
+  type?: string
   questions: GenerateQuestionOptions[]
 }
 
