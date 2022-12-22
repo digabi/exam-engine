@@ -171,6 +171,7 @@ function addSection(exam: libxml.Element, languages: Language[], options: Genera
   const section = createElement(exam, 'section', undefined, {
     'max-answers': options.maxAnswers,
     'cas-forbidden': options.casForbidden,
+    'type': options.type
   })
 
   createLocalizedElement(section, 'section-title', languages, { 'fi-FI': 'Osan otsikko', 'sv-FI': 'Delens titel' })
