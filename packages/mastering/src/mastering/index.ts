@@ -83,6 +83,12 @@ export interface MasteringOptions {
    * `<e:formula>…</e:formula>` element.
    */
   throwOnLatexError?: boolean
+
+  /**
+   * Group sibling choice-answer elements under one choicegroup question.
+   * This enables minus point handling within a single choicegroup.
+   */
+  groupChoiceAnswers?: boolean
 }
 
 const defaultOptions = {
@@ -270,7 +276,7 @@ async function masterExamVersion(
   updateMaxScoresToAnswers(exam)
   countSectionMaxAndMinAnswers(exam)
 
-  const gradingStructure = createGradingStructure(exam, generateId)
+  const gradingStructure = createGradingStructure(exam, generateId, { groupChoiceAnswers: options.groupChoiceAnswers })
 
   // This is bit of a hack. For hearing impaired exams, we want to delete the first section after the basic exam
   // structure has been set set up. This way the the questions in the hearing impaired exam are numbered in the same

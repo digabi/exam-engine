@@ -12,10 +12,22 @@ import { GenerateId } from '.'
 import { Answer, choiceAnswerOptionTypes, Exam, ns, Question } from './schema'
 import { getAttribute, getNumericAttribute, xpathOr } from './utils'
 
-export function createGradingStructure(exam: Exam, generateId: GenerateId): GradingStructure {
+export interface GradingStructureOptions {
+  /**
+   * Group sibling choice-answer elements under one choicegroup question.
+   */
+  groupChoiceAnswers?: boolean
+}
+
+export function createGradingStructure(
+  exam: Exam,
+  generateId: GenerateId,
+  options?: GradingStructureOptions
+): GradingStructure {
   const questions = _.chain(exam.topLevelQuestions)
     .flatMap((question) => {
       const questionAnswers = collectAnswers(question)
+      const questionDisplayNumber = getAttribute('display-number', question.element)
       return _.chain(questionAnswers)
         .groupBy(getQuestionType)
         .flatMap((answers, questionType): GradingStructureQuestion[] => {
@@ -23,7 +35,9 @@ export function createGradingStructure(exam: Exam, generateId: GenerateId): Grad
             case 'text':
               return answers.map(mkTextQuestion)
             case 'choice':
-              return answers.map((answer) => mkChoiceGroupQuestion(answer, generateId))
+              return options?.groupChoiceAnswers
+                ? [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
+                : answers.map((answer) => mkSingleChoiceGroupQuestion(answer, generateId))
             default:
               throw new Error(`Bug: grading structure generation not implemented for ${questionType}`)
           }
@@ -80,7 +94,26 @@ function mkTextQuestion(answer: Answer): TextQuestion {
   }
 }
 
-function mkChoiceGroupQuestion(answer: Answer, generateId: GenerateId): ChoiceGroupQuestion {
+function mkChoiceGroupQuestion(
+  answers: Answer[],
+  questionDisplayNumber: string,
+  generateId: GenerateId
+): ChoiceGroupQuestion {
+  const choices: ChoiceGroupChoice[] = answers.map(mkChoiceGroupChoice)
+  return { id: generateId(), displayNumber: questionDisplayNumber, type: 'choicegroup', choices }
+}
+
+function mkSingleChoiceGroupQuestion(answer: Answer, generateId: GenerateId): ChoiceGroupQuestion {
+  const choiceGroupChoice = mkChoiceGroupChoice(answer)
+  return {
+    id: generateId(),
+    displayNumber: choiceGroupChoice.displayNumber,
+    type: 'choicegroup',
+    choices: [choiceGroupChoice],
+  }
+}
+
+function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
   const questionId = getNumericAttribute('question-id', answer.element)
   const displayNumber = getAttribute('display-number', answer.element)
   const maxScore = getNumericAttribute('max-score', answer.element)
@@ -94,16 +127,13 @@ function mkChoiceGroupQuestion(answer: Answer, generateId: GenerateId): ChoiceGr
       return { id, score, correct }
     })
 
-  const choice: ChoiceGroupChoice = {
+  return {
     id: questionId,
     displayNumber,
     type: 'choice',
     options,
   }
-
-  return { id: generateId(), displayNumber: displayNumber, type: 'choicegroup', choices: [choice] }
 }
-
 const getDigit =
   (digit: number) =>
   (question: GradingStructureQuestion): number =>

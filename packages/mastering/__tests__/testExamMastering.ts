@@ -132,6 +132,21 @@ describe('Exam mastering', () => {
     ])
   })
 
+  it('combines choice-answers and dropdown-answers to the same question in grading structure when groupChoiceAnswers option is set', async () => {
+    const xml = generateExam({ sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }] })
+    const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata, { groupChoiceAnswers: true })
+    expect(masteringResult.gradingStructure.questions).toMatchObject([
+      {
+        type: 'choicegroup',
+        displayNumber: '1',
+        choices: [
+          { type: 'choice', displayNumber: '1.1' },
+          { type: 'choice', displayNumber: '1.2' },
+        ],
+      },
+    ])
+  })
+
   it('supports arbitrarily nested questions', async () => {
     const xml = generateExam({
       sections: [
