@@ -33,7 +33,7 @@
     "downshift": "^6.0.0",
     "file-loader": "^6.1.0",
     "fontfaceobserver": "^2.1.0",
-    "i18next": "^21.6.12",
+    "i18next": "^22.4.8",
     "jquery": "^3.4.1",
     "less": "^4.1.0",
     "less-loader": "^11.0.0",
