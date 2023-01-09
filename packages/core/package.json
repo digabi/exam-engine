@@ -30,7 +30,7 @@
     "css-loader": "^5.0.0",
     "css-minimizer-webpack-plugin": "^3.x",
     "date-fns": "^2.8.1",
-    "downshift": "^6.0.0",
+    "downshift": "^7.1.2",
     "file-loader": "^6.1.0",
     "fontfaceobserver": "^2.1.0",
     "i18next": "^21.6.12",
