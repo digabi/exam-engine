@@ -278,13 +278,6 @@ async function masterExamVersion(
 
   const gradingStructure = createGradingStructure(exam, generateId, { groupChoiceAnswers: options.groupChoiceAnswers })
 
-  // This is bit of a hack. For hearing impaired exams, we want to delete the first section after the basic exam
-  // structure has been set set up. This way the the questions in the hearing impaired exam are numbered in the same
-  // manner than the normal exam and the grading structure is equal to the the normal grading structure.
-  if (type === 'hearing-impaired') {
-    exam.sections[0]?.element?.remove()
-    exam.sections.shift()
-  }
   countMaxScores(exam)
   removeComments(root)
   removeTableWhitespaceNodes(root)

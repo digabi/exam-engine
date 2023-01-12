@@ -17241,6 +17241,277 @@ Object {
             "id": 1,
             "options": Array [
               Object {
+                "correct": false,
+                "id": 66,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 67,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 68,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.1",
+        "id": 222,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "1.2",
+            "id": 2,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 69,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 70,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 71,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.2",
+        "id": 223,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "2.1",
+            "id": 3,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 72,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 73,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "2.1",
+        "id": 224,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "2.2",
+            "id": 4,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 74,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 75,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "2.2",
+        "id": 225,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "2.3",
+            "id": 5,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 76,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 77,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "2.3",
+        "id": 226,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "2.4",
+            "id": 6,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 78,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 79,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "2.4",
+        "id": 227,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "2.5",
+            "id": 7,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 80,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 81,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "2.5",
+        "id": 228,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "2.6",
+            "id": 8,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 82,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 83,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "2.6",
+        "id": 229,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "3.1",
+            "id": 9,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 84,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 85,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 86,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "3.1",
+        "id": 230,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "3.2",
+        "id": 10,
+        "maxScore": 6,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "3.3",
+            "id": 11,
+            "options": Array [
+              Object {
+                "correct": true,
+                "id": 87,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 88,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 89,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "3.3",
+        "id": 231,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "3.4",
+            "id": 12,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 90,
+                "score": 0,
+              },
+              Object {
                 "correct": true,
                 "id": 91,
                 "score": 3,
@@ -17250,60 +17521,66 @@ Object {
                 "id": 92,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "3.4",
+        "id": 232,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "4.1",
+            "id": 13,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 93,
                 "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "1.1",
-        "id": 328,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "1.2",
-        "id": 2,
-        "maxScore": 6,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "1.3",
-            "id": 3,
-            "options": Array [
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 94,
-                "score": 0,
+                "score": 3,
               },
               Object {
                 "correct": false,
                 "id": 95,
                 "score": 0,
               },
-              Object {
-                "correct": true,
-                "id": 96,
-                "score": 3,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "1.3",
-        "id": 329,
+        "displayNumber": "4.1",
+        "id": 233,
         "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "4.2.1",
+        "id": 14,
+        "maxScore": 3,
+        "type": "text",
+      },
+      Object {
+        "displayNumber": "4.2.2",
+        "id": 15,
+        "maxScore": 3,
+        "type": "text",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "1.4",
-            "id": 4,
+            "displayNumber": "4.3",
+            "id": 16,
             "options": Array [
+              Object {
+                "correct": false,
+                "id": 96,
+                "score": 0,
+              },
               Object {
                 "correct": false,
                 "id": 97,
@@ -17312,62 +17589,56 @@ Object {
               Object {
                 "correct": true,
                 "id": 98,
-                "score": 3,
-              },
-              Object {
-                "correct": false,
-                "id": 99,
-                "score": 0,
+                "score": 2,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "1.4",
-        "id": 330,
+        "displayNumber": "4.3",
+        "id": 234,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "1.5",
-        "id": 5,
-        "maxScore": 6,
-        "type": "text",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "2.1",
-            "id": 6,
+            "displayNumber": "4.4",
+            "id": 17,
             "options": Array [
               Object {
                 "correct": true,
-                "id": 100,
+                "id": 99,
                 "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 100,
+                "score": 0,
               },
               Object {
                 "correct": false,
                 "id": 101,
                 "score": 0,
               },
-              Object {
-                "correct": false,
-                "id": 102,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "2.1",
-        "id": 331,
+        "displayNumber": "4.4",
+        "id": 235,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "2.2",
-            "id": 7,
+            "displayNumber": "4.5",
+            "id": 18,
             "options": Array [
+              Object {
+                "correct": false,
+                "id": 102,
+                "score": 0,
+              },
               Object {
                 "correct": true,
                 "id": 103,
@@ -17378,25 +17649,25 @@ Object {
                 "id": 104,
                 "score": 0,
               },
-              Object {
-                "correct": false,
-                "id": 105,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "2.2",
-        "id": 332,
+        "displayNumber": "4.5",
+        "id": 236,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "2.3",
-            "id": 8,
+            "displayNumber": "4.6",
+            "id": 19,
             "options": Array [
+              Object {
+                "correct": true,
+                "id": 105,
+                "score": 3,
+              },
               Object {
                 "correct": false,
                 "id": 106,
@@ -17407,25 +17678,25 @@ Object {
                 "id": 107,
                 "score": 0,
               },
-              Object {
-                "correct": true,
-                "id": 108,
-                "score": 3,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "2.3",
-        "id": 333,
+        "displayNumber": "4.6",
+        "id": 237,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "2.4",
-            "id": 9,
+            "displayNumber": "5.1",
+            "id": 20,
             "options": Array [
+              Object {
+                "correct": false,
+                "id": 108,
+                "score": 0,
+              },
               Object {
                 "correct": false,
                 "id": 109,
@@ -17439,109 +17710,67 @@ Object {
               Object {
                 "correct": true,
                 "id": 111,
-                "score": 3,
+                "score": 2,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "2.4",
-        "id": 334,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "3.1",
-            "id": 10,
-            "options": Array [
               Object {
                 "correct": false,
                 "id": 112,
                 "score": 0,
               },
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 113,
-                "score": 3,
+                "score": 0,
               },
               Object {
                 "correct": false,
                 "id": 114,
                 "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "3.1",
-        "id": 335,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "3.2",
-            "id": 11,
-            "options": Array [
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 115,
-                "score": 3,
+                "score": 0,
               },
               Object {
                 "correct": false,
                 "id": 116,
                 "score": 0,
               },
-              Object {
-                "correct": false,
-                "id": 117,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "3.2",
-        "id": 336,
+        "displayNumber": "5.1",
+        "id": 238,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "3.3",
-            "id": 12,
+            "displayNumber": "5.2",
+            "id": 21,
             "options": Array [
+              Object {
+                "correct": false,
+                "id": 117,
+                "score": 0,
+              },
               Object {
                 "correct": false,
                 "id": 118,
                 "score": 0,
               },
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 119,
-                "score": 0,
+                "score": 2,
               },
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 120,
-                "score": 3,
+                "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "3.3",
-        "id": 337,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "3.4",
-            "id": 13,
-            "options": Array [
               Object {
                 "correct": false,
                 "id": 121,
@@ -17553,130 +17782,18 @@ Object {
                 "score": 0,
               },
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 123,
-                "score": 3,
+                "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "3.4",
-        "id": 338,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "3.5",
-            "id": 14,
-            "options": Array [
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 124,
-                "score": 3,
+                "score": 0,
               },
               Object {
                 "correct": false,
                 "id": 125,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 126,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "3.5",
-        "id": 339,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "4.1",
-            "id": 15,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 127,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 128,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 129,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "4.1",
-        "id": 340,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "4.2",
-            "id": 16,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 130,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 131,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 132,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "4.2",
-        "id": 341,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "5.1",
-        "id": 17,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "5.2",
-            "id": 18,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 133,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 134,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 135,
                 "score": 0,
               },
             ],
@@ -17684,28 +17801,58 @@ Object {
           },
         ],
         "displayNumber": "5.2",
-        "id": 342,
+        "id": 239,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
             "displayNumber": "5.3",
-            "id": 19,
+            "id": 22,
             "options": Array [
               Object {
                 "correct": false,
-                "id": 136,
+                "id": 126,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 127,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 128,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 129,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 130,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 131,
                 "score": 0,
               },
               Object {
                 "correct": true,
-                "id": 137,
+                "id": 132,
                 "score": 2,
               },
               Object {
                 "correct": false,
-                "id": 138,
+                "id": 133,
+                "score": 0,
+              },
+              Object {
+                "correct": false,
+                "id": 134,
                 "score": 0,
               },
             ],
@@ -17713,29 +17860,83 @@ Object {
           },
         ],
         "displayNumber": "5.3",
-        "id": 343,
+        "id": 240,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
             "displayNumber": "6.1",
-            "id": 20,
+            "id": 23,
             "options": Array [
+              Object {
+                "correct": false,
+                "id": 135,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 136,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 137,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "6.1",
+        "id": 241,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "6.2",
+            "id": 24,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 138,
+                "score": 0,
+              },
               Object {
                 "correct": false,
                 "id": 139,
                 "score": 0,
               },
               Object {
-                "correct": false,
-                "id": 140,
-                "score": 0,
-              },
-              Object {
                 "correct": true,
-                "id": 141,
+                "id": 140,
                 "score": 2,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "6.2",
+        "id": 242,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "6.3",
+        "id": 25,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "7.1",
+            "id": 26,
+            "options": Array [
+              Object {
+                "correct": false,
+                "id": 141,
+                "score": 0,
               },
               Object {
                 "correct": false,
@@ -17743,10 +17944,30 @@ Object {
                 "score": 0,
               },
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 143,
-                "score": 0,
+                "score": 3,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "7.1",
+        "id": 243,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "7.2",
+        "id": 27,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "7.3",
+            "id": 28,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 144,
@@ -17758,28 +17979,28 @@ Object {
                 "score": 0,
               },
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 146,
-                "score": 0,
+                "score": 3,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "6.1",
-        "id": 344,
+        "displayNumber": "7.3",
+        "id": 244,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "6.2",
-            "id": 21,
+            "displayNumber": "7.4",
+            "id": 29,
             "options": Array [
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 147,
-                "score": 0,
+                "score": 3,
               },
               Object {
                 "correct": false,
@@ -17791,6 +18012,26 @@ Object {
                 "id": 149,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "7.4",
+        "id": 245,
+        "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "8.1",
+        "id": 30,
+        "maxScore": 4,
+        "type": "text",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "8.2",
+            "id": 31,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 150,
@@ -17799,46 +18040,60 @@ Object {
               Object {
                 "correct": true,
                 "id": 151,
-                "score": 2,
+                "score": 3,
               },
               Object {
                 "correct": false,
                 "id": 152,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "8.2",
+        "id": 246,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "8.3",
+            "id": 32,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 153,
                 "score": 0,
               },
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 154,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 155,
                 "score": 0,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "6.2",
-        "id": 345,
+        "displayNumber": "8.3",
+        "id": 247,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "6.3",
-            "id": 22,
+            "displayNumber": "8.4",
+            "id": 33,
             "options": Array [
               Object {
-                "correct": false,
-                "id": 155,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
+                "correct": true,
                 "id": 156,
-                "score": 0,
+                "score": 3,
               },
               Object {
                 "correct": false,
@@ -17846,102 +18101,116 @@ Object {
                 "score": 0,
               },
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 158,
-                "score": 2,
+                "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "8.4",
+        "id": 248,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "8.5",
+            "id": 34,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 159,
                 "score": 0,
               },
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 160,
-                "score": 0,
+                "score": 3,
               },
               Object {
                 "correct": false,
                 "id": 161,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "8.5",
+        "id": 249,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "8.6",
+            "id": 35,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 162,
                 "score": 0,
               },
+              Object {
+                "correct": true,
+                "id": 163,
+                "score": 3,
+              },
+              Object {
+                "correct": false,
+                "id": 164,
+                "score": 0,
+              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "6.3",
-        "id": 346,
+        "displayNumber": "8.6",
+        "id": 250,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "7.1",
-            "id": 23,
+            "displayNumber": "9.1",
+            "id": 36,
             "options": Array [
-              Object {
-                "correct": false,
-                "id": 163,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 164,
-                "score": 2,
-              },
               Object {
                 "correct": false,
                 "id": 165,
                 "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "7.1",
-        "id": 347,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "7.2",
-            "id": 24,
-            "options": Array [
               Object {
                 "correct": false,
                 "id": 166,
                 "score": 0,
               },
               Object {
-                "correct": false,
-                "id": 167,
-                "score": 0,
-              },
-              Object {
                 "correct": true,
-                "id": 168,
+                "id": 167,
                 "score": 2,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "7.2",
-        "id": 348,
+        "displayNumber": "9.1",
+        "id": 251,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "7.3",
-            "id": 25,
+            "displayNumber": "9.2",
+            "id": 37,
             "options": Array [
+              Object {
+                "correct": false,
+                "id": 168,
+                "score": 0,
+              },
               Object {
                 "correct": true,
                 "id": 169,
@@ -17952,87 +18221,93 @@ Object {
                 "id": 170,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "9.2",
+        "id": 252,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "9.3",
+            "id": 38,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 171,
                 "score": 0,
               },
+              Object {
+                "correct": true,
+                "id": 172,
+                "score": 2,
+              },
+              Object {
+                "correct": false,
+                "id": 173,
+                "score": 0,
+              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "7.3",
-        "id": 349,
+        "displayNumber": "9.3",
+        "id": 253,
         "type": "choicegroup",
+      },
+      Object {
+        "displayNumber": "9.4",
+        "id": 39,
+        "maxScore": 2,
+        "type": "text",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "8.1",
-            "id": 26,
+            "displayNumber": "10.1",
+            "id": 40,
             "options": Array [
-              Object {
-                "correct": false,
-                "id": 172,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 173,
-                "score": 2,
-              },
               Object {
                 "correct": false,
                 "id": 174,
                 "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "8.1",
-        "id": 350,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "8.2",
-            "id": 27,
-            "options": Array [
               Object {
                 "correct": false,
                 "id": 175,
                 "score": 0,
               },
               Object {
-                "correct": false,
-                "id": 176,
-                "score": 0,
-              },
-              Object {
                 "correct": true,
-                "id": 177,
-                "score": 2,
+                "id": 176,
+                "score": 1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "8.2",
-        "id": 351,
+        "displayNumber": "10.1",
+        "id": 254,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "9.1",
-            "id": 28,
+            "displayNumber": "10.2",
+            "id": 41,
             "options": Array [
               Object {
                 "correct": true,
-                "id": 178,
+                "id": 177,
                 "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 178,
+                "score": 0,
               },
               Object {
                 "correct": false,
@@ -18043,15 +18318,15 @@ Object {
             "type": "choice",
           },
         ],
-        "displayNumber": "9.1",
-        "id": 352,
+        "displayNumber": "10.2",
+        "id": 255,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "9.2",
-            "id": 29,
+            "displayNumber": "10.3",
+            "id": 42,
             "options": Array [
               Object {
                 "correct": false,
@@ -18059,71 +18334,57 @@ Object {
                 "score": 0,
               },
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 181,
+                "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 182,
                 "score": 1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "9.2",
-        "id": 353,
+        "displayNumber": "10.3",
+        "id": 256,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "9.3",
-            "id": 30,
+            "displayNumber": "10.4",
+            "id": 43,
             "options": Array [
-              Object {
-                "correct": false,
-                "id": 182,
-                "score": 0,
-              },
               Object {
                 "correct": true,
                 "id": 183,
                 "score": 1,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "9.3",
-        "id": 354,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "9.4",
-            "id": 31,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 184,
-                "score": 1,
-              },
               Object {
                 "correct": false,
-                "id": 185,
+                "id": 184,
                 "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 185,
+                "score": 1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "9.4",
-        "id": 355,
+        "displayNumber": "10.4",
+        "id": 257,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "9.5",
-            "id": 32,
+            "displayNumber": "10.5",
+            "id": 44,
             "options": Array [
               Object {
                 "correct": false,
@@ -18131,323 +18392,319 @@ Object {
                 "score": 0,
               },
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 187,
-                "score": 1,
+                "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "9.5",
-        "id": 356,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "9.6",
-            "id": 33,
-            "options": Array [
               Object {
                 "correct": true,
                 "id": 188,
                 "score": 1,
               },
-              Object {
-                "correct": false,
-                "id": 189,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "9.6",
-        "id": 357,
+        "displayNumber": "10.5",
+        "id": 258,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "10.1",
-            "id": 34,
+            "displayNumber": "10.6",
+            "id": 45,
             "options": Array [
               Object {
                 "correct": false,
-                "id": 190,
+                "id": 189,
                 "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 190,
+                "score": 1,
               },
               Object {
                 "correct": false,
                 "id": 191,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "10.6",
+        "id": 259,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "10.7",
+            "id": 46,
+            "options": Array [
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 192,
-                "score": 3,
+                "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "10.1",
-        "id": 358,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "10.2",
-        "id": 35,
-        "maxScore": 6,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "10.3",
-            "id": 36,
-            "options": Array [
               Object {
-                "correct": true,
+                "correct": false,
                 "id": 193,
-                "score": 3,
+                "score": 0,
               },
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 194,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 195,
-                "score": 0,
+                "score": 1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "10.3",
-        "id": 359,
+        "displayNumber": "10.7",
+        "id": 260,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "10.4",
-            "id": 37,
+            "displayNumber": "10.8",
+            "id": 47,
             "options": Array [
               Object {
                 "correct": true,
+                "id": 195,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
                 "id": 196,
-                "score": 3,
+                "score": 0,
               },
               Object {
                 "correct": false,
                 "id": 197,
                 "score": 0,
               },
-              Object {
-                "correct": false,
-                "id": 198,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "10.4",
-        "id": 360,
+        "displayNumber": "10.8",
+        "id": 261,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "11.1",
-            "id": 38,
+            "displayNumber": "10.9",
+            "id": 48,
             "options": Array [
               Object {
                 "correct": true,
+                "id": 198,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
                 "id": 199,
-                "score": 3,
+                "score": 0,
               },
               Object {
                 "correct": false,
                 "id": 200,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "10.9",
+        "id": 262,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "10.10",
+            "id": 49,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 201,
                 "score": 0,
               },
+              Object {
+                "correct": true,
+                "id": 202,
+                "score": 1,
+              },
+              Object {
+                "correct": false,
+                "id": 203,
+                "score": 0,
+              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "11.1",
-        "id": 361,
+        "displayNumber": "10.10",
+        "id": 263,
         "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "11.2.1",
-        "id": 39,
-        "maxScore": 3,
-        "type": "text",
-      },
-      Object {
-        "displayNumber": "11.2.2",
-        "id": 40,
-        "maxScore": 3,
-        "type": "text",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "11.3",
-            "id": 41,
+            "displayNumber": "10.11",
+            "id": 50,
             "options": Array [
-              Object {
-                "correct": false,
-                "id": 202,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 203,
-                "score": 2,
-              },
               Object {
                 "correct": false,
                 "id": 204,
                 "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "11.3",
-        "id": 362,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "11.4",
-            "id": 42,
-            "options": Array [
               Object {
                 "correct": false,
                 "id": 205,
                 "score": 0,
               },
               Object {
-                "correct": false,
-                "id": 206,
-                "score": 0,
-              },
-              Object {
                 "correct": true,
-                "id": 207,
-                "score": 3,
+                "id": 206,
+                "score": 1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "11.4",
-        "id": 363,
+        "displayNumber": "10.11",
+        "id": 264,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "11.5",
-            "id": 43,
+            "displayNumber": "10.12",
+            "id": 51,
             "options": Array [
+              Object {
+                "correct": false,
+                "id": 207,
+                "score": 0,
+              },
               Object {
                 "correct": false,
                 "id": 208,
                 "score": 0,
               },
               Object {
-                "correct": false,
-                "id": 209,
-                "score": 0,
-              },
-              Object {
                 "correct": true,
-                "id": 210,
-                "score": 3,
+                "id": 209,
+                "score": 1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "11.5",
-        "id": 364,
+        "displayNumber": "10.12",
+        "id": 265,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "11.6",
-            "id": 44,
+            "displayNumber": "10.13",
+            "id": 52,
             "options": Array [
               Object {
                 "correct": false,
-                "id": 211,
+                "id": 210,
                 "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 211,
+                "score": 1,
               },
               Object {
                 "correct": false,
                 "id": 212,
                 "score": 0,
               },
-              Object {
-                "correct": true,
-                "id": 213,
-                "score": 3,
-              },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "11.6",
-        "id": 365,
+        "displayNumber": "10.13",
+        "id": 266,
         "type": "choicegroup",
       },
       Object {
         "choices": Array [
           Object {
-            "displayNumber": "12.1",
-            "id": 45,
+            "displayNumber": "10.14",
+            "id": 53,
             "options": Array [
               Object {
                 "correct": false,
-                "id": 214,
+                "id": 213,
                 "score": 0,
+              },
+              Object {
+                "correct": true,
+                "id": 214,
+                "score": 1,
               },
               Object {
                 "correct": false,
                 "id": 215,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "10.14",
+        "id": 267,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "10.15",
+            "id": 54,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 216,
                 "score": 0,
               },
               Object {
-                "correct": true,
-                "id": 217,
-                "score": 2,
-              },
-              Object {
                 "correct": false,
-                "id": 218,
+                "id": 217,
                 "score": 0,
               },
+              Object {
+                "correct": true,
+                "id": 218,
+                "score": 1,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "10.15",
+        "id": 268,
+        "type": "choicegroup",
+      },
+      Object {
+        "choices": Array [
+          Object {
+            "displayNumber": "10.16",
+            "id": 55,
+            "options": Array [
               Object {
                 "correct": false,
                 "id": 219,
@@ -18459,1004 +18716,16 @@ Object {
                 "score": 0,
               },
               Object {
-                "correct": false,
+                "correct": true,
                 "id": 221,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 222,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "12.1",
-        "id": 366,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "12.2",
-            "id": 46,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 223,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 224,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 225,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 226,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 227,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 228,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 229,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 230,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 231,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "12.2",
-        "id": 367,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "12.3",
-            "id": 47,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 232,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 233,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 234,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 235,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 236,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 237,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 238,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 239,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 240,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "12.3",
-        "id": 368,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "13.1",
-            "id": 48,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 241,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 242,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 243,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "13.1",
-        "id": 369,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "13.2",
-            "id": 49,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 244,
-                "score": 2,
-              },
-              Object {
-                "correct": false,
-                "id": 245,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 246,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "13.2",
-        "id": 370,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "13.3",
-        "id": 50,
-        "maxScore": 4,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "14.1",
-            "id": 51,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 247,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 248,
-                "score": 3,
-              },
-              Object {
-                "correct": false,
-                "id": 249,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "14.1",
-        "id": 371,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "14.2",
-        "id": 52,
-        "maxScore": 4,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "14.3",
-            "id": 53,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 250,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 251,
-                "score": 3,
-              },
-              Object {
-                "correct": false,
-                "id": 252,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "14.3",
-        "id": 372,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "14.4",
-            "id": 54,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 253,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 254,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 255,
-                "score": 3,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "14.4",
-        "id": 373,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "15.1",
-        "id": 55,
-        "maxScore": 4,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "15.2",
-            "id": 56,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 256,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 257,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 258,
-                "score": 3,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "15.2",
-        "id": 374,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "15.3",
-            "id": 57,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 259,
-                "score": 3,
-              },
-              Object {
-                "correct": false,
-                "id": 260,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 261,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "15.3",
-        "id": 375,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "15.4",
-            "id": 58,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 262,
-                "score": 3,
-              },
-              Object {
-                "correct": false,
-                "id": 263,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 264,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "15.4",
-        "id": 376,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "15.5",
-            "id": 59,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 265,
-                "score": 3,
-              },
-              Object {
-                "correct": false,
-                "id": 266,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 267,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "15.5",
-        "id": 377,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "15.6",
-            "id": 60,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 268,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 269,
-                "score": 3,
-              },
-              Object {
-                "correct": false,
-                "id": 270,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "15.6",
-        "id": 378,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "16.1",
-            "id": 61,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 271,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 272,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 273,
-                "score": 2,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "16.1",
-        "id": 379,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "16.2",
-            "id": 62,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 274,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 275,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 276,
-                "score": 2,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "16.2",
-        "id": 380,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "16.3",
-            "id": 63,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 277,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 278,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 279,
-                "score": 2,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "16.3",
-        "id": 381,
-        "type": "choicegroup",
-      },
-      Object {
-        "displayNumber": "16.4",
-        "id": 64,
-        "maxScore": 2,
-        "type": "text",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.1",
-            "id": 65,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 280,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 281,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 282,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.1",
-        "id": 382,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.2",
-            "id": 66,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 283,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 284,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 285,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.2",
-        "id": 383,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.3",
-            "id": 67,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 286,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 287,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 288,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.3",
-        "id": 384,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.4",
-            "id": 68,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 289,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 290,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 291,
                 "score": 1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "17.4",
-        "id": 385,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.5",
-            "id": 69,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 292,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 293,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 294,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.5",
-        "id": 386,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.6",
-            "id": 70,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 295,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 296,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 297,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.6",
-        "id": 387,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.7",
-            "id": 71,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 298,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 299,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 300,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.7",
-        "id": 388,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.8",
-            "id": 72,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 301,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 302,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 303,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.8",
-        "id": 389,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.9",
-            "id": 73,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 304,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 305,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 306,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.9",
-        "id": 390,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.10",
-            "id": 74,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 307,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 308,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 309,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.10",
-        "id": 391,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.11",
-            "id": 75,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 310,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 311,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 312,
-                "score": 1,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.11",
-        "id": 392,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.12",
-            "id": 76,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 313,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 314,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 315,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.12",
-        "id": 393,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.13",
-            "id": 77,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 316,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 317,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 318,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.13",
-        "id": 394,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.14",
-            "id": 78,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 319,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 320,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 321,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.14",
-        "id": 395,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.15",
-            "id": 79,
-            "options": Array [
-              Object {
-                "correct": true,
-                "id": 322,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 323,
-                "score": 0,
-              },
-              Object {
-                "correct": false,
-                "id": 324,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.15",
-        "id": 396,
-        "type": "choicegroup",
-      },
-      Object {
-        "choices": Array [
-          Object {
-            "displayNumber": "17.16",
-            "id": 80,
-            "options": Array [
-              Object {
-                "correct": false,
-                "id": 325,
-                "score": 0,
-              },
-              Object {
-                "correct": true,
-                "id": 326,
-                "score": 1,
-              },
-              Object {
-                "correct": false,
-                "id": 327,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "17.16",
-        "id": 397,
+        "displayNumber": "10.16",
+        "id": 269,
         "type": "choicegroup",
       },
       Object {
@@ -19478,8 +18747,8 @@ Object {
             "text": "willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)",
           },
         ],
-        "displayNumber": "18.1",
-        "id": 81,
+        "displayNumber": "11.1",
+        "id": 56,
         "maxScore": 2,
         "type": "text",
       },
@@ -19490,8 +18759,8 @@ Object {
             "text": "weil ich zuerst Mama fragen muss",
           },
         ],
-        "displayNumber": "18.2",
-        "id": 82,
+        "displayNumber": "11.2",
+        "id": 57,
         "maxScore": 2,
         "type": "text",
       },
@@ -19502,8 +18771,8 @@ Object {
             "text": "Kannst du mir helfen?",
           },
         ],
-        "displayNumber": "19.1",
-        "id": 83,
+        "displayNumber": "12.1",
+        "id": 58,
         "maxScore": 2,
         "type": "text",
       },
@@ -19518,8 +18787,8 @@ Object {
             "text": "Was soll man hier machen? Ich verstehe nichts!",
           },
         ],
-        "displayNumber": "19.2",
-        "id": 84,
+        "displayNumber": "12.2",
+        "id": 59,
         "maxScore": 3,
         "type": "text",
       },
@@ -19538,8 +18807,8 @@ Object {
             "text": "Was für ein Wetter ist heute?",
           },
         ],
-        "displayNumber": "19.3",
-        "id": 85,
+        "displayNumber": "12.3",
+        "id": 60,
         "maxScore": 2,
         "type": "text",
       },
@@ -19554,34 +18823,34 @@ Object {
             "text": "Heute ist sehr schlechtes Wetter",
           },
         ],
-        "displayNumber": "19.4",
-        "id": 86,
+        "displayNumber": "12.4",
+        "id": 61,
         "maxScore": 3,
         "type": "text",
       },
       Object {
-        "displayNumber": "20.1",
-        "id": 87,
+        "displayNumber": "13.1",
+        "id": 62,
         "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
       Object {
-        "displayNumber": "20.2",
-        "id": 88,
+        "displayNumber": "13.2",
+        "id": 63,
         "maxLength": 240,
         "maxScore": 33,
         "type": "text",
       },
       Object {
-        "displayNumber": "21.1",
-        "id": 89,
+        "displayNumber": "14.1",
+        "id": 64,
         "maxScore": 66,
         "type": "text",
       },
       Object {
-        "displayNumber": "21.2",
-        "id": 90,
+        "displayNumber": "14.2",
+        "id": 65,
         "maxScore": 66,
         "type": "text",
       },
@@ -20034,7 +19303,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section display-number="1" max-score="71">
+  <e:section type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
@@ -21847,7 +21116,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section display-number="1" max-score="71">
+  <e:section type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
@@ -23666,15 +22935,15 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
   <e:table-of-contents/>
   
 
-  <e:section display-number="2" max-score="99">
+  <e:section display-number="1" max-score="99">
     <e:section-title>Textverständnis</e:section-title>
 
-    <e:question display-number="8" max-score="4">
+    <e:question display-number="1" max-score="4">
       <e:question-title>Hausaufgaben</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.
       </e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="8.A">
+        <e:attachment display-number="1.A">
           <e:attachment-title>Text: Whatsapp-Chat</e:attachment-title>
           <div class="kupla1"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was
             wir für morgen machen müssen?
@@ -23707,27 +22976,27 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="8.1" max-score="2">
+      <e:question display-number="1.1" max-score="2">
         <e:question-title>Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat?</e:question-title>
-        <e:choice-answer display-number="8.1" question-id="26" max-score="2">
+        <e:choice-answer display-number="1.1" question-id="1" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="172">Sie hat ihre Notizen in der Schule</e:choice-answer-option><e:choice-answer-option option-id="173">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option><e:choice-answer-option option-id="174">Sie war nicht im Unterricht</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="66">Sie war nicht im Unterricht</e:choice-answer-option><e:choice-answer-option option-id="67">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option><e:choice-answer-option option-id="68">Sie hat ihre Notizen in der Schule</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="8.2" max-score="2">
+      <e:question display-number="1.2" max-score="2">
         <e:question-title>Welche Hausaufgaben wird Maren für morgen machen?</e:question-title>
-        <e:choice-answer display-number="8.2" question-id="27" max-score="2">
+        <e:choice-answer display-number="1.2" question-id="2" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="175">Mathe</e:choice-answer-option><e:choice-answer-option option-id="176">Chemie</e:choice-answer-option><e:choice-answer-option option-id="177">Geschichte</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="69">Geschichte</e:choice-answer-option><e:choice-answer-option option-id="70">Chemie</e:choice-answer-option><e:choice-answer-option option-id="71">Mathe</e:choice-answer-option></e:choice-answer>
       </e:question>
 
     </e:question>
 
-    <e:question display-number="9" max-score="6">
+    <e:question display-number="2" max-score="6">
       <e:question-title>Freitag der Dreizehnte</e:question-title>
       <e:question-instruction>
         <p>
@@ -23742,7 +23011,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         
       </e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="9.A">
+        <e:attachment display-number="2.A">
           <e:attachment-title>Texte: Freitag der Dreizehnte</e:attachment-title>
           <p>
             <b>Text 1: Zeitungsartikel, Freitag den 13.3.2018</b>
@@ -23780,61 +23049,61 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="9.1" max-score="1">
+      <e:question display-number="2.1" max-score="1">
         <e:question-title>An welchem Tag es passiert ist</e:question-title>
-        <e:choice-answer ordering="fixed" display-number="9.1" question-id="28" max-score="1">
-          <e:choice-answer-option option-id="178">Richtig</e:choice-answer-option>
-          <e:choice-answer-option option-id="179">Falsch</e:choice-answer-option>
+        <e:choice-answer ordering="fixed" display-number="2.1" question-id="3" max-score="1">
+          <e:choice-answer-option option-id="72">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="73">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
-      <e:question display-number="9.2" max-score="1">
+      <e:question display-number="2.2" max-score="1">
         <e:question-title>Welche Farbe die Autos hatten</e:question-title>
-        <e:choice-answer ordering="fixed" display-number="9.2" question-id="29" max-score="1">
-          <e:choice-answer-option option-id="180">Richtig</e:choice-answer-option>
-          <e:choice-answer-option option-id="181">Falsch</e:choice-answer-option>
+        <e:choice-answer ordering="fixed" display-number="2.2" question-id="4" max-score="1">
+          <e:choice-answer-option option-id="74">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="75">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
-      <e:question display-number="9.3" max-score="1">
+      <e:question display-number="2.3" max-score="1">
         <e:question-title>Wo im Auto der Mann etwas vergessen hatte</e:question-title>
-        <e:choice-answer ordering="fixed" display-number="9.3" question-id="30" max-score="1">
-          <e:choice-answer-option option-id="182">Richtig</e:choice-answer-option>
-          <e:choice-answer-option option-id="183">Falsch</e:choice-answer-option>
+        <e:choice-answer ordering="fixed" display-number="2.3" question-id="5" max-score="1">
+          <e:choice-answer-option option-id="76">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="77">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
-      <e:question display-number="9.4" max-score="1">
+      <e:question display-number="2.4" max-score="1">
         <e:question-title>Wo der Mann sein Auto geparkt hatte</e:question-title>
-        <e:choice-answer ordering="fixed" display-number="9.4" question-id="31" max-score="1">
-          <e:choice-answer-option option-id="184">Richtig</e:choice-answer-option>
-          <e:choice-answer-option option-id="185">Falsch</e:choice-answer-option>
+        <e:choice-answer ordering="fixed" display-number="2.4" question-id="6" max-score="1">
+          <e:choice-answer-option option-id="78">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="79">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
-      <e:question display-number="9.5" max-score="1">
+      <e:question display-number="2.5" max-score="1">
         <e:question-title>Was der Mann machte, nachdem er seinen Fehler bemerkt hatte</e:question-title>
-        <e:choice-answer ordering="fixed" display-number="9.5" question-id="32" max-score="1">
-          <e:choice-answer-option option-id="186">Richtig</e:choice-answer-option>
-          <e:choice-answer-option option-id="187">Falsch</e:choice-answer-option>
+        <e:choice-answer ordering="fixed" display-number="2.5" question-id="7" max-score="1">
+          <e:choice-answer-option option-id="80">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="81">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
-      <e:question display-number="9.6" max-score="1">
+      <e:question display-number="2.6" max-score="1">
         <e:question-title>Was alles in der Geldbörse war</e:question-title>
-        <e:choice-answer ordering="fixed" display-number="9.6" question-id="33" max-score="1">
-          <e:choice-answer-option option-id="188">Richtig</e:choice-answer-option>
-          <e:choice-answer-option option-id="189">Falsch</e:choice-answer-option>
+        <e:choice-answer ordering="fixed" display-number="2.6" question-id="8" max-score="1">
+          <e:choice-answer-option option-id="82">Richtig</e:choice-answer-option>
+          <e:choice-answer-option option-id="83">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
     </e:question>
 
-    <e:question display-number="10" max-score="15">
+    <e:question display-number="3" max-score="15">
       <e:question-title>Duis Minim?</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment name="zeugnis" display-number="10.A">
+        <e:attachment name="zeugnis" display-number="3.A">
           <e:attachment-title>Text: Duis Minim?</e:attachment-title>
           <p>
             <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
@@ -23849,52 +23118,52 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="10.1" max-score="3">
+      <e:question display-number="3.1" max-score="3">
         <e:question-title>Wie begründet der Sohn seine Bitte?</e:question-title>
-        <e:choice-answer display-number="10.1" question-id="34" max-score="3">
+        <e:choice-answer display-number="3.1" question-id="9" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="190">Er hat seine Leistungen verbessert</e:choice-answer-option><e:choice-answer-option option-id="191">Er möchte eine Urlaubsreise machen</e:choice-answer-option><e:choice-answer-option option-id="192">Er wird anders behandelt als andere Schüler</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="84">Er hat seine Leistungen verbessert</e:choice-answer-option><e:choice-answer-option option-id="85">Er wird anders behandelt als andere Schüler</e:choice-answer-option><e:choice-answer-option option-id="86">Er möchte eine Urlaubsreise machen</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="10.2" max-score="6">
+      <e:question display-number="3.2" max-score="6">
         <e:question-title>
           <span lang="fi-FI">Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä
             siitä isän mielestä seuraa?
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="6" display-number="10.2" question-id="35"/>
+        <e:text-answer type="rich-text" max-score="6" display-number="3.2" question-id="10"/>
         
       </e:question>
 
-      <e:question display-number="10.3" max-score="3">
+      <e:question display-number="3.3" max-score="3">
         <e:question-title>Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“?
         </e:question-title>
-        <e:choice-answer display-number="10.3" question-id="36" max-score="3">
+        <e:choice-answer display-number="3.3" question-id="11" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="193">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option><e:choice-answer-option option-id="194">Dass der Vater kaum versteht, was dem Sohn wichtig ist</e:choice-answer-option><e:choice-answer-option option-id="195">Dass der Vater versucht, den Sohn streng zu erziehen</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="87">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option><e:choice-answer-option option-id="88">Dass der Vater versucht, den Sohn streng zu erziehen</e:choice-answer-option><e:choice-answer-option option-id="89">Dass der Vater kaum versteht, was dem Sohn wichtig ist</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="10.4" max-score="3">
+      <e:question display-number="3.4" max-score="3">
         <e:question-title>Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen?</e:question-title>
-        <e:choice-answer display-number="10.4" question-id="37" max-score="3">
+        <e:choice-answer display-number="3.4" question-id="12" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="196">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option><e:choice-answer-option option-id="197">Weil beide zu unterschiedlichen Zeiten zu Hause sind</e:choice-answer-option><e:choice-answer-option option-id="198">Weil der Vater so viel von zu Hause weg ist</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="90">Weil beide zu unterschiedlichen Zeiten zu Hause sind</e:choice-answer-option><e:choice-answer-option option-id="91">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option><e:choice-answer-option option-id="92">Weil der Vater so viel von zu Hause weg ist</e:choice-answer-option></e:choice-answer>
       </e:question>
 
     </e:question>
 
-    <e:question display-number="11" max-score="20">
+    <e:question display-number="4" max-score="20">
       <e:question-title>Excepteur cupidatat!</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="11.A">
+        <e:attachment display-number="4.A">
           <e:attachment-title>Text: Excepteur cupidatat!</e:attachment-title>
           <p>
             <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
@@ -23909,16 +23178,16 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="11.1" max-score="3">
+      <e:question display-number="4.1" max-score="3">
         <e:question-title>Was mag Proident besonders an seinem Job?</e:question-title>
-        <e:choice-answer display-number="11.1" question-id="38" max-score="3">
+        <e:choice-answer display-number="4.1" question-id="13" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="199">Die Arbeit bietet viel Abwechslung</e:choice-answer-option><e:choice-answer-option option-id="200">Seine Sportlerkarriere profitiert davon</e:choice-answer-option><e:choice-answer-option option-id="201">Er kann seine eigenen Grenzen austesten</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="93">Er kann seine eigenen Grenzen austesten</e:choice-answer-option><e:choice-answer-option option-id="94">Die Arbeit bietet viel Abwechslung</e:choice-answer-option><e:choice-answer-option option-id="95">Seine Sportlerkarriere profitiert davon</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="11.2" max-score="6">
+      <e:question display-number="4.2" max-score="6">
         <e:question-title>
           <span lang="fi-FI">Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan
             perusteella.
@@ -23926,56 +23195,56 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           
         </e:question-title>
         <span lang="fi-FI">
-          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3" display-number="11.2.1" question-id="39"/>, sekä siitä, miten
-          <e:text-answer max-score="3" display-number="11.2.2" question-id="40"/>
+          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3" display-number="4.2.1" question-id="14"/>, sekä siitä, miten
+          <e:text-answer max-score="3" display-number="4.2.2" question-id="15"/>
           ja miten retki suunnitellaan.
         </span>
         
         
       </e:question>
 
-      <e:question display-number="11.3" max-score="2">
+      <e:question display-number="4.3" max-score="2">
         <e:question-title>Wie ist Proidents Arbeit als Lorem und Ipsum organisiert?</e:question-title>
-        <e:choice-answer display-number="11.3" question-id="41" max-score="2">
+        <e:choice-answer display-number="4.3" question-id="16" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="202">Er macht eine lange Wanderung und sitzt danach im Büro</e:choice-answer-option><e:choice-answer-option option-id="203">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
-          </e:choice-answer-option><e:choice-answer-option option-id="204">Er hat eine Woche Arbeit und dann eine Woche frei</e:choice-answer-option></e:choice-answer>
-      </e:question>
-
-      <e:question display-number="11.4" max-score="3">
-        <e:question-title>Was bedeutet es, dass Proident für seine Gäste verantwortlich ist?</e:question-title>
-        <e:choice-answer display-number="11.4" question-id="42" max-score="3">
-          
-          
-          
-        <e:choice-answer-option option-id="205">Er muss bei der Planung auch unrealistische Wünsche berücksichtigen
-          </e:choice-answer-option><e:choice-answer-option option-id="206">Er muss seinen Kunden ein unvergessliches Erlebnis bieten</e:choice-answer-option><e:choice-answer-option option-id="207">Er muss manchmal das Tempo der Wanderung verlangsamen
+        <e:choice-answer-option option-id="96">Er macht eine lange Wanderung und sitzt danach im Büro</e:choice-answer-option><e:choice-answer-option option-id="97">Er hat eine Woche Arbeit und dann eine Woche frei</e:choice-answer-option><e:choice-answer-option option-id="98">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
           </e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="11.5" max-score="3">
-        <e:question-title>Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext?</e:question-title>
-        <e:choice-answer display-number="11.5" question-id="43" max-score="3">
+      <e:question display-number="4.4" max-score="3">
+        <e:question-title>Was bedeutet es, dass Proident für seine Gäste verantwortlich ist?</e:question-title>
+        <e:choice-answer display-number="4.4" question-id="17" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="208">Es ist Proident gelungen, seine Kunden zu beschützen</e:choice-answer-option><e:choice-answer-option option-id="209">Es ist unnötig, die Gefahren der Touren zu übertreiben</e:choice-answer-option><e:choice-answer-option option-id="210">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="99">Er muss manchmal das Tempo der Wanderung verlangsamen
+          </e:choice-answer-option><e:choice-answer-option option-id="100">Er muss seinen Kunden ein unvergessliches Erlebnis bieten</e:choice-answer-option><e:choice-answer-option option-id="101">Er muss bei der Planung auch unrealistische Wünsche berücksichtigen
+          </e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="11.6" max-score="3">
+      <e:question display-number="4.5" max-score="3">
+        <e:question-title>Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext?</e:question-title>
+        <e:choice-answer display-number="4.5" question-id="18" max-score="3">
+          
+          
+          
+        <e:choice-answer-option option-id="102">Es ist unnötig, die Gefahren der Touren zu übertreiben</e:choice-answer-option><e:choice-answer-option option-id="103">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option><e:choice-answer-option option-id="104">Es ist Proident gelungen, seine Kunden zu beschützen</e:choice-answer-option></e:choice-answer>
+      </e:question>
+
+      <e:question display-number="4.6" max-score="3">
         <e:question-title>Was machen viele Lorem und Ipsum, um finanziell klarzukommen?</e:question-title>
-        <e:choice-answer display-number="11.6" question-id="44" max-score="3">
+        <e:choice-answer display-number="4.6" question-id="19" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="211">Sie suchen sich später einen neuen Beruf</e:choice-answer-option><e:choice-answer-option option-id="212">Sie machen oft viele Überstunden</e:choice-answer-option><e:choice-answer-option option-id="213">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="105">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option><e:choice-answer-option option-id="106">Sie machen oft viele Überstunden</e:choice-answer-option><e:choice-answer-option option-id="107">Sie suchen sich später einen neuen Beruf</e:choice-answer-option></e:choice-answer>
       </e:question>
 
     </e:question>
 
-    <e:question display-number="12" max-score="6">
+    <e:question display-number="5" max-score="6">
       <e:question-title>Wendungen</e:question-title>
       <e:question-instruction>
         <span lang="fi-FI">Lue alla olevat kolme pikaviestiä ja valitse kuhunkin aukkoon parhaiten sopiva
@@ -23989,16 +23258,16 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         <h4>Emma</h4>
         <p>Emma: Mama, tust du mir einen Gefallen? Ich warte gerade im Café Sonnenschein auf Tim. Ich will hier mit ihm
           für die Geografieprüfung lernen, aber ich habe mein Buch zu Hause vergessen. Kannst du es mir bringen?
-          <e:dropdown-answer ordering="fixed" display-number="12.1" question-id="45" max-score="2">
-            <e:dropdown-answer-option option-id="214">Nichts zu danken!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="215">Macht nichts!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="216">Und ob!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="217">Vielen Dank im Voraus!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="218">Gern, bitte!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="219">Hast du was?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="220">Warum immer ich?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="221">Aber ich?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="222">Wie war‘s?</e:dropdown-answer-option>
+          <e:dropdown-answer ordering="fixed" display-number="5.1" question-id="20" max-score="2">
+            <e:dropdown-answer-option option-id="108">Nichts zu danken!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="109">Macht nichts!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="110">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="111">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="112">Gern, bitte!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="113">Hast du was?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="114">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="115">Aber ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="116">Wie war‘s?</e:dropdown-answer-option>
           </e:dropdown-answer>
         </p>
         <br/>
@@ -24013,16 +23282,16 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           Antonia: Ja sehr! Und wollte er denn wissen, was ich jetzt so mache?
           <br/>
           Hannah:
-          <e:dropdown-answer ordering="fixed" display-number="12.2" question-id="46" max-score="2">
-            <e:dropdown-answer-option option-id="223">Nichts zu danken!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="224">Macht nichts!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="225">Und ob!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="226">Vielen Dank im Voraus!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="227">Gern, bitte!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="228">Hast du was?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="229">Warum immer ich?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="230">Aber ich?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="231">Wie war‘s?</e:dropdown-answer-option>
+          <e:dropdown-answer ordering="fixed" display-number="5.2" question-id="21" max-score="2">
+            <e:dropdown-answer-option option-id="117">Nichts zu danken!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="118">Macht nichts!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="119">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="120">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="121">Gern, bitte!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="122">Hast du was?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="123">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="124">Aber ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="125">Wie war‘s?</e:dropdown-answer-option>
           </e:dropdown-answer>
           Er hat nur von dir geredet.
         </p>
@@ -24034,16 +23303,16 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           Lukas: Nee, er kommt heute gar nicht. Und Florian und ich kommen direkt von der Arbeit.
           <br/>
           Jonas: Ich glaub, dann muss ich schon wieder den Ball mitbringen. Ach, Mist!
-          <e:dropdown-answer ordering="fixed" display-number="12.3" question-id="47" max-score="2">
-            <e:dropdown-answer-option option-id="232">Nichts zu danken!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="233">Macht nichts!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="234">Und ob!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="235">Vielen Dank im Voraus!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="236">Gern, bitte!</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="237">Hast du was?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="238">Warum immer ich?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="239">Aber ich?</e:dropdown-answer-option>
-            <e:dropdown-answer-option option-id="240">Wie war‘s?</e:dropdown-answer-option>
+          <e:dropdown-answer ordering="fixed" display-number="5.3" question-id="22" max-score="2">
+            <e:dropdown-answer-option option-id="126">Nichts zu danken!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="127">Macht nichts!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="128">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="129">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="130">Gern, bitte!</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="131">Hast du was?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="132">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="133">Aber ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option option-id="134">Wie war‘s?</e:dropdown-answer-option>
           </e:dropdown-answer>
         </p>
         <e:reference>
@@ -24055,11 +23324,11 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
       </e:attachment>
     </e:question>
 
-    <e:question display-number="13" max-score="8">
+    <e:question display-number="6" max-score="8">
       <e:question-title>Adipisicing voluptate</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="13.A">
+        <e:attachment display-number="6.A">
           <e:attachment-title>Text: Adipisicing voluptate</e:attachment-title>
           <p>
             <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
@@ -24074,43 +23343,43 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="13.1" max-score="2">
+      <e:question display-number="6.1" max-score="2">
         <e:question-title>Wann bekommt man bei Flugverspätung <b>kein</b> Essen?
         </e:question-title>
-        <e:choice-answer display-number="13.1" question-id="48" max-score="2">
+        <e:choice-answer display-number="6.1" question-id="23" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="241">Bei Verspätung unter 5 Stunden</e:choice-answer-option><e:choice-answer-option option-id="242">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option><e:choice-answer-option option-id="243">Bei Buchung eines anderen Fluges</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="135">Bei Buchung eines anderen Fluges</e:choice-answer-option><e:choice-answer-option option-id="136">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option><e:choice-answer-option option-id="137">Bei Verspätung unter 5 Stunden</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="13.2" max-score="2">
+      <e:question display-number="6.2" max-score="2">
         <e:question-title>Wann bezahlt Lorem Ipsum Telefonate?</e:question-title>
-        <e:choice-answer display-number="13.2" question-id="49" max-score="2">
+        <e:choice-answer display-number="6.2" question-id="24" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="244">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option><e:choice-answer-option option-id="245">Nur wenn man im Hotel übernachtet</e:choice-answer-option><e:choice-answer-option option-id="246">Nur wenn man Verwandte anrufen möchte</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="138">Nur wenn man Verwandte anrufen möchte</e:choice-answer-option><e:choice-answer-option option-id="139">Nur wenn man im Hotel übernachtet</e:choice-answer-option><e:choice-answer-option option-id="140">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="13.3" max-score="4">
+      <e:question display-number="6.3" max-score="4">
         <e:question-title>
           <span lang="fi-FI">Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös
             järjestää? Kirjoita vastauksesi lyhyesti suomeksi.
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="13.3" question-id="50"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="6.3" question-id="25"/>
         
       </e:question>
 
     </e:question>
 
-    <e:question display-number="14" max-score="13">
+    <e:question display-number="7" max-score="13">
       <e:question-title>Ullamco</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="14.A">
+        <e:attachment display-number="7.A">
           <e:attachment-title>Text: Ullamco</e:attachment-title>
           <p>
             <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
@@ -24125,53 +23394,53 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="14.1" max-score="3">
+      <e:question display-number="7.1" max-score="3">
         <e:question-title>Was erlebten die Ullamco?</e:question-title>
-        <e:choice-answer display-number="14.1" question-id="51" max-score="3">
+        <e:choice-answer display-number="7.1" question-id="26" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="247">Eine unerwartet frühzeitige Ullamco am Ullamco</e:choice-answer-option><e:choice-answer-option option-id="248">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option><e:choice-answer-option option-id="249">Eine gelungene Ullamco auf dem Ullamco</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="141">Eine gelungene Ullamco auf dem Ullamco</e:choice-answer-option><e:choice-answer-option option-id="142">Eine unerwartet frühzeitige Ullamco am Ullamco</e:choice-answer-option><e:choice-answer-option option-id="143">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="14.2" max-score="4">
+      <e:question display-number="7.2" max-score="4">
         <e:question-title>
           <span lang="fi-FI">Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class="e-nowrap">(2 asiaa)
           </span> Kirjoita vastauksesi lyhyesti suomeksi.
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="14.2" question-id="52"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="7.2" question-id="27"/>
         
       </e:question>
 
-      <e:question display-number="14.3" max-score="3">
+      <e:question display-number="7.3" max-score="3">
         <e:question-title>Welche weitere Ullamco hatte die Ullamco?</e:question-title>
-        <e:choice-answer display-number="14.3" question-id="53" max-score="3">
+        <e:choice-answer display-number="7.3" question-id="28" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="250">Ein Ullamco brachte die Fluggäste von Ullamco nach Ullamco</e:choice-answer-option><e:choice-answer-option option-id="251">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
-          </e:choice-answer-option><e:choice-answer-option option-id="252">Die Ullamco mussten noch in Ullamco übernachten</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="144">Die Ullamco mussten noch in Ullamco übernachten</e:choice-answer-option><e:choice-answer-option option-id="145">Ein Ullamco brachte die Fluggäste von Ullamco nach Ullamco</e:choice-answer-option><e:choice-answer-option option-id="146">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
+          </e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="14.4" max-score="3">
+      <e:question display-number="7.4" max-score="3">
         <e:question-title>Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext?
         </e:question-title>
-        <e:choice-answer display-number="14.4" question-id="54" max-score="3">
+        <e:choice-answer display-number="7.4" question-id="29" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="253">Ein gefährlicher Unfall</e:choice-answer-option><e:choice-answer-option option-id="254">Ein anstrengendes Experiment</e:choice-answer-option><e:choice-answer-option option-id="255">Ein unerwartetes Abenteuer</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="147">Ein unerwartetes Abenteuer</e:choice-answer-option><e:choice-answer-option option-id="148">Ein anstrengendes Experiment</e:choice-answer-option><e:choice-answer-option option-id="149">Ein gefährlicher Unfall</e:choice-answer-option></e:choice-answer>
       </e:question>
 
     </e:question>
 
-    <e:question display-number="15" max-score="19">
+    <e:question display-number="8" max-score="19">
       <e:question-title>Eiusmod</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="15.A">
+        <e:attachment display-number="8.A">
           <e:attachment-title>Text: Eiusmod</e:attachment-title>
           <p>
             <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
@@ -24186,71 +23455,71 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="15.1" max-score="4">
+      <e:question display-number="8.1" max-score="4">
         <e:question-title>
           <span lang="fi-FI">Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän
             perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi.
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="15.1" question-id="55"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true" display-number="8.1" question-id="30"/>
         
       </e:question>
 
-      <e:question display-number="15.2" max-score="3">
+      <e:question display-number="8.2" max-score="3">
         <e:question-title>Wie sind die beliebtesten Postkarten?</e:question-title>
-        <e:choice-answer display-number="15.2" question-id="56" max-score="3">
+        <e:choice-answer display-number="8.2" question-id="31" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="256">Sie lassen den Urlaub beeindruckend erscheinen</e:choice-answer-option><e:choice-answer-option option-id="257">Sie kombinieren meist Text und Bilder</e:choice-answer-option><e:choice-answer-option option-id="258">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="150">Sie kombinieren meist Text und Bilder</e:choice-answer-option><e:choice-answer-option option-id="151">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option><e:choice-answer-option option-id="152">Sie lassen den Urlaub beeindruckend erscheinen</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="15.3" max-score="3">
+      <e:question display-number="8.3" max-score="3">
         <e:question-title>Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen?</e:question-title>
-        <e:choice-answer display-number="15.3" question-id="57" max-score="3">
+        <e:choice-answer display-number="8.3" question-id="32" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="259">Sie finden solche Karten auf Reisen gut</e:choice-answer-option><e:choice-answer-option option-id="260">Sie halten diese Karten nicht mehr für modern</e:choice-answer-option><e:choice-answer-option option-id="261">Sie sind besonders stolz auf die Berliner Postkarten</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="153">Sie sind besonders stolz auf die Berliner Postkarten</e:choice-answer-option><e:choice-answer-option option-id="154">Sie finden solche Karten auf Reisen gut</e:choice-answer-option><e:choice-answer-option option-id="155">Sie halten diese Karten nicht mehr für modern</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="15.4" max-score="3">
+      <e:question display-number="8.4" max-score="3">
         <e:question-title>Was ärgert die Kartenverkäufer?</e:question-title>
-        <e:choice-answer display-number="15.4" question-id="58" max-score="3">
+        <e:choice-answer display-number="8.4" question-id="33" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="262">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option><e:choice-answer-option option-id="263">Männer senden und empfangen fast keine Postkarten</e:choice-answer-option><e:choice-answer-option option-id="264">Nur erwachsene Frauen interessieren sich für die Karten</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="156">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option><e:choice-answer-option option-id="157">Nur erwachsene Frauen interessieren sich für die Karten</e:choice-answer-option><e:choice-answer-option option-id="158">Männer senden und empfangen fast keine Postkarten</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="15.5" max-score="3">
+      <e:question display-number="8.5" max-score="3">
         <e:question-title>Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext?</e:question-title>
-        <e:choice-answer display-number="15.5" question-id="59" max-score="3">
+        <e:choice-answer display-number="8.5" question-id="34" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="265">Es ist wahr, dass die Karten nicht mehr so beliebt sind
-          </e:choice-answer-option><e:choice-answer-option option-id="266">Man weiß, dass die Postkarte irgendwann sterben wird</e:choice-answer-option><e:choice-answer-option option-id="267">Ipsum mag die Fragen des Interviewers nicht</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="159">Ipsum mag die Fragen des Interviewers nicht</e:choice-answer-option><e:choice-answer-option option-id="160">Es ist wahr, dass die Karten nicht mehr so beliebt sind
+          </e:choice-answer-option><e:choice-answer-option option-id="161">Man weiß, dass die Postkarte irgendwann sterben wird</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="15.6" max-score="3">
+      <e:question display-number="8.6" max-score="3">
         <e:question-title>Wann könnte es die Postkarte schwer haben?</e:question-title>
-        <e:choice-answer display-number="15.6" question-id="60" max-score="3">
+        <e:choice-answer display-number="8.6" question-id="35" max-score="3">
           
           
           
-        <e:choice-answer-option option-id="268">Wenn die Smartphones immer billiger und attraktiver werden</e:choice-answer-option><e:choice-answer-option option-id="269">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
-          </e:choice-answer-option><e:choice-answer-option option-id="270">Wenn man in der Familie keine Postkarten mehr verschickt</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="162">Wenn man in der Familie keine Postkarten mehr verschickt</e:choice-answer-option><e:choice-answer-option option-id="163">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
+          </e:choice-answer-option><e:choice-answer-option option-id="164">Wenn die Smartphones immer billiger und attraktiver werden</e:choice-answer-option></e:choice-answer>
       </e:question>
 
     </e:question>
 
-    <e:question display-number="16" max-score="8">
+    <e:question display-number="9" max-score="8">
       <e:question-title>Duis dolore</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment display-number="16.A">
+        <e:attachment display-number="9.A">
           <e:attachment-title>Text: Duis dolore</e:attachment-title>
           <p>
             <span lang="fi-FI">Aineisto poistettu tekijänoikeussyistä.</span>
@@ -24265,44 +23534,44 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </e:attachment>
       </e:external-material>
 
-      <e:question display-number="16.1" max-score="2">
+      <e:question display-number="9.1" max-score="2">
         <e:question-title>Wie reagieren viele Kunden auf die Einwegbecher?</e:question-title>
-        <e:choice-answer display-number="16.1" question-id="61" max-score="2">
+        <e:choice-answer display-number="9.1" question-id="36" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="271">Sie entscheiden, keine Einwegbecher mehr zu verwenden</e:choice-answer-option><e:choice-answer-option option-id="272">Sie benutzen die Einwegbecher, ohne darüber nachzudenken</e:choice-answer-option><e:choice-answer-option option-id="273">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
+        <e:choice-answer-option option-id="165">Sie entscheiden, keine Einwegbecher mehr zu verwenden</e:choice-answer-option><e:choice-answer-option option-id="166">Sie benutzen die Einwegbecher, ohne darüber nachzudenken</e:choice-answer-option><e:choice-answer-option option-id="167">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
           </e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="16.2" max-score="2">
+      <e:question display-number="9.2" max-score="2">
         <e:question-title>Was könnte im neuen System zum Problem werden?</e:question-title>
-        <e:choice-answer display-number="16.2" question-id="62" max-score="2">
+        <e:choice-answer display-number="9.2" question-id="37" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="274">Es bringt das jetzige System der Pfandflaschen durcheinander</e:choice-answer-option><e:choice-answer-option option-id="275">Es lohnt sich nicht außerhalb des Stadtzentrums</e:choice-answer-option><e:choice-answer-option option-id="276">Es ist für das Verhalten der Kunden nicht flexibel genug
-          </e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="168">Es lohnt sich nicht außerhalb des Stadtzentrums</e:choice-answer-option><e:choice-answer-option option-id="169">Es ist für das Verhalten der Kunden nicht flexibel genug
+          </e:choice-answer-option><e:choice-answer-option option-id="170">Es bringt das jetzige System der Pfandflaschen durcheinander</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="16.3" max-score="2">
+      <e:question display-number="9.3" max-score="2">
         <e:question-title>Was will Lorem Ipsum erreichen?</e:question-title>
-        <e:choice-answer display-number="16.3" question-id="63" max-score="2">
+        <e:choice-answer display-number="9.3" question-id="38" max-score="2">
           
           
           
-        <e:choice-answer-option option-id="277">Die Finanzierung für das neue System zu sichern</e:choice-answer-option><e:choice-answer-option option-id="278">Mit anderen Städten effektiv zusammenzuarbeiten</e:choice-answer-option><e:choice-answer-option option-id="279">Die Kunden stärker zur Rückgabe der Becher zu motivieren
-          </e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="171">Die Finanzierung für das neue System zu sichern</e:choice-answer-option><e:choice-answer-option option-id="172">Die Kunden stärker zur Rückgabe der Becher zu motivieren
+          </e:choice-answer-option><e:choice-answer-option option-id="173">Mit anderen Städten effektiv zusammenzuarbeiten</e:choice-answer-option></e:choice-answer>
       </e:question>
 
-      <e:question display-number="16.4" max-score="2">
+      <e:question display-number="9.4" max-score="2">
         <e:question-title>
           <span lang="fi-FI">Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin
             perusteella lyhyesti suomeksi.
           </span>
           
         </e:question-title>
-        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true" display-number="16.4" question-id="64"/>
+        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true" display-number="9.4" question-id="39"/>
         
       </e:question>
 
@@ -24310,10 +23579,10 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 
   </e:section>
 
-  <e:section display-number="3" max-score="30">
+  <e:section display-number="2" max-score="30">
     <e:section-title>Struktur und Vokabular</e:section-title>
 
-    <e:question display-number="17" max-score="16">
+    <e:question display-number="10" max-score="16">
       <e:question-title>Auswahl-Antwort-Test</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und wählen Sie jeweils auf der Drop-Down-Liste die in den
         Textzusammenhang am besten passende Antwortalternative aus.
@@ -24336,118 +23605,118 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         <h4>Max und Moritz, Vorwort</h4>
         <p>
           Ach, was
-          <e:dropdown-answer display-number="17.1" question-id="65" max-score="1">
+          <e:dropdown-answer display-number="10.1" question-id="40" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="280">kann</e:dropdown-answer-option><e:dropdown-answer-option option-id="281">muß</e:dropdown-answer-option><e:dropdown-answer-option option-id="282">darf</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="174">darf</e:dropdown-answer-option><e:dropdown-answer-option option-id="175">kann</e:dropdown-answer-option><e:dropdown-answer-option option-id="176">muß</e:dropdown-answer-option></e:dropdown-answer>
           man oft von
-          <e:dropdown-answer display-number="17.2" question-id="66" max-score="1">
+          <e:dropdown-answer display-number="10.2" question-id="41" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="283">gelben</e:dropdown-answer-option><e:dropdown-answer-option option-id="284">bösen</e:dropdown-answer-option><e:dropdown-answer-option option-id="285">netten</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="177">bösen</e:dropdown-answer-option><e:dropdown-answer-option option-id="178">gelben</e:dropdown-answer-option><e:dropdown-answer-option option-id="179">netten</e:dropdown-answer-option></e:dropdown-answer>
           <br/>
           Kindern hören oder lesen!!
           <br/>
           Wie zum Beispiel hier
-          <e:dropdown-answer display-number="17.3" question-id="67" max-score="1">
+          <e:dropdown-answer display-number="10.3" question-id="42" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="286">nach</e:dropdown-answer-option><e:dropdown-answer-option option-id="287">von</e:dropdown-answer-option><e:dropdown-answer-option option-id="288">zu</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="180">nach</e:dropdown-answer-option><e:dropdown-answer-option option-id="181">zu</e:dropdown-answer-option><e:dropdown-answer-option option-id="182">von</e:dropdown-answer-option></e:dropdown-answer>
           diesen,
           <br/>
           Welche Max und Moritz
           <span class="e-nowrap">
-            <e:dropdown-answer display-number="17.4" question-id="68" max-score="1">
+            <e:dropdown-answer display-number="10.4" question-id="43" max-score="1">
               
               
               
-            <e:dropdown-answer-option option-id="289">hießen</e:dropdown-answer-option><e:dropdown-answer-option option-id="290">sind</e:dropdown-answer-option><e:dropdown-answer-option option-id="291">heißen</e:dropdown-answer-option></e:dropdown-answer>
+            <e:dropdown-answer-option option-id="183">heißen</e:dropdown-answer-option><e:dropdown-answer-option option-id="184">sind</e:dropdown-answer-option><e:dropdown-answer-option option-id="185">hießen</e:dropdown-answer-option></e:dropdown-answer>
             ;
           </span>
           <br/>
           <span class="e-nowrap">
-            <e:dropdown-answer display-number="17.5" question-id="69" max-score="1">
+            <e:dropdown-answer display-number="10.5" question-id="44" max-score="1">
               
               
               
-            <e:dropdown-answer-option option-id="292">Das</e:dropdown-answer-option><e:dropdown-answer-option option-id="293">Der</e:dropdown-answer-option><e:dropdown-answer-option option-id="294">Die</e:dropdown-answer-option></e:dropdown-answer>
+            <e:dropdown-answer-option option-id="186">Das</e:dropdown-answer-option><e:dropdown-answer-option option-id="187">Der</e:dropdown-answer-option><e:dropdown-answer-option option-id="188">Die</e:dropdown-answer-option></e:dropdown-answer>
             ,
           </span>
           anstatt durch weise Lehren
           <br/>
           Sich
-          <e:dropdown-answer display-number="17.6" question-id="70" max-score="1">
+          <e:dropdown-answer display-number="10.6" question-id="45" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="295">zum</e:dropdown-answer-option><e:dropdown-answer-option option-id="296">zur</e:dropdown-answer-option><e:dropdown-answer-option option-id="297">zu den</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="189">zu den</e:dropdown-answer-option><e:dropdown-answer-option option-id="190">zum</e:dropdown-answer-option><e:dropdown-answer-option option-id="191">zur</e:dropdown-answer-option></e:dropdown-answer>
           Guten zu bekehren,
           <br/>
           Oftmals noch
-          <e:dropdown-answer display-number="17.7" question-id="71" max-score="1">
+          <e:dropdown-answer display-number="10.7" question-id="46" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="298">darüber</e:dropdown-answer-option><e:dropdown-answer-option option-id="299">danach</e:dropdown-answer-option><e:dropdown-answer-option option-id="300">dazu</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="192">dazu</e:dropdown-answer-option><e:dropdown-answer-option option-id="193">danach</e:dropdown-answer-option><e:dropdown-answer-option option-id="194">darüber</e:dropdown-answer-option></e:dropdown-answer>
           lachten
           <br/>
           Und
-          <e:dropdown-answer display-number="17.8" question-id="72" max-score="1">
+          <e:dropdown-answer display-number="10.8" question-id="47" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="301">sich</e:dropdown-answer-option><e:dropdown-answer-option option-id="302">mich</e:dropdown-answer-option><e:dropdown-answer-option option-id="303">dich</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="195">sich</e:dropdown-answer-option><e:dropdown-answer-option option-id="196">mich</e:dropdown-answer-option><e:dropdown-answer-option option-id="197">dich</e:dropdown-answer-option></e:dropdown-answer>
           heimlich lustig machten. –
           <br/>
           – Ja, zur Übeltätigkeit,
           <br/>
           Ja,
-          <e:dropdown-answer display-number="17.9" question-id="73" max-score="1">
+          <e:dropdown-answer display-number="10.9" question-id="48" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="304">danach</e:dropdown-answer-option><e:dropdown-answer-option option-id="305">dazu</e:dropdown-answer-option><e:dropdown-answer-option option-id="306">darüber</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="198">dazu</e:dropdown-answer-option><e:dropdown-answer-option option-id="199">danach</e:dropdown-answer-option><e:dropdown-answer-option option-id="200">darüber</e:dropdown-answer-option></e:dropdown-answer>
           ist man bereit! –
           <br/>
           – Menschen necken,
-          <e:dropdown-answer display-number="17.10" question-id="74" max-score="1">
+          <e:dropdown-answer display-number="10.10" question-id="49" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="307">Bücher</e:dropdown-answer-option><e:dropdown-answer-option option-id="308">Computer</e:dropdown-answer-option><e:dropdown-answer-option option-id="309">Tiere</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="201">Computer</e:dropdown-answer-option><e:dropdown-answer-option option-id="202">Tiere</e:dropdown-answer-option><e:dropdown-answer-option option-id="203">Bücher</e:dropdown-answer-option></e:dropdown-answer>
           quälen,
           <br/>
           Äpfel, Birnen, Zwetschen
-          <e:dropdown-answer display-number="17.11" question-id="75" max-score="1">
+          <e:dropdown-answer display-number="10.11" question-id="50" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="310">schlehten</e:dropdown-answer-option><e:dropdown-answer-option option-id="311">stählen</e:dropdown-answer-option><e:dropdown-answer-option option-id="312">stehlen</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="204">stählen</e:dropdown-answer-option><e:dropdown-answer-option option-id="205">schlehten</e:dropdown-answer-option><e:dropdown-answer-option option-id="206">stehlen</e:dropdown-answer-option></e:dropdown-answer>
           – –
           <br/>
-          <e:dropdown-answer display-number="17.12" question-id="76" max-score="1">
+          <e:dropdown-answer display-number="10.12" question-id="51" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="313">Das</e:dropdown-answer-option><e:dropdown-answer-option option-id="314">Der</e:dropdown-answer-option><e:dropdown-answer-option option-id="315">Die</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="207">Die</e:dropdown-answer-option><e:dropdown-answer-option option-id="208">Der</e:dropdown-answer-option><e:dropdown-answer-option option-id="209">Das</e:dropdown-answer-option></e:dropdown-answer>
           ist freilich angenehmer
           <br/>
           Und dazu
-          <e:dropdown-answer display-number="17.13" question-id="77" max-score="1">
+          <e:dropdown-answer display-number="10.13" question-id="52" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="316">auch</e:dropdown-answer-option><e:dropdown-answer-option option-id="317">euch</e:dropdown-answer-option><e:dropdown-answer-option option-id="318">doch</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="210">doch</e:dropdown-answer-option><e:dropdown-answer-option option-id="211">auch</e:dropdown-answer-option><e:dropdown-answer-option option-id="212">euch</e:dropdown-answer-option></e:dropdown-answer>
           viel bequemer,
           <br/>
-          <e:dropdown-answer display-number="17.14" question-id="78" max-score="1">
+          <e:dropdown-answer display-number="10.14" question-id="53" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="319">Als</e:dropdown-answer-option><e:dropdown-answer-option option-id="320">Wenn</e:dropdown-answer-option><e:dropdown-answer-option option-id="321">Wann</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="213">Wenn</e:dropdown-answer-option><e:dropdown-answer-option option-id="214">Als</e:dropdown-answer-option><e:dropdown-answer-option option-id="215">Wann</e:dropdown-answer-option></e:dropdown-answer>
           in Kirche oder Schule
           <br/>
           Festzusitzen auf dem Stuhle. –
@@ -24457,21 +23726,21 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           Wenn ich, auf das Ende sehe!! –
           <br/>
           – Ach, das war
-          <e:dropdown-answer display-number="17.15" question-id="79" max-score="1">
+          <e:dropdown-answer display-number="10.15" question-id="54" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="322">ein</e:dropdown-answer-option><e:dropdown-answer-option option-id="323">eines</e:dropdown-answer-option><e:dropdown-answer-option option-id="324">eine</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="216">eine</e:dropdown-answer-option><e:dropdown-answer-option option-id="217">eines</e:dropdown-answer-option><e:dropdown-answer-option option-id="218">ein</e:dropdown-answer-option></e:dropdown-answer>
           schlimmes Ding,
           <br/>
           Wie es Max und Moritz ging.
           <br/>
           – Drum ist hier, was
-          <e:dropdown-answer display-number="17.16" question-id="80" max-score="1">
+          <e:dropdown-answer display-number="10.16" question-id="55" max-score="1">
             
             
             
-          <e:dropdown-answer-option option-id="325">es</e:dropdown-answer-option><e:dropdown-answer-option option-id="326">sie</e:dropdown-answer-option><e:dropdown-answer-option option-id="327">er</e:dropdown-answer-option></e:dropdown-answer>
+          <e:dropdown-answer-option option-id="219">es</e:dropdown-answer-option><e:dropdown-answer-option option-id="220">er</e:dropdown-answer-option><e:dropdown-answer-option option-id="221">sie</e:dropdown-answer-option></e:dropdown-answer>
           getrieben,
           <br/>
           Abgemalt und aufgeschrieben.
@@ -24487,7 +23756,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
       </e:attachment>
     </e:question>
 
-    <e:question display-number="18" max-score="4">
+    <e:question display-number="11" max-score="4">
       <e:question-title>Umformung</e:question-title>
       <e:question-instruction>
         <span lang="fi-FI">Kirjoita kohdat kokonaan uudelleen siten, että lisäät kuhunkin lauseeseen sulkeissa
@@ -24512,7 +23781,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
             <b>Felix:</b>
             Ach so. Aber Samstag?
             <span class="e-nowrap">
-              <e:scored-text-answer display-number="18.1" question-id="81" max-score="2">
+              <e:scored-text-answer display-number="11.1" question-id="56" max-score="2">
                 <e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint>
                 
                 
@@ -24527,7 +23796,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
             <b>Anna:</b>
             Ja, gerne! Aber ich sage dir erst morgen Bescheid,
             <span class="e-nowrap">
-              <e:scored-text-answer display-number="18.2" question-id="82" max-score="2">
+              <e:scored-text-answer display-number="11.2" question-id="57" max-score="2">
                 <e:hint>weil ich zuerst Mama frage (müssen)</e:hint>
                 
                 
@@ -24549,7 +23818,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
       </e:attachment>
     </e:question>
 
-    <e:question display-number="19" max-score="10">
+    <e:question display-number="12" max-score="10">
       <e:question-title>Dialog</e:question-title>
       <e:question-instruction>
         <span lang="fi-FI">Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä
@@ -24569,7 +23838,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </p>
           <p>
             Tim fragt: 
-            <e:scored-text-answer max-score="2" display-number="19.1" question-id="83">
+            <e:scored-text-answer max-score="2" display-number="12.1" question-id="58">
               <e:hint>
                 <span lang="fi-FI">Voitko auttaa minua?</span>
                 
@@ -24580,7 +23849,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
             Jan: Ja, klar. Was ist denn?
             <br/>
             Tim antwortet:
-            <e:scored-text-answer max-score="3" display-number="19.2" question-id="84">
+            <e:scored-text-answer max-score="3" display-number="12.2" question-id="59">
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.2. kuva</e:attachment-title>
@@ -24607,7 +23876,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </p>
           <p>
             Anna fragt:
-            <e:scored-text-answer max-score="2" display-number="19.3" question-id="85">
+            <e:scored-text-answer max-score="2" display-number="12.3" question-id="60">
               <e:hint>
                 <span lang="fi-FI">Millainen sää tänään on?</span>
                 
@@ -24618,7 +23887,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
             </e:scored-text-answer>
             <br/>
             Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet:
-            <e:scored-text-answer max-score="3" display-number="19.4" question-id="86">
+            <e:scored-text-answer max-score="3" display-number="12.4" question-id="61">
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.4. kuva</e:attachment-title>
@@ -24650,9 +23919,9 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 
   </e:section>
 
-  <e:section display-number="4" max-score="99">
+  <e:section display-number="3" max-score="99">
     <e:section-title>Schriftliche Produktion</e:section-title>
-    <e:question max-answers="1" display-number="20" max-score="33">
+    <e:question max-answers="1" display-number="13" max-score="33">
       <e:question-title>Kurze Schreibaufgabe</e:question-title>
       <e:question-instruction>
         <span lang="fi-FI">
@@ -24665,7 +23934,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         </span>
         
       </e:question-instruction>
-      <e:question display-number="20.1" max-score="33">
+      <e:question display-number="13.1" max-score="33">
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           <span lang="fi-FI">
@@ -24673,9 +23942,9 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </span>
           
         </e:question-instruction>
-        <e:text-answer type="rich-text" max-score="33" max-length="240" display-number="20.1" question-id="87"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240" display-number="13.1" question-id="62"/>
       </e:question>
-      <e:question display-number="20.2" max-score="33">
+      <e:question display-number="13.2" max-score="33">
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           <span lang="fi-FI">
@@ -24685,11 +23954,11 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </span>
           
         </e:question-instruction>
-        <e:text-answer type="rich-text" max-score="33" max-length="240" display-number="20.2" question-id="88"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240" display-number="13.2" question-id="63"/>
       </e:question>
     </e:question>
 
-    <e:question max-answers="1" display-number="21" max-score="66">
+    <e:question max-answers="1" display-number="14" max-score="66">
       <e:question-title>Lange Schreibaufgabe</e:question-title>
       <e:question-instruction>
         <span lang="fi-FI">
@@ -24706,7 +23975,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         
       </e:question-instruction>
 
-      <e:question display-number="21.1" max-score="66">
+      <e:question display-number="14.1" max-score="66">
         <e:question-title>Lange Schreibaufgabe</e:question-title>
         <e:question-instruction>
           <span lang="fi-FI">
@@ -24756,10 +24025,10 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
             </e:reference>
           </e:attachment>
         </p>
-        <e:text-answer type="rich-text" max-score="66" display-number="21.1" question-id="89"/>
+        <e:text-answer type="rich-text" max-score="66" display-number="14.1" question-id="64"/>
       </e:question>
 
-      <e:question display-number="21.2" max-score="66">
+      <e:question display-number="14.2" max-score="66">
         <e:question-title>Lange Schreibaufgabe</e:question-title>
         <e:question-instruction>
           <span lang="fi-FI">
@@ -24768,7 +24037,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           </span>
           
         </e:question-instruction>
-        <e:text-answer type="rich-text" max-score="66" display-number="21.2" question-id="90"/>
+        <e:text-answer type="rich-text" max-score="66" display-number="14.2" question-id="65"/>
       </e:question>
 
     </e:question>
@@ -24867,7 +24136,16 @@ exports[`Exam mastering supports multiple exam-type attributes: hearing-impaired
     </span>
   </e:exam-instruction>
   <e:table-of-contents/>
-  
+  <e:section display-number="1" max-score="0">
+    <e:section-title>Kuuntelutehtävät</e:section-title>
+    <e:question display-number="1" max-score="0">
+      <e:question-title>Kaikille yhteinen tehtävä</e:question-title>
+    </e:question>
+    <e:question exam-type="normal hearing-impaired" display-number="2" max-score="0">
+      <e:question-title>Kuuntelutehtävä</e:question-title>
+    </e:question>
+    
+  </e:section>
   <e:section display-number="2" max-score="0">
     <e:section-title>Kirjalliset tehtävät</e:section-title>
     <e:question exam-type="normal hearing-impaired" display-number="3" max-score="0">
