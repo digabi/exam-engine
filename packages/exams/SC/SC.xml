@@ -71,7 +71,7 @@
 
   </e:exam-grading-instruction>
   <e:table-of-contents/>
-  <e:section>
+  <e:section type="H" exam-type="normal">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg"/>
