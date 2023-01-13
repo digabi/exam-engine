@@ -9,7 +9,7 @@ import { queryAll } from '../../src/dom-utils'
 
 const allScores: Score[] = [
   {
-    questionId: 1,
+    questionId: 330,
     answerId: 1,
     autograding: { score: 3 },
   },
@@ -33,7 +33,7 @@ const allScores: Score[] = [
 const answers: ExamAnswer[] = [
   {
     type: 'choice',
-    questionId: 1,
+    questionId: 330,
     value: '93',
     displayNumber: '1.1',
   },
@@ -182,7 +182,7 @@ describe('Total score calculation for ' + testExam, () => {
     const choiceAnswer: ExamAnswer = {
       type: 'choice',
       questionId: 1,
-      value: '91',
+      value: '93',
       displayNumber: '1.1',
     }
     expect(
@@ -193,14 +193,14 @@ describe('Total score calculation for ' + testExam, () => {
     const scoredTextAnswer: ExamAnswer[] = [
       {
         type: 'text',
-        questionId: 81,
+        questionId: 83,
         value: 'Willst du am Samstag mit ins Kino kommen',
         characterCount: 33,
         displayNumber: '18.1',
       },
       {
         type: 'text',
-        questionId: 82,
+        questionId: 84,
         value: 'Bar Bar',
         characterCount: 6,
         displayNumber: '18.2',
@@ -209,13 +209,13 @@ describe('Total score calculation for ' + testExam, () => {
 
     const scoredTextScore: Score[] = [
       {
-        questionId: 81,
-        answerId: 81,
+        questionId: 83,
+        answerId: 83,
         autograding: { score: 2 },
       },
       {
-        questionId: 82,
-        answerId: 82,
+        questionId: 84,
+        answerId: 84,
         autograding: { score: 0 },
       },
     ]
