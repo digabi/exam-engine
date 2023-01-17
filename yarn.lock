@@ -7000,11 +7000,11 @@ extsprintf@^1.2.0:
   integrity sha512-Wrk35e8ydCKDj/ArClo1VrPVmN8zph5V4AtHwIuHhvMXsKf73UT3BOD+azBIW+3wOJ4FhEH7zyaJCFvChjYvMA==
 
 fast-check@^3.0.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/fast-check/-/fast-check-3.5.0.tgz#5d633f82b35a3d18c76574d3c38526f46a44f9fc"
-  integrity sha512-5Yk9kfPy1DR8+9nl+wgRbXGM+p7e25nDRuZ/4b3TjIaWu53p/KkwS4uyKFc+Ek2Ft5nF40KRCbPYGrWYp0SjPw==
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/fast-check/-/fast-check-3.6.0.tgz#39c986f33b29a10910be8424bba1919d472612be"
+  integrity sha512-T4fVjMD2HKKLMkmfG3obN7xkhQdL+ZxKoS3Asj6dOsUwWhqEqB1FRaWIiFrGD1575sGA6npQn8pMtcbsRpw+3g==
   dependencies:
-    pure-rand "^5.0.2"
+    pure-rand "^6.0.0"
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
@@ -12893,10 +12893,10 @@ puppeteer@^18.0.5:
     proxy-from-env "1.1.0"
     puppeteer-core "18.2.1"
 
-pure-rand@^5.0.2:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/pure-rand/-/pure-rand-5.0.3.tgz#a2f15dfbc3be8433d1d8ed67ee411aa83fb90406"
-  integrity sha512-9N8x1h8dptBQpHyC7aZMS+iNOAm97WMGY0AFrguU1cpfW3I5jINkWe5BIY5md0ofy+1TCIELsVcm/GJXZSaPbw==
+pure-rand@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/pure-rand/-/pure-rand-6.0.0.tgz#701996ceefa253507923a0e864c17ab421c04a7c"
+  integrity sha512-rLSBxJjP+4DQOgcJAx6RZHT2he2pkhQdSnofG5VWyVl6GRq/K02ISOuOLcsMOrtKDIJb8JN2zm3FFzWNbezdPw==
 
 q@^1.1.2, q@^1.5.1:
   version "1.5.1"
