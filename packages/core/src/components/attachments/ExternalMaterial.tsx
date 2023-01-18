@@ -27,7 +27,7 @@ const renderChildNodes = createRenderChildNodes({
   image: Image,
   video: Video,
   formula: Formula,
-  reference: surround(Reference, 'div', { className: 'e-mrg-y-2 e-font-size-s e-light' }),
+  reference: surround(Reference, 'div', { className: 'e-mrg-y-2 e-font-size-s' }),
   'image-overlay': ImageOverlay,
 })
 
