@@ -19,9 +19,9 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
     return (
       <>
         {element.hasChildNodes() && (
-          <header className="e-semibold" id={tocSectionTitleId(displayNumber)}>
+          <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
             {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
-          </header>
+          </h4>
         )}
         {showAnsweringInstructions && maxAnswers != null && (
           <div>
