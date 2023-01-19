@@ -49,9 +49,9 @@ function ExternalMaterial({ element, showTitle = true, forceRender = false }: Ex
   return (
     <div className="external-material-list e-mrg-b-4">
       {showTitle && (
-        <div className="e-font-size-l e-semibold" id={id}>
+        <h4 className="external-material-title" id={id}>
           {t('external-material-title')}
-        </div>
+        </h4>
       )}
       <ol className="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby={id}>
         {renderChildNodes(element)}
