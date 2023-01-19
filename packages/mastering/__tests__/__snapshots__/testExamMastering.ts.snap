@@ -197,7 +197,7 @@ exports[`Exam mastering masters A_E.xml exam correctly: xml 1`] = `
         </e:attachment>
     </e:external-material>
     <e:section max-answers="1" display-number="1" max-score="60">
-        <e:section-title/>
+        <e:section-title>Aiheet</e:section-title>
         <e:question display-number="1" max-score="60">
             <e:question-title>Digitaalinen arki</e:question-title>
             <e:text-answer type="rich-text" max-score="60" display-number="1" question-id="1"/>
