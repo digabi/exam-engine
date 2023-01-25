@@ -1130,10 +1130,10 @@
     http-response-object "^3.0.1"
     parse-cache-control "^1.0.1"
 
-"@digabi/eslint-config@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-1.2.0.tgz#0f1e6aee45a8aa980d9074c26b8c5a4a20e4fb95"
-  integrity sha512-PS+HLmFz7E0sDOyRFDvsxfWzIp9pxG8sc3AO4Bvjvd6MeDWKEK12MH8U95dmpHTt0qqSeiQMaO/dErvM7Ldy2Q==
+"@digabi/eslint-config@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@digabi/eslint-config/-/eslint-config-2.0.1.tgz#bc5a7fd6c97ddd64de89f18ca11ee2b582e60177"
+  integrity sha512-RWGGiPG7xUWvU0Oj1nGiPF6MR/OlwyCChVInlPzymxjozQ9Hy9i3oqRkWDAaqEVaZIuwTRJwdblU9ATunob50A==
 
 "@digabi/mathquill@^0.10.12":
   version "0.10.12"
