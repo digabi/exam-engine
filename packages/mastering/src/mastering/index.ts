@@ -260,7 +260,7 @@ async function masterExamVersion(
   await addExamMetadata(root, generateUuid, language, type)
   // Add question ids before removing questions in wrong language and for other exam-types
   // in order to keep question ids same within different exam versions
-  // It helps when grading productive questions
+  // It helps when grading productive questions.
   addQuestionIds(root, generateId)
   applyLocalizations(root, language, type)
 
