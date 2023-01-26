@@ -258,6 +258,10 @@ async function masterExamVersion(
   const translation = createTranslationFile(doc)
 
   await addExamMetadata(root, generateUuid, language, type)
+  // Add question ids before removing questions in wrong language and for other exam-types
+  // in order to keep question ids same within different exam versions
+  // It helps when grading productive questions
+  addQuestionIds(root, generateId)
   applyLocalizations(root, language, type)
 
   const exam = parseExamStructure(root)
@@ -268,7 +272,6 @@ async function masterExamVersion(
   addAnswerNumbers(exam)
   addAttachmentNumbers(exam)
 
-  addQuestionIds(exam, generateId)
   // Perform shuffling before adding answer options ids, so the student can't guess the original order.
   if (options.multiChoiceShuffleSecret) shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
   addAnswerOptionIds(exam, generateId)
@@ -278,13 +281,6 @@ async function masterExamVersion(
 
   const gradingStructure = createGradingStructure(exam, generateId, { groupChoiceAnswers: options.groupChoiceAnswers })
 
-  // This is bit of a hack. For hearing impaired exams, we want to delete the first section after the basic exam
-  // structure has been set set up. This way the the questions in the hearing impaired exam are numbered in the same
-  // manner than the normal exam and the grading structure is equal to the the normal grading structure.
-  if (type === 'hearing-impaired') {
-    exam.sections[0]?.element?.remove()
-    exam.sections.shift()
-  }
   countMaxScores(exam)
   removeComments(root)
   removeTableWhitespaceNodes(root)
@@ -570,7 +566,8 @@ function addAttachmentNumbers(exam: Exam) {
   }
 }
 
-function addQuestionIds(exam: Exam, generateId: GenerateId) {
+function addQuestionIds(root: Element, generateId: GenerateId) {
+  const exam = parseExamStructure(root)
   for (const answer of exam.answers) {
     answer.element.attr('question-id', String(generateId()))
   }

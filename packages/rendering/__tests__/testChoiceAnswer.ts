@@ -25,9 +25,9 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
   it('remembers the choices after reloading', async () => {
     await loadExam(page, ctx.url)
 
-    await setChoiceAnswer(page, 1, '91')
+    await setChoiceAnswer(page, 1, '95')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('91')
+    expect(await getRadioButtonValue(page, 1)).toBe('95')
 
     await setChoiceAnswer(page, 1, '93')
     await loadExam(page, ctx.url)

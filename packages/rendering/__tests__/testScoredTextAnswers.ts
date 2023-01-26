@@ -18,8 +18,8 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
     await ctx.close()
   })
 
-  const firstAnswerId = 81
-  const secondAnswerId = 82
+  const firstAnswerId = 83
+  const secondAnswerId = 84
 
   it('highlights the hint when focusing a scored text answer', async () => {
     await loadExam(page, ctx.url)
@@ -32,6 +32,8 @@ describe('testScoredTextAnswers.ts — Scored text answer interactions', () => {
   })
 
   it('focuses the answer when clicking a hint', async () => {
+    await loadExam(page, ctx.url)
+
     await clickAnswerHint(firstAnswerId)
     await expectAnswerHintToBeFocused(firstAnswerId)
 

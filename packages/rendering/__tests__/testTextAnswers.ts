@@ -53,17 +53,17 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   it('shows the error indicator when too many answers', async () => {
     await loadExam(page, ctx.url)
     await expectErrorIndicatorToDisappear()
-    await type('oikea vastaus', 87)
-    await type('oikea vastaus 2', 88)
+    await type('oikea vastaus', 89)
+    await type('oikea vastaus 2', 90)
     await expectErrorIndicator('Tehtävä 20: Vastaa joko kohtaan 20.1 tai 20.2.')
-    await clearInput(88)
+    await clearInput(90)
     await expectErrorIndicatorToDisappear()
   })
 
   it('shows the error indicator when answer is too long', async () => {
     await loadExam(page, ctx.url)
     await expectErrorIndicatorToDisappear()
-    await type('o'.repeat(241), 87)
+    await type('o'.repeat(241), 89)
     await expectErrorIndicator('Tehtävä 20.1: Vastaus on liian pitkä.')
   })
 
@@ -78,14 +78,14 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     )
   }
 
-  const type = (text: string, questionId = 87) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
+  const type = (text: string, questionId = 89) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
 
-  async function clearInput(questionId = 87) {
+  async function clearInput(questionId = 89) {
     await page.click(`.text-answer[data-question-id="${questionId}"]`, { clickCount: 3 })
     await page.keyboard.press('Backspace')
   }
 
-  async function expectCharacterCountToBe(expectedCount: number, questionId = 87) {
+  async function expectCharacterCountToBe(expectedCount: number, questionId = 89) {
     const text = await getTextContent(page, `.text-answer[data-question-id="${questionId}"] ~ .answer-toolbar`)
     const count = Number(/\d+/.exec(text))
     expect(count).toEqual(expectedCount)
