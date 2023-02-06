@@ -8,6 +8,7 @@ import { ResultsContext, withResultsContext } from '../context/ResultsContext'
 import { MultiLineAnswer } from '../results/MultiLineAnswer'
 import SingleLineAnswer from '../results/SingleLineAnswer'
 import { QuestionContext } from '../context/QuestionContext'
+import { Score } from '../../types/Score'
 
 const Results: React.FunctionComponent<CommonExamProps> = () => {
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -20,6 +21,29 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
   const [answerId, setAnswerId] = useState<number>(answerIds[0])
 
   const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
+  const score: Score = {
+    questionId: 3,
+    answerId: 3,
+    pregrading: {
+      annotations: [
+        {
+          startIndex: 5,
+          length: 10,
+          message: '+1',
+        },
+      ],
+    },
+    censoring: {
+      scores: [],
+      annotations: [
+        {
+          startIndex: 9,
+          length: 10,
+          message: '+1',
+        },
+      ],
+    },
+  }
   function selectQuestion(id: number) {
     setAnswerId(id)
   }
@@ -38,7 +62,7 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
           Tehtävä {displayNumber} ({questionId})
         </div>
         {type === 'richText' ? (
-          <MultiLineAnswer {...{ type: 'rich-text', value }} />
+          <MultiLineAnswer {...{ type: 'rich-text', value, score }} />
         ) : (
           <SingleLineAnswer {...{ value, answers }}>
             <div></div>
