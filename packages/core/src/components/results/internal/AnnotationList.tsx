@@ -45,7 +45,7 @@ function ResultsAnnotationList() {
   const { answers } = useContext(QuestionContext)
   const { scores, singleGrading } = useContext(ResultsContext)
 
-  const answersAndScores = mapMaybe(answers, (answer) => {
+  const answersAndScores = mapMaybe(answers || [], (answer) => {
     const questionId = getNumericAttribute(answer, 'question-id')
     const score = findScore(scores, questionId!)
 

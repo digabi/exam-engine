@@ -1,51 +1,60 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { changeLanguage, initI18n } from '../../i18n'
 import { useCached } from '../../useCached'
 import { withCommonExamContext } from '../context/CommonExamContext'
 import { CommonExamProps } from '../exam/Exam'
 import { ResultsContext, withResultsContext } from '../context/ResultsContext'
-import { MultiLineAnswer } from '../results/MultiLineAnswer'
-import SingleLineAnswer from '../results/SingleLineAnswer'
-import { QuestionContext } from '../context/QuestionContext'
-import { Score } from '../../types/Score'
+import { GradingAnswer } from './GradingAnswer'
+import { Annotation } from '../../types/Score'
 
-const Results: React.FunctionComponent<CommonExamProps> = () => {
+const Grading: React.FunctionComponent<CommonExamProps> = () => {
   const { answersByQuestionId } = useContext(ResultsContext)
-  const { answers } = useContext(QuestionContext)
 
   const i18n = useCached(() => initI18n('FI-fi'))
   useEffect(changeLanguage(i18n, 'FI-fi'))
 
   const answerIds = Object.keys(answersByQuestionId).map(Number)
+  if (answerIds.length === 0) {
+    return <div>No answers</div>
+  }
   const [answerId, setAnswerId] = useState<number>(answerIds[0])
 
+  const annotationsStorage = useRef<{ [k: string]: { pregrading: Annotation[]; censoring: Annotation[] } }>(
+    Object.fromEntries(
+      answerIds.map((id) => [
+        id,
+        {
+          pregrading: [
+            {
+              startIndex: 2,
+              length: 5,
+              message: '+1',
+            },
+          ],
+          censoring: [],
+        },
+      ])
+    )
+  )
+
+  const [annotations, setAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>({
+    pregrading: [],
+    censoring: [],
+  })
+
   const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
-  const score: Score = {
-    questionId: 3,
-    answerId: 3,
-    pregrading: {
-      annotations: [
-        {
-          startIndex: 5,
-          length: 10,
-          message: '+1',
-        },
-      ],
-    },
-    censoring: {
-      scores: [],
-      annotations: [
-        {
-          startIndex: 9,
-          length: 10,
-          message: '+1',
-        },
-      ],
-    },
+
+  if (type === 'choice') {
+    return <div>choice answer</div>
   }
   function selectQuestion(id: number) {
     setAnswerId(id)
+    setAnnotations(annotationsStorage.current[id])
+  }
+  function saveAnnotations(annotations: { pregrading: Annotation[]; censoring: Annotation[] }) {
+    annotationsStorage.current[answerId] = annotations
+    console.log('saving: ', annotationsStorage.current)
   }
   return (
     <I18nextProvider i18n={i18n}>
@@ -53,7 +62,7 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
         <div>
           {answerIds.map((id) => (
             <button onClick={() => selectQuestion(id)} key={id}>
-              {id}
+              {answersByQuestionId[id].displayNumber}
             </button>
           ))}
         </div>
@@ -61,16 +70,17 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
         <div>
           Tehtävä {displayNumber} ({questionId})
         </div>
-        {type === 'richText' ? (
-          <MultiLineAnswer {...{ type: 'rich-text', value, score }} />
-        ) : (
-          <SingleLineAnswer {...{ value, answers }}>
-            <div></div>
-          </SingleLineAnswer>
-        )}
+        <GradingAnswer
+          {...{
+            type,
+            value,
+            annotations,
+            saveAnnotations,
+          }}
+        />
       </main>
     </I18nextProvider>
   )
 }
 
-export default React.memo(withResultsContext(withCommonExamContext(Results)))
+export default React.memo(withResultsContext(withCommonExamContext(Grading)))
