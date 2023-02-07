@@ -6,7 +6,7 @@ import { withCommonExamContext } from '../context/CommonExamContext'
 import { CommonExamProps } from '../exam/Exam'
 import { ResultsContext, withResultsContext } from '../context/ResultsContext'
 import { GradingAnswer } from './GradingAnswer'
-import { Score } from '../../types/Score'
+import { Annotation } from '../../types/Score'
 
 const Results: React.FunctionComponent<CommonExamProps> = () => {
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -19,34 +19,25 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
     return <div>No answers</div>
   }
   const [answerId, setAnswerId] = useState<number>(answerIds[0])
+  const [censoring, setCensoring] = useState<Annotation[]>([
+    {
+      startIndex: 9,
+      length: 10,
+      message: '+1',
+    },
+  ])
+  const [pregrading, setPregrading] = useState<Annotation[]>([
+    {
+      startIndex: 6,
+      length: 10,
+      message: '+1',
+    },
+  ])
 
   const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
 
   if (type === 'choice') {
     return <div>choice answer</div>
-  }
-  const score: Score = {
-    questionId: 3,
-    answerId: 3,
-    pregrading: {
-      annotations: [
-        {
-          startIndex: 6,
-          length: 10,
-          message: '+1',
-        },
-      ],
-    },
-    censoring: {
-      scores: [],
-      annotations: [
-        {
-          startIndex: 9,
-          length: 10,
-          message: '+1',
-        },
-      ],
-    },
   }
   function selectQuestion(id: number) {
     setAnswerId(id)
@@ -65,7 +56,16 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
         <div>
           Tehtävä {displayNumber} ({questionId})
         </div>
-        <GradingAnswer {...{ type, value, score }} />
+        <GradingAnswer
+          {...{
+            type,
+            value,
+            pregrading,
+            censoring,
+            setPregrading,
+            setCensoring,
+          }}
+        />
       </main>
     </I18nextProvider>
   )
