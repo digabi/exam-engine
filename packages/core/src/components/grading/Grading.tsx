@@ -5,29 +5,33 @@ import { useCached } from '../../useCached'
 import { withCommonExamContext } from '../context/CommonExamContext'
 import { CommonExamProps } from '../exam/Exam'
 import { ResultsContext, withResultsContext } from '../context/ResultsContext'
-import { MultiLineAnswer } from '../results/MultiLineAnswer'
-import SingleLineAnswer from '../results/SingleLineAnswer'
-import { QuestionContext } from '../context/QuestionContext'
+import { GradingAnswer } from './GradingAnswer'
 import { Score } from '../../types/Score'
 
 const Results: React.FunctionComponent<CommonExamProps> = () => {
   const { answersByQuestionId } = useContext(ResultsContext)
-  const { answers } = useContext(QuestionContext)
 
   const i18n = useCached(() => initI18n('FI-fi'))
   useEffect(changeLanguage(i18n, 'FI-fi'))
 
   const answerIds = Object.keys(answersByQuestionId).map(Number)
+  if (answerIds.length === 0) {
+    return <div>No answers</div>
+  }
   const [answerId, setAnswerId] = useState<number>(answerIds[0])
 
   const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
+
+  if (type === 'choice') {
+    return <div>choice answer</div>
+  }
   const score: Score = {
     questionId: 3,
     answerId: 3,
     pregrading: {
       annotations: [
         {
-          startIndex: 5,
+          startIndex: 6,
           length: 10,
           message: '+1',
         },
@@ -61,13 +65,7 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
         <div>
           Tehtävä {displayNumber} ({questionId})
         </div>
-        {type === 'richText' ? (
-          <MultiLineAnswer {...{ type: 'rich-text', value, score }} />
-        ) : (
-          <SingleLineAnswer {...{ value, answers }}>
-            <div></div>
-          </SingleLineAnswer>
-        )}
+        <GradingAnswer {...{ type, value, score }} />
       </main>
     </I18nextProvider>
   )
