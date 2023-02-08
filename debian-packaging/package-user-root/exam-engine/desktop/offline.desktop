@@ -2,5 +2,5 @@
 Comment=
 Terminal=true
 Name=Tee offline
-Exec=bash -c "PUPPETEER_CACHE_DIR=/home/digabi/exam-engine/.cache ee create-offline `dirname %k`/*.xml; read -n 1 -s -p 'Valmis!'"
+Exec=bash -c "ee create-offline `dirname %k`/*.xml; read -n 1 -s -p 'Valmis!'"
 Type=Application
