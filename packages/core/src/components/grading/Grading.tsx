@@ -34,6 +34,10 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
     },
   ])
 
+  useEffect(() => {
+    console.log(pregrading, censoring)
+  }, [censoring, pregrading])
+
   const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
 
   if (type === 'choice') {

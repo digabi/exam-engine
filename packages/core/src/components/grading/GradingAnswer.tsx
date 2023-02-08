@@ -30,7 +30,6 @@ export const GradingAnswer: React.FunctionComponent<{
     if (selection && answerRef.current !== null && popupRef.current !== null && hasTextSelectedInAnswerText()) {
       const range = selection.getRangeAt(0)
       const position = calculatePosition(answerRef.current, range)
-      console.log(range, position, '\n=== range')
       setPregrading([{ ...position, type: 'text', message: '' }])
       // setCensoring(censoring)
       const { left, top } = getPopupCss(range, answerRef.current)
@@ -123,7 +122,6 @@ function hasTextSelectedInAnswerText(): boolean {
   function selectionInAnswerText(sel: Selection) {
     if (sel.type === 'None' || sel.type === 'Caret' || sel.rangeCount === 0) return false
     const startContainer = sel.getRangeAt(0).startContainer
-    console.log(startContainer, '\n=== startContainer')
     return (
       sel.rangeCount > 0 &&
       startContainer.parentElement?.closest('.e-multiline-results-text-answer') !== null &&
