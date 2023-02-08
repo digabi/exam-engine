@@ -25,6 +25,7 @@ jobs:
         with:
           path: |
             **/node_modules
+            ~/.cache/puppeteer
           key: ${{ matrix.node-version }}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ matrix.node-version }}-
@@ -48,6 +49,7 @@ jobs:
         with:
           path: |
             **/node_modules
+            ~/.cache/puppeteer
           key: 14.x-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             14.x-
