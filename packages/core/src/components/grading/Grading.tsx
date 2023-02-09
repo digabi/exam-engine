@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { changeLanguage, initI18n } from '../../i18n'
 import { useCached } from '../../useCached'
@@ -19,24 +19,34 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
     return <div>No answers</div>
   }
   const [answerId, setAnswerId] = useState<number>(answerIds[0])
-  const [censoring, setCensoring] = useState<Annotation[]>([
-    {
-      startIndex: 9,
-      length: 10,
-      message: '+1',
-    },
-  ])
-  const [pregrading, setPregrading] = useState<Annotation[]>([
-    {
-      startIndex: 6,
-      length: 10,
-      message: '+1',
-    },
-  ])
+
+  const annotationsStorage = useRef<{ [k: string]: { pregrading: Annotation[]; censoring: Annotation[] } }>(
+    Object.fromEntries(
+      answerIds.map((id) => [
+        id,
+        {
+          pregrading: [
+            {
+              startIndex: 2,
+              length: 5,
+              message: '+1',
+            },
+          ],
+          censoring: [],
+        },
+      ])
+    )
+  )
+
+  const [annotations, setAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>({
+    pregrading: [],
+    censoring: [],
+  })
 
   useEffect(() => {
-    console.log(pregrading, censoring)
-  }, [censoring, pregrading])
+    annotationsStorage.current[answerId] = annotations
+    console.log('saving: ', annotationsStorage.current)
+  }, [annotations])
 
   const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
 
@@ -45,6 +55,10 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
   }
   function selectQuestion(id: number) {
     setAnswerId(id)
+    setAnnotations({
+      pregrading: annotationsStorage.current[id].pregrading,
+      censoring: annotationsStorage.current[id].censoring,
+    })
   }
   return (
     <I18nextProvider i18n={i18n}>
@@ -52,7 +66,7 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
         <div>
           {answerIds.map((id) => (
             <button onClick={() => selectQuestion(id)} key={id}>
-              {id}
+              {answersByQuestionId[id].displayNumber}
             </button>
           ))}
         </div>
@@ -64,10 +78,8 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
           {...{
             type,
             value,
-            pregrading,
-            censoring,
-            setPregrading,
-            setCensoring,
+            annotations,
+            setAnnotations,
           }}
         />
       </main>
