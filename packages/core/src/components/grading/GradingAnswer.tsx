@@ -79,7 +79,7 @@ export const GradingAnswer: React.FunctionComponent<{
         <div onMouseUp={onMouseUp} ref={answerRef} />
       ) : (
         <span className="text-answer text-answer--single-line">
-          <span className="e-inline-block" ref={answerRef}></span>
+          <span className="e-inline-block" onMouseUp={onMouseUp} ref={answerRef}></span>
         </span>
       )}
       <div style={{ display: 'none', position: 'absolute' }} ref={popupRef} className="popup add-annotation-popup">
