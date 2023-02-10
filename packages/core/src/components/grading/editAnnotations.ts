@@ -68,13 +68,13 @@ export function hasTextSelectedInAnswerText(): boolean {
   }
 
   function isRangeSelection(sel: Selection) {
-    return _.get(sel, 'type', '') === 'Range'
+    return sel?.type === 'Range'
   }
 
   function textSelectedInRange(sel: Selection) {
     const range = sel.getRangeAt(0)
     return (
-      _.get(sel, 'rangeCount', 0) > 0 &&
+      !!sel.rangeCount &&
       (range.toString().length > 0 ||
         isParentContainer(range.startContainer as Element) ||
         isParentContainer(range.endContainer as Element))
@@ -88,10 +88,9 @@ export function hasTextSelectedInAnswerText(): boolean {
 
 export function selectionHasNothingToUnderline(range: Range) {
   const contents = range.cloneContents()
-  const hasImages = _.includes(
-    _.toArray(contents.childNodes).map((x) => (x instanceof Element ? x.tagName : null)),
-    'IMG'
-  )
+  const hasImages = Array.from(contents.childNodes)
+    .map((x) => (x instanceof Element ? x.tagName : null))
+    .includes('IMG')
   return contents.textContent?.length === 0 && !hasImages
 }
 
