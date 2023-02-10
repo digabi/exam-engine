@@ -1,6 +1,5 @@
 import React, { FormEvent, useLayoutEffect, useRef } from 'react'
 import { Annotation, TextAnnotation } from '../..'
-import * as _ from 'lodash-es'
 import AnnotationList from '../results/internal/AnnotationList'
 import {
   calculatePosition,
@@ -46,7 +45,6 @@ export const GradingAnswer: React.FunctionComponent<{
       popup.style.left = popupCss.left.toString() + 'px'
       popup.style.top = popupCss.top.toString() + 'px'
       popup.style.display = 'block'
-      popup.style.position = 'absolute'
       const inputElement = messageRef.current!
       inputElement.value = ''
       inputElement.focus()
@@ -57,7 +55,14 @@ export const GradingAnswer: React.FunctionComponent<{
     }
   }
 
-  function confirmAnnotation(message: string) {
+  function renderAnswerWithAnnotations(annotations: Annotations) {
+    answerRef.current!.innerHTML = value
+    renderAnnotations(answerRef.current!, annotations.pregrading, annotations.censoring)
+  }
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const message: string = messageRef.current!.value
     const annotations = {
       pregrading: latestSavedAnnotations.pregrading,
       censoring: mergeAnnotation(
@@ -74,17 +79,6 @@ export const GradingAnswer: React.FunctionComponent<{
     renderAnswerWithAnnotations(latestSavedAnnotations)
     popupRef.current!.style.display = 'none'
   }
-
-  function renderAnswerWithAnnotations(annotations: Annotations) {
-    answerRef.current!.innerHTML = value
-    renderAnnotations(answerRef.current!, annotations.pregrading, annotations.censoring)
-  }
-
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const message: string = messageRef.current!.value
-    confirmAnnotation(message)
-  }
   return (
     <div
       style={{ position: 'relative' }}
@@ -97,7 +91,7 @@ export const GradingAnswer: React.FunctionComponent<{
           <span className="e-inline-block" ref={answerRef}></span>
         </span>
       )}
-      <div style={{ display: 'none' }} ref={popupRef} className="popup add-annotation-popup">
+      <div style={{ display: 'none', position: 'absolute' }} ref={popupRef} className="popup add-annotation-popup">
         <form onSubmit={(e) => onSubmit(e)}>
           <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
           <i className="fa fa-comment"></i>
