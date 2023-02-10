@@ -17,7 +17,6 @@ export const AnswerWithAnnotations: React.FunctionComponent<{
       renderAnnotations(answerRef.current, annotations.pregrading, annotations.censoring)
     }
   })
-  console.log('RENDER')
   return type === 'richText' ? (
     <div ref={answerRef} />
   ) : (

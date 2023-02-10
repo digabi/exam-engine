@@ -38,15 +38,10 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
     )
   )
 
-  const [annotations, setAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>({
+  const [savedAnnotations, setSavedAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>({
     pregrading: [],
     censoring: [],
   })
-
-  useEffect(() => {
-    annotationsStorage.current[answerId] = annotations
-    console.log('saving: ', annotationsStorage.current)
-  }, [annotations])
 
   const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
 
@@ -55,10 +50,14 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
   }
   function selectQuestion(id: number) {
     setAnswerId(id)
-    setAnnotations({
+    setSavedAnnotations({
       pregrading: annotationsStorage.current[id].pregrading,
       censoring: annotationsStorage.current[id].censoring,
     })
+  }
+  function saveAnnotations(annotations: { pregrading: Annotation[]; censoring: Annotation[] }) {
+    annotationsStorage.current[answerId] = annotations
+    console.log('saving: ', annotationsStorage.current)
   }
   return (
     <I18nextProvider i18n={i18n}>
@@ -78,8 +77,8 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
           {...{
             type,
             value,
-            annotations,
-            setAnnotations,
+            savedAnnotations,
+            saveAnnotations,
           }}
         />
       </main>

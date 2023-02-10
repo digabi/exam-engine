@@ -15,17 +15,23 @@ import { AnnotationPopup } from './AnnotationPopup'
 export const GradingAnswer: React.FunctionComponent<{
   type: 'richText' | 'text'
   value?: string
-  annotations: { pregrading: Annotation[]; censoring: Annotation[] }
-  setAnnotations: (annotations: { pregrading: Annotation[]; censoring: Annotation[] }) => void
-}> = ({ type, annotations, setAnnotations, value }) => {
+  savedAnnotations: { pregrading: Annotation[]; censoring: Annotation[] }
+  saveAnnotations: (annotations: { pregrading: Annotation[]; censoring: Annotation[] }) => void
+}> = ({ type, savedAnnotations, saveAnnotations, value }) => {
   const answerRef = useRef<HTMLDivElement>(null)
   const [popupVisible, setPopupVisible] = useState<boolean>(false)
   const [position, setPosition] = useState<{ left: number; top: number }>({ left: 0, top: 0 })
 
-  const [currentAnnotations, setCurrentAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>(
-    annotations
-  )
+  const [unsavedAnnotations, setUnsavedAnnotations] = useState<{
+    pregrading: Annotation[]
+    censoring: Annotation[]
+  }>()
 
+  // useEffect(() => {
+  //   setCurrentAnnotations(annotations)
+  // }, [annotations])
+
+  console.log(savedAnnotations, unsavedAnnotations, '\n=== annotations, currentAnnotations')
   useEffect(() => {
     if (answerRef.current) {
       document.addEventListener('selectionchange', onSelect)
@@ -36,10 +42,6 @@ export const GradingAnswer: React.FunctionComponent<{
   }, [])
   const newAnnotation = useRef<TextAnnotation>()
 
-  useEffect(() => {
-    setCurrentAnnotations(annotations)
-    console.log(annotations, '\n=== annotations')
-  }, [annotations])
   function onSelect() {}
 
   function onMouseUp() {
@@ -55,27 +57,29 @@ export const GradingAnswer: React.FunctionComponent<{
       const popupCss = getPopupCss(range, answerRef.current)
       setPosition(popupCss)
 
-      setCurrentAnnotations((currentAnnotations) => ({
-        pregrading: annotations.pregrading,
-        censoring: mergeAnnotation(answerRef.current!, annotation, currentAnnotations.censoring),
-      }))
+      setUnsavedAnnotations({
+        pregrading: savedAnnotations.pregrading,
+        censoring: mergeAnnotation(answerRef.current, annotation, savedAnnotations.censoring),
+      })
       setPopupVisible(true)
     }
   }
 
-  function setMessage(message: string) {
-    setAnnotations({
-      pregrading: annotations.pregrading,
+  function confirmAnnotation(message: string) {
+    saveAnnotations({
+      pregrading: savedAnnotations.pregrading,
       censoring: mergeAnnotation(
         answerRef.current!,
         {
           ...newAnnotation.current!,
           message,
         },
-        annotations.censoring || []
+        savedAnnotations.censoring || []
       ),
     })
+    setUnsavedAnnotations(undefined)
     setPopupVisible(false)
+    newAnnotation.current = undefined
   }
   return (
     <div
@@ -83,11 +87,11 @@ export const GradingAnswer: React.FunctionComponent<{
       className="e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
     >
       <div ref={answerRef}>
-        <AnswerWithAnnotations type={type} value={value} annotations={currentAnnotations} />
+        <AnswerWithAnnotations type={type} value={value} annotations={unsavedAnnotations || savedAnnotations} />
       </div>
       <AnnotationPopup
         position={position}
-        setMessage={setMessage}
+        setMessage={confirmAnnotation}
         message={newAnnotation.current?.message || ''}
         popupVisible={popupVisible}
       />
