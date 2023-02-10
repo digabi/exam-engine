@@ -62,17 +62,10 @@ export const GradingAnswer: React.FunctionComponent<{
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const message: string = messageRef.current!.value
+    newAnnotation.message = messageRef.current!.value
     const annotations = {
       pregrading: latestSavedAnnotations.pregrading,
-      censoring: mergeAnnotation(
-        answerRef.current!,
-        {
-          ...newAnnotation,
-          message,
-        },
-        latestSavedAnnotations.censoring || []
-      ),
+      censoring: mergeAnnotation(answerRef.current!, newAnnotation, latestSavedAnnotations.censoring || []),
     }
     saveAnnotations(annotations)
     latestSavedAnnotations = annotations
