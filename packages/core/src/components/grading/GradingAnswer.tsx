@@ -31,6 +31,15 @@ export const GradingAnswer: React.FunctionComponent<{
     }
   })
 
+  function showAnnotationPopup(range: Range) {
+    Object.assign(popupRef.current!.style, getPopupCss(range, answerRef.current!), {
+      display: 'block',
+    })
+    const inputElement = messageRef.current!
+    inputElement.value = ''
+    inputElement.focus()
+  }
+
   function onMouseUp() {
     const selection = window.getSelection()
     if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
@@ -40,12 +49,7 @@ export const GradingAnswer: React.FunctionComponent<{
       }
       const position = calculatePosition(answerRef.current, range)
       newAnnotation = { ...position, type: 'text', message: '' }
-      Object.assign(popupRef.current!.style, getPopupCss(range, answerRef.current), {
-        display: 'block',
-      })
-      const inputElement = messageRef.current!
-      inputElement.value = ''
-      inputElement.focus()
+      showAnnotationPopup(range)
       renderAnswerWithAnnotations({
         pregrading: latestSavedAnnotations.pregrading,
         censoring: mergeAnnotation(answerRef.current, newAnnotation, latestSavedAnnotations.censoring),
