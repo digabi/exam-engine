@@ -20,7 +20,7 @@ export const GradingAnswer: React.FunctionComponent<{
   const answerRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLDivElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
-  let newAnnotation: TextAnnotation
+  let newAnnotation: TextAnnotation | undefined
 
   let latestSavedAnnotations: Annotations
 
@@ -60,17 +60,26 @@ export const GradingAnswer: React.FunctionComponent<{
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    newAnnotation.message = messageRef.current!.value
+    newAnnotation!.message = messageRef.current!.value
     latestSavedAnnotations = {
       pregrading: latestSavedAnnotations.pregrading,
-      censoring: mergeAnnotation(answerRef.current!, newAnnotation, latestSavedAnnotations.censoring || []),
+      censoring: mergeAnnotation(answerRef.current!, newAnnotation!, latestSavedAnnotations.censoring || []),
     }
     saveAnnotations(latestSavedAnnotations)
     renderAnswerWithAnnotations(latestSavedAnnotations)
+    newAnnotation = undefined
     popupRef.current!.style.display = 'none'
+  }
+  function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
+    if (e.key === 'Escape' && newAnnotation) {
+      renderAnswerWithAnnotations(latestSavedAnnotations)
+      newAnnotation = undefined
+      popupRef.current!.style.display = 'none'
+    }
   }
   return (
     <div
+      onKeyUp={(e) => onKeyUp(e)}
       style={{ position: 'relative' }}
       className="e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
     >
