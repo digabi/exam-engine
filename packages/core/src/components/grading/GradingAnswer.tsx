@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { FormEvent, useLayoutEffect, useRef } from 'react'
 import { Annotation, TextAnnotation } from '../..'
 import * as _ from 'lodash-es'
 import AnnotationList from '../results/internal/AnnotationList'
-import { AnswerWithAnnotations } from './AnswerWithAnnotations'
 import {
   calculatePosition,
   getPopupCss,
@@ -10,39 +9,28 @@ import {
   mergeAnnotation,
   selectionHasNothingToUnderline,
 } from './editAnnotations'
-import { AnnotationPopup } from './AnnotationPopup'
+import { renderAnnotations } from '../../renderAnnotations'
 
+type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 export const GradingAnswer: React.FunctionComponent<{
   type: 'richText' | 'text'
-  value?: string
-  savedAnnotations: { pregrading: Annotation[]; censoring: Annotation[] }
-  saveAnnotations: (annotations: { pregrading: Annotation[]; censoring: Annotation[] }) => void
+  value: string
+  savedAnnotations: Annotations
+  saveAnnotations: (annotations: Annotations) => void
 }> = ({ type, savedAnnotations, saveAnnotations, value }) => {
   const answerRef = useRef<HTMLDivElement>(null)
-  const [popupVisible, setPopupVisible] = useState<boolean>(false)
-  const [position, setPosition] = useState<{ left: number; top: number }>({ left: 0, top: 0 })
+  const popupRef = useRef<HTMLDivElement>(null)
+  const messageRef = useRef<HTMLInputElement>(null)
+  let newAnnotation: TextAnnotation
 
-  const [unsavedAnnotations, setUnsavedAnnotations] = useState<{
-    pregrading: Annotation[]
-    censoring: Annotation[]
-  }>()
+  let latestSavedAnnotations: Annotations
 
-  // useEffect(() => {
-  //   setCurrentAnnotations(annotations)
-  // }, [annotations])
-
-  console.log(savedAnnotations, unsavedAnnotations, '\n=== annotations, currentAnnotations')
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (answerRef.current) {
-      document.addEventListener('selectionchange', onSelect)
-      document.addEventListener('mousedown', () => console.log('mousedown'))
-      document.addEventListener('mouseup', onMouseUp)
-      return () => {}
+      latestSavedAnnotations = savedAnnotations
+      renderAnswerWithAnnotations(latestSavedAnnotations)
     }
-  }, [])
-  const newAnnotation = useRef<TextAnnotation>()
-
-  function onSelect() {}
+  })
 
   function onMouseUp() {
     const selection = window.getSelection()
@@ -52,50 +40,72 @@ export const GradingAnswer: React.FunctionComponent<{
         return
       }
       const position = calculatePosition(answerRef.current, range)
-      const annotation: Annotation = { ...position, type: 'text', message: '' }
-      newAnnotation.current = annotation
+      newAnnotation = { ...position, type: 'text', message: '' }
       const popupCss = getPopupCss(range, answerRef.current)
-      setPosition(popupCss)
-
-      setUnsavedAnnotations({
-        pregrading: savedAnnotations.pregrading,
-        censoring: mergeAnnotation(answerRef.current, annotation, savedAnnotations.censoring),
+      const popup = popupRef.current!
+      popup.style.left = popupCss.left.toString() + 'px'
+      popup.style.top = popupCss.top.toString() + 'px'
+      popup.style.display = 'block'
+      popup.style.position = 'absolute'
+      const inputElement = messageRef.current!
+      inputElement.value = ''
+      inputElement.focus()
+      renderAnswerWithAnnotations({
+        pregrading: latestSavedAnnotations.pregrading,
+        censoring: mergeAnnotation(answerRef.current, newAnnotation, latestSavedAnnotations.censoring),
       })
-      setPopupVisible(true)
     }
   }
 
   function confirmAnnotation(message: string) {
-    saveAnnotations({
-      pregrading: savedAnnotations.pregrading,
+    const annotations = {
+      pregrading: latestSavedAnnotations.pregrading,
       censoring: mergeAnnotation(
         answerRef.current!,
         {
-          ...newAnnotation.current!,
+          ...newAnnotation,
           message,
         },
-        savedAnnotations.censoring || []
+        latestSavedAnnotations.censoring || []
       ),
-    })
-    setUnsavedAnnotations(undefined)
-    setPopupVisible(false)
-    newAnnotation.current = undefined
+    }
+    saveAnnotations(annotations)
+    latestSavedAnnotations = annotations
+    renderAnswerWithAnnotations(latestSavedAnnotations)
+    popupRef.current!.style.display = 'none'
+  }
+
+  function renderAnswerWithAnnotations(annotations: Annotations) {
+    answerRef.current!.innerHTML = value
+    renderAnnotations(answerRef.current!, annotations.pregrading, annotations.censoring)
+  }
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const message: string = messageRef.current!.value
+    confirmAnnotation(message)
   }
   return (
     <div
       style={{ position: 'relative' }}
       className="e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
     >
-      <div ref={answerRef}>
-        <AnswerWithAnnotations type={type} value={value} annotations={unsavedAnnotations || savedAnnotations} />
+      {type === 'richText' ? (
+        <div onMouseUp={onMouseUp} ref={answerRef} />
+      ) : (
+        <span className="text-answer text-answer--single-line">
+          <span className="e-inline-block" ref={answerRef}></span>
+        </span>
+      )}
+      <div style={{ display: 'none' }} ref={popupRef} className="popup add-annotation-popup">
+        <form onSubmit={(e) => onSubmit(e)}>
+          <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
+          <i className="fa fa-comment"></i>
+          <button type="submit" data-i18n="arpa.annotate">
+            Merkitse
+          </button>
+        </form>
       </div>
-      <AnnotationPopup
-        position={position}
-        setMessage={confirmAnnotation}
-        message={newAnnotation.current?.message || ''}
-        popupVisible={popupVisible}
-      />
-
       <AnnotationList />
     </div>
   )
