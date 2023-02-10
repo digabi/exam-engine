@@ -40,7 +40,16 @@ export const GradingAnswer: React.FunctionComponent<{
     inputElement.focus()
   }
 
+  function closePopupAndRefresh() {
+    newAnnotation = undefined
+    popupRef.current!.style.display = 'none'
+    renderAnswerWithAnnotations(latestSavedAnnotations)
+  }
+
   function onMouseUp() {
+    if (newAnnotation) {
+      closePopupAndRefresh()
+    }
     const selection = window.getSelection()
     if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
       const range = selection.getRangeAt(0)
@@ -65,20 +74,18 @@ export const GradingAnswer: React.FunctionComponent<{
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     newAnnotation!.message = messageRef.current!.value
-    latestSavedAnnotations = {
-      pregrading: latestSavedAnnotations.pregrading,
-      censoring: mergeAnnotation(answerRef.current!, newAnnotation!, latestSavedAnnotations.censoring || []),
-    }
+    latestSavedAnnotations.censoring = mergeAnnotation(
+      answerRef.current!,
+      newAnnotation!,
+      latestSavedAnnotations.censoring || []
+    )
+
     saveAnnotations(latestSavedAnnotations)
-    renderAnswerWithAnnotations(latestSavedAnnotations)
-    newAnnotation = undefined
-    popupRef.current!.style.display = 'none'
+    closePopupAndRefresh()
   }
   function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
     if (e.key === 'Escape' && newAnnotation) {
-      renderAnswerWithAnnotations(latestSavedAnnotations)
-      newAnnotation = undefined
-      popupRef.current!.style.display = 'none'
+      closePopupAndRefresh()
     }
   }
   return (
