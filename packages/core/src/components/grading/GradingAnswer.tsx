@@ -14,9 +14,9 @@ type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 export const GradingAnswer: React.FunctionComponent<{
   type: 'richText' | 'text'
   value: string
-  savedAnnotations: Annotations
+  annotations: Annotations
   saveAnnotations: (annotations: Annotations) => void
-}> = ({ type, savedAnnotations, saveAnnotations, value }) => {
+}> = ({ type, annotations, saveAnnotations, value }) => {
   const answerRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLDivElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
@@ -26,7 +26,7 @@ export const GradingAnswer: React.FunctionComponent<{
 
   useLayoutEffect(() => {
     if (answerRef.current) {
-      latestSavedAnnotations = savedAnnotations
+      latestSavedAnnotations = annotations
       renderAnswerWithAnnotations(latestSavedAnnotations)
     }
   })

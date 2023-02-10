@@ -8,7 +8,7 @@ import { ResultsContext, withResultsContext } from '../context/ResultsContext'
 import { GradingAnswer } from './GradingAnswer'
 import { Annotation } from '../../types/Score'
 
-const Results: React.FunctionComponent<CommonExamProps> = () => {
+const Grading: React.FunctionComponent<CommonExamProps> = () => {
   const { answersByQuestionId } = useContext(ResultsContext)
 
   const i18n = useCached(() => initI18n('FI-fi'))
@@ -38,7 +38,7 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
     )
   )
 
-  const [savedAnnotations, setSavedAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>({
+  const [annotations, setAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>({
     pregrading: [],
     censoring: [],
   })
@@ -50,10 +50,7 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
   }
   function selectQuestion(id: number) {
     setAnswerId(id)
-    setSavedAnnotations({
-      pregrading: annotationsStorage.current[id].pregrading,
-      censoring: annotationsStorage.current[id].censoring,
-    })
+    setAnnotations(annotationsStorage.current[id])
   }
   function saveAnnotations(annotations: { pregrading: Annotation[]; censoring: Annotation[] }) {
     annotationsStorage.current[answerId] = annotations
@@ -77,7 +74,7 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
           {...{
             type,
             value,
-            savedAnnotations,
+            annotations,
             saveAnnotations,
           }}
         />
@@ -86,4 +83,4 @@ const Results: React.FunctionComponent<CommonExamProps> = () => {
   )
 }
 
-export default React.memo(withResultsContext(withCommonExamContext(Results)))
+export default React.memo(withResultsContext(withCommonExamContext(Grading)))
