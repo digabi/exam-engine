@@ -38,13 +38,13 @@ export function getPopupCss(range: Range, container: HTMLDivElement) {
   if (container) {
     const containerRect = container.getBoundingClientRect()
     return {
-      top: boundingRect.bottom - containerRect.top + 10,
-      left: boundingRect.left - containerRect.left,
+      top: String(boundingRect.bottom - containerRect.top + 10) + 'px',
+      left: String(boundingRect.left - containerRect.left) + 'px',
     }
   } else {
     return {
-      top: 0,
-      left: 0,
+      top: '0px',
+      left: '0px',
     }
   }
 }

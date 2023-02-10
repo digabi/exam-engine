@@ -40,11 +40,9 @@ export const GradingAnswer: React.FunctionComponent<{
       }
       const position = calculatePosition(answerRef.current, range)
       newAnnotation = { ...position, type: 'text', message: '' }
-      const popupCss = getPopupCss(range, answerRef.current)
-      const popup = popupRef.current!
-      popup.style.left = popupCss.left.toString() + 'px'
-      popup.style.top = popupCss.top.toString() + 'px'
-      popup.style.display = 'block'
+      Object.assign(popupRef.current!.style, getPopupCss(range, answerRef.current), {
+        display: 'block',
+      })
       const inputElement = messageRef.current!
       inputElement.value = ''
       inputElement.focus()
