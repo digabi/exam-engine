@@ -92,12 +92,12 @@ export const GradingAnswer: React.FunctionComponent<{
     <div
       onKeyUp={(e) => onKeyUp(e)}
       style={{ position: 'relative' }}
-      className="e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
+      className="answer e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
     >
       {type === 'richText' ? (
         <div onMouseUp={onMouseUp} ref={answerRef} />
       ) : (
-        <span className="text-answer text-answer--single-line">
+        <span className="answer text-answer text-answer--single-line">
           <span className="e-inline-block" onMouseUp={onMouseUp} ref={answerRef}></span>
         </span>
       )}
