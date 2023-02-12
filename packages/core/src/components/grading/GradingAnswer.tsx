@@ -9,6 +9,7 @@ import {
   selectionHasNothingToUnderline,
 } from './editAnnotations'
 import { renderAnnotations } from '../../renderAnnotations'
+import * as _ from 'lodash-es'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 export const GradingAnswer: React.FunctionComponent<{
@@ -21,7 +22,7 @@ export const GradingAnswer: React.FunctionComponent<{
   const popupRef = useRef<HTMLDivElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
   let newAnnotation: TextAnnotation | undefined
-
+  // let isMouseDown = false
   let latestSavedAnnotations: Annotations
 
   useLayoutEffect(() => {
@@ -46,7 +47,36 @@ export const GradingAnswer: React.FunctionComponent<{
     renderAnswerWithAnnotations(latestSavedAnnotations)
   }
 
+  function onMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    if (e.button !== 0) {
+      return
+    }
+    const target = e.currentTarget
+    const image = target.nodeName === 'IMG' ? target : target.querySelector('img')!
+    image.addEventListener('dragstart', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+    })
+    // isMouseDown = true
+    // const { attachmentIndex, bbox, startX, startY } = mouseDownForImageAnnotation(e)
+
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mouseup', onWindowMouseUp)
+  }
+
+  function onWindowMouseUp() {
+    window.removeEventListener('mousemove', onMouseMove)
+    window.removeEventListener('mouseup', onWindowMouseUp)
+  }
+  function onMouseMove(e: MouseEvent) {
+    e.preventDefault()
+    e.stopPropagation()
+    // const shape = mouseMoveCalculations(e, bbox, attachmentIndex, startX, startY)
+    // renderImageAnnotation(answerRef.current!, shape, 'censoring', attachmentIndex)
+  }
+
   function onMouseUp() {
+    // isMouseDown = false
     if (newAnnotation) {
       closePopupAndRefresh()
     }
@@ -95,7 +125,7 @@ export const GradingAnswer: React.FunctionComponent<{
       className="answer e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
     >
       {type === 'richText' ? (
-        <div onMouseUp={onMouseUp} ref={answerRef} />
+        <div onMouseUp={onMouseUp} ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
       ) : (
         <span className="answer text-answer text-answer--single-line">
           <span className="e-inline-block" onMouseUp={onMouseUp} ref={answerRef}></span>
