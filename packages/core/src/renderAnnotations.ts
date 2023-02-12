@@ -25,7 +25,7 @@ export function renderAnnotations(
   }
 }
 
-function renderImageAnnotation(
+export function renderImageAnnotation(
   element: HTMLElement,
   annotation: ImageAnnotation,
   type: 'pregrading' | 'censoring',
