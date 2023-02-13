@@ -45,6 +45,7 @@ export function GradingAnswer({
   let mouseDownInfo: NewImageAnnotation
   let newImageAnnotationMark: HTMLElement | undefined
   let imageAtHand: HTMLImageElement | undefined
+  let isPopupVisible = false
 
   useLayoutEffect(() => {
     if (answerRef.current) {
@@ -86,17 +87,21 @@ export function GradingAnswer({
     const inputElement = messageRef.current!
     inputElement.value = ''
     inputElement.focus()
+    isPopupVisible = true
   }
 
   function closePopupAndRefresh() {
     newAnnotationObject = undefined
     newImageAnnotationMark = undefined
     imageAtHand = undefined
+    isPopupVisible = false
     popupRef.current!.style.display = 'none'
     renderAnswerWithAnnotations(latestSavedAnnotations)
   }
 
   function onMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    window.addEventListener('mouseup', onWindowMouseUp)
+
     if (e.button !== 0) {
       return
     }
@@ -108,36 +113,24 @@ export function GradingAnswer({
     imageAtHand.addEventListener('dragstart', preventDefaults)
     mouseDownInfo = imageAnnotationMouseDownInfo(e, imageAtHand)
 
-    window.addEventListener('mousemove', onMouseMove)
-    window.addEventListener('mouseup', onWindowMouseUp)
+    window.addEventListener('mousemove', onMouseMoveForImageAnnotation)
   }
 
-  function onWindowMouseUp() {
+  function onWindowMouseUp(e: MouseEvent) {
     imageAtHand?.removeEventListener('dragstart', preventDefaults)
-    window.removeEventListener('mousemove', onMouseMove)
+    window.removeEventListener('mousemove', onMouseMoveForImageAnnotation)
     window.removeEventListener('mouseup', onWindowMouseUp)
 
-    if (newImageAnnotationMark) {
-      showAnnotationPopup(newImageAnnotationMark?.getBoundingClientRect()!)
-    }
-  }
-
-  function onMouseMove(e: MouseEvent) {
-    preventDefaults(e)
-    newAnnotationObject = annotationFromMousePosition(e, mouseDownInfo)
-
-    if (newImageAnnotationMark) {
-      updateImageAnnotationMarkSize(newImageAnnotationMark, newAnnotationObject)
-    } else {
-      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, 'censoring')
-    }
-  }
-
-  function onMouseUp() {
-    if (newAnnotationObject?.type === 'text') {
+    if (isPopupVisible && (e.target as Element).closest('.popup') === null) {
       closePopupAndRefresh()
       return
     }
+
+    if (newImageAnnotationMark) {
+      showAnnotationPopup(newImageAnnotationMark?.getBoundingClientRect()!)
+      return
+    }
+
     const selection = window.getSelection()
     if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
       const range = selection.getRangeAt(0)
@@ -153,6 +146,19 @@ export function GradingAnswer({
       })
     }
   }
+
+  function onMouseMoveForImageAnnotation(e: MouseEvent) {
+    preventDefaults(e)
+    newAnnotationObject = annotationFromMousePosition(e, mouseDownInfo)
+
+    if (newImageAnnotationMark) {
+      updateImageAnnotationMarkSize(newImageAnnotationMark, newAnnotationObject)
+    } else {
+      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, 'censoring')
+    }
+  }
+
+  function onMouseUp() {}
 
   function renderAnswerWithAnnotations(annotations: Annotations) {
     const container = answerRef.current!
