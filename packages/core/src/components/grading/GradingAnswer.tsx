@@ -45,7 +45,7 @@ export function GradingAnswer({
   let latestSavedAnnotations: Annotations
   let mouseDownInfo: NewImageAnnotation
   let newImageAnnotationMark: HTMLElement | undefined
-  let imageAtHand: HTMLImageElement | undefined
+  let imageAtHand: HTMLImageElement | null
   let newImageAnnotation: ImageAnnotation | undefined
 
   useLayoutEffect(() => {
@@ -102,11 +102,10 @@ export function GradingAnswer({
       return
     }
     const target = e.target as Element
-    const image = target.closest('img')
-    if (image === null) {
+    imageAtHand = target.closest('img')
+    if (imageAtHand === null) {
       return
     }
-    imageAtHand = image
     imageAtHand.addEventListener('dragstart', preventDefaults)
     mouseDownInfo = mouseDownForImageAnnotation(e, imageAtHand)
 
@@ -171,7 +170,7 @@ export function GradingAnswer({
       closePopupAndRefresh()
       newImageAnnotation = undefined
       newImageAnnotationMark = undefined
-      imageAtHand = undefined
+      imageAtHand = null
       return
     }
     newAnnotation!.message = message
