@@ -2,7 +2,7 @@ import * as _ from 'lodash-es'
 import { Annotation, ImageAnnotation, TextAnnotation } from '../../types/Score'
 import React from 'react'
 
-export function calculatePosition(answerTextNode: Element, range: Range) {
+export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
   const answerNodes = allNodesUnder(answerTextNode)
   const charactersBefore = charactersBeforeContainer(range.startContainer, range.startOffset)
   const charactersUntilEnd = charactersBeforeContainer(range.endContainer, range.endOffset)
@@ -34,7 +34,7 @@ export function allNodesUnder(el: Node, documentObject = document): Node[] {
   return a
 }
 
-export function getPopupCss(boundingRect: DOMRect, container: HTMLDivElement) {
+export function popupPosition(boundingRect: DOMRect, container: HTMLDivElement) {
   if (container) {
     const containerRect = container.getBoundingClientRect()
     return {
@@ -145,7 +145,7 @@ export function getImageStartIndex($image: Element, $answerText: Element) {
   const range = document.createRange()
   const referenceNode = $image
   range.selectNode(referenceNode)
-  return calculatePosition($answerText, range).startIndex
+  return textAnnotationFromRange($answerText, range).startIndex
 }
 
 export type NewImageAnnotation = {
@@ -156,7 +156,7 @@ export type NewImageAnnotation = {
   clientX: number
   clientY: number
 }
-export function mouseMoveCalculations(
+export function annotationFromMousePosition(
   e: MouseEvent,
   { bbox, attachmentIndex, startX, startY, clientX, clientY }: NewImageAnnotation
 ): ImageAnnotation {
@@ -191,28 +191,13 @@ export function mouseMoveCalculations(
     }
   }
 }
-export function mouseDownForImageAnnotation(
+export function imageAnnotationMouseDownInfo(
   e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   image: HTMLImageElement
 ): NewImageAnnotation {
-  // We have attached `mousedown` to `.attachmentWrapper` as well, so
-  // the target isn't necessarily the image itself.
-
-  image.addEventListener('dragstart', (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-  })
   const targetAnswerText = image.closest('.answer')!
   const attachmentIndex = Array.from(targetAnswerText.querySelectorAll('img')).findIndex((img) => img === image)
-  // The event will come from the topmost `.answerText`, which isn't
-  // necessarily the correct one. So we need to find the correct
-  // `.answerText` to add the annotation to.
-  // const $answerText = $targetAnswerText
-  //   .parent()
-  //   .children('.answerText' + (isCensor ? '.is_censor' : '.is_pregrading'))
-  const answerText = targetAnswerText // OMA kokeilu
-  const attachmentWrapper = answerText.querySelectorAll('img').item(attachmentIndex).parentElement!
-  // let $shape
+  const attachmentWrapper = targetAnswerText.querySelectorAll('.e-annotation-wrapper').item(attachmentIndex)
   const bbox = attachmentWrapper.getBoundingClientRect()
   const clientX = e.clientX
   const startX = clamp((clientX - bbox.left) / bbox.width)
