@@ -91,6 +91,9 @@ export function GradingAnswer({
 
   function closePopupAndRefresh() {
     newAnnotation = undefined
+    newImageAnnotation = undefined
+    newImageAnnotationMark = undefined
+    imageAtHand = undefined
     popupRef.current!.style.display = 'none'
     renderAnswerWithAnnotations(latestSavedAnnotations)
   }
@@ -170,26 +173,21 @@ export function GradingAnswer({
         newImageAnnotation,
         latestSavedAnnotations.censoring
       )
-      saveAnnotations(latestSavedAnnotations)
       closePopupAndRefresh()
-      newImageAnnotation = undefined
-      newImageAnnotationMark = undefined
-      imageAtHand = undefined
-      return
+    } else {
+      newAnnotation!.message = message
+      latestSavedAnnotations.censoring = mergeAnnotation(
+        answerRef.current!,
+        newAnnotation!,
+        latestSavedAnnotations.censoring || []
+      )
     }
-    newAnnotation!.message = message
-    latestSavedAnnotations.censoring = mergeAnnotation(
-      answerRef.current!,
-      newAnnotation!,
-      latestSavedAnnotations.censoring || []
-    )
-
     saveAnnotations(latestSavedAnnotations)
     closePopupAndRefresh()
   }
 
   function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
-    if (e.key === 'Escape' && newAnnotation) {
+    if (e.key === 'Escape' && (newAnnotation || newImageAnnotation)) {
       closePopupAndRefresh()
     }
   }
