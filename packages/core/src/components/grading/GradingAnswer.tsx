@@ -2,12 +2,12 @@ import React, { FormEvent, useLayoutEffect, useRef } from 'react'
 import { Annotation, ImageAnnotation, TextAnnotation } from '../..'
 import AnnotationList from '../results/internal/AnnotationList'
 import {
-  calculatePosition,
-  getPopupCss,
+  textAnnotationFromRange,
+  popupPosition,
   hasTextSelectedInAnswerText,
   mergeAnnotation,
-  mouseDownForImageAnnotation,
-  mouseMoveCalculations,
+  imageAnnotationMouseDownInfo,
+  annotationFromMousePosition,
   NewImageAnnotation,
   selectionHasNothingToUnderline,
 } from './editAnnotations'
@@ -17,7 +17,6 @@ import {
   updateImageAnnotationMarkSize,
   wrapAllImages,
 } from '../../renderAnnotations'
-import * as _ from 'lodash-es'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
@@ -45,7 +44,7 @@ export function GradingAnswer({
   let latestSavedAnnotations: Annotations
   let mouseDownInfo: NewImageAnnotation
   let newImageAnnotationMark: HTMLElement | undefined
-  let imageAtHand: HTMLImageElement | null
+  let imageAtHand: HTMLImageElement | undefined
   let newImageAnnotation: ImageAnnotation | undefined
 
   useLayoutEffect(() => {
@@ -82,7 +81,7 @@ export function GradingAnswer({
   )
 
   function showAnnotationPopup(rect: DOMRect) {
-    Object.assign(popupRef.current!.style, getPopupCss(rect, answerRef.current!), {
+    Object.assign(popupRef.current!.style, popupPosition(rect, answerRef.current!), {
       display: 'block',
     })
     const inputElement = messageRef.current!
@@ -102,12 +101,12 @@ export function GradingAnswer({
       return
     }
     const target = e.target as Element
-    imageAtHand = target.closest('img')
-    if (imageAtHand === null) {
+    imageAtHand = target.closest('.e-annotation-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
+    if (!imageAtHand) {
       return
     }
     imageAtHand.addEventListener('dragstart', preventDefaults)
-    mouseDownInfo = mouseDownForImageAnnotation(e, imageAtHand)
+    mouseDownInfo = imageAnnotationMouseDownInfo(e, imageAtHand)
 
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onWindowMouseUp)
@@ -123,7 +122,7 @@ export function GradingAnswer({
 
   function onMouseMove(e: MouseEvent) {
     preventDefaults(e)
-    newImageAnnotation = mouseMoveCalculations(e, mouseDownInfo)
+    newImageAnnotation = annotationFromMousePosition(e, mouseDownInfo)
 
     if (newImageAnnotationMark) {
       updateImageAnnotationMarkSize(newImageAnnotationMark, newImageAnnotation)
@@ -142,7 +141,7 @@ export function GradingAnswer({
       if (selectionHasNothingToUnderline(range)) {
         return
       }
-      const position = calculatePosition(answerRef.current, range)
+      const position = textAnnotationFromRange(answerRef.current, range)
       newAnnotation = { ...position, type: 'text', message: '' }
       showAnnotationPopup(range.getBoundingClientRect())
       renderAnswerWithAnnotations({
@@ -170,7 +169,7 @@ export function GradingAnswer({
       closePopupAndRefresh()
       newImageAnnotation = undefined
       newImageAnnotationMark = undefined
-      imageAtHand = null
+      imageAtHand = undefined
       return
     }
     newAnnotation!.message = message
