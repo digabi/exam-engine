@@ -116,7 +116,9 @@ export function GradingAnswer({
     window.removeEventListener('mousemove', onMouseMove)
     window.removeEventListener('mouseup', onWindowMouseUp)
 
-    showAnnotationPopup(newImageAnnotationMark?.getBoundingClientRect()!)
+    if (newImageAnnotationMark) {
+      showAnnotationPopup(newImageAnnotationMark?.getBoundingClientRect()!)
+    }
   }
 
   function onMouseMove(e: MouseEvent) {
