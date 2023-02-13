@@ -11,10 +11,20 @@ import {
   NewImageAnnotation,
   selectionHasNothingToUnderline,
 } from './editAnnotations'
-import { renderAnnotations, renderImageAnnotation, updateImageAnnotationMarkSize } from '../../renderAnnotations'
+import {
+  renderAnnotations,
+  renderImageAnnotationByImage,
+  updateImageAnnotationMarkSize,
+  wrapAllImages,
+} from '../../renderAnnotations'
 import * as _ from 'lodash-es'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
+
+function preventDefaults(e: Event) {
+  e.preventDefault()
+  e.stopPropagation()
+}
 
 export function GradingAnswer({
   type,
@@ -35,6 +45,8 @@ export function GradingAnswer({
   let latestSavedAnnotations: Annotations
   let newImageAnnotation: NewImageAnnotation
   let newImageAnnotationMark: HTMLElement | undefined
+  let imageAtHand: HTMLImageElement | undefined
+
   useLayoutEffect(() => {
     if (answerRef.current) {
       latestSavedAnnotations = annotations
@@ -87,33 +99,33 @@ export function GradingAnswer({
     if (e.button !== 0) {
       return
     }
-    const target = e.currentTarget
-    const image = target.nodeName === 'IMG' ? target : target.querySelector('img')!
-    image.addEventListener('dragstart', (e) => {
-      e.preventDefault()
-      e.stopPropagation()
-    })
-    // isMouseDown = true
-    newImageAnnotation = mouseDownForImageAnnotation(e)
+    const target = e.target as Element
+    const image = target.closest('img')
+    if (image === null) {
+      return
+    }
+    imageAtHand = image
+    imageAtHand.addEventListener('dragstart', preventDefaults)
+    newImageAnnotation = mouseDownForImageAnnotation(e, imageAtHand)
 
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onWindowMouseUp)
   }
 
   function onWindowMouseUp() {
+    imageAtHand?.removeEventListener('dragstart', preventDefaults)
     window.removeEventListener('mousemove', onMouseMove)
     window.removeEventListener('mouseup', onWindowMouseUp)
   }
 
   function onMouseMove(e: MouseEvent) {
-    e.preventDefault()
-    e.stopPropagation()
+    preventDefaults(e)
     const shape = mouseMoveCalculations(e, newImageAnnotation)
 
     if (newImageAnnotationMark) {
       updateImageAnnotationMarkSize(newImageAnnotationMark, shape)
     } else {
-      newImageAnnotationMark = renderImageAnnotation(answerRef.current!, shape, 'censoring')
+      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', shape, 'censoring')
     }
   }
 
@@ -139,8 +151,10 @@ export function GradingAnswer({
   }
 
   function renderAnswerWithAnnotations(annotations: Annotations) {
-    answerRef.current!.innerHTML = value
-    renderAnnotations(answerRef.current!, annotations.pregrading, annotations.censoring)
+    const container = answerRef.current!
+    container.innerHTML = value
+    wrapAllImages(container)
+    renderAnnotations(container, annotations.pregrading, annotations.censoring)
   }
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {

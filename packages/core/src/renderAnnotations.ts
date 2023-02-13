@@ -41,6 +41,24 @@ export function updateImageAnnotationMarkSize(mark: HTMLElement, annotation: Lin
   }
 }
 
+function getWrapper(image: HTMLImageElement) {
+  const parent = image.parentElement!
+
+  if (parent instanceof HTMLSpanElement) {
+    return parent
+  }
+
+  const wrapper = createElement('span', { className: 'e-annotation-wrapper' })
+  parent.insertBefore(wrapper, image)
+  wrapper.appendChild(image)
+
+  return wrapper
+}
+
+export function wrapAllImages(answerElement: HTMLElement) {
+  answerElement.querySelectorAll('img').forEach(getWrapper)
+}
+
 export function renderImageAnnotation(
   answerElement: HTMLElement,
   annotation: ImageAnnotation,
@@ -49,24 +67,19 @@ export function renderImageAnnotation(
 ): HTMLElement {
   const { attachmentIndex } = annotation
   const image = answerElement.querySelectorAll('img')[attachmentIndex]
-
-  const wrapper = getWrapper()
+  const title = annotation.message
+  return renderImageAnnotationByImage(image, title, annotation, type, index)
+}
+export function renderImageAnnotationByImage(
+  image: HTMLImageElement,
+  title: string,
+  annotation: ImageAnnotation,
+  type: 'pregrading' | 'censoring',
+  index?: number
+): HTMLElement {
+  const wrapper = getWrapper(image)
   const shape = mkShape()
   wrapper.appendChild(shape)
-
-  function getWrapper() {
-    const parent = image.parentElement!
-
-    if (parent instanceof HTMLSpanElement) {
-      return parent
-    }
-
-    const wrapper = createElement('span', { className: 'e-annotation-wrapper' })
-    parent.insertBefore(wrapper, image)
-    wrapper.appendChild(image)
-
-    return wrapper
-  }
 
   function mkShape() {
     const mark = createElement('mark', {
@@ -74,7 +87,7 @@ export function renderImageAnnotation(
         'e-annotation--pregrading': type === 'pregrading',
         'e-annotation--censoring': type === 'censoring',
       }),
-      title: annotation.message,
+      title,
     })
 
     updateImageAnnotationMarkSize(mark, annotation)
