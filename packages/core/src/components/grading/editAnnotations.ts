@@ -192,11 +192,12 @@ export function mouseMoveCalculations(
     }
   }
 }
-export function mouseDownForImageAnnotation(e: React.MouseEvent<HTMLDivElement, MouseEvent>): NewImageAnnotation {
-  const target = e.currentTarget
+export function mouseDownForImageAnnotation(
+  e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  image: HTMLImageElement
+): NewImageAnnotation {
   // We have attached `mousedown` to `.attachmentWrapper` as well, so
   // the target isn't necessarily the image itself.
-  const image = target.nodeName === 'IMG' ? target : target.querySelector('img')!
 
   image.addEventListener('dragstart', (e) => {
     e.preventDefault()
