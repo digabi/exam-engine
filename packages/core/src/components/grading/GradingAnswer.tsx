@@ -1,5 +1,5 @@
 import React, { FormEvent, useLayoutEffect, useRef } from 'react'
-import { Annotation, ImageAnnotation, TextAnnotation } from '../..'
+import { Annotation } from '../..'
 import AnnotationList from '../results/internal/AnnotationList'
 import {
   annotationFromMousePosition,
@@ -39,13 +39,12 @@ export function GradingAnswer({
   const answerRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLDivElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
-  let newAnnotationObject: TextAnnotation | undefined
+  let newAnnotationObject: Annotation | undefined
   // let isMouseDown = false
   let latestSavedAnnotations: Annotations
   let mouseDownInfo: NewImageAnnotation
   let newImageAnnotationMark: HTMLElement | undefined
   let imageAtHand: HTMLImageElement | undefined
-  let newImageAnnotationObject: ImageAnnotation | undefined
 
   useLayoutEffect(() => {
     if (answerRef.current) {
@@ -91,7 +90,6 @@ export function GradingAnswer({
 
   function closePopupAndRefresh() {
     newAnnotationObject = undefined
-    newImageAnnotationObject = undefined
     newImageAnnotationMark = undefined
     imageAtHand = undefined
     popupRef.current!.style.display = 'none'
@@ -126,17 +124,17 @@ export function GradingAnswer({
 
   function onMouseMove(e: MouseEvent) {
     preventDefaults(e)
-    newImageAnnotationObject = annotationFromMousePosition(e, mouseDownInfo)
+    newAnnotationObject = annotationFromMousePosition(e, mouseDownInfo)
 
     if (newImageAnnotationMark) {
-      updateImageAnnotationMarkSize(newImageAnnotationMark, newImageAnnotationObject)
+      updateImageAnnotationMarkSize(newImageAnnotationMark, newAnnotationObject)
     } else {
-      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newImageAnnotationObject, 'censoring')
+      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, 'censoring')
     }
   }
 
   function onMouseUp() {
-    if (newAnnotationObject) {
+    if (newAnnotationObject?.type === 'text') {
       closePopupAndRefresh()
       return
     }
@@ -168,7 +166,7 @@ export function GradingAnswer({
     const message = messageRef.current!.value
     latestSavedAnnotations.censoring = mergeAnnotation(
       answerRef.current!,
-      { ...(newImageAnnotationObject || newAnnotationObject)!, message },
+      { ...newAnnotationObject!, message },
       latestSavedAnnotations.censoring || []
     )
 
@@ -177,7 +175,7 @@ export function GradingAnswer({
   }
 
   function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
-    if (e.key === 'Escape' && (newAnnotationObject || newImageAnnotationObject)) {
+    if (e.key === 'Escape' && newAnnotationObject) {
       closePopupAndRefresh()
     }
   }
