@@ -1,5 +1,5 @@
 import React, { FormEvent, useLayoutEffect, useRef } from 'react'
-import { Annotation, TextAnnotation } from '../..'
+import { Annotation, ImageAnnotation, TextAnnotation } from '../..'
 import AnnotationList from '../results/internal/AnnotationList'
 import {
   calculatePosition,
@@ -43,9 +43,10 @@ export function GradingAnswer({
   let newAnnotation: TextAnnotation | undefined
   // let isMouseDown = false
   let latestSavedAnnotations: Annotations
-  let newImageAnnotation: NewImageAnnotation
+  let mouseDownInfo: NewImageAnnotation
   let newImageAnnotationMark: HTMLElement | undefined
   let imageAtHand: HTMLImageElement | undefined
+  let newImageAnnotation: ImageAnnotation | undefined
 
   useLayoutEffect(() => {
     if (answerRef.current) {
@@ -80,8 +81,8 @@ export function GradingAnswer({
     </div>
   )
 
-  function showAnnotationPopup(range: Range) {
-    Object.assign(popupRef.current!.style, getPopupCss(range, answerRef.current!), {
+  function showAnnotationPopup(rect: DOMRect) {
+    Object.assign(popupRef.current!.style, getPopupCss(rect, answerRef.current!), {
       display: 'block',
     })
     const inputElement = messageRef.current!
@@ -90,6 +91,7 @@ export function GradingAnswer({
   }
 
   function closePopupAndRefresh() {
+    console.log('close popup')
     newAnnotation = undefined
     popupRef.current!.style.display = 'none'
     renderAnswerWithAnnotations(latestSavedAnnotations)
@@ -106,7 +108,7 @@ export function GradingAnswer({
     }
     imageAtHand = image
     imageAtHand.addEventListener('dragstart', preventDefaults)
-    newImageAnnotation = mouseDownForImageAnnotation(e, imageAtHand)
+    mouseDownInfo = mouseDownForImageAnnotation(e, imageAtHand)
 
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onWindowMouseUp)
@@ -116,21 +118,22 @@ export function GradingAnswer({
     imageAtHand?.removeEventListener('dragstart', preventDefaults)
     window.removeEventListener('mousemove', onMouseMove)
     window.removeEventListener('mouseup', onWindowMouseUp)
+
+    showAnnotationPopup(newImageAnnotationMark?.getBoundingClientRect()!)
   }
 
   function onMouseMove(e: MouseEvent) {
     preventDefaults(e)
-    const shape = mouseMoveCalculations(e, newImageAnnotation)
+    newImageAnnotation = mouseMoveCalculations(e, mouseDownInfo)
 
     if (newImageAnnotationMark) {
-      updateImageAnnotationMarkSize(newImageAnnotationMark, shape)
+      updateImageAnnotationMarkSize(newImageAnnotationMark, newImageAnnotation)
     } else {
-      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', shape, 'censoring')
+      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newImageAnnotation, 'censoring')
     }
   }
 
   function onMouseUp() {
-    // isMouseDown = false
     if (newAnnotation) {
       closePopupAndRefresh()
     }
@@ -142,7 +145,7 @@ export function GradingAnswer({
       }
       const position = calculatePosition(answerRef.current, range)
       newAnnotation = { ...position, type: 'text', message: '' }
-      showAnnotationPopup(range)
+      showAnnotationPopup(range.getBoundingClientRect())
       renderAnswerWithAnnotations({
         pregrading: latestSavedAnnotations.pregrading,
         censoring: mergeAnnotation(answerRef.current, newAnnotation, latestSavedAnnotations.censoring),
@@ -159,7 +162,19 @@ export function GradingAnswer({
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    newAnnotation!.message = messageRef.current!.value
+    const message = messageRef.current!.value
+
+    if (newImageAnnotation) {
+      newImageAnnotation.message = message
+      latestSavedAnnotations.censoring.push(newImageAnnotation)
+      saveAnnotations(latestSavedAnnotations)
+      closePopupAndRefresh()
+      newImageAnnotation = undefined
+      newImageAnnotationMark = undefined
+      imageAtHand = undefined
+      return
+    }
+    newAnnotation!.message = message
     latestSavedAnnotations.censoring = mergeAnnotation(
       answerRef.current!,
       newAnnotation!,
