@@ -2,14 +2,14 @@ import React, { FormEvent, useLayoutEffect, useRef } from 'react'
 import { Annotation, ImageAnnotation, TextAnnotation } from '../..'
 import AnnotationList from '../results/internal/AnnotationList'
 import {
-  textAnnotationFromRange,
-  popupPosition,
-  hasTextSelectedInAnswerText,
-  mergeAnnotation,
-  imageAnnotationMouseDownInfo,
   annotationFromMousePosition,
+  hasTextSelectedInAnswerText,
+  imageAnnotationMouseDownInfo,
+  mergeAnnotation,
   NewImageAnnotation,
+  popupPosition,
   selectionHasNothingToUnderline,
+  textAnnotationFromRange,
 } from './editAnnotations'
 import {
   renderAnnotations,
@@ -165,23 +165,12 @@ export function GradingAnswer({
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const message = messageRef.current!.value
+    latestSavedAnnotations.censoring = mergeAnnotation(
+      answerRef.current!,
+      { ...(newImageAnnotation || newAnnotation)!, message },
+      latestSavedAnnotations.censoring || []
+    )
 
-    if (newImageAnnotation) {
-      newImageAnnotation.message = message
-      latestSavedAnnotations.censoring = mergeAnnotation(
-        answerRef.current!,
-        newImageAnnotation,
-        latestSavedAnnotations.censoring
-      )
-      closePopupAndRefresh()
-    } else {
-      newAnnotation!.message = message
-      latestSavedAnnotations.censoring = mergeAnnotation(
-        answerRef.current!,
-        newAnnotation!,
-        latestSavedAnnotations.censoring || []
-      )
-    }
     saveAnnotations(latestSavedAnnotations)
     closePopupAndRefresh()
   }
