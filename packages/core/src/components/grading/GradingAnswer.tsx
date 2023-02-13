@@ -90,7 +90,6 @@ export function GradingAnswer({
   }
 
   function closePopupAndRefresh() {
-    console.log('close popup')
     newAnnotation = undefined
     popupRef.current!.style.display = 'none'
     renderAnswerWithAnnotations(latestSavedAnnotations)
@@ -164,7 +163,11 @@ export function GradingAnswer({
 
     if (newImageAnnotation) {
       newImageAnnotation.message = message
-      latestSavedAnnotations.censoring.push(newImageAnnotation)
+      latestSavedAnnotations.censoring = mergeAnnotation(
+        answerRef.current!,
+        newImageAnnotation,
+        latestSavedAnnotations.censoring
+      )
       saveAnnotations(latestSavedAnnotations)
       closePopupAndRefresh()
       newImageAnnotation = undefined

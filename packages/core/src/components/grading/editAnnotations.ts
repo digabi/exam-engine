@@ -94,12 +94,12 @@ export function selectionHasNothingToUnderline(range: Range) {
   return contents.textContent?.length === 0 && !hasImages
 }
 
-export function mergeAnnotation($answerText: Element, newAnnotation: TextAnnotation, annotations: Annotation[]) {
+export function mergeAnnotation($answerText: Element, newAnnotation: Annotation, annotations: Annotation[]) {
   // @ts-ignore
   const parted = getOverlappingAnnotations(annotations, newAnnotation)
 
   if (parted.overlapping.length > 0) {
-    parted.overlapping.push(newAnnotation)
+    parted.overlapping.push(newAnnotation as TextAnnotation)
     const mergedStart = _.minBy(parted.overlapping, (range) => range.startIndex)
     const mergedEnd = _.maxBy(parted.overlapping, (range) => range.startIndex + range.length)
     const mergedRange = {
