@@ -1,4 +1,4 @@
-import { Annotation, ImageAnnotation, TextAnnotation } from './types/Score'
+import { Annotation, ImageAnnotation, LineAnnotation, RectAnnotation, TextAnnotation } from './types/Score'
 import { createElement } from './dom-utils'
 import classNames from 'classnames'
 
@@ -25,14 +25,30 @@ export function renderAnnotations(
   }
 }
 
+export function updateImageAnnotationMarkSize(mark: HTMLElement, annotation: LineAnnotation | RectAnnotation): void {
+  const style = mark.style
+  const pct = (n: number) => `${n * 100}%`
+  if (annotation.type === 'rect') {
+    style.left = pct(annotation.x)
+    style.top = pct(annotation.y)
+    style.right = pct(1 - (annotation.x + annotation.width))
+    style.bottom = pct(1 - (annotation.y + annotation.height))
+  } else {
+    style.left = pct(annotation.x1)
+    style.top = pct(annotation.y1)
+    style.right = pct(1 - annotation.x2)
+    style.bottom = pct(1 - annotation.y2)
+  }
+}
+
 export function renderImageAnnotation(
-  element: HTMLElement,
+  answerElement: HTMLElement,
   annotation: ImageAnnotation,
   type: 'pregrading' | 'censoring',
   index?: number
-): void {
+): HTMLElement {
   const { attachmentIndex } = annotation
-  const image = element.querySelectorAll('img')[attachmentIndex]
+  const image = answerElement.querySelectorAll('img')[attachmentIndex]
 
   const wrapper = getWrapper()
   const shape = mkShape()
@@ -61,20 +77,7 @@ export function renderImageAnnotation(
       title: annotation.message,
     })
 
-    const style = mark.style
-    const pct = (n: number) => `${n * 100}%`
-
-    if (annotation.type === 'rect') {
-      style.left = pct(annotation.x)
-      style.top = pct(annotation.y)
-      style.right = pct(1 - (annotation.x + annotation.width))
-      style.bottom = pct(1 - (annotation.y + annotation.height))
-    } else {
-      style.left = pct(annotation.x1)
-      style.top = pct(annotation.y1)
-      style.right = pct(1 - annotation.x2)
-      style.bottom = pct(1 - annotation.y2)
-    }
+    updateImageAnnotationMarkSize(mark, annotation)
 
     if (index) {
       mark.appendChild(createSup(index, 'shape'))
@@ -82,6 +85,7 @@ export function renderImageAnnotation(
 
     return mark
   }
+  return shape
 }
 
 function renderTextAnnotation(

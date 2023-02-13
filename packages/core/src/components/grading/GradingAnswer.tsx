@@ -6,9 +6,12 @@ import {
   getPopupCss,
   hasTextSelectedInAnswerText,
   mergeAnnotation,
+  mouseDownForImageAnnotation,
+  mouseMoveCalculations,
+  NewImageAnnotation,
   selectionHasNothingToUnderline,
 } from './editAnnotations'
-import { renderAnnotations } from '../../renderAnnotations'
+import { renderAnnotations, renderImageAnnotation, updateImageAnnotationMarkSize } from '../../renderAnnotations'
 import * as _ from 'lodash-es'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
@@ -24,7 +27,8 @@ export const GradingAnswer: React.FunctionComponent<{
   let newAnnotation: TextAnnotation | undefined
   // let isMouseDown = false
   let latestSavedAnnotations: Annotations
-
+  let newImageAnnotation: NewImageAnnotation
+  let newImageAnnotationMark: HTMLElement | undefined
   useLayoutEffect(() => {
     if (answerRef.current) {
       latestSavedAnnotations = annotations
@@ -58,7 +62,7 @@ export const GradingAnswer: React.FunctionComponent<{
       e.stopPropagation()
     })
     // isMouseDown = true
-    // const { attachmentIndex, bbox, startX, startY } = mouseDownForImageAnnotation(e)
+    newImageAnnotation = mouseDownForImageAnnotation(e)
 
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onWindowMouseUp)
@@ -71,8 +75,13 @@ export const GradingAnswer: React.FunctionComponent<{
   function onMouseMove(e: MouseEvent) {
     e.preventDefault()
     e.stopPropagation()
-    // const shape = mouseMoveCalculations(e, bbox, attachmentIndex, startX, startY)
-    // renderImageAnnotation(answerRef.current!, shape, 'censoring', attachmentIndex)
+    const shape = mouseMoveCalculations(e, newImageAnnotation)
+
+    if (newImageAnnotationMark) {
+      updateImageAnnotationMarkSize(newImageAnnotationMark, shape)
+    } else {
+      newImageAnnotationMark = renderImageAnnotation(answerRef.current!, shape, 'censoring')
+    }
   }
 
   function onMouseUp() {

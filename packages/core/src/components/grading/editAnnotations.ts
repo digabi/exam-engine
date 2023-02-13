@@ -149,18 +149,23 @@ export function getImageStartIndex($image: Element, $answerText: Element) {
   return calculatePosition($answerText, range).startIndex
 }
 
+export type NewImageAnnotation = {
+  bbox: DOMRect
+  attachmentIndex: number
+  startX: number
+  startY: number
+  clientX: number
+  clientY: number
+}
 export function mouseMoveCalculations(
   e: MouseEvent,
-  bbox: DOMRect,
-  attachmentIndex: number,
-  startX: number,
-  startY: number
+  { bbox, attachmentIndex, startX, startY, clientX, clientY }: NewImageAnnotation
 ): ImageAnnotation {
   const lineThresholdPx = 10
   const currentX = clamp((e.clientX - bbox.left) / bbox.width)
   const currentY = clamp((e.clientY - bbox.top) / bbox.height)
-  const isVerticalLine = Math.abs(e.clientX - e.clientX) <= lineThresholdPx
-  const isHorizontalLine = Math.abs(e.clientY - e.clientY) <= lineThresholdPx
+  const isVerticalLine = Math.abs(clientX - e.clientX) <= lineThresholdPx
+  const isHorizontalLine = Math.abs(clientY - e.clientY) <= lineThresholdPx
   const type = isVerticalLine || isHorizontalLine ? 'line' : 'rect'
   switch (type) {
     case 'rect': {
@@ -187,7 +192,7 @@ export function mouseMoveCalculations(
     }
   }
 }
-export function mouseDownForImageAnnotation(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+export function mouseDownForImageAnnotation(e: React.MouseEvent<HTMLDivElement, MouseEvent>): NewImageAnnotation {
   const target = e.currentTarget
   // We have attached `mousedown` to `.attachmentWrapper` as well, so
   // the target isn't necessarily the image itself.
@@ -209,9 +214,11 @@ export function mouseDownForImageAnnotation(e: React.MouseEvent<HTMLDivElement, 
   const attachmentWrapper = answerText.querySelectorAll('img').item(attachmentIndex).parentElement!
   // let $shape
   const bbox = attachmentWrapper.getBoundingClientRect()
-  const startX = clamp((e.clientX - bbox.left) / bbox.width)
-  const startY = clamp((e.clientY - bbox.top) / bbox.height)
-  return { attachmentIndex, bbox, startX, startY }
+  const clientX = e.clientX
+  const startX = clamp((clientX - bbox.left) / bbox.width)
+  const clientY = e.clientY
+  const startY = clamp((clientY - bbox.top) / bbox.height)
+  return { attachmentIndex, bbox, startX, startY, clientX, clientY }
 }
 
 function clamp(n: number) {
