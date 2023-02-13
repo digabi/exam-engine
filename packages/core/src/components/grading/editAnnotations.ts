@@ -60,9 +60,11 @@ export function hasTextSelectedInAnswerText(): boolean {
   function selectionInAnswerText(sel: Selection) {
     if (sel.type === 'None' || sel.type === 'Caret' || sel.rangeCount === 0) return false
     const startContainer = sel.getRangeAt(0).startContainer
+    const endContainer = sel.getRangeAt(0).endContainer
     return (
       sel.rangeCount > 0 &&
       startContainer.parentElement?.closest('.answer') !== null &&
+      endContainer.parentElement?.closest('.answer') !== null &&
       startContainer.parentElement?.closest('.remove-annotation-popup') === null
     )
   }
@@ -82,7 +84,7 @@ export function hasTextSelectedInAnswerText(): boolean {
   }
 
   function isParentContainer(container: Element) {
-    return container && container.classList && container.classList.contains('answerText')
+    return container.classList.contains('answer')
   }
 }
 
