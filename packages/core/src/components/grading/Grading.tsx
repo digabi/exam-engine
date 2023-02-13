@@ -3,12 +3,11 @@ import { I18nextProvider } from 'react-i18next'
 import { changeLanguage, initI18n } from '../../i18n'
 import { useCached } from '../../useCached'
 import { withCommonExamContext } from '../context/CommonExamContext'
-import { CommonExamProps } from '../exam/Exam'
 import { ResultsContext, withResultsContext } from '../context/ResultsContext'
 import { GradingAnswer } from './GradingAnswer'
 import { Annotation } from '../../types/Score'
 
-const Grading: React.FunctionComponent<CommonExamProps> = () => {
+function Grading() {
   const { answersByQuestionId } = useContext(ResultsContext)
 
   const i18n = useCached(() => initI18n('FI-fi'))
@@ -66,14 +65,17 @@ const Grading: React.FunctionComponent<CommonExamProps> = () => {
   if (type === 'choice') {
     return <div>choice answer</div>
   }
+
   function selectQuestion(id: number) {
     setAnswerId(id)
     setAnnotations(annotationsStorage.current[id])
   }
+
   function saveAnnotations(annotations: { pregrading: Annotation[]; censoring: Annotation[] }) {
     annotationsStorage.current[answerId] = annotations
     console.log('saving: ', annotationsStorage.current)
   }
+
   return (
     <I18nextProvider i18n={i18n}>
       <main className="e-exam">

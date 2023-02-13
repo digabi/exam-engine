@@ -15,12 +15,18 @@ import { renderAnnotations, renderImageAnnotation, updateImageAnnotationMarkSize
 import * as _ from 'lodash-es'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
-export const GradingAnswer: React.FunctionComponent<{
+
+export function GradingAnswer({
+  type,
+  annotations,
+  saveAnnotations,
+  value,
+}: {
   type: 'richText' | 'text'
   value: string
   annotations: Annotations
   saveAnnotations: (annotations: Annotations) => void
-}> = ({ type, annotations, saveAnnotations, value }) => {
+}) {
   const answerRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLDivElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
@@ -35,6 +41,32 @@ export const GradingAnswer: React.FunctionComponent<{
       renderAnswerWithAnnotations(latestSavedAnnotations)
     }
   })
+
+  return (
+    <div
+      onKeyUp={(e) => onKeyUp(e)}
+      style={{ position: 'relative' }}
+      className="answer e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
+    >
+      {type === 'richText' ? (
+        <div onMouseUp={onMouseUp} ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
+      ) : (
+        <span className="answer text-answer text-answer--single-line">
+          <span className="e-inline-block" onMouseUp={onMouseUp} ref={answerRef}></span>
+        </span>
+      )}
+      <div style={{ display: 'none', position: 'absolute' }} ref={popupRef} className="popup add-annotation-popup">
+        <form onSubmit={(e) => onSubmit(e)}>
+          <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
+          <i className="fa fa-comment"></i>
+          <button type="submit" data-i18n="arpa.annotate">
+            Merkitse
+          </button>
+        </form>
+      </div>
+      <AnnotationList />
+    </div>
+  )
 
   function showAnnotationPopup(range: Range) {
     Object.assign(popupRef.current!.style, getPopupCss(range, answerRef.current!), {
@@ -72,6 +104,7 @@ export const GradingAnswer: React.FunctionComponent<{
     window.removeEventListener('mousemove', onMouseMove)
     window.removeEventListener('mouseup', onWindowMouseUp)
   }
+
   function onMouseMove(e: MouseEvent) {
     e.preventDefault()
     e.stopPropagation()
@@ -122,34 +155,10 @@ export const GradingAnswer: React.FunctionComponent<{
     saveAnnotations(latestSavedAnnotations)
     closePopupAndRefresh()
   }
+
   function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
     if (e.key === 'Escape' && newAnnotation) {
       closePopupAndRefresh()
     }
   }
-  return (
-    <div
-      onKeyUp={(e) => onKeyUp(e)}
-      style={{ position: 'relative' }}
-      className="answer e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
-    >
-      {type === 'richText' ? (
-        <div onMouseUp={onMouseUp} ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
-      ) : (
-        <span className="answer text-answer text-answer--single-line">
-          <span className="e-inline-block" onMouseUp={onMouseUp} ref={answerRef}></span>
-        </span>
-      )}
-      <div style={{ display: 'none', position: 'absolute' }} ref={popupRef} className="popup add-annotation-popup">
-        <form onSubmit={(e) => onSubmit(e)}>
-          <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
-          <i className="fa fa-comment"></i>
-          <button type="submit" data-i18n="arpa.annotate">
-            Merkitse
-          </button>
-        </form>
-      </div>
-      <AnnotationList />
-    </div>
-  )
 }
