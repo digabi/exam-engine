@@ -61,11 +61,11 @@ export function GradingAnswer({
       className="answer e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
     >
       {type === 'richText' ? (
-        <div onMouseUp={onMouseUp} ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
+        <div ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
       ) : (
-        <span className="answer text-answer text-answer--single-line">
-          <span className="e-inline-block" onMouseUp={onMouseUp} ref={answerRef}></span>
-        </span>
+        <div className="answer text-answer text-answer--single-line">
+          <div className="e-inline-block" onMouseDown={(e) => onMouseDown(e)} ref={answerRef}></div>
+        </div>
       )}
       <div style={{ display: 'none', position: 'absolute' }} ref={popupRef} className="popup add-annotation-popup">
         <form onSubmit={(e) => onSubmit(e)}>
@@ -157,8 +157,6 @@ export function GradingAnswer({
       newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, 'censoring')
     }
   }
-
-  function onMouseUp() {}
 
   function renderAnswerWithAnnotations(annotations: Annotations) {
     const container = answerRef.current!
