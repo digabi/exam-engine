@@ -34,8 +34,7 @@ export function allNodesUnder(el: Node, documentObject = document): Node[] {
   return a
 }
 
-export function getPopupCss(range: Range, container: HTMLDivElement) {
-  const boundingRect = range.getBoundingClientRect()
+export function getPopupCss(boundingRect: DOMRect, container: HTMLDivElement) {
   if (container) {
     const containerRect = container.getBoundingClientRect()
     return {
