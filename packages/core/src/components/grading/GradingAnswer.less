@@ -2,6 +2,9 @@
   word-break: break-word;
   background: #fff;
   padding: 20px;
+  .e-annotation-wrapper {
+    line-height: 0;
+  }
   .popup {
     input[type="text"] {
       background: white;
@@ -46,7 +49,21 @@
 
   img {
     max-width: 100%;
-    padding: 0.25rem;
+  }
+
+  img,
+  .e-annotation-wrapper .e-annotation {
+    cursor: crosshair;
+    -moz-user-drag: -moz-none;
+    -khtml-user-drag: none;
+    -webkit-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
   }
 
   // LaTeX formulas
