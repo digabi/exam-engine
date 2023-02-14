@@ -66,7 +66,8 @@ function Grading() {
     return <div>choice answer</div>
   }
 
-  function selectQuestion(id: number) {
+  function selectQuestion(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: number) {
+    e.preventDefault()
     setAnswerId(id)
     setAnnotations(annotationsStorage.current[id])
   }
@@ -86,7 +87,7 @@ function Grading() {
                 {answersByQuestionId[id].displayNumber}
               </span>
             ) : (
-              <a className="grading-navi-item" href="javascript:void(0)" onClick={() => selectQuestion(id)} key={id}>
+              <a className="grading-navi-item" href="" onClick={(e) => selectQuestion(e, id)} key={id}>
                 {answersByQuestionId[id].displayNumber}
               </a>
             )
