@@ -58,7 +58,7 @@ export function GradingAnswer({
     <div
       onKeyUp={(e) => onKeyUp(e)}
       style={{ position: 'relative' }}
-      className="answer e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
+      className="answer e-grading-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
     >
       {type === 'richText' ? (
         <div ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
