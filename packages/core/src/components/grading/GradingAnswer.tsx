@@ -63,7 +63,7 @@ export function GradingAnswer({
       {type === 'richText' ? (
         <div ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
       ) : (
-        <div className="answer text-answer text-answer--single-line">
+        <div className="answer">
           <div className="e-inline-block" onMouseDown={(e) => onMouseDown(e)} ref={answerRef}></div>
         </div>
       )}
