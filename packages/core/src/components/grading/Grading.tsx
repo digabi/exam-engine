@@ -60,7 +60,7 @@ function Grading() {
     censoring: [],
   })
 
-  const { questionId, type, value, displayNumber } = answersByQuestionId[answerId]
+  const { type, value } = answersByQuestionId[answerId]
 
   if (type === 'choice') {
     return <div>choice answer</div>
@@ -79,17 +79,20 @@ function Grading() {
   return (
     <I18nextProvider i18n={i18n}>
       <main className="e-exam">
-        <div>
-          {answerIds.map((id) => (
-            <button onClick={() => selectQuestion(id)} key={id}>
-              {answersByQuestionId[id].displayNumber}
-            </button>
-          ))}
+        <div className="grading-navi">
+          {answerIds.map((id) =>
+            id === answerId ? (
+              <span key={id} className="grading-navi-item">
+                {answersByQuestionId[id].displayNumber}
+              </span>
+            ) : (
+              <a className="grading-navi-item" href="javascript:void(0)" onClick={() => selectQuestion(id)} key={id}>
+                {answersByQuestionId[id].displayNumber}
+              </a>
+            )
+          )}
         </div>
 
-        <div>
-          Tehtävä {displayNumber} ({questionId})
-        </div>
         <GradingAnswer
           {...{
             type,
