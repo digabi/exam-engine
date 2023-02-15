@@ -123,12 +123,10 @@ export function GradingAnswer({
     if (target.tagName === 'MARK') {
       clearTimeout(fadeTooltipOut)
       const tooltip = tooltipRef.current!
-      // const rect = target.getBoundingClientRect()
-      // popupPosition(rect, answerRef.current!)
-      tooltip.style.display = 'block'
-      target.appendChild(tooltip)
+      const rect = target.getBoundingClientRect()
+      Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
       tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || ''
-      tooltip.querySelector('.e-annotation-tooltip-remove')!.setAttribute('data-id', '45')
+      tooltip.querySelector('.e-annotation-tooltip-remove')!.setAttribute('data-id', target.dataset.listIndex || '')
       answerRef.current!.addEventListener('mouseout', onMouseOut)
     }
   }
@@ -202,7 +200,6 @@ export function GradingAnswer({
   function onMouseMoveForImageAnnotation(e: MouseEvent) {
     preventDefaults(e)
     newAnnotationObject = annotationFromMousePosition(e, mouseDownInfo)
-
     if (newImageAnnotationMark) {
       updateImageAnnotationMarkSize(newImageAnnotationMark, newAnnotationObject)
     } else {
