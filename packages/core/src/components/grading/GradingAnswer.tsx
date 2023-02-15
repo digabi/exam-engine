@@ -54,12 +54,13 @@ export function GradingAnswer({
   })
 
   return (
-    <div
-      onKeyUp={(e) => onKeyUp(e)}
-      style={{ position: 'relative' }}
-      className="answer e-grading-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
-    >
-      <div ref={answerRef} onMouseDown={(e) => onMouseDown(e)} />
+    <div style={{ position: 'relative' }}>
+      <div
+        className="answer e-grading-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
+        ref={answerRef}
+        onKeyUp={(e) => onKeyUp(e)}
+        onMouseDown={(e) => onMouseDown(e)}
+      />
       <div style={{ display: 'none', position: 'absolute' }} ref={popupRef} className="popup add-annotation-popup">
         <form onSubmit={(e) => onSubmit(e)}>
           <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
