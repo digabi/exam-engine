@@ -10,17 +10,17 @@ export function renderAnnotations(
   const annotations = [...pregradingAnnotations, ...censoringAnnotations]
   const annotationsWithMessages = annotations.filter((a) => a.message)
 
-  for (const annotation of annotations) {
+  for (const [i, annotation] of annotations.entries()) {
     const type = pregradingAnnotations.includes(annotation) ? 'pregrading' : 'censoring'
     const index = annotationsWithMessages.indexOf(annotation) + 1 || undefined
-
+    const listIndex = type === 'pregrading' ? i : i - pregradingAnnotations.length
     switch (annotation.type) {
       case 'line':
       case 'rect':
-        renderImageAnnotation(element, annotation, type, index)
+        renderImageAnnotation(element, annotation, type, listIndex, index)
         break
       default:
-        renderTextAnnotation(element, annotation, type, index)
+        renderTextAnnotation(element, annotation, type, listIndex, index)
     }
   }
 }
@@ -63,18 +63,20 @@ export function renderImageAnnotation(
   answerElement: HTMLElement,
   annotation: ImageAnnotation,
   type: 'pregrading' | 'censoring',
+  listIndex: number,
   index?: number
 ): HTMLElement {
   const { attachmentIndex } = annotation
   const image = answerElement.querySelectorAll('img')[attachmentIndex]
   const title = annotation.message
-  return renderImageAnnotationByImage(image, title, annotation, type, index)
+  return renderImageAnnotationByImage(image, title, annotation, type, listIndex, index)
 }
 export function renderImageAnnotationByImage(
   image: HTMLImageElement,
   title: string,
   annotation: ImageAnnotation,
   type: 'pregrading' | 'censoring',
+  listIndex: number,
   index?: number
 ): HTMLElement {
   const wrapper = getWrapper(image)
@@ -88,6 +90,7 @@ export function renderImageAnnotationByImage(
         'e-annotation--censoring': type === 'censoring',
       }),
       title,
+      'data-list-index': listIndex.toString(),
     })
 
     updateImageAnnotationMarkSize(mark, annotation)
@@ -105,6 +108,7 @@ function renderTextAnnotation(
   rootElement: HTMLElement,
   annotation: TextAnnotation,
   type: 'pregrading' | 'censoring',
+  listIndex: number,
   index?: number
 ): void {
   const { startIndex, length: annotationLength } = annotation
@@ -204,6 +208,7 @@ function renderTextAnnotation(
       }),
       title: annotation.message,
       'data-message': annotation.message,
+      'data-list-index': listIndex.toString(),
     })
   }
 
