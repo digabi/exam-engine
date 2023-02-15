@@ -60,6 +60,10 @@ function Grading() {
     censoring: [],
   })
 
+  useEffect(() => {
+    setAnnotations(annotationsStorage.current[answerId])
+  })
+
   const { type, value } = answersByQuestionId[answerId]
 
   if (type === 'choice') {
