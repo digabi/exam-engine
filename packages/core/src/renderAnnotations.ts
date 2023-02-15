@@ -203,6 +203,7 @@ function renderTextAnnotation(
         'e-annotation--censoring': type === 'censoring',
       }),
       title: annotation.message,
+      'data-message': annotation.message,
     })
   }
 
