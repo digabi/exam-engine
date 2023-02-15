@@ -1,6 +1,5 @@
 import React, { FormEvent, useLayoutEffect, useRef } from 'react'
 import { Annotation } from '../..'
-import AnnotationList from '../results/internal/AnnotationList'
 import {
   annotationFromMousePosition,
   hasTextSelectedInAnswerText,
@@ -70,7 +69,6 @@ export function GradingAnswer({
           </button>
         </form>
       </div>
-      <AnnotationList />
     </div>
   )
 
