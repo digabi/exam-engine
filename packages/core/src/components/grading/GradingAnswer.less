@@ -1,11 +1,19 @@
-.e-grading-answer {
-  word-break: break-word;
-  background: #fff;
-  padding: 20px;
-  .e-annotation-wrapper {
-    line-height: 0;
-  }
+.e-grading-answer-wrapper {
+  position: relative;
+
   .popup {
+    box-shadow: 0 0 7px 0 rgba(74, 144, 226, 0.5);
+    position: absolute;
+    padding: 5px 10px;
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+    z-index: 300;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+
     input[type="text"] {
       background: white;
       border: 2px solid #e6e6e6;
@@ -16,20 +24,8 @@
       font-weight: 300;
       color: #333333;
     }
-    form {
-      box-shadow: 0 0 7px 0 rgba(74, 144, 226, 0.5);
-      position: absolute;
-      padding: 5px 10px;
-      background: #fff;
-      color: #333;
-      border-radius: 5px;
-      z-index: 300;
-      font-size: 16px;
-      font-weight: 400;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    button {
+
+    .e-add-annotation-button {
       font-family: 'Source Sans Pro', sans-serif;
       font-weight: 400;
       font-size: 18px;
@@ -43,8 +39,15 @@
       border-radius: 3px;
       cursor: pointer;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-
     }
+  }
+}
+.e-grading-answer {
+  word-break: break-word;
+  background: #fff;
+  padding: 20px;
+  .e-annotation-wrapper {
+    line-height: 0;
   }
 
   img {
@@ -70,4 +73,29 @@
   img[alt] {
     vertical-align: middle;
   }
+  mark {
+    position: relative;
+  }
+}
+.e-annotation-tooltip {
+  background: #fff;
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+}
+.e-annotation-tooltip-remove {
+  background: none;
+  border: none;
+  font-size: 22px;
+  padding: 0 5px;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  vertical-align: top;
+  &:hover {
+    color: #ce0000;
+  }
+}
+.e-annotation-tooltip-label {
+  margin: 0 5px;
 }

@@ -36,8 +36,9 @@ export function GradingAnswer({
   saveAnnotations: (annotations: Annotations) => void
 }) {
   const answerRef = useRef<HTMLDivElement>(null)
-  const popupRef = useRef<HTMLDivElement>(null)
+  const popupRef = useRef<HTMLFormElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
+  const tooltipRef = useRef<HTMLDivElement>(null)
   let newAnnotationObject: Annotation | undefined
   // let isMouseDown = false
   let latestSavedAnnotations: Annotations
@@ -45,6 +46,7 @@ export function GradingAnswer({
   let newImageAnnotationMark: HTMLElement | undefined
   let imageAtHand: HTMLImageElement | undefined
   let isPopupVisible = false
+  let fadeTooltipOut: ReturnType<typeof setTimeout>
 
   useLayoutEffect(() => {
     if (answerRef.current) {
@@ -53,26 +55,83 @@ export function GradingAnswer({
     }
   })
 
+  function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    e.preventDefault()
+    console.log('removing annotation', e.target)
+  }
+
   return (
-    <div style={{ position: 'relative' }}>
+    <div className="e-grading-answer-wrapper">
       <div
         className="answer e-grading-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
         ref={answerRef}
         onKeyUp={(e) => onKeyUp(e)}
         onMouseDown={(e) => onMouseDown(e)}
+        onMouseOver={(e) => onMouseOver(e)}
       />
-      <div style={{ display: 'none', position: 'absolute' }} ref={popupRef} className="popup add-annotation-popup">
-        <form onSubmit={(e) => onSubmit(e)}>
-          <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
-          <i className="fa fa-comment"></i>
-          <button type="submit" data-i18n="arpa.annotate">
-            Merkitse
-          </button>
-        </form>
+
+      <form
+        style={{ display: 'none', position: 'absolute' }}
+        ref={popupRef}
+        className="popup add-annotation-popup"
+        onSubmit={(e) => onSubmit(e)}
+      >
+        <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
+        <i className="fa fa-comment"></i>
+        <button className="e-add-annotation-button" type="submit" data-i18n="arpa.annotate">
+          Merkitse
+        </button>
+      </form>
+      <div
+        style={{ display: 'none' }}
+        ref={tooltipRef}
+        className="e-annotation-tooltip popup"
+        onMouseOver={onMouseOverTooltip}
+        onMouseOut={closeTooltip}
+      >
+        <span className="e-annotation-tooltip-label">tooltip text</span>
+        <button onClick={(e) => removeAnnotation(e)} className="e-annotation-tooltip-remove">
+          ×
+        </button>
       </div>
     </div>
   )
 
+  function closeTooltip() {
+    fadeTooltipOut = setTimeout(() => {
+      tooltipRef.current!.style.display = 'none'
+      answerRef.current!.appendChild(tooltipRef.current!)
+    }, 1000)
+  }
+
+  function onMouseOverTooltip() {
+    clearTimeout(fadeTooltipOut)
+  }
+  function onMouseOut(e: MouseEvent) {
+    const target = e.target as Element
+    if (target.tagName === 'MARK') {
+      clearTimeout(fadeTooltipOut)
+      closeTooltip()
+    }
+    answerRef.current!.removeEventListener('mouseout', onMouseOut)
+  }
+  function onMouseOver(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    const target = e.target as HTMLElement
+    if (isPopupVisible) {
+      return
+    }
+    if (target.tagName === 'MARK') {
+      clearTimeout(fadeTooltipOut)
+      const tooltip = tooltipRef.current!
+      // const rect = target.getBoundingClientRect()
+      // popupPosition(rect, answerRef.current!)
+      tooltip.style.display = 'block'
+      target.appendChild(tooltip)
+      tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || ''
+      tooltip.querySelector('.e-annotation-tooltip-remove')!.setAttribute('data-id', '45')
+      answerRef.current!.addEventListener('mouseout', onMouseOut)
+    }
+  }
   function showAnnotationPopup(rect: DOMRect) {
     Object.assign(popupRef.current!.style, popupPosition(rect, answerRef.current!), {
       display: 'block',
@@ -160,6 +219,8 @@ export function GradingAnswer({
     }
     wrapAllImages(container)
     renderAnnotations(container, annotations.pregrading, annotations.censoring)
+    //TODO make titles optional for annotation rendering
+    container.querySelectorAll('mark').forEach((mark) => mark.removeAttribute('title'))
   }
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
