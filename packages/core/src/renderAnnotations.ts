@@ -223,14 +223,8 @@ function renderTextAnnotation(
 }
 
 function createSup(index: number, type: 'text' | 'shape') {
-  const content = `${index})`
-  const children = type === 'text' ? [] : content
-  return createElement(
-    'sup',
-    {
-      className: `e-annotation__index e-annotation__index--${type}`,
-      'data-content': content,
-    },
-    ...children
-  )
+  return createElement('sup', {
+    className: `e-annotation__index e-annotation__index--${type}`,
+    'data-content': `${index})`,
+  })
 }

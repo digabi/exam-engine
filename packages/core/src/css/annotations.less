@@ -41,5 +41,9 @@
     right: 0;
     top: -0.5rem;
     transform: translateX(100%);
+
+    &::after {
+      content: attr(data-content);
+    }
   }
 }
