@@ -206,7 +206,7 @@ export function GradingAnswer({
     if (newImageAnnotationMark) {
       updateImageAnnotationMarkSize(newImageAnnotationMark, newAnnotationObject)
     } else {
-      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, 'censoring')
+      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, 'censoring', 999)
     }
   }
 
