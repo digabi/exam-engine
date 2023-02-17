@@ -53,6 +53,8 @@ export function GradingAnswer({
   useLayoutEffect(() => {
     if (answerRef.current) {
       latestSavedAnnotations = annotations
+      tooltipRef.current!.style.display = 'none'
+      popupRef.current!.style.display = 'none'
       renderAnswerWithAnnotations(latestSavedAnnotations)
     }
   })
@@ -64,7 +66,6 @@ export function GradingAnswer({
     annotationDataForTooltip = undefined
     saveAnnotations(latestSavedAnnotations)
   }
-
   return (
     <div className="e-grading-answer-wrapper">
       <div
@@ -105,7 +106,6 @@ export function GradingAnswer({
   function closeTooltip() {
     fadeTooltipOut = setTimeout(() => {
       tooltipRef.current!.style.display = 'none'
-      answerRef.current!.appendChild(tooltipRef.current!)
     }, 400)
   }
 
@@ -120,16 +120,22 @@ export function GradingAnswer({
     }
     answerRef.current!.removeEventListener('mouseout', onMouseOut)
   }
+
+  function showTooltip(target: HTMLElement) {
+    clearTimeout(fadeTooltipOut)
+    const tooltip = tooltipRef.current!
+    tooltip.style.display = 'block'
+    const rect = target.getBoundingClientRect()
+    Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
+    tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || '–'
+    annotationDataForTooltip = { index: Number(target.dataset.listIndex), type: target.dataset.type as Type }
+    answerRef.current!.addEventListener('mouseout', onMouseOut)
+  }
+
   function onMouseOver(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const target = e.target as HTMLElement
     if (target.tagName === 'MARK' && !isPopupVisible && !hasTextSelectedInAnswerText() && !newImageAnnotationMark) {
-      clearTimeout(fadeTooltipOut)
-      const tooltip = tooltipRef.current!
-      const rect = target.getBoundingClientRect()
-      Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
-      tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || '–'
-      annotationDataForTooltip = { index: Number(target.dataset.listIndex), type: target.dataset.type as Type }
-      answerRef.current!.addEventListener('mouseout', onMouseOut)
+      showTooltip(target)
     }
   }
   function showAnnotationPopup(rect: DOMRect) {
