@@ -64,9 +64,9 @@ function Grading() {
     setAnnotations(annotationsStorage.current[answerId])
   })
 
-  const { type, value } = answersByQuestionId[answerId]
+  const { type: answerType, value } = answersByQuestionId[answerId]
 
-  if (type === 'choice') {
+  if (answerType === 'choice') {
     return <div>choice answer</div>
   }
 
@@ -100,7 +100,8 @@ function Grading() {
 
         <GradingAnswer
           {...{
-            type,
+            answerType,
+            gradingRole: 'censoring',
             value,
             annotations,
             saveAnnotations,
