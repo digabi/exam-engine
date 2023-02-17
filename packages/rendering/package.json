@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "19.1.1-alpha.0",
+  "version": "19.1.2-alpha.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -14,7 +14,7 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
     "@digabi/exam-engine-core": "19.1.0-alpha.0",
-    "@digabi/exam-engine-mastering": "19.1.1-alpha.0",
+    "@digabi/exam-engine-mastering": "19.1.2-alpha.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "babel-loader": "^9.1.2",
     "child-process-promise": "^2.2.1",
@@ -44,5 +44,5 @@
     "webpack-dev-server": "^4.7.2",
     "webpack-merge": "^5.0.9"
   },
-  "gitHead": "2cb7257bd95a009401bcd172e638ff718336f58b"
+  "gitHead": "5522a70a6dcb82e56d8eca2c04cb73c827fe6ad2"
 }
