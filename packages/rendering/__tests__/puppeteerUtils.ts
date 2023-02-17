@@ -66,3 +66,19 @@ export async function getTextContent(page: Page, selector: string): Promise<stri
     }
   })
 }
+
+export async function getPageAndRequestErrors(page: Page, filename: string) {
+  const requestErrors: string[] = []
+  const pageErrors: Error[] = []
+
+  page.on('requestfailed', (req) => {
+    const errorText = req.failure()!.errorText
+    if (errorText !== 'net::ERR_ABORTED') {
+      requestErrors.push(req.url())
+    }
+  })
+  page.on('pageerror', (err) => pageErrors.push(err))
+
+  await page.goto('file://' + filename, { waitUntil: 'networkidle0' })
+  return { requestErrors, pageErrors }
+}

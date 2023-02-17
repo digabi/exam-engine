@@ -1,0 +1,6 @@
+[Desktop Entry]
+Comment=
+Terminal=true
+Name=Tee hyvän vastauksen piirteet
+Exec=bash -c "ee create-grading-instructions `dirname %k`/*.xml; read -n 1 -s -p 'Valmis!'"
+Type=Application

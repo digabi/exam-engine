@@ -62,6 +62,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
     Avovastausten arvostelusta:
     <br/>
     <br/>
+    <e:image src=\\"7_hvp.jpg\\"/>
     <p>Sensorikunnan linjaus väärän tedon asemasta vastauksessa<br/>Täydet pisteet voi saada vain vastaus, joka ei
       sisällä väärää tetoa. Mikäli vastauksessa on vaadittavat elementt (täysien pisteiden vastaus), mutta siinä on
       lisäksi väärää tetoa, vähennetään yksi piste.
@@ -1408,6 +1409,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
     Avovastausten arvostelusta:
     <br/>
     <br/>
+    <e:image src=\\"7_hvp.jpg\\"/>
     <p>Sensorikunnan linjaus väärän tedon asemasta vastauksessa<br/>Täydet pisteet voi saada vain vastaus, joka ei
       sisällä väärää tetoa. Mikäli vastauksessa on vaadittavat elementt (täysien pisteiden vastaus), mutta siinä on
       lisäksi väärää tetoa, vähennetään yksi piste.
