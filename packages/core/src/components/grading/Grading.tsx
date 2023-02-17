@@ -100,6 +100,7 @@ function Grading() {
 
         <GradingAnswer
           {...{
+            isReadOnly: false,
             answerType,
             gradingRole: 'censoring',
             value,
