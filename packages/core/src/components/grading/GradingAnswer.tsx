@@ -100,11 +100,7 @@ export function GradingAnswer({
         onMouseOut={closeTooltip}
       >
         <span className="e-annotation-tooltip-label">tooltip text</span>
-        <button
-          style={{ display: isReadOnly ? 'none' : 'initial' }}
-          onClick={(e) => removeAnnotation(e)}
-          className="e-annotation-tooltip-remove"
-        >
+        <button onClick={(e) => removeAnnotation(e)} className="e-annotation-tooltip-remove">
           ×
         </button>
       </div>
@@ -132,11 +128,13 @@ export function GradingAnswer({
   function showTooltip(target: HTMLElement) {
     clearTimeout(fadeTooltipOut)
     const tooltip = tooltipRef.current!
-    tooltip.style.display = 'block'
+    const type = target.dataset.type as GradingType
+    tooltip.querySelector<HTMLDivElement>('.e-annotation-tooltip-remove')!.style.display =
+      isReadOnly || type !== gradingRole ? 'none' : 'initial'
     const rect = target.getBoundingClientRect()
     Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
     tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || '–'
-    annotationDataForTooltip = { index: Number(target.dataset.listIndex), type: target.dataset.type as GradingType }
+    annotationDataForTooltip = { index: Number(target.dataset.listIndex), type }
     answerRef.current!.addEventListener('mouseout', onMouseOut)
   }
 
