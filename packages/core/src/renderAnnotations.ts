@@ -90,7 +90,9 @@ export function renderImageAnnotationByImage(
         'e-annotation--censoring': type === 'censoring',
       }),
       title,
+      'data-message': annotation.message,
       'data-list-index': listIndex.toString(),
+      'data-type': type,
     })
 
     updateImageAnnotationMarkSize(mark, annotation)
@@ -209,6 +211,7 @@ function renderTextAnnotation(
       title: annotation.message,
       'data-message': annotation.message,
       'data-list-index': listIndex.toString(),
+      'data-type': type,
     })
   }
 

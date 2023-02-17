@@ -24,6 +24,8 @@ function preventDefaults(e: Event) {
   e.stopPropagation()
 }
 
+type Type = 'pregrading' | 'censoring'
+
 export function GradingAnswer({
   type,
   annotations,
@@ -47,7 +49,7 @@ export function GradingAnswer({
   let imageAtHand: HTMLImageElement | undefined
   let isPopupVisible = false
   let fadeTooltipOut: ReturnType<typeof setTimeout>
-
+  let annotationDataForTooltip: { index: number; type: Type } | undefined
   useLayoutEffect(() => {
     if (answerRef.current) {
       latestSavedAnnotations = annotations
@@ -57,7 +59,11 @@ export function GradingAnswer({
 
   function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
     e.preventDefault()
-    console.log('removing annotation', e.target)
+    closeTooltip()
+    latestSavedAnnotations[annotationDataForTooltip!.type].splice(annotationDataForTooltip!.index, 1)
+    annotationDataForTooltip = undefined
+    saveAnnotations(latestSavedAnnotations)
+    renderAnswerWithAnnotations(latestSavedAnnotations)
   }
 
   return (
@@ -101,7 +107,7 @@ export function GradingAnswer({
     fadeTooltipOut = setTimeout(() => {
       tooltipRef.current!.style.display = 'none'
       answerRef.current!.appendChild(tooltipRef.current!)
-    }, 1000)
+    }, 400)
   }
 
   function onMouseOverTooltip() {
@@ -117,16 +123,13 @@ export function GradingAnswer({
   }
   function onMouseOver(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const target = e.target as HTMLElement
-    if (isPopupVisible) {
-      return
-    }
-    if (target.tagName === 'MARK') {
+    if (target.tagName === 'MARK' && !isPopupVisible && !hasTextSelectedInAnswerText() && !newImageAnnotationMark) {
       clearTimeout(fadeTooltipOut)
       const tooltip = tooltipRef.current!
       const rect = target.getBoundingClientRect()
       Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
       tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || ''
-      tooltip.querySelector('.e-annotation-tooltip-remove')!.setAttribute('data-id', target.dataset.listIndex || '')
+      annotationDataForTooltip = { index: Number(target.dataset.listIndex), type: target.dataset.type as Type }
       answerRef.current!.addEventListener('mouseout', onMouseOut)
     }
   }
