@@ -200,17 +200,13 @@ export function GradingAnswer({
       const position = textAnnotationFromRange(answerRef.current, range)
       newAnnotationObject = { ...position, type: 'text', message: '' }
       showAnnotationPopup(range.getBoundingClientRect())
-      renderAnswerWithAnnotations(
-        gradingRole === 'censoring'
-          ? {
-              pregrading: latestSavedAnnotations.pregrading,
-              censoring: mergeAnnotation(answerRef.current, newAnnotationObject, latestSavedAnnotations.censoring),
-            }
-          : {
-              pregrading: mergeAnnotation(answerRef.current, newAnnotationObject, latestSavedAnnotations.pregrading),
-              censoring: latestSavedAnnotations.censoring,
-            }
+      const newAnnotations = { ...latestSavedAnnotations }
+      newAnnotations[gradingRole] = mergeAnnotation(
+        answerRef.current,
+        newAnnotationObject,
+        latestSavedAnnotations[gradingRole]
       )
+      renderAnswerWithAnnotations(newAnnotations)
     }
   }
 
