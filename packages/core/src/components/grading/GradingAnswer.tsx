@@ -83,24 +83,23 @@ export function GradingAnswer({
       <form
         style={{ display: 'none', position: 'absolute' }}
         ref={popupRef}
-        className="popup add-annotation-popup"
+        className="e-grading-answer-popup e-grading-answer-add-annotation"
         onSubmit={(e) => onSubmit(e)}
       >
-        <input name="message" className="add-annotation-text" type="text" ref={messageRef} />
-        <i className="fa fa-comment"></i>
-        <button className="e-add-annotation-button" type="submit" data-i18n="arpa.annotate">
+        <input name="message" className="e-grading-answer-add-annotation-text" type="text" ref={messageRef} />
+        <button className="e-grading-answer-add-annotation-button" type="submit" data-i18n="arpa.annotate">
           Merkitse
         </button>
       </form>
       <div
         style={{ display: 'none' }}
         ref={tooltipRef}
-        className="e-annotation-tooltip popup"
+        className="e-grading-answer-tooltip e-grading-answer-popup"
         onMouseOver={onMouseOverTooltip}
         onMouseOut={closeTooltip}
       >
-        <span className="e-annotation-tooltip-label">tooltip text</span>
-        <button onClick={(e) => removeAnnotation(e)} className="e-annotation-tooltip-remove">
+        <span className="e-grading-answer-tooltip-label">tooltip text</span>
+        <button onClick={(e) => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
           ×
         </button>
       </div>
@@ -129,11 +128,11 @@ export function GradingAnswer({
     clearTimeout(fadeTooltipOut)
     const tooltip = tooltipRef.current!
     const type = target.dataset.type as GradingType
-    tooltip.querySelector<HTMLDivElement>('.e-annotation-tooltip-remove')!.style.display =
+    tooltip.querySelector<HTMLDivElement>('.e-grading-answer-tooltip-remove')!.style.display =
       isReadOnly || type !== gradingRole ? 'none' : 'initial'
     const rect = target.getBoundingClientRect()
     Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
-    tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || '–'
+    tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = target.dataset.message || '–'
     annotationDataForTooltip = { index: Number(target.dataset.listIndex), type }
     answerRef.current!.addEventListener('mouseout', onMouseOut)
   }
