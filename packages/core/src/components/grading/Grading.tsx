@@ -79,7 +79,6 @@ function Grading() {
   function saveAnnotations(annotations: { pregrading: Annotation[]; censoring: Annotation[] }) {
     annotationsStorage.current[answerId] = annotations
     setAnnotations({ ...annotationsStorage.current[answerId] })
-    console.log('saving: ', annotationsStorage.current)
   }
 
   return (
