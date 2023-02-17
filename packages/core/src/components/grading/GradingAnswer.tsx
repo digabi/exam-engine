@@ -27,12 +27,14 @@ function preventDefaults(e: Event) {
 type GradingType = 'pregrading' | 'censoring'
 
 export function GradingAnswer({
+  isReadOnly,
   answerType,
   gradingRole,
   annotations,
   saveAnnotations,
   value,
 }: {
+  isReadOnly: boolean
   answerType: 'richText' | 'text'
   gradingRole: GradingType
   value: string
@@ -98,7 +100,11 @@ export function GradingAnswer({
         onMouseOut={closeTooltip}
       >
         <span className="e-annotation-tooltip-label">tooltip text</span>
-        <button onClick={(e) => removeAnnotation(e)} className="e-annotation-tooltip-remove">
+        <button
+          style={{ display: isReadOnly ? 'none' : 'initial' }}
+          onClick={(e) => removeAnnotation(e)}
+          className="e-annotation-tooltip-remove"
+        >
           ×
         </button>
       </div>
@@ -136,7 +142,12 @@ export function GradingAnswer({
 
   function onMouseOver(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const target = e.target as HTMLElement
-    if (target.tagName === 'MARK' && !isPopupVisible && !hasTextSelectedInAnswerText() && !newImageAnnotationMark) {
+    if (
+      target.tagName === 'MARK' &&
+      !isPopupVisible &&
+      (!hasTextSelectedInAnswerText() || isReadOnly) &&
+      !newImageAnnotationMark
+    ) {
       showTooltip(target)
     }
   }
@@ -160,6 +171,9 @@ export function GradingAnswer({
   }
 
   function onMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    if (isReadOnly) {
+      return
+    }
     window.addEventListener('mouseup', onWindowMouseUp)
 
     if (e.button !== 0) {
