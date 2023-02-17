@@ -59,6 +59,14 @@ void yargs
     runCommand('./commands/create-offline')
   )
   .command(
+    'create-grading-instructions [exam] [options]',
+    'Create a grading instructions of the exam.',
+    (argv) => {
+      addExamAndOutdirArgs(argv)
+    },
+    runCommand('./commands/create-grading-instructions')
+  )
+  .command(
     'create-mex [exam] [options]',
     'Package the exam to a .mex file that can be imported by Abitti',
     (argv) => {

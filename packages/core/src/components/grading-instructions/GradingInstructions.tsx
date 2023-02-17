@@ -32,6 +32,7 @@ import QuestionInstruction from '../exam/QuestionInstruction'
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
     queryAncestors(element, [
+      // Keep in sync with lists in mastering/index.ts
       'answer-grading-instruction',
       'choice-answer-option',
       'dropdown-answer-option',
