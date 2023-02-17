@@ -16,6 +16,7 @@ import {
   updateImageAnnotationMarkSize,
   wrapAllImages,
 } from '../../renderAnnotations'
+import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
@@ -79,7 +80,11 @@ export function GradingAnswer({
         onMouseDown={(e) => onMouseDown(e)}
         onMouseOver={(e) => onMouseOver(e)}
       />
-
+      <GradingAnswerAnnotationList
+        censoring={annotations.censoring}
+        pregrading={annotations.pregrading}
+        singleGrading={false}
+      />
       <form
         style={{ display: 'none', position: 'absolute' }}
         ref={popupRef}
