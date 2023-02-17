@@ -24,15 +24,17 @@ function preventDefaults(e: Event) {
   e.stopPropagation()
 }
 
-type Type = 'pregrading' | 'censoring'
+type GradingType = 'pregrading' | 'censoring'
 
 export function GradingAnswer({
-  type,
+  answerType,
+  gradingRole,
   annotations,
   saveAnnotations,
   value,
 }: {
-  type: 'richText' | 'text'
+  answerType: 'richText' | 'text'
+  gradingRole: GradingType
   value: string
   annotations: Annotations
   saveAnnotations: (annotations: Annotations) => void
@@ -49,7 +51,7 @@ export function GradingAnswer({
   let imageAtHand: HTMLImageElement | undefined
   let isPopupVisible = false
   let fadeTooltipOut: ReturnType<typeof setTimeout>
-  let annotationDataForTooltip: { index: number; type: Type } | undefined
+  let annotationDataForTooltip: { index: number; type: GradingType } | undefined
   useLayoutEffect(() => {
     if (answerRef.current) {
       latestSavedAnnotations = annotations
@@ -128,7 +130,7 @@ export function GradingAnswer({
     const rect = target.getBoundingClientRect()
     Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
     tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || '–'
-    annotationDataForTooltip = { index: Number(target.dataset.listIndex), type: target.dataset.type as Type }
+    annotationDataForTooltip = { index: Number(target.dataset.listIndex), type: target.dataset.type as GradingType }
     answerRef.current!.addEventListener('mouseout', onMouseOut)
   }
 
@@ -198,10 +200,17 @@ export function GradingAnswer({
       const position = textAnnotationFromRange(answerRef.current, range)
       newAnnotationObject = { ...position, type: 'text', message: '' }
       showAnnotationPopup(range.getBoundingClientRect())
-      renderAnswerWithAnnotations({
-        pregrading: latestSavedAnnotations.pregrading,
-        censoring: mergeAnnotation(answerRef.current, newAnnotationObject, latestSavedAnnotations.censoring),
-      })
+      renderAnswerWithAnnotations(
+        gradingRole === 'censoring'
+          ? {
+              pregrading: latestSavedAnnotations.pregrading,
+              censoring: mergeAnnotation(answerRef.current, newAnnotationObject, latestSavedAnnotations.censoring),
+            }
+          : {
+              pregrading: mergeAnnotation(answerRef.current, newAnnotationObject, latestSavedAnnotations.pregrading),
+              censoring: latestSavedAnnotations.censoring,
+            }
+      )
     }
   }
 
@@ -211,13 +220,13 @@ export function GradingAnswer({
     if (newImageAnnotationMark) {
       updateImageAnnotationMarkSize(newImageAnnotationMark, newAnnotationObject)
     } else {
-      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, 'censoring', 999)
+      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, gradingRole, 999)
     }
   }
 
   function renderAnswerWithAnnotations(annotations: Annotations) {
     const container = answerRef.current!
-    if (type === 'richText') {
+    if (answerType === 'richText') {
       container.innerHTML = value
     } else {
       container.textContent = value
@@ -231,10 +240,10 @@ export function GradingAnswer({
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const message = messageRef.current!.value
-    latestSavedAnnotations.censoring = mergeAnnotation(
+    latestSavedAnnotations[gradingRole] = mergeAnnotation(
       answerRef.current!,
       { ...newAnnotationObject!, message },
-      latestSavedAnnotations.censoring || []
+      latestSavedAnnotations[gradingRole] || []
     )
     popupRef.current!.style.display = 'none'
     saveAnnotations(latestSavedAnnotations)
