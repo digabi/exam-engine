@@ -15,10 +15,16 @@ export interface CreateOfflineExamOptions {
    * as x264/mp3.
    */
   mediaVersion?: boolean
+
+  /**
+   * Which type will be created, offline without grading-instruction or just grading-instructions
+   */
+  type?: 'offline' | 'grading-instructions'
 }
 
 const defaultOptions: CreateOfflineExamOptions = {
   mediaVersion: false,
+  type: 'offline',
 }
 
 export async function createOfflineExam(
@@ -39,14 +45,20 @@ export async function createOfflineExam(
     const examOutputDirectory = getExamOutputDirectory(result, outputDirectory)
     await runWebpack(result, examOutputDirectory, opts)
 
+    await fs.mkdir(`${examOutputDirectory}/attachments`, { recursive: true })
+
     for (const attachment of result.attachments) {
-      await copyAttachment(attachment, resolveAttachment, examOutputDirectory, cacheDirectory, opts)
+      if (opts.type === 'offline' && !attachment.filename.includes('_hvp.')) {
+        await copyAttachment(attachment, resolveAttachment, examOutputDirectory, cacheDirectory, opts)
+      } else if (opts.type === 'grading-instructions' && attachment.filename.includes('_hvp.')) {
+        await copyAttachment(attachment, resolveAttachment, examOutputDirectory, cacheDirectory, opts)
+      }
     }
 
     examOutputDirectories.push(examOutputDirectory)
   }
 
-  await optimizeWithPuppeteer(examOutputDirectories)
+  await optimizeWithPuppeteer(examOutputDirectories, opts)
 
   return examOutputDirectories
 }
@@ -98,7 +110,7 @@ async function copyAttachment(
   return fs.copyFile(source, target)
 }
 
-async function optimizeWithPuppeteer(examOutputDirectories: string[]) {
+async function optimizeWithPuppeteer(examOutputDirectories: string[], options: CreateOfflineExamOptions) {
   const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   try {
     const context = await browser.createIncognitoBrowserContext()
@@ -107,9 +119,12 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[]) {
 
     for (const examOutputDirectory of examOutputDirectories) {
       for (const htmlFile of [
-        path.resolve(examOutputDirectory, 'index.html'),
-        path.resolve(examOutputDirectory, 'grading-instructions.html'),
-        path.resolve(examOutputDirectory, 'attachments/index.html'),
+        ...(options.type === 'offline'
+          ? [
+              path.resolve(examOutputDirectory, 'index.html'),
+              path.resolve(examOutputDirectory, 'attachments/index.html'),
+            ]
+          : [path.resolve(examOutputDirectory, 'grading-instructions.html')]),
       ]) {
         await page.goto('file://' + htmlFile)
         await page.waitForSelector('.e-exam')

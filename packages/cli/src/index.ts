@@ -59,6 +59,19 @@ void yargs
     runCommand('./commands/create-offline')
   )
   .command(
+    'create-grading-instructions [exam] [options]',
+    'Create a grading instructions of the exam.',
+    (argv) => {
+      addExamAndOutdirArgs(argv)
+      argv.option('media', {
+        description:
+          'Create a media version of the exam. This will encode video files as x264 and audio files as mp3 and not remove hidden references from the exam.',
+        type: 'boolean',
+      })
+    },
+    runCommand('./commands/create-grading-instructions')
+  )
+  .command(
     'create-mex [exam] [options]',
     'Package the exam to a .mex file that can be imported by Abitti',
     (argv) => {
