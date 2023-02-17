@@ -128,7 +128,7 @@ export function GradingAnswer({
       const tooltip = tooltipRef.current!
       const rect = target.getBoundingClientRect()
       Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
-      tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || ''
+      tooltip.querySelector('.e-annotation-tooltip-label')!.textContent = target.dataset.message || '–'
       annotationDataForTooltip = { index: Number(target.dataset.listIndex), type: target.dataset.type as Type }
       answerRef.current!.addEventListener('mouseout', onMouseOut)
     }
