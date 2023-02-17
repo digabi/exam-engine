@@ -63,7 +63,6 @@ export function GradingAnswer({
     latestSavedAnnotations[annotationDataForTooltip!.type].splice(annotationDataForTooltip!.index, 1)
     annotationDataForTooltip = undefined
     saveAnnotations(latestSavedAnnotations)
-    renderAnswerWithAnnotations(latestSavedAnnotations)
   }
 
   return (
@@ -231,9 +230,8 @@ export function GradingAnswer({
       { ...newAnnotationObject!, message },
       latestSavedAnnotations.censoring || []
     )
-
+    popupRef.current!.style.display = 'none'
     saveAnnotations(latestSavedAnnotations)
-    closePopupAndRefresh()
   }
 
   function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
