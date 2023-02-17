@@ -17,6 +17,8 @@ import {
   wrapAllImages,
 } from '../../renderAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
+import classNames from 'classnames'
+import { useExamTranslation } from '../../i18n'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
@@ -71,6 +73,10 @@ export function GradingAnswer({
     annotationDataForTooltip = undefined
     saveAnnotations(latestSavedAnnotations)
   }
+  const maxLength = 100
+  const answerLength = 50
+  const { t } = useExamTranslation()
+
   return (
     <div className="e-grading-answer-wrapper">
       <div
@@ -80,6 +86,15 @@ export function GradingAnswer({
         onMouseDown={(e) => onMouseDown(e)}
         onMouseOver={(e) => onMouseOver(e)}
       />
+      <div className="answer-toolbar e-font-size-xs e-columns e-mrg-b-2">
+        <div className={classNames('answer-toolbar__answer-length e-column')}>
+          {t(maxLength != null ? 'answer-length-with-max-length' : 'answer-length', {
+            count: answerLength,
+            maxLength: maxLength,
+          })}
+        </div>
+      </div>
+
       <GradingAnswerAnnotationList
         censoring={annotations.censoring}
         pregrading={annotations.pregrading}
