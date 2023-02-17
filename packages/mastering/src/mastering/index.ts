@@ -192,6 +192,8 @@ export function parseExam(xml: string, validate = false): Document {
 export interface Attachment {
   filename: string
   restricted: boolean
+  visibleInGradingInstructions: boolean
+  withinGradingInstruction: boolean
 }
 
 export interface MasteringResult {
@@ -330,16 +332,57 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
 }
 
 function collectAttachments(exam: Element, attachments: Element[]): Attachment[] {
-  const mkAttachment = (filename: string, restricted = false): Attachment => ({ filename, restricted })
+  const mkAttachment = (
+    filename: string,
+    restricted = false,
+    visibleInGradingInstructions = false,
+    withinGradingInstruction = false
+  ): Attachment => ({
+    filename,
+    restricted,
+    visibleInGradingInstructions,
+    withinGradingInstruction,
+  })
   const maybeCustomStylesheet = getAttribute('exam-stylesheet', exam, null)
 
   return _.uniqWith(
     [
-      ...attachments.map((a) => mkAttachment(getAttribute('src', a), a.attr('times') != null)),
+      ...attachments.map((a) => {
+        return mkAttachment(
+          getAttribute('src', a),
+          a.attr('times') != null,
+          isVisibleInGradingInstructions(a),
+          isWithinGradingInstructions(a)
+        )
+      }),
       ...(maybeCustomStylesheet ? [mkAttachment(maybeCustomStylesheet)] : []),
     ],
     _.isEqual
   )
+}
+
+//TODO: Sync with tsx
+function isVisibleInGradingInstructions(attachment: Element) {
+  const found = queryAncestors(attachment, (e) =>
+    [
+      'answer-grading-instruction',
+      'choice-answer-option',
+      'dropdown-answer-option',
+      'exam-grading-instruction',
+      'question-grading-instruction',
+      'hint',
+      'question-title',
+      'question-instruction',
+    ].includes(e.name())
+  )
+  return !!found
+}
+
+function isWithinGradingInstructions(attachment: Element) {
+  const found = queryAncestors(attachment, (e) =>
+    ['exam-grading-instruction', 'question-grading-instruction', 'answer-grading-instruction'].includes(e.name())
+  )
+  return !!found
 }
 
 async function addExamMetadata(exam: Element, generateUuid: GenerateUuid, language: string, type: ExamType) {

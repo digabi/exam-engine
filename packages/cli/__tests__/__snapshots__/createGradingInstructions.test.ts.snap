@@ -863,6 +863,17 @@ Array [
 
 exports[`ee create-grading-instructions creates grading instuctions 3`] = `
 Array [
+  "7.1.0478.jpg",
+  "7.1.4327.jpg",
+  "7.1.7279.jpg",
+  "7.2.1617.jpg",
+  "7.2.7276.jpg",
+  "7.2.7291.jpg",
+  "7.2.jpg",
+  "7.3.4375.jpg",
+  "7.3.4927.jpg",
+  "7.3.7459.jpg",
+  "7.4.jpg",
   "7_hvp.jpg",
 ]
 `;
