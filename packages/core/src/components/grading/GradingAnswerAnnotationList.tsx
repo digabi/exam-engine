@@ -1,34 +1,7 @@
 import * as _ from 'lodash-es'
 import React from 'react'
 import { Annotation } from '../../index'
-import { useExamTranslation } from '../../i18n'
-
-interface AnnotationItem {
-  numbering: string
-  message: string
-}
-
-interface AnnotationListProps {
-  i18nTitleKey?: 'grading.pregrading-annotations' | 'grading.censor-annotations'
-  annotations?: AnnotationItem[]
-}
-
-const AnnotationListComponent = ({ i18nTitleKey, annotations }: AnnotationListProps) => {
-  const { t } = useExamTranslation()
-
-  return annotations ? (
-    <>
-      {i18nTitleKey && <h5>{t(i18nTitleKey)}</h5>}
-      <ol className="e-list-data e-pad-l-0 e-font-size-s">
-        {annotations.map(({ numbering, message }) => (
-          <li data-list-number={numbering} key={numbering}>
-            {message}
-          </li>
-        ))}
-      </ol>
-    </>
-  ) : null
-}
+import { AnnotationLists } from '../shared/AnnotationLists'
 
 function GradingAnswerAnnotationList({
   pregrading,
@@ -50,28 +23,13 @@ function GradingAnswerAnnotationList({
 
   const pregradingAnnotations = getListOfAnnotations(pregrading)
   const censoringAnnotations = getListOfAnnotations(censoring, pregradingAnnotations.length)
-
-  return pregradingAnnotations.length || censoringAnnotations.length ? (
-    <div className="e-annotation-list e-columns e-mrg-t-2">
-      {singleGrading ? (
-        <div className="e-column e-column--10">
-          <AnnotationListComponent annotations={pregradingAnnotations} />
-        </div>
-      ) : (
-        <>
-          <div className="e-column e-column--6">
-            <AnnotationListComponent
-              i18nTitleKey={'grading.pregrading-annotations'}
-              annotations={pregradingAnnotations}
-            />
-          </div>
-          <div className="e-column e-column--6">
-            <AnnotationListComponent i18nTitleKey={'grading.censor-annotations'} annotations={censoringAnnotations} />
-          </div>
-        </>
-      )}
-    </div>
-  ) : null
+  return (
+    <AnnotationLists
+      pregradingAnnotations={pregradingAnnotations}
+      censoringAnnotations={censoringAnnotations}
+      singleGrading={singleGrading}
+    />
+  )
 }
 
 export default GradingAnswerAnnotationList
