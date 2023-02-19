@@ -74,4 +74,4 @@ function GradingAnswerAnnotationList({
   ) : null
 }
 
-export default React.memo(GradingAnswerAnnotationList)
+export default GradingAnswerAnnotationList
