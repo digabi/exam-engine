@@ -63,8 +63,8 @@ export function hasTextSelectedInAnswerText(): boolean {
     const endContainer = sel.getRangeAt(0).endContainer
     return (
       sel.rangeCount > 0 &&
-      startContainer.parentElement?.closest('.answer') !== null &&
-      endContainer.parentElement?.closest('.answer') !== null &&
+      startContainer.parentElement?.closest('.e-grading-answer') !== null &&
+      endContainer.parentElement?.closest('.e-grading-answer') !== null &&
       startContainer.parentElement?.closest('.remove-annotation-popup') === null
     )
   }
@@ -197,7 +197,7 @@ export function imageAnnotationMouseDownInfo(
   e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   image: HTMLImageElement
 ): NewImageAnnotation {
-  const targetAnswerText = image.closest('.answer')!
+  const targetAnswerText = image.closest('.e-grading-answer')!
   const attachmentIndex = Array.from(targetAnswerText.querySelectorAll('img')).findIndex((img) => img === image)
   const attachmentWrapper = targetAnswerText.querySelectorAll('.e-annotation-wrapper').item(attachmentIndex)
   const bbox = attachmentWrapper.getBoundingClientRect()

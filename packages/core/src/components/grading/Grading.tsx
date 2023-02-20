@@ -104,6 +104,7 @@ function Grading() {
             answerType,
             gradingRole: 'censoring',
             value,
+            maxLength: 100,
             annotations,
             saveAnnotations,
           }}

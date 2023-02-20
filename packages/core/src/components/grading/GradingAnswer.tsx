@@ -17,18 +17,12 @@ import {
   wrapAllImages,
 } from '../../renderAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
-import classNames from 'classnames'
 import { useExamTranslation } from '../../i18n'
+import { createElement } from '../../dom-utils'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
-function preventDefaults(e: Event) {
-  e.preventDefault()
-  e.stopPropagation()
-}
-
 type GradingType = 'pregrading' | 'censoring'
-
 export function GradingAnswer({
   isReadOnly,
   answerType,
@@ -36,15 +30,18 @@ export function GradingAnswer({
   annotations,
   saveAnnotations,
   value,
+  maxLength,
 }: {
   isReadOnly: boolean
   answerType: 'richText' | 'text'
   gradingRole: GradingType
   value: string
+  maxLength?: number
   annotations: Annotations
   saveAnnotations: (annotations: Annotations) => void
 }) {
   const answerRef = useRef<HTMLDivElement>(null)
+  const answerCountRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLFormElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
@@ -63,6 +60,23 @@ export function GradingAnswer({
       tooltipRef.current!.style.display = 'none'
       popupRef.current!.style.display = 'none'
       renderAnswerWithAnnotations(latestSavedAnnotations)
+      const count = countCharacters(answerRef.current.innerText)
+      const percentage = countSurplusPercentage(count, maxLength)
+      answerCountRef.current!.innerHTML = t('answer-length', {
+        count,
+      }).toString()
+      if (percentage > 0) {
+        answerCountRef.current!.appendChild(
+          createElement(
+            'span',
+            { className: 'e-grading-answer-max-length-surplus' },
+            t('max-length-surplus', {
+              max: maxLength,
+              percentage,
+            }).toString()
+          )
+        )
+      }
     }
   })
 
@@ -73,27 +87,18 @@ export function GradingAnswer({
     annotationDataForTooltip = undefined
     saveAnnotations(latestSavedAnnotations)
   }
-  const maxLength = 100
-  const answerLength = 50
   const { t } = useExamTranslation()
 
   return (
     <div className="e-grading-answer-wrapper">
       <div
-        className="answer e-grading-answer e-line-height-l e-pad-l-2 e-mrg-b-1"
+        className="e-grading-answer e-line-height-l e-mrg-b-1"
         ref={answerRef}
         onKeyUp={(e) => onKeyUp(e)}
         onMouseDown={(e) => onMouseDown(e)}
         onMouseOver={(e) => onMouseOver(e)}
       />
-      <div className="answer-toolbar e-font-size-xs e-columns e-mrg-b-2">
-        <div className={classNames('answer-toolbar__answer-length e-column')}>
-          {t(maxLength != null ? 'answer-length-with-max-length' : 'answer-length', {
-            count: answerLength,
-            maxLength: maxLength,
-          })}
-        </div>
-      </div>
+      <div className="e-font-size-xs e-grading-answer-length" ref={answerCountRef}></div>
 
       <GradingAnswerAnnotationList
         censoring={annotations.censoring}
@@ -281,4 +286,19 @@ export function GradingAnswer({
       closePopupAndRefresh()
     }
   }
+}
+
+function preventDefaults(e: Event) {
+  e.preventDefault()
+  e.stopPropagation()
+}
+
+export function countSurplusPercentage(characters: number, maxCharacters: number | undefined | null): number {
+  if (!maxCharacters || characters <= maxCharacters) {
+    return 0
+  }
+  return Math.floor((100 * characters) / maxCharacters - 100)
+}
+export function countCharacters(text: string) {
+  return text.replace(/\s/g, '').length
 }
