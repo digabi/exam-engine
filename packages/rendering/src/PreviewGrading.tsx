@@ -6,7 +6,7 @@ import { Annotation } from '@digabi/exam-engine-core'
 import { GradingAnswer } from '@digabi/exam-engine-core/dist/components/grading/GradingAnswer'
 import { withCommonExamContext } from '@digabi/exam-engine-core/dist/components/context/CommonExamContext'
 
-function Grading() {
+function PreviewGrading() {
   const { answersByQuestionId } = useContext(ResultsContext)
 
   const i18n = initI18n('FI-fi')
@@ -115,4 +115,4 @@ function Grading() {
   )
 }
 
-export default React.memo(withResultsContext(withCommonExamContext(Grading)))
+export default React.memo(withResultsContext(withCommonExamContext(PreviewGrading)))
