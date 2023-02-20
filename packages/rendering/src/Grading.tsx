@@ -1,16 +1,15 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
-import { changeLanguage, initI18n } from '../../i18n'
-import { useCached } from '../../useCached'
-import { withCommonExamContext } from '../context/CommonExamContext'
-import { ResultsContext, withResultsContext } from '../context/ResultsContext'
-import { GradingAnswer } from './GradingAnswer'
-import { Annotation } from '../../types/Score'
+import { ResultsContext, withResultsContext } from '@digabi/exam-engine-core/dist/components/context/ResultsContext'
+import { changeLanguage, initI18n } from '@digabi/exam-engine-core/dist/i18n'
+import { Annotation } from '@digabi/exam-engine-core'
+import { GradingAnswer } from '@digabi/exam-engine-core/dist/components/grading/GradingAnswer'
+import { withCommonExamContext } from '@digabi/exam-engine-core/dist/components/context/CommonExamContext'
 
 function Grading() {
   const { answersByQuestionId } = useContext(ResultsContext)
 
-  const i18n = useCached(() => initI18n('FI-fi'))
+  const i18n = initI18n('FI-fi')
   useEffect(changeLanguage(i18n, 'FI-fi'))
 
   const answerIds = Object.keys(answersByQuestionId).map(Number)

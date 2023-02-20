@@ -3,7 +3,6 @@ import {
   Exam,
   Results,
   GradingInstructions,
-  Grading,
   parseExam,
   ExamAnswer,
   ExamServerAPI,
@@ -16,6 +15,7 @@ import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 import createRouter from 'router5'
 import { Link, RouterProvider, useRoute, useRouter } from 'react-router5'
 import browserPlugin from 'router5-plugin-browser'
+import Grading from './Grading'
 
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }
 
