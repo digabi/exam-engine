@@ -71,13 +71,6 @@ export function GradingAnswer({
     }
   })
 
-  function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    e.preventDefault()
-    closeTooltip()
-    latestSavedAnnotations[annotationDataForTooltip!.type].splice(annotationDataForTooltip!.index, 1)
-    annotationDataForTooltip = undefined
-    saveAnnotations(latestSavedAnnotations)
-  }
   const { t } = useExamTranslation()
   const percentage = countSurplusPercentage(characterCount, maxLength)
 
@@ -88,7 +81,7 @@ export function GradingAnswer({
         ref={answerRef}
         onKeyUp={(e) => onKeyUp(e)}
         onMouseDown={(e) => onMouseDown(e)}
-        onMouseOver={(e) => onMouseOver(e)}
+        onMouseOver={(e) => onMouseOver(e.target as HTMLElement)}
       />
       <div className="e-font-size-xs e-grading-answer-length">
         {t('answer-length', {
@@ -99,13 +92,12 @@ export function GradingAnswer({
             {t('max-length-surplus', {
               max: maxLength,
               percentage,
-            })}{' '}
+            })}
           </span>
         ) : (
           ''
         )}
       </div>
-
       <GradingAnswerAnnotationList
         censoring={annotations.censoring}
         pregrading={annotations.pregrading}
@@ -137,6 +129,13 @@ export function GradingAnswer({
     </div>
   )
 
+  function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    e.preventDefault()
+    closeTooltip()
+    latestSavedAnnotations[annotationDataForTooltip!.type].splice(annotationDataForTooltip!.index, 1)
+    annotationDataForTooltip = undefined
+    saveAnnotations(latestSavedAnnotations)
+  }
   function closeTooltip() {
     fadeTooltipOut = setTimeout(() => {
       tooltipRef.current!.style.display = 'none'
@@ -158,18 +157,17 @@ export function GradingAnswer({
   function showTooltip(target: HTMLElement) {
     clearTimeout(fadeTooltipOut)
     const tooltip = tooltipRef.current!
-    const type = target.dataset.type as GradingType
+    const { type, listIndex, message } = target.dataset
     tooltip.querySelector<HTMLDivElement>('.e-grading-answer-tooltip-remove')!.style.display =
       isReadOnly || type !== gradingRole ? 'none' : 'initial'
     const rect = target.getBoundingClientRect()
     Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
-    tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = target.dataset.message || '–'
-    annotationDataForTooltip = { index: Number(target.dataset.listIndex), type }
+    tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = message || '–'
+    annotationDataForTooltip = { index: Number(listIndex), type: type as GradingType }
     answerRef.current!.addEventListener('mouseout', onMouseOut)
   }
 
-  function onMouseOver(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    const target = e.target as HTMLElement
+  function onMouseOver(target: HTMLElement) {
     if (
       target.tagName === 'MARK' &&
       !isPopupVisible &&
