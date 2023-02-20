@@ -50,6 +50,21 @@
     line-height: 0;
   }
 
+  .full-size-image {
+    user-select: none;
+    background: #fff;
+    text-align: center;
+    a {
+      [lang="fi-FI"] &:after {
+        content: 'Näytä kuva täysikokoisena'
+      }
+      [lang="sv-FI"] &:after {
+        content: 'Visa bilden i full storlek'
+      }
+      font-weight: bold;
+    }
+  }
+
   img {
     max-width: 100%;
   }

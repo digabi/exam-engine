@@ -19,6 +19,7 @@ import {
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
 import { useExamTranslation } from '../../i18n'
 import { createElement } from '../../dom-utils'
+import { updateLargeImageWarnings } from './largeImageDetector'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
@@ -46,7 +47,6 @@ export function GradingAnswer({
   const messageRef = useRef<HTMLInputElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
   let newAnnotationObject: Annotation | undefined
-  // let isMouseDown = false
   let latestSavedAnnotations: Annotations
   let mouseDownInfo: NewImageAnnotation
   let newImageAnnotationMark: HTMLElement | undefined
@@ -54,12 +54,15 @@ export function GradingAnswer({
   let isPopupVisible = false
   let fadeTooltipOut: ReturnType<typeof setTimeout>
   let annotationDataForTooltip: { index: number; type: GradingType } | undefined
+  let resizeTimeout: ReturnType<typeof setTimeout>
+
   useLayoutEffect(() => {
     if (answerRef.current) {
       latestSavedAnnotations = annotations
       tooltipRef.current!.style.display = 'none'
       popupRef.current!.style.display = 'none'
       renderAnswerWithAnnotations(latestSavedAnnotations)
+      updateLargeImageWarnings(answerRef.current)
       const count = countCharacters(answerRef.current.innerText)
       const percentage = countSurplusPercentage(count, maxLength)
       answerCountRef.current!.innerHTML = t('answer-length', {
@@ -77,6 +80,11 @@ export function GradingAnswer({
           )
         )
       }
+    }
+
+    window.onresize = () => {
+      clearTimeout(resizeTimeout)
+      resizeTimeout = setTimeout(() => updateLargeImageWarnings(answerRef.current!), 1000)
     }
   })
 
