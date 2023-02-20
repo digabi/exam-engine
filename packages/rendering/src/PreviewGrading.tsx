@@ -115,4 +115,4 @@ function PreviewGrading() {
   )
 }
 
-export default React.memo(withResultsContext(withCommonExamContext(PreviewGrading)))
+export default withResultsContext(withCommonExamContext(PreviewGrading))
