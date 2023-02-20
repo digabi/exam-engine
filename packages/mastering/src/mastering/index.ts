@@ -1,4 +1,8 @@
-import { GradingStructure } from '@digabi/exam-engine-core'
+import {
+  GradingStructure,
+  VisibleGradingInstructionElements,
+  GradingInstructionElements,
+} from '@digabi/exam-engine-core'
 import crypto from 'crypto'
 import { readFileSync } from 'fs'
 import { Document, Element, parseXml, SyntaxError, Text } from 'libxmljs2'
@@ -361,28 +365,12 @@ function collectAttachments(exam: Element, attachments: Element[]): Attachment[]
   )
 }
 
-//TODO: Sync with tsx
 function isVisibleInGradingInstructions(attachment: Element) {
-  const found = queryAncestors(attachment, (e) =>
-    [
-      'answer-grading-instruction',
-      'choice-answer-option',
-      'dropdown-answer-option',
-      'exam-grading-instruction',
-      'question-grading-instruction',
-      'hint',
-      'question-title',
-      'question-instruction',
-    ].includes(e.name())
-  )
-  return !!found
+  return !!queryAncestors(attachment, (e) => VisibleGradingInstructionElements.includes(e.name()))
 }
 
 function isWithinGradingInstructions(attachment: Element) {
-  const found = queryAncestors(attachment, (e) =>
-    ['exam-grading-instruction', 'question-grading-instruction', 'answer-grading-instruction'].includes(e.name())
-  )
-  return !!found
+  return !!queryAncestors(attachment, (e) => GradingInstructionElements.includes(e.name()))
 }
 
 async function addExamMetadata(exam: Element, generateUuid: GenerateUuid, language: string, type: ExamType) {

@@ -48,9 +48,10 @@ export async function createOfflineExam(
     await fs.mkdir(`${examOutputDirectory}/attachments`, { recursive: true })
 
     for (const attachment of result.attachments) {
-      if (opts.type === 'offline' && !attachment.withinGradingInstruction) {
-        await copyAttachment(attachment, resolveAttachment, examOutputDirectory, cacheDirectory, opts)
-      } else if (opts.type === 'grading-instructions' && attachment.visibleInGradingInstructions) {
+      if (
+        (opts.type === 'offline' && !attachment.withinGradingInstruction) ||
+        (opts.type === 'grading-instructions' && attachment.visibleInGradingInstructions)
+      ) {
         await copyAttachment(attachment, resolveAttachment, examOutputDirectory, cacheDirectory, opts)
       }
     }

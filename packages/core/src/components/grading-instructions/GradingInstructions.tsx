@@ -28,19 +28,10 @@ import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Recording from './Recording'
 import QuestionInstruction from '../exam/QuestionInstruction'
+import { VisibleGradingInstructionElements } from './GradingInstructionsElements'
 
 const renderIfWithinGradingInstructionContent = renderIf(
-  ({ element }) =>
-    queryAncestors(element, [
-      'answer-grading-instruction',
-      'choice-answer-option',
-      'dropdown-answer-option',
-      'exam-grading-instruction',
-      'question-grading-instruction',
-      'hint',
-      'question-title',
-      'question-instruction',
-    ]) != null
+  ({ element }) => queryAncestors(element, VisibleGradingInstructionElements) != null
 )
 
 const renderIfNotWithinExternalMaterial = renderIf(
