@@ -71,7 +71,7 @@ export const fi_FI = {
   'answer-length': 'Vastauksen pituus: {{count}} merkki.',
   'answer-length_plural': 'Vastauksen pituus: {{count}} merkkiä.',
   'answer-length-with-max-length': 'Vastauksen pituus: {{count}} / {{maxLength}} merkkiä.',
-  'max-length-surplus': 'Vastauksen enimmäispituus {{max}} merkkiä ylittyy {{percentage}} %.',
+  'max-length-surplus': 'Vastauksen enimmäispituus {{maxLength}} merkkiä ylittyy {{percentage}} %.',
   'max-length-info': 'Vastauksen pituus on enintään {{count}} merkkiä. Ylityksestä seuraa pistevähennys.',
   'previous-answer-versions': 'Aiemmat vastausluonnokset',
   'zoom-in': 'Suurenna kuva',
