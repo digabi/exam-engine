@@ -63,12 +63,13 @@ function Grading() {
     setAnnotations(annotationsStorage.current[answerId])
   })
 
-  const { type: answerType, value } = answersByQuestionId[answerId]
+  const answer = answersByQuestionId[answerId]
+  const { type: answerType, value } = answer
 
   if (answerType === 'choice') {
     return <div>choice answer</div>
   }
-
+  const { characterCount } = answer
   function selectQuestion(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: number) {
     e.preventDefault()
     setAnswerId(id)
@@ -103,6 +104,7 @@ function Grading() {
             answerType,
             gradingRole: 'censoring',
             value,
+            characterCount,
             maxLength: 100,
             annotations,
             saveAnnotations,
