@@ -59,7 +59,7 @@ export const sv_FI: Translations = {
   'listen-times-remaining_plural': '{{count}} lyssningsgånger kvar.',
   'answer-length': 'Svarets längd: {{count}} tecken.',
   'answer-length-with-max-length': 'Svarets längd: {{count}} / {{maxLength}} tecken.',
-  'max-length-surplus': 'Svaret överskrider maximallängden på {{max}} märken med {{percentage}} %.',
+  'max-length-surplus': 'Svaret överskrider maximallängden på {{maxLength}} märken med {{percentage}} %.',
   'max-length-info':
     'Svaret får inte överskrida {{count}} tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.',
   'previous-answer-versions': 'Tidigare utkast till svar',

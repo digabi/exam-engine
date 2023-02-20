@@ -34,15 +34,17 @@ export function allNodesUnder(el: Node, documentObject = document): Node[] {
   return a
 }
 
-export function popupPosition(boundingRect: DOMRect, container: HTMLDivElement) {
+export function showAndPositionPopup(boundingRect: DOMRect, container: HTMLDivElement) {
   if (container) {
     const containerRect = container.getBoundingClientRect()
     return {
+      display: 'block',
       top: String(boundingRect.bottom - containerRect.top + 10) + 'px',
       left: String(boundingRect.left - containerRect.left) + 'px',
     }
   } else {
     return {
+      display: 'block',
       top: '0px',
       left: '0px',
     }

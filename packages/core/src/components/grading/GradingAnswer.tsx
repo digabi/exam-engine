@@ -6,7 +6,7 @@ import {
   imageAnnotationMouseDownInfo,
   mergeAnnotation,
   NewImageAnnotation,
-  popupPosition,
+  showAndPositionPopup,
   selectionHasNothingToUnderline,
   textAnnotationFromRange,
 } from './editAnnotations'
@@ -47,37 +47,30 @@ export function GradingAnswer({
   const messageRef = useRef<HTMLInputElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
   let newAnnotationObject: Annotation | undefined
-  let latestSavedAnnotations: Annotations
-  let mouseDownInfo: NewImageAnnotation
-  let newImageAnnotationMark: HTMLElement | undefined
-  let imageAtHand: HTMLImageElement | undefined
+  let savedAnnotations: Annotations
+  let currentImageAnnotationStart: NewImageAnnotation
+  let currentImageAnnotationElement: HTMLElement | undefined
+  let currentImg: HTMLImageElement | undefined
   let isPopupVisible = false
-  let fadeTooltipOut: ReturnType<typeof setTimeout>
+  let closeTooltipTimeout: ReturnType<typeof setTimeout>
   let annotationDataForTooltip: { index: number; type: GradingType } | undefined
-  let resizeTimeout: ReturnType<typeof setTimeout>
+  let windowResizeTimeout: ReturnType<typeof setTimeout>
 
   useLayoutEffect(() => {
     if (answerRef.current) {
-      latestSavedAnnotations = annotations
+      savedAnnotations = annotations
       tooltipRef.current!.style.display = 'none'
       popupRef.current!.style.display = 'none'
-      renderAnswerWithAnnotations(latestSavedAnnotations)
+      renderAnswerWithAnnotations(savedAnnotations)
       updateLargeImageWarnings(answerRef.current)
     }
 
     window.onresize = () => {
-      clearTimeout(resizeTimeout)
-      resizeTimeout = setTimeout(() => updateLargeImageWarnings(answerRef.current!), 1000)
+      clearTimeout(windowResizeTimeout)
+      windowResizeTimeout = setTimeout(() => updateLargeImageWarnings(answerRef.current!), 1000)
     }
   })
 
-  function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    e.preventDefault()
-    closeTooltip()
-    latestSavedAnnotations[annotationDataForTooltip!.type].splice(annotationDataForTooltip!.index, 1)
-    annotationDataForTooltip = undefined
-    saveAnnotations(latestSavedAnnotations)
-  }
   const { t } = useExamTranslation()
   const percentage = countSurplusPercentage(characterCount, maxLength)
 
@@ -88,7 +81,7 @@ export function GradingAnswer({
         ref={answerRef}
         onKeyUp={(e) => onKeyUp(e)}
         onMouseDown={(e) => onMouseDown(e)}
-        onMouseOver={(e) => onMouseOver(e)}
+        onMouseOver={(e) => onMouseOver(e.target as HTMLElement)}
       />
       <div className="e-font-size-xs e-grading-answer-length">
         {t('answer-length', {
@@ -97,22 +90,21 @@ export function GradingAnswer({
         {percentage > 0 ? (
           <span className="e-grading-answer-max-length-surplus">
             {t('max-length-surplus', {
-              max: maxLength,
+              maxLength,
               percentage,
-            })}{' '}
+            })}
           </span>
         ) : (
           ''
         )}
       </div>
-
       <GradingAnswerAnnotationList
         censoring={annotations.censoring}
         pregrading={annotations.pregrading}
         singleGrading={false}
       />
       <form
-        style={{ display: 'none', position: 'absolute' }}
+        style={{ display: 'none' }}
         ref={popupRef}
         className="e-grading-answer-popup e-grading-answer-add-annotation"
         onSubmit={(e) => onSubmit(e)}
@@ -137,52 +129,56 @@ export function GradingAnswer({
     </div>
   )
 
+  function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    e.preventDefault()
+    closeTooltip()
+    savedAnnotations[annotationDataForTooltip!.type].splice(annotationDataForTooltip!.index, 1)
+    annotationDataForTooltip = undefined
+    saveAnnotations(savedAnnotations)
+  }
   function closeTooltip() {
-    fadeTooltipOut = setTimeout(() => {
+    closeTooltipTimeout = setTimeout(() => {
       tooltipRef.current!.style.display = 'none'
     }, 400)
   }
 
   function onMouseOverTooltip() {
-    clearTimeout(fadeTooltipOut)
+    clearTimeout(closeTooltipTimeout)
   }
   function onMouseOut(e: MouseEvent) {
     const target = e.target as Element
     if (target.tagName === 'MARK') {
-      clearTimeout(fadeTooltipOut)
+      clearTimeout(closeTooltipTimeout)
       closeTooltip()
     }
     answerRef.current!.removeEventListener('mouseout', onMouseOut)
   }
 
   function showTooltip(target: HTMLElement) {
-    clearTimeout(fadeTooltipOut)
+    clearTimeout(closeTooltipTimeout)
     const tooltip = tooltipRef.current!
-    const type = target.dataset.type as GradingType
+    const { type, listIndex, message } = target.dataset
     tooltip.querySelector<HTMLDivElement>('.e-grading-answer-tooltip-remove')!.style.display =
       isReadOnly || type !== gradingRole ? 'none' : 'initial'
     const rect = target.getBoundingClientRect()
-    Object.assign(tooltip.style, popupPosition(rect, answerRef.current!), { display: 'block' })
-    tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = target.dataset.message || '–'
-    annotationDataForTooltip = { index: Number(target.dataset.listIndex), type }
+    Object.assign(tooltip.style, showAndPositionPopup(rect, answerRef.current!))
+    tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = message || '–'
+    annotationDataForTooltip = { index: Number(listIndex), type: type as GradingType }
     answerRef.current!.addEventListener('mouseout', onMouseOut)
   }
 
-  function onMouseOver(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    const target = e.target as HTMLElement
+  function onMouseOver(target: HTMLElement) {
     if (
       target.tagName === 'MARK' &&
       !isPopupVisible &&
       (!hasTextSelectedInAnswerText() || isReadOnly) &&
-      !newImageAnnotationMark
+      !currentImageAnnotationElement
     ) {
       showTooltip(target)
     }
   }
   function showAnnotationPopup(rect: DOMRect) {
-    Object.assign(popupRef.current!.style, popupPosition(rect, answerRef.current!), {
-      display: 'block',
-    })
+    Object.assign(popupRef.current!.style, showAndPositionPopup(rect, answerRef.current!))
     const inputElement = messageRef.current!
     inputElement.value = ''
     inputElement.focus()
@@ -191,11 +187,11 @@ export function GradingAnswer({
 
   function closePopupAndRefresh() {
     newAnnotationObject = undefined
-    newImageAnnotationMark = undefined
-    imageAtHand = undefined
+    currentImageAnnotationElement = undefined
+    currentImg = undefined
     isPopupVisible = false
     popupRef.current!.style.display = 'none'
-    renderAnswerWithAnnotations(latestSavedAnnotations)
+    renderAnswerWithAnnotations(savedAnnotations)
   }
 
   function onMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -208,18 +204,18 @@ export function GradingAnswer({
       return
     }
     const target = e.target as Element
-    imageAtHand = target.closest('.e-annotation-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
-    if (!imageAtHand) {
+    currentImg = target.closest('.e-annotation-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
+    if (!currentImg) {
       return
     }
-    imageAtHand.addEventListener('dragstart', preventDefaults)
-    mouseDownInfo = imageAnnotationMouseDownInfo(e, imageAtHand)
+    currentImg.addEventListener('dragstart', preventDefaults)
+    currentImageAnnotationStart = imageAnnotationMouseDownInfo(e, currentImg)
 
     window.addEventListener('mousemove', onMouseMoveForImageAnnotation)
   }
 
   function onWindowMouseUp(e: MouseEvent) {
-    imageAtHand?.removeEventListener('dragstart', preventDefaults)
+    currentImg?.removeEventListener('dragstart', preventDefaults)
     window.removeEventListener('mousemove', onMouseMoveForImageAnnotation)
     window.removeEventListener('mouseup', onWindowMouseUp)
 
@@ -228,8 +224,8 @@ export function GradingAnswer({
       return
     }
 
-    if (newImageAnnotationMark) {
-      showAnnotationPopup(newImageAnnotationMark?.getBoundingClientRect()!)
+    if (currentImageAnnotationElement) {
+      showAnnotationPopup(currentImageAnnotationElement?.getBoundingClientRect()!)
       return
     }
 
@@ -242,11 +238,11 @@ export function GradingAnswer({
       const position = textAnnotationFromRange(answerRef.current, range)
       newAnnotationObject = { ...position, type: 'text', message: '' }
       showAnnotationPopup(range.getBoundingClientRect())
-      const newAnnotations = { ...latestSavedAnnotations }
+      const newAnnotations = { ...savedAnnotations }
       newAnnotations[gradingRole] = mergeAnnotation(
         answerRef.current,
         newAnnotationObject,
-        latestSavedAnnotations[gradingRole]
+        savedAnnotations[gradingRole]
       )
       renderAnswerWithAnnotations(newAnnotations)
     }
@@ -254,11 +250,17 @@ export function GradingAnswer({
 
   function onMouseMoveForImageAnnotation(e: MouseEvent) {
     preventDefaults(e)
-    newAnnotationObject = annotationFromMousePosition(e, mouseDownInfo)
-    if (newImageAnnotationMark) {
-      updateImageAnnotationMarkSize(newImageAnnotationMark, newAnnotationObject)
+    newAnnotationObject = annotationFromMousePosition(e, currentImageAnnotationStart)
+    if (currentImageAnnotationElement) {
+      updateImageAnnotationMarkSize(currentImageAnnotationElement, newAnnotationObject)
     } else {
-      newImageAnnotationMark = renderImageAnnotationByImage(imageAtHand!, '', newAnnotationObject, gradingRole, 999)
+      currentImageAnnotationElement = renderImageAnnotationByImage(
+        currentImg!,
+        '',
+        newAnnotationObject,
+        gradingRole,
+        999
+      )
     }
   }
 
@@ -278,13 +280,13 @@ export function GradingAnswer({
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const message = messageRef.current!.value
-    latestSavedAnnotations[gradingRole] = mergeAnnotation(
+    savedAnnotations[gradingRole] = mergeAnnotation(
       answerRef.current!,
       { ...newAnnotationObject!, message },
-      latestSavedAnnotations[gradingRole] || []
+      savedAnnotations[gradingRole] || []
     )
     popupRef.current!.style.display = 'none'
-    saveAnnotations(latestSavedAnnotations)
+    saveAnnotations(savedAnnotations)
   }
 
   function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
@@ -299,12 +301,9 @@ function preventDefaults(e: Event) {
   e.stopPropagation()
 }
 
-export function countSurplusPercentage(characters: number, maxCharacters: number | undefined | null): number {
+function countSurplusPercentage(characters: number, maxCharacters: number | undefined | null): number {
   if (!maxCharacters || characters <= maxCharacters) {
     return 0
   }
   return Math.floor((100 * characters) / maxCharacters - 100)
-}
-export function countCharacters(text: string) {
-  return text.replace(/\s/g, '').length
 }
