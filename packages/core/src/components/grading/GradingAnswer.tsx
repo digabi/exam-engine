@@ -59,8 +59,8 @@ export function GradingAnswer({
   useLayoutEffect(() => {
     if (answerRef.current) {
       savedAnnotations = annotations
-      tooltipRef.current!.style.display = 'none'
-      popupRef.current!.style.display = 'none'
+      toggle(tooltipRef.current, false)
+      toggle(popupRef.current, false)
       renderAnswerWithAnnotations(savedAnnotations)
       updateLargeImageWarnings(answerRef.current)
     }
@@ -138,7 +138,7 @@ export function GradingAnswer({
   }
   function closeTooltip() {
     closeTooltipTimeout = setTimeout(() => {
-      tooltipRef.current!.style.display = 'none'
+      toggle(tooltipRef.current, false)
     }, 400)
   }
 
@@ -158,8 +158,11 @@ export function GradingAnswer({
     clearTimeout(closeTooltipTimeout)
     const tooltip = tooltipRef.current!
     const { type, listIndex, message } = target.dataset
-    tooltip.querySelector<HTMLDivElement>('.e-grading-answer-tooltip-remove')!.style.display =
-      isReadOnly || type !== gradingRole ? 'none' : 'initial'
+    toggle(
+      tooltip.querySelector<HTMLDivElement>('.e-grading-answer-tooltip-remove'),
+      !isReadOnly && type === gradingRole
+    )
+
     const rect = target.getBoundingClientRect()
     Object.assign(tooltip.style, showAndPositionPopup(rect, answerRef.current!))
     tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = message || '–'
@@ -190,7 +193,7 @@ export function GradingAnswer({
     currentImageAnnotationElement = undefined
     currentImg = undefined
     isPopupVisible = false
-    popupRef.current!.style.display = 'none'
+    toggle(popupRef.current, false)
     renderAnswerWithAnnotations(savedAnnotations)
   }
 
@@ -285,7 +288,7 @@ export function GradingAnswer({
       { ...newAnnotationObject!, message },
       savedAnnotations[gradingRole] || []
     )
-    popupRef.current!.style.display = 'none'
+    toggle(popupRef.current, false)
     saveAnnotations(savedAnnotations)
   }
 
@@ -306,4 +309,10 @@ function countSurplusPercentage(characters: number, maxCharacters: number | unde
     return 0
   }
   return Math.floor((100 * characters) / maxCharacters - 100)
+}
+
+function toggle(element: HTMLElement | null, isVisible: boolean): void {
+  if (element instanceof HTMLElement) {
+    element.style.display = isVisible ? 'initial' : 'none'
+  }
 }
