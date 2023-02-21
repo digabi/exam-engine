@@ -64,9 +64,9 @@ function PreviewGrading() {
   })
 
   const answer = answersByQuestionId[answerId]
-  const { type: answerType, value } = answer
+  const { type, value } = answer
 
-  if (answerType === 'choice') {
+  if (type === 'choice') {
     return <div>choice answer</div>
   }
   const { characterCount } = answer
@@ -100,11 +100,9 @@ function PreviewGrading() {
 
         <GradingAnswer
           {...{
+            answer: { type, characterCount, value },
             isReadOnly: false,
-            answerType,
             gradingRole: 'censoring',
-            value,
-            characterCount,
             maxLength: 100,
             annotations,
             saveAnnotations,
