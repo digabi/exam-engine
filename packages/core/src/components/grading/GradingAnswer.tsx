@@ -231,6 +231,9 @@ export function GradingAnswer({
       return
     }
 
+    if (isPopupVisible) {
+      return
+    }
     const selection = window.getSelection()
     if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
       const range = selection.getRangeAt(0)
