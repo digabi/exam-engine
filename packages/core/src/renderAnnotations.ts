@@ -2,6 +2,8 @@ import { Annotation, ImageAnnotation, LineAnnotation, RectAnnotation, TextAnnota
 import { createElement } from './dom-utils'
 import classNames from 'classnames'
 
+const messageLengthThreshold = 5
+
 export function renderAnnotations(
   element: HTMLElement,
   pregradingAnnotations: Annotation[],
@@ -234,7 +236,7 @@ function renderTextAnnotation(
 function createSup(index: number, type: 'text' | 'shape', message: string) {
   return createElement('sup', {
     className: `e-annotation__index e-annotation__index--${type}`,
-    'data-content': `${index})`,
+    'data-content': message.length > messageLengthThreshold ? `${index})` : message,
     'data-message': message,
   })
 }
