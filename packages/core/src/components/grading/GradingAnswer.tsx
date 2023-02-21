@@ -44,9 +44,11 @@ export function GradingAnswer({
   const tooltipRef = useRef<HTMLDivElement>(null)
   let newAnnotationObject: Annotation | undefined
   let savedAnnotations: Annotations
-  let currentImageAnnotationStart: NewImageAnnotation
-  let currentImageAnnotationElement: HTMLElement | undefined
-  let currentImg: HTMLImageElement | undefined
+  const imgAnnotationState: {
+    start: NewImageAnnotation | undefined
+    element: HTMLElement | undefined
+    img: HTMLImageElement | undefined
+  } = { start: undefined, element: undefined, img: undefined }
   let isPopupVisible = false
   let closeTooltipTimeout: ReturnType<typeof setTimeout>
   let annotationDataForTooltip: { index: number; type: GradingType } | undefined
@@ -171,7 +173,7 @@ export function GradingAnswer({
       target.tagName === 'MARK' &&
       !isPopupVisible &&
       (!hasTextSelectedInAnswerText() || isReadOnly) &&
-      !currentImageAnnotationElement
+      !imgAnnotationState.element
     ) {
       showTooltip(target)
     }
@@ -186,8 +188,8 @@ export function GradingAnswer({
 
   function closePopupAndRefresh() {
     newAnnotationObject = undefined
-    currentImageAnnotationElement = undefined
-    currentImg = undefined
+    imgAnnotationState.element = undefined
+    imgAnnotationState.img = undefined
     isPopupVisible = false
     toggle(popupRef.current, false)
     renderAnswerWithAnnotations(savedAnnotations)
@@ -203,18 +205,19 @@ export function GradingAnswer({
       return
     }
     const target = e.target as Element
-    currentImg = target.closest('.e-annotation-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
-    if (!currentImg) {
+    const img = target.closest('.e-annotation-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
+    if (!img) {
       return
     }
-    currentImg.addEventListener('dragstart', preventDefaults)
-    currentImageAnnotationStart = imageAnnotationMouseDownInfo(e, currentImg)
+    img.addEventListener('dragstart', preventDefaults)
+    imgAnnotationState.start = imageAnnotationMouseDownInfo(e, img)
+    imgAnnotationState.img = img
 
     window.addEventListener('mousemove', onMouseMoveForImageAnnotation)
   }
 
   function onWindowMouseUp(e: MouseEvent) {
-    currentImg?.removeEventListener('dragstart', preventDefaults)
+    imgAnnotationState.img?.removeEventListener('dragstart', preventDefaults)
     window.removeEventListener('mousemove', onMouseMoveForImageAnnotation)
     window.removeEventListener('mouseup', onWindowMouseUp)
 
@@ -223,8 +226,8 @@ export function GradingAnswer({
       return
     }
 
-    if (currentImageAnnotationElement) {
-      showAnnotationPopup(currentImageAnnotationElement?.getBoundingClientRect()!)
+    if (imgAnnotationState.element) {
+      showAnnotationPopup(imgAnnotationState.element?.getBoundingClientRect()!)
       return
     }
 
@@ -249,12 +252,12 @@ export function GradingAnswer({
 
   function onMouseMoveForImageAnnotation(e: MouseEvent) {
     preventDefaults(e)
-    newAnnotationObject = annotationFromMousePosition(e, currentImageAnnotationStart)
-    if (currentImageAnnotationElement) {
-      updateImageAnnotationMarkSize(currentImageAnnotationElement, newAnnotationObject)
+    newAnnotationObject = annotationFromMousePosition(e, imgAnnotationState.start!)
+    if (imgAnnotationState.element) {
+      updateImageAnnotationMarkSize(imgAnnotationState.element, newAnnotationObject)
     } else {
-      currentImageAnnotationElement = renderImageAnnotationByImage(
-        currentImg!,
+      imgAnnotationState.element = renderImageAnnotationByImage(
+        imgAnnotationState.img!,
         '',
         newAnnotationObject,
         gradingRole,
