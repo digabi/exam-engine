@@ -27,7 +27,7 @@ export function toNodeLength(node: Node) {
 export function allNodesUnder(el: Node, documentObject = document): Node[] {
   let n: Node | null = null
   const a: Node[] = []
-  const walk = documentObject.createTreeWalker(el, NodeFilter.SHOW_ALL, null)
+  const walk = documentObject.createTreeWalker(el, NodeFilter.SHOW_TEXT + NodeFilter.SHOW_ELEMENT, null)
   while ((n = walk.nextNode())) {
     a.push(n)
   }
