@@ -60,7 +60,6 @@ export function GradingAnswer({
       toggle(tooltipRef.current, false)
       toggle(popupRef.current, false)
       renderAnswerWithAnnotations(savedAnnotations)
-      updateLargeImageWarnings(answerRef.current)
     }
 
     window.onresize = () => {
@@ -270,10 +269,11 @@ export function GradingAnswer({
     const container = answerRef.current!
     if (type === 'richText') {
       container.innerHTML = value
+      wrapAllImages(container)
+      updateLargeImageWarnings(container)
     } else {
       container.textContent = value
     }
-    wrapAllImages(container)
     renderAnnotations(container, annotations.pregrading, annotations.censoring)
     //TODO make titles optional for annotation rendering
     container.querySelectorAll('mark').forEach((mark) => mark.removeAttribute('title'))
