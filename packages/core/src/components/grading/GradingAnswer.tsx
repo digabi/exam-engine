@@ -76,7 +76,6 @@ export function GradingAnswer({
       <div
         className="e-grading-answer e-line-height-l e-mrg-b-1"
         ref={answerRef}
-        onKeyUp={(e) => onKeyUp(e)}
         onMouseDown={(e) => onMouseDown(e)}
         onMouseOver={(e) => onMouseOver(e.target as HTMLElement)}
       />
@@ -183,6 +182,7 @@ export function GradingAnswer({
     inputElement.value = ''
     inputElement.focus()
     isPopupVisible = true
+    window.addEventListener('keydown', onKeyUp)
   }
 
   function closePopupAndRefresh() {
@@ -190,6 +190,7 @@ export function GradingAnswer({
     imgAnnotationState.element = undefined
     imgAnnotationState.img = undefined
     isPopupVisible = false
+    window.removeEventListener('keydown', onKeyUp)
     toggle(popupRef.current, false)
     renderAnswerWithAnnotations(savedAnnotations)
   }
@@ -291,8 +292,8 @@ export function GradingAnswer({
     saveAnnotations(savedAnnotations)
   }
 
-  function onKeyUp(e: React.KeyboardEvent<HTMLDivElement>) {
-    if (e.key === 'Escape' && newAnnotationObject) {
+  function onKeyUp(e: KeyboardEvent) {
+    if (e.key === 'Escape' && isPopupVisible) {
       closePopupAndRefresh()
     }
   }
