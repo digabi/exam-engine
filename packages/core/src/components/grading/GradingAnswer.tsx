@@ -24,20 +24,16 @@ type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingType = 'pregrading' | 'censoring'
 export function GradingAnswer({
+  answer: { type, characterCount, value },
   isReadOnly,
-  answerType,
   gradingRole,
   annotations,
   saveAnnotations,
-  value,
-  characterCount,
   maxLength,
 }: {
+  answer: { type: 'richText' | 'text'; characterCount: number; value: string }
   isReadOnly: boolean
-  answerType: 'richText' | 'text'
   gradingRole: GradingType
-  value: string
-  characterCount: number
   maxLength?: number
   annotations: Annotations
   saveAnnotations: (annotations: Annotations) => void
@@ -269,7 +265,7 @@ export function GradingAnswer({
 
   function renderAnswerWithAnnotations(annotations: Annotations) {
     const container = answerRef.current!
-    if (answerType === 'richText') {
+    if (type === 'richText') {
       container.innerHTML = value
     } else {
       container.textContent = value
