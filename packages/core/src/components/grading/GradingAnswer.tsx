@@ -6,8 +6,8 @@ import {
   imageAnnotationMouseDownInfo,
   mergeAnnotation,
   NewImageAnnotation,
-  showAndPositionPopup,
   selectionHasNothingToUnderline,
+  showAndPositionPopup,
   textAnnotationFromRange,
 } from './editAnnotations'
 import {
@@ -51,8 +51,15 @@ export function GradingAnswer({
   } = { start: undefined, element: undefined, img: undefined }
   let isPopupVisible = false
   let closeTooltipTimeout: ReturnType<typeof setTimeout>
-  let annotationDataForTooltip: { index: number; type: GradingType } | undefined
+  let annotationDataForTooltip: { index: number; type: GradingType; message: string } | undefined
   let windowResizeTimeout: ReturnType<typeof setTimeout>
+  let popupPosition: DOMRect
+  function editExistingAnnotation(e: React.MouseEvent<HTMLSpanElement>) {
+    if ((e.target as HTMLElement).closest('.editable')) {
+      toggle(tooltipRef.current, false)
+      showOldAnnotationPopup(popupPosition)
+    }
+  }
 
   useLayoutEffect(() => {
     if (answerRef.current) {
@@ -117,7 +124,9 @@ export function GradingAnswer({
         onMouseOver={onMouseOverTooltip}
         onMouseOut={closeTooltip}
       >
-        <span className="e-grading-answer-tooltip-label">tooltip text</span>
+        <span onClick={(e) => editExistingAnnotation(e)} className="e-grading-answer-tooltip-label">
+          tooltip text
+        </span>
         <button onClick={(e) => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
           ×
         </button>
@@ -154,15 +163,12 @@ export function GradingAnswer({
     clearTimeout(closeTooltipTimeout)
     const tooltip = tooltipRef.current!
     const { type, listIndex, message } = target.dataset
-    toggle(
-      tooltip.querySelector<HTMLDivElement>('.e-grading-answer-tooltip-remove'),
-      !isReadOnly && type === gradingRole
-    )
-
+    tooltip.classList.toggle('editable', !isReadOnly && type === gradingRole)
     const rect = target.getBoundingClientRect()
+    popupPosition = rect
     Object.assign(tooltip.style, showAndPositionPopup(rect, answerRef.current!))
     tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = message || '–'
-    annotationDataForTooltip = { index: Number(listIndex), type: type as GradingType }
+    annotationDataForTooltip = { index: Number(listIndex), type: type as GradingType, message: message || '' }
     answerRef.current!.addEventListener('mouseout', onMouseOut)
   }
 
@@ -177,9 +183,16 @@ export function GradingAnswer({
     }
   }
   function showAnnotationPopup(rect: DOMRect) {
+    annotationDataForTooltip = undefined
+    setupAnnotationPopup(rect, '')
+  }
+  function showOldAnnotationPopup(rect: DOMRect) {
+    setupAnnotationPopup(rect, annotationDataForTooltip!.message)
+  }
+  function setupAnnotationPopup(rect: DOMRect, message: string) {
     Object.assign(popupRef.current!.style, showAndPositionPopup(rect, answerRef.current!))
     const inputElement = messageRef.current!
-    inputElement.value = ''
+    inputElement.value = message
     inputElement.focus()
     isPopupVisible = true
     window.addEventListener('keydown', onKeyUp)
@@ -286,11 +299,15 @@ export function GradingAnswer({
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const message = messageRef.current!.value
-    savedAnnotations[gradingRole] = mergeAnnotation(
-      answerRef.current!,
-      { ...newAnnotationObject!, message },
-      savedAnnotations[gradingRole] || []
-    )
+    if (annotationDataForTooltip) {
+      savedAnnotations[annotationDataForTooltip.type][annotationDataForTooltip.index].message = message
+    } else {
+      savedAnnotations[gradingRole] = mergeAnnotation(
+        answerRef.current!,
+        { ...newAnnotationObject!, message },
+        savedAnnotations[gradingRole] || []
+      )
+    }
     toggle(popupRef.current, false)
     saveAnnotations(savedAnnotations)
   }

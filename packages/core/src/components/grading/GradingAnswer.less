@@ -106,6 +106,10 @@
   position: absolute;
 }
 .e-grading-answer-tooltip-remove {
+  display: none;
+}
+.editable .e-grading-answer-tooltip-remove {
+  display: initial;
   background: none;
   border: none;
   font-size: 22px;
@@ -120,6 +124,12 @@
 }
 .e-grading-answer-tooltip-label {
   margin: 0 5px;
+  border: 1px solid transparent;
+  padding: 0 4px;
+  .editable &:hover {
+    border: 1px dashed #aaa;
+    cursor: pointer;
+  }
 }
 .e-grading-answer-length {
   color: gray;
