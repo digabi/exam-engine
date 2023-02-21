@@ -49,11 +49,22 @@ export function GradingAnswer({
     element: HTMLElement | undefined
     img: HTMLImageElement | undefined
   } = { start: undefined, element: undefined, img: undefined }
-  let isPopupVisible = false
+  let isAnnotationPopupVisible = false
   let closeTooltipTimeout: ReturnType<typeof setTimeout>
   let annotationDataForTooltip: { index: number; type: GradingType; message: string } | undefined
   let windowResizeTimeout: ReturnType<typeof setTimeout>
   let popupPosition: DOMRect
+
+  function onAnnotationClick(e: React.MouseEvent<HTMLDivElement>) {
+    if (e.target instanceof HTMLElement && e.target.tagName === 'MARK') {
+      showTooltip(e.target)
+    } else {
+      if (annotationDataForTooltip) {
+        closeTooltip()
+      }
+    }
+  }
+
   function editExistingAnnotation(e: React.MouseEvent<HTMLSpanElement>) {
     if ((e.target as HTMLElement).closest('.editable')) {
       toggle(tooltipRef.current, false)
@@ -83,6 +94,7 @@ export function GradingAnswer({
       <div
         className="e-grading-answer e-line-height-l e-mrg-b-1"
         ref={answerRef}
+        onClick={(e) => onAnnotationClick(e)}
         onMouseDown={(e) => onMouseDown(e)}
         onMouseOver={(e) => onMouseOver(e.target as HTMLElement)}
       />
@@ -175,7 +187,7 @@ export function GradingAnswer({
   function onMouseOver(target: HTMLElement) {
     if (
       target.tagName === 'MARK' &&
-      !isPopupVisible &&
+      !isAnnotationPopupVisible &&
       (!hasTextSelectedInAnswerText() || isReadOnly) &&
       !imgAnnotationState.element
     ) {
@@ -194,7 +206,7 @@ export function GradingAnswer({
     const inputElement = messageRef.current!
     inputElement.value = message
     inputElement.focus()
-    isPopupVisible = true
+    isAnnotationPopupVisible = true
     window.addEventListener('keydown', onKeyUp)
   }
 
@@ -202,7 +214,7 @@ export function GradingAnswer({
     newAnnotationObject = undefined
     imgAnnotationState.element = undefined
     imgAnnotationState.img = undefined
-    isPopupVisible = false
+    isAnnotationPopupVisible = false
     window.removeEventListener('keydown', onKeyUp)
     toggle(popupRef.current, false)
     renderAnswerWithAnnotations(savedAnnotations)
@@ -234,7 +246,7 @@ export function GradingAnswer({
     window.removeEventListener('mousemove', onMouseMoveForImageAnnotation)
     window.removeEventListener('mouseup', onWindowMouseUp)
 
-    if (isPopupVisible && (e.target as Element).closest('.popup') === null) {
+    if (isAnnotationPopupVisible && (e.target as Element).closest('.popup') === null) {
       closePopupAndRefresh()
       return
     }
@@ -244,7 +256,7 @@ export function GradingAnswer({
       return
     }
 
-    if (isPopupVisible) {
+    if (isAnnotationPopupVisible) {
       return
     }
     const selection = window.getSelection()
@@ -311,7 +323,7 @@ export function GradingAnswer({
   }
 
   function onKeyUp(e: KeyboardEvent) {
-    if (e.key === 'Escape' && isPopupVisible) {
+    if (e.key === 'Escape' && isAnnotationPopupVisible) {
       closePopupAndRefresh()
     }
   }
