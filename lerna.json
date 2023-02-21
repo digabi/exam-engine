@@ -1,6 +1,6 @@
 {
   "npmClient": "yarn",
   "packages": ["packages/*"],
-  "version": "19.0.4-alpha.2",
+  "version": "19.0.4-alpha.3",
   "exact": true
 }
