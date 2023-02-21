@@ -58,10 +58,13 @@
   }
 
   .full-size-image {
+    position: relative;
     user-select: none;
     background: #fff;
     text-align: center;
     a {
+      position: absolute; bottom: 0;
+
       [lang="fi-FI"] &:after {
         content: 'Näytä kuva täysikokoisena'
       }
