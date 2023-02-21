@@ -291,9 +291,7 @@ export function GradingAnswer({
     } else {
       container.textContent = value
     }
-    renderAnnotations(container, annotations.pregrading, annotations.censoring)
-    //TODO make titles optional for annotation rendering
-    container.querySelectorAll('mark').forEach((mark) => mark.removeAttribute('title'))
+    renderAnnotations(container, annotations.pregrading, annotations.censoring, false)
   }
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {

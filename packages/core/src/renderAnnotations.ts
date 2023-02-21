@@ -7,7 +7,8 @@ const messageLengthThreshold = 5
 export function renderAnnotations(
   element: HTMLElement,
   pregradingAnnotations: Annotation[],
-  censoringAnnotations: Annotation[]
+  censoringAnnotations: Annotation[],
+  showTitle = true
 ): void {
   const annotations = [...pregradingAnnotations, ...censoringAnnotations]
   const annotationsWithMessages = annotations.filter((a) => a.message)
@@ -19,10 +20,10 @@ export function renderAnnotations(
     switch (annotation.type) {
       case 'line':
       case 'rect':
-        renderImageAnnotation(element, annotation, type, listIndex, index)
+        renderImageAnnotation(element, annotation, type, listIndex, index, showTitle)
         break
       default:
-        renderTextAnnotation(element, annotation, type, listIndex, index)
+        renderTextAnnotation(element, annotation, type, listIndex, index, showTitle)
     }
   }
 }
@@ -66,11 +67,12 @@ export function renderImageAnnotation(
   annotation: ImageAnnotation,
   type: 'pregrading' | 'censoring',
   listIndex: number,
-  index?: number
+  index: number | undefined,
+  showTitle: boolean
 ): HTMLElement {
   const { attachmentIndex } = annotation
   const image = answerElement.querySelectorAll('img')[attachmentIndex]
-  const title = annotation.message
+  const title = showTitle ? annotation.message : ''
   return renderImageAnnotationByImage(image, title, annotation, type, listIndex, index)
 }
 export function renderImageAnnotationByImage(
@@ -113,7 +115,8 @@ function renderTextAnnotation(
   annotation: TextAnnotation,
   type: 'pregrading' | 'censoring',
   listIndex: number,
-  index?: number
+  index: number | undefined,
+  showTitle: boolean
 ): void {
   const { startIndex, length: annotationLength } = annotation
   return go(rootElement.childNodes[0], 0, annotationLength)
@@ -210,7 +213,7 @@ function renderTextAnnotation(
         'e-annotation--pregrading': type === 'pregrading',
         'e-annotation--censoring': type === 'censoring',
       }),
-      title: annotation.message,
+      title: showTitle ? annotation.message : '',
       'data-message': annotation.message,
       'data-list-index': listIndex.toString(),
       'data-type': type,
