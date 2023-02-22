@@ -7,7 +7,7 @@ import {
   mergeAnnotation,
   NewImageAnnotation,
   selectionHasNothingToUnderline,
-  showAndPositionPopup,
+  showAndPositionElement,
   textAnnotationFromRange,
 } from './editAnnotations'
 import {
@@ -177,7 +177,7 @@ export function GradingAnswer({
     const { type, listIndex, message } = target.dataset
     tooltip.classList.toggle('editable', !isReadOnly && type === gradingRole)
     tooltipPosition = target.getBoundingClientRect()
-    Object.assign(tooltip.style, showAndPositionPopup(tooltipPosition, answerRef.current!))
+    Object.assign(tooltip.style, showAndPositionElement(tooltipPosition, answerRef.current!))
     tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = message || '–'
     annotationDataForTooltip = { index: Number(listIndex), type: type as GradingType, message: message || '' }
     answerRef.current!.addEventListener('mouseout', onMouseOut)
@@ -201,7 +201,7 @@ export function GradingAnswer({
     setupAnnotationPopup(rect, annotationDataForTooltip!.message)
   }
   function setupAnnotationPopup(rect: DOMRect, message: string) {
-    Object.assign(popupRef.current!.style, showAndPositionPopup(rect, answerRef.current!))
+    Object.assign(popupRef.current!.style, showAndPositionElement(rect, answerRef.current!))
     const inputElement = messageRef.current!
     inputElement.value = message
     inputElement.focus()
