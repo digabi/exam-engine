@@ -27,24 +27,35 @@ describe('testGrading.ts', () => {
   })
 
   it('renders surplus warning', async () => {
-    const surplus = await page.waitForSelector('.e-grading-answer-max-length-surplus')
-    const text = await surplus?.evaluate((el) => el.textContent)
-    expect(text).toBe('Vastauksen enimmäispituus 100 merkkiä ylittyy 268 %.')
+    await expectText('.e-grading-answer-max-length-surplus', 'Vastauksen enimmäispituus 100 merkkiä ylittyy 268 %.')
   })
 
   it('creates text annotation', async () => {
-    await page.mouse.move(200, 200)
-    await page.mouse.down()
-    await page.mouse.move(400, 200)
-    await page.mouse.up()
+    await drag(200, 200, 400, 200)
     await page.waitForSelector('.e-grading-answer-popup')
     await page.keyboard.type('first annotation message')
     await page.keyboard.press('Enter')
-    const annotation = await page.waitForSelector('.e-annotation--censoring')
-    const annotationText = await annotation?.evaluate((el) => el.textContent)
-    expect(annotationText).toBe('sque tellus iaculis, iaculis d')
-    const annotationList = await page.waitForSelector('.e-annotation-list')
-    const text = await annotationList?.evaluate((el) => el.textContent)
-    expect(text).toBe('Valmistavan arvostelun merkinnät+1Sensorin merkinnätfirst annotation message')
+    await expectText('.e-annotation--censoring', 'sque tellus iaculis, iaculis d')
+    await expectAnnotationMessages(['+1', 'first annotation message'])
   })
+
+  async function expectText(selector: string, text: string) {
+    const element = await page.waitForSelector(selector)
+    const textContent = await element?.evaluate((el) => el.textContent)
+    expect(textContent).toBe(text)
+  }
+  async function expectAnnotationMessages(expected: string[]) {
+    const annotationList = await page.waitForSelector('.e-annotation-list')
+    const listItems = await annotationList?.evaluate((el) =>
+      Array.from(el.querySelectorAll('li')).map((li) => li.textContent)
+    )
+    expect(listItems).toEqual(expected)
+  }
+
+  async function drag(x1: number, y1: number, x2: number, y2: number) {
+    await page.mouse.move(x1, y1)
+    await page.mouse.down()
+    await page.mouse.move(x2, y2)
+    await page.mouse.up()
+  }
 })
