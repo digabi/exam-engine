@@ -14,9 +14,9 @@ describe('testGrading.ts', () => {
     ctx = await previewExam(resolveExam('N/N.xml'))
     page = await createPage()
     await loadExam(page, ctx.url)
-    const questionId = 7
-    await page.type(
-      `.text-answer[data-question-id="${questionId}"]`,
+    await answer(1, 'Short answer message content')
+    await answer(
+      7,
       'Duis magna mi, interdum eu mattis vel, ultricies a nibh. Duis tortor tortor, imperdiet eget fermentum eget, rutrum ac lorem. Ut eu enim risus. Donec sed eros orci. Aenean vel eros lobortis, dignissim magna nec, vulputate quam. Morbi non metus consequat, pellentesque tellus iaculis, iaculis dolor. Vivamus vel feugiat neque, sit amet varius turpis. Aliquam non dapibus augue, interdum dapibus tellus. Ut at est eu ex pharetra ultricies'
     )
     await page.waitForSelector('.save-indicator-text--saved')
@@ -28,11 +28,25 @@ describe('testGrading.ts', () => {
     await ctx.close()
   })
 
-  it('renders surplus warning', async () => {
-    await expectText('.e-grading-answer-max-length-surplus', 'Vastauksen enimmäispituus 100 merkkiä ylittyy 268 %.')
+  it('renders single line answer with character without warning and annotate', async () => {
+    await expectText('.e-grading-answer-length', 'Vastauksen pituus: 25 merkkiä.')
+    await page.waitForSelector('.e-grading-answer-max-length-surplus', HIDDEN)
+    await drag(245, 140, 300, 140)
+    await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
+    await page.keyboard.type('+1p.')
+    await page.keyboard.press('Enter')
+    await expectAnnotationMessages(['+1', '+1p.'])
+  })
+
+  it('renders character count with surplus warning', async () => {
+    await navigateToAnswer('2')
+    const surplusText = 'Vastauksen enimmäispituus 100 merkkiä ylittyy 268 %.'
+    await expectText('.e-grading-answer-length', 'Vastauksen pituus: 368 merkkiä.' + surplusText)
+    await expectText('.e-grading-answer-max-length-surplus', surplusText)
   })
 
   it('creates text annotation, modify and remove it', async () => {
+    await navigateToAnswer('2')
     await drag(200, 200, 400, 200)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('first annotation message')
@@ -55,7 +69,7 @@ describe('testGrading.ts', () => {
   })
 
   async function expectText(selector: string, text: string) {
-    const element = await page.waitForSelector(selector)
+    const element = await page.waitForSelector(selector, VISIBLE)
     const textContent = await element?.evaluate((el) => el.textContent)
     expect(textContent).toBe(text)
   }
@@ -72,5 +86,13 @@ describe('testGrading.ts', () => {
     await page.mouse.down()
     await page.mouse.move(x2, y2)
     await page.mouse.up()
+  }
+  async function answer(questionId: number, text: string) {
+    await page.type(`.text-answer[data-question-id="${questionId}"]`, text)
+  }
+  async function navigateToAnswer(displayNumber: string) {
+    const navi = await page.waitForSelector('.grading-navi')
+    const button = await navi?.waitForSelector('text/' + displayNumber)
+    await button?.click()
   }
 })
