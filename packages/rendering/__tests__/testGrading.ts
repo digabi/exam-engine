@@ -53,7 +53,7 @@ describe('testGrading.ts', () => {
 
   it('creates annotations, modifies and removes them', async () => {
     await navigateToAnswer('2')
-    await drag(200, 200, 400, 200)
+    await drag(200, 200, 402, 200)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('first annotation message')
     await page.keyboard.press('Enter')
