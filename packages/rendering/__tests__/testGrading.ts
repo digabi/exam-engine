@@ -19,6 +19,11 @@ describe('testGrading.ts', () => {
       7,
       'Duis magna mi, interdum eu mattis vel, ultricies a nibh. Duis tortor tortor, imperdiet eget fermentum eget, rutrum ac lorem. Ut eu enim risus. Donec sed eros orci. Aenean vel eros lobortis, dignissim magna nec, vulputate quam. Morbi non metus consequat, pellentesque tellus iaculis, iaculis dolor. Vivamus vel feugiat neque, sit amet varius turpis. Aliquam non dapibus augue, interdum dapibus tellus. Ut at est eu ex pharetra ultricies'
     )
+    await page.click('[data-js="newEquation"]')
+    await page.keyboard.type('1/x+2x^2')
+    await page.keyboard.press('Escape')
+    // await page.type(`.text-answer[data-question-id="${7}"]`, text)
+
     await page.waitForSelector('.save-indicator-text--saved')
     await page.goto(ctx.url + '/fi-FI/normal/grading')
     await page.waitForSelector('.e-grading-answer')
@@ -29,6 +34,7 @@ describe('testGrading.ts', () => {
   })
 
   it('renders single line answer with character without warning and annotate', async () => {
+    await navigateToAnswer('1.1')
     await expectText('.e-grading-answer-length', 'Vastauksen pituus: 25 merkkiä.')
     await page.waitForSelector('.e-grading-answer-max-length-surplus', HIDDEN)
     await drag(245, 140, 300, 140)
@@ -45,7 +51,7 @@ describe('testGrading.ts', () => {
     await expectText('.e-grading-answer-max-length-surplus', surplusText)
   })
 
-  it('creates text annotation, modify and remove it', async () => {
+  it('creates annotations, modifies and removes them', async () => {
     await navigateToAnswer('2')
     await drag(200, 200, 400, 200)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
@@ -66,6 +72,14 @@ describe('testGrading.ts', () => {
     await page.mouse.move(300, 200)
     await page.click('.e-grading-answer-tooltip-remove')
     await expectAnnotationMessages(['+1'])
+
+    await drag(510, 230, 550, 250)
+    await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
+    await page.keyboard.type('img annotation msg')
+    await page.keyboard.press('Enter')
+    await page.waitForSelector('.e-grading-answer-add-annotation', HIDDEN)
+    await page.waitForSelector('.e-annotation-wrapper .e-annotation--censoring', VISIBLE)
+    await expectAnnotationMessages(['+1', 'img annotation msg'])
   })
 
   async function expectText(selector: string, text: string) {
