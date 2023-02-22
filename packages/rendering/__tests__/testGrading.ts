@@ -3,6 +3,8 @@ import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
 import { initPuppeteer, loadExam } from './puppeteerUtils'
 
+const VISIBLE = { visible: true }
+const HIDDEN = { hidden: true }
 describe('testGrading.ts', () => {
   const createPage = initPuppeteer()
   let page: Page
@@ -30,13 +32,26 @@ describe('testGrading.ts', () => {
     await expectText('.e-grading-answer-max-length-surplus', 'Vastauksen enimmäispituus 100 merkkiä ylittyy 268 %.')
   })
 
-  it('creates text annotation', async () => {
+  it('creates text annotation, modify and remove it', async () => {
     await drag(200, 200, 400, 200)
-    await page.waitForSelector('.e-grading-answer-popup')
+    await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('first annotation message')
     await page.keyboard.press('Enter')
+    await page.waitForSelector('.e-grading-answer-add-annotation', HIDDEN)
     await expectText('.e-annotation--censoring', 'sque tellus iaculis, iaculis d')
     await expectAnnotationMessages(['+1', 'first annotation message'])
+
+    await page.mouse.move(300, 200)
+    await page.waitForSelector('.e-grading-answer-tooltip', VISIBLE)
+    await page.click('.e-grading-answer-tooltip-label')
+    await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
+    await page.keyboard.sendCharacter('2')
+    await page.keyboard.press('Enter')
+    await expectAnnotationMessages(['+1', 'first annotation message2'])
+
+    await page.mouse.move(300, 200)
+    await page.click('.e-grading-answer-tooltip-remove')
+    await expectAnnotationMessages(['+1'])
   })
 
   async function expectText(selector: string, text: string) {
@@ -45,7 +60,7 @@ describe('testGrading.ts', () => {
     expect(textContent).toBe(text)
   }
   async function expectAnnotationMessages(expected: string[]) {
-    const annotationList = await page.waitForSelector('.e-annotation-list')
+    const annotationList = await page.waitForSelector('.e-annotation-list', VISIBLE)
     const listItems = await annotationList?.evaluate((el) =>
       Array.from(el.querySelectorAll('li')).map((li) => li.textContent)
     )
