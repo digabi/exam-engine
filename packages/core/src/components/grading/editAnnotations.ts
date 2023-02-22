@@ -20,6 +20,10 @@ export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
   }
 }
 
+export function getOverlappingMessages(currentAnnotations: TextAnnotation[], start: number, length: number) {
+  const parted = getOverlappingAnnotations(currentAnnotations, { startIndex: start, length, message: '' })
+  return _.compact(parted.overlapping.map((anno) => anno.message)).reduceRight((msg, str) => `${str} / ${msg}`, '')
+}
 export function toNodeLength(node: Node) {
   return node.nodeType === Node.TEXT_NODE ? node.textContent?.length : node.nodeName === 'IMG' ? 1 : 0
 }

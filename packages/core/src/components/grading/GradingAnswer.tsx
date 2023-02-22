@@ -1,7 +1,8 @@
 import React, { FormEvent, useLayoutEffect, useRef } from 'react'
-import { Annotation } from '../..'
+import { Annotation, TextAnnotation } from '../..'
 import {
   annotationFromMousePosition,
+  getOverlappingMessages,
   hasTextSelectedInAnswerText,
   imageAnnotationMouseDownInfo,
   mergeAnnotation,
@@ -193,9 +194,9 @@ export function GradingAnswer({
       showTooltip(target)
     }
   }
-  function showAnnotationPopup(rect: DOMRect) {
+  function showAnnotationPopup(rect: DOMRect, message: string) {
     annotationDataForTooltip = undefined
-    setupAnnotationPopup(rect, '')
+    setupAnnotationPopup(rect, message)
   }
   function showOldAnnotationPopup(rect: DOMRect) {
     setupAnnotationPopup(rect, annotationDataForTooltip!.message)
@@ -251,7 +252,7 @@ export function GradingAnswer({
     }
 
     if (imgAnnotationState.element) {
-      showAnnotationPopup(imgAnnotationState.element?.getBoundingClientRect()!)
+      showAnnotationPopup(imgAnnotationState.element?.getBoundingClientRect()!, '')
       return
     }
 
@@ -265,8 +266,12 @@ export function GradingAnswer({
         return
       }
       const position = textAnnotationFromRange(answerRef.current, range)
-      newAnnotationObject = { ...position, type: 'text', message: '' }
-      showAnnotationPopup(range.getBoundingClientRect())
+      const textAnnotations: TextAnnotation[] = savedAnnotations[gradingRole].filter(
+        (a) => a.type === 'text'
+      ) as TextAnnotation[]
+      const message = getOverlappingMessages(textAnnotations, position.startIndex, position.length)
+      newAnnotationObject = { ...position, type: 'text', message }
+      showAnnotationPopup(range.getBoundingClientRect(), message)
       const newAnnotations = { ...savedAnnotations }
       newAnnotations[gradingRole] = mergeAnnotation(
         answerRef.current,
