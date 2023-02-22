@@ -56,11 +56,17 @@ export function GradingAnswer({
   let windowResizeTimeout: ReturnType<typeof setTimeout>
   let tooltipPosition: DOMRect
 
-  function onAnnotationClick(e: React.MouseEvent<HTMLDivElement>) {
-    if (e.target instanceof HTMLElement && e.target.tagName === 'MARK') {
-      showTooltip(e.target)
-    } else {
-      if (annotationDataForTooltip) {
+  function onAnnotationOrListClick(e: React.MouseEvent<HTMLDivElement>) {
+    const element = e.target
+    if (element instanceof HTMLElement) {
+      if (element.tagName === 'MARK') {
+        showTooltip(element)
+      } else if (element.tagName === 'LI') {
+        const index = element.dataset.listNumber?.replace(')', '')!
+        const mark = document.querySelector<HTMLElement>(`.e-annotation[data-index="${index}"]`)!
+        showTooltip(mark)
+        mark.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      } else if (annotationDataForTooltip) {
         closeTooltip()
       }
     }
@@ -91,11 +97,10 @@ export function GradingAnswer({
   const percentage = countSurplusPercentage(characterCount, maxLength)
 
   return (
-    <div className="e-grading-answer-wrapper">
+    <div onClick={(e) => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
       <div
         className="e-grading-answer e-line-height-l e-mrg-b-1"
         ref={answerRef}
-        onClick={(e) => onAnnotationClick(e)}
         onMouseDown={(e) => onMouseDown(e)}
         onMouseOver={(e) => onMouseOver(e.target as HTMLElement)}
       />
