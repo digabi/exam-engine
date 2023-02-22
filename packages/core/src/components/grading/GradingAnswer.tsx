@@ -1,4 +1,4 @@
-import React, { FormEvent, useLayoutEffect, useRef } from 'react'
+import React, { FormEvent, useEffect, useLayoutEffect, useRef } from 'react'
 import { Annotation, TextAnnotation } from '../..'
 import {
   annotationFromMousePosition,
@@ -18,14 +18,18 @@ import {
   wrapAllImages,
 } from '../../renderAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
-import { useExamTranslation } from '../../i18n'
+import { changeLanguage, initI18n } from '../../i18n'
 import { updateLargeImageWarnings } from './largeImageDetector'
+import { I18nextProvider } from 'react-i18next'
+import { useCached } from '../../useCached'
+import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingType = 'pregrading' | 'censoring'
 export function GradingAnswer({
   answer: { type, characterCount, value },
+  language,
   isReadOnly,
   gradingRole,
   annotations,
@@ -33,6 +37,7 @@ export function GradingAnswer({
   maxLength,
 }: {
   answer: { type: 'richText' | 'text'; characterCount: number; value: string }
+  language: string
   isReadOnly: boolean
   gradingRole: GradingType
   maxLength?: number
@@ -93,63 +98,52 @@ export function GradingAnswer({
     }
   })
 
-  const { t } = useExamTranslation()
   const percentage = countSurplusPercentage(characterCount, maxLength)
+  const i18n = useCached(() => initI18n(language))
+  useEffect(changeLanguage(i18n, language))
 
   return (
-    <div onClick={(e) => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
-      <div
-        className="e-grading-answer e-line-height-l e-mrg-b-1"
-        ref={answerRef}
-        onMouseDown={(e) => onMouseDown(e)}
-        onMouseOver={(e) => onMouseOver(e.target as HTMLElement)}
-      />
-      <div className="e-font-size-xs e-grading-answer-length">
-        {t('answer-length', {
-          count: characterCount,
-        })}
-        {percentage > 0 ? (
-          <span className="e-grading-answer-max-length-surplus">
-            {t('max-length-surplus', {
-              maxLength,
-              percentage,
-            })}
+    <I18nextProvider i18n={i18n}>
+      <div onClick={(e) => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
+        <div
+          className="e-grading-answer e-line-height-l e-mrg-b-1"
+          ref={answerRef}
+          onMouseDown={(e) => onMouseDown(e)}
+          onMouseOver={(e) => onMouseOver(e.target as HTMLElement)}
+        />
+        <AnswerCharacterCounter characterCount={characterCount} percentage={percentage} maxLength={maxLength} />
+        <GradingAnswerAnnotationList
+          censoring={annotations.censoring}
+          pregrading={annotations.pregrading}
+          singleGrading={false}
+        />
+        <form
+          style={{ display: 'none' }}
+          ref={popupRef}
+          className="e-grading-answer-popup e-grading-answer-add-annotation"
+          onSubmit={(e) => onSubmit(e)}
+        >
+          <input name="message" className="e-grading-answer-add-annotation-text" type="text" ref={messageRef} />
+          <button className="e-grading-answer-add-annotation-button" type="submit" data-i18n="arpa.annotate">
+            Merkitse
+          </button>
+        </form>
+        <div
+          style={{ display: 'none' }}
+          ref={tooltipRef}
+          className="e-grading-answer-tooltip e-grading-answer-popup"
+          onMouseOver={onMouseOverTooltip}
+          onMouseOut={closeTooltip}
+        >
+          <span onClick={(e) => editExistingAnnotation(e)} className="e-grading-answer-tooltip-label">
+            tooltip text
           </span>
-        ) : (
-          ''
-        )}
+          <button onClick={(e) => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
+            ×
+          </button>
+        </div>
       </div>
-      <GradingAnswerAnnotationList
-        censoring={annotations.censoring}
-        pregrading={annotations.pregrading}
-        singleGrading={false}
-      />
-      <form
-        style={{ display: 'none' }}
-        ref={popupRef}
-        className="e-grading-answer-popup e-grading-answer-add-annotation"
-        onSubmit={(e) => onSubmit(e)}
-      >
-        <input name="message" className="e-grading-answer-add-annotation-text" type="text" ref={messageRef} />
-        <button className="e-grading-answer-add-annotation-button" type="submit" data-i18n="arpa.annotate">
-          Merkitse
-        </button>
-      </form>
-      <div
-        style={{ display: 'none' }}
-        ref={tooltipRef}
-        className="e-grading-answer-tooltip e-grading-answer-popup"
-        onMouseOver={onMouseOverTooltip}
-        onMouseOut={closeTooltip}
-      >
-        <span onClick={(e) => editExistingAnnotation(e)} className="e-grading-answer-tooltip-label">
-          tooltip text
-        </span>
-        <button onClick={(e) => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
-          ×
-        </button>
-      </div>
-    </div>
+    </I18nextProvider>
   )
 
   function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
