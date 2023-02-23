@@ -20,7 +20,15 @@ export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
   }
 }
 
-export function getOverlappingMessages(currentAnnotations: TextAnnotation[], start: number, length: number) {
+export function getOverlappingMessages(currentAnnotations: Annotation[], start: number, length: number) {
+  const textAnnotations: TextAnnotation[] = currentAnnotations.filter((a) => a.type === 'text') as TextAnnotation[]
+  return getOverlappingMessagesFromTextAnnotations(textAnnotations, start, length)
+}
+export function getOverlappingMessagesFromTextAnnotations(
+  currentAnnotations: TextAnnotation[],
+  start: number,
+  length: number
+) {
   const parted = getOverlappingAnnotations(currentAnnotations, { startIndex: start, length, message: '' })
   return _.compact(parted.overlapping.map((anno) => anno.message)).reduceRight((msg, str) => `${str} / ${msg}`, '')
 }
