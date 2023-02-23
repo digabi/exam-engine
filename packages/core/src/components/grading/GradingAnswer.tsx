@@ -126,6 +126,15 @@ export function GradingAnswer({
           <button className="e-grading-answer-add-annotation-button" type="submit" data-i18n="arpa.annotate">
             Merkitse
           </button>
+          <button
+            className="e-grading-answer-close-popup"
+            onClick={(e) => {
+              e.preventDefault()
+              hideAnnotationPopupAndRefresh()
+            }}
+          >
+            ×
+          </button>
         </form>
         <div
           style={{ display: 'none' }}
@@ -200,6 +209,8 @@ export function GradingAnswer({
     setupAnnotationPopup(rect, annotationDataForTooltip!.message)
   }
   function setupAnnotationPopup(rect: DOMRect, message: string) {
+    // Could be active from previous popup
+    window.removeEventListener('keydown', onKeyUpInAnnotationPopup)
     Object.assign(popupRef.current!.style, showAndPositionElement(rect, answerRef.current!))
     const inputElement = messageRef.current!
     inputElement.value = message
@@ -217,7 +228,6 @@ export function GradingAnswer({
     toggle(popupRef.current, false)
     renderAnswerWithAnnotations(savedAnnotations)
   }
-
   function onAnswerMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     if (isReadOnly) {
       return
