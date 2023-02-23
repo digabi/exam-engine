@@ -1,0 +1,167 @@
+.e-grading-answer-wrapper {
+  background: #fff;
+  position: relative;
+  padding: 20px;
+
+  .e-grading-answer-popup {
+    background: #fff;
+    box-shadow: 0 0 7px 0 rgba(74, 144, 226, 0.5);
+    position: absolute;
+    padding: 2px 8px;
+    color: #333;
+    border-radius: 5px;
+    z-index: 300;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+
+    input[type="text"] {
+      background: white;
+      border: 2px solid #e6e6e6;
+      padding: 3px;
+      margin-right: 4px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #333333;
+    }
+
+    .e-grading-answer-add-annotation-button {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+      background: #006ed2;
+      color: white;
+      padding: 0 8px;
+      border: 0;
+      margin-left: 5px;
+      border-radius: 3px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    }
+  }
+  .e-grading-answer-add-annotation {
+    padding: 8px 10px;
+  }
+}
+.e-grading-answer {
+  word-break: break-word;
+  background: #fff;
+  .e-annotation-wrapper {
+    line-height: 0;
+    sup {
+      white-space: nowrap;
+    }
+  }
+
+  .full-size-image {
+    position: relative;
+    user-select: none;
+    background: #fffa;
+    line-height: 1;
+
+    a {
+      position: absolute; bottom: 0;
+
+      [lang="fi-FI"] &:after {
+        content: 'Näytä kuva täysikokoisena'
+      }
+      [lang="sv-FI"] &:after {
+        content: 'Visa bilden i full storlek'
+      }
+      font-weight: bold;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  img,
+  .e-annotation-wrapper .e-annotation {
+    cursor: crosshair;
+    -moz-user-drag: -moz-none;
+    -khtml-user-drag: none;
+    -webkit-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  // LaTeX formulas
+  img[alt] {
+    vertical-align: middle;
+  }
+  mark {
+  }
+}
+.e-grading-answer-tooltip {
+  background: #fff;
+  position: absolute;
+}
+.e-grading-answer-tooltip-remove {
+  display: none;
+}
+.editable .e-grading-answer-tooltip-remove {
+  display: initial;
+  background: none;
+  border: none;
+  font-size: 22px;
+  padding: 0 5px;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  vertical-align: top;
+  &:hover {
+    color: #ce0000;
+  }
+}
+.e-grading-answer-tooltip-label {
+  margin: 0 5px;
+  border: 1px solid transparent;
+  padding: 0 4px;
+  .editable &:hover {
+    border: 1px dashed #aaa;
+    cursor: pointer;
+  }
+}
+.e-grading-answer-length {
+  color: gray;
+}
+.e-grading-answer-max-length-surplus {
+  color: #ce0000;
+  font-weight: 600;
+  margin-left: 1ex;
+}
+.e-annotation-list li {
+  &:hover {
+    cursor: pointer;
+    color: #000;
+  }
+}
+.e-grading-answer-close-popup {
+  &:hover {
+    color: #ce0000;
+  }
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 50px;
+  line-height: 0;
+  text-align: center;
+  width: 23px;
+  height: 23px;
+  font-size: 20px;
+  display: inline-block;
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  cursor: pointer;
+  margin-left: -11px;
+  margin-bottom: -11px;
+}
