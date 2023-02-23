@@ -135,7 +135,7 @@
   color: gray;
 }
 .e-grading-answer-max-length-surplus {
-  color: red;
+  color: #ce0000;
   font-weight: 600;
   margin-left: 1ex;
 }
@@ -146,7 +146,10 @@
   }
 }
 .e-grading-answer-close-popup {
-  background: none;
+  &:hover {
+    color: #ce0000;
+  }
+  background: #fff;
   border: 1px solid #aaa;
   border-radius: 50px;
   line-height: 0;
@@ -155,9 +158,10 @@
   height: 23px;
   font-size: 20px;
   display: inline-block;
-  vertical-align: middle;
   position: absolute;
   bottom: 100%;
   left: 100%;
   cursor: pointer;
+  margin-left: -11px;
+  margin-bottom: -11px;
 }
