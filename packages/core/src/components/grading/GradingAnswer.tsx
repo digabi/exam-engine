@@ -57,7 +57,7 @@ export function GradingAnswer({
   } = { start: undefined, element: undefined, img: undefined }
   let isEditAnnotationPopupVisible = false
   let annotationDataForTooltip: { index: number; role: GradingRole; message: string } | undefined
-  let tooltipPosition: DOMRect
+  let annotationPositionForPopup: DOMRect
   let hideTooltipTimeout: ReturnType<typeof setTimeout>
   let windowResizeTimeout: ReturnType<typeof setTimeout>
 
@@ -80,7 +80,7 @@ export function GradingAnswer({
   function editExistingAnnotation(e: React.MouseEvent<HTMLSpanElement>) {
     if ((e.target as HTMLElement).closest('.editable')) {
       toggle(tooltipRef.current, false)
-      showExistingAnnotationPopup(tooltipPosition)
+      showExistingAnnotationPopup(annotationPositionForPopup)
     }
   }
 
@@ -184,8 +184,8 @@ export function GradingAnswer({
     const tooltip = tooltipRef.current!
     const { type, listIndex, message } = target.dataset
     tooltip.classList.toggle('editable', !isReadOnly && type === gradingRole)
-    tooltipPosition = target.getBoundingClientRect()
-    Object.assign(tooltip.style, showAndPositionElement(tooltipPosition, answerRef.current!))
+    annotationPositionForPopup = target.getBoundingClientRect()
+    showAndPositionElement(annotationPositionForPopup, answerRef.current!, tooltip)
     tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = message || '–'
     annotationDataForTooltip = { index: Number(listIndex), role: type as GradingRole, message: message || '' }
     answerRef.current!.addEventListener('mouseout', onMouseOutFromTooltip)
@@ -211,7 +211,7 @@ export function GradingAnswer({
   function setupAnnotationPopup(rect: DOMRect, message: string) {
     // Could be active from previous popup
     window.removeEventListener('keydown', onKeyUpInAnnotationPopup)
-    Object.assign(popupRef.current!.style, showAndPositionElement(rect, answerRef.current!))
+    showAndPositionElement(rect, answerRef.current!, popupRef.current!)
     const inputElement = messageRef.current!
     inputElement.value = message
     inputElement.focus()
