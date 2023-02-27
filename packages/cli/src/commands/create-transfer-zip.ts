@@ -29,7 +29,9 @@ export default async function createTransferZip({
     const type = (examVersion.attr('exam-type')?.value() ?? 'normal') as ExamType
     const language = examVersion.attr('lang')?.value()!
     const localizedXml = localize(xml, language, type)
-    const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment))
+    const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
+      removeCorrectAnswers: false,
+    })
     const typeSuffix = type === 'visually-impaired' ? '_vi' : type === 'hearing-impaired' ? '_hi' : ''
     const outputFilename = path.resolve(outdir, `${examName(exam)}_${language}${typeSuffix}_transfer.zip`)
 
