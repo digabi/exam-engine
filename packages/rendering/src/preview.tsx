@@ -15,6 +15,7 @@ import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 import createRouter from 'router5'
 import { Link, RouterProvider, useRoute, useRouter } from 'react-router5'
 import browserPlugin from 'router5-plugin-browser'
+import Grading from './PreviewGrading'
 
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }
 
@@ -28,6 +29,7 @@ const routes = [
   { name: 'grading-instructions', path: '/:language/:type/grading-instructions' },
   { name: 'exam', path: '/:language/:type/exam' },
   { name: 'results', path: '/:language/:type/results' },
+  { name: 'grading', path: '/:language/:type/grading' },
 ]
 
 const router = createRouter(routes, {
@@ -115,6 +117,7 @@ const Toolbar: React.FunctionComponent<{
       <NavigateTo routeName="attachments" title="Aineisto" />
       <NavigateTo routeName="results" title="Suorituskopio" />
       <NavigateTo routeName="grading-instructions" title="HVP" />
+      <NavigateTo routeName="grading" title="Arvostelu" />
     </ol>
   </div>
 )
@@ -170,6 +173,8 @@ const App: React.FunctionComponent<{
         <Attachments {...examProps} />
       ) : route.name === 'grading-instructions' ? (
         <GradingInstructions {...commonProps} />
+      ) : route.name === 'grading' ? (
+        <Grading {...resultsProps} />
       ) : (
         <Exam {...examProps} />
       )}

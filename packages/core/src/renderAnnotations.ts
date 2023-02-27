@@ -1,56 +1,91 @@
-import { Annotation, ImageAnnotation, TextAnnotation } from './types/Score'
+import { Annotation, ImageAnnotation, LineAnnotation, RectAnnotation, TextAnnotation } from './types/Score'
 import { createElement } from './dom-utils'
 import classNames from 'classnames'
+
+const messageLengthThreshold = 5
 
 export function renderAnnotations(
   element: HTMLElement,
   pregradingAnnotations: Annotation[],
-  censoringAnnotations: Annotation[]
+  censoringAnnotations: Annotation[],
+  showTitle = true
 ): void {
   const annotations = [...pregradingAnnotations, ...censoringAnnotations]
   const annotationsWithMessages = annotations.filter((a) => a.message)
 
-  for (const annotation of annotations) {
+  for (const [i, annotation] of annotations.entries()) {
     const type = pregradingAnnotations.includes(annotation) ? 'pregrading' : 'censoring'
     const index = annotationsWithMessages.indexOf(annotation) + 1 || undefined
-
+    const listIndex = type === 'pregrading' ? i : i - pregradingAnnotations.length
     switch (annotation.type) {
       case 'line':
       case 'rect':
-        renderImageAnnotation(element, annotation, type, index)
+        renderImageAnnotation(element, annotation, type, listIndex, index, showTitle)
         break
       default:
-        renderTextAnnotation(element, annotation, type, index)
+        renderTextAnnotation(element, annotation, type, listIndex, index, showTitle)
     }
   }
 }
 
-function renderImageAnnotation(
-  element: HTMLElement,
+export function updateImageAnnotationMarkSize(mark: HTMLElement, annotation: LineAnnotation | RectAnnotation): void {
+  const style = mark.style
+  const pct = (n: number) => `${n * 100}%`
+  if (annotation.type === 'rect') {
+    style.left = pct(annotation.x)
+    style.top = pct(annotation.y)
+    style.right = pct(1 - (annotation.x + annotation.width))
+    style.bottom = pct(1 - (annotation.y + annotation.height))
+  } else {
+    style.left = pct(annotation.x1)
+    style.top = pct(annotation.y1)
+    style.right = pct(1 - annotation.x2)
+    style.bottom = pct(1 - annotation.y2)
+  }
+}
+
+function getWrapper(image: HTMLImageElement) {
+  const parent = image.parentElement!
+
+  if (parent instanceof HTMLSpanElement) {
+    return parent
+  }
+
+  const wrapper = createElement('span', { className: 'e-annotation-wrapper' })
+  parent.insertBefore(wrapper, image)
+  wrapper.appendChild(image)
+
+  return wrapper
+}
+
+export function wrapAllImages(answerElement: HTMLElement) {
+  answerElement.querySelectorAll('img').forEach(getWrapper)
+}
+
+export function renderImageAnnotation(
+  answerElement: HTMLElement,
   annotation: ImageAnnotation,
   type: 'pregrading' | 'censoring',
-  index?: number
-): void {
+  listIndex: number,
+  index: number | undefined,
+  showTitle: boolean
+): HTMLElement {
   const { attachmentIndex } = annotation
-  const image = element.querySelectorAll('img')[attachmentIndex]
-
-  const wrapper = getWrapper()
+  const image = answerElement.querySelectorAll('img')[attachmentIndex]
+  const title = showTitle ? annotation.message : ''
+  return renderImageAnnotationByImage(image, title, annotation, type, listIndex, index)
+}
+export function renderImageAnnotationByImage(
+  image: HTMLImageElement,
+  title: string,
+  annotation: ImageAnnotation,
+  type: 'pregrading' | 'censoring',
+  listIndex: number,
+  index?: number
+): HTMLElement {
+  const wrapper = getWrapper(image)
   const shape = mkShape()
   wrapper.appendChild(shape)
-
-  function getWrapper() {
-    const parent = image.parentElement!
-
-    if (parent instanceof HTMLSpanElement) {
-      return parent
-    }
-
-    const wrapper = createElement('span', { className: 'e-annotation-wrapper' })
-    parent.insertBefore(wrapper, image)
-    wrapper.appendChild(image)
-
-    return wrapper
-  }
 
   function mkShape() {
     const mark = createElement('mark', {
@@ -58,37 +93,31 @@ function renderImageAnnotation(
         'e-annotation--pregrading': type === 'pregrading',
         'e-annotation--censoring': type === 'censoring',
       }),
-      title: annotation.message,
+      title,
+      'data-message': annotation.message,
+      'data-list-index': listIndex.toString(),
+      'data-index': String(index) || '',
+      'data-type': type,
     })
 
-    const style = mark.style
-    const pct = (n: number) => `${n * 100}%`
-
-    if (annotation.type === 'rect') {
-      style.left = pct(annotation.x)
-      style.top = pct(annotation.y)
-      style.right = pct(1 - (annotation.x + annotation.width))
-      style.bottom = pct(1 - (annotation.y + annotation.height))
-    } else {
-      style.left = pct(annotation.x1)
-      style.top = pct(annotation.y1)
-      style.right = pct(1 - annotation.x2)
-      style.bottom = pct(1 - annotation.y2)
-    }
+    updateImageAnnotationMarkSize(mark, annotation)
 
     if (index) {
-      mark.appendChild(createSup(index, 'shape'))
+      mark.appendChild(createSup(index, 'shape', annotation.message))
     }
 
     return mark
   }
+  return shape
 }
 
 function renderTextAnnotation(
   rootElement: HTMLElement,
   annotation: TextAnnotation,
   type: 'pregrading' | 'censoring',
-  index?: number
+  listIndex: number,
+  index: number | undefined,
+  showTitle: boolean
 ): void {
   const { startIndex, length: annotationLength } = annotation
   return go(rootElement.childNodes[0], 0, annotationLength)
@@ -122,7 +151,7 @@ function renderTextAnnotation(
       // We know that we're at the last mark of this annotation.
       // Render the superscript index after it, if necessary.
       else if (index) {
-        mark.appendChild(createSup(index, 'text'))
+        mark.appendChild(createSup(index, 'text', annotation.message))
       }
     } else {
       if (node instanceof Text && currentIndex + length(node) > startIndex) {
@@ -185,7 +214,11 @@ function renderTextAnnotation(
         'e-annotation--pregrading': type === 'pregrading',
         'e-annotation--censoring': type === 'censoring',
       }),
-      title: annotation.message,
+      title: showTitle ? annotation.message : '',
+      'data-message': annotation.message,
+      'data-list-index': listIndex.toString(),
+      'data-index': String(index) || '',
+      'data-type': type,
     })
   }
 
@@ -205,15 +238,10 @@ function renderTextAnnotation(
   }
 }
 
-function createSup(index: number, type: 'text' | 'shape') {
-  const content = `${index})`
-  const children = type === 'text' ? [] : content
-  return createElement(
-    'sup',
-    {
-      className: `e-annotation__index e-annotation__index--${type}`,
-      'data-content': content,
-    },
-    ...children
-  )
+function createSup(index: number, type: 'text' | 'shape', message: string) {
+  return createElement('sup', {
+    className: `e-annotation__index e-annotation__index--${type}`,
+    'data-content': message.length > messageLengthThreshold ? `${index})` : message,
+    'data-message': message,
+  })
 }
