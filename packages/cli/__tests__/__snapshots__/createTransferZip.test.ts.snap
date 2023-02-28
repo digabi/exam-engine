@@ -2,6 +2,7 @@
 
 exports[`ee create-transfer-zip creates hi transfer zip 1`] = `
 Array [
+  "7_hvp.jpg",
   "maxmoritz.png",
   "7.2.jpg",
   "7.4.jpg",
@@ -1317,6 +1318,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
 
 exports[`ee create-transfer-zip creates transfer zip 1`] = `
 Array [
+  "7_hvp.jpg",
   "audio-test.ogg",
   "1.ogg",
   "1.1.ogg",
