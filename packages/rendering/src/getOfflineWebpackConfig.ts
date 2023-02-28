@@ -59,29 +59,34 @@ export function getOfflineWebpackConfig(
         'process.env.MEDIA_VERSION': JSON.stringify(options.mediaVersion),
       }),
       new CssMinimizerPlugin(),
-      new HtmlWebpackPlugin({
-        filename: 'index.html',
-        language: result.language,
-        template: path.resolve(__dirname, '../public/offline.html'),
-        title: result.title!,
-        backgroundColor: '#e0f4fe',
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'grading-instructions.html',
-        language: result.language,
-        template: path.resolve(__dirname, '../public/offline.html'),
-        title: result.title!,
-        backgroundColor: '#e0f4fe',
-        publicPath: './',
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'attachments/index.html',
-        language: result.language,
-        template: path.resolve(__dirname, '../public/offline.html'),
-        title: result.title!,
-        backgroundColor: '#f0f0f0',
-        publicPath: '../',
-      }),
+      ...(options.type === 'offline'
+        ? [
+            new HtmlWebpackPlugin({
+              filename: 'index.html',
+              language: result.language,
+              template: path.resolve(__dirname, '../public/offline.html'),
+              title: result.title!,
+              backgroundColor: '#e0f4fe',
+            }),
+            new HtmlWebpackPlugin({
+              filename: 'attachments/index.html',
+              language: result.language,
+              template: path.resolve(__dirname, '../public/offline.html'),
+              title: result.title!,
+              backgroundColor: '#f0f0f0',
+              publicPath: '../',
+            }),
+          ]
+        : [
+            new HtmlWebpackPlugin({
+              filename: 'grading-instructions.html',
+              language: result.language,
+              template: path.resolve(__dirname, '../public/offline.html'),
+              title: result.title!,
+              backgroundColor: '#e0f4fe',
+              publicPath: './',
+            }),
+          ]),
       new HTMLInlineCSSWebpackPlugin(),
     ],
   })
