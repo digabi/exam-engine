@@ -46,6 +46,13 @@
     padding: 8px 10px;
   }
 }
+.e-grading-answer[lang="fi-FI"] .full-size-image a:after {
+  content: 'Näytä kuva täysikokoisena'
+}
+.e-grading-answer[lang="sv-FI"] .full-size-image a:after {
+  content: 'Visa bilden i full storlek'
+}
+
 .e-grading-answer {
   word-break: break-word;
   background: #fff;
@@ -64,17 +71,9 @@
 
     a {
       position: absolute; bottom: 0;
-
-      [lang="fi-FI"] &:after {
-        content: 'Näytä kuva täysikokoisena'
-      }
-      [lang="sv-FI"] &:after {
-        content: 'Visa bilden i full storlek'
-      }
       font-weight: bold;
     }
   }
-
   img {
     max-width: 100%;
   }

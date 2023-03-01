@@ -6,13 +6,14 @@ import { withCommonExamContext } from '@digabi/exam-engine-core/dist/components/
 
 function PreviewGrading() {
   const { answersByQuestionId } = useContext(ResultsContext)
-  const language = 'fi-FI'
   const answerIds = Object.keys(answersByQuestionId).map(Number)
   if (answerIds.length === 0) {
     return <div>No answers</div>
   }
   const [answerId, setAnswerId] = useState<number>(answerIds[0])
 
+  type Language = 'fi-FI' | 'sv-FI'
+  const [language, setLanguage] = useState<Language>('fi-FI')
   const annotationsStorage = useRef<{ [k: string]: { pregrading: Annotation[]; censoring: Annotation[] } }>(
     Object.fromEntries(
       answerIds.map((id) => [
@@ -57,21 +58,30 @@ function PreviewGrading() {
     annotationsStorage.current[answerId] = annotations
     setAnnotations({ ...annotationsStorage.current[answerId] })
   }
-
   return (
     <main className="e-exam">
-      <div className="grading-navi">
-        {answerIds.map((id) =>
-          id === answerId ? (
-            <span key={id} className="grading-navi-item">
-              {answersByQuestionId[id].displayNumber}
-            </span>
-          ) : (
-            <a className="grading-navi-item" href="" onClick={(e) => selectQuestion(e, id)} key={id}>
-              {answersByQuestionId[id].displayNumber}
-            </a>
-          )
-        )}
+      <div className="grading-header">
+        <div className="grading-navi">
+          {answerIds.map((id) =>
+            id === answerId ? (
+              <span key={id} className="grading-navi-item">
+                {answersByQuestionId[id].displayNumber}
+              </span>
+            ) : (
+              <a className="grading-navi-item" href="" onClick={(e) => selectQuestion(e, id)} key={id}>
+                {answersByQuestionId[id].displayNumber}
+              </a>
+            )
+          )}
+        </div>
+        <div className="language-settings">
+          <a className="grading-navi-item" href="" onClick={() => setLanguage('fi-FI')}>
+            FI
+          </a>
+          <a className="grading-navi-item" href="" onClick={() => setLanguage('sv-FI')}>
+            SV
+          </a>
+        </div>
       </div>
 
       <GradingAnswer

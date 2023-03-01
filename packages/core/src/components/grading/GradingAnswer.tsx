@@ -90,6 +90,7 @@ export function GradingAnswer({
       toggle(tooltipRef.current, false)
       toggle(popupRef.current, false)
       renderAnswerWithAnnotations(savedAnnotations)
+      answerRef.current.setAttribute('lang', language)
     }
 
     window.onresize = () => {
