@@ -96,7 +96,7 @@ export function renderImageAnnotationByImage(
       title,
       'data-message': annotation.message,
       'data-list-index': listIndex.toString(),
-      'data-index': String(index) || '',
+      'data-index': index ? String(index) : '',
       'data-type': type,
     })
 
@@ -217,7 +217,7 @@ function renderTextAnnotation(
       title: showTitle ? annotation.message : '',
       'data-message': annotation.message,
       'data-list-index': listIndex.toString(),
-      'data-index': String(index) || '',
+      'data-index': index ? String(index) : '',
       'data-type': type,
     })
   }
