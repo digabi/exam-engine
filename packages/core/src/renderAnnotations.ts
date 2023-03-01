@@ -89,15 +89,17 @@ export function renderImageAnnotationByImage(
 
   function mkShape() {
     const mark = createElement('mark', {
-      className: classNames('e-annotation e-annotation--shape', {
-        'e-annotation--pregrading': type === 'pregrading',
-        'e-annotation--censoring': type === 'censoring',
-      }),
-      title,
-      'data-message': annotation.message,
-      'data-list-index': listIndex.toString(),
-      'data-index': index ? String(index) : '',
-      'data-type': type,
+      ...{
+        className: classNames('e-annotation e-annotation--shape', {
+          'e-annotation--pregrading': type === 'pregrading',
+          'e-annotation--censoring': type === 'censoring',
+        }),
+        title,
+        'data-list-index': String(listIndex),
+        'data-type': type,
+      },
+      ...(index && { 'data-index': String(index) }),
+      ...(annotation.message && { 'data-message': annotation.message }),
     })
 
     updateImageAnnotationMarkSize(mark, annotation)
@@ -210,15 +212,17 @@ function renderTextAnnotation(
 
   function mkMark(): HTMLElement {
     return createElement('mark', {
-      className: classNames('e-annotation', {
-        'e-annotation--pregrading': type === 'pregrading',
-        'e-annotation--censoring': type === 'censoring',
-      }),
-      title: showTitle ? annotation.message : '',
-      'data-message': annotation.message,
-      'data-list-index': listIndex.toString(),
-      'data-index': index ? String(index) : '',
-      'data-type': type,
+      ...{
+        className: classNames('e-annotation', {
+          'e-annotation--pregrading': type === 'pregrading',
+          'e-annotation--censoring': type === 'censoring',
+        }),
+        title: showTitle ? annotation.message : '',
+        'data-list-index': String(listIndex),
+        'data-type': type,
+      },
+      ...(index && { 'data-index': String(index) }),
+      ...(annotation.message && { 'data-message': annotation.message }),
     })
   }
 

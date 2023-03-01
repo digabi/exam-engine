@@ -158,8 +158,7 @@ function getOverlappingAnnotations(
 
 export function getImageStartIndex($image: Element, $answerText: Element) {
   const range = document.createRange()
-  const referenceNode = $image
-  range.selectNode(referenceNode)
+  range.selectNode($image)
   return textAnnotationFromRange($answerText, range).startIndex
 }
 
