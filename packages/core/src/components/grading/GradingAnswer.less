@@ -45,6 +45,12 @@
   .e-grading-answer-add-annotation {
     padding: 8px 10px;
   }
+  .e-annotation-list li {
+    &:hover {
+      cursor: pointer;
+      color: #000;
+    }
+  }
 }
 .e-grading-answer[lang="fi-FI"] .full-size-image a:after {
   content: 'Näytä kuva täysikokoisena'
@@ -137,12 +143,6 @@
   color: #ce0000;
   font-weight: 600;
   margin-left: 1ex;
-}
-.e-annotation-list li {
-  &:hover {
-    cursor: pointer;
-    color: #000;
-  }
 }
 .e-grading-answer-close-popup {
   &:hover {
