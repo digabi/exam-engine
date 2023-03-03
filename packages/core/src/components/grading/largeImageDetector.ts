@@ -13,7 +13,7 @@ export async function waitUntilImagesDone() {
   throw Error('Images not loaded')
 }
 export function updateLargeImageWarnings(answer: Element) {
-  const images = answer.querySelectorAll('img')
+  const images = answer?.querySelectorAll('img') || []
   remainingImages = images.length
   images.forEach((img) => {
     if (img.complete) {
