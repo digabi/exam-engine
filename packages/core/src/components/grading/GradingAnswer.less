@@ -3,48 +3,6 @@
   position: relative;
   padding: 20px;
 
-  .e-grading-answer-popup {
-    background: #fff;
-    box-shadow: 0 0 7px 0 rgba(74, 144, 226, 0.5);
-    position: absolute;
-    padding: 2px 8px;
-    color: #333;
-    border-radius: 5px;
-    z-index: 300;
-    font-size: 16px;
-    font-weight: 400;
-    white-space: nowrap;
-
-    input[type="text"] {
-      background: white;
-      border: 2px solid #e6e6e6;
-      padding: 3px;
-      margin-right: 4px;
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 16px;
-      font-weight: 300;
-      color: #333333;
-    }
-
-    .e-grading-answer-add-annotation-button {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 26px;
-      text-align: center;
-      background: #006ed2;
-      color: white;
-      padding: 0 8px;
-      border: 0;
-      margin-left: 5px;
-      border-radius: 3px;
-      cursor: pointer;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-    }
-  }
-  .e-grading-answer-add-annotation {
-    padding: 8px 10px;
-  }
   .e-annotation-list li {
     &:hover {
       cursor: pointer;
@@ -57,6 +15,47 @@
   .e-annotation--pregrading .e-annotation__index{
     color: #f12228
   }
+}
+.e-grading-answer-popup {
+  background: #fff;
+  box-shadow: 0 0 7px 0 rgba(74, 144, 226, 0.5);
+  position: absolute;
+  padding: 2px 8px;
+  color: #333;
+  border-radius: 5px;
+  z-index: 300;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+
+  input[type="text"] {
+    background: white;
+    border: 2px solid #e6e6e6;
+    padding: 3px;
+    margin-right: 4px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #333333;
+  }
+}
+.e-grading-answer-add-annotation-button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  background: #006ed2;
+  color: white;
+  padding: 0 8px;
+  border: 0;
+  margin-left: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+.e-grading-answer-add-annotation {
+  padding: 8px 10px;
 }
 .e-grading-answer[lang="fi-FI"] .full-size-image a:after {
   content: 'Näytä kuva täysikokoisena'
