@@ -8,7 +8,7 @@ exports[`<AnnotationList /> fi-FI filters empty annotations 1`] = `
     className="e-column e-column--6"
   >
     <h5>
-      Valmistavan arvostelun merkinnät
+      Alustavan arvostelun merkinnät (opettaja)
     </h5>
     <ol
       className="e-list-data e-pad-l-0 e-font-size-s"
@@ -72,7 +72,7 @@ exports[`<AnnotationList /> fi-FI renders with only censoring annotations 1`] = 
     className="e-column e-column--6"
   >
     <h5>
-      Valmistavan arvostelun merkinnät
+      Alustavan arvostelun merkinnät (opettaja)
     </h5>
     <ol
       className="e-list-data e-pad-l-0 e-font-size-s"
@@ -105,7 +105,7 @@ exports[`<AnnotationList /> fi-FI renders with only pregrading annotations 1`] =
     className="e-column e-column--6"
   >
     <h5>
-      Valmistavan arvostelun merkinnät
+      Alustavan arvostelun merkinnät (opettaja)
     </h5>
     <ol
       className="e-list-data e-pad-l-0 e-font-size-s"
@@ -138,7 +138,7 @@ exports[`<AnnotationList /> fi-FI renders with pregrading and censoring annotati
     className="e-column e-column--6"
   >
     <h5>
-      Valmistavan arvostelun merkinnät
+      Alustavan arvostelun merkinnät (opettaja)
     </h5>
     <ol
       className="e-list-data e-pad-l-0 e-font-size-s"
@@ -177,7 +177,7 @@ exports[`<AnnotationList /> sv-FI renders with pregrading and censoring annotati
     className="e-column e-column--6"
   >
     <h5>
-      Preliminära bedömningens anteckningar
+      Preliminära bedömningens anteckningar (lärare)
     </h5>
     <ol
       className="e-list-data e-pad-l-0 e-font-size-s"
