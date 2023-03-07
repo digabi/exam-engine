@@ -39,7 +39,7 @@ export const fi_FI = {
     clear: 'Poista valinta.',
   },
   grading: {
-    'pregrading-annotations': 'Valmistavan arvostelun merkinnät',
+    'pregrading-annotations': 'Alustavan arvostelun merkinnät (opettaja)',
     'censor-annotations': 'Sensorin merkinnät',
   },
   references: {

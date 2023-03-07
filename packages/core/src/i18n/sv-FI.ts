@@ -28,7 +28,7 @@ export const sv_FI: Translations = {
     clear: 'Avmarkera alternativet.',
   },
   grading: {
-    'pregrading-annotations': 'Preliminära bedömningens anteckningar',
+    'pregrading-annotations': 'Preliminära bedömningens anteckningar (lärare)',
     'censor-annotations': 'Censorns anteckningar',
   },
   references: {
