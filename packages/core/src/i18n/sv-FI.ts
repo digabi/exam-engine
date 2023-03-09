@@ -35,6 +35,7 @@ export const sv_FI: Translations = {
     'round.1': '1.c',
     'round.2': '2.c',
     'round.3': '3.c',
+    annotate: 'Markera',
   },
   references: {
     heading: 'Källor',

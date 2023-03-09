@@ -18,24 +18,16 @@ import {
   wrapAllImages,
 } from '../../renderAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
-import { changeLanguage, initI18n } from '../../i18n'
+import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { updateLargeImageWarnings } from './largeImageDetector'
 import { I18nextProvider } from 'react-i18next'
 import { useCached } from '../../useCached'
 import { AnswerCharacterCounter } from './AnswerCharacterCounter'
-
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingRole = 'pregrading' | 'censoring'
-export function GradingAnswer({
-  answer: { type, characterCount, value },
-  language,
-  isReadOnly,
-  gradingRole,
-  annotations,
-  saveAnnotations,
-  maxLength,
-}: {
+
+type GradingAnswerProps = {
   answer: { type: 'richText' | 'text'; characterCount: number; value: string }
   language: string
   isReadOnly: boolean
@@ -43,7 +35,27 @@ export function GradingAnswer({
   maxLength?: number
   annotations: Annotations
   saveAnnotations: (annotations: Annotations) => void
-}) {
+}
+
+export function GradingAnswer(props: GradingAnswerProps) {
+  const i18n = useCached(() => initI18n(props.language))
+  useEffect(changeLanguage(i18n, props.language))
+  return (
+    <I18nextProvider i18n={i18n}>
+      <GradingAnswerWithTranslations {...props} />
+    </I18nextProvider>
+  )
+}
+
+function GradingAnswerWithTranslations({
+  answer: { type, characterCount, value },
+  language,
+  isReadOnly,
+  gradingRole,
+  annotations,
+  saveAnnotations,
+  maxLength,
+}: GradingAnswerProps) {
   const answerRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLFormElement>(null)
   const messageRef = useRef<HTMLInputElement>(null)
@@ -99,60 +111,54 @@ export function GradingAnswer({
     }
   })
 
-  const i18n = useCached(() => initI18n(language))
-  useEffect(changeLanguage(i18n, language))
-
+  const { t } = useExamTranslation()
   return (
-    <I18nextProvider i18n={i18n}>
-      <div onClick={(e) => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
-        <div
-          className="e-grading-answer e-line-height-l e-mrg-b-1"
-          ref={answerRef}
-          onMouseDown={(e) => onAnswerMouseDown(e)}
-          onMouseOver={(e) => onMouseOverAnnotation(e.target as HTMLElement)}
-        />
-        <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />
-        <GradingAnswerAnnotationList
-          censoring={annotations.censoring}
-          pregrading={annotations.pregrading}
-          singleGrading={false}
-        />
-        <form
-          style={{ display: 'none' }}
-          ref={popupRef}
-          className="e-grading-answer-popup e-grading-answer-add-annotation"
-          onSubmit={(e) => onSubmitAnnotation(e)}
+    <div onClick={(e) => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
+      <div
+        className="e-grading-answer e-line-height-l e-mrg-b-1"
+        ref={answerRef}
+        onMouseDown={(e) => onAnswerMouseDown(e)}
+        onMouseOver={(e) => onMouseOverAnnotation(e.target as HTMLElement)}
+      />
+      <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />
+      <GradingAnswerAnnotationList
+        censoring={annotations.censoring}
+        pregrading={annotations.pregrading}
+        singleGrading={false}
+      />
+      <form
+        style={{ display: 'none' }}
+        ref={popupRef}
+        className="e-grading-answer-popup e-grading-answer-add-annotation"
+        onSubmit={(e) => onSubmitAnnotation(e)}
+      >
+        <input name="message" className="e-grading-answer-add-annotation-text" type="text" ref={messageRef} />
+        <button className="e-grading-answer-add-annotation-button" type="submit" data-i18n="arpa.annotate">
+          {t('grading.annotate')}
+        </button>
+        <button
+          className="e-grading-answer-close-popup"
+          onClick={(e) => {
+            e.preventDefault()
+            hideAnnotationPopupAndRefresh()
+          }}
         >
-          <input name="message" className="e-grading-answer-add-annotation-text" type="text" ref={messageRef} />
-          <button className="e-grading-answer-add-annotation-button" type="submit" data-i18n="arpa.annotate">
-            Merkitse
-          </button>
-          <button
-            className="e-grading-answer-close-popup"
-            onClick={(e) => {
-              e.preventDefault()
-              hideAnnotationPopupAndRefresh()
-            }}
-          >
-            ×
-          </button>
-        </form>
-        <div
-          style={{ display: 'none' }}
-          ref={tooltipRef}
-          className="e-grading-answer-tooltip e-grading-answer-popup"
-          onMouseOver={onMouseOverTooltip}
-          onMouseOut={hideTooltip}
-        >
-          <span onClick={(e) => editExistingAnnotation(e)} className="e-grading-answer-tooltip-label">
-            tooltip text
-          </span>
-          <button onClick={(e) => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
-            ×
-          </button>
-        </div>
+          ×
+        </button>
+      </form>
+      <div
+        style={{ display: 'none' }}
+        ref={tooltipRef}
+        className="e-grading-answer-tooltip e-grading-answer-popup"
+        onMouseOver={onMouseOverTooltip}
+        onMouseOut={hideTooltip}
+      >
+        <span onClick={(e) => editExistingAnnotation(e)} className="e-grading-answer-tooltip-label"></span>
+        <button onClick={(e) => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
+          ×
+        </button>
       </div>
-    </I18nextProvider>
+    </div>
   )
 
   function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {

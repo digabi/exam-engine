@@ -75,10 +75,24 @@ function PreviewGrading() {
           )}
         </div>
         <div className="language-settings">
-          <a className="grading-navi-item" href="" onClick={() => setLanguage('fi-FI')}>
+          <a
+            className="grading-navi-item"
+            href=""
+            onClick={(e) => {
+              e.preventDefault()
+              setLanguage('fi-FI')
+            }}
+          >
             FI
           </a>
-          <a className="grading-navi-item" href="" onClick={() => setLanguage('sv-FI')}>
+          <a
+            className="grading-navi-item"
+            href=""
+            onClick={(e) => {
+              e.preventDefault()
+              setLanguage('sv-FI')
+            }}
+          >
             SV
           </a>
         </div>

@@ -46,6 +46,7 @@ export const fi_FI = {
     'round.1': '1.s',
     'round.2': '2.s',
     'round.3': '3.s',
+    annotate: 'Merkitse',
   },
   references: {
     heading: 'Lähteet',
