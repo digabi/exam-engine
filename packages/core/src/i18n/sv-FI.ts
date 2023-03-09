@@ -30,6 +30,11 @@ export const sv_FI: Translations = {
   grading: {
     'pregrading-annotations': 'Preliminära bedömningens anteckningar (lärare)',
     'censor-annotations': 'Censorns anteckningar',
+    'pregrading-abbrev': 'prel.',
+    'inspection-grading-abbrev': 'ompr.',
+    'round.1': '1.c',
+    'round.2': '2.c',
+    'round.3': '3.c',
   },
   references: {
     heading: 'Källor',

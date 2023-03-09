@@ -15,14 +15,18 @@ export interface QuestionManualScoreProps {
 interface NormalizedScore {
   score: number
   shortCode: string
-  type: string
+  type:
+    | 'grading.pregrading-abbrev'
+    | 'grading.round.1'
+    | 'grading.round.2'
+    | 'grading.round.3'
+    | 'grading.inspection-grading-abbrev'
 }
 
 function QuestionManualScore({ scores, maxScore, displayNumber, multilineAnswer }: QuestionManualScoreProps) {
   const { answers } = useContext(QuestionContext)
   const containerProps = { answers, displayNumber, multilineAnswer }
   const shortCode = scores?.censoring?.nonAnswerDetails?.shortCode
-
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
       {scores?.pregrading?.score == null && !scores?.censoring?.scores?.length ? (
@@ -81,6 +85,8 @@ interface ScoreRowProps {
 }
 
 function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & NormalizedScore) {
+  const { t } = useExamTranslation()
+
   return (
     <div className={latest ? 'e-color-black' : 'e-color-darkgrey e-font-size-xs'}>
       <ScoreColumn className={classNames('e-nowrap', { 'e-font-size-m': latest })}>
@@ -89,7 +95,7 @@ function ScoreRow({ score, shortCode, type, maxScore, latest }: ScoreRowProps & 
         {` p.`}
       </ScoreColumn>
       <ScoreColumn className="e-result-scorecount-shortcode">{shortCode}</ScoreColumn>
-      <ScoreColumn className="e-mrg-r-0">{type}</ScoreColumn>
+      <ScoreColumn className="e-mrg-r-0">{t(type)}</ScoreColumn>
     </div>
   )
 }
@@ -104,19 +110,23 @@ function ScoreColumn({ className, children }: ScoreColumnProps) {
 }
 
 function normalizePregradingScore({ score }: PregradingScore): NormalizedScore | null {
-  return score !== undefined ? { score, shortCode: '', type: 'va' } : null
+  return score !== undefined ? { score, shortCode: '', type: 'grading.pregrading-abbrev' } : null
 }
 
 function normalizeCensoringScores(score: CensoringScore): NormalizedScore[] {
   return score.scores.map((s, i) => ({
     score: s.score,
     shortCode: s.shortCode || '',
-    type: `${score.scores.length - i}.s`,
+    type: `grading.round.${score.scores.length - i}` as NormalizedScore['type'],
   }))
 }
 
 function normalizeInspectionScore(score: InspectionScore): NormalizedScore {
-  return { score: score.score, shortCode: score.shortCodes ? score.shortCodes.join(', ') : '', type: 'ta' }
+  return {
+    score: score.score,
+    shortCode: score.shortCodes ? score.shortCodes.join(', ') : '',
+    type: 'grading.inspection-grading-abbrev',
+  }
 }
 
 export default React.memo(QuestionManualScore)

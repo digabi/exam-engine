@@ -41,6 +41,11 @@ export const fi_FI = {
   grading: {
     'pregrading-annotations': 'Alustavan arvostelun merkinnät (opettaja)',
     'censor-annotations': 'Sensorin merkinnät',
+    'pregrading-abbrev': 'alust.',
+    'inspection-grading-abbrev': 'ov',
+    'round.1': '1.s',
+    'round.2': '2.s',
+    'round.3': '3.s',
   },
   references: {
     heading: 'Lähteet',

@@ -65,7 +65,7 @@ exports[`<QuestionManualScore /> fi-FI renders with displayNumber where there ar
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
@@ -120,7 +120,7 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and one censor sc
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
@@ -217,7 +217,7 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and three censor 
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
@@ -251,7 +251,7 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading score 1`] = `
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
@@ -285,7 +285,7 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspe
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        ta
+        ov
       </span>
     </div>
     <div
@@ -369,7 +369,7 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspe
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
@@ -403,7 +403,7 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when pregrad
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
@@ -500,7 +500,7 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when there a
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
@@ -550,7 +550,7 @@ exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspe
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        ta
+        ov
       </span>
     </div>
     <div
@@ -634,7 +634,7 @@ exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspe
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
-        va
+        alust.
       </span>
     </div>
   </div>
