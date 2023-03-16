@@ -337,6 +337,7 @@ function GradingAnswerWithTranslations({
 
   function onKeyUpInAnnotationPopup(e: KeyboardEvent) {
     if (e.key === 'Escape' && isEditAnnotationPopupVisible) {
+      e.stopPropagation()
       hideAnnotationPopupAndRefresh()
     }
   }
