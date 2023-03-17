@@ -124,7 +124,7 @@ function GradingAnswerWithTranslations({
       <GradingAnswerAnnotationList
         censoring={annotations.censoring}
         pregrading={annotations.pregrading}
-        singleGrading={false}
+        singleGrading={gradingRole === 'pregrading'}
       />
       <form
         style={{ display: 'none' }}
