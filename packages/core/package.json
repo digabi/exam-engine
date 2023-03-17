@@ -58,7 +58,7 @@
     "utility-types": "^3.10.0",
     "webpack": "^5.23.0",
     "webpack-bundle-analyzer": "^4.1.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^5.0.1"
   },
   "gitHead": "cefffb210c708a1ccedcb225bdd1db6795d79624"
 }
