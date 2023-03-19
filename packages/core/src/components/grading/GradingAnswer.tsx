@@ -72,6 +72,7 @@ function GradingAnswerWithTranslations({
   let annotationPositionForPopup: DOMRect
   let hideTooltipTimeout: ReturnType<typeof setTimeout>
   let windowResizeTimeout: ReturnType<typeof setTimeout>
+  let selectionChangeTimeout: ReturnType<typeof setTimeout>
 
   function onAnnotationOrListClick(e: React.MouseEvent<HTMLDivElement>) {
     const element = e.target
@@ -103,6 +104,7 @@ function GradingAnswerWithTranslations({
       toggle(popupRef.current, false)
       renderAnswerWithAnnotations(savedAnnotations)
       answerRef.current.setAttribute('lang', language)
+      document.addEventListener('selectionchange', onSelectionChangeForMobileDevices)
     }
 
     window.onresize = () => {
@@ -132,7 +134,13 @@ function GradingAnswerWithTranslations({
         className="e-grading-answer-popup e-grading-answer-add-annotation"
         onSubmit={(e) => onSubmitAnnotation(e)}
       >
-        <input name="message" className="e-grading-answer-add-annotation-text" type="text" ref={messageRef} />
+        <input
+          onFocus={() => onNewAnnotationMessageFocus()}
+          name="message"
+          className="e-grading-answer-add-annotation-text"
+          type="text"
+          ref={messageRef}
+        />
         <button className="e-grading-answer-add-annotation-button" type="submit" data-i18n="arpa.annotate">
           {t('grading.annotate')}
         </button>
@@ -287,7 +295,48 @@ function GradingAnswerWithTranslations({
       renderAnswerWithAnnotations(newAnnotations)
     }
   }
+  function isDesktopVersion() {
+    return matchMedia('(pointer:fine)').matches
+  }
+  // Only used for touch devices
+  function onNewAnnotationMessageFocus() {
+    if (isDesktopVersion()) {
+      return
+    }
+    if (answerRef.current) {
+      const newAnnotations = { ...savedAnnotations }
+      newAnnotations[gradingRole] = mergeAnnotation(
+        answerRef.current,
+        newAnnotationObject!,
+        savedAnnotations[gradingRole]
+      )
+      renderAnswerWithAnnotations(newAnnotations)
+    }
+  }
+  function onSelectionChangeForMobileDevices() {
+    if (isDesktopVersion()) {
+      return
+    }
+    clearTimeout(selectionChangeTimeout)
+    selectionChangeTimeout = setTimeout(onSelectionChangeAfterThrottle, 500)
+  }
 
+  function onSelectionChangeAfterThrottle() {
+    const selection = window.getSelection()
+    if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
+      const range = selection.getRangeAt(0)
+      if (selectionHasNothingToUnderline(range)) {
+        return
+      }
+      const position = textAnnotationFromRange(answerRef.current, range)
+      const message = getOverlappingMessages(savedAnnotations[gradingRole], position.startIndex, position.length)
+      isEditAnnotationPopupVisible = true
+      const inputElement = messageRef.current!
+      inputElement.value = message
+      showAndPositionElement(range.getBoundingClientRect(), answerRef.current, popupRef.current!)
+      newAnnotationObject = { ...position, type: 'text', message }
+    }
+  }
   function onMouseMoveForImageAnnotation(e: MouseEvent) {
     preventDefaults(e)
     newAnnotationObject = annotationFromMousePosition(e, imgAnnotationState.start!)
