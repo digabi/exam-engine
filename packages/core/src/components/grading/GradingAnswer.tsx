@@ -244,15 +244,11 @@ function GradingAnswerWithTranslations({
     renderAnswerWithAnnotations(savedAnnotations)
   }
   function onAnswerMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    if (isReadOnly) {
+    // Do annotations only with left mouse buttons and when permitted
+    if (isReadOnly || e.button !== 0) {
       return
     }
     window.addEventListener('mouseup', onWindowMouseUpAfterAnswerMouseDown)
-
-    // Do annotations only with left mouse buttons
-    if (e.button !== 0) {
-      return
-    }
     const target = e.target as Element
     const img = target.closest('.e-annotation-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
     if (!img) {
