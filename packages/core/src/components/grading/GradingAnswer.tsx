@@ -74,29 +74,6 @@ function GradingAnswerWithTranslations({
   let windowResizeTimeout: ReturnType<typeof setTimeout>
   let selectionChangeTimeout: ReturnType<typeof setTimeout>
 
-  function onAnnotationOrListClick(e: React.MouseEvent<HTMLDivElement>) {
-    const element = e.target
-    if (element instanceof HTMLElement) {
-      if (element.tagName === 'MARK') {
-        showTooltip(element)
-      } else if (element.tagName === 'LI') {
-        const index = element.dataset.listNumber?.replace(')', '')!
-        const mark = document.querySelector<HTMLElement>(`.e-annotation[data-index="${index}"]`)!
-        showTooltip(mark)
-        mark.scrollIntoView({ block: 'center', behavior: 'smooth' })
-      } else if (annotationDataForTooltip) {
-        hideTooltip()
-      }
-    }
-  }
-
-  function editExistingAnnotation(e: React.MouseEvent<HTMLSpanElement>) {
-    if ((e.target as HTMLElement).closest('.editable')) {
-      toggle(tooltipRef.current, false)
-      showExistingAnnotationPopup(annotationPositionForPopup)
-    }
-  }
-
   useLayoutEffect(() => {
     if (answerRef.current) {
       savedAnnotations = annotations
@@ -169,6 +146,28 @@ function GradingAnswerWithTranslations({
     </div>
   )
 
+  function onAnnotationOrListClick(e: React.MouseEvent<HTMLDivElement>) {
+    const element = e.target
+    if (element instanceof HTMLElement) {
+      if (element.tagName === 'MARK') {
+        showTooltip(element)
+      } else if (element.tagName === 'LI') {
+        const index = element.dataset.listNumber?.replace(')', '')!
+        const mark = document.querySelector<HTMLElement>(`.e-annotation[data-index="${index}"]`)!
+        showTooltip(mark)
+        mark.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      } else if (annotationDataForTooltip) {
+        hideTooltip()
+      }
+    }
+  }
+
+  function editExistingAnnotation(e: React.MouseEvent<HTMLSpanElement>) {
+    if ((e.target as HTMLElement).closest('.editable')) {
+      toggle(tooltipRef.current, false)
+      showExistingAnnotationPopup(annotationPositionForPopup)
+    }
+  }
   function removeAnnotation(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
     e.preventDefault()
     hideTooltip()
