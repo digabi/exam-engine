@@ -46,14 +46,19 @@ export function allNodesUnder(el: Node, documentObject = document): Node[] {
   return a
 }
 
-export function showAndPositionElement(annotationRect: DOMRect, container: HTMLElement, popup: HTMLElement) {
+export function showAndPositionElement(
+  annotationRect: DOMRect,
+  container: HTMLElement,
+  popup: HTMLElement,
+  topMargin: number
+) {
   const style = popup.style
   if (container) {
     style.display = 'block'
     const containerRect = container.getBoundingClientRect()
     const popupRect = popup.getBoundingClientRect()
     const left = annotationRect.left - containerRect.left
-    const top = annotationRect.bottom - containerRect.top + 25
+    const top = annotationRect.bottom - containerRect.top + topMargin
 
     style.top = String(top) + 'px'
     style.left =

@@ -107,6 +107,7 @@ function PreviewGrading() {
           maxLength: 100,
           annotations,
           saveAnnotations,
+          popupTopMargin: 0,
         }}
       />
     </main>

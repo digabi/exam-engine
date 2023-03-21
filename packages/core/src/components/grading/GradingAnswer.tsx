@@ -38,6 +38,7 @@ type GradingAnswerProps = {
   maxLength?: number
   annotations: Annotations
   saveAnnotations: (annotations: Annotations) => void
+  popupTopMargin?: number
 }
 
 export function GradingAnswer(props: GradingAnswerProps) {
@@ -58,6 +59,7 @@ function GradingAnswerWithTranslations({
   annotations,
   saveAnnotations,
   maxLength,
+  popupTopMargin = 25,
 }: GradingAnswerProps) {
   const answerRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLFormElement>(null)
@@ -202,7 +204,7 @@ function GradingAnswerWithTranslations({
     const { type, listIndex, message } = target.dataset
     tooltip.classList.toggle('editable', !isReadOnly && type === gradingRole)
     annotationPositionForPopup = target.getBoundingClientRect()
-    showAndPositionElement(annotationPositionForPopup, answerRef.current!, tooltip)
+    showAndPositionElement(annotationPositionForPopup, answerRef.current!, tooltip, popupTopMargin)
     tooltip.querySelector('.e-grading-answer-tooltip-label')!.textContent = message || '–'
     annotationDataForTooltip = { index: Number(listIndex), role: type as GradingRole, message: message || '' }
     answerRef.current!.addEventListener('mouseout', onMouseOutFromTooltip)
@@ -228,7 +230,7 @@ function GradingAnswerWithTranslations({
   function setupAnnotationPopup(rect: DOMRect, message: string) {
     // Could be active from previous popup
     window.removeEventListener('keydown', onKeyUpInAnnotationPopup)
-    showAndPositionElement(rect, answerRef.current!, popupRef.current!)
+    showAndPositionElement(rect, answerRef.current!, popupRef.current!, popupTopMargin)
     const inputElement = messageRef.current!
     inputElement.value = message
     inputElement.focus()
@@ -328,7 +330,7 @@ function GradingAnswerWithTranslations({
       isEditAnnotationPopupVisible = true
       const inputElement = messageRef.current!
       inputElement.value = message
-      showAndPositionElement(range.getBoundingClientRect(), answerRef.current, popupRef.current!)
+      showAndPositionElement(range.getBoundingClientRect(), answerRef.current, popupRef.current!, popupTopMargin)
       newAnnotationObject = { ...position, type: 'text', message }
     }
   }
