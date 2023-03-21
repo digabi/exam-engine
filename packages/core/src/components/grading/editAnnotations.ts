@@ -223,3 +223,18 @@ export function imageAnnotationMouseDownInfo(
 function clamp(n: number) {
   return _.clamp(n, 0, 1)
 }
+
+export function preventDefaults(e: Event) {
+  e.preventDefault()
+  e.stopPropagation()
+}
+
+export function toggle(element: HTMLElement | null, isVisible: boolean): void {
+  if (element instanceof HTMLElement) {
+    element.style.display = isVisible ? 'initial' : 'none'
+  }
+}
+
+export function isDesktopVersion() {
+  return matchMedia('(pointer:fine)').matches
+}

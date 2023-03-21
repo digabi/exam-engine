@@ -5,11 +5,14 @@ import {
   getOverlappingMessages,
   hasTextSelectedInAnswerText,
   imageAnnotationMouseDownInfo,
+  isDesktopVersion,
   mergeAnnotation,
   NewImageAnnotation,
+  preventDefaults,
   selectionHasNothingToUnderline,
   showAndPositionElement,
   textAnnotationFromRange,
+  toggle,
 } from './editAnnotations'
 import {
   renderAnnotations,
@@ -290,9 +293,6 @@ function GradingAnswerWithTranslations({
       renderAnswerWithAnnotations(newAnnotations)
     }
   }
-  function isDesktopVersion() {
-    return matchMedia('(pointer:fine)').matches
-  }
   // Only used for touch devices
   function onNewAnnotationMessageFocus() {
     if (isDesktopVersion()) {
@@ -384,16 +384,5 @@ function GradingAnswerWithTranslations({
       e.stopPropagation()
       hideAnnotationPopupAndRefresh()
     }
-  }
-}
-
-function preventDefaults(e: Event) {
-  e.preventDefault()
-  e.stopPropagation()
-}
-
-function toggle(element: HTMLElement | null, isVisible: boolean): void {
-  if (element instanceof HTMLElement) {
-    element.style.display = isVisible ? 'initial' : 'none'
   }
 }
