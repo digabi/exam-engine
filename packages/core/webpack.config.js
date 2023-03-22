@@ -14,6 +14,7 @@ module.exports = function () {
     entry: path.resolve(__dirname, 'dist/index.js'),
     output: {
       path: path.resolve(__dirname, 'dist'),
+      pathinfo: false,
       publicPath: '',
       filename: 'main-bundle.js',
       library: 'ExamBundle',

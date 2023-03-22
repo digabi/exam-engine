@@ -20,6 +20,7 @@ export function getOfflineWebpackConfig(
     entry: [require.resolve('@babel/polyfill/noConflict'), path.resolve(__dirname, 'offline.js')],
     output: {
       path: outputDirectory,
+      pathinfo: false,
     },
     module: {
       rules: [
