@@ -1,3 +1,6 @@
+@import "@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "@fortawesome/fontawesome-free/less/solid.less";
+
 .e-grading-answer-wrapper {
   background: #fff;
   position: relative;
@@ -58,12 +61,6 @@
 .e-grading-answer-add-annotation {
   padding: 8px 10px;
 }
-.e-grading-answer[lang="fi-FI"] .full-size-image a:after {
-  content: 'Näytä kuva täysikokoisena'
-}
-.e-grading-answer[lang="sv-FI"] .full-size-image a:after {
-  content: 'Visa bilden i full storlek'
-}
 
 .e-grading-answer {
   border-left: 2px solid #aaa;
@@ -81,24 +78,21 @@
   .full-size-image {
     position: relative;
     user-select: none;
-    background: #fffa;
-    line-height: 1;
 
     a {
-      position: absolute; bottom: 0;
-      font-weight: 500;
-      color: #004dd0;
-      border-radius: 2px;
+      .fa-icon-solid(@fa-var-magnifying-glass-plus);
+      position: absolute;
+      bottom: 10px;
+      right: 100%;
+      margin-right: 13px;
+      color: #004DD0;
       padding: 3px 7px;
       background: #fff;
-      box-shadow: 0 0 10px 0 #0003;
-      font-size: 12px;
-      text-transform: uppercase;
+      font-size: 22px;
       &:hover {
-        color: blue;
+        color: #00235E;
         background: none;
         text-decoration: none;
-        box-shadow: none;
       }
     }
   }
