@@ -97,19 +97,21 @@ function PreviewGrading() {
           </a>
         </div>
       </div>
-
-      <GradingAnswer
-        {...{
-          answer: { type, characterCount, value },
-          language,
-          isReadOnly: false,
-          gradingRole: 'censoring',
-          maxLength: 100,
-          annotations,
-          saveAnnotations,
-          popupTopMargin: 0,
-        }}
-      />
+      <div className="answer-and-scores">
+        <div className="score-margin">Ei arvosteltu</div>
+        <GradingAnswer
+          {...{
+            answer: { type, characterCount, value },
+            language,
+            isReadOnly: false,
+            gradingRole: 'censoring',
+            maxLength: 100,
+            annotations,
+            saveAnnotations,
+            popupTopMargin: 0,
+          }}
+        />
+      </div>
     </main>
   )
 }
