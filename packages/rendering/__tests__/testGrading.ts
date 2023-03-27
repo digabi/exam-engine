@@ -15,14 +15,19 @@ describe('testGrading.ts', () => {
     page = await createPage()
     await loadExam(page, ctx.url)
     await answer(1, 'Short answer message content')
-    await answer(
-      7,
-      'Duis magna mi, interdum eu mattis vel, ultricies a nibh. Duis tortor tortor, imperdiet eget fermentum eget, rutrum ac lorem. Ut eu enim risus. Donec sed eros orci. Aenean vel eros lobortis, dignissim magna nec, vulputate quam. Morbi non metus consequat, pellentesque tellus iaculis, iaculis dolor. Vivamus vel feugiat neque, sit amet varius turpis. Aliquam non dapibus augue, interdum dapibus tellus. Ut at est eu ex pharetra ultricies'
-    )
+    await answer(7, 'Duis magna mi, interdum eu mattis vel, ultricies a nibh. Duis tortor tortor, ')
+    await page.keyboard.press('Enter')
+    await answer(7, 'imperdiet eget fermentum eget, rutrum ac lorem. Ut eu enim risus. Donec sed eros orci. ')
+    await page.keyboard.press('Enter')
+    await answer(7, 'Aenean vel eros lobortis, dignissim magna nec, vulputate quam. Morbi non metus consequat, ')
+    await page.keyboard.press('Enter')
+    await answer(7, 'pellentesque tellus iaculis, iaculis dolor. Vivamus vel feugiat neque, sit amet varius turpis.')
+    await page.keyboard.press('Enter')
+    await answer(7, 'Aliquam non dapibus augue, interdum dapibus tellus. Ut at est eu ex pharetra ultricies')
+    await page.keyboard.press('Enter')
     await page.click('[data-js="newEquation"]')
     await page.keyboard.type('1/x+2x^2')
     await page.keyboard.press('Escape')
-    // await page.type(`.text-answer[data-question-id="${7}"]`, text)
 
     await page.waitForSelector('.save-indicator-text--saved')
     await page.goto(ctx.url + '/fi-FI/normal/grading')
@@ -37,7 +42,7 @@ describe('testGrading.ts', () => {
     await navigateToAnswer('1.1')
     await expectText('.e-grading-answer-length', 'Vastauksen pituus: 25 merkkiä.')
     await page.waitForSelector('.e-grading-answer-max-length-surplus', HIDDEN)
-    await drag(245, 140, 300, 140)
+    await drag(463, 150, 518, 150)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('+1p.')
     await page.keyboard.press('Enter')
@@ -53,15 +58,15 @@ describe('testGrading.ts', () => {
 
   it('creates annotations, modifies and removes them', async () => {
     await navigateToAnswer('2')
-    await drag(200, 200, 402, 200)
+    await drag(418, 210, 620, 210)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('first annotation message')
     await page.keyboard.press('Enter')
     await page.waitForSelector('.e-grading-answer-add-annotation', HIDDEN)
-    await expectText('.e-annotation--censoring', 'sque tellus iaculis, iaculis d')
+    await expectText('.e-annotation--censoring', 'vel eros lobortis, dignissim ')
     await expectAnnotationMessages(['+1', 'first annotation message'])
 
-    await page.mouse.move(300, 200)
+    await page.mouse.move(518, 210)
     await page.waitForSelector('.e-grading-answer-tooltip', VISIBLE)
     await page.click('.e-grading-answer-tooltip-label')
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
@@ -69,11 +74,11 @@ describe('testGrading.ts', () => {
     await page.keyboard.press('Enter')
     await expectAnnotationMessages(['+1', 'first annotation message2'])
 
-    await page.mouse.move(300, 200)
+    await page.mouse.move(518, 210)
     await page.click('.e-grading-answer-tooltip-remove')
     await expectAnnotationMessages(['+1'])
 
-    await drag(510, 230, 550, 250)
+    await drag(360, 300, 370, 310)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('img annotation msg')
     await page.keyboard.press('Enter')
