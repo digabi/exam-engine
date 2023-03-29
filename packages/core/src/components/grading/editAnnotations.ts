@@ -62,7 +62,7 @@ export function showAndPositionElement(
 
     style.top = `${String(top)}px`
     style.left = `${String(
-      left + popupRect.width < containerRect.width ? left + 20 : containerRect.width - popupRect.width + 15
+      left + popupRect.width < containerRect.width - 30 ? left + 20 : containerRect.width - popupRect.width - 20
     )}px`
   }
 }
