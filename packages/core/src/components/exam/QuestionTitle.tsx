@@ -21,7 +21,7 @@ const QuestionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, r
             'exam-question-title__display-number--indented': level > 0,
           })}
         >
-          {formatQuestionDisplayNumber(displayNumber) + ' '}
+          {`${formatQuestionDisplayNumber(displayNumber)} `}
         </strong>
         {renderChildNodes(element)} <Score score={maxScore} size={level === 0 ? 'large' : 'small'} />
       </Tag>

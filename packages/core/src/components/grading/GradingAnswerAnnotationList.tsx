@@ -16,7 +16,7 @@ function GradingAnswerAnnotationList({
     annotations
       .filter((a) => a.message.length)
       .map((annotation: Annotation, i: number) => {
-        const numbering = String(listNumberOffset + i + 1) + ')'
+        const numbering = `${String(listNumberOffset + i + 1)})`
         const message = annotation.message
         return { numbering, message }
       }) ?? []

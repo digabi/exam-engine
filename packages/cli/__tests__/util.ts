@@ -24,7 +24,7 @@ export function streamToBuffer(readableStream: Stream): Promise<Buffer> {
       chunks.push(data)
     })
     readableStream.on('error', ({ message }) => reject(new Error(String(message))))
-    readableStream.on('end', function () {
+    readableStream.on('end', () => {
       resolve(Buffer.concat(chunks))
     })
   })

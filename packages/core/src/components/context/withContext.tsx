@@ -12,6 +12,6 @@ export const withContext =
         </Context.Provider>
       )
     }
-    Wrapped.displayName = 'WithContext(' + getDisplayName(Component) + ')'
+    Wrapped.displayName = `WithContext(${getDisplayName(Component)})`
     return Wrapped
   }

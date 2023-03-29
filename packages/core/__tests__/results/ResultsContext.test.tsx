@@ -65,14 +65,14 @@ const getMediaMetadata: GetMediaMetadata = (__, type) =>
 
 const exam = listExams().find((e) => e.includes(testExam))
 if (exam == null) {
-  throw new Error('Could not find the exam file to use in test: ' + testExam)
+  throw new Error(`Could not find the exam file to use in test: ${testExam}`)
 }
 
 let result: MasteringResult
 let doc: XMLDocument
 let topLevelQuestions: Element[]
 
-describe('Total score calculation for ' + testExam, () => {
+describe(`Total score calculation for ${testExam}`, () => {
   beforeAll(async () => {
     const source = await fs.readFile(exam, 'utf-8')
     const results = await masterExam(source, () => '', getMediaMetadata)

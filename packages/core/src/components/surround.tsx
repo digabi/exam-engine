@@ -22,6 +22,6 @@ export default function surround<K extends keyof JSX.IntrinsicElements>(
       </TagAsAny>
     )
   }
-  Wrapped.displayName = 'Surround(' + getDisplayName(Component) + ')'
+  Wrapped.displayName = `Surround(${getDisplayName(Component)})`
   return Wrapped
 }

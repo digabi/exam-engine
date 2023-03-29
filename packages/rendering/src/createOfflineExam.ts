@@ -127,7 +127,7 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[], options: C
             ]
           : [path.resolve(examOutputDirectory, 'grading-instructions.html')]),
       ]) {
-        await page.goto('file://' + htmlFile)
+        await page.goto(`file://${htmlFile}`)
         await page.waitForSelector('.e-exam')
         await page.evaluate(() => {
           // Fix asset path on attachments page.

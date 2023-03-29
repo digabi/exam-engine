@@ -203,9 +203,8 @@ describe('Extra answers validation', () => {
   })
 })
 
-const answerQuestions = (...displayNumbers: string[]): Record<number, ExamAnswer> => {
-  return answerQuestionsWithText('foo', ...displayNumbers)
-}
+const answerQuestions = (...displayNumbers: string[]): Record<number, ExamAnswer> =>
+  answerQuestionsWithText('foo', ...displayNumbers)
 
 const answerQuestionsWithText = (text: string, ...displayNumbers: string[]): Record<number, ExamAnswer> => {
   const findQuestionId = (displayNumber: string) =>

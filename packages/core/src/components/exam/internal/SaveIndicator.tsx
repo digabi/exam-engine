@@ -15,7 +15,7 @@ function SaveIndicator() {
 
   return (
     <div className="save-indicator e-pad-1 e-font-size-xs">
-      <span className={classNames('save-indicator-text', 'save-indicator-text--' + state)}>{t('answer-saved')}</span>
+      <span className={classNames('save-indicator-text', `save-indicator-text--${state}`)}>{t('answer-saved')}</span>
     </div>
   )
 }

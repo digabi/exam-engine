@@ -79,6 +79,6 @@ export async function getPageAndRequestErrors(page: Page, filename: string) {
   })
   page.on('pageerror', (err) => pageErrors.push(err))
 
-  await page.goto('file://' + filename, { waitUntil: 'networkidle0' })
+  await page.goto(`file://${filename}`, { waitUntil: 'networkidle0' })
   return { requestErrors, pageErrors }
 }

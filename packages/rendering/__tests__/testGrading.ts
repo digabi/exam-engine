@@ -30,7 +30,7 @@ describe('testGrading.ts', () => {
     await page.keyboard.press('Escape')
 
     await page.waitForSelector('.save-indicator-text--saved')
-    await page.goto(ctx.url + '/fi-FI/normal/grading')
+    await page.goto(`${ctx.url}/fi-FI/normal/grading`)
     await page.waitForSelector('.e-grading-answer')
   })
 
@@ -52,7 +52,7 @@ describe('testGrading.ts', () => {
   it('renders character count with surplus warning', async () => {
     await navigateToAnswer('2')
     const surplusText = 'Vastauksen enimmäispituus 100 merkkiä ylittyy 268 %.'
-    await expectText('.e-grading-answer-length', 'Vastauksen pituus: 368 merkkiä.' + surplusText)
+    await expectText('.e-grading-answer-length', `Vastauksen pituus: 368 merkkiä.${surplusText}`)
     await expectText('.e-grading-answer-max-length-surplus', surplusText)
   })
 
@@ -111,7 +111,7 @@ describe('testGrading.ts', () => {
   }
   async function navigateToAnswer(displayNumber: string) {
     const navi = await page.waitForSelector('.grading-navi')
-    const button = await navi?.waitForSelector('text/' + displayNumber)
+    const button = await navi?.waitForSelector(`text/${displayNumber}`)
     await button?.click()
   }
 })

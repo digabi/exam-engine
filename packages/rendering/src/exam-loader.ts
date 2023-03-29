@@ -7,7 +7,7 @@ import * as uuid from 'uuid'
 
 function stringifyModule(module: any, attachments: Attachment[] = []): string {
   const imports = attachments.map((attachment) => `require('./attachments/${attachment.filename}')`).join('\n')
-  return imports + '\nmodule.exports = ' + JSON.stringify(module)
+  return `${imports}\nmodule.exports = ${JSON.stringify(module)}`
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -61,7 +61,7 @@ function beautifyError(error: SyntaxError & Error, source: string) {
 Rivi ${line!}, sarake ${column}:
 
 ${offendingLine}
-${column > 0 ? '-'.repeat(column) + '^' : '^'.repeat(offendingLine.length)}
+${column > 0 ? `${'-'.repeat(column)}^` : '^'.repeat(offendingLine.length)}
 `
   return error
 }

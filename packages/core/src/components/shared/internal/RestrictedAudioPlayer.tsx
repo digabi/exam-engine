@@ -63,7 +63,7 @@ function formatDuration(duration: number): string {
   const minutes = Math.floor(duration / 60)
   const seconds = duration % 60
 
-  return padWithZeroes(minutes) + ':' + padWithZeroes(seconds)
+  return `${padWithZeroes(minutes)}:${padWithZeroes(seconds)}`
 }
 
 function padWithZeroes(num: number) {

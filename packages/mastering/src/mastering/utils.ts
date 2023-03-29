@@ -58,7 +58,7 @@ export function getNumericAttribute<T = number>(name: string, element: Element, 
 
 /** Helper function for generating `(.//e:foo | .//e:bar | .//e:baz)`-like XPath selectors. */
 export function xpathOr(names: readonly string[]): string {
-  return '(' + names.map((localName) => `.//e:${localName}`).join(' | ') + ')'
+  return `(${names.map((localName) => `.//e:${localName}`).join(' | ')})`
 }
 
 function _getAttr<T, U>(element: Element, name: string, transform: (value: string) => T, defaultValue?: U): T | U {

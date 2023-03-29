@@ -18,7 +18,7 @@ function QuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
             'exam-question-title__display-number--indented': level > 0,
           })}
         >
-          {formatQuestionDisplayNumber(displayNumber) + ' '}
+          {`${formatQuestionDisplayNumber(displayNumber)} `}
         </strong>
         {renderChildNodes(element)}
       </Tag>

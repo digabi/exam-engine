@@ -258,14 +258,14 @@ describe('generateExam()', () => {
     const question: fc.Memo<GenerateQuestionOptions> = fc.memo<GenerateQuestionOptions>((n) =>
       fc.oneof(rootQuestion(n), subQuestion, subQuestion, subQuestion)
     )
-    const rootQuestion: fc.Memo<GenerateQuestionOptions> = fc.memo<GenerateQuestionOptions>((n) => {
-      return n === 0
+    const rootQuestion: fc.Memo<GenerateQuestionOptions> = fc.memo<GenerateQuestionOptions>((n) =>
+      n === 0
         ? subQuestion
         : fc.record({
             maxAnswers: optional(maxAnswers),
             questions: fc.array(question(n - 1), { minLength: 1, maxLength: 5 }),
           })
-    })
+    )
     const questions = fc.array(question(2), { minLength: 1, maxLength: 5 })
     const section: fc.Arbitrary<GenerateSectionOptions> = fc.record({
       maxAnswers: optional(maxAnswers),

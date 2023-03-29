@@ -34,7 +34,7 @@ export async function createMex(
   koeUpdate?: Readable
 ): Promise<void> {
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
-  const renderingFiles = await glob(bundleDir + '/{main-bundle.js,main.css,assets/*}', {
+  const renderingFiles = await glob(`${bundleDir}/{main-bundle.js,main.css,assets/*}`, {
     nodir: true,
     realpath: true,
   })

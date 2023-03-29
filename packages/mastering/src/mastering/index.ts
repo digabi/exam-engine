@@ -33,7 +33,7 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
 
 const schemaDir = path.resolve(__dirname, '../../schema')
 const schema = parseXml(readFileSync(path.resolve(schemaDir, 'exam.xsd')).toString(), {
-  baseUrl: schemaDir + '/',
+  baseUrl: `${schemaDir}/`,
 })
 
 interface VideoMetadata {
@@ -347,14 +347,14 @@ function collectAttachments(exam: Element, attachments: Element[]): Attachment[]
 
   return _.uniqWith(
     [
-      ...attachments.map((a) => {
-        return mkAttachment(
+      ...attachments.map((a) =>
+        mkAttachment(
           getAttribute('src', a),
           a.attr('times') != null,
           isVisibleInGradingInstructions(a),
           isWithinGradingInstructions(a)
         )
-      }),
+      ),
       ...(maybeCustomStylesheet ? [mkAttachment(maybeCustomStylesheet)] : []),
     ],
     _.isEqual
@@ -408,7 +408,7 @@ function addYoCustomizations(exam: Element, language: string, type: ExamType) {
 
   const i18n = initI18n(language)
   const dayCode = getAttribute('day-code', exam, null)
-  const key = dayCode ? examCode + '_' + dayCode : examCode
+  const key = dayCode ? `${examCode}_${dayCode}` : examCode
 
   const examLang = getAttribute('lang', exam, null)
   if (!examLang) {
@@ -446,7 +446,7 @@ function addYoCustomizations(exam: Element, language: string, type: ExamType) {
     const title = i18n.t(key, { ns: 'exam-title' })
     if (title) {
       const suffix = i18n.t(type, { ns: 'exam-title', defaultValue: '' })
-      const fullTitle = title + (suffix ? ' ' + suffix : '')
+      const fullTitle = title + (suffix ? ` ${suffix}` : '')
       const firstChild = exam.child(0) as Element
       firstChild.addPrevSibling(
         exam
@@ -568,7 +568,7 @@ function addSectionNumbers(exam: Exam) {
 
 function addQuestionNumbers(exam: Exam) {
   function addQuestionNumber(question: Question, index: number, prefix = '') {
-    const displayNumber = `${prefix ? prefix + '.' : ''}${index + 1}`
+    const displayNumber = `${prefix ? `${prefix}.` : ''}${index + 1}`
     question.element.attr('display-number', displayNumber)
     question.childQuestions.forEach((q, i) => addQuestionNumber(q, i, displayNumber))
   }

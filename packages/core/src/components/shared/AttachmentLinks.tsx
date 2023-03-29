@@ -15,16 +15,15 @@ const mkAttachmentLinks = (type: 'link' | 'plain'): React.FunctionComponent<Exam
       const attachment = query(root, (el) => el.localName === 'attachment' && el.getAttribute('name') === name)!
       return attachment.getAttribute('display-number')!
     })
-    const groupedDisplayNumbers = splitWhen(displayNumbers, (displayNumber, i) => {
-      return i > 0 && !isSuccessive(displayNumbers[i - 1], displayNumber)
-    })
+    const groupedDisplayNumbers = splitWhen(
+      displayNumbers,
+      (displayNumber, i) => i > 0 && !isSuccessive(displayNumbers[i - 1], displayNumber)
+    )
 
     const isShort = element.getAttribute('type') === 'short'
     const href = url(attachmentsURL, { hash: displayNumbers[0] })
     const displayNumbersString = groupedDisplayNumbers
-      .map((group) => {
-        return group.length > 1 ? `${group[0]}–${group[group.length - 1]}` : group[0]
-      })
+      .map((group) => (group.length > 1 ? `${group[0]}–${group[group.length - 1]}` : group[0]))
       .join(', ')
 
     const count = groupedDisplayNumbers[0].length

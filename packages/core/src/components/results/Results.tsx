@@ -77,7 +77,7 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
           {examTitle && (
             <DocumentTitle id="title" className="e-column e-mrg-b-0">
               {renderChildNodes(examTitle)}
-              {date && ', ' + dateTimeFormatter.format(date)}
+              {date && `, ${dateTimeFormatter.format(date)}`}
             </DocumentTitle>
           )}
           <ScoresAndFinalGrade />

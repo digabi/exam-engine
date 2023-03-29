@@ -51,7 +51,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
   const invalid = validationError != null
   const lang = useLanguageOfInstruction ? language : undefined
   const labelledBy = element.hasAttribute('max-length')
-    ? questionLabelIds + ' ' + answerLengthInfoId(element)
+    ? `${questionLabelIds} ${answerLengthInfoId(element)}`
     : questionLabelIds
 
   useEffect(() => {

@@ -62,7 +62,7 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
     return (
-      <li data-list-number={displayNumber + '.'}>
+      <li data-list-number={`${displayNumber}.`}>
         <div className="e-columns">
           <span className="e-column">
             <a href={url('', { hash: displayNumber })}>{renderChildNodes(questionTitle)}</a>

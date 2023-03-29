@@ -60,10 +60,10 @@ export function showAndPositionElement(
     const left = annotationRect.left - containerRect.left
     const top = annotationRect.bottom - containerRect.top + topMargin
 
-    style.top = String(top) + 'px'
-    style.left =
-      String(left + popupRect.width < containerRect.width ? left + 20 : containerRect.width - popupRect.width + 15) +
-      'px'
+    style.top = `${String(top)}px`
+    style.left = `${String(
+      left + popupRect.width < containerRect.width ? left + 20 : containerRect.width - popupRect.width + 15
+    )}px`
   }
 }
 
