@@ -3,15 +3,23 @@ import { Annotation, ImageAnnotation, TextAnnotation } from '../../types/Score'
 import React from 'react'
 
 export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
+  if (selectionHasNothingToUnderline(range)) {
+    return undefined
+  }
   const answerNodes = allNodesUnder(answerTextNode)
-  const charactersBefore = charactersBeforeContainer(range.startContainer, range.startOffset)
-  const charactersUntilEnd = charactersBeforeContainer(range.endContainer, range.endOffset)
+  const charactersBefore = charactersBeforeContainer(range.startContainer, range.startOffset, answerTextNode)
+  const charactersUntilEnd = charactersBeforeContainer(range.endContainer, range.endOffset, answerTextNode)
+  const length = charactersUntilEnd - charactersBefore
+  // selectionHasNothingToUnderline won't catch cases where empty selection is between images
+  if (length === 0) {
+    return undefined
+  }
   return {
     startIndex: charactersBefore,
-    length: charactersUntilEnd - charactersBefore,
+    length,
   }
 
-  function charactersBeforeContainer(rangeContainer: Node, offset: number) {
+  function charactersBeforeContainer(rangeContainer: Node, offset: number, answerTextNode: Element) {
     const containerIsTag = rangeContainer === answerTextNode
     const container = containerIsTag ? rangeContainer.childNodes[offset] : rangeContainer
     const offsetInside: number = containerIsTag ? 0 : offset
@@ -166,7 +174,7 @@ function getOverlappingAnnotations(
 export function getImageStartIndex($image: Element, $answerText: Element) {
   const range = document.createRange()
   range.selectNode($image)
-  return textAnnotationFromRange($answerText, range).startIndex
+  return textAnnotationFromRange($answerText, range)?.startIndex
 }
 
 export type NewImageAnnotation = {

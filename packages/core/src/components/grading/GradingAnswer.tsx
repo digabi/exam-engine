@@ -9,7 +9,6 @@ import {
   mergeAnnotation,
   NewImageAnnotation,
   preventDefaults,
-  selectionHasNothingToUnderline,
   showAndPositionElement,
   textAnnotationFromRange,
   toggle,
@@ -279,10 +278,10 @@ function GradingAnswerWithTranslations({
     const selection = window.getSelection()
     if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
       const range = selection.getRangeAt(0)
-      if (selectionHasNothingToUnderline(range)) {
+      const position = textAnnotationFromRange(answerRef.current, range)
+      if (!position) {
         return
       }
-      const position = textAnnotationFromRange(answerRef.current, range)
       const message = getOverlappingMessages(savedAnnotations[gradingRole], position.startIndex, position.length)
       newAnnotationObject = { ...position, type: 'text', message }
       showAnnotationPopup(range.getBoundingClientRect(), message)
@@ -322,10 +321,10 @@ function GradingAnswerWithTranslations({
     const selection = window.getSelection()
     if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
       const range = selection.getRangeAt(0)
-      if (selectionHasNothingToUnderline(range)) {
+      const position = textAnnotationFromRange(answerRef.current, range)
+      if (!position) {
         return
       }
-      const position = textAnnotationFromRange(answerRef.current, range)
       const message = getOverlappingMessages(savedAnnotations[gradingRole], position.startIndex, position.length)
       isEditAnnotationPopupVisible = true
       const inputElement = messageRef.current!
