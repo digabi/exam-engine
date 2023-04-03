@@ -28,7 +28,9 @@ function updateImageStatus(img: HTMLImageElement) {
   const wrapper = img.parentElement
   const nextSibling = wrapper?.nextSibling
   const hasFullSizeLink = nextSibling instanceof HTMLElement && nextSibling.classList.contains('full-size-image')
-  if (img.naturalWidth > img.width) {
+  const isLargeImage = img.naturalWidth > img.width
+  wrapper?.classList.toggle('e-large-image', isLargeImage)
+  if (isLargeImage) {
     if (!hasFullSizeLink) {
       wrapper?.insertAdjacentHTML('afterend', `<div class="full-size-image"><a target="_blank" href="${img.src}"></a>`)
     }
