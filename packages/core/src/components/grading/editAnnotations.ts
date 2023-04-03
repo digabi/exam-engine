@@ -76,7 +76,9 @@ export function hasTextSelectedInAnswerText(): boolean {
   )
 
   function selectionInAnswerText(sel: Selection) {
-    if (sel.type === 'None' || sel.type === 'Caret' || sel.rangeCount === 0) return false
+    if (sel.type === 'None' || sel.type === 'Caret' || sel.rangeCount === 0) {
+      return false
+    }
     const startContainer = sel.getRangeAt(0).startContainer
     const endContainer = sel.getRangeAt(0).endContainer
     return (
@@ -186,7 +188,7 @@ export function annotationFromMousePosition(
   const isHorizontalLine = Math.abs(clientY - e.clientY) <= lineThresholdPx
   const type = isVerticalLine || isHorizontalLine ? 'line' : 'rect'
   switch (type) {
-    case 'rect': {
+    case 'rect':
       return {
         type: 'rect',
         attachmentIndex,
@@ -196,8 +198,8 @@ export function annotationFromMousePosition(
         height: Math.abs(currentY - startY),
         message: '',
       }
-    }
-    case 'line': {
+
+    case 'line':
       return {
         type: 'line',
         attachmentIndex,
@@ -207,7 +209,6 @@ export function annotationFromMousePosition(
         y2: isHorizontalLine ? startY : Math.max(startY, currentY),
         message: '',
       }
-    }
   }
 }
 export function imageAnnotationMouseDownInfo(
