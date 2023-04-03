@@ -111,7 +111,7 @@ export function hasTextSelectedInAnswerText(): boolean {
 export function selectionHasNothingToUnderline(range: Range) {
   const contents = range.cloneContents()
   const hasImages = Array.from(contents.childNodes).some(
-    (x) => x instanceof Element && (x.className === 'e-annotation-wrapper' || x.tagName === 'IMG')
+    (x) => x instanceof Element && (x.classList.contains('e-annotation-wrapper') || x.tagName === 'IMG')
   )
   return contents.textContent?.length === 0 && !hasImages
 }
