@@ -210,13 +210,14 @@ function GradingAnswerWithTranslations({
   }
 
   function onMouseOverAnnotation(target: HTMLElement) {
+    const markElement = target.closest('mark')
     if (
-      target.tagName === 'MARK' &&
+      markElement &&
       !isEditAnnotationPopupVisible &&
       (!hasTextSelectedInAnswerText() || isReadOnly) &&
       !imgAnnotationState.element
     ) {
-      showTooltip(target)
+      showTooltip(markElement)
     }
   }
   function showAnnotationPopup(rect: DOMRect, message: string) {
