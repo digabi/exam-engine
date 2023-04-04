@@ -92,6 +92,11 @@ function GradingAnswerWithTranslations({
       clearTimeout(windowResizeTimeout)
       windowResizeTimeout = setTimeout(() => updateLargeImageWarnings(answerRef.current!), 1000)
     }
+    return () => {
+      window.removeEventListener('keydown', onKeyUpInAnnotationPopup)
+      window.removeEventListener('mouseup', onWindowMouseUpAfterAnswerMouseDown)
+      window.removeEventListener('mousemove', onMouseMoveForImageAnnotation)
+    }
   })
 
   const { t } = useExamTranslation()
