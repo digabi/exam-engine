@@ -159,7 +159,9 @@ function GradingAnswerWithTranslations({
     const element = e.target
     if (element instanceof HTMLElement) {
       if (element.tagName === 'MARK') {
-        showTooltip(element)
+        if (!imgAnnotationState.element) {
+          showTooltip(element)
+        }
       } else if (element.tagName === 'LI') {
         const index = element.dataset.listNumber?.replace(')', '')!
         const mark = document.querySelector<HTMLElement>(`.e-annotation[data-index="${index}"]`)!
