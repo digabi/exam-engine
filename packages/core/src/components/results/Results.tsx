@@ -25,6 +25,9 @@ import QuestionTitle from './QuestionTitle'
 import Section from './Section'
 import ScoredTextAnswer from './ScoredTextAnswer'
 import TextAnswer from './TextAnswer'
+import { ErrorIndicatorForErrors } from '../exam/internal/ErrorIndicator'
+import { validateAnswers } from '../../validateAnswers'
+import { parseExamStructure } from '../../parser/parseExamStructure'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -56,7 +59,7 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes,
 })
 
-const Results: React.FunctionComponent<ResultsProps> = () => {
+const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
 
@@ -80,7 +83,7 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
               {date && `, ${dateTimeFormatter.format(date)}`}
             </DocumentTitle>
           )}
-          <ScoresAndFinalGrade />
+          <ScoresAndFinalGrade doc={doc} />
         </div>
         {renderChildNodes(root)}
       </main>
@@ -88,12 +91,13 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
   )
 }
 
-function ScoresAndFinalGrade() {
-  const { gradingText, totalScore } = useContext(ResultsContext)
+function ScoresAndFinalGrade({ doc }: { doc: XMLDocument }) {
+  const { gradingText, totalScore, answersByQuestionId } = useContext(ResultsContext)
   const { t } = useExamTranslation()
 
   return (
     <div className="e-column--narrow">
+      <ErrorIndicatorForErrors validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)} />
       <table className="e-table e-table--borderless e-mrg-b-0">
         <tbody>
           <tr>
