@@ -62,6 +62,7 @@ const renderChildNodes = createRenderChildNodes({
 const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
+  const { answersByQuestionId } = useContext(ResultsContext)
 
   const examTitle = findChildElement(root, 'exam-title')
   const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -70,7 +71,6 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
   useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
-
   return (
     <I18nextProvider i18n={i18n}>
       <main className="e-exam" lang={subjectLanguage}>
@@ -83,21 +83,24 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
               {date && `, ${dateTimeFormatter.format(date)}`}
             </DocumentTitle>
           )}
-          <ScoresAndFinalGrade doc={doc} />
+          <ScoresAndFinalGrade />
         </div>
+        <ErrorIndicatorForErrors
+          validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
+          inExam={false}
+        />
         {renderChildNodes(root)}
       </main>
     </I18nextProvider>
   )
 }
 
-function ScoresAndFinalGrade({ doc }: { doc: XMLDocument }) {
-  const { gradingText, totalScore, answersByQuestionId } = useContext(ResultsContext)
+function ScoresAndFinalGrade() {
+  const { gradingText, totalScore } = useContext(ResultsContext)
   const { t } = useExamTranslation()
 
   return (
     <div className="e-column--narrow">
-      <ErrorIndicatorForErrors validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)} />
       <table className="e-table e-table--borderless e-mrg-b-0">
         <tbody>
           <tr>
