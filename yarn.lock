@@ -8658,10 +8658,10 @@ libnpmpublish@6.0.4:
     semver "^7.3.7"
     ssri "^9.0.0"
 
-libxmljs2@^0.31.0:
-  version "0.31.0"
-  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.31.0.tgz#0f7cf42453500843628d338f1e1b88d0bc20fa90"
-  integrity sha512-+o8y4lhmmf7zUA67watbLcAcxE0lkBkuatoIwgFkWTmuFTPEOZKunNpSjW6V7ONzAj8Ey1qVeR12q1JMU/sTlQ==
+libxmljs2@^0.32.0:
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/libxmljs2/-/libxmljs2-0.32.0.tgz#408e35c54a5ad5e0366bc8299ba20ed35224d0d9"
+  integrity sha512-DuvKfSQZeUzw0A4UWZXfcBpr3VqlcJY1b3aw99PxTiX3T5t1rEO4gSpobNrP9S74LIhyDKaAs/lphuErV+n+7w==
   dependencies:
     "@mapbox/node-pre-gyp" "^1.0.10"
     bindings "~1.5.0"
