@@ -25,6 +25,9 @@ import QuestionTitle from './QuestionTitle'
 import Section from './Section'
 import ScoredTextAnswer from './ScoredTextAnswer'
 import TextAnswer from './TextAnswer'
+import { ErrorIndicatorForErrors } from '../exam/internal/ErrorIndicator'
+import { validateAnswers } from '../../validateAnswers'
+import { parseExamStructure } from '../../parser/parseExamStructure'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -56,9 +59,10 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes,
 })
 
-const Results: React.FunctionComponent<ResultsProps> = () => {
+const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
+  const { answersByQuestionId } = useContext(ResultsContext)
 
   const examTitle = findChildElement(root, 'exam-title')
   const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -67,7 +71,6 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
   useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
-
   return (
     <I18nextProvider i18n={i18n}>
       <main className="e-exam" lang={subjectLanguage}>
@@ -82,6 +85,10 @@ const Results: React.FunctionComponent<ResultsProps> = () => {
           )}
           <ScoresAndFinalGrade />
         </div>
+        <ErrorIndicatorForErrors
+          validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
+          inExam={false}
+        />
         {renderChildNodes(root)}
       </main>
     </I18nextProvider>

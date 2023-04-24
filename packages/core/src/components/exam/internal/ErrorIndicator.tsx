@@ -4,10 +4,11 @@ import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { findChildElement } from '../../../dom-utils'
 import { useExamTranslation } from '../../../i18n'
-import { AnswerTooLong, ExtraAnswer } from '../../../validateAnswers'
+import { AnswerTooLong, ExtraAnswer, ValidationError } from '../../../validateAnswers'
 import AnsweringInstructions from '../../AnsweringInstructions'
 import { CommonExamContext } from '../../context/CommonExamContext'
 import { AnswersState } from '../../../store/answers/reducer'
+import classNames from 'classnames'
 
 const ExtraAnswerError: React.FunctionComponent<ExtraAnswer> = (props) => {
   const { t } = useExamTranslation()
@@ -30,13 +31,19 @@ const AnswerTooLongError: React.FunctionComponent<AnswerTooLong> = ({ displayNum
     </div>
   )
 }
-
-const ErrorIndicator: React.FunctionComponent = () => {
-  const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors)
-
+export function ErrorIndicatorForErrors({
+  validationErrors,
+  inExam,
+}: {
+  validationErrors: ValidationError[]
+  inExam: boolean
+}) {
   return validationErrors.length > 0 ? (
     <div
-      className="error-indicator e-columns e-columns--inline e-bg-color-error e-color-off-white e-font-size-xs e-pad-1 e-mrg-r-1"
+      className={classNames(
+        { 'error-indicator e-bg-color-error e-color-off-white': inExam },
+        'e-columns e-columns--inline e-font-size-xs e-pad-1 e-mrg-r-1'
+      )}
       role="alert"
     >
       <div className="e-column e-column--narrow">
@@ -55,6 +62,10 @@ const ErrorIndicator: React.FunctionComponent = () => {
       </div>
     </div>
   ) : null
+}
+const ErrorIndicator: React.FunctionComponent = () => {
+  const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors)
+  return <ErrorIndicatorForErrors validationErrors={validationErrors} inExam={true} />
 }
 
 const FallbackTitle: React.FunctionComponent<ExtraAnswer> = ({ elementType, displayNumber }) => {
