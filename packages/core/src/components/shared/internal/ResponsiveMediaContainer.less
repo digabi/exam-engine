@@ -11,6 +11,9 @@
       border-radius: 4px;
     }
   }
+  .e-choice-answer {
+    display: flow-root;
+  }
   .e-choice-answer-option--selected .responsive-media-container--bordered {
     box-shadow: 0 0 0 1px @colors[link], inset 0 0 0 1px @colors[link];
     border-color: @colors[link];
@@ -21,6 +24,7 @@
     display: block;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 
     img,
     video {
