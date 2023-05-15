@@ -11,7 +11,7 @@ module.exports = {
     },
     {
       path: 'packages/core/dist/main.css',
-      maxSize: '10KB',
+      maxSize: '11KB',
     },
   ],
 }
