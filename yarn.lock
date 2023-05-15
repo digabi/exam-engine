@@ -4807,21 +4807,19 @@ css-has-pseudo@^3.0.4:
   dependencies:
     postcss-selector-parser "^6.0.9"
 
-css-loader@^5.0.0:
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-5.2.7.tgz#9b9f111edf6fb2be5dc62525644cbc9c232064ae"
-  integrity sha512-Q7mOvpBNBG7YrVGMxRxcBJZFL75o+cH2abNASdibkj/fffYD8qWbInZrD0S9ccI6vZclF3DsHE7njGlLtaHbhg==
+css-loader@^6.7.3:
+  version "6.7.3"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-6.7.3.tgz#1e8799f3ccc5874fdd55461af51137fcc5befbcd"
+  integrity sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==
   dependencies:
     icss-utils "^5.1.0"
-    loader-utils "^2.0.0"
-    postcss "^8.2.15"
+    postcss "^8.4.19"
     postcss-modules-extract-imports "^3.0.0"
     postcss-modules-local-by-default "^4.0.0"
     postcss-modules-scope "^3.0.0"
     postcss-modules-values "^4.0.0"
-    postcss-value-parser "^4.1.0"
-    schema-utils "^3.0.0"
-    semver "^7.3.5"
+    postcss-value-parser "^4.2.0"
+    semver "^7.3.8"
 
 css-minimizer-webpack-plugin@*:
   version "3.4.1"
@@ -11131,7 +11129,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.27:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postcss@^8.0.5, postcss@^8.2.1, postcss@^8.2.15, postcss@^8.3.11, postcss@^8.3.5, postcss@^8.4.17:
+postcss@^8.0.5, postcss@^8.2.1, postcss@^8.3.11, postcss@^8.3.5, postcss@^8.4.17, postcss@^8.4.19:
   version "8.4.23"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.23.tgz#df0aee9ac7c5e53e1075c24a3613496f9e6552ab"
   integrity sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==
