@@ -112,7 +112,7 @@ async function copyAttachment(
 }
 
 async function optimizeWithPuppeteer(examOutputDirectories: string[], options: CreateOfflineExamOptions) {
-  const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] })
+  const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   try {
     const context = await browser.createIncognitoBrowserContext()
     const page = await context.newPage()

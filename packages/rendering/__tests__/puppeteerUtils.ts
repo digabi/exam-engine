@@ -7,7 +7,10 @@ const isInDebugMode = process.env.PUPPETEER_DEBUG === '1'
 export function initPuppeteer(): () => Promise<Page> {
   let browser: Browser
   beforeAll(async () => {
-    browser = await puppeteer.launch({ headless: !isInDebugMode, args: ['--no-sandbox', '--disable-setuid-sandbox'] })
+    browser = await puppeteer.launch({
+      headless: isInDebugMode ? false : 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    })
   })
   afterAll(async () => {
     await browser.close()
