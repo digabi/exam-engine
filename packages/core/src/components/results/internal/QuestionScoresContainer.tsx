@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classnames from 'classnames'
+import { QuestionContext } from '../../context/QuestionContext'
 
 function QuestionScoresContainer({
   answers,
@@ -12,11 +13,14 @@ function QuestionScoresContainer({
   children: React.ReactNode
   multilineAnswer?: boolean
 }) {
+  const { displayNumber: topLevelDisplayNumber } = useContext(QuestionContext)
+  const fullDisplayNumber = displayNumber ? `${topLevelDisplayNumber}.${displayNumber?.replace('.', '')}` : undefined
   return (
     <div
       className={classnames('e-result-scorecount', 'e-float-right', {
         'e-result-scorecount-multiline-answer': multilineAnswer,
       })}
+      id={fullDisplayNumber}
     >
       <div className="e-result-scorecount-border-wrap">
         {answers.length > 1 && displayNumber && (
