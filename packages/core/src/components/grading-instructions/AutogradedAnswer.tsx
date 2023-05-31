@@ -14,8 +14,8 @@ const AutogradedAnswer: React.FC<ExamComponentProps> = ({ element, renderChildNo
   const content = (
     <>
       {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
-      {gradingInstructions && <AnswerGradingInstruction {...{ element: gradingInstructions, renderChildNodes }} />}
       <ul>{renderChildNodes(element)}</ul>
+      {gradingInstructions && <AnswerGradingInstruction {...{ element: gradingInstructions, renderChildNodes }} />}
     </>
   )
 

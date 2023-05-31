@@ -71,7 +71,9 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
               piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
             </span>
             
-           <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">6 p.</span></span></h4><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
+           <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">6 p.</span></span></h4><ul>
+            
+          </ul><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
               <span lang=\\"fi-FI\\">
                 <p>Hänen sukulaisensa tulevat vierailulle (3/0 p.).</p>
                 <p>Hänen serkkunsa tulee mukaan (3/0 p.).</p>
@@ -84,9 +86,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
                 </p>
               </span>
               
-            </div><ul>
-            
-          </ul><details class=\\"e-grading-instruction-recording e-pad-1 e-mrg-b-2\\"><summary><strong><span lang=\\"fi-FI\\">Tallenne</span></strong> <em>Hören Sie den Abschnitt für die Frage 1.2.</em></summary>
+            </div><details class=\\"e-grading-instruction-recording e-pad-1 e-mrg-b-2\\"><summary><strong><span lang=\\"fi-FI\\">Tallenne</span></strong> <em>Hören Sie den Abschnitt für die Frage 1.2.</em></summary>
               <p>
                 [Pling]
                 <br>
@@ -630,7 +630,14 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
       </div><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
         <span lang=\\"fi-FI\\">Tehtävässä vaaditaan muunnoksilta kieliopillista ja oikeinkirjoituksen oikeellisuutta. Kuitenkaan väärästä välimerkistä tai sen puuttumisesta ei ole vähennetty pisteitä.</span>
         
-      </div><div class=\\"e-mrg-l-8\\"><p class=\\"exam-question-title\\"><span class=\\"exam-question-title__display-number--indented e-semibold\\">18.1 </span>Kommst du am Samstag mit ins Kino (wollen) <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">2 p.</span></span></p><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
+      </div><div class=\\"e-mrg-l-8\\"><p class=\\"exam-question-title\\"><span class=\\"exam-question-title__display-number--indented e-semibold\\">18.1 </span>Kommst du am Samstag mit ins Kino (wollen) <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">2 p.</span></span></p><ul>
+                
+                
+                <li>Willst du am Samstag mit ins Kino kommen?&nbsp;(<span lang=\\"fi-FI\\">2 p.</span>)</li>
+                <li>Willst du ins Kino am Samstag mitkommen? (sanajärjestys)&nbsp;(<span lang=\\"fi-FI\\">1 p.</span>)</li>
+                <li>Will du am Samstag mit ins Kino kommen? (verbin taivutus)&nbsp;(<span lang=\\"fi-FI\\">1 p.</span>)</li>
+                <li>willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)&nbsp;(<span lang=\\"fi-FI\\">1 p.</span>)</li>
+              </ul><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
                   <span lang=\\"fi-FI\\">
                     <p>
                       Vastauksessa on hyväksytty myös ”mitkommen”-verbin käyttö. Esim. ”Willst du am Samstag ins Kino mitkommen?” ja myös esim. ”Willst du am Samstag mit mir ins Kino mitkommen?”.
@@ -651,14 +658,11 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
                     </p>
                   </span>
                   
-                </div><ul>
+                </div></div><div class=\\"e-mrg-l-8\\"><p class=\\"exam-question-title\\"><span class=\\"exam-question-title__display-number--indented e-semibold\\">18.2 </span>weil ich zuerst Mama frage (müssen) <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">2 p.</span></span></p><ul>
                 
                 
-                <li>Willst du am Samstag mit ins Kino kommen?&nbsp;(<span lang=\\"fi-FI\\">2 p.</span>)</li>
-                <li>Willst du ins Kino am Samstag mitkommen? (sanajärjestys)&nbsp;(<span lang=\\"fi-FI\\">1 p.</span>)</li>
-                <li>Will du am Samstag mit ins Kino kommen? (verbin taivutus)&nbsp;(<span lang=\\"fi-FI\\">1 p.</span>)</li>
-                <li>willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)&nbsp;(<span lang=\\"fi-FI\\">1 p.</span>)</li>
-              </ul></div><div class=\\"e-mrg-l-8\\"><p class=\\"exam-question-title\\"><span class=\\"exam-question-title__display-number--indented e-semibold\\">18.2 </span>weil ich zuerst Mama frage (müssen) <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">2 p.</span></span></p><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
+                <li>weil ich zuerst Mama fragen muss&nbsp;(<span lang=\\"fi-FI\\">2 p.</span>)</li>
+              </ul><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
                   <span lang=\\"fi-FI\\">
                     <p>
                       esimerkkejä:
@@ -675,11 +679,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
                     </p>
                   </span>
                   
-                </div><ul>
-                
-                
-                <li>weil ich zuerst Mama fragen muss&nbsp;(<span lang=\\"fi-FI\\">2 p.</span>)</li>
-              </ul></div></div>
+                </div></div></div>
 
     <div class=\\"e-grading-instructions-question e-mrg-b-8 e-clearfix\\" id=\\"19\\"><h3 class=\\"exam-question-title\\"><strong class=\\"exam-question-title__display-number\\">19. </strong>Dialog <span class=\\"e-score e-nowrap e-score--large e-font-size-l e-semibold\\"><span lang=\\"fi-FI\\">10 p.</span></span></h3><div class=\\"exam-question-instruction e-mrg-b-2\\" id=\\"question-instruction-19\\">
         <span lang=\\"fi-FI\\">Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä
