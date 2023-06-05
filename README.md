@@ -71,7 +71,7 @@ To create a transfer zip, navigate to the exam directory and run
 $ ee create-transfer-zip
 ```
 
-This creates a transfer zip files in the exam directory for each language
+This creates a transfer zip file in the exam directory for each language
 version of the exam.
 
 # Offline versions
@@ -109,7 +109,7 @@ Exam-engine is structured as a monorepo containing several NPM packages.
 | Component                                           | Purpose                                                                                                                                                                                                                                                                                 |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [@digabi/exam-engine-core](packages/core)           | The main UI code responsible for rendering a mastered exam into HTML. It produces an AMD bundle containing several React components and a CSS file. This AMD bundle is packaged to every exam .mex file and loaded dynamically when taking the exam.                                       |
-| [@digabi/exam-engine-mastering](packages/mastering) | Mastering is a step in which we take a source XML file, validate its contents, do some processing (e.g. calculate the maximum score and assign IDs for each question). A single source XML file will produce a separate mastered XML files for each language defined in the source XML. |
+| [@digabi/exam-engine-mastering](packages/mastering) | Mastering is a step in which we take a source XML file, validate its contents, do some processing (e.g. calculate the maximum score and assign IDs for each question). A single source XML file will produce a separate mastered XML file for each language defined in the source XML. |
 | [@digabi/exam-engine-rendering](packages/rendering) | Contains webpack-related code for previewing an exam or converting one into a static HTML file (also known as an "offline exam").                                                                                                                                                       |
 | [@digabi/exam-engine-exams](packages/exams)         | Contains sample exams in the mex format.                                                                                                                                                                                                                                                |
 | [@digabi/exam-engine-cli](packages/cli)             | Contains the `ee` CLI tool.                                                                                                                                                                                                                                                             |
