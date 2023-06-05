@@ -104,11 +104,11 @@ The information in this section is only relevant for developers.
 
 ## Architecture
 
-Exam-engine is structured as a a monorepo that containing several NPM packages.
+Exam-engine is structured as a monorepo containing several NPM packages.
 
 | Component                                           | Purpose                                                                                                                                                                                                                                                                                 |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@digabi/exam-engine-core](packages/core)           | The main UI code responsible for rendering a mastered exam into HTML. It produces an AMD bundle containing several React components and a CSS file. This AMD bundle packaged to every exam .mex file and loaded dynamically when taking the exam.                                       |
+| [@digabi/exam-engine-core](packages/core)           | The main UI code responsible for rendering a mastered exam into HTML. It produces an AMD bundle containing several React components and a CSS file. This AMD bundle is packaged to every exam .mex file and loaded dynamically when taking the exam.                                       |
 | [@digabi/exam-engine-mastering](packages/mastering) | Mastering is a step in which we take a source XML file, validate its contents, do some processing (e.g. calculate the maximum score and assign IDs for each question). A single source XML file will produce a separate mastered XML files for each language defined in the source XML. |
 | [@digabi/exam-engine-rendering](packages/rendering) | Contains webpack-related code for previewing an exam or converting one into a static HTML file (also known as an "offline exam").                                                                                                                                                       |
 | [@digabi/exam-engine-exams](packages/exams)         | Contains sample exams in the mex format.                                                                                                                                                                                                                                                |
