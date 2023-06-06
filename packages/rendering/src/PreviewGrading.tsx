@@ -42,23 +42,7 @@ function PreviewGrading() {
   })
 
   const answer = answersByQuestionId[answerId]
-  const { type, value } = answer
 
-  if (type === 'choice') {
-    return <div>choice answer</div>
-  }
-  const { characterCount } = answer
-  function selectQuestion(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: number) {
-    e.preventDefault()
-    setAnswerId(id)
-    setAnnotations(annotationsStorage.current[id])
-  }
-
-  function saveAnnotations(annotations: { pregrading: Annotation[]; censoring: Annotation[] }) {
-    console.log(annotations)
-    annotationsStorage.current[answerId] = annotations
-    setAnnotations({ ...annotationsStorage.current[answerId] })
-  }
   return (
     <main className="e-exam">
       <div className="grading-header">
@@ -100,21 +84,37 @@ function PreviewGrading() {
       </div>
       <div className="answer-and-scores">
         <div className="score-margin">Ei arvosteltu</div>
-        <GradingAnswer
-          {...{
-            answer: { type, characterCount, value },
-            language,
-            isReadOnly: false,
-            gradingRole: 'censoring',
-            maxLength: 100,
-            annotations,
-            saveAnnotations,
-            popupTopMargin: 0,
-          }}
-        />
+        {answer.type === 'choice' ? (
+          <div>choice answer</div>
+        ) : (
+          <GradingAnswer
+            {...{
+              answer,
+              language,
+              isReadOnly: false,
+              gradingRole: 'censoring',
+              maxLength: 100,
+              annotations,
+              saveAnnotations,
+              popupTopMargin: 0,
+            }}
+          />
+        )}
       </div>
     </main>
   )
+
+  function selectQuestion(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: number) {
+    e.preventDefault()
+    setAnswerId(id)
+    setAnnotations(annotationsStorage.current[id])
+  }
+
+  function saveAnnotations(annotations: { pregrading: Annotation[]; censoring: Annotation[] }) {
+    console.log(annotations)
+    annotationsStorage.current[answerId] = annotations
+    setAnnotations({ ...annotationsStorage.current[answerId] })
+  }
 }
 
 export default withResultsContext(withCommonExamContext(PreviewGrading))
