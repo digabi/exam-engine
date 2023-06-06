@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<QuestionManualScore /> fi-FI renders with NoPregrading when there are no scores 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <span
@@ -13,16 +13,16 @@ exports[`<QuestionManualScore /> fi-FI renders with NoPregrading when there are 
     />
      / 6 
      p.
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders with NoPregrading when there is pregrading data but no scores 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <span
@@ -30,16 +30,16 @@ exports[`<QuestionManualScore /> fi-FI renders with NoPregrading when there is p
     />
      / 6 
      p.
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders with displayNumber where there are more than one answer 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <sup
@@ -71,16 +71,16 @@ exports[`<QuestionManualScore /> fi-FI renders with displayNumber where there ar
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders with pregrading and one censor scores 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <div
@@ -127,16 +127,16 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and one censor sc
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders with pregrading and three censor scores 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <div
@@ -225,16 +225,16 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and three censor 
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders with pregrading score 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <div
@@ -260,16 +260,16 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading score 1`] = `
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspection scores 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <div
@@ -379,16 +379,16 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspe
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when pregrading score is 0 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <div
@@ -414,16 +414,16 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when pregrad
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when there are scores 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <div
@@ -512,16 +512,16 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when there a
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> fi-FI renders without score 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <span
@@ -529,16 +529,16 @@ exports[`<QuestionManualScore /> fi-FI renders without score 1`] = `
     />
      / 6 
      p.
-  </div>
-</div>
+  </span>
+</span>
 `;
 
 exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspection scores 1`] = `
-<div
+<span
   className="e-result-scorecount e-float-right"
   id="1.1"
 >
-  <div
+  <span
     className="e-result-scorecount-border-wrap"
   >
     <div
@@ -648,6 +648,6 @@ exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspe
         alust.
       </span>
     </div>
-  </div>
-</div>
+  </span>
+</span>
 `;
