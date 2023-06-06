@@ -15,7 +15,7 @@ function QuestionAutoScore({ score, maxScore, displayNumber }: QuestionAutoScore
   const containerProps = { answers, displayNumber }
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
-      {typeof score === 'number' ? <b>{score}</b> : <div className="e-result-scorecount-empty" />}{' '}
+      {typeof score === 'number' ? <b>{score}</b> : <span className="e-result-scorecount-empty" />}{' '}
       {maxScore ? `/ ${maxScore} ` : null} {t('points', { count: '' as any as number })}
     </ResultsExamQuestionScoresContainer>
   )
