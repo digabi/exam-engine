@@ -58,7 +58,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
     const { current } = ref
 
     if (current) {
-      if (type === 'single-line') {
+      if (type === 'single-line' || type === 'integer') {
         current.style.width = '0'
         current.style.width = `${current.scrollWidth + borderWidthPx}px`
       }
@@ -77,6 +77,38 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
       }
       dispatch(saveAnswer(answer))
       setScreenshotError(undefined)
+    },
+    [questionId, displayNumber]
+  )
+
+  const [integerValue, setIntegerValue] = useState<string>('')
+  const onIntegerChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
+    (event) => {
+      event.preventDefault()
+      event.currentTarget.classList.remove('text-answer--integer--input-error')
+      const patternForIntegers = /^-?\d*$/
+      const value = event.currentTarget.value.trim()
+      if (patternForIntegers.test(value)) {
+        setIntegerValue(value)
+        const answer: TextAnswerT = {
+          type: 'text',
+          questionId,
+          value,
+          characterCount: getCharacterCount(value),
+          displayNumber,
+        }
+        dispatch(saveAnswer(answer))
+        setScreenshotError(undefined)
+      } else {
+        event.currentTarget.classList.add('text-answer--integer--input-error')
+        setTimeout(
+          (target: HTMLInputElement) => {
+            target.classList.remove('text-answer--integer--input-error')
+          },
+          1000,
+          event.currentTarget
+        )
+      }
     },
     [questionId, displayNumber]
   )
@@ -132,6 +164,25 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
             }}
           />
         </>
+      )
+    case 'integer':
+      return (
+        <span className="e-nowrap">
+          <input
+            type="text"
+            className={classNames('text-answer text-answer--integer', className)}
+            value={integerValue}
+            onChange={onIntegerChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            ref={ref}
+            data-question-id={questionId}
+            lang={lang}
+            aria-describedby={scoreId}
+            aria-labelledby={labelledBy}
+          />
+          {answers.length > 1 && <Score score={maxScore} size="inline" id={scoreId} />}
+        </span>
       )
     case 'single-line':
     default:

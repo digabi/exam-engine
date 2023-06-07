@@ -27,6 +27,34 @@
     }
   }
 
+  &--integer {
+    .e-exam.e-monospace();
+    .e-exam.e-font-size-m();
+    height: 1.5rem;
+    min-width: 2rem;
+    max-width: 100%;
+    padding: 0 0.5rem 2px;
+    vertical-align: baseline;
+    &:focus {
+      position: relative;
+    }
+    &--input-error {
+      animation: blink-animation 1s steps(1, start) 0s 1;
+      -webkit-animation: blink-animation 1s steps(1, start) 0s 1;
+    }
+  }
+
+  @keyframes blink-animation {
+    to {
+      background-color: rgba(255, 0, 0, 0.5);
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      background-color: rgba(255, 0, 0, 0.5);
+    }
+  }
+
   &--rich-text {
     .e-exam.e-sans-serif();
     .e-exam.e-font-size-m();
