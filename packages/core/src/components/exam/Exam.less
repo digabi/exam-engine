@@ -1,7 +1,19 @@
-.e-exam {
-  margin: 0 auto;
+.halves {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  position: fixed;
   width: 100%;
-  max-width: 65rem;
+
+  & > div,
+  & > nav {
+    height: 100vh;
+    overflow: auto;
+  }
+}
+
+.e-exam {
+  width: 100%;
   .e-exam.e-sans-serif();
   .e-exam.e-font-size-m();
   color: @colors[black];
@@ -108,6 +120,24 @@
       }
     }
   }
+
+  .main-exam-container {
+    flex: 0 0 65rem;
+    padding-right: 1em;
+
+    .main-exam {
+      max-width: 65rem;
+      margin-right: auto;
+      padding: 1px;
+      box-sizing: content-box;
+    }
+  }
+}
+
+.anchor {
+  position: relative;
+  top: -2em;
+  visibility: hidden;
 }
 
 .e-exam * {
@@ -133,8 +163,6 @@
       padding-top: 4.5rem;
     }
   }
-
-
 
   &.math-editor-focus .exam-question.expanded {
     padding-top: 9rem;
