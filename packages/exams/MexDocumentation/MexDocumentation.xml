@@ -606,7 +606,7 @@
           <tr>
             <td>type</td>
             <td>
-              <code>single-line | rich-text</code>
+              <code>single-line | rich-text | integer</code>
             </td>
             <td>No</td>
             <td>
