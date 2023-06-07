@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
-import { findChildElement, getAttribute, query, queryAncestors } from '../../dom-utils'
+import { findChildElement, getAttribute, getNumericAttribute, query, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { tocSectionTitleId, tocTitleId } from '../../ids'
 import { url } from '../../url'
@@ -65,7 +65,10 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
       <li data-list-number={`${displayNumber}.`}>
         <div className="e-columns">
           <span className="e-column">
-            <a href={url('', { hash: displayNumber })}>{renderChildNodes(questionTitle)}</a>
+            <a href={url('', { hash: displayNumber })}>
+              <span className="question-number">{displayNumber}</span>
+              <span className="question-title">{renderChildNodes(questionTitle)}</span>
+            </a>
           </span>
           {externalMaterial && (
             <span className="e-column e-column--narrow">
@@ -83,6 +86,7 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
             {t('points', { count: maxScore })}
           </span>
         </div>
+        <ul className="sub-q">{renderChildNodes(element)}</ul>
       </li>
     )
   }
@@ -96,9 +100,20 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
     const { root, maxScore } = useContext(CommonExamContext)
     const { t } = useExamTranslation()
 
+    let maxA = 0
+    root.childNodes.forEach((n) => {
+      console.log(n.nodeName, n)
+      if (n.nodeName === 'e:section') {
+        const maxAnswers = getNumericAttribute(n as Element, 'max-answers') || 0
+        console.log(maxAnswers)
+        maxA += maxAnswers
+      }
+    })
+
     return (
-      <nav className="table-of-contents e-mrg-b-6" aria-labelledby={tocTitleId}>
+      <nav className="table-of-contents" aria-labelledby={tocTitleId}>
         <h2 id={tocTitleId}>{t('toc-heading')}</h2>
+        <p>Vastaa {maxA} tehtävään</p>
         <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
         <div className="e-columns">
           <strong className="e-column">{t('exam-total')}</strong>
