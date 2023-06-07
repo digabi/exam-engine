@@ -14,11 +14,11 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   return !casForbidden || casStatus === 'forbidden' ? (
     <div
       className={classNames('exam-question', {
-        'e-mrg-b-8 e-clearfix': level === 0,
-        'e-mrg-l-8 e-mrg-y-4': level > 0,
+        'e-pad-b-8 e-clearfix': level === 0,
+        'e-mrg-l-8': level > 0,
       })}
-      id={displayNumber}
     >
+      <div className="anchor" id={displayNumber} />
       {renderChildNodes(element)}
     </div>
   ) : null

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { createRef, useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
@@ -43,6 +43,7 @@ import { mkTableOfContents } from '../shared/TableOfContents'
 import TextAnswer from './TextAnswer'
 import Video from '../shared/Video'
 import RenderChildNodes from '../RenderChildNodes'
+import * as _ from 'lodash-es'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -119,6 +120,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const externalMaterial = findChildElement(root, 'external-material')
   const examStylesheet = root.getAttribute('exam-stylesheet')
 
+  const examRef = createRef<HTMLDivElement>()
+
   const store = useCached(() =>
     initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
   )
@@ -131,29 +134,70 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   useEffect(scrollToHash, [])
 
+  const handleExamScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
+    const scrollY = e.currentTarget.scrollTop
+    const sections = document.querySelectorAll('.exam-question')
+
+    // Find the section currently in view
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top + scrollY
+      const sectionBottom = section.getBoundingClientRect().bottom + scrollY
+
+      const sectionFillsView = scrollY > sectionTop && scrollY <= sectionBottom
+      const sectionBeginsInView = scrollY > sectionTop - window.innerHeight && scrollY <= sectionTop
+
+      const id = section.querySelector('.anchor')?.id || ''
+      if (sectionFillsView || sectionBeginsInView) {
+        document.querySelector(`.table-of-contents li[data-list-number="${id}."]`)?.classList.add('current')
+      } else {
+        document.querySelector(`.table-of-contents li[data-list-number="${id}."]`)?.classList.remove('current')
+      }
+    })
+  }
+
+  const throttledScroll = _.throttle(handleExamScroll, 50, { trailing: false })
+
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId}>
+        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-          <SectionElement aria-labelledby={examTitleId}>
-            {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-            {date && (
-              <p>
-                <strong>{dateTimeFormatter.format(date)}</strong>
-              </p>
+
+          <div className="halves">
+            {tableOfContents && (
+              <div className="sidebar-toc-container">
+                <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
+              </div>
             )}
-            {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
-            {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
-            {externalMaterial && (
-              <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-            )}
-          </SectionElement>
-          {renderChildNodes(root)}
-          <div className="e-footer">
-            <ErrorIndicator />
-            <SaveIndicator />
+
+            <div className="main-exam-container" onScroll={throttledScroll}>
+              <div className="main-exam">
+                <SectionElement aria-labelledby={examTitleId}>
+                  {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+                  {date && (
+                    <p>
+                      <strong>{dateTimeFormatter.format(date)}</strong>
+                    </p>
+                  )}
+                  {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+
+                  {tableOfContents && (
+                    <div className="main-toc-container">
+                      <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
+                    </div>
+                  )}
+                  {externalMaterial && (
+                    <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                  )}
+                </SectionElement>
+                {renderChildNodes(root)}
+                <div className="e-footer">
+                  <ErrorIndicator />
+                  <SaveIndicator />
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </I18nextProvider>
