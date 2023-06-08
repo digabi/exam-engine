@@ -105,7 +105,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
           (target: HTMLInputElement) => {
             target.classList.remove('text-answer--integer--input-error')
           },
-          1000,
+          200,
           event.currentTarget
         )
       }
@@ -170,7 +170,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
         <span className="e-nowrap">
           <input
             type="text"
-            className={classNames('text-answer text-answer--integer', className)}
+            className={classNames('text-answer text-answer--single-line text-answer--integer', className)}
             value={integerValue}
             onChange={onIntegerChange}
             onFocus={onFocus}
