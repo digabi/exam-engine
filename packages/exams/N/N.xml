@@ -124,7 +124,7 @@
       <e:localization lang="sv-FI">
         Värdet av uttrycket <e:formula>(-9)\cdot (42-35)</e:formula> är </e:localization>
 		</e:question-title>
-			<p><e:scored-text-answer max-score="2"><e:accepted-answer score="2">–63</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:scored-text-answer max-score="2" type="integer"><e:accepted-answer score="2">–63</e:accepted-answer></e:scored-text-answer></p>
   </e:question>
 
 	<e:question>
@@ -134,7 +134,7 @@
       <e:localization lang="sv-FI">
         Nollstället till funktionen <e:formula>f(x)=4x-12</e:formula> är </e:localization>
 		</e:question-title>
-			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">3</e:accepted-answer></e:scored-text-answer></p></e:question>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score="2" type="integer"><e:accepted-answer score="2">3</e:accepted-answer></e:scored-text-answer></p></e:question>
 
 	<e:question>
 		<e:question-title>
@@ -145,7 +145,7 @@
         En rät linje går genom punkterna <e:formula>A = (1, 15)</e:formula> och <e:formula>B = (7, 81).</e:formula>
 				Linjens riktningskoefficient är </e:localization>
 		</e:question-title>
-			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">11</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score="2" type="integer"><e:accepted-answer score="2">11</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
 
 	<e:question>
@@ -155,7 +155,7 @@
       <e:localization lang="sv-FI">
         Värdet av uttrycket <e:formula>6^3\cdot 2^{-2}</e:formula> är </e:localization>
 		</e:question-title>
-			<p><e:scored-text-answer max-score="2"><e:accepted-answer score="2">54</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:scored-text-answer max-score="2" type="integer"><e:accepted-answer score="2">54</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
 
 	<e:question>
@@ -166,7 +166,7 @@
         <e:localization lang="sv-FI">
         En geometrisk talföljd börjar med talen  <e:formula>a_1=256,</e:formula> <e:formula>a_2=128</e:formula> och <e:formula>a_3=64.</e:formula> Talföljdens femte element är </e:localization>
 		</e:question-title>
-			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">16</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score="2" type="integer"><e:accepted-answer score="2">16</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
 
 	<e:question>
@@ -176,7 +176,7 @@
       <e:localization lang="sv-FI">
         Lösningen till ekvationen <e:formula>2^{2x-5}=8</e:formula> är </e:localization>
 		</e:question-title>
-			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score="2"><e:accepted-answer score="2">4</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score="2" type="integer"><e:accepted-answer score="2">4</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
   </e:question>
 
