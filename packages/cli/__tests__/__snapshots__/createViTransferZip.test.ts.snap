@@ -90,7 +90,7 @@ exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
         Lausekkeen <e:formula assistive-title=\\"(-9) *(42 -35)\\">(-9)\\\\cdot (42-35)</e:formula> arvo on 
       
 		</e:question-title>
-			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">–63</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">–63</e:accepted-answer></e:scored-text-answer></p>
   </e:question>
 
 	<e:question>
@@ -99,7 +99,7 @@ exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
         Funktion <e:formula assistive-title=\\"f(x) =4 x -12\\">f(x)=4x-12</e:formula> nollakohta on 
       
 		</e:question-title>
-			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">3</e:accepted-answer></e:scored-text-answer></p></e:question>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">3</e:accepted-answer></e:scored-text-answer></p></e:question>
 
 	<e:question>
 		<e:question-title>
@@ -108,7 +108,7 @@ exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
 				Suoran kulmakerroin on 
         
 		</e:question-title>
-			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">11</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">11</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
 
 	<e:question>
@@ -117,7 +117,7 @@ exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
         Lausekkeen <e:formula assistive-title=\\"6^3 *2^(-2)\\">6^3\\\\cdot 2^{-2}</e:formula> arvo on 
       
 		</e:question-title>
-			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">54</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">54</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
 
 	<e:question>
@@ -127,7 +127,7 @@ exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
 				jäsen on 
         
 		</e:question-title>
-			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">16</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">16</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
 
 	<e:question>
@@ -136,7 +136,7 @@ exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
         Yhtälön <e:formula assistive-title=\\"2^(2 x -5) =8\\">2^{2x-5}=8</e:formula> ratkaisu on 
       
 		</e:question-title>
-			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">4</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">4</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
   </e:question>
 
@@ -1478,7 +1478,7 @@ exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
         Lausekkeen <e:formula assistive-title=\\"(-9) *(42 -35)\\">(-9)\\\\cdot (42-35)</e:formula> arvo on 
       
 		</e:question-title>
-			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">–63</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">–63</e:accepted-answer></e:scored-text-answer></p>
   </e:question>
 
 	<e:question>
@@ -1487,7 +1487,7 @@ exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
         Funktion <e:formula assistive-title=\\"f(x) =4 x -12\\">f(x)=4x-12</e:formula> nollakohta on 
       
 		</e:question-title>
-			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">3</e:accepted-answer></e:scored-text-answer></p></e:question>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">3</e:accepted-answer></e:scored-text-answer></p></e:question>
 
 	<e:question>
 		<e:question-title>
@@ -1496,7 +1496,7 @@ exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
 				Suoran kulmakerroin on 
         
 		</e:question-title>
-			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">11</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>k=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">11</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
 
 	<e:question>
@@ -1505,7 +1505,7 @@ exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
         Lausekkeen <e:formula assistive-title=\\"6^3 *2^(-2)\\">6^3\\\\cdot 2^{-2}</e:formula> arvo on 
       
 		</e:question-title>
-			<p><e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">54</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">54</e:accepted-answer></e:scored-text-answer></p>
     </e:question>
 
 	<e:question>
@@ -1515,7 +1515,7 @@ exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
 				jäsen on 
         
 		</e:question-title>
-			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">16</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>a_5=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">16</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
 
 	<e:question>
@@ -1524,7 +1524,7 @@ exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
         Yhtälön <e:formula assistive-title=\\"2^(2 x -5) =8\\">2^{2x-5}=8</e:formula> ratkaisu on 
       
 		</e:question-title>
-			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\"><e:accepted-answer score=\\"2\\">4</e:accepted-answer></e:scored-text-answer></p>
+			<p><e:formula>x=</e:formula> <e:scored-text-answer max-score=\\"2\\" type=\\"integer\\"><e:accepted-answer score=\\"2\\">4</e:accepted-answer></e:scored-text-answer></p>
 		</e:question>
   </e:question>
 
