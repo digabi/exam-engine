@@ -14,7 +14,7 @@ describe('testGrading.ts', () => {
     ctx = await previewExam(resolveExam('N/N.xml'))
     page = await createPage()
     await loadExam(page, ctx.url)
-    await answer(1, 'Short answer message content')
+    await answer(1, '1234567890987654321')
     await answer(7, 'Duis magna mi, interdum eu mattis vel, ultricies a nibh. Duis tortor tortor, ')
     await page.keyboard.press('Enter')
     await answer(7, 'imperdiet eget fermentum eget, rutrum ac lorem. Ut eu enim risus. Donec sed eros orci. ')
@@ -40,7 +40,7 @@ describe('testGrading.ts', () => {
 
   it('renders single line answer with character without warning and annotate', async () => {
     await navigateToAnswer('1.1')
-    await expectText('.e-grading-answer-length', 'Vastauksen pituus: 25 merkkiä.')
+    await expectText('.e-grading-answer-length', 'Vastauksen pituus: 19 merkkiä.')
     await page.waitForSelector('.e-grading-answer-max-length-surplus', HIDDEN)
     await drag(463, 150, 518, 150)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
