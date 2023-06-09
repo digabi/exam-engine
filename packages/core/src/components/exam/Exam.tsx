@@ -1,4 +1,4 @@
-import React, { createRef, useContext, useEffect } from 'react'
+import React, { createRef, useContext, useEffect, useMemo, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
@@ -46,6 +46,7 @@ import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import * as _ from 'lodash-es'
+import classNames from 'classnames'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -118,6 +119,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
 
+  const [useSidebarNavi, setUseSidebarNavi] = useState<boolean>(false)
+  const toggleSidebarNavi = () => setUseSidebarNavi((useSidebarNavi) => !useSidebarNavi)
+
   const examTitle = findChildElement(root, 'exam-title')
   const examInstruction = findChildElement(root, 'exam-instruction')
   const tableOfContents = findChildElement(root, 'table-of-contents')
@@ -129,8 +133,15 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const store = useCached(() =>
     initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
   )
-  const TableOfContents = useCached(() =>
-    mkTableOfContents({ showAttachmentLinks: true, showAnsweringInstructions: true })
+  const TableOfContents = useMemo(
+    () =>
+      mkTableOfContents({
+        showAttachmentLinks: true,
+        showAnsweringInstructions: true,
+        toggleSidebarNavi,
+        isInSideBar: useSidebarNavi,
+      }),
+    [useSidebarNavi]
   )
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
@@ -164,14 +175,21 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
+        <main
+          className={classNames('e-exam', { sidebarNavi: useSidebarNavi })}
+          lang={subjectLanguage}
+          aria-labelledby={examTitleId}
+          ref={examRef}
+        >
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-          <div className="halves">
-            {tableOfContents && (
+          <div className="e-halves">
+            {useSidebarNavi && tableOfContents && (
               <div className="sidebar-toc-container">
-                <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
+                <TableOfContents
+                  {...{ element: tableOfContents, renderChildNodes, toggleSidebarNavi, isInSideBar: useSidebarNavi }}
+                />
               </div>
             )}
 
@@ -186,9 +204,16 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                   )}
                   {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-                  {tableOfContents && (
+                  {!useSidebarNavi && tableOfContents && (
                     <div className="main-toc-container">
-                      <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
+                      <TableOfContents
+                        {...{
+                          element: tableOfContents,
+                          renderChildNodes,
+                          toggleSidebarNavi,
+                          isInSideBar: useSidebarNavi,
+                        }}
+                      />
                     </div>
                   )}
                   {externalMaterial && (
