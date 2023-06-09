@@ -1,17 +1,3 @@
-.halves {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  position: fixed;
-  width: 100%;
-
-  & > div,
-  & > nav {
-    height: 100vh;
-    overflow: auto;
-  }
-}
-
 .e-exam {
   width: 100%;
   .e-exam.e-sans-serif();
@@ -118,11 +104,23 @@
           opacity: 1;
         }
       }
+  .e-halves {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    position: fixed;
+    width: 100%;
+
+    & > div,
+    & > nav {
+      height: 100vh;
+      overflow: auto;
+      padding: 1px;
     }
   }
 
   .main-exam-container {
-    flex: 0 0 65rem;
+    flex: 1 0 65rem;
     padding-right: 1em;
 
     .main-exam {
@@ -131,6 +129,10 @@
       padding: 1px;
       box-sizing: content-box;
     }
+  }
+
+  &:not(.sidebarNavi) .main-exam-container {
+    flex-grow: 0;
   }
 }
 
