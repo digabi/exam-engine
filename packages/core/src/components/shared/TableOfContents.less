@@ -1,3 +1,5 @@
+@import './Breakpoints.less';
+
 .e-exam {
   .sidebar-toc-container {
     flex: auto;
@@ -9,6 +11,7 @@
     }
 
     .table-of-contents {
+      position: relative;
       display: flex;
       align-self: flex-start;
       flex-direction: column;
@@ -30,6 +33,12 @@
 
       .e-list-data {
         border-spacing: 0;
+      }
+
+      .table-of-contents--score-column {
+        text-align: right;
+        width: 4rem;
+        padding-right: 0.5em;
       }
 
       li {
@@ -58,14 +67,68 @@
         }
       }
 
-      .table-of-contents--score-column {
-        text-align: right;
-        width: 4rem;
-        padding-right: 0.5em;
-      }
-
       .toc-section-header {
         margin-bottom: 0;
+      }
+
+      @media (max-width: @break-point-mid) {
+        padding: 0.75rem;
+        position: fixed;
+
+        .table-of-contents--score-column {
+          flex: 1;
+          margin-left: 0;
+        }
+
+        .e-external-material,
+        .answer-instructions,
+        .e-number-and-title,
+        .sub-questions,
+        .e-total,
+        h2 span,
+        .question-title {
+          display: none;
+        }
+
+        li:before {
+          padding-right: 0.5rem;
+          text-align: center;
+        }
+
+        li li:hover {
+          cursor: pointer;
+          background: hsl(194 52% 89% / 1);
+        }
+
+        .close-toc {
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 0.5em;
+          background: #eee;
+          margin: 4px;
+          box-sizing: content-box;
+          left: 0;
+        }
+      }
+
+      @media (max-width: @break-point-narrow) {
+        padding: 0.25rem;
+
+        ol,
+        li {
+          margin-bottom: 0;
+        }
+
+        ol li:not(:first-child) .toc-section-header {
+          border-bottom: 1px solid #ccc;
+        }
+
+        .toc-section-header span,
+        .e-columns {
+          display: none;
+        }
       }
     }
 

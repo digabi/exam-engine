@@ -29,7 +29,7 @@ export const mkTableOfContents = (options: {
           </h4>
         )}
         {showAnsweringInstructions && maxAnswers != null && (
-          <div>
+          <div className="answer-instructions">
             <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
           </div>
         )}
@@ -67,16 +67,22 @@ export const mkTableOfContents = (options: {
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
     return (
-      <li data-list-number={`${displayNumber}.`}>
+      <li
+        data-list-number={`${displayNumber}.`}
+        onClick={() => {
+          console.log('click', displayNumber)
+          window.location.href = `#${displayNumber}`
+        }}
+      >
         <div className="e-columns">
-          <span className="e-column">
+          <span className="e-column e-number-and-title">
             <a href={url('', { hash: displayNumber })}>
               <span className="question-number">{displayNumber}</span>
               <span className="question-title">{renderChildNodes(questionTitle)}</span>
             </a>
           </span>
           {externalMaterial && (
-            <span className="e-column e-column--narrow">
+            <span className="e-column e-column--narrow e-external-material">
               <a
                 href={url(attachmentsURL, {
                   hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number')
@@ -108,14 +114,21 @@ export const mkTableOfContents = (options: {
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
         <h2 id={tocTitleId}>
-          {t('toc-heading')}
+          <span className="e-toc-heading">{t('toc-heading')}</span>
           <button className="toggle-navi e-link-button" onClick={toggleSidebarNavi}>
-            {isInSideBar ? 'Palauta sisällys kokeeseen →' : '← Kiinnitä sisällys reunaan'}
+            {isInSideBar ? (
+              <>
+                <span>Palauta sisällys kokeeseen</span>
+                <span className="close-toc">→</span>
+              </>
+            ) : (
+              '← Kiinnitä sisällys reunaan'
+            )}
           </button>
         </h2>
         <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
         <div className="e-columns">
-          <strong className="e-column">{t('exam-total')}</strong>
+          <strong className="e-column e-total">{t('exam-total')}</strong>
           <strong className="e-column e-column--narrow table-of-contents--score-column">
             {t('points', { count: maxScore })}
           </strong>

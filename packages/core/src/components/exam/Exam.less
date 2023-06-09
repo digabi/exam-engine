@@ -1,3 +1,5 @@
+@import '../shared/Breakpoints.less';
+
 .e-exam {
   width: 100%;
   .e-exam.e-sans-serif();
@@ -111,6 +113,14 @@
     position: fixed;
     width: 100%;
 
+    @media (max-width: @break-point-mid) {
+      gap: 1em;
+    }
+
+    @media (max-width: @break-point-narrow) {
+      gap: 0.5em;
+    }
+
     & > div,
     & > nav {
       height: 100vh;
@@ -131,8 +141,9 @@
     }
   }
 
-  &:not(.sidebarNavi) .main-exam-container {
-    flex-grow: 0;
+  &:not(.sidebarNavi) .main-exam {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
