@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
-import { findChildElement, getAttribute, getNumericAttribute, query, queryAncestors } from '../../dom-utils'
+import { findChildElement, getAttribute, query, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { tocSectionTitleId, tocTitleId } from '../../ids'
 import { url } from '../../url'
@@ -9,8 +9,13 @@ import { CommonExamContext } from '../context/CommonExamContext'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext, withSectionContext } from '../context/SectionContext'
 
-export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showAnsweringInstructions: boolean }) => {
-  const { showAttachmentLinks, showAnsweringInstructions } = options
+export const mkTableOfContents = (options: {
+  showAttachmentLinks: boolean
+  showAnsweringInstructions: boolean
+  toggleSidebarNavi?: () => void
+  isInSideBar?: boolean
+}) => {
+  const { showAttachmentLinks, showAnsweringInstructions, toggleSidebarNavi, isInSideBar } = options
 
   const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { sections } = useContext(CommonExamContext)
@@ -86,7 +91,7 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
             {t('points', { count: maxScore })}
           </span>
         </div>
-        <ul className="sub-q">{renderChildNodes(element)}</ul>
+        <ul className="sub-questions">{renderChildNodes(element)}</ul>
       </li>
     )
   }
@@ -100,20 +105,14 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
     const { root, maxScore } = useContext(CommonExamContext)
     const { t } = useExamTranslation()
 
-    let maxA = 0
-    root.childNodes.forEach((n) => {
-      console.log(n.nodeName, n)
-      if (n.nodeName === 'e:section') {
-        const maxAnswers = getNumericAttribute(n as Element, 'max-answers') || 0
-        console.log(maxAnswers)
-        maxA += maxAnswers
-      }
-    })
-
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
-        <h2 id={tocTitleId}>{t('toc-heading')}</h2>
-        <p>Vastaa {maxA} tehtävään</p>
+        <h2 id={tocTitleId}>
+          {t('toc-heading')}
+          <button className="toggle-navi e-link-button" onClick={toggleSidebarNavi}>
+            {isInSideBar ? 'Palauta sisällys kokeeseen →' : '← Kiinnitä sisällys reunaan'}
+          </button>
+        </h2>
         <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
         <div className="e-columns">
           <strong className="e-column">{t('exam-total')}</strong>
