@@ -15,6 +15,7 @@
 
     @media (max-width: @break-point-mid) {
       gap: 1em;
+      padding: 0 0.5rem;
     }
 
     @media (max-width: @break-point-narrow) {
@@ -23,23 +24,29 @@
   }
 
   .main-exam-container {
-    flex: 1 0 65rem;
+    flex: 1 0.5 65rem;
     padding-right: 1em;
     height: 100vh;
     overflow: auto;
-    padding: 5px 1px 2rem;
+    padding: 0.5rem 1px 2rem;
+    scroll-behavior: smooth;
 
     .main-exam {
       max-width: 65rem;
       margin-right: auto;
       box-sizing: content-box;
+
+      @media (max-width: @break-point-mini) {
+        margin-right: 0;
+        margin-left: auto;
+      }
     }
   }
 }
 
 .anchor {
   position: relative;
-  top: -2em;
+  top: -1.5em;
   visibility: hidden;
 }
 

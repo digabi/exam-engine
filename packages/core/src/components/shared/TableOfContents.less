@@ -1,9 +1,18 @@
 @import './Breakpoints.less';
 
 .e-exam {
-  .table-of-contents--score-column {
-    text-align: right;
-    width: 4rem;
+  .table-of-contents {
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    .max-answers {
+      margin: 0 0 1rem;
+    }
+
+    .table-of-contents--score-column {
+      text-align: right;
+    }
   }
 
   .sidebar-toc-container {
@@ -11,16 +20,10 @@
     display: flex;
     height: 100vh;
     overflow: auto;
-    padding: 5px 1px 2rem;
+    padding: 0.5rem 1px 2rem;
 
-    .max-answers {
-      margin: 0 0 1rem;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
+    a:hover {
+      text-decoration: none;
     }
 
     .table-of-contents {
@@ -35,21 +38,31 @@
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
 
       .question-number {
-        display: none;
+        text-align: center;
       }
 
       .e-columns {
         padding-top: 0.25em;
+        flex: 1;
       }
 
       .e-list-data {
         border-spacing: 0;
       }
 
-      li {
+      li.level-0 {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 2rem auto 3rem 25px;
+        gap: 0 0.5rem;
+
+        .question-number {
+          display: none;
+        }
+
         &:before {
-          padding: 0.25em 0.25em 0.25em 0.5em;
-          width: 1.5em;
+          grid-column: 1;
+          padding-left: 0.25rem;
           border-left: 1px solid transparent;
         }
 
@@ -67,16 +80,39 @@
             color: #1b4a5a;
           }
         }
+
+        &:hover {
+          cursor: pointer;
+          background: hsl(194 52% 89% / 0.75);
+        }
+      }
+
+      li.level-1 {
+        display: block;
+        border-radius: 3px;
+
+        .question-number {
+          display: block;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: hsl(194 52% 80% / 0.75);
+        }
       }
 
       .e-external-material {
-        width: 25px;
+        grid-column: 4;
         padding-right: 0.5em;
-        margin-left: 0.5rem;
+        margin-left: 0;
       }
 
       .toc-section-header {
         margin-bottom: 0;
+      }
+
+      .table-of-contents--score-column {
+        margin-left: 0;
       }
 
       @media (max-width: @break-point-mid) {
@@ -90,22 +126,12 @@
           text-overflow: ellipsis;
         }
 
-        .table-of-contents--score-column {
-          margin-left: 0;
-        }
-
-        .e-external-material,
         .answer-instructions,
-        //.e-number-and-title,
-        .e-sub-questions,
-        .e-total,
-        //.question-title
-        h2 {
+        .e-total {
           display: none;
         }
 
         .e-number-and-title {
-          flex: 0 1 200px;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -125,20 +151,39 @@
       }
 
       @media (max-width: @break-point-narrow) {
+        li.level-0 {
+          grid-template-columns: 1.5rem auto 3rem;
+        }
+
+        .e-sub-questions,
+        .max-answers,
+        h2,
+        .e-external-material {
+          display: none;
+        }
+      }
+
+      @media (max-width: @break-point-mini) {
         padding: 0.25rem;
         position: fixed;
         left: 5px;
+
+        li.level-0 {
+          grid-template-columns: 1.5rem;
+        }
 
         ol,
         li {
           margin-bottom: 0;
         }
 
-        ol li:not(:last-child) {
+        ol li:not(.level-0):not(:last-child) {
           border-bottom: 1px solid #ccc;
         }
 
         .toc-section-header,
+        .table-of-contents--score-column,
+        .e-number-and-title,
         .e-columns {
           display: none;
         }
@@ -146,13 +191,16 @@
     }
 
     .e-sub-questions {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 25px);
       flex-wrap: wrap;
-      max-width: calc(100% - 5rem);
       gap: 0 1em;
       margin: 0;
       padding: 0;
-      font-size: 15px;
+      font-size: 14px;
+
+      grid-column: 2;
+      grid-row: 2;
 
       .e-columns {
         padding-top: 0;
@@ -185,6 +233,14 @@
 
   .main-toc-container {
     padding-bottom: 2rem;
+
+    li.level-0 {
+      display: flex;
+
+      .table-of-contents--score-column {
+        width: 4rem;
+      }
+    }
 
     .question-number,
     .e-sub-questions {
