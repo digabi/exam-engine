@@ -14,6 +14,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   return !casForbidden || casStatus === 'forbidden' ? (
     <div
       className={classNames('exam-question', {
+        'e-level-0': level === 0,
         'e-pad-b-8 e-clearfix': level === 0,
         'e-mrg-l-8': level > 0,
       })}
