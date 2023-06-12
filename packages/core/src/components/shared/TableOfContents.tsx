@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
-import { findChildElement, getAttribute, query, queryAncestors } from '../../dom-utils'
+import { findChildElement, getAttribute, getNumericAttribute, query, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { tocSectionTitleId, tocTitleId } from '../../ids'
 import { url } from '../../url'
@@ -126,19 +126,23 @@ export const mkTableOfContents = (options: {
   const TableOfContents: React.FunctionComponent<ExamComponentProps> = () => {
     const { root, maxScore } = useContext(CommonExamContext)
     const { t } = useExamTranslation()
+    const maxAnswers = getNumericAttribute(root, 'max-answers')
 
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
         <h2 id={tocTitleId}>
           <span className="e-toc-heading">{t('toc-heading')}</span>
         </h2>
+
+        {maxAnswers && <div className="max-answers">Vastaa enintään {maxAnswers} tehtävään</div>}
+
         <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
         <div className="e-columns">
           <strong className="e-column e-total">{t('exam-total')}</strong>
           <strong className="e-column e-column--narrow table-of-contents--score-column">
             {t('points', { count: maxScore })}
           </strong>
-          <span className="e-column e-column--narrow e-external-material" />
+          {isInSidebar && <span className="e-column e-column--narrow e-external-material" />}
         </div>
       </nav>
     )
