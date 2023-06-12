@@ -129,7 +129,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     mkTableOfContents({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
-      isInSideBar: true,
+      isInSidebar: true,
     })
   )
 
@@ -137,7 +137,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     mkTableOfContents({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
-      isInSideBar: false,
+      isInSidebar: false,
     })
   )
 
@@ -146,9 +146,15 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   useEffect(scrollToHash, [])
 
+  const isInViewport = (element: Element) => {
+    const rect = element.getBoundingClientRect()
+    return rect.top >= 100 && rect.bottom <= window.innerHeight - 100
+  }
+
   const handleExamScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     const scrollY = e.currentTarget.scrollTop
     const sections = document.querySelectorAll('.exam-question.e-level-0')
+    const sideNavigation = document.querySelector(`.sidebar-toc-container`)
 
     // Find the section currently in view
     sections.forEach((section) => {
@@ -159,18 +165,25 @@ const Exam: React.FunctionComponent<ExamProps> = ({
       const sectionEndsInView = sectionBottom < scrollY + window.innerHeight && sectionBottom > scrollY
       const sectionFillsView = sectionTop < scrollY && sectionBottom > scrollY + window.innerHeight
 
-      const id = section.querySelector('.anchor')?.id || ''
+      const sectionId = section.querySelector('.anchor')?.id || ''
+
+      sectionEndsInView && console.log(sectionId, sectionBottom, scrollY)
 
       if (sectionBeginsInView || sectionEndsInView || sectionFillsView) {
-        const current = document.querySelector('.current') as HTMLElement
-        const nav = document.querySelector(`.sidebar-toc-container`)
-        const navHeight = document.querySelector('.sidebar-toc-container')?.getBoundingClientRect().height || 0
-        const currentY = current?.offsetTop
-        const scrollTo = currentY - navHeight / 2
-        current && nav?.scrollTo({ behavior: 'smooth', top: scrollTo })
-        document.querySelector(`.table-of-contents li[data-list-number="${id}."]`)?.classList.add('current')
+        const currentNavTitle = document.querySelector(`.table-of-contents li[data-list-number="${sectionId}."]`)
+
+        if (currentNavTitle) {
+          currentNavTitle.classList.add('current')
+          const isVisible = isInViewport(currentNavTitle)
+
+          if (!isVisible && sideNavigation) {
+            const navHeight = sideNavigation.getBoundingClientRect().height
+            const scrollToPos = (currentNavTitle as HTMLElement).offsetTop - navHeight / 2
+            sideNavigation.scrollTo({ behavior: 'smooth', top: scrollToPos })
+          }
+        }
       } else {
-        document.querySelector(`.table-of-contents li[data-list-number="${id}."]`)?.classList.remove('current')
+        document.querySelector(`.table-of-contents li[data-list-number="${sectionId}."]`)?.classList.remove('current')
       }
     })
   }
@@ -187,7 +200,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           <div className="e-halves">
             {tableOfContents && (
               <div className="sidebar-toc-container">
-                <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes, isInSideBar: true }} />
+                <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes, isInSidebar: true }} />
               </div>
             )}
 

@@ -1,9 +1,17 @@
 @import './Breakpoints.less';
 
 .e-exam {
+  .table-of-contents--score-column {
+    text-align: right;
+    width: 4rem;
+  }
+
   .sidebar-toc-container {
     flex: auto;
     display: flex;
+    height: 100vh;
+    overflow: auto;
+    padding: 5px 1px 2rem;
 
     h2 {
       display: flex;
@@ -18,8 +26,6 @@
       background: white;
       padding: 2rem;
       z-index: 1;
-      max-height: 100vh;
-      overflow: auto;
       margin-left: auto;
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
 
@@ -35,15 +41,10 @@
         border-spacing: 0;
       }
 
-      .table-of-contents--score-column {
-        text-align: right;
-        width: 4rem;
-        padding-right: 0.5em;
-      }
-
       li {
         &:before {
-          padding-left: 0.5em;
+          padding: 0.25em 0.25em 0.25em 0.5em;
+          width: 1.5em;
           border-left: 1px solid transparent;
         }
 
@@ -60,11 +61,13 @@
           a {
             color: #1b4a5a;
           }
-
-          li.current {
-            background: transparent;
-          }
         }
+      }
+
+      .e-external-material {
+        width: 25px;
+        padding-right: 0.5em;
+        margin-left: 0.5rem;
       }
 
       .toc-section-header {
@@ -73,68 +76,75 @@
 
       @media (max-width: @break-point-mid) {
         padding: 0.75rem;
-        position: fixed;
+        overflow: auto;
+
+        .toc-section-header {
+          font-size: 16px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
         .table-of-contents--score-column {
-          flex: 1;
           margin-left: 0;
         }
 
         .e-external-material,
         .answer-instructions,
-        .e-number-and-title,
-        .sub-questions,
+        //.e-number-and-title,
+        .e-sub-questions,
         .e-total,
-        h2 span,
-        .question-title {
+        //.question-title
+        h2 {
           display: none;
         }
 
-        li:before {
-          padding-right: 0.5rem;
-          text-align: center;
+        .e-number-and-title {
+          flex: 0 1 200px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
-        li li:hover {
-          cursor: pointer;
-          background: hsl(194 52% 89% / 1);
-        }
+        li {
+          &:before {
+            padding-right: 0.5rem;
+            text-align: center;
+          }
 
-        .close-toc {
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 0;
-          padding: 0.5em;
-          background: #eee;
-          margin: 4px;
-          box-sizing: content-box;
-          left: 0;
+          li:hover {
+            cursor: pointer;
+            background: hsl(194 52% 89% / 1);
+          }
         }
       }
 
       @media (max-width: @break-point-narrow) {
         padding: 0.25rem;
+        position: fixed;
+        left: 5px;
 
         ol,
         li {
           margin-bottom: 0;
         }
 
-        ol li:not(:first-child) .toc-section-header {
+        ol li:not(:last-child) {
           border-bottom: 1px solid #ccc;
         }
 
-        .toc-section-header span,
+        .toc-section-header,
         .e-columns {
           display: none;
         }
       }
     }
 
-    .sub-questions {
+    .e-sub-questions {
       display: flex;
-      gap: 1em;
+      flex-wrap: wrap;
+      max-width: calc(100% - 5rem);
+      gap: 0 1em;
       margin: 0;
       padding: 0;
       font-size: 15px;
@@ -147,7 +157,7 @@
       .e-clearfix,
       .question-title,
       li:before,
-      .sub-questions,
+      .e-sub-questions,
       .table-of-contents--score-column,
       br {
         display: none;
@@ -160,24 +170,22 @@
       li {
         width: auto;
         margin-bottom: 0;
+
+        .e-columns {
+          display: block;
+        }
       }
     }
   }
 
   .main-toc-container {
     .question-number,
-    .sub-questions {
+    .e-sub-questions {
       display: none;
     }
 
     h2 * {
       display: block;
     }
-  }
-
-  .toggle-navi {
-    font-size: 14px;
-    margin-top: 5px;
-    margin-bottom: 5px;
   }
 }
