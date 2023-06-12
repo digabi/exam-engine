@@ -120,30 +120,20 @@
     @media (max-width: @break-point-narrow) {
       gap: 0.5em;
     }
-
-    & > div,
-    & > nav {
-      height: 100vh;
-      overflow: auto;
-      padding: 1px;
-    }
   }
 
   .main-exam-container {
     flex: 1 0 65rem;
     padding-right: 1em;
+    height: 100vh;
+    overflow: auto;
+    padding: 5px 1px 2rem;
 
     .main-exam {
       max-width: 65rem;
       margin-right: auto;
-      padding: 1px;
       box-sizing: content-box;
     }
-  }
-
-  &:not(.sidebarNavi) .main-exam {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
