@@ -8,14 +8,15 @@ import AnsweringInstructions from '../AnsweringInstructions'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext, withSectionContext } from '../context/SectionContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 
 export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
   showAnsweringInstructions: boolean
-  toggleSidebarNavi?: () => void
   isInSideBar?: boolean
 }) => {
-  const { showAttachmentLinks, showAnsweringInstructions, toggleSidebarNavi, isInSideBar } = options
+  const { showAttachmentLinks, showAnsweringInstructions, isInSideBar } = options
 
   const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { sections } = useContext(CommonExamContext)
@@ -69,10 +70,7 @@ export const mkTableOfContents = (options: {
     return (
       <li
         data-list-number={`${displayNumber}.`}
-        onClick={() => {
-          console.log('click', displayNumber)
-          window.location.href = `#${displayNumber}`
-        }}
+        onClick={() => (isInSideBar ? (window.location.href = `#${displayNumber}`) : undefined)}
       >
         <div className="e-columns">
           <span className="e-column e-number-and-title">
@@ -115,16 +113,6 @@ export const mkTableOfContents = (options: {
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
         <h2 id={tocTitleId}>
           <span className="e-toc-heading">{t('toc-heading')}</span>
-          <button className="toggle-navi e-link-button" onClick={toggleSidebarNavi}>
-            {isInSideBar ? (
-              <>
-                <span>Palauta sisällys kokeeseen</span>
-                <span className="close-toc">→</span>
-              </>
-            ) : (
-              '← Kiinnitä sisällys reunaan'
-            )}
-          </button>
         </h2>
         <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
         <div className="e-columns">

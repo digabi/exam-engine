@@ -50,7 +50,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
     <ExpandQuestionContext.Provider value={{ expanded, toggleWriterMode }}>
       <div
         className={classNames('e-exam-question', {
-          'e-level-0 e-pad-b-8 e-pad-t-4 e-clearfix': level === 0,
+          'e-level-0 e-pad-b-8 e-clearfix': level === 0,
           'e-mrg-l-8': level > 0,
           'e-expanded': expanded
         })}
