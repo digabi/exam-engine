@@ -167,8 +167,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
       const sectionId = section.querySelector('.anchor')?.id || ''
 
-      sectionEndsInView && console.log(sectionId, sectionBottom, scrollY)
-
       if (sectionBeginsInView || sectionEndsInView || sectionFillsView) {
         const currentNavTitle = document.querySelector(`.table-of-contents li[data-list-number="${sectionId}."]`)
 
