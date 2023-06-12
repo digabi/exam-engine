@@ -14,9 +14,9 @@ import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
   showAnsweringInstructions: boolean
-  isInSideBar?: boolean
+  isInSidebar?: boolean
 }) => {
-  const { showAttachmentLinks, showAnsweringInstructions, isInSideBar } = options
+  const { showAttachmentLinks, showAnsweringInstructions, isInSidebar } = options
 
   const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { sections } = useContext(CommonExamContext)
@@ -61,7 +61,7 @@ export const mkTableOfContents = (options: {
 
   const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { attachmentsURL } = useContext(CommonExamContext)
-    const { displayNumber, maxScore } = useContext(QuestionContext)
+    const { displayNumber, maxScore, level } = useContext(QuestionContext)
     const { t } = useExamTranslation()
 
     const questionTitle = findChildElement(element, 'question-title')!
@@ -70,7 +70,8 @@ export const mkTableOfContents = (options: {
     return (
       <li
         data-list-number={`${displayNumber}.`}
-        onClick={() => (isInSideBar ? (window.location.href = `#${displayNumber}`) : undefined)}
+        onClick={() => (isInSidebar ? (window.location.href = `#${displayNumber}`) : undefined)}
+        className={`level-${level}`}
       >
         <div className="e-columns">
           <span className="e-column e-number-and-title">
@@ -79,7 +80,8 @@ export const mkTableOfContents = (options: {
               <span className="question-title">{renderChildNodes(questionTitle)}</span>
             </a>
           </span>
-          {externalMaterial && (
+
+          {!isInSidebar && externalMaterial && (
             <span className="e-column e-column--narrow e-external-material">
               <a
                 href={url(attachmentsURL, {
@@ -91,11 +93,27 @@ export const mkTableOfContents = (options: {
               </a>
             </span>
           )}
+
           <span className="e-column e-column--narrow table-of-contents--score-column">
             {t('points', { count: maxScore })}
           </span>
+
+          {isInSidebar && level === 0 && (
+            <span className="e-column e-column--narrow e-external-material">
+              {externalMaterial && (
+                <a
+                  href={url(attachmentsURL, {
+                    hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number'),
+                  })}
+                  target="attachments"
+                >
+                  <FontAwesomeIcon size="sm" icon={faPaperclip} fixedWidth />
+                </a>
+              )}
+            </span>
+          )}
         </div>
-        <ul className="sub-questions">{renderChildNodes(element)}</ul>
+        <ul className="e-sub-questions">{renderChildNodes(element)}</ul>
       </li>
     )
   }
@@ -120,6 +138,7 @@ export const mkTableOfContents = (options: {
           <strong className="e-column e-column--narrow table-of-contents--score-column">
             {t('points', { count: maxScore })}
           </strong>
+          <span className="e-column e-column--narrow e-external-material" />
         </div>
       </nav>
     )
