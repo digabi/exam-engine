@@ -1,4 +1,4 @@
-import React, { createRef, useContext, useEffect, useMemo, useState } from 'react'
+import React, { createRef, useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
@@ -46,7 +46,6 @@ import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import * as _ from 'lodash-es'
-import classNames from 'classnames'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -119,9 +118,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
 
-  const [useSidebarNavi, setUseSidebarNavi] = useState<boolean>(false)
-  const toggleSidebarNavi = () => setUseSidebarNavi((useSidebarNavi) => !useSidebarNavi)
-
   const examTitle = findChildElement(root, 'exam-title')
   const examInstruction = findChildElement(root, 'exam-instruction')
   const tableOfContents = findChildElement(root, 'table-of-contents')
@@ -133,15 +129,20 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const store = useCached(() =>
     initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
   )
-  const TableOfContents = useMemo(
-    () =>
-      mkTableOfContents({
-        showAttachmentLinks: true,
-        showAnsweringInstructions: true,
-        toggleSidebarNavi,
-        isInSideBar: useSidebarNavi,
-      }),
-    [useSidebarNavi]
+  const TableOfContentsSidebar = useCached(() =>
+    mkTableOfContents({
+      showAttachmentLinks: true,
+      showAnsweringInstructions: true,
+      isInSideBar: true,
+    })
+  )
+
+  const TableOfContents = useCached(() =>
+    mkTableOfContents({
+      showAttachmentLinks: true,
+      showAnsweringInstructions: true,
+      isInSideBar: false,
+    })
   )
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
@@ -151,18 +152,26 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const handleExamScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     const scrollY = e.currentTarget.scrollTop
-    const sections = document.querySelectorAll('.exam-question')
+    const sections = document.querySelectorAll('.exam-question.e-level-0')
 
     // Find the section currently in view
     sections.forEach((section) => {
       const sectionTop = section.getBoundingClientRect().top + scrollY
       const sectionBottom = section.getBoundingClientRect().bottom + scrollY
 
-      const sectionFillsView = scrollY > sectionTop && scrollY <= sectionBottom
-      const sectionBeginsInView = scrollY > sectionTop - window.innerHeight && scrollY <= sectionTop
+      const sectionBeginsInView = sectionTop < scrollY + window.innerHeight && sectionTop > scrollY
+      const sectionEndsInView = sectionBottom < scrollY + window.innerHeight && sectionBottom > scrollY
+      const sectionFillsView = sectionTop < scrollY && sectionBottom > scrollY + window.innerHeight
 
       const id = section.querySelector('.anchor')?.id || ''
-      if (sectionFillsView || sectionBeginsInView) {
+
+      if (sectionBeginsInView || sectionEndsInView || sectionFillsView) {
+        const current = document.querySelector('.current') as HTMLElement
+        const nav = document.querySelector(`.sidebar-toc-container`)
+        const navHeight = document.querySelector('.sidebar-toc-container')?.getBoundingClientRect().height || 0
+        const currentY = current?.offsetTop
+        const scrollTo = currentY - navHeight / 2
+        current && nav?.scrollTo({ behavior: 'smooth', top: scrollTo })
         document.querySelector(`.table-of-contents li[data-list-number="${id}."]`)?.classList.add('current')
       } else {
         document.querySelector(`.table-of-contents li[data-list-number="${id}."]`)?.classList.remove('current')
@@ -175,21 +184,14 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <main
-          className={classNames('e-exam', { sidebarNavi: useSidebarNavi })}
-          lang={subjectLanguage}
-          aria-labelledby={examTitleId}
-          ref={examRef}
-        >
+        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
           <div className="e-halves">
-            {useSidebarNavi && tableOfContents && (
+            {tableOfContents && (
               <div className="sidebar-toc-container">
-                <TableOfContents
-                  {...{ element: tableOfContents, renderChildNodes, toggleSidebarNavi, isInSideBar: useSidebarNavi }}
-                />
+                <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes, isInSideBar: true }} />
               </div>
             )}
 
@@ -204,14 +206,13 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                   )}
                   {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-                  {!useSidebarNavi && tableOfContents && (
+                  {tableOfContents && (
                     <div className="main-toc-container">
                       <TableOfContents
                         {...{
                           element: tableOfContents,
                           renderChildNodes,
-                          toggleSidebarNavi,
-                          isInSideBar: useSidebarNavi,
+                          isInSideBar: false,
                         }}
                       />
                     </div>
