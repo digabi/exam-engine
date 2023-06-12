@@ -26,7 +26,8 @@ export const mkTableOfContents = (options: {
       <>
         {element.hasChildNodes() && (
           <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
-            {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
+            {sections.length > 1 && t('section', { displayNumber })}
+            {renderChildNodes(element)}
           </h4>
         )}
         {showAnsweringInstructions && maxAnswers != null && (
@@ -73,46 +74,44 @@ export const mkTableOfContents = (options: {
         onClick={() => (isInSidebar ? (window.location.href = `#${displayNumber}`) : undefined)}
         className={`level-${level}`}
       >
-        <div className="e-columns">
-          <span className="e-column e-number-and-title">
-            <a href={url('', { hash: displayNumber })}>
-              <span className="question-number">{displayNumber}</span>
-              <span className="question-title">{renderChildNodes(questionTitle)}</span>
+        <span className="e-column e-number-and-title">
+          <a href={url('', { hash: displayNumber })}>
+            <span className="question-number">{displayNumber}</span>
+            <span className="question-title">{renderChildNodes(questionTitle)}</span>
+          </a>
+        </span>
+
+        {!isInSidebar && externalMaterial && (
+          <span className="e-column e-column--narrow e-external-material">
+            <a
+              href={url(attachmentsURL, {
+                hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number'),
+              })}
+              target="attachments"
+            >
+              {t('material')}
             </a>
           </span>
+        )}
 
-          {!isInSidebar && externalMaterial && (
-            <span className="e-column e-column--narrow e-external-material">
+        <span className="e-column e-column--narrow table-of-contents--score-column">
+          {t('points', { count: maxScore })}
+        </span>
+
+        {isInSidebar && level === 0 && (
+          <span className="e-column e-column--narrow e-external-material">
+            {externalMaterial && (
               <a
                 href={url(attachmentsURL, {
                   hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number')
                 })}
                 target="attachments"
               >
-                {t('material')}
+                <FontAwesomeIcon size="sm" icon={faPaperclip} fixedWidth />
               </a>
-            </span>
-          )}
-
-          <span className="e-column e-column--narrow table-of-contents--score-column">
-            {t('points', { count: maxScore })}
+            )}
           </span>
-
-          {isInSidebar && level === 0 && (
-            <span className="e-column e-column--narrow e-external-material">
-              {externalMaterial && (
-                <a
-                  href={url(attachmentsURL, {
-                    hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number'),
-                  })}
-                  target="attachments"
-                >
-                  <FontAwesomeIcon size="sm" icon={faPaperclip} fixedWidth />
-                </a>
-              )}
-            </span>
-          )}
-        </div>
+        )}
         <ul className="e-sub-questions">{renderChildNodes(element)}</ul>
       </li>
     )
