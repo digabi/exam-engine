@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
-import { findChildElement, getAttribute, getNumericAttribute, query, queryAncestors } from '../../dom-utils'
+import { findChildElement, getAttribute, getNumericAttribute, query, queryAll, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { tocSectionTitleId, tocTitleId } from '../../ids'
 import { url } from '../../url'
@@ -68,6 +68,11 @@ export const mkTableOfContents = (options: {
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
+    const tocElement = element.cloneNode(true) as Element
+    const questions = queryAll(tocElement, 'question')
+    tocElement.innerHTML = ''
+    questions.forEach((i) => tocElement.appendChild(i))
+
     return (
       <li
         data-list-number={`${displayNumber}.`}
@@ -77,7 +82,7 @@ export const mkTableOfContents = (options: {
         <span className="e-column e-number-and-title">
           <a href={url('', { hash: displayNumber })}>
             <span className="question-number">{displayNumber}</span>
-            <span className="question-title">{renderChildNodes(questionTitle)}</span>
+            {questionTitle && <span className="question-title">{renderChildNodes(questionTitle)}</span>}
           </a>
         </span>
 
@@ -112,7 +117,7 @@ export const mkTableOfContents = (options: {
             )}
           </span>
         )}
-        <ul className="e-sub-questions">{renderChildNodes(element)}</ul>
+        <ul className="e-sub-questions">{renderChildNodes(tocElement)}</ul>
       </li>
     )
   }
