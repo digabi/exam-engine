@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
-import { findChildElement, getAttribute, getNumericAttribute, query, queryAll, queryAncestors } from '../../dom-utils'
+import { findChildElement, getAttribute, getNumericAttribute, query, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { tocSectionTitleId, tocTitleId } from '../../ids'
 import { url } from '../../url'
@@ -10,6 +10,9 @@ import { QuestionContext, withQuestionContext } from '../context/QuestionContext
 import { SectionContext, withSectionContext } from '../context/SectionContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from 'react-redux'
+import { AnswersState } from '../../store/answers/reducer'
+import classNames from 'classnames'
 
 export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
@@ -65,13 +68,30 @@ export const mkTableOfContents = (options: {
     const { displayNumber, maxScore, level } = useContext(QuestionContext)
     const { t } = useExamTranslation()
 
+    const questionId = Number(element.querySelector('[question-id]')?.getAttribute('question-id'))
+
+    const answersById = useSelector((state: { answers: AnswersState }) => state.answers.answersById)
+    const answer = useSelector((state: { answers: AnswersState }) => state.answers.answersById[questionId])
+
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
-    const tocElement = element.cloneNode(true) as Element
-    const questions = queryAll(tocElement, 'question')
-    tocElement.innerHTML = ''
-    questions.forEach((i) => tocElement.appendChild(i))
+    const subQuestions = element.querySelectorAll('[question-id]')
+    const subQuestionIds = [] as { id: number; type: string; maxLength?: number }[]
+
+    subQuestions.forEach((e) => {
+      const id = Number(e.getAttribute('question-id'))
+      const type = e.getAttribute('type') || ''
+      const maxLength = Number(e.getAttribute('max-length'))
+
+      if (id) {
+        subQuestionIds.push({ id, type, maxLength })
+      }
+    })
+
+    const allSubquestionsAreAnswered = subQuestionIds.every((i) => answersById[i.id])
+    const hasSubQuestions = element.hasChildNodes()
+    const answered = answer?.value && (!hasSubQuestions || allSubquestionsAreAnswered)
 
     return (
       <li
@@ -85,7 +105,6 @@ export const mkTableOfContents = (options: {
             {questionTitle && <span className="question-title">{renderChildNodes(questionTitle)}</span>}
           </a>
         </span>
-
         {!isInSidebar && externalMaterial && (
           <span className="e-column e-column--narrow e-external-material">
             <a
@@ -98,11 +117,9 @@ export const mkTableOfContents = (options: {
             </a>
           </span>
         )}
-
         <span className="e-column e-column--narrow table-of-contents--score-column">
           {t('points', { count: maxScore })}
         </span>
-
         {isInSidebar && level === 0 && (
           <span className="e-column e-column--narrow e-external-material">
             {externalMaterial && (
@@ -117,7 +134,30 @@ export const mkTableOfContents = (options: {
             )}
           </span>
         )}
-        <ul className="e-sub-questions">{renderChildNodes(tocElement)}</ul>
+        <div className={classNames('answers', { answered })}>
+          {subQuestionIds.map((i) => {
+            const answer = answersById[i.id]
+            const type = answer?.type
+            const answerIsFormula = answer?.value.includes('math.svg')
+            const answerIsImage = answer?.value.includes('data:image')
+            const textType = type === 'richText' || type === 'text'
+            console.log(displayNumber, answer)
+            return (
+              <div
+                key={i.id}
+                className={classNames('q', {
+                  ok: answersById[i.id]?.value,
+                  [type]: type,
+                  tooLong: textType && i.maxLength && answer?.characterCount > i.maxLength,
+                  big: i.type === 'rich-text',
+                })}
+              >
+                {type === 'richText' &&
+                  (answerIsFormula ? '∑' : answerIsImage ? 'img' : !!answer?.characterCount && answer.characterCount)}
+              </div>
+            )
+          })}
+        </div>
       </li>
     )
   }
