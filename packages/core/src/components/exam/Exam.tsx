@@ -151,6 +151,11 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     return rect.top >= 100 && rect.bottom <= window.innerHeight - 100
   }
 
+  useEffect(() => {
+    const s4 = document.querySelectorAll('.exam-question.e-level-0')
+    console.log('s4', s4)
+  }, [])
+
   const handleExamScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     const scrollY = e.currentTarget.scrollTop
     const sections = document.querySelectorAll('.exam-question.e-level-0')

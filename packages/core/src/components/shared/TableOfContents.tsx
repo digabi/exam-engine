@@ -13,6 +13,7 @@ import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { AnswersState } from '../../store/answers/reducer'
 import classNames from 'classnames'
+import { Indicator } from './AnswerIndicator'
 
 export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
@@ -76,20 +77,20 @@ export const mkTableOfContents = (options: {
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
-    const subQuestions = element.querySelectorAll('[question-id]')
-    const subQuestionIds = [] as { id: number; type: string; maxLength?: number }[]
+    const subQuestionNodes = element.querySelectorAll('[question-id]')
+    const subQuestions = [] as { id: number; type: string; maxLength?: number }[]
 
-    subQuestions.forEach((e) => {
+    subQuestionNodes.forEach((e) => {
       const id = Number(e.getAttribute('question-id'))
       const type = e.getAttribute('type') || ''
       const maxLength = Number(e.getAttribute('max-length'))
 
       if (id) {
-        subQuestionIds.push({ id, type, maxLength })
+        subQuestions.push({ id, type, maxLength })
       }
     })
 
-    const allSubquestionsAreAnswered = subQuestionIds.every((i) => answersById[i.id])
+    const allSubquestionsAreAnswered = subQuestions.every((i) => answersById[i.id])
     const hasSubQuestions = element.hasChildNodes()
     const answered = answer?.value && (!hasSubQuestions || allSubquestionsAreAnswered)
 
@@ -135,28 +136,9 @@ export const mkTableOfContents = (options: {
           </span>
         )}
         <div className={classNames('answers', { answered })}>
-          {subQuestionIds.map((i) => {
-            const answer = answersById[i.id]
-            const type = answer?.type
-            const answerIsFormula = answer?.value.includes('math.svg')
-            const answerIsImage = answer?.value.includes('data:image')
-            const textType = type === 'richText' || type === 'text'
-            console.log(displayNumber, answer)
-            return (
-              <div
-                key={i.id}
-                className={classNames('q', {
-                  ok: answersById[i.id]?.value,
-                  [type]: type,
-                  tooLong: textType && i.maxLength && answer?.characterCount > i.maxLength,
-                  big: i.type === 'rich-text',
-                })}
-              >
-                {type === 'richText' &&
-                  (answerIsFormula ? '∑' : answerIsImage ? 'img' : !!answer?.characterCount && answer.characterCount)}
-              </div>
-            )
-          })}
+          {subQuestions.map((i) => (
+            <Indicator key={i.id} type={i.type} id={i.id} maxLength={i.maxLength} answer={answersById[i.id]} />
+          ))}
         </div>
       </li>
     )
