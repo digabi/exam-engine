@@ -37,10 +37,6 @@
       margin-left: auto;
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
 
-      .question-number {
-        text-align: center;
-      }
-
       .e-columns {
         padding-top: 0.25em;
         flex: 1;
@@ -55,9 +51,22 @@
         display: grid;
         grid-template-columns: 2rem auto 3rem 25px;
         gap: 0 0.5rem;
+        line-height: 22px;
+        padding: 2px 0;
+        position: relative;
 
         .question-number {
           display: none;
+        }
+
+        & > .e-number-and-title.answered {
+          &:before {
+            //content: '✔︎';
+            position: absolute;
+            left: -1rem;
+            color: green;
+            font-size: 12px;
+          }
         }
 
         &:before {
@@ -90,14 +99,25 @@
       li.level-1 {
         display: block;
         border-radius: 3px;
+        position: relative;
 
         .question-number {
-          display: block;
+          display: flex;
         }
 
         &:hover {
           cursor: pointer;
           background: hsl(194 52% 80% / 0.75);
+        }
+
+        .e-number-and-title.answered .question-number:after {
+          content: '✔︎';
+          padding-left: 3px;
+          font-size: 10px;
+          color: green;
+          top: 0;
+          margin-top: -2px;
+          display: inline-block;
         }
       }
 
@@ -189,17 +209,58 @@
       }
     }
 
+    .answers {
+      margin: 3px 0 6px;
+      font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      grid-column: 2;
+      grid-row: 2;
+      gap: 2px;
+
+      .q {
+        display: block;
+        width: 9px;
+        height: 12px;
+        border-radius: 4px;
+        background: #dfe9ec;
+        box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        display: grid;
+        place-items: center;
+        color: white;
+        line-height: 12px;
+        font-size: 9px;
+
+        &.big {
+          padding: 0 2px;
+          width: auto;
+          min-width: 18px;
+        }
+
+        &.ok {
+          background: #0b9;
+        }
+
+        &.tooLong {
+          background: #d40;
+        }
+      }
+    }
+
     .e-sub-questions {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 25px);
+      display: flex;
+      //display: grid;
+      grid-template-columns: repeat(auto-fill, 30px);
       flex-wrap: wrap;
       gap: 0 1em;
       margin: 0;
       padding: 0;
       font-size: 14px;
-
       grid-column: 2;
       grid-row: 2;
+      line-height: 20px;
 
       .e-columns {
         padding-top: 0;
