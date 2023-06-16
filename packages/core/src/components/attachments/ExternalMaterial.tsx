@@ -16,6 +16,7 @@ import Video from '../shared/Video'
 import ImageOverlay from '../shared/ImageOverlay'
 import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
+import ExamTranslation from '../shared/ExamTranslation'
 
 const renderChildNodes = createRenderChildNodes({
   'attachment-link': mkAttachmentLink('link'),
@@ -29,6 +30,7 @@ const renderChildNodes = createRenderChildNodes({
   video: Video,
   formula: Formula,
   'question-number': QuestionNumber,
+  translation: ExamTranslation,
   reference: surround(Reference, 'div', { className: 'e-mrg-y-2 e-font-size-s' }),
   'image-overlay': ImageOverlay,
 })

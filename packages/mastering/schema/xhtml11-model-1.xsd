@@ -94,6 +94,7 @@
             <xs:element ref="e:localization" />
             <xs:element ref="e:formula" />
             <xs:element ref="e:question-number" />
+            <xs:element ref="e:translation" />
         </xs:choice>
     </xs:group>
     <!--

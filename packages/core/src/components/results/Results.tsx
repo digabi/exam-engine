@@ -29,6 +29,7 @@ import { ErrorIndicatorForErrors } from '../exam/internal/ErrorIndicator'
 import { validateAnswers } from '../../validateAnswers'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { QuestionNumber } from '../shared/QuestionNumber'
+import ExamTranslation from '../shared/ExamTranslation'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -53,6 +54,7 @@ const renderChildNodes = createRenderChildNodes({
   image: renderIf(({ element }) => queryAncestors(element, 'choice-answer') != null)(Image),
   'question-instruction': ExamQuestionInstruction,
   'question-number': QuestionNumber,
+  translation: ExamTranslation,
   'question-title': QuestionTitle,
   section: Section,
   'section-title': ExamSectionTitle,

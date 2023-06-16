@@ -44,6 +44,7 @@ import TextAnswer from './TextAnswer'
 import Video from '../shared/Video'
 import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
+import ExamTranslation from '../shared/ExamTranslation'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -91,6 +92,7 @@ const renderChildNodes = createRenderChildNodes({
   image: Image,
   question: Question,
   'question-number': QuestionNumber,
+  translation: ExamTranslation,
   'question-instruction': QuestionInstruction,
   'question-title': QuestionTitle,
   hints: Hints,

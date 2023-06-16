@@ -330,6 +330,12 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="translation">
+    <xs:complexType>
+      <xs:attribute name="key" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="image">
     <xs:complexType>
       <xs:sequence>

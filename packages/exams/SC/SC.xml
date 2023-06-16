@@ -6,6 +6,7 @@
     <e:exam-version lang="fi-FI" exam-type="hearing-impaired"/>
   </e:exam-versions>
   <e:exam-instruction>
+    <e:translation key="audio-test.instructions" />
     <e:localization lang="fi-FI">
       <p>
         Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
@@ -79,7 +80,9 @@
 
     <e:question>
       <e:question-title>Picknick</e:question-title>
-      <e:question-instruction>Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
+      <e:question-instruction>
+
+        Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
         Sprachnachrichten. Hören Sie die Diskussion und beantworten Sie die Fragen. Hören Sie zunächst den Text als
         Ganzes und dann in Abschnitten.
       </e:question-instruction>
@@ -111,6 +114,7 @@
       <e:audio-group>
         <e:question>
           <e:question-title>
+            <e:question-number suffix="2" />
             <e:localization lang="fi-FI">Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa
               piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
             </e:localization>
@@ -1025,7 +1029,7 @@
         <e:question-grading-instruction>
           <e:localization lang="fi-FI">
             <p>
-              Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
+              <e:question-number suffix="2"/> Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
             </p>
           </e:localization>
           <e:localization lang="sv-FI">
