@@ -173,6 +173,11 @@ function assertExamIsValid(doc: Document): Document {
   if (audiosInExternalMaterialWithTimes.length > 0) {
     throw mkError(`External material must not contain audio with times attribute`, audiosInExternalMaterialWithTimes[0])
   }
+  const questionNumbersUnderQuestion = doc.find<Element>('//e:question//e:question-number', ns)
+  const totalQuestionNumbers = doc.find<Element>('//e:question-number', ns)
+  if (totalQuestionNumbers.length > questionNumbersUnderQuestion.length) {
+    throw mkError(`Question number must be under question`, doc.root()!)
+  }
 
   return doc
 }
