@@ -43,6 +43,7 @@ import { mkTableOfContents } from '../shared/TableOfContents'
 import TextAnswer from './TextAnswer'
 import Video from '../shared/Video'
 import RenderChildNodes from '../RenderChildNodes'
+import { QuestionNumber } from '../shared/QuestionNumber'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -89,6 +90,7 @@ const renderChildNodes = createRenderChildNodes({
   formula: Formula,
   image: Image,
   question: Question,
+  'question-number': QuestionNumber,
   'question-instruction': QuestionInstruction,
   'question-title': QuestionTitle,
   hints: Hints,

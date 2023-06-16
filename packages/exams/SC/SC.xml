@@ -2092,6 +2092,7 @@
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           <e:localization lang="fi-FI">
+            Vastaa joko tähän tai tehtävään <e:question-number suffix="1" />.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.

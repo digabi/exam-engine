@@ -324,6 +324,12 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="question-number">
+    <xs:complexType>
+      <xs:attribute name="suffix" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="image">
     <xs:complexType>
       <xs:sequence>
