@@ -59,7 +59,9 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
 
     
 
-    <div class=\\"e-grading-instructions-question e-mrg-b-8 e-clearfix\\" id=\\"1\\"><h3 class=\\"exam-question-title\\"><strong class=\\"exam-question-title__display-number\\">1. </strong>Picknick <span class=\\"e-score e-nowrap e-score--large e-font-size-l e-semibold\\"><span lang=\\"fi-FI\\">21 p.</span></span></h3><div class=\\"exam-question-instruction e-mrg-b-2\\" id=\\"question-instruction-1\\">Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
+    <div class=\\"e-grading-instructions-question e-mrg-b-8 e-clearfix\\" id=\\"1\\"><h3 class=\\"exam-question-title\\"><strong class=\\"exam-question-title__display-number\\">1. </strong>Picknick <span class=\\"e-score e-nowrap e-score--large e-font-size-l e-semibold\\"><span lang=\\"fi-FI\\">21 p.</span></span></h3><div class=\\"exam-question-instruction e-mrg-b-2\\" id=\\"question-instruction-1\\">
+
+        Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
         Sprachnachrichten. Hören Sie die Diskussion und beantworten Sie die Fragen. Hören Sie zunächst den Text als
         Ganzes und dann in Abschnitten.
       </div><div class=\\"e-grading-instructions-question e-mrg-l-8 e-mrg-y-4\\" id=\\"1.1\\"><h4 class=\\"exam-question-title e-normal e-font-size-m\\"><strong class=\\"exam-question-title__display-number exam-question-title__display-number--indented\\">1.1 </strong>Warum findet Alina den Stadtpark nicht gut für das Picknick? <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">3 p.</span></span></h4><ul>
@@ -67,6 +69,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
             
             
           <li>Sie meint, dass dort zu viele Leute sind&nbsp;(<span lang=\\"fi-FI\\">3 p.</span>)</li></ul></div><div class=\\"e-grading-instructions-question e-mrg-l-8 e-mrg-y-4\\" id=\\"1.2\\"><h4 class=\\"exam-question-title e-normal e-font-size-m\\"><strong class=\\"exam-question-title__display-number exam-question-title__display-number--indented\\">1.2 </strong>
+            1.2
             <span lang=\\"fi-FI\\">Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa
               piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
             </span>
@@ -332,7 +335,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
          <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">6 p.</span></span></h4><ul></ul><div class=\\"e-answer-grading-instruction e-multiline-results-text-answer e-mrg-b-2 e-pad-l-2\\">
           <span lang=\\"fi-FI\\">
             <p>
-              Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0&nbsp;p.)
+              10.2 Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0&nbsp;p.)
             </p>
           </span>
           
@@ -769,6 +772,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
           
         </div><p class=\\"e-answer-length-info\\"><svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"info-circle\\" class=\\"svg-inline--fa fa-info-circle fa-w-16 fa-fw fa-lg e-color-link e-mrg-r-1\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z\\"></path></svg><em><span lang=\\"fi-FI\\">Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.</span></em></p><ul></ul></div><div class=\\"e-grading-instructions-question e-mrg-l-8 e-mrg-y-4\\" id=\\"20.2\\"><h4 class=\\"exam-question-title e-normal e-font-size-m\\"><strong class=\\"exam-question-title__display-number exam-question-title__display-number--indented\\">20.2 </strong>Kurze Schreibaufgabe <span class=\\"e-score e-nowrap e-score--small e-font-size-m e-semibold\\"><span lang=\\"fi-FI\\">33 p.</span></span></h4><div class=\\"exam-question-instruction e-mrg-b-2\\" id=\\"question-instruction-22\\">
           <span lang=\\"fi-FI\\">
+            Vastaa joko tähän tai tehtävään 20.1.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.
