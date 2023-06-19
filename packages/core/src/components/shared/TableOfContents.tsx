@@ -29,10 +29,12 @@ export const mkTableOfContents = (options: {
     return (
       <>
         {element.hasChildNodes() && (
-          <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
-            {sections.length > 1 && t('section', { displayNumber })}
-            {renderChildNodes(element)}
-          </h4>
+          <div className="toc-section-header-container">
+            <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
+              {sections.length > 1 && t('section', { displayNumber })}
+              {renderChildNodes(element)}
+            </h4>
+          </div>
         )}
         {showAnsweringInstructions && maxAnswers != null && (
           <div className="answer-instructions">
@@ -69,36 +71,38 @@ export const mkTableOfContents = (options: {
     const { displayNumber, maxScore, level } = useContext(QuestionContext)
     const { t } = useExamTranslation()
 
-    const questionId = Number(element.querySelector('[question-id]')?.getAttribute('question-id'))
-
     const answersById = useSelector((state: { answers: AnswersState }) => state.answers.answersById)
-    const answer = useSelector((state: { answers: AnswersState }) => state.answers.answersById[questionId])
+    const questionId = Number(element.querySelector('[question-id]')?.getAttribute('question-id'))
 
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
     const subQuestionNodes = element.querySelectorAll('[question-id]')
-    const subQuestions = [] as { id: number; type: string; maxLength?: number }[]
+    const subQuestions = [] as { id: number; type: string; displayNumber: string }[]
 
     subQuestionNodes.forEach((e) => {
       const id = Number(e.getAttribute('question-id'))
       const type = e.getAttribute('type') || ''
-      const maxLength = Number(e.getAttribute('max-length'))
+      const displayNumber = e.getAttribute('display-number') || ''
 
       if (id) {
-        subQuestions.push({ id, type, maxLength })
+        subQuestions.push({ id, type, displayNumber })
       }
     })
 
     const allSubquestionsAreAnswered = subQuestions.every((i) => answersById[i.id])
     const hasSubQuestions = element.hasChildNodes()
-    const answered = answer?.value && (!hasSubQuestions || allSubquestionsAreAnswered)
+    const answered = !!answersById[questionId]?.value && (!hasSubQuestions || allSubquestionsAreAnswered)
+
+    const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors).filter(
+      (i) => i.displayNumber === displayNumber
+    )
 
     return (
       <li
         data-list-number={`${displayNumber}.`}
         onClick={() => (isInSidebar ? (window.location.href = `#${displayNumber}`) : undefined)}
-        className={`level-${level}`}
+        className={`level-${level} ${validationErrors.length > 0 ? 'error' : ''}`}
       >
         <span className="e-column e-number-and-title">
           <a href={url('', { hash: displayNumber })}>
@@ -106,6 +110,11 @@ export const mkTableOfContents = (options: {
             {questionTitle && <span className="question-title">{renderChildNodes(questionTitle)}</span>}
           </a>
         </span>
+
+        <div className="numeric">
+          {subQuestions.filter((i) => answersById[i.id]).length}/{subQuestions.length}
+        </div>
+
         {!isInSidebar && externalMaterial && (
           <span className="e-column e-column--narrow e-external-material">
             <a
@@ -118,10 +127,12 @@ export const mkTableOfContents = (options: {
             </a>
           </span>
         )}
+
         <span className="e-column e-column--narrow table-of-contents--score-column">
           {t('points', { count: maxScore })}
         </span>
-        {isInSidebar && level === 0 && (
+
+        {isInSidebar && (
           <span className="e-column e-column--narrow e-external-material">
             {externalMaterial && (
               <a
@@ -135,9 +146,10 @@ export const mkTableOfContents = (options: {
             )}
           </span>
         )}
+
         <div className={classNames('answers', { answered })}>
           {subQuestions.map((i) => (
-            <Indicator key={i.id} type={i.type} id={i.id} maxLength={i.maxLength} answer={answersById[i.id]} />
+            <Indicator key={i.id} type={i.type} id={i.id} answer={answersById[i.id]} displayNumber={i.displayNumber} />
           ))}
         </div>
       </li>
