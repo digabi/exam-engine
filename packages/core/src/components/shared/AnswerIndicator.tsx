@@ -1,22 +1,16 @@
 import React, { memo } from 'react'
 import classNames from 'classnames'
 import { ExamAnswer } from '../../types/ExamAnswer'
-import { useSelector } from 'react-redux'
-import { AnswersState } from '../../store/answers/reducer'
 
 type Props = {
   id: number
   type: string
   answer: ExamAnswer
-  displayNumber: string
+  error: boolean
 }
 
 const AnswerIndicator = (props: Props) => {
-  const { id, type, answer, displayNumber } = props
-  const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors).filter(
-    (i) => i.displayNumber === displayNumber
-  )
-  console.log(displayNumber, validationErrors)
+  const { id, type, answer, error } = props
 
   const answerIsFormula = answer?.value.includes('math.svg')
   const answerIsImage = answer?.value.includes('data:image')
@@ -27,7 +21,7 @@ const AnswerIndicator = (props: Props) => {
       key={id}
       className={classNames('answer-indicator', {
         ok: answer?.value,
-        error: validationErrors.length > 0,
+        error,
         big: type === 'rich-text',
       })}
     >
