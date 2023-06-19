@@ -85,32 +85,30 @@ export const mkTableOfContents = (options: {
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
-    const subQuestionNodes = element.querySelectorAll('[question-id]')
-    const subQuestions = [] as { id: number; type: string; error: boolean }[]
+    const subquestionNodes = element.querySelectorAll('[question-id]')
+    const subquestions = [] as { id: number; type: string; error: boolean }[]
 
     const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors).filter(
       (i) => i?.elementType === 'question'
     )
     const questionValidationErrors = validationErrors.filter((i) => i.displayNumber === displayNumber)
 
-    subQuestionNodes.forEach((e) => {
+    subquestionNodes.forEach((e) => {
       const id = Number(e.getAttribute('question-id'))
       const type = e.getAttribute('type') || ''
       const displayNumber = e.getAttribute('display-number') || ''
       const error = !!validationErrors.find((i) => i.displayNumber === displayNumber)
 
       if (id) {
-        subQuestions.push({ id, type, error })
+        subquestions.push({ id, type, error })
       }
     })
 
-    const allSubquestionsAreAnswered = subQuestions.every((i) => answersById[i.id])
-    const hasSubQuestions = element.hasChildNodes()
-    const subQuestionError = !!subQuestions.find((i) => i.error)
-    const answered = !!answersById[questionId]?.value && (!hasSubQuestions || allSubquestionsAreAnswered)
+    const subQuestionError = !!subquestions.find((i) => i.error)
     const maxAnswers = Number(element.getAttribute('max-answers'))
 
-    console.log(displayNumber, subQuestionError)
+    const subquestionsAnswered = subquestions.filter((i) => answersById[i.id]?.value).length
+    const requiredAnswers = maxAnswers || subquestions.length
 
     return (
       <li
@@ -125,8 +123,13 @@ export const mkTableOfContents = (options: {
           </a>
         </span>
 
-        <div className={classNames('numeric', { error: subQuestionError })}>
-          {subQuestions.filter((i) => answersById[i.id]?.value).length}/{maxAnswers || subQuestions.length}
+        <div
+          className={classNames('numeric-answer-indicator', {
+            error: subQuestionError,
+            ok: subquestionsAnswered === requiredAnswers,
+          })}
+        >
+          {subquestionsAnswered}/{requiredAnswers}
         </div>
 
         {!isInSidebar && externalMaterial && (
@@ -161,8 +164,8 @@ export const mkTableOfContents = (options: {
           </span>
         )}
 
-        <div className={classNames('answers', { answered })}>
-          {subQuestions.map((i) => (
+        <div className="answers">
+          {subquestions.map((i) => (
             <Indicator key={i.id} type={i.type} id={i.id} answer={answersById[i.id]} error={i.error} />
           ))}{' '}
         </div>
