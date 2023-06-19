@@ -6,13 +6,18 @@
       margin-bottom: 1rem;
     }
 
-    .max-answers {
-      margin: 0 0 1rem;
-    }
-
     .table-of-contents--score-column {
       text-align: right;
       white-space: nowrap;
+    }
+
+    .answer-instructions.error {
+      color: #d40;
+    }
+
+    .section-number,
+    .numeric {
+      display: none;
     }
   }
 
@@ -23,8 +28,18 @@
     overflow: auto;
     padding: 0.5rem 1px 2rem;
 
+    @media (max-width: @break-point-mini) {
+      flex: 1 0 100px;
+    }
+
     a:hover {
       text-decoration: none;
+    }
+
+    .answer-instructions,
+    .max-answers {
+      margin: 0.5rem 0 1rem;
+      line-height: 20px;
     }
 
     .table-of-contents {
@@ -50,7 +65,7 @@
       li.level-0 {
         margin: 0;
         display: grid;
-        grid-template-columns: 1.5rem auto 3rem 15px;
+        grid-template-columns: 27px auto 3rem 15px;
         gap: 0 0.5rem;
         line-height: 22px;
         padding: 2px 0.25rem;
@@ -66,6 +81,12 @@
           border-radius: 4px;
           width: 100%;
           box-sizing: border-box;
+          padding: 0 3px;
+        }
+
+        &.error:before {
+          background: #d40;
+          color: white;
         }
 
         &.current {
@@ -81,11 +102,6 @@
           a {
             color: #1b4a5a;
           }
-        }
-
-        &.error:before {
-          background: #d40;
-          color: white;
         }
 
         &:hover {
@@ -137,10 +153,6 @@
         margin-left: 0;
       }
 
-      .numeric {
-        display: none;
-      }
-
       @media (max-width: @break-point-mid) {
         .toc-section-header {
           font-size: 16px;
@@ -171,14 +183,44 @@
         font-size: 14px;
         padding: 5px;
 
+        ol {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
         li.level-0 {
           grid-template-columns: 23px 40px;
+
+          &.error:before {
+            color: #d40;
+            font-weight: 600;
+            background: none;
+          }
+        }
+
+        .section-number {
+          display: block;
+          font-weight: 600;
         }
 
         .numeric {
           display: flex;
           justify-content: flex-end;
           white-space: nowrap;
+
+          &.error {
+            color: #d40;
+          }
+        }
+
+        .answer-instructions {
+          display: none;
+
+          &.error {
+            display: block;
+            margin: 0 0 0.5rem;
+          }
         }
 
         .answers {
@@ -188,10 +230,6 @@
         ol,
         li {
           margin-bottom: 0;
-        }
-
-        ol li:not(.level-0):not(:last-child) {
-          border-bottom: 1px solid #ccc;
         }
 
         .toc-section-header,
@@ -244,24 +282,26 @@
         }
       }
     }
-
-    @media (max-width: @break-point-mini) {
-      flex: 0 0 auto;
-    }
   }
 
   .main-toc-container {
     padding-bottom: 2rem;
 
     li {
-      display: flex;
+      display: list-item;
+
+      &.level-0 {
+        display: flex;
+      }
 
       .table-of-contents--score-column {
         width: 4rem;
       }
     }
 
-    .question-number {
+    .question-number,
+    .answers,
+    .numeric {
       display: none;
     }
 

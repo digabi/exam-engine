@@ -26,19 +26,27 @@ export const mkTableOfContents = (options: {
     const { sections } = useContext(CommonExamContext)
     const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
     const { t } = useExamTranslation()
+
+    const sectionValidationErrors = useSelector(
+      (state: { answers: AnswersState }) => state.answers.validationErrors
+    ).filter((i) => i.displayNumber === displayNumber && i?.elementType === 'section')
+
     return (
       <>
+        <div className="section-number">Osa {displayNumber}</div>
         {element.hasChildNodes() && (
           <div className="toc-section-header-container">
             <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
-              {sections.length > 1 && t('section', { displayNumber })}
-              {renderChildNodes(element)}
+              {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
             </h4>
           </div>
         )}
+
         {showAnsweringInstructions && maxAnswers != null && (
-          <div className="answer-instructions">
-            <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
+          <div style={{ display: 'grid' }}>
+            <div className={classNames('answer-instructions', { error: !!sectionValidationErrors.length })}>
+              <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
+            </div>
           </div>
         )}
       </>
@@ -78,31 +86,37 @@ export const mkTableOfContents = (options: {
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
     const subQuestionNodes = element.querySelectorAll('[question-id]')
-    const subQuestions = [] as { id: number; type: string; displayNumber: string }[]
+    const subQuestions = [] as { id: number; type: string; error: boolean }[]
+
+    const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors).filter(
+      (i) => i?.elementType === 'question'
+    )
+    const questionValidationErrors = validationErrors.filter((i) => i.displayNumber === displayNumber)
 
     subQuestionNodes.forEach((e) => {
       const id = Number(e.getAttribute('question-id'))
       const type = e.getAttribute('type') || ''
       const displayNumber = e.getAttribute('display-number') || ''
+      const error = !!validationErrors.find((i) => i.displayNumber === displayNumber)
 
       if (id) {
-        subQuestions.push({ id, type, displayNumber })
+        subQuestions.push({ id, type, error })
       }
     })
 
     const allSubquestionsAreAnswered = subQuestions.every((i) => answersById[i.id])
     const hasSubQuestions = element.hasChildNodes()
+    const subQuestionError = !!subQuestions.find((i) => i.error)
     const answered = !!answersById[questionId]?.value && (!hasSubQuestions || allSubquestionsAreAnswered)
+    const maxAnswers = Number(element.getAttribute('max-answers'))
 
-    const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors).filter(
-      (i) => i.displayNumber === displayNumber
-    )
+    console.log(displayNumber, subQuestionError)
 
     return (
       <li
         data-list-number={`${displayNumber}.`}
         onClick={() => (isInSidebar ? (window.location.href = `#${displayNumber}`) : undefined)}
-        className={`level-${level} ${validationErrors.length > 0 ? 'error' : ''}`}
+        className={`level-${level} ${questionValidationErrors.length > 0 ? 'error' : ''}`}
       >
         <span className="e-column e-number-and-title">
           <a href={url('', { hash: displayNumber })}>
@@ -111,8 +125,8 @@ export const mkTableOfContents = (options: {
           </a>
         </span>
 
-        <div className="numeric">
-          {subQuestions.filter((i) => answersById[i.id]).length}/{subQuestions.length}
+        <div className={classNames('numeric', { error: subQuestionError })}>
+          {subQuestions.filter((i) => answersById[i.id]?.value).length}/{maxAnswers || subQuestions.length}
         </div>
 
         {!isInSidebar && externalMaterial && (
@@ -149,8 +163,8 @@ export const mkTableOfContents = (options: {
 
         <div className={classNames('answers', { answered })}>
           {subQuestions.map((i) => (
-            <Indicator key={i.id} type={i.type} id={i.id} answer={answersById[i.id]} displayNumber={i.displayNumber} />
-          ))}
+            <Indicator key={i.id} type={i.type} id={i.id} answer={answersById[i.id]} error={i.error} />
+          ))}{' '}
         </div>
       </li>
     )
@@ -166,13 +180,23 @@ export const mkTableOfContents = (options: {
     const { t } = useExamTranslation()
     const maxAnswers = getNumericAttribute(root, 'max-answers')
 
+    const examValidationErrors = useSelector(
+      (state: { answers: AnswersState }) => state.answers.validationErrors
+    ).filter((i) => i?.elementType === 'exam')
+
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
         <h2 id={tocTitleId}>
           <span className="e-toc-heading">{t('toc-heading')}</span>
         </h2>
 
-        {maxAnswers && <div className="max-answers">Vastaa enintään {maxAnswers} tehtävään</div>}
+        {maxAnswers && (
+          <div style={{ display: 'grid' }}>
+            <div className={classNames('answer-instructions', { error: !!examValidationErrors.length })}>
+              Vastaa enintään {maxAnswers} tehtävään
+            </div>
+          </div>
+        )}
 
         <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
         <div className="e-columns">
