@@ -28,6 +28,8 @@ import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Recording from './Recording'
 import QuestionInstruction from '../exam/QuestionInstruction'
+import { QuestionNumber } from '../shared/QuestionNumber'
+import ExamTranslation from '../shared/ExamTranslation'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -68,6 +70,8 @@ const renderChildNodes = createRenderChildNodes({
   'question-title': QuestionTitle,
   'question-instruction': QuestionInstruction,
   'question-grading-instruction': AnswerGradingInstruction,
+  'question-number': QuestionNumber,
+  translation: ExamTranslation,
   'scored-text-answer': AutogradedAnswer,
   'text-answer': AutogradedAnswer,
   section: Section,

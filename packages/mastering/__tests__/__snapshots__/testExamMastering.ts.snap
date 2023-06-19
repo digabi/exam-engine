@@ -19213,7 +19213,7 @@ Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Jätä toinen 
 
 Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
 
-Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
+Vastaa joko tähän tai tehtävään . Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
 
 Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
 
@@ -19351,7 +19351,7 @@ Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Jätä toinen 
 
 Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
 
-Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
+Vastaa joko tähän tai tehtävään . Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
 
 Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
 
@@ -19489,7 +19489,7 @@ Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Jätä toinen 
 
 Ystäväsi on kipeänä. Kysy WhatsApp-viestissä, voitko auttaa häntä jotenkin ja tee jokin ehdotus.
 
-Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
+Vastaa joko tähän tai tehtävään . Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän voisi tuoda mukanaan juhliin.
 
 Valitse seuraavista kohdista vain toinen, johon vastaat saksaksi. Kirjoitussuorituksen pituus: 300–450 merkkiä. Välilyöntejä ja rivinvaihtoja ei lasketa mukaan merkkimäärään. Jätä toinen vastauskenttä tyhjäksi.
 
@@ -19503,6 +19503,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></e:exam-title>
   
   <e:exam-instruction>
+    <e:translation key="audio-test.instructions"/>
     <span lang="fi-FI">
       <p>
         Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
@@ -19532,7 +19533,9 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 
     <e:question display-number="1" max-score="21">
       <e:question-title>Picknick</e:question-title>
-      <e:question-instruction>Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
+      <e:question-instruction>
+
+        Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
         Sprachnachrichten. Hören Sie die Diskussion und beantworten Sie die Fragen. Hören Sie zunächst den Text als
         Ganzes und dann in Abschnitten.
       </e:question-instruction>
@@ -19564,6 +19567,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:audio-group>
         <e:question display-number="1.2" max-score="6">
           <e:question-title>
+            <e:question-number suffix="2"/>
             <span lang="fi-FI">Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa
               piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
             </span>
@@ -21212,6 +21216,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           <span lang="fi-FI">
+            Vastaa joko tähän tai tehtävään <e:question-number suffix="1"/>.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.
@@ -21318,6 +21323,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" lang="de-DE" max-score="299"><e:exam-title><span lang="sv-FI">SV – Tyska, kort lärokurs</span></e:exam-title>
   
   <e:exam-instruction>
+    <e:translation key="audio-test.instructions"/>
     
     <span lang="sv-FI">
       <p>
@@ -21345,7 +21351,9 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
     <e:question display-number="1" max-score="21">
       <e:question-title>Picknick</e:question-title>
-      <e:question-instruction>Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
+      <e:question-instruction>
+
+        Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
         Sprachnachrichten. Hören Sie die Diskussion und beantworten Sie die Fragen. Hören Sie zunächst den Text als
         Ganzes und dann in Abschnitten.
       </e:question-instruction>
@@ -21377,6 +21385,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:audio-group>
         <e:question display-number="1.2" max-score="6">
           <e:question-title>
+            <e:question-number suffix="2"/>
             
             <span lang="sv-FI">Vad har Niklas för program under det inkommande veckoslutet, och hur påverkar
               det picknicken? Skriv ett kort svar på svenska.
@@ -23133,6 +23142,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" lang="de-DE" max-score="228"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä (kuulovammaiset)</span></e:exam-title>
   
   <e:exam-instruction>
+    <e:translation key="audio-test.instructions"/>
     <span lang="fi-FI">
       <p>
         Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
@@ -24170,6 +24180,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           <span lang="fi-FI">
+            Vastaa joko tähän tai tehtävään <e:question-number suffix="1"/>.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.

@@ -20,6 +20,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
     <e:exam-version lang=\\"fi-FI\\" exam-type=\\"hearing-impaired\\"/>
   </e:exam-versions>
   <e:exam-instruction>
+    <e:translation key=\\"audio-test.instructions\\"/>
     
       <p>
         Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
@@ -276,7 +277,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-grading-instruction>
           
             <p>
-              Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
+              <e:question-number suffix=\\"2\\"/> Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
             </p>
           
           
@@ -1215,6 +1216,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           
+            Vastaa joko tähän tai tehtävään <e:question-number suffix=\\"1\\"/>.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.
@@ -1368,6 +1370,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
     
   </e:exam-versions>
   <e:exam-instruction>
+    <e:translation key=\\"audio-test.instructions\\"/>
     
       <p>
         Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
@@ -1426,7 +1429,9 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
 
     <e:question>
       <e:question-title>Picknick</e:question-title>
-      <e:question-instruction>Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
+      <e:question-instruction>
+
+        Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe. Sie schicken sich
         Sprachnachrichten. Hören Sie die Diskussion und beantworten Sie die Fragen. Hören Sie zunächst den Text als
         Ganzes und dann in Abschnitten.
       </e:question-instruction>
@@ -1458,6 +1463,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:audio-group>
         <e:question>
           <e:question-title>
+            <e:question-number suffix=\\"2\\"/>
             Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa
               piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
             
@@ -2343,7 +2349,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-grading-instruction>
           
             <p>
-              Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
+              <e:question-number suffix=\\"2\\"/> Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
             </p>
           
           
@@ -3282,6 +3288,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           
+            Vastaa joko tähän tai tehtävään <e:question-number suffix=\\"1\\"/>.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.

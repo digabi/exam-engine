@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:e="http://ylioppilastutkinto.fi/exam.xsd"
     xmlns:xh11d="http://www.w3.org/1999/xhtml/datatypes/" elementFormDefault="qualified">
     <xs:import namespace="http://www.w3.org/1999/xhtml/datatypes/" schemaLocation="xhtml-datatypes-1.xsd" />
     <xs:import namespace="http://ylioppilastutkinto.fi/exam.xsd" schemaLocation="exam.xsd" />
@@ -93,6 +93,8 @@
             <xs:element ref="e:attachment-links" />
             <xs:element ref="e:localization" />
             <xs:element ref="e:formula" />
+            <xs:element ref="e:question-number" />
+            <xs:element ref="e:translation" />
         </xs:choice>
     </xs:group>
     <!--
