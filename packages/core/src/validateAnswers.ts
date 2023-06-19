@@ -9,6 +9,7 @@ export interface AnswerTooLong {
   type: 'AnswerTooLong'
   displayNumber: string
   characterCount: number
+  elementType: 'exam' | 'section' | 'question'
 }
 
 export interface ExtraAnswer extends AnsweringInstructionProps {
@@ -44,8 +45,9 @@ function validateAnswerLength(
                 {
                   type: 'AnswerTooLong',
                   displayNumber: element.attributes.displayNumber,
-                  characterCount: maybeAnswer.characterCount
-                }
+                  characterCount: maybeAnswer.characterCount,
+                  elementType: 'question',
+                },
               ]
             : errors
         }
