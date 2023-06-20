@@ -33,7 +33,6 @@ export const mkTableOfContents = (options: {
 
     return (
       <>
-        <div className="section-number">Osa {displayNumber}</div>
         {element.hasChildNodes() && (
           <div className="toc-section-header-container">
             <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
@@ -80,7 +79,6 @@ export const mkTableOfContents = (options: {
     const { t } = useExamTranslation()
 
     const answersById = useSelector((state: { answers: AnswersState }) => state.answers.answersById)
-    const questionId = Number(element.querySelector('[question-id]')?.getAttribute('question-id'))
 
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
