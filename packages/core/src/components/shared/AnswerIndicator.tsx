@@ -1,6 +1,8 @@
 import React, { memo } from 'react'
 import classNames from 'classnames'
 import { ExamAnswer } from '../../types/ExamAnswer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faImage } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
   id: number
@@ -28,7 +30,7 @@ const AnswerIndicator = (props: Props) => {
       {answer?.type === 'richText' && (
         <>
           {answerIsFormula && '∑'}
-          {answerIsImage && 'img'}
+          {answerIsImage && <FontAwesomeIcon icon={faImage} size="lg" />}
           {(answerIsLongText && answer?.characterCount) || ''}
         </>
       )}
