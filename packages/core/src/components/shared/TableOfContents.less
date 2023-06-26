@@ -28,12 +28,30 @@
     overflow: auto;
     padding: 0.5rem 1px 2rem;
 
-    @media (max-width: @break-point-mini) {
+    @media (max-width: @break-point-narrow) {
       flex: 1 0 100px;
+    }
+
+    @media (max-width: @break-point-mini) {
+      position: fixed;
+      left: 0.25rem;
+      top: 0.25rem;
+      z-index: 1;
+      padding: 1px;
+      overflow: visible;
+
+      .toc-section-header,
+      .numeric-answer-indicator {
+        display: none;
+      }
     }
 
     a:hover {
       text-decoration: none;
+    }
+
+    #toc-title {
+      display: none;
     }
 
     .answer-instructions,
@@ -48,7 +66,7 @@
       align-self: flex-start;
       flex-direction: column;
       background: white;
-      padding: 2rem 1vw;
+      padding: 1rem 1vw 2rem;
       z-index: 1;
       margin-left: auto;
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
@@ -89,7 +107,7 @@
         }
 
         &.current {
-          background: rgb(240 244 248);
+          background: rgb(234 240 245);
 
           .question-title,
           .question-number,
@@ -129,7 +147,6 @@
       @media (max-width: @break-point-mid) {
         .toc-section-header,
         .e-number-and-title {
-          font-size: 15px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -138,15 +155,11 @@
 
       @media (max-width: @break-point-narrow) {
         font-size: 15px;
+        padding: 5px;
 
         .toc-section-header {
           font-size: 15px;
         }
-      }
-
-      @media (max-width: @break-point-mini) {
-        font-size: 14px;
-        padding: 5px;
 
         ol {
           display: flex;
@@ -168,7 +181,7 @@
           white-space: nowrap;
 
           &.ok {
-            color: #0a7;
+            color: rgb(80, 138, 189);
           }
 
           &.error {
@@ -200,6 +213,25 @@
           display: none;
         }
       }
+
+      @media (max-width: @break-point-mini) {
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        overflow: visible;
+        border-radius: 5px;
+
+        li.level-0 {
+          grid-template-columns: 23px;
+        }
+
+        .toc-section-header,
+        .numeric-answer-indicator {
+          display: none;
+        }
+
+        ol li:not(:first-child):not(.level-0) {
+          border-top: 1px solid #ddd;
+        }
+      }
     }
 
     .answers {
@@ -214,7 +246,7 @@
 
       .answer-indicator {
         display: block;
-        width: 9px;
+        width: 8px;
         height: 12px;
         border-radius: 4px;
         background: #dfe9ec;
@@ -230,11 +262,11 @@
         &.big {
           padding: 0 3px;
           width: auto;
-          min-width: 18px;
+          min-width: 20px;
         }
 
         &.ok {
-          background: #2b9;
+          background: #2d90e8;
         }
 
         &.error {
