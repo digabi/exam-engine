@@ -19,22 +19,25 @@ const AnswerIndicator = (props: Props) => {
   const answerIsLongText = answer?.type === 'richText' && !answerIsFormula && !answerIsImage
 
   return (
-    <div
-      key={id}
-      className={classNames('answer-indicator', {
-        ok: answer?.value,
-        error,
-        big: type === 'rich-text',
-      })}
-    >
-      {answer?.type === 'richText' && (
-        <>
-          {answerIsFormula && '∑'}
-          {answerIsImage && <FontAwesomeIcon icon={faImage} size="lg" />}
-          {(answerIsLongText && answer?.characterCount) || ''}
-        </>
-      )}
-    </div>
+    <>
+      <div
+        key={id}
+        className={classNames('answer-indicator', {
+          ok: answer?.value,
+          error,
+          big: type === 'rich-text',
+        })}
+      >
+        {answer?.type === 'richText' && (
+          <>
+            {answerIsFormula && '∑'}
+            {answerIsImage && <FontAwesomeIcon icon={faImage} size="lg" />}
+            {(answerIsLongText && answer?.characterCount) || ''}
+          </>
+        )}
+      </div>
+      {error && <div className="error-mark">!</div>}
+    </>
   )
 }
 

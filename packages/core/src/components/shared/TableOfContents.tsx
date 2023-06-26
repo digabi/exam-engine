@@ -27,9 +27,9 @@ export const mkTableOfContents = (options: {
     const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
     const { t } = useExamTranslation()
 
-    const sectionValidationErrors = useSelector(
+    const hasSectionValidationErrors = !!useSelector(
       (state: { answers: AnswersState }) => state.answers.validationErrors
-    ).filter((i) => i.displayNumber === displayNumber && i?.elementType === 'section')
+    ).find((i) => i.displayNumber === displayNumber && i?.elementType === 'section')
 
     return (
       <>
@@ -43,7 +43,8 @@ export const mkTableOfContents = (options: {
 
         {showAnsweringInstructions && maxAnswers != null && (
           <div style={{ display: 'grid' }}>
-            <div className={classNames('answer-instructions', { error: !!sectionValidationErrors.length })}>
+            <div className={classNames('answer-instructions', { error: hasSectionValidationErrors })}>
+              {hasSectionValidationErrors && <div className="error-mark">!</div>}
               <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
             </div>
           </div>
@@ -89,13 +90,13 @@ export const mkTableOfContents = (options: {
     const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors).filter(
       (i) => i?.elementType === 'question'
     )
-    const questionValidationErrors = validationErrors.filter((i) => i.displayNumber === displayNumber)
+    const hasQuestionValidationError = !!validationErrors.find((i) => i.displayNumber === displayNumber)
 
     subquestionNodes.forEach((e) => {
       const id = Number(e.getAttribute('question-id'))
       const type = e.getAttribute('type') || ''
-      const displayNumber = e.getAttribute('display-number') || ''
-      const error = !!validationErrors.find((i) => i.displayNumber === displayNumber)
+      const subQuestionDisplayNumber = e.getAttribute('display-number') || ''
+      const error = !!validationErrors.find((i) => i.displayNumber === subQuestionDisplayNumber)
 
       if (id) {
         subquestions.push({ id, type, error })
@@ -112,7 +113,7 @@ export const mkTableOfContents = (options: {
       <li
         data-list-number={`${displayNumber}.`}
         onClick={() => (isInSidebar ? (window.location.href = `#${displayNumber}`) : undefined)}
-        className={`level-${level} ${questionValidationErrors.length > 0 ? 'error' : ''}`}
+        className={`level-${level} ${hasQuestionValidationError ? 'error' : ''}`}
       >
         <span className="e-column e-number-and-title">
           <a href={url('', { hash: displayNumber })}>
@@ -181,9 +182,9 @@ export const mkTableOfContents = (options: {
     const { t } = useExamTranslation()
     const maxAnswers = getNumericAttribute(root, 'max-answers')
 
-    const examValidationErrors = useSelector(
+    const hasExamValidationErrors = !!useSelector(
       (state: { answers: AnswersState }) => state.answers.validationErrors
-    ).filter((i) => i?.elementType === 'exam')
+    ).find((i) => i?.elementType === 'exam')
 
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
@@ -193,7 +194,8 @@ export const mkTableOfContents = (options: {
 
         {maxAnswers && (
           <div style={{ display: 'grid' }}>
-            <div className={classNames('answer-instructions', { error: !!examValidationErrors.length })}>
+            <div className={classNames('answer-instructions', { error: !!hasExamValidationErrors })}>
+              {hasExamValidationErrors && <div className="error-mark">!</div>}
               Vastaa enintään {maxAnswers} tehtävään
             </div>
           </div>
