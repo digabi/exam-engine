@@ -160,6 +160,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     const sections = document.querySelectorAll('.exam-question.e-level-0')
     const sideNavigation = document.querySelector(`.sidebar-toc-container`)
 
+    const lis = document.querySelectorAll(`.sidebar-toc-container li[data-list-number]`)
+    lis.forEach((i) => i.classList.remove('current'))
+
     // Find the section currently in view
     sections.forEach((section) => {
       const sectionTop = section.getBoundingClientRect().top + scrollY
@@ -184,13 +187,15 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             sideNavigation.scrollTo({ behavior: 'smooth', top: scrollToPos })
           }
         }
-      } else {
+      }
+      /*else {
         document.querySelector(`.table-of-contents li[data-list-number="${sectionId}."]`)?.classList.remove('current')
       }
+      */
     })
   }
 
-  const throttledScroll = _.throttle(handleExamScroll, 50, { trailing: false })
+  const throttledScroll = _.throttle(handleExamScroll, 100, { trailing: false })
 
   return (
     <Provider store={store}>
