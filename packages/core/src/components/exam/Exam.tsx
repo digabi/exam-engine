@@ -188,10 +188,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           }
         }
       }
-      /*else {
-        document.querySelector(`.table-of-contents li[data-list-number="${sectionId}."]`)?.classList.remove('current')
-      }
-      */
     })
   }
 
