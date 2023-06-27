@@ -162,6 +162,7 @@ const App: React.FunctionComponent<{
     casStatus: 'forbidden' as const,
     restrictedAudioPlaybackStats: [],
     examServerApi,
+    type,
   }
 
   return (

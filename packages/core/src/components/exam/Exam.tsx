@@ -44,6 +44,7 @@ import TextAnswer from './TextAnswer'
 import Video from '../shared/Video'
 import RenderChildNodes from '../RenderChildNodes'
 import * as _ from 'lodash-es'
+import classNames from 'classnames'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -72,6 +73,7 @@ export interface ExamProps extends CommonExamProps {
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[]
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
+  type: 'normal' | 'visually-impaired' | 'hearing-impaired'
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -110,6 +112,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   answers,
   restrictedAudioPlaybackStats,
   examServerApi,
+  type,
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -189,6 +192,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const throttledScroll = _.throttle(handleExamScroll, 100, { trailing: false })
 
+  const visuallyImpaired = type === 'visually-impaired'
+
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
@@ -197,14 +202,14 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
           <div className="e-halves">
-            {tableOfContents && (
+            {tableOfContents && !visuallyImpaired && (
               <div className="sidebar-toc-container">
                 <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes, isInSidebar: true }} />
               </div>
             )}
 
             <div className="main-exam-container" onScroll={throttledScroll}>
-              <div className="main-exam">
+              <div className={classNames('main-exam', { center: visuallyImpaired })}>
                 <SectionElement aria-labelledby={examTitleId}>
                   {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
                   {date && (
