@@ -45,7 +45,7 @@ describe('testGrading.ts', () => {
     await navigateToAnswer('1.1')
     await expectText('.e-grading-answer-length', 'Vastauksen pituus: 19 merkkiä.')
     await page.waitForSelector('.e-grading-answer-max-length-surplus', HIDDEN)
-    await drag(463, 150, 518, 150)
+    await drag(345, 150, 500, 150)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('+1p.')
     await page.keyboard.press('Enter')
@@ -61,7 +61,7 @@ describe('testGrading.ts', () => {
 
   it('creates and modifies annotations', async () => {
     await navigateToAnswer('2')
-    await drag(418, 210, 620, 210)
+    await drag(300, 210, 502, 210)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('first annotation message')
     await page.keyboard.press('Enter')
@@ -69,7 +69,7 @@ describe('testGrading.ts', () => {
     await expectText('.e-annotation--censoring', 'vel eros lobortis, dignissim ')
     await expectAnnotationMessages(['+1', 'first annotation message'])
 
-    await page.hover('.e-annotation--censoring')
+    await page.mouse.move(500, 210)
     await page.waitForSelector('.e-grading-answer-tooltip', VISIBLE)
     await page.click('.e-grading-answer-tooltip-label')
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
@@ -80,9 +80,17 @@ describe('testGrading.ts', () => {
     await page.waitForSelector('.e-grading-answer-tooltip', HIDDEN)
   })
 
+<<<<<<< HEAD
   it('removes annotations', async () => {
     await navigateToAnswer('2')
     await drag(360, 300, 370, 310)
+=======
+    await page.mouse.move(500, 210)
+    await page.click('.e-grading-answer-tooltip-remove')
+    await expectAnnotationMessages(['+1'])
+
+    await drag(242, 300, 252, 310)
+>>>>>>> 62cd9699 (Fix annotation tests)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('img annotation msg')
     await page.keyboard.press('Enter')
