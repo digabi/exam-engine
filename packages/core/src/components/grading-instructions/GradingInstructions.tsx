@@ -30,6 +30,7 @@ import Recording from './Recording'
 import QuestionInstruction from '../exam/QuestionInstruction'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
+import { AnswersState } from '../../store/answers/reducer'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -86,7 +87,11 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps> = ({ doc }) 
   const examTitle = findChildElement(root, 'exam-title')
   const examGradingInstruction = findChildElement(root, 'exam-grading-instruction')
   const tableOfContents = findChildElement(root, 'table-of-contents')
-  const TableOfContents = mkTableOfContents({ showAnsweringInstructions: false, showAttachmentLinks: false })
+  const TableOfContents = mkTableOfContents({
+    showAnsweringInstructions: false,
+    showAttachmentLinks: false,
+    answers: {} as AnswersState,
+  })
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
