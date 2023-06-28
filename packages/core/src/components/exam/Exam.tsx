@@ -128,11 +128,15 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const store = useCached(() =>
     initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
   )
+
+  const answersState = store.getState().answers
+
   const TableOfContentsSidebar = useCached(() =>
     mkTableOfContents({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
       isInSidebar: true,
+      answers: answersState,
     })
   )
 
@@ -141,6 +145,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
       isInSidebar: false,
+      answers: answersState,
     })
   )
 

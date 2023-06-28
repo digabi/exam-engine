@@ -10,7 +10,6 @@ import { QuestionContext, withQuestionContext } from '../context/QuestionContext
 import { SectionContext, withSectionContext } from '../context/SectionContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
-import { useSelector } from 'react-redux'
 import { AnswersState } from '../../store/answers/reducer'
 import classNames from 'classnames'
 import { Indicator } from './AnswerIndicator'
@@ -19,17 +18,18 @@ export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
   showAnsweringInstructions: boolean
   isInSidebar?: boolean
+  answers: AnswersState
 }) => {
-  const { showAttachmentLinks, showAnsweringInstructions, isInSidebar } = options
+  const { showAttachmentLinks, showAnsweringInstructions, isInSidebar, answers } = options
 
   const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { sections } = useContext(CommonExamContext)
     const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
     const { t } = useExamTranslation()
 
-    const hasSectionValidationErrors = !!useSelector(
-      (state: { answers: AnswersState }) => state.answers.validationErrors
-    ).find((i) => i.displayNumber === displayNumber && i?.elementType === 'section')
+    const hasSectionValidationErrors = answers.validationErrors?.find(
+      (i) => i.displayNumber === displayNumber && i?.elementType === 'section'
+    )
 
     return (
       <>
@@ -79,24 +79,22 @@ export const mkTableOfContents = (options: {
     const { displayNumber, maxScore, level } = useContext(QuestionContext)
     const { t } = useExamTranslation()
 
-    const answersById = useSelector((state: { answers: AnswersState }) => state.answers.answersById)
-
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
+    const answersById = answers?.answersById || {}
     const subquestionNodes = element.querySelectorAll('[question-id]')
     const subquestions = [] as { id: number; type: string; error: boolean }[]
 
-    const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors).filter(
-      (i) => i?.elementType === 'question'
-    )
-    const hasQuestionValidationError = !!validationErrors.find((i) => i.displayNumber === displayNumber)
+    const questionValidationErrors = answers.validationErrors?.filter((i) => i?.elementType === 'question')
+
+    const hasQuestionValidationError = !!questionValidationErrors?.find((i) => i.displayNumber === displayNumber)
 
     subquestionNodes.forEach((e) => {
       const id = Number(e.getAttribute('question-id'))
       const type = e.getAttribute('type') || ''
       const subQuestionDisplayNumber = e.getAttribute('display-number') || ''
-      const error = !!validationErrors.find((i) => i.displayNumber === subQuestionDisplayNumber)
+      const error = !!questionValidationErrors?.find((i) => i.displayNumber === subQuestionDisplayNumber)
 
       if (id) {
         subquestions.push({ id, type, error })
@@ -106,7 +104,7 @@ export const mkTableOfContents = (options: {
     const subQuestionError = !!subquestions.find((i) => i.error)
     const maxAnswers = Number(element.getAttribute('max-answers'))
 
-    const subquestionsAnswered = subquestions.filter((i) => answersById[i.id]?.value).length
+    const subquestionsAnswered = subquestions?.filter((i) => answersById[i.id]?.value).length
     const requiredAnswers = maxAnswers || subquestions.length
 
     return (
@@ -182,9 +180,7 @@ export const mkTableOfContents = (options: {
     const { t } = useExamTranslation()
     const maxAnswers = getNumericAttribute(root, 'max-answers')
 
-    const hasExamValidationErrors = !!useSelector(
-      (state: { answers: AnswersState }) => state.answers.validationErrors
-    ).find((i) => i?.elementType === 'exam')
+    const hasExamValidationErrors = answers.validationErrors?.find((i) => i?.elementType === 'exam')
 
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
