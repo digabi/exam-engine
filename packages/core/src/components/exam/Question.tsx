@@ -1,15 +1,17 @@
 import classNames from 'classnames'
-import React, { Dispatch, SetStateAction, createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext } from '../context/SectionContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { CasState } from '../../store/cas/reducer'
+import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
-  setExpanded: Dispatch<SetStateAction<boolean>>
-}>({ expanded: false, setExpanded: () => undefined })
+  toggleWriterMode: (s: boolean) => void
+}>({ expanded: false, toggleWriterMode: () => undefined })
 
 function Question({ element, renderChildNodes }: ExamComponentProps) {
   const casStatus = useSelector((state: { cas: CasState }) => state.cas.casStatus)
@@ -17,8 +19,15 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level } = useContext(QuestionContext)
   const [expanded, setExpanded] = useState<boolean>(false)
 
+  const toggleWriterMode = (open: boolean) => {
+    open
+      ? document.querySelector('body')?.classList.remove('writer-mode')
+      : document.querySelector('body')?.classList.add('writer-mode')
+    setExpanded((expanded) => !expanded)
+  }
+
   return !casForbidden || casStatus === 'forbidden' ? (
-    <ExpandQuestionContext.Provider value={{ expanded, setExpanded }}>
+    <ExpandQuestionContext.Provider value={{ expanded, toggleWriterMode }}>
       <div
         className={classNames('exam-question', {
           'e-level-0': level === 0,
@@ -29,7 +38,8 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
       >
         <div className="anchor" id={displayNumber} />
         {expanded && (
-          <div className="expand close" onClick={() => setExpanded(false)}>
+          <div className="expand close" onClick={() => toggleWriterMode(true)}>
+            <FontAwesomeIcon icon={faCompressAlt} />
             Sulje kirjoitusnäkymä
           </div>
         )}

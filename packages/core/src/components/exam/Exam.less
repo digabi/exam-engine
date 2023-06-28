@@ -15,21 +15,20 @@
       inset: 0;
       padding: 3rem;
       padding-left: 5rem;
+      transition: padding-top 0.2s;
       background: white;
       margin-left: 0;
       display: flex;
       flex-direction: column;
       padding-left: ~'max(2.5rem, (100vw - 60rem)/2)';
       padding-right: ~'max(2.5rem, (100vw - 60rem)/2)';
-      overscroll-behavior: contain;
-      overflow-y: scroll;
 
       .exam-attachment {
         display: none;
       }
 
       .text-answer-container {
-        height: 100%;
+        height: 90%;
         padding: 2px;
         overflow-y: scroll;
 
@@ -45,19 +44,50 @@
     }
 
     .expand {
-      height: 30px;
       position: absolute;
-      border-radius: 2px;
+      border-radius: 4px;
       background: #ddd;
       z-index: 2;
+      height: 32px;
       display: grid;
       place-content: center;
       cursor: pointer;
 
       &.close {
-        top: 1rem;
-        right: 1rem;
-        padding: 0 1rem;
+        padding: 0.25rem 1rem;
+        position: relative;
+        align-self: flex-end;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      &.open {
+        font-size: 20px;
+        width: 32px;
+        top: -4px;
+        right: -4px;
+
+        &:before {
+          opacity: 0;
+          content: 'Avaa kirjoitusnäkymä';
+          position: absolute;
+          right: 110%;
+          font-size: 14px;
+          white-space: nowrap;
+          background: #eee;
+          padding: 0.25rem 0.75rem;
+          pointer-events: none;
+          transition: opacity 0.1s;
+          border-radius: 5px;
+          height: 32px;
+          box-sizing: border-box;
+        }
+
+        &:hover:before {
+          opacity: 1;
+        }
       }
 
       &:hover {
@@ -76,4 +106,22 @@
   bottom: 0;
   right: 0;
   z-index: 2;
+}
+
+.rich-text-editor-tools {
+  z-index: 3;
+}
+
+.rich-text-editor-focus {
+  .exam-question.expanded {
+    padding-top: 6rem;
+  }
+
+  &.math-editor-focus .exam-question.expanded {
+    padding-top: 9rem;
+  }
+}
+
+body.writer-mode {
+  overflow: hidden;
 }

@@ -5,6 +5,8 @@ import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { makeRichText } from 'rich-text-editor'
 import { ExpandQuestionContext } from './Question'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 
 export interface ScreenshotError {
   key: 'screenshot-too-big' | 'screenshot-byte-limit-reached' | 'screenshot-upload-failed'
@@ -94,10 +96,9 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
 
   render(): React.ReactNode {
     const { className, questionId, invalid, lang, labelledBy } = this.props
-
     return (
       <ExpandQuestionContext.Consumer>
-        {({ expanded, setExpanded }) => (
+        {({ expanded, toggleWriterMode }) => (
           <div className="text-answer-container">
             <div
               ref={this.ref}
@@ -111,8 +112,8 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
               aria-labelledby={labelledBy}
             />
             {!expanded && (
-              <div className="expand open" onClick={() => setExpanded(!expanded)}>
-                <div className="symbol">↕</div>
+              <div className="expand open" onClick={() => toggleWriterMode(false)}>
+                <FontAwesomeIcon icon={faExpandAlt} />
               </div>
             )}
           </div>
