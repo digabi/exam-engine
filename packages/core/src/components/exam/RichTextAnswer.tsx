@@ -4,6 +4,7 @@ import React from 'react'
 import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { makeRichText } from 'rich-text-editor'
+import { ExpandQuestionContext } from './Question'
 
 export interface ScreenshotError {
   key: 'screenshot-too-big' | 'screenshot-byte-limit-reached' | 'screenshot-upload-failed'
@@ -95,17 +96,28 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
     const { className, questionId, invalid, lang, labelledBy } = this.props
 
     return (
-      <div
-        ref={this.ref}
-        className={className}
-        data-question-id={questionId}
-        role="textbox"
-        aria-multiline="true"
-        aria-invalid={invalid}
-        tabIndex={0}
-        lang={lang}
-        aria-labelledby={labelledBy}
-      />
+      <ExpandQuestionContext.Consumer>
+        {({ expanded, setExpanded }) => (
+          <div className="text-answer-container">
+            <div
+              ref={this.ref}
+              className={className}
+              data-question-id={questionId}
+              role="textbox"
+              aria-multiline="true"
+              aria-invalid={invalid}
+              tabIndex={0}
+              lang={lang}
+              aria-labelledby={labelledBy}
+            />
+            {!expanded && (
+              <div className="expand open" onClick={() => setExpanded(!expanded)}>
+                <div className="symbol">↕</div>
+              </div>
+            )}
+          </div>
+        )}
+      </ExpandQuestionContext.Consumer>
     )
   }
 }
