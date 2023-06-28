@@ -46,6 +46,7 @@ describe('Answer length validation', () => {
         displayNumber: '1',
         type: 'AnswerTooLong',
         characterCount: 8,
+        elementType: 'question',
       },
     ])
   })
@@ -55,11 +56,13 @@ describe('Answer length validation', () => {
         displayNumber: '1',
         type: 'AnswerTooLong',
         characterCount: 8,
+        elementType: 'question',
       },
       {
         displayNumber: '2.1',
         type: 'AnswerTooLong',
         characterCount: 8,
+        elementType: 'question',
       },
     ])
   })
