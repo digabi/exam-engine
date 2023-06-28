@@ -45,8 +45,14 @@ describe('Answer length validation', () => {
       {
         displayNumber: '1',
         type: 'AnswerTooLong',
+<<<<<<< HEAD
         characterCount: 8
       }
+=======
+        characterCount: 8,
+        elementType: 'question',
+      },
+>>>>>>> 62cd9699 (Fix annotation tests)
     ])
   })
   it('returns multiple errors if multiple answers are too long', () => {
@@ -54,13 +60,24 @@ describe('Answer length validation', () => {
       {
         displayNumber: '1',
         type: 'AnswerTooLong',
+<<<<<<< HEAD
         characterCount: 8
+=======
+        characterCount: 8,
+        elementType: 'question',
+>>>>>>> 62cd9699 (Fix annotation tests)
       },
       {
         displayNumber: '2.1',
         type: 'AnswerTooLong',
+<<<<<<< HEAD
         characterCount: 8
       }
+=======
+        characterCount: 8,
+        elementType: 'question',
+      },
+>>>>>>> 62cd9699 (Fix annotation tests)
     ])
   })
 
