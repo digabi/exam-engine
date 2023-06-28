@@ -1,6 +1,10 @@
 {
   "name": "@digabi/exam-engine-mastering",
+<<<<<<< HEAD
   "version": "19.8.2-alpha.0",
+=======
+  "version": "19.7.0-alpha.0",
+>>>>>>> d39f3ffc (v19.7.0-alpha.0)
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -9,7 +13,11 @@
     "schema"
   ],
   "dependencies": {
+<<<<<<< HEAD
     "@digabi/exam-engine-core": "19.8.1",
+=======
+    "@digabi/exam-engine-core": "19.7.0-alpha.0",
+>>>>>>> d39f3ffc (v19.7.0-alpha.0)
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "cloneable-readable": "^3.0.0",
     "compare-versions": "^6.0.0",
