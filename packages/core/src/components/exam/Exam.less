@@ -14,12 +14,10 @@
       z-index: 3;
       inset: 0;
       padding: 3rem;
-      padding-left: 5rem;
       transition: padding-top 0.2s;
       background: white;
       margin-left: 0;
-      display: flex;
-      flex-direction: column;
+      overflow-y: auto;
       padding-left: ~'max(2.5rem, (100vw - 60rem)/2)';
       padding-right: ~'max(2.5rem, (100vw - 60rem)/2)';
 
@@ -28,30 +26,42 @@
       }
 
       .text-answer-container {
-        height: 90%;
         padding: 2px;
         overflow-y: scroll;
+        flex: 1;
 
         .text-answer--rich-text {
-          height: 99%;
-          font-size: 18px;
+          height: calc(100% - 8px);
+          font-size: 20px;
           line-height: 32px;
-          padding: ~'max(1.5rem, 3vw)' ~'max(2rem, 4vw)';
-          font-family: Georgia, Times, 'Times New Roman', serif;
-          overflow-y: scroll;
+          padding: ~'min(4rem, 6vw)' ~'min(6rem, 9vw)';
+          font-family: Cambria, Times, 'Times New Roman', serif;
+          overflow-y: hidden;
         }
       }
+    }
+
+    .full-screen {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .expand {
       position: absolute;
       border-radius: 4px;
-      background: #ddd;
+      background: #eee;
       z-index: 2;
       height: 32px;
       display: grid;
       place-content: center;
       cursor: pointer;
+      border: none;
+      font-size: 16px;
+
+      &:hover {
+        background: #ddd;
+      }
 
       &.close {
         padding: 0.25rem 1rem;
@@ -61,13 +71,14 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        float: right;
       }
 
       &.open {
         font-size: 20px;
         width: 32px;
-        top: -4px;
-        right: -4px;
+        top: 5px;
+        right: 5px;
 
         &:before {
           opacity: 0;
@@ -89,10 +100,6 @@
           opacity: 1;
         }
       }
-
-      &:hover {
-        background: #ccc;
-      }
     }
   }
 }
@@ -113,10 +120,6 @@
 }
 
 .rich-text-editor-focus {
-  .exam-question.expanded {
-    padding-top: 6rem;
-  }
-
   &.math-editor-focus .exam-question.expanded {
     padding-top: 9rem;
   }

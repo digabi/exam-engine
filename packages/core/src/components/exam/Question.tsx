@@ -37,13 +37,18 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         })}
       >
         <div className="anchor" id={displayNumber} />
-        {expanded && (
-          <div className="expand close" onClick={() => toggleWriterMode(true)}>
-            <FontAwesomeIcon icon={faCompressAlt} />
-            Sulje kirjoitusnäkymä
+
+        {expanded ? (
+          <div className="full-screen">
+            <button className="expand close" onClick={() => toggleWriterMode(true)}>
+              <FontAwesomeIcon icon={faCompressAlt} />
+              Pienennä näkymä
+            </button>
+            {renderChildNodes(element)}
           </div>
+        ) : (
+          renderChildNodes(element)
         )}
-        {renderChildNodes(element)}
       </div>
     </ExpandQuestionContext.Provider>
   ) : null
