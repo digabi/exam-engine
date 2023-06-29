@@ -81,7 +81,7 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const className = element.getAttribute('class')
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
-  const scoreValue = answer && choice.options.find((option) => option.id === Number(answer.value))!.score
+  const scoreValue = answer && choice.options.find((option) => option.id === Number(answer.value))?.score
   const maxScore = getNumericAttribute(element, 'max-score')
 
   return (
