@@ -59,8 +59,9 @@ function PreviewGrading() {
     annotationsStorage.current[answerId] = annotations
     setAnnotations({ ...annotationsStorage.current[answerId] })
   }
+
   return (
-    <main className="e-exam">
+    <main className="e-exam e-grading">
       <div className="grading-header">
         <div className="grading-navi">
           {answerIds.map((id) =>

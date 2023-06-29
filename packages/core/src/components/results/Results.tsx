@@ -73,7 +73,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
   useEffect(scrollToHash, [])
   return (
     <I18nextProvider i18n={i18n}>
-      <main className="e-exam" lang={subjectLanguage}>
+      <main className="e-exam e-results" lang={subjectLanguage}>
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
