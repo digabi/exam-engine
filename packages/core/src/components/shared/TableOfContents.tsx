@@ -13,23 +13,25 @@ import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 import { AnswersState } from '../../store/answers/reducer'
 import classNames from 'classnames'
 import { Indicator } from './AnswerIndicator'
+import { useSelector } from 'react-redux'
+import { ExamAnswer, QuestionId } from '../../types/ExamAnswer'
 
 export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
   showAnsweringInstructions: boolean
   isInSidebar?: boolean
-  answers: AnswersState
 }) => {
-  const { showAttachmentLinks, showAnsweringInstructions, isInSidebar, answers } = options
+  const { showAttachmentLinks, showAnsweringInstructions, isInSidebar } = options
 
   const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { sections } = useContext(CommonExamContext)
     const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
     const { t } = useExamTranslation()
 
-    const hasSectionValidationErrors = answers.validationErrors?.find(
-      (i) => i.displayNumber === displayNumber && i?.elementType === 'section'
-    )
+    const hasSectionValidationErrors = () =>
+      useSelector((state: { answers: AnswersState }) => state.answers)?.validationErrors.find(
+        (i) => i.displayNumber === displayNumber && i?.elementType === 'section'
+      )
 
     return (
       <>
@@ -43,8 +45,8 @@ export const mkTableOfContents = (options: {
 
         {showAnsweringInstructions && maxAnswers != null && (
           <div style={{ display: 'grid' }}>
-            <div className={classNames('answer-instructions', { error: hasSectionValidationErrors })}>
-              {hasSectionValidationErrors && <div className="error-mark">!</div>}
+            <div className={classNames('answer-instructions', { error: isInSidebar && hasSectionValidationErrors() })}>
+              {isInSidebar && hasSectionValidationErrors() && <div className="error-mark">!</div>}
               <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
             </div>
           </div>
@@ -53,7 +55,11 @@ export const mkTableOfContents = (options: {
     )
   }
 
-  const TOCSection: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
+  const TOCSection: React.FunctionComponent<ExamComponentProps & { answers: AnswersState }> = ({
+    element,
+    answers,
+    renderChildNodes,
+  }) => {
     const { displayNumber } = useContext(SectionContext)
     const sectionTitle = findChildElement(element, 'section-title')
 
@@ -63,7 +69,8 @@ export const mkTableOfContents = (options: {
           <TOCSectionTitle
             {...{
               element: sectionTitle,
-              renderChildNodes
+              renderChildNodes,
+              answers,
             }}
           />
         )}
@@ -82,29 +89,35 @@ export const mkTableOfContents = (options: {
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
-    const answersById = answers?.answersById || {}
-    const subquestionNodes = element.querySelectorAll('[question-id]')
     const subquestions = [] as { id: number; type: string; error: boolean }[]
 
-    const questionValidationErrors = answers.validationErrors?.filter((i) => i?.elementType === 'question')
+    let answersById = {} as Record<QuestionId, ExamAnswer>
+    let hasQuestionValidationError
 
-    const hasQuestionValidationError = !!questionValidationErrors?.find((i) => i.displayNumber === displayNumber)
+    if (isInSidebar) {
+      const answers = useSelector((state: { answers: AnswersState }) => state.answers)
 
-    subquestionNodes.forEach((e) => {
-      const id = Number(e.getAttribute('question-id'))
-      const type = e.getAttribute('type') || ''
-      const subQuestionDisplayNumber = e.getAttribute('display-number') || ''
-      const error = !!questionValidationErrors?.find((i) => i.displayNumber === subQuestionDisplayNumber)
+      answersById = answers?.answersById || {}
+      const subquestionNodes = element.querySelectorAll('[question-id]')
 
-      if (id) {
-        subquestions.push({ id, type, error })
-      }
-    })
+      const questionValidationErrors = answers.validationErrors?.filter((i) => i?.elementType === 'question')
+      hasQuestionValidationError = !!questionValidationErrors?.find((i) => i.displayNumber === displayNumber)
+
+      subquestionNodes.forEach((e) => {
+        const id = Number(e.getAttribute('question-id'))
+        const type = e.getAttribute('type') || ''
+        const subQuestionDisplayNumber = e.getAttribute('display-number') || ''
+        const error = !!questionValidationErrors?.find((i) => i.displayNumber === subQuestionDisplayNumber)
+
+        if (id) {
+          subquestions.push({ id, type, error })
+        }
+      })
+    }
 
     const subQuestionError = !!subquestions.find((i) => i.error)
-    const maxAnswers = Number(element.getAttribute('max-answers'))
-
     const subquestionsAnswered = subquestions?.filter((i) => answersById[i.id]?.value).length
+    const maxAnswers = Number(element.getAttribute('max-answers'))
     const requiredAnswers = maxAnswers || subquestions.length
 
     return (
@@ -180,7 +193,10 @@ export const mkTableOfContents = (options: {
     const { t } = useExamTranslation()
     const maxAnswers = getNumericAttribute(root, 'max-answers')
 
-    const hasExamValidationErrors = answers.validationErrors?.find((i) => i?.elementType === 'exam')
+    const hasExamValidationErrors = () =>
+      !!useSelector((state: { answers: AnswersState }) =>
+        state.answers.validationErrors?.find((i) => i?.elementType === 'exam')
+      )
 
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
@@ -190,8 +206,8 @@ export const mkTableOfContents = (options: {
 
         {maxAnswers && (
           <div style={{ display: 'grid' }}>
-            <div className={classNames('answer-instructions', { error: !!hasExamValidationErrors })}>
-              {hasExamValidationErrors && <div className="error-mark">!</div>}
+            <div className={classNames('answer-instructions', { error: isInSidebar && hasExamValidationErrors() })}>
+              {isInSidebar && hasExamValidationErrors() && <div className="error-mark">!</div>}
               Vastaa enintään {maxAnswers} tehtävään
             </div>
           </div>
