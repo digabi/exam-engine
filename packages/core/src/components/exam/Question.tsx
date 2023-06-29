@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext } from '../context/SectionContext'
@@ -19,12 +19,24 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level } = useContext(QuestionContext)
   const [expanded, setExpanded] = useState<boolean>(false)
 
-  const toggleWriterMode = (open: boolean) => {
-    open
+  const toggleWriterMode = (setOpen: boolean) => {
+    setOpen
       ? document.querySelector('body')?.classList.remove('writer-mode')
       : document.querySelector('body')?.classList.add('writer-mode')
     setExpanded((expanded) => !expanded)
   }
+
+  const handleEsc = (e: KeyboardEvent) => {
+    if (e.key === 'Escape' || e.code === 'Escape') {
+      toggleWriterMode(false)
+    }
+  }
+  useEffect(() => {
+    if (expanded) {
+      window.addEventListener('keydown', handleEsc)
+    }
+    return () => window.removeEventListener('keydown', handleEsc)
+  }, [expanded])
 
   return !casForbidden || casStatus === 'forbidden' ? (
     <ExpandQuestionContext.Provider value={{ expanded, toggleWriterMode }}>
