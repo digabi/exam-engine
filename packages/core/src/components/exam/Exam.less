@@ -17,9 +17,15 @@
       transition: padding-top 0.2s;
       background: white;
       margin-left: 0;
+      display: flex;
+      flex-direction: column;
       overflow-y: auto;
       padding-left: ~'max(2.5rem, (100vw - 60rem)/2)';
       padding-right: ~'max(2.5rem, (100vw - 60rem)/2)';
+
+      .exam-question-title {
+        margin-right: 13rem;
+      }
 
       .exam-attachment {
         display: none;
@@ -44,7 +50,8 @@
     .full-screen {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      position: relative;
+      flex: 1;
     }
 
     .expand {
@@ -64,14 +71,12 @@
       }
 
       &.close {
+        top: 0;
+        right: 0;
         padding: 0.25rem 1rem;
-        position: relative;
-        align-self: flex-end;
-        margin-bottom: 1rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        float: right;
       }
 
       &.open {

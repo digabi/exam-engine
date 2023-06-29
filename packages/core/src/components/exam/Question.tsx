@@ -19,11 +19,15 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level } = useContext(QuestionContext)
   const [expanded, setExpanded] = useState<boolean>(false)
 
-  const toggleWriterMode = (setOpen: boolean) => {
-    setOpen
-      ? document.querySelector('body')?.classList.remove('writer-mode')
-      : document.querySelector('body')?.classList.add('writer-mode')
-    setExpanded((expanded) => !expanded)
+  const toggleWriterMode = (expand: boolean) => {
+    setExpanded(expand)
+    const body = document.querySelector('body')
+    if (expand) {
+      body?.classList.add('writer-mode')
+    } else {
+      body?.classList.remove('writer-mode')
+      body?.classList.remove('rich-text-editor-focus')
+    }
   }
 
   const handleEsc = (e: KeyboardEvent) => {
@@ -31,6 +35,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
       toggleWriterMode(false)
     }
   }
+
   useEffect(() => {
     if (expanded) {
       window.addEventListener('keydown', handleEsc)
@@ -52,7 +57,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
 
         {expanded ? (
           <div className="full-screen">
-            <button className="expand close" onClick={() => toggleWriterMode(true)}>
+            <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
               Pienennä näkymä
             </button>

@@ -112,7 +112,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
               aria-labelledby={labelledBy}
             />
             {!expanded && (
-              <button className="expand open" onClick={() => toggleWriterMode(false)}>
+              <button className="expand open" onClick={() => toggleWriterMode(true)}>
                 <FontAwesomeIcon icon={faExpandAlt} />
               </button>
             )}
