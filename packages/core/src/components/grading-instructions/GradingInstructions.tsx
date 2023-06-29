@@ -28,7 +28,6 @@ import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Recording from './Recording'
 import QuestionInstruction from '../exam/QuestionInstruction'
-import { AnswersState } from '../../store/answers/reducer'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -86,7 +85,6 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps> = ({ doc }) 
   const TableOfContents = mkTableOfContents({
     showAnsweringInstructions: false,
     showAttachmentLinks: false,
-    answers: {} as AnswersState,
   })
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
