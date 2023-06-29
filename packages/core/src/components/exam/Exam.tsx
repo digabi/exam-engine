@@ -133,14 +133,11 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
   )
 
-  const answersState = store.getState().answers
-
   const TableOfContentsSidebar = useCached(() =>
     mkTableOfContents({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
       isInSidebar: true,
-      answers: answersState,
     })
   )
 
@@ -149,7 +146,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
       isInSidebar: false,
-      answers: answersState,
     })
   )
 
@@ -213,7 +209,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           <div className="e-halves">
             {tableOfContents && !visuallyImpaired && (
               <div className="sidebar-toc-container">
-                <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes, isInSidebar: true }} />
+                <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
               </div>
             )}
 
@@ -234,7 +230,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                         {...{
                           element: tableOfContents,
                           renderChildNodes,
-                          isInSideBar: false,
                         }}
                       />
                     </div>
