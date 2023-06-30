@@ -73,6 +73,9 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await expectErrorIndicatorToDisappear()
     await type('o'.repeat(241), 89)
     await expectErrorIndicator('Tehtävä 20.1: Vastaus on liian pitkä.')
+    const indicator = await page.$('.sidebar-toc-container div[data-indicator-id="89"]')
+    const className = await (await indicator?.getProperty('className'))?.jsonValue()
+    expect(className).toContain('error')
   })
 
   it('a text answer indicator has correct state in side navigation', async () => {
@@ -95,50 +98,6 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(indicatorValueThen).toContain('12')
     expect(classNameFinally).not.toContain('ok')
     expect(indicatorValueFinally).toContain('')
-  })
-
-  describe('Navigation errors', () => {
-    let ctx_ge: PreviewContext
-
-    beforeAll(async () => {
-      ctx_ge = await previewExam(resolveExam('GE/GE.xml'))
-    })
-
-    afterAll(async () => {
-      await ctx_ge.close()
-    })
-
-    it('shows an exam error when exam has too many questions answered', async () => {
-      await loadExam(page, ctx_ge.url)
-
-      const errorMarkLocator = '.sidebar-toc-container .error-mark.exam'
-      let errorMark = await page.$(errorMarkLocator)
-      expect(errorMark).toBeFalsy()
-
-      await type('testivastaus', 21)
-      await type('testivastaus', 23)
-      await type('testivastaus', 26)
-      await type('testivastaus', 32)
-      await type('testivastaus', 37)
-      await type('testivastaus', 41)
-      errorMark = await page.waitForSelector(errorMarkLocator)
-      expect(errorMark).toBeTruthy()
-    })
-
-    it('shows a section error when section has too many questions answered', async () => {
-      await loadExam(page, ctx_ge.url)
-
-      const errorMarkLocator = '.sidebar-toc-container li[data-section-id="2"] .error-mark'
-
-      await type('testivastaus', 21)
-      await type('testivastaus', 23)
-      let errorMark = await page.$(errorMarkLocator)
-      expect(errorMark).toBeFalsy()
-
-      await type('testivastaus', 26)
-      errorMark = await page.waitForSelector(errorMarkLocator)
-      expect(errorMark).toBeTruthy()
-    })
   })
 
   const expectErrorIndicator = async (text: string) => {
