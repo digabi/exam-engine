@@ -33,6 +33,22 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
     await loadExam(page, ctx.url)
     expect(await getRadioButtonValue(page, 1)).toBe('93')
   })
+
+  it('a choice answer indicator has correct state in side navigation', async () => {
+    await loadExam(page, ctx.url)
+    const indicator = await page.$('.sidebar-toc-container div[data-indicator-id="44"]')
+
+    const className = await (await indicator?.getProperty('className'))?.jsonValue()
+    const indicatorValue = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
+    await setChoiceAnswer(page, 44, '207')
+    const classNameThen = await (await indicator?.getProperty('className'))?.jsonValue()
+    const indicatorValueThen = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
+
+    expect(className).not.toContain('ok')
+    expect(indicatorValue).toContain('')
+    expect(classNameThen).toContain('ok')
+    expect(indicatorValueThen).toContain('')
+  })
 })
 
 async function getRadioButtonValue(page: Page, questionId: number): Promise<string | undefined> {

@@ -27,6 +27,7 @@ const AnswerIndicator = (props: Props) => {
           error,
           big: type === 'rich-text',
         })}
+        data-indicator-id={id}
       >
         {answer?.type === 'richText' && (
           <>

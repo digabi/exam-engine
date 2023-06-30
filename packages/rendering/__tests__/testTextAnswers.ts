@@ -56,8 +56,16 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await type('oikea vastaus', 89)
     await type('oikea vastaus 2', 90)
     await expectErrorIndicator('Tehtävä 20: Vastaa joko kohtaan 20.1 tai 20.2.')
+
+    const questionName = await page.$('.sidebar-toc-container li[data-list-number="20."]')
+    const className = await (await questionName?.getProperty('className'))?.jsonValue()
+    expect(className).toContain('error')
+
     await clearInput(90)
     await expectErrorIndicatorToDisappear()
+
+    const classNameThen = await (await questionName?.getProperty('className'))?.jsonValue()
+    expect(classNameThen).not.toContain('error')
   })
 
   it('shows the error indicator when answer is too long', async () => {
@@ -65,6 +73,28 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await expectErrorIndicatorToDisappear()
     await type('o'.repeat(241), 89)
     await expectErrorIndicator('Tehtävä 20.1: Vastaus on liian pitkä.')
+  })
+
+  it('a text answer indicator has correct state in side navigation', async () => {
+    await loadExam(page, ctx.url)
+    await clearInput(90)
+    const indicator = await page.$('.sidebar-toc-container div[data-indicator-id="90"]')
+
+    const className = await (await indicator?.getProperty('className'))?.jsonValue()
+    const indicatorValue = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
+    await type('testivastaus', 90)
+    const classNameThen = await (await indicator?.getProperty('className'))?.jsonValue()
+    const indicatorValueThen = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
+    await clearInput(90)
+    const classNameFinally = await (await indicator?.getProperty('className'))?.jsonValue()
+    const indicatorValueFinally = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
+
+    expect(className).not.toContain('ok')
+    expect(indicatorValue).toContain('')
+    expect(classNameThen).toContain('ok')
+    expect(indicatorValueThen).toContain('12')
+    expect(classNameFinally).not.toContain('ok')
+    expect(indicatorValueFinally).toContain('')
   })
 
   const expectErrorIndicator = async (text: string) => {
