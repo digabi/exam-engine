@@ -64,7 +64,7 @@ export const mkTableOfContents = (options: {
     const sectionTitle = findChildElement(element, 'section-title')
 
     return (
-      <li>
+      <li data-section-id={displayNumber}>
         {sectionTitle && (
           <TOCSectionTitle
             {...{
@@ -207,7 +207,7 @@ export const mkTableOfContents = (options: {
         {maxAnswers && (
           <div style={{ display: 'grid' }}>
             <div className={classNames('answer-instructions', { error: isInSidebar && hasExamValidationErrors() })}>
-              {isInSidebar && hasExamValidationErrors() && <div className="error-mark">!</div>}
+              {isInSidebar && hasExamValidationErrors() && <div className="error-mark exam">!</div>}
               Vastaa enintään {maxAnswers} tehtävään
             </div>
           </div>
