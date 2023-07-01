@@ -56,7 +56,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         <div className="anchor" id={displayNumber} />
 
         {expanded ? (
-          <div className="full-screen">
+          <div className="full-screen" data-full-screen-id={displayNumber}>
             <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
               Pienennä näkymä

@@ -141,28 +141,30 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
       return (
         <>
           {maxLength != null && <AnswerLengthInfo {...{ maxLength, id: answerLengthInfoId(element) }} />}
-          <RichTextAnswer
-            answer={answer as RichTextAnswerT}
-            className={classNames('text-answer text-answer--rich-text', className)}
-            saveScreenshot={data => examServerApi.saveScreenshot(questionId, data)}
-            onChange={onRichTextChange}
-            onError={onError}
-            questionId={questionId}
-            lang={lang}
-            invalid={invalid}
-            labelledBy={labelledBy}
-          />
-          <AnswerToolbar
-            {...{
-              answer,
-              element,
-              selectAnswerVersion: wrappedSelectAnswerVersion,
-              showAnswerHistory,
-              supportsAnswerHistory,
-              screenshotError,
-              validationError
-            }}
-          />
+          <div className="text-answer-container">
+            <RichTextAnswer
+              answer={answer as RichTextAnswerT}
+              className={classNames('text-answer text-answer--rich-text', className)}
+              saveScreenshot={data => examServerApi.saveScreenshot(questionId, data)}
+              onChange={onRichTextChange}
+              onError={onError}
+              questionId={questionId}
+              lang={lang}
+              invalid={invalid}
+              labelledBy={labelledBy}
+            />
+            <AnswerToolbar
+              {...{
+                answer,
+                element,
+                selectAnswerVersion: wrappedSelectAnswerVersion,
+                showAnswerHistory,
+                supportsAnswerHistory,
+                screenshotError,
+                validationError
+              }}
+            />
+          </div>
         </>
       )
     case 'integer':

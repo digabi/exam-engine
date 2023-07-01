@@ -13,15 +13,11 @@
       position: fixed;
       z-index: 3;
       inset: 0;
-      padding: 3rem;
       transition: padding-top 0.2s;
       background: white;
       margin-left: 0;
-      display: flex;
-      flex-direction: column;
       overflow-y: auto;
-      padding-left: ~'max(2.5rem, (100vw - 60rem)/2)';
-      padding-right: ~'max(2.5rem, (100vw - 60rem)/2)';
+      pointer-events: none;
 
       .exam-question-title {
         margin-right: 13rem;
@@ -35,6 +31,8 @@
         padding: 2px;
         overflow-y: scroll;
         flex: 1;
+        display: flex;
+        flex-direction: column;
 
         .text-answer--rich-text {
           height: calc(100% - 8px);
@@ -50,8 +48,12 @@
     .full-screen {
       display: flex;
       flex-direction: column;
-      position: relative;
       flex: 1;
+      margin-top: 3rem;
+      margin-left: ~'max(2.5rem, (100vw - 60rem)/2)';
+      margin-right: ~'max(2.5rem, (100vw - 60rem)/2)';
+      pointer-events: all;
+
     }
 
     .expand {
@@ -71,8 +73,8 @@
       }
 
       &.close {
-        top: 0;
-        right: 0;
+        top: 3rem;
+        right: 3rem;
         padding: 0.25rem 1rem;
         display: flex;
         align-items: center;

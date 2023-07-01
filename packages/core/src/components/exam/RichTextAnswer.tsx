@@ -99,7 +99,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
     return (
       <ExpandQuestionContext.Consumer>
         {({ expanded, toggleWriterMode }) => (
-          <div className="text-answer-container">
+          <>
             <div
               ref={this.ref}
               className={className}
@@ -116,7 +116,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
                 <FontAwesomeIcon icon={faExpandAlt} />
               </button>
             )}
-          </div>
+          </>
         )}
       </ExpandQuestionContext.Consumer>
     )

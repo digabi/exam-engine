@@ -67,6 +67,55 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await expectErrorIndicator('Tehtävä 20.1: Vastaus on liian pitkä.')
   })
 
+  it('opens rich text answer in writer mode, and exits', async () => {
+    await loadExam(page, ctx.url)
+
+    const body = await page.$('body')
+    const fullScreenSelector = 'div[data-full-screen-id="1.2"]'
+    const answerText = 'vastaukseni'
+
+    await openWriterMode(page)
+    await type(answerText, 2)
+    await page.click(`${fullScreenSelector} .expand.close`)
+    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
+    expect(bodyClass).not.toContain('writer-mode')
+
+    const fullScreen = await page.$(fullScreenSelector)
+    expect(fullScreen).toBeFalsy()
+
+    const answerBox = await page.$('.text-answer[data-question-id="2"]')
+    const answer = await (await answerBox?.getProperty('innerHTML'))?.jsonValue()
+    expect(answer).toBe(answerText)
+  })
+
+  it('ESC exits writer mode', async () => {
+    await loadExam(page, ctx.url)
+
+    const body = await page.$('body')
+    const fullScreenSelector = 'div[data-full-screen-id="1.2"]'
+
+    await openWriterMode(page)
+    await page.keyboard.press('Escape')
+    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
+    expect(bodyClass).not.toContain('writer-mode')
+
+    const fullScreen = await page.$(fullScreenSelector)
+    expect(fullScreen).toBeFalsy()
+  })
+
+  const openWriterMode = async (page: Page) => {
+    await page.click('.text-answer[data-question-id="2"] + .expand')
+
+    const body = await page.$('body')
+    const fullScreenSelector = 'div[data-full-screen-id="1.2"]'
+
+    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
+    expect(bodyClass).toContain('writer-mode')
+
+    const fullScreen = await page.$(fullScreenSelector)
+    expect(fullScreen).toBeTruthy()
+  }
+
   const expectErrorIndicator = async (text: string) => {
     await page.waitForFunction(
       (text: string) => {
