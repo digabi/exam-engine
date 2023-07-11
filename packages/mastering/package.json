@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "@digabi/exam-engine-core": "19.8.11",
+    "@digabi/exam-engine-rendering": "19.8.11",
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "cloneable-readable": "^3.0.0",
     "compare-versions": "^6.0.0",

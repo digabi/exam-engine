@@ -8,6 +8,7 @@ import * as uuid from 'uuid'
 import webpack from 'webpack'
 import { getOfflineWebpackConfig } from './getOfflineWebpackConfig'
 import ffmpeg from 'ffmpeg-static'
+import { createFileWithCleanExif } from './utils/exifDataAndImageHandler'
 
 export interface CreateOfflineExamOptions {
   /**
@@ -107,7 +108,7 @@ async function copyAttachment(
       await fs.copyFile(cachedFilename, newTarget)
     }
   }
-
+  await createFileWithCleanExif(source)
   return fs.copyFile(source, target)
 }
 

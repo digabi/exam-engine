@@ -10334,6 +10334,11 @@ picomatch@^2.2.3:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
   integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
 
+piexif-ts@^2.0.16:
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/piexif-ts/-/piexif-ts-2.0.16.tgz#b49313811f099d617e7e5ea42741e3eed9fb58ab"
+  integrity sha512-D32ISpv1CwGYVMLk4Zm/+793DhOj2JuMMpyJRA2/b096XDDWhpAsB901ckXkP4m4cBnI5t6novtOwruwlNVxaA==
+
 pify@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-5.0.0.tgz#1f5eca3f5e87ebec28cc6d54a0e4aaf00acc127f"

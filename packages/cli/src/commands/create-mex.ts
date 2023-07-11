@@ -3,6 +3,7 @@ import { createReadStream, createWriteStream, promises as fs } from 'fs'
 import path from 'path'
 import * as uuid from 'uuid'
 import { examName } from '../utils'
+import { createFileWithCleanExif } from '@digabi/exam-engine-rendering'
 
 export default async function createMexExam({
   exam,
@@ -34,13 +35,19 @@ export default async function createMexExam({
   for (const { language, xml, attachments, type } of results) {
     const suffix = type === 'normal' ? '' : type === 'visually-impaired' ? '_vi' : '_hi'
     const outputFilename = `${examName(exam)}_${language}${suffix}.mex`
-    await createMex(
-      xml,
-      attachments.map(({ filename, restricted }) => ({
+    const attachmentStreams = []
+
+    for (const { filename, restricted } of attachments) {
+      attachmentStreams.push({
         filename,
         restricted,
-        contents: createReadStream(resolveAttachment(filename))
-      })),
+        contents: createReadStream(await createFileWithCleanExif(resolveAttachment(filename)))
+      })
+    }
+
+    await createMex(
+      xml,
+      attachmentStreams,
       createReadStream(nsaScripts),
       securityCodes ? createReadStream(securityCodes) : null,
       passphrase,
