@@ -114,6 +114,14 @@ function assertExamIsValid(doc: Document): Document {
     throw error
   }
 
+  const sections = doc.find<Element>('//e:section', ns).slice(1)
+  for (const section of sections) {
+    const casForbidden = getAttribute('cas-forbidden', section, 'false')
+    if (casForbidden == 'true') {
+      throw mkError('cas-forbidden attribute can be true only on first section', section)
+    }
+  }
+
   for (const answer of doc.find<Element>(xpathOr(answerTypes), ns)) {
     // Ensure that the each answer element is directly within a question,
     // ignoring a few special HTML-like exam elements.

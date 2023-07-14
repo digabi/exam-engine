@@ -37,6 +37,27 @@ describe('Exam mastering', () => {
         'Invalid empty day-code for exam-code A'
       )
     })
+    it('other than first section is cas restricted', async () => {
+      const xml = await readFixture('cas.xml')
+      expect(await masterExam(xml, generateUuid, getMediaMetadata)).toHaveLength(1)
+      expect(
+        await masterExam(
+          xml.replace(/<e:section cas-forbidden="true">/g, '<e:section>'),
+          generateUuid,
+          getMediaMetadata
+        )
+      ).toHaveLength(1)
+      await expect(
+        masterExam(
+          xml.replace(/<e:section cas-forbidden="false">/g, '<e:section cas-forbidden="true">'),
+          generateUuid,
+          getMediaMetadata
+        )
+      ).rejects.toThrow('cas-forbidden attribute can be true only on first section')
+      return expect(
+        masterExam(xml.replace(/<e:section>/g, '<e:section cas-forbidden="true">'), generateUuid, getMediaMetadata)
+      ).rejects.toThrow('cas-forbidden attribute can be true only on first section')
+    })
   })
 
   it('validates the XML against a schema', async () => {

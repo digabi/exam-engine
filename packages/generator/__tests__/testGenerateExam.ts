@@ -269,7 +269,6 @@ describe('generateExam()', () => {
     const questions = fc.array(question(2), { minLength: 1, maxLength: 5 })
     const section: fc.Arbitrary<GenerateSectionOptions> = fc.record({
       maxAnswers: optional(maxAnswers),
-      casForbidden: optional(fc.boolean()),
       questions
     })
     const sections = fc.array(section, { minLength: 1, maxLength: 3 })
