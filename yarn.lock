@@ -5436,10 +5436,10 @@ dom-converter@^0.2.0:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.2.0.tgz#57fd054c5f8f34c52a3eeffdb7e7e93cd357d95b"
-  integrity sha512-Ru5o9+V8CpunKnz5LGgWXkmrH/20cGKwcHwS4m73zIvs54CN9epEmT/HLqFJW3kXpakAFkEdzgy1hzlJe3E4OQ==
+dom-helpers@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.2.1.tgz#d9400536b2bf8225ad98fe052e029451ac40e902"
+  integrity sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==
   dependencies:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
@@ -11514,13 +11514,13 @@ raw-body@2.4.3:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-css-transition-replace@^4.0.2:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/react-css-transition-replace/-/react-css-transition-replace-4.0.5.tgz#1f139daf5ec28ae8d34f840e50f24c30e32c227e"
-  integrity sha512-nRBSliVk2exhJxGb+DMTekE59rH1XMbQgbE+U/RLLowO2VBYoU+edo1h9mlRdjKruVItPHBysXiw+uCIOD+UaQ==
+react-css-transition-replace@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/react-css-transition-replace/-/react-css-transition-replace-5.0.1.tgz#15f19ce06ffa4f86fd97633cee42025fe40b07f4"
+  integrity sha512-Pi5hk/FXZJ1eVkUgI8lTbGrlOz5fSe7GkSkzG1JCsL6+c7hT62Tw+dv3Wbo5nKL25QQB+iS4GdRYf051RwERqg==
   dependencies:
-    dom-helpers "^5.2.0"
-    prop-types "^15.7.2"
+    dom-helpers "^5.2.1"
+    prop-types "^15.8.1"
 
 react-dom@^17.0.2:
   version "17.0.2"
