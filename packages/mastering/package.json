@@ -12,7 +12,7 @@
     "@digabi/exam-engine-core": "19.8.0",
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "cloneable-readable": "^3.0.0",
-    "compare-versions": "^5.0.1",
+    "compare-versions": "^6.0.0",
     "ffprobe": "^1.1.0",
     "glob": "^8.0.3",
     "glob-promise": "^6.0.2",
