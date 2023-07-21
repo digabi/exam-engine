@@ -10,6 +10,8 @@ export interface ScreenshotError {
   options?: TOptions
 }
 
+type ErrorResponse = { response: { status: number } }
+
 interface Props {
   answer?: RichTextAnswerT
   className?: string
@@ -48,7 +50,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
         {
           locale: this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV',
           screenshotSaver: ({ data, type }: { data: Buffer; type: string }) =>
-            saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err) => {
+            saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err: ErrorResponse) => {
               this.handleSaveError(err)
               throw err // Rethrow error so rich-text-editor can handle it.
             }),
@@ -58,7 +60,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
     }
   }
 
-  handleSaveError = (err: unknown): void => {
+  handleSaveError = (err: ErrorResponse): void => {
     const key = (() => {
       switch (_.get(err, 'response.status')) {
         case 409:
