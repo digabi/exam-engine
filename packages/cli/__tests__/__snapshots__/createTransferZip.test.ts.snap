@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ee create-transfer-zip creates hi transfer zip 1`] = `
-Array [
+[
   "7_hvp.jpg",
   "maxmoritz.png",
   "7.2.jpg",
@@ -12,15 +12,15 @@ Array [
 `;
 
 exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
-"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>
-<e:exam xmlns:e=\\"http://ylioppilastutkinto.fi/exam.xsd\\" xmlns:xsi=\\"http://www.w3.org/2001/XMLSchema-instance\\" xmlns=\\"http://www.w3.org/1999/xhtml\\" xsi:schemaLocation=\\"http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd\\" exam-schema-version=\\"0.4\\" date=\\"1970-01-01\\" exam-code=\\"SC\\" exam-stylesheet=\\"custom.css\\">
+"<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.4" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css">
   <e:exam-versions>
     
     
-    <e:exam-version lang=\\"fi-FI\\" exam-type=\\"hearing-impaired\\"/>
+    <e:exam-version lang="fi-FI" exam-type="hearing-impaired"/>
   </e:exam-versions>
   <e:exam-instruction>
-    <e:translation key=\\"audio-test.instructions\\"/>
+    <e:translation key="audio-test.instructions"/>
     
       <p>
         Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
@@ -64,7 +64,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
     Avovastausten arvostelusta:
     <br/>
     <br/>
-    <e:image src=\\"7_hvp.jpg\\"/>
+    <e:image src="7_hvp.jpg"/>
     <p>Sensorikunnan linjaus väärän tedon asemasta vastauksessa<br/>Täydet pisteet voi saada vain vastaus, joka ei
       sisällä väärää tetoa. Mikäli vastauksessa on vaadittavat elementt (täysien pisteiden vastaus), mutta siinä on
       lisäksi väärää tetoa, vähennetään yksi piste.
@@ -84,27 +84,27 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:external-material>
         <e:attachment>
           <e:attachment-title>Text: Whatsapp-Chat</e:attachment-title>
-          <div class=\\"kupla1\\"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was
+          <div class="kupla1"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was
             wir für morgen machen müssen?
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal
+          <div class="kupla2"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal
             Tom. Hat eben doch Vorteile, wenn man mit seinem Bruder in derselben Klasse ist ...
           </div>
-          <div class=\\"kupla1\\"><b>Maren</b>: Okay. Aber frag bitte schnell! Ich muss nachher noch zum Schwimmen.
+          <div class="kupla1"><b>Maren</b>: Okay. Aber frag bitte schnell! Ich muss nachher noch zum Schwimmen.
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Für morgen haben wir: Mathe, Seite 76, Aufgaben 6, 7, 8 und in Geschichte
+          <div class="kupla2"><b>Kevin</b>: Für morgen haben wir: Mathe, Seite 76, Aufgaben 6, 7, 8 und in Geschichte
             den Inhalt der letzten Stunde wiederholen, und in Chemie machen wir doch im Moment nur die Experimente.
           </div>
-          <div class=\\"kupla1\\"><b>Maren</b>: Mathe für morgen? Das kann nicht sein! Morgen haben wir kein Mathe! Und
+          <div class="kupla1"><b>Maren</b>: Mathe für morgen? Das kann nicht sein! Morgen haben wir kein Mathe! Und
             Geschichte!? So ein Pech! Ich habe mein Geschichtsbuch in der Schule vergessen.
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Stimmt ja! Morgen fällt Mathe aus. Ich kann die Seiten vom Geschichtsbuch
+          <div class="kupla2"><b>Kevin</b>: Stimmt ja! Morgen fällt Mathe aus. Ich kann die Seiten vom Geschichtsbuch
             fotografieren und dir schicken. Okay?
           </div>
-          <div class=\\"kupla1\\"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen
+          <div class="kupla1"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen
             doch nicht ganz frei, aber ist ja nicht so viel … ;)
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!
+          <div class="kupla2"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!
           </div>
           <e:reference>
             <e:author>
@@ -120,7 +120,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Sie hat ihre Notizen in der Schule</e:choice-answer-option>
           <e:choice-answer-option>Sie war nicht im Unterricht</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option>
+          <e:choice-answer-option score="2">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
@@ -128,7 +128,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-title>Welche Hausaufgaben wird Maren für morgen machen?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Mathe</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Geschichte</e:choice-answer-option>
+          <e:choice-answer-option score="2">Geschichte</e:choice-answer-option>
           <e:choice-answer-option>Chemie</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -190,48 +190,48 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
 
       <e:question>
         <e:question-title>An welchem Tag es passiert ist</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
-          <e:choice-answer-option score=\\"1\\">Richtig</e:choice-answer-option>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
           <e:choice-answer-option>Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Welche Farbe die Autos hatten</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
+        <e:choice-answer ordering="fixed">
           <e:choice-answer-option>Richtig</e:choice-answer-option>
-          <e:choice-answer-option score=\\"1\\">Falsch</e:choice-answer-option>
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Wo im Auto der Mann etwas vergessen hatte</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
+        <e:choice-answer ordering="fixed">
           <e:choice-answer-option>Richtig</e:choice-answer-option>
-          <e:choice-answer-option score=\\"1\\">Falsch</e:choice-answer-option>
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Wo der Mann sein Auto geparkt hatte</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
-          <e:choice-answer-option score=\\"1\\">Richtig</e:choice-answer-option>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
           <e:choice-answer-option>Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Was der Mann machte, nachdem er seinen Fehler bemerkt hatte</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
+        <e:choice-answer ordering="fixed">
           <e:choice-answer-option>Richtig</e:choice-answer-option>
-          <e:choice-answer-option score=\\"1\\">Falsch</e:choice-answer-option>
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Was alles in der Geldbörse war</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
-          <e:choice-answer-option score=\\"1\\">Richtig</e:choice-answer-option>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
           <e:choice-answer-option>Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -242,7 +242,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question-title>Duis Minim?</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment name=\\"zeugnis\\">
+        <e:attachment name="zeugnis">
           <e:attachment-title>Text: Duis Minim?</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -262,7 +262,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Er möchte eine Urlaubsreise machen</e:choice-answer-option>
           <e:choice-answer-option>Er hat seine Leistungen verbessert</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Er wird anders behandelt als andere Schüler</e:choice-answer-option>
+          <e:choice-answer-option score="3">Er wird anders behandelt als andere Schüler</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
@@ -273,11 +273,11 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"6\\"/>
+        <e:text-answer type="rich-text" max-score="6"/>
         <e:question-grading-instruction>
           
             <p>
-              <e:question-number suffix=\\"2\\"/> Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
+              <e:question-number suffix="2"/> Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
             </p>
           
           
@@ -290,14 +290,14 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Dass der Vater kaum versteht, was dem Sohn wichtig ist</e:choice-answer-option>
           <e:choice-answer-option>Dass der Vater versucht, den Sohn streng zu erziehen</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option>
+          <e:choice-answer-option score="3">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option>
+          <e:choice-answer-option score="3">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option>
           <e:choice-answer-option>Weil der Vater so viel von zu Hause weg ist</e:choice-answer-option>
           <e:choice-answer-option>Weil beide zu unterschiedlichen Zeiten zu Hause sind</e:choice-answer-option>
         </e:choice-answer>
@@ -327,7 +327,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question>
         <e:question-title>Was mag Proident besonders an seinem Job?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Die Arbeit bietet viel Abwechslung</e:choice-answer-option>
+          <e:choice-answer-option score="3">Die Arbeit bietet viel Abwechslung</e:choice-answer-option>
           <e:choice-answer-option>Seine Sportlerkarriere profitiert davon</e:choice-answer-option>
           <e:choice-answer-option>Er kann seine eigenen Grenzen austesten</e:choice-answer-option>
         </e:choice-answer>
@@ -341,8 +341,8 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           
         </e:question-title>
         
-          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score=\\"3\\"/>, sekä siitä, miten
-          <e:text-answer max-score=\\"3\\"/>
+          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3"/>, sekä siitä, miten
+          <e:text-answer max-score="3"/>
           ja miten retki suunnitellaan.
         
         
@@ -367,7 +367,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Er macht eine lange Wanderung und sitzt danach im Büro</e:choice-answer-option>
           <e:choice-answer-option>Er hat eine Woche Arbeit und dann eine Woche frei</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
+          <e:choice-answer-option score="2">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
           </e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -375,7 +375,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question>
         <e:question-title>Was bedeutet es, dass Proident für seine Gäste verantwortlich ist?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Er muss manchmal das Tempo der Wanderung verlangsamen
+          <e:choice-answer-option score="3">Er muss manchmal das Tempo der Wanderung verlangsamen
           </e:choice-answer-option>
           <e:choice-answer-option>Er muss seinen Kunden ein unvergessliches Erlebnis bieten</e:choice-answer-option>
           <e:choice-answer-option>Er muss bei der Planung auch unrealistische Wünsche berücksichtigen
@@ -386,7 +386,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question>
         <e:question-title>Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option>
+          <e:choice-answer-option score="3">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option>
           <e:choice-answer-option>Es ist Proident gelungen, seine Kunden zu beschützen</e:choice-answer-option>
           <e:choice-answer-option>Es ist unnötig, die Gefahren der Touren zu übertreiben</e:choice-answer-option>
         </e:choice-answer>
@@ -395,7 +395,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question>
         <e:question-title>Was machen viele Lorem und Ipsum, um finanziell klarzukommen?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option>
+          <e:choice-answer-option score="3">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option>
           <e:choice-answer-option>Sie machen oft viele Überstunden</e:choice-answer-option>
           <e:choice-answer-option>Sie suchen sich später einen neuen Beruf</e:choice-answer-option>
         </e:choice-answer>
@@ -417,11 +417,11 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <h4>Emma</h4>
         <p>Emma: Mama, tust du mir einen Gefallen? Ich warte gerade im Café Sonnenschein auf Tim. Ich will hier mit ihm
           für die Geografieprüfung lernen, aber ich habe mein Buch zu Hause vergessen. Kannst du es mir bringen?
-          <e:dropdown-answer ordering=\\"fixed\\">
+          <e:dropdown-answer ordering="fixed">
             <e:dropdown-answer-option>Nichts zu danken!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Macht nichts!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Und ob!</e:dropdown-answer-option>
-            <e:dropdown-answer-option score=\\"2\\">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="2">Vielen Dank im Voraus!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Gern, bitte!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Hast du was?</e:dropdown-answer-option>
             <e:dropdown-answer-option>Warum immer ich?</e:dropdown-answer-option>
@@ -441,10 +441,10 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           Antonia: Ja sehr! Und wollte er denn wissen, was ich jetzt so mache?
           <br/>
           Hannah:
-          <e:dropdown-answer ordering=\\"fixed\\">
+          <e:dropdown-answer ordering="fixed">
             <e:dropdown-answer-option>Nichts zu danken!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Macht nichts!</e:dropdown-answer-option>
-            <e:dropdown-answer-option score=\\"2\\">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="2">Und ob!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Vielen Dank im Voraus!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Gern, bitte!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Hast du was?</e:dropdown-answer-option>
@@ -462,14 +462,14 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           Lukas: Nee, er kommt heute gar nicht. Und Florian und ich kommen direkt von der Arbeit.
           <br/>
           Jonas: Ich glaub, dann muss ich schon wieder den Ball mitbringen. Ach, Mist!
-          <e:dropdown-answer ordering=\\"fixed\\">
+          <e:dropdown-answer ordering="fixed">
             <e:dropdown-answer-option>Nichts zu danken!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Macht nichts!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Und ob!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Vielen Dank im Voraus!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Gern, bitte!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Hast du was?</e:dropdown-answer-option>
-            <e:dropdown-answer-option score=\\"2\\">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="2">Warum immer ich?</e:dropdown-answer-option>
             <e:dropdown-answer-option>Aber ich?</e:dropdown-answer-option>
             <e:dropdown-answer-option>Wie war‘s?</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -507,7 +507,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         </e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Bei Verspätung unter 5 Stunden</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option>
+          <e:choice-answer-option score="2">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option>
           <e:choice-answer-option>Bei Buchung eines anderen Fluges</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -517,7 +517,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Nur wenn man im Hotel übernachtet</e:choice-answer-option>
           <e:choice-answer-option>Nur wenn man Verwandte anrufen möchte</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option>
+          <e:choice-answer-option score="2">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
@@ -528,7 +528,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"4\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             <p>
@@ -567,19 +567,19 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-title>Was erlebten die Ullamco?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Eine gelungene Ullamco auf dem Ullamco</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option>
+          <e:choice-answer-option score="3">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option>
           <e:choice-answer-option>Eine unerwartet frühzeitige Ullamco am Ullamco</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>
-          Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class=\\"e-nowrap\\">(2 asiaa)
+          Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class="e-nowrap">(2 asiaa)
           </span> Kirjoita vastauksesi lyhyesti suomeksi.
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"4\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             <p>
@@ -596,7 +596,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question>
         <e:question-title>Welche weitere Ullamco hatte die Ullamco?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
+          <e:choice-answer-option score="3">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
           </e:choice-answer-option>
           <e:choice-answer-option>Ein Ullamco brachte die Fluggäste von Ullamco nach Ullamco</e:choice-answer-option>
           <e:choice-answer-option>Die Ullamco mussten noch in Ullamco übernachten</e:choice-answer-option>
@@ -607,7 +607,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-title>Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext?
         </e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Ein unerwartetes Abenteuer</e:choice-answer-option>
+          <e:choice-answer-option score="3">Ein unerwartetes Abenteuer</e:choice-answer-option>
           <e:choice-answer-option>Ein gefährlicher Unfall</e:choice-answer-option>
           <e:choice-answer-option>Ein anstrengendes Experiment</e:choice-answer-option>
         </e:choice-answer>
@@ -641,7 +641,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"4\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             <p>
@@ -658,7 +658,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question>
         <e:question-title>Wie sind die beliebtesten Postkarten?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option>
+          <e:choice-answer-option score="3">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option>
           <e:choice-answer-option>Sie kombinieren meist Text und Bilder</e:choice-answer-option>
           <e:choice-answer-option>Sie lassen den Urlaub beeindruckend erscheinen</e:choice-answer-option>
         </e:choice-answer>
@@ -668,7 +668,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-title>Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Sie halten diese Karten nicht mehr für modern</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Sie finden solche Karten auf Reisen gut</e:choice-answer-option>
+          <e:choice-answer-option score="3">Sie finden solche Karten auf Reisen gut</e:choice-answer-option>
           <e:choice-answer-option>Sie sind besonders stolz auf die Berliner Postkarten</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -678,14 +678,14 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Nur erwachsene Frauen interessieren sich für die Karten</e:choice-answer-option>
           <e:choice-answer-option>Männer senden und empfangen fast keine Postkarten</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option>
+          <e:choice-answer-option score="3">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Es ist wahr, dass die Karten nicht mehr so beliebt sind
+          <e:choice-answer-option score="3">Es ist wahr, dass die Karten nicht mehr so beliebt sind
           </e:choice-answer-option>
           <e:choice-answer-option>Ipsum mag die Fragen des Interviewers nicht</e:choice-answer-option>
           <e:choice-answer-option>Man weiß, dass die Postkarte irgendwann sterben wird</e:choice-answer-option>
@@ -695,7 +695,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       <e:question>
         <e:question-title>Wann könnte es die Postkarte schwer haben?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
+          <e:choice-answer-option score="3">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
           </e:choice-answer-option>
           <e:choice-answer-option>Wenn man in der Familie keine Postkarten mehr verschickt</e:choice-answer-option>
           <e:choice-answer-option>Wenn die Smartphones immer billiger und attraktiver werden</e:choice-answer-option>
@@ -727,7 +727,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-title>Wie reagieren viele Kunden auf die Einwegbecher?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Sie benutzen die Einwegbecher, ohne darüber nachzudenken</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
+          <e:choice-answer-option score="2">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
           </e:choice-answer-option>
           <e:choice-answer-option>Sie entscheiden, keine Einwegbecher mehr zu verwenden</e:choice-answer-option>
         </e:choice-answer>
@@ -738,7 +738,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Es lohnt sich nicht außerhalb des Stadtzentrums</e:choice-answer-option>
           <e:choice-answer-option>Es bringt das jetzige System der Pfandflaschen durcheinander</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Es ist für das Verhalten der Kunden nicht flexibel genug
+          <e:choice-answer-option score="2">Es ist für das Verhalten der Kunden nicht flexibel genug
           </e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -747,7 +747,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-title>Was will Lorem Ipsum erreichen?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Die Finanzierung für das neue System zu sichern</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Die Kunden stärker zur Rückgabe der Becher zu motivieren
+          <e:choice-answer-option score="2">Die Kunden stärker zur Rückgabe der Becher zu motivieren
           </e:choice-answer-option>
           <e:choice-answer-option>Mit anderen Städten effektiv zusammenzuarbeiten</e:choice-answer-option>
         </e:choice-answer>
@@ -760,7 +760,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"2\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             Kaupunki haluaa vähentä kertakäyttömukien määrää. (2/0 p.)
@@ -783,7 +783,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       </e:question-instruction>
       <e:attachment>
         <e:attachment-title>Auswahl-kuva</e:attachment-title>
-        <e:image src=\\"maxmoritz.png\\" class=\\"e-width-quarter e-illustration-right\\"/>
+        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right"/>
         <e:reference>
           <e:title>Max und Moritz</e:title>
           <e:author>Wilhelm Busch</e:author>
@@ -800,13 +800,13 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <p>
           Ach, was
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">muß</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">muß</e:dropdown-answer-option>
             <e:dropdown-answer-option>kann</e:dropdown-answer-option>
             <e:dropdown-answer-option>darf</e:dropdown-answer-option>
           </e:dropdown-answer>
           man oft von
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">bösen</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">bösen</e:dropdown-answer-option>
             <e:dropdown-answer-option>netten</e:dropdown-answer-option>
             <e:dropdown-answer-option>gelben</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -815,25 +815,25 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           Wie zum Beispiel hier
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">von</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">von</e:dropdown-answer-option>
             <e:dropdown-answer-option>zu</e:dropdown-answer-option>
             <e:dropdown-answer-option>nach</e:dropdown-answer-option>
           </e:dropdown-answer>
           diesen,
           <br/>
           Welche Max und Moritz
-          <span class=\\"e-nowrap\\">
+          <span class="e-nowrap">
             <e:dropdown-answer>
-              <e:dropdown-answer-option score=\\"1\\">hießen</e:dropdown-answer-option>
-              <e:dropdown-answer-option score=\\"1\\">heißen</e:dropdown-answer-option>
+              <e:dropdown-answer-option score="1">hießen</e:dropdown-answer-option>
+              <e:dropdown-answer-option score="1">heißen</e:dropdown-answer-option>
               <e:dropdown-answer-option>sind</e:dropdown-answer-option>
             </e:dropdown-answer>
             ;
           </span>
           <br/>
-          <span class=\\"e-nowrap\\">
+          <span class="e-nowrap">
             <e:dropdown-answer>
-              <e:dropdown-answer-option score=\\"1\\">Die</e:dropdown-answer-option>
+              <e:dropdown-answer-option score="1">Die</e:dropdown-answer-option>
               <e:dropdown-answer-option>Der</e:dropdown-answer-option>
               <e:dropdown-answer-option>Das</e:dropdown-answer-option>
             </e:dropdown-answer>
@@ -843,7 +843,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           Sich
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">zum</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">zum</e:dropdown-answer-option>
             <e:dropdown-answer-option>zur</e:dropdown-answer-option>
             <e:dropdown-answer-option>zu den</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -851,7 +851,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           Oftmals noch
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">darüber</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">darüber</e:dropdown-answer-option>
             <e:dropdown-answer-option>danach</e:dropdown-answer-option>
             <e:dropdown-answer-option>dazu</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -859,7 +859,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           Und
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">sich</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">sich</e:dropdown-answer-option>
             <e:dropdown-answer-option>mich</e:dropdown-answer-option>
             <e:dropdown-answer-option>dich</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -869,7 +869,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           Ja,
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">dazu</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">dazu</e:dropdown-answer-option>
             <e:dropdown-answer-option>danach</e:dropdown-answer-option>
             <e:dropdown-answer-option>darüber</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -877,7 +877,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           – Menschen necken,
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">Tiere</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">Tiere</e:dropdown-answer-option>
             <e:dropdown-answer-option>Bücher</e:dropdown-answer-option>
             <e:dropdown-answer-option>Computer</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -885,14 +885,14 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           Äpfel, Birnen, Zwetschen
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">stehlen</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">stehlen</e:dropdown-answer-option>
             <e:dropdown-answer-option>stählen</e:dropdown-answer-option>
             <e:dropdown-answer-option>schlehten</e:dropdown-answer-option>
           </e:dropdown-answer>
           – –
           <br/>
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">Das</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">Das</e:dropdown-answer-option>
             <e:dropdown-answer-option>Der</e:dropdown-answer-option>
             <e:dropdown-answer-option>Die</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -900,14 +900,14 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           Und dazu
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">auch</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">auch</e:dropdown-answer-option>
             <e:dropdown-answer-option>doch</e:dropdown-answer-option>
             <e:dropdown-answer-option>euch</e:dropdown-answer-option>
           </e:dropdown-answer>
           viel bequemer,
           <br/>
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">Als</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">Als</e:dropdown-answer-option>
             <e:dropdown-answer-option>Wenn</e:dropdown-answer-option>
             <e:dropdown-answer-option>Wann</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -921,7 +921,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           – Ach, das war
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">ein</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">ein</e:dropdown-answer-option>
             <e:dropdown-answer-option>eine</e:dropdown-answer-option>
             <e:dropdown-answer-option>eines</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -931,7 +931,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <br/>
           – Drum ist hier, was
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">sie</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">sie</e:dropdown-answer-option>
             <e:dropdown-answer-option>er</e:dropdown-answer-option>
             <e:dropdown-answer-option>es</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -977,7 +977,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <p>
             <b>Felix:</b>
             Ach so. Aber Samstag?
-            <span class=\\"e-nowrap\\">
+            <span class="e-nowrap">
               <e:scored-text-answer>
                 <e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint>
                 <e:answer-grading-instruction>
@@ -1002,10 +1002,10 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
                   
                   
                 </e:answer-grading-instruction>
-                <e:accepted-answer score=\\"2\\">Willst du am Samstag mit ins Kino kommen?</e:accepted-answer>
-                <e:accepted-answer score=\\"1\\">Willst du ins Kino am Samstag mitkommen? (sanajärjestys)</e:accepted-answer>
-                <e:accepted-answer score=\\"1\\">Will du am Samstag mit ins Kino kommen? (verbin taivutus)</e:accepted-answer>
-                <e:accepted-answer score=\\"1\\">willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)</e:accepted-answer>
+                <e:accepted-answer score="2">Willst du am Samstag mit ins Kino kommen?</e:accepted-answer>
+                <e:accepted-answer score="1">Willst du ins Kino am Samstag mitkommen? (sanajärjestys)</e:accepted-answer>
+                <e:accepted-answer score="1">Will du am Samstag mit ins Kino kommen? (verbin taivutus)</e:accepted-answer>
+                <e:accepted-answer score="1">willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)</e:accepted-answer>
               </e:scored-text-answer>
               ?
             </span>
@@ -1013,7 +1013,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           <p>
             <b>Anna:</b>
             Ja, gerne! Aber ich sage dir erst morgen Bescheid,
-            <span class=\\"e-nowrap\\">
+            <span class="e-nowrap">
               <e:scored-text-answer>
                 <e:hint>weil ich zuerst Mama frage (müssen)</e:hint>
                 <e:answer-grading-instruction>
@@ -1034,7 +1034,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
                   
                   
                 </e:answer-grading-instruction>
-                <e:accepted-answer score=\\"2\\">weil ich zuerst Mama fragen muss</e:accepted-answer>
+                <e:accepted-answer score="2">weil ich zuerst Mama fragen muss</e:accepted-answer>
               </e:scored-text-answer>
               .
             </span>
@@ -1106,22 +1106,22 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           </p>
           <p>
             Tim fragt: 
-            <e:scored-text-answer max-score=\\"2\\">
+            <e:scored-text-answer max-score="2">
               <e:hint>
                 Voitko auttaa minua?
                 
               </e:hint>
-              <e:accepted-answer score=\\"2\\">Kannst du mir helfen?</e:accepted-answer>
+              <e:accepted-answer score="2">Kannst du mir helfen?</e:accepted-answer>
             </e:scored-text-answer>
             <br/>
             Jan: Ja, klar. Was ist denn?
             <br/>
             Tim antwortet:
-            <e:scored-text-answer max-score=\\"3\\">
+            <e:scored-text-answer max-score="3">
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.2. kuva</e:attachment-title>
-                  <e:image src=\\"7.2.jpg\\"/>
+                  <e:image src="7.2.jpg"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a
@@ -1133,8 +1133,8 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
                   </e:reference>
                 </e:attachment>
               </e:hint>
-              <e:accepted-answer score=\\"3\\">Mathe ist immer so schwierig.</e:accepted-answer>
-              <e:accepted-answer score=\\"3\\">Was soll man hier machen? Ich verstehe nichts!</e:accepted-answer>
+              <e:accepted-answer score="3">Mathe ist immer so schwierig.</e:accepted-answer>
+              <e:accepted-answer score="3">Was soll man hier machen? Ich verstehe nichts!</e:accepted-answer>
             </e:scored-text-answer>
           </p>
           <br/>
@@ -1144,22 +1144,22 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           </p>
           <p>
             Anna fragt:
-            <e:scored-text-answer max-score=\\"2\\">
+            <e:scored-text-answer max-score="2">
               <e:hint>
                 Millainen sää tänään on?
                 
               </e:hint>
-              <e:accepted-answer score=\\"2\\">Wie ist das Wetter heute?</e:accepted-answer>
-              <e:accepted-answer score=\\"2\\">Was ist heute für Wetter?</e:accepted-answer>
-              <e:accepted-answer score=\\"2\\">Was für ein Wetter ist heute?</e:accepted-answer>
+              <e:accepted-answer score="2">Wie ist das Wetter heute?</e:accepted-answer>
+              <e:accepted-answer score="2">Was ist heute für Wetter?</e:accepted-answer>
+              <e:accepted-answer score="2">Was für ein Wetter ist heute?</e:accepted-answer>
             </e:scored-text-answer>
             <br/>
             Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet:
-            <e:scored-text-answer max-score=\\"3\\">
+            <e:scored-text-answer max-score="3">
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.4. kuva</e:attachment-title>
-                  <e:image src=\\"7.4.jpg\\"/>
+                  <e:image src="7.4.jpg"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda
@@ -1171,8 +1171,8 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
                   </e:reference>
                 </e:attachment>
               </e:hint>
-              <e:accepted-answer score=\\"3\\">Du brauchst einen Regenschirm, denn es regnet stark.</e:accepted-answer>
-              <e:accepted-answer score=\\"3\\">Heute ist sehr schlechtes Wetter</e:accepted-answer>
+              <e:accepted-answer score="3">Du brauchst einen Regenschirm, denn es regnet stark.</e:accepted-answer>
+              <e:accepted-answer score="3">Heute ist sehr schlechtes Wetter</e:accepted-answer>
             </e:scored-text-answer>
           </p>
         </e:hints>
@@ -1189,7 +1189,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
 
   <e:section>
     <e:section-title>Schriftliche Produktion</e:section-title>
-    <e:question max-answers=\\"1\\">
+    <e:question max-answers="1">
       <e:question-title>Kurze Schreibaufgabe</e:question-title>
       <e:question-instruction>
         
@@ -1210,24 +1210,24 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
           
           
         </e:question-instruction>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"33\\" max-length=\\"240\\"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240"/>
       </e:question>
       <e:question>
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           
-            Vastaa joko tähän tai tehtävään <e:question-number suffix=\\"1\\"/>.
+            Vastaa joko tähän tai tehtävään <e:question-number suffix="1"/>.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.
           
           
         </e:question-instruction>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"33\\" max-length=\\"240\\"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240"/>
       </e:question>
     </e:question>
 
-    <e:question max-answers=\\"1\\">
+    <e:question max-answers="1">
       <e:question-title>Lange Schreibaufgabe</e:question-title>
       <e:question-instruction>
         
@@ -1255,7 +1255,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <p>
           <e:attachment>
             <e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title>
-            <e:image src=\\"24.1.jpg\\"/>
+            <e:image src="24.1.jpg"/>
             <e:reference>
               <e:author>Riik@mctr</e:author>
               <e:title>Manchester Airport (EGCC)</e:title>
@@ -1294,19 +1294,19 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
             </e:reference>
           </e:attachment>
         </p>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"66\\"/>
+        <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
       <e:question>
         <e:question-title>Lange Schreibaufgabe</e:question-title>
         <e:question-instruction>
           
-            Eräs isä on lähettänyt tekstin keskustelupalstalle<e:attachment-link ref=\\"zeugnis\\"/>. Hän pyytää
+            Eräs isä on lähettänyt tekstin keskustelupalstalle<e:attachment-link ref="zeugnis"/>. Hän pyytää
             mielipiteitä siitä, kumpi on oikeassa – hän vai poika. Vastaa palstalla isälle. Perustele näkemyksesi.
           
           
         </e:question-instruction>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"66\\"/>
+        <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
     </e:question>
@@ -1319,7 +1319,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
 `;
 
 exports[`ee create-transfer-zip creates transfer zip 1`] = `
-Array [
+[
   "7_hvp.jpg",
   "audio-test.ogg",
   "1.ogg",
@@ -1362,15 +1362,15 @@ Array [
 `;
 
 exports[`ee create-transfer-zip creates transfer zip 2`] = `
-"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>
-<e:exam xmlns:e=\\"http://ylioppilastutkinto.fi/exam.xsd\\" xmlns:xsi=\\"http://www.w3.org/2001/XMLSchema-instance\\" xmlns=\\"http://www.w3.org/1999/xhtml\\" xsi:schemaLocation=\\"http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd\\" exam-schema-version=\\"0.4\\" date=\\"1970-01-01\\" exam-code=\\"SC\\" exam-stylesheet=\\"custom.css\\">
+"<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.4" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css">
   <e:exam-versions>
-    <e:exam-version lang=\\"fi-FI\\"/>
+    <e:exam-version lang="fi-FI"/>
     
     
   </e:exam-versions>
   <e:exam-instruction>
-    <e:translation key=\\"audio-test.instructions\\"/>
+    <e:translation key="audio-test.instructions"/>
     
       <p>
         Koe koostuu neljästä osasta: kuullun ymmärtäminen, luetun ymmärtäminen, sanasto ja rakenteet sekä kirjallinen
@@ -1414,7 +1414,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
     Avovastausten arvostelusta:
     <br/>
     <br/>
-    <e:image src=\\"7_hvp.jpg\\"/>
+    <e:image src="7_hvp.jpg"/>
     <p>Sensorikunnan linjaus väärän tedon asemasta vastauksessa<br/>Täydet pisteet voi saada vain vastaus, joka ei
       sisällä väärää tetoa. Mikäli vastauksessa on vaadittavat elementt (täysien pisteiden vastaus), mutta siinä on
       lisäksi väärää tetoa, vähennetään yksi piste.
@@ -1422,10 +1422,10 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
 
   </e:exam-grading-instruction>
   <e:table-of-contents/>
-  <e:section type=\\"H\\" exam-type=\\"normal visually-impaired\\">
+  <e:section type="H" exam-type="normal visually-impaired">
     <e:section-title>Hörverständnis</e:section-title>
 
-    <e:audio-test src=\\"audio-test.ogg\\"/>
+    <e:audio-test src="audio-test.ogg"/>
 
     <e:question>
       <e:question-title>Picknick</e:question-title>
@@ -1438,7 +1438,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:audio-group>
         <e:attachment>
           <e:attachment-title>1. audio</e:attachment-title>
-          <e:audio src=\\"1.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Text zuerst als Ganzes</e:audio-title></e:audio>
+          <e:audio src="1.ogg" times="1"><e:audio-title>Hören Sie den Text zuerst als Ganzes</e:audio-title></e:audio>
           <e:reference>
             <e:author>
               YTL
@@ -1453,23 +1453,23 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
           <e:choice-answer>
             <e:choice-answer-option>Sie denkt, dass der Weg zu weit ist</e:choice-answer-option>
-            <e:choice-answer-option score=\\"3\\">Sie meint, dass dort zu viele Leute sind</e:choice-answer-option>
+            <e:choice-answer-option score="3">Sie meint, dass dort zu viele Leute sind</e:choice-answer-option>
             <e:choice-answer-option>Sie weiß, dass Kevin der Stadtpark nicht gefällt</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src=\\"1.1.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 1.1.</e:audio-title></e:audio>
+          <e:audio src="1.1.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 1.1.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
       <e:audio-group>
         <e:question>
           <e:question-title>
-            <e:question-number suffix=\\"2\\"/>
+            <e:question-number suffix="2"/>
             Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa
               piknikkiin? Kirjoita vastauksesi lyhyesti suomeksi.
             
             
           </e:question-title>
-          <e:text-answer type=\\"rich-text\\" max-score=\\"6\\" use-language-of-instruction=\\"true\\">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true">
             <e:answer-grading-instruction>
               
                 <p>Hänen sukulaisensa tulevat vierailulle (3/0 p.).</p>
@@ -1485,7 +1485,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
               
             </e:answer-grading-instruction>
           </e:text-answer>
-          <e:audio src=\\"1.2.ogg\\" times=\\"1\\">
+          <e:audio src="1.2.ogg" times="1">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title>
             <e:audio-transcription>
               <p>
@@ -1515,18 +1515,18 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <e:question-title>Warum werden die Vier am See nicht grillen?</e:question-title>
           <e:choice-answer>
             <e:choice-answer-option>Er liegt in einem Naturschutzgebiet</e:choice-answer-option>
-            <e:choice-answer-option score=\\"3\\">Das Wetter ist so heiß und trocken</e:choice-answer-option>
+            <e:choice-answer-option score="3">Das Wetter ist so heiß und trocken</e:choice-answer-option>
             <e:choice-answer-option>Sie bräuchten dafür eine Erlaubnis</e:choice-answer-option>
           </e:choice-answer>
         </e:question>
         <e:question>
           <e:question-title>Was wird Alina mitbringen?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score=\\"3\\">Etwas Süßes</e:choice-answer-option>
+            <e:choice-answer-option score="3">Etwas Süßes</e:choice-answer-option>
             <e:choice-answer-option>Etwas Salziges</e:choice-answer-option>
             <e:choice-answer-option>Etwas zu trinken</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src=\\"1.3_1.4.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Fragen 1.3. und 1.4.</e:audio-title></e:audio>
+          <e:audio src="1.3_1.4.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Fragen 1.3. und 1.4.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -1546,8 +1546,8 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
             
             
           </e:question-grading-instruction>
-          <e:text-answer type=\\"rich-text\\" max-score=\\"6\\" use-language-of-instruction=\\"true\\"/>
-          <e:audio src=\\"1.5.ogg\\" times=\\"1\\">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true"/>
+          <e:audio src="1.5.ogg" times="1">
             <e:audio-title>Hören Sie den Abschnitt für die Frage 1.5.</e:audio-title>
             <e:audio-transcription>
               Paula: Also abgemacht! Am Sonntag um 14.00 Uhr am See. Ich denke mir für euch eine Überraschung
@@ -1569,13 +1569,13 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question>
           <e:question-title>Was sagt Toni weiter?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score=\\"3\\">... vielleicht ein anderes Mal.</e:choice-answer-option>
+            <e:choice-answer-option score="3">... vielleicht ein anderes Mal.</e:choice-answer-option>
             <e:choice-answer-option>... schön dich zu sehen!</e:choice-answer-option>
             <e:choice-answer-option>... kommst du jetzt sofort?</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>2.1. audio</e:attachment-title>
-            <e:audio src=\\"2.1.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.1.</e:audio-title></e:audio>
+            <e:audio src="2.1.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1590,13 +1590,13 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question>
           <e:question-title>Was sagt Toni weiter?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score=\\"3\\">... ich habe natürlich nichts dagegen.</e:choice-answer-option>
+            <e:choice-answer-option score="3">... ich habe natürlich nichts dagegen.</e:choice-answer-option>
             <e:choice-answer-option>... ich kann dich schon verstehen.</e:choice-answer-option>
             <e:choice-answer-option>... ich habe es doch gesagt.</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>2.2. audio</e:attachment-title>
-            <e:audio src=\\"2.2.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.2.</e:audio-title></e:audio>
+            <e:audio src="2.2.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.2.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1611,13 +1611,13 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question>
           <e:question-title>Was sagt Toni weiter?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score=\\"3\\">... Jetzt bin ich sauer.</e:choice-answer-option>
+            <e:choice-answer-option score="3">... Jetzt bin ich sauer.</e:choice-answer-option>
             <e:choice-answer-option>... Das ist ja echt süß.</e:choice-answer-option>
             <e:choice-answer-option>... Du siehst ja gut aus.</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>2.3. audio</e:attachment-title>
-            <e:audio src=\\"2.3.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.3.</e:audio-title></e:audio>
+            <e:audio src="2.3.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.3.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1632,13 +1632,13 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question>
           <e:question-title>Was sagt Toni weiter?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score=\\"3\\">... Einverstanden!</e:choice-answer-option>
+            <e:choice-answer-option score="3">... Einverstanden!</e:choice-answer-option>
             <e:choice-answer-option>... Geschlossen!</e:choice-answer-option>
             <e:choice-answer-option>... Vergiss es!</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>2.4. audio</e:attachment-title>
-            <e:audio src=\\"2.4.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.4.</e:audio-title></e:audio>
+            <e:audio src="2.4.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.4.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1665,12 +1665,12 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <e:question-title>Was ist für Shari Heimat?</e:question-title>
           <e:choice-answer>
             <e:choice-answer-option>Das Geburtsland der Mutter</e:choice-answer-option>
-            <e:choice-answer-option score=\\"3\\">Verwandte und Freunde</e:choice-answer-option>
+            <e:choice-answer-option score="3">Verwandte und Freunde</e:choice-answer-option>
             <e:choice-answer-option>Die ganze Welt</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.1. audio</e:attachment-title>
-            <e:audio src=\\"3.1.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 3.1.</e:audio-title></e:audio>
+            <e:audio src="3.1.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 3.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1687,19 +1687,19 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <e:choice-answer>
             <e:choice-answer-option>Er fand es dort nicht gut, aber auch nicht schlecht</e:choice-answer-option>
             <e:choice-answer-option>Er wollte wieder nach Hause fahren</e:choice-answer-option>
-            <e:choice-answer-option score=\\"3\\">Er fühlte sich dort sehr wohl</e:choice-answer-option>
+            <e:choice-answer-option score="3">Er fühlte sich dort sehr wohl</e:choice-answer-option>
           </e:choice-answer>
         </e:question>
         <e:question>
           <e:question-title>Was sagt Leon über seine Zukunftspläne?</e:question-title>
           <e:choice-answer>
             <e:choice-answer-option>Er möchte vielleicht in einer anderen Stadt leben</e:choice-answer-option>
-            <e:choice-answer-option score=\\"3\\">Er möchte am liebsten in der Heimatstadt bleiben</e:choice-answer-option>
+            <e:choice-answer-option score="3">Er möchte am liebsten in der Heimatstadt bleiben</e:choice-answer-option>
             <e:choice-answer-option>Er möchte nach dem Studium in die Heimatstadt zurückkommen</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.2.–3.3. audio</e:attachment-title>
-            <e:audio src=\\"3.2_3.3.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio-title></e:audio>
+            <e:audio src="3.2_3.3.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1715,7 +1715,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <e:question-title>Was mag Larena an ihrem Heimatdorf?</e:question-title>
           <e:choice-answer>
             <e:choice-answer-option>Sie lernt dort schnell neue Leute kennen</e:choice-answer-option>
-            <e:choice-answer-option score=\\"3\\">Sie kennt sich dort gut aus</e:choice-answer-option>
+            <e:choice-answer-option score="3">Sie kennt sich dort gut aus</e:choice-answer-option>
             <e:choice-answer-option>Sie hat dort ihre Ruhe</e:choice-answer-option>
           </e:choice-answer>
         </e:question>
@@ -1724,11 +1724,11 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <e:choice-answer>
             <e:choice-answer-option>Sie traf einige Bekannte von früheren Kursen</e:choice-answer-option>
             <e:choice-answer-option>Sie lernte in New York andere Deutsche kennen</e:choice-answer-option>
-            <e:choice-answer-option score=\\"3\\">Sie machte mit den New Yorkern gute Erfahrungen</e:choice-answer-option>
+            <e:choice-answer-option score="3">Sie machte mit den New Yorkern gute Erfahrungen</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.4.–3.5. audio</e:attachment-title>
-            <e:audio src=\\"3.4_3.5.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio-title></e:audio>
+            <e:audio src="3.4_3.5.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1758,13 +1758,13 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question>
           <e:question-title>Welche Farbe hat die Katze?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score=\\"2\\">Sie ist schwarz-grau</e:choice-answer-option>
+            <e:choice-answer-option score="2">Sie ist schwarz-grau</e:choice-answer-option>
             <e:choice-answer-option>Sie ist grau-gelb</e:choice-answer-option>
             <e:choice-answer-option>Sie ist schwarz-gelb</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>4.1. audio</e:attachment-title>
-            <e:audio src=\\"4.1.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.1.</e:audio-title></e:audio>
+            <e:audio src="4.1.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1779,13 +1779,13 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question>
           <e:question-title>Wer kann gestern gegen 12 Uhr etwas gesehen haben?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score=\\"2\\">Studenten in der Mittagspause</e:choice-answer-option>
+            <e:choice-answer-option score="2">Studenten in der Mittagspause</e:choice-answer-option>
             <e:choice-answer-option>Besucher beim Motorrad-Treffen</e:choice-answer-option>
             <e:choice-answer-option>Mechaniker von der Werkstatt</e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>4.2. audio</e:attachment-title>
-            <e:audio src=\\"4.2.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.2.</e:audio-title></e:audio>
+            <e:audio src="4.2.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.2.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -1806,7 +1806,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:external-material>
         <e:attachment>
           <e:attachment-title>Video: Katze</e:attachment-title>
-          <e:video src=\\"5.webm\\">
+          <e:video src="5.webm">
             <e:video-transcription>
               Das Experiment läuft vierzehn Tage. Kamerafallen überwachen die Ausgänge der Häuser.
               So können die Wissenschaftler die Katzen rund um die Uhr im Blick behalten.
@@ -1840,7 +1840,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"3\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="3" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             <p>14 päivää / 2 viikkoa (3/0 p.)</p>
@@ -1854,7 +1854,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Er kämpft oft mit anderen Katzen</e:choice-answer-option>
           <e:choice-answer-option>Er läuft vorsichtig über die Schnellstraße</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Er rennt sehr weite Strecken</e:choice-answer-option>
+          <e:choice-answer-option score="2">Er rennt sehr weite Strecken</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
@@ -1862,7 +1862,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Was kann die nächste Studie zeigen?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Wie sich Katzen vor allem in der Nacht verhalten</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Wie Katzen auf andere Katzen reagieren</e:choice-answer-option>
+          <e:choice-answer-option score="2">Wie Katzen auf andere Katzen reagieren</e:choice-answer-option>
           <e:choice-answer-option>Wie man die Hauskatzen aktivieren könnte</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -1881,7 +1881,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:audio-group>
         <e:attachment>
           <e:attachment-title>6. audio</e:attachment-title>
-          <e:audio src=\\"6.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+          <e:audio src="6.ogg" times="1"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
           <e:reference>
             <e:author>
               YTL
@@ -1894,51 +1894,51 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:audio-group>
         <e:question>
           <e:question-title>Welche Zeit passt Lars am besten?</e:question-title>
-          <e:choice-answer ordering=\\"fixed\\">
+          <e:choice-answer ordering="fixed">
             <e:choice-answer-option>Montag, 13.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Montag, 14.00 Uhr</e:choice-answer-option>
-            <e:choice-answer-option score=\\"2\\">Montag, 15.00 Uhr</e:choice-answer-option>
+            <e:choice-answer-option score="2">Montag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Montag, 16.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 13.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 14.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src=\\"6.1.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.1.</e:audio-title></e:audio>
+          <e:audio src="6.1.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.1.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
       <e:audio-group>
         <e:question>
           <e:question-title>Welche Zeit passt Katarina am besten?</e:question-title>
-          <e:choice-answer ordering=\\"fixed\\">
+          <e:choice-answer ordering="fixed">
             <e:choice-answer-option>Montag, 13.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Montag, 14.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Montag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Montag, 16.00 Uhr</e:choice-answer-option>
-            <e:choice-answer-option score=\\"2\\">Dienstag, 13.00 Uhr</e:choice-answer-option>
+            <e:choice-answer-option score="2">Dienstag, 13.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 14.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src=\\"6.2.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.2.</e:audio-title></e:audio>
+          <e:audio src="6.2.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.2.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
       <e:audio-group>
         <e:question>
           <e:question-title>Welche Zeit passt Marit am besten?</e:question-title>
-          <e:choice-answer ordering=\\"fixed\\">
+          <e:choice-answer ordering="fixed">
             <e:choice-answer-option>Montag, 13.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Montag, 14.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Montag, 15.00 Uhr</e:choice-answer-option>
-            <e:choice-answer-option score=\\"2\\">Montag, 16.00 Uhr</e:choice-answer-option>
+            <e:choice-answer-option score="2">Montag, 16.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 13.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 14.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option>Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src=\\"6.3.ogg\\" times=\\"1\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.3.</e:audio-title></e:audio>
+          <e:audio src="6.3.ogg" times="1"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.3.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -1956,11 +1956,11 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer direction=\\"horizontal\\">
+          <e:choice-answer direction="horizontal">
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.1.0478.jpg</e:attachment-title>
-                <e:image src=\\"7.1.0478.jpg\\"/>
+                <e:image src="7.1.0478.jpg"/>
                 <e:reference>
                   <e:title>Fried Potatoes</e:title>
                   <e:author>jeffhutchison</e:author>
@@ -1972,10 +1972,10 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                 </e:reference>
               </e:attachment>
             </e:choice-answer-option>
-            <e:choice-answer-option score=\\"2\\">
+            <e:choice-answer-option score="2">
               <e:attachment>
                 <e:attachment-title>7.1.4327.jpg</e:attachment-title>
-                <e:image src=\\"7.1.4327.jpg\\"/>
+                <e:image src="7.1.4327.jpg"/>
                 <e:reference>
                   <e:author>jules</e:author>
                   <e:title>potato rosti</e:title>
@@ -1990,7 +1990,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.1.7279.jpg</e:attachment-title>
-                <e:image src=\\"7.1.7279.jpg\\"/>
+                <e:image src="7.1.7279.jpg"/>
                 <e:reference>
                   <e:title>mashed potatoes for perogies</e:title>
                   <e:author>Gail</e:author>
@@ -2005,7 +2005,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.1. audio</e:attachment-title>
-            <e:audio src=\\"7.1.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.1.</e:audio-title></e:audio>
+            <e:audio src="7.1.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -2019,11 +2019,11 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer direction=\\"horizontal\\">
+          <e:choice-answer direction="horizontal">
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.2.1617.jpg</e:attachment-title>
-                <e:image src=\\"7.2.1617.jpg\\"/>
+                <e:image src="7.2.1617.jpg"/>
                 <e:reference>
                   <e:author>Aaron Headly</e:author>
                   <e:title>Poached egg</e:title>
@@ -2038,7 +2038,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.2.7276.jpg</e:attachment-title>
-                <e:image src=\\"7.2.7276.jpg\\"/>
+                <e:image src="7.2.7276.jpg"/>
                 <e:reference>
                   <e:title>Scrambled Eggs</e:title>
                   <e:author>Steve Garfield</e:author>
@@ -2050,10 +2050,10 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                 </e:reference>
               </e:attachment>
             </e:choice-answer-option>
-            <e:choice-answer-option score=\\"2\\">
+            <e:choice-answer-option score="2">
               <e:attachment>
                 <e:attachment-title>7.2.7291.jpg</e:attachment-title>
-                <e:image src=\\"7.2.7291.jpg\\"/>
+                <e:image src="7.2.7291.jpg"/>
                 <e:reference>
                   <e:author>Marco Verch</e:author>
                   <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
@@ -2068,7 +2068,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.2. audio</e:attachment-title>
-            <e:audio src=\\"7.2.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.2.</e:audio-title></e:audio>
+            <e:audio src="7.2.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.2.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -2082,11 +2082,11 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:audio-group>
         <e:question>
           <e:question-title>Welches Bild passt?</e:question-title>
-          <e:choice-answer direction=\\"horizontal\\">
+          <e:choice-answer direction="horizontal">
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.3.4375.jpg</e:attachment-title>
-                <e:image src=\\"7.3.4375.jpg\\"/>
+                <e:image src="7.3.4375.jpg"/>
                 <e:reference>
                   <e:title>Coffee By The Cup @ Madeline's</e:title>
                   <e:author>Troy Tolley</e:author>
@@ -2098,10 +2098,10 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                 </e:reference>
               </e:attachment>
             </e:choice-answer-option>
-            <e:choice-answer-option score=\\"2\\">
+            <e:choice-answer-option score="2">
               <e:attachment>
                 <e:attachment-title>7.3.4927.jpg</e:attachment-title>
-                <e:image src=\\"7.3.4927.jpg\\"/>
+                <e:image src="7.3.4927.jpg"/>
                 <e:reference>
                   <e:title>Coffee Maker</e:title>
                   <e:author>Neil</e:author>
@@ -2116,7 +2116,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
             <e:choice-answer-option>
               <e:attachment>
                 <e:attachment-title>7.3.7459.jpg</e:attachment-title>
-                <e:image src=\\"7.3.7459.jpg\\"/>
+                <e:image src="7.3.7459.jpg"/>
                 <e:reference>
                   <e:title>Man using the French Press to make coffee</e:title>
                   <e:author>Marco Verch</e:author>
@@ -2131,7 +2131,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.3. audio</e:attachment-title>
-            <e:audio src=\\"7.3.ogg\\" times=\\"2\\"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.3.</e:audio-title></e:audio>
+            <e:audio src="7.3.ogg" times="2"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.3.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 YTL
@@ -2156,27 +2156,27 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:external-material>
         <e:attachment>
           <e:attachment-title>Text: Whatsapp-Chat</e:attachment-title>
-          <div class=\\"kupla1\\"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was
+          <div class="kupla1"><b>Maren</b>: Hi Kevin, habe vergessen mir die Hausaufgaben aufzuschreiben. Weißt du, was
             wir für morgen machen müssen?
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal
+          <div class="kupla2"><b>Kevin</b>: Keine Ahnung! War doch heute gar nicht in der Schule. Aber ich frage mal
             Tom. Hat eben doch Vorteile, wenn man mit seinem Bruder in derselben Klasse ist ...
           </div>
-          <div class=\\"kupla1\\"><b>Maren</b>: Okay. Aber frag bitte schnell! Ich muss nachher noch zum Schwimmen.
+          <div class="kupla1"><b>Maren</b>: Okay. Aber frag bitte schnell! Ich muss nachher noch zum Schwimmen.
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Für morgen haben wir: Mathe, Seite 76, Aufgaben 6, 7, 8 und in Geschichte
+          <div class="kupla2"><b>Kevin</b>: Für morgen haben wir: Mathe, Seite 76, Aufgaben 6, 7, 8 und in Geschichte
             den Inhalt der letzten Stunde wiederholen, und in Chemie machen wir doch im Moment nur die Experimente.
           </div>
-          <div class=\\"kupla1\\"><b>Maren</b>: Mathe für morgen? Das kann nicht sein! Morgen haben wir kein Mathe! Und
+          <div class="kupla1"><b>Maren</b>: Mathe für morgen? Das kann nicht sein! Morgen haben wir kein Mathe! Und
             Geschichte!? So ein Pech! Ich habe mein Geschichtsbuch in der Schule vergessen.
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Stimmt ja! Morgen fällt Mathe aus. Ich kann die Seiten vom Geschichtsbuch
+          <div class="kupla2"><b>Kevin</b>: Stimmt ja! Morgen fällt Mathe aus. Ich kann die Seiten vom Geschichtsbuch
             fotografieren und dir schicken. Okay?
           </div>
-          <div class=\\"kupla1\\"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen
+          <div class="kupla1"><b>Maren</b>: Jaaaaa! Daran habe ich gar nicht gedacht. Dann habe ich nach dem Schwimmen
             doch nicht ganz frei, aber ist ja nicht so viel … ;)
           </div>
-          <div class=\\"kupla2\\"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!
+          <div class="kupla2"><b>Kevin</b>: Tut mir leid ;). Schicke sie gleich. Viel Spaß!
           </div>
           <e:reference>
             <e:author>
@@ -2192,7 +2192,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Sie hat ihre Notizen in der Schule</e:choice-answer-option>
           <e:choice-answer-option>Sie war nicht im Unterricht</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option>
+          <e:choice-answer-option score="2">Sie kann sich daran nicht mehr erinnern</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
@@ -2200,7 +2200,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Welche Hausaufgaben wird Maren für morgen machen?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Mathe</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Geschichte</e:choice-answer-option>
+          <e:choice-answer-option score="2">Geschichte</e:choice-answer-option>
           <e:choice-answer-option>Chemie</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -2262,48 +2262,48 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
 
       <e:question>
         <e:question-title>An welchem Tag es passiert ist</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
-          <e:choice-answer-option score=\\"1\\">Richtig</e:choice-answer-option>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
           <e:choice-answer-option>Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Welche Farbe die Autos hatten</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
+        <e:choice-answer ordering="fixed">
           <e:choice-answer-option>Richtig</e:choice-answer-option>
-          <e:choice-answer-option score=\\"1\\">Falsch</e:choice-answer-option>
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Wo im Auto der Mann etwas vergessen hatte</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
+        <e:choice-answer ordering="fixed">
           <e:choice-answer-option>Richtig</e:choice-answer-option>
-          <e:choice-answer-option score=\\"1\\">Falsch</e:choice-answer-option>
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Wo der Mann sein Auto geparkt hatte</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
-          <e:choice-answer-option score=\\"1\\">Richtig</e:choice-answer-option>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
           <e:choice-answer-option>Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Was der Mann machte, nachdem er seinen Fehler bemerkt hatte</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
+        <e:choice-answer ordering="fixed">
           <e:choice-answer-option>Richtig</e:choice-answer-option>
-          <e:choice-answer-option score=\\"1\\">Falsch</e:choice-answer-option>
+          <e:choice-answer-option score="1">Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Was alles in der Geldbörse war</e:question-title>
-        <e:choice-answer ordering=\\"fixed\\">
-          <e:choice-answer-option score=\\"1\\">Richtig</e:choice-answer-option>
+        <e:choice-answer ordering="fixed">
+          <e:choice-answer-option score="1">Richtig</e:choice-answer-option>
           <e:choice-answer-option>Falsch</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -2314,7 +2314,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question-title>Duis Minim?</e:question-title>
       <e:question-instruction>Lesen Sie den folgenden Text und beantworten Sie die Fragen.</e:question-instruction>
       <e:external-material>
-        <e:attachment name=\\"zeugnis\\">
+        <e:attachment name="zeugnis">
           <e:attachment-title>Text: Duis Minim?</e:attachment-title>
           <p>
             Aineisto poistettu tekijänoikeussyistä.
@@ -2334,7 +2334,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Er möchte eine Urlaubsreise machen</e:choice-answer-option>
           <e:choice-answer-option>Er hat seine Leistungen verbessert</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Er wird anders behandelt als andere Schüler</e:choice-answer-option>
+          <e:choice-answer-option score="3">Er wird anders behandelt als andere Schüler</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
@@ -2345,11 +2345,11 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"6\\"/>
+        <e:text-answer type="rich-text" max-score="6"/>
         <e:question-grading-instruction>
           
             <p>
-              <e:question-number suffix=\\"2\\"/> Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
+              <e:question-number suffix="2"/> Isoäiti antaisi joka tapauksessa rahaa (3/0 p.). Se ei vahvista [opiskelu]motivaatiota / Se ei ole motivoivaa / Se vähentää motivaatiota / Se vie motivaation (3/0 p.)
             </p>
           
           
@@ -2362,14 +2362,14 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Dass der Vater kaum versteht, was dem Sohn wichtig ist</e:choice-answer-option>
           <e:choice-answer-option>Dass der Vater versucht, den Sohn streng zu erziehen</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option>
+          <e:choice-answer-option score="3">Dass der Vater das macht, was man von ihm erwartet</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option>
+          <e:choice-answer-option score="3">Weil der Sohn sich zu Hause oft zurückzieht</e:choice-answer-option>
           <e:choice-answer-option>Weil der Vater so viel von zu Hause weg ist</e:choice-answer-option>
           <e:choice-answer-option>Weil beide zu unterschiedlichen Zeiten zu Hause sind</e:choice-answer-option>
         </e:choice-answer>
@@ -2399,7 +2399,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question>
         <e:question-title>Was mag Proident besonders an seinem Job?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Die Arbeit bietet viel Abwechslung</e:choice-answer-option>
+          <e:choice-answer-option score="3">Die Arbeit bietet viel Abwechslung</e:choice-answer-option>
           <e:choice-answer-option>Seine Sportlerkarriere profitiert davon</e:choice-answer-option>
           <e:choice-answer-option>Er kann seine eigenen Grenzen austesten</e:choice-answer-option>
         </e:choice-answer>
@@ -2413,8 +2413,8 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           
         </e:question-title>
         
-          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score=\\"3\\"/>, sekä siitä, miten
-          <e:text-answer max-score=\\"3\\"/>
+          Koulutuksessa oppii esimerkiksi paljon luonnosta, säästä,<e:text-answer max-score="3"/>, sekä siitä, miten
+          <e:text-answer max-score="3"/>
           ja miten retki suunnitellaan.
         
         
@@ -2439,7 +2439,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Er macht eine lange Wanderung und sitzt danach im Büro</e:choice-answer-option>
           <e:choice-answer-option>Er hat eine Woche Arbeit und dann eine Woche frei</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
+          <e:choice-answer-option score="2">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
           </e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -2447,7 +2447,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question>
         <e:question-title>Was bedeutet es, dass Proident für seine Gäste verantwortlich ist?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Er muss manchmal das Tempo der Wanderung verlangsamen
+          <e:choice-answer-option score="3">Er muss manchmal das Tempo der Wanderung verlangsamen
           </e:choice-answer-option>
           <e:choice-answer-option>Er muss seinen Kunden ein unvergessliches Erlebnis bieten</e:choice-answer-option>
           <e:choice-answer-option>Er muss bei der Planung auch unrealistische Wünsche berücksichtigen
@@ -2458,7 +2458,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question>
         <e:question-title>Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option>
+          <e:choice-answer-option score="3">Es kann jedem passieren, dass etwas schief geht</e:choice-answer-option>
           <e:choice-answer-option>Es ist Proident gelungen, seine Kunden zu beschützen</e:choice-answer-option>
           <e:choice-answer-option>Es ist unnötig, die Gefahren der Touren zu übertreiben</e:choice-answer-option>
         </e:choice-answer>
@@ -2467,7 +2467,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question>
         <e:question-title>Was machen viele Lorem und Ipsum, um finanziell klarzukommen?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option>
+          <e:choice-answer-option score="3">Sie haben häufig zwei Arbeitsstellen</e:choice-answer-option>
           <e:choice-answer-option>Sie machen oft viele Überstunden</e:choice-answer-option>
           <e:choice-answer-option>Sie suchen sich später einen neuen Beruf</e:choice-answer-option>
         </e:choice-answer>
@@ -2489,11 +2489,11 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <h4>Emma</h4>
         <p>Emma: Mama, tust du mir einen Gefallen? Ich warte gerade im Café Sonnenschein auf Tim. Ich will hier mit ihm
           für die Geografieprüfung lernen, aber ich habe mein Buch zu Hause vergessen. Kannst du es mir bringen?
-          <e:dropdown-answer ordering=\\"fixed\\">
+          <e:dropdown-answer ordering="fixed">
             <e:dropdown-answer-option>Nichts zu danken!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Macht nichts!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Und ob!</e:dropdown-answer-option>
-            <e:dropdown-answer-option score=\\"2\\">Vielen Dank im Voraus!</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="2">Vielen Dank im Voraus!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Gern, bitte!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Hast du was?</e:dropdown-answer-option>
             <e:dropdown-answer-option>Warum immer ich?</e:dropdown-answer-option>
@@ -2513,10 +2513,10 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           Antonia: Ja sehr! Und wollte er denn wissen, was ich jetzt so mache?
           <br/>
           Hannah:
-          <e:dropdown-answer ordering=\\"fixed\\">
+          <e:dropdown-answer ordering="fixed">
             <e:dropdown-answer-option>Nichts zu danken!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Macht nichts!</e:dropdown-answer-option>
-            <e:dropdown-answer-option score=\\"2\\">Und ob!</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="2">Und ob!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Vielen Dank im Voraus!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Gern, bitte!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Hast du was?</e:dropdown-answer-option>
@@ -2534,14 +2534,14 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           Lukas: Nee, er kommt heute gar nicht. Und Florian und ich kommen direkt von der Arbeit.
           <br/>
           Jonas: Ich glaub, dann muss ich schon wieder den Ball mitbringen. Ach, Mist!
-          <e:dropdown-answer ordering=\\"fixed\\">
+          <e:dropdown-answer ordering="fixed">
             <e:dropdown-answer-option>Nichts zu danken!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Macht nichts!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Und ob!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Vielen Dank im Voraus!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Gern, bitte!</e:dropdown-answer-option>
             <e:dropdown-answer-option>Hast du was?</e:dropdown-answer-option>
-            <e:dropdown-answer-option score=\\"2\\">Warum immer ich?</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="2">Warum immer ich?</e:dropdown-answer-option>
             <e:dropdown-answer-option>Aber ich?</e:dropdown-answer-option>
             <e:dropdown-answer-option>Wie war‘s?</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2579,7 +2579,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         </e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Bei Verspätung unter 5 Stunden</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option>
+          <e:choice-answer-option score="2">Bei negativen Folgen auf den Zeitplan</e:choice-answer-option>
           <e:choice-answer-option>Bei Buchung eines anderen Fluges</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -2589,7 +2589,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Nur wenn man im Hotel übernachtet</e:choice-answer-option>
           <e:choice-answer-option>Nur wenn man Verwandte anrufen möchte</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option>
+          <e:choice-answer-option score="2">Nur wenn man sich mindestens zwei Stunden verspätet</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
@@ -2600,7 +2600,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"4\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             <p>
@@ -2639,19 +2639,19 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Was erlebten die Ullamco?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Eine gelungene Ullamco auf dem Ullamco</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option>
+          <e:choice-answer-option score="3">Eine Ullamco auf einem anderen Ullamco als geplant</e:choice-answer-option>
           <e:choice-answer-option>Eine unerwartet frühzeitige Ullamco am Ullamco</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>
-          Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class=\\"e-nowrap\\">(2 asiaa)
+          Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class="e-nowrap">(2 asiaa)
           </span> Kirjoita vastauksesi lyhyesti suomeksi.
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"4\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             <p>
@@ -2668,7 +2668,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question>
         <e:question-title>Welche weitere Ullamco hatte die Ullamco?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
+          <e:choice-answer-option score="3">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
           </e:choice-answer-option>
           <e:choice-answer-option>Ein Ullamco brachte die Fluggäste von Ullamco nach Ullamco</e:choice-answer-option>
           <e:choice-answer-option>Die Ullamco mussten noch in Ullamco übernachten</e:choice-answer-option>
@@ -2679,7 +2679,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext?
         </e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Ein unerwartetes Abenteuer</e:choice-answer-option>
+          <e:choice-answer-option score="3">Ein unerwartetes Abenteuer</e:choice-answer-option>
           <e:choice-answer-option>Ein gefährlicher Unfall</e:choice-answer-option>
           <e:choice-answer-option>Ein anstrengendes Experiment</e:choice-answer-option>
         </e:choice-answer>
@@ -2713,7 +2713,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"4\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="4" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             <p>
@@ -2730,7 +2730,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question>
         <e:question-title>Wie sind die beliebtesten Postkarten?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option>
+          <e:choice-answer-option score="3">Sie zeigen oft verschiedene Bilder vom Urlaubsort</e:choice-answer-option>
           <e:choice-answer-option>Sie kombinieren meist Text und Bilder</e:choice-answer-option>
           <e:choice-answer-option>Sie lassen den Urlaub beeindruckend erscheinen</e:choice-answer-option>
         </e:choice-answer>
@@ -2740,7 +2740,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Sie halten diese Karten nicht mehr für modern</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Sie finden solche Karten auf Reisen gut</e:choice-answer-option>
+          <e:choice-answer-option score="3">Sie finden solche Karten auf Reisen gut</e:choice-answer-option>
           <e:choice-answer-option>Sie sind besonders stolz auf die Berliner Postkarten</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -2750,14 +2750,14 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Nur erwachsene Frauen interessieren sich für die Karten</e:choice-answer-option>
           <e:choice-answer-option>Männer senden und empfangen fast keine Postkarten</e:choice-answer-option>
-          <e:choice-answer-option score=\\"3\\">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option>
+          <e:choice-answer-option score="3">Einige Jugendliche benutzen oft unfaire Tricks</e:choice-answer-option>
         </e:choice-answer>
       </e:question>
 
       <e:question>
         <e:question-title>Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Es ist wahr, dass die Karten nicht mehr so beliebt sind
+          <e:choice-answer-option score="3">Es ist wahr, dass die Karten nicht mehr so beliebt sind
           </e:choice-answer-option>
           <e:choice-answer-option>Ipsum mag die Fragen des Interviewers nicht</e:choice-answer-option>
           <e:choice-answer-option>Man weiß, dass die Postkarte irgendwann sterben wird</e:choice-answer-option>
@@ -2767,7 +2767,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       <e:question>
         <e:question-title>Wann könnte es die Postkarte schwer haben?</e:question-title>
         <e:choice-answer>
-          <e:choice-answer-option score=\\"3\\">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
+          <e:choice-answer-option score="3">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
           </e:choice-answer-option>
           <e:choice-answer-option>Wenn man in der Familie keine Postkarten mehr verschickt</e:choice-answer-option>
           <e:choice-answer-option>Wenn die Smartphones immer billiger und attraktiver werden</e:choice-answer-option>
@@ -2799,7 +2799,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Wie reagieren viele Kunden auf die Einwegbecher?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Sie benutzen die Einwegbecher, ohne darüber nachzudenken</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
+          <e:choice-answer-option score="2">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
           </e:choice-answer-option>
           <e:choice-answer-option>Sie entscheiden, keine Einwegbecher mehr zu verwenden</e:choice-answer-option>
         </e:choice-answer>
@@ -2810,7 +2810,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:choice-answer>
           <e:choice-answer-option>Es lohnt sich nicht außerhalb des Stadtzentrums</e:choice-answer-option>
           <e:choice-answer-option>Es bringt das jetzige System der Pfandflaschen durcheinander</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Es ist für das Verhalten der Kunden nicht flexibel genug
+          <e:choice-answer-option score="2">Es ist für das Verhalten der Kunden nicht flexibel genug
           </e:choice-answer-option>
         </e:choice-answer>
       </e:question>
@@ -2819,7 +2819,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-title>Was will Lorem Ipsum erreichen?</e:question-title>
         <e:choice-answer>
           <e:choice-answer-option>Die Finanzierung für das neue System zu sichern</e:choice-answer-option>
-          <e:choice-answer-option score=\\"2\\">Die Kunden stärker zur Rückgabe der Becher zu motivieren
+          <e:choice-answer-option score="2">Die Kunden stärker zur Rückgabe der Becher zu motivieren
           </e:choice-answer-option>
           <e:choice-answer-option>Mit anderen Städten effektiv zusammenzuarbeiten</e:choice-answer-option>
         </e:choice-answer>
@@ -2832,7 +2832,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           
           
         </e:question-title>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"2\\" use-language-of-instruction=\\"true\\"/>
+        <e:text-answer type="rich-text" max-score="2" use-language-of-instruction="true"/>
         <e:question-grading-instruction>
           
             Kaupunki haluaa vähentä kertakäyttömukien määrää. (2/0 p.)
@@ -2855,7 +2855,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       </e:question-instruction>
       <e:attachment>
         <e:attachment-title>Auswahl-kuva</e:attachment-title>
-        <e:image src=\\"maxmoritz.png\\" class=\\"e-width-quarter e-illustration-right\\"/>
+        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right"/>
         <e:reference>
           <e:title>Max und Moritz</e:title>
           <e:author>Wilhelm Busch</e:author>
@@ -2872,13 +2872,13 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <p>
           Ach, was
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">muß</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">muß</e:dropdown-answer-option>
             <e:dropdown-answer-option>kann</e:dropdown-answer-option>
             <e:dropdown-answer-option>darf</e:dropdown-answer-option>
           </e:dropdown-answer>
           man oft von
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">bösen</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">bösen</e:dropdown-answer-option>
             <e:dropdown-answer-option>netten</e:dropdown-answer-option>
             <e:dropdown-answer-option>gelben</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2887,25 +2887,25 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           Wie zum Beispiel hier
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">von</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">von</e:dropdown-answer-option>
             <e:dropdown-answer-option>zu</e:dropdown-answer-option>
             <e:dropdown-answer-option>nach</e:dropdown-answer-option>
           </e:dropdown-answer>
           diesen,
           <br/>
           Welche Max und Moritz
-          <span class=\\"e-nowrap\\">
+          <span class="e-nowrap">
             <e:dropdown-answer>
-              <e:dropdown-answer-option score=\\"1\\">hießen</e:dropdown-answer-option>
-              <e:dropdown-answer-option score=\\"1\\">heißen</e:dropdown-answer-option>
+              <e:dropdown-answer-option score="1">hießen</e:dropdown-answer-option>
+              <e:dropdown-answer-option score="1">heißen</e:dropdown-answer-option>
               <e:dropdown-answer-option>sind</e:dropdown-answer-option>
             </e:dropdown-answer>
             ;
           </span>
           <br/>
-          <span class=\\"e-nowrap\\">
+          <span class="e-nowrap">
             <e:dropdown-answer>
-              <e:dropdown-answer-option score=\\"1\\">Die</e:dropdown-answer-option>
+              <e:dropdown-answer-option score="1">Die</e:dropdown-answer-option>
               <e:dropdown-answer-option>Der</e:dropdown-answer-option>
               <e:dropdown-answer-option>Das</e:dropdown-answer-option>
             </e:dropdown-answer>
@@ -2915,7 +2915,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           Sich
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">zum</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">zum</e:dropdown-answer-option>
             <e:dropdown-answer-option>zur</e:dropdown-answer-option>
             <e:dropdown-answer-option>zu den</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2923,7 +2923,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           Oftmals noch
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">darüber</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">darüber</e:dropdown-answer-option>
             <e:dropdown-answer-option>danach</e:dropdown-answer-option>
             <e:dropdown-answer-option>dazu</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2931,7 +2931,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           Und
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">sich</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">sich</e:dropdown-answer-option>
             <e:dropdown-answer-option>mich</e:dropdown-answer-option>
             <e:dropdown-answer-option>dich</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2941,7 +2941,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           Ja,
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">dazu</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">dazu</e:dropdown-answer-option>
             <e:dropdown-answer-option>danach</e:dropdown-answer-option>
             <e:dropdown-answer-option>darüber</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2949,7 +2949,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           – Menschen necken,
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">Tiere</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">Tiere</e:dropdown-answer-option>
             <e:dropdown-answer-option>Bücher</e:dropdown-answer-option>
             <e:dropdown-answer-option>Computer</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2957,14 +2957,14 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           Äpfel, Birnen, Zwetschen
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">stehlen</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">stehlen</e:dropdown-answer-option>
             <e:dropdown-answer-option>stählen</e:dropdown-answer-option>
             <e:dropdown-answer-option>schlehten</e:dropdown-answer-option>
           </e:dropdown-answer>
           – –
           <br/>
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">Das</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">Das</e:dropdown-answer-option>
             <e:dropdown-answer-option>Der</e:dropdown-answer-option>
             <e:dropdown-answer-option>Die</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2972,14 +2972,14 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           Und dazu
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">auch</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">auch</e:dropdown-answer-option>
             <e:dropdown-answer-option>doch</e:dropdown-answer-option>
             <e:dropdown-answer-option>euch</e:dropdown-answer-option>
           </e:dropdown-answer>
           viel bequemer,
           <br/>
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">Als</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">Als</e:dropdown-answer-option>
             <e:dropdown-answer-option>Wenn</e:dropdown-answer-option>
             <e:dropdown-answer-option>Wann</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -2993,7 +2993,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           – Ach, das war
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">ein</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">ein</e:dropdown-answer-option>
             <e:dropdown-answer-option>eine</e:dropdown-answer-option>
             <e:dropdown-answer-option>eines</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -3003,7 +3003,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <br/>
           – Drum ist hier, was
           <e:dropdown-answer>
-            <e:dropdown-answer-option score=\\"1\\">sie</e:dropdown-answer-option>
+            <e:dropdown-answer-option score="1">sie</e:dropdown-answer-option>
             <e:dropdown-answer-option>er</e:dropdown-answer-option>
             <e:dropdown-answer-option>es</e:dropdown-answer-option>
           </e:dropdown-answer>
@@ -3049,7 +3049,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <p>
             <b>Felix:</b>
             Ach so. Aber Samstag?
-            <span class=\\"e-nowrap\\">
+            <span class="e-nowrap">
               <e:scored-text-answer>
                 <e:hint>Kommst du am Samstag mit ins Kino (wollen)</e:hint>
                 <e:answer-grading-instruction>
@@ -3074,10 +3074,10 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                   
                   
                 </e:answer-grading-instruction>
-                <e:accepted-answer score=\\"2\\">Willst du am Samstag mit ins Kino kommen?</e:accepted-answer>
-                <e:accepted-answer score=\\"1\\">Willst du ins Kino am Samstag mitkommen? (sanajärjestys)</e:accepted-answer>
-                <e:accepted-answer score=\\"1\\">Will du am Samstag mit ins Kino kommen? (verbin taivutus)</e:accepted-answer>
-                <e:accepted-answer score=\\"1\\">willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)</e:accepted-answer>
+                <e:accepted-answer score="2">Willst du am Samstag mit ins Kino kommen?</e:accepted-answer>
+                <e:accepted-answer score="1">Willst du ins Kino am Samstag mitkommen? (sanajärjestys)</e:accepted-answer>
+                <e:accepted-answer score="1">Will du am Samstag mit ins Kino kommen? (verbin taivutus)</e:accepted-answer>
+                <e:accepted-answer score="1">willst du am Samstag mit ins Kino kommen 1 p. (pieni alkukirjain, ei vähennystä puuttuvasta kysymysmerkistä)</e:accepted-answer>
               </e:scored-text-answer>
               ?
             </span>
@@ -3085,7 +3085,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           <p>
             <b>Anna:</b>
             Ja, gerne! Aber ich sage dir erst morgen Bescheid,
-            <span class=\\"e-nowrap\\">
+            <span class="e-nowrap">
               <e:scored-text-answer>
                 <e:hint>weil ich zuerst Mama frage (müssen)</e:hint>
                 <e:answer-grading-instruction>
@@ -3106,7 +3106,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                   
                   
                 </e:answer-grading-instruction>
-                <e:accepted-answer score=\\"2\\">weil ich zuerst Mama fragen muss</e:accepted-answer>
+                <e:accepted-answer score="2">weil ich zuerst Mama fragen muss</e:accepted-answer>
               </e:scored-text-answer>
               .
             </span>
@@ -3178,22 +3178,22 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           </p>
           <p>
             Tim fragt: 
-            <e:scored-text-answer max-score=\\"2\\">
+            <e:scored-text-answer max-score="2">
               <e:hint>
                 Voitko auttaa minua?
                 
               </e:hint>
-              <e:accepted-answer score=\\"2\\">Kannst du mir helfen?</e:accepted-answer>
+              <e:accepted-answer score="2">Kannst du mir helfen?</e:accepted-answer>
             </e:scored-text-answer>
             <br/>
             Jan: Ja, klar. Was ist denn?
             <br/>
             Tim antwortet:
-            <e:scored-text-answer max-score=\\"3\\">
+            <e:scored-text-answer max-score="3">
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.2. kuva</e:attachment-title>
-                  <e:image src=\\"7.2.jpg\\"/>
+                  <e:image src="7.2.jpg"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a
@@ -3205,8 +3205,8 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                   </e:reference>
                 </e:attachment>
               </e:hint>
-              <e:accepted-answer score=\\"3\\">Mathe ist immer so schwierig.</e:accepted-answer>
-              <e:accepted-answer score=\\"3\\">Was soll man hier machen? Ich verstehe nichts!</e:accepted-answer>
+              <e:accepted-answer score="3">Mathe ist immer so schwierig.</e:accepted-answer>
+              <e:accepted-answer score="3">Was soll man hier machen? Ich verstehe nichts!</e:accepted-answer>
             </e:scored-text-answer>
           </p>
           <br/>
@@ -3216,22 +3216,22 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           </p>
           <p>
             Anna fragt:
-            <e:scored-text-answer max-score=\\"2\\">
+            <e:scored-text-answer max-score="2">
               <e:hint>
                 Millainen sää tänään on?
                 
               </e:hint>
-              <e:accepted-answer score=\\"2\\">Wie ist das Wetter heute?</e:accepted-answer>
-              <e:accepted-answer score=\\"2\\">Was ist heute für Wetter?</e:accepted-answer>
-              <e:accepted-answer score=\\"2\\">Was für ein Wetter ist heute?</e:accepted-answer>
+              <e:accepted-answer score="2">Wie ist das Wetter heute?</e:accepted-answer>
+              <e:accepted-answer score="2">Was ist heute für Wetter?</e:accepted-answer>
+              <e:accepted-answer score="2">Was für ein Wetter ist heute?</e:accepted-answer>
             </e:scored-text-answer>
             <br/>
             Die Mutter öffnet die Vorhänge, sieht aus dem Fenster raus, und antwortet:
-            <e:scored-text-answer max-score=\\"3\\">
+            <e:scored-text-answer max-score="3">
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.4. kuva</e:attachment-title>
-                  <e:image src=\\"7.4.jpg\\"/>
+                  <e:image src="7.4.jpg"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda
@@ -3243,8 +3243,8 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                   </e:reference>
                 </e:attachment>
               </e:hint>
-              <e:accepted-answer score=\\"3\\">Du brauchst einen Regenschirm, denn es regnet stark.</e:accepted-answer>
-              <e:accepted-answer score=\\"3\\">Heute ist sehr schlechtes Wetter</e:accepted-answer>
+              <e:accepted-answer score="3">Du brauchst einen Regenschirm, denn es regnet stark.</e:accepted-answer>
+              <e:accepted-answer score="3">Heute ist sehr schlechtes Wetter</e:accepted-answer>
             </e:scored-text-answer>
           </p>
         </e:hints>
@@ -3261,7 +3261,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
 
   <e:section>
     <e:section-title>Schriftliche Produktion</e:section-title>
-    <e:question max-answers=\\"1\\">
+    <e:question max-answers="1">
       <e:question-title>Kurze Schreibaufgabe</e:question-title>
       <e:question-instruction>
         
@@ -3282,24 +3282,24 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           
           
         </e:question-instruction>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"33\\" max-length=\\"240\\"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240"/>
       </e:question>
       <e:question>
         <e:question-title>Kurze Schreibaufgabe</e:question-title>
         <e:question-instruction>
           
-            Vastaa joko tähän tai tehtävään <e:question-number suffix=\\"1\\"/>.
+            Vastaa joko tähän tai tehtävään <e:question-number suffix="1"/>.
             Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen
             vaihto-oppilaan mukaan. Kirjoita hänelle viime hetken kutsu tekstiviestillä ja kerro hänelle myös, mitä hän
             voisi tuoda mukanaan juhliin.
           
           
         </e:question-instruction>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"33\\" max-length=\\"240\\"/>
+        <e:text-answer type="rich-text" max-score="33" max-length="240"/>
       </e:question>
     </e:question>
 
-    <e:question max-answers=\\"1\\">
+    <e:question max-answers="1">
       <e:question-title>Lange Schreibaufgabe</e:question-title>
       <e:question-instruction>
         
@@ -3327,7 +3327,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <p>
           <e:attachment>
             <e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title>
-            <e:image src=\\"24.1.jpg\\"/>
+            <e:image src="24.1.jpg"/>
             <e:reference>
               <e:author>Riik@mctr</e:author>
               <e:title>Manchester Airport (EGCC)</e:title>
@@ -3366,19 +3366,19 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
             </e:reference>
           </e:attachment>
         </p>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"66\\"/>
+        <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
       <e:question>
         <e:question-title>Lange Schreibaufgabe</e:question-title>
         <e:question-instruction>
           
-            Eräs isä on lähettänyt tekstin keskustelupalstalle<e:attachment-link ref=\\"zeugnis\\"/>. Hän pyytää
+            Eräs isä on lähettänyt tekstin keskustelupalstalle<e:attachment-link ref="zeugnis"/>. Hän pyytää
             mielipiteitä siitä, kumpi on oikeassa – hän vai poika. Vastaa palstalla isälle. Perustele näkemyksesi.
           
           
         </e:question-instruction>
-        <e:text-answer type=\\"rich-text\\" max-score=\\"66\\"/>
+        <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
     </e:question>
