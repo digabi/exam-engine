@@ -66,7 +66,7 @@ describe('testGrading.ts', () => {
     await expectText('.e-annotation--censoring', 'vel eros lobortis, dignissim ')
     await expectAnnotationMessages(['+1', 'first annotation message'])
 
-    await page.mouse.move(518, 210)
+    await page.hover('.e-annotation[data-index="2"]')
     await page.waitForSelector('.e-grading-answer-tooltip', VISIBLE)
     await page.click('.e-grading-answer-tooltip-label')
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
@@ -74,7 +74,7 @@ describe('testGrading.ts', () => {
     await page.keyboard.press('Enter')
     await expectAnnotationMessages(['+1', 'first annotation message2'])
 
-    await page.mouse.move(518, 210)
+    await page.hover('.e-annotation[data-index="2"]')
     await page.click('.e-grading-answer-tooltip-remove')
     await expectAnnotationMessages(['+1'])
 
