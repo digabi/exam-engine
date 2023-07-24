@@ -1,8 +1,8 @@
-import i18n, { PostProcessorModule, TFunctionKeys, TOptions } from 'i18next'
+import i18n, { PostProcessorModule, TOptions } from 'i18next'
 import * as _ from 'lodash-es'
 import React from 'react'
 // eslint-disable-next-line no-restricted-imports
-import { TFuncKey, TFunction, useTranslation } from 'react-i18next'
+import { TFunction, useTranslation } from 'react-i18next'
 import { A_E } from './A_E'
 import { BA } from './BA'
 import { CA } from './CA'
@@ -108,7 +108,7 @@ export function initI18n(language: string, examCode?: string, dayCode?: string):
 export function useExamTranslation() {
   const { i18n, t: originalT } = useTranslation()
   type Translator = {
-    <TKeys extends TFuncKey>(key: TKeys | TKeys[], options?: TOptions): string | JSX.Element
+    (key: string | string[], options?: TOptions): string | JSX.Element
     raw: TFunction
   }
   const t: Translator = (key, options) => translate(i18n, key, options)
@@ -122,11 +122,7 @@ export function useExamTranslation() {
  *
  * If you want to disable the wrapping, you can use `t.raw(…)`.
  */
-function translate<TKeys extends TFunctionKeys>(
-  instance: typeof i18n,
-  key: TKeys | TKeys[],
-  options?: TOptions
-): string | JSX.Element {
+function translate(instance: typeof i18n, key: string | string[], options?: TOptions): string | JSX.Element {
   const translation = instance.t(key, options)
 
   const namespace = instance.options.defaultNS!.toString()
@@ -144,14 +140,10 @@ function translate<TKeys extends TFunctionKeys>(
  * Ideally, we'd probably want to use `i18n.exists()` for this purpose, but I
  * couldn't find a way to disable the fallback mechanism when using it.
  */
-function hasTranslation<TKeys extends TFunctionKeys>(
-  instance: typeof i18n,
-  namespace: string,
-  key: TKeys | TKeys[]
-): boolean {
+function hasTranslation(instance: typeof i18n, namespace: string, key: string | string[]): boolean {
   return Array.isArray(key)
-    ? key.some((k) => instance.getResource(instance.language, namespace, k as string) != null)
-    : instance.getResource(instance.language, namespace, key as string) != null
+    ? key.some((k) => instance.getResource(instance.language, namespace, k) != null)
+    : instance.getResource(instance.language, namespace, key) != null
 }
 
 export const changeLanguage = (_i18n: typeof i18n, language: string) => (): void => {

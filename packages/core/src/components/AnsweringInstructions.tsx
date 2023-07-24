@@ -15,7 +15,7 @@ function AnsweringInstructions({ maxAnswers, minAnswers, elementType, childQuest
   )
 
   const { t } = useExamTranslation()
-  const possibleTranslationStrings: any[] = cartesian(
+  const possibleTranslationStrings = cartesian(
     [childDisplayNumbers.length, '*'],
     [maxAnswers, '*'],
     [minAnswers != null ? minAnswers : maxAnswers, '*']
