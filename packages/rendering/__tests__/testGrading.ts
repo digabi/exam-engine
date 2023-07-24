@@ -113,5 +113,6 @@ describe('testGrading.ts', () => {
     const navi = await page.waitForSelector('.grading-navi')
     const button = await navi?.waitForSelector(`text/${displayNumber}`)
     await button?.click()
+    await page.waitForSelector('.e-grading-answer', VISIBLE)
   }
 })
