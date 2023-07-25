@@ -30,6 +30,9 @@ describe('testGrading.ts', () => {
     await page.keyboard.press('Escape')
 
     await page.waitForSelector('.save-indicator-text--saved')
+  })
+
+  beforeEach(async () => {
     await page.goto(`${ctx.url}/fi-FI/normal/grading`)
     await page.waitForSelector('.e-grading-answer')
   })
@@ -56,7 +59,7 @@ describe('testGrading.ts', () => {
     await expectText('.e-grading-answer-max-length-surplus', surplusText)
   })
 
-  it('creates annotations, modifies and removes them', async () => {
+  it('creates and modifies annotations', async () => {
     await navigateToAnswer('2')
     await drag(418, 210, 620, 210)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
@@ -66,18 +69,19 @@ describe('testGrading.ts', () => {
     await expectText('.e-annotation--censoring', 'vel eros lobortis, dignissim ')
     await expectAnnotationMessages(['+1', 'first annotation message'])
 
-    await page.hover('.e-annotation[data-index="2"]')
+    await page.hover('.e-annotation--censoring')
     await page.waitForSelector('.e-grading-answer-tooltip', VISIBLE)
     await page.click('.e-grading-answer-tooltip-label')
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
-    await page.keyboard.sendCharacter('2')
+    await page.keyboard.type('2')
     await page.keyboard.press('Enter')
     await expectAnnotationMessages(['+1', 'first annotation message2'])
+    await page.mouse.reset()
+    await page.waitForSelector('.e-grading-answer-tooltip', HIDDEN)
+  })
 
-    await page.hover('.e-annotation[data-index="2"]')
-    await page.click('.e-grading-answer-tooltip-remove')
-    await expectAnnotationMessages(['+1'])
-
+  it('removes annotations', async () => {
+    await navigateToAnswer('2')
     await drag(360, 300, 370, 310)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('img annotation msg')
@@ -85,6 +89,11 @@ describe('testGrading.ts', () => {
     await page.waitForSelector('.e-grading-answer-add-annotation', HIDDEN)
     await page.waitForSelector('.e-annotation-wrapper .e-annotation--censoring', VISIBLE)
     await expectAnnotationMessages(['+1', 'img annotation msg'])
+
+    await page.hover('.e-annotation--censoring')
+    await page.waitForSelector('.e-grading-answer-tooltip', VISIBLE)
+    await page.click('.e-grading-answer-tooltip-remove')
+    await expectAnnotationMessages(['+1'])
   })
 
   async function expectText(selector: string, text: string) {
