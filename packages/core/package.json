@@ -46,7 +46,7 @@
     "react": "^18.2.0",
     "react-css-transition-replace": "^5.0.1",
     "react-dom": "^18.2.0",
-    "react-i18next": "^11.2.5",
+    "react-i18next": "^13.0.2",
     "react-redux": "^8.1.1",
     "react-test-renderer": "^18.2.0",
     "redux": "^4.2.1",
