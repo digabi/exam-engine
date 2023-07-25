@@ -10989,14 +10989,13 @@ react-css-transition-replace@^5.0.1:
     dom-helpers "^5.2.1"
     prop-types "^15.8.1"
 
-react-dom@^17.0.2:
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
-  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+react-dom@^18.2.0:
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
+  integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
   dependencies:
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    scheduler "^0.20.2"
+    scheduler "^0.23.0"
 
 react-i18next@^11.2.5:
   version "11.18.6"
@@ -11021,7 +11020,7 @@ react-is@^17.0.2:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-redux@^8.0.4:
+react-redux@^8.1.1:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-8.1.1.tgz#8e740f3fd864a4cd0de5ba9cdc8ad39cc9e7c81a"
   integrity sha512-5W0QaKtEhj+3bC0Nj0NkqkhIv8gLADH/2kYFMTHxCVqQILiWzLv6MaLuV5wJU3BQEdHKzTfcvPN0WMS6SC1oyA==
@@ -11057,13 +11056,12 @@ react-test-renderer@^18.2.0:
     react-shallow-renderer "^16.15.0"
     scheduler "^0.23.0"
 
-react@^17.0.2:
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
-  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+react@^18.2.0:
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
+  integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 read-cmd-shim@4.0.0:
   version "4.0.0"
@@ -11182,7 +11180,7 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-redux-saga-test-plan@^4.0.0-rc.3:
+redux-saga-test-plan@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/redux-saga-test-plan/-/redux-saga-test-plan-4.0.6.tgz#0e50a68f63083fbda4bb20cc087833d5b84ace77"
   integrity sha512-ESdbFoDWCeJ/EiFdUNSCGtA2CC9tnuvHDm6k06gVFa98EIeR2hpzFkGk9kJ1/hpMUnYFp+OOEEITIrZeDYBfFg==
@@ -11191,14 +11189,14 @@ redux-saga-test-plan@^4.0.0-rc.3:
     lodash.isequal "^4.5.0"
     lodash.ismatch "^4.4.0"
 
-redux-saga@^1.1.3:
+redux-saga@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-1.2.3.tgz#7362f78a0235868daf1210f8862a95906ac018a1"
   integrity sha512-HDe0wTR5nhd8Xr5xjGzoyTbdAw6rjy1GDplFt3JKtKN8/MnkQSRqK/n6aQQhpw5NI4ekDVOaW+w4sdxPBaCoTQ==
   dependencies:
     "@redux-saga/core" "^1.2.3"
 
-redux@^4.0.0, redux@^4.0.1, redux@^4.0.4:
+redux@^4.0.0, redux@^4.0.4, redux@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.2.1.tgz#c08f4306826c49b5e9dc901dee0452ea8fce6197"
   integrity sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==
@@ -11547,14 +11545,6 @@ saxes@^6.0.0:
   integrity sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==
   dependencies:
     xmlchars "^2.2.0"
-
-scheduler@^0.20.2:
-  version "0.20.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
-  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 scheduler@^0.23.0:
   version "0.23.0"
