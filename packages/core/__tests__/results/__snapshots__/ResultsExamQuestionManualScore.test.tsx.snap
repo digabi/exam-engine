@@ -62,9 +62,7 @@ exports[`<QuestionManualScore /> fi-FI renders with displayNumber where there ar
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
@@ -113,14 +111,11 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and one censor sc
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         1
-        
          p.
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
@@ -169,7 +164,6 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and three censor 
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         3
-        
          p.
       </span>
       <span
@@ -190,7 +184,6 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and three censor 
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         2
-        
          p.
       </span>
       <span
@@ -211,14 +204,11 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading and three censor 
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         1
-        
          p.
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
@@ -251,9 +241,7 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading score 1`] = `
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
@@ -302,7 +290,6 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         4
-        
          p.
       </span>
       <span
@@ -323,7 +310,6 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         3
-        
          p.
       </span>
       <span
@@ -344,7 +330,6 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         2
-        
          p.
       </span>
       <span
@@ -365,14 +350,11 @@ exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         1
-        
          p.
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
@@ -405,9 +387,7 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when pregrad
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
@@ -456,7 +436,6 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when there a
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         3
-        
          p.
       </span>
       <span
@@ -477,7 +456,6 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when there a
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         2
-        
          p.
       </span>
       <span
@@ -498,14 +476,11 @@ exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when there a
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         1
-        
          p.
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
@@ -571,7 +546,6 @@ exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         4
-        
          p.
       </span>
       <span
@@ -592,7 +566,6 @@ exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         3
-        
          p.
       </span>
       <span
@@ -613,7 +586,6 @@ exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         2
-        
          p.
       </span>
       <span
@@ -634,14 +606,11 @@ exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspe
         className="e-mrg-r-1 e-nowrap e-nowrap"
       >
         1
-        
          p.
       </span>
       <span
         className="e-mrg-r-1 e-nowrap e-result-scorecount-shortcode"
-      >
-        
-      </span>
+      />
       <span
         className="e-mrg-r-1 e-nowrap e-mrg-r-0"
       >
