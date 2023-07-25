@@ -12,7 +12,7 @@ export default async function createMexExam({
   passphrase,
   privateKey,
   ktpUpdate,
-  koeUpdate,
+  koeUpdate
 }: {
   exam: string
   outdir?: string
@@ -39,7 +39,7 @@ export default async function createMexExam({
       attachments.map(({ filename, restricted }) => ({
         filename,
         restricted,
-        contents: createReadStream(resolveAttachment(filename)),
+        contents: createReadStream(resolveAttachment(filename))
       })),
       createReadStream(nsaScripts),
       securityCodes ? createReadStream(securityCodes) : null,

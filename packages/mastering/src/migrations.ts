@@ -11,7 +11,7 @@ const migrations: Record<string, Migration> = {
   '0.1': migrateFrom01To02,
   '0.2': migrateFrom02To03,
   '0.3': migrateFrom03To04,
-  '0.4': noop,
+  '0.4': noop
 }
 const supportedVersions = Object.keys(migrations)
 

@@ -5,7 +5,7 @@ import {
   GradingInstructions,
   GradingStructure,
   Score,
-  TextQuestion,
+  TextQuestion
 } from '@digabi/exam-engine-core'
 import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
 import { listExams } from '@digabi/exam-engine-exams'
@@ -19,13 +19,13 @@ import { ResultsProps } from '../src/components/results/Results'
 import { examServerApi } from './examServerApi'
 import { generateAnswers } from '@digabi/exam-engine-generator'
 
-describe.each(listExams().map((exam) => [path.basename(exam), exam]))('%s', (_basename, exam) => {
+describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_basename, exam) => {
   const resolveAttachment = (filename: string) => path.resolve(path.dirname(exam), 'attachments', filename)
 
   it('renders properly', async () => {
     const source = await fs.readFile(exam, 'utf-8')
     const results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment), {
-      removeCorrectAnswers: false,
+      removeCorrectAnswers: false
     })
     for (const { xml, language, gradingStructure } of results) {
       const doc = parseExam(xml, true)
@@ -34,19 +34,19 @@ describe.each(listExams().map((exam) => [path.basename(exam), exam]))('%s', (_ba
         answers: [],
         attachmentsURL: '/attachments',
         resolveAttachment: (filename: string) => `/attachments/${encodeURIComponent(filename)}`,
-        language,
+        language
       }
       const examProps: ExamProps = {
         ...commonProps,
         casStatus: 'forbidden',
         examServerApi,
-        restrictedAudioPlaybackStats: [],
+        restrictedAudioPlaybackStats: []
       }
       const resultsProps: ResultsProps = {
         ...commonProps,
         gradingStructure,
         answers: generateAnswers(gradingStructure),
-        scores: mkScores(gradingStructure),
+        scores: mkScores(gradingStructure)
       }
       expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
       expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
@@ -69,34 +69,32 @@ function generateScore(question: { id: number; maxScore: number; displayNumber: 
     pregrading: {
       score: Math.min(question.maxScore, i),
       comment: `Pregading comment to question ${question.displayNumber}`,
-      annotations: [
-        { startIndex: 0, length: 0, message: `Pregading annotation to question ${question.displayNumber}` },
-      ],
+      annotations: [{ startIndex: 0, length: 0, message: `Pregading annotation to question ${question.displayNumber}` }]
     },
     censoring: {
       scores: [
         {
           score: Math.min(question.maxScore, i),
-          shortCode: 'TestCen1',
+          shortCode: 'TestCen1'
         },
         {
           score: Math.min(question.maxScore, i),
-          shortCode: 'TestCen2',
+          shortCode: 'TestCen2'
         },
         {
           score: Math.min(question.maxScore, i),
-          shortCode: 'TestCen3',
-        },
+          shortCode: 'TestCen3'
+        }
       ],
       comment: `Censor comment to question ${question.displayNumber}`,
       annotations: [
-        { startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` },
+        { startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` }
       ],
-      nonAnswerDetails: { shortCode: 'CEN' },
+      nonAnswerDetails: { shortCode: 'CEN' }
     },
     inspection: {
       score: Math.min(question.maxScore, i),
-      shortCodes: ['TestIns1', 'TestIns2'],
-    },
+      shortCodes: ['TestIns1', 'TestIns2']
+    }
   }
 }

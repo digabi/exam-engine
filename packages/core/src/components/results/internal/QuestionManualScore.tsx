@@ -45,7 +45,7 @@ function renderNormalizedScores(scores: Score, maxScore?: number) {
   const normalizedScores = [
     scores.inspection && normalizeInspectionScore(scores.inspection),
     ...(scores.censoring ? normalizeCensoringScores(scores.censoring) : []),
-    scores.pregrading && normalizePregradingScore(scores.pregrading),
+    scores.pregrading && normalizePregradingScore(scores.pregrading)
   ].filter(Boolean) as NormalizedScore[]
 
   return normalizedScores.map((score, i) => <ScoreRow key={i} {...score} latest={i === 0} maxScore={maxScore} />)
@@ -117,7 +117,7 @@ function normalizeCensoringScores(score: CensoringScore): NormalizedScore[] {
   return score.scores.map((s, i) => ({
     score: s.score,
     shortCode: s.shortCode || '',
-    type: `grading.round.${score.scores.length - i}` as NormalizedScore['type'],
+    type: `grading.round.${score.scores.length - i}` as NormalizedScore['type']
   }))
 }
 
@@ -125,7 +125,7 @@ function normalizeInspectionScore(score: InspectionScore): NormalizedScore {
   return {
     score: score.score,
     shortCode: score.shortCodes ? score.shortCodes.join(', ') : '',
-    type: 'grading.inspection-grading-abbrev',
+    type: 'grading.inspection-grading-abbrev'
   }
 }
 

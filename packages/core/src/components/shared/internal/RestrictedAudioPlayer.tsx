@@ -13,7 +13,7 @@ function RestrictedAudioPlayer({
   restrictedAudioId,
   duration,
   times,
-  labelId,
+  labelId
 }: {
   src: string
   restrictedAudioId: RestrictedAudioId
@@ -42,7 +42,7 @@ function RestrictedAudioPlayer({
     >
       <button
         className={classNames('restricted-audio-player__play e-column e-column--narrow', {
-          'restricted-audio-player__play--playing': playing,
+          'restricted-audio-player__play--playing': playing
         })}
         disabled={disabled}
         onClick={() => stopped && dispatch(playAudio({ src, restrictedAudioId, duration }))}

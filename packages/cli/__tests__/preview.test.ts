@@ -9,11 +9,11 @@ describe('ee preview', () => {
   let output = ''
   beforeAll(
     () =>
-      new Promise<void>((resolve) => {
+      new Promise<void>(resolve => {
         const ee = exec('DISABLE_BROWSER=true yarn ee preview packages/exams/SC/SC.xml', {
           encoding: 'utf8',
           cwd,
-          signal,
+          signal
         })
         ee.stdout?.on('data', (chunk: string) => {
           output += chunk

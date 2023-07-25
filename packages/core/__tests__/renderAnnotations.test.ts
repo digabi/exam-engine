@@ -11,8 +11,8 @@ describe('renderAnnotations()', () => {
           {
             startIndex: 0,
             length: 5,
-            message: 'foo',
-          },
+            message: 'foo'
+          }
         ],
         []
       )
@@ -25,7 +25,7 @@ describe('renderAnnotations()', () => {
         'Lorem ipsum dolor sit amet',
         [
           { startIndex: 0, length: 5, message: 'foo' },
-          { startIndex: 5, length: 5, message: 'bar' },
+          { startIndex: 5, length: 5, message: 'bar' }
         ],
         []
       )
@@ -38,7 +38,7 @@ describe('renderAnnotations()', () => {
         'Lorem ipsum dolor sit amet',
         [
           { startIndex: 0, length: 5, message: 'foo' },
-          { startIndex: 10, length: 5, message: 'bar' },
+          { startIndex: 10, length: 5, message: 'bar' }
         ],
         []
       )
@@ -63,8 +63,8 @@ describe('renderAnnotations()', () => {
           {
             startIndex: 0,
             length: 10,
-            message: 'foo',
-          },
+            message: 'foo'
+          }
         ],
         []
       )
@@ -79,8 +79,8 @@ describe('renderAnnotations()', () => {
           {
             startIndex: 0,
             length: 5,
-            message: 'foo',
-          },
+            message: 'foo'
+          }
         ],
         []
       )
@@ -99,8 +99,8 @@ describe('renderAnnotations()', () => {
             x: 0.25,
             y: 0.25,
             height: 0.5,
-            width: 0.5,
-          },
+            width: 0.5
+          }
         ],
         []
       )
@@ -119,8 +119,8 @@ describe('renderAnnotations()', () => {
             x1: 0.25,
             y1: 0.25,
             x2: 0.75,
-            y2: 0.25,
-          },
+            y2: 0.25
+          }
         ],
         []
       )
@@ -139,7 +139,7 @@ describe('renderAnnotations()', () => {
             x: 0,
             y: 0,
             width: 1,
-            height: 1,
+            height: 1
           },
           {
             type: 'rect',
@@ -148,14 +148,14 @@ describe('renderAnnotations()', () => {
             x: 0,
             y: 0,
             width: 1,
-            height: 1,
+            height: 1
           },
           {
             type: 'text',
             startIndex: 25,
             message: 'Text annotation',
-            length: 5,
-          },
+            length: 5
+          }
         ],
         []
       )
@@ -170,8 +170,8 @@ describe('renderAnnotations()', () => {
           {
             startIndex: 5,
             length: 999,
-            message: 'Boom!',
-          },
+            message: 'Boom!'
+          }
         ],
         []
       )

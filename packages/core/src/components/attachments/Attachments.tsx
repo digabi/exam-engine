@@ -23,7 +23,7 @@ const renderChildNodes = createRenderChildNodes({
   'external-material': AttachmentsExternalMaterial,
   'question-title': AttachmentsQuestionTitle,
   question: AttachmentsQuestion,
-  section: withSectionContext(RenderChildNodes),
+  section: withSectionContext(RenderChildNodes)
 })
 
 const Attachments: React.FunctionComponent<ExamProps> = () => {

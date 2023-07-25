@@ -5,7 +5,7 @@ import {
   GradingInstructions,
   parseExam,
   ExamAnswer,
-  ExamServerAPI,
+  ExamServerAPI
 } from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { ExamType, MasteringResult } from '@digabi/exam-engine-mastering'
@@ -29,14 +29,14 @@ const routes = [
   { name: 'grading-instructions', path: '/:language/:type/grading-instructions' },
   { name: 'exam', path: '/:language/:type/exam' },
   { name: 'results', path: '/:language/:type/results' },
-  { name: 'grading', path: '/:language/:type/grading' },
+  { name: 'grading', path: '/:language/:type/grading' }
 ]
 
 const router = createRouter(routes, {
   defaultRoute: 'exam',
   defaultParams: results
     ? { language: results[0].language, type: results[0].type }
-    : { language: 'fi-FI', type: 'normal' },
+    : { language: 'fi-FI', type: 'normal' }
 })
 router.usePlugin(browserPlugin())
 router.start()
@@ -44,7 +44,7 @@ router.start()
 const resolveAttachment = (filename: string) => `/attachments/${encodeURIComponent(filename)}`
 
 const findExam = (params: RouteParams): MasteringResult => {
-  const result = results.find((r) => r.language === params.language && r.type === params.type)
+  const result = results.find(r => r.language === params.language && r.type === params.type)
   if (!result) {
     throw new Error('Unable to find exam!')
   }
@@ -71,7 +71,7 @@ const ChangeExamVersion: React.FunctionComponent<RouteParams> = ({ language, typ
 
 const SaveTranslation: React.FunctionComponent<{ translation: string; translationFilename: string }> = ({
   translation,
-  translationFilename,
+  translationFilename
 }) => (
   <li className="toolbar__item">
     <button
@@ -149,19 +149,19 @@ const App: React.FunctionComponent<{
     doc,
     attachmentsURL,
     resolveAttachment,
-    answers,
+    answers
   }
   const resultsProps = {
     ...commonProps,
     gradingStructure,
-    scores: [],
+    scores: []
   }
   const examProps = {
     ...commonProps,
     casCountdownDuration: Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || undefined,
     casStatus: 'forbidden' as const,
     restrictedAudioPlaybackStats: [],
-    examServerApi,
+    examServerApi
   }
 
   return (

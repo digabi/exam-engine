@@ -37,7 +37,7 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
 
 async function getRadioButtonValue(page: Page, questionId: number): Promise<string | undefined> {
   return page
-    .$eval(`.e-radio-button[name="${questionId}"]:checked`, (e) => (e as HTMLInputElement).value)
+    .$eval(`.e-radio-button[name="${questionId}"]:checked`, e => (e as HTMLInputElement).value)
     .catch(() => undefined)
 }
 

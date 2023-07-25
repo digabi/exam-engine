@@ -128,7 +128,7 @@ export function createElement<K extends keyof HTMLElementTagNameMap>(
 ): HTMLElementTagNameMap[K] {
   const element = document.createElement(tagName)
   setProperties(element, properties)
-  children.forEach((c) => element.appendChild(typeof c === 'string' ? new Text(c) : c))
+  children.forEach(c => element.appendChild(typeof c === 'string' ? new Text(c) : c))
   return element
 }
 

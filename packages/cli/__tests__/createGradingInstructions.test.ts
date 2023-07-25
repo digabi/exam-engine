@@ -21,21 +21,21 @@ describe('ee create-grading-instructions', () => {
 
   it('creates grading instructions', async () => {
     const gradingInstructions = await fs.readFile(`${exams}/SC/1970-01-01_SC_fi/grading-instructions.html`, {
-      encoding: 'utf8',
+      encoding: 'utf8'
     })
     expect(gradingInstructions.replace(/(width: )(\d+)(px)/g, '$199$3')).toMatchSnapshot()
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi`))).toEqual([
       'assets',
       'attachments',
       'grading-instructions.html',
-      'main-bundle.js',
+      'main-bundle.js'
     ])
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/assets`))).toMatchSnapshot()
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/attachments`))).toMatchSnapshot()
   })
 
   function filterFileList(fileList: Array<string>): Array<string> {
-    return fileList.filter((fileName) => fileName !== '.DS_Store')
+    return fileList.filter(fileName => fileName !== '.DS_Store')
   }
 
   async function removeGeneratedDirectories() {

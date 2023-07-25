@@ -146,10 +146,10 @@ export function generateExam(options: GenerateExamOptions): string {
     'exam-code': options.examCode,
     'day-code': options.dayCode,
     date: options.date,
-    'max-answers': options.maxAnswers,
+    'max-answers': options.maxAnswers
   })
   const examVersions = options.examVersions ?? [{ language: 'fi-FI' }]
-  const languages = examVersions.map((v) => v.language)
+  const languages = examVersions.map(v => v.language)
   const examVersionsElement = createElement(exam, 'exam-versions')
 
   for (const { language, type } of examVersions) {
@@ -171,7 +171,7 @@ function addSection(exam: libxml.Element, languages: Language[], options: Genera
   const section = createElement(exam, 'section', undefined, {
     'max-answers': options.maxAnswers,
     'cas-forbidden': options.casForbidden,
-    type: options.type,
+    type: options.type
   })
 
   createLocalizedElement(section, 'section-title', languages, { 'fi-FI': 'Osan otsikko', 'sv-FI': 'Delens titel' })
@@ -185,7 +185,7 @@ function addQuestion(parent: libxml.Element, languages: Language[], options: Gen
   const question = createElement(parent, 'question', undefined, { 'max-answers': options.maxAnswers })
   createLocalizedElement(question, 'question-title', languages, {
     'fi-FI': 'Kysymyksen otsikko',
-    'sv-FI': 'Uppgiftens titel',
+    'sv-FI': 'Uppgiftens titel'
   })
 
   if ('questions' in options) {
@@ -217,7 +217,7 @@ function addTextAnswer(
   const answer = createElement(question, options.name, undefined, {
     'max-score': options.maxScore,
     'max-length': options.maxLength,
-    type: options.type,
+    type: options.type
   })
 
   if (options.hint) {

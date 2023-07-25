@@ -9,7 +9,7 @@ import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
 
 function ImageOverlay({ element, renderChildNodes }: ExamComponentProps) {
-  const [opacities, setOpacities] = useState<number[]>(() => _.times(element.children.length, (i) => (i === 0 ? 1 : 0)))
+  const [opacities, setOpacities] = useState<number[]>(() => _.times(element.children.length, i => (i === 0 ? 1 : 0)))
   const mkSetOpacity = (index: number) => (opacity: number) => {
     const updatedOpacities = [...opacities]
     updatedOpacities[index] = opacity
@@ -66,7 +66,7 @@ function Slider({ opacity, setOpacity, element, renderChildNodes }: SliderProps)
         max={1}
         step={0.01}
         value={opacity}
-        onChange={(e) => setOpacity(Number(e.target.value))}
+        onChange={e => setOpacity(Number(e.target.value))}
       />
       <FontAwesomeIcon icon={faEye} className="e-mrg-l-1 e-pointer" onClick={() => setOpacity(1)} />
     </div>
@@ -87,13 +87,13 @@ function ImageOverlayImage({ element, absolute, opacity }: ImageOverlayImageProp
     <div
       className={classNames('e-columns e-columns--center-h', { 'e-image-overlay__image-absolute': absolute })}
       style={{
-        opacity: opacity,
+        opacity: opacity
       }}
     >
       <ResponsiveMediaContainer
         {...{
           width,
-          height,
+          height
         }}
       >
         <img className="e-image" src={imgUrl} />

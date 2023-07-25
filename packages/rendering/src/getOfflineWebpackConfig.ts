@@ -20,7 +20,7 @@ export function getOfflineWebpackConfig(
     entry: [require.resolve('@babel/polyfill/noConflict'), path.resolve(__dirname, 'offline.js')],
     output: {
       path: outputDirectory,
-      pathinfo: false,
+      pathinfo: false
     },
     module: {
       rules: [
@@ -42,22 +42,22 @@ export function getOfflineWebpackConfig(
                       firefox: '78',
                       edge: '79',
                       safari: '13',
-                      ios: '13',
-                    },
-                  },
-                ],
-              ],
-            },
-          },
-        },
-      ],
+                      ios: '13'
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      ]
     },
     plugins: [
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(mode),
         'process.env.EXAM': JSON.stringify(result.xml),
         'process.env.EXAM_LANGUAGE': JSON.stringify(result.language),
-        'process.env.MEDIA_VERSION': JSON.stringify(options.mediaVersion),
+        'process.env.MEDIA_VERSION': JSON.stringify(options.mediaVersion)
       }),
       new CssMinimizerPlugin(),
       ...(options.type === 'offline'
@@ -67,7 +67,7 @@ export function getOfflineWebpackConfig(
               language: result.language,
               template: path.resolve(__dirname, '../public/offline.html'),
               title: result.title!,
-              backgroundColor: '#e0f4fe',
+              backgroundColor: '#e0f4fe'
             }),
             new HtmlWebpackPlugin({
               filename: 'attachments/index.html',
@@ -75,8 +75,8 @@ export function getOfflineWebpackConfig(
               template: path.resolve(__dirname, '../public/offline.html'),
               title: result.title!,
               backgroundColor: '#f0f0f0',
-              publicPath: '../',
-            }),
+              publicPath: '../'
+            })
           ]
         : [
             new HtmlWebpackPlugin({
@@ -85,10 +85,10 @@ export function getOfflineWebpackConfig(
               template: path.resolve(__dirname, '../public/offline.html'),
               title: result.title!,
               backgroundColor: '#e0f4fe',
-              publicPath: './',
-            }),
+              publicPath: './'
+            })
           ]),
-      new HTMLInlineCSSWebpackPlugin(),
-    ],
+      new HTMLInlineCSSWebpackPlugin()
+    ]
   })
 }

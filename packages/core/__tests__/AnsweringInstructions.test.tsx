@@ -18,13 +18,13 @@ describe('<AnsweringInstructions />', () => {
       expectRendering({
         maxAnswers: 1,
         elementType: 'question',
-        childQuestions: mkQuestions(range(1, 10, '1.')),
+        childQuestions: mkQuestions(range(1, 10, '1.'))
       })
 
       expectRendering({
         maxAnswers: 5,
         elementType: 'question',
-        childQuestions: mkQuestions(range(1, 10, '1.')),
+        childQuestions: mkQuestions(range(1, 10, '1.'))
       })
     })
 
@@ -32,7 +32,7 @@ describe('<AnsweringInstructions />', () => {
       expectRendering({
         maxAnswers: 1,
         elementType: 'question',
-        childQuestions: mkQuestions(range(1, 2, '1.')),
+        childQuestions: mkQuestions(range(1, 2, '1.'))
       })
     })
 
@@ -40,7 +40,7 @@ describe('<AnsweringInstructions />', () => {
       expectRendering({
         maxAnswers: 11,
         elementType: 'question',
-        childQuestions: mkQuestions(range(1, 12, '1.')),
+        childQuestions: mkQuestions(range(1, 12, '1.'))
       })
     })
   })
@@ -50,13 +50,13 @@ describe('<AnsweringInstructions />', () => {
       expectRendering({
         maxAnswers: 1,
         elementType: 'section',
-        childQuestions: mkQuestions(range(1, 10)),
+        childQuestions: mkQuestions(range(1, 10))
       })
 
       expectRendering({
         maxAnswers: 5,
         elementType: 'section',
-        childQuestions: mkQuestions(range(1, 10)),
+        childQuestions: mkQuestions(range(1, 10))
       })
     })
 
@@ -64,7 +64,7 @@ describe('<AnsweringInstructions />', () => {
       expectRendering({
         maxAnswers: 1,
         elementType: 'section',
-        childQuestions: mkQuestions(range(1, 2)),
+        childQuestions: mkQuestions(range(1, 2))
       })
     })
 
@@ -73,19 +73,19 @@ describe('<AnsweringInstructions />', () => {
         minAnswers: 2,
         maxAnswers: 5,
         elementType: 'section',
-        childQuestions: mkQuestions(range(1, 12)),
+        childQuestions: mkQuestions(range(1, 12))
       })
 
       expectRendering({
         maxAnswers: 11,
         elementType: 'section',
-        childQuestions: mkQuestions(range(1, 12)),
+        childQuestions: mkQuestions(range(1, 12))
       })
     })
   })
 
   function range(start: number, end: number, prefix = ''): string[] {
-    return _.range(start, end + 1).map((n) => `${prefix}${n}`)
+    return _.range(start, end + 1).map(n => `${prefix}${n}`)
   }
 
   function expectRendering(props: AnsweringInstructionProps) {
@@ -98,7 +98,7 @@ describe('<AnsweringInstructions />', () => {
   }
 
   function mkQuestions(displayNumbers: string[]): Element[] {
-    return displayNumbers.map((displayNumber) => {
+    return displayNumbers.map(displayNumber => {
       const question = document.createElement('question')
       question.setAttribute('display-number', displayNumber)
       return question

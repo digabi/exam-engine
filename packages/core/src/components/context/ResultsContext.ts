@@ -8,7 +8,7 @@ import {
   ExamAnswer,
   GradingStructure,
   QuestionId,
-  Score,
+  Score
 } from '../../index'
 import { withContext } from './withContext'
 import { ResultsProps } from '../results/Results'
@@ -37,7 +37,7 @@ export const withResultsContext = withContext<ResultsContext, ResultsProps>(
       scores,
       totalScore,
       gradingText,
-      singleGrading,
+      singleGrading
     }
   }
 )
@@ -46,7 +46,7 @@ export function findMultiChoiceFromGradingStructure(
   gradingStructure: GradingStructure,
   id: number
 ): ChoiceGroupChoice | undefined {
-  const choiceGroups = gradingStructure.questions.filter((v) => v.type === 'choicegroup')
+  const choiceGroups = gradingStructure.questions.filter(v => v.type === 'choicegroup')
 
   for (let i = 0, length = choiceGroups.length; i < length; i++) {
     const choiceGroup = choiceGroups[i] as ChoiceGroupQuestion
@@ -60,7 +60,7 @@ export function findMultiChoiceFromGradingStructure(
 }
 
 export function findScore(scores: Score[], questionId: number): Score | undefined {
-  return scores.find((a) => a.questionId === questionId)
+  return scores.find(a => a.questionId === questionId)
 }
 
 export function calculateQuestionsTotalSumScore(
@@ -70,7 +70,7 @@ export function calculateQuestionsTotalSumScore(
   answersByQuestionId: Record<QuestionId, ExamAnswer>
 ): number {
   return _.sum(
-    topLevelQuestions.map((question) =>
+    topLevelQuestions.map(question =>
       calculateQuestionSumScore(question, gradingStructure, scores, answersByQuestionId)
     )
   )
@@ -84,7 +84,7 @@ export function calculateQuestionSumScore(
 ): number {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
     const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)
-    return choice ? choice.options.find((o) => o.id === Number(scoredAnswer.value))!.score : 0
+    return choice ? choice.options.find(o => o.id === Number(scoredAnswer.value))!.score : 0
   }
 
   const textQuestionScore = (questionId: number) => {
@@ -95,7 +95,7 @@ export function calculateQuestionSumScore(
   }
 
   const sumScore = _.sum(
-    findChildrenAnswers(questionElement).map((answer) => {
+    findChildrenAnswers(questionElement).map(answer => {
       const questionId = getNumericAttribute(answer, 'question-id')!
       const scoredAnswer = answersById[questionId]
       if (!scoredAnswer) {

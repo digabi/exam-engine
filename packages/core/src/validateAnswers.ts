@@ -44,8 +44,8 @@ function validateAnswerLength(
                 {
                   type: 'AnswerTooLong',
                   displayNumber: element.attributes.displayNumber,
-                  characterCount: maybeAnswer.characterCount,
-                },
+                  characterCount: maybeAnswer.characterCount
+                }
               ]
             : errors
         }
@@ -72,7 +72,7 @@ function validateExtraAnswers(
       case 'section':
       case 'question': {
         const children = element.childNodes.map(go)
-        const childrenWithAnswers = children.filter((v) => v.answerCount > 0)
+        const childrenWithAnswers = children.filter(v => v.answerCount > 0)
         const maxAnswers = element.attributes.maxAnswers ?? Infinity
         // Currently, min-answers exists only at section level.
         const minAnswers = element.name === 'section' ? element.attributes.minAnswers : undefined
@@ -83,7 +83,7 @@ function validateExtraAnswers(
           element.name === 'exam'
             ? childrenWithAnswers.reduce((acc, section) => acc + section.answerCount, 0)
             : childrenWithAnswers.length
-        const childExtraAnswers = _.flatMap(children, (v) => v.extraAnswers)
+        const childExtraAnswers = _.flatMap(children, v => v.extraAnswers)
         // If there are extra answers on the current level, we prepend them to
         // the extra answers array, so it is ordered naturally in document
         // order.
@@ -94,11 +94,11 @@ function validateExtraAnswers(
                   type: 'ExtraAnswer',
                   elementType: element.name,
                   displayNumber,
-                  childQuestions: children.map((v) => v.displayNumber),
+                  childQuestions: children.map(v => v.displayNumber),
                   maxAnswers,
-                  minAnswers,
+                  minAnswers
                 } as ExtraAnswer,
-                ...childExtraAnswers,
+                ...childExtraAnswers
               ]
             : childExtraAnswers
 
@@ -124,7 +124,7 @@ export function validateAnswers(
   examStructure: RootElement,
   answersById: Record<QuestionId, ExamAnswer>
 ): ValidationError[] {
-  return _.flatMap([validateAnswerLength, validateExtraAnswers], (validationFn) =>
+  return _.flatMap([validateAnswerLength, validateExtraAnswers], validationFn =>
     validationFn(examStructure, answersById)
   )
 }

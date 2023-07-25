@@ -16,11 +16,11 @@ void yargs
   .command(
     'new <directory>',
     'Create a new exam',
-    (argv) => {
+    argv => {
       argv
         .positional('directory', {
           description: 'The directory for the new exam',
-          type: 'string',
+          type: 'string'
         })
         .demandOption('directory')
     },
@@ -29,12 +29,12 @@ void yargs
   .command(
     ['preview [exam] [options]', 'start'],
     'Preview an exam',
-    (argv) => {
+    argv => {
       addExamArgs(argv)
       argv.option('port', {
         alias: 'p',
         description: 'The HTTP port to use',
-        type: 'number',
+        type: 'number'
       })
     },
     runCommand('./commands/preview')
@@ -48,12 +48,12 @@ void yargs
   .command(
     'create-offline [exam] [options]',
     'Create a standalone offline version of the exam.',
-    (argv) => {
+    argv => {
       addExamAndOutdirArgs(argv)
       argv.option('media', {
         description:
           'Create a media version of the exam. This will encode video files as x264 and audio files as mp3 and not remove hidden references from the exam.',
-        type: 'boolean',
+        type: 'boolean'
       })
     },
     runCommand('./commands/create-offline')
@@ -61,7 +61,7 @@ void yargs
   .command(
     'create-grading-instructions [exam] [options]',
     'Create a grading instructions of the exam.',
-    (argv) => {
+    argv => {
       addExamAndOutdirArgs(argv)
     },
     runCommand('./commands/create-grading-instructions')
@@ -69,42 +69,42 @@ void yargs
   .command(
     'create-mex [exam] [options]',
     'Package the exam to a .mex file that can be imported by Abitti',
-    (argv) => {
+    argv => {
       addExamAndOutdirArgs(argv)
       argv
         .option('private-key', {
           alias: 'k',
           description: 'The private key (in PEM format) used for signing the exam',
-          coerce: resolveFile,
+          coerce: resolveFile
         })
         .option('passphrase', {
           alias: 'p',
-          description: 'The secret passphrase that decrypts the exam',
+          description: 'The secret passphrase that decrypts the exam'
         })
         .option('nsa-scripts', {
           alias: 'n',
           description: 'Monitoring scripts as a .zip file',
-          coerce: resolveFile,
+          coerce: resolveFile
         })
         .option('security-codes', {
           alias: 's',
           description: 'The security codes (in JSON format)',
-          coerce: maybe(resolveFile),
+          coerce: maybe(resolveFile)
         })
         .option('ktp-update', {
           description: 'ktp-update.zip',
-          coerce: maybe(resolveFile),
+          coerce: maybe(resolveFile)
         })
         .option('koe-update', {
           description: 'koe-update.zip',
-          coerce: maybe(resolveFile),
+          coerce: maybe(resolveFile)
         })
         .demandOption(['private-key', 'passphrase', 'nsa-scripts'])
     },
     runCommand('./commands/create-mex')
   )
   .command('migrate [exam]', 'Convert an exam to the latest schema.', addExamArgs, runCommand('./commands/migrate'))
-  .check((argv) => {
+  .check(argv => {
     if (typeof argv.exam === 'string') {
       accessSync(argv.exam)
     }
@@ -118,7 +118,7 @@ function addExamArgs(yargv: yargs.Argv) {
   yargv.positional('exam', {
     description: 'The path to an exam XML file or the directory containing it.',
     default: process.cwd(),
-    coerce: resolveExam,
+    coerce: resolveExam
   })
 }
 
@@ -127,7 +127,7 @@ function addExamAndOutdirArgs(argv: yargs.Argv) {
   argv.option('outdir', {
     alias: 'o',
     description: 'The output directory',
-    coerce: maybe(resolveFile),
+    coerce: maybe(resolveFile)
   })
 }
 

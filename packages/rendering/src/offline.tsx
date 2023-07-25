@@ -33,7 +33,7 @@ render(
       examServerApi,
       language,
       resolveAttachment,
-      restrictedAudioPlaybackStats: [],
+      restrictedAudioPlaybackStats: []
     }}
   />,
   document.getElementById('app')

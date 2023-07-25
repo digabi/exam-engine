@@ -24,7 +24,7 @@ export function migrateFrom02To03(doc: Document) {
     if (childNodes.length) {
       const name = element.name()
       const title = element.node(`${name}-title`).namespace(ns.e)
-      childNodes.forEach((node) => title.addChild(node))
+      childNodes.forEach(node => title.addChild(node))
     }
   }
 

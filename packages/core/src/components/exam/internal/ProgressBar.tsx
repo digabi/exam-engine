@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 const ProgressBar: React.FunctionComponent<{ duration: number; durationRemaining: number; className?: string }> = ({
   duration,
   durationRemaining,
-  className,
+  className
 }) => {
   const progressBarRef = useRef<HTMLDivElement>(null)
   const [animating, setAnimating] = useState(false)

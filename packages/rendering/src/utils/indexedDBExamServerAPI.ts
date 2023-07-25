@@ -11,7 +11,7 @@ export default function indexedDBExamServerAPI(
     constructor() {
       super('exam')
       this.version(1).stores({
-        answer: '[examUuid+questionId], examUuid',
+        answer: '[examUuid+questionId], examUuid'
       })
     }
   })()
@@ -34,9 +34,9 @@ export default function indexedDBExamServerAPI(
   document.body.appendChild(audioPlayer)
 
   const examServerApi: ExamServerAPI = {
-    setCasStatus: (casStatus) => Promise.resolve(casStatus),
+    setCasStatus: casStatus => Promise.resolve(casStatus),
     getAnswers: () => db.answer.where({ examUuid }).toArray(),
-    saveAnswer: async (answer) => {
+    saveAnswer: async answer => {
       await db.answer.put({ ...answer, examUuid })
     },
     async playAudio(src) {
@@ -66,7 +66,7 @@ export default function indexedDBExamServerAPI(
         }
         reader.readAsDataURL(file)
       })
-    },
+    }
   }
 
   return examServerApi

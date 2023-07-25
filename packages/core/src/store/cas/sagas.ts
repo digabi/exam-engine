@@ -17,7 +17,7 @@ export function* performEnableCas(examServerApi: ExamServerAPI, { payload }: Ret
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { cancelled } = yield race({
       finished: call(countdown, payload, updateCasRemaining),
-      cancelled: take('ALLOW_CAS_CANCELLED'),
+      cancelled: take('ALLOW_CAS_CANCELLED')
     })
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

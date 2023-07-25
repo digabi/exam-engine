@@ -104,7 +104,7 @@ const renderChildNodes = createRenderChildNodes({
   'section-title': SectionTitle,
   'text-answer': TextAnswer,
   video: Video,
-  'image-overlay': ImageOverlay,
+  'image-overlay': ImageOverlay
 })
 
 const Exam: React.FunctionComponent<ExamProps> = ({
@@ -112,7 +112,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   casStatus,
   answers,
   restrictedAudioPlaybackStats,
-  examServerApi,
+  examServerApi
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)

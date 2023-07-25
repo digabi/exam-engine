@@ -36,7 +36,7 @@ function TextAnswer({ element }: ExamComponentProps) {
           <AnswerToolbar
             {...{
               answer,
-              element,
+              element
             }}
           />
           {comment && (
@@ -56,7 +56,7 @@ function TextAnswer({ element }: ExamComponentProps) {
             answers,
             score,
             displayNumber,
-            value,
+            value
           }}
         >
           <ResultsExamQuestionManualScore {...{ scores: score, maxScore, displayNumber }} />

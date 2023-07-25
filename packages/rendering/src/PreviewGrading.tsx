@@ -16,25 +16,25 @@ function PreviewGrading() {
   const [language, setLanguage] = useState<Language>('fi-FI')
   const annotationsStorage = useRef<{ [k: string]: { pregrading: Annotation[]; censoring: Annotation[] } }>(
     Object.fromEntries(
-      answerIds.map((id) => [
+      answerIds.map(id => [
         id,
         {
           pregrading: [
             {
               startIndex: 2,
               length: 5,
-              message: '+1',
-            },
+              message: '+1'
+            }
           ],
-          censoring: [],
-        },
+          censoring: []
+        }
       ])
     )
   )
 
   const [annotations, setAnnotations] = useState<{ pregrading: Annotation[]; censoring: Annotation[] }>({
     pregrading: [],
-    censoring: [],
+    censoring: []
   })
 
   useEffect(() => {
@@ -47,13 +47,13 @@ function PreviewGrading() {
     <main className="e-exam">
       <div className="grading-header">
         <div className="grading-navi">
-          {answerIds.map((id) =>
+          {answerIds.map(id =>
             id === answerId ? (
               <span key={id} className="grading-navi-item">
                 {answersByQuestionId[id].displayNumber}
               </span>
             ) : (
-              <a className="grading-navi-item" href="" onClick={(e) => selectQuestion(e, id)} key={id}>
+              <a className="grading-navi-item" href="" onClick={e => selectQuestion(e, id)} key={id}>
                 {answersByQuestionId[id].displayNumber}
               </a>
             )
@@ -63,7 +63,7 @@ function PreviewGrading() {
           <a
             className="grading-navi-item"
             href=""
-            onClick={(e) => {
+            onClick={e => {
               e.preventDefault()
               setLanguage('fi-FI')
             }}
@@ -73,7 +73,7 @@ function PreviewGrading() {
           <a
             className="grading-navi-item"
             href=""
-            onClick={(e) => {
+            onClick={e => {
               e.preventDefault()
               setLanguage('sv-FI')
             }}
@@ -96,7 +96,7 @@ function PreviewGrading() {
               maxLength: 100,
               annotations,
               saveAnnotations,
-              popupTopMargin: 0,
+              popupTopMargin: 0
             }}
           />
         )}

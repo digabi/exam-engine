@@ -19,21 +19,21 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
 
   const selectedOption = findChildElement(
     element,
-    (childElement) => answer?.value === childElement.getAttribute('option-id')
+    childElement => answer?.value === childElement.getAttribute('option-id')
   )
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
   if (selectedOption) {
-    const correctIds = choice.options.filter((o) => o.correct).map((o) => o.id)
+    const correctIds = choice.options.filter(o => o.correct).map(o => o.id)
 
-    const correctOptions = Array.from(element.children).filter((childElement) =>
+    const correctOptions = Array.from(element.children).filter(childElement =>
       correctIds.includes(getNumericAttribute(childElement, 'option-id')!)
     )
 
     const isAnswerCorrect = correctIds.includes(getNumericAttribute(selectedOption, 'option-id') as number)
     const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-    const scoreValue = answer && choice.options.find((option) => option.id === Number(answer.value))!.score
+    const scoreValue = answer && choice.options.find(option => option.id === Number(answer.value))!.score
 
     const maxScore = getNumericAttribute(element, 'max-score')!
 
@@ -44,7 +44,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
         <span
           className={classNames('e-dropdown-answer__answered', {
             'e-dropdown-answer__answered--correct': isAnswerCorrect,
-            'e-dropdown-answer__answered--wrong': !isAnswerCorrect,
+            'e-dropdown-answer__answered--wrong': !isAnswerCorrect
           })}
         >
           <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>

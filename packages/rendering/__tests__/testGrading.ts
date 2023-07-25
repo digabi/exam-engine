@@ -98,13 +98,13 @@ describe('testGrading.ts', () => {
 
   async function expectText(selector: string, text: string) {
     const element = await page.waitForSelector(selector, VISIBLE)
-    const textContent = await element?.evaluate((el) => el.textContent)
+    const textContent = await element?.evaluate(el => el.textContent)
     expect(textContent).toBe(text)
   }
   async function expectAnnotationMessages(expected: string[]) {
     const annotationList = await page.waitForSelector('.e-annotation-list', VISIBLE)
-    const listItems = await annotationList?.evaluate((el) =>
-      Array.from(el.querySelectorAll('li')).map((li) => li.textContent)
+    const listItems = await annotationList?.evaluate(el =>
+      Array.from(el.querySelectorAll('li')).map(li => li.textContent)
     )
     expect(listItems).toEqual(expected)
   }

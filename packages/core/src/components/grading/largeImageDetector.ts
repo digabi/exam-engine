@@ -7,7 +7,7 @@ export async function waitUntilImagesDone() {
     if (remainingImages === 0) {
       return
     } else {
-      await new Promise((resolve) => setTimeout(resolve, 100))
+      await new Promise(resolve => setTimeout(resolve, 100))
     }
   }
   throw Error('Images not loaded')
@@ -15,7 +15,7 @@ export async function waitUntilImagesDone() {
 export function updateLargeImageWarnings(answer: Element) {
   const images = answer?.querySelectorAll('img') || []
   remainingImages = images.length
-  images.forEach((img) => {
+  images.forEach(img => {
     if (img.complete) {
       setTimeout(() => updateImageStatus(img), 0)
     } else {

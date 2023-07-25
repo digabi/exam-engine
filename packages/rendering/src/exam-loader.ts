@@ -6,7 +6,7 @@ import path from 'path'
 import * as uuid from 'uuid'
 
 function stringifyModule(module: any, attachments: Attachment[] = []): string {
-  const imports = attachments.map((attachment) => `require('./attachments/${attachment.filename}')`).join('\n')
+  const imports = attachments.map(attachment => `require('./attachments/${attachment.filename}')`).join('\n')
   return `${imports}\nmodule.exports = ${JSON.stringify(module)}`
 }
 
@@ -26,10 +26,10 @@ export default async function examLoader(this: any, source: string): Promise<voi
     const module = { original: source, results }
 
     const attachments = _.chain(results)
-      .flatMap((r) => r.attachments)
+      .flatMap(r => r.attachments)
       .uniqWith(_.isEqual)
       .value()
-    await Promise.all(attachments.map((attachment) => fs.access(resolveAttachment(attachment.filename))))
+    await Promise.all(attachments.map(attachment => fs.access(resolveAttachment(attachment.filename))))
 
     callback(null, stringifyModule(module))
   } catch (err) {

@@ -43,7 +43,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
       maxScore: getNumericAttribute(root, 'max-score'),
       sections: queryAll(root, 'section'),
       resolveAttachment,
-      root,
+      root
     }
   })(Component)
 }

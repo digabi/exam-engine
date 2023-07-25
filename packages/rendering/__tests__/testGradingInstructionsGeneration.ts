@@ -11,9 +11,9 @@ describe('testGradingInstructionsGeneration.ts - grading instructions generation
   let gradingInstructionHtmlFile: string
 
   beforeAll(async () => {
-    const tmpdir = await tmp.dir().then((r) => r.path)
+    const tmpdir = await tmp.dir().then(r => r.path)
     const [outputDirectory] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir, {
-      type: 'grading-instructions',
+      type: 'grading-instructions'
     })
     gradingInstructionHtmlFile = path.resolve(outputDirectory, 'grading-instructions.html')
     page = await createPage()

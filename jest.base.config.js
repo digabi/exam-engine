@@ -5,6 +5,6 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)$': ['@swc-node/jest'],
     '/packages/core/dist': ['@swc-node/jest'],
-    '/node_modules/rich-text-editor': ['@swc-node/jest'],
-  },
+    '/node_modules/rich-text-editor': ['@swc-node/jest']
+  }
 }

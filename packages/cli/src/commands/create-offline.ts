@@ -6,7 +6,7 @@ export default async function createOffline({
   exam,
   outdir = path.dirname(exam),
   media,
-  spinner,
+  spinner
 }: {
   exam: string
   outdir?: string

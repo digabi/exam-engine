@@ -60,7 +60,7 @@ const renderChildNodes = createRenderChildNodes({
   'section-title': ExamSectionTitle,
   'text-answer': TextAnswer,
   'scored-text-answer': ScoredTextAnswer,
-  'scored-text-answers': RenderChildNodes,
+  'scored-text-answers': RenderChildNodes
 })
 
 const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {

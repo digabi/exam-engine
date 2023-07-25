@@ -23,11 +23,11 @@ import { ns } from '../mastering/schema'
  * ```
  * */
 export function migrateFrom01To02(doc: Document) {
-  doc.find<Element>('./e:languages', ns).forEach((languages) => {
+  doc.find<Element>('./e:languages', ns).forEach(languages => {
     languages
       .name('exam-versions')
       .find<Element>('./e:language', ns)
-      .forEach((language) => {
+      .forEach(language => {
         language.name('exam-version').attr('lang', language.text()).text('')
       })
   })

@@ -16,17 +16,17 @@ beforeAll(async () => {
       {
         questions: [
           question([textAnswer({ maxLength: 3 })]),
-          question({ questions: [question([textAnswer({ maxLength: 3 })]), question([textAnswer()])] }),
-        ],
+          question({ questions: [question([textAnswer({ maxLength: 3 })]), question([textAnswer()])] })
+        ]
       },
       {
         maxAnswers: 1,
         questions: [
           question([textAnswer()]),
-          question({ maxAnswers: 1, questions: [question([textAnswer()]), question([textAnswer()])] }),
-        ],
-      },
-    ],
+          question({ maxAnswers: 1, questions: [question([textAnswer()]), question([textAnswer()])] })
+        ]
+      }
+    ]
   })
   const [masteringResult] = await masterExam(
     exam,
@@ -45,8 +45,8 @@ describe('Answer length validation', () => {
       {
         displayNumber: '1',
         type: 'AnswerTooLong',
-        characterCount: 8,
-      },
+        characterCount: 8
+      }
     ])
   })
   it('returns multiple errors if multiple answers are too long', () => {
@@ -54,13 +54,13 @@ describe('Answer length validation', () => {
       {
         displayNumber: '1',
         type: 'AnswerTooLong',
-        characterCount: 8,
+        characterCount: 8
       },
       {
         displayNumber: '2.1',
         type: 'AnswerTooLong',
-        characterCount: 8,
-      },
+        characterCount: 8
+      }
     ])
   })
 
@@ -100,7 +100,7 @@ describe('Extra answers validation', () => {
       ['1', '4.2'],
       ['2.1', '4.2'],
       ['2.2', '4.2'],
-      ['2.1', '2.2', '4.2'],
+      ['2.1', '2.2', '4.2']
     ]
     const invalidAnswerCombinations = _.differenceWith(allAnswerCombinations, validAnswerCombinations, _.isEqual)
 
@@ -121,8 +121,8 @@ describe('Extra answers validation', () => {
         maxAnswers: 1,
         minAnswers: undefined,
         elementType: 'question',
-        type: 'ExtraAnswer',
-      },
+        type: 'ExtraAnswer'
+      }
     ])
   })
 
@@ -134,8 +134,8 @@ describe('Extra answers validation', () => {
         maxAnswers: 1,
         minAnswers: 0,
         elementType: 'section',
-        type: 'ExtraAnswer',
-      },
+        type: 'ExtraAnswer'
+      }
     ])
   })
 
@@ -147,8 +147,8 @@ describe('Extra answers validation', () => {
         maxAnswers: 2,
         minAnswers: undefined,
         elementType: 'exam',
-        type: 'ExtraAnswer',
-      },
+        type: 'ExtraAnswer'
+      }
     ])
   })
 
@@ -160,7 +160,7 @@ describe('Extra answers validation', () => {
         maxAnswers: 2,
         minAnswers: undefined,
         elementType: 'exam',
-        type: 'ExtraAnswer',
+        type: 'ExtraAnswer'
       },
       {
         childQuestions: ['3', '4'],
@@ -168,8 +168,8 @@ describe('Extra answers validation', () => {
         maxAnswers: 1,
         minAnswers: 0,
         elementType: 'section',
-        type: 'ExtraAnswer',
-      },
+        type: 'ExtraAnswer'
+      }
     ])
   })
 
@@ -181,7 +181,7 @@ describe('Extra answers validation', () => {
         maxAnswers: 2,
         minAnswers: undefined,
         elementType: 'exam',
-        type: 'ExtraAnswer',
+        type: 'ExtraAnswer'
       },
       {
         childQuestions: ['3', '4'],
@@ -189,7 +189,7 @@ describe('Extra answers validation', () => {
         maxAnswers: 1,
         minAnswers: 0,
         elementType: 'section',
-        type: 'ExtraAnswer',
+        type: 'ExtraAnswer'
       },
       {
         childQuestions: ['4.1', '4.2'],
@@ -197,8 +197,8 @@ describe('Extra answers validation', () => {
         maxAnswers: 1,
         minAnswers: undefined,
         elementType: 'question',
-        type: 'ExtraAnswer',
-      },
+        type: 'ExtraAnswer'
+      }
     ])
   })
 })
@@ -208,13 +208,13 @@ const answerQuestions = (...displayNumbers: string[]): Record<number, ExamAnswer
 
 const answerQuestionsWithText = (text: string, ...displayNumbers: string[]): Record<number, ExamAnswer> => {
   const findQuestionId = (displayNumber: string) =>
-    gradingStructure.questions.find((q) => q.displayNumber === displayNumber)!.id
+    gradingStructure.questions.find(q => q.displayNumber === displayNumber)!.id
 
   const createAnswer = (questionId: number): ExamAnswer => ({
     questionId,
     type: 'text',
     value: text,
-    characterCount: text.length,
+    characterCount: text.length
   })
 
   const questionIds = displayNumbers.map(findQuestionId)
@@ -224,4 +224,4 @@ const answerQuestionsWithText = (text: string, ...displayNumbers: string[]): Rec
 }
 
 const subsets = <T>(array: T[]): T[][] =>
-  array.reduce((subsets, value) => subsets.concat(subsets.map((set) => [...set, value])), [[]] as T[][])
+  array.reduce((subsets, value) => subsets.concat(subsets.map(set => [...set, value])), [[]] as T[][])

@@ -11,7 +11,7 @@ export function renderAnnotations(
   showTitle = true
 ): void {
   const annotations = [...pregradingAnnotations, ...censoringAnnotations]
-  const annotationsWithMessages = annotations.filter((a) => a.message)
+  const annotationsWithMessages = annotations.filter(a => a.message)
 
   for (const [i, annotation] of annotations.entries()) {
     const type = pregradingAnnotations.includes(annotation) ? 'pregrading' : 'censoring'
@@ -92,14 +92,14 @@ export function renderImageAnnotationByImage(
       ...{
         className: classNames('e-annotation e-annotation--shape', {
           'e-annotation--pregrading': type === 'pregrading',
-          'e-annotation--censoring': type === 'censoring',
+          'e-annotation--censoring': type === 'censoring'
         }),
         title,
         'data-list-index': String(listIndex),
-        'data-type': type,
+        'data-type': type
       },
       ...(index && { 'data-index': String(index) }),
-      ...(annotation.message && { 'data-message': annotation.message }),
+      ...(annotation.message && { 'data-message': annotation.message })
     })
 
     updateImageAnnotationMarkSize(mark, annotation)
@@ -215,14 +215,14 @@ function renderTextAnnotation(
       ...{
         className: classNames('e-annotation', {
           'e-annotation--pregrading': type === 'pregrading',
-          'e-annotation--censoring': type === 'censoring',
+          'e-annotation--censoring': type === 'censoring'
         }),
         title: showTitle ? annotation.message : '',
         'data-list-index': String(listIndex),
-        'data-type': type,
+        'data-type': type
       },
       ...(index && { 'data-index': String(index) }),
-      ...(annotation.message && { 'data-message': annotation.message }),
+      ...(annotation.message && { 'data-message': annotation.message })
     })
   }
 
@@ -246,6 +246,6 @@ function createSup(index: number, type: 'text' | 'shape', message: string) {
   return createElement('sup', {
     className: `e-annotation__index e-annotation__index--${type}`,
     'data-content': message.length > messageLengthThreshold ? `${index})` : message,
-    'data-message': message,
+    'data-message': message
   })
 }

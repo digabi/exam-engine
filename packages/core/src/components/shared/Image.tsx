@@ -33,7 +33,7 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           height,
           caption,
           captionId,
-          bordered: hasCaption || queryAncestors(element, 'choice-answer') != null,
+          bordered: hasCaption || queryAncestors(element, 'choice-answer') != null
         }}
       >
         {queryAncestors(element, ['choice-answer', 'hint']) != null ? (

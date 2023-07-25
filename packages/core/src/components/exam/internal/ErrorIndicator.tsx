@@ -10,7 +10,7 @@ import { CommonExamContext } from '../../context/CommonExamContext'
 import { AnswersState } from '../../../store/answers/reducer'
 import classNames from 'classnames'
 
-const ExtraAnswerError: React.FunctionComponent<ExtraAnswer> = (props) => {
+const ExtraAnswerError: React.FunctionComponent<ExtraAnswer> = props => {
   const { t } = useExamTranslation()
   const { displayNumber, elementType } = props
   return (
@@ -33,7 +33,7 @@ const AnswerTooLongError: React.FunctionComponent<AnswerTooLong> = ({ displayNum
 }
 export function ErrorIndicatorForErrors({
   validationErrors,
-  inExam,
+  inExam
 }: {
   validationErrors: ValidationError[]
   inExam: boolean
@@ -50,7 +50,7 @@ export function ErrorIndicatorForErrors({
         <FontAwesomeIcon size="lg" icon={faExclamationTriangle} fixedWidth className="e-mrg-r-1" />
       </div>
       <div className="e-column e-column--gapless">
-        {validationErrors.map((validationError) => {
+        {validationErrors.map(validationError => {
           const key = validationError.type + validationError.displayNumber
           switch (validationError.type) {
             case 'ExtraAnswer':
@@ -77,7 +77,7 @@ const FallbackTitle: React.FunctionComponent<ExtraAnswer> = ({ elementType, disp
     const { root } = useContext(CommonExamContext)
     const section = findChildElement(
       root,
-      (e) => e.localName === 'section' && e.getAttribute('display-number') === displayNumber
+      e => e.localName === 'section' && e.getAttribute('display-number') === displayNumber
     )
     if (section) {
       const sectionTitle = findChildElement(section, 'section-title')

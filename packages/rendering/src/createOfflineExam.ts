@@ -24,7 +24,7 @@ export interface CreateOfflineExamOptions {
 
 const defaultOptions: CreateOfflineExamOptions = {
   mediaVersion: false,
-  type: 'offline',
+  type: 'offline'
 }
 
 export async function createOfflineExam(
@@ -37,9 +37,9 @@ export async function createOfflineExam(
   const source = await fs.readFile(examFile, 'utf-8')
   const examOutputDirectories: string[] = []
   const results = await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
-    removeCorrectAnswers: false,
+    removeCorrectAnswers: false
   })
-  const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then((d) => d.path)
+  const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then(d => d.path)
 
   for (const result of results) {
     const examOutputDirectory = getExamOutputDirectory(result, outputDirectory)
@@ -123,9 +123,9 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[], options: C
         ...(options.type === 'offline'
           ? [
               path.resolve(examOutputDirectory, 'index.html'),
-              path.resolve(examOutputDirectory, 'attachments/index.html'),
+              path.resolve(examOutputDirectory, 'attachments/index.html')
             ]
-          : [path.resolve(examOutputDirectory, 'grading-instructions.html')]),
+          : [path.resolve(examOutputDirectory, 'grading-instructions.html')])
       ]) {
         await page.goto(`file://${htmlFile}`)
         await page.waitForSelector('.e-exam')
@@ -137,10 +137,10 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[], options: C
           }
           // Remove rich-text-editor injected styles
           Array.from(document.head.querySelectorAll(':scope > style'))
-            .filter((e) => !e.textContent!.includes('NotoSans'))
-            .forEach((e) => e.remove())
+            .filter(e => !e.textContent!.includes('NotoSans'))
+            .forEach(e => e.remove())
           // Remove rich-text-editor injected HTML.
-          document.body.querySelectorAll(':scope > :not(#app)').forEach((e) => e.remove())
+          document.body.querySelectorAll(':scope > :not(#app)').forEach(e => e.remove())
         })
         const prerenderedContent = await page.content()
         await fs.writeFile(htmlFile, prerenderedContent, 'utf-8')

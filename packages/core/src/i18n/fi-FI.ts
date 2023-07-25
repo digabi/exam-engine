@@ -27,16 +27,16 @@ export const fi_FI = {
   'audio-errors': {
     'already-accessed': 'Olet jo toistanut tämän äänitteen. Päivitä sivu.',
     'already-playing': 'Kuuntele äänite ensin loppuun.',
-    'other-error': 'Äänitteen toistaminen epäonnistui, pyydä apua valvojalta.',
+    'other-error': 'Äänitteen toistaminen epäonnistui, pyydä apua valvojalta.'
   },
   'audio-test': {
     instructions: 'Koe sisältää kuullunymmärtämisen tehtäviä.',
     play: 'Testaa äänitteiden kuuluvuus',
-    volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.',
+    volume: 'Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.'
   },
   'dropdown-answer': {
     label: 'Valitse parhaiten sopiva vaihtoehto.',
-    clear: 'Poista valinta.',
+    clear: 'Poista valinta.'
   },
   grading: {
     'pregrading-annotations': 'Alustavan arvostelun merkinnät (opettaja)',
@@ -46,7 +46,7 @@ export const fi_FI = {
     'round.1': '1.s',
     'round.2': '2.s',
     'round.3': '3.s',
-    annotate: 'Merkitse',
+    annotate: 'Merkitse'
   },
   references: {
     heading: 'Lähteet',
@@ -54,20 +54,20 @@ export const fi_FI = {
     date: 'Julkaistu:',
     'reference-date': 'Viitattu:',
     translator: 'Käännös:',
-    'modified-by': 'Muokkaus:',
+    'modified-by': 'Muokkaus:'
   },
   cas: {
     forbidden: {
       infoText: 'Saat estetyt laskinohjelmat käyttöön palautettuasi A-osan.',
-      buttonText: 'Palauta A-osa',
+      buttonText: 'Palauta A-osa'
     },
     allowing: {
       infoText: 'A-osan vastaukset lukitaan. Saat estetyt laskinohjelmat käyttöösi hetken kuluttua.',
-      cancel: 'Peruuta ({{count}} s)',
+      cancel: 'Peruuta ({{count}} s)'
     },
     allowed: {
-      infoText: 'A-osa palautettu',
-    },
+      infoText: 'A-osa palautettu'
+    }
   },
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
@@ -135,7 +135,7 @@ export const fi_FI = {
     'toc-section_*_10_10': 'Vastaa kymmeneen tehtävään.',
     'toc-section_1_*_1': 'Vastaa tehtävään {{questions, range}}.',
     'toc-section_2_*_1': 'Vastaa joko tehtävään {{questions, first}} tai {{questions, last}}.',
-    'toc-section_*_*_*': 'Vastaa {{answerCount, range}} tehtävään.',
+    'toc-section_*_*_*': 'Vastaa {{answerCount, range}} tehtävään.'
   },
   'answer-errors': {
     'screenshot-too-big':
@@ -143,11 +143,11 @@ export const fi_FI = {
     'screenshot-byte-limit-reached':
       'Kokeesi kuvakaappauksille varattu tila on täyttynyt. (Voit viitata aineistokuviin suoraan ilman kuvakaappausta.)',
     'screenshot-upload-failed': 'Kuvan liittäminen ei onnistunut. Kokeile uudestaan.',
-    'answer-too-long': 'Vastaus on liian pitkä.',
+    'answer-too-long': 'Vastaus on liian pitkä.'
   },
   'screen-reader': {
     'answer-begin': '[Vastaus alkaa]',
     'answer-end': '[Vastaus päättyy]',
-    'correct-answer': '[Hyväksytty vastaus]',
-  },
+    'correct-answer': '[Hyväksytty vastaus]'
+  }
 }

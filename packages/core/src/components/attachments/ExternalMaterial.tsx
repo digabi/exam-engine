@@ -32,7 +32,7 @@ const renderChildNodes = createRenderChildNodes({
   'question-number': QuestionNumber,
   translation: ExamTranslation,
   reference: surround(Reference, 'div', { className: 'e-mrg-y-2 e-font-size-s' }),
-  'image-overlay': ImageOverlay,
+  'image-overlay': ImageOverlay
 })
 
 interface AttachmentsExternalMaterialProps extends ExamComponentProps {

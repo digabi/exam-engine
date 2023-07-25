@@ -23,14 +23,14 @@ const ChoiceAnswerOption = ({
   questionId,
   onSelect,
   direction,
-  value,
+  value
 }: ChoiceAnswerOptionProps) => {
   const className = element.getAttribute('class')
 
   const content = (
     <div
       className={classNames('e-choice-answer-option e-column', className, {
-        'e-choice-answer-option--selected': selected,
+        'e-choice-answer-option--selected': selected
       })}
     >
       {renderChildNodes(element)}
@@ -42,7 +42,7 @@ const ChoiceAnswerOption = ({
       <label
         className={classNames('e-columns', {
           'e-columns--inline':
-            query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */,
+            query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */
         })}
       >
         <input
@@ -85,7 +85,7 @@ const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, re
   )
   const dispatch = useDispatch()
   const onSelect = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    (event) => {
+    event => {
       dispatch(saveAnswer({ type: 'choice', questionId, value: event.currentTarget.value, displayNumber }))
     },
     [questionId, displayNumber]
@@ -94,13 +94,13 @@ const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, re
   return (
     <div
       className={classNames('e-choice-answer e-mrg-b-4', className, {
-        'e-columns': direction === 'horizontal',
+        'e-columns': direction === 'horizontal'
       })}
       data-question-id={questionId}
       role="radiogroup"
       aria-labelledby={questionLabelIds}
     >
-      {mapChildElements(element, (childElement) => {
+      {mapChildElements(element, childElement => {
         const optionId = childElement.getAttribute('option-id')!
         const isNoAnswer = childElement.getAttribute('type') === 'no-answer'
         const value = isNoAnswer ? '' : optionId
@@ -116,7 +116,7 @@ const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, re
               key: optionId,
               direction,
               selected,
-              value,
+              value
             }}
           />
         )

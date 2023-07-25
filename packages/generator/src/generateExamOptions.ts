@@ -4,7 +4,7 @@ import {
   GenerateDropdownAnswerOptions,
   GenerateQuestionOptions,
   GenerateScoredTextAnswerOptions,
-  GenerateTextAnswerOptions,
+  GenerateTextAnswerOptions
 } from './generateExam'
 
 /**
@@ -47,7 +47,7 @@ export function textAnswer(options?: Partial<GenerateTextAnswerOptions>): Genera
     name: 'text-answer',
     maxScore: 6,
     type: 'rich-text',
-    ...options,
+    ...options
   }
 }
 
@@ -58,15 +58,15 @@ export function scoredTextAnswer(options?: Partial<GenerateScoredTextAnswerOptio
     acceptedAnswers: [
       {
         text: 'Oikea vaihtoehto',
-        score: 3,
+        score: 3
       },
       // The legacy exam generator expects this to be the correct answer. (ノಠ益ಠ)ノ彡┻━┻
       {
         text: 'lol',
-        score: 3,
-      },
+        score: 3
+      }
     ],
-    ...options,
+    ...options
   }
 }
 
@@ -76,18 +76,18 @@ export function choiceAnswer(options?: Partial<GenerateChoiceAnswerOptions>): Ge
     options: [
       {
         text: 'Oikea vaihtoehto',
-        score: 3,
+        score: 3
       },
       {
         text: 'Väärä vaihtoehto',
-        score: 0,
+        score: 0
       },
       {
         text: 'Väärä vaihtoehto',
-        score: 0,
-      },
+        score: 0
+      }
     ],
-    ...options,
+    ...options
   }
 }
 
@@ -97,17 +97,17 @@ export function dropdownAnswer(options?: Partial<GenerateDropdownAnswerOptions>)
     options: [
       {
         text: 'Oikea vaihtoehto',
-        score: 3,
+        score: 3
       },
       {
         text: 'Väärä vaihtoehto',
-        score: 0,
+        score: 0
       },
       {
         text: 'Väärä vaihtoehto',
-        score: 0,
-      },
+        score: 0
+      }
     ],
-    ...options,
+    ...options
   }
 }

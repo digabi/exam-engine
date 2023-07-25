@@ -16,20 +16,20 @@ export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
   }
   return {
     startIndex: charactersBefore,
-    length,
+    length
   }
 
   function charactersBeforeContainer(rangeContainer: Node, offset: number, answerTextNode: Element) {
     const containerIsTag = rangeContainer === answerTextNode
     const container = containerIsTag ? rangeContainer.childNodes[offset] : rangeContainer
     const offsetInside: number = containerIsTag ? 0 : offset
-    const nodesBeforeContainer = _.takeWhile(answerNodes, (node) => node !== container)
+    const nodesBeforeContainer = _.takeWhile(answerNodes, node => node !== container)
     return offsetInside + _.sum(nodesBeforeContainer.map(toNodeLength))
   }
 }
 
 export function getOverlappingMessages(currentAnnotations: Annotation[], start: number, length: number) {
-  const textAnnotations: TextAnnotation[] = currentAnnotations.filter((a) => a.type === 'text') as TextAnnotation[]
+  const textAnnotations: TextAnnotation[] = currentAnnotations.filter(a => a.type === 'text') as TextAnnotation[]
   return getOverlappingMessagesFromTextAnnotations(textAnnotations, start, length)
 }
 export function getOverlappingMessagesFromTextAnnotations(
@@ -38,7 +38,7 @@ export function getOverlappingMessagesFromTextAnnotations(
   length: number
 ) {
   const parted = getOverlappingAnnotations(currentAnnotations, { startIndex: start, length, message: '' })
-  return _.compact(parted.overlapping.map((anno) => anno.message)).reduceRight((msg, str) => `${str} / ${msg}`, '')
+  return _.compact(parted.overlapping.map(anno => anno.message)).reduceRight((msg, str) => `${str} / ${msg}`, '')
 }
 export function toNodeLength(node: Node) {
   return node.nodeType === Node.TEXT_NODE ? node.textContent?.length : node.nodeName === 'IMG' ? 1 : 0
@@ -119,7 +119,7 @@ export function hasTextSelectedInAnswerText(): boolean {
 export function selectionHasNothingToUnderline(range: Range) {
   const contents = range.cloneContents()
   const hasImages = Array.from(contents.childNodes).some(
-    (x) => x instanceof Element && (x.classList.contains('e-annotation-wrapper') || x.tagName === 'IMG')
+    x => x instanceof Element && (x.classList.contains('e-annotation-wrapper') || x.tagName === 'IMG')
   )
   return contents.textContent?.length === 0 && !hasImages
 }
@@ -130,12 +130,12 @@ export function mergeAnnotation($answerText: Element, newAnnotation: Annotation,
 
   if (parted.overlapping.length > 0) {
     parted.overlapping.push(newAnnotation as TextAnnotation)
-    const mergedStart = _.minBy(parted.overlapping, (range) => range.startIndex)
-    const mergedEnd = _.maxBy(parted.overlapping, (range) => range.startIndex + range.length)
+    const mergedStart = _.minBy(parted.overlapping, range => range.startIndex)
+    const mergedEnd = _.maxBy(parted.overlapping, range => range.startIndex + range.length)
     const mergedRange = {
       startIndex: mergedStart!.startIndex,
       length: mergedEnd!.startIndex + mergedEnd!.length - mergedStart!.startIndex,
-      message: newAnnotation.message,
+      message: newAnnotation.message
     }
     parted.nonOverlapping.push(mergedRange)
   } else {
@@ -143,12 +143,12 @@ export function mergeAnnotation($answerText: Element, newAnnotation: Annotation,
   }
   return _.sortBy(
     parted.nonOverlapping,
-    (a) =>
+    a =>
       a.type === 'line' || a.type === 'rect'
         ? getImageStartIndex(findAttachment($answerText, a.attachmentIndex), $answerText)
         : a.startIndex,
-    (a) => (a.type === 'rect' ? a.y : a.type === 'line' ? a.y1 : undefined),
-    (a) => (a.type === 'rect' ? a.x : a.type === 'line' ? a.x1 : undefined)
+    a => (a.type === 'rect' ? a.y : a.type === 'line' ? a.y1 : undefined),
+    a => (a.type === 'rect' ? a.x : a.type === 'line' ? a.x1 : undefined)
   )
 }
 
@@ -159,7 +159,7 @@ function getOverlappingAnnotations(
   annotations: TextAnnotation[],
   newAnnotation: TextAnnotation
 ): { overlapping: TextAnnotation[]; nonOverlapping: Annotation[] } {
-  const partitioned = _.partition(annotations, (other) => {
+  const partitioned = _.partition(annotations, other => {
     const newEnd = newAnnotation.startIndex + newAnnotation.length
     const otherEnd = other.startIndex + other.length
     return (
@@ -204,7 +204,7 @@ export function annotationFromMousePosition(
         y: Math.min(startY, currentY),
         width: Math.abs(currentX - startX),
         height: Math.abs(currentY - startY),
-        message: '',
+        message: ''
       }
 
     case 'line':
@@ -215,7 +215,7 @@ export function annotationFromMousePosition(
         y1: isHorizontalLine ? startY : Math.min(startY, currentY),
         x2: isVerticalLine ? startX : Math.max(startX, currentX),
         y2: isHorizontalLine ? startY : Math.max(startY, currentY),
-        message: '',
+        message: ''
       }
   }
 }
@@ -224,7 +224,7 @@ export function imageAnnotationMouseDownInfo(
   image: HTMLImageElement
 ): NewImageAnnotation {
   const targetAnswerText = image.closest('.e-grading-answer')!
-  const attachmentIndex = Array.from(targetAnswerText.querySelectorAll('img')).findIndex((img) => img === image)
+  const attachmentIndex = Array.from(targetAnswerText.querySelectorAll('img')).findIndex(img => img === image)
   const attachmentWrapper = targetAnswerText.querySelectorAll('.e-annotation-wrapper').item(attachmentIndex)
   const bbox = attachmentWrapper.getBoundingClientRect()
   const clientX = e.clientX

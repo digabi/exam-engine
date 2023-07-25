@@ -10,9 +10,9 @@ const mkAttachmentLinks = (type: 'link' | 'plain'): React.FunctionComponent<Exam
   const AttachmentLinks: React.FunctionComponent<ExamComponentProps> = ({ element }) => {
     const { root, attachmentsURL } = useContext(CommonExamContext)
     const { t } = useExamTranslation()
-    const displayNumbers = mapChildElements(element, (attachmentLink) => {
+    const displayNumbers = mapChildElements(element, attachmentLink => {
       const name = attachmentLink.getAttribute('ref')!
-      const attachment = query(root, (el) => el.localName === 'attachment' && el.getAttribute('name') === name)!
+      const attachment = query(root, el => el.localName === 'attachment' && el.getAttribute('name') === name)!
       return attachment.getAttribute('display-number')!
     })
     const groupedDisplayNumbers = splitWhen(
@@ -23,7 +23,7 @@ const mkAttachmentLinks = (type: 'link' | 'plain'): React.FunctionComponent<Exam
     const isShort = element.getAttribute('type') === 'short'
     const href = url(attachmentsURL, { hash: displayNumbers[0] })
     const displayNumbersString = groupedDisplayNumbers
-      .map((group) => (group.length > 1 ? `${group[0]}–${group[group.length - 1]}` : group[0]))
+      .map(group => (group.length > 1 ? `${group[0]}–${group[group.length - 1]}` : group[0]))
       .join(', ')
 
     const count = groupedDisplayNumbers[0].length
