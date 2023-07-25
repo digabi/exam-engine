@@ -17,7 +17,6 @@
       background: white;
       margin-left: 0;
       overflow-y: auto;
-      pointer-events: none;
 
       .exam-question-title {
         margin-right: 13rem;
@@ -29,8 +28,7 @@
 
       .text-answer-container {
         padding: 2px;
-        overflow-y: scroll;
-        flex: 1;
+        overflow-y: hidden;
         display: flex;
         flex-direction: column;
 
@@ -40,7 +38,7 @@
           line-height: 32px;
           padding: ~'min(4rem, 6vw)' ~'min(6rem, 9vw)';
           font-family: Cambria, Times, 'Times New Roman', serif;
-          overflow-y: hidden;
+          overflow-y: scroll;
         }
       }
     }
@@ -50,9 +48,11 @@
       flex-direction: column;
       flex: 1;
       margin-top: 3rem;
-      margin-left: ~'max(2.5rem, (100vw - 60rem)/2)';
-      margin-right: ~'max(2.5rem, (100vw - 60rem)/2)';
-      pointer-events: all;
+      margin-left: ~'max(2.5rem, (100vw - 55rem)/2)';
+      margin-right: ~'max(2.5rem, (100vw - 55rem)/2)';
+      position: fixed;
+      inset: 0;
+      transition: padding 0.3s 0.05s;
     }
 
     .expand {
@@ -72,8 +72,7 @@
       }
 
       &.close {
-        top: 3rem;
-        right: 3rem;
+        right: 0;
         padding: 0.25rem 1rem;
         display: flex;
         align-items: center;
@@ -127,6 +126,10 @@
 }
 
 .rich-text-editor-focus {
+  .full-screen {
+    padding-top: 3rem;
+  }
+
   &.math-editor-focus .exam-question.expanded {
     padding-top: 9rem;
   }

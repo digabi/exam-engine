@@ -110,9 +110,15 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
               tabIndex={0}
               lang={lang}
               aria-labelledby={labelledBy}
+              id={String(questionId)}
             />
             {!expanded && (
-              <button className="expand open" onClick={() => toggleWriterMode(true)} aria-labelledby="expand-label">
+              <button
+                className="expand open"
+                onClick={() => toggleWriterMode(true)}
+                aria-labelledby="expand-label"
+                aria-owns={String(questionId)}
+              >
                 <div className="label" id="expand-label">
                   Avaa kirjoitusnäkymä
                 </div>
