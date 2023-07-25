@@ -1,6 +1,6 @@
 import { Attachments, Exam, GradingInstructions, ExamAnswer, parseExam } from '@digabi/exam-engine-core'
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import '../public/offline.less'
 import noopExamServerAPI from './utils/noopExamServerAPI'
 
@@ -23,7 +23,8 @@ const Root = isAttachmentsPage
   ? GradingInstructions
   : Exam
 
-render(
+const root = createRoot(document.getElementById('app')!)
+root.render(
   <Root
     {...{
       answers,
@@ -35,6 +36,5 @@ render(
       resolveAttachment,
       restrictedAudioPlaybackStats: []
     }}
-  />,
-  document.getElementById('app')
+  />
 )
