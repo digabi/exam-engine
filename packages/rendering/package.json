@@ -19,7 +19,7 @@
     "babel-loader": "^9.1.2",
     "child-process-promise": "^2.2.1",
     "css-loader": "^5.0.0",
-    "css-minimizer-webpack-plugin": "^1.x",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "dexie": "^3.0.0",
     "ffmpeg-static": "^5.0.0",
     "file-loader": "^6.0.0",
