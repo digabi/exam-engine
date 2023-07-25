@@ -18,7 +18,7 @@ export async function previewExam(examFile: string, options: RenderingOptions = 
   const devServer = config.devServer!
   const webpackDevServer: Server = new Server({ ...devServer, port: options.port ?? 0, host: 'localhost' }, compiler)
   return new Promise((resolve, reject) => {
-    webpackDevServer.startCallback((err) => {
+    webpackDevServer.startCallback(err => {
       if (err) {
         reject(err)
       } else {

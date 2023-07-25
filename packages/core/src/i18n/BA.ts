@@ -8,5 +8,5 @@ export const BA: ExamTranslations = _.pick(sv_FI, [
   'external-material-title',
   'section',
   'references',
-  'toc-heading',
+  'toc-heading'
 ])

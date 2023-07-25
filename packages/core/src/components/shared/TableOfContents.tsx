@@ -42,7 +42,7 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
           <TOCSectionTitle
             {...{
               element: sectionTitle,
-              renderChildNodes,
+              renderChildNodes
             }}
           />
         )}
@@ -71,7 +71,7 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
             <span className="e-column e-column--narrow">
               <a
                 href={url(attachmentsURL, {
-                  hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number'),
+                  hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number')
                 })}
                 target="attachments"
               >
@@ -89,7 +89,7 @@ export const mkTableOfContents = (options: { showAttachmentLinks: boolean; showA
 
   const renderChildNodes = createRenderChildNodes({
     section: withSectionContext(TOCSection),
-    question: withQuestionContext(TOCQuestion),
+    question: withQuestionContext(TOCQuestion)
   })
 
   const TableOfContents: React.FunctionComponent<ExamComponentProps> = () => {

@@ -53,7 +53,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
             saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err: ErrorResponse) => {
               this.handleSaveError(err)
               throw err // Rethrow error so rich-text-editor can handle it.
-            }),
+            })
         },
         this.handleChange
       )

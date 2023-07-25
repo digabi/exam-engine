@@ -15,7 +15,7 @@ import { validateAnswers } from '../validateAnswers'
 const rootReducer = combineReducers({
   answers: answersReducer,
   audio: audioReducer,
-  cas: casReducer,
+  cas: casReducer
 })
 
 function* rootSaga(examServerApi: ExamServerAPI) {
@@ -56,14 +56,14 @@ export function initializeExamStore(
       supportsAnswerHistory: typeof examServerApi.selectAnswerVersion === 'function',
       savedQuestionIds: initialQuestionIds,
       examStructure,
-      validationErrors: validateAnswers(examStructure, answersById),
+      validationErrors: validateAnswers(examStructure, answersById)
     },
     audio: {
       errors: {},
       nowPlaying: null,
-      playbackTimes,
+      playbackTimes
     },
-    cas: { casStatus },
+    cas: { casStatus }
   }
   const sagaMiddleware = createSagaMiddleware()
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access

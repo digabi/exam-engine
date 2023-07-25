@@ -2,7 +2,7 @@ import { ChoiceGroupQuestion, ExamAnswer, GradingStructure, TextQuestion } from 
 import _ from 'lodash'
 
 export function generateAnswers(gradingStructure: GradingStructure): ExamAnswer[] {
-  return _.flatMap(gradingStructure.questions, (question) => {
+  return _.flatMap(gradingStructure.questions, question => {
     switch (question.type) {
       case 'text':
         return generateTextAnswer(question)
@@ -19,8 +19,8 @@ function generateTextAnswer(question: TextQuestion): ExamAnswer[] {
       questionId: question.id,
       type: 'text',
       characterCount: getCharacterCount(value),
-      value,
-    },
+      value
+    }
   ]
 }
 
@@ -30,7 +30,7 @@ function generateChoiceAnswer(question: ChoiceGroupQuestion): ExamAnswer[] {
     return {
       questionId: choice.id,
       type: 'choice',
-      value: String(option.id),
+      value: String(option.id)
     }
   })
 }

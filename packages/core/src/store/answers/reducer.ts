@@ -42,13 +42,13 @@ const initialState: AnswersState = {
   examStructure: {
     name: 'exam',
     attributes: {},
-    childNodes: [],
+    childNodes: []
   },
   focusedQuestionId: null,
   supportsAnswerHistory: false,
   serverQuestionIds: new Set(),
   savedQuestionIds: new Set(),
-  validationErrors: [],
+  validationErrors: []
 }
 
 export default function answersReducer(state: AnswersState = initialState, action: AnswersAction): AnswersState {

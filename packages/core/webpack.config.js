@@ -5,9 +5,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 module.exports = function () {
   const plugins = [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].css'
     }),
-    new CssMinimizerPlugin(),
+    new CssMinimizerPlugin()
   ]
 
   return {
@@ -19,10 +19,10 @@ module.exports = function () {
       filename: 'main-bundle.js',
       library: 'ExamBundle',
       libraryTarget: 'umd',
-      globalObject: 'this',
+      globalObject: 'this'
     },
     resolve: {
-      fallback: { path: false },
+      fallback: { path: false }
     },
     plugins,
     module: {
@@ -38,20 +38,20 @@ module.exports = function () {
               options: {
                 sourceMap: true,
                 lessOptions: {
-                  paths: [path.resolve(__dirname, 'src')],
-                },
-              },
-            },
-          ],
+                  paths: [path.resolve(__dirname, 'src')]
+                }
+              }
+            }
+          ]
         },
         {
           test: /\.(woff|woff2|otf|ttf|eot|svg|png|gif|jpg)$/,
           loader: 'file-loader',
           options: {
-            name: 'assets/[name].[ext]',
-          },
-        },
-      ],
+            name: 'assets/[name].[ext]'
+          }
+        }
+      ]
     },
     stats: 'errors-warnings',
     externals: {
@@ -59,17 +59,17 @@ module.exports = function () {
         root: 'React',
         commonjs2: 'react',
         commonjs: 'react',
-        amd: 'react',
+        amd: 'react'
       },
       'react-dom': {
         root: 'ReactDOM',
         commonjs2: 'react-dom',
         commonjs: 'react-dom',
-        amd: 'react-dom',
-      },
+        amd: 'react-dom'
+      }
     },
     performance: {
-      hints: false,
-    },
+      hints: false
+    }
   }
 }

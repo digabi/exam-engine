@@ -55,7 +55,7 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
         renderWithPrefix('reference-date', 'references.reference-date', AsDate),
         renderWithPrefix('translator', 'references.translator', RenderChildNodes),
         renderWithPrefix('modified-by', 'references.modified-by', RenderChildNodes),
-        renderWith('note', RenderChildNodes),
+        renderWith('note', RenderChildNodes)
       ])}
     </span>
   )

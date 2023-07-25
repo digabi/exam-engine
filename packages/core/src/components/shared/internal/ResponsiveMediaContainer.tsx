@@ -25,7 +25,7 @@ const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainer
   height,
   width,
   caption,
-  captionId,
+  captionId
 }) => {
   const paddingBottom = `${(height / width) * 100}%`
   const maxWidth = width + (bordered ? borderedPaddingAndBorderPx : 0)
@@ -38,13 +38,13 @@ const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainer
         className
       )}
       style={{
-        maxWidth,
+        maxWidth
       }}
     >
       <span
         className="responsive-media-container__inner"
         style={{
-          paddingBottom,
+          paddingBottom
         }}
       >
         {children}

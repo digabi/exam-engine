@@ -9,7 +9,7 @@ export function initPuppeteer(): () => Promise<Page> {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       headless: isInDebugMode ? false : 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
   })
   afterAll(async () => {
@@ -31,7 +31,7 @@ export async function loadExam(page: Page, url: string): Promise<void> {
 }
 
 export async function delay(millis: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, millis))
+  return new Promise(resolve => setTimeout(resolve, millis))
 }
 
 // Normally unused, but very useful for debugging
@@ -41,7 +41,7 @@ export async function halt(page: Page): Promise<void> {
 }
 
 export async function getInnerText(page: Page, selector: string): Promise<string> {
-  return page.$eval(selector, (e) => {
+  return page.$eval(selector, e => {
     if (e instanceof HTMLElement) {
       return e.innerText
     } else {
@@ -51,7 +51,7 @@ export async function getInnerText(page: Page, selector: string): Promise<string
 }
 
 export async function getOuterHtml(page: Page, selector: string): Promise<string> {
-  return page.$eval(selector, (e) => {
+  return page.$eval(selector, e => {
     if (e instanceof HTMLElement) {
       return e.outerHTML
     } else {
@@ -61,7 +61,7 @@ export async function getOuterHtml(page: Page, selector: string): Promise<string
 }
 
 export async function getTextContent(page: Page, selector: string): Promise<string> {
-  return page.$eval(selector, (e) => {
+  return page.$eval(selector, e => {
     if (e instanceof HTMLElement) {
       return e.textContent!.trim()
     } else {
@@ -74,13 +74,13 @@ export async function getPageAndRequestErrors(page: Page, filename: string) {
   const requestErrors: string[] = []
   const pageErrors: Error[] = []
 
-  page.on('requestfailed', (req) => {
+  page.on('requestfailed', req => {
     const errorText = req.failure()!.errorText
     if (errorText !== 'net::ERR_ABORTED') {
       requestErrors.push(req.url())
     }
   })
-  page.on('pageerror', (err) => pageErrors.push(err))
+  page.on('pageerror', err => pageErrors.push(err))
 
   await page.goto(`file://${filename}`, { waitUntil: 'networkidle0' })
   return { requestErrors, pageErrors }

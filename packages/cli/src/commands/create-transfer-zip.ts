@@ -11,7 +11,7 @@ import { examName } from '../utils'
 export default async function createTransferZip({
   exam,
   outdir = path.dirname(exam),
-  spinner,
+  spinner
 }: {
   exam: string
   outdir?: string
@@ -30,7 +30,7 @@ export default async function createTransferZip({
     const language = examVersion.attr('lang')?.value()!
     const localizedXml = localize(xml, language, type)
     const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
-      removeCorrectAnswers: false,
+      removeCorrectAnswers: false
     })
     const typeSuffix = type === 'visually-impaired' ? '_vi' : type === 'hearing-impaired' ? '_hi' : ''
     const outputFilename = path.resolve(outdir, `${examName(exam)}_${language}${typeSuffix}_transfer.zip`)
@@ -42,8 +42,8 @@ export default async function createTransferZip({
     zipFile.addReadStream(attachmentsZipFile.outputStream, 'attachments.zip')
 
     const attachments = _.chain(results)
-      .flatMap((r) => r.attachments)
-      .map((a) => a.filename)
+      .flatMap(r => r.attachments)
+      .map(a => a.filename)
       .uniq()
       .value()
     for (const attachment of attachments) {
@@ -61,13 +61,13 @@ export default async function createTransferZip({
 function localize(xml: string, language: string, type: ExamType): string {
   const doc = parseExam(xml)
 
-  doc.find<Element>('.//e:exam-version', ns).forEach((element) => {
+  doc.find<Element>('.//e:exam-version', ns).forEach(element => {
     if (getAttribute(element, 'lang') !== language || !getAttribute(element, 'exam-type', 'normal')?.includes(type)) {
       element.remove()
     }
   })
 
-  doc.find<Element>('//e:localization', ns).forEach((element) => {
+  doc.find<Element>('//e:localization', ns).forEach(element => {
     if (
       getAttribute(element, 'lang', language) === language &&
       getAttribute(element, 'exam-type', type)?.includes(type)
@@ -80,10 +80,10 @@ function localize(xml: string, language: string, type: ExamType): string {
     element.remove()
   })
 
-  doc.find<Element>(`//e:*[@lang and @lang!='${language}']`, ns).forEach((element) => element.remove())
+  doc.find<Element>(`//e:*[@lang and @lang!='${language}']`, ns).forEach(element => element.remove())
   doc
     .find<Element>(`//e:*[@exam-type and not(contains(@exam-type, '${type}'))]`, ns)
-    .forEach((element) => element.remove())
+    .forEach(element => element.remove())
 
   return doc.toString(false)
 }

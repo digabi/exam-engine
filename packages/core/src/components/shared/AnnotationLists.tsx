@@ -4,7 +4,7 @@ import { useExamTranslation } from '../../i18n'
 export function AnnotationLists({
   pregradingAnnotations,
   censoringAnnotations,
-  singleGrading,
+  singleGrading
 }: {
   pregradingAnnotations: { numbering: string; message: string }[]
   censoringAnnotations: { numbering: string; message: string }[]

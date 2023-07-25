@@ -20,7 +20,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
 
   const examServerAPI: ExamServerAPI = {
     getAnswers: () => Promise.resolve([]),
-    setCasStatus: (casStatus) => Promise.resolve(casStatus),
+    setCasStatus: casStatus => Promise.resolve(casStatus),
     saveAnswer: () => Promise.resolve(),
     saveScreenshot(_, file) {
       return new Promise((resolve, reject) => {
@@ -49,7 +49,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
     },
     async playRestrictedAudio(src) {
       return examServerAPI.playAudio(src)
-    },
+    }
   }
 
   return examServerAPI

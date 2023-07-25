@@ -12,7 +12,7 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
   let attachmentsHtmlFile: string
 
   beforeAll(async () => {
-    const tmpdir = await tmp.dir().then((r) => r.path)
+    const tmpdir = await tmp.dir().then(r => r.path)
     const [outputDirectory] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir)
     examHtmlFile = path.resolve(outputDirectory, 'index.html')
     attachmentsHtmlFile = path.resolve(outputDirectory, 'attachments/index.html')

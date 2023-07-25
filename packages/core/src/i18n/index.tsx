@@ -42,18 +42,18 @@ const examSpecificTranslations = {
   TC,
   VA,
   VC: VA,
-  Z,
+  Z
 }
 
 const resources = {
   'fi-FI': {
     translation: fi_FI,
-    ...examSpecificTranslations,
+    ...examSpecificTranslations
   },
   'sv-FI': {
     translation: sv_FI,
-    ...examSpecificTranslations,
-  },
+    ...examSpecificTranslations
+  }
 }
 
 declare module 'react-i18next' {
@@ -70,7 +70,7 @@ export function initI18n(language: string, examCode?: string, dayCode?: string):
     .use<PostProcessorModule>({
       type: 'postProcessor',
       name: 'lowercase',
-      process: (value, _key, options) => value.toLocaleLowerCase(options.lng),
+      process: (value, _key, options) => value.toLocaleLowerCase(options.lng)
     })
     .createInstance(
       {
@@ -98,8 +98,8 @@ export function initI18n(language: string, examCode?: string, dayCode?: string):
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-return
                 return value
             }
-          },
-        },
+          }
+        }
       },
       _.noop
     )
@@ -142,7 +142,7 @@ function translate(instance: typeof i18n, key: string | string[], options?: TOpt
  */
 function hasTranslation(instance: typeof i18n, namespace: string, key: string | string[]): boolean {
   return Array.isArray(key)
-    ? key.some((k) => instance.getResource(instance.language, namespace, k) != null)
+    ? key.some(k => instance.getResource(instance.language, namespace, k) != null)
     : instance.getResource(instance.language, namespace, key) != null
 }
 

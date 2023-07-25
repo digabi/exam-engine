@@ -42,7 +42,7 @@ const renderIfWithinGradingInstructionContent = renderIf(
       'question-grading-instruction',
       'hint',
       'question-title',
-      'question-instruction',
+      'question-instruction'
     ]) != null
 )
 
@@ -76,7 +76,7 @@ const renderChildNodes = createRenderChildNodes({
   'text-answer': AutogradedAnswer,
   section: Section,
   'section-title': SectionTitle,
-  video: Recording,
+  video: Recording
 })
 
 const GradingInstructions: React.FunctionComponent<CommonExamProps> = ({ doc }) => {

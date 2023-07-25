@@ -6,7 +6,7 @@ export default async function createGradingInstructions({
   exam,
   outdir = path.dirname(exam),
   media,
-  spinner,
+  spinner
 }: {
   exam: string
   outdir?: string
@@ -16,7 +16,7 @@ export default async function createGradingInstructions({
   spinner.start(`Creating grading instructions for ${exam}...`)
   for (const directory of await createOfflineExam(exam, outdir, {
     mediaVersion: media,
-    type: 'grading-instructions',
+    type: 'grading-instructions'
   })) {
     spinner.succeed(directory)
   }

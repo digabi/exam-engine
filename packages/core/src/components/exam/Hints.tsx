@@ -10,7 +10,7 @@ import { AnswersState } from '../../store/answers/reducer'
 const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const focusedQuestionId = useSelector((state: { answers: AnswersState }) => state.answers.focusedQuestionId)
   const answersWithHints = queryAll(element, ['text-answer', 'scored-text-answer']).filter(
-    (answer) => findChildElement(answer, 'hint') != null
+    answer => findChildElement(answer, 'hint') != null
   )
 
   return answersWithHints.length > 0 ? (
@@ -33,7 +33,7 @@ const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChi
 function Hint({
   answer,
   focusedQuestionId,
-  renderChildNodes,
+  renderChildNodes
 }: {
   answer: Element
   focusedQuestionId: QuestionId | null
@@ -46,7 +46,7 @@ function Hint({
   return (
     <p
       className={classNames('e-hints__hint', {
-        'e-hints__hint--focused': focusedQuestionId === questionId,
+        'e-hints__hint--focused': focusedQuestionId === questionId
       })}
       onClick={() => {
         const question = document.querySelector<HTMLElement>(`.text-answer[data-question-id="${questionId}"]`)

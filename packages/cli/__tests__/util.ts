@@ -51,7 +51,7 @@ export async function extractTransferZip(pathToZip: string) {
   const entries: string[] = []
   let examXml = ''
   const attachmentNames: string[] = []
-  await zipFile.walkEntries(async (entry) => {
+  await zipFile.walkEntries(async entry => {
     entries.push(entry.fileName)
     if (entry.fileName === 'exam.xml') {
       const examContentReadStream = await entry.openReadStream()
@@ -59,7 +59,7 @@ export async function extractTransferZip(pathToZip: string) {
     }
     if (entry.fileName === 'attachments.zip') {
       const attachments = await yauzl.fromBuffer(await streamToBuffer(await entry.openReadStream()))
-      await attachments.walkEntries((attachmentEntry) => {
+      await attachments.walkEntries(attachmentEntry => {
         attachmentNames.push(attachmentEntry.fileName)
       })
     }
@@ -67,6 +67,6 @@ export async function extractTransferZip(pathToZip: string) {
   return {
     entries,
     attachmentNames,
-    examXml,
+    examXml
   }
 }

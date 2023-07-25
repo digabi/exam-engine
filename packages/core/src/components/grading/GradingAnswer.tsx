@@ -11,13 +11,13 @@ import {
   preventDefaults,
   showAndPositionElement,
   textAnnotationFromRange,
-  toggle,
+  toggle
 } from './editAnnotations'
 import {
   renderAnnotations,
   renderImageAnnotationByImage,
   updateImageAnnotationMarkSize,
-  wrapAllImages,
+  wrapAllImages
 } from '../../renderAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
@@ -58,7 +58,7 @@ function GradingAnswerWithTranslations({
   annotations,
   saveAnnotations,
   maxLength,
-  popupTopMargin = 25,
+  popupTopMargin = 25
 }: GradingAnswerProps) {
   const answerRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLFormElement>(null)
@@ -101,12 +101,12 @@ function GradingAnswerWithTranslations({
 
   const { t } = useExamTranslation()
   return (
-    <div onClick={(e) => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
+    <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
       <div
         className="e-grading-answer e-line-height-l e-mrg-b-1"
         ref={answerRef}
-        onMouseDown={(e) => onAnswerMouseDown(e)}
-        onMouseOver={(e) => onMouseOverAnnotation(e.target as HTMLElement)}
+        onMouseDown={e => onAnswerMouseDown(e)}
+        onMouseOver={e => onMouseOverAnnotation(e.target as HTMLElement)}
       />
       <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />
       <GradingAnswerAnnotationList
@@ -118,7 +118,7 @@ function GradingAnswerWithTranslations({
         style={{ display: 'none' }}
         ref={popupRef}
         className="e-grading-answer-popup e-grading-answer-add-annotation"
-        onSubmit={(e) => onSubmitAnnotation(e)}
+        onSubmit={e => onSubmitAnnotation(e)}
       >
         <input
           onFocus={() => onNewAnnotationMessageFocus()}
@@ -132,7 +132,7 @@ function GradingAnswerWithTranslations({
         </button>
         <button
           className="e-grading-answer-close-popup"
-          onClick={(e) => {
+          onClick={e => {
             e.preventDefault()
             hideAnnotationPopupAndRefresh()
           }}
@@ -147,8 +147,8 @@ function GradingAnswerWithTranslations({
         onMouseOver={onMouseOverTooltip}
         onMouseOut={hideTooltip}
       >
-        <span onClick={(e) => editExistingAnnotation(e)} className="e-grading-answer-tooltip-label"></span>
-        <button onClick={(e) => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
+        <span onClick={e => editExistingAnnotation(e)} className="e-grading-answer-tooltip-label"></span>
+        <button onClick={e => removeAnnotation(e)} className="e-grading-answer-tooltip-remove">
           ×
         </button>
       </div>

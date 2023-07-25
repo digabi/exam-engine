@@ -13,7 +13,7 @@ function References(_props: ExamComponentProps) {
   const { root } = useContext(CommonExamContext)
   const { t } = useExamTranslation()
   const internalReferences = queryAll(root, 'reference').filter(
-    (reference) => queryAncestors(reference, 'external-material') == null
+    reference => queryAncestors(reference, 'external-material') == null
   )
 
   return internalReferences.length > 0 ? (

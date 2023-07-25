@@ -7,5 +7,5 @@ export const CA: ExamTranslations = _.pick(fi_FI, [
   'external-material-title',
   'section',
   'references',
-  'toc-heading',
+  'toc-heading'
 ])

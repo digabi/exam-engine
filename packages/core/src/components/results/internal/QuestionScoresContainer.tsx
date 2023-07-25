@@ -6,7 +6,7 @@ function QuestionScoresContainer({
   answers,
   displayNumber,
   children,
-  multilineAnswer,
+  multilineAnswer
 }: {
   answers: Element[]
   displayNumber?: string
@@ -18,7 +18,7 @@ function QuestionScoresContainer({
   return (
     <span
       className={classnames('e-result-scorecount', 'e-float-right', {
-        'e-result-scorecount-multiline-answer': multilineAnswer,
+        'e-result-scorecount-multiline-answer': multilineAnswer
       })}
       id={fullDisplayNumber}
     >

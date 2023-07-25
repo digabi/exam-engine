@@ -11,7 +11,7 @@ export const TC: ExamTranslations = {
     date: 'Pubblicato:',
     'reference-date': 'Consultato:',
     translator: 'Traduzione:',
-    'modified-by': 'Adattamento:',
+    'modified-by': 'Adattamento:'
   },
-  'toc-heading': 'Contenuto',
+  'toc-heading': 'Contenuto'
 }

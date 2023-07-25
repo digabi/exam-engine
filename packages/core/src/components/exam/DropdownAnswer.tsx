@@ -35,7 +35,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   const currentlySelectedItem =
     answer &&
     answer.value &&
-    findChildElement(element, (childElement) => answer.value === childElement.getAttribute('option-id'))
+    findChildElement(element, childElement => answer.value === childElement.getAttribute('option-id'))
 
   const labelRef = useRef<HTMLDivElement>(null)
   const menuRef = React.useRef<HTMLElement>(null)
@@ -45,7 +45,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
     // Force a re-measure if element changes or fonts are loaded after this
     // component has been rendered.
     const [, setFontsLoaded] = useState(fonts.loaded)
-    fonts.ready.then(() => setFontsLoaded(true)).catch((err) => console.error(err))
+    fonts.ready.then(() => setFontsLoaded(true)).catch(err => console.error(err))
 
     useEffect(() => setMeasuring(true), [element])
 
@@ -53,7 +53,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
       if (measuring && menuRef.current && labelRef.current) {
         const menuEl = menuRef.current
         const labelEl = labelRef.current
-        const preferredWidth = _.max(mapChildElements(menuEl, (el) => el.firstElementChild!.scrollWidth))!
+        const preferredWidth = _.max(mapChildElements(menuEl, el => el.firstElementChild!.scrollWidth))!
 
         // Run the DOM mutations on the next frame to avoid layout trashing in exams with lots of dropdowns.
         const requestId = requestAnimationFrame(() => {
@@ -68,12 +68,12 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   const { answers, questionLabelIds } = useContext(QuestionContext)
   const { getItemProps, getMenuProps, getToggleButtonProps, highlightedIndex, isOpen, selectedItem } = useSelect({
     items,
-    itemToString: (item) => (item ? item.textContent! : ''),
+    itemToString: item => (item ? item.textContent! : ''),
     onSelectedItemChange: ({ selectedItem }) => {
       const value = selectedItem ? selectedItem.getAttribute('option-id')! : ''
       dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))
     },
-    initialSelectedItem: currentlySelectedItem,
+    initialSelectedItem: currentlySelectedItem
   })
 
   const { t } = useExamTranslation()
@@ -84,12 +84,12 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
       <span className={classNames('e-dropdown-answer e-normal')} data-question-id={questionId}>
         <button
           className={classNames('e-dropdown-answer__toggle-button e-button-plain e-columns', {
-            'e-dropdown-answer__toggle-button--open': isOpen,
+            'e-dropdown-answer__toggle-button--open': isOpen
           })}
           {...getToggleButtonProps(
             {
               'aria-describedby': scoreId,
-              'aria-labelledby': questionLabelIds,
+              'aria-labelledby': questionLabelIds
             },
             { suppressRefError: !runningInBrowser }
           )}
@@ -116,7 +116,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
             {
               className: classNames('e-dropdown-answer__menu', { 'e-dropdown-answer__menu--open': isOpen }),
               'aria-labelledby': undefined,
-              ref: menuRef,
+              ref: menuRef
             },
             { suppressRefError: !runningInBrowser }
           )}
@@ -126,12 +126,12 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
               className={classNames('e-dropdown-answer__menu-item e-block e-pad-l-1 e-pad-r-4', {
                 'e-dropdown-answer__menu-item--selected': item === selectedItem,
                 'e-bg-color-off-white': highlightedIndex !== i,
-                'e-bg-color-link e-color-off-white': highlightedIndex === i,
+                'e-bg-color-link e-color-off-white': highlightedIndex === i
               })}
               key={i}
               {...getItemProps({
                 item,
-                index: i,
+                index: i
               })}
             >
               {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}

@@ -59,7 +59,7 @@ function CasControls(props: CasState) {
       ) : props.casStatus === 'allowing' ? (
         <div
           className="e-text-center"
-          ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.scrollIntoView()}
+          ref={e => e != null && casCountdownDuration === props.durationRemaining && e.scrollIntoView()}
         >
           <hr className="e-exam-separator" />
           <p id="e-cas-controls-allowing-description">{t('cas.allowing.infoText')}</p>
@@ -72,7 +72,7 @@ function CasControls(props: CasState) {
             className="e-button"
             id="allow-cas-cancelled"
             onClick={() => dispatch(allowCasCancelled())}
-            ref={(e) => e != null && casCountdownDuration === props.durationRemaining && e.focus()}
+            ref={e => e != null && casCountdownDuration === props.durationRemaining && e.focus()}
             aria-describedby="e-cas-controls-allowing-description"
           >
             {t('cas.allowing.cancel', { count: props.durationRemaining })}

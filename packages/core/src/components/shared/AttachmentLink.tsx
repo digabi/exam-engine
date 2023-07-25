@@ -12,7 +12,7 @@ const mkAttachmentLink = (type: 'link' | 'plain'): React.FunctionComponent<ExamC
     const { root } = useContext(CommonExamContext)
     const { attachmentsURL } = useContext(CommonExamContext)
     const { t } = useExamTranslation()
-    const attachment = query(root, (el) => el.localName === 'attachment' && el.getAttribute('name') === name)!
+    const attachment = query(root, el => el.localName === 'attachment' && el.getAttribute('name') === name)!
     const displayNumber = attachment.getAttribute('display-number')!
     const isShort = element.getAttribute('type') === 'short'
     const href = url(attachmentsURL, { hash: displayNumber })

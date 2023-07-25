@@ -10,7 +10,7 @@ export interface AnsweringInstructionProps {
 }
 
 function AnsweringInstructions({ maxAnswers, minAnswers, elementType, childQuestions }: AnsweringInstructionProps) {
-  const childDisplayNumbers = childQuestions.map((question) =>
+  const childDisplayNumbers = childQuestions.map(question =>
     _.isString(question) ? question : question.getAttribute('display-number')!
   )
 

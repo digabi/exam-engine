@@ -7,7 +7,7 @@ import {
   playAudioFinished,
   playAudioStarted,
   showAudioError,
-  updateRemaining,
+  updateRemaining
 } from './actions'
 import { AudioPlaybackResponse, ExamServerAPI } from '../..'
 

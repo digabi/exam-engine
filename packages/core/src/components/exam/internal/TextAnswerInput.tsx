@@ -66,14 +66,14 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
   })
 
   const onChange = useCallback<React.ChangeEventHandler<HTMLTextAreaElement & HTMLInputElement>>(
-    (event) => {
+    event => {
       const value = event.currentTarget.value.trim()
       const answer: TextAnswerT = {
         type: 'text',
         questionId,
         value,
         characterCount: getCharacterCount(value),
-        displayNumber,
+        displayNumber
       }
       dispatch(saveAnswer(answer))
       setScreenshotError(undefined)
@@ -83,7 +83,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
 
   const [integerValue, setIntegerValue] = useState<string>('')
   const onIntegerChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    (event) => {
+    event => {
       event.preventDefault()
       event.currentTarget.classList.remove('text-answer--integer--input-error')
       const patternForIntegers = /^-?\d*$/
@@ -95,7 +95,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
           questionId,
           value,
           characterCount: getCharacterCount(value),
-          displayNumber,
+          displayNumber
         }
         dispatch(saveAnswer(answer))
         setScreenshotError(undefined)
@@ -120,7 +120,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
         questionId,
         value: answerHtml,
         characterCount: getCharacterCount(answerText),
-        displayNumber,
+        displayNumber
       }
       dispatch(saveAnswer(answer))
       setScreenshotError(undefined)
@@ -144,7 +144,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
           <RichTextAnswer
             answer={answer as RichTextAnswerT}
             className={classNames('text-answer text-answer--rich-text', className)}
-            saveScreenshot={(data) => examServerApi.saveScreenshot(questionId, data)}
+            saveScreenshot={data => examServerApi.saveScreenshot(questionId, data)}
             onChange={onRichTextChange}
             onError={onError}
             questionId={questionId}
@@ -160,7 +160,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
               showAnswerHistory,
               supportsAnswerHistory,
               screenshotError,
-              validationError,
+              validationError
             }}
           />
         </>

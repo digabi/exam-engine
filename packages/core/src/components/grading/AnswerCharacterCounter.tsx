@@ -3,7 +3,7 @@ import { useExamTranslation } from '../../i18n'
 
 export function AnswerCharacterCounter({
   characterCount,
-  maxLength,
+  maxLength
 }: {
   characterCount: number
   maxLength: number | undefined
@@ -14,13 +14,13 @@ export function AnswerCharacterCounter({
   return (
     <div className="e-font-size-xs e-grading-answer-length">
       {t('answer-length', {
-        count: characterCount,
+        count: characterCount
       })}
       {percentage > 0 ? (
         <span className="e-grading-answer-max-length-surplus">
           {t('max-length-surplus', {
             maxLength,
-            percentage,
+            percentage
           })}
         </span>
       ) : (

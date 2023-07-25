@@ -77,7 +77,7 @@ function parseSection(section: Element): SectionElement {
   return parseElement<SectionElement>(section, questions, {
     displayNumber: getAttribute(section, 'display-number')!,
     minAnswers: getNumericAttribute(section, 'min-answers'),
-    maxAnswers: getNumericAttribute(section, 'max-answers'),
+    maxAnswers: getNumericAttribute(section, 'max-answers')
   })
 }
 
@@ -90,7 +90,7 @@ function parseQuestion(question: Element): QuestionElement {
       )
   return parseElement<QuestionElement>(question, childElements, {
     displayNumber: getAttribute(question, 'display-number')!,
-    maxAnswers: getNumericAttribute(question, 'max-answers'),
+    maxAnswers: getNumericAttribute(question, 'max-answers')
   })
 }
 
@@ -98,7 +98,7 @@ function parseAnswer(answer: Element): AnswerElement {
   const attributes = {
     displayNumber: getAttribute(answer, 'display-number')!,
     questionId: getNumericAttribute(answer, 'question-id')!,
-    maxLength: getNumericAttribute(answer, 'max-length'),
+    maxLength: getNumericAttribute(answer, 'max-length')
   }
   return parseElement(answer, [], attributes)
 }
@@ -111,6 +111,6 @@ function parseElement<T extends ExamElement>(
   return {
     name: element.localName,
     attributes,
-    childNodes,
+    childNodes
   } as T
 }

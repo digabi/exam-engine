@@ -9,7 +9,7 @@ import { sectionTitleId } from '../../ids'
 function Section({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber } = useContext(SectionContext)
   const { answersByQuestionId } = useContext(ResultsContext)
-  const containsAnswers = query(element, (e) => {
+  const containsAnswers = query(element, e => {
     const maybeQuestionId = e.getAttribute('question-id')
     return maybeQuestionId != null && Object.prototype.hasOwnProperty.call(answersByQuestionId, maybeQuestionId)
   })

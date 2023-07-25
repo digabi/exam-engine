@@ -10,7 +10,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
 
   beforeAll(async () => {
     ctx = await previewExam(resolveExam('N/N.xml'), {
-      casCountdownDurationSeconds: 2,
+      casCountdownDurationSeconds: 2
     })
     page = await createPage()
   })

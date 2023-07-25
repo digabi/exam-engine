@@ -91,16 +91,16 @@ describe('Exam mastering', () => {
         examCode: 'A',
         date: '2020-01-01',
         language: 'fi-FI',
-        type: 'normal',
-      },
+        type: 'normal'
+      }
     ])
     expect(spy.mock.calls[1]).toEqual([
       {
         examCode: 'A',
         date: '2020-01-01',
         language: 'sv-FI',
-        type: 'normal',
-      },
+        type: 'normal'
+      }
     ])
   })
 
@@ -115,20 +115,20 @@ describe('Exam mastering', () => {
 
   it('does not combine choice-answers and dropdown-answers to the same question in grading structure', async () => {
     const xml = generateExam({
-      sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }],
+      sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }]
     })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
     expect(masteringResult.gradingStructure.questions).toMatchObject([
       {
         type: 'choicegroup',
         displayNumber: '1.1',
-        choices: [{ type: 'choice', displayNumber: '1.1' }],
+        choices: [{ type: 'choice', displayNumber: '1.1' }]
       },
       {
         type: 'choicegroup',
         displayNumber: '1.2',
-        choices: [{ type: 'choice', displayNumber: '1.2' }],
-      },
+        choices: [{ type: 'choice', displayNumber: '1.2' }]
+      }
     ])
   })
 
@@ -141,9 +141,9 @@ describe('Exam mastering', () => {
         displayNumber: '1',
         choices: [
           { type: 'choice', displayNumber: '1.1' },
-          { type: 'choice', displayNumber: '1.2' },
-        ],
-      },
+          { type: 'choice', displayNumber: '1.2' }
+        ]
+      }
     ])
   })
 
@@ -154,10 +154,10 @@ describe('Exam mastering', () => {
           questions: [
             question([question([textAnswer()]), question([textAnswer()])]),
             question([question([question([textAnswer()]), question([textAnswer()])])]),
-            question([question([question([question([textAnswer()]), question([textAnswer()])])])]),
-          ],
-        },
-      ],
+            question([question([question([question([textAnswer()]), question([textAnswer()])])])])
+          ]
+        }
+      ]
     })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
     expect(wrap(masteringResult.xml)).toMatchSnapshot('xml')
@@ -175,20 +175,20 @@ describe('Exam mastering', () => {
       examVersions: [
         { language: 'fi-FI', type: 'normal' },
         { language: 'fi-FI', type: 'visually-impaired' },
-        { language: 'fi-FI', type: 'hearing-impaired' },
+        { language: 'fi-FI', type: 'hearing-impaired' }
       ],
       sections: [
         {
-          questions: [question([textAnswer()])],
-        },
-      ],
+          questions: [question([textAnswer()])]
+        }
+      ]
     })
     const masteringResults = await masterExam(xml, generateUuid, getMediaMetadata)
-    const titles = masteringResults.map((r) => r.title)
+    const titles = masteringResults.map(r => r.title)
     expect(titles).toEqual([
       'FI – Englanti, pitkä oppimäärä',
       'FI – Englanti, pitkä oppimäärä (näkövammaiset)',
-      'FI – Englanti, pitkä oppimäärä (kuulovammaiset)',
+      'FI – Englanti, pitkä oppimäärä (kuulovammaiset)'
     ])
   })
 

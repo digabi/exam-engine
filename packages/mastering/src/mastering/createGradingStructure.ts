@@ -4,7 +4,7 @@ import {
   ChoiceGroupQuestion,
   GradingStructure,
   GradingStructureQuestion,
-  TextQuestion,
+  TextQuestion
 } from '@digabi/exam-engine-core'
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
@@ -25,7 +25,7 @@ export function createGradingStructure(
   options?: GradingStructureOptions
 ): GradingStructure {
   const questions = _.chain(exam.topLevelQuestions)
-    .flatMap((question) => {
+    .flatMap(question => {
       const questionAnswers = collectAnswers(question)
       const questionDisplayNumber = getAttribute('display-number', question.element)
       return _.chain(questionAnswers)
@@ -37,7 +37,7 @@ export function createGradingStructure(
             case 'choice':
               return options?.groupChoiceAnswers
                 ? [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
-                : answers.map((answer) => mkSingleChoiceGroupQuestion(answer, generateId))
+                : answers.map(answer => mkSingleChoiceGroupQuestion(answer, generateId))
             default:
               throw new Error(`Bug: grading structure generation not implemented for ${questionType}`)
           }
@@ -81,7 +81,7 @@ function mkTextQuestion(answer: Answer): TextQuestion {
     displayNumber,
     maxScore,
     type: 'text' as const,
-    ...(maxLength && { maxLength }),
+    ...(maxLength && { maxLength })
   }
 
   if (type === 'text-answer') {
@@ -89,7 +89,7 @@ function mkTextQuestion(answer: Answer): TextQuestion {
   } else {
     const correctAnswers = answer.element
       .find<Element>('./e:accepted-answer', ns)
-      .map((e) => ({ text: e.text(), score: getNumericAttribute('score', e) }))
+      .map(e => ({ text: e.text(), score: getNumericAttribute('score', e) }))
     return { ...question, correctAnswers }
   }
 }
@@ -109,7 +109,7 @@ function mkSingleChoiceGroupQuestion(answer: Answer, generateId: GenerateId): Ch
     id: generateId(),
     displayNumber: choiceGroupChoice.displayNumber,
     type: 'choicegroup',
-    choices: [choiceGroupChoice],
+    choices: [choiceGroupChoice]
   }
 }
 
@@ -120,7 +120,7 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
 
   const options: ChoiceGroupOption[] = answer.element
     .find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
-    .map((option) => {
+    .map(option => {
       const id = getNumericAttribute('option-id', option)
       const score = getNumericAttribute('score', option, 0)
       const correct = score > 0 && score === maxScore
@@ -131,7 +131,7 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
     id: questionId,
     displayNumber,
     type: 'choice',
-    options,
+    options
   }
 }
 const getDigit =

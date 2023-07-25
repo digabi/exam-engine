@@ -4,7 +4,7 @@ import {
   allowCasCancelled,
   allowCasCountdown,
   allowCasSucceeded,
-  updateCasRemaining,
+  updateCasRemaining
 } from '../src/store/cas/actions'
 import { performEnableCas } from '../src/store/cas/sagas'
 import { CasStatus } from '../src'

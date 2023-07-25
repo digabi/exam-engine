@@ -6,7 +6,7 @@ import { AnnotationLists } from '../shared/AnnotationLists'
 function GradingAnswerAnnotationList({
   pregrading,
   censoring,
-  singleGrading,
+  singleGrading
 }: {
   pregrading: Annotation[]
   censoring: Annotation[]
@@ -14,7 +14,7 @@ function GradingAnswerAnnotationList({
 }) {
   const getListOfAnnotations = (annotations: Annotation[], listNumberOffset = 0) =>
     annotations
-      .filter((a) => a.message.length)
+      .filter(a => a.message.length)
       .map((annotation: Annotation, i: number) => {
         const numbering = `${String(listNumberOffset + i + 1)})`
         const message = annotation.message

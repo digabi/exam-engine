@@ -14,7 +14,7 @@ export interface ExamComponentProps {
 
 export const enum RenderOptions {
   RenderHTML,
-  SkipHTML,
+  SkipHTML
 }
 
 export type RenderChildNodes = (element: Element, options?: RenderOptions) => React.ReactNode[]

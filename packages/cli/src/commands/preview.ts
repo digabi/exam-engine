@@ -4,7 +4,7 @@ import { Ora } from 'ora'
 export default async function preview({
   exam,
   port,
-  spinner,
+  spinner
 }: {
   exam: string
   port?: number

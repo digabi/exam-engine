@@ -21,7 +21,7 @@ function ChoiceAnswerOption({
   element,
   questionId,
   direction,
-  isCorrect,
+  isCorrect
 }: ChoiceAnswerOptionProps) {
   const { t } = useExamTranslation()
   const className = element.getAttribute('class')
@@ -30,7 +30,7 @@ function ChoiceAnswerOption({
   const content = (
     <div
       className={classNames('e-choice-answer-option e-column', className, {
-        'e-choice-answer-option--selected': selected,
+        'e-choice-answer-option--selected': selected
       })}
     >
       {renderChildNodes(element)}
@@ -57,7 +57,7 @@ function ChoiceAnswerOption({
         className={classNames('e-columns', {
           'e-correct-answer-left': isCorrect,
           'e-columns--inline':
-            query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */,
+            query(element, ['image', 'video']) == null /* Force full width for options containing responsive media */
         })}
       >
         <Content narrow />
@@ -81,7 +81,7 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const className = element.getAttribute('class')
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
-  const scoreValue = answer && choice.options.find((option) => option.id === Number(answer.value))!.score
+  const scoreValue = answer && choice.options.find(option => option.id === Number(answer.value))!.score
   const maxScore = getNumericAttribute(element, 'max-score')
 
   return (
@@ -89,13 +89,13 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
       {scoreValue !== undefined && <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} />}
       <div
         className={classNames('e-choice-answer', className, {
-          'e-columns': direction === 'horizontal',
+          'e-columns': direction === 'horizontal'
         })}
       >
-        {mapChildElements(element, (childElement) => {
+        {mapChildElements(element, childElement => {
           const optionId = getNumericAttribute(childElement, 'option-id')!
           const selected = answer != null && Number(answer.value) === optionId
-          const grading = choice.options.find((option) => option.id === optionId)!
+          const grading = choice.options.find(option => option.id === optionId)!
           return (
             <ChoiceAnswerOption
               {...{
@@ -105,7 +105,7 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
                 key: optionId,
                 direction,
                 selected,
-                isCorrect: grading.correct,
+                isCorrect: grading.correct
               }}
             />
           )

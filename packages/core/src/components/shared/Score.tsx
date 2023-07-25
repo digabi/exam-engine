@@ -16,7 +16,7 @@ export const Score: React.FunctionComponent<ScoreProps> = ({ id, size = 'small',
       className={classNames('e-score e-nowrap', {
         'e-score--small e-font-size-m e-semibold': size === 'small',
         'e-score--large e-font-size-l e-semibold': size === 'large',
-        'e-score--inline e-font-size-xs': size === 'inline',
+        'e-score--inline e-font-size-xs': size === 'inline'
       })}
       id={id}
     >

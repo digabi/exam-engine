@@ -24,7 +24,7 @@ function AnswerToolbar({
   validationError,
   selectAnswerVersion,
   showAnswerHistory = false,
-  supportsAnswerHistory = false,
+  supportsAnswerHistory = false
 }: AnswerToolbarProps) {
   const { t } = useExamTranslation()
   const answerLength = answer?.characterCount
@@ -37,7 +37,7 @@ function AnswerToolbar({
         {answer != null
           ? t(maxLength != null ? 'answer-length-with-max-length' : 'answer-length', {
               count: answerLength,
-              maxLength: maxLength,
+              maxLength: maxLength
             })
           : NBSP}
         {screenshotError ? (

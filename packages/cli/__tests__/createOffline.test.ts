@@ -26,14 +26,14 @@ describe('ee create-offline', () => {
       'assets',
       'attachments',
       'index.html',
-      'main-bundle.js',
+      'main-bundle.js'
     ])
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/assets`))).toMatchSnapshot()
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/attachments`))).toMatchSnapshot()
   })
 
   function filterFileList(fileList: Array<string>): Array<string> {
-    return fileList.filter((fileName) => fileName !== '.DS_Store')
+    return fileList.filter(fileName => fileName !== '.DS_Store')
   }
 
   async function removeGeneratedDirectories() {

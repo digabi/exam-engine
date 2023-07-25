@@ -28,12 +28,12 @@ describe('Mex exam package creation', () => {
     exams = [
       {
         filename: 'exam_a.mex',
-        contents: Readable.from(['mock exam A']),
+        contents: Readable.from(['mock exam A'])
       },
       {
         filename: 'exam_b.mex',
-        contents: Readable.from(['mock exam B']),
-      },
+        contents: Readable.from(['mock exam B'])
+      }
     ]
   })
 
@@ -78,19 +78,19 @@ describe('Mex exam package creation', () => {
         ktpUpdate,
         koeUpdate
       )
-      return await expectZipEntriesAreCorrect(mexBuffers, (e) => ({
+      return await expectZipEntriesAreCorrect(mexBuffers, e => ({
         fileName: e.fileName,
-        uncompressedSize: e.fileName === 'rendering.zip.bin' ? 0 : e.uncompressedSize, // ignore rendering.zip size
+        uncompressedSize: e.fileName === 'rendering.zip.bin' ? 0 : e.uncompressedSize // ignore rendering.zip size
       }))
     }
 
     it('creates a minimal mex with verifyable exam.xml signature', async () => {
       const mexEntries = await expectCorrectMexIsCreated()
       const encryptedExamXml = await toBuffer(
-        await mexEntries.find((e) => e.fileName === 'exam.xml.bin')!.openReadStream()
+        await mexEntries.find(e => e.fileName === 'exam.xml.bin')!.openReadStream()
       )
       const encryptedExamXmlSignature = (
-        await toBuffer(await mexEntries.find((e) => e.fileName === 'exam.xml.bin.sig')!.openReadStream())
+        await toBuffer(await mexEntries.find(e => e.fileName === 'exam.xml.bin.sig')!.openReadStream())
       ).toString('utf8')
 
       const signatureVerificationResult = verifyWithSHA256AndRSA(encryptedExamXml, publicKey, encryptedExamXmlSignature)
@@ -117,9 +117,9 @@ describe('Mex exam package creation', () => {
         ktpUpdate,
         koeUpdate
       )
-      await expectZipEntriesAreCorrect(mexBuffers, (e) => ({
+      await expectZipEntriesAreCorrect(mexBuffers, e => ({
         fileName: e.fileName,
-        uncompressedSize: e.uncompressedSize,
+        uncompressedSize: e.uncompressedSize
       }))
     }
 
@@ -139,7 +139,7 @@ async function readResource(filename: string): Promise<string> {
 }
 
 function toBuffer(stream: Readable): Promise<Buffer> {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const buffers: Buffer[] = []
     stream.on('data', (d: Buffer) => buffers.push(d))
     stream.on('end', () => resolve(Buffer.concat(buffers)))
