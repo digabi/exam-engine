@@ -1,8 +1,8 @@
-import i18n, { PostProcessorModule, TOptions } from 'i18next'
+import i18n, { PostProcessorModule, TOptions, TFunction } from 'i18next'
 import * as _ from 'lodash-es'
 import React from 'react'
 // eslint-disable-next-line no-restricted-imports
-import { TFunction, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { A_E } from './A_E'
 import { BA } from './BA'
 import { CA } from './CA'
