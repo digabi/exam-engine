@@ -7,6 +7,7 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 import { CasState } from '../../store/cas/reducer'
 import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useExamTranslation } from '../../i18n'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -18,6 +19,8 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { casForbidden } = useContext(SectionContext)
   const { displayNumber, level } = useContext(QuestionContext)
   const [expanded, setExpanded] = useState<boolean>(false)
+
+  const { t } = useExamTranslation()
 
   const toggleWriterMode = (expand: boolean) => {
     setExpanded(expand)
@@ -46,11 +49,11 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   return !casForbidden || casStatus === 'forbidden' ? (
     <ExpandQuestionContext.Provider value={{ expanded, toggleWriterMode }}>
       <div
-        className={classNames('exam-question', {
+        className={classNames('e-exam-question', {
           'e-level-0': level === 0,
           'e-pad-b-4 e-pad-t-4 e-clearfix': level === 0,
           'e-mrg-l-8': level > 0,
-          expanded
+          'e-expanded': expanded
         })}
       >
         <div className="anchor" id={displayNumber} />
@@ -59,7 +62,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
           <div className="full-screen" data-full-screen-id={displayNumber}>
             <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
-              Pienennä näkymä
+              {t('close-writing-mode')}
             </button>
             {renderChildNodes(element)}
           </div>

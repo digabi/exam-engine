@@ -7,6 +7,7 @@ import { makeRichText } from 'rich-text-editor'
 import { ExpandQuestionContext } from './Question'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+import { useExamTranslation } from '../../i18n'
 
 export interface ScreenshotError {
   key: 'screenshot-too-big' | 'screenshot-byte-limit-reached' | 'screenshot-upload-failed'
@@ -119,9 +120,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
                 aria-labelledby="expand-label"
                 aria-owns={String(questionId)}
               >
-                <div className="label" id="expand-label">
-                  Avaa kirjoitusnäkymä
-                </div>
+                <ExpandButtonLabel />
                 <FontAwesomeIcon icon={faExpandAlt} />
               </button>
             )}
@@ -130,4 +129,13 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
       </ExpandQuestionContext.Consumer>
     )
   }
+}
+
+const ExpandButtonLabel = () => {
+  const { t } = useExamTranslation()
+  return (
+    <div className="label" id="expand-label">
+      {t('open-writing-mode')}
+    </div>
+  )
 }
