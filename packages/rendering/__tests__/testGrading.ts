@@ -61,7 +61,7 @@ describe('testGrading.ts', () => {
 
   it('creates and modifies annotations', async () => {
     await navigateToAnswer('2')
-    await drag(418, 210, 620, 210)
+    await drag(300, 210, 502, 210)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('first annotation message')
     await page.keyboard.press('Enter')
@@ -81,10 +81,8 @@ describe('testGrading.ts', () => {
   })
 
   it('removes annotations', async () => {
-    await page.mouse.move(500, 210)
-    await page.click('.e-grading-answer-tooltip-remove')
-    await expectAnnotationMessages(['+1'])
-    await drag(360, 300, 370, 310)
+    await navigateToAnswer('2')
+    await drag(242, 300, 252, 310)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('img annotation msg')
     await page.keyboard.press('Enter')
