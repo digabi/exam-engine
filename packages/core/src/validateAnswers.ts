@@ -46,8 +46,8 @@ function validateAnswerLength(
                   type: 'AnswerTooLong',
                   displayNumber: element.attributes.displayNumber,
                   characterCount: maybeAnswer.characterCount,
-                  elementType: 'question',
-                },
+                  elementType: 'question'
+                }
               ]
             : errors
         }

@@ -25,7 +25,7 @@ const AnswerIndicator = (props: Props) => {
         className={classNames('answer-indicator', {
           ok: answer?.value,
           error,
-          big: type === 'rich-text',
+          big: type === 'rich-text'
         })}
         data-indicator-id={id}
       >
