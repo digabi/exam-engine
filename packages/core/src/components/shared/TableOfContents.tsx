@@ -30,7 +30,7 @@ export const mkTableOfContents = (options: {
 
     const hasSectionValidationErrors = () =>
       useSelector((state: { answers: AnswersState }) => state.answers)?.validationErrors.find(
-        (i) => i.displayNumber === displayNumber && i?.elementType === 'section'
+        i => i.displayNumber === displayNumber && i?.elementType === 'section'
       )
 
     return (
@@ -58,7 +58,7 @@ export const mkTableOfContents = (options: {
   const TOCSection: React.FunctionComponent<ExamComponentProps & { answers: AnswersState }> = ({
     element,
     answers,
-    renderChildNodes,
+    renderChildNodes
   }) => {
     const { displayNumber } = useContext(SectionContext)
     const sectionTitle = findChildElement(element, 'section-title')
@@ -70,7 +70,7 @@ export const mkTableOfContents = (options: {
             {...{
               element: sectionTitle,
               renderChildNodes,
-              answers,
+              answers
             }}
           />
         )}
@@ -100,14 +100,14 @@ export const mkTableOfContents = (options: {
       answersById = answers?.answersById || {}
       const subquestionNodes = element.querySelectorAll('[question-id]')
 
-      const questionValidationErrors = answers.validationErrors?.filter((i) => i?.elementType === 'question')
-      hasQuestionValidationError = !!questionValidationErrors?.find((i) => i.displayNumber === displayNumber)
+      const questionValidationErrors = answers.validationErrors?.filter(i => i?.elementType === 'question')
+      hasQuestionValidationError = !!questionValidationErrors?.find(i => i.displayNumber === displayNumber)
 
-      subquestionNodes.forEach((e) => {
+      subquestionNodes.forEach(e => {
         const id = Number(e.getAttribute('question-id'))
         const type = e.getAttribute('type') || ''
         const subQuestionDisplayNumber = e.getAttribute('display-number') || ''
-        const error = !!questionValidationErrors?.find((i) => i.displayNumber === subQuestionDisplayNumber)
+        const error = !!questionValidationErrors?.find(i => i.displayNumber === subQuestionDisplayNumber)
 
         if (id) {
           subquestions.push({ id, type, error })
@@ -115,8 +115,8 @@ export const mkTableOfContents = (options: {
       })
     }
 
-    const subQuestionError = !!subquestions.find((i) => i.error)
-    const subquestionsAnswered = subquestions?.filter((i) => answersById[i.id]?.value).length
+    const subQuestionError = !!subquestions.find(i => i.error)
+    const subquestionsAnswered = subquestions?.filter(i => answersById[i.id]?.value).length
     const maxAnswers = Number(element.getAttribute('max-answers'))
     const requiredAnswers = maxAnswers || subquestions.length
 
@@ -136,7 +136,7 @@ export const mkTableOfContents = (options: {
         <div
           className={classNames('numeric-answer-indicator', {
             error: subQuestionError,
-            ok: subquestionsAnswered === requiredAnswers,
+            ok: subquestionsAnswered === requiredAnswers
           })}
         >
           {subquestionsAnswered}/{requiredAnswers}
@@ -146,7 +146,7 @@ export const mkTableOfContents = (options: {
           <span className="e-column e-column--narrow e-external-material">
             <a
               href={url(attachmentsURL, {
-                hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number'),
+                hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number')
               })}
               target="attachments"
             >
@@ -175,7 +175,7 @@ export const mkTableOfContents = (options: {
         )}
 
         <div className="answers">
-          {subquestions.map((i) => (
+          {subquestions.map(i => (
             <Indicator key={i.id} type={i.type} id={i.id} answer={answersById[i.id]} error={i.error} />
           ))}{' '}
         </div>
@@ -194,8 +194,8 @@ export const mkTableOfContents = (options: {
     const maxAnswers = getNumericAttribute(root, 'max-answers')
 
     const hasExamValidationErrors = () =>
-      !!useSelector((state: { answers: AnswersState }) =>
-        state.answers.validationErrors?.find((i) => i?.elementType === 'exam')
+      !!useSelector(
+        (state: { answers: AnswersState }) => state.answers.validationErrors?.find(i => i?.elementType === 'exam')
       )
 
     return (

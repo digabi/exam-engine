@@ -116,7 +116,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   answers,
   restrictedAudioPlaybackStats,
   examServerApi,
-  type,
+  type
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -137,7 +137,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     mkTableOfContents({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
-      isInSidebar: true,
+      isInSidebar: true
     })
   )
 
@@ -145,7 +145,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     mkTableOfContents({
       showAttachmentLinks: true,
       showAnsweringInstructions: true,
-      isInSidebar: false,
+      isInSidebar: false
     })
   )
 
@@ -165,10 +165,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     const sideNavigation = document.querySelector(`.sidebar-toc-container`)
 
     const lis = document.querySelectorAll(`.sidebar-toc-container li[data-list-number]`)
-    lis.forEach((i) => i.classList.remove('current'))
+    lis.forEach(i => i.classList.remove('current'))
 
     // Find the section currently in view
-    sections.forEach((section) => {
+    sections.forEach(section => {
       const sectionTop = section.getBoundingClientRect().top + scrollY
       const sectionBottom = section.getBoundingClientRect().bottom + scrollY
 
@@ -229,7 +229,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                       <TableOfContents
                         {...{
                           element: tableOfContents,
-                          renderChildNodes,
+                          renderChildNodes
                         }}
                       />
                     </div>
