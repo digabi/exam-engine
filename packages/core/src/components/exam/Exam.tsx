@@ -161,7 +161,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const handleExamScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     const scrollY = e.currentTarget.scrollTop
-    const sections = document.querySelectorAll('.exam-question.e-level-0')
+    const sections = document.querySelectorAll('.e-exam-question.e-level-0')
     const sideNavigation = document.querySelector(`.sidebar-toc-container`)
 
     const lis = document.querySelectorAll(`.sidebar-toc-container li[data-list-number]`)
