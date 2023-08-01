@@ -61,6 +61,8 @@ export const sv_FI: Translations = {
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',
   'too-many-answers': 'TODO',
+  'open-writing-mode': 'TODO',
+  'close-writing-mode': 'TODO',
   'listen-times-remaining': '{{count}} lyssningsgång kvar.',
   'listen-times-remaining_plural': '{{count}} lyssningsgånger kvar.',
   'answer-length': 'Svarets längd: {{count}} tecken.',

@@ -5,6 +5,109 @@
   .e-exam.e-sans-serif();
   .e-exam.e-font-size-m();
   color: @colors[black];
+
+  .e-exam-question {
+    position: relative;
+
+    &.e-expanded {
+      position: fixed;
+      z-index: 3;
+      inset: 0;
+      transition: padding-top 0.2s;
+      background: white;
+      margin-left: 0;
+      overflow-y: auto;
+
+      .exam-question-title {
+        margin-right: 13rem;
+      }
+
+      .exam-attachment {
+        display: none;
+      }
+
+      .text-answer-container {
+        padding: 2px;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .text-answer--rich-text {
+          height: calc(100% - 8px);
+          font-size: 18px;
+          line-height: 200%;
+          padding: ~'min(4rem, 6vw)' ~'min(6rem, 9vw)';
+          font-family: Georgia, Times, 'Times New Roman', serif;
+          overflow-y: scroll;
+        }
+      }
+    }
+
+    .full-screen {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-top: 1rem;
+      margin-left: ~'max(2.5rem, (100vw - 55rem)/2)';
+      margin-right: ~'max(2.5rem, (100vw - 55rem)/2)';
+      position: fixed;
+      inset: 0;
+      transition: padding 0.3s 0.05s;
+    }
+
+    .expand {
+      position: absolute;
+      border-radius: 4px;
+      background: #eee;
+      z-index: 2;
+      height: 32px;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+
+      &:hover {
+        background: #ddd;
+      }
+
+      &.close {
+        right: 0;
+        padding: 0.25rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      &.open {
+        font-size: 20px;
+        width: 32px;
+        top: 5px;
+        right: 5px;
+
+        .label {
+          opacity: 0;
+          position: absolute;
+          right: calc(100% + 3px);
+          font-size: 14px;
+          white-space: nowrap;
+          background: #eee;
+          padding: 0.25rem 0.75rem;
+          pointer-events: none;
+          transition: opacity 0.1s;
+          border-radius: 5px;
+          height: 32px;
+          box-sizing: border-box;
+          display: grid;
+          place-content: center;
+        }
+
+        &:hover .label {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .e-exam * {
@@ -16,4 +119,28 @@
   bottom: 0;
   right: 0;
   z-index: 2;
+}
+
+.rich-text-editor-tools {
+  z-index: 3;
+}
+
+.rich-text-editor-focus {
+  .full-screen {
+    padding-top: 2rem;
+
+    @media (max-width: 1300px) {
+      padding-top: 4.5rem;
+    }
+  }
+
+
+
+  &.math-editor-focus .exam-question.expanded {
+    padding-top: 9rem;
+  }
+}
+
+body.writer-mode {
+  overflow: hidden;
 }

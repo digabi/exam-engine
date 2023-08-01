@@ -72,6 +72,8 @@ export const fi_FI = {
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
   'too-many-answers': 'Vastattu liiaan moneen tehtävään:',
+  'open-writing-mode': 'Avaa kirjoitusnäkymä',
+  'close-writing-mode': 'Pienennä näkymä',
   'listen-times-remaining': '{{count}} kuuntelukerta jäljellä.',
   'listen-times-remaining_plural': '{{count}} kuuntelukertaa jäljellä.',
   'answer-length': 'Vastauksen pituus: {{count}} merkki.',

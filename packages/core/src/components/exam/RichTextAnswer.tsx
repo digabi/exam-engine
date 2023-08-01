@@ -4,6 +4,10 @@ import React from 'react'
 import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { makeRichText } from 'rich-text-editor'
+import { ExpandQuestionContext } from './Question'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+import { useExamTranslation } from '../../i18n'
 
 export interface ScreenshotError {
   key: 'screenshot-too-big' | 'screenshot-byte-limit-reached' | 'screenshot-upload-failed'
@@ -93,19 +97,45 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
 
   render(): React.ReactNode {
     const { className, questionId, invalid, lang, labelledBy } = this.props
-
     return (
-      <div
-        ref={this.ref}
-        className={className}
-        data-question-id={questionId}
-        role="textbox"
-        aria-multiline="true"
-        aria-invalid={invalid}
-        tabIndex={0}
-        lang={lang}
-        aria-labelledby={labelledBy}
-      />
+      <ExpandQuestionContext.Consumer>
+        {({ expanded, toggleWriterMode }) => (
+          <>
+            <div
+              ref={this.ref}
+              className={className}
+              data-question-id={questionId}
+              role="textbox"
+              aria-multiline="true"
+              aria-invalid={invalid}
+              tabIndex={0}
+              lang={lang}
+              aria-labelledby={labelledBy}
+              id={String(questionId)}
+            />
+            {!expanded && (
+              <button
+                className="expand open"
+                onClick={() => toggleWriterMode(true)}
+                aria-labelledby="expand-label"
+                aria-owns={String(questionId)}
+              >
+                <ExpandButtonLabel />
+                <FontAwesomeIcon icon={faExpandAlt} />
+              </button>
+            )}
+          </>
+        )}
+      </ExpandQuestionContext.Consumer>
     )
   }
+}
+
+const ExpandButtonLabel = () => {
+  const { t } = useExamTranslation()
+  return (
+    <div className="label" id="expand-label">
+      {t('open-writing-mode')}
+    </div>
+  )
 }

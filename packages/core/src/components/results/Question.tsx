@@ -14,7 +14,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
 
   return hasAnswers ? (
     <div
-      className={classNames('exam-question', {
+      className={classNames('e-exam-question', {
         'e-mrg-b-8 e-clearfix': level === 0,
         'e-mrg-l-8 e-mrg-y-4': level > 0
       })}
