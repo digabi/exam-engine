@@ -208,7 +208,7 @@ export const mkTableOfContents = (options: {
           <div style={{ display: 'grid' }}>
             <div className={classNames('answer-instructions', { error: isInSidebar && hasExamValidationErrors() })}>
               {isInSidebar && hasExamValidationErrors() && <div className="error-mark exam">!</div>}
-              Vastaa enintään {maxAnswers} tehtävään
+              {t('max-answers-warning', { count: maxAnswers })}
             </div>
           </div>
         )}
