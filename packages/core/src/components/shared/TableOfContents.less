@@ -27,8 +27,8 @@
     height: 100vh;
     overflow: auto;
     padding: 0.5rem 1px 2rem;
-    position: sticky; 
-    top: 0; 
+    position: sticky;
+    top: 0;
 
     @media (max-width: @break-point-narrow) {
       flex: 1 0 100px;
@@ -129,6 +129,17 @@
           cursor: pointer;
           background: hsla(194, 41%, 82%, 0.75);
         }
+
+        .question-title {
+          * {
+            display: inline;
+            white-space: nowrap;
+          }
+
+          div {
+            display: none;
+          }
+        }
       }
 
       .e-external-material {
@@ -151,13 +162,11 @@
         font-size: 14px;
       }
 
-      @media (max-width: @break-point-mid) {
-        .toc-section-header,
-        .e-number-and-title {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+      .toc-section-header,
+      .e-number-and-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       @media (max-width: @break-point-narrow) {
