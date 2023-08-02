@@ -159,8 +159,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     return rect.top >= 100 && rect.bottom <= window.innerHeight - 100
   }
 
-  const handleExamScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
-    const scrollY = e.currentTarget.scrollTop
+  const handleExamScroll = () => {
+    const scrollY = window.scrollY
     const sections = document.querySelectorAll('.e-exam-question.e-level-0')
     const sideNavigation = document.querySelector(`.sidebar-toc-container`)
 
@@ -199,6 +199,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const visuallyImpaired = type === 'visually-impaired'
 
+  window.addEventListener('scroll', throttledScroll)
+
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
@@ -213,7 +215,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
               </div>
             )}
 
-            <div className="main-exam-container" onScroll={throttledScroll}>
+            <div className="main-exam-container" /*onScroll={throttledScroll}*/>
               <div className={classNames('main-exam', { center: visuallyImpaired })}>
                 <SectionElement aria-labelledby={examTitleId}>
                   {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
