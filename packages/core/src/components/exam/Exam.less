@@ -4,8 +4,8 @@
   /**
   * Temporarily force this here. 
   * "max-width: 990px;" will be removed in 'koe' repository when it's published next time
-  */ 
-  max-width: auto !important; 
+  */
+  max-width: auto !important;
 }
 
 .e-exam {
@@ -67,7 +67,7 @@
       position: absolute;
       border-radius: 4px;
       background: #eee;
-      z-index: 2;
+      z-index: 1;
       height: 32px;
       display: grid;
       place-content: center;
@@ -77,6 +77,7 @@
 
       &:hover {
         background: #ddd;
+        cursor: pointer;
       }
 
       &.close {
@@ -143,7 +144,7 @@
   }
 
   .main-exam-container {
-    flex: 0 0.5 65rem;
+    flex: 1 0.5 65rem;
     padding-right: 1em;
     padding: 0.5rem 1px 2rem;
 
