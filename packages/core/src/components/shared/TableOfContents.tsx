@@ -123,7 +123,7 @@ export const mkTableOfContents = (options: {
     return (
       <li
         data-list-number={`${displayNumber}.`}
-        onClick={() => (isInSidebar ? (window.location.href = `#${displayNumber}`) : undefined)}
+        onClick={() => (isInSidebar ? (window.location.href = `#question-nr-${displayNumber}`) : undefined)}
         className={`level-${level} ${hasQuestionValidationError ? 'error' : ''}`}
       >
         <span className="e-column e-number-and-title">

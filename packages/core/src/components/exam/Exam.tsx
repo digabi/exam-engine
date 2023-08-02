@@ -177,9 +177,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
       const sectionFillsView = sectionTop < scrollY && sectionBottom > scrollY + window.innerHeight
 
       const sectionId = section.querySelector('.anchor')?.id || ''
+      const sectionNumber = sectionId.replace('question-nr-', '')
 
       if (sectionBeginsInView || sectionEndsInView || sectionFillsView) {
-        const currentNavTitle = document.querySelector(`.table-of-contents li[data-list-number="${sectionId}."]`)
+        const currentNavTitle = document.querySelector(`.table-of-contents li[data-list-number="${sectionNumber}."]`)
 
         if (currentNavTitle) {
           currentNavTitle.classList.add('current')
