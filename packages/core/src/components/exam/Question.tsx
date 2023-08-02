@@ -55,7 +55,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
           'e-expanded': expanded
         })}
       >
-        <div className="anchor" id={displayNumber} />
+        <div className="anchor" id={`question-nr-${displayNumber}`} />
 
         {expanded ? (
           <div className="full-screen" data-full-screen-id={displayNumber}>
