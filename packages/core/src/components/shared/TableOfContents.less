@@ -22,11 +22,13 @@
   }
 
   .sidebar-toc-container {
-    flex: auto;
+    flex: 0 1 500px;
     display: flex;
     height: 100vh;
     overflow: auto;
     padding: 0.5rem 1px 2rem;
+    position: sticky; 
+    top: 0; 
 
     @media (max-width: @break-point-narrow) {
       flex: 1 0 100px;

@@ -122,7 +122,6 @@
     display: flex;
     justify-content: center;
     gap: 2em;
-    position: fixed;
     width: 100%;
 
     @media (max-width: @break-point-mid) {
@@ -136,10 +135,8 @@
   }
 
   .main-exam-container {
-    flex: 1 0.5 65rem;
+    flex: 0 0.5 65rem; 
     padding-right: 1em;
-    height: 100vh;
-    overflow: auto;
     padding: 0.5rem 1px 2rem;
 
     .main-exam {
