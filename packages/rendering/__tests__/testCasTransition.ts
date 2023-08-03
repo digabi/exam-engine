@@ -47,7 +47,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
       // FIXME: Remove explicit type after Puppeteer 7.x has added better page.waitForFunction types.
       // https://github.com/puppeteer/puppeteer/issues/6884
       (innerVisible: boolean) => {
-        const element = document.getElementById('1')
+        const element = document.getElementById('question-nr-1')
         return innerVisible ? element != null : element == null
       },
       undefined,
