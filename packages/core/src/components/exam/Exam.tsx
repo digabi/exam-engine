@@ -242,12 +242,12 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                   )}
                 </SectionElement>
                 {renderChildNodes(root)}
-                <div className="e-footer">
-                  <ErrorIndicator />
-                  <SaveIndicator />
-                </div>
               </div>
             </div>
+          </div>
+          <div className="e-footer">
+            <ErrorIndicator />
+            <SaveIndicator />
           </div>
         </main>
       </I18nextProvider>
