@@ -1,6 +1,12 @@
 @import './Breakpoints.less';
 @error: #f90;
 
+.rich-text-editor-focus {
+  .e-exam .sidebar-toc-container {
+    top: 38px;
+  }
+}
+
 .e-exam {
   .table-of-contents {
     h2 {
@@ -29,24 +35,7 @@
     padding: 0.5rem 1px 2rem;
     position: sticky;
     top: 0;
-
-    @media (max-width: @break-point-narrow) {
-      flex: 1 0 100px;
-    }
-
-    @media (max-width: @break-point-mini) {
-      position: fixed;
-      left: 0.25rem;
-      top: 0.25rem;
-      z-index: 1;
-      padding: 1px;
-      overflow: visible;
-
-      .toc-section-header,
-      .numeric-answer-indicator {
-        display: none;
-      }
-    }
+    transition: top 0.2s;
 
     a:hover {
       text-decoration: none;
@@ -171,87 +160,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
-
-      @media (max-width: @break-point-narrow) {
-        font-size: 15px;
-        padding: 5px;
-
-        .toc-section-header {
-          font-size: 15px;
-        }
-
-        ol {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          ol {
-            gap: 0;
-          }
-        }
-
-        li.level-0 {
-          grid-template-columns: 23px 40px;
-        }
-
-        .numeric-answer-indicator {
-          display: flex;
-          justify-content: flex-end;
-          white-space: nowrap;
-          font-size: 14px;
-
-          &.ok {
-            color: rgb(80, 138, 189);
-          }
-
-          &.error {
-            color: @error;
-            font-weight: 600;
-          }
-        }
-
-        .answer-instructions {
-          display: none;
-
-          &.error {
-            display: block;
-            margin: 0 0 0.5rem;
-          }
-        }
-
-        ol,
-        li {
-          margin-bottom: 0;
-        }
-
-        .e-external-material,
-        .e-number-and-title,
-        .table-of-contents--score-column,
-        .e-columns,
-        .answers,
-        h2 {
-          display: none;
-        }
-      }
-
-      @media (max-width: @break-point-mini) {
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-        overflow: visible;
-        border-radius: 5px;
-
-        li.level-0 {
-          grid-template-columns: 23px;
-        }
-
-        .toc-section-header,
-        .numeric-answer-indicator {
-          display: none;
-        }
-
-        ol li:not(:first-child):not(.level-0) {
-          border-top: 1px solid #ddd;
-        }
-      }
     }
 
     .error-mark {
@@ -338,6 +246,130 @@
 
     h2 * {
       display: block;
+    }
+  }
+}
+
+// @container rules need to be at root level until less supports them properly
+// https://github.com/less/less.js/issues/3766
+
+@container (max-width: @break-point-smaller-navi-font) {
+  .e-exam .sidebar-toc-container .table-of-contents {
+    .toc-section-header {
+      font-size: 16px;
+    }
+
+    li.level-0 {
+      grid-template-columns: 27px auto 28px 15px;
+      padding: 0 2px;
+
+      &:before,
+      .question-title {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@container (max-width: @break-point-numeric-navi) {
+  .e-exam .sidebar-toc-container {
+    flex: 1 0 100px;
+
+    .table-of-contents {
+      font-size: 15px;
+      padding: 5px;
+
+      .toc-section-header {
+        font-size: 15px;
+      }
+
+      ol {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        ol {
+          gap: 0;
+        }
+      }
+
+      li.level-0 {
+        grid-template-columns: 23px 40px;
+      }
+
+      .numeric-answer-indicator {
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+        font-size: 14px;
+
+        &.ok {
+          color: rgb(80, 138, 189);
+        }
+
+        &.error {
+          color: @error;
+          font-weight: 600;
+        }
+      }
+
+      .answer-instructions {
+        display: none;
+
+        &.error {
+          display: block;
+          margin: 0 0 0.5rem;
+        }
+      }
+
+      ol,
+      li {
+        margin-bottom: 0;
+      }
+
+      .e-external-material,
+      .e-number-and-title,
+      .table-of-contents--score-column,
+      .e-columns,
+      .answers,
+      h2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@container (max-width: @break-point-mini-navi) {
+  .e-exam .sidebar-toc-container {
+    position: fixed;
+    left: 0.25rem;
+    top: 0.25rem;
+    z-index: 1;
+    padding: 1px;
+    overflow: visible;
+
+    .toc-section-header,
+    .numeric-answer-indicator {
+      display: none;
+    }
+
+    .table-of-contents {
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      overflow: visible;
+      border-radius: 5px;
+
+      li.level-0 {
+        grid-template-columns: 23px;
+      }
+
+      .toc-section-header,
+      .numeric-answer-indicator {
+        display: none;
+      }
+
+      ol li:not(:first-child):not(.level-0) {
+        border-top: 1px solid #ddd;
+      }
     }
   }
 }
