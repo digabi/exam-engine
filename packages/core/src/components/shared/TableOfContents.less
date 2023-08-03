@@ -341,12 +341,14 @@
 
 @container (max-width: @break-point-mini-navi) {
   .e-exam .sidebar-toc-container {
-    position: fixed;
-    left: 0.25rem;
+    position: sticky;
+    flex: 0 0 50px;
+    overflow: scroll;
+    max-height: 100vh;
     top: 0.25rem;
     z-index: 1;
     padding: 1px;
-    overflow: visible;
+    overflow: scroll;
 
     .toc-section-header,
     .numeric-answer-indicator {
@@ -357,6 +359,7 @@
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
       overflow: visible;
       border-radius: 5px;
+      margin-left: 0;
 
       li.level-0 {
         grid-template-columns: 23px;

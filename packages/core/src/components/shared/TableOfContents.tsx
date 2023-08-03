@@ -127,7 +127,7 @@ export const mkTableOfContents = (options: {
         className={`level-${level} ${hasQuestionValidationError ? 'error' : ''}`}
       >
         <span className="e-column e-number-and-title">
-          <a href={url('', { hash: displayNumber })}>
+          <a href={url('', { hash: `question-nr-${displayNumber}` })}>
             <span className="question-number">{displayNumber}</span>
             {questionTitle && <span className="question-title">{renderChildNodes(questionTitle)}</span>}
           </a>
