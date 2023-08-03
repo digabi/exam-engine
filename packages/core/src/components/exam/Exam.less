@@ -1,11 +1,20 @@
 @import '../shared/Breakpoints.less';
 
-.k-exam-content {
-  /**
-  * Temporarily force this here. 
-  * "max-width: 990px;" will be removed in 'koe' repository when it's published next time
-  */
-  max-width: auto !important;
+/**
+* Temporarily force some k-exam-* styles this here. 
+* "max-width: 990px;" will be removed in 'koe' repository when it's published next time
+*/
+
+.k-exam-body {
+  margin: 0 !important;
+
+  .k-exam-content {
+    max-width: auto !important;
+
+    .k-header {
+      width: calc(100% - 2rem) !important;
+    }
+  }
 }
 
 .e-exam {
@@ -13,6 +22,7 @@
   .e-exam.e-sans-serif();
   .e-exam.e-font-size-m();
   color: @colors[black];
+  container-type: inline-size;
 
   .e-exam-question {
     position: relative;
@@ -130,21 +140,13 @@
   .e-halves {
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 1vw;
     width: 100%;
-
-    @media (max-width: @break-point-mid) {
-      gap: 1em;
-      padding: 0 0.5rem;
-    }
-
-    @media (max-width: @break-point-narrow) {
-      gap: 0.5em;
-    }
+    padding: 0 0.5rem;
   }
 
   .main-exam-container {
-    flex: 1 0.5 65rem;
+    flex: 1 1.5 65rem;
     padding-right: 1em;
     padding: 0.5rem 1px 2rem;
 
@@ -156,15 +158,6 @@
       &.center {
         margin-left: auto;
       }
-
-      @media (max-width: @break-point-narrow) {
-        margin-right: 0;
-        margin-left: auto;
-      }
-    }
-
-    @media (max-width: @break-point-narrow) {
-      flex-shrink: 1;
     }
   }
 }
@@ -206,4 +199,19 @@
 
 body.writer-mode {
   overflow: hidden;
+}
+// @container rules need to be at root level until less supports them properly
+// https://github.com/less/less.js/issues/3766
+
+@container (max-width: @break-point-numeric-navi) {
+  .e-exam {
+    .main-exam-container {
+      flex-shrink: 1;
+
+      .main-exam {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+  }
 }
