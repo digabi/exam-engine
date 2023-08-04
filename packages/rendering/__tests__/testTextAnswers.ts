@@ -115,16 +115,17 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   })
 
   const openWriterMode = async (page: Page) => {
+    // focus the textarea first, because it may affect the clickability of expand button
+    await page.click('.text-answer[data-question-id="2"]')
     await page.click('.text-answer[data-question-id="2"] + .expand')
-
     const body = await page.$('body')
     const fullScreenSelector = 'div[data-full-screen-id="1.2"]'
 
-    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
-    expect(bodyClass).toContain('writer-mode')
-
     const fullScreen = await page.$(fullScreenSelector)
     expect(fullScreen).toBeTruthy()
+
+    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
+    expect(bodyClass).toContain('writer-mode')
   }
 
   it('a text answer indicator has correct state in side navigation', async () => {

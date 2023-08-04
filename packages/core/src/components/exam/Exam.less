@@ -14,6 +14,10 @@
     .k-header {
       width: calc(100% - 2rem) !important;
     }
+
+    .k-overlay {
+      z-index: 3 !important;
+    }
   }
 }
 
@@ -28,7 +32,7 @@
 
     &.e-expanded {
       position: fixed;
-      z-index: 3;
+      z-index: 5;
       inset: 0;
       transition: padding-top 0.2s;
       background: white;
@@ -76,7 +80,7 @@
       position: absolute;
       border-radius: 4px;
       background: #eee;
-      z-index: 1;
+      z-index: 2;
       height: 32px;
       display: grid;
       place-content: center;
@@ -136,7 +140,7 @@
     margin: 0 auto;
   }
 
-  .e-halves {
+  .e-toc-and-exam {
     display: flex;
     justify-content: center;
     gap: 1vw;
@@ -199,6 +203,10 @@
 
 body.writer-mode {
   overflow: hidden;
+
+  .e-toc-and-exam {
+    container-type: normal;
+  }
 }
 // @container rules need to be at root level until less supports them properly
 // https://github.com/less/less.js/issues/3766

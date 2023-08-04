@@ -161,16 +161,7 @@ export const mkTableOfContents = (options: {
 
         {isInSidebar && (
           <span className="e-column e-column--narrow e-external-material">
-            {externalMaterial && (
-              <a
-                href={url(attachmentsURL, {
-                  hash: getAttribute(queryAncestors(externalMaterial, 'question')!, 'display-number')
-                })}
-                target="attachments"
-              >
-                <FontAwesomeIcon size="sm" icon={faPaperclip} fixedWidth />
-              </a>
-            )}
+            {externalMaterial && <FontAwesomeIcon size="sm" icon={faPaperclip} fixedWidth />}
           </span>
         )}
 

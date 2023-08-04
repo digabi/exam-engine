@@ -209,7 +209,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-          <div className="e-halves">
+          <div className="e-toc-and-exam">
             {tableOfContents && !visuallyImpaired && (
               <div className="sidebar-toc-container">
                 <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
