@@ -162,7 +162,8 @@ const App: React.FunctionComponent<{
     casCountdownDuration: Number(process.env.CAS_COUNTDOWN_DURATION_SECONDS) || undefined,
     casStatus: 'forbidden' as const,
     restrictedAudioPlaybackStats: [],
-    examServerApi
+    examServerApi,
+    type
   }
 
   return (

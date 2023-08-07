@@ -86,7 +86,10 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps> = ({ doc }) 
   const examTitle = findChildElement(root, 'exam-title')
   const examGradingInstruction = findChildElement(root, 'exam-grading-instruction')
   const tableOfContents = findChildElement(root, 'table-of-contents')
-  const TableOfContents = mkTableOfContents({ showAnsweringInstructions: false, showAttachmentLinks: false })
+  const TableOfContents = mkTableOfContents({
+    showAnsweringInstructions: false,
+    showAttachmentLinks: false
+  })
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))

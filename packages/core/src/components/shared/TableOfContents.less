@@ -1,10 +1,382 @@
+@import './Breakpoints.less';
+@error: #f90;
+
+.rich-text-editor-focus {
+  .e-exam .sidebar-toc-container {
+    top: 38px;
+  }
+}
+
 .e-exam {
-  .table-of-contents--score-column {
-    text-align: right;
-    width: 4rem;
+  .table-of-contents {
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    .table-of-contents--score-column {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .answer-instructions.error {
+      color: @error;
+    }
+
+    .numeric-answer-indicator {
+      display: none;
+    }
   }
 
-  .toc-section-header {
-    margin-bottom: 0;
+  .sidebar-toc-container {
+    flex: 1 1 220px;
+    display: flex;
+    height: 100vh;
+    overflow: auto;
+    padding: 0.5rem 1px 2rem;
+    position: sticky;
+    top: 0;
+    transition: top 0.2s;
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    #toc-title {
+      display: none;
+    }
+
+    .answer-instructions,
+    .max-answers {
+      margin: 0.25rem 0 1rem;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .table-of-contents {
+      position: relative;
+      display: flex;
+      align-self: flex-start;
+      flex-direction: column;
+      background: white;
+      padding: 1rem 1vw 2rem;
+      z-index: 1;
+      margin-left: auto;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
+      max-width: 500px;
+
+      .e-columns {
+        padding-top: 0.25em;
+        flex: 1;
+      }
+
+      .e-list-data {
+        border-spacing: 0;
+      }
+
+      li.level-0 {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 27px auto 3rem 15px;
+        gap: 0 0.5rem;
+        line-height: 22px;
+        padding: 2px 0.25rem;
+        position: relative;
+        cursor: pointer;
+
+        .question-number {
+          display: none;
+        }
+
+        &:before {
+          grid-column: 1;
+          border-radius: 4px;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 3px;
+        }
+
+        &.error:before {
+          color: @error;
+          font-weight: 600;
+        }
+
+        &.current {
+          background: rgb(236 242 247);
+
+          .question-title,
+          .question-number,
+          a {
+            color: #1b4a5a;
+          }
+        }
+
+        &.error .question-title {
+          color: @error;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: hsla(194, 41%, 82%, 0.75);
+        }
+
+        .question-title {
+          * {
+            display: inline;
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 16px;
+          }
+
+          div {
+            display: none;
+          }
+        }
+      }
+
+      .e-external-material {
+        grid-column: 4;
+        padding-right: 0.5em;
+        margin-left: 0;
+        width: calc(17px + 0.5rem);
+      }
+
+      .toc-section-header-container {
+        display: grid;
+
+        .toc-section-header {
+          margin-bottom: 0;
+        }
+      }
+
+      .table-of-contents--score-column {
+        margin-left: 0;
+        font-size: 14px;
+      }
+
+      .e-total {
+        font-size: 14px;
+      }
+
+      .toc-section-header,
+      .e-number-and-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .error-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      height: 14px;
+      width: 14px;
+      font-weight: bold;
+      font-size: 10px;
+      margin: 0 8px 0 2px;
+      background: black;
+      color: white;
+    }
+
+    .answers {
+      margin: 3px 0 6px;
+      font-size: 14px;
+      grid-column: 2;
+      grid-row: 2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2px;
+
+      .answer-indicator {
+        display: block;
+        width: 7px;
+        height: 12px;
+        border-radius: 4px;
+        background: hsla(194, 100%, 15%, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        color: white;
+        line-height: 12px;
+        font-size: 9px;
+
+        &.big {
+          padding: 0 3px;
+          width: auto;
+          min-width: 16px;
+        }
+
+        &.ok {
+          background: #2d90e8;
+        }
+
+        &.error {
+          background: @error;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .main-toc-container {
+    padding-bottom: 2rem;
+
+    .answer-instructions {
+      margin: 0 0 0.5rem;
+    }
+
+    li {
+      &.level-0 {
+        display: flex;
+      }
+
+      .table-of-contents--score-column {
+        width: 4rem;
+      }
+    }
+
+    .toc-section-header {
+      margin: 0.5rem 0 0;
+    }
+
+    .question-number,
+    .answers {
+      display: none;
+    }
+
+    h2 * {
+      display: block;
+    }
+  }
+}
+
+// @container rules need to be at root level until less supports them properly
+// https://github.com/less/less.js/issues/3766
+
+@container (max-width: @break-point-smaller-navi-font) {
+  .e-exam .sidebar-toc-container .table-of-contents {
+    .toc-section-header {
+      font-size: 16px;
+    }
+
+    li.level-0 {
+      grid-template-columns: 27px auto 28px 15px;
+      padding: 0 2px;
+
+      &:before,
+      .question-title {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@container (max-width: @break-point-numeric-navi) {
+  .e-exam .sidebar-toc-container {
+    flex: 1 0 100px;
+
+    .table-of-contents {
+      font-size: 15px;
+      padding: 5px;
+
+      .toc-section-header {
+        font-size: 15px;
+      }
+
+      ol {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        ol {
+          gap: 0;
+        }
+      }
+
+      li.level-0 {
+        grid-template-columns: 23px 40px;
+      }
+
+      .numeric-answer-indicator {
+        display: flex;
+        justify-content: flex-end;
+        white-space: nowrap;
+        font-size: 14px;
+
+        &.ok {
+          color: rgb(80, 138, 189);
+        }
+
+        &.error {
+          color: @error;
+          font-weight: 600;
+        }
+      }
+
+      .answer-instructions {
+        display: none;
+
+        &.error {
+          display: block;
+          margin: 0 0 0.5rem;
+        }
+      }
+
+      ol,
+      li {
+        margin-bottom: 0;
+      }
+
+      .e-external-material,
+      .e-number-and-title,
+      .table-of-contents--score-column,
+      .e-columns,
+      .answers,
+      h2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@container (max-width: @break-point-mini-navi) {
+  .e-exam .sidebar-toc-container {
+    position: sticky;
+    flex: 0 0 50px;
+    overflow: scroll;
+    max-height: 100vh;
+    top: 0.25rem;
+    z-index: 1;
+    padding: 1px;
+    overflow: scroll;
+
+    .toc-section-header,
+    .numeric-answer-indicator {
+      display: none;
+    }
+
+    .table-of-contents {
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      overflow: visible;
+      border-radius: 5px;
+      margin-left: 0;
+
+      li.level-0 {
+        grid-template-columns: 23px;
+      }
+
+      .toc-section-header,
+      .numeric-answer-indicator {
+        display: none;
+      }
+
+      ol li:not(:first-child):not(.level-0) {
+        border-top: 1px solid #ddd;
+      }
+    }
   }
 }

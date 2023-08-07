@@ -1,7 +1,28 @@
+@import '../shared/Breakpoints.less';
+
+/**
+* Temporarily force some k-exam-* styles this here. 
+* They will be removed in 'koe' repository when it's published next time
+*/
+
+.k-exam-body {
+  margin: 0 !important;
+
+  .k-exam-content {
+    max-width: unset !important;
+
+    .k-header {
+      width: calc(100% - 2rem) !important;
+    }
+
+    .k-overlay {
+      z-index: 3 !important;
+    }
+  }
+}
+
 .e-exam {
-  margin: 0 auto;
   width: 100%;
-  max-width: 65rem;
   .e-exam.e-sans-serif();
   .e-exam.e-font-size-m();
   color: @colors[black];
@@ -11,7 +32,7 @@
 
     &.e-expanded {
       position: fixed;
-      z-index: 3;
+      z-index: 5;
       inset: 0;
       transition: padding-top 0.2s;
       background: white;
@@ -69,6 +90,7 @@
 
       &:hover {
         background: #ddd;
+        cursor: pointer;
       }
 
       &.close {
@@ -108,6 +130,46 @@
       }
     }
   }
+
+  &.e-grading-instructions,
+  &.e-results,
+  &.e-grading,
+  &.attachments {
+    max-width: 65rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .e-toc-and-exam {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    width: 100%;
+    padding: 0 0.5rem;
+    container-type: inline-size;
+  }
+
+  .main-exam-container {
+    flex: 1 1.5 65rem;
+    padding-right: 1em;
+    padding: 0.5rem 1px 2rem;
+
+    .main-exam {
+      max-width: 65rem;
+      margin-right: auto;
+      box-sizing: content-box;
+
+      &.center {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.anchor {
+  position: relative;
+  top: -1.5em;
+  visibility: hidden;
 }
 
 .e-exam * {
@@ -134,8 +196,6 @@
     }
   }
 
-
-
   &.math-editor-focus .exam-question.expanded {
     padding-top: 9rem;
   }
@@ -143,4 +203,31 @@
 
 body.writer-mode {
   overflow: hidden;
+
+  .e-toc-and-exam {
+    container-type: normal;
+  }
+}
+// @container rules need to be at root level until less supports them properly
+// https://github.com/less/less.js/issues/3766
+
+@container (max-width: @break-point-numeric-navi) {
+  .e-exam {
+    .main-exam-container {
+      flex-shrink: 1;
+
+      .main-exam {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@container (max-width: @break-point-mini-navi) {
+  .e-exam {
+    .main-exam-container {
+      margin-left: -38px;
+    }
+  }
 }

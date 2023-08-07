@@ -61,6 +61,8 @@ export const sv_FI: Translations = {
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',
   'too-many-answers': 'Svar på för många uppgifter:',
+  'max-answers-warning': 'Besvara högst {{count}} uppgift.',
+  'max-answers-warning_plural': 'Besvara högst {{count}} uppgifter.',
   'open-writing-mode': 'Öppna skrivvyn',
   'close-writing-mode': 'Minska vyn',
   'listen-times-remaining': '{{count}} lyssningsgång kvar.',

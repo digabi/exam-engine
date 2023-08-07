@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { createRef, useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
@@ -45,6 +45,8 @@ import Video from '../shared/Video'
 import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
+import * as _ from 'lodash-es'
+import classNames from 'classnames'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -73,6 +75,7 @@ export interface ExamProps extends CommonExamProps {
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[]
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
+  type: 'normal' | 'visually-impaired' | 'hearing-impaired'
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -112,7 +115,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   casStatus,
   answers,
   restrictedAudioPlaybackStats,
-  examServerApi
+  examServerApi,
+  type
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -123,11 +127,26 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const externalMaterial = findChildElement(root, 'external-material')
   const examStylesheet = root.getAttribute('exam-stylesheet')
 
+  const examRef = createRef<HTMLDivElement>()
+
   const store = useCached(() =>
     initializeExamStore(parseExamStructure(doc), casStatus, answers, restrictedAudioPlaybackStats, examServerApi)
   )
+
+  const TableOfContentsSidebar = useCached(() =>
+    mkTableOfContents({
+      showAttachmentLinks: true,
+      showAnsweringInstructions: true,
+      isInSidebar: true
+    })
+  )
+
   const TableOfContents = useCached(() =>
-    mkTableOfContents({ showAttachmentLinks: true, showAnsweringInstructions: true })
+    mkTableOfContents({
+      showAttachmentLinks: true,
+      showAnsweringInstructions: true,
+      isInSidebar: false
+    })
   )
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
@@ -135,26 +154,97 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   useEffect(scrollToHash, [])
 
+  const isInViewport = (element: Element) => {
+    const rect = element.getBoundingClientRect()
+    return rect.top >= 100 && rect.bottom <= window.innerHeight - 100
+  }
+
+  const handleExamScroll = () => {
+    const scrollY = window.scrollY
+    const sections = document.querySelectorAll('.e-exam-question.e-level-0')
+    const sideNavigation = document.querySelector(`.sidebar-toc-container`)
+
+    const lis = document.querySelectorAll(`.sidebar-toc-container li[data-list-number]`)
+    lis.forEach(i => i.classList.remove('current'))
+
+    // Find the section currently in view
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top + scrollY
+      const sectionBottom = section.getBoundingClientRect().bottom + scrollY
+
+      const sectionBeginsInView = sectionTop < scrollY + window.innerHeight && sectionTop > scrollY
+      const sectionEndsInView = sectionBottom < scrollY + window.innerHeight && sectionBottom > scrollY
+      const sectionFillsView = sectionTop < scrollY && sectionBottom > scrollY + window.innerHeight
+
+      const sectionId = section.querySelector('.anchor')?.id || ''
+      const sectionNumber = sectionId.replace('question-nr-', '')
+
+      if (sectionBeginsInView || sectionEndsInView || sectionFillsView) {
+        const currentNavTitle = document.querySelector(`.table-of-contents li[data-list-number="${sectionNumber}."]`)
+
+        if (currentNavTitle) {
+          currentNavTitle.classList.add('current')
+          const isVisible = isInViewport(currentNavTitle)
+
+          if (!isVisible && sideNavigation) {
+            const navHeight = sideNavigation.getBoundingClientRect().height
+            const scrollToPos = (currentNavTitle as HTMLElement).offsetTop - navHeight / 2
+            sideNavigation.scrollTo({ behavior: 'smooth', top: scrollToPos })
+          }
+        }
+      }
+    })
+  }
+
+  const throttledScroll = _.throttle(handleExamScroll, 100, { trailing: false })
+
+  const visuallyImpaired = type === 'visually-impaired'
+
+  window.addEventListener('scroll', throttledScroll)
+
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId}>
+        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-          <SectionElement aria-labelledby={examTitleId}>
-            {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-            {date && (
-              <p>
-                <strong>{dateTimeFormatter.format(date)}</strong>
-              </p>
+
+          <div className="e-toc-and-exam">
+            {tableOfContents && !visuallyImpaired && (
+              <div className="sidebar-toc-container">
+                <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
+              </div>
             )}
-            {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
-            {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
-            {externalMaterial && (
-              <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-            )}
-          </SectionElement>
-          {renderChildNodes(root)}
+
+            <div className="main-exam-container" /*onScroll={throttledScroll}*/>
+              <div className={classNames('main-exam', { center: visuallyImpaired })}>
+                <SectionElement aria-labelledby={examTitleId}>
+                  {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+                  {date && (
+                    <p>
+                      <strong>{dateTimeFormatter.format(date)}</strong>
+                    </p>
+                  )}
+                  {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+
+                  {tableOfContents && (
+                    <div className="main-toc-container">
+                      <TableOfContents
+                        {...{
+                          element: tableOfContents,
+                          renderChildNodes
+                        }}
+                      />
+                    </div>
+                  )}
+                  {externalMaterial && (
+                    <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                  )}
+                </SectionElement>
+                {renderChildNodes(root)}
+              </div>
+            </div>
+          </div>
           <div className="e-footer">
             <ErrorIndicator />
             <SaveIndicator />
