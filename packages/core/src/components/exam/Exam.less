@@ -16,7 +16,7 @@
     }
 
     .k-overlay {
-      z-index: 3 !important;
+      z-index: 5 !important;
     }
   }
 }
@@ -71,8 +71,7 @@
       margin-top: 1rem;
       margin-left: ~'max(2.5rem, (100vw - 55rem)/2)';
       margin-right: ~'max(2.5rem, (100vw - 55rem)/2)';
-      position: fixed;
-      inset: 0;
+      position: relative;
       transition: padding 0.3s 0.05s;
     }
 
@@ -143,7 +142,7 @@
   .e-toc-and-exam {
     display: flex;
     justify-content: center;
-    gap: 1vw;
+    gap: 0.5vw;
     width: 100%;
     padding: 0 0.5rem;
     container-type: inline-size;
@@ -184,7 +183,7 @@
 }
 
 .rich-text-editor-tools {
-  z-index: 3;
+  z-index: 6;
 }
 
 .rich-text-editor-focus {

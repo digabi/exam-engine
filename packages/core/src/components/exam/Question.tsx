@@ -30,6 +30,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
     } else {
       body?.classList.remove('writer-mode')
       body?.classList.remove('rich-text-editor-focus')
+      setTimeout(() => document.getElementById(`question-nr-${displayNumber}`)?.scrollIntoView(), 10)
     }
   }
 
