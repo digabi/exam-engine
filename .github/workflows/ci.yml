@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [16.x, 18.x]
     steps:
       - uses: actions/checkout@v3
 
@@ -39,10 +39,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 14
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Restore cache
         uses: actions/cache@v3
@@ -50,9 +50,9 @@ jobs:
           path: |
             **/node_modules
             ~/.cache/puppeteer
-          key: 14.x-${{ hashFiles('yarn.lock') }}
+          key: 18.x-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            14.x-
+            18.x-
 
       - run: yarn --frozen-lockfile
       - run: yarn lint
