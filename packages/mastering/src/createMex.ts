@@ -1,11 +1,11 @@
 import fs from 'fs'
-import glob from 'glob-promise'
 import path from 'path'
 import stream, { Readable, Writable } from 'stream'
 import yazl, { ZipFile } from 'yazl'
 import { createAES256EncryptStreamWithIv, deriveAES256KeyAndIv, KeyAndIv, signWithSHA256AndRSA } from './crypto-utils'
 import cloneable from 'cloneable-readable'
 import { promisify } from 'util'
+import { glob } from 'glob'
 
 const pipeline = promisify(stream.pipeline)
 
