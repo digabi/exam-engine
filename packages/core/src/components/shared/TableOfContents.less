@@ -96,10 +96,6 @@
         position: relative;
         cursor: pointer;
 
-        .question-number {
-          display: none;
-        }
-
         &:before {
           grid-column: 1;
           border-radius: 4px;
@@ -116,14 +112,13 @@
         &.current {
           background: rgb(236 242 247);
 
-          .question-title,
-          .question-number,
+          .e-question-title,
           a {
             color: #1b4a5a;
           }
         }
 
-        &.error .question-title {
+        &.error .e-question-title {
           color: @error;
         }
 
@@ -132,7 +127,7 @@
           background: hsla(194, 41%, 82%, 0.75);
         }
 
-        .question-title {
+        .e-question-title {
           * {
             display: inline;
             white-space: nowrap;
@@ -171,7 +166,7 @@
       }
 
       .toc-section-header,
-      .e-number-and-title {
+      .e-question-title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -255,7 +250,6 @@
       margin: 0.5rem 0 0;
     }
 
-    .question-number,
     .answers {
       display: none;
     }
@@ -358,7 +352,7 @@
       }
 
       .e-external-material,
-      .e-number-and-title,
+      .e-question-title,
       .table-of-contents--score-column,
       .e-columns,
       .answers,
