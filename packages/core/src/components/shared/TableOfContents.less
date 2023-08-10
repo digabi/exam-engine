@@ -1,6 +1,10 @@
 @import './Breakpoints.less';
 @error: #f90;
 
+#bertta .sidebar-toc-container .table-of-contents {
+  padding: 1rem 1cqw 2rem important;
+}
+
 .rich-text-editor-focus {
   .e-exam .sidebar-toc-container {
     top: 38px;
@@ -59,7 +63,7 @@
       align-self: flex-start;
       flex-direction: column;
       background: white;
-      padding: 1rem 1cqw 2rem;
+      padding: 1rem 1vw 2rem;
       z-index: 1;
       margin-left: auto;
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
@@ -257,7 +261,14 @@
 // @container rules need to be at root level until less supports them properly
 // https://github.com/less/less.js/issues/3766
 
-@container (max-width: @break-point-smaller-navi-font) {
+@container exam-container (max-width: @break-point-smaller-navi-font) {
+  .smaller-navi-font();
+}
+@media (max-width: @break-point-smaller-navi-font) {
+  .smaller-navi-font();
+}
+
+.smaller-navi-font {
   .e-exam .sidebar-toc-container .table-of-contents {
     .toc-section-header {
       font-size: 16px;
@@ -268,14 +279,21 @@
       padding: 0 2px;
 
       &:before,
-      .question-title {
+      .e-question-title {
         font-size: 14px;
       }
     }
   }
 }
 
-@container (max-width: @break-point-numeric-navi) {
+@container exam-container (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+@media (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+
+.numeric-navi {
   .e-exam .sidebar-toc-container {
     flex: 1 0 100px;
 
@@ -343,7 +361,14 @@
   }
 }
 
-@container (max-width: @break-point-mini-navi) {
+@container exam-container (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+@media (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+
+.mini-navi {
   .e-exam .sidebar-toc-container {
     position: sticky;
     flex: 0 0 50px;

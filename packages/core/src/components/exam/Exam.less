@@ -21,6 +21,11 @@
   }
 }
 
+#bertta .e-toc-and-exam {
+  container-type: inline-size;
+  container-name: exam-container;
+}
+
 .e-exam {
   width: 100%;
   .e-exam.e-sans-serif();
@@ -145,7 +150,6 @@
     gap: 0.5vw;
     width: 100%;
     padding: 0 0.5rem;
-    container-type: inline-size;
   }
 
   .main-exam-container {
@@ -210,7 +214,14 @@ body.writer-mode {
 // @container rules need to be at root level until less supports them properly
 // https://github.com/less/less.js/issues/3766
 
-@container (max-width: @break-point-numeric-navi) {
+@container exam-container (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+@media (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+
+.numeric-navi {
   .e-exam {
     .main-exam-container {
       flex-shrink: 1;
@@ -223,7 +234,14 @@ body.writer-mode {
   }
 }
 
-@container (max-width: @break-point-mini-navi) {
+@container exam-container (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+@media (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+
+.mini-navi {
   .e-exam {
     .main-exam-container {
       margin-left: -38px;
