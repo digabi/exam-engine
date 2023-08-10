@@ -41,7 +41,7 @@
     "tmp-promise": "^3.0.2",
     "uuid": "^9.0.0",
     "webpack": "^5.23.0",
-    "webpack-dev-server": "^4.7.2",
+    "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.0.9"
   },
   "gitHead": "cefffb210c708a1ccedcb225bdd1db6795d79624"
