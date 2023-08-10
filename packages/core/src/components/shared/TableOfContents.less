@@ -5,12 +5,6 @@
   padding: 1rem 1cqw 2rem important;
 }
 
-.rich-text-editor-focus {
-  .e-exam .sidebar-toc-container {
-    top: 38px;
-  }
-}
-
 .e-exam {
   .table-of-contents {
     h2 {
@@ -43,7 +37,8 @@
     flex: 1 1 250px;
     display: flex;
     height: 100vh;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 0.5rem 1px 2rem;
     position: sticky;
     top: 0;
@@ -71,7 +66,7 @@
       align-self: flex-start;
       flex-direction: column;
       background: white;
-      padding: 1rem 1vw 2rem;
+      padding: 2rem 1vw 2rem;
       z-index: 1;
       margin-left: auto;
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
@@ -374,12 +369,12 @@
   .e-exam .sidebar-toc-container {
     position: sticky;
     flex: 0 0 50px;
-    overflow: scroll;
     max-height: 100vh;
     top: 0.25rem;
     z-index: 1;
     padding: 1px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     .toc-section-header,
     .numeric-answer-indicator {
