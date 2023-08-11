@@ -201,10 +201,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const handleTOCScroll = (e: Event) => {
     const toc = e.currentTarget as Element
     const deltaY = (e as WheelEvent).deltaY
-    if (deltaY > 0 && toc.scrollTop >= toc.scrollHeight - toc.clientHeight) {
-      e.preventDefault()
-    }
-    if (deltaY < 0 && toc.scrollTop === 0) {
+    const hitsTop = deltaY < 0 && toc.scrollTop === 0
+    const hitsBottom = deltaY > 0 && toc.scrollTop >= toc.scrollHeight - toc.clientHeight
+    if (hitsTop || hitsBottom) {
       e.preventDefault()
     }
   }
