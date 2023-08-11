@@ -1,16 +1,22 @@
 @import './Breakpoints.less';
 @error: #f90;
 
-.rich-text-editor-focus {
-  .e-exam .sidebar-toc-container {
-    top: 38px;
-  }
+#bertta .sidebar-toc-container .table-of-contents {
+  padding: 1rem 1cqw 2rem important;
 }
 
 .e-exam {
   .table-of-contents {
     h2 {
       margin-bottom: 1rem;
+    }
+
+    li.level-0 {
+      display: flex;
+
+      .question-number {
+        display: none;
+      }
     }
 
     .table-of-contents--score-column {
@@ -31,7 +37,8 @@
     flex: 1 1 250px;
     display: flex;
     height: 100vh;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 0.5rem 1px 2rem;
     position: sticky;
     top: 0;
@@ -59,7 +66,7 @@
       align-self: flex-start;
       flex-direction: column;
       background: white;
-      padding: 1rem 1cqw 2rem;
+      padding: 2rem 1vw 2rem;
       z-index: 1;
       margin-left: auto;
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
@@ -84,10 +91,6 @@
         position: relative;
         cursor: pointer;
 
-        .question-number {
-          display: none;
-        }
-
         &:before {
           grid-column: 1;
           border-radius: 4px;
@@ -104,14 +107,13 @@
         &.current {
           background: rgb(236 242 247);
 
-          .question-title,
-          .question-number,
+          .e-question-title,
           a {
             color: #1b4a5a;
           }
         }
 
-        &.error .question-title {
+        &.error .e-question-title {
           color: @error;
         }
 
@@ -120,7 +122,7 @@
           background: hsla(194, 41%, 82%, 0.75);
         }
 
-        .question-title {
+        .e-question-title {
           * {
             display: inline;
             white-space: nowrap;
@@ -159,7 +161,7 @@
       }
 
       .toc-section-header,
-      .e-number-and-title {
+      .e-question-title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -243,7 +245,6 @@
       margin: 0.5rem 0 0;
     }
 
-    .question-number,
     .answers {
       display: none;
     }
@@ -257,7 +258,14 @@
 // @container rules need to be at root level until less supports them properly
 // https://github.com/less/less.js/issues/3766
 
-@container (max-width: @break-point-smaller-navi-font) {
+@container exam-container (max-width: @break-point-smaller-navi-font) {
+  .smaller-navi-font();
+}
+@media (max-width: @break-point-smaller-navi-font) {
+  .smaller-navi-font();
+}
+
+.smaller-navi-font {
   .e-exam .sidebar-toc-container .table-of-contents {
     .toc-section-header {
       font-size: 16px;
@@ -268,14 +276,21 @@
       padding: 0 2px;
 
       &:before,
-      .question-title {
+      .e-question-title {
         font-size: 14px;
       }
     }
   }
 }
 
-@container (max-width: @break-point-numeric-navi) {
+@container exam-container (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+@media (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+
+.numeric-navi {
   .e-exam .sidebar-toc-container {
     flex: 1 0 100px;
 
@@ -332,7 +347,7 @@
       }
 
       .e-external-material,
-      .e-number-and-title,
+      .e-question-title,
       .table-of-contents--score-column,
       .e-columns,
       .answers,
@@ -343,16 +358,23 @@
   }
 }
 
-@container (max-width: @break-point-mini-navi) {
+@container exam-container (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+@media (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+
+.mini-navi {
   .e-exam .sidebar-toc-container {
     position: sticky;
     flex: 0 0 50px;
-    overflow: scroll;
     max-height: 100vh;
     top: 0.25rem;
     z-index: 1;
     padding: 1px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     .toc-section-header,
     .numeric-answer-indicator {

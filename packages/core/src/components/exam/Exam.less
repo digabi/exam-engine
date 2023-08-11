@@ -19,6 +19,15 @@
       z-index: 5 !important;
     }
   }
+
+  .k-exam-footer {
+    margin: 0 !important;
+  }
+}
+
+#bertta .e-toc-and-exam {
+  container-type: inline-size;
+  container-name: exam-container;
 }
 
 .e-exam {
@@ -26,6 +35,7 @@
   .e-exam.e-sans-serif();
   .e-exam.e-font-size-m();
   color: @colors[black];
+  padding-bottom: 2rem;
 
   .e-exam-question {
     position: relative;
@@ -145,13 +155,12 @@
     gap: 0.5vw;
     width: 100%;
     padding: 0 0.5rem;
-    container-type: inline-size;
   }
 
   .main-exam-container {
     flex: 1 1.5 65rem;
     padding-right: 1em;
-    padding: 0.5rem 1px 2rem;
+    padding: 0.5rem 1px 0;
 
     .main-exam {
       max-width: 65rem;
@@ -210,7 +219,14 @@ body.writer-mode {
 // @container rules need to be at root level until less supports them properly
 // https://github.com/less/less.js/issues/3766
 
-@container (max-width: @break-point-numeric-navi) {
+@container exam-container (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+@media (max-width: @break-point-numeric-navi) {
+  .numeric-navi();
+}
+
+.numeric-navi {
   .e-exam {
     .main-exam-container {
       flex-shrink: 1;
@@ -223,7 +239,14 @@ body.writer-mode {
   }
 }
 
-@container (max-width: @break-point-mini-navi) {
+@container exam-container (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+@media (max-width: @break-point-mini-navi) {
+  .mini-navi();
+}
+
+.mini-navi {
   .e-exam {
     .main-exam-container {
       margin-left: -38px;

@@ -186,7 +186,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           currentNavTitle.classList.add('current')
           const isVisible = isInViewport(currentNavTitle)
 
-          if (!isVisible && sideNavigation) {
+          if (!isVisible && !!sideNavigation) {
             const navHeight = sideNavigation.getBoundingClientRect().height
             const scrollToPos = (currentNavTitle as HTMLElement).offsetTop - navHeight / 2
             sideNavigation.scrollTo({ behavior: 'smooth', top: scrollToPos })
@@ -196,11 +196,25 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     })
   }
 
-  const throttledScroll = _.throttle(handleExamScroll, 100, { trailing: false })
+  window.addEventListener('scroll', _.throttle(handleExamScroll, 100, { trailing: false }))
+
+  const handleTOCScroll = (e: Event) => {
+    const toc = e.currentTarget as Element
+    const deltaY = (e as WheelEvent).deltaY
+    const hitsTop = deltaY < 0 && toc.scrollTop === 0
+    const hitsBottom = deltaY > 0 && toc.scrollTop >= toc.scrollHeight - toc.clientHeight
+    if (hitsTop || hitsBottom) {
+      e.preventDefault()
+    }
+  }
+
+  useEffect(() => {
+    const toc = document.querySelector('.sidebar-toc-container')
+    toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
+    return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
+  }, [])
 
   const visuallyImpaired = type === 'visually-impaired'
-
-  window.addEventListener('scroll', throttledScroll)
 
   return (
     <Provider store={store}>
@@ -216,7 +230,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
               </div>
             )}
 
-            <div className="main-exam-container" /*onScroll={throttledScroll}*/>
+            <div className="main-exam-container">
               <div className={classNames('main-exam', { center: visuallyImpaired })}>
                 <SectionElement aria-labelledby={examTitleId}>
                   {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}

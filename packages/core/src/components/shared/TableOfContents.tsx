@@ -126,10 +126,9 @@ export const mkTableOfContents = (options: {
         onClick={() => (isInSidebar ? (window.location.href = `#question-nr-${displayNumber}`) : undefined)}
         className={`level-${level} ${hasQuestionValidationError ? 'error' : ''}`}
       >
-        <span className="e-column e-number-and-title">
+        <span className="e-column e-question-title">
           <a href={url('', { hash: `question-nr-${displayNumber}` })}>
-            <span className="question-number">{displayNumber}</span>
-            {questionTitle && <span className="question-title">{renderChildNodes(questionTitle)}</span>}
+            <span>{renderChildNodes(questionTitle)}</span>
           </a>
         </span>
 
