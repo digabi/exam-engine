@@ -41,11 +41,12 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   const menuRef = React.useRef<HTMLElement>(null)
 
   const [measuring, setMeasuring] = useState(true)
+  const [fontsLoaded, setFontsLoaded] = useState(fonts.loaded)
+
   if (runningInBrowser) {
     // Force a re-measure if element changes or fonts are loaded after this
     // component has been rendered.
-    const [, setFontsLoaded] = useState(fonts.loaded)
-    fonts.ready.then(() => setFontsLoaded(true)).catch(err => console.error(err))
+    fonts.ready.then(() => !fontsLoaded && setFontsLoaded(true)).catch(err => console.error(err))
 
     useEffect(() => setMeasuring(true), [element])
 
