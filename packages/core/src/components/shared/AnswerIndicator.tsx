@@ -16,7 +16,7 @@ const AnswerIndicator = (props: Props) => {
 
   const answerIsFormula = answer?.value.includes('math.svg')
   const answerIsImage = answer?.value.includes('data:image')
-  const answerIsLongText = answer?.type === 'richText' && !answerIsFormula && !answerIsImage
+  const answerIsLongText = answer?.type === 'richText'
 
   return (
     <>
@@ -31,9 +31,13 @@ const AnswerIndicator = (props: Props) => {
       >
         {answer?.type === 'richText' && (
           <>
-            {answerIsFormula && '∑'}
-            {answerIsImage && <FontAwesomeIcon icon={faImage} size="lg" />}
-            {(answerIsLongText && answer?.characterCount) || ''}
+            {answerIsLongText && <span>{answer?.characterCount || ''}</span>}
+            {answerIsFormula && <span className="formula">∑</span>}
+            {answerIsImage && (
+              <span className="img">
+                <FontAwesomeIcon icon={faImage} size="lg" />
+              </span>
+            )}
           </>
         )}
       </div>

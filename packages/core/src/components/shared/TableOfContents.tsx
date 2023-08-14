@@ -190,9 +190,11 @@ export const mkTableOfContents = (options: {
 
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
-        <h2 id={tocTitleId}>
-          <span className="e-toc-heading">{t('toc-heading')}</span>
-        </h2>
+        {!isInSidebar && (
+          <h2 id={tocTitleId}>
+            <span className="e-toc-heading">{t('toc-heading')}</span>
+          </h2>
+        )}
 
         {maxAnswers && (
           <div style={{ display: 'grid' }}>
