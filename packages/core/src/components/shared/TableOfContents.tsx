@@ -28,10 +28,10 @@ export const mkTableOfContents = (options: {
     const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
     const { t } = useExamTranslation()
 
-    const hasSectionValidationErrors = () =>
-      useSelector((state: { answers: AnswersState }) => state.answers)?.validationErrors.find(
-        i => i.displayNumber === displayNumber && i?.elementType === 'section'
-      )
+    const hasSectionValidationErrors = !!useSelector(
+      (state: { answers: AnswersState }) =>
+        state.answers?.validationErrors?.find(i => i.displayNumber === displayNumber && i?.elementType === 'section')
+    )
 
     return (
       <>
@@ -43,10 +43,10 @@ export const mkTableOfContents = (options: {
           </div>
         )}
 
-        {showAnsweringInstructions && maxAnswers != null && (
+        {showAnsweringInstructions && maxAnswers && (
           <div style={{ display: 'grid' }}>
-            <div className={classNames('answer-instructions', { error: isInSidebar && hasSectionValidationErrors() })}>
-              {isInSidebar && hasSectionValidationErrors() && <div className="error-mark">!</div>}
+            <div className={classNames('answer-instructions', { error: isInSidebar && hasSectionValidationErrors })}>
+              {isInSidebar && hasSectionValidationErrors && <div className="error-mark">!</div>}
               <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
             </div>
           </div>
@@ -183,10 +183,9 @@ export const mkTableOfContents = (options: {
     const { t } = useExamTranslation()
     const maxAnswers = getNumericAttribute(root, 'max-answers')
 
-    const hasExamValidationErrors = () =>
-      !!useSelector(
-        (state: { answers: AnswersState }) => state.answers.validationErrors?.find(i => i?.elementType === 'exam')
-      )
+    const hasExamValidationErrors = !!useSelector(
+      (state: { answers: AnswersState }) => state.answers.validationErrors?.find(i => i?.elementType === 'exam')
+    )
 
     return (
       <nav className="table-of-contents" aria-labelledby={tocTitleId}>
@@ -198,8 +197,8 @@ export const mkTableOfContents = (options: {
 
         {maxAnswers && (
           <div style={{ display: 'grid' }}>
-            <div className={classNames('answer-instructions', { error: isInSidebar && hasExamValidationErrors() })}>
-              {isInSidebar && hasExamValidationErrors() && <div className="error-mark exam">!</div>}
+            <div className={classNames('answer-instructions', { error: isInSidebar && hasExamValidationErrors })}>
+              {isInSidebar && hasExamValidationErrors && <div className="error-mark exam">!</div>}
               {t('max-answers-warning', { count: maxAnswers })}
             </div>
           </div>
