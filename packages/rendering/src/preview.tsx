@@ -10,7 +10,7 @@ import {
 import '@digabi/exam-engine-core/dist/main.css'
 import { ExamType, MasteringResult } from '@digabi/exam-engine-mastering'
 import React, { useEffect, useMemo } from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 import createRouter from 'router5'
 import { Link, RouterProvider, useRoute, useRouter } from 'react-router5'
@@ -126,7 +126,6 @@ const App: React.FunctionComponent<{
   examServerApi: ExamServerAPI
   answers: ExamAnswer[]
   resolveAttachment: (filename: string) => string
-  callback: () => void
 }> = ({ examServerApi, answers, resolveAttachment }) => {
   const router = useRouter()
   const { route } = useRoute()
@@ -167,7 +166,7 @@ const App: React.FunctionComponent<{
   }
 
   return (
-    <div ref={callback}>
+    <>
       <Toolbar {...{ translation, translationFilename }} />
       {route.name === 'results' ? (
         <Results {...resultsProps} />
@@ -180,19 +179,8 @@ const App: React.FunctionComponent<{
       ) : (
         <Exam {...examProps} />
       )}
-    </div>
+    </>
   )
-}
-
-const callback = () => {
-  document.getElementById('app')!.removeAttribute('aria-busy')
-  const maybeScrollY = localStorage.getItem(location.pathname)
-  localStorage.removeItem(location.pathname)
-  if (maybeScrollY) {
-    requestAnimationFrame(() => {
-      window.scrollTo(0, Number(maybeScrollY))
-    }) // Delay scrolling a bit to wait for the layout to stabilize.
-  }
 }
 
 onload = async () => {
@@ -219,10 +207,20 @@ onload = async () => {
     localStorage.setItem(location.pathname, window.scrollY.toString())
   })
 
-  const root = createRoot(app)
-  root.render(
+  ReactDOM.render(
     <RouterProvider router={router}>
-      <App {...{ examServerApi, answers, resolveAttachment, callback }} />
-    </RouterProvider>
+      <App {...{ examServerApi, answers, resolveAttachment }} />
+    </RouterProvider>,
+    app,
+    () => {
+      app.removeAttribute('aria-busy')
+      const maybeScrollY = localStorage.getItem(location.pathname)
+      localStorage.removeItem(location.pathname)
+      if (maybeScrollY) {
+        requestAnimationFrame(() => {
+          window.scrollTo(0, Number(maybeScrollY))
+        }) // Delay scrolling a bit to wait for the layout to stabilize.
+      }
+    }
   )
 }
