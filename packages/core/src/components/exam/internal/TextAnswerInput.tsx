@@ -31,16 +31,22 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
   const { examServerApi } = useContext(ExamContext)
 
   const [screenshotError, setScreenshotError] = useState<ScreenshotError>()
-  const { answer, supportsAnswerHistory, showAnswerHistory, validationError } = useSelector(
-    (state: { answers: AnswersState }) => {
-      const answer = state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
-      const supportsAnswerHistory = state.answers.supportsAnswerHistory
-      const showAnswerHistory = state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
-      const validationError = state.answers.validationErrors.find(
-        (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
-      )
-      return { answer, supportsAnswerHistory, showAnswerHistory, validationError }
-    }
+  const answer = useSelector(
+    (state: { answers: AnswersState }) =>
+      state.answers.answersById[questionId] as TextAnswerT | RichTextAnswerT | undefined
+  )
+
+  const supportsAnswerHistory = useSelector((state: { answers: AnswersState }) => state.answers.supportsAnswerHistory)
+
+  const showAnswerHistory = useSelector(
+    (state: { answers: AnswersState }) =>
+      state.answers.supportsAnswerHistory && state.answers.serverQuestionIds.has(questionId)
+  )
+
+  const validationError = useSelector((state: { answers: AnswersState }) =>
+    state.answers.validationErrors.find(
+      (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
+    )
   )
 
   const dispatch = useDispatch()
