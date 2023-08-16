@@ -150,6 +150,34 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(indicatorValueFinally).toContain('')
   })
 
+  describe('Test integer answer', () => {
+    const createPage = initPuppeteer()
+    let page: Page
+    let ctx: PreviewContext
+    beforeAll(async () => {
+      ctx = await previewExam(resolveExam('N/N.xml'))
+      page = await createPage()
+    })
+
+    afterAll(async () => {
+      await ctx.close()
+    })
+
+    it("remembers integer answer's value after reloading", async () => {
+      await loadExam(page, ctx.url)
+      await setIntegerAnswer(page, 1, -3)
+      await loadExam(page, ctx.url)
+      expect(await getIntegerValue(page, 1)).toBe(-3)
+      await setIntegerAnswer(page, 2, 0)
+      await loadExam(page, ctx.url)
+      expect(await getIntegerValue(page, 2)).toBe(0)
+
+      await setIntegerAnswer(page, 3, 10)
+      await loadExam(page, ctx.url)
+      expect(await getIntegerValue(page, 3)).toBe(10)
+    })
+  })
+
   const expectErrorIndicator = async (text: string) => {
     await page.waitForFunction(
       (text: string) => {
@@ -172,6 +200,17 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     const text = await getTextContent(page, `.text-answer[data-question-id="${questionId}"] ~ .answer-toolbar`)
     const count = Number(/\d+/.exec(text))
     expect(count).toEqual(expectedCount)
+  }
+
+  async function setIntegerAnswer(page: Page, questionId: number, value: number): Promise<void> {
+    await page.type(`input.text-answer--integer[data-question-id="${questionId}"]`, value.toString())
+    await page.waitForSelector('.save-indicator-text--saved')
+  }
+
+  async function getIntegerValue(page: Page, questionId: number): Promise<number | undefined> {
+    return page
+      .$eval(`input.text-answer--integer[data-question-id="${questionId}"]`, e => Number(e.value))
+      .catch(() => undefined)
   }
 
   const expectToBeSaved = () => page.waitForSelector('.save-indicator-text--saved')

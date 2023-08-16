@@ -86,8 +86,8 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
     },
     [questionId, displayNumber]
   )
+  const [integerValue, setIntegerValue] = useState<string>(answer?.value || '')
 
-  const [integerValue, setIntegerValue] = useState<string>('')
   const onIntegerChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     event => {
       event.preventDefault()
