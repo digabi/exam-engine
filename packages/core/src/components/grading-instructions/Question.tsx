@@ -14,6 +14,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
       })}
       id={displayNumber}
     >
+      <div className="anchor" id={`question-nr-${displayNumber}`} />
       {renderChildNodes(element, RenderOptions.SkipHTML)}
     </div>
   )
