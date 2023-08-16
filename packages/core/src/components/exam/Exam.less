@@ -82,7 +82,7 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      margin-top: 3rem;
+      padding-top: 3rem;
       margin-left: ~'max(2.5rem, (100vw - 55rem)/2)';
       margin-right: ~'max(2.5rem, (100vw - 55rem)/2)';
       position: relative;
@@ -200,18 +200,12 @@
   z-index: 6;
 }
 
-.rich-text-editor-focus {
-  .full-screen {
-    @media (max-width: 1278px) {
-      padding-top: 2rem;
-    }
-    @media (max-width: 952px) {
-      padding-top: 4rem;
-    }
+.rich-text-editor-focus .e-exam .e-exam-question .full-screen {
+  @media (max-width: 1278px) {
+    padding-top: 5rem;
   }
-
-  &.math-editor-focus .exam-question.expanded {
-    padding-top: 9rem;
+  @media (max-width: 952px) {
+    padding-top: 7rem;
   }
 }
 
