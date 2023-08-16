@@ -79,7 +79,7 @@ function GradingAnswerWithTranslations({
   let selectionChangeTimeout: ReturnType<typeof setTimeout>
 
   useLayoutEffect(() => {
-    if (answerRef.current) {
+    if (answerRef.current && tooltipRef.current && popupRef.current) {
       savedAnnotations = annotations
       toggle(tooltipRef.current, false)
       toggle(popupRef.current, false)
@@ -175,7 +175,7 @@ function GradingAnswerWithTranslations({
 
   function editExistingAnnotation(e: React.MouseEvent<HTMLSpanElement>) {
     if ((e.target as HTMLElement).closest('.editable')) {
-      toggle(tooltipRef.current, false)
+      toggle(tooltipRef.current!, false)
       showExistingAnnotationPopup(annotationPositionForPopup)
     }
   }
@@ -188,7 +188,7 @@ function GradingAnswerWithTranslations({
   }
   function hideTooltip() {
     hideTooltipTimeout = setTimeout(() => {
-      toggle(tooltipRef.current, false)
+      toggle(tooltipRef.current!, false)
     }, 400)
   }
 
@@ -251,7 +251,7 @@ function GradingAnswerWithTranslations({
     imgAnnotationState.img = undefined
     isEditAnnotationPopupVisible = false
     window.removeEventListener('keydown', onKeyUpInAnnotationPopup)
-    toggle(popupRef.current, false)
+    toggle(popupRef.current!, false)
     renderAnswerWithAnnotations(savedAnnotations)
   }
   function onAnswerMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -384,7 +384,7 @@ function GradingAnswerWithTranslations({
         savedAnnotations[gradingRole] || []
       )
     }
-    toggle(popupRef.current, false)
+    toggle(popupRef.current!, false)
     saveAnnotations(savedAnnotations)
   }
 

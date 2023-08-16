@@ -243,10 +243,8 @@ export function preventDefaults(e: Event) {
   e.stopPropagation()
 }
 
-export function toggle(element: HTMLElement | null, isVisible: boolean): void {
-  if (element instanceof HTMLElement) {
-    element.style.display = isVisible ? 'initial' : 'none'
-  }
+export function toggle(element: HTMLElement, isVisible: boolean): void {
+  element.style.display = isVisible ? 'initial' : 'none'
 }
 
 export function isDesktopVersion() {
