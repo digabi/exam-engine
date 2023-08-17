@@ -48,6 +48,7 @@
       background: white;
       margin: 0;
       padding: 0;
+      overflow-y: auto;
 
       .exam-question-title {
         margin-right: 13rem;
@@ -59,21 +60,23 @@
 
       .text-answer-container {
         padding: 2px;
-        overflow-y: hidden;
         display: flex;
         flex-direction: column;
 
         .text-answer--rich-text {
           height: calc(100% - 8px);
-          font-size: 18px;
           line-height: ~'clamp(24px, 7vw, 2rem)';
           padding: ~'min(4rem, 6vw)' ~'min(6rem, 9vw)';
-          font-family: Georgia, Times, 'Times New Roman', serif;
-          overflow-y: scroll;
         }
 
         .answer-toolbar {
-          padding-bottom: 0.5rem;
+          position: sticky;
+          bottom: 0;
+          background: white;
+          padding: 0.25rem;
+          display: inline-block;
+          align-self: flex-start;
+          margin-left: .5rem;
         }
       }
     }
