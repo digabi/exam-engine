@@ -46,7 +46,6 @@ import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import * as _ from 'lodash-es'
-import classNames from 'classnames'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -75,7 +74,6 @@ export interface ExamProps extends CommonExamProps {
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[]
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
-  type: 'normal' | 'visually-impaired' | 'hearing-impaired'
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -115,8 +113,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   casStatus,
   answers,
   restrictedAudioPlaybackStats,
-  examServerApi,
-  type
+  examServerApi
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -214,8 +211,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
   }, [])
 
-  const visuallyImpaired = type === 'visually-impaired'
-
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
@@ -224,14 +219,14 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
           <div className="e-toc-and-exam">
-            {tableOfContents && !visuallyImpaired && (
-              <div className="sidebar-toc-container">
+            {tableOfContents && (
+              <div className="sidebar-toc-container" aria-hidden="true">
                 <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
               </div>
             )}
 
             <div className="main-exam-container">
-              <div className={classNames('main-exam', { center: visuallyImpaired })}>
+              <div className="main-exam">
                 <SectionElement aria-labelledby={examTitleId}>
                   {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
                   {date && (

@@ -40,8 +40,7 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
         ...commonProps,
         casStatus: 'forbidden',
         examServerApi,
-        restrictedAudioPlaybackStats: [],
-        type: 'normal'
+        restrictedAudioPlaybackStats: []
       }
       const resultsProps: ResultsProps = {
         ...commonProps,
