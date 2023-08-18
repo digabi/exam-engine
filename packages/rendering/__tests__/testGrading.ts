@@ -83,14 +83,14 @@ describe('testGrading.ts', () => {
 
   it('removes annotations', async () => {
     await navigateToAnswer('2')
-    await drag(242, 300, 252, 310)
+    await drag(300, 210, 502, 210)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
-    await page.keyboard.type('img annotation msg')
+    await page.keyboard.type('second annotation message')
     await page.keyboard.press('Enter')
     await page.mouse.reset()
     await page.waitForSelector('.e-grading-answer-add-annotation', HIDDEN)
-    await page.waitForSelector('.e-annotation-wrapper .e-annotation--censoring', VISIBLE)
-    await expectAnnotationMessages(['+1', 'img annotation msg'])
+    await expectText('.e-annotation--censoring', 'vel eros lobortis, dignissim ')
+    await expectAnnotationMessages(['+1', 'second annotation message'])
 
     await page.hover('.e-annotation--censoring')
     await page.waitForSelector('.e-grading-answer-tooltip', VISIBLE)
