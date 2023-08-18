@@ -8,6 +8,7 @@ import { CasState } from '../../store/cas/reducer'
 import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useExamTranslation } from '../../i18n'
+import { getNumericAttribute, query } from '../../dom-utils'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -34,17 +35,25 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
     }
   }
 
-  const handleEsc = (e: KeyboardEvent) => {
-    if (e.key === 'Escape' || e.code === 'Escape') {
+  const escapeKeys = ['Escape', 'Tab']
+
+  const handleCloseView = (e: KeyboardEvent) => {
+    if (escapeKeys.includes(e.key) || escapeKeys.includes(e.code)) {
       toggleWriterMode(false)
     }
   }
+  const textAnswerElement = query(element, 'text-answer')
+  const questionId = textAnswerElement ? getNumericAttribute(textAnswerElement, 'question-id') : null
 
   useEffect(() => {
     if (expanded) {
-      window.addEventListener('keydown', handleEsc)
+      window.addEventListener('keydown', handleCloseView)
+      const textInput = questionId
+        ? document.querySelector<HTMLElement>(`[data-question-id="${questionId}"]`)
+        : undefined
+      textInput?.focus()
     }
-    return () => window.removeEventListener('keydown', handleEsc)
+    return () => window.removeEventListener('keydown', handleCloseView)
   }, [expanded])
 
   return !casForbidden || casStatus === 'forbidden' ? (
