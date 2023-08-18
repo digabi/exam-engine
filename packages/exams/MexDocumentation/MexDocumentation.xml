@@ -557,11 +557,13 @@
     <e:question>
       <e:question-title>text-answer</e:question-title>
       <p>
-        There are two types of text answers.
+        There are three types of text answers.
         <code>rich-text</code>
         answer is intended for verbose essay-style answers, whereas
         <code>single-line</code>
         answer is intended for short, at most couple words, answers.
+        <code>integer</code>
+        answer is intended for integer answers.
       </p>
 
       <p>
@@ -649,6 +651,17 @@
       <pre class="code"><![CDATA[<e:text-answer type="rich-text" max-score="2" max-length="20" />]]></pre>
       <div class="example">
         <e:text-answer type="rich-text" max-score="2" max-length="20"/>
+      </div>
+
+
+      <h4>
+        <code>integer</code>
+        answer example
+      </h4>
+      <p>The answer can only contain numbers (0...9), and a minus sign (-) in the beginning</p>
+      <pre class="code"><![CDATA[<e:text-answer type="integer" max-score="1" />]]></pre>
+      <div class="example">
+        <e:text-answer type="integer" max-score="1"/>
       </div>
 
     </e:question>
