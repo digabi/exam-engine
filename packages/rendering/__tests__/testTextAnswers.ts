@@ -99,7 +99,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(answer).toBe(answerText)
   })
 
-  it('ESC exits writer mode', async () => {
+  it('ESC and Tab keys exit writer mode', async () => {
     await loadExam(page, ctx.url)
 
     const body = await page.$('body')
@@ -108,6 +108,10 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await openWriterMode(page)
     await page.keyboard.press('Escape')
     const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
+    expect(bodyClass).not.toContain('writer-mode')
+
+    await openWriterMode(page)
+    await page.keyboard.press('Tab')
     expect(bodyClass).not.toContain('writer-mode')
 
     const fullScreen = await page.$(fullScreenSelector)
