@@ -435,7 +435,21 @@
           </p>
         </e:localization>
       </e:question>
+
+      <e:question>
+        <e:question-title>Pre-defined translations</e:question-title>
+        <p>There are some pre-defined translations that can be easily reused with the <code>e:translation</code> tag. For example this code</p>
+        <pre class="code"><![CDATA[<e:translation key="audio-test.instructions" />]]></pre>
+        <p>renders the following text:
+          <e:translation key="audio-test.instructions" />
+        </p>
+        <p>For a full list of available translations, <a href="https://github.com/digabi/exam-engine/tree/master/packages/core/src/i18n">see these files</a>. 
+        By default, each exam's translations are first looked up in their corresponding translation files (for example, 
+        German exam = GA.ts), and then in the generic Finnish/Swedish translation files (fi-FI.ts and sv-FI.ts)</p>
+      </e:question>
     </e:question>
+
+
   </e:section>
 
   <e:section max-answers="1">
@@ -658,7 +672,7 @@
         <code>integer</code>
         answer example
       </h4>
-      <p>The answer can only contain numbers (0...9), and a minus sign (-) in the beginning</p>
+      <p>The answer can only contain digits (0...9), and optionally a minus sign (-) at the beginning</p>
       <pre class="code"><![CDATA[<e:text-answer type="integer" max-score="1" />]]></pre>
       <div class="example">
         <e:text-answer type="integer" max-score="1"/>
