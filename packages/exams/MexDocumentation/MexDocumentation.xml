@@ -237,6 +237,14 @@
                 <p>See section Answer types below for details.</p>
               </div>
               <div>
+                <strong>
+                  Question number,
+                  <code>&lt;e:question-number&gt;</code>
+                </strong>
+                0-n elements
+                <p>To show parent question number as a prefix and fixed number as a suffix.</p>
+              </div>
+              <div>
                 <strong>OR</strong>
               </div>
               <div>
@@ -469,6 +477,12 @@
         max-answers is ignored in Abitti grading.
       </div>
       <p>
+        Section attribute <code>type</code> can be user to describe how an exam should be packed.
+      </p>
+      <div class="warning-box">
+        Type attribute is an YTL specific type code that is used only in packaging exams for matriculation examination. Type options are H, T, D, E, X, A and B. Use 'H' to denote hearing section of the exam. The other options have more cosmetic effect on exam packaging. This attribute does not have effect on how sections are displayed in the exam.
+      </div>
+      <p>
         CAS applications can be disabled for a
         section by setting
         <code>cas-forbidden="true"</code>
@@ -524,13 +538,13 @@
       <pre class="code"><![CDATA[<e:question>
   <e:question-title>Example question title</e:question-title>
   <e:question-instruction>Question description</e:question-instruction>
-  …HTML code, answer types, materials, sub-questions...
+  …HTML code, answer types, materials, sub-questions, question numbers (e.g. <e:question-number suffix="1" />)...
 </e:question>]]></pre>
     </e:section-instruction>
     <e:question>
       <e:question-title>Example question title</e:question-title>
       <e:question-instruction>Question description</e:question-instruction>
-      …HTML code, answer types, materials, sub-questions...
+      …HTML code, answer types, materials, sub-questions, question numbers (e.g. <e:question-number suffix="1" />)...
     </e:question>
 
     <e:section-instruction>
@@ -2005,6 +2019,15 @@
       <pre class="code"><![CDATA[<e:formula mode="display">\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>]]></pre>
       <p>
         <e:formula mode="display">\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}</e:formula>
+      </p>
+
+      <h4>
+        Example of a
+        <code>assistive-title</code>
+      </h4>
+      <pre class="code"><![CDATA[<e:formula assistive-title="10/36 &gt; 9/36 =1/4">\frac{10}{36}&gt;\frac{9}{36}=\frac{1}{4}</e:formula>]]></pre>
+      <p>
+        <e:formula assistive-title="10/36 &gt; 9/36 =1/4">\frac{10}{36}&gt;\frac{9}{36}=\frac{1}{4}</e:formula>
       </p>
     </e:question>
   </e:section>
