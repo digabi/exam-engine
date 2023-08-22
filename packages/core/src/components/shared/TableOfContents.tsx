@@ -199,7 +199,7 @@ export const mkTableOfContents = (options: {
           </h2>
         )}
 
-        {maxAnswers && (
+        {showAnsweringInstructions && maxAnswers && (
           <div style={{ display: 'grid' }}>
             <div className={classNames('answer-instructions', { error: showExamValidationErrors })}>
               {showExamValidationErrors && <div className="error-mark exam">!</div>}
