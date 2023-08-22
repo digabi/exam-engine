@@ -99,27 +99,22 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(answer).toBe(answerText)
   })
 
-  it('ESC and Tab keys exit writer mode', async () => {
+  it('Tab key does not change focus in writing mode', async () => {
     await loadExam(page, ctx.url)
 
-    const body = await page.$('body')
-    const fullScreenSelector = 'div[data-full-screen-id="1.2"]'
+    const textareaFocusedSelector = 'div[data-full-screen-id="1.2"] .text-answer--rich-text.rich-text-focused'
 
     await openWriterMode(page)
-    await page.keyboard.press('Escape')
-    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
-    expect(bodyClass).not.toContain('writer-mode')
+    const textareaFocused = await page.$(textareaFocusedSelector)
+    expect(textareaFocused).toBeTruthy()
 
-    await openWriterMode(page)
     await page.keyboard.press('Tab')
-    expect(bodyClass).not.toContain('writer-mode')
-
-    const fullScreen = await page.$(fullScreenSelector)
-    expect(fullScreen).toBeFalsy()
+    const textareaFocusedThen = await page.$(textareaFocusedSelector)
+    expect(textareaFocusedThen).toBeTruthy()
   })
 
   const openWriterMode = async (page: Page) => {
-    // focus the textarea first, because it may affect the clickability of expand button
+    // focus the textarea first, because it's z-index may affect clickability of the expand button
     await page.click('.text-answer[data-question-id="2"]')
     await page.click('.text-answer[data-question-id="2"] + .expand')
     const body = await page.$('body')
