@@ -159,7 +159,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const handleExamScroll = () => {
     const scrollY = window.scrollY
     const sections = document.querySelectorAll('.e-exam-question.e-level-0')
-    const sideNavigation = document.querySelector(`.sidebar-toc-container`)
+    const sideNavigation = document.querySelector(`.sidebar-toc-container .table-of-contents`)
 
     const lis = document.querySelectorAll(`.sidebar-toc-container li[data-list-number]`)
     lis.forEach(i => i.classList.remove('current'))
@@ -197,6 +197,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const handleTOCScroll = (e: Event) => {
     const toc = e.currentTarget as Element
+
+    if (toc.scrollHeight <= toc.clientHeight) {
+      return
+    }
     const deltaY = (e as WheelEvent).deltaY
     const hitsTop = deltaY < 0 && toc.scrollTop === 0
     const hitsBottom = deltaY > 0 && toc.scrollTop >= toc.scrollHeight - toc.clientHeight
@@ -206,7 +210,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   }
 
   useEffect(() => {
-    const toc = document.querySelector('.sidebar-toc-container')
+    const toc = document.querySelector('.sidebar-toc-container .table-of-contents')
     toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
     return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
   }, [])
