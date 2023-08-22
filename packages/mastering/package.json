@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-mastering",
-  "version": "19.9.2",
+  "version": "19.9.3",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -9,8 +9,8 @@
     "schema"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "19.9.2",
-    "@digabi/exam-engine-rendering": "19.9.2",
+    "@digabi/exam-engine-core": "19.9.3",
+    "@digabi/exam-engine-rendering": "19.9.3",
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "cloneable-readable": "^3.0.0",
     "compare-versions": "^6.0.0",
@@ -22,5 +22,5 @@
     "mathjax-node": "^2.1.1",
     "yazl": "^2.5.1"
   },
-  "gitHead": "cefffb210c708a1ccedcb225bdd1db6795d79624"
+  "gitHead": "cfa4d9eb7da2cb76ce1a37f420b5be3b6cb0ea2c"
 }

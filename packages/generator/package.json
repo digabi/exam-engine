@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-generator",
-  "version": "19.9.2",
+  "version": "19.9.3",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -8,9 +8,9 @@
     "dist"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "19.9.2",
+    "@digabi/exam-engine-core": "19.9.3",
     "libxmljs2": "^0.32.0",
     "lodash": "^4.17.15"
   },
-  "gitHead": "cefffb210c708a1ccedcb225bdd1db6795d79624"
+  "gitHead": "cfa4d9eb7da2cb76ce1a37f420b5be3b6cb0ea2c"
 }
