@@ -109,7 +109,8 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(textareaFocused).toBeTruthy()
 
     await page.keyboard.press('Tab')
-    expect(textareaFocused).toBeTruthy()
+    const textareaFocusedThen = await page.$(textareaFocusedSelector)
+    expect(textareaFocusedThen).toBeTruthy()
   })
 
   const openWriterMode = async (page: Page) => {
