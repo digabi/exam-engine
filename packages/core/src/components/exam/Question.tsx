@@ -35,11 +35,9 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
     }
   }
 
-  const escapeKeys = ['Escape', 'Tab']
-
-  const handleCloseView = (e: KeyboardEvent) => {
-    if (escapeKeys.includes(e.key) || escapeKeys.includes(e.code)) {
-      toggleWriterMode(false)
+  const preventTabKey = (e: KeyboardEvent) => {
+    if (e.code === 'Tab') {
+      e.preventDefault()
     }
   }
   const textAnswerElement = query(element, 'text-answer')
@@ -47,13 +45,13 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
 
   useEffect(() => {
     if (expanded) {
-      window.addEventListener('keydown', handleCloseView)
+      window.addEventListener('keydown', preventTabKey)
       const textInput = questionId
         ? document.querySelector<HTMLElement>(`[data-question-id="${questionId}"]`)
         : undefined
       textInput?.focus()
     }
-    return () => window.removeEventListener('keydown', handleCloseView)
+    return () => window.removeEventListener('keydown', preventTabKey)
   }, [expanded])
 
   return !casForbidden || casStatus === 'forbidden' ? (
