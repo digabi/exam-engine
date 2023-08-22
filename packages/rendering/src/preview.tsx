@@ -178,7 +178,27 @@ const App: React.FunctionComponent<{
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (
-        <Exam {...examProps} />
+        <div>
+          <div
+            style={{
+              width: `calc(100% - 2rem)`,
+              margin: '20px auto'
+            }}
+          >
+            Tähän tulee koetilanteessa kokelaan nimi
+          </div>
+          <Exam {...examProps} />
+          <div
+            style={{
+              background: 'white',
+              padding: '30px 60px',
+              marginTop: '-20px',
+              textAlign: 'center'
+            }}
+          >
+            {`Tähän tulee koetilanteessa "Päätä koe" -nappi.`}
+          </div>
+        </div>
       )}
     </div>
   )
