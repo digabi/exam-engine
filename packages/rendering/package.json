@@ -28,6 +28,7 @@
     "less": "^4.1.0",
     "less-loader": "^11.0.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "piexif-ts": "^2.0.16",
     "postcss": "^8.0.5",
     "postcss-loader": "^7.0.0",
     "postcss-preset-env": "^9.1.0",
