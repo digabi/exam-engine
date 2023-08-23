@@ -52,7 +52,6 @@
     "jest-junit": "^16.0.0",
     "jest-snapshot-serializer-raw": "^1.1.0",
     "lerna": "^7.1.4",
-    "piexif-ts": "^2.0.16",
     "prettier": "^3.0.0",
     "puppeteer": "^21.0.2",
     "tmp-promise": "^3.0.2",
@@ -75,5 +74,7 @@
   "workspaces": [
     "packages/**"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "piexif-ts": "^2.0.16"
+  }
 }
