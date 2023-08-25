@@ -74,5 +74,7 @@
   "workspaces": [
     "packages/**"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "piexif-ts": "^2.0.16"
+  }
 }
