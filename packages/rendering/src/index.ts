@@ -6,4 +6,3 @@ export interface RenderingOptions {
 
 export * from './createOfflineExam'
 export * from './previewExam'
-export * from './utils/exifDataAndImageHandler'
