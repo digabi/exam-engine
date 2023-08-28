@@ -134,7 +134,10 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
     [questionId, displayNumber]
   )
 
-  const onError = useCallback(() => (screenshotError: ScreenshotError) => setScreenshotError(screenshotError), [])
+  const onError = useCallback(
+    (screenshotError: ScreenshotError) => setScreenshotError(screenshotError),
+    [screenshotError]
+  )
   const onFocus = useCallback(() => dispatch(answerFocused(questionId)), [questionId])
   const onBlur = useCallback(() => dispatch(answerBlurred(questionId)), [questionId])
   const wrappedSelectAnswerVersion = useCallback<typeof selectAnswerVersion>(
