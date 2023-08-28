@@ -49,7 +49,9 @@ export const mkTableOfContents = (options: {
           <div style={{ display: 'grid' }}>
             <div className={classNames('answer-instructions', { error: showSectionValidationErrors })}>
               {showSectionValidationErrors && <div className="error-mark">!</div>}
-              <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
+              <span className="error-reason">
+                <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
+              </span>
             </div>
           </div>
         )}
@@ -203,7 +205,7 @@ export const mkTableOfContents = (options: {
           <div style={{ display: 'grid' }}>
             <div className={classNames('answer-instructions', { error: showExamValidationErrors })}>
               {showExamValidationErrors && <div className="error-mark exam">!</div>}
-              {t('max-answers-warning', { count: maxAnswers })}
+              <span className="error-reason">{t('max-answers-warning', { count: maxAnswers })}</span>
             </div>
           </div>
         )}

@@ -177,6 +177,7 @@
       border-radius: 5px;
       height: 14px;
       width: 14px;
+      flex: 0 0 14px;
       font-weight: bold;
       font-size: 10px;
       margin: 0 8px 0 2px;
@@ -307,6 +308,10 @@
   .e-exam .sidebar-toc-container {
     flex: 1 0 100px;
 
+    .error-reason {
+      font-size: 14px;
+    }
+
     .table-of-contents {
       font-size: 15px;
       padding: 5px;
@@ -412,6 +417,10 @@
       ol li:not(:first-child):not(.level-0) {
         border-top: 1px solid #ddd;
       }
+    }
+
+    .error-reason {
+      display: none;
     }
   }
 }
