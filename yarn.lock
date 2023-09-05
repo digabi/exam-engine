@@ -2577,9 +2577,9 @@
     "@types/node" "*"
 
 "@types/child-process-promise@^2.2.1":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@types/child-process-promise/-/child-process-promise-2.2.2.tgz#ac7d640a6289f7caa6102d92d83a0123a07a4937"
-  integrity sha512-4eGTIhKW0jb9DlS81Fgo/UyZ12DMhDhz3Ec8tdHW53l4ubteynNIuy7Z1HNnyHn1jTzXa/o9iX0WoAdiSoDs+Q==
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@types/child-process-promise/-/child-process-promise-2.2.3.tgz#8788935093a1c795ede87e6b8732df7f7adf0add"
+  integrity sha512-KmWGn82bbXrmWGQ3v+iSSBospH2hCaQM4LLqeKAQrIzrAnE8qpS73MeECW+BUZwIzOibwZefr7RTkVN9nUM+vQ==
   dependencies:
     "@types/node" "*"
 
