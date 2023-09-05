@@ -2614,9 +2614,9 @@
     classnames "*"
 
 "@types/cloneable-readable@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/cloneable-readable/-/cloneable-readable-2.0.0.tgz#b5bc6602d4771a5db9d80f3867427e9da5f68a63"
-  integrity sha512-Q9fTsA3hEbOXmGIZ7StMunr/SCvtdfXDfJcDadYk/MPbS3Xh/fWCsdhW26NVx1XNNcX3SkdBqPkfbOiD6p3q2Q==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@types/cloneable-readable/-/cloneable-readable-2.0.1.tgz#1c814d8735518abc3cced26034cc8a12389792d2"
+  integrity sha512-JdIAEyLh8OJmlg6/QF0LWkjWollQzK5KGNJ/bdyWkSA7Y+nWXwi3Pto/3aeW+xzr5zECRjHHpFHeZgAXws1OMQ==
   dependencies:
     "@types/node" "*"
 
