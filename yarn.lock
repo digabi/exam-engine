@@ -2946,9 +2946,9 @@
   integrity sha512-0VBprVqfgFD7Ehb2vd8Lh9TG3jP98gvr8rgehQqzztZNI7o8zS8Ad4jyZneKELphpuE212D8J70LnSNQSyO6bQ==
 
 "@types/tmp@^0.2.0":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.2.3.tgz#908bfb113419fd6a42273674c00994d40902c165"
-  integrity sha512-dDZH/tXzwjutnuk4UacGgFRwV+JSLaXL1ikvidfJprkb7L9Nx1njcRHHmi3Dsvt7pgqqTEeucQuOrWHPFgzVHA==
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.2.4.tgz#1e26f791b94a95474f1f3322a721dfb065b876fb"
+  integrity sha512-Vq3rwM+2KgiLacq68EjTJD9cuJ/ne5pXntWn8B8Rxj25SLkGAhCgooCZ1lhcIcV5OFveJ+s5Cqpi+XKfFM/xZA==
 
 "@types/tough-cookie@*":
   version "4.0.2"
