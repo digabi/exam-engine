@@ -8,7 +8,7 @@ describe('ee new', () => {
 
   beforeAll(removeDirectory)
   beforeAll(async () => {
-    output = await exec('yarn ee new new_exam', { cwd })
+    output = await exec('npm run ee new new_exam', { cwd })
   })
   afterAll(removeDirectory)
 

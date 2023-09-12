@@ -64,7 +64,6 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 - Install `git` and NodeJS (here from HomeBrew):
 
       brew install git node
-      npm install -g yarn
 
 - Install Firefox
 - Recommended:
@@ -84,7 +83,6 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
       sudo apt install git
       sudo snap install node --channel=12/stable --classic
-      # yarn got installed there^
 
 - Firefox should already be installed
 - Recommended: Install Visual Studio Code and JDK for XML Extension:
@@ -100,8 +98,6 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
       15:55 $ node -v
       v12.8.0
-      15:55 $ yarn -v
-      1.21.1
 
 ---
 
@@ -109,7 +105,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
     git clone https://github.com/digabi/exam-engine
     cd exam-engine
-    yarn
+    npm install
 
 ---
 
@@ -117,7 +113,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
        cd exam-engine
        git pull
-       yarn
+       npm install
 
 - If you have made edits to exam-engine files, discard (`git checkout .`) or stash (`git stash`) your modifications
 
@@ -132,7 +128,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 - Create empty exam
 
       cd exam-engine
-      yarn new hello
+      npm run new hello
 
 - Open exam in editor
 
@@ -140,7 +136,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 
 - Start exam preview
 
-      yarn start hello
+      npm run start hello
 
 - Demo/hands-on: See changes or error messages (try deleting section) in preview after (auto)save
 
@@ -151,7 +147,7 @@ https://gitter.im/abitti-dev/exam-engine?at=5df799fbe47fb31eb7c12cf3
 - Create transfer.zip:
 
       cd exam-engine
-      yarn create-transfer-zip hello
+      npm run create-transfer-zip hello
       ls -l hello
 
 - Upload `hello_fi-FI_transfer.zip` to Abitti: `Tuo koe (.zip)`

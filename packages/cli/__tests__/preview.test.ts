@@ -10,7 +10,7 @@ describe('ee preview', () => {
   beforeAll(
     () =>
       new Promise<void>(resolve => {
-        const ee = exec('DISABLE_BROWSER=true yarn ee preview packages/exams/SC/SC.xml', {
+        const ee = exec('DISABLE_BROWSER=true npm run ee preview packages/exams/SC/SC.xml', {
           encoding: 'utf8',
           cwd,
           signal

@@ -6,7 +6,7 @@ describe('ee create-transfer-zip', () => {
   let output: string
 
   beforeAll(async () => {
-    output = await exec('yarn ee create-transfer-zip packages/exams/SC/SC.xml', { cwd: root })
+    output = await exec('npm run ee create-transfer-zip packages/exams/SC/SC.xml', { cwd: root })
   })
 
   it('logs progress', () => {

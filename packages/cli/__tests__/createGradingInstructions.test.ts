@@ -9,7 +9,7 @@ describe('ee create-grading-instructions', () => {
 
   beforeAll(async () => {
     await removeGeneratedDirectories()
-    output = await exec(`yarn ee create-grading-instructions packages/exams/SC/SC.xml`, { cwd: root })
+    output = await exec(`npm run ee create-grading-instructions packages/exams/SC/SC.xml`, { cwd: root })
   })
 
   it('logs progress', () => {
