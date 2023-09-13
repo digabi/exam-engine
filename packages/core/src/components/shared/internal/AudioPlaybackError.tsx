@@ -7,10 +7,13 @@ import { useExamTranslation } from '../../../i18n'
 
 const AudioPlaybackError: React.FunctionComponent<{
   error?: AudioPlaybackError
+  children: React.ReactNode[] | React.ReactNode
 }> = ({ error, children }) => {
   const { t } = useExamTranslation()
 
   return (
+    // @types/react 18 removed children from implicit props. This component has not explicitly added them yet
+    // @ts-ignore
     <ReactCSSTransitionReplace transitionName="e-crossfade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
       {error != null ? (
         <div className="e-color-error" role="alert">
