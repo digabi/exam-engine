@@ -11917,9 +11917,9 @@ reusify@^1.0.4:
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
 rich-text-editor@^7.1.4, rich-text-editor@^7.1.6:
-  version "7.1.7"
-  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-7.1.7.tgz#bb0931185e460c7591588ea792c59f54a22029d2"
-  integrity sha512-MBJnMHAe2BIa9IKdnn0m4Tt2AmW1cckpO+7LJMGwrFL8oCTK7NY9AKkzQw9zETPQD06olsQYNEZtUMjX2Ja3ig==
+  version "7.1.8"
+  resolved "https://registry.yarnpkg.com/rich-text-editor/-/rich-text-editor-7.1.8.tgz#a366125c54ececc829322551ab16cd78bf329f34"
+  integrity sha512-AbomALetND83DwX3XRE4rsB/0vii5mwi8+wG3w38Unju4qGmgnLpmY+6oLJIMOEyOcwnmkqFlANNNNF4zudPrg==
   dependencies:
     "@digabi/mathquill" "^0.10.12"
     "@types/express" "*"
