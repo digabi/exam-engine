@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "19.9.12-alpha.0",
+  "version": "19.9.13-alpha.0",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
