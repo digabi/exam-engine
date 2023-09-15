@@ -5,7 +5,6 @@ import path from 'path'
 export function listExams(): string[] {
   return glob.globSync(resolveExam('*/*.xml')).sort()
 }
-
 /** Resolves a filename relative to the exams directory */
 export function resolveExam(filename: string): string {
   return path.resolve(__dirname, '..', filename)
