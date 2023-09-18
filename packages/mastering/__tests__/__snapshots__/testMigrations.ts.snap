@@ -2,15 +2,16 @@
 
 exports[`Exam migrations migrates an old exam to the current schema 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.4" date="2020-01-01" exam-code="A" day-code="X">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.5" date="2020-01-01" exam-code="A" day-code="X">
     <e:exam-versions>
         <e:exam-version lang="fi-FI"/>
         <e:exam-version lang="sv-FI"/>
     </e:exam-versions>
     <e:exam-title/>
     <e:exam-instruction/>
-    <e:section>
+    <e:section cas-forbidden="true">
         <e:section-title/>
+        <e:section-instruction>Cas forbidden section 1Cas forbidden section 2Cas forbidden section 3</e:section-instruction>
         <e:question>
             <e:question-title/>
             <e:audio src="1.ogg"><e:audio-title>
@@ -20,7 +21,30 @@ exports[`Exam migrations migrates an old exam to the current schema 1`] = `
                 Audio file <em>description</em>
             </e:image-title></e:image>
         </e:question>
+    <e:question>
+            <e:question-title>Question with sub question</e:question-title>
+            <e:question>
+                <e:question-title>Sub question</e:question-title>
+            </e:question>
+        </e:question><e:question>
+            <e:question-title/>
+        </e:question></e:section><e:section>
+        <e:section-title/>
+        <e:section-instruction>Section without cas-forbidden attribute</e:section-instruction>
+        <e:question>
+            <e:question-title/>
+        </e:question>
     </e:section>
+    
+    
+    <e:section cas-forbidden="false">
+        <e:section-title/>
+        <e:section-instruction>Explicitly unset cas forbidden section</e:section-instruction>
+        <e:question>
+            <e:question-title/>
+        </e:question>
+    </e:section>
+    
 </e:exam>
 
 `;

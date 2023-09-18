@@ -73,7 +73,7 @@
 
   <xs:simpleType name="exam-schema-version">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="0.4" />
+      <xs:enumeration value="0.5" />
     </xs:restriction>
   </xs:simpleType>
 

@@ -142,7 +142,7 @@ export function generateExam(options: GenerateExamOptions): string {
     xmlns: 'http://www.w3.org/1999/xhtml',
     'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
     'xsi:schemaLocation': 'http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd',
-    'exam-schema-version': '0.4',
+    'exam-schema-version': '0.5',
     'exam-code': options.examCode,
     'day-code': options.dayCode,
     date: options.date,
