@@ -7810,7 +7810,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           Content for multiple language versions of the same exam can be defined using localization elements.
         </p>
         <div class="warning-box">
-          Multiple languages work in Abitti when you create transfer zip with "yarn create-transfer-zip" -command. It generates separate transfer zip for each language.
+          Multiple languages work in Abitti when you create transfer zip with "npm run create-transfer-zip" -command. It generates separate transfer zip for each language.
         </div>
       </e:question-instruction>
       <e:question display-number="3.1" max-score="0">

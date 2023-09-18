@@ -6,7 +6,7 @@ describe('ee', () => {
   let output: string
 
   beforeAll(async () => {
-    output = await exec('yarn ee', { cwd: root })
+    output = await exec('npm run ee', { cwd: root })
   })
 
   it('prints help', () => {

@@ -1,11 +1,9 @@
-import glob from 'glob'
+import * as glob from 'glob'
 import path from 'path'
 
 /** Returns an array of all exam xml files in the exams directory */
 export function listExams(): string[] {
-  // Using glob.sync here for this to be easier to use in mocha `describe(…)` blocks.
-  // Could refactor this to glob-promise when top-level await is available
-  return glob.sync(resolveExam('*/*.xml'))
+  return glob.globSync(resolveExam('*/*.xml')).sort()
 }
 
 /** Resolves a filename relative to the exams directory */

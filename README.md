@@ -116,10 +116,10 @@ Exam-engine is structured as a monorepo containing several NPM packages.
 
 ## Preview
 
-The `ee` client can be run with `yarn ee`. So to preview an exam, run
+The `ee` client can be run with `npm run ee`. So to preview an exam, run
 
 ```
-$ yarn ee preview path/to/exam.xml
+$ npm run ee preview path/to/exam.xml
 ```
 
 ## Compilation
@@ -128,13 +128,13 @@ Before doing any changes to the code, you'll want to command TypeScript to compi
 any changes within the whole project automatically.
 
 ```
-$ yarn watch
+$ npm run watch
 ```
 
 ## Lint
 
 ```
-$ yarn lint
+$ npm run lint
 ```
 
 ## Tests
@@ -142,21 +142,21 @@ $ yarn lint
 To run all tests
 
 ```
-$ yarn test
+$ npm run test
 ```
 
 To run a specific test or a specific set of tests, use
 
 ```
-$ yarn test packages/foo/__tests__/testFoo.ts
-$ yarn test packages/foo
+$ npm run test packages/foo/__tests__/testFoo.ts
+$ npm run test packages/foo
 ```
 
 If you've made changes to the code that affect exam mastering or rendering,
 you need to update the test snapshots by running. Review changes the snapshots manually.
 
 ```
-$ yarn test -u
+$ npm run test -- -u
 ```
 
 Travis CI runs tests on all branches and pull requests in https://travis-ci.org/digabi/exam-engine
@@ -172,13 +172,13 @@ $ npm login
 When publishing a prerelease, use:
 
 ```bash
-$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem yarn lerna publish --dist-tag next
+$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem npm run lerna publish --dist-tag next
 ```
 
 With official releases you need to skip the `dist-tag` parameter:
 
 ```bash
-$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem yarn lerna publish
+$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem npm run lerna publish
 ```
 
 The commands prompt you for details about the release: just running them does not publish

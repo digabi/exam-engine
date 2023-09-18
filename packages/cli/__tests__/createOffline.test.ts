@@ -9,7 +9,7 @@ describe('ee create-offline', () => {
 
   beforeAll(async () => {
     await removeGeneratedDirectories()
-    output = await exec(`yarn ee create-offline packages/exams/SC/SC.xml`, { cwd: root })
+    output = await exec(`npm run ee create-offline packages/exams/SC/SC.xml`, { cwd: root })
   })
 
   it('logs progress', () => {
