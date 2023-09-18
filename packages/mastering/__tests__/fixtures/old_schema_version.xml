@@ -7,15 +7,53 @@
     <e:exam-title />
     <e:exam-instruction />
     <e:section>
-        <e:section-title />
+        <e:section-title/>
+        <e:section-instruction>Section without cas-forbidden attribute</e:section-instruction>
         <e:question>
-            <e:question-title></e:question-title>
+            <e:question-title/>
+        </e:question>
+    </e:section>
+    <e:section cas-forbidden="true">
+        <e:section-title/>
+        <e:section-instruction>Cas forbidden section 1</e:section-instruction>
+        <e:question>
+            <e:question-title/>
             <e:audio src="1.ogg">
                 Audio file <em>description</em>
             </e:audio>
             <e:image src="1.jpg">
                 Audio file <em>description</em>
             </e:image>
+        </e:question>
+    </e:section>
+    <e:section cas-forbidden="true">
+        <e:section-title/>
+        <e:section-instruction>Cas forbidden section 2</e:section-instruction>
+        <e:section-instruction>
+            <p>Instructions 2</p>
+        </e:section-instruction>
+        <e:question>
+            <e:question-title>Question with sub question</e:question-title>
+            <e:question>
+                <e:question-title>Sub question</e:question-title>
+            </e:question>
+        </e:question>
+    </e:section>
+    <e:section cas-forbidden="false">
+        <e:section-title/>
+        <e:section-instruction>Explicitly unset cas forbidden section</e:section-instruction>
+        <e:question>
+            <e:question-title/>
+        </e:question>
+    </e:section>
+    <e:section cas-forbidden="true">
+        <e:section-title/>
+        <e:section-instruction>Cas forbidden section 3</e:section-instruction>
+        <e:section-instruction>
+            <p>Instructions 3</p>
+        </e:section-instruction>
+        <e:question>
+            <e:question-title></e:question-title>
         </e:question>
     </e:section>
 </e:exam>
