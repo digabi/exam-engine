@@ -1,5 +1,5 @@
 import React, { FormEvent, useEffect, useLayoutEffect, useRef } from 'react'
-import { Annotation } from '../..'
+import { Annotation, TextAnnotation } from '../..'
 import {
   annotationFromMousePosition,
   getOverlappingMessages,
@@ -163,7 +163,7 @@ function GradingAnswerWithTranslations({
           showTooltip(element)
         }
       } else if (element.tagName === 'LI') {
-        const index = element.dataset.listNumber?.replace(')', '')!
+        const index = element.dataset.listNumber?.replace(')', '')
         const mark = document.querySelector<HTMLElement>(`.e-annotation[data-index="${index}"]`)!
         showTooltip(mark)
         mark.scrollIntoView({ block: 'center', behavior: 'smooth' })
@@ -278,7 +278,7 @@ function GradingAnswerWithTranslations({
 
     // Image annotation is being created since shape exists
     if (imgAnnotationState.element) {
-      showAnnotationPopup(imgAnnotationState.element?.getBoundingClientRect()!, '')
+      showAnnotationPopup(imgAnnotationState.element?.getBoundingClientRect(), '')
       return
     }
 
@@ -297,7 +297,7 @@ function GradingAnswerWithTranslations({
       newAnnotations[gradingRole] = mergeAnnotation(
         answerRef.current,
         newAnnotationObject,
-        savedAnnotations[gradingRole]
+        savedAnnotations[gradingRole] as TextAnnotation[]
       )
       renderAnswerWithAnnotations(newAnnotations)
     }
@@ -311,8 +311,8 @@ function GradingAnswerWithTranslations({
       const newAnnotations = { ...savedAnnotations }
       newAnnotations[gradingRole] = mergeAnnotation(
         answerRef.current,
-        newAnnotationObject!,
-        savedAnnotations[gradingRole]
+        newAnnotationObject! as TextAnnotation,
+        savedAnnotations[gradingRole] as TextAnnotation[]
       )
       renderAnswerWithAnnotations(newAnnotations)
     }
@@ -380,8 +380,8 @@ function GradingAnswerWithTranslations({
       // Saving new annotation
       savedAnnotations[gradingRole] = mergeAnnotation(
         answerRef.current!,
-        { ...newAnnotationObject!, message },
-        savedAnnotations[gradingRole] || []
+        { ...newAnnotationObject!, message } as TextAnnotation,
+        (savedAnnotations[gradingRole] as TextAnnotation[]) || []
       )
     }
     toggle(popupRef.current!, false)

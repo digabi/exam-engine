@@ -27,7 +27,7 @@ export default async function createTransferZip({
   const doc = parseExam(xml, true)
   for (const examVersion of doc.find<Element>('./e:exam-versions/e:exam-version', ns)) {
     const type = (examVersion.attr('exam-type')?.value() ?? 'normal') as ExamType
-    const language = examVersion.attr('lang')?.value()!
+    const language = examVersion.attr('lang')!.value()
     const localizedXml = localize(xml, language, type)
     const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
       removeCorrectAnswers: false

@@ -6,7 +6,6 @@ function ExamTranslation({ element }: ExamComponentProps) {
   const { t } = useExamTranslation()
   const key = element.getAttribute('key')!
 
-  // @ts-ignore
   return <>{t(key)}</>
 }
 
