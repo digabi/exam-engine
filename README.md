@@ -106,13 +106,13 @@ The information in this section is only relevant for developers.
 
 Exam-engine is structured as a monorepo containing several NPM packages.
 
-| Component                                           | Purpose                                                                                                                                                                                                                                                                                 |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@digabi/exam-engine-core](packages/core)           | The main UI code responsible for rendering a mastered exam into HTML. It produces an AMD bundle containing several React components and a CSS file. This AMD bundle is packaged to every exam .mex file and loaded dynamically when taking the exam.                                       |
+| Component                                           | Purpose                                                                                                                                                                                                                                                                                |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@digabi/exam-engine-core](packages/core)           | The main UI code responsible for rendering a mastered exam into HTML. It produces an AMD bundle containing several React components and a CSS file. This AMD bundle is packaged to every exam .mex file and loaded dynamically when taking the exam.                                   |
 | [@digabi/exam-engine-mastering](packages/mastering) | Mastering is a step in which we take a source XML file, validate its contents, do some processing (e.g. calculate the maximum score and assign IDs for each question). A single source XML file will produce a separate mastered XML file for each language defined in the source XML. |
-| [@digabi/exam-engine-rendering](packages/rendering) | Contains webpack-related code for previewing an exam or converting one into a static HTML file (also known as an "offline exam").                                                                                                                                                       |
-| [@digabi/exam-engine-exams](packages/exams)         | Contains sample exams in the mex format.                                                                                                                                                                                                                                                |
-| [@digabi/exam-engine-cli](packages/cli)             | Contains the `ee` CLI tool.                                                                                                                                                                                                                                                             |
+| [@digabi/exam-engine-rendering](packages/rendering) | Contains webpack-related code for previewing an exam or converting one into a static HTML file (also known as an "offline exam").                                                                                                                                                      |
+| [@digabi/exam-engine-exams](packages/exams)         | Contains sample exams in the mex format.                                                                                                                                                                                                                                               |
+| [@digabi/exam-engine-cli](packages/cli)             | Contains the `ee` CLI tool.                                                                                                                                                                                                                                                            |
 
 ## Preview
 
@@ -169,16 +169,10 @@ First, login to npm using:
 $ npm login
 ```
 
-When publishing a prerelease, use:
+When publishing a (pre)release, use:
 
 ```bash
-$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem npm run lerna publish --dist-tag next
-```
-
-With official releases you need to skip the `dist-tag` parameter:
-
-```bash
-$ ANSWERS_PRIVATE_KEY=/absolute/path/to/answers-private-key.pem npm run lerna publish
+$ npm run lerna publish
 ```
 
 The commands prompt you for details about the release: just running them does not publish
