@@ -13,6 +13,7 @@ const AudioPlaybackError: React.FunctionComponent<{
 
   return (
     // @types/react 18 removed children from implicit props. This component has not explicitly added them yet
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     <ReactCSSTransitionReplace transitionName="e-crossfade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
       {error != null ? (
