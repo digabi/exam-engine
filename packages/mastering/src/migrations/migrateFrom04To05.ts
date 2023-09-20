@@ -45,4 +45,5 @@ export function migrateFrom04To05(doc: Document) {
   if (!isFirstSectionCasForbidden) {
     firstSection.addPrevSibling(firstCasForbiddenSection)
   }
+  doc.root()?.attr('exam-schema-version', '0.5')
 }
