@@ -6,10 +6,11 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "*/*.mex"
+    "*/*.mex",
+    "*/*.pem"
   ],
   "scripts": {
-    "prepublishOnly": "find . -name '*.mex' -delete && find . -name '*.xml' -print0 | xargs -0 -n1 -P4 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k answers_key.pem"
+    "prepublishOnly": "find . -name '*.mex' -delete && find . -name '*.xml' -print0 | xargs -0 -n1 -P4 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k exam_key.pem"
   },
   "dependencies": {
     "@digabi/exam-engine-mastering": "19.11.0-alpha.0"
