@@ -10,6 +10,7 @@ export function migrateFrom04To05(doc: Document) {
   const casForbiddenSections = doc
     .find<Element>('./e:section', ns)
     .filter(section => section.attr('cas-forbidden')?.value() == 'true')
+  doc.root()?.attr('exam-schema-version', '0.5')
   if (casForbiddenSections.length == 0) {
     return // no cas-forbidden sections
   }
@@ -45,5 +46,4 @@ export function migrateFrom04To05(doc: Document) {
   if (!isFirstSectionCasForbidden) {
     firstSection.addPrevSibling(firstCasForbiddenSection)
   }
-  doc.root()?.attr('exam-schema-version', '0.5')
 }
