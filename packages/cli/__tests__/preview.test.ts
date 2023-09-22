@@ -7,10 +7,11 @@ describe('ee preview', () => {
   const controller = new AbortController()
   const { signal } = controller
   let output = ''
+  let ee: childPromise.ChildProcess
   beforeAll(
     () =>
       new Promise<void>(resolve => {
-        const ee = exec('DISABLE_BROWSER=true npm run ee preview packages/exams/SC/SC.xml', {
+        ee = exec('DISABLE_BROWSER=true npm run ee preview packages/exams/SC/SC.xml', {
           encoding: 'utf8',
           cwd,
           signal
@@ -27,6 +28,9 @@ describe('ee preview', () => {
         })
       })
   )
+  afterAll(() => {
+    exec(`kill -9 ${ee.pid!}`)
+  })
   it('logs preview starup', () => {
     expect(output).toContain(`- Previewing ${cwd}/packages/exams/SC/SC.xml...`)
     expect(output).toContain(`Server is running at http://localhost:`)
