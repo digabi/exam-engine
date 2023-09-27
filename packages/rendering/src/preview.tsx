@@ -163,7 +163,8 @@ const App: React.FunctionComponent<{
     casStatus: 'forbidden' as const,
     restrictedAudioPlaybackStats: [],
     examServerApi,
-    type
+    type,
+    finishExam: () => Promise.resolve()
   }
 
   return (
@@ -188,16 +189,6 @@ const App: React.FunctionComponent<{
             Tähän tulee koetilanteessa kokelaan nimi
           </div>
           <Exam {...examProps} />
-          <div
-            style={{
-              background: 'white',
-              padding: '30px 60px',
-              marginTop: '-20px',
-              textAlign: 'center'
-            }}
-          >
-            {`Tähän tulee koetilanteessa "Päätä koe" -nappi.`}
-          </div>
         </div>
       )}
     </div>
