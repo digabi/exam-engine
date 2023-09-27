@@ -69,6 +69,10 @@ export const fi_FI = {
       infoText: 'A-osa palautettu'
     }
   },
+  'finish-exam': {
+    finish: 'Päätä koe',
+    instructions: 'Painikkeen napsauttamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
+  },
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
   'too-many-answers': 'Vastattu liian moneen tehtävään:',
