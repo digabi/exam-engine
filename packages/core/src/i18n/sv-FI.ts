@@ -58,6 +58,11 @@ export const sv_FI: Translations = {
       infoText: 'Del A returnerad'
     }
   },
+  'finish-exam': {
+    finish: 'Avsluta provet',
+    instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
+  },
+
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',
   'too-many-answers': 'Svar på för många uppgifter:',
