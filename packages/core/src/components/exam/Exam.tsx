@@ -262,6 +262,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
               </div>
             </div>
           </div>
+          <div className="e-section e-exam-footer-content" />
           <div className="e-footer">
             <ErrorIndicator />
             <SaveIndicator />
