@@ -9,7 +9,7 @@ import { QuestionContext } from '../context/QuestionContext'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from '../context/ResultsContext'
 import ResultsExamQuestionAutoScore from './internal/QuestionAutoScore'
-import { useIsStudentsExamineExamPage } from './isExamExaminePageHook'
+import { useIsStudentsExamineExamPage } from './isExamineExamPageHook'
 
 function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const { t, i18n } = useExamTranslation()

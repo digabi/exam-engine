@@ -175,34 +175,42 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const handleExamScroll = () => {
     const scrollY = window.scrollY
-    const sections = document.querySelectorAll('.e-exam-question.e-level-0')
+    const questionsAndSectionTitles = document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
     const sideNavigation = document.querySelector(`.sidebar-toc-container .table-of-contents`)
 
-    const lis = document.querySelectorAll(`.sidebar-toc-container li[data-list-number]`)
+    const lis = document.querySelectorAll('.sidebar-toc-container li[data-list-number], .toc-section-header')
     lis.forEach(i => i.classList.remove('current'))
 
     // Find the section currently in view
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top + scrollY
-      const sectionBottom = section.getBoundingClientRect().bottom + scrollY
+    questionsAndSectionTitles.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top + scrollY
+      const elementBottom = element.getBoundingClientRect().bottom + scrollY
 
-      const sectionBeginsInView = sectionTop < scrollY + window.innerHeight && sectionTop > scrollY
-      const sectionEndsInView = sectionBottom < scrollY + window.innerHeight && sectionBottom > scrollY
-      const sectionFillsView = sectionTop < scrollY && sectionBottom > scrollY + window.innerHeight
+      const elementBeginsInView = elementTop < scrollY + window.innerHeight && elementTop > scrollY
+      const elementEndsInView = elementBottom < scrollY + window.innerHeight && elementBottom > scrollY
+      const elementFillsView = elementTop < scrollY && elementBottom > scrollY + window.innerHeight
 
-      const sectionId = section.querySelector('.anchor')?.id || ''
-      const sectionNumber = sectionId.replace('question-nr-', '')
+      if (elementBeginsInView || elementEndsInView || elementFillsView) {
+        const currentQuestionNumber = element.querySelector('.anchor')?.id.replace('question-nr-', '')
+        const naviQuestionTitle =
+          currentQuestionNumber &&
+          document.querySelector(`.table-of-contents li[data-list-number="${currentQuestionNumber}."]`)
 
-      if (sectionBeginsInView || sectionEndsInView || sectionFillsView) {
-        const currentNavTitle = document.querySelector(`.table-of-contents li[data-list-number="${sectionNumber}."]`)
+        const currentSectionId = element.getAttribute('id')?.replace('section-title-', '')
+        const naviSectionHeader =
+          currentSectionId && document.querySelector(`.table-of-contents #toc-section-title-${currentSectionId}`)
 
-        if (currentNavTitle) {
-          currentNavTitle.classList.add('current')
-          const isVisible = isInViewport(currentNavTitle)
+        if (naviSectionHeader) {
+          naviSectionHeader?.classList.add('current')
+        }
+
+        if (naviQuestionTitle) {
+          naviQuestionTitle.classList.add('current')
+          const isVisible = isInViewport(naviQuestionTitle)
 
           if (!isVisible && !!sideNavigation) {
             const navHeight = sideNavigation.getBoundingClientRect().height
-            const scrollToPos = (currentNavTitle as HTMLElement).offsetTop - navHeight / 2
+            const scrollToPos = (naviQuestionTitle as HTMLElement).offsetTop - navHeight / 2
             sideNavigation.scrollTo({ behavior: 'smooth', top: scrollToPos })
           }
         }
@@ -272,6 +280,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                       />
                     </div>
                   )}
+
                   {externalMaterial && (
                     <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
                   )}
@@ -290,6 +299,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             <ErrorIndicator />
             <SaveIndicator />
           </div>
+
           {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
         </main>
       </I18nextProvider>

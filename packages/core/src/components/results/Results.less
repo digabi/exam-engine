@@ -170,19 +170,6 @@
     text-align: center;
     padding-bottom: 3rem;
   }
-
-  .e-hidden {
-    overflow: hidden;
-    opacity: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    transition:
-      height 1s ease-out 1s,
-      padding 0s ease-in-out 1s,
-      margin 0s ease-in-out 1s,
-      opacity 1.5s ease-in-out;
-  }
 }
 
 .examine-exam-page.e-exam {
@@ -228,4 +215,22 @@
       background-color: @readonly;
     }
   }
+}
+
+.session-ended {
+  > :not(.e-logout-container, .e-logout-container *) {
+    overflow: hidden;
+    opacity: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    transition:
+      height 1s ease-out 1s,
+      padding 0s ease-in-out 1s,
+      margin 0s ease-in-out 1s,
+      opacity 1.5s ease-in-out;
+  }
+
+  min-height: calc(100% - 125px);
 }

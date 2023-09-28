@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
@@ -30,7 +30,7 @@ import { validateAnswers } from '../../validateAnswers'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
-import { useIsStudentsExamineExamPage } from './isExamExaminePageHook'
+import { useIsStudentsExamineExamPage } from './isExamineExamPageHook'
 import classNames from 'classnames'
 import { EndExamSession } from './EndExamSession'
 
@@ -86,10 +86,32 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
     window.location.hash = ''
   }, [])
 
+  const [sessionEnded, setSessionEnded] = useState<boolean>(false)
+
+  const onEndSession = async () => {
+    try {
+      await endSession()
+      const elements = document.querySelectorAll('main > *:not(.e-logout-container)')
+      elements.forEach(el => {
+        const element = el as HTMLElement
+        element.style.height = `${element.clientHeight}px`
+      })
+
+      setTimeout(() => {
+        setSessionEnded(true)
+      }, 100)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
   return (
     <I18nextProvider i18n={i18n}>
       <main
-        className={classNames('e-exam e-results', { 'examine-exam-page': isStudentsExamineExamPage })}
+        className={classNames('e-exam e-results', {
+          'examine-exam-page': isStudentsExamineExamPage,
+          'session-ended': sessionEnded
+        })}
         lang={subjectLanguage}
       >
         <React.StrictMode />
@@ -120,7 +142,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
 
         {renderChildNodes(root)}
 
-        {studentCanEndSession && <EndExamSession endSession={endSession} />}
+        {studentCanEndSession && <EndExamSession onEndSession={onEndSession} sessionEnded={sessionEnded} />}
       </main>
       <div className="e-exam-footer-content" />
     </I18nextProvider>

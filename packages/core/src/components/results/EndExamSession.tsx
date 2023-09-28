@@ -1,38 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useExamTranslation } from '../../i18n'
 
-export const EndExamSession = ({ endSession }: { endSession: () => Promise<void> }) => {
-  const [examEnded, setExamEnded] = useState<boolean>(false)
+interface Props {
+  onEndSession: () => Promise<void>
+  sessionEnded: boolean
+}
+
+export const EndExamSession = ({ onEndSession, sessionEnded }: Props) => {
   const { t } = useExamTranslation()
-
-  const endExam = async () => {
-    await endSession()
-    const elements = document.querySelectorAll('main > *:not(.e-logout-container)')
-    elements.forEach(el => {
-      const element = el as HTMLElement
-      element.style.height = `${element.clientHeight}px`
-      element.classList.add('e-hidden')
-      setExamEnded(true)
-      setTimeout(() => {
-        element.style.height = '0'
-      }, 50)
-    })
-
-    const main = document.querySelector('main') as HTMLElement
-    main.style.minHeight = 'calc(100% - 125px)'
-
-    setTimeout(() => {
-      const sections = document.querySelectorAll('.e-section')
-      sections.forEach.call(sections, section => {
-        section.parentNode?.removeChild(section)
-      })
-    }, 2000)
-  }
 
   return (
     <div className="e-logout-container">
       <div className="e-bg-color-off-white e-pad-6 shadow-box">
-        {examEnded ? (
+        {sessionEnded ? (
           <>
             <h3>{t('examineExam.thankYouTitle')}</h3>
             <p>
@@ -51,8 +31,8 @@ export const EndExamSession = ({ endSession }: { endSession: () => Promise<void>
             </p>
           </>
         )}
-        {!examEnded && (
-          <button className="e-button" onClick={() => void endExam()}>
+        {!sessionEnded && (
+          <button id="endSession" className="e-button" onClick={() => void onEndSession()}>
             Päätä koe
           </button>
         )}

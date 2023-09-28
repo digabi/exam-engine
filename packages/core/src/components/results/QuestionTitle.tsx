@@ -6,7 +6,7 @@ import { QuestionContext } from '../context/QuestionContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { formatQuestionDisplayNumber } from '../../formatting'
 import { Score } from '../shared/Score'
-import { useIsStudentsExamineExamPage } from './isExamExaminePageHook'
+import { useIsStudentsExamineExamPage } from './isExamineExamPageHook'
 
 function QuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level, maxAnswers, maxScore, childQuestions } = useContext(QuestionContext)

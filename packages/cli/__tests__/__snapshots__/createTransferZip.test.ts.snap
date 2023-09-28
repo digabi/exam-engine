@@ -1354,6 +1354,17 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
+        <e:question>
+          <e:question-title>Lange Schreibaufgabe</e:question-title>
+          <e:question-instruction>
+            
+                  Ylimääräinen tehtävä
+            
+            
+          </e:question-instruction>
+          <e:text-answer type="rich-text" max-score="66"/>
+        </e:question>
+
     </e:question>
 
   </e:section>
@@ -3470,6 +3481,17 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         </e:question-instruction>
         <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
+
+        <e:question>
+          <e:question-title>Lange Schreibaufgabe</e:question-title>
+          <e:question-instruction>
+            
+                  Ylimääräinen tehtävä
+            
+            
+          </e:question-instruction>
+          <e:text-answer type="rich-text" max-score="66"/>
+        </e:question>
 
     </e:question>
 

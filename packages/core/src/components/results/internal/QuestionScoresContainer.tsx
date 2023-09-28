@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import classnames from 'classnames'
 import { QuestionContext } from '../../context/QuestionContext'
-import { useIsStudentsExamineExamPage } from '../isExamExaminePageHook'
+import { useIsStudentsExamineExamPage } from '../isExamineExamPageHook'
 
 function QuestionScoresContainer({
   answers,
