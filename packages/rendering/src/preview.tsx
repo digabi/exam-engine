@@ -164,7 +164,9 @@ const App: React.FunctionComponent<{
     restrictedAudioPlaybackStats: [],
     examServerApi,
     type,
-    finishExam: () => Promise.resolve()
+    finishExam: () => Promise.resolve(),
+    studentName: '[Kokelaan Nimi]',
+    allowLanguageChange: true
   }
 
   return (
@@ -179,17 +181,7 @@ const App: React.FunctionComponent<{
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (
-        <div>
-          <div
-            style={{
-              width: `calc(100% - 2rem)`,
-              margin: '20px auto'
-            }}
-          >
-            Tähän tulee koetilanteessa kokelaan nimi
-          </div>
-          <Exam {...examProps} />
-        </div>
+        <Exam {...examProps} />
       )}
     </div>
   )
