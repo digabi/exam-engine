@@ -46,7 +46,6 @@
   .e-exam.e-sans-serif();
   .e-exam.e-font-size-m();
   color: @colors[black];
-  padding-bottom: 2rem;
 
   .e-exam-question {
     position: relative;
@@ -191,6 +190,30 @@
       }
     }
   }
+
+  .e-exam-footer-content {
+    position: relative;
+    background-color: #fafafa;
+    color: #6d6d6d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //background-image: url(../../../img/pallasathene-logo.png);
+    background-image: url(../../../img/logo.png);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    height: 93px;
+    margin-top: 2rem;
+
+    .e-exam-footer-organization {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      padding-left: 80px;
+      font-family: 'Source Sans 3', sans-serif;
+    }
+  }
 }
 
 .anchor {
@@ -225,7 +248,7 @@
     &:hover  {
       background: #288199;
     }
-    
+
     &[disabled] {
       opacity: 0.6;
       box-shadow: none;
@@ -262,6 +285,7 @@ body.writer-mode {
     container-type: normal;
   }
 }
+
 // @container rules need to be at root level until less supports them properly
 // https://github.com/less/less.js/issues/3766
 
