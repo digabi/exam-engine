@@ -71,7 +71,7 @@ export const fi_FI = {
   },
   'finish-exam': {
     finish: 'Päätä koe',
-    instructions: 'Painikkeen napsauttamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
+    instructions: 'Painikkeen klikkaamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
   },
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
