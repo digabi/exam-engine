@@ -75,6 +75,13 @@
       overflow-y: auto;
       max-height: 100vh;
 
+      ol li {
+        margin-bottom: 0;
+        ol {
+          margin-bottom: 0;
+        }
+      }
+
       .e-columns {
         padding-top: 0.25em;
         flex: 1;
@@ -151,6 +158,11 @@
 
         .toc-section-header {
           margin-bottom: 0;
+          padding: 0.5rem;
+
+          &.current {
+            background: rgb(236 242 247);
+          }
         }
       }
 
@@ -292,6 +304,10 @@
 
 .smaller-navi-font {
   .e-exam .sidebar-toc-container .table-of-contents {
+    li.level-0 .e-question-title * {
+      font-size: 14px;
+    }
+
     .toc-section-header {
       font-size: 16px;
     }
@@ -327,14 +343,17 @@
       font-size: 15px;
       padding: 5px;
 
-      .toc-section-header {
-        font-size: 15px;
+      .toc-section-header-container {
+        .toc-section-header {
+          font-size: 15px;
+          padding: 0.5rem 0;
+        }
       }
 
       ol {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0;
 
         ol {
           gap: 0;

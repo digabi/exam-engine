@@ -62,6 +62,18 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       expect(await questionSelector?.isIntersectingViewport()).toBe(true)
     })
 
+    it('navigates to subquestion when clicking on it in sidebar', async () => {
+      await loadExam(page, ctx.url)
+
+      const subQuestionLinkInSidebar = '.sidebar-toc-container div[data-indicator-id="11"]'
+      const questionInExam = 'h4[id="question-title-1.7"]'
+      const questionSelector = await page.waitForSelector(questionInExam)
+
+      expect(await questionSelector?.isIntersectingViewport()).not.toBe(true)
+      await page.click(subQuestionLinkInSidebar)
+      expect(await questionSelector?.isIntersectingViewport()).toBe(true)
+    })
+
     const type = (text: string, questionId = 89) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
   })
 
