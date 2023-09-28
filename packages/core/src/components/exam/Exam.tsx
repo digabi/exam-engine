@@ -46,6 +46,7 @@ import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import * as _ from 'lodash-es'
+import { StudentNameHeader } from './StudentNameHeader'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -74,6 +75,7 @@ export interface ExamProps extends CommonExamProps {
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[]
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
+  studentName: string
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -113,7 +115,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   casStatus,
   answers,
   restrictedAudioPlaybackStats,
-  examServerApi
+  examServerApi,
+  studentName
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -231,6 +234,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
             <div className="main-exam-container">
               <div className="main-exam">
+                <StudentNameHeader studentName={studentName} />
                 <SectionElement aria-labelledby={examTitleId}>
                   {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
                   {date && (
