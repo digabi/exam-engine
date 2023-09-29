@@ -1,0 +1,140 @@
+.k-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: hsla(0, 0%, 38%, 0.7);
+}
+
+.k-undo-view {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  position: fixed;
+  margin: 0 auto;
+  top: 40px;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  width: 100%;
+  max-width: 1080px;
+  min-width: 400px;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.k-undo-view-header {
+  padding: 20px 30px;
+  height: 60px;
+  width: 100%;
+}
+
+.k-undo-view-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.k-undo-view-close-overlay-button {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.k-undo-view-content {
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.3em;
+  min-height: 50px;
+  overflow: scroll-y;
+  display: flex;
+  flex: 1;
+}
+
+.k-undo-view-answer-index {
+  min-width: 220px;
+  max-width: 380px;
+  background: #f7f7f7;
+  font-size: 15px;
+  line-height: 1.2em;
+  overflow-y: auto;
+  flex: 1;
+  padding: 5px;
+
+  input[type='radio'] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: fixed;
+  }
+}
+
+.k-undo-view-right-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  overflow-x: hidden;
+}
+
+.k-undo-view-answer-content {
+  flex: 1;
+  padding: 10px 30px 30px 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+
+  &.plainText {
+    white-space: pre-wrap;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.k-undo-view-bottom-bar {
+  padding: 15px;
+  text-align: right;
+}
+
+.k-undo-view-entry {
+  box-sizing: border-box;
+  border: 5px solid transparent;
+  padding: 10px 10px 10px 15px;
+  width: 100%;
+  color: #333;
+  user-select: none;
+  cursor: pointer;
+  word-wrap: break-word;
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.k-undo-view-entry-tab:checked ~ .k-undo-view-entry {
+  background: #fff;
+  border: #2c8da8 solid 5px;
+}
+
+.k-undo-view-answer-index label:first-child .k-undo-view-answer-cropped:after {
+  content: ' \25CF';
+  font-size: 20px;
+  color: #2c8da8;
+}
+
+.k-undo-view-answer-length {
+  color: #666;
+  font-size: 12px;
+  line-height: 1.35em;
+}
