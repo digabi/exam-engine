@@ -166,7 +166,14 @@ const App: React.FunctionComponent<{
     type,
     finishExam: () => Promise.resolve(),
     studentName: '[Kokelaan Nimi]',
-    allowLanguageChange: true
+    allowLanguageChange: true,
+    showUndoView: false,
+    undoViewProps: {
+      questionId: 0,
+      title: '',
+      close: () => undefined,
+      restoreAnswer: () => undefined
+    }
   }
 
   return (
