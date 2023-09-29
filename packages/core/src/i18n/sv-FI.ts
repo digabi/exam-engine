@@ -62,7 +62,19 @@ export const sv_FI: Translations = {
     finish: 'Avsluta provet',
     instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
   },
-
+  undo: {
+    close: 'Stäng',
+    restoreAnswer: 'Återställ',
+    answerNoText: 'ingen text',
+    answerWordCount: '{{count}} ord',
+    answerWordCount_plural: '{{count}} ord',
+    answerCharacterCount: '{{count}} tecken',
+    answerCharacterCount_plural: '{{count}} tecken',
+    answerImageCount: '{{count}} bild',
+    answerImageCount_plural: '{{count}} bilder',
+    minutesSinceAnswer: '{{ minutes }} min sedan',
+    latestVersion: 'Den senaste versionen'
+  },
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',
   'too-many-answers': 'Svar på för många uppgifter:',
