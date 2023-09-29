@@ -47,6 +47,8 @@ import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import * as _ from 'lodash-es'
 import { StudentNameHeader } from './StudentNameHeader'
+import { UndoView } from './UndoView'
+import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -60,6 +62,13 @@ export interface CommonExamProps {
   doc: XMLDocument
   /** @deprecated Not used anymore */
   language?: string
+}
+
+interface UndoViewProps {
+  close: () => void
+  restoreAnswer: (examAnswer: TextAnswerType | RichTextAnswer) => void
+  questionId: number
+  title: string
 }
 
 /** Props related to taking the exam, 'executing' it */
@@ -76,6 +85,8 @@ export interface ExamProps extends CommonExamProps {
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
   studentName: string
+  showUndoView: boolean
+  undoViewProps: UndoViewProps
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -116,7 +127,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   answers,
   restrictedAudioPlaybackStats,
   examServerApi,
-  studentName
+  studentName,
+  showUndoView,
+  undoViewProps
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -267,6 +280,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             <ErrorIndicator />
             <SaveIndicator />
           </div>
+          {showUndoView && <UndoView {...undoViewProps} questionId={0} />}
         </main>
       </I18nextProvider>
     </Provider>
