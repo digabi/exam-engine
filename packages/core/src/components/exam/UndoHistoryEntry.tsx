@@ -49,16 +49,14 @@ export class UndoHistoryEntry extends React.PureComponent<UndoHistoryEntryProps>
           onChange={this.inputValueChanged}
           ref={this.entryInputRef}
         />
-        <div className="k-undo-view-entry js-undo-entry-content">
-          <UndoEntry
-            croppedAnswer={croppedAnswer}
-            wordCount={wordCount}
-            characterCount={characterCount}
-            screenshotCount={screenshotCount}
-            answerIndex={answerIndex}
-            minutesSinceAnswer={minutesSinceAnswer}
-          />
-        </div>
+        <UndoEntry
+          croppedAnswer={croppedAnswer}
+          wordCount={wordCount}
+          characterCount={characterCount}
+          screenshotCount={screenshotCount}
+          answerIndex={answerIndex}
+          minutesSinceAnswer={minutesSinceAnswer}
+        />
       </label>
     )
   }
@@ -90,19 +88,19 @@ const UndoEntry = ({
 
   return (
     <div className="k-undo-view-entry js-undo-entry-content">
+      <div className="js-undo-history-entry-time">
+        {answerIndex === 0 ? t('undo.latestVersion') : t('undo.minutesSinceAnswer', { minutes: minutesSinceAnswer })}
+      </div>
       <div className="k-undo-view-answer-cropped js-undo-history-entry-answer">
         {croppedAnswer || t('undo.answerNoText')}
       </div>
       <div className="k-undo-view-answer-length js-undo-history-entry-stats">
         {arr.map((el, index) => (
           <>
-            {el} {index < arr.length - 1 && <span>, </span>}
+            {el}
+            {index < arr.length - 1 && <span>, </span>}
           </>
         ))}
-      </div>
-
-      <div className="k-undo-view-answer-length js-undo-history-entry-time">
-        {answerIndex === 0 ? t('undo.latestVersion') : t('undo.minutesSinceAnswer', { minutes: minutesSinceAnswer })}
       </div>
     </div>
   )
