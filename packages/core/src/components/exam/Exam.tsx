@@ -280,7 +280,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             <ErrorIndicator />
             <SaveIndicator />
           </div>
-          {showUndoView && <UndoView {...undoViewProps} questionId={0} />}
+          {showUndoView && <UndoView {...undoViewProps} />}
         </main>
       </I18nextProvider>
     </Provider>
