@@ -209,10 +209,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
       <FocusTrap>
         <div onClick={this.overlayClicked.bind(this)} className="k-overlay js-undo-overlay" aria-modal="true">
           <div id="undo" className="k-undo-view">
-            <div className="k-undo-view-header js-undo-view-header">
-              <h3 className="k-undo-view-title js-undo-view-title">{this.props.title}</h3>
-              <CloseButton close={this.close.bind(this)} />
-            </div>
+            <CloseButton close={this.close.bind(this)} />
 
             {this.state.loading ? (
               'Loading...'
@@ -235,6 +232,9 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
                   ))}
                 </div>
                 <div className="k-undo-view-right-panel">
+                  <div className="k-undo-view-header js-undo-view-header">
+                    <h3 className="k-undo-view-title js-undo-view-title">{this.props.title}</h3>
+                  </div>
                   <AnswerDisplay selectedAnswer={selectedAnswer} />
                   <BottomBar
                     selectedAnswer={selectedAnswer}
