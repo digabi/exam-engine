@@ -82,6 +82,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
 
   return (
     <span className="e-nowrap">
+      <span className="anchor" id={`question-nr-${displayNumber}`} />
       <span className={classNames('e-dropdown-answer e-normal')} data-question-id={questionId}>
         <button
           className={classNames('e-dropdown-answer__toggle-button e-button-plain e-columns', {
