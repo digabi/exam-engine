@@ -40,7 +40,15 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
         ...commonProps,
         casStatus: 'forbidden',
         examServerApi,
-        restrictedAudioPlaybackStats: []
+        restrictedAudioPlaybackStats: [],
+        studentName: '[Kokelaan Nimi]',
+        showUndoView: false,
+        undoViewProps: {
+          questionId: 0,
+          title: '',
+          close: () => undefined,
+          restoreAnswer: () => undefined
+        }
       }
       const resultsProps: ResultsProps = {
         ...commonProps,
