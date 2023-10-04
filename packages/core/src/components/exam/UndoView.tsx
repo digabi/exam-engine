@@ -49,11 +49,11 @@ function AnswerDisplay(props: { selectedAnswer?: AnswerHistoryEntry }) {
   return selectedAnswer ? (
     selectedAnswer.type === 'richText' ? (
       <div
-        className="k-undo-view-answer-content js-undo-answer-detail"
+        className="e-undo-view-answer-content js-undo-answer-detail"
         dangerouslySetInnerHTML={{ __html: selectedAnswer.value }}
       />
     ) : (
-      <div className="k-undo-view-answer-content js-undo-answer-detail plainText">{selectedAnswer.value}</div>
+      <div className="e-undo-view-answer-content js-undo-answer-detail plainText">{selectedAnswer.value}</div>
     )
   ) : null
 }
@@ -67,9 +67,9 @@ function BottomBar(props: {
   const { selectedAnswer, selectedAnswerIndex, restoreAnswer, questionId } = props
   const disableRestoreButton = !selectedAnswer || selectedAnswerIndex === 0
   return (
-    <div className="k-undo-view-bottom-bar">
+    <div className="e-undo-view-bottom-bar">
       <button
-        className="k-button-default k-button js-restore-answer-button"
+        className="e-button-default e-button js-restore-answer-button"
         disabled={disableRestoreButton}
         onClick={() => selectedAnswer && restoreAnswer({ ...selectedAnswer, questionId })}
       >
@@ -137,7 +137,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
   }
 
   toggleBodyScroll = (scrollEnabled: boolean) =>
-    document.documentElement.classList.toggle('k-exam-body-no-scroll', !scrollEnabled)
+    document.documentElement.classList.toggle('e-exam-body-no-scroll', !scrollEnabled)
 
   public componentDidMount() {
     this.toggleBodyScroll(false)
@@ -207,16 +207,16 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
     const now = moment()
     return (
       <FocusTrap>
-        <div onClick={this.overlayClicked.bind(this)} className="k-overlay js-undo-overlay" aria-modal="true">
-          <div id="undo" className="k-undo-view">
+        <div onClick={this.overlayClicked.bind(this)} className="e-overlay js-undo-overlay" aria-modal="true">
+          <div id="undo" className="e-undo-view">
             <CloseButton close={this.close.bind(this)} />
 
             {this.state.loading ? (
               'Loading...'
             ) : (
               //<Spinner />
-              <div className="k-undo-view-content">
-                <div className="k-undo-view-answer-index js-undo-answer-index">
+              <div className="e-undo-view-content">
+                <div className="e-undo-view-answer-index js-undo-answer-index">
                   {this.state.answers.map((answer, index) => (
                     <UndoHistoryEntry
                       key={answer.answerTime.unix()}
@@ -231,9 +231,9 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
                     />
                   ))}
                 </div>
-                <div className="k-undo-view-right-panel">
-                  <div className="k-undo-view-header js-undo-view-header">
-                    <h3 className="k-undo-view-title js-undo-view-title">{this.props.title}</h3>
+                <div className="e-undo-view-right-panel">
+                  <div className="e-undo-view-header js-undo-view-header">
+                    <h3 className="e-undo-view-title js-undo-view-title">{this.props.title}</h3>
                   </div>
                   <AnswerDisplay selectedAnswer={selectedAnswer} />
                   <BottomBar
@@ -259,7 +259,7 @@ const CloseButton = ({ close }: { close: () => void }) => {
       <img
         src="img/closeButton.svg"
         id="closeUndoDialogButton"
-        className="k-undo-view-close-overlay-button js-close-undo-dialog-button"
+        className="e-undo-view-close-overlay-button js-close-undo-dialog-button"
         onClick={close}
         tabIndex={0}
         role="button"
