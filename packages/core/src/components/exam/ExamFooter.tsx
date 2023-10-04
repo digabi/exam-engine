@@ -13,12 +13,17 @@ function ExamFooter({ element, renderChildNodes }: ExamComponentProps) {
     <SectionElement>
       <div className="e-exam-footer">
         {renderChildNodes(element)}
-        <button id="finishExam" onClick={() => void finishExam()} aria-describedby="finishExamInstructions">
-          {t('finish-exam.finish')}
-        </button>
-        <div className="e-finish-exam-instructions" id="finishExamInstructions">
-          {t('finish-exam.instructions')}
-        </div>
+
+        {finishExam !== undefined && (
+          <>
+            <button id="finishExam" onClick={() => void finishExam()} aria-describedby="finishExamInstructions">
+              {t('finish-exam.finish')}
+            </button>
+            <div className="e-finish-exam-instructions" id="finishExamInstructions">
+              {t('finish-exam.instructions')}
+            </div>
+          </>
+        )}
       </div>
     </SectionElement>
   )
