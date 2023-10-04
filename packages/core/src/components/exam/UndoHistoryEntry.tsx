@@ -96,10 +96,10 @@ const UndoEntry = ({
       </div>
       <div className="e-undo-view-answer-length js-undo-history-entry-stats">
         {arr.map((el, index) => (
-          <>
+          <React.Fragment key={index}>
             {el}
             {index < arr.length - 1 && <span>, </span>}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>
