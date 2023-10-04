@@ -1,4 +1,4 @@
-.k-overlay {
+.e-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   background-color: hsla(0, 0%, 38%, 0.7);
 }
 
-.k-undo-view {
+.e-undo-view {
   display: flex;
   flex-direction: column;
   font-weight: 400;
@@ -25,9 +25,11 @@
   max-width: 1080px;
   min-width: 400px;
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.k-undo-view-close-overlay-button {
+.e-undo-view-close-overlay-button {
   position: absolute;
   width: 25px;
   height: 25px;
@@ -40,7 +42,7 @@
   }
 }
 
-.k-undo-view-content {
+.e-undo-view-content {
   font-size: 15px;
   line-height: 1.3em;
   min-height: 50px;
@@ -49,7 +51,7 @@
   flex: 1;
 }
 
-.k-undo-view-answer-index {
+.e-undo-view-answer-index {
   min-width: 220px;
   max-width: 380px;
   font-size: 15px;
@@ -65,15 +67,15 @@
   }
 }
 
-.k-undo-view-entry-tab:checked ~ .k-undo-view-entry {
+.e-undo-view-entry-tab:checked ~ .e-undo-view-entry {
   background: #fff;
   border-color: @colors[link];
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.k-undo-view-entry {
+.e-undo-view-entry {
   box-sizing: border-box;
-  border-left: 5px solid transparent;
+  border-left: 10px solid transparent;
   padding: 8px 12px;
   width: 100%;
   color: #333;
@@ -90,7 +92,7 @@
     font-size: 14px;
   }
 
-  .k-undo-view-answer-length {
+  .e-undo-view-answer-length {
     color: #666;
     font-size: 12px;
     line-height: 1.35em;
@@ -98,25 +100,25 @@
   }
 }
 
-.k-undo-view-answer-index label:first-child .js-undo-history-entry-time:after {
+.e-undo-view-answer-index label:first-child .js-undo-history-entry-time:after {
   content: ' \25CF';
   font-size: 20px;
   color: #2c8da8;
 }
 
-.k-undo-view-right-panel {
+.e-undo-view-right-panel {
   background: #fff;
   display: flex;
   flex-direction: column;
   flex: 2;
   overflow-x: hidden;
 
-  .k-undo-view-header {
+  .e-undo-view-header {
     padding: 20px 30px;
     height: 60px;
     width: 100%;
 
-    .k-undo-view-title {
+    .e-undo-view-title {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -124,7 +126,7 @@
     }
   }
 
-  .k-undo-view-answer-content {
+  .e-undo-view-answer-content {
     flex: 1;
     padding: 10px 30px 30px 30px;
     overflow-y: auto;
@@ -140,7 +142,7 @@
     }
   }
 
-  .k-undo-view-bottom-bar {
+  .e-undo-view-bottom-bar {
     padding: 15px;
     text-align: right;
   }

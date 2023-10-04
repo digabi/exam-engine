@@ -42,7 +42,7 @@ export class UndoHistoryEntry extends React.PureComponent<UndoHistoryEntryProps>
       <label ref={this.labelInputRef} className="js-undo-history-entry">
         <input
           type="radio"
-          className="k-undo-view-entry-tab"
+          className="e-undo-view-entry-tab"
           name="undoHistory"
           value={answerIndex}
           checked={selected}
@@ -87,14 +87,14 @@ const UndoEntry = ({
   const arr = [wordCountText, characterCountText, imageCountText].filter(x => x !== null)
 
   return (
-    <div className="k-undo-view-entry js-undo-entry-content">
+    <div className="e-undo-view-entry js-undo-entry-content">
       <div className="js-undo-history-entry-time">
         {answerIndex === 0 ? t('undo.latestVersion') : t('undo.minutesSinceAnswer', { minutes: minutesSinceAnswer })}
       </div>
-      <div className="k-undo-view-answer-cropped js-undo-history-entry-answer">
+      <div className="e-undo-view-answer-cropped js-undo-history-entry-answer">
         {croppedAnswer || t('undo.answerNoText')}
       </div>
-      <div className="k-undo-view-answer-length js-undo-history-entry-stats">
+      <div className="e-undo-view-answer-length js-undo-history-entry-stats">
         {arr.map((el, index) => (
           <>
             {el}
