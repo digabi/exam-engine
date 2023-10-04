@@ -231,6 +231,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
   }, [])
 
+  // TODO: Remove 'isOldKoeVersion' checks when old Koe version is not supported anymore
+  const isOldKoeVersion = examServerApi.finishExam === undefined
+
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
@@ -280,7 +283,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             <ErrorIndicator />
             <SaveIndicator />
           </div>
-          {showUndoView && <UndoView {...undoViewProps} />}
+          {showUndoView && !isOldKoeVersion && <UndoView {...undoViewProps} />}
         </main>
       </I18nextProvider>
     </Provider>
