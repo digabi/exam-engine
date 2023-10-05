@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React from 'react'
 //import { Spinner } from '../components/spinner'
-import moment from 'moment'
 import { UndoHistoryEntry } from './UndoHistoryEntry'
 import FocusTrap from 'focus-trap-react'
 import { useExamTranslation } from '../../i18n'
@@ -13,7 +12,7 @@ export interface AnswerHistoryEntry {
   type: 'text' | 'richText'
   value: string
   characterCount: number
-  answerTime: moment.Moment
+  answerTime: number
 }
 
 export interface UndoViewProps {
@@ -32,14 +31,14 @@ interface UndoViewState {
 type AnswerHistoryResult = {
   type: 'text' | 'richText'
   value: string
-  answer_time: string
+  answer_time: number
   character_count: number
 }
 function toAnswerHistoryEntry(answer: AnswerHistoryResult): AnswerHistoryEntry {
   return {
     type: answer.type,
     value: answer.value,
-    answerTime: moment(answer.answer_time),
+    answerTime: answer.answer_time,
     characterCount: answer.character_count
   }
 }
@@ -204,7 +203,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
 
   public render() {
     const selectedAnswer = this.state.answers[this.state.selectedAnswerIndex]
-    const now = moment()
+    const now = new Date().getTime()
     return (
       <FocusTrap>
         <div onClick={this.overlayClicked.bind(this)} className="e-overlay js-undo-overlay" aria-modal="true">
@@ -217,19 +216,23 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
               //<Spinner />
               <div className="e-undo-view-content">
                 <div className="e-undo-view-answer-index js-undo-answer-index">
-                  {this.state.answers.map((answer, index) => (
-                    <UndoHistoryEntry
-                      key={answer.answerTime.unix()}
-                      answerIndex={index}
-                      selected={index === this.state.selectedAnswerIndex}
-                      onChange={index => this.setState({ selectedAnswerIndex: index })}
-                      croppedAnswer={truncateAnswer(answer)}
-                      minutesSinceAnswer={now.diff(answer.answerTime, 'minutes')}
-                      wordCount={countWords(answer)}
-                      characterCount={countCharacters(answer)}
-                      screenshotCount={countScreenshots(answer)}
-                    />
-                  ))}
+                  {this.state.answers.map((answer, index) => {
+                    const timeSinceAnswer = now - new Date(answer.answerTime).getTime()
+                    const toMinutes = Math.round(timeSinceAnswer / 1000 / 60)
+                    return (
+                      <UndoHistoryEntry
+                        key={new Date(answer.answerTime).getTime()}
+                        answerIndex={index}
+                        selected={index === this.state.selectedAnswerIndex}
+                        onChange={index => this.setState({ selectedAnswerIndex: index })}
+                        croppedAnswer={truncateAnswer(answer)}
+                        minutesSinceAnswer={toMinutes}
+                        wordCount={countWords(answer)}
+                        characterCount={countCharacters(answer)}
+                        screenshotCount={countScreenshots(answer)}
+                      />
+                    )
+                  })}
                 </div>
                 <div className="e-undo-view-right-panel">
                   <div className="e-undo-view-header js-undo-view-header">
