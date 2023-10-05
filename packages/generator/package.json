@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-generator",
-  "version": "19.10.4-alpha.0",
+  "version": "19.10.2",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
