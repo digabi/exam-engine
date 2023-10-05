@@ -74,6 +74,7 @@ export const fi_FI = {
     instructions: 'Painikkeen klikkaamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
   },
   undo: {
+    loading: 'Ladataan...',
     close: 'Sulje',
     restoreAnswer: 'Palauta',
     answerNoText: 'ei tekstiä',

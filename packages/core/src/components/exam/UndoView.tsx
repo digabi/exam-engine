@@ -211,9 +211,8 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
             <CloseButton close={this.close.bind(this)} />
 
             {this.state.loading ? (
-              'Loading...'
+              <Loading />
             ) : (
-              //<Spinner />
               <div className="e-undo-view-content">
                 <div className="e-undo-view-answer-index js-undo-answer-index">
                   {this.state.answers.map((answer, index) => {
@@ -253,6 +252,11 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
       </FocusTrap>
     )
   }
+}
+
+const Loading = () => {
+  const { t } = useExamTranslation()
+  return <div style={{ padding: '10px' }}>{t('undo.loading')}</div>
 }
 
 const CloseButton = ({ close }: { close: () => void }) => {
