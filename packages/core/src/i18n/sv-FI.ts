@@ -63,6 +63,7 @@ export const sv_FI: Translations = {
     instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
   },
   undo: {
+    loading: 'Laddar...',
     close: 'Stäng',
     restoreAnswer: 'Återställ',
     answerNoText: 'ingen text',
