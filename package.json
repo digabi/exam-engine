@@ -76,7 +76,6 @@
     "packages/**"
   ],
   "dependencies": {
-    "focus-trap-react": "^10.2.2",
-    "moment": "^2.29.4"
+    "focus-trap-react": "^10.2.2"
   }
 }
