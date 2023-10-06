@@ -81,12 +81,12 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const className = element.getAttribute('class')
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
-  const scoreValue = answer && choice.options.find(option => option.id === Number(answer.value))?.score
+  const scoreValue = answer && choice?.options?.find(option => option.id === Number(answer.value))?.score
   const maxScore = getNumericAttribute(element, 'max-score')
 
   return (
     <>
-      {scoreValue !== undefined && <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} />}
+      <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} />
       <div
         className={classNames('e-choice-answer', className, {
           'e-columns': direction === 'horizontal'
@@ -95,7 +95,7 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
         {mapChildElements(element, childElement => {
           const optionId = getNumericAttribute(childElement, 'option-id')!
           const selected = answer != null && Number(answer.value) === optionId
-          const grading = choice.options.find(option => option.id === optionId)!
+          const grading = choice?.options?.find(option => option.id === optionId)
           return (
             <ChoiceAnswerOption
               {...{
@@ -105,7 +105,7 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
                 key: optionId,
                 direction,
                 selected,
-                isCorrect: grading.correct
+                isCorrect: grading?.correct || false
               }}
             />
           )

@@ -46,7 +46,7 @@ export function findMultiChoiceFromGradingStructure(
   gradingStructure: GradingStructure,
   id: number
 ): ChoiceGroupChoice | undefined {
-  const choiceGroups = gradingStructure.questions.filter(v => v.type === 'choicegroup')
+  const choiceGroups = gradingStructure?.questions.filter(v => v.type === 'choicegroup') || []
 
   for (let i = 0, length = choiceGroups.length; i < length; i++) {
     const choiceGroup = choiceGroups[i] as ChoiceGroupQuestion

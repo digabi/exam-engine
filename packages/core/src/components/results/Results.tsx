@@ -30,6 +30,7 @@ import { validateAnswers } from '../../validateAnswers'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
+import { useIsFinishExamPage } from './isExamFinishPageHook'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -75,6 +76,8 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
   useEffect(changeLanguage(i18n, language))
 
   useEffect(scrollToHash, [])
+  const isFinishExamPage = useIsFinishExamPage()
+
   return (
     <I18nextProvider i18n={i18n}>
       <main className="e-exam e-results" lang={subjectLanguage}>
@@ -87,7 +90,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
               {date && `, ${dateTimeFormatter.format(date)}`}
             </DocumentTitle>
           )}
-          <ScoresAndFinalGrade />
+          {!isFinishExamPage && <ScoresAndFinalGrade />}
         </div>
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
