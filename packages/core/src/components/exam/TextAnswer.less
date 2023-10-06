@@ -5,13 +5,15 @@
 .e-exam .text-answer {
   border: 1px solid transparent;
   border-bottom: none;
-  box-shadow: inset 0 0 0 1.5px @colors[grey];
+  box-shadow: inset 0 0 0 2px @colors[grey];
   border-radius: 0.25rem;
   outline: none;
 
   &:focus {
     border-color: @colors[link];
-    box-shadow: 0 0 0 1px @colors[link], 0 1px 0 1px @colors[link];
+    box-shadow:
+      0 0 0 1px @colors[link],
+      0 1px 0 1px @colors[link];
   }
 
   &--single-line {
@@ -22,8 +24,14 @@
     max-width: 100%;
     padding: 0 0.5rem 2px;
     vertical-align: baseline;
+    display: inline-block;
     &:focus {
       position: relative;
+    }
+
+    &.noAnswer {
+      box-shadow: inset 0 0 0 2px #e0c1a1;
+      border: none;
     }
   }
 
@@ -31,7 +39,7 @@
     .e-exam.e-monospace();
     min-width: 2rem;
     padding-bottom: 0;
-    
+
     &--input-error {
       animation: blink-animation 0.2s steps(1, start) 0s 1;
       -webkit-animation: blink-animation 0.2s steps(1, start) 0s 1;
@@ -68,7 +76,9 @@
 
     &[aria-invalid='true'] {
       border-color: @colors[error];
-      box-shadow: 0 0 0 1px @colors[error], 0 1px 0 1px @colors[error];
+      box-shadow:
+        0 0 0 1px @colors[error],
+        0 1px 0 1px @colors[error];
     }
 
     &.expanded {

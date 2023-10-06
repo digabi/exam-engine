@@ -1,3 +1,16 @@
+.e-results {
+  input,
+  label {
+    pointer-events: none;
+  }
+
+  &.finish-exam-page {
+    input[type='radio'] {
+      filter: grayscale();
+    }
+  }
+}
+
 .e-result-scorecount {
   display: block;
   clear: right;
@@ -52,4 +65,71 @@
 // If several questions are on same row, scores overlap next question. Hack to prevent it.
 table td .e-result-scorecount {
   margin-right: 0;
+}
+
+.k-exam-done-return {
+  color: #359bb7;
+  background: inherit;
+  outline: none;
+  border: none;
+  font: inherit;
+  position: relative;
+  display: inline-block;
+  line-height: 36px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.finish-page-instructions {
+  padding: 1.5rem 2rem;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 15px 22px -10px rgb(156 188 206);
+  margin-bottom: 1rem;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 120px;
+    object-position: top;
+  }
+}
+
+.noAnswer {
+  background: #f7eadd;
+  opacity: 0.9;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 6px;
+  padding-right: 1rem;
+  margin-left: 0rem !important;
+
+  &.e-level-0 {
+    padding-left: 1rem;
+  }
+
+  &.e-level-1 {
+    padding-left: 3rem;
+    margin-left: 1rem !important;
+  }
+
+  .noAnswer {
+    padding-right: 0;
+    padding-left: 3rem !important;
+  }
+
+  .e-result-scorecount.e-float-right {
+    padding-left: 1rem;
+
+    &.e-result-scorecount-multiline-answer {
+      left: 2rem;
+    }
+  }
+}
+
+.e-dropdown-answer__answered {
+  display: inline-block;
+  height: 24px;
 }

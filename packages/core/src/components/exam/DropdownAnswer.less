@@ -4,6 +4,15 @@
     display: inline-block;
     max-width: 100%;
     position: relative;
+    vertical-align: middle;
+
+    &__no-answer {
+      min-width: 4rem;
+      display: inline-block;
+      min-height: 24px;
+      background: #f7eadd;
+      border: 1px solid #e0c1a1;
+    }
 
     &__answered {
       padding: 0 0.25rem;
@@ -25,6 +34,7 @@
       box-shadow: 0 -4px 0 -2px inset @colors[correct-answer];
       border-bottom: 1px solid @colors[correct-answer];
       font-style: italic;
+      vertical-align: top;
     }
 
     &__label {

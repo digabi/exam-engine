@@ -26,55 +26,57 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
-  if (selectedOption || isFinishExamPage) {
-    const correctIds = choice?.options.filter(o => o.correct).map(o => o.id) || []
+  const correctIds = choice?.options.filter(o => o.correct).map(o => o.id) || []
 
-    const correctOptions = Array.from(element.children).filter(childElement =>
-      correctIds.includes(getNumericAttribute(childElement, 'option-id')!)
-    )
+  const correctOptions = Array.from(element.children).filter(childElement =>
+    correctIds.includes(getNumericAttribute(childElement, 'option-id')!)
+  )
 
-    const isAnswerCorrect =
-      selectedOption && correctIds.includes(getNumericAttribute(selectedOption, 'option-id') as number)
-    const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-    const scoreValue = answer && choice?.options.find(option => option.id === Number(answer.value))!.score
+  const isAnswerCorrect =
+    selectedOption && correctIds.includes(getNumericAttribute(selectedOption, 'option-id') as number)
+  const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
+  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))!.score) || 0
 
-    const maxScore = getNumericAttribute(element, 'max-score')!
+  const maxScore = getNumericAttribute(element, 'max-score')!
 
-    return (
-      <>
-        {(answers.length > 1 || isFinishExamPage) && <sup>{displayNumber}</sup>}
+  console.log(displayNumber, answer, choice, scoreValue)
 
-        <span
-          className={classNames(
-            'e-dropdown-answer__answered',
-            !isFinishExamPage && {
-              'e-dropdown-answer__answered--correct': isAnswerCorrect,
-              'e-dropdown-answer__answered--wrong': !isAnswerCorrect
-            }
-          )}
-        >
-          <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
-          {selectedOption && renderChildNodes(selectedOption)}
-          <ScreenReaderOnly>{t('screen-reader.answer-end')}</ScreenReaderOnly>
-          {isAnswerCorrect && <ScreenReaderOnly>{t('screen-reader.correct-answer')}</ScreenReaderOnly>}
+  return (
+    <>
+      {answers.length > 1 && <sup>{displayNumber}</sup>}
+
+      <span
+        className={classNames(
+          'e-dropdown-answer__answered',
+          !selectedOption && 'e-dropdown-answer__no-answer',
+          !isFinishExamPage && {
+            'e-dropdown-answer__answered--correct': isAnswerCorrect,
+            'e-dropdown-answer__answered--wrong': !isAnswerCorrect
+          }
+        )}
+      >
+        <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
+        {selectedOption && renderChildNodes(selectedOption)}
+        <ScreenReaderOnly>{t('screen-reader.answer-end')}</ScreenReaderOnly>
+        {isAnswerCorrect && <ScreenReaderOnly>{t('screen-reader.correct-answer')}</ScreenReaderOnly>}
+      </span>
+
+      {!isFinishExamPage && !isAnswerCorrect && (
+        <span className="e-dropdown-answer__correct" aria-hidden={true}>
+          {correctOptions.map((correctOption, i) => (
+            <React.Fragment key={i}>
+              {renderChildNodes(correctOption)}
+              {i < correctOptions.length - 1 && ', '}
+            </React.Fragment>
+          ))}
         </span>
-        {!isFinishExamPage && !isAnswerCorrect && (
-          <span className="e-dropdown-answer__correct" aria-hidden={true}>
-            {correctOptions.map((correctOption, i) => (
-              <React.Fragment key={i}>
-                {renderChildNodes(correctOption)}
-                {i < correctOptions.length - 1 && ', '}
-              </React.Fragment>
-            ))}
-          </span>
-        )}
-        {scoreValue != null && (
-          <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} displayNumber={displayNumber} />
-        )}
-      </>
-    )
-  }
-  return null
+      )}
+
+      {scoreValue != null && (
+        <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} displayNumber={displayNumber} />
+      )}
+    </>
+  )
 }
 
 export default React.memo(DropdownAnswer)
