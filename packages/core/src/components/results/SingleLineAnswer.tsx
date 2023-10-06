@@ -3,6 +3,8 @@ import { Score } from '../..'
 import { useExamTranslation } from '../../i18n'
 import { renderAnnotations } from '../../renderAnnotations'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
+import { useIsFinishExamPage } from './isExamFinishPageHook'
+import classNames from 'classnames'
 
 function SingleLineAnswer({
   displayNumber,
@@ -25,10 +27,16 @@ function SingleLineAnswer({
     }
   })
 
+  const isFinishExamPage = useIsFinishExamPage()
+
   return (
     <>
       {displayNumber && <sup>{displayNumber}</sup>}
-      <span className="text-answer text-answer--single-line">
+      <span
+        className={classNames('text-answer text-answer--single-line', {
+          noAnswer: isFinishExamPage && value === undefined
+        })}
+      >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
         <span className="e-inline-block" ref={answerRef}>
           {value}

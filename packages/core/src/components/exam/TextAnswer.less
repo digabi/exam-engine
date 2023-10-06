@@ -11,7 +11,9 @@
 
   &:focus {
     border-color: @colors[link];
-    box-shadow: 0 0 0 1px @colors[link], 0 1px 0 1px @colors[link];
+    box-shadow:
+      0 0 0 1px @colors[link],
+      0 1px 0 1px @colors[link];
   }
 
   &--single-line {
@@ -22,6 +24,7 @@
     max-width: 100%;
     padding: 0 0.5rem 2px;
     vertical-align: baseline;
+    display: inline-block;
     &:focus {
       position: relative;
     }
@@ -31,7 +34,7 @@
     .e-exam.e-monospace();
     min-width: 2rem;
     padding-bottom: 0;
-    
+
     &--input-error {
       animation: blink-animation 0.2s steps(1, start) 0s 1;
       -webkit-animation: blink-animation 0.2s steps(1, start) 0s 1;
@@ -68,7 +71,9 @@
 
     &[aria-invalid='true'] {
       border-color: @colors[error];
-      box-shadow: 0 0 0 1px @colors[error], 0 1px 0 1px @colors[error];
+      box-shadow:
+        0 0 0 1px @colors[error],
+        0 1px 0 1px @colors[error];
     }
 
     &.expanded {
