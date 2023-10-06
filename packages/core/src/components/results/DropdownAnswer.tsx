@@ -42,11 +42,12 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
 
     return (
       <>
-        {(answers.length > 1 || isFinishExamPage) && <sup>{displayNumber}</sup>}
+        {answers.length > 1 && <sup>{displayNumber}</sup>}
 
         <span
           className={classNames(
             'e-dropdown-answer__answered',
+            isFinishExamPage && !selectedOption && 'e-dropdown-answer__no-answer',
             !isFinishExamPage && {
               'e-dropdown-answer__answered--correct': isAnswerCorrect,
               'e-dropdown-answer__answered--wrong': !isAnswerCorrect
