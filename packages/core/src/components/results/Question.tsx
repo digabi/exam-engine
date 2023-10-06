@@ -12,18 +12,19 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level } = useContext(QuestionContext)
   const hasAnswers = questionHasAnswers(element, answersByQuestionId)
 
-  return hasAnswers ? (
+  return (
     <div
       className={classNames('e-exam-question', {
         'e-mrg-b-8 e-clearfix': level === 0,
-        'e-mrg-l-8 e-mrg-y-4': level > 0
+        'e-mrg-l-8 e-mrg-y-4': level > 0,
+        noAnswer: !hasAnswers
       })}
       id={displayNumber}
     >
       {renderChildNodes(element)}
       <AnnotationList />
     </div>
-  ) : null
+  )
 }
 
 function questionHasAnswers(element: Element, answers: Record<number, ExamAnswer>): boolean {
