@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React from 'react'
-//import { Spinner } from '../components/spinner'
 import { UndoHistoryEntry } from './UndoHistoryEntry'
 import FocusTrap from 'focus-trap-react'
 import { useExamTranslation } from '../../i18n'
@@ -100,11 +99,6 @@ function truncateAnswer(answer: AnswerHistoryEntry, length = 50): string {
   const endChars = charsToShow - startChars
 
   return answerText.substr(0, startChars) + separator + answerText.substr(answerText.length - endChars)
-}
-
-function countWords(answer: AnswerHistoryEntry) {
-  const text = getAnswerText(answer)
-  return text.length === 0 ? 0 : text.split(/\s+/gi).filter(s => s.length > 0).length
 }
 
 function countCharacters(answer: AnswerHistoryEntry) {
@@ -226,7 +220,6 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
                         onChange={index => this.setState({ selectedAnswerIndex: index })}
                         croppedAnswer={truncateAnswer(answer)}
                         minutesSinceAnswer={toMinutes}
-                        wordCount={countWords(answer)}
                         characterCount={countCharacters(answer)}
                         screenshotCount={countScreenshots(answer)}
                       />
