@@ -7,7 +7,6 @@ export interface UndoHistoryEntryProps {
   answerIndex: number
   selected: boolean
   onChange: (index: number) => void
-  wordCount: number
   characterCount: number
   screenshotCount: number
 }
@@ -36,8 +35,7 @@ export class UndoHistoryEntry extends React.PureComponent<UndoHistoryEntryProps>
   }
 
   public render() {
-    const { selected, croppedAnswer, wordCount, characterCount, screenshotCount, answerIndex, minutesSinceAnswer } =
-      this.props
+    const { selected, croppedAnswer, characterCount, screenshotCount, answerIndex, minutesSinceAnswer } = this.props
     return (
       <label ref={this.labelInputRef} className="js-undo-history-entry">
         <input
@@ -51,7 +49,6 @@ export class UndoHistoryEntry extends React.PureComponent<UndoHistoryEntryProps>
         />
         <UndoEntry
           croppedAnswer={croppedAnswer}
-          wordCount={wordCount}
           characterCount={characterCount}
           screenshotCount={screenshotCount}
           answerIndex={answerIndex}
@@ -64,7 +61,6 @@ export class UndoHistoryEntry extends React.PureComponent<UndoHistoryEntryProps>
 
 interface UndoEntryProps {
   croppedAnswer: string
-  wordCount: number
   characterCount: number
   screenshotCount: number
   answerIndex: number
@@ -73,18 +69,16 @@ interface UndoEntryProps {
 
 const UndoEntry = ({
   croppedAnswer,
-  wordCount,
   characterCount,
   screenshotCount,
   answerIndex,
   minutesSinceAnswer
 }: UndoEntryProps) => {
   const { t } = useExamTranslation()
-  const wordCountText = wordCount > 0 ? t('undo.answerWordCount', { count: wordCount }) : null
   const characterCountText = characterCount > 0 ? t('undo.answerCharacterCount', { count: characterCount }) : null
   const imageCountText = screenshotCount > 0 ? t('undo.answerImageCount', { count: screenshotCount }) : null
 
-  const arr = [wordCountText, characterCountText, imageCountText].filter(x => x !== null)
+  const arr = [characterCountText, imageCountText].filter(x => x !== null)
 
   return (
     <div className="e-undo-view-entry js-undo-entry-content">
