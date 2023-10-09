@@ -1,3 +1,10 @@
+.e-results {
+  input,
+  label {
+    pointer-events: none;
+  }
+}
+
 .e-result-scorecount {
   display: block;
   clear: right;
@@ -52,4 +59,41 @@
 // If several questions are on same row, scores overlap next question. Hack to prevent it.
 table td .e-result-scorecount {
   margin-right: 0;
+}
+
+.noAnswer {
+  background: #eee;
+  opacity: 0.9;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 6px;
+  padding-right: 1rem;
+  margin-left: 0rem !important;
+
+  &.e-level-0 {
+    padding-left: 1rem;
+  }
+
+  &.e-level-1 {
+    padding-left: 2.5rem;
+    margin-left: 1.5rem !important;
+  }
+
+  .noAnswer {
+    padding-right: 0;
+    padding-left: 3rem !important;
+  }
+
+  .e-result-scorecount.e-float-right {
+    padding-left: 1rem;
+
+    &.e-result-scorecount-multiline-answer {
+      left: 2rem;
+    }
+  }
+}
+
+.e-dropdown-answer__answered {
+  display: inline-block;
+  height: 24px;
 }
