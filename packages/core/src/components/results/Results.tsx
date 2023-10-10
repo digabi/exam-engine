@@ -31,6 +31,7 @@ import { parseExamStructure } from '../../parser/parseExamStructure'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import { useIsFinishExamPage } from './isExamFinishPageHook'
+import classNames from 'classnames'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -80,7 +81,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <main className="e-exam e-results" lang={subjectLanguage}>
+      <main className={classNames('e-exam e-results', { 'finish-exam-page': isFinishExamPage })} lang={subjectLanguage}>
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
@@ -92,6 +93,14 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
           )}
           {!isFinishExamPage && <ScoresAndFinalGrade />}
         </div>
+
+        {isFinishExamPage && (
+          <div className="finish-page-instructions">
+            Näet tässä vastauksesi täsmälleen samanlaisena kuin kokeen arvostelija tulee ne näkemään. Tarkista, että
+            olet vastannut kaikkiin tehtäviin.
+          </div>
+        )}
+
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
           inExam={false}
