@@ -46,7 +46,7 @@ export function ErrorIndicatorForErrors({
       )}
       role="alert"
     >
-      <div className="e-column e-column--narrow">
+      <div className="e-column e-column--narrow" style={{ color: '#f90' }}>
         <FontAwesomeIcon size="lg" icon={faExclamationTriangle} fixedWidth className="e-mrg-r-1" />
       </div>
       <div className="e-column e-column--gapless">

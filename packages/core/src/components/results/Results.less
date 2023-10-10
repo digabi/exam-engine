@@ -3,6 +3,12 @@
   label {
     pointer-events: none;
   }
+
+  &.finish-exam-page {
+    input[type='radio'] {
+      filter: grayscale();
+    }
+  }
 }
 
 .e-result-scorecount {
@@ -61,8 +67,16 @@ table td .e-result-scorecount {
   margin-right: 0;
 }
 
+.finish-page-instructions {
+  padding: 1.5rem 2rem;
+  background: hsl(198 100% 96% / 1);
+  border-radius: 5px;
+  box-shadow: 0 15px 22px -10px rgb(156 188 206);
+  margin: 0 2rem 1rem;
+}
+
 .noAnswer {
-  background: #eee;
+  background: #fbf3eb;
   opacity: 0.9;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -75,8 +89,8 @@ table td .e-result-scorecount {
   }
 
   &.e-level-1 {
-    padding-left: 2.5rem;
-    margin-left: 1.5rem !important;
+    padding-left: 3rem;
+    margin-left: 1rem !important;
   }
 
   .noAnswer {
