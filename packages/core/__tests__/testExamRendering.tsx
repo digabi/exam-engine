@@ -54,7 +54,8 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
         ...commonProps,
         gradingStructure,
         answers: generateAnswers(gradingStructure),
-        scores: mkScores(gradingStructure)
+        scores: mkScores(gradingStructure),
+        returnToExam: () => {}
       }
       expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
       expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
