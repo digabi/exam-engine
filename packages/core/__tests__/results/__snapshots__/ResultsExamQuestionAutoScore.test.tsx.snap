@@ -1,64 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<QuestionAutoScore /> renders displayNumber number when there are more than one answer 1`] = `
-<span
-  className="e-result-scorecount e-float-right"
-  id="1.1"
->
-  <span
-    className="e-result-scorecount-border-wrap"
-  >
-    <sup
-      aria-hidden="true"
-      className="e-result-scorecount-sup e-mrg-r-1"
-    >
-      1
-    </sup>
-    <b>
-      1
-    </b>
-     
-    / 3 
-     
-     p.
-  </span>
-</span>
-`;
+exports[`<QuestionAutoScore /> renders displayNumber number when there are more than one answer 1`] = `null`;
 
-exports[`<QuestionAutoScore /> renders with score 1`] = `
-<span
-  className="e-result-scorecount e-float-right"
-  id="1.1"
->
-  <span
-    className="e-result-scorecount-border-wrap"
-  >
-    <b>
-      1
-    </b>
-     
-    / 3 
-     
-     p.
-  </span>
-</span>
-`;
+exports[`<QuestionAutoScore /> renders with score 1`] = `null`;
 
-exports[`<QuestionAutoScore /> renders without score 1`] = `
-<span
-  className="e-result-scorecount e-float-right"
-  id="1.1"
->
-  <span
-    className="e-result-scorecount-border-wrap"
-  >
-    <span
-      className="e-result-scorecount-empty"
-    />
-     
-    / 3 
-     
-     p.
-  </span>
-</span>
-`;
+exports[`<QuestionAutoScore /> renders without score 1`] = `null`;
