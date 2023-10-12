@@ -5,7 +5,7 @@
 .e-exam .text-answer {
   border: 1px solid transparent;
   border-bottom: none;
-  box-shadow: inset 0 0 0 1.5px @colors[grey];
+  box-shadow: inset 0 0 0 2px @colors[grey];
   border-radius: 0.25rem;
   outline: none;
 
@@ -27,6 +27,11 @@
     display: inline-block;
     &:focus {
       position: relative;
+    }
+
+    &.noAnswer {
+      box-shadow: inset 0 0 0 2px #e0c1a1;
+      border: none;
     }
   }
 
