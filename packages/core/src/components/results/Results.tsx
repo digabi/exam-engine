@@ -121,18 +121,20 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
         />
         {renderChildNodes(root)}
 
-        <div>
-          <p className="k-exam-done-instructions">
-            Kun olet valmis, sammuta tietokoneesi oikeasta yläkulmasta.
-            <br />
-            Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.
-          </p>
-          <img
-            className="k-exam-done-shutdown-image"
-            src="/dist/digabi-shutdown-screenshot.png"
-            alt={t('examFinished.shutdownTooltip')!}
-          />
-        </div>
+        {isFinishExamPage && (
+          <div>
+            <p className="k-exam-done-instructions">
+              Kun olet valmis, sammuta tietokoneesi oikeasta yläkulmasta.
+              <br />
+              Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.
+            </p>
+            <img
+              className="k-exam-done-shutdown-image"
+              src="/dist/digabi-shutdown-screenshot.png"
+              alt={t('examFinished.shutdownTooltip')!}
+            />
+          </div>
+        )}
       </main>
     </I18nextProvider>
   )
