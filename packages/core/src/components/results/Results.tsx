@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { I18nextProvider } from 'react-i18next'
+import { I18nextProvider, useTranslation } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement, queryAncestors } from '../../dom-utils'
@@ -41,6 +41,7 @@ export interface ResultsProps extends CommonExamProps {
   /** Scores for exam answers */
   scores: Score[]
   singleGrading?: boolean
+  returnToExam: () => void
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -65,7 +66,7 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes
 })
 
-const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
+const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -75,8 +76,8 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
-
   useEffect(scrollToHash, [])
+  const { t } = useTranslation()
   const isFinishExamPage = useIsFinishExamPage()
 
   return (
@@ -84,6 +85,11 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
       <main className={classNames('e-exam e-results', { 'finish-exam-page': isFinishExamPage })} lang={subjectLanguage}>
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+        {isFinishExamPage && (
+          <button className="k-exam-done-return js-exam-done-return" onClick={() => returnToExam()}>
+            Palaa kokeeseen
+          </button>
+        )}
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
           {examTitle && (
             <DocumentTitle id="title" className="e-column e-mrg-b-0">
@@ -96,8 +102,16 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
 
         {isFinishExamPage && (
           <div className="finish-page-instructions">
-            Näet tässä vastauksesi täsmälleen samanlaisena kuin kokeen arvostelija tulee ne näkemään. Tarkista, että
-            olet vastannut kaikkiin tehtäviin.
+            <p>Näet tässä vastauksesi samanlaisena kuin kokeen arvostelija tulee ne näkemään.</p>
+            <ul>
+              <li>
+                Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. <br />
+              </li>
+              <li>
+                Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää
+                arvosteltavaksi.
+              </li>
+            </ul>
           </div>
         )}
 
@@ -106,6 +120,21 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc }) => {
           inExam={false}
         />
         {renderChildNodes(root)}
+
+        {isFinishExamPage && (
+          <div>
+            <p className="k-exam-done-instructions">
+              Kun olet valmis, sammuta tietokoneesi oikeasta yläkulmasta.
+              <br />
+              Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.
+            </p>
+            <img
+              className="k-exam-done-shutdown-image"
+              src="/dist/digabi-shutdown-screenshot.png"
+              alt={t('examFinished.shutdownTooltip')!}
+            />
+          </div>
+        )}
       </main>
     </I18nextProvider>
   )
