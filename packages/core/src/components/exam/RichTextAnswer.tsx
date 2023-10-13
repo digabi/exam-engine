@@ -26,6 +26,7 @@ interface Props {
   saveScreenshot: (screenshot: Blob) => Promise<string>
   labelledBy: string
   lang?: string
+  ignoreEventHandling?: boolean
 }
 
 export default class RichTextAnswer extends React.PureComponent<Props> {
@@ -52,6 +53,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
       makeRichText(
         current,
         {
+          ignoreEventHandling: this.props.ignoreEventHandling,
           locale: this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV',
           screenshotSaver: ({ data, type }: { data: Buffer; type: string }) =>
             saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err: ErrorResponse) => {
