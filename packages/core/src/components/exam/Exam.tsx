@@ -59,7 +59,7 @@ export interface CommonExamProps {
   doc: XMLDocument
   /** @deprecated Not used anymore */
   language?: string
-  ignoreEventHanding?: boolean
+  ignoreEventHandling?: boolean
 }
 
 /** Props related to taking the exam, 'executing' it */

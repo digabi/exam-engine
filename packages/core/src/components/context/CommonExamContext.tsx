@@ -28,7 +28,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
 ): React.ComponentType<P> {
   return withContext<CommonExamContext, P>(
     CommonExamContext,
-    ({ attachmentsURL, resolveAttachment, doc, ignoreEventHanding }) => {
+    ({ attachmentsURL, resolveAttachment, doc, ignoreEventHandling }) => {
       const root = doc.documentElement
       const maybeDate = getAttribute(root, 'date')
       const language = getAttribute(root, 'exam-lang')!
@@ -47,7 +47,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
         sections: queryAll(root, 'section'),
         resolveAttachment,
         root,
-        ignoreEventHanding
+        ignoreEventHandling
       }
     }
   )(Component)
