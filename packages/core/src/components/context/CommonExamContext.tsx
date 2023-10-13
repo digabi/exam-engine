@@ -18,6 +18,7 @@ export interface CommonExamContext {
   sections: Element[]
   resolveAttachment: (filename: string) => string
   root: Element
+  ignoreEventHandling?: boolean
 }
 
 export const CommonExamContext = React.createContext({} as CommonExamContext)
@@ -25,25 +26,29 @@ export const CommonExamContext = React.createContext({} as CommonExamContext)
 export function withCommonExamContext<P extends CommonExamProps>(
   Component: React.ComponentType<P>
 ): React.ComponentType<P> {
-  return withContext<CommonExamContext, P>(CommonExamContext, ({ attachmentsURL, resolveAttachment, doc }) => {
-    const root = doc.documentElement
-    const maybeDate = getAttribute(root, 'date')
-    const language = getAttribute(root, 'exam-lang')!
-    const subjectLanguage = getAttribute(root, 'lang') || language
+  return withContext<CommonExamContext, P>(
+    CommonExamContext,
+    ({ attachmentsURL, resolveAttachment, doc, ignoreEventHandling }) => {
+      const root = doc.documentElement
+      const maybeDate = getAttribute(root, 'date')
+      const language = getAttribute(root, 'exam-lang')!
+      const subjectLanguage = getAttribute(root, 'lang') || language
 
-    return {
-      attachmentsURL,
-      date: maybeDate ? new Date(maybeDate) : undefined,
-      dateTimeFormatter: new Intl.DateTimeFormat('fi-FI', { timeZone: 'UTC' }),
-      dayCode: getAttribute(root, 'day-code'),
-      examCode: getAttribute(root, 'exam-code'),
-      language,
-      subjectLanguage,
-      maxAnswers: getNumericAttribute(root, 'max-answers'),
-      maxScore: getNumericAttribute(root, 'max-score'),
-      sections: queryAll(root, 'section'),
-      resolveAttachment,
-      root
+      return {
+        attachmentsURL,
+        date: maybeDate ? new Date(maybeDate) : undefined,
+        dateTimeFormatter: new Intl.DateTimeFormat('fi-FI', { timeZone: 'UTC' }),
+        dayCode: getAttribute(root, 'day-code'),
+        examCode: getAttribute(root, 'exam-code'),
+        language,
+        subjectLanguage,
+        maxAnswers: getNumericAttribute(root, 'max-answers'),
+        maxScore: getNumericAttribute(root, 'max-score'),
+        sections: queryAll(root, 'section'),
+        resolveAttachment,
+        root,
+        ignoreEventHandling
+      }
     }
-  })(Component)
+  )(Component)
 }
