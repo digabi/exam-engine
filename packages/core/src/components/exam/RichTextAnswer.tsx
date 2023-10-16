@@ -61,7 +61,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
               throw err // Rethrow error so rich-text-editor can handle it.
             })
         },
-        this.handleChange
+        this.props.ignoreEventHandling ? () => {} : this.handleChange
       )
     }
   }
