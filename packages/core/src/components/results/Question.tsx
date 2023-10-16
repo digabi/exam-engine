@@ -29,7 +29,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
 
 function questionHasAnswers(element: Element, answers: Record<number, ExamAnswer>): boolean {
   const answerElems = findChildrenAnswers(element)
-  return answerElems.some(e => answers[getNumericAttribute(e, 'question-id')!])
+  return answerElems.some(e => answers[getNumericAttribute(e, 'question-id')!]?.value)
 }
 
 export default React.memo(withQuestionContext(Question))
