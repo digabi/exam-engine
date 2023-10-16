@@ -6,19 +6,12 @@
     position: relative;
     vertical-align: middle;
 
-    &__no-answer {
-      min-width: 4rem;
-      display: inline-block;
-      min-height: 24px;
-      background: #f7eadd;
-      border: 1px solid #e0c1a1;
-      vertical-align: middle;
-    }
-
     &__answered {
-      padding: 0 0.25rem;
-      border: 1px solid black;
+      border: 2px solid #bbb;
       vertical-align: middle;
+      padding: 0 6px;
+      border-radius: 4px;
+      display: inline-block;
 
       &--correct {
         box-shadow: 0 -4px 0 -2px inset @colors[correct-answer];
@@ -31,12 +24,21 @@
       }
     }
 
+    &__no-answer {
+      min-width: 4rem;
+      display: inline-block;
+      min-height: 24px;
+      background: @colors[no-answer-bg];
+      border-color: @colors[no-answer-border];
+      vertical-align: middle;
+    }
+
     &__correct {
       padding: 0 0.25rem;
       box-shadow: 0 -4px 0 -2px inset @colors[correct-answer];
       border-bottom: 1px solid @colors[correct-answer];
       font-style: italic;
-      vertical-align: top;
+      vertical-align: middle;
     }
 
     &__label {
@@ -113,5 +115,9 @@
     .e-formula svg {
       max-width: inherit;
     }
+  }
+
+  .no-answer .e-dropdown-answer__no-answer {
+    background-color: #f5f5f5;
   }
 }

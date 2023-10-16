@@ -1,3 +1,7 @@
+@readonly: #f9f9f9;
+@no-answer-bg: @colors[no-answer-bg];
+@no-answer-border: @colors[no-answer-border];
+
 .e-results {
   input,
   label {
@@ -9,127 +13,191 @@
       filter: grayscale();
     }
   }
-}
 
-.e-result-scorecount {
-  display: block;
-  clear: right;
-  margin-right: -9rem;
-  width: 8rem;
-  position: relative;
-}
-
-.e-result-scorecount-border-wrap {
-  display: block;
-  border-left: 1px solid @colors[grey];
-  padding-left: 1.5rem;
-}
-
-// Special rendering for multi-line and rich-text answer scores. The pdf rendering
-// with annotations might break because the score component affects
-// the flow of the elements in an annotated rich-text answer, which might put the overlayed
-// annotation elements out-of-sync on page breaks.
-.e-result-scorecount-multiline-answer {
-  position: relative;
-  left: 1rem;
-  margin: 0;
-  height: 0;
-  width: 0;
-  overflow: visible;
-  clear: right;
-  white-space: nowrap;
-}
-
-.e-exam .e-result-scorecount-sup {
-  position: absolute;
-  left: 0.25rem;
-  top: 0;
-  line-height: 1rem;
-  text-align: right;
-  min-width: 1rem;
-}
-
-.e-results-section-wrapper {
-  padding-right: 9rem;
-}
-
-.e-result-scorecount-empty {
-  position: relative;
-  top: 2px;
-  display: inline-block;
-  height: 1ex;
-  width: 1.5ch;
-  border-bottom: 2px solid #333;
-}
-
-// If several questions are on same row, scores overlap next question. Hack to prevent it.
-table td .e-result-scorecount {
-  margin-right: 0;
-}
-
-.k-exam-done-return {
-  color: #359bb7;
-  background: inherit;
-  outline: none;
-  border: none;
-  font: inherit;
-  position: relative;
-  display: inline-block;
-  line-height: 36px;
-  font-size: 16px;
-  font-weight: 400;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.finish-page-instructions {
-  padding: 1.5rem 2rem;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 15px 22px -10px rgb(156 188 206);
-  margin-bottom: 1rem;
-
-  img {
-    object-fit: contain;
-    width: 100%;
-    height: 120px;
-    object-position: top;
-  }
-}
-
-.noAnswer {
-  background: #f7eadd;
-  opacity: 0.9;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-radius: 6px;
-  padding-right: 1rem;
-  margin-left: 0rem !important;
-
-  &.e-level-0 {
-    padding-left: 1rem;
+  .e-result-scorecount {
+    display: block;
+    clear: right;
+    margin-right: -9rem;
+    width: 8rem;
+    position: relative;
   }
 
-  &.e-level-1 {
-    padding-left: 3rem;
-    margin-left: 1rem !important;
+  .e-result-scorecount-border-wrap {
+    display: block;
+    border-left: 1px solid @colors[grey];
+    padding-left: 1.5rem;
   }
 
-  .noAnswer {
-    padding-right: 0;
-    padding-left: 3rem !important;
+  // Special rendering for multi-line and rich-text answer scores. The pdf rendering
+  // with annotations might break because the score component affects
+  // the flow of the elements in an annotated rich-text answer, which might put the overlayed
+  // annotation elements out-of-sync on page breaks.
+  .e-result-scorecount-multiline-answer {
+    position: relative;
+    left: 1rem;
+    margin: 0;
+    height: 0;
+    width: 0;
+    overflow: visible;
+    clear: right;
+    white-space: nowrap;
   }
 
-  .e-result-scorecount.e-float-right {
-    padding-left: 1rem;
+  .e-exam .e-result-scorecount-sup {
+    position: absolute;
+    left: 0.25rem;
+    top: 0;
+    line-height: 1rem;
+    text-align: right;
+    min-width: 1rem;
+  }
 
-    &.e-result-scorecount-multiline-answer {
-      left: 2rem;
+  .e-results-section-wrapper {
+    padding-right: 9rem;
+  }
+
+  .e-result-scorecount-empty {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    height: 1ex;
+    width: 1.5ch;
+    border-bottom: 2px solid #333;
+  }
+
+  // If several questions are on same row, scores overlap next question. Hack to prevent it.
+  table td .e-result-scorecount {
+    margin-right: 0;
+  }
+
+  .e-exam-done-return {
+    color: #359bb7;
+    background: inherit;
+    outline: none;
+    border: none;
+    font: inherit;
+    position: relative;
+    display: inline-block;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .e-exam-done-instructions {
+    margin: 2rem 0;
+
+    img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      object-position: top;
     }
   }
+
+  .finish-page-instructions {
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 15px 22px -10px rgb(156 188 206);
+    margin-bottom: 1rem;
+
+    li {
+      list-style-type: circle;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+
+      &:last-child {
+        background-color: @no-answer-bg;
+      }
+    }
+  }
+
+  .e-exam-question.no-answer {
+    background: @no-answer-bg;
+    opacity: 0.9;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 6px;
+    padding-right: 1rem;
+    margin-left: 0rem !important;
+
+    &.e-level-0 {
+      padding-left: 1rem;
+    }
+
+    &.e-level-1 {
+      padding-left: 3rem;
+      margin-left: 1rem !important;
+    }
+
+    .no-answer {
+      padding-right: 0;
+      padding-left: 3rem !important;
+    }
+
+    .e-result-scorecount.e-float-right {
+      padding-left: 1rem;
+
+      &.e-result-scorecount-multiline-answer {
+        left: 2rem;
+      }
+    }
+  }
+
+  .e-dropdown-answer__no-answer {
+    display: inline-block;
+    height: 24px;
+    border-color: @no-answer-border;
+  }
+
+  label input:not(:checked) + div {
+    opacity: 0.5;
+  }
 }
 
-.e-dropdown-answer__answered {
-  display: inline-block;
-  height: 24px;
+.finish-exam-page.e-exam {
+  .e-choice-answer,
+  .e-multiline-results-text-answer,
+  .text-answer--single-line,
+  .e-dropdown-answer__answered {
+    cursor: not-allowed;
+  }
+
+  .e-multiline-results-text-answer,
+  .text-answer--single-line {
+    border-color: #ddd;
+    background-color: @readonly;
+
+    &.no-answer {
+      box-shadow: inset 0 0 0 2px @no-answer-border;
+      border: none;
+      background-color: @no-answer-bg;
+    }
+  }
+
+  .text-answer--single-line:not(.no-answer) {
+    word-break: break-word;
+    border-radius: 3px;
+    color: #333;
+    border: none;
+  }
+
+  .e-dropdown-answer__answered {
+    background-color: @readonly;
+    border-color: #ddd;
+  }
+
+  .e-dropdown-answer__no-answer {
+    background-color: @no-answer-bg;
+    border-color: @no-answer-border;
+  }
+
+  .no-answer {
+    .e-dropdown-answer__no-answer,
+    .e-multiline-results-text-answer.no-answer {
+      background-color: @readonly;
+    }
+  }
 }

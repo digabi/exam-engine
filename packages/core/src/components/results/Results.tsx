@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { I18nextProvider, useTranslation } from 'react-i18next'
+import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement, queryAncestors } from '../../dom-utils'
@@ -30,7 +30,7 @@ import { validateAnswers } from '../../validateAnswers'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
-import { useIsFinishExamPage } from './isExamFinishPageHook'
+import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
 import classNames from 'classnames'
 
 export interface ResultsProps extends CommonExamProps {
@@ -77,17 +77,19 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
-  const { t } = useTranslation()
-  const isFinishExamPage = useIsFinishExamPage()
+  const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
 
   return (
     <I18nextProvider i18n={i18n}>
-      <main className={classNames('e-exam e-results', { 'finish-exam-page': isFinishExamPage })} lang={subjectLanguage}>
+      <main
+        className={classNames('e-exam e-results', { 'finish-exam-page': isStudentsFinishExamPage })}
+        lang={subjectLanguage}
+      >
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-        {isFinishExamPage && (
-          <button className="k-exam-done-return js-exam-done-return" onClick={() => returnToExam()}>
-            Palaa kokeeseen
+        {isStudentsFinishExamPage && (
+          <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
+            <BackToExamText />
           </button>
         )}
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
@@ -97,23 +99,10 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
               {date && `, ${dateTimeFormatter.format(date)}`}
             </DocumentTitle>
           )}
-          {!isFinishExamPage && <ScoresAndFinalGrade />}
+          {!isStudentsFinishExamPage && <ScoresAndFinalGrade />}
         </div>
 
-        {isFinishExamPage && (
-          <div className="finish-page-instructions">
-            <p>Näet tässä vastauksesi samanlaisena kuin kokeen arvostelija tulee ne näkemään.</p>
-            <ul>
-              <li>
-                Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. <br />
-              </li>
-              <li>
-                Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää
-                arvosteltavaksi.
-              </li>
-            </ul>
-          </div>
-        )}
+        {isStudentsFinishExamPage && <FinishPageInstructions />}
 
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
@@ -121,22 +110,42 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
         />
         {renderChildNodes(root)}
 
-        {isFinishExamPage && (
-          <div>
-            <p className="k-exam-done-instructions">
-              Kun olet valmis, sammuta tietokoneesi oikeasta yläkulmasta.
-              <br />
-              Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.
-            </p>
-            <img
-              className="k-exam-done-shutdown-image"
-              src="/dist/digabi-shutdown-screenshot.png"
-              alt={t('examFinished.shutdownTooltip')!}
-            />
-          </div>
-        )}
+        {isStudentsFinishExamPage && <ShutdownInstructions />}
       </main>
     </I18nextProvider>
+  )
+}
+
+const BackToExamText = () => {
+  const { t } = useExamTranslation()
+  return t('examFinished.returnToExam')
+}
+
+const FinishPageInstructions = () => {
+  const { t } = useExamTranslation()
+  return (
+    <div className="finish-page-instructions">
+      <p>{t('examFinished.hereAreYourAnswers')}</p>
+      <ul>
+        <li>{t('examFinished.checkYourAnswers')}</li>
+        <li>{t('examFinished.removeExcessAnswers')}</li>
+        <li>{t('examFinished.emptyAnswersAreHighlighted')}</li>
+      </ul>
+    </div>
+  )
+}
+
+const ShutdownInstructions = () => {
+  const { t, i18n } = useExamTranslation()
+  return (
+    <div className="e-exam-done-instructions">
+      <p>{t('examFinished.shutdownInstructions')}</p>
+      <img
+        className="e-exam-done-shutdown-image"
+        src="/dist/digabi-shutdown-screenshot.png"
+        alt={i18n.t('examFinished.shutdownTooltip')}
+      />
+    </div>
   )
 }
 

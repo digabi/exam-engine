@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import classnames from 'classnames'
 import { QuestionContext } from '../../context/QuestionContext'
-import { useIsFinishExamPage } from '../isExamFinishPageHook'
+import { useIsStudentsFinishExamPage } from '../isExamFinishPageHook'
 
 function QuestionScoresContainer({
   answers,
@@ -15,9 +15,10 @@ function QuestionScoresContainer({
   multilineAnswer?: boolean
 }) {
   const { displayNumber: topLevelDisplayNumber } = useContext(QuestionContext)
-  const isFinishExamPage = useIsFinishExamPage()
+  const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
   const fullDisplayNumber = displayNumber ? `${topLevelDisplayNumber}.${displayNumber?.replace('.', '')}` : undefined
-  if (isFinishExamPage) {
+
+  if (isStudentsFinishExamPage) {
     return null
   }
   return (

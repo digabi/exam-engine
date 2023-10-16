@@ -9,10 +9,10 @@ import { QuestionContext } from '../context/QuestionContext'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from '../context/ResultsContext'
 import ResultsExamQuestionAutoScore from './internal/QuestionAutoScore'
-import { useIsFinishExamPage } from './isExamFinishPageHook'
+import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
 
 function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
-  const { t } = useExamTranslation()
+  const { t, i18n } = useExamTranslation()
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const { answers } = useContext(QuestionContext)
   const questionId = getNumericAttribute(element, 'question-id')!
@@ -22,7 +22,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
     element,
     childElement => answer?.value === childElement.getAttribute('option-id')
   )
-  const isFinishExamPage = useIsFinishExamPage()
+  const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
@@ -35,11 +35,9 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const isAnswerCorrect =
     selectedOption && correctIds.includes(getNumericAttribute(selectedOption, 'option-id') as number)
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))!.score) || 0
+  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))?.score) || 0
 
   const maxScore = getNumericAttribute(element, 'max-score')!
-
-  console.log(displayNumber, answer, choice, scoreValue)
 
   return (
     <>
@@ -49,11 +47,13 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
         className={classNames(
           'e-dropdown-answer__answered',
           !selectedOption && 'e-dropdown-answer__no-answer',
-          !isFinishExamPage && {
+          !isStudentsFinishExamPage && {
             'e-dropdown-answer__answered--correct': isAnswerCorrect,
             'e-dropdown-answer__answered--wrong': !isAnswerCorrect
           }
         )}
+        data-question-id={questionId}
+        aria-description={!selectedOption ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
       >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
         {selectedOption && renderChildNodes(selectedOption)}
@@ -61,7 +61,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
         {isAnswerCorrect && <ScreenReaderOnly>{t('screen-reader.correct-answer')}</ScreenReaderOnly>}
       </span>
 
-      {!isFinishExamPage && !isAnswerCorrect && (
+      {!isStudentsFinishExamPage && !isAnswerCorrect && (
         <span className="e-dropdown-answer__correct" aria-hidden={true}>
           {correctOptions.map((correctOption, i) => (
             <React.Fragment key={i}>
