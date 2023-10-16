@@ -194,8 +194,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     })
   }
 
-  window.addEventListener('scroll', _.throttle(handleExamScroll, 100, { trailing: false }))
-
   const handleTOCScroll = (e: Event) => {
     const toc = e.currentTarget as Element
 
@@ -213,7 +211,12 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   useEffect(() => {
     const toc = document.querySelector('.sidebar-toc-container .table-of-contents')
     toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
-    return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
+    const throttleScroll = _.throttle(handleExamScroll, 100, { trailing: false })
+    window.addEventListener('scroll', throttleScroll)
+    return () => {
+      toc?.removeEventListener('wheel', handleTOCScroll)
+      window.removeEventListener('scroll', throttleScroll)
+    }
   }, [])
 
   return (
