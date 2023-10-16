@@ -102,15 +102,13 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
 
         {isFinishExamPage && (
           <div className="finish-page-instructions">
-            <p>Näet tässä vastauksesi samanlaisena kuin kokeen arvostelija tulee ne näkemään.</p>
+            <p>Näet tässä vastauksesi samanlaisina kuin kokeen arvostelijat tulevat ne näkemään.</p>
             <ul>
               <li>
-                Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. <br />
+                Tarkista, että näet alla kaikki koesuoritukset, jotka haluat jättää arvosteltavaksi.
+                <br />
               </li>
-              <li>
-                Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää
-                arvosteltavaksi.
-              </li>
+              <li>Jos näet ylimääräisiä koesuorituksia, palaa kokeeseen ja poista ne.</li>
             </ul>
           </div>
         )}

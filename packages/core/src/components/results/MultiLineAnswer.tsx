@@ -3,6 +3,7 @@ import { Score } from '../..'
 import { useExamTranslation } from '../../i18n'
 import { renderAnnotations } from '../../renderAnnotations'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
+import classNames from 'classnames'
 
 export const MultiLineAnswer: React.FunctionComponent<{
   type: 'rich-text'
@@ -19,7 +20,11 @@ export const MultiLineAnswer: React.FunctionComponent<{
   })
 
   return (
-    <div className="e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1">
+    <div
+      className={classNames('e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1', {
+        noAnswer: !value
+      })}
+    >
       <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
       {type === 'rich-text' ? (
         <div dangerouslySetInnerHTML={{ __html: value || '' }} ref={answerRef} />
