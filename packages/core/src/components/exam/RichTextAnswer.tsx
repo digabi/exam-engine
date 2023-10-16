@@ -3,7 +3,6 @@ import * as _ from 'lodash-es'
 import React from 'react'
 import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
-import { makeRichText } from 'rich-text-editor'
 import { ExpandQuestionContext } from './Question'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
@@ -39,31 +38,6 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
     super(props)
     this.ref = React.createRef()
     this.lastHTML = this.props.answer ? this.props.answer.value : ''
-  }
-
-  componentDidMount(): void {
-    const { current } = this.ref
-    const { answer, saveScreenshot } = this.props
-
-    if (current) {
-      if (answer) {
-        current.innerHTML = answer.value
-      }
-
-      makeRichText(
-        current,
-        {
-          ignoreEventHandling: this.props.ignoreEventHandling,
-          locale: this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV',
-          screenshotSaver: ({ data, type }: { data: Buffer; type: string }) =>
-            saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err: ErrorResponse) => {
-              this.handleSaveError(err)
-              throw err // Rethrow error so rich-text-editor can handle it.
-            })
-        },
-        this.props.ignoreEventHandling ? () => {} : this.handleChange
-      )
-    }
   }
 
   handleSaveError = (err: ErrorResponse): void => {
