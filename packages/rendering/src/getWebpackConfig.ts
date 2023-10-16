@@ -8,7 +8,8 @@ export function getWebpackConfig(configuration: webpack.Configuration) {
     {
       output: {
         publicPath: '',
-        filename: 'main-bundle.js'
+        filename: 'main-bundle.js',
+        assetModuleFilename: 'assets/[name][ext]'
       },
       resolve: {
         fallback: { path: false },
@@ -48,10 +49,7 @@ export function getWebpackConfig(configuration: webpack.Configuration) {
           },
           {
             test: /\.(woff|woff2|otf|ttf|eot|svg|png|gif|jpg)$/,
-            loader: require.resolve('file-loader'),
-            options: {
-              name: 'assets/[name].[ext]'
-            }
+            type: 'asset/resource'
           }
         ]
       },

@@ -31,7 +31,6 @@
     "css-minimizer-webpack-plugin": "^5.0.1",
     "date-fns": "^2.8.1",
     "downshift": "^8.0.0",
-    "file-loader": "^6.1.0",
     "fontfaceobserver": "^2.1.0",
     "i18next": "^23.2.11",
     "jquery": "^3.4.1",
