@@ -26,6 +26,7 @@ interface Props {
   saveScreenshot: (screenshot: Blob) => Promise<string>
   labelledBy: string
   lang?: string
+  applyMakeRichText: boolean
 }
 
 export default class RichTextAnswer extends React.PureComponent<Props> {
@@ -49,18 +50,21 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
         current.innerHTML = answer.value
       }
 
-      makeRichText(
-        current,
-        {
-          locale: this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV',
-          screenshotSaver: ({ data, type }: { data: Buffer; type: string }) =>
-            saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err: ErrorResponse) => {
-              this.handleSaveError(err)
-              throw err // Rethrow error so rich-text-editor can handle it.
-            })
-        },
-        this.handleChange
-      )
+      if (this.props.applyMakeRichText) {
+        makeRichText(
+          current,
+          {
+            ignoreEventHandling: this.props.applyMakeRichText,
+            locale: this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV',
+            screenshotSaver: ({ data, type }: { data: Buffer; type: string }) =>
+              saveScreenshot(data instanceof Blob ? data : new Blob([data], { type })).catch((err: ErrorResponse) => {
+                this.handleSaveError(err)
+                throw err // Rethrow error so rich-text-editor can handle it.
+              })
+          },
+          this.handleChange
+        )
+      }
     }
   }
 

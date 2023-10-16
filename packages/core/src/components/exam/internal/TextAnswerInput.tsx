@@ -26,7 +26,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
   const useLanguageOfInstruction = getBooleanAttribute(element, 'use-language-of-instruction')
   const maxLength = getNumericAttribute(element, 'max-length')
 
-  const { language } = useContext(CommonExamContext)
+  const { language, applyMakeRichText } = useContext(CommonExamContext)
   const { questionLabelIds, answers } = useContext(QuestionContext)
   const { examServerApi } = useContext(ExamContext)
 
@@ -161,6 +161,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
               lang={lang}
               invalid={invalid}
               labelledBy={labelledBy}
+              applyMakeRichText={applyMakeRichText ?? true}
             />
             <AnswerToolbar
               {...{
