@@ -35,11 +35,9 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const isAnswerCorrect =
     selectedOption && correctIds.includes(getNumericAttribute(selectedOption, 'option-id') as number)
   const displayNumber = shortDisplayNumber(element.getAttribute('display-number')!)
-  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))!.score) || 0
+  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))?.score) || 0
 
   const maxScore = getNumericAttribute(element, 'max-score')!
-
-  console.log(displayNumber, answer, choice, scoreValue)
 
   return (
     <>
