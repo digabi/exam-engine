@@ -52,6 +52,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
             'e-dropdown-answer__answered--wrong': !isAnswerCorrect
           }
         )}
+        data-question-id={questionId}
       >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
         {selectedOption && renderChildNodes(selectedOption)}
