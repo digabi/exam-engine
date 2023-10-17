@@ -19,7 +19,8 @@ module.exports = function () {
       filename: 'main-bundle.js',
       library: 'ExamBundle',
       libraryTarget: 'umd',
-      globalObject: 'this'
+      globalObject: 'this',
+      assetModuleFilename: 'assets/[name][ext]'
     },
     resolve: {
       fallback: { path: false }
@@ -46,10 +47,7 @@ module.exports = function () {
         },
         {
           test: /\.(woff|woff2|otf|ttf|eot|svg|png|gif|jpg)$/,
-          loader: 'file-loader',
-          options: {
-            name: 'assets/[name].[ext]'
-          }
+          type: 'asset/resource'
         }
       ]
     },
