@@ -86,7 +86,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
         {isFinishExamPage && (
-          <button className="k-exam-done-return js-exam-done-return" onClick={returnToExam}>
+          <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
             {t('examFinished.returnToExam')}
           </button>
         )}
@@ -118,9 +118,9 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
 
         {isFinishExamPage && (
           <div>
-            <p className="k-exam-done-instructions">{t('examFinished.shutdownInstructions')}</p>
+            <p className="e-exam-done-instructions">{t('examFinished.shutdownInstructions')}</p>
             <img
-              className="k-exam-done-shutdown-image"
+              className="e-exam-done-shutdown-image"
               src="/dist/digabi-shutdown-screenshot.png"
               alt={t('examFinished.shutdownTooltip')!}
             />
