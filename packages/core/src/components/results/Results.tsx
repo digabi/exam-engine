@@ -87,7 +87,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
         {isFinishExamPage && (
           <button className="k-exam-done-return js-exam-done-return" onClick={returnToExam}>
-            Palaa kokeeseen
+            {t('examFinished.returnToExam')}
           </button>
         )}
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
@@ -102,13 +102,10 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
 
         {isFinishExamPage && (
           <div className="finish-page-instructions">
-            <p>Näet tässä vastauksesi samanlaisina kuin kokeen arvostelijat tulevat ne näkemään.</p>
+            <p>{t('examFinished.hereAreYourAnswers')}</p>
             <ul>
-              <li>
-                Tarkista, että näet alla kaikki koesuoritukset, jotka haluat jättää arvosteltavaksi.
-                <br />
-              </li>
-              <li>Jos näet ylimääräisiä koesuorituksia, palaa kokeeseen ja poista ne.</li>
+              <li>{t('examFinished.checkYourAnswers')}</li>
+              <li>{t('examFinished.removeExcessAnswers')}</li>
             </ul>
           </div>
         )}
@@ -121,11 +118,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
 
         {isFinishExamPage && (
           <div>
-            <p className="k-exam-done-instructions">
-              Kun olet valmis, sammuta tietokoneesi oikeasta yläkulmasta.
-              <br />
-              Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.
-            </p>
+            <p className="k-exam-done-instructions">{t('examFinished.shutdownInstructions')}</p>
             <img
               className="k-exam-done-shutdown-image"
               src="/dist/digabi-shutdown-screenshot.png"
