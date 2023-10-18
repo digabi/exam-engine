@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { I18nextProvider, useTranslation } from 'react-i18next'
+import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement, queryAncestors } from '../../dom-utils'
@@ -77,7 +77,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
-  const { t } = useTranslation()
+  const { t } = useExamTranslation()
   const isFinishExamPage = useIsFinishExamPage()
 
   return (
@@ -122,7 +122,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
             <img
               className="e-exam-done-shutdown-image"
               src="/dist/digabi-shutdown-screenshot.png"
-              alt={t('examFinished.shutdownTooltip')!}
+              alt={t('examFinished.shutdownTooltip')! as string}
             />
           </div>
         )}
