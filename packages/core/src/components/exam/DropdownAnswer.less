@@ -1,3 +1,12 @@
+.finish-exam-page {
+  .e-dropdown-answer {
+    &__answered {
+      background-color: #f5f5f5;
+      border-color: #ccc;
+    }
+  }
+}
+
 .e-exam {
   .e-dropdown-answer {
     @margin: 1px;
@@ -8,10 +17,8 @@
 
     &__answered {
       padding: 0 0.25rem;
-      border: 2px solid black;
+      border: 2px solid #666;
       vertical-align: middle;
-      background-color: #f5f5f5;
-      border-color: #ccc;
 
       &--correct {
         box-shadow: 0 -4px 0 -2px inset @colors[correct-answer];

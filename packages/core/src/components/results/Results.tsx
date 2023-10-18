@@ -86,7 +86,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
         {isFinishExamPage && (
-          <button className="k-exam-done-return js-exam-done-return" onClick={() => returnToExam()}>
+          <button className="k-exam-done-return js-exam-done-return" onClick={returnToExam}>
             Palaa kokeeseen
           </button>
         )}
