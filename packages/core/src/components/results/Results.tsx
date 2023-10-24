@@ -30,7 +30,7 @@ import { validateAnswers } from '../../validateAnswers'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
-import { useIsFinishExamPage } from './isExamFinishPageHook'
+import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
 import classNames from 'classnames'
 
 export interface ResultsProps extends CommonExamProps {
@@ -77,17 +77,19 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
-  const { t } = useExamTranslation()
-  const isFinishExamPage = useIsFinishExamPage()
+  const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
 
   return (
     <I18nextProvider i18n={i18n}>
-      <main className={classNames('e-exam e-results', { 'finish-exam-page': isFinishExamPage })} lang={subjectLanguage}>
+      <main
+        className={classNames('e-exam e-results', { 'finish-exam-page': isStudentsFinishExamPage })}
+        lang={subjectLanguage}
+      >
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-        {isFinishExamPage && (
+        {isStudentsFinishExamPage && (
           <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
-            {t('examFinished.returnToExam')}
+            <BackToExamText />
           </button>
         )}
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
@@ -97,18 +99,10 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
               {date && `, ${dateTimeFormatter.format(date)}`}
             </DocumentTitle>
           )}
-          {!isFinishExamPage && <ScoresAndFinalGrade />}
+          {!isStudentsFinishExamPage && <ScoresAndFinalGrade />}
         </div>
 
-        {isFinishExamPage && (
-          <div className="finish-page-instructions">
-            <p>{t('examFinished.hereAreYourAnswers')}</p>
-            <ul>
-              <li>{t('examFinished.checkYourAnswers')}</li>
-              <li>{t('examFinished.removeExcessAnswers')}</li>
-            </ul>
-          </div>
-        )}
+        {isStudentsFinishExamPage && <FinishPageInstructions />}
 
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
@@ -116,18 +110,41 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
         />
         {renderChildNodes(root)}
 
-        {isFinishExamPage && (
-          <div>
-            <p className="e-exam-done-instructions">{t('examFinished.shutdownInstructions')}</p>
-            <img
-              className="e-exam-done-shutdown-image"
-              src="/dist/digabi-shutdown-screenshot.png"
-              alt={t('examFinished.shutdownTooltip')! as string}
-            />
-          </div>
-        )}
+        {isStudentsFinishExamPage && <ShutdownInstructions />}
       </main>
     </I18nextProvider>
+  )
+}
+
+const BackToExamText = () => {
+  const { t } = useExamTranslation()
+  return t('examFinished.returnToExam')
+}
+
+const FinishPageInstructions = () => {
+  const { t } = useExamTranslation()
+  return (
+    <div className="finish-page-instructions">
+      <p>{t('examFinished.hereAreYourAnswers')}</p>
+      <ul>
+        <li>{t('examFinished.checkYourAnswers')}</li>
+        <li>{t('examFinished.removeExcessAnswers')}</li>
+      </ul>
+    </div>
+  )
+}
+
+const ShutdownInstructions = () => {
+  const { t } = useExamTranslation()
+  return (
+    <div className="e-exam-done-instructions">
+      <p>{t('examFinished.shutdownInstructions')}</p>
+      <img
+        className="e-exam-done-shutdown-image"
+        src="/dist/digabi-shutdown-screenshot.png"
+        alt={t('examFinished.shutdownTooltip')! as string}
+      />
+    </div>
   )
 }
 
