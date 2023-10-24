@@ -129,6 +129,7 @@ const FinishPageInstructions = () => {
       <ul>
         <li>{t('examFinished.checkYourAnswers')}</li>
         <li>{t('examFinished.removeExcessAnswers')}</li>
+        <li>{t('examFinished.emptyAnswersAreHighlighted')}</li>
       </ul>
     </div>
   )

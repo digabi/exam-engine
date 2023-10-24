@@ -103,11 +103,14 @@
     box-shadow: 0 15px 22px -10px rgb(156 188 206);
     margin-bottom: 1rem;
 
-    img {
-      object-fit: contain;
-      width: 100%;
-      height: 120px;
-      object-position: top;
+    li {
+      list-style-type: circle;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+
+      &:last-child {
+        background-color: @no-answer-bg;
+      }
     }
   }
 
