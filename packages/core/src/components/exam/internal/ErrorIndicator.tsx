@@ -41,8 +41,8 @@ export function ErrorIndicatorForErrors({
   return validationErrors.length > 0 ? (
     <div
       className={classNames(
-        { 'error-indicator e-bg-color-error e-color-off-white': inExam },
-        'e-columns e-columns--inline e-font-size-xs e-pad-1 e-mrg-r-1'
+        { 'error-indicator e-bg-color-error e-color-off-white': inExam, 'e-font-size-xs': inExam },
+        'e-columns e-columns--inline  e-pad-1 e-mrg-r-1'
       )}
       role="alert"
     >

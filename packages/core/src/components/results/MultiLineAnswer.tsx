@@ -21,7 +21,7 @@ export const MultiLineAnswer: React.FunctionComponent<{
 
   return (
     <div
-      className={classNames('e-multiline-results-text-answer e-line-height-l e-pad-l-2 e-mrg-b-1', {
+      className={classNames('e-multiline-results-text-answer e-line-height-l e-pad-x-2 e-mrg-b-1', {
         noAnswer: !value
       })}
     >
