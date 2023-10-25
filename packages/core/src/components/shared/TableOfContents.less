@@ -116,7 +116,7 @@
           }
         }
 
-        &.error .e-question-title {
+        &.error .e-question-title * {
           color: @error;
         }
 
@@ -234,6 +234,8 @@
         &.error {
           background: @error;
           color: black;
+          border: 2px solid black;
+          box-sizing: content-box;
         }
       }
     }

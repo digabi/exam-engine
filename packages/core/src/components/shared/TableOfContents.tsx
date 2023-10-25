@@ -96,7 +96,7 @@ export const mkTableOfContents = (options: {
     const subquestions = [] as { id: number; type: string; error: boolean }[]
 
     let answersById = {} as Record<QuestionId, ExamAnswer>
-    let hasQuestionValidationError
+    let hasQuestionValidationError = false
 
     if (isInSidebar) {
       const answers = useSelector((state: { answers: AnswersState }) => state.answers)
@@ -111,10 +111,19 @@ export const mkTableOfContents = (options: {
         const id = Number(e.getAttribute('question-id'))
         const type = e.getAttribute('type') || ''
         const subQuestionDisplayNumber = e.getAttribute('display-number') || ''
-        const error = !!questionValidationErrors?.find(i => i.displayNumber === subQuestionDisplayNumber)
+        const hasError = !!questionValidationErrors?.find(i => i.displayNumber === subQuestionDisplayNumber)
+        const childQuestionHasError = questionValidationErrors
+          .flatMap(i => ('childQuestions' in i ? i.childQuestions : []))
+          .includes(subQuestionDisplayNumber)
+        const hasAnswer = !!answersById[id]?.value
 
         if (id) {
-          subquestions.push({ id, type, error })
+          subquestions.push({
+            id,
+            type,
+            error: hasError || (childQuestionHasError && hasAnswer),
+            displayNumber: Number(subQuestionDisplayNumber)
+          })
         }
       })
     }
@@ -128,7 +137,7 @@ export const mkTableOfContents = (options: {
       <li
         data-list-number={`${displayNumber}.`}
         onClick={() => (isInSidebar ? (window.location.href = `#question-nr-${displayNumber}`) : undefined)}
-        className={`level-${level} ${hasQuestionValidationError ? 'error' : ''}`}
+        className={classNames(`level-${level}`, { error: hasQuestionValidationError })}
       >
         <span className="e-column e-question-title">
           <a href={url('', { hash: `question-nr-${displayNumber}` })} tabIndex={isInSidebar ? -1 : undefined}>
