@@ -2254,6 +2254,19 @@
         <e:text-answer type="rich-text" max-score="66"/>
       </e:question>
 
+        <e:question>
+          <e:question-title>Lange Schreibaufgabe</e:question-title>
+          <e:question-instruction>
+            <e:localization lang="fi-FI">
+                  Ylimääräinen tehtävä
+            </e:localization>
+            <e:localization lang="sv-FI">
+                  Extra uppgift
+            </e:localization>
+          </e:question-instruction>
+          <e:text-answer type="rich-text" max-score="66"/>
+        </e:question>
+
     </e:question>
 
   </e:section>

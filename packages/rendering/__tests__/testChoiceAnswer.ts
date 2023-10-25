@@ -25,13 +25,13 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
   it('remembers the choices after reloading', async () => {
     await loadExam(page, ctx.url)
 
-    await setChoiceAnswer(page, 1, '101')
+    await setChoiceAnswer(page, 1, '102')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('101')
+    expect(await getRadioButtonValue(page, 1)).toBe('102')
 
-    await setChoiceAnswer(page, 1, '99')
+    await setChoiceAnswer(page, 1, '100')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('99')
+    expect(await getRadioButtonValue(page, 1)).toBe('100')
   })
 
   it('a choice answer indicator has correct state in side navigation', async () => {
@@ -40,7 +40,7 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
 
     const className = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValue = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
-    await setChoiceAnswer(page, 44, '213')
+    await setChoiceAnswer(page, 44, '214')
     const classNameThen = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValueThen = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
 

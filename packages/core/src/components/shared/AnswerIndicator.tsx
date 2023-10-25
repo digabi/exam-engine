@@ -21,30 +21,28 @@ const AnswerIndicator = (props: Props) => {
     answerIsLongText && (value?.includes('<img src="/screenshot/') || value?.includes('<img src="data:image/png;'))
 
   return (
-    <>
-      <div
-        key={id}
-        className={classNames('answer-indicator', {
-          ok: value,
-          error,
-          big: type === 'rich-text'
-        })}
-        data-indicator-id={id}
-      >
-        {answer?.type === 'richText' && (
-          <>
-            {(answerIsLongText && answer?.characterCount && <span>{answer.characterCount}</span>) || ''}
-            {answerIsFormula && <span className="formula">∑</span>}
-            {answerIsImage && (
-              <span className="img">
-                <FontAwesomeIcon icon={faImage} size="lg" />
-              </span>
-            )}
-          </>
-        )}
-      </div>
-      {error && <div className="error-mark">!</div>}
-    </>
+    <div
+      key={id}
+      className={classNames('answer-indicator', {
+        ok: value,
+        error,
+        big: type === 'rich-text'
+      })}
+      data-indicator-id={id}
+      onClick={onClick}
+    >
+      {answer?.type === 'richText' && (
+        <>
+          {(answerIsLongText && answer?.characterCount && <span>{answer.characterCount}</span>) || ''}
+          {answerIsFormula && <span className="formula">∑</span>}
+          {answerIsImage && (
+            <span className="img">
+              <FontAwesomeIcon icon={faImage} size="lg" />
+            </span>
+          )}
+        </>
+      )}
+    </div>
   )
 }
 
