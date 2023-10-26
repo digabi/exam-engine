@@ -7,6 +7,10 @@ import yauzl from 'yauzl-promise'
 
 const execAsync = promisify(childPromise.exec)
 
+interface YauzlEntryV4 extends yauzl.Entry {
+  filename: string
+}
+
 export function readStreamToString(readStream: Stream): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     let readBuilder = ''
@@ -47,23 +51,25 @@ export function stripColorCodes(output: string) {
 }
 
 export async function extractTransferZip(pathToZip: string) {
-  const zipFile = await yauzl.open(pathToZip, { lazyEntries: true })
+  const zipFile = await yauzl.open(pathToZip)
   const entries: string[] = []
   let examXml = ''
   const attachmentNames: string[] = []
-  await zipFile.walkEntries(async entry => {
-    entries.push(entry.fileName)
-    if (entry.fileName === 'exam.xml') {
+  const fileEntries = (await zipFile.readEntries()) as YauzlEntryV4[]
+  for (const entry of fileEntries) {
+    entries.push(entry.filename)
+    if (entry.filename === 'exam.xml') {
       const examContentReadStream = await entry.openReadStream()
       examXml = await readStreamToString(examContentReadStream)
     }
-    if (entry.fileName === 'attachments.zip') {
+    if (entry.filename === 'attachments.zip') {
       const attachments = await yauzl.fromBuffer(await streamToBuffer(await entry.openReadStream()))
-      await attachments.walkEntries(attachmentEntry => {
-        attachmentNames.push(attachmentEntry.fileName)
-      })
+      const attachmentEntries = (await attachments.readEntries()) as YauzlEntryV4[]
+      for (const attachmentEntry of attachmentEntries) {
+        attachmentNames.push(attachmentEntry.filename)
+      }
     }
-  })
+  }
   return {
     entries,
     attachmentNames,
