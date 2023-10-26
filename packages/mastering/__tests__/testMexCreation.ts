@@ -5,6 +5,10 @@ import { Readable, PassThrough } from 'stream'
 import { createMex, AttachmentFile, createMultiMex, ExamFile } from '../dist/createMex'
 import { verifyWithSHA256AndRSA } from '../src/crypto-utils'
 
+interface YauzlEntryV4 extends yauzl.Entry {
+  filename: string
+}
+
 interface InterestingEntryMetadata {
   fileName: string
   uncompressedSize: number
@@ -54,10 +58,10 @@ describe('Mex exam package creation', () => {
 
   async function expectZipEntriesAreCorrect(
     mexBuffers: Buffer[],
-    entryMapper: (value: yauzl.Entry, index: number, array: yauzl.Entry[]) => InterestingEntryMetadata
-  ): Promise<yauzl.Entry[]> {
+    entryMapper: (value: YauzlEntryV4, index: number, array: YauzlEntryV4[]) => InterestingEntryMetadata
+  ): Promise<YauzlEntryV4[]> {
     const zip = await yauzl.fromBuffer(Buffer.concat(mexBuffers))
-    const rawEntries = await zip.readEntries()
+    const rawEntries = (await zip.readEntries()) as YauzlEntryV4[]
     const mappedEntries = rawEntries.map(entryMapper)
     expect(mappedEntries).toMatchSnapshot()
     return rawEntries
@@ -79,18 +83,18 @@ describe('Mex exam package creation', () => {
         koeUpdate
       )
       return await expectZipEntriesAreCorrect(mexBuffers, e => ({
-        fileName: e.fileName,
-        uncompressedSize: e.fileName === 'rendering.zip.bin' ? 0 : e.uncompressedSize // ignore rendering.zip size
+        fileName: e.filename,
+        uncompressedSize: e.filename === 'rendering.zip.bin' ? 0 : e.uncompressedSize // ignore rendering.zip size
       }))
     }
 
     it('creates a minimal mex with verifyable exam.xml signature', async () => {
       const mexEntries = await expectCorrectMexIsCreated()
       const encryptedExamXml = await toBuffer(
-        await mexEntries.find(e => e.fileName === 'exam.xml.bin')!.openReadStream()
+        await mexEntries.find(e => e.filename === 'exam.xml.bin')!.openReadStream()
       )
       const encryptedExamXmlSignature = (
-        await toBuffer(await mexEntries.find(e => e.fileName === 'exam.xml.bin.sig')!.openReadStream())
+        await toBuffer(await mexEntries.find(e => e.filename === 'exam.xml.bin.sig')!.openReadStream())
       ).toString('utf8')
 
       const signatureVerificationResult = verifyWithSHA256AndRSA(encryptedExamXml, publicKey, encryptedExamXmlSignature)
@@ -117,8 +121,9 @@ describe('Mex exam package creation', () => {
         ktpUpdate,
         koeUpdate
       )
+
       await expectZipEntriesAreCorrect(mexBuffers, e => ({
-        fileName: e.fileName,
+        fileName: e.filename,
         uncompressedSize: e.uncompressedSize
       }))
     }
