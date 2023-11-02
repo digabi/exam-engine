@@ -3,47 +3,47 @@
 exports[`Mex exam package creation with createMex creates a mex with koe-update.zip 1`] = `
 [
   {
-    "fileName": "exam.xml.bin",
+    "fileName": undefined,
     "uncompressedSize": 8,
   },
   {
-    "fileName": "exam.xml.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "nsa.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 16,
   },
   {
-    "fileName": "nsa.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "koe-update.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 19,
   },
   {
-    "fileName": "koe-update.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "koe-update.zip.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "rendering.zip.bin",
-    "uncompressedSize": 0,
+    "fileName": undefined,
+    "uncompressedSize": 5279073,
   },
   {
-    "fileName": "rendering.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "attachments.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 22,
   },
   {
-    "fileName": "attachments.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
 ]
@@ -52,35 +52,35 @@ exports[`Mex exam package creation with createMex creates a mex with koe-update.
 exports[`Mex exam package creation with createMex creates a minimal mex with verifyable exam.xml signature 1`] = `
 [
   {
-    "fileName": "exam.xml.bin",
+    "fileName": undefined,
     "uncompressedSize": 8,
   },
   {
-    "fileName": "exam.xml.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "nsa.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 16,
   },
   {
-    "fileName": "nsa.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "rendering.zip.bin",
-    "uncompressedSize": 0,
+    "fileName": undefined,
+    "uncompressedSize": 5279073,
   },
   {
-    "fileName": "rendering.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "attachments.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 22,
   },
   {
-    "fileName": "attachments.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
 ]
@@ -89,27 +89,27 @@ exports[`Mex exam package creation with createMex creates a minimal mex with ver
 exports[`Mex exam package creation with createMultiMex creates a minimal multimex 1`] = `
 [
   {
-    "fileName": "exam_a.mex",
+    "fileName": undefined,
     "uncompressedSize": 11,
   },
   {
-    "fileName": "exam_b.mex",
+    "fileName": undefined,
     "uncompressedSize": 11,
   },
   {
-    "fileName": "nsa.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 16,
   },
   {
-    "fileName": "nsa.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "security-codes.json.bin",
+    "fileName": undefined,
     "uncompressedSize": 19,
   },
   {
-    "fileName": "security-codes.json.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
 ]
@@ -118,39 +118,39 @@ exports[`Mex exam package creation with createMultiMex creates a minimal multime
 exports[`Mex exam package creation with createMultiMex creates a multimex with koe-update.zip 1`] = `
 [
   {
-    "fileName": "exam_a.mex",
+    "fileName": undefined,
     "uncompressedSize": 11,
   },
   {
-    "fileName": "exam_b.mex",
+    "fileName": undefined,
     "uncompressedSize": 11,
   },
   {
-    "fileName": "nsa.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 16,
   },
   {
-    "fileName": "nsa.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "security-codes.json.bin",
+    "fileName": undefined,
     "uncompressedSize": 19,
   },
   {
-    "fileName": "security-codes.json.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "koe-update.zip.bin",
+    "fileName": undefined,
     "uncompressedSize": 19,
   },
   {
-    "fileName": "koe-update.zip.bin.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
   {
-    "fileName": "koe-update.zip.sig",
+    "fileName": undefined,
     "uncompressedSize": 88,
   },
 ]
