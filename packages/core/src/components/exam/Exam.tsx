@@ -49,6 +49,7 @@ import * as _ from 'lodash-es'
 import { StudentNameHeader } from './StudentNameHeader'
 import { UndoView } from './UndoView'
 import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
+import FinishExam from './FinishExam'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -275,6 +276,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                   )}
                 </SectionElement>
                 {renderChildNodes(root)}
+                <FinishExam />
               </div>
             </div>
           </div>
