@@ -1,9 +1,8 @@
 import React from 'react'
-import SectionElement from '../SectionElement'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 
 function ExamFooter({ element, renderChildNodes }: ExamComponentProps) {
-  return <SectionElement>{renderChildNodes(element)}</SectionElement>
+  return <div className="e-exam-footer">{renderChildNodes(element)}</div>
 }
 
 export default React.memo(ExamFooter)

@@ -1,0 +1,149 @@
+.e-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: hsla(0, 0%, 38%, 0.7);
+}
+
+.e-undo-view {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  position: fixed;
+  margin: 0 auto;
+  top: 40px;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  background: #eee;
+  overflow: hidden;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 1080px;
+  min-width: 400px;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.e-undo-view-close-overlay-button {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.e-undo-view-content {
+  font-size: 15px;
+  line-height: 1.3em;
+  min-height: 50px;
+  overflow: scroll-y;
+  display: flex;
+  flex: 1;
+}
+
+.e-undo-view-answer-index {
+  min-width: 220px;
+  max-width: 380px;
+  font-size: 15px;
+  line-height: 1.2em;
+  overflow-y: auto;
+  flex: 1;
+
+  input[type='radio'] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: fixed;
+  }
+}
+
+.e-undo-view-entry-tab:checked ~ .e-undo-view-entry {
+  background: #fff;
+  border-color: @colors[link];
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.e-undo-view-entry {
+  box-sizing: border-box;
+  border-left: 10px solid transparent;
+  padding: 8px 12px;
+  width: 100%;
+  color: #333;
+  user-select: none;
+  cursor: pointer;
+  word-wrap: break-word;
+
+  &:hover {
+    background: #fff;
+  }
+
+  .js-undo-history-entry-time {
+    color: @colors[link];
+    font-size: 14px;
+  }
+
+  .e-undo-view-answer-length {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.35em;
+    margin-top: 3px;
+  }
+}
+
+.e-undo-view-answer-index label:first-child .js-undo-history-entry-time:after {
+  content: ' \25CF';
+  font-size: 20px;
+  color: #2c8da8;
+}
+
+.e-undo-view-right-panel {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  overflow-x: hidden;
+
+  .e-undo-view-header {
+    padding: 20px 30px;
+    height: 60px;
+    width: 100%;
+
+    .e-undo-view-title {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-right: 30px;
+    }
+  }
+
+  .e-undo-view-answer-content {
+    flex: 1;
+    padding: 10px 30px 30px 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+
+    &.plainText {
+      white-space: pre-wrap;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .e-undo-view-bottom-bar {
+    padding: 15px;
+    text-align: right;
+  }
+}

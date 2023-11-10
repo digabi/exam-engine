@@ -163,7 +163,17 @@ const App: React.FunctionComponent<{
     casStatus: 'forbidden' as const,
     restrictedAudioPlaybackStats: [],
     examServerApi,
-    type
+    type,
+    finishExam: () => Promise.resolve(),
+    studentName: '[Kokelaan Nimi]',
+    allowLanguageChange: true,
+    showUndoView: false,
+    undoViewProps: {
+      questionId: 0,
+      title: '',
+      close: () => undefined,
+      restoreAnswer: () => undefined
+    }
   }
 
   return (
@@ -178,27 +188,7 @@ const App: React.FunctionComponent<{
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (
-        <div>
-          <div
-            style={{
-              width: `calc(100% - 2rem)`,
-              margin: '20px auto'
-            }}
-          >
-            Tähän tulee koetilanteessa kokelaan nimi
-          </div>
-          <Exam {...examProps} />
-          <div
-            style={{
-              background: 'white',
-              padding: '30px 60px',
-              marginTop: '-20px',
-              textAlign: 'center'
-            }}
-          >
-            {`Tähän tulee koetilanteessa "Päätä koe" -nappi.`}
-          </div>
-        </div>
+        <Exam {...examProps} />
       )}
     </div>
   )

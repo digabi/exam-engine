@@ -69,6 +69,25 @@ export const fi_FI = {
       infoText: 'A-osa palautettu'
     }
   },
+  'finish-exam': {
+    finish: 'Päätä koe',
+    instructions: 'Painikkeen klikkaamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
+  },
+  undo: {
+    loading: 'Ladataan...',
+    close: 'Sulje',
+    restoreAnswer: 'Palauta',
+    answerNoText: 'ei tekstiä',
+    answerWordCount: '{{count}} sana',
+    answerWordCount_plural: '{{count}} sanaa',
+    answerCharacterCount: '{{count}} merkki',
+    answerCharacterCount_plural: '{{count}} merkkiä',
+    answerImageCount: '{{count}} kuva',
+    answerImageCount_plural: '{{count}} kuvaa',
+    minutesSinceAnswer: '{{ minutes }} min sitten',
+    latestVersion: 'Viimeisin versio'
+  },
+
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
   'too-many-answers': 'Vastattu liian moneen tehtävään:',

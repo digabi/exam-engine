@@ -46,6 +46,10 @@ import RenderChildNodes from '../RenderChildNodes'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import * as _ from 'lodash-es'
+import { StudentNameHeader } from './StudentNameHeader'
+import { UndoView } from './UndoView'
+import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
+import FinishExam from './FinishExam'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -61,6 +65,13 @@ export interface CommonExamProps {
   language?: string
 }
 
+interface UndoViewProps {
+  close: () => void
+  restoreAnswer: (examAnswer: TextAnswerType | RichTextAnswer) => void
+  questionId: number
+  title: string
+}
+
 /** Props related to taking the exam, 'executing' it */
 export interface ExamProps extends CommonExamProps {
   /** The status of CAS software on the OS */
@@ -74,6 +85,9 @@ export interface ExamProps extends CommonExamProps {
   restrictedAudioPlaybackStats: RestrictedAudioPlaybackStats[]
   /** Exam Server API implementation */
   examServerApi: ExamServerAPI
+  studentName: string
+  showUndoView: boolean
+  undoViewProps: UndoViewProps
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -113,7 +127,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   casStatus,
   answers,
   restrictedAudioPlaybackStats,
-  examServerApi
+  examServerApi,
+  studentName,
+  showUndoView,
+  undoViewProps
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -215,6 +232,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
   }, [])
 
+  // TODO: Remove 'isOldKoeVersion' checks when old Koe version is not supported anymore
+  const isOldKoeVersion = examServerApi.finishExam === undefined
+
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
@@ -231,6 +251,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
             <div className="main-exam-container">
               <div className="main-exam">
+                <StudentNameHeader studentName={studentName} />
                 <SectionElement aria-labelledby={examTitleId}>
                   {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
                   {date && (
@@ -255,13 +276,16 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                   )}
                 </SectionElement>
                 {renderChildNodes(root)}
+                <FinishExam />
               </div>
             </div>
           </div>
+          {!isOldKoeVersion && <div className="e-section e-exam-footer-content" />}
           <div className="e-footer">
             <ErrorIndicator />
             <SaveIndicator />
           </div>
+          {showUndoView && !isOldKoeVersion && <UndoView {...undoViewProps} />}
         </main>
       </I18nextProvider>
     </Provider>
