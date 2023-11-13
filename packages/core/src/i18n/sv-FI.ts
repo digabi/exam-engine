@@ -59,7 +59,7 @@ export const sv_FI: Translations = {
     }
   },
   'finish-exam': {
-    finish: 'Avsluta provet',
+    finish: 'TODO TODO',
     instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
   },
   undo: {
@@ -77,13 +77,16 @@ export const sv_FI: Translations = {
     latestVersion: 'Den senaste versionen'
   },
   examFinished: {
-    returnToExam: 'Palaa kokeeseen',
+    returnToExam: 'Återvänd till provutförandet',
     hereAreYourAnswers: 'Du ser här dina svar på samma sätt som de som bedömer proven kommer att se dem.',
     checkYourAnswers: 'Kontrollera att du kan se alla de svar som du vill lämna in till bedömning.',
     removeExcessAnswers:
       'Om du ser svar som du inte vill lämna in till bedömning bör du gå tillbaka till provet och avlägsna dem.',
     emptyAnswersAreHighlighted:
-      'Tomma svarsfält har markerats. Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.'
+      'Tomma svarsfält har markerats. Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.',
+    shutdownInstructions:
+      'Släck datorn från övre högra hörnet.\nNär datorn har slocknat ta bort USB-minnet och lämna det till provets övervakare.',
+    shutdownTooltip: 'Stäng av datorn via menyn i övre högra hörnet'
   },
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',

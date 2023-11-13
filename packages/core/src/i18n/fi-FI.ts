@@ -70,7 +70,7 @@ export const fi_FI = {
     }
   },
   'finish-exam': {
-    finish: 'Päätä koe',
+    finish: 'Siirry tarkastelemaan vastauksiasi',
     instructions: 'Painikkeen klikkaamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
   },
   undo: {
@@ -88,12 +88,15 @@ export const fi_FI = {
     latestVersion: 'Viimeisin versio'
   },
   examFinished: {
-    returnToExam: 'Palaa kokeeseen',
+    returnToExam: 'Palaa suorittamaan koetta',
     hereAreYourAnswers: 'Näet tässä vastauksesi samanlaisina kuin kokeen arvostelijat tulevat ne näkemään.',
     checkYourAnswers: 'Tarkista, että näet alla kaikki vastaukset, jotka haluat jättää arvosteltavaksi.',
     removeExcessAnswers: 'Jos näet vastauksia, joita et halua jättää arvosteltavaksi, palaa kokeeseen ja poista ne.',
     emptyAnswersAreHighlighted:
-      'Tyhjät vastaukset on korostettu. Kokeessa voi olla valinnaisia tehtäviä, joten tyhjä vastaus ei välttämättä tarkoita virhettä.'
+      'Tyhjät vastaukset on korostettu. Kokeessa voi olla valinnaisia tehtäviä, joten tyhjä vastaus ei välttämättä tarkoita virhettä.',
+    shutdownInstructions:
+      'Sammuta tietokoneesi oikeasta yläkulmasta.\nKun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.',
+    shutdownTooltip: 'Sammuta kone oikean yläkulman valikosta'
   },
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
