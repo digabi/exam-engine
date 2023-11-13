@@ -82,7 +82,8 @@ export const sv_FI: Translations = {
     checkYourAnswers: 'Kontrollera att du kan se alla de svar som du vill lämna in till bedömning.',
     removeExcessAnswers:
       'Om du ser svar som du inte vill lämna in till bedömning bör du gå tillbaka till provet och avlägsna dem.',
-    emptyAnswersAreHighlighted: 'TODO TODO TODO.'
+    emptyAnswersAreHighlighted:
+      'Tomma svarsfält har markerats. Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.'
   },
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',
