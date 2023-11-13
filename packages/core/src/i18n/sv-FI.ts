@@ -76,6 +76,14 @@ export const sv_FI: Translations = {
     minutesSinceAnswer: '{{ minutes }} min sedan',
     latestVersion: 'Den senaste versionen'
   },
+  examFinished: {
+    returnToExam: 'Palaa kokeeseen',
+    hereAreYourAnswers: 'Du ser här dina svar på samma sätt som de som bedömer proven kommer att se dem.',
+    checkYourAnswers: 'Kontrollera att du kan se alla de svar som du vill lämna in till bedömning.',
+    removeExcessAnswers:
+      'Om du ser svar som du inte vill lämna in till bedömning bör du gå tillbaka till provet och avlägsna dem.',
+    emptyAnswersAreHighlighted: 'TODO TODO TODO.'
+  },
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',
   'too-many-answers': 'Svar på för många uppgifter:',

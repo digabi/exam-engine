@@ -87,7 +87,14 @@ export const fi_FI = {
     minutesSinceAnswer: '{{ minutes }} min sitten',
     latestVersion: 'Viimeisin versio'
   },
-
+  examFinished: {
+    returnToExam: 'Palaa kokeeseen',
+    hereAreYourAnswers: 'Näet tässä vastauksesi samanlaisina kuin kokeen arvostelijat tulevat ne näkemään.',
+    checkYourAnswers: 'Tarkista, että näet alla kaikki vastaukset, jotka haluat jättää arvosteltavaksi.',
+    removeExcessAnswers: 'Jos näet vastauksia, joita et halua jättää arvosteltavaksi, palaa kokeeseen ja poista ne.',
+    emptyAnswersAreHighlighted:
+      'Tyhjät vastaukset on korostettu. Kokeessa voi olla valinnaisia tehtäviä, joten tyhjä vastaus ei välttämättä tarkoita virhettä.'
+  },
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
   'too-many-answers': 'Vastattu liian moneen tehtävään:',
