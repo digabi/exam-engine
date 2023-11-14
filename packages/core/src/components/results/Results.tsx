@@ -87,11 +87,13 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
       >
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+
         {isStudentsFinishExamPage && (
           <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
-            <BackToExamText />
+            « <BackToExamText />
           </button>
         )}
+
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
           {examTitle && (
             <DocumentTitle id="title" className="e-column e-mrg-b-0">
@@ -129,7 +131,10 @@ const FinishPageInstructions = () => {
       <ul>
         <li>{t('examFinished.checkYourAnswers')}</li>
         <li>{t('examFinished.removeExcessAnswers')}</li>
-        <li>{t('examFinished.emptyAnswersAreHighlighted')}</li>
+        <li>
+          <span className="no-answer-example">{t('examFinished.emptyAnswersAreHighlighted')}</span>
+          {t('examFinished.thereMayBeOptionalQuestions')}
+        </li>
       </ul>
     </div>
   )

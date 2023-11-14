@@ -276,7 +276,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                   )}
                 </SectionElement>
                 {renderChildNodes(root)}
-                <FinishExam />
+                {!isOldKoeVersion && <FinishExam />}
               </div>
             </div>
           </div>
