@@ -99,17 +99,20 @@
   .finish-page-instructions {
     padding: 1.5rem 2rem;
     background: white;
-    border-radius: 5px;
     box-shadow: 0 15px 22px -10px rgb(156 188 206);
     margin-bottom: 1rem;
+    border-radius: 5px;
 
     li {
       list-style-type: circle;
       padding: 0.25rem 0.5rem;
-      border-radius: 3px;
 
-      &:last-child {
+      .no-answer-example {
+        border-radius: 6px;
+        padding: 0.25rem 0.5rem;
         background-color: @no-answer-bg;
+        margin: 0 0.25rem 0.25rem -0.5rem;
+        display: inline-block;
       }
     }
   }
