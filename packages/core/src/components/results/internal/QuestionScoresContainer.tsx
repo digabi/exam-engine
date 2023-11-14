@@ -17,6 +17,7 @@ function QuestionScoresContainer({
   const { displayNumber: topLevelDisplayNumber } = useContext(QuestionContext)
   const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
   const fullDisplayNumber = displayNumber ? `${topLevelDisplayNumber}.${displayNumber?.replace('.', '')}` : undefined
+
   if (isStudentsFinishExamPage) {
     return null
   }
