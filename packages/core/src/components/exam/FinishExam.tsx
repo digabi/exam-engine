@@ -7,18 +7,19 @@ function FinishExam() {
   const { finishExam } = examServerApi
   const { t } = useExamTranslation()
 
+  const goToInspectAnswers = () => {
+    finishExam()
+    window.scrollTo(0, 0)
+  }
+
   return (
     <div className="e-finish-exam">
-      {finishExam !== undefined && (
-        <>
-          <button id="finishExam" onClick={() => void finishExam()} aria-describedby="finishExamInstructions">
-            {t('finish-exam.finish')}
-          </button>
-          <div className="e-finish-exam-instructions" id="finishExamInstructions">
-            {t('finish-exam.instructions')}
-          </div>
-        </>
-      )}
+      <button id="finishExam" onClick={goToInspectAnswers} aria-describedby="finishExamInstructions">
+        {t('finish-exam.finish')}
+      </button>
+      <div className="e-finish-exam-instructions" id="finishExamInstructions">
+        {t('finish-exam.instructions')}
+      </div>
     </div>
   )
 }

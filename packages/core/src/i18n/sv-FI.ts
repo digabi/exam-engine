@@ -59,7 +59,7 @@ export const sv_FI: Translations = {
     }
   },
   'finish-exam': {
-    finish: 'TODO TODO',
+    finish: 'Kontrollera dina svar',
     instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
   },
   undo: {
@@ -82,8 +82,9 @@ export const sv_FI: Translations = {
     checkYourAnswers: 'Kontrollera att du kan se alla de svar som du vill lämna in till bedömning.',
     removeExcessAnswers:
       'Om du ser svar som du inte vill lämna in till bedömning bör du gå tillbaka till provet och avlägsna dem.',
-    emptyAnswersAreHighlighted:
-      'Tomma svarsfält har markerats. Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.',
+    emptyAnswersAreHighlighted: 'Tomma svarsfält har markerats.',
+    thereMayBeOptionalQuestions:
+      'Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.',
     questionHasNoAnswer: 'Denna fråga har inte besvarats',
     shutdownInstructions:
       'Släck datorn från övre högra hörnet.\nNär datorn har slocknat ta bort USB-minnet och lämna det till provets övervakare.',
