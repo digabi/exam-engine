@@ -6,11 +6,13 @@ import AnnotationList from './internal/AnnotationList'
 import { ResultsContext } from '../context/ResultsContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { ExamAnswer } from '../..'
+import { useExamTranslation } from '../../i18n'
 
 function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { answersByQuestionId } = useContext(ResultsContext)
   const { displayNumber, level } = useContext(QuestionContext)
   const hasAnswers = questionHasAnswers(element, answersByQuestionId)
+  const { i18n } = useExamTranslation()
 
   return (
     <div
@@ -20,6 +22,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         'no-answer': !hasAnswers
       })}
       id={displayNumber}
+      aria-description={!hasAnswers ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
     >
       {renderChildNodes(element)}
       <AnnotationList />

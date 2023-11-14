@@ -12,7 +12,7 @@ import ResultsExamQuestionAutoScore from './internal/QuestionAutoScore'
 import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
 
 function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
-  const { t } = useExamTranslation()
+  const { t, i18n } = useExamTranslation()
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const { answers } = useContext(QuestionContext)
   const questionId = getNumericAttribute(element, 'question-id')!
@@ -53,6 +53,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
           }
         )}
         data-question-id={questionId}
+        aria-description={!selectedOption ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
       >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
         {selectedOption && renderChildNodes(selectedOption)}
