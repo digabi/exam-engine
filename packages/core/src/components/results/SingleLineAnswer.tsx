@@ -31,7 +31,7 @@ function SingleLineAnswer({
       {displayNumber && <sup>{displayNumber}</sup>}
       <span
         className={classNames('text-answer text-answer--single-line', {
-          noAnswer: !value
+          'no-answer': !value
         })}
       >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
