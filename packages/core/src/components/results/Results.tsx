@@ -136,14 +136,14 @@ const FinishPageInstructions = () => {
 }
 
 const ShutdownInstructions = () => {
-  const { t } = useExamTranslation()
+  const { t, i18n } = useExamTranslation()
   return (
     <div className="e-exam-done-instructions">
       <p>{t('examFinished.shutdownInstructions')}</p>
       <img
         className="e-exam-done-shutdown-image"
         src="/dist/digabi-shutdown-screenshot.png"
-        alt={t('examFinished.shutdownTooltip')! as string}
+        alt={i18n.t('examFinished.shutdownTooltip')}
       />
     </div>
   )
