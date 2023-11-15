@@ -77,7 +77,7 @@ function generateScore(question: { id: number; maxScore: number; displayNumber: 
     pregrading: {
       score: Math.min(question.maxScore, i),
       comment: `Pregading comment to question ${question.displayNumber}`,
-      annotations: [{ startIndex: 0, length: 0, message: `Pregading annotation to question ${question.displayNumber}` }]
+      annotations: [{ startIndex: 0, length: 1, message: `Pregading annotation to question ${question.displayNumber}` }]
     },
     censoring: {
       scores: [
@@ -96,7 +96,7 @@ function generateScore(question: { id: number; maxScore: number; displayNumber: 
       ],
       comment: `Censor comment to question ${question.displayNumber}`,
       annotations: [
-        { startIndex: 0, length: 0, message: `Censoring annotation to question ${question.displayNumber}` }
+        { startIndex: 0, length: 1, message: `Censoring annotation to question ${question.displayNumber}` }
       ],
       nonAnswerDetails: { shortCode: 'CEN' }
     },
