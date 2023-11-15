@@ -79,6 +79,10 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
   useEffect(scrollToHash, [])
   const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
 
+  useEffect(() => {
+    window.location.hash = ''
+  }, [])
+
   return (
     <I18nextProvider i18n={i18n}>
       <main
