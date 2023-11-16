@@ -11,11 +11,11 @@ export function renderAnnotations(
   showTitle = true
 ): void {
   const annotations = [...pregradingAnnotations, ...censoringAnnotations]
-  const annotationsWithMessages = annotations.filter(a => a.message)
+  const annotationsWithLength = annotations.filter(a => ('length' in a ? a.length : true))
 
   for (const [i, annotation] of annotations.entries()) {
     const type = pregradingAnnotations.includes(annotation) ? 'pregrading' : 'censoring'
-    const index = annotationsWithMessages.indexOf(annotation) + 1 || undefined
+    const index = annotationsWithLength.indexOf(annotation) + 1 || undefined
     const listIndex = type === 'pregrading' ? i : i - pregradingAnnotations.length
     switch (annotation.type) {
       case 'line':
