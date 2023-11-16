@@ -96,7 +96,7 @@ describe('<AnnotationList />', () => {
                   },
                   {
                     startIndex: 1,
-                    length: 0,
+                    length: 1,
                     message: ''
                   },
                   {

@@ -34,7 +34,7 @@ function ResultsAnnotationList() {
       answerElementAndScores,
       ([answer, score]) =>
         score[annotationsFrom]?.annotations
-          ?.filter(a => ('length' in a ? !!a.length : true))
+          ?.filter(a => a.message.length)
           .map((annotation: Annotation, i: number) => {
             const numbering = `${getPrefix(answers, answer) + String(listNumberOffset + i + 1)})`
             const message = annotation.message
