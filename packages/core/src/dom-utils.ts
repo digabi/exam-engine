@@ -21,8 +21,8 @@ function mkPredicate(selector: Selector): (element: Element) => boolean {
   return typeof selector === 'function'
     ? (element: Element) => element.namespaceURI === ExamNamespaceURI && selector(element)
     : Array.isArray(selector)
-    ? (element: Element) => element.namespaceURI === ExamNamespaceURI && selector.includes(element.localName)
-    : (element: Element) => element.namespaceURI === ExamNamespaceURI && element.localName === selector
+      ? (element: Element) => element.namespaceURI === ExamNamespaceURI && selector.includes(element.localName)
+      : (element: Element) => element.namespaceURI === ExamNamespaceURI && element.localName === selector
 }
 
 export function query(root: Element, selector: Selector): Element | undefined {

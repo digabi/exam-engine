@@ -8,8 +8,8 @@ function mkPredicate(query: Query) {
   return _.isString(query)
     ? (e: Element) => e.name() === query
     : _.isFunction(query)
-    ? query
-    : (e: Element) => query.includes(e.name())
+      ? query
+      : (e: Element) => query.includes(e.name())
 }
 
 export function queryAncestors(element: Element, query: Query): Element | undefined {

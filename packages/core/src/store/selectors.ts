@@ -10,8 +10,8 @@ export const getAudioState =
     return nowPlaying == null
       ? 'stopped'
       : nowPlaying.audio.restrictedAudioId === restrictedAudioId && nowPlaying.audio.src === src
-      ? 'playing'
-      : 'other-playing'
+        ? 'playing'
+        : 'other-playing'
   }
 
 export const getAudioPlaybackError =

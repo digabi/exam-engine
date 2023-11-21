@@ -20,8 +20,8 @@ const examServerApi = noopExamServerAPI(resolveAttachment)
 const Root = isAttachmentsPage
   ? Attachments
   : location.pathname.includes('grading-instructions.html')
-  ? GradingInstructions
-  : Exam
+    ? GradingInstructions
+    : Exam
 
 const root = createRoot(document.getElementById('app')!)
 root.render(
