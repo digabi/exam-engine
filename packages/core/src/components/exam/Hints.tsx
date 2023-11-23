@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { ExamComponentProps, RenderChildNodes } from '../../createRenderChildNodes'
-import { findChildElement, getNumericAttribute, queryAll } from '../../dom-utils'
-import { shortDisplayNumber } from '../../shortDisplayNumber'
+import { findChildElement, getNumericAttribute, queryAll, queryAncestors } from '../../dom-utils'
 import { QuestionId } from '../../index'
+import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { AnswersState } from '../../store/answers/reducer'
 
 const Hints: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
@@ -43,6 +43,10 @@ function Hint({
   const displayNumber = answer.getAttribute('display-number')!
   const hint = findChildElement(answer, 'hint')!
 
+  const parentQuestion = queryAncestors(answer, 'question')
+  const siblingQuestions = parentQuestion?.querySelectorAll('[question-id]')
+  const hasSiblingQuestions = siblingQuestions && siblingQuestions?.length > 1
+
   return (
     <p
       className={classNames('e-hints__hint', {
@@ -56,7 +60,7 @@ function Hint({
       }}
       data-question-id={questionId}
     >
-      {shortDisplayNumber(displayNumber)} {renderChildNodes(hint)}
+      {hasSiblingQuestions && shortDisplayNumber(displayNumber)} {renderChildNodes(hint)}
     </p>
   )
 }
