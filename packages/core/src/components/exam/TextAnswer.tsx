@@ -1,5 +1,5 @@
 import React from 'react'
-import { findChildElement } from '../../dom-utils'
+import { findChildElement, queryAncestors } from '../../dom-utils'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import TextAnswerInput from './internal/TextAnswerInput'
 import { ExamComponentProps } from '../../createRenderChildNodes'
@@ -11,9 +11,15 @@ function TextAnswer(props: ExamComponentProps) {
   const hint = findChildElement(element, 'hint')
   const textAnswer = <TextAnswerInput {...props} />
 
+  const parentQuestion = queryAncestors(element, 'question')
+  const siblings = parentQuestion?.querySelectorAll('[question-id]')
+  const hasSiblingQuestions = siblings && siblings?.length > 1
+
   return hint ? (
     <label className="e-nowrap">
-      <sup className="e-text-answer-display-number e-color-darkgrey">{shortDisplayNumber(displayNumber)}</sup>
+      {hasSiblingQuestions && (
+        <sup className="e-text-answer-display-number e-color-darkgrey">{shortDisplayNumber(displayNumber)}</sup>
+      )}
       <ScreenReaderOnly>{renderChildNodes(hint)}</ScreenReaderOnly>
       {textAnswer}
     </label>
