@@ -1,6 +1,6 @@
 {
   "npmClient": "npm",
   "packages": ["packages/*"],
-  "version": "19.15.4-image-paste-debugging.13",
+  "version": "19.15.4-y.0",
   "exact": true
 }
