@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-generator",
-  "version": "19.15.4-image-paste-debugging.8",
+  "version": "19.15.4-image-paste-debugging.9",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -8,9 +8,9 @@
     "dist"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "19.15.4-image-paste-debugging.8",
+    "@digabi/exam-engine-core": "19.15.4-image-paste-debugging.9",
     "libxmljs2": "^0.33.0",
     "lodash": "^4.17.15"
   },
-  "gitHead": "4d8ad2ccf520020520d0843b2a20136f2c5c8258"
+  "gitHead": "53a5f3152ee11764a1342966dc5607b32ae09cea"
 }
