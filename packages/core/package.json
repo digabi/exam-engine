@@ -58,5 +58,5 @@
     "webpack-bundle-analyzer": "^4.1.0",
     "webpack-cli": "^5.0.2"
   },
-  "gitHead": "bcff4f74e1a027203a4fa28031e8379311689a57"
+  "gitHead": "4d8ad2ccf520020520d0843b2a20136f2c5c8258"
 }
