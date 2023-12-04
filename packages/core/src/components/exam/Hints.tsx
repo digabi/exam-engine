@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { ExamComponentProps, RenderChildNodes } from '../../createRenderChildNodes'
-import { findChildElement, getNumericAttribute, queryAll, queryAncestors } from '../../dom-utils'
+import { findChildElement, getNumericAttribute, hasSiblingQuestions, queryAll } from '../../dom-utils'
 import { QuestionId } from '../../index'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { AnswersState } from '../../store/answers/reducer'
@@ -43,9 +43,7 @@ function Hint({
   const displayNumber = answer.getAttribute('display-number')!
   const hint = findChildElement(answer, 'hint')!
 
-  const parentQuestion = queryAncestors(answer, 'question')
-  const siblingQuestions = parentQuestion?.querySelectorAll('[question-id]')
-  const hasSiblingQuestions = siblingQuestions && siblingQuestions?.length > 1
+  const hasSiblings = hasSiblingQuestions(answer)
 
   return (
     <p
@@ -60,7 +58,7 @@ function Hint({
       }}
       data-question-id={questionId}
     >
-      {hasSiblingQuestions && shortDisplayNumber(displayNumber)} {renderChildNodes(hint)}
+      {hasSiblings && shortDisplayNumber(displayNumber)} {renderChildNodes(hint)}
     </p>
   )
 }

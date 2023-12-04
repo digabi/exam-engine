@@ -121,6 +121,12 @@ export function findChildrenAnswers(element: Element): Element[] {
   return queryAll(element, ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'], true)
 }
 
+export function hasSiblingQuestions(answer: Element) {
+  const parentQuestion = queryAncestors(answer, 'question')
+  const siblingQuestions = parentQuestion?.querySelectorAll('[question-id]')
+  return siblingQuestions && siblingQuestions?.length > 1
+}
+
 export function createElement<K extends keyof HTMLElementTagNameMap>(
   tagName: K,
   properties?: Record<string, string> | null,
