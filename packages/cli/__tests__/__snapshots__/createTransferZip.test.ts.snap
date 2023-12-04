@@ -1054,6 +1054,51 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
     </e:question>
 
     <e:question>
+      <e:question-title>Vihjenumerointitesti</e:question-title>
+      <e:question>
+        <e:question-title>Alitehtävä, jossa kolme aukkoa</e:question-title>
+        <e:hints>
+                        Oli synkkä ja myrskyinen
+          <e:scored-text-answer max-score="2">
+            <e:hint>yö</e:hint>
+          </e:scored-text-answer>
+                        . Ja niin he 
+          <e:scored-text-answer max-score="2">
+            <e:hint>elivät</e:hint>
+          </e:scored-text-answer>
+                        elämänsä  
+          <e:scored-text-answer max-score="2">
+            <e:hint>onnellisina</e:hint>
+          </e:scored-text-answer>
+          loppuun asti.
+        </e:hints>
+      </e:question>
+      <e:question>
+        <e:question-title>Alitehtävä, jossa vain yksi aukko</e:question-title>
+        <e:hints>
+                        Tässä alitehtävässä on vain yksi
+          <e:scored-text-answer max-score="2">
+            <e:hint>aukko</e:hint>
+          </e:scored-text-answer>
+                        , joten ei ole tarve käyttää numerointia, ei myöskään vihjeessä.
+        </e:hints>
+      </e:question>
+      <e:question>
+        <e:question-title>Alitehtävä, jossa kolme aukkoa</e:question-title>
+        <e:hints>
+                        Olipa kerran pieni
+          <e:scored-text-answer max-score="2">
+            <e:hint>menninkäinen</e:hint>
+          </e:scored-text-answer>
+                        , joka ei uskonut, että on olemassa
+          <e:scored-text-answer max-score="2">
+            <e:hint>päivänsäde</e:hint>
+          </e:scored-text-answer>
+        </e:hints>
+      </e:question>
+    </e:question>
+
+    <e:question>
       <e:question-title>Dialog</e:question-title>
       <e:question-instruction>
         Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä
@@ -3123,6 +3168,51 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
           </e:author>
         </e:reference>
       </e:attachment>
+    </e:question>
+
+    <e:question>
+      <e:question-title>Vihjenumerointitesti</e:question-title>
+      <e:question>
+        <e:question-title>Alitehtävä, jossa kolme aukkoa</e:question-title>
+        <e:hints>
+                        Oli synkkä ja myrskyinen
+          <e:scored-text-answer max-score="2">
+            <e:hint>yö</e:hint>
+          </e:scored-text-answer>
+                        . Ja niin he 
+          <e:scored-text-answer max-score="2">
+            <e:hint>elivät</e:hint>
+          </e:scored-text-answer>
+                        elämänsä  
+          <e:scored-text-answer max-score="2">
+            <e:hint>onnellisina</e:hint>
+          </e:scored-text-answer>
+          loppuun asti.
+        </e:hints>
+      </e:question>
+      <e:question>
+        <e:question-title>Alitehtävä, jossa vain yksi aukko</e:question-title>
+        <e:hints>
+                        Tässä alitehtävässä on vain yksi
+          <e:scored-text-answer max-score="2">
+            <e:hint>aukko</e:hint>
+          </e:scored-text-answer>
+                        , joten ei ole tarve käyttää numerointia, ei myöskään vihjeessä.
+        </e:hints>
+      </e:question>
+      <e:question>
+        <e:question-title>Alitehtävä, jossa kolme aukkoa</e:question-title>
+        <e:hints>
+                        Olipa kerran pieni
+          <e:scored-text-answer max-score="2">
+            <e:hint>menninkäinen</e:hint>
+          </e:scored-text-answer>
+                        , joka ei uskonut, että on olemassa
+          <e:scored-text-answer max-score="2">
+            <e:hint>päivänsäde</e:hint>
+          </e:scored-text-answer>
+        </e:hints>
+      </e:question>
     </e:question>
 
     <e:question>
