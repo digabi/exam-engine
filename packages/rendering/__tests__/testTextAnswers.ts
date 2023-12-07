@@ -75,10 +75,12 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await clearInput(DEFAULT_QUESTION_ID)
     await expectErrorIndicatorToDisappear()
     await type('o'.repeat(250), DEFAULT_QUESTION_ID)
-    await expectErrorIndicator('Tehtävä 21.1: Vastaus on liian pitkä.')
-    const indicator = await page.$(`.sidebar-toc-container div[data-indicator-id="${DEFAULT_QUESTION_ID}"]`)
-    const className = await (await indicator?.getProperty('className'))?.jsonValue()
+    const temp = await page.waitForSelector(
+      `.sidebar-toc-container div[data-indicator-id="${DEFAULT_QUESTION_ID}"].error`
+    )
+    const className = await temp?.getProperty('className').then(e => e.jsonValue())
     expect(className).toContain('error')
+    await expectErrorIndicator('Tehtävä 21.1: Vastaus on liian pitkä.')
   })
 
   it('opens rich text answer in writer mode, and exits', async () => {
