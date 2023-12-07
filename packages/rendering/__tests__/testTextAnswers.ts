@@ -64,6 +64,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(className).toContain('error')
 
     await clearInput(DEFAULT_QUESTION_ID)
+    await clearInput(DEFAULT_QUESTION_ID + 1)
     await expectErrorIndicatorToDisappear()
 
     const classNameThen = await (await questionName?.getProperty('className'))?.jsonValue()
@@ -72,15 +73,14 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
 
   it('shows the error indicator when answer is too long', async () => {
     await loadExam(page, ctx.url)
-    await clearInput(DEFAULT_QUESTION_ID)
     await expectErrorIndicatorToDisappear()
     await type('o'.repeat(250), DEFAULT_QUESTION_ID)
-    const temp = await page.waitForSelector(
+    await expectErrorIndicator('Tehtävä 21.1: Vastaus on liian pitkä.')
+
+    const errorIndicator = await page.waitForSelector(
       `.sidebar-toc-container div[data-indicator-id="${DEFAULT_QUESTION_ID}"].error`
     )
-    const className = await temp?.getProperty('className').then(e => e.jsonValue())
-    expect(className).toContain('error')
-    await expectErrorIndicator('Tehtävä 21.1: Vastaus on liian pitkä.')
+    expect(errorIndicator).toBeTruthy()
   })
 
   it('opens rich text answer in writer mode, and exits', async () => {
