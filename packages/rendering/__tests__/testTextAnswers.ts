@@ -3,6 +3,8 @@ import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
 import { getTextContent, initPuppeteer, loadExam } from './puppeteerUtils'
 
+const DEFAULT_QUESTION_ID = 95
+
 describe('testTextAnswers.ts — Text answer interactions', () => {
   const createPage = initPuppeteer()
   let page: Page
@@ -53,15 +55,16 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   it('shows the error indicator when too many answers', async () => {
     await loadExam(page, ctx.url)
     await expectErrorIndicatorToDisappear()
-    await type('oikea vastaus', 89)
-    await type('oikea vastaus 2', 90)
-    await expectErrorIndicator('Tehtävä 20: Vastaa joko kohtaan 20.1 tai 20.2.')
+    await type('oikea vastaus', DEFAULT_QUESTION_ID)
+    await type('oikea vastaus 2', DEFAULT_QUESTION_ID + 1)
+    await expectErrorIndicator('Tehtävä 21: Vastaa joko kohtaan 21.1 tai 21.2.')
 
-    const questionName = await page.$('.sidebar-toc-container li[data-list-number="20."]')
+    const questionName = await page.$('.sidebar-toc-container li[data-list-number="21."]')
     const className = await (await questionName?.getProperty('className'))?.jsonValue()
     expect(className).toContain('error')
 
-    await clearInput(90)
+    await clearInput(DEFAULT_QUESTION_ID)
+    await clearInput(DEFAULT_QUESTION_ID + 1)
     await expectErrorIndicatorToDisappear()
 
     const classNameThen = await (await questionName?.getProperty('className'))?.jsonValue()
@@ -71,11 +74,13 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   it('shows the error indicator when answer is too long', async () => {
     await loadExam(page, ctx.url)
     await expectErrorIndicatorToDisappear()
-    await type('o'.repeat(241), 89)
-    await expectErrorIndicator('Tehtävä 20.1: Vastaus on liian pitkä.')
-    const indicator = await page.$('.sidebar-toc-container div[data-indicator-id="89"]')
-    const className = await (await indicator?.getProperty('className'))?.jsonValue()
-    expect(className).toContain('error')
+    await type('o'.repeat(250), DEFAULT_QUESTION_ID)
+    await expectErrorIndicator('Tehtävä 21.1: Vastaus on liian pitkä.')
+
+    const errorIndicator = await page.waitForSelector(
+      `.sidebar-toc-container div[data-indicator-id="${DEFAULT_QUESTION_ID}"].error`
+    )
+    expect(errorIndicator).toBeTruthy()
   })
 
   it('opens rich text answer in writer mode, and exits', async () => {
@@ -129,21 +134,21 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
 
   it('a text answer indicator has correct state in side navigation', async () => {
     await loadExam(page, ctx.url)
-    await clearInput(90)
-    const indicator = await page.$('.sidebar-toc-container div[data-indicator-id="90"]')
+    await clearInput(DEFAULT_QUESTION_ID)
+    const indicator = await page.$(`.sidebar-toc-container div[data-indicator-id="${DEFAULT_QUESTION_ID}"]`)
 
     const className = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValue = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
-    await type('testivastaus', 90)
+    await type('testivastaus', DEFAULT_QUESTION_ID)
     const classNameThen = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValueThen = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
-    await clearInput(90)
+    await clearInput(DEFAULT_QUESTION_ID)
     const classNameFinally = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValueFinally = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
 
     expect(className).not.toContain('ok')
     expect(indicatorValue).toContain('')
-    expect(classNameThen).toContain('ok')
+    expect(classNameThen).toContain('answer-indicator ok')
     expect(indicatorValueThen).toContain('12')
     expect(classNameFinally).not.toContain('ok')
     expect(indicatorValueFinally).toContain('')
@@ -188,14 +193,15 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     )
   }
 
-  const type = (text: string, questionId = 89) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
+  const type = (text: string, questionId = DEFAULT_QUESTION_ID) =>
+    page.type(`.text-answer[data-question-id="${questionId}"]`, text)
 
-  async function clearInput(questionId = 89) {
+  async function clearInput(questionId = DEFAULT_QUESTION_ID) {
     await page.click(`.text-answer[data-question-id="${questionId}"]`, { clickCount: 3 })
     await page.keyboard.press('Backspace')
   }
 
-  async function expectCharacterCountToBe(expectedCount: number, questionId = 89) {
+  async function expectCharacterCountToBe(expectedCount: number, questionId = DEFAULT_QUESTION_ID) {
     const text = await getTextContent(page, `.text-answer[data-question-id="${questionId}"] ~ .answer-toolbar`)
     const count = Number(/\d+/.exec(text))
     expect(count).toEqual(expectedCount)

@@ -25,13 +25,13 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
   it('remembers the choices after reloading', async () => {
     await loadExam(page, ctx.url)
 
-    await setChoiceAnswer(page, 1, '95')
+    await setChoiceAnswer(page, 1, '101')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('95')
+    expect(await getRadioButtonValue(page, 1)).toBe('101')
 
-    await setChoiceAnswer(page, 1, '93')
+    await setChoiceAnswer(page, 1, '99')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('93')
+    expect(await getRadioButtonValue(page, 1)).toBe('99')
   })
 
   it('a choice answer indicator has correct state in side navigation', async () => {
@@ -40,13 +40,13 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
 
     const className = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValue = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
-    await setChoiceAnswer(page, 44, '207')
+    await setChoiceAnswer(page, 44, '213')
     const classNameThen = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValueThen = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
 
     expect(className).not.toContain('ok')
     expect(indicatorValue).toContain('')
-    expect(classNameThen).toContain('ok')
+    expect(classNameThen).toContain('answer-indicator ok')
     expect(indicatorValueThen).toContain('')
   })
 })

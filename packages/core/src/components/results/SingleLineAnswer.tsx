@@ -1,14 +1,15 @@
+import classNames from 'classnames'
 import React, { useLayoutEffect, useRef } from 'react'
 import { Score } from '../..'
 import { useExamTranslation } from '../../i18n'
 import { renderAnnotations } from '../../renderAnnotations'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
-import classNames from 'classnames'
 
 function SingleLineAnswer({
   displayNumber,
   score,
   value,
+  answers,
   children
 }: {
   answers: Element[]
@@ -28,7 +29,7 @@ function SingleLineAnswer({
 
   return (
     <>
-      {displayNumber && <sup>{displayNumber}</sup>}
+      {displayNumber && answers.length > 1 && <sup>{displayNumber}</sup>}
       <span
         className={classNames('text-answer text-answer--single-line', {
           'no-answer': !value
