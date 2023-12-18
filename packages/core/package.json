@@ -47,7 +47,7 @@
     "react-i18next": "^13.0.2",
     "react-redux": "^8.1.1",
     "react-test-renderer": "^18.2.0",
-    "redux": "^4.2.1",
+    "redux": "^5.0.0",
     "redux-saga": "^1.2.3",
     "redux-saga-test-plan": "^4.0.6",
     "rich-text-editor": "^7.2.3",
