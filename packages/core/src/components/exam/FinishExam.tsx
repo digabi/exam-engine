@@ -8,8 +8,10 @@ function FinishExam() {
   const { t } = useExamTranslation()
 
   const goToInspectAnswers = () => {
-    finishExam()
-    window.scrollTo(0, 0)
+    if (finishExam() !== undefined) {
+      finishExam()
+      window.scrollTo(0, 0)
+    }
   }
 
   return (
