@@ -232,8 +232,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
   }, [])
 
-  // TODO: Remove 'isOldKoeVersion' checks when old Koe version is not supported anymore
-  const isOldKoeVersion = examServerApi.finishExam === undefined
+  // TODO: Remove 'isNewKoeVersion' checks when old Koe version is not supported anymore
+  const isNewKoeVersion = examServerApi.finishExam !== undefined
+  const isPreview = studentName === '[Kokelaan Nimi]'
 
   return (
     <Provider store={store}>
@@ -275,17 +276,21 @@ const Exam: React.FunctionComponent<ExamProps> = ({
                     <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
                   )}
                 </SectionElement>
+
                 {renderChildNodes(root)}
-                {!isOldKoeVersion && <FinishExam />}
+
+                {(isPreview || isNewKoeVersion) && <FinishExam />}
               </div>
             </div>
           </div>
-          {!isOldKoeVersion && <div className="e-section e-exam-footer-content" />}
+
+          {(isPreview || isNewKoeVersion) && <div className="e-exam-footer-content" />}
+
           <div className="e-footer">
             <ErrorIndicator />
             <SaveIndicator />
           </div>
-          {showUndoView && !isOldKoeVersion && <UndoView {...undoViewProps} />}
+          {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
         </main>
       </I18nextProvider>
     </Provider>

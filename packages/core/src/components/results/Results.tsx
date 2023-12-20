@@ -32,6 +32,7 @@ import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
 import classNames from 'classnames'
+import { EndExamSession } from './EndExamSession'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -42,6 +43,7 @@ export interface ResultsProps extends CommonExamProps {
   scores: Score[]
   singleGrading?: boolean
   returnToExam: () => void
+  endSession: () => Promise<void>
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -66,7 +68,7 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes
 })
 
-const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) => {
+const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, endSession }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -114,10 +116,13 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
           inExam={false}
         />
+
         {renderChildNodes(root)}
 
-        {isStudentsFinishExamPage && <ShutdownInstructions />}
+        {isStudentsFinishExamPage && <EndExamSession endSession={endSession} />}
       </main>
+
+      <div className="e-section e-exam-footer-content" />
     </I18nextProvider>
   )
 }
@@ -130,7 +135,7 @@ const BackToExamText = () => {
 const FinishPageInstructions = () => {
   const { t } = useExamTranslation()
   return (
-    <div className="finish-page-instructions">
+    <div className="e-section finish-page-instructions shadow-box">
       <p>{t('examFinished.hereAreYourAnswers')}</p>
       <ul>
         <li>{t('examFinished.checkYourAnswers')}</li>
@@ -140,20 +145,6 @@ const FinishPageInstructions = () => {
           {t('examFinished.thereMayBeOptionalQuestions')}
         </li>
       </ul>
-    </div>
-  )
-}
-
-const ShutdownInstructions = () => {
-  const { t, i18n } = useExamTranslation()
-  return (
-    <div className="e-exam-done-instructions">
-      <p>{t('examFinished.shutdownInstructions')}</p>
-      <img
-        className="e-exam-done-shutdown-image"
-        src="/dist/digabi-shutdown-screenshot.png"
-        alt={i18n.t('examFinished.shutdownTooltip')}
-      />
     </div>
   )
 }

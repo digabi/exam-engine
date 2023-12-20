@@ -164,7 +164,6 @@ const App: React.FunctionComponent<{
     restrictedAudioPlaybackStats: [],
     examServerApi,
     type,
-    finishExam: () => Promise.resolve(),
     studentName: '[Kokelaan Nimi]',
     allowLanguageChange: true,
     showUndoView: false,
