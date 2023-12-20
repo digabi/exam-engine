@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
@@ -32,6 +32,8 @@ import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
 import classNames from 'classnames'
+import { ExamContext } from '../context/ExamContext'
+import { EndExamSession } from './EndExamSession'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -70,7 +72,6 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
   const { answersByQuestionId } = useContext(ResultsContext)
-  const [examEnded, setExamEnded] = useState<boolean>(false)
 
   const examTitle = findChildElement(root, 'exam-title')
   const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -84,20 +85,8 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
     window.location.hash = ''
   }, [])
 
-  const endExam = () => {
-    setExamEnded(true)
-    const sections = document.querySelectorAll('.e-section')
-    sections.forEach(section => {
-      const sec = section as HTMLElement
-      const sectionHeight = section.clientHeight
-      sec.style.height = `${sectionHeight}px`
-      section.classList.add('e-hidden')
-      setTimeout(() => {
-        sec.style.height = '0px'
-        sec.style.paddingTop = '1rem'
-      }, 250)
-    })
-  }
+  const { examServerApi } = useContext(ExamContext)
+  console.log('examServerApi', examServerApi)
 
   return (
     <I18nextProvider i18n={i18n}>
@@ -133,27 +122,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam }) =
         {renderChildNodes(root)}
 
         {isStudentsFinishExamPage && <ShutdownInstructions />}
-        {!isStudentsFinishExamPage && (
-          <div className="e-logout-container">
-            <div className="e-bg-color-off-white e-pad-6 ">
-              <p>
-                {examEnded ? (
-                  'Kiitos! Sammuta vielä tietokoneesi'
-                ) : (
-                  <>
-                    Kun olet tarkistanut vastauksesi, päätä koe klikkaamalla alla olevaa nappia. <br />
-                    Napin klikkaamisen jälkeen et voi enää palata kokeeseen.
-                  </>
-                )}
-              </p>
-              {!examEnded && (
-                <button className="e-button" onClick={endExam}>
-                  Päätä koe
-                </button>
-              )}
-            </div>
-          </div>
-        )}
+        {!isStudentsFinishExamPage && <EndExamSession />}
       </main>
     </I18nextProvider>
   )

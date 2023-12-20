@@ -37,6 +37,7 @@ export default function indexedDBExamServerAPI(
     setCasStatus: casStatus => Promise.resolve(casStatus),
     getAnswers: () => db.answer.where({ examUuid }).toArray(),
     finishExam: () => undefined,
+    endSession: () => Promise.resolve(),
     saveAnswer: async answer => {
       await db.answer.put({ ...answer, examUuid })
     },

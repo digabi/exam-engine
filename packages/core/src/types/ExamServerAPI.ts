@@ -67,4 +67,5 @@ export interface ExamServerAPI {
   /** Save screenshot to server. Should return the URL to the saved screenshot. */
   saveScreenshot: (questionId: QuestionId, screenshot: Blob) => Promise<string>
   finishExam: () => void
+  endSession: () => Promise<void>
 }
