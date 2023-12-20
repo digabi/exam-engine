@@ -8,15 +8,21 @@ function FinishExam() {
   const { t } = useExamTranslation()
 
   const goToInspectAnswers = () => {
-    if (finishExam() !== undefined) {
-      finishExam()
-      window.scrollTo(0, 0)
+    if (!finishExam) {
+      return
     }
+    finishExam()
+    window.scrollTo(0, 0)
   }
 
   return (
     <div className="e-finish-exam">
-      <button id="finishExam" onClick={goToInspectAnswers} aria-describedby="finishExamInstructions">
+      <button
+        className="e-button"
+        id="finishExam"
+        onClick={goToInspectAnswers}
+        aria-describedby="finishExamInstructions"
+      >
         {t('finish-exam.finish')}
       </button>
       <div className="e-finish-exam-instructions" id="finishExamInstructions">
