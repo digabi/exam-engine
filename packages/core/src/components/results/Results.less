@@ -158,6 +158,22 @@
   label input:not(:checked) + div {
     opacity: 0.5;
   }
+
+  .e-logout-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto 4rem;
+    text-align: center;
+  }
+
+  .e-hidden {
+    overflow: hidden;
+    opacity: 0.5;
+    transition:
+      height 1s ease-in-out 0.5s,
+      padding 1s ease-in-out 0.5s,
+      opacity 0.5s ease-in-out;
+  }
 }
 
 .finish-exam-page.e-exam {
