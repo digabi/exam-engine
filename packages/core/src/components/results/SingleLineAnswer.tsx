@@ -34,7 +34,7 @@ function SingleLineAnswer({
         className={classNames('text-answer text-answer--single-line', {
           'no-answer': !value
         })}
-        aria-description={!value ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
+        aria-description={!value ? i18n.t('examineExam.questionHasNoAnswer') : undefined}
       >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
         <span className="e-inline-block" ref={answerRef}>

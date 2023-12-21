@@ -9,7 +9,7 @@ import { QuestionContext } from '../context/QuestionContext'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from '../context/ResultsContext'
 import ResultsExamQuestionAutoScore from './internal/QuestionAutoScore'
-import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
+import { useIsStudentsExamineExamPage } from './isExamExaminePageHook'
 
 function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
   const { t, i18n } = useExamTranslation()
@@ -22,7 +22,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
     element,
     childElement => answer?.value === childElement.getAttribute('option-id')
   )
-  const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
+  const isStudentsExamineExamPage = useIsStudentsExamineExamPage()
 
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)!
 
@@ -47,13 +47,13 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
         className={classNames(
           'e-dropdown-answer__answered',
           !selectedOption && 'e-dropdown-answer__no-answer',
-          !isStudentsFinishExamPage && {
+          !isStudentsExamineExamPage && {
             'e-dropdown-answer__answered--correct': isAnswerCorrect,
             'e-dropdown-answer__answered--wrong': !isAnswerCorrect
           }
         )}
         data-question-id={questionId}
-        aria-description={!selectedOption ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
+        aria-description={!selectedOption ? i18n.t('examineExam.questionHasNoAnswer') : undefined}
       >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
         {selectedOption && renderChildNodes(selectedOption)}
@@ -61,7 +61,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
         {isAnswerCorrect && <ScreenReaderOnly>{t('screen-reader.correct-answer')}</ScreenReaderOnly>}
       </span>
 
-      {!isStudentsFinishExamPage && !isAnswerCorrect && (
+      {!isStudentsExamineExamPage && !isAnswerCorrect && (
         <span className="e-dropdown-answer__correct" aria-hidden={true}>
           {correctOptions.map((correctOption, i) => (
             <React.Fragment key={i}>

@@ -20,6 +20,13 @@ export const EndExamSession = ({ endSession }: { endSession: () => Promise<void>
 
     const main = document.querySelector('main') as HTMLElement
     main.style.minHeight = 'calc(100% - 125px)'
+
+    setTimeout(() => {
+      const sections = document.querySelectorAll('.e-section')
+      sections.forEach.call(sections, section => {
+        section.parentNode?.removeChild(section)
+      })
+    }, 2000)
   }
 
   return (
@@ -27,14 +34,22 @@ export const EndExamSession = ({ endSession }: { endSession: () => Promise<void>
       <div className="e-bg-color-off-white e-pad-6 shadow-box">
         {examEnded ? (
           <>
-            <h3>Kiitos!</h3>
-            {t('examFinished.shutdownInstructions')}
+            <h3>{t('examineExam.thankYouTitle')}</h3>
+            <p>
+              {t('examineExam.shutdownComputer')}
+              <br />
+              {t('examineExam.returnUsbStick')}
+            </p>
           </>
         ) : (
-          <p>
-            Kun olet tarkistanut vastauksesi, päätä koe klikkaamalla alla olevaa nappia. <br />
-            Napin klikkaamisen jälkeen et voi enää palata kokeeseen.
-          </p>
+          <>
+            <h3>{t('examineExam.endExamTitle')}</h3>
+            <p>
+              {t('examineExam.afterInspectingYourAnswers')}
+              <br />
+              {t('examineExam.youCanNotReturnToExam')}
+            </p>
+          </>
         )}
         {!examEnded && (
           <button className="e-button" onClick={() => void endExam()}>

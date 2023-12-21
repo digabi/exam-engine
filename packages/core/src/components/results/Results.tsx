@@ -30,7 +30,7 @@ import { validateAnswers } from '../../validateAnswers'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
-import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
+import { useIsStudentsExamineExamPage } from './isExamExaminePageHook'
 import classNames from 'classnames'
 import { EndExamSession } from './EndExamSession'
 
@@ -79,7 +79,8 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
   useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
-  const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
+  const isStudentsExamineExamPage = useIsStudentsExamineExamPage()
+  const studentCanEndSession = endSession !== undefined
 
   useEffect(() => {
     window.location.hash = ''
@@ -88,13 +89,13 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
   return (
     <I18nextProvider i18n={i18n}>
       <main
-        className={classNames('e-exam e-results', { 'finish-exam-page': isStudentsFinishExamPage })}
+        className={classNames('e-exam e-results', { 'examine-exam-page': isStudentsExamineExamPage })}
         lang={subjectLanguage}
       >
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-        {isStudentsFinishExamPage && (
+        {isStudentsExamineExamPage && (
           <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
             « <BackToExamText />
           </button>
@@ -107,10 +108,10 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
               {date && `, ${dateTimeFormatter.format(date)}`}
             </DocumentTitle>
           )}
-          {!isStudentsFinishExamPage && <ScoresAndFinalGrade />}
+          {!isStudentsExamineExamPage && <ScoresAndFinalGrade />}
         </div>
 
-        {isStudentsFinishExamPage && <FinishPageInstructions />}
+        {isStudentsExamineExamPage && <ExamineExamInstructions />}
 
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
@@ -119,30 +120,30 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
 
         {renderChildNodes(root)}
 
-        {isStudentsFinishExamPage && <EndExamSession endSession={endSession} />}
+        {studentCanEndSession && <EndExamSession endSession={endSession} />}
       </main>
-
-      <div className="e-section e-exam-footer-content" />
+      <div className="e-exam-footer-content" />
     </I18nextProvider>
   )
 }
 
 const BackToExamText = () => {
   const { t } = useExamTranslation()
-  return t('examFinished.returnToExam')
+  return t('examineExam.returnToExam')
 }
 
-const FinishPageInstructions = () => {
+const ExamineExamInstructions = () => {
   const { t } = useExamTranslation()
   return (
-    <div className="e-section finish-page-instructions shadow-box">
-      <p>{t('examFinished.hereAreYourAnswers')}</p>
+    <div className="e-section examine-exam-page-instructions shadow-box">
+      <h3>{t('examineExam.checkYourAnswersTitle')}</h3>
       <ul>
-        <li>{t('examFinished.checkYourAnswers')}</li>
-        <li>{t('examFinished.removeExcessAnswers')}</li>
+        <li>{t('examineExam.hereAreYourAnswers')}</li>
+        <li>{t('examineExam.checkYourAnswers')}</li>
+        <li>{t('examineExam.removeExcessAnswers')}</li>
         <li>
-          <span className="no-answer-example">{t('examFinished.emptyAnswersAreHighlighted')}</span>
-          {t('examFinished.thereMayBeOptionalQuestions')}
+          <span className="no-answer-example">{t('examineExam.emptyAnswersAreHighlighted')}</span>
+          {t('examineExam.thereMayBeOptionalQuestions')}
         </li>
       </ul>
     </div>
