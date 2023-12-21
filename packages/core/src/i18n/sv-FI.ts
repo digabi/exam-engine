@@ -58,8 +58,8 @@ export const sv_FI: Translations = {
       infoText: 'Del A returnerad'
     }
   },
-  'finish-exam': {
-    finish: 'Kontrollera dina svar',
+  'examine-exam': {
+    examine: 'Kontrollera dina svar',
     instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
   },
   undo: {
@@ -76,8 +76,9 @@ export const sv_FI: Translations = {
     minutesSinceAnswer: '{{ minutes }} min sedan',
     latestVersion: 'Den senaste versionen'
   },
-  examFinished: {
+  examineExam: {
     returnToExam: 'Återvänd till provutförandet',
+    checkYourAnswersTitle: 'Kontrollera dina svar',
     hereAreYourAnswers: 'Du ser här dina svar på samma sätt som de som bedömer proven kommer att se dem.',
     checkYourAnswers: 'Kontrollera att du kan se alla de svar som du vill lämna in till bedömning.',
     removeExcessAnswers:
@@ -86,9 +87,13 @@ export const sv_FI: Translations = {
     thereMayBeOptionalQuestions:
       'Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.',
     questionHasNoAnswer: 'Denna fråga har inte besvarats',
-    shutdownInstructions:
-      'Stäng nu av datorn. När datorn har är avstängd, ta bort USB-minnet och ge det till provets övervakare.',
-    shutdownTooltip: 'Stäng av datorn via menyn i övre högra hörnet'
+    endExamTitle: 'Avsluta provet',
+    afterInspectingYourAnswers:
+      'När du har kontrollerat dina svar kan du avsluta provet genom att klicka på knappen nedan.',
+    youCanNotReturnToExam: 'Efter att du klickat på knappen kan du inte längre gå tillbaka till provet.',
+    thankYouTitle: 'Tack!',
+    shutdownComputer: 'Stäng nu av datorn.',
+    returnUsbStick: 'När datorn har är avstängd, ta bort USB-minnet och ge det till provets övervakare.'
   },
   'toc-heading': 'Innehåll',
   'answer-saved': 'Sparad',

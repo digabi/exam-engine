@@ -24,7 +24,7 @@ export const MultiLineAnswer: React.FunctionComponent<{
       className={classNames('e-multiline-results-text-answer e-line-height-l e-pad-x-2 e-mrg-b-1', {
         'no-answer': !value
       })}
-      aria-description={!value ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
+      aria-description={!value ? i18n.t('examineExam.questionHasNoAnswer') : undefined}
     >
       <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
       {type === 'rich-text' ? (

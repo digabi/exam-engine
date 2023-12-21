@@ -22,7 +22,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         'no-answer': !hasAnswers
       })}
       id={displayNumber}
-      aria-description={!hasAnswers ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
+      aria-description={!hasAnswers ? i18n.t('examineExam.questionHasNoAnswer') : undefined}
     >
       {renderChildNodes(element)}
       <AnnotationList />
