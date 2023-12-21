@@ -121,7 +121,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
 
         {isStudentsExamineExamPage && <EndExamSession endSession={endSession} />}
       </main>
-      <div className="e-section e-exam-footer-content" />
+      <div className="e-exam-footer-content" />
     </I18nextProvider>
   )
 }
@@ -135,8 +135,9 @@ const FinishPageInstructions = () => {
   const { t } = useExamTranslation()
   return (
     <div className="e-section finish-page-instructions shadow-box">
-      <p>{t('examFinished.hereAreYourAnswers')}</p>
+      <h3>{t('examFinished.checkYourAnswersTitle')}</h3>
       <ul>
+        <li>{t('examFinished.hereAreYourAnswers')}</li>
         <li>{t('examFinished.checkYourAnswers')}</li>
         <li>{t('examFinished.removeExcessAnswers')}</li>
         <li>

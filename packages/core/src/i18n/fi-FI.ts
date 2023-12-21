@@ -89,6 +89,7 @@ export const fi_FI = {
   },
   examFinished: {
     returnToExam: 'Palaa suorittamaan koetta',
+    checkYourAnswersTitle: 'Tarkista vastauksesi',
     hereAreYourAnswers: 'Näet tässä vastauksesi samanlaisina kuin kokeen arvostelijat tulevat ne näkemään.',
     checkYourAnswers: 'Tarkista, että näet alla kaikki vastaukset, jotka haluat jättää arvosteltavaksi.',
     removeExcessAnswers: 'Jos näet vastauksia, joita et halua jättää arvosteltavaksi, palaa kokeeseen ja poista ne.',
@@ -96,9 +97,12 @@ export const fi_FI = {
     thereMayBeOptionalQuestions:
       'Kokeessa voi olla valinnaisia tehtäviä, joten tyhjä vastaus ei välttämättä tarkoita virhettä.',
     questionHasNoAnswer: 'Tähän kysymykseen ei ole vastattu',
-    shutdownInstructions:
-      'Sammuta vielä tietokoneesi. Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.',
-    shutdownTooltip: 'Sammuta kone oikean yläkulman valikosta'
+    endExamTitle: 'Päätä koe',
+    afterInspectingYourAnswers: 'Kun olet tarkistanut vastauksesi, päätä koe klikkaamalla alla olevaa nappia.',
+    youCanNotReturnToExam: 'Napin klikkaamisen jälkeen et voi enää palata kokeeseen.',
+    thankYouTitle: 'Kiitos!',
+    shutdownComputer: 'Sammuta vielä tietokoneesi.',
+    returnUsbStick: 'Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.'
   },
   'toc-heading': 'Sisällys',
   'answer-saved': 'Tallennettu',
