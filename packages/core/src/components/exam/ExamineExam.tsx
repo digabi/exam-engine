@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { useExamTranslation } from '../../i18n'
 import { ExamContext } from '../context/ExamContext'
+import { ExamServerAPI } from '../../types/ExamServerAPI'
 
 function ExamineExam() {
   const { examServerApi } = useContext(ExamContext)
-  const { examineExam: examineExam } = examServerApi
+  const { examineExam }: ExamServerAPI = examServerApi
   const { t } = useExamTranslation()
 
   const goToInspectAnswers = () => {
