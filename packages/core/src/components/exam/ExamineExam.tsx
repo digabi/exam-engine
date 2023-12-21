@@ -2,34 +2,34 @@ import React, { useContext } from 'react'
 import { useExamTranslation } from '../../i18n'
 import { ExamContext } from '../context/ExamContext'
 
-function FinishExam() {
+function ExamineExam() {
   const { examServerApi } = useContext(ExamContext)
-  const { finishExam } = examServerApi
+  const { examineExam: examineExam } = examServerApi
   const { t } = useExamTranslation()
 
   const goToInspectAnswers = () => {
-    if (!finishExam) {
+    if (!examineExam) {
       return
     }
-    finishExam()
+    examineExam()
     window.scrollTo(0, 0)
   }
 
   return (
-    <div className="e-finish-exam">
+    <div className="e-examine-exam">
       <button
         className="e-button"
-        id="finishExam"
+        id="examineExam"
         onClick={goToInspectAnswers}
-        aria-describedby="finishExamInstructions"
+        aria-describedby="examineExamInstructions"
       >
-        {t('finish-exam.finish')}
+        {t('examine-exam.examine')}
       </button>
-      <div className="e-finish-exam-instructions" id="finishExamInstructions">
-        {t('finish-exam.instructions')}
+      <div className="e-examine-exam-instructions" id="examineExamInstructions">
+        {t('examine-exam.instructions')}
       </div>
     </div>
   )
 }
 
-export default React.memo(FinishExam)
+export default React.memo(ExamineExam)

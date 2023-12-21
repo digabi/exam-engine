@@ -69,8 +69,8 @@ export const fi_FI = {
       infoText: 'A-osa palautettu'
     }
   },
-  'finish-exam': {
-    finish: 'Siirry tarkastelemaan vastauksiasi',
+  'examine-exam': {
+    examine: 'Siirry tarkastelemaan vastauksiasi',
     instructions: 'Painikkeen klikkaamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
   },
   undo: {

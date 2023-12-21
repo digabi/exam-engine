@@ -58,8 +58,8 @@ export const sv_FI: Translations = {
       infoText: 'Del A returnerad'
     }
   },
-  'finish-exam': {
-    finish: 'Kontrollera dina svar',
+  'examine-exam': {
+    examine: 'Kontrollera dina svar',
     instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
   },
   undo: {

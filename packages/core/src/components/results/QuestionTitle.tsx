@@ -6,12 +6,12 @@ import { QuestionContext } from '../context/QuestionContext'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { formatQuestionDisplayNumber } from '../../formatting'
 import { Score } from '../shared/Score'
-import { useIsStudentsFinishExamPage } from './isExamFinishPageHook'
+import { useIsStudentsExamineExamPage } from './isExamExaminePageHook'
 
 function QuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level, maxAnswers, maxScore, childQuestions } = useContext(QuestionContext)
   const Tag = `h${Math.min(3 + level, 6)}` as 'h3' | 'h4' | 'h5' | 'h6'
-  const isStudentsFinishExamPage = useIsStudentsFinishExamPage()
+  const isStudentsExamineExamPage = useIsStudentsExamineExamPage()
 
   return (
     <>
@@ -24,7 +24,7 @@ function QuestionTitle({ element, renderChildNodes }: ExamComponentProps) {
           {`${formatQuestionDisplayNumber(displayNumber)} `}
         </strong>
         {renderChildNodes(element)}{' '}
-        {isStudentsFinishExamPage && <Score score={maxScore} size={level === 0 ? 'large' : 'small'} />}
+        {isStudentsExamineExamPage && <Score score={maxScore} size={level === 0 ? 'large' : 'small'} />}
       </Tag>
       {maxAnswers != null && childQuestions.length > 0 && (
         <p className="e-italic">

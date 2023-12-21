@@ -49,7 +49,7 @@ import * as _ from 'lodash-es'
 import { StudentNameHeader } from './StudentNameHeader'
 import { UndoView } from './UndoView'
 import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
-import FinishExam from './FinishExam'
+import ExamineExam from './ExamineExam'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -233,7 +233,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   }, [])
 
   // TODO: Remove 'isNewKoeVersion' checks when old Koe version is not supported anymore
-  const isNewKoeVersion = examServerApi.finishExam !== undefined
+  const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
   return (
@@ -279,7 +279,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
                 {renderChildNodes(root)}
 
-                {(isPreview || isNewKoeVersion) && <FinishExam />}
+                {(isPreview || isNewKoeVersion) && <ExamineExam />}
               </div>
             </div>
           </div>
