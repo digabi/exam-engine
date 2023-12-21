@@ -76,7 +76,7 @@ export const sv_FI: Translations = {
     minutesSinceAnswer: '{{ minutes }} min sedan',
     latestVersion: 'Den senaste versionen'
   },
-  examFinished: {
+  examineExam: {
     returnToExam: 'Återvänd till provutförandet',
     checkYourAnswersTitle: 'Kontrollera dina svar',
     hereAreYourAnswers: 'Du ser här dina svar på samma sätt som de som bedömer proven kommer att se dem.',

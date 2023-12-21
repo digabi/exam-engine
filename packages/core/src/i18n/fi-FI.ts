@@ -87,7 +87,7 @@ export const fi_FI = {
     minutesSinceAnswer: '{{ minutes }} min sitten',
     latestVersion: 'Viimeisin versio'
   },
-  examFinished: {
+  examineExam: {
     returnToExam: 'Palaa suorittamaan koetta',
     checkYourAnswersTitle: 'Tarkista vastauksesi',
     hereAreYourAnswers: 'Näet tässä vastauksesi samanlaisina kuin kokeen arvostelijat tulevat ne näkemään.',

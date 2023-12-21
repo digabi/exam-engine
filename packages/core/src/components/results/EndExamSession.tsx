@@ -34,20 +34,20 @@ export const EndExamSession = ({ endSession }: { endSession: () => Promise<void>
       <div className="e-bg-color-off-white e-pad-6 shadow-box">
         {examEnded ? (
           <>
-            <h3>{t('examFinished.thankYouTitle')}</h3>
+            <h3>{t('examineExam.thankYouTitle')}</h3>
             <p>
-              {t('examFinished.shutdownComputer')}
+              {t('examineExam.shutdownComputer')}
               <br />
-              {t('examFinished.returnUsbStick')}
+              {t('examineExam.returnUsbStick')}
             </p>
           </>
         ) : (
           <>
-            <h3>{t('examFinished.endExamTitle')}</h3>
+            <h3>{t('examineExam.endExamTitle')}</h3>
             <p>
-              {t('examFinished.afterInspectingYourAnswers')}
+              {t('examineExam.afterInspectingYourAnswers')}
               <br />
-              {t('examFinished.youCanNotReturnToExam')}
+              {t('examineExam.youCanNotReturnToExam')}
             </p>
           </>
         )}

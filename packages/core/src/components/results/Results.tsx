@@ -110,7 +110,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
           {!isStudentsExamineExamPage && <ScoresAndFinalGrade />}
         </div>
 
-        {isStudentsExamineExamPage && <FinishPageInstructions />}
+        {isStudentsExamineExamPage && <ExamineExamInstructions />}
 
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
@@ -128,21 +128,21 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
 
 const BackToExamText = () => {
   const { t } = useExamTranslation()
-  return t('examFinished.returnToExam')
+  return t('examineExam.returnToExam')
 }
 
-const FinishPageInstructions = () => {
+const ExamineExamInstructions = () => {
   const { t } = useExamTranslation()
   return (
     <div className="e-section examine-exam-page-instructions shadow-box">
-      <h3>{t('examFinished.checkYourAnswersTitle')}</h3>
+      <h3>{t('examineExam.checkYourAnswersTitle')}</h3>
       <ul>
-        <li>{t('examFinished.hereAreYourAnswers')}</li>
-        <li>{t('examFinished.checkYourAnswers')}</li>
-        <li>{t('examFinished.removeExcessAnswers')}</li>
+        <li>{t('examineExam.hereAreYourAnswers')}</li>
+        <li>{t('examineExam.checkYourAnswers')}</li>
+        <li>{t('examineExam.removeExcessAnswers')}</li>
         <li>
-          <span className="no-answer-example">{t('examFinished.emptyAnswersAreHighlighted')}</span>
-          {t('examFinished.thereMayBeOptionalQuestions')}
+          <span className="no-answer-example">{t('examineExam.emptyAnswersAreHighlighted')}</span>
+          {t('examineExam.thereMayBeOptionalQuestions')}
         </li>
       </ul>
     </div>

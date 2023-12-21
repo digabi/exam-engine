@@ -53,7 +53,7 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
           }
         )}
         data-question-id={questionId}
-        aria-description={!selectedOption ? i18n.t('examFinished.questionHasNoAnswer') : undefined}
+        aria-description={!selectedOption ? i18n.t('examineExam.questionHasNoAnswer') : undefined}
       >
         <ScreenReaderOnly>{t('screen-reader.answer-begin')}</ScreenReaderOnly>
         {selectedOption && renderChildNodes(selectedOption)}
