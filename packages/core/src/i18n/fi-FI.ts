@@ -97,7 +97,7 @@ export const fi_FI = {
       'Kokeessa voi olla valinnaisia tehtäviä, joten tyhjä vastaus ei välttämättä tarkoita virhettä.',
     questionHasNoAnswer: 'Tähän kysymykseen ei ole vastattu',
     shutdownInstructions:
-      'Sammuta tietokoneesi oikeasta yläkulmasta.\nKun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.',
+      'Sammuta vielä tietokoneesi. Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.',
     shutdownTooltip: 'Sammuta kone oikean yläkulman valikosta'
   },
   'toc-heading': 'Sisällys',

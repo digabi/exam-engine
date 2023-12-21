@@ -22,8 +22,6 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
     getAnswers: () => Promise.resolve([]),
     setCasStatus: casStatus => Promise.resolve(casStatus),
     saveAnswer: () => Promise.resolve(),
-    finishExam: () => undefined,
-    endSession: () => Promise.resolve(),
     saveScreenshot(_, file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader()

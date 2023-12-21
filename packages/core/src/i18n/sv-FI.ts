@@ -87,7 +87,7 @@ export const sv_FI: Translations = {
       'Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.',
     questionHasNoAnswer: 'Denna fråga har inte besvarats',
     shutdownInstructions:
-      'Släck datorn från övre högra hörnet.\nNär datorn har slocknat ta bort USB-minnet och lämna det till provets övervakare.',
+      'Stäng nu av datorn. När datorn har är avstängd, ta bort USB-minnet och ge det till provets övervakare.',
     shutdownTooltip: 'Stäng av datorn via menyn i övre högra hörnet'
   },
   'toc-heading': 'Innehåll',

@@ -1,44 +1,41 @@
-import React, { useContext, useState } from 'react'
-import { ExamContext } from '../context/ExamContext'
+import React, { useState } from 'react'
+import { useExamTranslation } from '../../i18n'
 
-export const EndExamSession = () => {
+export const EndExamSession = ({ endSession }: { endSession: () => Promise<void> }) => {
   const [examEnded, setExamEnded] = useState<boolean>(false)
-
-  const { examServerApi } = useContext(ExamContext)
+  const { t } = useExamTranslation()
 
   const endExam = async () => {
-    console.log('end')
-    const res = await examServerApi?.endSession()
-    console.log('res', res)
-    const sections = document.querySelectorAll('.e-section')
-    sections.forEach(section => {
-      const sec = section as HTMLElement
-      const sectionHeight = section.clientHeight
-      sec.style.height = `${sectionHeight}px`
-      section.classList.add('e-hidden')
+    await endSession()
+    const elements = document.querySelectorAll('main > *:not(.e-logout-container)')
+    elements.forEach(el => {
+      const element = el as HTMLElement
+      element.style.height = `${element.clientHeight}px`
+      element.classList.add('e-hidden')
       setExamEnded(true)
       setTimeout(() => {
-        sec.style.height = '0px'
-        sec.style.opacity = '0'
-        sec.style.padding = '0'
-        sec.style.margin = '0'
-      }, 250)
+        element.style.height = '0'
+      }, 50)
     })
+
+    const main = document.querySelector('main') as HTMLElement
+    main.style.minHeight = 'calc(100% - 125px)'
   }
 
   return (
     <div className="e-logout-container">
-      <div className="e-bg-color-off-white e-pad-6 ">
-        <p>
-          {examEnded ? (
-            'Kiitos! Sammuta vielä tietokoneesi'
-          ) : (
-            <>
-              Kun olet tarkistanut vastauksesi, päätä koe klikkaamalla alla olevaa nappia. <br />
-              Napin klikkaamisen jälkeen et voi enää palata kokeeseen.
-            </>
-          )}
-        </p>
+      <div className="e-bg-color-off-white e-pad-6 shadow-box">
+        {examEnded ? (
+          <>
+            <h3>Kiitos!</h3>
+            {t('examFinished.shutdownInstructions')}
+          </>
+        ) : (
+          <p>
+            Kun olet tarkistanut vastauksesi, päätä koe klikkaamalla alla olevaa nappia. <br />
+            Napin klikkaamisen jälkeen et voi enää palata kokeeseen.
+          </p>
+        )}
         {!examEnded && (
           <button className="e-button" onClick={() => void endExam()}>
             Päätä koe
