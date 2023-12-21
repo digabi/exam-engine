@@ -134,7 +134,7 @@ const BackToExamText = () => {
 const FinishPageInstructions = () => {
   const { t } = useExamTranslation()
   return (
-    <div className="e-section finish-page-instructions shadow-box">
+    <div className="e-section examine-exam-page-instructions shadow-box">
       <h3>{t('examFinished.checkYourAnswersTitle')}</h3>
       <ul>
         <li>{t('examFinished.hereAreYourAnswers')}</li>
