@@ -87,9 +87,10 @@ export const sv_FI: Translations = {
     thereMayBeOptionalQuestions:
       'Det kan finnas valbara uppgifter i provet, och därmed innebär ett tomt svarsfält inte alltid att något är fel.',
     questionHasNoAnswer: 'Denna fråga har inte besvarats',
-    endExamTitle: 'TODO',
-    afterInspectingYourAnswers: 'TODO',
-    youCanNotReturnToExam: 'TODO',
+    endExamTitle: 'Avsluta provet',
+    afterInspectingYourAnswers:
+      'När du har kontrollerat dina svar kan du avsluta provet genom att klicka på knappen nedan.',
+    youCanNotReturnToExam: 'Efter att du klickat på knappen kan du inte längre gå tillbaka till provet.',
     thankYouTitle: 'Tack!',
     shutdownComputer: 'Stäng nu av datorn.',
     returnUsbStick: 'När datorn har är avstängd, ta bort USB-minnet och ge det till provets övervakare.'
