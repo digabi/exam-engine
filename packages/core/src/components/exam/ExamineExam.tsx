@@ -5,18 +5,14 @@ import { ExamServerAPI } from '../../types/ExamServerAPI'
 
 function ExamineExam() {
   const { examServerApi } = useContext(ExamContext)
-  const { examineExam, finishExam }: ExamServerAPI = examServerApi
+  const { examineExam }: ExamServerAPI = examServerApi
   const { t } = useExamTranslation()
 
   const goToInspectAnswers = () => {
-    if (!examineExam && !finishExam) {
+    if (!examineExam) {
       return
     }
-    if (examineExam) {
-      examineExam()
-    } else if (finishExam) {
-      finishExam()
-    }
+    examineExam()
     window.scrollTo(0, 0)
   }
 

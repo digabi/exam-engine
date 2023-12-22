@@ -233,7 +233,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   }, [])
 
   // TODO: Remove 'isNewKoeVersion' checks when old Koe version is not supported anymore
-  const isNewKoeVersion = examServerApi.examineExam !== undefined || examServerApi.finishExam !== undefined
+  const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
   return (
