@@ -80,6 +80,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
   useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
   const isStudentsExamineExamPage = useIsStudentsExamineExamPage()
+  const studentCanEndSession = endSession !== undefined
 
   useEffect(() => {
     window.location.hash = ''
@@ -119,7 +120,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
 
         {renderChildNodes(root)}
 
-        {isStudentsExamineExamPage && <EndExamSession endSession={endSession} />}
+        {studentCanEndSession && <EndExamSession endSession={endSession} />}
       </main>
       <div className="e-exam-footer-content" />
     </I18nextProvider>
