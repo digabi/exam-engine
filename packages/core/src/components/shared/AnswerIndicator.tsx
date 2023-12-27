@@ -9,16 +9,22 @@ type Props = {
   type: string
   answer: ExamAnswer
   error: boolean
+  displayNumber: number
 }
 
 const AnswerIndicator = (props: Props) => {
-  const { id, type, answer, error } = props
+  const { id, type, answer, error, displayNumber } = props
 
   const value = answer?.value
   const answerIsLongText = answer?.type === 'richText'
   const answerIsFormula = answerIsLongText && value?.includes('src="/math.svg?latex=')
   const answerIsImage =
     answerIsLongText && (value?.includes('<img src="/screenshot/') || value?.includes('<img src="data:image/png;'))
+
+  const onClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation()
+    window.location.href = `#question-nr-${displayNumber}`
+  }
 
   return (
     <div

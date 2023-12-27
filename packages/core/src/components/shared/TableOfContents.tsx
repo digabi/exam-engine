@@ -93,7 +93,7 @@ export const mkTableOfContents = (options: {
     const questionTitle = findChildElement(element, 'question-title')!
     const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
-    const subquestions = [] as { id: number; type: string; error: boolean }[]
+    const subquestions = [] as { id: number; type: string; error: boolean; displayNumber: number }[]
 
     let answersById = {} as Record<QuestionId, ExamAnswer>
     let hasQuestionValidationError = false
@@ -179,7 +179,14 @@ export const mkTableOfContents = (options: {
 
         <div className="answers">
           {subquestions.map(i => (
-            <Indicator key={i.id} type={i.type} id={i.id} answer={answersById[i.id]} error={i.error} />
+            <Indicator
+              key={i.id}
+              type={i.type}
+              id={i.id}
+              answer={answersById[i.id]}
+              error={i.error}
+              displayNumber={i.displayNumber}
+            />
           ))}{' '}
         </div>
       </li>
