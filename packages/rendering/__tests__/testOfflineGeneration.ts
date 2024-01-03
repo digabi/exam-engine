@@ -13,7 +13,7 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
 
   beforeAll(async () => {
     const tmpdir = await tmp.dir().then(r => r.path)
-    const [outputDirectory] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir)
+    const [outputDirectory] = await createOfflineExam(resolveExam('A_X/A_X.xml'), tmpdir)
     examHtmlFile = path.resolve(outputDirectory, 'index.html')
     attachmentsHtmlFile = path.resolve(outputDirectory, 'attachments/index.html')
     page = await createPage()
@@ -25,6 +25,13 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
 
   it('renders attachment page without errors', async () => {
     await expectToRenderWithoutErrors(attachmentsHtmlFile)
+  })
+
+  it('renders attachment page with functional links', async () => {
+    await expectToRenderWithoutErrors(attachmentsHtmlFile)
+    const referenceLinks = await page.$$('a[target="_blank"]')
+    const linkCount = referenceLinks.length
+    expect(linkCount).toBe(4)
   })
 
   async function expectToRenderWithoutErrors(filename: string) {
