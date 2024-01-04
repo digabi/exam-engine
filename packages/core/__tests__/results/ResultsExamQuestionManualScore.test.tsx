@@ -12,7 +12,8 @@ import { initI18n } from '../../src/i18n'
 
 const defaultProps = {
   maxScore: 6,
-  displayNumber: '1'
+  displayNumber: '1',
+  questionId: 1
 }
 
 const defaultScores: Score = {

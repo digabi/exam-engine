@@ -9,17 +9,22 @@ import { ExamAnswer } from '../..'
 import { useExamTranslation } from '../../i18n'
 
 function Question({ element, renderChildNodes }: ExamComponentProps) {
-  const { answersByQuestionId } = useContext(ResultsContext)
+  const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const { displayNumber, level } = useContext(QuestionContext)
   const hasAnswers = questionHasAnswers(element, answersByQuestionId)
   const { i18n } = useExamTranslation()
+
+  const question = gradingStructure.questions.find(q => q.displayNumber === displayNumber)
+  const questionId = question && ('choices' in question ? question.choices[0].id : question.id)
+  const isNonAnswer = questionId ? answersByQuestionId[questionId]?.answerNonAnswer : false
 
   return (
     <div
       className={classNames('e-exam-question', `e-level-${level}`, {
         'e-mrg-b-8 e-clearfix': level === 0,
         'e-mrg-l-8 e-mrg-y-4': level > 0,
-        'no-answer': !hasAnswers
+        'no-answer': !hasAnswers,
+        'non-answer': isNonAnswer
       })}
       id={displayNumber}
       aria-description={!hasAnswers ? i18n.t('examineExam.questionHasNoAnswer') : undefined}

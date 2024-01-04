@@ -7,12 +7,13 @@ export interface QuestionAutoScoreProps {
   score?: number
   maxScore?: number
   displayNumber?: string
+  questionId: number
 }
 
-function QuestionAutoScore({ score, maxScore, displayNumber }: QuestionAutoScoreProps) {
+function QuestionAutoScore({ score, maxScore, displayNumber, questionId }: QuestionAutoScoreProps) {
   const { answers } = useContext(QuestionContext)
   const { t } = useExamTranslation()
-  const containerProps = { answers, displayNumber }
+  const containerProps = { answers, displayNumber, questionId }
 
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>
