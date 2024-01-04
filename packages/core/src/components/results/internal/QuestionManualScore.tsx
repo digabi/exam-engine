@@ -10,6 +10,7 @@ export interface QuestionManualScoreProps {
   maxScore?: number
   displayNumber?: string
   multilineAnswer?: boolean
+  questionId: number
 }
 
 interface NormalizedScore {
@@ -23,9 +24,15 @@ interface NormalizedScore {
     | 'grading.inspection-grading-abbrev'
 }
 
-function QuestionManualScore({ scores, maxScore, displayNumber, multilineAnswer }: QuestionManualScoreProps) {
+function QuestionManualScore({
+  scores,
+  maxScore,
+  displayNumber,
+  multilineAnswer,
+  questionId
+}: QuestionManualScoreProps) {
   const { answers } = useContext(QuestionContext)
-  const containerProps = { answers, displayNumber, multilineAnswer }
+  const containerProps = { answers, displayNumber, multilineAnswer, questionId }
   const shortCode = scores?.censoring?.nonAnswerDetails?.shortCode
   return (
     <ResultsExamQuestionScoresContainer {...containerProps}>

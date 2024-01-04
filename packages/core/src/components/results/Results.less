@@ -121,34 +121,63 @@
     }
   }
 
-  .e-exam-question.no-answer {
-    background: @no-answer-bg;
-    opacity: 0.9;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 6px;
-    padding-right: 1rem;
-    margin-left: 0rem !important;
-
-    &.e-level-0 {
-      padding-left: 1rem;
-    }
-
-    &.e-level-1 {
+  .e-exam-question {
+    &.non-answer {
       padding-left: 3rem;
-      margin-left: 1rem !important;
+      margin-left: 1rem;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
+      opacity: 1;
+      border-radius: 5px;
+      background-image: repeating-linear-gradient(-45deg, transparent 0 10px, rgba(0, 0, 0, 0.05) 10px 13px);
+      border: 3px solid #f5f5f5;
+
+      .e-result-scorecount {
+        .non-answer {
+          border-left: 1px solid @colors[grey];
+          display: block;
+          font-style: italic;
+          padding-left: 1.5rem;
+          white-space: normal;
+          color: #888;
+
+          + * {
+            display: none;
+          }
+        }
+      }
     }
 
-    .no-answer {
-      padding-right: 0;
-      padding-left: 3rem !important;
-    }
+    &.no-answer {
+      background: @no-answer-bg;
+      opacity: 0.9;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: 6px;
+      padding-right: 1rem;
+      margin-left: 0rem !important;
 
-    .e-result-scorecount.e-float-right {
-      padding-left: 1rem;
+      &.e-level-0 {
+        padding-left: 1rem;
+      }
 
-      &.e-result-scorecount-multiline-answer {
-        left: 2rem;
+      &.e-level-1 {
+        padding-left: 3rem;
+        margin-left: 1rem !important;
+      }
+
+      .no-answer {
+        padding-right: 0;
+        padding-left: 3rem !important;
+      }
+
+      .e-result-scorecount.e-float-right {
+        padding-left: 1rem;
+
+        &.e-result-scorecount-multiline-answer {
+          left: 2rem;
+        }
       }
     }
   }
@@ -172,7 +201,7 @@
   }
 }
 
-.examine-exam-page.e-exam {
+.e-exam {
   .e-choice-answer,
   .e-multiline-results-text-answer,
   .text-answer--single-line,
@@ -218,7 +247,7 @@
 }
 
 .session-ended {
-  > :not(.e-logout-container, .e-logout-container *) {
+  > *:not(.e-logout-container, .e-logout-container *) {
     overflow: hidden;
     opacity: 0 !important;
     padding: 0 !important;

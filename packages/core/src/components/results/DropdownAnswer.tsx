@@ -73,7 +73,12 @@ function DropdownAnswer({ element, renderChildNodes }: ExamComponentProps) {
       )}
 
       {scoreValue != null && (
-        <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} displayNumber={displayNumber} />
+        <ResultsExamQuestionAutoScore
+          score={scoreValue}
+          maxScore={maxScore}
+          displayNumber={displayNumber}
+          questionId={questionId}
+        />
       )}
     </>
   )

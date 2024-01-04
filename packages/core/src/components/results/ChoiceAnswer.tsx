@@ -86,7 +86,7 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
 
   return (
     <>
-      <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} />
+      <ResultsExamQuestionAutoScore score={scoreValue} maxScore={maxScore} questionId={questionId} />
       <div
         className={classNames('e-choice-answer', className, {
           'e-columns': direction === 'horizontal'

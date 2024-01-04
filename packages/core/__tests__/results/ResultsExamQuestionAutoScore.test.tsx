@@ -17,7 +17,8 @@ describe('<QuestionAutoScore />', () => {
     const props = {
       score: undefined,
       maxScore: 3,
-      displayNumber: '1'
+      displayNumber: '1',
+      questionId: 1
     }
     expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
   })
@@ -26,7 +27,8 @@ describe('<QuestionAutoScore />', () => {
     const props = {
       score: 1,
       maxScore: 3,
-      displayNumber: '1'
+      displayNumber: '1',
+      questionId: 1
     }
     expect(renderWithContext(props, []).toJSON()).toMatchSnapshot()
   })
@@ -35,7 +37,8 @@ describe('<QuestionAutoScore />', () => {
     const props = {
       score: 1,
       maxScore: 3,
-      displayNumber: '1'
+      displayNumber: '1',
+      questionId: 1
     }
     expect(renderWithContext(props, [{} as Element, {} as Element]).toJSON()).toMatchSnapshot()
   })
