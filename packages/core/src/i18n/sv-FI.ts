@@ -35,7 +35,8 @@ export const sv_FI: Translations = {
     'round.1': '1.c',
     'round.2': '2.c',
     'round.3': '3.c',
-    annotate: 'Markera'
+    annotate: 'Markera',
+    'non-answer-not-graded': 'Lämnats utan bedömning'
   },
   references: {
     heading: 'Källor',
