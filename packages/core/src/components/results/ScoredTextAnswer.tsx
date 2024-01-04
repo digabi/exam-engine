@@ -25,6 +25,7 @@ function ScoredTextAnswer({ element }: ExamComponentProps) {
         score={autogradingScore?.score}
         maxScore={maxScore}
         displayNumber={answers.length > 1 ? displayNumber : undefined}
+        questionId={questionId}
       />
     </ResultsSingleLineAnswer>
   )

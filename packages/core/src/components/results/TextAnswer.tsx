@@ -31,7 +31,12 @@ function TextAnswer({ element }: ExamComponentProps) {
       return (
         <>
           {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
-          <ResultsExamQuestionManualScore multilineAnswer={true} scores={score} maxScore={maxScore} />
+          <ResultsExamQuestionManualScore
+            multilineAnswer={true}
+            scores={score}
+            maxScore={maxScore}
+            questionId={questionId}
+          />
           <MultiLineAnswer {...{ type, value, score }} />
           <AnswerToolbar
             {...{
@@ -59,7 +64,7 @@ function TextAnswer({ element }: ExamComponentProps) {
             value
           }}
         >
-          <ResultsExamQuestionManualScore {...{ scores: score, maxScore, displayNumber }} />
+          <ResultsExamQuestionManualScore {...{ scores: score, maxScore, displayNumber, questionId }} />
         </ResultsSingleLineAnswer>
       )
   }
