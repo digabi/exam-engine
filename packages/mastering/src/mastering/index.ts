@@ -285,6 +285,8 @@ async function masterExamVersion(
   addSectionNumbers(exam)
   addQuestionNumbers(exam)
   addAnswerNumbers(exam)
+
+  validateAttachments(exam, language, type)
   addAttachmentNumbers(exam)
 
   // Perform shuffling before adding answer options ids, so the student can't guess the original order.
@@ -599,6 +601,31 @@ function addAnswerNumbers(exam: Exam) {
   }
 
   exam.topLevelQuestions.forEach(addAnswerNumber)
+}
+
+function validateAttachments(exam: Exam, language: string, type: ExamType) {
+  // Validate that each reference is found in the exam structure after the localization is applied.
+
+  const examExternalMaterial = exam.element.find<Element>('./e:external-material/e:attachment', ns)
+  const questionExternalMaterial = exam.questions.flatMap(question =>
+    question.element.find<Element>('./e:external-material/e:attachment', ns)
+  )
+
+  const externalMaterial = examExternalMaterial.concat(questionExternalMaterial)
+
+  const attachments: string[] = externalMaterial.map(attachment => getAttribute('name', attachment, ''))
+
+  exam.element.find<Element>('//e:attachment-link', ns).forEach(link => {
+    const expectedReference = getAttribute('ref', link)
+    if (!attachments.includes(expectedReference)) {
+      throw mkError(
+        `Reference ${JSON.stringify(expectedReference)} not found from available attachments: ${JSON.stringify(
+          attachments
+        )} (${language}, ${type})`,
+        link
+      )
+    }
+  })
 }
 
 function addAttachmentNumbers(exam: Exam) {
