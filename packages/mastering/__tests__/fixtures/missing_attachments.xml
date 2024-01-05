@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.5" date="2020-01-01">
+  <e:exam-versions>
+    <e:exam-version lang="fi-FI" exam-type="normal"/>
+    <e:exam-version lang="fi-FI" exam-type="visually-impaired"/>
+    <e:exam-version lang="fi-FI" exam-type="hearing-impaired"/>
+  </e:exam-versions>
+  <e:exam-instruction>
+    <e:localization exam-type="normal visually-impaired">
+      Tekstiä tavalliseen ja näkövammaisten kokeeseen.
+    </e:localization>
+    <e:localization exam-type="hearing-impaired">
+      Tekstiä kuulovammaisten kokeeseen.
+    </e:localization>
+  </e:exam-instruction>
+  <e:table-of-contents />
+  <e:section>
+    <e:section-title>Kuuntelutehtävät</e:section-title>
+    <e:question>
+      <e:question-title>Kaikille yhteinen tehtävä</e:question-title>
+      <e:external-material exam-type="normal">
+      <e:attachment name="1A">
+        <e:attachment-title>
+            <e:localization lang="fi-FI">Kuva: Puuveistokset</e:localization>
+        </e:attachment-title>
+
+        <e:reference>
+          <e:author>
+            <e:localization lang="fi-FI">YTL</e:localization>
+          </e:author>
+        </e:reference>
+      </e:attachment>
+    </e:external-material>
+    <e:question-instruction>
+      <e:localization lang="fi-FI" exam-type="normal">
+          Katso kuva <e:attachment-link type="short" ref="1A"/>.
+      </e:localization>
+
+      <e:localization lang="fi-FI" exam-type="visually-impaired">
+        Linkkiä <e:attachment-link type="short" ref="1A"/> ei löydy.
+      </e:localization>
+
+      <e:localization lang="fi-FI" exam-type="hearing-impaired">
+        Linkkiä <e:attachment-link type="short" ref="1A"/> ei löydy.
+      </e:localization>
+
+    </e:question-instruction><e:localization lang="fi-FI" exam-type="normal"/>
+    </e:question>
+    <e:question exam-type="normal hearing-impaired">
+      <e:question-title>Kuuntelutehtävä</e:question-title>
+    </e:question>
+    <e:question exam-type="visually-impaired">
+      <e:question-title>Näkövammaisten korvaava kuuntelutehtävä</e:question-title>
+    </e:question>
+  </e:section>
+  <e:section>
+    <e:section-title>Kirjalliset tehtävät</e:section-title>
+    <e:question exam-type="normal hearing-impaired">
+      <e:question-title>Kirjallinen tehtävä</e:question-title>
+    </e:question>
+    <e:question exam-type="visually-impaired">
+      <e:question-title>Näkövammaisten korvaava kirjallinen tehtävä</e:question-title>
+    </e:question>
+  </e:section>
+</e:exam>

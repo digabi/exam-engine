@@ -58,6 +58,12 @@ describe('Exam mastering', () => {
         masterExam(xml.replace(/<e:section>/g, '<e:section cas-forbidden="true">'), generateUuid, getMediaMetadata)
       ).rejects.toThrow('cas-forbidden attribute can be true only on first section')
     })
+    it('XML has missing attachment', async () => {
+      const xml = await readFixture('missing_attachments.xml')
+      return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+        'Reference "1A" not found from available attachments: [] (fi-FI, visually-impaired)'
+      )
+    })
   })
 
   it('validates the XML against a schema', async () => {
