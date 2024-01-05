@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.5" date="2020-01-01">
+  <e:exam-versions>
+    <e:exam-version lang="fi-FI" exam-type="normal"/>
+  </e:exam-versions>
+  <e:exam-instruction>
+    <e:localization exam-type="normal">
+      Tekstiä tavalliseen ja näkövammaisten kokeeseen.
+    </e:localization>
+  </e:exam-instruction>
+  <e:table-of-contents />
+
+  <e:section>
+    <e:section-title>Tehtävä</e:section-title>
+    <e:question>
+        <e:question-title>
+            <e:localization lang="fi-FI">Otsikko</e:localization>
+        </e:question-title>
+
+        <e:question-instruction>
+            <e:localization lang="fi-FI" exam-type="normal">
+                Kysymys
+            </e:localization>
+        </e:question-instruction>
+        <e:localization lang="fi-FI" exam-type="normal"/>
+            <e:text-answer type="single-line" max-score="12" max-length="111">
+            <e:answer-grading-instruction>
+            <e:localization lang="fi-FI">
+              Ohje
+            </e:localization>
+        </e:answer-grading-instruction>
+    </e:text-answer>
+  </e:question>
+</e:section>
+</e:exam>

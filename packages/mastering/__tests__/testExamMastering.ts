@@ -64,6 +64,12 @@ describe('Exam mastering', () => {
         'Reference "1A" not found from available attachments: [] (fi-FI, visually-impaired)'
       )
     })
+    it('has non-rich text questions with a max length', async () => {
+      const xml = await readFixture('unallowed_max_length.xml')
+      return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+        'Only text answers with the type "rich-text" can have a max length'
+      )
+    })
   })
 
   it('validates the XML against a schema', async () => {
