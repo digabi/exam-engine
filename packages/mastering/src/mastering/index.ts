@@ -632,7 +632,7 @@ function validateAttachments(exam: Exam, language: string, type: ExamType) {
 // Validate that only text-answers where type = rich-text have max-lenth attributes
 function validateMaxLengthAttributes(exam: Exam) {
   const textAnswers = exam.element.find<Element>('//e:text-answer', ns)
-  const nonRichTextAnswers = textAnswers.filter(e => getAttribute('type', e) !== 'rich-text')
+  const nonRichTextAnswers = textAnswers.filter(e => getAttribute('type', e, 'single-line') !== 'rich-text')
   const nonRichTextAnswersWithMaxLength = nonRichTextAnswers.filter(e => getAttribute('max-length', e, false))
 
   if (nonRichTextAnswersWithMaxLength.length) {
