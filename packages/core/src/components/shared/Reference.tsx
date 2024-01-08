@@ -66,14 +66,7 @@ function Italic({ element, renderChildNodes }: ExamComponentProps) {
 }
 
 function Link({ element, renderChildNodes }: ExamComponentProps) {
-  const isOfflineVersion = window.location.protocol === 'file:'
-  return isOfflineVersion ? (
-    <a href={element.textContent!} target="_blank" rel="noreferrer">
-      {renderChildNodes(element)}
-    </a>
-  ) : (
-    <i>{renderChildNodes(element)}</i>
-  )
+  return <i>{renderChildNodes(element)}</i>
 }
 
 function AsDate({ element }: ExamComponentProps) {

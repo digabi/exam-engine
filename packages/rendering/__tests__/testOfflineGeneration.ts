@@ -27,13 +27,6 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
     await expectToRenderWithoutErrors(attachmentsHtmlFile)
   })
 
-  it('renders attachment page with functional links', async () => {
-    await expectToRenderWithoutErrors(attachmentsHtmlFile)
-    const referenceLinks = await page.$$('a[target="_blank"]')
-    const linkCount = referenceLinks.length
-    expect(linkCount).toBe(4)
-  })
-
   async function expectToRenderWithoutErrors(filename: string) {
     const { requestErrors, pageErrors } = await getPageAndRequestErrors(page, filename)
     expect(requestErrors).toEqual([])
