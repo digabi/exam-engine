@@ -117,11 +117,9 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-        {isStudentsExamineExamPage && (
-          <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
-            « <BackToExamText />
-          </button>
-        )}
+        <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
+          « <BackToExamText />
+        </button>
 
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
           {examTitle && (
@@ -133,7 +131,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
           {!isStudentsExamineExamPage && <ScoresAndFinalGrade />}
         </div>
 
-        {isStudentsExamineExamPage && <ExamineExamInstructions />}
+        <ExamineExamInstructions />
 
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
@@ -142,7 +140,12 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
 
         {renderChildNodes(root)}
 
-        {studentCanEndSession && <EndExamSession onEndSession={onEndSession} sessionEnded={sessionEnded} />}
+        {(studentCanEndSession || !isStudentsExamineExamPage) && (
+          <EndExamSession
+            onEndSession={isStudentsExamineExamPage ? onEndSession : () => Promise.resolve()}
+            sessionEnded={sessionEnded}
+          />
+        )}
       </main>
       <div className="e-exam-footer-content" />
     </I18nextProvider>
