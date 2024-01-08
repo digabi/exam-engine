@@ -33,7 +33,7 @@ export const EndExamSession = ({ onEndSession, sessionEnded }: Props) => {
         )}
         {!sessionEnded && (
           <button id="endSession" className="e-button" onClick={() => void onEndSession()}>
-            Päätä koe
+            {t('examineExam.endExamTitle')}
           </button>
         )}
       </div>
