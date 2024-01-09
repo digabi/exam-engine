@@ -49,6 +49,9 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
     },
     async playRestrictedAudio(src) {
       return examServerAPI.playAudio(src)
+    },
+    getRestrictedAudio() {
+      throw new Error('other-error')
     }
   }
 
