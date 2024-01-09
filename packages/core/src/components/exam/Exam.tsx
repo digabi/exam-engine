@@ -63,6 +63,7 @@ export interface CommonExamProps {
   doc: XMLDocument
   /** @deprecated Not used anymore */
   language?: string
+  abitti2?: boolean
 }
 
 interface UndoViewProps {

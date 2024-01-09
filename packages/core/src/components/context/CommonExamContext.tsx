@@ -26,7 +26,7 @@ export const CommonExamContext = React.createContext({} as CommonExamContext)
 export function withCommonExamContext<P extends CommonExamProps>(
   Component: React.ComponentType<P>
 ): React.ComponentType<P> {
-  return withContext<CommonExamContext, P>(CommonExamContext, ({ attachmentsURL, resolveAttachment, doc }) => {
+  return withContext<CommonExamContext, P>(CommonExamContext, ({ attachmentsURL, resolveAttachment, doc, abitti2 }) => {
     const root = doc.documentElement
     const maybeDate = getAttribute(root, 'date')
     const language = getAttribute(root, 'exam-lang')!
@@ -44,6 +44,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
       maxScore: getNumericAttribute(root, 'max-score'),
       sections: queryAll(root, 'section'),
       resolveAttachment,
+      abitti2: abitti2 || false,
       root
     }
   })(Component)

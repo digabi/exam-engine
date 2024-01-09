@@ -5,7 +5,7 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { audioLabelId } from '../../ids'
-import { getAudioPlaybackError, getPlaybackTimesRemaining } from '../../store/selectors'
+import { getAudioPlaybackError, getPlaybackTimesRemaining, getPlaybackTimes } from '../../store/selectors'
 import AudioPlaybackError from './internal/AudioPlaybackError'
 import { CommonExamContext } from '../context/CommonExamContext'
 import RestrictedAudioPlayer from './internal/RestrictedAudioPlayer'
@@ -22,6 +22,8 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
     times != null && restrictedAudioId != null
       ? useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
       : undefined
+  const playbackTimes =
+    times != null && restrictedAudioId != null ? useSelector(getPlaybackTimes(restrictedAudioId)) : undefined
   const { resolveAttachment, abitti2 } = useContext(CommonExamContext)
   const labelId = audioLabelId(element)
 
@@ -37,7 +39,7 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
           controls
           controlsList="nodownload"
         >
-          <source src={resolveAttachment(abitti2 ? `restricted/$src` : src)} />
+          <source src={resolveAttachment(abitti2 ? `restricted/${restrictedAudioId}/${playbackTimes}` : src)} />
         </audio>
       )}
       <div className="e-column" id={labelId}>
