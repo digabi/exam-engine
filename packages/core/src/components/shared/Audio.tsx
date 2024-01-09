@@ -22,12 +22,12 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
     times != null && restrictedAudioId != null
       ? useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
       : undefined
-  const { resolveAttachment } = useContext(CommonExamContext)
+  const { resolveAttachment, abitti2 } = useContext(CommonExamContext)
   const labelId = audioLabelId(element)
 
   return (
     <div className={classNames('audio e-columns e-columns--center-v e-mrg-b-2', className)}>
-      {restrictedAudioId != null && times != null ? (
+      {restrictedAudioId != null && times != null && !abitti2 ? (
         <RestrictedAudioPlayer {...{ src, restrictedAudioId, duration, times, labelId }} />
       ) : (
         <audio
@@ -37,7 +37,7 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
           controls
           controlsList="nodownload"
         >
-          <source src={resolveAttachment(src)} />
+          <source src={resolveAttachment(abitti2 ? `restricted/$src` : src)} />
         </audio>
       )}
       <div className="e-column" id={labelId}>

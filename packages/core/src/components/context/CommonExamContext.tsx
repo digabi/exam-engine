@@ -18,6 +18,7 @@ export interface CommonExamContext {
   sections: Element[]
   resolveAttachment: (filename: string) => string
   root: Element
+  abitti2: boolean
 }
 
 export const CommonExamContext = React.createContext({} as CommonExamContext)
