@@ -62,6 +62,15 @@ export interface ExamServerAPI {
    * @param playbackTimes How many times this audio has been listened to already.
    */
   playRestrictedAudio: (src: string, restrictedAudioId: number, playbackTimes: number) => Promise<AudioPlaybackResponse>
+
+  /**
+   * Get restricted audio file in a blob. The promise should be resolved with blob
+   * when the audio file has be loaded or rejected with an error response if an error occurs.
+   *
+   * @param restrictedAudioId A number that uniquely identifies each restricted audio element.
+   * @param playbackTimes How many times this audio has been listened to already.
+   */
+  getRestrictedAudio: (src: string, restrictedAudioId: number, playbackTimes: number) => Promise<Blob>
   /** Select another answer version from answer history. Return undefined to cancel. Optional feature. */
   selectAnswerVersion?: (questionId: QuestionId, questionTitle: string) => Promise<ExamAnswer | undefined>
   /** Save screenshot to server. Should return the URL to the saved screenshot. */
