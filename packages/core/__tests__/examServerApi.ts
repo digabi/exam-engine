@@ -7,5 +7,6 @@ export const examServerApi: ExamServerAPI = {
   saveScreenshot: () => Promise.resolve('ok'),
   playAudio: () => Promise.resolve('ok'),
   playRestrictedAudio: () => Promise.resolve('ok'),
+  getRestrictedAudio: () => Promise.resolve(new Blob()),
   examineExam: () => undefined
 }

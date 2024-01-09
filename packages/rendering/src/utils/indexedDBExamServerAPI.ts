@@ -54,6 +54,9 @@ export default function indexedDBExamServerAPI(
     async playRestrictedAudio(src) {
       return examServerApi.playAudio(src)
     },
+    getRestrictedAudio() {
+      throw new Error('other-error')
+    },
     saveScreenshot(_, file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
