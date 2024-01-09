@@ -8,7 +8,6 @@ import { CasState } from '../../store/cas/reducer'
 import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useExamTranslation } from '../../i18n'
-import { getNumericAttribute, query } from '../../dom-utils'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -18,7 +17,7 @@ export const ExpandQuestionContext = createContext<{
 function Question({ element, renderChildNodes }: ExamComponentProps) {
   const casStatus = useSelector((state: { cas: CasState }) => state.cas.casStatus)
   const { casForbidden } = useContext(SectionContext)
-  const { displayNumber, level } = useContext(QuestionContext)
+  const { displayNumber, level, questionId } = useContext(QuestionContext)
   const [expanded, setExpanded] = useState<boolean>(false)
 
   const { t } = useExamTranslation()
@@ -40,8 +39,6 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
       e.preventDefault()
     }
   }
-  const textAnswerElement = query(element, 'text-answer')
-  const questionId = textAnswerElement ? getNumericAttribute(textAnswerElement, 'question-id') : null
 
   useEffect(() => {
     if (expanded) {

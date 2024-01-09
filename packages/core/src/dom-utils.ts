@@ -44,6 +44,24 @@ export function query(root: Element, selector: Selector): Element | undefined {
   return go(root)
 }
 
+export function queryId(root: Element): number | undefined {
+  function go(element: Element): number | undefined {
+    for (let i = 0, length = element.children.length; i < length; i++) {
+      const childElement = element.children[i]
+      if (childElement.getAttribute('question-id') != null) {
+        const id = childElement?.getAttribute('question-id') || undefined
+        return Number(id)
+      } else {
+        const maybeElement = go(childElement)
+        if (maybeElement != null) {
+          return maybeElement
+        }
+      }
+    }
+  }
+  return go(root)
+}
+
 export function queryAll(root: Element, selector: Selector, recurse = true): Element[] {
   const predicate = mkPredicate(selector)
   const results: Element[] = []
