@@ -1,5 +1,6 @@
 @import './Breakpoints.less';
 @error: #f90;
+@currentBg: rgb(236 242 247);
 
 #bertta .sidebar-toc-container .table-of-contents {
   padding: 1rem 1cqw 2rem important;
@@ -53,9 +54,13 @@
       display: none;
     }
 
+    .answer-instructions-container.current {
+      background: @currentBg;
+    }
     .answer-instructions,
     .max-answers {
       margin: 0.25rem 0 1rem;
+      padding: 0 0.5rem;
       line-height: 20px;
       display: flex;
       align-items: center;
@@ -115,7 +120,7 @@
         }
 
         &.current {
-          background: rgb(236 242 247);
+          background: @currentBg;
 
           .e-question-title,
           a {
@@ -161,7 +166,7 @@
           padding: 0.5rem;
 
           &.current {
-            background: rgb(236 242 247);
+            background: @currentBg;
           }
         }
       }
@@ -312,6 +317,11 @@
       font-size: 16px;
     }
 
+    .answer-instructions {
+      font-size: 14px;
+      margin: 0 0 0.5rem;
+    }
+
     li.level-0 {
       grid-template-columns: 23px auto 32px 15px;
       padding: 0 2px;
@@ -337,6 +347,10 @@
 
     .error-reason {
       font-size: 14px;
+    }
+
+    .answer-instructions {
+      padding: 0;
     }
 
     .table-of-contents {
