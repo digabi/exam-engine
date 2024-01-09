@@ -178,8 +178,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     const questionsAndSectionTitles = document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
     const sideNavigation = document.querySelector(`.sidebar-toc-container .table-of-contents`)
 
-    const lis = document.querySelectorAll('.sidebar-toc-container li[data-list-number], .toc-section-header')
-    lis.forEach(i => i.classList.remove('current'))
+    const highlightableElementsInNavi = document.querySelectorAll(
+      'li.level-0, .toc-section-header, .answer-instructions-container'
+    )
+    highlightableElementsInNavi.forEach(i => i.classList.remove('current'))
 
     // Find the section currently in view
     questionsAndSectionTitles.forEach(element => {
@@ -191,18 +193,22 @@ const Exam: React.FunctionComponent<ExamProps> = ({
       const elementFillsView = elementTop < scrollY && elementBottom > scrollY + window.innerHeight
 
       if (elementBeginsInView || elementEndsInView || elementFillsView) {
+        const currentSectionId = element.getAttribute('id')?.replace('section-title-', '')
+
+        if (currentSectionId) {
+          const naviSectionHeader = document.querySelector(`.table-of-contents #toc-section-title-${currentSectionId}`)
+          const sectionAnswerInstructions = document.querySelector(
+            `.table-of-contents .answer-instructions-container.section-${currentSectionId}`
+          )
+          naviSectionHeader?.classList.add('current')
+          sectionAnswerInstructions?.classList.add('current')
+        }
+
         const currentQuestionNumber = element.querySelector('.anchor')?.id.replace('question-nr-', '')
+
         const naviQuestionTitle =
           currentQuestionNumber &&
           document.querySelector(`.table-of-contents li[data-list-number="${currentQuestionNumber}."]`)
-
-        const currentSectionId = element.getAttribute('id')?.replace('section-title-', '')
-        const naviSectionHeader =
-          currentSectionId && document.querySelector(`.table-of-contents #toc-section-title-${currentSectionId}`)
-
-        if (naviSectionHeader) {
-          naviSectionHeader?.classList.add('current')
-        }
 
         if (naviQuestionTitle) {
           naviQuestionTitle.classList.add('current')

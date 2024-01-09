@@ -46,8 +46,12 @@ export const mkTableOfContents = (options: {
         )}
 
         {showAnsweringInstructions && maxAnswers && (
-          <div style={{ display: 'grid' }}>
-            <div className={classNames('answer-instructions', { error: showSectionValidationErrors })}>
+          <div style={{ display: 'grid' }} className={`answer-instructions-container section-${displayNumber}`}>
+            <div
+              className={classNames('answer-instructions', {
+                error: showSectionValidationErrors
+              })}
+            >
               {showSectionValidationErrors && <div className="error-mark">!</div>}
               <span className="error-reason">
                 <AnsweringInstructions {...{ maxAnswers, minAnswers, childQuestions, elementType: 'toc-section' }} />
