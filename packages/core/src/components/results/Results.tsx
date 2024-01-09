@@ -87,21 +87,16 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
   }, [])
 
   const [sessionEnded, setSessionEnded] = useState<boolean>(false)
-  const [showThankYouText, setShowThankYouText] = useState<boolean>(false)
 
   const onEndSession = async () => {
     try {
-      await endSession()
-      setShowThankYouText(true)
       const elements = document.querySelectorAll('main > *:not(.e-logout-container)')
       elements.forEach(el => {
         const element = el as HTMLElement
         element.style.height = `${element.clientHeight}px`
       })
-
-      setTimeout(() => {
-        setSessionEnded(true)
-      }, 10)
+      await endSession()
+      setSessionEnded(true)
     } catch (e) {
       console.error(e)
     }
@@ -145,7 +140,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
         {(studentCanEndSession || !isStudentsExamineExamPage) && (
           <EndExamSession
             onEndSession={isStudentsExamineExamPage ? onEndSession : () => Promise.resolve()}
-            showThankYouText={showThankYouText}
+            sessionEnded={sessionEnded}
           />
         )}
       </main>

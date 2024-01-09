@@ -3,17 +3,16 @@ import { useExamTranslation } from '../../i18n'
 
 interface Props {
   onEndSession: () => Promise<void>
-  showThankYouText: boolean
+  sessionEnded: boolean
 }
 
-export const EndExamSession = ({ onEndSession, showThankYouText }: Props) => {
+export const EndExamSession = ({ onEndSession, sessionEnded }: Props) => {
   const { t } = useExamTranslation()
 
   return (
     <div className="e-logout-container">
-      {showThankYouText ? 'valmis' : 'kesken'}
       <div className="e-bg-color-off-white e-pad-6 shadow-box">
-        {showThankYouText ? (
+        {sessionEnded ? (
           <>
             <h3>{t('examineExam.thankYouTitle')}</h3>
             <p>
@@ -32,7 +31,7 @@ export const EndExamSession = ({ onEndSession, showThankYouText }: Props) => {
             </p>
           </>
         )}
-        {!showThankYouText && (
+        {!sessionEnded && (
           <button id="endSession" className="e-button" onClick={() => void onEndSession()}>
             {t('examineExam.endExamTitle')}
           </button>
