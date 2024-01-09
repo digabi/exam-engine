@@ -90,16 +90,13 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
 
   const onEndSession = async () => {
     try {
-      await endSession()
       const elements = document.querySelectorAll('main > *:not(.e-logout-container)')
       elements.forEach(el => {
         const element = el as HTMLElement
         element.style.height = `${element.clientHeight}px`
       })
-
-      setTimeout(() => {
-        setSessionEnded(true)
-      }, 100)
+      await endSession()
+      setSessionEnded(true)
     } catch (e) {
       console.error(e)
     }
