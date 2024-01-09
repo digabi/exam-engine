@@ -14,7 +14,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const hasAnswers = questionHasAnswers(element, answersByQuestionId)
   const { i18n } = useExamTranslation()
 
-  const question = gradingStructure.questions.find(q => q.displayNumber === displayNumber)
+  const question = gradingStructure?.questions?.find(q => q.displayNumber === displayNumber)
   const questionId = question && ('choices' in question ? question.choices[0].id : question.id)
   const isNonAnswer = questionId ? answersByQuestionId[questionId]?.answerNonAnswer : false
 
