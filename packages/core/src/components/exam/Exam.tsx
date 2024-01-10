@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
-import { changeLanguage, initI18n } from '../../i18n'
+import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
@@ -49,7 +49,7 @@ import * as _ from 'lodash-es'
 import { StudentNameHeader } from './StudentNameHeader'
 import { UndoView } from './UndoView'
 import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
-import ExamineExam from './ExamineExam'
+import GoToExamineAnswersButton from './GoToExamineAnswersButton'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -294,7 +294,12 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
                 {renderChildNodes(root)}
 
-                {(isPreview || isNewKoeVersion) && <ExamineExam />}
+                {(isPreview || isNewKoeVersion) && (
+                  <div className="e-examine-exam">
+                    <GoToExamineAnswersButton />
+                    <ProceedToExamineAnswersText />
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -310,6 +315,15 @@ const Exam: React.FunctionComponent<ExamProps> = ({
         </main>
       </I18nextProvider>
     </Provider>
+  )
+}
+
+const ProceedToExamineAnswersText = () => {
+  const { t } = useExamTranslation()
+  return (
+    <div className="e-examine-exam-instructions" id="examineExamInstructions">
+      {t('examine-exam.instructions')}
+    </div>
   )
 }
 
