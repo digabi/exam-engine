@@ -162,14 +162,11 @@ function assertExamIsValid(doc: Document): Document {
     }
 
     // Validate that only text-answers where type = rich-text have max-lenth attributes
-    if (answer.name() !== "rich-text") {
+    if (answer.name() !== 'rich-text') {
       if (getAttribute('max-length', answer, false)) {
-        throw mkError(
-          `Only text answers with the type "rich-text" can have a max length`,
-          answer
-        )
+        throw mkError(`Only text answers with the type "rich-text" can have a max length`, answer)
+      }
     }
-
   }
 
   const root = doc.root()!
