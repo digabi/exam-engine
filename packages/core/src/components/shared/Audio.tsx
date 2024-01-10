@@ -35,7 +35,7 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
         <audio
           className="e-column e-column--narrow"
           aria-describedby={labelId}
-          preload="metadata"
+          preload={abitti2 && restrictedAudioId ? 'metadata' : 'none'}
           controls
           controlsList="nodownload"
         >
