@@ -39,7 +39,11 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
           controls
           controlsList="nodownload"
         >
-          <source src={resolveAttachment(abitti2 ? `restricted/${restrictedAudioId}/${playbackTimes}` : src)} />
+          <source
+            src={resolveAttachment(
+              abitti2 && restrictedAudioId ? `restricted/${restrictedAudioId}/${playbackTimes}` : src
+            )}
+          />
         </audio>
       )}
       <div className="e-column" id={labelId}>
