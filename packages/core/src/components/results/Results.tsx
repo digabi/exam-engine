@@ -114,7 +114,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-        <button className="e-exam-done-return js-exam-done-return" onClick={returnToExam}>
+        <button className="e-exam-done-return js-exam-done-return e-button" onClick={returnToExam}>
           « <BackToExamText />
         </button>
 
@@ -127,16 +127,12 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
           )}
           {!isStudentsExamineExamPage && <ScoresAndFinalGrade />}
         </div>
-
         <ExamineExamInstructions />
-
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
           inExam={false}
         />
-
         {renderChildNodes(root)}
-
         {(studentCanEndSession || !isStudentsExamineExamPage) && (
           <EndExamSession
             onEndSession={isStudentsExamineExamPage ? onEndSession : () => Promise.resolve()}
