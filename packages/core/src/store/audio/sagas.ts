@@ -10,8 +10,16 @@ import {
   updateRemaining
 } from './actions'
 import { AudioPlaybackResponse, ExamServerAPI } from '../..'
+import { MutableRefObject } from 'react'
 
 type PlayAudio = ReturnType<typeof playAudio>
+
+function getAudioResponse(audioRef: MutableRefObject<HTMLAudioElement | null>) {
+  return new Promise(resolve => {
+    audioRef.current!.addEventListener('playing', () => resolve('ok'))
+    audioRef.current!.addEventListener('error', () => resolve('fail'))
+  })
+}
 
 function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
   const audio = action.payload
@@ -21,8 +29,9 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
     const playbackTimes: number | undefined =
       audio.restrictedAudioId != null ? yield select(getPlaybackTimes(audio.restrictedAudioId)) : undefined
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const response: AudioPlaybackResponse =
-      playbackTimes != null && audio.restrictedAudioId != null
+    const response: AudioPlaybackResponse = audio.audioRef
+      ? getAudioResponse(audio.audioRef)
+      : playbackTimes != null && audio.restrictedAudioId != null
         ? yield call(examServerApi.playRestrictedAudio, audio.src, audio.restrictedAudioId, playbackTimes)
         : yield call(examServerApi.playAudio, audio.src)
     if (response === 'ok') {

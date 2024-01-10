@@ -2,6 +2,7 @@ import * as _ from 'lodash-es'
 import { ActionType } from 'typesafe-actions'
 import * as actions from './actions'
 import { AudioPlaybackError, RestrictedAudioId } from '../..'
+import { MutableRefObject } from 'react'
 
 type AudioAction = ActionType<typeof actions>
 
@@ -12,6 +13,10 @@ export interface Audio {
   duration: number
   /** An unique identifier for each restricted audio element. For compatibility with KTP. */
   restrictedAudioId?: number
+  /** Is this abitti2 */
+  abitti2?: boolean
+  /** Ref to audio element */
+  audioRef?: MutableRefObject<HTMLAudioElement | null>
 }
 
 export interface NowPlaying {

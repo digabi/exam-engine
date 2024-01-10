@@ -5,7 +5,7 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { audioLabelId } from '../../ids'
-import { getAudioPlaybackError, getPlaybackTimesRemaining, getPlaybackTimes } from '../../store/selectors'
+import { getAudioPlaybackError, getPlaybackTimesRemaining } from '../../store/selectors'
 import AudioPlaybackError from './internal/AudioPlaybackError'
 import { CommonExamContext } from '../context/CommonExamContext'
 import RestrictedAudioPlayer from './internal/RestrictedAudioPlayer'
@@ -22,28 +22,22 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
     times != null && restrictedAudioId != null
       ? useSelector(getPlaybackTimesRemaining(restrictedAudioId, times))
       : undefined
-  const playbackTimes =
-    times != null && restrictedAudioId != null ? useSelector(getPlaybackTimes(restrictedAudioId)) : undefined
-  const { resolveAttachment, abitti2 } = useContext(CommonExamContext)
+  const { resolveAttachment } = useContext(CommonExamContext)
   const labelId = audioLabelId(element)
 
   return (
     <div className={classNames('audio e-columns e-columns--center-v e-mrg-b-2', className)}>
-      {restrictedAudioId != null && times != null && !abitti2 ? (
+      {restrictedAudioId != null && times != null ? (
         <RestrictedAudioPlayer {...{ src, restrictedAudioId, duration, times, labelId }} />
       ) : (
         <audio
           className="e-column e-column--narrow"
           aria-describedby={labelId}
-          preload={abitti2 && restrictedAudioId ? 'metadata' : 'none'}
+          preload="metadata"
           controls
           controlsList="nodownload"
         >
-          <source
-            src={resolveAttachment(
-              abitti2 && restrictedAudioId ? `restricted/${restrictedAudioId}/${playbackTimes}` : src
-            )}
-          />
+          <source src={resolveAttachment(src)} />
         </audio>
       )}
       <div className="e-column" id={labelId}>
