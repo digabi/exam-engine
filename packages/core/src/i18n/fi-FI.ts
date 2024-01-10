@@ -58,8 +58,11 @@ export const fi_FI = {
     'modified-by': 'Muokkaus:'
   },
   cas: {
+    examineSectionA: 'Voit käydä tarkastelemassa A-osan vastauksiasi nyt.',
+    cannotEditLater: 'Palautettuasi A-osan et voi enää muokata A-osan vastauksia.',
+    youCanReturn: 'Tarkastelun jälkeen voit palata kokeeseen jatkamaan tehtäviin vastaamista.',
     forbidden: {
-      infoText: 'Saat estetyt laskinohjelmat käyttöön palautettuasi A-osan.',
+      infoText: 'Saat estetyt laskinohjelmat käyttöösi palautettuasi A-osan.',
       buttonText: 'Palauta A-osa'
     },
     allowing: {
@@ -72,7 +75,7 @@ export const fi_FI = {
   },
   'examine-exam': {
     examine: 'Siirry tarkastelemaan vastauksiasi',
-    instructions: 'Painikkeen klikkaamisen jälkeen voit vielä palata muokkaamaan vastauksia.'
+    instructions: 'Tarkastelun jälkeen voit vielä palata muokkaamaan vastauksia, tai päättää kokeen.'
   },
   undo: {
     loading: 'Ladataan...',

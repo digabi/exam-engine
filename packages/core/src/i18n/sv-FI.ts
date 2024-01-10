@@ -47,6 +47,10 @@ export const sv_FI: Translations = {
     'modified-by': 'Bearbetning:'
   },
   cas: {
+    examineSectionA: 'Du kan nu granska dina svar för del A.',
+    cannotEditLater: 'När du har returnerat del A kan du inte längre redigera svaren för del A.',
+    youCanReturn:
+      'Efter att du granskat dina svar kan du gå tillbaka till provet för att fortsätta svara på uppgifterna.',
     forbidden: {
       infoText: 'Du får tillgång till de blockerade räknarprogrammen efter att du returnerat del A.',
       buttonText: 'Returnera del A'
@@ -61,7 +65,7 @@ export const sv_FI: Translations = {
   },
   'examine-exam': {
     examine: 'Kontrollera dina svar',
-    instructions: 'Efter att ha klickat på knappen kan du ännu återvända och redigera svaren.'
+    instructions: 'Efter att du granskat dina svar kan du ännu gå tillbaka och redigera svaren eller avsluta provet.'
   },
   undo: {
     loading: 'Laddar...',
