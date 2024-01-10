@@ -11,6 +11,7 @@ import SectionElement from '../SectionElement'
 import { SectionContext, withSectionContext } from '../context/SectionContext'
 import { CommonExamContext } from '../context/CommonExamContext'
 import * as _ from 'lodash-es'
+import GoToExamineAnswersButton from './GoToExamineAnswersButton'
 
 function LastSectionNote() {
   const { t } = useExamTranslation()
@@ -46,6 +47,14 @@ function CasControls(props: CasState) {
       {props.casStatus === 'forbidden' ? (
         <div className="e-text-center">
           <hr className="e-exam-separator" />
+          <p>
+            {t('cas.examineSectionA')}
+            <br />
+            {t('cas.cannotEditLater')}
+          </p>
+          <GoToExamineAnswersButton />
+          <p>{t('cas.youCanReturn')}</p>
+          <p className="dots-separator">•••</p>
           <p id="e-cas-controls-forbidden-description">{t('cas.forbidden.infoText')}</p>
           <button
             className="e-button"

@@ -3,7 +3,7 @@ import { useExamTranslation } from '../../i18n'
 import { ExamContext } from '../context/ExamContext'
 import { ExamServerAPI } from '../../types/ExamServerAPI'
 
-function ExamineExam() {
+function GoToExamineAnswersButton() {
   const { examServerApi } = useContext(ExamContext)
   const { examineExam }: ExamServerAPI = examServerApi
   const { t } = useExamTranslation()
@@ -17,20 +17,14 @@ function ExamineExam() {
   }
 
   return (
-    <div className="e-examine-exam">
-      <button
-        className="e-button"
-        id="examineExam"
-        onClick={goToInspectAnswers}
-        aria-describedby="examineExamInstructions"
-      >
-        {t('examine-exam.examine')}
-      </button>
-      <div className="e-examine-exam-instructions" id="examineExamInstructions">
-        {t('examine-exam.instructions')}
-      </div>
-    </div>
+    <button
+      className="e-button goto-examine-answers"
+      onClick={goToInspectAnswers}
+      aria-describedby="examineExamInstructions"
+    >
+      {t('examine-exam.examine')}
+    </button>
   )
 }
 
-export default React.memo(ExamineExam)
+export default React.memo(GoToExamineAnswersButton)

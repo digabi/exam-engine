@@ -21,7 +21,6 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
 
   it('hides questions of the first section after clicking enable CAS button', async () => {
     await loadExam(page, ctx.url)
-
     await expectQuestionToBeVisible(true)
     await clickToggleCas(true)
     await expectQuestionToBeVisible(false)
@@ -30,6 +29,10 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
   it('allows the user to cancel the operation', async () => {
     await clickToggleCas(false)
     await expectQuestionToBeVisible(true)
+  })
+
+  it('part A includes a button for proceeding to examine answers', () => {
+    expect(page.locator('.e-cas-controls .goto-examine-answers')).toBeTruthy()
   })
 
   it('after waiting for the countdown to finish, it enables CAS software and locks answers for the first section', async () => {
