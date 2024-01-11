@@ -6,12 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RestrictedAudioId } from '../../../index'
 import { useExamTranslation } from '../../../i18n'
 import { playAudio } from '../../../store/audio/actions'
-import {
-  getAudioState,
-  getDurationRemaining,
-  getPlaybackTimesRemaining,
-  getPlaybackTimes
-} from '../../../store/selectors'
+import { getAudioState, getDurationRemaining, getPlaybackTimesRemaining } from '../../../store/selectors'
 import { CommonExamContext } from '../../context/CommonExamContext'
 
 function RestrictedAudioPlayer({
@@ -37,9 +32,7 @@ function RestrictedAudioPlayer({
   const disabled = !stopped || playbackTimesRemaining === 0
   const remainingLabelId = `audio-remaining-${restrictedAudioId}`
   const labels = playing ? [] : [remainingLabelId, labelId]
-  const { abitti2, resolveAttachment } = useContext(CommonExamContext)
-  const playbackTimes =
-    times != null && restrictedAudioId != null ? useSelector(getPlaybackTimes(restrictedAudioId)) : undefined
+  const { abitti2 } = useContext(CommonExamContext)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   return (
