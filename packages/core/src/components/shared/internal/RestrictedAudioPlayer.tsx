@@ -52,7 +52,7 @@ function RestrictedAudioPlayer({
     >
       {abitti2 && (
         <audio ref={audioRef} className="e-column e-column--narrow" aria-describedby={labelId} preload={'none'}>
-          <source src={resolveAttachment(`restricted/${restrictedAudioId}/${playbackTimes}`)} />
+          <source />
         </audio>
       )}
       <button
@@ -62,10 +62,14 @@ function RestrictedAudioPlayer({
         disabled={disabled}
         onClick={() => {
           if (stopped) {
-            dispatch(playAudio({ src, restrictedAudioId, duration, audioRef }))
-            if (abitti2) {
-              void audioRef.current!.play()
-            }
+            dispatch(
+              playAudio({
+                src,
+                restrictedAudioId,
+                duration,
+                audioRef
+              })
+            )
           }
         }}
         aria-labelledby={labels.join(' ')}

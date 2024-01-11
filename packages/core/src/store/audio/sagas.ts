@@ -10,15 +10,23 @@ import {
   updateRemaining
 } from './actions'
 import { AudioPlaybackResponse, ExamServerAPI } from '../..'
-import { MutableRefObject } from 'react'
+
+import { Audio } from './reducer'
+import AudioPlaybackError from '../../components/shared/internal/AudioPlaybackError'
 
 type PlayAudio = ReturnType<typeof playAudio>
 
-function getAudioResponse(audioRef: MutableRefObject<HTMLAudioElement | null>) {
-  return new Promise(resolve => {
-    audioRef.current!.addEventListener('playing', () => resolve('ok'))
-    audioRef.current!.addEventListener('error', () => resolve('fail'))
-  })
+async function getAudioResponse(examServerApi: ExamServerAPI, audio: Audio, playbackTimes: number) {
+  try {
+    const response = await examServerApi.getRestrictedAudio(audio.src, audio.restrictedAudioId!, playbackTimes)
+    const source = audio.audioRef!.current!.querySelector('source')!
+    source.src = URL.createObjectURL(response)
+    audio.audioRef!.current!.load()
+    void audio.audioRef!.current!.play()
+    return 'ok'
+  } catch (err) {
+    return (err as { message: AudioPlaybackError }).message
+  }
 }
 
 function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
@@ -29,11 +37,12 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
     const playbackTimes: number | undefined =
       audio.restrictedAudioId != null ? yield select(getPlaybackTimes(audio.restrictedAudioId)) : undefined
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const response: AudioPlaybackResponse = audio.audioRef
-      ? getAudioResponse(audio.audioRef)
-      : playbackTimes != null && audio.restrictedAudioId != null
-        ? yield call(examServerApi.playRestrictedAudio, audio.src, audio.restrictedAudioId, playbackTimes)
-        : yield call(examServerApi.playAudio, audio.src)
+    const response: AudioPlaybackResponse =
+      audio.audioRef && playbackTimes != null
+        ? yield getAudioResponse(examServerApi, audio, playbackTimes)
+        : playbackTimes != null && audio.restrictedAudioId != null
+          ? yield call(examServerApi.playRestrictedAudio, audio.src, audio.restrictedAudioId, playbackTimes)
+          : yield call(examServerApi.playAudio, audio.src)
     if (response === 'ok') {
       yield put(playAudioStarted(audio))
       yield call(countdown, audio.duration, updateRemaining)
