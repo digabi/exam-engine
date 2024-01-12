@@ -155,7 +155,8 @@ const App: React.FunctionComponent<{
   const resultsProps = {
     ...commonProps,
     gradingStructure,
-    scores: []
+    scores: [],
+    isPreviewPage: true
   }
   const examProps = {
     ...commonProps,

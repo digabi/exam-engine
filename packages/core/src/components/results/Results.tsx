@@ -44,7 +44,8 @@ export interface ResultsProps extends CommonExamProps {
   singleGrading?: boolean
   returnToExam: () => void
   endSession: () => Promise<void>
-  studentSessionEnded: boolean
+  studentSessionEnded?: boolean
+  isPreviewPage?: boolean
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -69,7 +70,13 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes
 })
 
-const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, endSession, studentSessionEnded }) => {
+const Results: React.FunctionComponent<ResultsProps> = ({
+  doc,
+  returnToExam,
+  endSession,
+  studentSessionEnded = false,
+  isPreviewPage
+}) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -82,6 +89,8 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
   useEffect(scrollToHash, [])
   const isStudentsExamineExamPage = useIsStudentsExamineExamPage()
   const studentCanEndSession = endSession !== undefined
+
+  const isExamCopy = !isStudentsExamineExamPage && !isPreviewPage
 
   useEffect(() => {
     window.location.hash = ''
@@ -114,9 +123,11 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
         <React.StrictMode />
         {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-        <button className="e-exam-done-return js-exam-done-return e-button" onClick={returnToExam}>
-          « <BackToExamText />
-        </button>
+        {!isExamCopy && (
+          <button className="e-exam-done-return js-exam-done-return e-button" onClick={returnToExam}>
+            « <BackToExamText />
+          </button>
+        )}
 
         <div className="e-columns e-columns--bottom-v e-mrg-b-4">
           {examTitle && (
@@ -127,13 +138,17 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
           )}
           {!isStudentsExamineExamPage && <ScoresAndFinalGrade />}
         </div>
-        <ExamineExamInstructions />
+
+        {!isExamCopy && <ExamineExamInstructions />}
+
         <ErrorIndicatorForErrors
           validationErrors={validateAnswers(parseExamStructure(doc), answersByQuestionId)}
           inExam={false}
         />
+
         {renderChildNodes(root)}
-        {(studentCanEndSession || !isStudentsExamineExamPage) && (
+
+        {(studentCanEndSession || isPreviewPage) && (
           <EndExamSession
             onEndSession={isStudentsExamineExamPage ? onEndSession : () => Promise.resolve()}
             sessionEnded={studentSessionEnded}
