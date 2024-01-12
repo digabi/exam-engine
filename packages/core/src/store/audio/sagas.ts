@@ -27,13 +27,13 @@ async function loadAndPlayRestrictedAudio(
     audio.load()
     void audio.play()
     return {
-      result: 'ok',
+      response: 'ok',
       cleanup: () => {
         URL.revokeObjectURL(source.src)
       }
     }
   } catch (_) {
-    return { result: 'other-error', cleanup: () => {} }
+    return { response: 'other-error', cleanup: () => {} }
   }
 }
 
@@ -59,14 +59,15 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
 
     if (audio.audioRef) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const response: { result: AudioPlaybackResponse; cleanup: () => void } = yield loadAndPlayRestrictedAudio(
-        examServerApi,
-        audio.restrictedAudioId!,
-        audio.audioRef.current!,
-        playbackTimes!
-      )
-      yield handleResponse(response.result, audio)
-      yield response.cleanup()
+      const { response, cleanup }: { response: AudioPlaybackResponse; cleanup: () => void } =
+        yield loadAndPlayRestrictedAudio(
+          examServerApi,
+          audio.restrictedAudioId!,
+          audio.audioRef.current!,
+          playbackTimes!
+        )
+      yield handleResponse(response, audio)
+      yield cleanup()
     } else {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const response: AudioPlaybackResponse =
