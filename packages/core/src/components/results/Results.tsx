@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
@@ -44,6 +44,7 @@ export interface ResultsProps extends CommonExamProps {
   singleGrading?: boolean
   returnToExam: () => void
   endSession: () => Promise<void>
+  studentSessionEnded: boolean
 }
 
 const renderChildNodes = createRenderChildNodes({
@@ -68,7 +69,7 @@ const renderChildNodes = createRenderChildNodes({
   'scored-text-answers': RenderChildNodes
 })
 
-const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, endSession }) => {
+const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, endSession, studentSessionEnded }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -86,17 +87,16 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
     window.location.hash = ''
   }, [])
 
-  const [sessionEnded, setSessionEnded] = useState<boolean>(false)
-
-  const onEndSession = async () => {
+  const onEndSession = () => {
     try {
       const elements = document.querySelectorAll('main > *:not(.e-logout-container)')
       elements.forEach(el => {
         const element = el as HTMLElement
         element.style.height = `${element.clientHeight}px`
       })
-      await endSession()
-      setSessionEnded(true)
+      setTimeout(() => {
+        void endSession()
+      }, 50)
     } catch (e) {
       console.error(e)
     }
@@ -107,7 +107,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
       <main
         className={classNames('e-exam e-results', {
           'examine-exam-page': isStudentsExamineExamPage,
-          'session-ended': sessionEnded
+          'session-ended': studentSessionEnded
         })}
         lang={subjectLanguage}
       >
@@ -136,7 +136,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({ doc, returnToExam, end
         {(studentCanEndSession || !isStudentsExamineExamPage) && (
           <EndExamSession
             onEndSession={isStudentsExamineExamPage ? onEndSession : () => Promise.resolve()}
-            sessionEnded={sessionEnded}
+            sessionEnded={studentSessionEnded}
           />
         )}
       </main>

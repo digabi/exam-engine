@@ -243,14 +243,15 @@
     overflow: hidden;
     opacity: 0 !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
     height: 0 !important;
     border: none !important;
     transition:
+      opacity 1.5s ease-in-out,
+      padding 1s ease-in-out 1s,
+      margin 1s ease-in-out 1s,
       height 1s ease-out 1s,
-      padding 0s ease-in-out 1s,
-      margin 0s ease-in-out 1s,
-      opacity 1.5s ease-in-out;
+      border 1s ease-in-out 1s;
   }
 
   min-height: calc(100% - 125px);

@@ -2,7 +2,7 @@ import React from 'react'
 import { useExamTranslation } from '../../i18n'
 
 interface Props {
-  onEndSession: () => Promise<void>
+  onEndSession: () => void
   sessionEnded: boolean
 }
 
