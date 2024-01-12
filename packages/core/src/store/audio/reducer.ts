@@ -13,8 +13,6 @@ export interface Audio {
   duration: number
   /** An unique identifier for each restricted audio element. For compatibility with KTP. */
   restrictedAudioId?: number
-  /** Is this abitti2 */
-  abitti2?: boolean
   /** Ref to audio element */
   audioRef?: MutableRefObject<HTMLAudioElement | null>
 }

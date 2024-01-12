@@ -44,7 +44,7 @@ function RestrictedAudioPlayer({
       lang={i18n.language}
     >
       {abitti2 && (
-        <audio ref={audioRef} className="e-column e-column--narrow" aria-describedby={labelId} preload={'none'}>
+        <audio ref={audioRef} preload="none">
           <source />
         </audio>
       )}
@@ -53,18 +53,17 @@ function RestrictedAudioPlayer({
           'restricted-audio-player__play--playing': playing
         })}
         disabled={disabled}
-        onClick={() => {
-          if (stopped) {
-            dispatch(
-              playAudio({
-                src,
-                restrictedAudioId,
-                duration,
-                audioRef
-              })
-            )
-          }
-        }}
+        onClick={() =>
+          stopped &&
+          dispatch(
+            playAudio({
+              src,
+              restrictedAudioId,
+              duration,
+              audioRef
+            })
+          )
+        }
         aria-labelledby={labels.join(' ')}
       >
         {!playing && <FontAwesomeIcon icon={faPlay} fixedWidth />}

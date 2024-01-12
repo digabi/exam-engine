@@ -10,22 +10,42 @@ import {
   updateRemaining
 } from './actions'
 import { AudioPlaybackResponse, ExamServerAPI } from '../..'
-
 import { Audio } from './reducer'
-import AudioPlaybackError from '../../components/shared/internal/AudioPlaybackError'
 
 type PlayAudio = ReturnType<typeof playAudio>
 
-async function getAudioResponse(examServerApi: ExamServerAPI, audio: Audio, playbackTimes: number) {
+async function loadAndPlayRestrictedAudio(
+  examServerApi: ExamServerAPI,
+  restrictedAudioId: number,
+  audio: HTMLAudioElement,
+  playbackTimes: number
+) {
   try {
-    const response = await examServerApi.getRestrictedAudio(audio.src, audio.restrictedAudioId!, playbackTimes)
-    const source = audio.audioRef!.current!.querySelector('source')!
+    const response = await examServerApi.getRestrictedAudio('', restrictedAudioId, playbackTimes)
+    const source = audio.querySelector('source')!
     source.src = URL.createObjectURL(response)
-    audio.audioRef!.current!.load()
-    void audio.audioRef!.current!.play()
-    return 'ok'
-  } catch (err) {
-    return (err as { message: AudioPlaybackError }).message
+    audio.load()
+    void audio.play()
+    return {
+      result: 'ok',
+      cleanup: () => {
+        URL.revokeObjectURL(source.src)
+      }
+    }
+  } catch (_) {
+    return { result: 'other-error', cleanup: () => {} }
+  }
+}
+
+function* handleResponse(response: AudioPlaybackResponse, audio: Audio) {
+  if (response === 'ok') {
+    yield put(playAudioStarted(audio))
+    yield call(countdown, audio.duration, updateRemaining)
+    yield put(playAudioFinished())
+  } else {
+    yield put(showAudioError(audio, response))
+    yield delay(5000)
+    yield put(hideAudioError(audio))
   }
 }
 
@@ -36,21 +56,24 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const playbackTimes: number | undefined =
       audio.restrictedAudioId != null ? yield select(getPlaybackTimes(audio.restrictedAudioId)) : undefined
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const response: AudioPlaybackResponse =
-      audio.audioRef && playbackTimes != null
-        ? yield getAudioResponse(examServerApi, audio, playbackTimes)
-        : playbackTimes != null && audio.restrictedAudioId != null
+
+    if (audio.audioRef) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const response: { result: AudioPlaybackResponse; cleanup: () => void } = yield loadAndPlayRestrictedAudio(
+        examServerApi,
+        audio.restrictedAudioId!,
+        audio.audioRef.current!,
+        playbackTimes!
+      )
+      yield handleResponse(response.result, audio)
+      yield response.cleanup()
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const response: AudioPlaybackResponse =
+        playbackTimes != null && audio.restrictedAudioId != null
           ? yield call(examServerApi.playRestrictedAudio, audio.src, audio.restrictedAudioId, playbackTimes)
           : yield call(examServerApi.playAudio, audio.src)
-    if (response === 'ok') {
-      yield put(playAudioStarted(audio))
-      yield call(countdown, audio.duration, updateRemaining)
-      yield put(playAudioFinished())
-    } else {
-      yield put(showAudioError(audio, response))
-      yield delay(5000)
-      yield put(hideAudioError(audio))
+      yield handleResponse(response, audio)
     }
   } catch (error) {
     console.error(error)
