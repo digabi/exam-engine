@@ -1,6 +1,6 @@
 {
   "npmClient": "npm",
   "packages": ["packages/*"],
-  "version": "19.17.0",
+  "version": "19.17.1-abitti2.1.0",
   "exact": true
 }
