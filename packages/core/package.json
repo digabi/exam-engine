@@ -39,7 +39,7 @@
     "lodash-es": "^4.17.15",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.0.5",
-    "postcss-loader": "^7.0.0",
+    "postcss-loader": "^8.0.0",
     "postcss-preset-env": "^9.1.0",
     "react": "^18.2.0",
     "react-css-transition-replace": "^5.0.1",
