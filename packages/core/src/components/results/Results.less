@@ -9,6 +9,13 @@
   }
 
   &.examine-exam-page {
+    .e-choice-answer,
+    .e-multiline-results-text-answer,
+    .text-answer--single-line,
+    .e-dropdown-answer__answered {
+      cursor: not-allowed;
+    }
+
     input[type='radio'] {
       filter: grayscale();
     }
@@ -43,7 +50,7 @@
     white-space: nowrap;
   }
 
-  .e-exam .e-result-scorecount-sup {
+  .e-result-scorecount-sup {
     position: absolute;
     left: 0.25rem;
     top: 0;
@@ -166,7 +173,7 @@
       }
 
       .e-result-scorecount.e-float-right {
-        padding-left: 1rem;
+        left: 1rem;
 
         &.e-result-scorecount-multiline-answer {
           left: 2rem;
@@ -191,15 +198,6 @@
     margin: 2rem auto;
     text-align: center;
     padding-bottom: 3rem;
-  }
-}
-
-.e-exam {
-  .e-choice-answer,
-  .e-multiline-results-text-answer,
-  .text-answer--single-line,
-  .e-dropdown-answer__answered {
-    cursor: not-allowed;
   }
 
   .e-multiline-results-text-answer,
