@@ -35,7 +35,7 @@
     "i18next": "^23.2.11",
     "jquery": "^3.4.1",
     "less": "^4.1.0",
-    "less-loader": "^11.0.0",
+    "less-loader": "^12.1.0",
     "lodash-es": "^4.17.15",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.0.5",
