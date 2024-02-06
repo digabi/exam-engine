@@ -263,7 +263,7 @@ const CloseButton = ({ close }: { close: () => void }) => {
         onClick={close}
         tabIndex={0}
         role="button"
-        aria-label={t('undo.close')! as string}
+        aria-label={t('undo.close') as string}
       />
     </div>
   )
