@@ -644,7 +644,7 @@ function addAttachmentNumbers(exam: Exam) {
 
   // Question external-material
   for (const question of exam.questions) {
-    const questionDisplayNumber = getAttribute('display-number', question.element)!
+    const questionDisplayNumber = getAttribute('display-number', question.element)
     // Only number external attachments for now, since you can't refer to internal
     // attachments. This also makes the numbering less confusing for users,
     // since it will always start at "A".
