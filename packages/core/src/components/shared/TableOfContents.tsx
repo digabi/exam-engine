@@ -30,9 +30,8 @@ export const mkTableOfContents = (options: {
 
     const showSectionValidationErrors =
       isInSidebar &&
-      !!useSelector(
-        (state: { answers: AnswersState }) =>
-          state.answers?.validationErrors?.find(i => i.displayNumber === displayNumber && i?.elementType === 'section')
+      !!useSelector((state: { answers: AnswersState }) =>
+        state.answers?.validationErrors?.find(i => i.displayNumber === displayNumber && i?.elementType === 'section')
       )
 
     return (
@@ -209,8 +208,8 @@ export const mkTableOfContents = (options: {
 
     const showExamValidationErrors =
       isInSidebar &&
-      !!useSelector(
-        (state: { answers: AnswersState }) => state.answers.validationErrors?.find(i => i?.elementType === 'exam')
+      !!useSelector((state: { answers: AnswersState }) =>
+        state.answers.validationErrors?.find(i => i?.elementType === 'exam')
       )
 
     return (
