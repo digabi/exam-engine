@@ -11,3 +11,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: rebase
+          auto-merge: major
