@@ -8,7 +8,7 @@ export function initPuppeteer(): () => Promise<Page> {
   let browser: Browser
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: isInDebugMode ? false : 'new',
+      headless: !isInDebugMode,
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
   })
@@ -17,7 +17,7 @@ export function initPuppeteer(): () => Promise<Page> {
   })
 
   return async function createPage() {
-    const context = await browser.createIncognitoBrowserContext()
+    const context = await browser.createBrowserContext()
     const page = await context.newPage()
     page.setDefaultNavigationTimeout(60000)
     await page.setViewport({ width: 1280, height: 3024 })
@@ -32,12 +32,6 @@ export async function loadExam(page: Page, url: string): Promise<void> {
 
 export async function delay(millis: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, millis))
-}
-
-// Normally unused, but very useful for debugging
-export async function halt(page: Page): Promise<void> {
-  console.error('Test execution halted')
-  await page.waitForTimeout(2000000) // 2 million milliseconds should be enough for everybody
 }
 
 export async function getInnerText(page: Page, selector: string): Promise<string> {
