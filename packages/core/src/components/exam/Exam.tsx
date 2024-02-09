@@ -50,6 +50,7 @@ import { StudentNameHeader } from './StudentNameHeader'
 import { UndoView } from './UndoView'
 import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
 import GoToExamineAnswersButton from './GoToExamineAnswersButton'
+import { Footer } from '../shared/Footer'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -305,9 +306,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             </div>
           </div>
 
-          {(isPreview || isNewKoeVersion) && <div className="e-exam-footer-content" />}
+          {(isPreview || isNewKoeVersion) && <Footer />}
 
-          <div className="e-footer">
+          <div className="e-indicators-container">
             <ErrorIndicator />
             <SaveIndicator />
           </div>
