@@ -33,6 +33,7 @@ import ExamTranslation from '../shared/ExamTranslation'
 import { useIsStudentsExamineExamPage } from './isExamineExamPageHook'
 import classNames from 'classnames'
 import { EndExamSession } from './EndExamSession'
+import { Footer } from '../shared/Footer'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -155,7 +156,7 @@ const Results: React.FunctionComponent<ResultsProps> = ({
           />
         )}
       </main>
-      <div className="e-exam-footer-content" />
+      <Footer />
     </I18nextProvider>
   )
 }
