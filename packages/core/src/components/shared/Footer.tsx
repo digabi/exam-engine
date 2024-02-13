@@ -1,10 +1,5 @@
 import React from 'react'
-import { VersionNumber } from './VersionNumber'
 
-export const Footer: React.FC = () => (
-  <footer className="e-footer">
-    <div className="e-footer-version-number-container">
-      <VersionNumber />
-    </div>
-  </footer>
+export const Footer: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
+  <footer className="e-footer">{children}</footer>
 )

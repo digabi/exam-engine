@@ -51,6 +51,7 @@ import { UndoView } from './UndoView'
 import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
 import GoToExamineAnswersButton from './GoToExamineAnswersButton'
 import { Footer } from '../shared/Footer'
+import { VersionNumber } from '../shared/VersionNumber'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -306,7 +307,13 @@ const Exam: React.FunctionComponent<ExamProps> = ({
             </div>
           </div>
 
-          {(isPreview || isNewKoeVersion) && <Footer />}
+          {(isPreview || isNewKoeVersion) && (
+            <Footer>
+              <div className="e-footer-version-number-container">
+                <VersionNumber />
+              </div>
+            </Footer>
+          )}
 
           <div className="e-indicators-container">
             <ErrorIndicator />
