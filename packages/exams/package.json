@@ -9,7 +9,7 @@
     "*/*.mex",
     "*/*.xml",
     "*.pem",
-    "attachments"
+    "*/attachments"
   ],
   "scripts": {
     "prepublishOnly": "find . -name '*.mex' -delete && find . -name '*.xml' -print0 | xargs -0 -n1 -P4 node ../cli/dist/index.js create-mex -p salasana -n nsa-scripts.zip -s security-codes.json -k exam_key.pem"
