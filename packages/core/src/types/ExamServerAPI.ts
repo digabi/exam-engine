@@ -76,4 +76,6 @@ export interface ExamServerAPI {
   /** Save screenshot to server. Should return the URL to the saved screenshot. */
   saveScreenshot: (questionId: QuestionId, screenshot: Blob) => Promise<string>
   examineExam?: () => void
+  /** Log client activity to server. Message format is free. Optional feature. */
+  logActivity?: (message: string) => void
 }
