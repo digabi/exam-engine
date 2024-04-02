@@ -44,6 +44,9 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const action: SelectAnswerAction = yield take('SELECT_ANSWER_VERSION')
     const { questionId, questionText } = action.payload
+    if (examServerApi.logActivity) {
+      yield call(examServerApi.logActivity, `Opened answer version history for question ${questionId}`)
+    }
     try {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const maybeNewAnswer: ExamAnswer | undefined = yield call(
@@ -53,6 +56,9 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
       )
       if (maybeNewAnswer) {
         yield put(saveAnswer(maybeNewAnswer))
+        if (examServerApi.logActivity) {
+          yield call(examServerApi.logActivity, `Restored answer version for question ${questionId}: ${maybeNewAnswer}`)
+        }
       }
     } catch (error) {
       console.error(error)
