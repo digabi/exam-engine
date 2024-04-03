@@ -57,10 +57,7 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
       if (maybeNewAnswer) {
         yield put(saveAnswer(maybeNewAnswer))
         if (examServerApi.logActivity) {
-          yield call(
-            examServerApi.logActivity,
-            `Restored answer version for question ${questionId}, ${questionText}"`
-          )
+          yield call(examServerApi.logActivity, `Restored answer version for question ${questionId}, ${questionText}`)
         }
       }
     } catch (error) {
