@@ -9,6 +9,7 @@ import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useExamTranslation } from '../../i18n'
 import { getNumericAttribute, query } from '../../dom-utils'
+import { ExamContext } from '../context/ExamContext'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -19,12 +20,20 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const casStatus = useSelector((state: { cas: CasState }) => state.cas.casStatus)
   const { casForbidden } = useContext(SectionContext)
   const { displayNumber, level } = useContext(QuestionContext)
+  const { examServerApi } = useContext(ExamContext)
   const [expanded, setExpanded] = useState<boolean>(false)
 
   const { t } = useExamTranslation()
 
   const toggleWriterMode = (expand: boolean) => {
     setExpanded(expand)
+    if (examServerApi.logActivity) {
+      examServerApi.logActivity(
+        expand
+          ? `Writer mode opened for display number ${displayNumber}`
+          : `Writer mode closed for display number ${displayNumber}`
+      )
+    }
     const body = document.querySelector('body')
     if (expand) {
       body?.classList.add('writer-mode')
