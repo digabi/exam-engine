@@ -17,7 +17,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "babel-loader": "^9.1.2",
     "child-process-promise": "^2.2.1",
-    "css-loader": "^6.8.1",
+    "css-loader": "^7.0.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
     "dexie": "^4.0.1",
     "ffmpeg-static": "^5.0.0",
