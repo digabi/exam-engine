@@ -53,6 +53,7 @@ function getWrapper(image: HTMLImageElement) {
 
   const wrapper = createElement('span', { className: 'e-annotation-wrapper' })
   parent.insertBefore(wrapper, image)
+  image.className = 'responsive-image'
   wrapper.appendChild(image)
 
   return wrapper
