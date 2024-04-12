@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-mastering",
-  "version": "20.0.1",
+  "version": "20.0.2-responsive-images.0",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -9,8 +9,8 @@
     "schema"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "20.0.1",
-    "@digabi/exam-engine-rendering": "20.0.1",
+    "@digabi/exam-engine-core": "20.0.2-responsive-images.0",
+    "@digabi/exam-engine-rendering": "20.0.2-responsive-images.0",
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "cloneable-readable": "^3.0.0",
     "compare-versions": "^6.0.0",
