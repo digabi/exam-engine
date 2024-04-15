@@ -125,9 +125,9 @@ function GradingAnswerWithTranslations({
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
       {totalImages !== 0 && loadedCount !== totalImages && (
-        <h5 className="loading-images">
+        <div className="loading-images">
           {t('grading.loading-images')} ({loadedCount}/{totalImages})
-        </h5>
+        </div>
       )}
       <div
         className="e-grading-answer e-line-height-l e-mrg-b-1"
