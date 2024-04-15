@@ -124,10 +124,10 @@ function GradingAnswerWithTranslations({
   const { t } = useExamTranslation()
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
-      {loadedCount !== totalImages && (
-        <div className="loading-images">
-          Ladataan kuvia... ({loadedCount}/{totalImages})
-        </div>
+      {totalImages !== 0 && loadedCount !== totalImages && (
+        <h5 className="loading-images">
+          {t('grading.loading-images')} ({loadedCount}/{totalImages})
+        </h5>
       )}
       <div
         className="e-grading-answer e-line-height-l e-mrg-b-1"
