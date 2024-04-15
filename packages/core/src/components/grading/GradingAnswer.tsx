@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useLayoutEffect, useRef } from 'react'
+import React, { FormEvent, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Annotation, TextAnnotation } from '../..'
 import {
   annotationFromMousePosition,
@@ -78,6 +78,27 @@ function GradingAnswerWithTranslations({
   let windowResizeTimeout: ReturnType<typeof setTimeout>
   let selectionChangeTimeout: ReturnType<typeof setTimeout>
 
+  const [loadedCount, setLoadedCount] = useState(0)
+  const [totalImages, setTotalImages] = useState(0)
+
+  useEffect(() => {
+    const images = document.querySelectorAll('img')
+    setTotalImages(images.length)
+    function checkAllImagesLoaded() {
+      setLoadedCount(prevCount => prevCount + 1)
+    }
+
+    images.forEach(img => {
+      img.addEventListener('load', checkAllImagesLoaded)
+    })
+
+    return () => {
+      images.forEach(img => {
+        img.removeEventListener('load', checkAllImagesLoaded)
+      })
+    }
+  }, [])
+
   useLayoutEffect(() => {
     if (answerRef.current && tooltipRef.current && popupRef.current) {
       savedAnnotations = annotations
@@ -102,6 +123,11 @@ function GradingAnswerWithTranslations({
   const { t } = useExamTranslation()
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
+      {loadedCount !== totalImages && (
+        <div>
+          Ladataan kuvia... ({loadedCount}/{totalImages})
+        </div>
+      )}
       <div
         className="e-grading-answer e-line-height-l e-mrg-b-1"
         ref={answerRef}
