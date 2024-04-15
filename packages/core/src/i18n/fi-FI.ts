@@ -47,7 +47,8 @@ export const fi_FI = {
     'round.2': '2.s',
     'round.3': '3.s',
     annotate: 'Merkitse',
-    'non-answer-not-graded': 'Jätetty arvostelematta'
+    'non-answer-not-graded': 'Jätetty arvostelematta',
+    'loading-images': 'Odota, kuvia ladataan...'
   },
   references: {
     heading: 'Lähteet',
