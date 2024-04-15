@@ -124,7 +124,7 @@ function GradingAnswerWithTranslations({
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
       {loadedCount !== totalImages && (
-        <div>
+        <div className="loading-images-counter">
           Ladataan kuvia... ({loadedCount}/{totalImages})
         </div>
       )}
