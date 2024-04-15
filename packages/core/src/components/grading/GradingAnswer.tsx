@@ -83,6 +83,7 @@ function GradingAnswerWithTranslations({
 
   useEffect(() => {
     const images = document.querySelectorAll('img')
+    setLoadedCount(0)
     setTotalImages(images.length)
     function checkAllImagesLoaded() {
       setLoadedCount(prevCount => prevCount + 1)
@@ -97,7 +98,7 @@ function GradingAnswerWithTranslations({
         img.removeEventListener('load', checkAllImagesLoaded)
       })
     }
-  }, [])
+  }, [value])
 
   useLayoutEffect(() => {
     if (answerRef.current && tooltipRef.current && popupRef.current) {
