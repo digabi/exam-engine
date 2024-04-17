@@ -82,19 +82,19 @@ function GradingAnswerWithTranslations({
   const [totalImages, setTotalImages] = useState(0)
 
   useEffect(() => {
-    const images = document.querySelectorAll('img')
+    const nonEmptyImages = document.querySelectorAll('img[src]')
     setLoadedCount(0)
-    setTotalImages(images.length)
+    setTotalImages(nonEmptyImages.length)
     function checkAllImagesLoaded() {
       setLoadedCount(prevCount => prevCount + 1)
     }
 
-    images.forEach(img => {
+    nonEmptyImages.forEach(img => {
       img.addEventListener('load', checkAllImagesLoaded)
     })
 
     return () => {
-      images.forEach(img => {
+      nonEmptyImages.forEach(img => {
         img.removeEventListener('load', checkAllImagesLoaded)
       })
     }
