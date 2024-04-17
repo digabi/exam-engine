@@ -67,23 +67,30 @@
 }
 
 .loading-images {
-  padding: 0.25rem 0.75rem;
-  margin: 0.5rem 0;
   display: inline-block;
-  border: 1px solid orange;
-  border-radius: 4px;
   font-size: 16px;
-  background: #fff8eb;
+  overflow: hidden;
+  display: flex;
+  animation: fade-in 0.5s ease-in-out both;
+  animation-delay: 0.5s;
 
-  animation: fade-in 1s both;
-  animation-delay: 1s;
+  span {
+    border-radius: 4px;
+    border: 1px solid orange;
+    padding: 0.25rem 0.75rem;
+    background: #fff8eb;
+  }
 
   @keyframes fade-in {
     from {
+      margin: 0;
       opacity: 0;
+      max-height: 0;
     }
     to {
+      margin: 0.5rem 0;
       opacity: 1;
+      max-height: 500px;
     }
   }
 }
