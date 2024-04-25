@@ -65,7 +65,7 @@ exports[`ee create-offline creates offline 1`] = `
 
     <div class="e-audio-test notification e-pad-2 e-mrg-b-4"><p><span lang="fi-FI">Koe sisältää kuullunymmärtämisen tehtäviä.</span></p><div class="e-columns e-columns--center-v e-mrg-b-2"><div class="e-column e-column--narrow"><button class="e-button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-fw e-mrg-r-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg><span lang="fi-FI">Testaa äänitteiden kuuluvuus</span></button></div><div class="e-column"><div><span><div>&nbsp;</div></span></div></div></div><div><span lang="fi-FI">Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.</span></div></div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-1"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="1"><div class="anchor" id="question-nr-1"></div>
       <h3 id="question-title-1" class="exam-question-title"><strong class="exam-question-title__display-number">1. </strong>Picknick <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">21 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-1">
 
@@ -82,7 +82,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-1.1"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="1.1"><div class="anchor" id="question-nr-1.1"></div>
           <h4 id="question-title-1.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">1.1 </strong>Warum findet Alina den Stadtpark nicht gut für das Picknick? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="1" role="radiogroup" aria-labelledby="question-title-1.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="1" value="100"><div class="e-choice-answer-option e-column">Sie meint, dass dort zu viele Leute sind</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="1" value="101"><div class="e-choice-answer-option e-column">Sie weiß, dass Kevin der Stadtpark nicht gefällt</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="1" value="102"><div class="e-choice-answer-option e-column">Sie denkt, dass der Weg zu weit ist</div></label></div></div>
           <div class="audio e-columns e-columns--center-v e-mrg-b-2"><div class="restricted-audio-player e-column e-column--narrow e-columns e-columns--inline e-columns--center-v e-pad-1" lang="fi-FI"><button class="restricted-audio-player__play e-column e-column--narrow" aria-labelledby="audio-remaining-1 audio-label-28"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg></button><span class="restricted-audio-player__duration e-column e-text-right" id="audio-remaining-1">00:34</span></div><div class="e-column" id="audio-label-28"><div><span><div>Hören Sie den Abschnitt für die Frage 1.1.</div></span></div><em><span lang="fi-FI">1 kuuntelukerta jäljellä.</span></em></div></div>
@@ -90,7 +90,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-1.2"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="1.2"><div class="anchor" id="question-nr-1.2"></div>
           <h4 id="question-title-1.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">1.2 </strong>
             1.2
             <span lang="fi-FI">Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa
@@ -107,11 +107,11 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-1.3"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="1.3"><div class="anchor" id="question-nr-1.3"></div>
           <h4 id="question-title-1.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">1.3 </strong>Warum werden die Vier am See nicht grillen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="3" role="radiogroup" aria-labelledby="question-title-1.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="3" value="103"><div class="e-choice-answer-option e-column">Sie bräuchten dafür eine Erlaubnis</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="3" value="104"><div class="e-choice-answer-option e-column">Er liegt in einem Naturschutzgebiet</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="3" value="105"><div class="e-choice-answer-option e-column">Das Wetter ist so heiß und trocken</div></label></div></div>
         </div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-1.4"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="1.4"><div class="anchor" id="question-nr-1.4"></div>
           <h4 id="question-title-1.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">1.4 </strong>Was wird Alina mitbringen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="4" role="radiogroup" aria-labelledby="question-title-1.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="4" value="106"><div class="e-choice-answer-option e-column">Etwas Salziges</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="4" value="107"><div class="e-choice-answer-option e-column">Etwas Süßes</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="4" value="108"><div class="e-choice-answer-option e-column">Etwas zu trinken</div></label></div></div>
           <div class="audio e-columns e-columns--center-v e-mrg-b-2"><div class="restricted-audio-player e-column e-column--narrow e-columns e-columns--inline e-columns--center-v e-pad-1" lang="fi-FI"><button class="restricted-audio-player__play e-column e-column--narrow" aria-labelledby="audio-remaining-3 audio-label-31"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg></button><span class="restricted-audio-player__duration e-column e-text-right" id="audio-remaining-3">01:01</span></div><div class="e-column" id="audio-label-31"><div><span><div>Hören Sie den Abschnitt für die Fragen 1.3. und 1.4.</div></span></div><em><span lang="fi-FI">1 kuuntelukerta jäljellä.</span></em></div></div>
@@ -119,7 +119,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-1.5"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="1.5"><div class="anchor" id="question-nr-1.5"></div>
           <h4 id="question-title-1.5" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">1.5 </strong>
             <span lang="fi-FI">Mitä Paula kertoo eväistään, ja mitä muuta hän ottaa mukaan? Kirjoita
               vastauksesi lyhyesti suomeksi.
@@ -137,13 +137,13 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-2"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="2"><div class="anchor" id="question-nr-2"></div>
       <h3 id="question-title-2" class="exam-question-title"><strong class="exam-question-title__display-number">2. </strong>Alltagssituationen <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">12 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-2">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
         Beantworten Sie die Fragen. Passen Sie auf! Sie können jeden Abschnitt <b>nur einmal</b> hören.
       </div>
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-2.1"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="2.1"><div class="anchor" id="question-nr-2.1"></div>
           <h4 id="question-title-2.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">2.1 </strong>Was sagt Toni weiter? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="6" role="radiogroup" aria-labelledby="question-title-2.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="6" value="109"><div class="e-choice-answer-option e-column">... vielleicht ein anderes Mal.</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="6" value="110"><div class="e-choice-answer-option e-column">... kommst du jetzt sofort?</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="6" value="111"><div class="e-choice-answer-option e-column">... schön dich zu sehen!</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -155,7 +155,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-2.2"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="2.2"><div class="anchor" id="question-nr-2.2"></div>
           <h4 id="question-title-2.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">2.2 </strong>Was sagt Toni weiter? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="7" role="radiogroup" aria-labelledby="question-title-2.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="7" value="112"><div class="e-choice-answer-option e-column">... ich habe natürlich nichts dagegen.</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="7" value="113"><div class="e-choice-answer-option e-column">... ich kann dich schon verstehen.</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="7" value="114"><div class="e-choice-answer-option e-column">... ich habe es doch gesagt.</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -167,7 +167,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-2.3"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="2.3"><div class="anchor" id="question-nr-2.3"></div>
           <h4 id="question-title-2.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">2.3 </strong>Was sagt Toni weiter? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="8" role="radiogroup" aria-labelledby="question-title-2.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="8" value="115"><div class="e-choice-answer-option e-column">... Das ist ja echt süß.</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="8" value="116"><div class="e-choice-answer-option e-column">... Du siehst ja gut aus.</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="8" value="117"><div class="e-choice-answer-option e-column">... Jetzt bin ich sauer.</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -179,7 +179,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-2.4"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="2.4"><div class="anchor" id="question-nr-2.4"></div>
           <h4 id="question-title-2.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">2.4 </strong>Was sagt Toni weiter? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="9" role="radiogroup" aria-labelledby="question-title-2.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="9" value="118"><div class="e-choice-answer-option e-column">... Geschlossen!</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="9" value="119"><div class="e-choice-answer-option e-column">... Vergiss es!</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="9" value="120"><div class="e-choice-answer-option e-column">... Einverstanden!</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -192,7 +192,7 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-3"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="3"><div class="anchor" id="question-nr-3"></div>
       <h3 id="question-title-3" class="exam-question-title"><strong class="exam-question-title__display-number">3. </strong>Heimat <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">15 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-3">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
         Beantworten Sie die Fragen. Sie können jeden Abschnitt zweimal hören.
@@ -202,7 +202,7 @@ exports[`ee create-offline creates offline 1`] = `
       </p>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-3.1"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="3.1"><div class="anchor" id="question-nr-3.1"></div>
           <h4 id="question-title-3.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">3.1 </strong>Was ist für Shari Heimat? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="10" role="radiogroup" aria-labelledby="question-title-3.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="10" value="121"><div class="e-choice-answer-option e-column">Die ganze Welt</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="10" value="122"><div class="e-choice-answer-option e-column">Verwandte und Freunde</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="10" value="123"><div class="e-choice-answer-option e-column">Das Geburtsland der Mutter</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -214,11 +214,11 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-3.2"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="3.2"><div class="anchor" id="question-nr-3.2"></div>
           <h4 id="question-title-3.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">3.2 </strong>Wie fühlte Leon sich im Urlaub? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="11" role="radiogroup" aria-labelledby="question-title-3.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="11" value="124"><div class="e-choice-answer-option e-column">Er fühlte sich dort sehr wohl</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="11" value="125"><div class="e-choice-answer-option e-column">Er wollte wieder nach Hause fahren</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="11" value="126"><div class="e-choice-answer-option e-column">Er fand es dort nicht gut, aber auch nicht schlecht</div></label></div></div>
         </div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-3.3"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="3.3"><div class="anchor" id="question-nr-3.3"></div>
           <h4 id="question-title-3.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">3.3 </strong>Was sagt Leon über seine Zukunftspläne? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="12" role="radiogroup" aria-labelledby="question-title-3.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="12" value="127"><div class="e-choice-answer-option e-column">Er möchte nach dem Studium in die Heimatstadt zurückkommen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="12" value="128"><div class="e-choice-answer-option e-column">Er möchte vielleicht in einer anderen Stadt leben</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="12" value="129"><div class="e-choice-answer-option e-column">Er möchte am liebsten in der Heimatstadt bleiben</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -230,11 +230,11 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-3.4"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="3.4"><div class="anchor" id="question-nr-3.4"></div>
           <h4 id="question-title-3.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">3.4 </strong>Was mag Larena an ihrem Heimatdorf? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="13" role="radiogroup" aria-labelledby="question-title-3.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="13" value="130"><div class="e-choice-answer-option e-column">Sie hat dort ihre Ruhe</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="13" value="131"><div class="e-choice-answer-option e-column">Sie lernt dort schnell neue Leute kennen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="13" value="132"><div class="e-choice-answer-option e-column">Sie kennt sich dort gut aus</div></label></div></div>
         </div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-3.5"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="3.5"><div class="anchor" id="question-nr-3.5"></div>
           <h4 id="question-title-3.5" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">3.5 </strong>Was erlebte Larena während des Sprachkurses? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="14" role="radiogroup" aria-labelledby="question-title-3.5"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="14" value="133"><div class="e-choice-answer-option e-column">Sie machte mit den New Yorkern gute Erfahrungen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="14" value="134"><div class="e-choice-answer-option e-column">Sie lernte in New York andere Deutsche kennen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="14" value="135"><div class="e-choice-answer-option e-column">Sie traf einige Bekannte von früheren Kursen</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -248,7 +248,7 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-4"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="4"><div class="anchor" id="question-nr-4"></div>
       <h3 id="question-title-4" class="exam-question-title"><strong class="exam-question-title__display-number">4. </strong>Gesucht! <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">4 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-4">
         <p>
@@ -261,7 +261,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-4.1"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="4.1"><div class="anchor" id="question-nr-4.1"></div>
           <h4 id="question-title-4.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">4.1 </strong>Welche Farbe hat die Katze? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="15" role="radiogroup" aria-labelledby="question-title-4.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="15" value="136"><div class="e-choice-answer-option e-column">Sie ist schwarz-gelb</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="15" value="137"><div class="e-choice-answer-option e-column">Sie ist schwarz-grau</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="15" value="138"><div class="e-choice-answer-option e-column">Sie ist grau-gelb</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -273,7 +273,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-4.2"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="4.2"><div class="anchor" id="question-nr-4.2"></div>
           <h4 id="question-title-4.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">4.2 </strong>Wer kann gestern gegen 12 Uhr etwas gesehen haben? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="16" role="radiogroup" aria-labelledby="question-title-4.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="16" value="139"><div class="e-choice-answer-option e-column">Studenten in der Mittagspause</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="16" value="140"><div class="e-choice-answer-option e-column">Besucher beim Motorrad-Treffen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="16" value="141"><div class="e-choice-answer-option e-column">Mechaniker von der Werkstatt</div></label></div></div>
           <span class="exam-attachment e-mrg-b-2">
@@ -286,7 +286,7 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-5"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="5"><div class="anchor" id="question-nr-5"></div>
       <h3 id="question-title-5" class="exam-question-title"><strong class="exam-question-title__display-number">5. </strong>Katze (Video) <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">7 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-5">Lesen Sie bitte zuerst die Anweisungen und Fragen und sehen Sie sich dann das Video an.
         Sie können sich das Video beliebig oft ansehen. Beantworten Sie die Fragen.
@@ -295,7 +295,7 @@ exports[`ee create-offline creates offline 1`] = `
         <li data-list-number="5.A" aria-label="5.A"><a href="attachments/index.html#5.A" class="exam-attachment-title" target="attachments">Video: Katze</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-5.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="5.1"><div class="anchor" id="question-nr-5.1"></div>
         <h4 id="question-title-5.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">5.1 </strong>
           <span lang="fi-FI">Kuinka kauan kissat ovat GPS-seurannassa? Kirjoita vastauksesi lyhyesti
             suomeksi.
@@ -306,19 +306,19 @@ exports[`ee create-offline creates offline 1`] = `
         
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-5.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="5.2"><div class="anchor" id="question-nr-5.2"></div>
         <h4 id="question-title-5.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">5.2 </strong>Was macht Kater Felix nachts? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="18" role="radiogroup" aria-labelledby="question-title-5.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="18" value="142"><div class="e-choice-answer-option e-column">Er rennt sehr weite Strecken</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="18" value="143"><div class="e-choice-answer-option e-column">Er kämpft oft mit anderen Katzen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="18" value="144"><div class="e-choice-answer-option e-column">Er läuft vorsichtig über die Schnellstraße</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-5.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="5.3"><div class="anchor" id="question-nr-5.3"></div>
         <h4 id="question-title-5.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">5.3 </strong>Was kann die nächste Studie zeigen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="19" role="radiogroup" aria-labelledby="question-title-5.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="19" value="145"><div class="e-choice-answer-option e-column">Wie sich Katzen vor allem in der Nacht verhalten</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="19" value="146"><div class="e-choice-answer-option e-column">Wie Katzen auf andere Katzen reagieren</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="19" value="147"><div class="e-choice-answer-option e-column">Wie man die Hauskatzen aktivieren könnte</div></label></div></div>
       </div>
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-6"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="6"><div class="anchor" id="question-nr-6"></div>
       <h3 id="question-title-6" class="exam-question-title"><strong class="exam-question-title__display-number">6. </strong>Termine <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">6 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-6">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
         Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
@@ -336,7 +336,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-6.1"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="6.1"><div class="anchor" id="question-nr-6.1"></div>
           <h4 id="question-title-6.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">6.1 </strong>Welche Zeit passt Lars am besten? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="20" role="radiogroup" aria-labelledby="question-title-6.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="148"><div class="e-choice-answer-option e-column">Montag, 13.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="149"><div class="e-choice-answer-option e-column">Montag, 14.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="150"><div class="e-choice-answer-option e-column">Montag, 15.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="151"><div class="e-choice-answer-option e-column">Montag, 16.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="152"><div class="e-choice-answer-option e-column">Dienstag, 13.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="153"><div class="e-choice-answer-option e-column">Dienstag, 14.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="154"><div class="e-choice-answer-option e-column">Dienstag, 15.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="20" value="155"><div class="e-choice-answer-option e-column">Dienstag, 16.00 Uhr</div></label></div></div>
           <div class="audio e-columns e-columns--center-v e-mrg-b-2"><div class="restricted-audio-player e-column e-column--narrow e-columns e-columns--inline e-columns--center-v e-pad-1" lang="fi-FI"><button class="restricted-audio-player__play e-column e-column--narrow" aria-labelledby="audio-remaining-15 audio-label-46"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg></button><span class="restricted-audio-player__duration e-column e-text-right" id="audio-remaining-15">00:41</span></div><div class="e-column" id="audio-label-46"><div><span><div>Hören Sie den Abschnitt für die Frage 6.1.</div></span></div><em><span lang="fi-FI">1 kuuntelukerta jäljellä.</span></em></div></div>
@@ -344,7 +344,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-6.2"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="6.2"><div class="anchor" id="question-nr-6.2"></div>
           <h4 id="question-title-6.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">6.2 </strong>Welche Zeit passt Katarina am besten? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="21" role="radiogroup" aria-labelledby="question-title-6.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="156"><div class="e-choice-answer-option e-column">Montag, 13.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="157"><div class="e-choice-answer-option e-column">Montag, 14.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="158"><div class="e-choice-answer-option e-column">Montag, 15.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="159"><div class="e-choice-answer-option e-column">Montag, 16.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="160"><div class="e-choice-answer-option e-column">Dienstag, 13.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="161"><div class="e-choice-answer-option e-column">Dienstag, 14.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="162"><div class="e-choice-answer-option e-column">Dienstag, 15.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="21" value="163"><div class="e-choice-answer-option e-column">Dienstag, 16.00 Uhr</div></label></div></div>
           <div class="audio e-columns e-columns--center-v e-mrg-b-2"><div class="restricted-audio-player e-column e-column--narrow e-columns e-columns--inline e-columns--center-v e-pad-1" lang="fi-FI"><button class="restricted-audio-player__play e-column e-column--narrow" aria-labelledby="audio-remaining-16 audio-label-47"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg></button><span class="restricted-audio-player__duration e-column e-text-right" id="audio-remaining-16">00:32</span></div><div class="e-column" id="audio-label-47"><div><span><div>Hören Sie den Abschnitt für die Frage 6.2.</div></span></div><em><span lang="fi-FI">1 kuuntelukerta jäljellä.</span></em></div></div>
@@ -352,7 +352,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-6.3"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="6.3"><div class="anchor" id="question-nr-6.3"></div>
           <h4 id="question-title-6.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">6.3 </strong>Welche Zeit passt Marit am besten? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4" data-question-id="22" role="radiogroup" aria-labelledby="question-title-6.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="164"><div class="e-choice-answer-option e-column">Montag, 13.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="165"><div class="e-choice-answer-option e-column">Montag, 14.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="166"><div class="e-choice-answer-option e-column">Montag, 15.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="167"><div class="e-choice-answer-option e-column">Montag, 16.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="168"><div class="e-choice-answer-option e-column">Dienstag, 13.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="169"><div class="e-choice-answer-option e-column">Dienstag, 14.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="170"><div class="e-choice-answer-option e-column">Dienstag, 15.00 Uhr</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="22" value="171"><div class="e-choice-answer-option e-column">Dienstag, 16.00 Uhr</div></label></div></div>
           <div class="audio e-columns e-columns--center-v e-mrg-b-2"><div class="restricted-audio-player e-column e-column--narrow e-columns e-columns--inline e-columns--center-v e-pad-1" lang="fi-FI"><button class="restricted-audio-player__play e-column e-column--narrow" aria-labelledby="audio-remaining-17 audio-label-48"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg></button><span class="restricted-audio-player__duration e-column e-text-right" id="audio-remaining-17">00:30</span></div><div class="e-column" id="audio-label-48"><div><span><div>Hören Sie den Abschnitt für die Frage 6.3.</div></span></div><em><span lang="fi-FI">1 kuuntelukerta jäljellä.</span></em></div></div>
@@ -361,7 +361,7 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-7"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="7"><div class="anchor" id="question-nr-7"></div>
       <h3 id="question-title-7" class="exam-question-title"><strong class="exam-question-title__display-number">7. </strong>Wissenstest für Hobbyköche <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">6 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-7">
         <p>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile. Beantworten Sie die
@@ -371,7 +371,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-7.1"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="7.1"><div class="anchor" id="question-nr-7.1"></div>
           <h4 id="question-title-7.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">7.1 </strong>Welches Bild passt? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4 e-columns" data-question-id="23" role="radiogroup" aria-labelledby="question-title-7.1"><div class="e-column e-mrg-b-1"><label class="e-block e-text-center"><input type="radio" class="e-radio-button" name="23" value="172"><div class="e-choice-answer-option e-column">
               <span class="exam-attachment e-mrg-b-2">
@@ -401,7 +401,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-7.2"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="7.2"><div class="anchor" id="question-nr-7.2"></div>
           <h4 id="question-title-7.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">7.2 </strong>Welches Bild passt? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4 e-columns" data-question-id="24" role="radiogroup" aria-labelledby="question-title-7.2"><div class="e-column e-mrg-b-1"><label class="e-block e-text-center"><input type="radio" class="e-radio-button" name="24" value="175"><div class="e-choice-answer-option e-column">
               <span class="exam-attachment e-mrg-b-2">
@@ -431,7 +431,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
 
       <div class="e-audio-group"><div class="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">✲✲✲</div>
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-7.3"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="7.3"><div class="anchor" id="question-nr-7.3"></div>
           <h4 id="question-title-7.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">7.3 </strong>Welches Bild passt? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
           <div class="e-choice-answer e-mrg-b-4 e-columns" data-question-id="25" role="radiogroup" aria-labelledby="question-title-7.3"><div class="e-column e-mrg-b-1"><label class="e-block e-text-center"><input type="radio" class="e-radio-button" name="25" value="178"><div class="e-choice-answer-option e-column">
               <span class="exam-attachment e-mrg-b-2">
@@ -467,7 +467,7 @@ exports[`ee create-offline creates offline 1`] = `
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-2">
     <h2 class="exam-section-title" id="section-title-2">Teil 2: Textverständnis</h2>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-8"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="8"><div class="anchor" id="question-nr-8"></div>
       <h3 id="question-title-8" class="exam-question-title"><strong class="exam-question-title__display-number">8. </strong>Hausaufgaben <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">4 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-8">Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.
       </div>
@@ -475,19 +475,19 @@ exports[`ee create-offline creates offline 1`] = `
         <li data-list-number="8.A" aria-label="8.A"><a href="attachments/index.html#8.A" class="exam-attachment-title" target="attachments">Text: Whatsapp-Chat</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-8.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="8.1"><div class="anchor" id="question-nr-8.1"></div>
         <h4 id="question-title-8.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">8.1 </strong>Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="26" role="radiogroup" aria-labelledby="question-title-8.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="26" value="181"><div class="e-choice-answer-option e-column">Sie hat ihre Notizen in der Schule</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="26" value="182"><div class="e-choice-answer-option e-column">Sie kann sich daran nicht mehr erinnern</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="26" value="183"><div class="e-choice-answer-option e-column">Sie war nicht im Unterricht</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-8.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="8.2"><div class="anchor" id="question-nr-8.2"></div>
         <h4 id="question-title-8.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">8.2 </strong>Welche Hausaufgaben wird Maren für morgen machen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="27" role="radiogroup" aria-labelledby="question-title-8.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="27" value="184"><div class="e-choice-answer-option e-column">Mathe</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="27" value="185"><div class="e-choice-answer-option e-column">Chemie</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="27" value="186"><div class="e-choice-answer-option e-column">Geschichte</div></label></div></div>
       </div>
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-9"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="9"><div class="anchor" id="question-nr-9"></div>
       <h3 id="question-title-9" class="exam-question-title"><strong class="exam-question-title__display-number">9. </strong>Freitag der Dreizehnte <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">6 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-9">
         <p>
@@ -505,51 +505,51 @@ exports[`ee create-offline creates offline 1`] = `
         <li data-list-number="9.A" aria-label="9.A"><a href="attachments/index.html#9.A" class="exam-attachment-title" target="attachments">Texte: Freitag der Dreizehnte</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-9.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="9.1"><div class="anchor" id="question-nr-9.1"></div>
         <h4 id="question-title-9.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">9.1 </strong>An welchem Tag es passiert ist <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">1 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="28" role="radiogroup" aria-labelledby="question-title-9.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="28" value="187"><div class="e-choice-answer-option e-column">Richtig</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="28" value="188"><div class="e-choice-answer-option e-column">Falsch</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-9.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="9.2"><div class="anchor" id="question-nr-9.2"></div>
         <h4 id="question-title-9.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">9.2 </strong>Welche Farbe die Autos hatten <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">1 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="29" role="radiogroup" aria-labelledby="question-title-9.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="29" value="189"><div class="e-choice-answer-option e-column">Richtig</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="29" value="190"><div class="e-choice-answer-option e-column">Falsch</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-9.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="9.3"><div class="anchor" id="question-nr-9.3"></div>
         <h4 id="question-title-9.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">9.3 </strong>Wo im Auto der Mann etwas vergessen hatte <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">1 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="30" role="radiogroup" aria-labelledby="question-title-9.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="30" value="191"><div class="e-choice-answer-option e-column">Richtig</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="30" value="192"><div class="e-choice-answer-option e-column">Falsch</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-9.4"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="9.4"><div class="anchor" id="question-nr-9.4"></div>
         <h4 id="question-title-9.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">9.4 </strong>Wo der Mann sein Auto geparkt hatte <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">1 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="31" role="radiogroup" aria-labelledby="question-title-9.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="31" value="193"><div class="e-choice-answer-option e-column">Richtig</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="31" value="194"><div class="e-choice-answer-option e-column">Falsch</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-9.5"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="9.5"><div class="anchor" id="question-nr-9.5"></div>
         <h4 id="question-title-9.5" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">9.5 </strong>Was der Mann machte, nachdem er seinen Fehler bemerkt hatte <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">1 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="32" role="radiogroup" aria-labelledby="question-title-9.5"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="32" value="195"><div class="e-choice-answer-option e-column">Richtig</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="32" value="196"><div class="e-choice-answer-option e-column">Falsch</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-9.6"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="9.6"><div class="anchor" id="question-nr-9.6"></div>
         <h4 id="question-title-9.6" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">9.6 </strong>Was alles in der Geldbörse war <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">1 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="33" role="radiogroup" aria-labelledby="question-title-9.6"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="33" value="197"><div class="e-choice-answer-option e-column">Richtig</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="33" value="198"><div class="e-choice-answer-option e-column">Falsch</div></label></div></div>
       </div>
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-10"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="10"><div class="anchor" id="question-nr-10"></div>
       <h3 id="question-title-10" class="exam-question-title"><strong class="exam-question-title__display-number">10. </strong>Duis Minim? <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">15 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-10">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
       <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-54">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-54">
         <li data-list-number="10.A" aria-label="10.A"><a href="attachments/index.html#10.A" class="exam-attachment-title" target="attachments">Text: Duis Minim?</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-10.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="10.1"><div class="anchor" id="question-nr-10.1"></div>
         <h4 id="question-title-10.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">10.1 </strong>Wie begründet der Sohn seine Bitte? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="34" role="radiogroup" aria-labelledby="question-title-10.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="34" value="199"><div class="e-choice-answer-option e-column">Er hat seine Leistungen verbessert</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="34" value="200"><div class="e-choice-answer-option e-column">Er möchte eine Urlaubsreise machen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="34" value="201"><div class="e-choice-answer-option e-column">Er wird anders behandelt als andere Schüler</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-10.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="10.2"><div class="anchor" id="question-nr-10.2"></div>
         <h4 id="question-title-10.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">10.2 </strong>
           <span lang="fi-FI">Mikä isoäidin tavassa antaa rahaa todistuksesta on pojan mielestä huonoa, ja mitä
             siitä isän mielestä seuraa?
@@ -560,32 +560,32 @@ exports[`ee create-offline creates offline 1`] = `
         
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-10.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="10.3"><div class="anchor" id="question-nr-10.3"></div>
         <h4 id="question-title-10.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">10.3 </strong>Was meint der Sohn mit dem Satz: „Veniam commodo dolore quis officia exercitation velit.“?
          <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="36" role="radiogroup" aria-labelledby="question-title-10.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="36" value="202"><div class="e-choice-answer-option e-column">Dass der Vater das macht, was man von ihm erwartet</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="36" value="203"><div class="e-choice-answer-option e-column">Dass der Vater kaum versteht, was dem Sohn wichtig ist</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="36" value="204"><div class="e-choice-answer-option e-column">Dass der Vater versucht, den Sohn streng zu erziehen</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-10.4"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="10.4"><div class="anchor" id="question-nr-10.4"></div>
         <h4 id="question-title-10.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">10.4 </strong>Warum gelingt es dem Vater nicht, genug Zeit mit dem Sohn zu verbringen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="37" role="radiogroup" aria-labelledby="question-title-10.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="37" value="205"><div class="e-choice-answer-option e-column">Weil der Sohn sich zu Hause oft zurückzieht</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="37" value="206"><div class="e-choice-answer-option e-column">Weil beide zu unterschiedlichen Zeiten zu Hause sind</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="37" value="207"><div class="e-choice-answer-option e-column">Weil der Vater so viel von zu Hause weg ist</div></label></div></div>
       </div>
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-11"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="11"><div class="anchor" id="question-nr-11"></div>
       <h3 id="question-title-11" class="exam-question-title"><strong class="exam-question-title__display-number">11. </strong>Excepteur cupidatat! <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">20 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-11">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
       <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-56">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-56">
         <li data-list-number="11.A" aria-label="11.A"><a href="attachments/index.html#11.A" class="exam-attachment-title" target="attachments">Text: Excepteur cupidatat!</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-11.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="11.1"><div class="anchor" id="question-nr-11.1"></div>
         <h4 id="question-title-11.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">11.1 </strong>Was mag Proident besonders an seinem Job? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="38" role="radiogroup" aria-labelledby="question-title-11.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="38" value="208"><div class="e-choice-answer-option e-column">Die Arbeit bietet viel Abwechslung</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="38" value="209"><div class="e-choice-answer-option e-column">Seine Sportlerkarriere profitiert davon</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="38" value="210"><div class="e-choice-answer-option e-column">Er kann seine eigenen Grenzen austesten</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-11.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="11.2"><div class="anchor" id="question-nr-11.2"></div>
         <h4 id="question-title-11.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">11.2 </strong>
           <span lang="fi-FI">Täydennä aukot „Voluptate voluptate“ -kappaleen alleviivatun kohdan
             perusteella.
@@ -601,32 +601,32 @@ exports[`ee create-offline creates offline 1`] = `
         
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-11.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="11.3"><div class="anchor" id="question-nr-11.3"></div>
         <h4 id="question-title-11.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">11.3 </strong>Wie ist Proidents Arbeit als Lorem und Ipsum organisiert? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="43" role="radiogroup" aria-labelledby="question-title-11.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="43" value="211"><div class="e-choice-answer-option e-column">Er hat eine Woche Arbeit und dann eine Woche frei</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="43" value="212"><div class="e-choice-answer-option e-column">Er arbeitet einige Monate sehr viel und dann mal sehr wenig
           </div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="43" value="213"><div class="e-choice-answer-option e-column">Er macht eine lange Wanderung und sitzt danach im Büro</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-11.4"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="11.4"><div class="anchor" id="question-nr-11.4"></div>
         <h4 id="question-title-11.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">11.4 </strong>Was bedeutet es, dass Proident für seine Gäste verantwortlich ist? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="44" role="radiogroup" aria-labelledby="question-title-11.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="44" value="214"><div class="e-choice-answer-option e-column">Er muss bei der Planung auch unrealistische Wünsche berücksichtigen
           </div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="44" value="215"><div class="e-choice-answer-option e-column">Er muss seinen Kunden ein unvergessliches Erlebnis bieten</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="44" value="216"><div class="e-choice-answer-option e-column">Er muss manchmal das Tempo der Wanderung verlangsamen
           </div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-11.5"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="11.5"><div class="anchor" id="question-nr-11.5"></div>
         <h4 id="question-title-11.5" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">11.5 </strong>Was bedeutet „nostrud proident excepteur fugiat deserunt“ im Kontext? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="45" role="radiogroup" aria-labelledby="question-title-11.5"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="45" value="217"><div class="e-choice-answer-option e-column">Es ist unnötig, die Gefahren der Touren zu übertreiben</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="45" value="218"><div class="e-choice-answer-option e-column">Es kann jedem passieren, dass etwas schief geht</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="45" value="219"><div class="e-choice-answer-option e-column">Es ist Proident gelungen, seine Kunden zu beschützen</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-11.6"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="11.6"><div class="anchor" id="question-nr-11.6"></div>
         <h4 id="question-title-11.6" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">11.6 </strong>Was machen viele Lorem und Ipsum, um finanziell klarzukommen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="46" role="radiogroup" aria-labelledby="question-title-11.6"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="46" value="220"><div class="e-choice-answer-option e-column">Sie suchen sich später einen neuen Beruf</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="46" value="221"><div class="e-choice-answer-option e-column">Sie machen oft viele Überstunden</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="46" value="222"><div class="e-choice-answer-option e-column">Sie haben häufig zwei Arbeitsstellen</div></label></div></div>
       </div>
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-12"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="12"><div class="anchor" id="question-nr-12"></div>
       <h3 id="question-title-12" class="exam-question-title"><strong class="exam-question-title__display-number">12. </strong>Wendungen <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">6 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-12">
         <span lang="fi-FI">Lue alla olevat kolme pikaviestiä ja valitse kuhunkin aukkoon parhaiten sopiva
@@ -671,25 +671,25 @@ exports[`ee create-offline creates offline 1`] = `
       </span>
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-13"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="13"><div class="anchor" id="question-nr-13"></div>
       <h3 id="question-title-13" class="exam-question-title"><strong class="exam-question-title__display-number">13. </strong>Adipisicing voluptate <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-13">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
       <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-62">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-62">
         <li data-list-number="13.A" aria-label="13.A"><a href="attachments/index.html#13.A" class="exam-attachment-title" target="attachments">Text: Adipisicing voluptate</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-13.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="13.1"><div class="anchor" id="question-nr-13.1"></div>
         <h4 id="question-title-13.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">13.1 </strong>Wann bekommt man bei Flugverspätung <b>kein</b> Essen?
          <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="50" role="radiogroup" aria-labelledby="question-title-13.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="50" value="250"><div class="e-choice-answer-option e-column">Bei negativen Folgen auf den Zeitplan</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="50" value="251"><div class="e-choice-answer-option e-column">Bei Buchung eines anderen Fluges</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="50" value="252"><div class="e-choice-answer-option e-column">Bei Verspätung unter 5 Stunden</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-13.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="13.2"><div class="anchor" id="question-nr-13.2"></div>
         <h4 id="question-title-13.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">13.2 </strong>Wann bezahlt Lorem Ipsum Telefonate? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="51" role="radiogroup" aria-labelledby="question-title-13.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="51" value="253"><div class="e-choice-answer-option e-column">Nur wenn man sich mindestens zwei Stunden verspätet</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="51" value="254"><div class="e-choice-answer-option e-column">Nur wenn man Verwandte anrufen möchte</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="51" value="255"><div class="e-choice-answer-option e-column">Nur wenn man im Hotel übernachtet</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-13.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="13.3"><div class="anchor" id="question-nr-13.3"></div>
         <h4 id="question-title-13.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">13.3 </strong>
           <span lang="fi-FI">Milloin lentoyhtiö tarjoaa hotellimajoituksen, ja mitä se siinä tapauksessa myös
             järjestää? Kirjoita vastauksesi lyhyesti suomeksi.
@@ -702,19 +702,19 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-14"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="14"><div class="anchor" id="question-nr-14"></div>
       <h3 id="question-title-14" class="exam-question-title"><strong class="exam-question-title__display-number">14. </strong>Ullamco <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">13 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-14">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
       <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-64">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-64">
         <li data-list-number="14.A" aria-label="14.A"><a href="attachments/index.html#14.A" class="exam-attachment-title" target="attachments">Text: Ullamco</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-14.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="14.1"><div class="anchor" id="question-nr-14.1"></div>
         <h4 id="question-title-14.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">14.1 </strong>Was erlebten die Ullamco? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="53" role="radiogroup" aria-labelledby="question-title-14.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="53" value="256"><div class="e-choice-answer-option e-column">Eine Ullamco auf einem anderen Ullamco als geplant</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="53" value="257"><div class="e-choice-answer-option e-column">Eine gelungene Ullamco auf dem Ullamco</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="53" value="258"><div class="e-choice-answer-option e-column">Eine unerwartet frühzeitige Ullamco am Ullamco</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-14.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="14.2"><div class="anchor" id="question-nr-14.2"></div>
         <h4 id="question-title-14.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">14.2 </strong>
           <span lang="fi-FI">Mikä teki lentokoneesta toiseen siirtymisen erityisen hankalaksi? <span class="e-nowrap">(2 asiaa)
           </span> Kirjoita vastauksesi lyhyesti suomeksi.
@@ -725,13 +725,13 @@ exports[`ee create-offline creates offline 1`] = `
         
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-14.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="14.3"><div class="anchor" id="question-nr-14.3"></div>
         <h4 id="question-title-14.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">14.3 </strong>Welche weitere Ullamco hatte die Ullamco? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="55" role="radiogroup" aria-labelledby="question-title-14.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="55" value="259"><div class="e-choice-answer-option e-column">Die Ullamco mussten noch in Ullamco übernachten</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="55" value="260"><div class="e-choice-answer-option e-column">Ein Ullamco brachte die Fluggäste von Ullamco nach Ullamco</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="55" value="261"><div class="e-choice-answer-option e-column">Fluggäste auf der Linie Ullamco–Ullamco wurden auch davon betroffen
           </div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-14.4"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="14.4"><div class="anchor" id="question-nr-14.4"></div>
         <h4 id="question-title-14.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">14.4 </strong>Aufgrund des ganzen Textes: Was bedeutet „consectetur cupidatat“ in diesem Kontext?
          <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="56" role="radiogroup" aria-labelledby="question-title-14.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="56" value="262"><div class="e-choice-answer-option e-column">Ein anstrengendes Experiment</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="56" value="263"><div class="e-choice-answer-option e-column">Ein gefährlicher Unfall</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="56" value="264"><div class="e-choice-answer-option e-column">Ein unerwartetes Abenteuer</div></label></div></div>
@@ -739,14 +739,14 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-15"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="15"><div class="anchor" id="question-nr-15"></div>
       <h3 id="question-title-15" class="exam-question-title"><strong class="exam-question-title__display-number">15. </strong>Eiusmod <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">19 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-15">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
       <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-66">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-66">
         <li data-list-number="15.A" aria-label="15.A"><a href="attachments/index.html#15.A" class="exam-attachment-title" target="attachments">Text: Eiusmod</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-15.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="15.1"><div class="anchor" id="question-nr-15.1"></div>
         <h4 id="question-title-15.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">15.1 </strong>
           <span lang="fi-FI">Mitä postikortti kertoo lähettäjästä Lorem Ipsumin mukaan, ja miten hän
             perustelee näkemyksensä? Kirjoita vastauksesi lyhyesti suomeksi.
@@ -757,28 +757,28 @@ exports[`ee create-offline creates offline 1`] = `
         
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-15.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="15.2"><div class="anchor" id="question-nr-15.2"></div>
         <h4 id="question-title-15.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">15.2 </strong>Wie sind die beliebtesten Postkarten? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="58" role="radiogroup" aria-labelledby="question-title-15.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="58" value="265"><div class="e-choice-answer-option e-column">Sie lassen den Urlaub beeindruckend erscheinen</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="58" value="266"><div class="e-choice-answer-option e-column">Sie kombinieren meist Text und Bilder</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="58" value="267"><div class="e-choice-answer-option e-column">Sie zeigen oft verschiedene Bilder vom Urlaubsort</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-15.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="15.3"><div class="anchor" id="question-nr-15.3"></div>
         <h4 id="question-title-15.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">15.3 </strong>Was halten die Berliner von Postkarten, die Top-Sehenswürdigkeiten zeigen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="59" role="radiogroup" aria-labelledby="question-title-15.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="59" value="268"><div class="e-choice-answer-option e-column">Sie halten diese Karten nicht mehr für modern</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="59" value="269"><div class="e-choice-answer-option e-column">Sie sind besonders stolz auf die Berliner Postkarten</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="59" value="270"><div class="e-choice-answer-option e-column">Sie finden solche Karten auf Reisen gut</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-15.4"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="15.4"><div class="anchor" id="question-nr-15.4"></div>
         <h4 id="question-title-15.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">15.4 </strong>Was ärgert die Kartenverkäufer? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="60" role="radiogroup" aria-labelledby="question-title-15.4"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="60" value="271"><div class="e-choice-answer-option e-column">Einige Jugendliche benutzen oft unfaire Tricks</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="60" value="272"><div class="e-choice-answer-option e-column">Nur erwachsene Frauen interessieren sich für die Karten</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="60" value="273"><div class="e-choice-answer-option e-column">Männer senden und empfangen fast keine Postkarten</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-15.5"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="15.5"><div class="anchor" id="question-nr-15.5"></div>
         <h4 id="question-title-15.5" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">15.5 </strong>Was bedeutet „Enim elit incididunt est elit cillum duis“ im Kontext? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="61" role="radiogroup" aria-labelledby="question-title-15.5"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="61" value="274"><div class="e-choice-answer-option e-column">Man weiß, dass die Postkarte irgendwann sterben wird</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="61" value="275"><div class="e-choice-answer-option e-column">Es ist wahr, dass die Karten nicht mehr so beliebt sind
           </div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="61" value="276"><div class="e-choice-answer-option e-column">Ipsum mag die Fragen des Interviewers nicht</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-15.6"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="15.6"><div class="anchor" id="question-nr-15.6"></div>
         <h4 id="question-title-15.6" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">15.6 </strong>Wann könnte es die Postkarte schwer haben? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="62" role="radiogroup" aria-labelledby="question-title-15.6"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="62" value="277"><div class="e-choice-answer-option e-column">Wenn man in der Familie keine Postkarten mehr verschickt</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="62" value="278"><div class="e-choice-answer-option e-column">Wenn die Schüler das Schreiben mit der Hand nicht mehr lernen
           </div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="62" value="279"><div class="e-choice-answer-option e-column">Wenn die Smartphones immer billiger und attraktiver werden</div></label></div></div>
@@ -786,32 +786,32 @@ exports[`ee create-offline creates offline 1`] = `
 
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-16"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="16"><div class="anchor" id="question-nr-16"></div>
       <h3 id="question-title-16" class="exam-question-title"><strong class="exam-question-title__display-number">16. </strong>Duis dolore <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-16">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
       <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-68">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-68">
         <li data-list-number="16.A" aria-label="16.A"><a href="attachments/index.html#16.A" class="exam-attachment-title" target="attachments">Text: Duis dolore</a></li>
       </ol></div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-16.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="16.1"><div class="anchor" id="question-nr-16.1"></div>
         <h4 id="question-title-16.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">16.1 </strong>Wie reagieren viele Kunden auf die Einwegbecher? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="63" role="radiogroup" aria-labelledby="question-title-16.1"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="63" value="280"><div class="e-choice-answer-option e-column">Sie benutzen die Einwegbecher, ohne darüber nachzudenken</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="63" value="281"><div class="e-choice-answer-option e-column">Sie entscheiden, keine Einwegbecher mehr zu verwenden</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="63" value="282"><div class="e-choice-answer-option e-column">Sie erinnern sich daran, dass sie nicht gut für die Umwelt sind
           </div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-16.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="16.2"><div class="anchor" id="question-nr-16.2"></div>
         <h4 id="question-title-16.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">16.2 </strong>Was könnte im neuen System zum Problem werden? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="64" role="radiogroup" aria-labelledby="question-title-16.2"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="64" value="283"><div class="e-choice-answer-option e-column">Es ist für das Verhalten der Kunden nicht flexibel genug
           </div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="64" value="284"><div class="e-choice-answer-option e-column">Es bringt das jetzige System der Pfandflaschen durcheinander</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="64" value="285"><div class="e-choice-answer-option e-column">Es lohnt sich nicht außerhalb des Stadtzentrums</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-16.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="16.3"><div class="anchor" id="question-nr-16.3"></div>
         <h4 id="question-title-16.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">16.3 </strong>Was will Lorem Ipsum erreichen? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-choice-answer e-mrg-b-4" data-question-id="65" role="radiogroup" aria-labelledby="question-title-16.3"><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="65" value="286"><div class="e-choice-answer-option e-column">Die Kunden stärker zur Rückgabe der Becher zu motivieren
           </div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="65" value="287"><div class="e-choice-answer-option e-column">Die Finanzierung für das neue System zu sichern</div></label></div><div class="e-mrg-b-1"><label class="e-columns e-columns--inline"><input type="radio" class="e-radio-button e-column e-column--narrow" name="65" value="288"><div class="e-choice-answer-option e-column">Mit anderen Städten effektiv zusammenzuarbeiten</div></label></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-16.4"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="16.4"><div class="anchor" id="question-nr-16.4"></div>
         <h4 id="question-title-16.4" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">16.4 </strong>
           <span lang="fi-FI">Miksi Hampuri haluaa siirtyä uuteen järjestelmään? Vastaa koko tekstin
             perusteella lyhyesti suomeksi.
@@ -829,7 +829,7 @@ exports[`ee create-offline creates offline 1`] = `
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-3">
     <h2 class="exam-section-title" id="section-title-3">Teil 3: Struktur und Vokabular</h2>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-17"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="17"><div class="anchor" id="question-nr-17"></div>
       <h3 id="question-title-17" class="exam-question-title"><strong class="exam-question-title__display-number">17. </strong>Auswahl-Antwort-Test <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">16 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-17">Lesen Sie den folgenden Text und wählen Sie jeweils auf der Drop-Down-Liste die in den
         Textzusammenhang am besten passende Antwortalternative aus.
@@ -925,7 +925,7 @@ exports[`ee create-offline creates offline 1`] = `
       </span>
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-18"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="18"><div class="anchor" id="question-nr-18"></div>
       <h3 id="question-title-18" class="exam-question-title"><strong class="exam-question-title__display-number">18. </strong>Umformung <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">4 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-18">
         <span lang="fi-FI">Kirjoita kohdat kokonaan uudelleen siten, että lisäät kuhunkin lauseeseen sulkeissa
@@ -971,9 +971,9 @@ exports[`ee create-offline creates offline 1`] = `
       </span>
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-19"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="19"><div class="anchor" id="question-nr-19"></div>
       <h3 id="question-title-19" class="exam-question-title"><strong class="exam-question-title__display-number">19. </strong>Vihjenumerointitesti <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">12 p.</span></span></h3>
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-19.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="19.1"><div class="anchor" id="question-nr-19.1"></div>
         <h4 id="question-title-19.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">19.1 </strong>Alitehtävä, jossa kolme aukkoa <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">6 p.</span></span></h4>
         <div class="e-columns"><div class="e-column e-column--8">
                         Oli synkkä ja myrskyinen
@@ -985,7 +985,7 @@ exports[`ee create-offline creates offline 1`] = `
           loppuun asti.
         </div><div class="e-hints e-column e-column--4" aria-hidden="true"><p class="e-hints__hint" data-question-id="85">1. yö</p><p class="e-hints__hint" data-question-id="86">2. elivät</p><p class="e-hints__hint" data-question-id="87">3. onnellisina</p></div></div>
       </div>
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-19.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="19.2"><div class="anchor" id="question-nr-19.2"></div>
         <h4 id="question-title-19.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">19.2 </strong>Alitehtävä, jossa vain yksi aukko <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4>
         <div class="e-columns"><div class="e-column e-column--8">
                         Tässä alitehtävässä on vain yksi
@@ -993,7 +993,7 @@ exports[`ee create-offline creates offline 1`] = `
                         , joten ei ole tarve käyttää numerointia, ei myöskään vihjeessä.
         </div><div class="e-hints e-column e-column--4" aria-hidden="true"><p class="e-hints__hint" data-question-id="88"> aukko</p></div></div>
       </div>
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-19.3"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="19.3"><div class="anchor" id="question-nr-19.3"></div>
         <h4 id="question-title-19.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">19.3 </strong>Alitehtävä, jossa kolme aukkoa <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">4 p.</span></span></h4>
         <div class="e-columns"><div class="e-column e-column--8">
                         Olipa kerran pieni
@@ -1004,7 +1004,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-20"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="20"><div class="anchor" id="question-nr-20"></div>
       <h3 id="question-title-20" class="exam-question-title"><strong class="exam-question-title__display-number">20. </strong>Dialog <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">10 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-19">
         <span lang="fi-FI">Tässä tehtävässä on kaksi lyhyttä dialogia. Molemmat koostuvat yhdestä kysymyksestä
@@ -1088,7 +1088,7 @@ exports[`ee create-offline creates offline 1`] = `
 
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-4">
     <h2 class="exam-section-title" id="section-title-4">Teil 4: Schriftliche Produktion</h2>
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-21"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="21"><div class="anchor" id="question-nr-21"></div>
       <h3 id="question-title-21" class="exam-question-title"><strong class="exam-question-title__display-number">21. </strong>Kurze Schreibaufgabe <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">33 p.</span></span></h3><p class="e-italic"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" class="svg-inline--fa fa-circle-info fa-fw fa-lg e-color-link e-mrg-r-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg><span lang="fi-FI">Vastaa joko kohtaan 21.1 tai 21.2.</span></p>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-20">
         <span lang="fi-FI">
@@ -1101,7 +1101,7 @@ exports[`ee create-offline creates offline 1`] = `
         </span>
         
       </div>
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-21.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="21.1"><div class="anchor" id="question-nr-21.1"></div>
         <h4 id="question-title-21.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">21.1 </strong>Kurze Schreibaufgabe <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">33 p.</span></span></h4>
         <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-21">
           <span lang="fi-FI">
@@ -1111,7 +1111,7 @@ exports[`ee create-offline creates offline 1`] = `
         </div>
         <p id="answer-length-info-98" class="e-answer-length-info"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" class="svg-inline--fa fa-circle-info fa-fw fa-lg e-color-link e-mrg-r-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg><em><span lang="fi-FI">Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.</span></em></p><div class="text-answer-container"><div class="text-answer text-answer--rich-text rich-text-editor" data-question-id="95" role="textbox" aria-multiline="true" aria-invalid="false" tabindex="0" aria-labelledby="question-instruction-21 answer-length-info-98" id="95" contenteditable="true" spellcheck="false" data-js="answer"></div><button class="expand open" aria-labelledby="expand-label" aria-owns="95"><div class="label" id="expand-label"><span lang="fi-FI">Avaa kirjoitusnäkymä</span></div><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="up-right-and-down-left-from-center" class="svg-inline--fa fa-up-right-and-down-left-from-center " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"></path></svg></button><div class="answer-toolbar e-font-size-xs e-columns e-mrg-b-2"><div class="answer-toolbar__answer-length e-column">&nbsp;</div><div class="answer-toolbar__history e-column e-column--narrow e-text-right"></div></div></div>
       </div>
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-21.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="21.2"><div class="anchor" id="question-nr-21.2"></div>
         <h4 id="question-title-21.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">21.2 </strong>Kurze Schreibaufgabe <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">33 p.</span></span></h4>
         <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-22">
           <span lang="fi-FI">
@@ -1126,7 +1126,7 @@ exports[`ee create-offline creates offline 1`] = `
       </div>
     </div>
 
-    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix"><div class="anchor" id="question-nr-22"></div>
+    <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="22"><div class="anchor" id="question-nr-22"></div>
       <h3 id="question-title-22" class="exam-question-title"><strong class="exam-question-title__display-number">22. </strong>Lange Schreibaufgabe <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">66 p.</span></span></h3><p class="e-italic"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" class="svg-inline--fa fa-circle-info fa-fw fa-lg e-color-link e-mrg-r-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg><span lang="fi-FI">Vastaa yhteen kohdista 22.1–22.3.</span></p>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-23">
         <span lang="fi-FI">
@@ -1143,7 +1143,7 @@ exports[`ee create-offline creates offline 1`] = `
         
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-22.1"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="22.1"><div class="anchor" id="question-nr-22.1"></div>
         <h4 id="question-title-22.1" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">22.1 </strong>Lange Schreibaufgabe <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">66 p.</span></span></h4>
         <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-24">
           <span lang="fi-FI">
@@ -1164,7 +1164,7 @@ exports[`ee create-offline creates offline 1`] = `
         <div class="text-answer-container"><div class="text-answer text-answer--rich-text rich-text-editor" data-question-id="97" role="textbox" aria-multiline="true" aria-invalid="false" tabindex="0" aria-labelledby="question-instruction-24" id="97" contenteditable="true" spellcheck="false" data-js="answer"></div><button class="expand open" aria-labelledby="expand-label" aria-owns="97"><div class="label" id="expand-label"><span lang="fi-FI">Avaa kirjoitusnäkymä</span></div><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="up-right-and-down-left-from-center" class="svg-inline--fa fa-up-right-and-down-left-from-center " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"></path></svg></button><div class="answer-toolbar e-font-size-xs e-columns e-mrg-b-2"><div class="answer-toolbar__answer-length e-column">&nbsp;</div><div class="answer-toolbar__history e-column e-column--narrow e-text-right"></div></div></div>
       </div>
 
-      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-22.2"></div>
+      <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="22.2"><div class="anchor" id="question-nr-22.2"></div>
         <h4 id="question-title-22.2" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">22.2 </strong>Lange Schreibaufgabe <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">66 p.</span></span></h4>
         <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-25">
           <span lang="fi-FI">
@@ -1176,7 +1176,7 @@ exports[`ee create-offline creates offline 1`] = `
         <div class="text-answer-container"><div class="text-answer text-answer--rich-text rich-text-editor" data-question-id="98" role="textbox" aria-multiline="true" aria-invalid="false" tabindex="0" aria-labelledby="question-instruction-25" id="98" contenteditable="true" spellcheck="false" data-js="answer"></div><button class="expand open" aria-labelledby="expand-label" aria-owns="98"><div class="label" id="expand-label"><span lang="fi-FI">Avaa kirjoitusnäkymä</span></div><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="up-right-and-down-left-from-center" class="svg-inline--fa fa-up-right-and-down-left-from-center " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"></path></svg></button><div class="answer-toolbar e-font-size-xs e-columns e-mrg-b-2"><div class="answer-toolbar__answer-length e-column">&nbsp;</div><div class="answer-toolbar__history e-column e-column--narrow e-text-right"></div></div></div>
       </div>
 
-        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4"><div class="anchor" id="question-nr-22.3"></div>
+        <div class="e-exam-question e-mrg-l-8 e-mrg-y-4" data-annotation-anchor="22.3"><div class="anchor" id="question-nr-22.3"></div>
           <h4 id="question-title-22.3" class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">22.3 </strong>Lange Schreibaufgabe <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">66 p.</span></span></h4>
           <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-26">
             <span lang="fi-FI">

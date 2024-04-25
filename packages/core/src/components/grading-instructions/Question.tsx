@@ -13,6 +13,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         'e-mrg-l-8 e-mrg-y-4': level > 0
       })}
       id={displayNumber}
+      data-annotation-anchor={displayNumber}
     >
       <div className="anchor" id={`question-nr-${displayNumber}`} />
       {renderChildNodes(element, RenderOptions.SkipHTML)}
