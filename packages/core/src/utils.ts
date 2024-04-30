@@ -33,7 +33,6 @@ export function intersperse<T>(separator: T, array: T[]): T[] {
   }
 
   result[result.length - 1] = array[array.length - 1]
-
   return result
 }
 
