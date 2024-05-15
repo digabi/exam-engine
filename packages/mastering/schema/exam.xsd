@@ -23,6 +23,7 @@
       <xs:attribute name="exam-stylesheet" type="xs:string" />
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
       <xs:attribute name="lang" type="xs:language" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
 
     <xs:key name="exam-version-key">
@@ -207,6 +208,7 @@
       <xs:sequence>
         <xs:element ref="e:exam-version" maxOccurs="unbounded" />
       </xs:sequence>
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -214,6 +216,7 @@
     <xs:complexType>
       <xs:attribute name="lang" type="e:exam-language-type" use="required" />
       <xs:attribute name="exam-type" type="e:exam-type" default="normal" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -223,12 +226,14 @@
         <xs:group ref="xhtml:xhtml.Flow.mix" />
       </xs:choice>
       <xs:attributeGroup ref="e:localizable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
   <xs:element name="table-of-contents">
     <xs:complexType>
       <xs:sequence />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -252,6 +257,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="meta" type="xs:string" />
       <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
@@ -269,6 +275,7 @@
         </xs:choice>
       </xs:sequence>
       <xs:attribute name="max-answers" type="xs:positiveInteger" />
+      <xs:attribute name="meta" type="xs:string" />
       <xs:attributeGroup ref="e:localizable" />
     </xs:complexType>
   </xs:element>
@@ -279,6 +286,7 @@
         <xs:element ref="e:attachment" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attributeGroup ref="e:localizable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -286,6 +294,7 @@
 
   <xs:attributeGroup name="sourcable">
     <xs:attribute name="src" type="xs:string" use="required" />
+    <xs:attribute name="meta" type="xs:string" />
   </xs:attributeGroup>
 
   <xs:element name="attachment">
@@ -297,6 +306,7 @@
       </xs:sequence>
       <xs:attribute name="name" type="xs:NMTOKEN" />
       <xs:attributeGroup ref="e:localizable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -306,6 +316,7 @@
         <xs:element ref="e:attachment-link" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="type" type="e:attachment-link-type" default="long" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -321,18 +332,21 @@
       <xs:sequence />
       <xs:attribute name="ref" type="xs:NMTOKEN" use="required" />
       <xs:attribute name="type" type="e:attachment-link-type" default="long" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
   <xs:element name="question-number">
     <xs:complexType>
       <xs:attribute name="suffix" type="xs:string" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
   <xs:element name="translation">
     <xs:complexType>
       <xs:attribute name="key" type="xs:string" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -353,6 +367,7 @@
         <xs:element ref="e:image" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attributeGroup ref="e:localizable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -394,6 +409,7 @@
         <xs:group ref="xhtml:xhtml.Flow.mix" />
         <xs:element ref="e:question" />
       </xs:choice>
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -428,6 +444,7 @@
       </xs:choice>
       <xs:attributeGroup ref="e:localizable" />
       <xs:attributeGroup ref="e:hidable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -447,6 +464,7 @@
   <xs:element name="references">
     <xs:complexType>
       <xs:sequence />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -462,6 +480,7 @@
               <xs:documentation>Assistive title for screen readers. Defaults to the LaTeX source code of the formula.</xs:documentation>
             </xs:annotation>
           </xs:attribute>
+          <xs:attribute name="meta" type="xs:string" />
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -502,6 +521,7 @@
         </xs:annotation>
       </xs:attribute>
       <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -518,6 +538,7 @@
       <xs:choice maxOccurs="unbounded">
         <xs:group ref="xhtml:xhtml.Flow.mix" />
       </xs:choice>
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -533,6 +554,7 @@
       <xs:choice maxOccurs="unbounded">
         <xs:group ref="xhtml:xhtml.Flow.mix" />
       </xs:choice>
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -552,6 +574,7 @@
       </xs:attribute>
       <xs:attributeGroup ref="e:stylable" />
       <xs:attributeGroup ref="e:localizable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -561,6 +584,7 @@
         <xs:extension base="xs:string">
           <xs:attribute name="score" type="xs:positiveInteger" use="required" />
           <xs:attributeGroup ref="e:localizable" />
+          <xs:attribute name="meta" type="xs:string" />
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -594,6 +618,7 @@
       <xs:attribute name="direction" type="e:direction" />
       <xs:attributeGroup ref="e:orderable" />
       <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -605,6 +630,7 @@
       <xs:attribute name="score" type="xs:integer" />
       <xs:attribute name="type" type="e:choice-answer-option-type" default="normal" />
       <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -622,6 +648,7 @@
       </xs:sequence>
       <xs:attributeGroup ref="e:orderable" />
       <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -632,6 +659,7 @@
       </xs:choice>
       <xs:attribute name="score" type="xs:integer" />
       <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
 

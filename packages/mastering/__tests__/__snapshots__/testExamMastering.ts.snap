@@ -19732,12 +19732,12 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
+  <e:section meta="section" type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
 
-    <e:question display-number="1" max-score="21">
+    <e:question meta="question" display-number="1" max-score="21">
       <e:question-title>Picknick</e:question-title>
       <e:question-instruction>
 
@@ -19761,7 +19761,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:audio-group>
         <e:question display-number="1.1" max-score="3">
           <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
-          <e:choice-answer question-id="1" display-number="1.1" max-score="3">
+          <e:choice-answer meta="choice-answer" question-id="1" display-number="1.1" max-score="3">
             
             
             
@@ -19779,7 +19779,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </span>
             
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" question-id="2" display-number="1.2">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" meta="text-answer" question-id="2" display-number="1.2">
             
           </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">
@@ -21606,12 +21606,12 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
+  <e:section meta="section" type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
 
-    <e:question display-number="1" max-score="21">
+    <e:question meta="question" display-number="1" max-score="21">
       <e:question-title>Picknick</e:question-title>
       <e:question-instruction>
 
@@ -21635,7 +21635,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:audio-group>
         <e:question display-number="1.1" max-score="3">
           <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
-          <e:choice-answer question-id="1" display-number="1.1" max-score="3">
+          <e:choice-answer meta="choice-answer" question-id="1" display-number="1.1" max-score="3">
             
             
             
@@ -21653,7 +21653,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               det picknicken? Skriv ett kort svar på svenska.
             </span>
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" question-id="2" display-number="1.2">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" meta="text-answer" question-id="2" display-number="1.2">
             
           </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">

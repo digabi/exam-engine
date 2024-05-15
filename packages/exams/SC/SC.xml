@@ -73,12 +73,12 @@
 
   </e:exam-grading-instruction>
   <e:table-of-contents/>
-  <e:section type="H" exam-type="normal visually-impaired">
+  <e:section meta="section" type="H" exam-type="normal visually-impaired">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg"/>
 
-    <e:question>
+    <e:question meta="question">
       <e:question-title>Picknick</e:question-title>
       <e:question-instruction>
 
@@ -102,7 +102,7 @@
       <e:audio-group>
         <e:question>
           <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
-          <e:choice-answer>
+          <e:choice-answer meta="choice-answer">
             <e:choice-answer-option>Sie denkt, dass der Weg zu weit ist</e:choice-answer-option>
             <e:choice-answer-option score="3">Sie meint, dass dort zu viele Leute sind</e:choice-answer-option>
             <e:choice-answer-option>Sie weiß, dass Kevin der Stadtpark nicht gefällt</e:choice-answer-option>
@@ -122,7 +122,7 @@
               det picknicken? Skriv ett kort svar på svenska.
             </e:localization>
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" meta="text-answer">
             <e:answer-grading-instruction>
               <e:localization lang="fi-FI">
                 <p>Hänen sukulaisensa tulevat vierailulle (3/0 p.).</p>
