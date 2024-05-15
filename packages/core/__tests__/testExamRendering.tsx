@@ -14,6 +14,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import React from 'react'
 import { create } from 'react-test-renderer'
+import * as _ from 'lodash-es'
 import { CommonExamProps, ExamProps } from '../src/components/exam/Exam'
 import { ResultsProps } from '../src/components/results/Results'
 import { examServerApi } from './examServerApi'
@@ -58,6 +59,7 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
         returnToExam: () => {},
         endSession: () => Promise.resolve()
       }
+      _.set(window, 'TEST_VERSION_NUMBER', '1.0.0')
       expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
       expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
       expect(create(<Results {...resultsProps} />).toJSON()).toMatchSnapshot('<Results />')
