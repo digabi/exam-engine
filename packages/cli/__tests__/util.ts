@@ -76,3 +76,11 @@ export async function extractTransferZip(pathToZip: string) {
     examXml
   }
 }
+
+export function removeStyles(htmlString: string): string {
+  // Regex to match style tags
+  const styleTagRegex = /<style[^>]*>.*?<\/style>/gs
+  // Regex to match inline styles
+  const inlineStyleRegex = / style="[^"]*"/g
+  return htmlString.replace(styleTagRegex, '').replace(inlineStyleRegex, '')
+}

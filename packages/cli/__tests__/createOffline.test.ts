@@ -1,5 +1,5 @@
 import * as fs from 'fs/promises'
-import { exec, stripColorCodes } from './util'
+import { exec, removeStyles, stripColorCodes } from './util'
 import * as path from 'path'
 
 describe('ee create-offline', () => {
@@ -21,7 +21,7 @@ describe('ee create-offline', () => {
 
   it('creates offline', async () => {
     const index = await fs.readFile(`${exams}/SC/1970-01-01_SC_fi/index.html`, { encoding: 'utf8' })
-    expect(index.replace(/(width: )(\d+)(px)/g, '$199$3')).toMatchSnapshot()
+    expect(removeStyles(index)).toMatchSnapshot()
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi`))).toEqual([
       'assets',
       'attachments',

@@ -1,5 +1,5 @@
 import * as fs from 'fs/promises'
-import { exec, stripColorCodes } from './util'
+import { exec, removeStyles, stripColorCodes } from './util'
 import * as path from 'path'
 
 describe('ee create-grading-instructions', () => {
@@ -23,7 +23,7 @@ describe('ee create-grading-instructions', () => {
     const gradingInstructions = await fs.readFile(`${exams}/SC/1970-01-01_SC_fi/grading-instructions.html`, {
       encoding: 'utf8'
     })
-    expect(gradingInstructions.replace(/(width: )(\d+)(px)/g, '$199$3')).toMatchSnapshot()
+    expect(removeStyles(gradingInstructions)).toMatchSnapshot()
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi`))).toEqual([
       'assets',
       'attachments',
