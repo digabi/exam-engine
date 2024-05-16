@@ -12,12 +12,14 @@ import { url } from '../../url'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { QuestionContext } from '../context/QuestionContext'
 import { Indicator } from './AnswerIndicator'
+import { TOCContext } from '../exam/Exam'
 
 export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { attachmentsURL } = useContext(CommonExamContext)
   const { displayNumber, maxScore, level } = useContext(QuestionContext)
   const { t } = useExamTranslation()
   const showAttachmentLinks = true
+  const { isInSidebar } = useContext(TOCContext)
 
   const questionTitle = findChildElement(element, 'question-title')!
   const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
@@ -26,8 +28,6 @@ export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ eleme
 
   let answersById = {} as Record<QuestionId, ExamAnswer>
   let hasQuestionValidationError = false
-
-  const isInSidebar = true
 
   if (isInSidebar) {
     const answers = useSelector((state: { answers: AnswersState }) => state.answers)
@@ -70,7 +70,7 @@ export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ eleme
     <li
       data-list-number={`${displayNumber}.`}
       onClick={() => (isInSidebar ? (window.location.href = `#question-nr-${displayNumber}`) : undefined)}
-      className={classNames(`level-${level}`, { error: hasQuestionValidationError, isVisible })}
+      className={classNames(`level-${level}`, { error: hasQuestionValidationError, current: isVisible })}
     >
       <span className="e-column e-question-title">
         <a href={url('', { hash: `question-nr-${displayNumber}` })} tabIndex={isInSidebar ? -1 : undefined}>

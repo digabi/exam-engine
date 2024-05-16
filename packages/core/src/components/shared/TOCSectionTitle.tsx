@@ -9,12 +9,13 @@ import { AnswersState } from '../../store/answers/reducer'
 import AnsweringInstructions from '../AnsweringInstructions'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { SectionContext } from '../context/SectionContext'
+import { TOCContext } from '../exam/Exam'
 
 export const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { sections } = useContext(CommonExamContext)
   const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
   const { t } = useExamTranslation()
-  const isInSidebar = true
+  const { isInSidebar } = useContext(TOCContext)
   const showAnsweringInstructions = true
 
   const showSectionValidationErrors =
@@ -26,7 +27,7 @@ export const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ e
   const isVisible = useIsElementInViewport('section', displayNumber)
 
   return (
-    <div className={isVisible ? 'isVisible' : ''}>
+    <div className={isVisible ? 'current' : ''}>
       {element.hasChildNodes() && (
         <div className="toc-section-header-container">
           <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>

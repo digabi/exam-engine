@@ -124,7 +124,10 @@ const renderChildNodes = createRenderChildNodes({
   'image-overlay': ImageOverlay
 })
 
-export const TOCContext = React.createContext({ visibleTOCElements: [] as string[] })
+export const TOCContext = React.createContext({
+  visibleTOCElements: [] as string[],
+  isInSidebar: false
+})
 
 const Exam: React.FunctionComponent<ExamProps> = ({
   doc,
@@ -221,6 +224,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   }, [visibleElements])
 
   // TODO: Remove 'isNewKoeVersion' checks when old Koe version is not supported anymore
+  // Here "old" means versions where student can not examine answers on a separate page after answering questions
   const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
@@ -236,7 +240,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
               <div className="sidebar-toc-container" aria-hidden="true">
                 <TOCContext.Provider
                   value={{
-                    visibleTOCElements: visibleElements
+                    visibleTOCElements: visibleElements,
+                    isInSidebar: true
                   }}
                 >
                   <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />

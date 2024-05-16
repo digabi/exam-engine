@@ -77,7 +77,7 @@
       overflow-y: auto;
       max-height: 100vh;
 
-      .isVisible {
+      .current {
         background: @currentBg;
       }
 
@@ -120,9 +120,7 @@
           font-weight: 600;
         }
 
-        &.isVisible {
-          background: @currentBg;
-
+        &.current {
           .e-question-title,
           a {
             color: #1b4a5a;
@@ -175,6 +173,7 @@
 
       .e-total {
         font-size: 14px;
+        margin-right: 0.5rem;
       }
 
       .toc-section-header,
