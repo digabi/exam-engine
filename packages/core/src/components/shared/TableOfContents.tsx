@@ -38,6 +38,7 @@ export const mkTableOfContents = (options: {
     const ref = React.createRef<HTMLDivElement>()
 
     useEffect(() => {
+      // Prevent scrolling the whole page when scrolling the TOC
       const handleTOCScroll = (e: WheelEvent) => {
         const toc = e.currentTarget as Element
         if (toc.scrollHeight <= toc.clientHeight) {

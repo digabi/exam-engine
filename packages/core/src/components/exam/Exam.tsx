@@ -1,9 +1,8 @@
-import * as _ from 'lodash-es'
 import React, { createRef, useContext, useEffect, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
-import { findChildElement, isElementPartiallyInViewport } from '../../dom-utils'
+import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
@@ -173,68 +172,53 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
 
-  const [examQuestionsAndSectionTitles, setExamQuestionsAndSectionTitles] = useState<
-    Map<Element, IntersectionObserverEntry>
-  >(new Map())
-
-  const callback = (entries: IntersectionObserverEntry[]) =>
-    entries.forEach(entry => {
-      setExamQuestionsAndSectionTitles(prevEntries => new Map(prevEntries).set(entry.target, entry))
-    })
-
-  const visibleTOCElements = Array.from(examQuestionsAndSectionTitles.values())
-    .filter(entry => entry.isIntersecting)
-    .map(entry => entry.target.getAttribute('data-toc-id') as string)
-
   useEffect(() => {
     const observer = new IntersectionObserver(callback)
-    const questionsAndSectionTitles = Array.from(
-      document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
-    )
-    questionsAndSectionTitles.forEach(element => {
-      observer.observe(element)
-    })
-
+    const observableElements = document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
+    observableElements.forEach(element => observer.observe(element))
     return () => {
-      questionsAndSectionTitles.forEach(element => observer.unobserve(element))
+      observableElements.forEach(element => observer.unobserve(element))
     }
   }, [])
 
+  const callback = (entries: IntersectionObserverEntry[]) =>
+    entries.forEach(entry => {
+      setObservableExamElements(prevEntries => ({
+        ...prevEntries,
+        [entry.target.getAttribute('data-toc-id')!]: entry.isIntersecting
+      }))
+    })
+
+  const [observableExamElements, setObservableExamElements] = useState<Record<string, boolean>>({})
+
+  const [visibleElements, setVisibleElements] = useState<string[]>([])
+
+  useEffect(() => {
+    const visibleElements = Object.keys(observableExamElements).filter(key => observableExamElements[key])
+    setVisibleElements(visibleElements)
+  }, [observableExamElements])
+
   const isInViewport = (element: Element) => {
+    const offset = 100 // must be at least this far away from viewport edges
     const rect = element.getBoundingClientRect()
-    return rect.top >= 100 && rect.bottom <= window.innerHeight - 100
+    return rect.top >= offset && rect.bottom <= window.innerHeight - offset
   }
 
-  const handleExamScroll = () => {
-    const questionsAndSectionTitles = Array.from(
-      document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
-    )
-
-    // Find the section currently in view
-    questionsAndSectionTitles.forEach(element => {
-      const elementIsInViewport = isElementPartiallyInViewport(element as HTMLElement)
-      if (elementIsInViewport) {
-        const currentQuestionNumber = element.querySelector('.anchor')?.id.replace('question-nr-', '')
-
-        const naviQuestionTitle =
-          currentQuestionNumber &&
-          document.querySelector(`.table-of-contents li[data-list-number="${currentQuestionNumber}."]`)
-
-        if (naviQuestionTitle) {
-          const isVisible = isInViewport(naviQuestionTitle)
-
-          const sideNavigation = document.querySelector(`.sidebar-toc-container .table-of-contents`)
-          if (!isVisible && !!sideNavigation) {
-            const navHeight = sideNavigation.getBoundingClientRect().height
-            const scrollToPos = (naviQuestionTitle as HTMLElement).offsetTop - navHeight / 2
-            sideNavigation.scrollTo({ behavior: 'smooth', top: scrollToPos })
-          }
+  useEffect(() => {
+    visibleElements.forEach(element => {
+      const displayNumber = element.replace('question-', '')
+      const naviQuestionTitle = document.querySelector(`.table-of-contents li[data-list-number="${displayNumber}."]`)
+      if (naviQuestionTitle) {
+        const isVisible = isInViewport(naviQuestionTitle)
+        const sideNavigation = document.querySelector(`.sidebar-toc-container .table-of-contents`)
+        if (!isVisible && !!sideNavigation) {
+          const navHeight = sideNavigation.getBoundingClientRect().height
+          const scrollToPos = (naviQuestionTitle as HTMLElement).offsetTop - navHeight / 2
+          sideNavigation.scrollTo({ behavior: 'smooth', top: scrollToPos })
         }
       }
     })
-  }
-
-  window.addEventListener('scroll', _.throttle(handleExamScroll, 500, { trailing: false }))
+  }, [visibleElements])
 
   // TODO: Remove 'isNewKoeVersion' checks when old Koe version is not supported anymore
   const isNewKoeVersion = examServerApi.examineExam !== undefined
@@ -250,7 +234,11 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           <div className="e-toc-and-exam">
             {tableOfContents && (
               <div className="sidebar-toc-container" aria-hidden="true">
-                <TOCContext.Provider value={{ visibleTOCElements }}>
+                <TOCContext.Provider
+                  value={{
+                    visibleTOCElements: visibleElements
+                  }}
+                >
                   <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
                 </TOCContext.Provider>
               </div>
