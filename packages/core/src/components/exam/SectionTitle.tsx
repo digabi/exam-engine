@@ -15,7 +15,7 @@ function SectionTitle({ element, renderChildNodes }: ExamComponentProps) {
   return (
     <>
       {element.hasChildNodes() && (
-        <h2 className="exam-section-title" id={sectionTitleId(displayNumber)}>
+        <h2 className="exam-section-title" id={sectionTitleId(displayNumber)} data-toc-id={`section-${displayNumber}`}>
           {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
         </h2>
       )}

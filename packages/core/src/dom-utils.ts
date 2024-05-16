@@ -1,5 +1,7 @@
-import { ExamNamespaceURI } from './createRenderChildNodes'
 import * as _ from 'lodash-es'
+import { ExamNamespaceURI } from './createRenderChildNodes'
+import { useContext, useEffect, useState } from 'react'
+import { TOCContext } from './components/exam/Exam'
 
 export const NBSP = '\u00A0'
 
@@ -149,4 +151,33 @@ export function setProperties(element: HTMLElement, properties?: Record<string, 
       ;(element as any)[k] = v
     }
   })
+}
+
+export function isElementPartiallyInViewport(element: HTMLElement | null) {
+  if (!element) {
+    return
+  }
+  const rect = element.getBoundingClientRect()
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth
+  const vertInView = rect.top <= windowHeight && rect.top + rect.height >= 0
+  const horInView = rect.left <= windowWidth && rect.left + rect.width >= 0
+  return vertInView && horInView
+}
+
+export function useIsElementInViewport(elementType: 'question' | 'section', displayNumber: string) {
+  const { visibleTOCElements } = useContext(TOCContext)
+  const [isVisible, setIsVisible] = useState(false)
+
+  const id = `${elementType}-${displayNumber}`
+
+  useEffect(() => {
+    if (visibleTOCElements.includes(id) && !isVisible) {
+      setIsVisible(true)
+    } else if (!visibleTOCElements.includes(id) && isVisible) {
+      setIsVisible(false)
+    }
+  }, [visibleTOCElements])
+
+  return isVisible
 }

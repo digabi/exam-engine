@@ -1,57 +1,57 @@
-import React, { createRef, useContext, useEffect } from 'react'
+import * as _ from 'lodash-es'
+import React, { createRef, useContext, useEffect, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
-import { findChildElement } from '../../dom-utils'
+import { findChildElement, isElementPartiallyInViewport } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
+import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeExamStore } from '../../store'
+import { RichTextAnswer, TextAnswer as TextAnswerType } from '../../types/ExamAnswer'
 import { useCached } from '../../useCached'
+import DocumentTitle from '../DocumentTitle'
+import RenderChildNodes from '../RenderChildNodes'
+import SectionElement from '../SectionElement'
+import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
+import { withExamContext } from '../context/ExamContext'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
 import AudioGroup from '../shared/AudioGroup'
 import AudioTest from '../shared/AudioTest'
-import ChoiceAnswer from './ChoiceAnswer'
-import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
-import DocumentTitle from '../DocumentTitle'
-import DropdownAnswer from './DropdownAnswer'
-import ErrorIndicator from './internal/ErrorIndicator'
+import ExamTranslation from '../shared/ExamTranslation'
+import File from '../shared/File'
+import { Footer } from '../shared/Footer'
+import Formula from '../shared/Formula'
+import Image from '../shared/Image'
+import ImageOverlay from '../shared/ImageOverlay'
+import { QuestionNumber } from '../shared/QuestionNumber'
+import References from '../shared/References'
+import { mkTableOfContents } from '../shared/TableOfContents'
+import { VersionNumber } from '../shared/VersionNumber'
+import Video from '../shared/Video'
 import ExamAttachment from './Attachment'
-import { withExamContext } from '../context/ExamContext'
+import ChoiceAnswer from './ChoiceAnswer'
+import DropdownAnswer from './DropdownAnswer'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
+import ExternalMaterial from './ExternalMaterial'
+import GoToExamineAnswersButton from './GoToExamineAnswersButton'
+import Hints from './Hints'
 import Question from './Question'
 import QuestionInstruction from './QuestionInstruction'
 import QuestionTitle from './QuestionTitle'
 import Section from './Section'
-import SectionTitle from './SectionTitle'
-import ExternalMaterial from './ExternalMaterial'
-import File from '../shared/File'
-import Formula from '../shared/Formula'
-import Hints from './Hints'
-import Image from '../shared/Image'
-import ImageOverlay from '../shared/ImageOverlay'
-import References from '../shared/References'
-import SaveIndicator from './internal/SaveIndicator'
-import SectionElement from '../SectionElement'
 import SectionInstruction from './SectionInstruction'
-import { mkTableOfContents } from '../shared/TableOfContents'
-import TextAnswer from './TextAnswer'
-import Video from '../shared/Video'
-import RenderChildNodes from '../RenderChildNodes'
-import { QuestionNumber } from '../shared/QuestionNumber'
-import ExamTranslation from '../shared/ExamTranslation'
-import * as _ from 'lodash-es'
+import SectionTitle from './SectionTitle'
 import { StudentNameHeader } from './StudentNameHeader'
+import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
-import { TextAnswer as TextAnswerType, RichTextAnswer } from '../../types/ExamAnswer'
-import GoToExamineAnswersButton from './GoToExamineAnswersButton'
-import { Footer } from '../shared/Footer'
-import { VersionNumber } from '../shared/VersionNumber'
+import ErrorIndicator from './internal/ErrorIndicator'
+import SaveIndicator from './internal/SaveIndicator'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -125,6 +125,8 @@ const renderChildNodes = createRenderChildNodes({
   'image-overlay': ImageOverlay
 })
 
+export const TOCContext = React.createContext({ visibleTOCElements: [] as string[] })
+
 const Exam: React.FunctionComponent<ExamProps> = ({
   doc,
   casStatus,
@@ -167,9 +169,36 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   )
 
   const i18n = useCached(() => initI18n(language, examCode, dayCode))
-  useEffect(changeLanguage(i18n, language))
 
+  useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
+
+  const [examQuestionsAndSectionTitles, setExamQuestionsAndSectionTitles] = useState<
+    Map<Element, IntersectionObserverEntry>
+  >(new Map())
+
+  const callback = (entries: IntersectionObserverEntry[]) =>
+    entries.forEach(entry => {
+      setExamQuestionsAndSectionTitles(prevEntries => new Map(prevEntries).set(entry.target, entry))
+    })
+
+  const visibleTOCElements = Array.from(examQuestionsAndSectionTitles.values())
+    .filter(entry => entry.isIntersecting)
+    .map(entry => entry.target.getAttribute('data-toc-id') as string)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callback)
+    const questionsAndSectionTitles = Array.from(
+      document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
+    )
+    questionsAndSectionTitles.forEach(element => {
+      observer.observe(element)
+    })
+
+    return () => {
+      questionsAndSectionTitles.forEach(element => observer.unobserve(element))
+    }
+  }, [])
 
   const isInViewport = (element: Element) => {
     const rect = element.getBoundingClientRect()
@@ -177,36 +206,14 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   }
 
   const handleExamScroll = () => {
-    const scrollY = window.scrollY
-    const questionsAndSectionTitles = document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
-    const sideNavigation = document.querySelector(`.sidebar-toc-container .table-of-contents`)
-
-    const highlightableElementsInNavi = document.querySelectorAll(
-      'li.level-0, .toc-section-header, .answer-instructions-container'
+    const questionsAndSectionTitles = Array.from(
+      document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
     )
-    highlightableElementsInNavi.forEach(i => i.classList.remove('current'))
 
     // Find the section currently in view
     questionsAndSectionTitles.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top + scrollY
-      const elementBottom = element.getBoundingClientRect().bottom + scrollY
-
-      const elementBeginsInView = elementTop < scrollY + window.innerHeight && elementTop > scrollY
-      const elementEndsInView = elementBottom < scrollY + window.innerHeight && elementBottom > scrollY
-      const elementFillsView = elementTop < scrollY && elementBottom > scrollY + window.innerHeight
-
-      if (elementBeginsInView || elementEndsInView || elementFillsView) {
-        const currentSectionId = element.getAttribute('id')?.replace('section-title-', '')
-
-        if (currentSectionId) {
-          const naviSectionHeader = document.querySelector(`.table-of-contents #toc-section-title-${currentSectionId}`)
-          const sectionAnswerInstructions = document.querySelector(
-            `.table-of-contents .answer-instructions-container.section-${currentSectionId}`
-          )
-          naviSectionHeader?.classList.add('current')
-          sectionAnswerInstructions?.classList.add('current')
-        }
-
+      const elementIsInViewport = isElementPartiallyInViewport(element as HTMLElement)
+      if (elementIsInViewport) {
         const currentQuestionNumber = element.querySelector('.anchor')?.id.replace('question-nr-', '')
 
         const naviQuestionTitle =
@@ -214,9 +221,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           document.querySelector(`.table-of-contents li[data-list-number="${currentQuestionNumber}."]`)
 
         if (naviQuestionTitle) {
-          naviQuestionTitle.classList.add('current')
           const isVisible = isInViewport(naviQuestionTitle)
 
+          const sideNavigation = document.querySelector(`.sidebar-toc-container .table-of-contents`)
           if (!isVisible && !!sideNavigation) {
             const navHeight = sideNavigation.getBoundingClientRect().height
             const scrollToPos = (naviQuestionTitle as HTMLElement).offsetTop - navHeight / 2
@@ -227,27 +234,7 @@ const Exam: React.FunctionComponent<ExamProps> = ({
     })
   }
 
-  window.addEventListener('scroll', _.throttle(handleExamScroll, 100, { trailing: false }))
-
-  const handleTOCScroll = (e: Event) => {
-    const toc = e.currentTarget as Element
-
-    if (toc.scrollHeight <= toc.clientHeight) {
-      return
-    }
-    const deltaY = (e as WheelEvent).deltaY
-    const hitsTop = deltaY < 0 && toc.scrollTop === 0
-    const hitsBottom = deltaY > 0 && toc.scrollTop >= toc.scrollHeight - toc.clientHeight
-    if (hitsTop || hitsBottom) {
-      e.preventDefault()
-    }
-  }
-
-  useEffect(() => {
-    const toc = document.querySelector('.sidebar-toc-container .table-of-contents')
-    toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
-    return () => toc?.addEventListener('wheel', handleTOCScroll, { passive: false })
-  }, [])
+  window.addEventListener('scroll', _.throttle(handleExamScroll, 500, { trailing: false }))
 
   // TODO: Remove 'isNewKoeVersion' checks when old Koe version is not supported anymore
   const isNewKoeVersion = examServerApi.examineExam !== undefined
@@ -263,7 +250,9 @@ const Exam: React.FunctionComponent<ExamProps> = ({
           <div className="e-toc-and-exam">
             {tableOfContents && (
               <div className="sidebar-toc-container" aria-hidden="true">
-                <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
+                <TOCContext.Provider value={{ visibleTOCElements }}>
+                  <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
+                </TOCContext.Provider>
               </div>
             )}
 

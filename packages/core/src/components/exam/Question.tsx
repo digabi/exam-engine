@@ -72,6 +72,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
           'e-expanded': expanded
         })}
         data-annotation-anchor={displayNumber}
+        data-toc-id={`question-${displayNumber}`}
       >
         <div className="anchor" id={`question-nr-${displayNumber}`} />
 

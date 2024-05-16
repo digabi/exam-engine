@@ -54,9 +54,6 @@
       display: none;
     }
 
-    .answer-instructions-container.current {
-      background: @currentBg;
-    }
     .answer-instructions,
     .max-answers {
       margin: 0.25rem 0 1rem;
@@ -79,6 +76,10 @@
       max-width: 500px;
       overflow-y: auto;
       max-height: 100vh;
+
+      .isVisible {
+        background: @currentBg;
+      }
 
       ol li {
         margin-bottom: 0;
@@ -119,7 +120,7 @@
           font-weight: 600;
         }
 
-        &.current {
+        &.isVisible {
           background: @currentBg;
 
           .e-question-title,
@@ -164,10 +165,6 @@
         .toc-section-header {
           margin-bottom: 0;
           padding: 0.5rem;
-
-          &.current {
-            background: @currentBg;
-          }
         }
       }
 
