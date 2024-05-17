@@ -1,11 +1,12 @@
 import React, { createRef, useContext, useEffect, useState } from 'react'
+import * as _ from 'lodash-es'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
+import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats, TextAnnotation } from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeExamStore } from '../../store'
@@ -17,6 +18,7 @@ import SectionElement from '../SectionElement'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { withExamContext } from '../context/ExamContext'
 import { TOCContext } from '../context/TOCContext'
+import { AnnotationContext } from '../context/AnnotationContext'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
@@ -228,83 +230,114 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
+  const testAnnotations = {
+    'e:exam:-1 > e:section:4 > e:question:4 > e:audio-group:5 > e:question:0 > e:choice-answer:1 > e:choice-answer-option:1':
+      {
+        startIndex: 3,
+        length: 10,
+        message: 'täällä ollaan!'
+      },
+    'e:exam:-1 > e:section:5 > e:question:2 > e:question-title:0': {
+      startIndex: 0,
+      length: 5,
+      message: 'moi!'
+    },
+    'e:exam:-1 > e:section:5 > e:question:4 > e:question:6 > e:choice-answer:1 > e:choice-answer-option:1': {
+      startIndex: 10,
+      length: 15,
+      message: 'moi Thomas'
+    }
+  }
+
+  const onClickMark = (annotation: TextAnnotation) => {
+    console.log(annotation)
+    return undefined
+  }
+
   return (
     <Provider store={store}>
-      <I18nextProvider i18n={i18n}>
-        <TOCContext.Provider
+      <TOCContext.Provider
+        value={{
+          visibleTOCElements: visibleElements,
+          addRef
+        }}
+      >
+        <AnnotationContext.Provider
           value={{
-            visibleTOCElements: visibleElements,
-            addRef
+            annotations: testAnnotations,
+            onClickAnnotation: onClickMark
           }}
         >
-          <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
-            <React.StrictMode />
-            {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+          <I18nextProvider i18n={i18n}>
+            <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
+              <React.StrictMode />
+              {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-            <div className="e-toc-and-exam">
-              {tableOfContents && (
-                <div className="sidebar-toc-container" aria-hidden="true">
-                  <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
-                </div>
-              )}
+              <div className="e-toc-and-exam">
+                {tableOfContents && (
+                  <div className="sidebar-toc-container" aria-hidden="true">
+                    <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
+                  </div>
+                )}
 
-              <div className="main-exam-container">
-                <div className="main-exam">
-                  <StudentNameHeader studentName={studentName} />
-                  <SectionElement aria-labelledby={examTitleId}>
-                    {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-                    {date && (
-                      <p>
-                        <strong>{dateTimeFormatter.format(date)}</strong>
-                      </p>
-                    )}
-                    {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+                <div className="main-exam-container">
+                  <div className="main-exam">
+                    <StudentNameHeader studentName={studentName} />
+                    <SectionElement aria-labelledby={examTitleId}>
+                      {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+                      {date && (
+                        <p>
+                          <strong>{dateTimeFormatter.format(date)}</strong>
+                        </p>
+                      )}
+                      {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-                    {tableOfContents && (
-                      <div className="main-toc-container">
-                        <TableOfContents
-                          {...{
-                            element: tableOfContents,
-                            renderChildNodes
-                          }}
-                        />
+                      {tableOfContents && (
+                        <div className="main-toc-container">
+                          <TableOfContents
+                            {...{
+                              element: tableOfContents,
+                              renderChildNodes
+                            }}
+                          />
+                        </div>
+                      )}
+
+                      {externalMaterial && (
+                        <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                      )}
+                    </SectionElement>
+
+                    {renderChildNodes(root)}
+
+                    {(isPreview || isNewKoeVersion) && (
+                      <div className="e-examine-exam">
+                        <GoToExamineAnswersButton />
+                        <ProceedToExamineAnswersText />
                       </div>
                     )}
-
-                    {externalMaterial && (
-                      <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                    )}
-                  </SectionElement>
-
-                  {renderChildNodes(root)}
-
-                  {(isPreview || isNewKoeVersion) && (
-                    <div className="e-examine-exam">
-                      <GoToExamineAnswersButton />
-                      <ProceedToExamineAnswersText />
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {(isPreview || isNewKoeVersion) && (
-              <Footer>
-                <div className="e-footer-version-number-container">
-                  <VersionNumber />
-                </div>
-              </Footer>
-            )}
+              {(isPreview || isNewKoeVersion) && (
+                <Footer>
+                  <div className="e-footer-version-number-container">
+                    <VersionNumber />
+                  </div>
+                </Footer>
+              )}
 
-            <div className="e-indicators-container">
-              <ErrorIndicator />
-              <SaveIndicator />
-            </div>
+              <div className="e-indicators-container">
+                <ErrorIndicator />
+                <SaveIndicator />
+              </div>
 
-            {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
-          </main>
-        </TOCContext.Provider>
-      </I18nextProvider>
+              {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
+            </main>
+          </I18nextProvider>
+        </AnnotationContext.Provider>
+      </TOCContext.Provider>
     </Provider>
   )
 }
