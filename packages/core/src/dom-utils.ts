@@ -169,3 +169,21 @@ export function useIsElementInViewport(elementType: 'question' | 'section', disp
 
   return isVisible
 }
+
+export function getElementPath(element: Element): string {
+  const temp = !element.tagName && Array.from(element.parentNode?.childNodes || []).indexOf(element)
+  const elementIndex = Array.from(element.parentElement?.children || []).indexOf(element)
+  let path = `${element.nodeName}:${elementIndex > 0 ? elementIndex : temp}`
+  let currentElement = element
+  while (currentElement.parentElement) {
+    currentElement = currentElement.parentElement
+    const displayNumber = currentElement.getAttribute('display-number')
+    const index =
+      Number(displayNumber) ||
+      Array.from(currentElement.parentElement?.children || [currentElement]).indexOf(currentElement)
+    const elementId = currentElement.getAttribute('id')
+    path = `${elementId || currentElement.nodeName}:${index} > ${path}`
+  }
+
+  return path
+}

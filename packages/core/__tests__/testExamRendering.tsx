@@ -64,6 +64,7 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
           restoreAnswer: () => undefined
         }
       }
+
       const resultsProps: ResultsProps = {
         ...commonProps,
         gradingStructure,

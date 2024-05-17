@@ -11,12 +11,14 @@ import AttachmentsQuestion from './Question'
 import AttachmentsQuestionTitle from './QuestionTitle'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
-import { ExamProps } from '../exam/Exam'
+import { AnnotationProps, ExamProps } from '../exam/Exam'
 import { withExamContext } from '../context/ExamContext'
 import RenderChildNodes from '../RenderChildNodes'
 import RenderExamElements from '../RenderExamElements'
 import SectionElement from '../SectionElement'
 import { withSectionContext } from '../context/SectionContext'
+import { AnnotationProvider } from '../context/AnnotationProvider'
+import { AnnotationPopup } from '../shared/AnnotationPopup'
 
 const renderChildNodes = createRenderChildNodes({
   'audio-group': RenderExamElements,
@@ -26,7 +28,11 @@ const renderChildNodes = createRenderChildNodes({
   section: withSectionContext(RenderChildNodes)
 })
 
-const Attachments: React.FunctionComponent<ExamProps> = () => {
+const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
+  annotations,
+  onClickAnnotation,
+  onSaveAnnotation
+}) => {
   const { root, language, date, dateTimeFormatter, dayCode, examCode, resolveAttachment, subjectLanguage } =
     useContext(CommonExamContext)
 
@@ -40,26 +46,33 @@ const Attachments: React.FunctionComponent<ExamProps> = () => {
   useEffect(scrollToHash, [])
 
   return (
-    <I18nextProvider i18n={i18n}>
-      <main className="e-exam attachments" lang={subjectLanguage} aria-labelledby={examTitleId}>
-        <React.StrictMode />
-        {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-        <SectionElement aria-labelledby={examTitleId}>
-          {examTitle && (
-            <DocumentTitle id={examTitleId}>
-              <AttachmentsPageTitle />
-              {NBSP}
-              {renderChildNodes(examTitle)}
-            </DocumentTitle>
-          )}
-          <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
-          {externalMaterial && (
-            <AttachmentsExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-          )}
-        </SectionElement>
-        {renderChildNodes(root)}
-      </main>
-    </I18nextProvider>
+    <AnnotationProvider
+      annotations={annotations}
+      onClickAnnotation={onClickAnnotation}
+      onSaveAnnotation={onSaveAnnotation}
+    >
+      <I18nextProvider i18n={i18n}>
+        <main className="e-exam attachments" lang={subjectLanguage} aria-labelledby={examTitleId}>
+          <AnnotationPopup />
+          <React.StrictMode />
+          {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+          <SectionElement aria-labelledby={examTitleId}>
+            {examTitle && (
+              <DocumentTitle id={examTitleId}>
+                <AttachmentsPageTitle />
+                {NBSP}
+                {renderChildNodes(examTitle)}
+              </DocumentTitle>
+            )}
+            <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
+            {externalMaterial && (
+              <AttachmentsExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+            )}
+          </SectionElement>
+          {renderChildNodes(root)}
+        </main>
+      </I18nextProvider>
+    </AnnotationProvider>
   )
 }
 

@@ -36,6 +36,27 @@ export interface InspectionScore {
 interface BaseAnnotation {
   /** The message attached to the annotation */
   message: string
+  showPopup?: boolean
+  markNumber?: string
+}
+
+export interface TextAnnotation extends BaseAnnotation {
+  /** Legacy exams don't have this property, so it's marked as optional. */
+  type?: 'text'
+  /** A zero-indexed index of the character where the annotation starts at. Images are counted as 1 character. */
+  startIndex: number
+  /** The length of the annotation in characters. Images are counted as 1 character. */
+  length: number
+}
+
+export interface NewExamAnnotation extends TextAnnotation {
+  displayNumber: string
+  annotationAnchor: string
+  hidden: boolean
+  selectedText: string
+}
+export interface ExamAnnotation extends NewExamAnnotation {
+  annotationId: number
 }
 
 interface ShapeAnnotation extends BaseAnnotation {
@@ -74,14 +95,5 @@ export interface RectAnnotation extends ShapeAnnotation {
  * corner of the image.
  */
 export type ImageAnnotation = LineAnnotation | RectAnnotation
-
-export interface TextAnnotation extends BaseAnnotation {
-  /** Legacy exams don't have this property, so it's marked as optional. */
-  type?: 'text'
-  /** A zero-indexed index of the character where the annotation starts at. Images are counted as 1 character. */
-  startIndex: number
-  /** The length of the annotation in characters. Images are counted as 1 character. */
-  length: number
-}
 
 export type Annotation = TextAnnotation | ImageAnnotation

@@ -15,6 +15,7 @@ import { QuestionContext } from '../context/QuestionContext'
 import { Score } from '../shared/Score'
 import { saveAnswer } from '../../store/answers/actions'
 import { AnswersState } from '../../store/answers/reducer'
+import { AnnotationContext } from '../context/AnnotationProvider'
 
 const menuBorderWidthPx = 2
 const roundingErrorCompensationPx = 1
@@ -80,6 +81,14 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   const { t } = useExamTranslation()
   const scoreId = answerScoreId(element)
 
+  const annotationContextData = useContext(AnnotationContext)
+  const canBeAnnotated = Object.keys(annotationContextData).length !== 0
+  const mouseHandlerOverrides = {
+    onClick: () => {},
+    onMouseDown: () => {},
+    onMouseMove: () => {}
+  }
+
   return (
     <span className="e-nowrap">
       <span className="anchor" id={`question-nr-${displayNumber}`} />
@@ -135,6 +144,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
                 item,
                 index: i
               })}
+              {...(canBeAnnotated ? mouseHandlerOverrides : {})}
             >
               {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
               <span className={classNames('e-dropdown-answer__menu-item-inner e-block', { 'e-nowrap': measuring })}>
