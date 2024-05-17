@@ -12,7 +12,7 @@ import { url } from '../../url'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { QuestionContext } from '../context/QuestionContext'
 import { Indicator } from './AnswerIndicator'
-import { TOCContext } from '../exam/Exam'
+import { TOCContext } from '../context/TOCContext'
 
 export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { attachmentsURL } = useContext(CommonExamContext)

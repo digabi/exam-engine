@@ -1,7 +1,7 @@
 import * as _ from 'lodash-es'
 import { ExamNamespaceURI } from './createRenderChildNodes'
 import { useContext, useEffect, useState } from 'react'
-import { TOCContext } from './components/exam/Exam'
+import { TOCContext } from './components/context/TOCContext'
 
 export const NBSP = '\u00A0'
 

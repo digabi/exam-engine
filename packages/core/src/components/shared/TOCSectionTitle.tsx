@@ -9,7 +9,7 @@ import { AnswersState } from '../../store/answers/reducer'
 import AnsweringInstructions from '../AnsweringInstructions'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { SectionContext } from '../context/SectionContext'
-import { TOCContext } from '../exam/Exam'
+import { TOCContext } from '../context/TOCContext'
 
 export const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { sections } = useContext(CommonExamContext)

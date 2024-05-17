@@ -51,6 +51,7 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
+import { TOCContext } from '../context/TOCContext'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -122,11 +123,6 @@ const renderChildNodes = createRenderChildNodes({
   'text-answer': TextAnswer,
   video: Video,
   'image-overlay': ImageOverlay
-})
-
-export const TOCContext = React.createContext({
-  visibleTOCElements: [] as string[],
-  isInSidebar: false
 })
 
 const Exam: React.FunctionComponent<ExamProps> = ({
