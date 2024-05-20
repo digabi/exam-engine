@@ -16,6 +16,7 @@ import RenderChildNodes from '../RenderChildNodes'
 import SectionElement from '../SectionElement'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { withExamContext } from '../context/ExamContext'
+import { TOCContext } from '../context/TOCContext'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
@@ -51,7 +52,6 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
-import { TOCContext } from '../context/TOCContext'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -171,14 +171,25 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   useEffect(changeLanguage(i18n, language))
   useEffect(scrollToHash, [])
 
+  const [allRefs, setAllRefs] = useState<HTMLDivElement[]>([])
+
+  const addRef = (ref: HTMLDivElement) => {
+    if (!allRefs.includes(ref)) {
+      setAllRefs(prevRefs => {
+        const nextAllRefs = [...prevRefs, ref]
+        return nextAllRefs
+      })
+    }
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(callback)
-    const observableElements = document.querySelectorAll('.e-exam-question.e-level-0, .exam-section-title')
+    const observableElements = allRefs
     observableElements.forEach(element => observer.observe(element))
     return () => {
       observableElements.forEach(element => observer.unobserve(element))
     }
-  }, [])
+  }, [allRefs])
 
   const callback = (entries: IntersectionObserverEntry[]) =>
     entries.forEach(entry => {
@@ -227,79 +238,80 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
-        <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
-          <React.StrictMode />
-          {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+        <TOCContext.Provider
+          value={{
+            visibleTOCElements: visibleElements,
+            isInSidebar: true,
+            addRef
+          }}
+        >
+          <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
+            <React.StrictMode />
+            {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
 
-          <div className="e-toc-and-exam">
-            {tableOfContents && (
-              <div className="sidebar-toc-container" aria-hidden="true">
-                <TOCContext.Provider
-                  value={{
-                    visibleTOCElements: visibleElements,
-                    isInSidebar: true
-                  }}
-                >
+            <div className="e-toc-and-exam">
+              {tableOfContents && (
+                <div className="sidebar-toc-container" aria-hidden="true">
                   <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
-                </TOCContext.Provider>
-              </div>
-            )}
+                </div>
+              )}
 
-            <div className="main-exam-container">
-              <div className="main-exam">
-                <StudentNameHeader studentName={studentName} />
-                <SectionElement aria-labelledby={examTitleId}>
-                  {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-                  {date && (
-                    <p>
-                      <strong>{dateTimeFormatter.format(date)}</strong>
-                    </p>
-                  )}
-                  {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+              <div className="main-exam-container">
+                <div className="main-exam">
+                  <StudentNameHeader studentName={studentName} />
+                  <SectionElement aria-labelledby={examTitleId}>
+                    {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+                    {date && (
+                      <p>
+                        <strong>{dateTimeFormatter.format(date)}</strong>
+                      </p>
+                    )}
+                    {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-                  {tableOfContents && (
-                    <div className="main-toc-container">
-                      <TableOfContents
-                        {...{
-                          element: tableOfContents,
-                          renderChildNodes
-                        }}
-                      />
+                    {tableOfContents && (
+                      <div className="main-toc-container">
+                        <TableOfContents
+                          {...{
+                            element: tableOfContents,
+                            renderChildNodes
+                          }}
+                        />
+                      </div>
+                    )}
+
+                    {externalMaterial && (
+                      <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                    )}
+                  </SectionElement>
+
+                  {renderChildNodes(root)}
+
+                  {(isPreview || isNewKoeVersion) && (
+                    <div className="e-examine-exam">
+                      <GoToExamineAnswersButton />
+                      <ProceedToExamineAnswersText />
                     </div>
                   )}
-
-                  {externalMaterial && (
-                    <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                  )}
-                </SectionElement>
-
-                {renderChildNodes(root)}
-
-                {(isPreview || isNewKoeVersion) && (
-                  <div className="e-examine-exam">
-                    <GoToExamineAnswersButton />
-                    <ProceedToExamineAnswersText />
-                  </div>
-                )}
+                </div>
               </div>
             </div>
-          </div>
 
-          {(isPreview || isNewKoeVersion) && (
-            <Footer>
-              <div className="e-footer-version-number-container">
-                <VersionNumber />
-              </div>
-            </Footer>
-          )}
+            {(isPreview || isNewKoeVersion) && (
+              <Footer>
+                <div className="e-footer-version-number-container">
+                  <VersionNumber />
+                </div>
+              </Footer>
+            )}
 
-          <div className="e-indicators-container">
-            <ErrorIndicator />
-            <SaveIndicator />
-          </div>
+            <div className="e-indicators-container">
+              <ErrorIndicator />
+              <SaveIndicator />
+            </div>
 
-          {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
-        </main>
+            {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
+          </main>
+        </TOCContext.Provider>
       </I18nextProvider>
     </Provider>
   )

@@ -1,15 +1,16 @@
+import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { ExamComponentProps } from '../../createRenderChildNodes'
+import { getNumericAttribute, query } from '../../dom-utils'
+import { useExamTranslation } from '../../i18n'
+import { CasState } from '../../store/cas/reducer'
+import { ExamContext } from '../context/ExamContext'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext } from '../context/SectionContext'
-import { ExamComponentProps } from '../../createRenderChildNodes'
-import { CasState } from '../../store/cas/reducer'
-import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useExamTranslation } from '../../i18n'
-import { getNumericAttribute, query } from '../../dom-utils'
-import { ExamContext } from '../context/ExamContext'
+import { TOCContext } from '../context/TOCContext'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -63,6 +64,16 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
     return () => window.removeEventListener('keydown', preventTabKey)
   }, [expanded])
 
+  const ref = React.createRef<HTMLDivElement>()
+
+  const { addRef } = useContext(TOCContext)
+
+  useEffect(() => {
+    if (ref?.current && level === 0) {
+      addRef(ref.current)
+    }
+  }, [])
+
   return !casForbidden || casStatus === 'forbidden' ? (
     <ExpandQuestionContext.Provider value={{ expanded, toggleWriterMode }}>
       <div
@@ -73,6 +84,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         })}
         data-annotation-anchor={displayNumber}
         data-toc-id={`question-${displayNumber}`}
+        ref={ref}
       >
         <div className="anchor" id={`question-nr-${displayNumber}`} />
 

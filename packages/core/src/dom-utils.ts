@@ -160,9 +160,9 @@ export function useIsElementInViewport(elementType: 'question' | 'section', disp
   const id = `${elementType}-${displayNumber}`
 
   useEffect(() => {
-    if (visibleTOCElements.includes(id) && !isVisible) {
+    if (visibleTOCElements?.includes(id) && !isVisible) {
       setIsVisible(true)
-    } else if (!visibleTOCElements.includes(id) && isVisible) {
+    } else if (!visibleTOCElements?.includes(id) && isVisible) {
       setIsVisible(false)
     }
   }, [visibleTOCElements])

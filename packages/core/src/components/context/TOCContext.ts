@@ -1,6 +1,9 @@
 import { createContext } from 'react'
 
-export const TOCContext = createContext({
-  visibleTOCElements: [] as string[],
-  isInSidebar: false
-})
+type TOCContextType = {
+  visibleTOCElements: string[]
+  isInSidebar: boolean
+  addRef: (object: HTMLDivElement) => void
+}
+
+export const TOCContext = createContext({} as TOCContextType)
