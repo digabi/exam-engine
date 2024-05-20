@@ -1,5 +1,7 @@
-import { ExamNamespaceURI } from './createRenderChildNodes'
 import * as _ from 'lodash-es'
+import { ExamNamespaceURI } from './createRenderChildNodes'
+import { useContext, useEffect, useState } from 'react'
+import { TOCContext } from './components/context/TOCContext'
 
 export const NBSP = '\u00A0'
 
@@ -149,4 +151,21 @@ export function setProperties(element: HTMLElement, properties?: Record<string, 
       ;(element as any)[k] = v
     }
   })
+}
+
+export function useIsElementInViewport(elementType: 'question' | 'section', displayNumber: string) {
+  const { visibleTOCElements } = useContext(TOCContext)
+  const [isVisible, setIsVisible] = useState(false)
+
+  const id = `${elementType}-${displayNumber}`
+
+  useEffect(() => {
+    if (visibleTOCElements?.includes(id) && !isVisible) {
+      setIsVisible(true)
+    } else if (!visibleTOCElements?.includes(id) && isVisible) {
+      setIsVisible(false)
+    }
+  }, [visibleTOCElements])
+
+  return isVisible
 }

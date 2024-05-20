@@ -54,9 +54,6 @@
       display: none;
     }
 
-    .answer-instructions-container.current {
-      background: @currentBg;
-    }
     .answer-instructions,
     .max-answers {
       margin: 0.25rem 0 1rem;
@@ -79,6 +76,12 @@
       max-width: 500px;
       overflow-y: auto;
       max-height: 100vh;
+
+      .current {
+        background: @currentBg;
+        outline: 2px solid @currentBg;
+        border-radius: 1px;
+      }
 
       ol li {
         margin-bottom: 0;
@@ -120,8 +123,6 @@
         }
 
         &.current {
-          background: @currentBg;
-
           .e-question-title,
           a {
             color: #1b4a5a;
@@ -164,10 +165,6 @@
         .toc-section-header {
           margin-bottom: 0;
           padding: 0.5rem;
-
-          &.current {
-            background: @currentBg;
-          }
         }
       }
 
@@ -178,6 +175,7 @@
 
       .e-total {
         font-size: 14px;
+        margin-right: 0.5rem;
       }
 
       .toc-section-header,

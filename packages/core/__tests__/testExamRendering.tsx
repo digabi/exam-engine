@@ -23,6 +23,19 @@ import { generateAnswers } from '@digabi/exam-engine-generator'
 describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_basename, exam) => {
   const resolveAttachment = (filename: string) => path.resolve(path.dirname(exam), 'attachments', filename)
 
+  beforeEach(() => {
+    // @ts-expect-error fix "IntersectionObserver is not defined" error in tests
+    global.IntersectionObserver = jest.fn((cb, options = {}) => {
+      const instance = {
+        observe: jest.fn,
+        takeRecords: jest.fn,
+        unobserve: jest.fn,
+        disconnect: jest.fn
+      }
+      return instance
+    })
+  })
+
   it('renders properly', async () => {
     const source = await fs.readFile(exam, 'utf-8')
     const results = await masterExam(source, () => '', getMediaMetadataFromLocalFile(resolveAttachment), {
