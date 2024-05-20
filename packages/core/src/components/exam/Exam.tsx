@@ -193,20 +193,13 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   const callback = (entries: IntersectionObserverEntry[]) =>
     entries.forEach(entry => {
-      setObservableExamElements(prevEntries => ({
-        ...prevEntries,
-        [entry.target.getAttribute('data-toc-id')!]: entry.isIntersecting
-      }))
+      const dataTOCId = entry.target.getAttribute('data-toc-id')!
+      setVisibleElements(prevEntries =>
+        entry.isIntersecting ? [...prevEntries, dataTOCId] : prevEntries.filter(entries => entries !== dataTOCId)
+      )
     })
 
-  const [observableExamElements, setObservableExamElements] = useState<Record<string, boolean>>({})
-
   const [visibleElements, setVisibleElements] = useState<string[]>([])
-
-  useEffect(() => {
-    const visibleElements = Object.keys(observableExamElements).filter(key => observableExamElements[key])
-    setVisibleElements(visibleElements)
-  }, [observableExamElements])
 
   const isInViewport = (element: Element) => {
     const offset = 100 // must be at least this far away from viewport edges
