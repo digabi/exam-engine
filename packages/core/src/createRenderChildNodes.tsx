@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AnnotationContext } from './components/context/AnnotationContext'
-import { mapChildNodes } from './dom-utils'
+import { mapChildNodes, queryAncestors } from './dom-utils'
 import { onMouseDownForAnnotation } from './components/grading/reactAnnotation'
 import { TextAnnotation } from './types/Score'
 import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
@@ -24,12 +24,17 @@ export const enum RenderOptions {
 export type RenderChildNodes = (element: Element, options?: RenderOptions) => React.ReactNode[]
 
 function getElementPath(element: Element): string {
-  let path = `${element.tagName}:${Array.from(element.parentElement?.children || []).indexOf(element)}`
+  const temp = !element.tagName && Array.from(element.parentNode?.childNodes || []).indexOf(element)
+  const elementIndex = Array.from(element.parentElement?.children || []).indexOf(element)
+  let path = `${element.nodeName}:${elementIndex > 0 ? elementIndex : temp}`
   let currentElement = element
-
   while (currentElement.parentElement) {
     currentElement = currentElement.parentElement
-    path = `${currentElement.tagName}:${Array.from(currentElement.parentElement?.children || []).indexOf(currentElement)} > ${path}`
+    const displayNumber = currentElement.getAttribute('display-number')
+    const index =
+      Number(displayNumber) || Array.from(currentElement.parentElement?.children || []).indexOf(currentElement)
+    const elementId = currentElement.getAttribute('id')
+    path = `${elementId || currentElement.nodeName}:${index} > ${path}`
   }
 
   return path
@@ -42,9 +47,9 @@ export function createRenderChildNodes(
     switch (node.nodeType) {
       case Node.TEXT_NODE:
       case Node.CDATA_SECTION_NODE: {
-        const path = getElementPath(node.parentElement as Element)
+        const path = getElementPath(node as Element)
         if (node.textContent?.trim().length) {
-          //console.log(path, node)
+          //console.log(path, node.textContent.trim())
         }
         return options === RenderOptions.RenderHTML ? renderTextNode(node as Text, path) : null
       }
@@ -92,6 +97,7 @@ export function createRenderChildNodes(
 }
 
 function renderTextNode(node: Text, key: string) {
+  const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
   const annotationData = useContext(AnnotationContext)
   if (Object.keys(annotationData).length === 0) {
     return node.textContent!
@@ -105,13 +111,12 @@ function renderTextNode(node: Text, key: string) {
   const mouseUpCallback = (annotation: TextAnnotation) => {
     setMyAnnotation({
       ...annotation,
-      showPopup: true
+      showPopup: true,
+      markNumber: displayNumber
     })
   }
 
-  const closeEditor = () => {
-    setMyAnnotation(null)
-  }
+  const closeEditor = () => setMyAnnotation(null)
 
   const hasAnnotation = myAnnotation && myAnnotation.startIndex >= 0 && myAnnotation.length > 0
 
@@ -130,16 +135,15 @@ function renderTextNode(node: Text, key: string) {
     return (
       <>
         {before}
-        <span style={{ position: 'relative' }}>
+        <span style={{ position: 'relative' }} key={key}>
           <mark
             onClick={e => {
-              e.preventDefault()
-              console.log('prevent', e)
               onClickAnnotation(e, myAnnotation)
             }}
           >
             {marked}
           </mark>
+          <sup data-content={annotation.markNumber} />
           {myAnnotation.showPopup && (
             <CreateAnnotationPopup updateComment={onUpdateComment} closeEditor={closeEditor} />
           )}
@@ -150,7 +154,12 @@ function renderTextNode(node: Text, key: string) {
   }
 
   return (
-    <span onMouseDown={e => onMouseDownForAnnotation(e, mouseUpCallback)} ref={annotationContextRef}>
+    <span
+      onMouseDown={e => onMouseDownForAnnotation(e, mouseUpCallback)}
+      ref={annotationContextRef}
+      key={key}
+      className="e-annotatable"
+    >
       {hasAnnotation ? <ElementWithMark myAnnotation={myAnnotation} /> : node.textContent!}
     </span>
   )
