@@ -18,7 +18,7 @@ function SectionTitle({ element, renderChildNodes }: ExamComponentProps) {
   const { addRef } = useContext(TOCContext)
 
   useEffect(() => {
-    if (ref?.current) {
+    if (ref?.current && addRef) {
       addRef(ref.current)
     }
   }, [])

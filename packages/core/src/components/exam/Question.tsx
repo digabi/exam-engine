@@ -69,7 +69,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { addRef } = useContext(TOCContext)
 
   useEffect(() => {
-    if (ref?.current && level === 0) {
+    if (ref?.current && level === 0 && addRef) {
       addRef(ref.current)
     }
   }, [])
