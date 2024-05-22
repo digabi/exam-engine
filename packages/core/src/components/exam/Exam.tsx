@@ -6,7 +6,7 @@ import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats, TextAnnotation } from '../../index'
+import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeExamStore } from '../../store'
@@ -230,29 +230,12 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
-  const testAnnotations = {
-    'e:exam:-1 > e:section:4 > e:question:4 > e:audio-group:5 > e:question:0 > e:choice-answer:1 > e:choice-answer-option:1':
-      {
-        startIndex: 3,
-        length: 10,
-        message: 'täällä ollaan!'
-      },
-    'e:exam:-1 > e:section:5 > e:question:2 > e:question-title:0': {
-      startIndex: 0,
-      length: 5,
-      message: 'moi!'
-    },
-    'e:exam:-1 > e:section:5 > e:question:4 > e:question:6 > e:choice-answer:1 > e:choice-answer-option:1': {
-      startIndex: 10,
-      length: 15,
-      message: 'moi Thomas'
-    }
-  }
-
+  /*
   const onClickMark = (annotation: TextAnnotation) => {
     console.log(annotation)
     return undefined
   }
+  */
 
   return (
     <Provider store={store}>
