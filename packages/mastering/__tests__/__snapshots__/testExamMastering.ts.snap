@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Exam mastering leaves metadata when needed 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="1">
+  
+  <e:exam-title>Metadata</e:exam-title>
+  <e:section display-number="1" max-score="1">
+    <e:section-title>Ensimmäinen osa</e:section-title>
+    <e:question meta="question-meta" display-number="1" max-score="1">
+      <e:question-title>Produktiivinen aukko</e:question-title>
+      <e:hints>
+        <e:scored-text-answer max-score="1" meta="scored-text-answer" question-id="1" display-number="1">
+          
+        </e:scored-text-answer>
+      </e:hints>
+    </e:question>
+  </e:section>
+</e:exam>
+
+`;
+
 exports[`Exam mastering masters A_E.xml exam correctly 1`] = `
 {
   "attachments": [],
@@ -19732,12 +19752,12 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section meta="section" type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
+  <e:section type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
 
-    <e:question meta="question" display-number="1" max-score="21">
+    <e:question display-number="1" max-score="21">
       <e:question-title>Picknick</e:question-title>
       <e:question-instruction>
 
@@ -19761,7 +19781,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:audio-group>
         <e:question display-number="1.1" max-score="3">
           <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
-          <e:choice-answer meta="choice-answer" question-id="1" display-number="1.1" max-score="3">
+          <e:choice-answer question-id="1" display-number="1.1" max-score="3">
             
             
             
@@ -19779,7 +19799,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </span>
             
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" meta="text-answer" question-id="2" display-number="1.2">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" question-id="2" display-number="1.2">
             
           </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">
@@ -21606,12 +21626,12 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
   </e:exam-instruction>
   
   <e:table-of-contents/>
-  <e:section meta="section" type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
+  <e:section type="H" exam-type="normal visually-impaired" display-number="1" max-score="71">
     <e:section-title>Hörverständnis</e:section-title>
 
     <e:audio-test src="audio-test.ogg" duration="999"/>
 
-    <e:question meta="question" display-number="1" max-score="21">
+    <e:question display-number="1" max-score="21">
       <e:question-title>Picknick</e:question-title>
       <e:question-instruction>
 
@@ -21635,7 +21655,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:audio-group>
         <e:question display-number="1.1" max-score="3">
           <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
-          <e:choice-answer meta="choice-answer" question-id="1" display-number="1.1" max-score="3">
+          <e:choice-answer question-id="1" display-number="1.1" max-score="3">
             
             
             
@@ -21653,7 +21673,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               det picknicken? Skriv ett kort svar på svenska.
             </span>
           </e:question-title>
-          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" meta="text-answer" question-id="2" display-number="1.2">
+          <e:text-answer type="rich-text" max-score="6" use-language-of-instruction="true" question-id="2" display-number="1.2">
             
           </e:text-answer>
           <e:audio src="1.2.ogg" times="1" restricted-audio-id="2" duration="999">
@@ -24653,6 +24673,26 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 
   <e:references/>
 <e:exam-footer><p lang="fi-FI" class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
+
+`;
+
+exports[`Exam mastering removes metadata by default 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="1">
+  
+  <e:exam-title>Metadata</e:exam-title>
+  <e:section display-number="1" max-score="1">
+    <e:section-title>Ensimmäinen osa</e:section-title>
+    <e:question display-number="1" max-score="1">
+      <e:question-title>Produktiivinen aukko</e:question-title>
+      <e:hints>
+        <e:scored-text-answer max-score="1" question-id="1" display-number="1">
+          
+        </e:scored-text-answer>
+      </e:hints>
+    </e:question>
+  </e:section>
+</e:exam>
 
 `;
 

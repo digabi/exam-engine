@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" exam-schema-version="0.5">
+  <e:exam-versions>
+      <e:exam-version lang="fi-FI"/>
+  </e:exam-versions>
+  <e:exam-title>Metadata</e:exam-title>
+  <e:section>
+    <e:section-title>Ensimmäinen osa</e:section-title>
+    <e:question meta="question-meta">
+      <e:question-title>Produktiivinen aukko</e:question-title>
+      <e:hints>
+        <e:scored-text-answer max-score="1" meta="scored-text-answer">
+          <e:accepted-answer score="1">Metaa</e:accepted-answer>
+        </e:scored-text-answer>
+      </e:hints>
+    </e:question>
+  </e:section>
+</e:exam>
