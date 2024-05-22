@@ -146,6 +146,18 @@ describe('Exam mastering', () => {
     }
   })
 
+  it('removes metadata by default', async () => {
+    const xml = await readFixture('exam_with_metadata.xml')
+    const masteringResults = await masterExam(xml, generateUuid, getMediaMetadata)
+    expect(masteringResults[0].xml).not.toContain('meta')
+  })
+
+  it('leaves metadata when needed', async () => {
+    const xml = await readFixture('exam_with_metadata.xml')
+    const masteringResults = await masterExam(xml, generateUuid, getMediaMetadata, { removeMetadata: false })
+    expect(masteringResults[0].xml).toContain('meta')
+  })
+
   it('does not combine choice-answers and dropdown-answers to the same question in grading structure', async () => {
     const xml = generateExam({
       sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }]

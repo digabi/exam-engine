@@ -79,6 +79,11 @@ export interface MasteringOptions {
    */
   removeCorrectAnswers?: boolean
   /**
+   * Remove meta attributes that might reveal information about question for the student. By default, this is set to true, but in some contexts
+   * (answer analysis) we want to preserve more content in the XML.
+   */
+  removeMetadata?: boolean
+  /**
    * Throws an error if encountering an invalid LaTeX formula in an
    * `<e:formula>…</e:formula>` element.
    */
@@ -94,6 +99,7 @@ export interface MasteringOptions {
 const defaultOptions = {
   multiChoiceShuffleSecret: 'tJXjzAhY3dT4B26aikG2tPmPRlWRTKXF5eVpOR2eDFz3Aj4a3FHF1jB3tswVWPhc',
   removeCorrectAnswers: true,
+  removeMetadata: true,
   throwOnLatexError: true
 }
 
@@ -316,6 +322,10 @@ async function masterExamVersion(
     removeHvpMetadata(root)
   }
 
+  if (options.removeMetadata) {
+    removeMetadata(root)
+  }
+
   const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
   addRestrictedAudioMetadata(attachments)
   await renderFormulas(root, options.throwOnLatexError)
@@ -514,6 +524,11 @@ function removeHvpMetadata(exam: Element) {
       ns
     )
     .forEach(e => e.remove())
+}
+
+function removeMetadata(exam: Element) {
+  const elementsWithMeta = exam.find('//e:*[@meta]', ns)
+  elementsWithMeta.forEach(e => (e as Element).attr('meta')?.remove())
 }
 
 function updateMaxScoresToAnswers(exam: Exam) {
