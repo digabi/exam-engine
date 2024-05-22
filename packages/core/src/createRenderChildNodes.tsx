@@ -1,6 +1,9 @@
 import React, { useContext } from 'react'
 import { AnnotationContext } from './components/context/AnnotationContext'
 import { mapChildNodes } from './dom-utils'
+import { onMouseDownForAnnotation } from './components/grading/reactAnnotation'
+import { TextAnnotation } from './types/Score'
+import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
@@ -41,7 +44,7 @@ export function createRenderChildNodes(
       case Node.CDATA_SECTION_NODE: {
         const path = getElementPath(node.parentElement as Element)
         if (node.textContent?.trim().length) {
-          console.log(path, node)
+          //console.log(path, node)
         }
         return options === RenderOptions.RenderHTML ? renderTextNode(node as Text, path) : null
       }
@@ -89,22 +92,68 @@ export function createRenderChildNodes(
 }
 
 function renderTextNode(node: Text, key: string) {
-  const { annotations, onClickAnnotation } = useContext(AnnotationContext)
+  const annotationData = useContext(AnnotationContext)
+  if (Object.keys(annotationData).length === 0) {
+    return node.textContent!
+  }
+
+  const { annotations, onClickAnnotation, onSaveAnnotation } = annotationData
+  const annotationContextRef = React.createRef<HTMLDivElement>()
   const annotation = annotations?.[key]
-  if (annotation && annotation.startIndex >= 0 && annotation.length > 0) {
+  const [myAnnotation, setMyAnnotation] = React.useState<TextAnnotation | null>(annotation)
+
+  const mouseUpCallback = (annotation: TextAnnotation) => {
+    setMyAnnotation({
+      ...annotation,
+      showPopup: true
+    })
+  }
+
+  const closeEditor = () => {
+    setMyAnnotation(null)
+  }
+
+  const hasAnnotation = myAnnotation && myAnnotation.startIndex >= 0 && myAnnotation.length > 0
+
+  const ElementWithMark = ({ myAnnotation }: { myAnnotation: TextAnnotation }) => {
     const text = node.textContent!
-    const before = text.slice(0, annotation.startIndex)
-    const marked = text.slice(annotation.startIndex, annotation.startIndex + annotation.length)
-    const after = text.slice(annotation.startIndex + annotation.length)
+    const annotationEndIndex = myAnnotation.startIndex + myAnnotation.length
+    const before = text.slice(0, myAnnotation.startIndex)
+    const marked = text.slice(myAnnotation.startIndex, annotationEndIndex)
+    const after = text.slice(annotationEndIndex)
+
+    function onUpdateComment(comment: string) {
+      onSaveAnnotation({ ...myAnnotation, message: comment }, key)
+      closeEditor()
+    }
+
     return (
       <>
         {before}
-        <mark onClick={() => onClickAnnotation(annotation)}>{marked}</mark>
+        <span style={{ position: 'relative' }}>
+          <mark
+            onClick={e => {
+              e.preventDefault()
+              console.log('prevent', e)
+              onClickAnnotation(e, myAnnotation)
+            }}
+          >
+            {marked}
+          </mark>
+          {myAnnotation.showPopup && (
+            <CreateAnnotationPopup updateComment={onUpdateComment} closeEditor={closeEditor} />
+          )}
+        </span>
         {after}
       </>
     )
   }
-  return node.textContent!
+
+  return (
+    <span onMouseDown={e => onMouseDownForAnnotation(e, mouseUpCallback)} ref={annotationContextRef}>
+      {hasAnnotation ? <ElementWithMark myAnnotation={myAnnotation} /> : node.textContent!}
+    </span>
+  )
 }
 
 function htmlAttributes2props<T extends HTMLElement>(element: T, index: number): React.HTMLProps<T> {

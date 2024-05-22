@@ -36,6 +36,7 @@ export interface InspectionScore {
 interface BaseAnnotation {
   /** The message attached to the annotation */
   message: string
+  showPopup?: boolean
 }
 
 interface ShapeAnnotation extends BaseAnnotation {

@@ -1,0 +1,66 @@
+import { textAnnotationFromRange } from './editAnnotations'
+import React from 'react'
+
+export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
+  function onWindowMouseUpAfterAnswerMouseDown(e: MouseEvent) {
+    const target = e.target as HTMLElement
+    window.removeEventListener('mouseup', onWindowMouseUpAfterAnswerMouseDown)
+
+    // Text annotation
+    const selection = window.getSelection()
+    if (selection && hasTextSelectedInAnswerText()) {
+      const range = selection.getRangeAt(0)
+      const position = textAnnotationFromRange(target, range)
+      if (!position) {
+        return
+      }
+      const selectedText = selection.toString()
+      mouseUpCallback({ ...position, selectedText, range: selection.getRangeAt(0) })
+    }
+  }
+
+  const isReadOnly = false
+  // Do annotations only with left mouse buttons and when permitted
+  if (isReadOnly || e.button !== 0) {
+    return
+  }
+  window.addEventListener('mouseup', onWindowMouseUpAfterAnswerMouseDown)
+}
+
+export function hasTextSelectedInAnswerText(): boolean {
+  const selection = window.getSelection()
+  return (
+    selection !== null &&
+    selectionInAnswerText(selection) &&
+    (isRangeSelection(selection) || textSelectedInRange(selection))
+  )
+
+  function selectionInAnswerText(sel: Selection) {
+    if (sel.type === 'None' || sel.type === 'Caret' || sel.rangeCount === 0) {
+      return false
+    }
+    const startContainer = sel.getRangeAt(0).startContainer
+    const endContainer = sel.getRangeAt(0).endContainer
+    const startParent = startContainer.parentElement
+    const endParent = endContainer.parentElement
+    return sel.rangeCount > 0 && startParent === endParent
+  }
+
+  function isRangeSelection(sel: Selection) {
+    return sel?.type === 'Range'
+  }
+
+  function textSelectedInRange(sel: Selection) {
+    const range = sel.getRangeAt(0)
+    return (
+      !!sel.rangeCount &&
+      (range.toString().length > 0 ||
+        isParentContainer(range.startContainer as Element) ||
+        isParentContainer(range.endContainer as Element))
+    )
+  }
+
+  function isParentContainer(container: Element) {
+    return container.classList.contains('answer')
+  }
+}

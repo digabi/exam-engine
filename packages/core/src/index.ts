@@ -4,6 +4,7 @@ import Exam from './components/exam/Exam'
 import GradingInstructions from './components/grading-instructions/GradingInstructions'
 import Results from './components/results/Results'
 import parseExam from './parser/parseExam'
+export { AnnotationContext } from './components/context/AnnotationContext'
 
 export { Attachments, Exam, GradingInstructions, Results, parseExam }
 export { ExamComponentProps } from './createRenderChildNodes'
