@@ -37,6 +37,7 @@ interface BaseAnnotation {
   /** The message attached to the annotation */
   message: string
   showPopup?: boolean
+  markNumber?: string
 }
 
 interface ShapeAnnotation extends BaseAnnotation {
