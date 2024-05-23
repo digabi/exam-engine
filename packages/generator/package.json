@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-generator",
-  "version": "20.2.4-meta-attribute.0",
+  "version": "20.2.5-meta-attribute.0",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "20.2.4-meta-attribute.0",
+    "@digabi/exam-engine-core": "20.2.5-meta-attribute.0",
     "libxmljs2": "^0.33.0",
     "lodash": "^4.17.15"
   },
