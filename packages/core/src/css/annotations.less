@@ -1,3 +1,6 @@
+@annotation-background: rgba(241, 34, 40, 0.2);
+@annotation-background-selected: hsla(46, 85%, 64%, 0.5);
+
 .e-annotation-wrapper {
   display: inline-block;
   position: relative;
@@ -20,6 +23,88 @@
     }
   }
 }
+
+.e-annotatable:hover {
+  &:not(:has(mark:hover)) {
+    outline-style: dashed;
+    outline-offset: 3px;
+    outline-width: 1px;
+    border-radius: 1px;
+    outline-color: rgba(241, 34, 40, 0.5);
+    background-color: rgba(241, 34, 40, 0.025);
+  }
+}
+
+.mark-bg-outline {
+  background: @annotation-background;
+  outline: 2px solid rgba(241, 34, 40, 0.2);
+  border-radius: 1px;
+}
+
+mark.e-annotation {
+  .mark-bg-outline;
+  cursor: pointer;
+
+  &[data-hidden=''] {
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: rgba(241, 34, 40, 0.3);
+    outline: 2px solid rgba(241, 34, 40, 0.3);
+  }
+
+  &.resolved {
+    background-color: #1111;
+    outline-color: #1111;
+  }
+
+  &.selected {
+    background-color: @annotation-background-selected;
+    outline: 2px solid @annotation-background-selected;
+  }
+
+  &[data-hidden='true'] {
+    background: none;
+    outline: none;
+
+    sup.e-annotation {
+      display: none;
+    }
+  }
+
+  sup.e-annotation {
+    // to make this "visible" for test
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+
+    &:after {
+      line-height: 14px;
+      position: absolute;
+      margin-top: -0.5rem;
+      content: attr(data-content);
+      white-space: nowrap;
+    }
+  }
+
+  /*> * {
+    background: none;
+  }
+  > mark {
+    .mark-bg-outline;
+  }
+  > p {
+    background: @annotation-background;
+  }
+  a {
+    background-color: transparent;
+  }
+*/
+}
+
 .e-annotation {
   position: relative; // The index is positioned absolutely with respect to this element.
 

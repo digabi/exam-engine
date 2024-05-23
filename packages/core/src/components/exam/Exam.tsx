@@ -230,13 +230,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
-  /*
-  const onClickMark = (annotation: TextAnnotation) => {
-    console.log(annotation)
-    return undefined
-  }
-  */
-
   return (
     <Provider store={store}>
       <TOCContext.Provider

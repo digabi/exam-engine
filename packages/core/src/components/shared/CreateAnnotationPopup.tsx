@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 
 export function CreateAnnotationPopup({
   updateComment,
@@ -7,17 +7,21 @@ export function CreateAnnotationPopup({
   updateComment: (value: string) => void
   closeEditor: () => void
 }) {
-  const commentTextArea = useRef<HTMLTextAreaElement>(null)
+  const [comment, setComment] = useState<string>('')
 
   return (
     <span className="annotation-popup" style={{ position: 'absolute' }}>
-      <textarea ref={commentTextArea} className="comment-content" role="textbox" aria-multiline="true" />
+      <textarea
+        className="comment-content"
+        role="textbox"
+        aria-multiline="true"
+        onChange={e => setComment(e.target.value)}
+        value={comment}
+        autoFocus={true}
+      />
       <span className="comment-button-area">
         <span>
-          <button
-            onClick={() => updateComment(commentTextArea?.current?.textContent || '')}
-            disabled={commentTextArea?.current?.textContent === ''}
-          >
+          <button onClick={() => updateComment(comment)} disabled={comment.trim().length === 0}>
             Vastaa
           </button>
           <button className="text-button" onClick={() => closeEditor()}>
