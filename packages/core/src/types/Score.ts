@@ -40,6 +40,10 @@ interface BaseAnnotation {
   markNumber?: string
 }
 
+export interface ExamMakerAnnotation extends TextAnnotation {
+  displayNumber?: string
+}
+
 interface ShapeAnnotation extends BaseAnnotation {
   /** A 0-indexed number describing which <img /> in the answer the annotation is attached to. */
   attachmentIndex: number

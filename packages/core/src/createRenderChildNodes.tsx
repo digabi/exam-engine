@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { AnnotationContext } from './components/context/AnnotationContext'
+import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { mapChildNodes, queryAncestors } from './dom-utils'
-import { onMouseDownForAnnotation } from './components/grading/reactAnnotation'
-import { TextAnnotation } from './types/Score'
+import { ExamMakerAnnotation, TextAnnotation } from './types/Score'
 import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
@@ -99,68 +99,89 @@ export function createRenderChildNodes(
 function renderTextNode(node: Text, key: string) {
   const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
   const annotationData = useContext(AnnotationContext)
+
   if (Object.keys(annotationData).length === 0) {
     return node.textContent!
   }
 
   const { annotations, onClickAnnotation, onSaveAnnotation } = annotationData
-  const annotationContextRef = React.createRef<HTMLDivElement>()
-  const annotation = annotations?.[key]
-  const [myAnnotation, setMyAnnotation] = React.useState<TextAnnotation | null>(annotation)
+  const [myAnnotations, setMyAnnotations] = React.useState<ExamMakerAnnotation[]>(annotations?.[key] || [])
 
-  const mouseUpCallback = (annotation: TextAnnotation) => {
-    setMyAnnotation({
-      ...annotation,
-      showPopup: true,
-      markNumber: displayNumber
-    })
+  useEffect(() => {
+    setMyAnnotations(annotations[key])
+  }, [annotations[key]])
+
+  const mouseUpCallback = (annotation: ExamMakerAnnotation) => {
+    setMyAnnotations([
+      ...(myAnnotations || []),
+      {
+        ...annotation,
+        showPopup: true,
+        displayNumber
+      }
+    ])
   }
 
-  const closeEditor = () => setMyAnnotation(null)
+  const hasAnnotation = myAnnotations?.length > 0
 
-  const hasAnnotation = myAnnotation && myAnnotation.startIndex >= 0 && myAnnotation.length > 0
+  const closeEditor = () => setMyAnnotations(myAnnotations.filter(a => !a.showPopup))
 
-  const ElementWithMark = ({ myAnnotation }: { myAnnotation: TextAnnotation }) => {
-    const text = node.textContent!
-    const annotationEndIndex = myAnnotation.startIndex + myAnnotation.length
-    const before = text.slice(0, myAnnotation.startIndex)
-    const marked = text.slice(myAnnotation.startIndex, annotationEndIndex)
-    const after = text.slice(annotationEndIndex)
+  function onUpdateComment(annotation: TextAnnotation, comment: string) {
+    onSaveAnnotation({ ...annotation, message: comment }, key)
+    closeEditor()
+  }
 
-    function onUpdateComment(comment: string) {
-      onSaveAnnotation({ ...myAnnotation, message: comment }, key)
-      closeEditor()
+  function markText(text: string, annotations: TextAnnotation[]): React.ReactNode[] {
+    if (annotations.length === 0) {
+      return [text]
     }
 
-    return (
-      <>
-        {before}
-        <span style={{ position: 'relative' }} key={key}>
-          <mark
-            onClick={e => {
-              onClickAnnotation(e, myAnnotation)
-            }}
-          >
-            {marked}
-          </mark>
-          <sup data-content={annotation.markNumber} />
-          {myAnnotation.showPopup && (
-            <CreateAnnotationPopup updateComment={onUpdateComment} closeEditor={closeEditor} />
+    annotations.sort((a, b) => a.startIndex - b.startIndex)
+
+    let nodes: React.ReactNode[] = []
+    let lastIndex = 0
+
+    for (let annotation of annotations) {
+      if (annotation.startIndex < 0 || annotation.length <= 0) {
+        return [text]
+      }
+      // Add unmarked text before this mark
+      if (annotation.startIndex > lastIndex) {
+        nodes.push(text.substring(lastIndex, annotation.startIndex))
+      }
+
+      // Add marked text
+      const markedText = text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
+      nodes.push(
+        <mark
+          key={annotation.startIndex}
+          className="e-annotation"
+          onClick={e => {
+            onClickAnnotation(e, annotation)
+          }}
+        >
+          {markedText}
+          {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
+          {annotation.showPopup && (
+            <CreateAnnotationPopup
+              updateComment={comment => onUpdateComment(annotation, comment)}
+              closeEditor={closeEditor}
+            />
           )}
-        </span>
-        {after}
-      </>
-    )
+        </mark>
+      )
+
+      lastIndex = annotation.startIndex + annotation.length
+    }
+
+    // Add remaining unmarked text
+    nodes.push(text.substring(lastIndex))
+    return nodes
   }
 
   return (
-    <span
-      onMouseDown={e => onMouseDownForAnnotation(e, mouseUpCallback)}
-      ref={annotationContextRef}
-      key={key}
-      className="e-annotatable"
-    >
-      {hasAnnotation ? <ElementWithMark myAnnotation={myAnnotation} /> : node.textContent!}
+    <span onMouseDown={e => onMouseDownForAnnotation(e, mouseUpCallback)} className="e-annotatable" key={key}>
+      {hasAnnotation ? markText(node.textContent!, myAnnotations) : node.textContent!}
     </span>
   )
 }
