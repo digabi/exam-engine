@@ -1,10 +1,11 @@
 import React from 'react'
-import { TextAnnotation } from '../../types/Score'
+import { ExamAnnotation } from '../../types/Score'
 
+//type Annotation = ExamAnnotation | TextAnnotation
 export interface AnnotationContextType {
-  annotations: Record<string, TextAnnotation[]>
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: TextAnnotation) => void
-  onSaveAnnotation: (a: TextAnnotation, key: string) => void
+  annotations: Record<string, ExamAnnotation[]>
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
+  onSaveAnnotation: (a: ExamAnnotation, key: string) => void
 }
 
 export const AnnotationContext = React.createContext({} as AnnotationContextType)

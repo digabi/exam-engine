@@ -40,8 +40,10 @@ interface BaseAnnotation {
   markNumber?: string
 }
 
-export interface ExamMakerAnnotation extends TextAnnotation {
+export interface ExamAnnotation extends TextAnnotation {
   displayNumber?: string
+  threadId: number
+  hidden: boolean
 }
 
 interface ShapeAnnotation extends BaseAnnotation {
