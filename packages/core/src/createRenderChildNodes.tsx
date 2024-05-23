@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { AnnotationContext } from './components/context/AnnotationContext'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
-import { mapChildNodes, queryAncestors } from './dom-utils'
-import { ExamMakerAnnotation, TextAnnotation } from './types/Score'
 import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
+import { mapChildNodes, queryAncestors } from './dom-utils'
+import { ExamAnnotation } from './types/Score'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
@@ -105,13 +105,13 @@ function renderTextNode(node: Text, key: string) {
   }
 
   const { annotations, onClickAnnotation, onSaveAnnotation } = annotationData
-  const [myAnnotations, setMyAnnotations] = React.useState<ExamMakerAnnotation[]>(annotations?.[key] || [])
+  const [myAnnotations, setMyAnnotations] = React.useState<ExamAnnotation[]>(annotations?.[key] || [])
 
   useEffect(() => {
     setMyAnnotations(annotations[key])
   }, [annotations[key]])
 
-  const mouseUpCallback = (annotation: ExamMakerAnnotation) => {
+  const mouseUpCallback = (annotation: ExamAnnotation) => {
     setMyAnnotations([
       ...(myAnnotations || []),
       {
@@ -126,12 +126,12 @@ function renderTextNode(node: Text, key: string) {
 
   const closeEditor = () => setMyAnnotations(myAnnotations.filter(a => !a.showPopup))
 
-  function onUpdateComment(annotation: TextAnnotation, comment: string) {
-    onSaveAnnotation({ ...annotation, message: comment }, key)
+  function onUpdateComment(annotation: ExamAnnotation, comment: string) {
+    onSaveAnnotation({ ...annotation, message: comment, threadId: annotation.threadId }, key)
     closeEditor()
   }
 
-  function markText(text: string, annotations: TextAnnotation[]): React.ReactNode[] {
+  function markText(text: string, annotations: ExamAnnotation[]): React.ReactNode[] {
     if (annotations.length === 0) {
       return [text]
     }
@@ -153,22 +153,31 @@ function renderTextNode(node: Text, key: string) {
       // Add marked text
       const markedText = text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
       nodes.push(
-        <mark
-          key={annotation.startIndex}
-          className="e-annotation"
-          onClick={e => {
-            onClickAnnotation(e, annotation)
-          }}
-        >
-          {markedText}
-          {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
-          {annotation.showPopup && (
-            <CreateAnnotationPopup
-              updateComment={comment => onUpdateComment(annotation, comment)}
-              closeEditor={closeEditor}
-            />
-          )}
-        </mark>
+        annotation.hidden ? (
+          <mark
+            key={annotation.startIndex}
+            className="e-annotation"
+            data-thread-id={annotation.threadId}
+            data-hidden="true"
+          />
+        ) : (
+          <mark
+            key={annotation.startIndex}
+            className="e-annotation"
+            data-thread-id={annotation.threadId}
+            data-hidden="false"
+            onClick={e => onClickAnnotation(e, annotation)}
+          >
+            {markedText}
+            {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
+            {annotation.showPopup && (
+              <CreateAnnotationPopup
+                updateComment={comment => onUpdateComment(annotation, comment)}
+                closeEditor={closeEditor}
+              />
+            )}
+          </mark>
+        )
       )
 
       lastIndex = annotation.startIndex + annotation.length
