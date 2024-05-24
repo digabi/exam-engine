@@ -368,6 +368,13 @@
             <td>No limit</td>
             <td>Maximum number of questions student should answer</td>
           </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
+          </tr>
         </tbody>
       </table>
       <p>
@@ -488,6 +495,11 @@
         <code>cas-forbidden="true"</code>
         attribute.
       </p>
+      <p>
+        Metadata can be added with
+        <code>meta</code>
+        attribute.
+      </p>
     </e:section-instruction>
     <e:section-instruction>
       <h4>Example of simple section</h4>
@@ -531,6 +543,11 @@
       <div class="warning-box">
           max-answers is ignored in Abitti grading.
         </div>
+      <p>
+        Metadata can be added with
+        <code>meta</code>
+        attribute.
+      </p>
     </e:section-instruction>
 
     <e:section-instruction>
@@ -651,6 +668,13 @@
             <td>-</td>
             <td>CSS class name</td>
           </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
+          </tr>
         </tbody>
       </table>
 
@@ -750,6 +774,13 @@
             <td>-</td>
             <td>CSS class name</td>
           </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
+          </tr>
         </tbody>
       </table>
 
@@ -782,6 +813,13 @@
             <td>No</td>
             <td>-</td>
             <td>CSS class name</td>
+          </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
           </tr>
         </tbody>
       </table>
@@ -912,6 +950,13 @@
             <td>-</td>
             <td>CSS class name</td>
           </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
+          </tr>
         </tbody>
       </table>
 
@@ -944,6 +989,13 @@
             <td>No</td>
             <td>-</td>
             <td>CSS class name</td>
+          </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
           </tr>
         </tbody>
       </table>
@@ -1025,6 +1077,13 @@
             <td>-</td>
             <td>CSS class name</td>
           </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
+          </tr>
         </tbody>
       </table>
 
@@ -1050,6 +1109,13 @@
             <td>Yes</td>
             <td>-</td>
             <td>Score for answer</td>
+          </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
           </tr>
         </tbody>
       </table>
@@ -1201,6 +1267,13 @@
             <td>–</td>
             <td>Exam language code. Use when material should be included only in certain language version.
             </td>
+          </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
           </tr>
         </tbody>
       </table>
@@ -1510,6 +1583,13 @@
             <td>–</td>
             <td>Exam language code. Use when image-overlay should be included only in a certain language version.
             </td>
+          </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
           </tr>
         </tbody>
       </table>
@@ -1843,6 +1923,13 @@
             </td>
             <td>Type of the reference, see example below.</td>
           </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
+          </tr>
         </tbody>
       </table>
 
@@ -1955,6 +2042,13 @@
             <td>An alternative assistive title that describes the equation
             for screen readers, perhaps using AsciiMath or Unicode
             notation</td>
+          </tr>
+          <tr>
+            <td>meta</td>
+            <td>String</td>
+            <td>No</td>
+            <td>–</td>
+            <td>Metadata about element</td>
           </tr>
         </tbody>
       </table>
