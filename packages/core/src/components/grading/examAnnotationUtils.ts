@@ -2,9 +2,9 @@ import { textAnnotationFromRange } from './editAnnotations'
 import React from 'react'
 
 export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
-  function onWindowMouseUpAfterAnswerMouseDown(e: MouseEvent) {
+  function onMouseUpAfterAnswerMouseDown(e: MouseEvent) {
     const target = e.target as HTMLElement
-    window.removeEventListener('mouseup', onWindowMouseUpAfterAnswerMouseDown)
+    window.removeEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 
     // Text annotation
     const selection = window.getSelection()
@@ -24,7 +24,7 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
   if (isReadOnly || e.button !== 0) {
     return
   }
-  window.addEventListener('mouseup', onWindowMouseUpAfterAnswerMouseDown)
+  window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 }
 
 export function hasTextSelectedInAnswerText(): boolean {
@@ -43,7 +43,12 @@ export function hasTextSelectedInAnswerText(): boolean {
     const endContainer = sel.getRangeAt(0).endContainer
     const startParent = startContainer.parentElement
     const endParent = endContainer.parentElement
-    return sel.rangeCount > 0 && startParent === endParent
+    const markTagExistsInSelection = Array.from(sel.getRangeAt(0).cloneContents().children).some(
+      child => child.tagName === 'MARK' && child.getAttribute('data-thread-id')
+    )
+    return (
+      sel.rangeCount > 0 && startParent === endParent && startParent?.tagName !== 'MARK' && !markTagExistsInSelection
+    )
   }
 
   function isRangeSelection(sel: Selection) {
