@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useRef } from 'react'
 import { AnnotationContext } from './components/context/AnnotationContext'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
@@ -98,38 +98,45 @@ export function createRenderChildNodes(
 
 function renderTextNode(node: Text, key: string) {
   const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
-  const annotationData = useContext(AnnotationContext)
 
-  if (Object.keys(annotationData).length === 0) {
+  const { annotations, onClickAnnotation, onSaveAnnotation, setNewAnnotation, newAnnotation } =
+    useContext(AnnotationContext)
+
+  if (!annotations) {
     return node.textContent!
   }
 
-  const { annotations, onClickAnnotation, onSaveAnnotation } = annotationData
-  const [myAnnotations, setMyAnnotations] = React.useState<ExamAnnotation[]>(annotations?.[key] || [])
+  const allowShowPopup = useRef(true)
+  const newAnnotationForThisNode = newAnnotation?.annotationAnchor === key ? newAnnotation : null
+  const thisNodeAnnotations = (annotations?.[key] || []).concat(newAnnotationForThisNode || [])
 
-  useEffect(() => {
-    setMyAnnotations(annotations[key])
-  }, [annotations[key]])
-
-  const mouseUpCallback = (annotation: ExamAnnotation) => {
-    setMyAnnotations([
-      ...(myAnnotations || []),
-      {
-        ...annotation,
-        showPopup: true,
-        displayNumber
-      }
-    ])
-  }
-
-  const hasAnnotation = myAnnotations?.length > 0
-
-  const closeEditor = () => setMyAnnotations(myAnnotations.filter(a => !a.showPopup))
+  const closeEditor = () => setNewAnnotation(null)
 
   function onUpdateComment(annotation: ExamAnnotation, comment: string) {
-    onSaveAnnotation({ ...annotation, message: comment, threadId: annotation.threadId }, key)
+    onSaveAnnotation({ ...annotation, message: comment, threadId: annotation.threadId, displayNumber }, key)
     closeEditor()
   }
+
+  const mouseUpCallback = (annotation: ExamAnnotation) => {
+    allowShowPopup.current = true
+    setNewAnnotation({ ...annotation, annotationAnchor: key })
+  }
+
+  function onMouseDown(e: React.MouseEvent) {
+    const target = e.target as Element
+    const clickIsInPopup = target.closest('.annotation-popup')
+    if (!clickIsInPopup) {
+      setNewAnnotation(null)
+      allowShowPopup.current = false
+    }
+    onMouseDownForAnnotation(e, mouseUpCallback)
+  }
+
+  return (
+    <span onMouseDown={onMouseDown} className="e-annotatable" key={key}>
+      {thisNodeAnnotations?.length > 0 ? markText(node.textContent!, thisNodeAnnotations) : node.textContent!}
+    </span>
+  )
 
   function markText(text: string, annotations: ExamAnnotation[]): React.ReactNode[] {
     if (annotations.length === 0) {
@@ -138,10 +145,10 @@ function renderTextNode(node: Text, key: string) {
 
     annotations.sort((a, b) => a.startIndex - b.startIndex)
 
-    let nodes: React.ReactNode[] = []
+    const nodes: React.ReactNode[] = []
     let lastIndex = 0
 
-    for (let annotation of annotations) {
+    for (const annotation of annotations) {
       if (annotation.startIndex < 0 || annotation.length <= 0) {
         return [text]
       }
@@ -152,6 +159,7 @@ function renderTextNode(node: Text, key: string) {
 
       // Add marked text
       const markedText = text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
+
       nodes.push(
         annotation.hidden ? (
           <mark
@@ -161,22 +169,24 @@ function renderTextNode(node: Text, key: string) {
             data-hidden="true"
           />
         ) : (
-          <mark
-            key={annotation.startIndex}
-            className="e-annotation"
-            data-thread-id={annotation.threadId}
-            data-hidden="false"
-            onClick={e => onClickAnnotation(e, annotation)}
-          >
-            {markedText}
-            {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
-            {annotation.showPopup && (
+          <>
+            <mark
+              key={annotation.startIndex}
+              className="e-annotation"
+              data-thread-id={annotation.threadId}
+              data-hidden="false"
+              onClick={e => onClickAnnotation(e, annotation)}
+            >
+              {markedText}
+              {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
+            </mark>
+            {newAnnotationForThisNode && newAnnotationForThisNode.startIndex === annotation.startIndex && (
               <CreateAnnotationPopup
                 updateComment={comment => onUpdateComment(annotation, comment)}
                 closeEditor={closeEditor}
               />
             )}
-          </mark>
+          </>
         )
       )
 
@@ -187,12 +197,6 @@ function renderTextNode(node: Text, key: string) {
     nodes.push(text.substring(lastIndex))
     return nodes
   }
-
-  return (
-    <span onMouseDown={e => onMouseDownForAnnotation(e, mouseUpCallback)} className="e-annotatable" key={key}>
-      {hasAnnotation ? markText(node.textContent!, myAnnotations) : node.textContent!}
-    </span>
-  )
 }
 
 function htmlAttributes2props<T extends HTMLElement>(element: T, index: number): React.HTMLProps<T> {

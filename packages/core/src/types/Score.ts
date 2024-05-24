@@ -44,6 +44,7 @@ export interface ExamAnnotation extends TextAnnotation {
   displayNumber?: string
   threadId: number
   hidden: boolean
+  annotationAnchor: string
 }
 
 interface ShapeAnnotation extends BaseAnnotation {

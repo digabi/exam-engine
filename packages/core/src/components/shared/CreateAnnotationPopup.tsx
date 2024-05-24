@@ -21,10 +21,17 @@ export function CreateAnnotationPopup({
       />
       <span className="comment-button-area">
         <span>
-          <button onClick={() => updateComment(comment)} disabled={comment.trim().length === 0}>
+          <button
+            className="button"
+            onClick={e => {
+              e.stopPropagation()
+              updateComment(comment)
+            }}
+            disabled={comment.trim().length === 0}
+          >
             Vastaa
           </button>
-          <button className="text-button" onClick={() => closeEditor()}>
+          <button className="button text-button" onClick={() => closeEditor()}>
             Peru
           </button>
         </span>
