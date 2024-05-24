@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { createRef, useContext, useRef } from 'react'
 import { AnnotationContext } from './components/context/AnnotationContext'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
@@ -107,6 +107,7 @@ function renderTextNode(node: Text, key: string) {
   }
 
   const allowShowPopup = useRef(true)
+  const markRef = createRef<HTMLElement>()
   const newAnnotationForThisNode = newAnnotation?.annotationAnchor === key ? newAnnotation : null
   const thisNodeAnnotations = (annotations?.[key] || []).concat(newAnnotationForThisNode || [])
 
@@ -169,24 +170,24 @@ function renderTextNode(node: Text, key: string) {
             data-hidden="true"
           />
         ) : (
-          <>
-            <mark
-              key={annotation.startIndex}
-              className="e-annotation"
-              data-thread-id={annotation.threadId}
-              data-hidden="false"
-              onClick={e => onClickAnnotation(e, annotation)}
-            >
-              {markedText}
-              {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
-            </mark>
+          <mark
+            key={annotation.startIndex}
+            ref={markRef}
+            className="e-annotation"
+            data-thread-id={annotation.threadId}
+            data-hidden="false"
+            onClick={e => onClickAnnotation(e, annotation)}
+          >
+            {markedText}
+            {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
             {newAnnotationForThisNode && newAnnotationForThisNode.startIndex === annotation.startIndex && (
               <CreateAnnotationPopup
                 updateComment={comment => onUpdateComment(annotation, comment)}
                 closeEditor={closeEditor}
+                markRef={markRef}
               />
             )}
-          </>
+          </mark>
         )
       )
 
