@@ -50,6 +50,7 @@ export interface GenerateTextAnswerOptions extends TextAnswerBase {
   name: 'text-answer'
   maxScore: number
   maxLength?: number
+  meta?: string
 }
 
 export interface GenerateScoredTextAnswerOptions extends TextAnswerBase {
@@ -57,6 +58,7 @@ export interface GenerateScoredTextAnswerOptions extends TextAnswerBase {
   maxScore?: number
   maxLength?: number
   acceptedAnswers?: GenerateAcceptedAnswer[]
+  meta?: string
 }
 
 export interface GenerateAcceptedAnswer {
@@ -217,7 +219,8 @@ function addTextAnswer(
   const answer = createElement(question, options.name, undefined, {
     'max-score': options.maxScore,
     'max-length': options.maxLength,
-    type: options.type
+    type: options.type,
+    meta: options.meta
   })
 
   if (options.hint) {
