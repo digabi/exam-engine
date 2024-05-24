@@ -7772,7 +7772,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           Top-level exam element.
         </p>
       </e:question-instruction>
-      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>exam-schema-version</td><td>Version string</td><td>No</td><td>—</td><td>Schema version, only 0.1 for now</td></tr><tr><td>date</td><td>YYYY-MM-DD</td><td>No</td><td>—</td><td>Exam date</td></tr><tr><td>exam-code</td><td>exam code string</td><td>No</td><td>—</td><td>Exam code used for exam specific translations</td></tr><tr><td>day-code</td><td>exam day code string</td><td>No</td><td>—</td><td>Exam day code used for exam specific translations</td></tr><tr><td>exam-stylesheet</td><td>custom CSS stylesheet file name</td><td>No</td><td>—</td><td>CSS file with this name must exist in attachments directory</td></tr><tr><td>max-answers</td><td>Integer</td><td>No</td><td>No limit</td><td>Maximum number of questions student should answer</td></tr></tbody></table>
+      <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>exam-schema-version</td><td>Version string</td><td>No</td><td>—</td><td>Schema version, only 0.1 for now</td></tr><tr><td>date</td><td>YYYY-MM-DD</td><td>No</td><td>—</td><td>Exam date</td></tr><tr><td>exam-code</td><td>exam code string</td><td>No</td><td>—</td><td>Exam code used for exam specific translations</td></tr><tr><td>day-code</td><td>exam day code string</td><td>No</td><td>—</td><td>Exam day code used for exam specific translations</td></tr><tr><td>exam-stylesheet</td><td>custom CSS stylesheet file name</td><td>No</td><td>—</td><td>CSS file with this name must exist in attachments directory</td></tr><tr><td>max-answers</td><td>Integer</td><td>No</td><td>No limit</td><td>Maximum number of questions student should answer</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
       <p>
         <code>exam-code</code>
         and
@@ -7886,6 +7886,11 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         <code>cas-forbidden="true"</code>
         attribute.
       </p>
+      <p>
+        Metadata can be added with
+        <code>meta</code>
+        attribute.
+      </p>
     </e:section-instruction>
     <e:section-instruction>
       <h4>Example of simple section</h4>
@@ -7929,6 +7934,11 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       <div class="warning-box">
           max-answers is ignored in Abitti grading.
         </div>
+      <p>
+        Metadata can be added with
+        <code>meta</code>
+        attribute.
+      </p>
     </e:section-instruction>
 
     <e:section-instruction>
@@ -8002,7 +8012,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
               <code>single-line | rich-text | integer</code>
             </td><td>No</td><td>
               <code>single-line</code>
-            </td><td>Type</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
+            </td><td>Type</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <h4>
         <code>single-line</code>
@@ -8067,13 +8077,13 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
               <code>random | fixed</code>
             </td><td>No</td><td>random</td><td>Ordering of options</td></tr><tr><td>direction</td><td>
               <code>vertical | horizontal</code>
-            </td><td>No</td><td>vertical</td><td>Direction of options</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
+            </td><td>No</td><td>vertical</td><td>Direction of options</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:choice-answer-option</code>
           )
-        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>No</td><td>0</td><td>Score for option</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>No</td><td>0</td><td>Score for option</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <h4>Examples</h4>
       <pre class="code"><![CDATA[<e:choice-answer>
@@ -8175,13 +8185,13 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           )
         </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>ordering</td><td>
               <code>random | fixed</code>
-            </td><td>No</td><td>random</td><td>Ordering of options</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
+            </td><td>No</td><td>random</td><td>Ordering of options</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:dropdown-answer-option</code>
           )
-        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>No</td><td>0</td><td>Score for option</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>No</td><td>0</td><td>Score for option</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code"><![CDATA[<e:dropdown-answer>
@@ -8227,13 +8237,13 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           Element attributes (
           <code>e:scored-text-answer</code>
           )
-        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>max-score</td><td>Integer</td><td>No</td><td>0</td><td>Maximum score</td></tr><tr><td class="e-nowrap">use-language-of-instruction</td><td>Boolean</td><td>No</td><td>false</td><td>Whether the student should answer the question in the language of instruction (typically the mother tongue) or the subject language. This attribute controls the HTML lang attribute of the input element, so a screen reader will read the answer using the correct language. Used only in secondary language exams.</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>max-score</td><td>Integer</td><td>No</td><td>0</td><td>Maximum score</td></tr><tr><td class="e-nowrap">use-language-of-instruction</td><td>Boolean</td><td>No</td><td>false</td><td>Whether the student should answer the question in the language of instruction (typically the mother tongue) or the subject language. This attribute controls the HTML lang attribute of the input element, so a screen reader will read the answer using the correct language. Used only in secondary language exams.</td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <table class="e-table e-width-full"><caption>
           Element attributes (
           <code>e:accepted-answer</code>
           )
-        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>Yes</td><td>-</td><td>Score for answer</td></tr></tbody></table>
+        </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>Yes</td><td>-</td><td>Score for answer</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <h4>
         Example of
@@ -8357,7 +8367,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
               <code>e:attachment-links</code>
               element.
             </td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when material should be included only in certain language version.
-            </td></tr></tbody></table>
+            </td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
       <table class="e-table e-width-full"><caption>
           Sub-elements of
           <code>e:reference</code>
@@ -8522,7 +8532,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       </e:question-instruction>
 
       <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when image-overlay should be included only in a certain language version.
-            </td></tr></tbody></table>
+            </td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code"><![CDATA[<e:image-overlay>
@@ -8718,7 +8728,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
               <code>long | short</code>
             </td><td>No</td><td>
               <code>long</code>
-            </td><td>Type of the reference, see example below.</td></tr></tbody></table>
+            </td><td>Type of the reference, see example below.</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <h4>Example</h4>
       <pre class="code"><![CDATA[<e:attachment-link ref="test-material" />
@@ -8804,7 +8814,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
               source code of the formula
             </td><td>An alternative assistive title that describes the equation
             for screen readers, perhaps using AsciiMath or Unicode
-            notation</td></tr></tbody></table>
+            notation</td></tr><tr><td>meta</td><td>String</td><td>No</td><td>–</td><td>Metadata about element</td></tr></tbody></table>
 
       <p>
         Notice that certain characters in formulas require special notation.
