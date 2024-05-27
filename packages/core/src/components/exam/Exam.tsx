@@ -6,7 +6,7 @@ import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
+import { ExamAnnotation, ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeExamStore } from '../../store'
@@ -18,7 +18,6 @@ import SectionElement from '../SectionElement'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { withExamContext } from '../context/ExamContext'
 import { TOCContext } from '../context/TOCContext'
-import { AnnotationContext } from '../context/AnnotationContext'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
@@ -54,6 +53,7 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
+import { AnnotationProvider } from '../context/AnnotationProvider'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -70,6 +70,11 @@ export interface CommonExamProps {
   abitti2?: boolean
 }
 
+export interface AnnotationProps {
+  annotations: Record<string, ExamAnnotation[]>
+  onClickAnnotation: () => void
+  onSaveAnnotation: () => void
+}
 interface UndoViewProps {
   close: () => void
   restoreAnswer: (examAnswer: TextAnswerType | RichTextAnswer) => void
@@ -127,7 +132,7 @@ const renderChildNodes = createRenderChildNodes({
   'image-overlay': ImageOverlay
 })
 
-const Exam: React.FunctionComponent<ExamProps> = ({
+const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   doc,
   casStatus,
   answers,
@@ -135,7 +140,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   examServerApi,
   studentName,
   showUndoView,
-  undoViewProps
+  undoViewProps,
+  annotations,
+  onClickAnnotation,
+  onSaveAnnotation
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -232,16 +240,15 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   return (
     <Provider store={store}>
-      <TOCContext.Provider
-        value={{
-          visibleTOCElements: visibleElements,
-          addRef
-        }}
+      <AnnotationProvider
+        annotations={annotations}
+        onClickAnnotation={onClickAnnotation}
+        onSaveAnnotation={onSaveAnnotation}
       >
-        <AnnotationContext.Provider
+        <TOCContext.Provider
           value={{
-            annotations: testAnnotations,
-            onClickAnnotation: onClickMark
+            visibleTOCElements: visibleElements,
+            addRef
           }}
         >
           <I18nextProvider i18n={i18n}>
@@ -312,8 +319,8 @@ const Exam: React.FunctionComponent<ExamProps> = ({
               {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
             </main>
           </I18nextProvider>
-        </AnnotationContext.Provider>
-      </TOCContext.Provider>
+        </TOCContext.Provider>
+      </AnnotationProvider>
     </Provider>
   )
 }

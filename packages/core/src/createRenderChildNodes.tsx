@@ -1,9 +1,9 @@
 import React, { createRef, useContext } from 'react'
-import { AnnotationContext } from './components/context/AnnotationContext'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
 import { mapChildNodes, queryAncestors } from './dom-utils'
 import { ExamAnnotation } from './types/Score'
+import { AnnotationContext } from './components/context/AnnotationProvider'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
