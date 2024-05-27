@@ -21,6 +21,7 @@ export function CreateAnnotationPopup({
     <span className="annotation-popup" style={{ position: 'absolute' }} ref={popupRef}>
       <textarea
         className="comment-content"
+        data-testid="edit-comment"
         role="textbox"
         aria-multiline="true"
         onChange={e => setComment(e.target.value)}
@@ -35,6 +36,7 @@ export function CreateAnnotationPopup({
               e.stopPropagation()
               updateComment(comment)
             }}
+            data-testid="save-comment"
             disabled={comment.trim().length === 0}
           >
             Vastaa

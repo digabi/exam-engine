@@ -1,4 +1,4 @@
-import React, { createRef, useContext, useRef } from 'react'
+import React, { createRef, useContext } from 'react'
 import { AnnotationContext } from './components/context/AnnotationContext'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
@@ -99,15 +99,15 @@ export function createRenderChildNodes(
 function renderTextNode(node: Text, key: string) {
   const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
 
-  const { annotations, onClickAnnotation, onSaveAnnotation, setNewAnnotation, newAnnotation } =
-    useContext(AnnotationContext)
+  const annotationContextData = useContext(AnnotationContext)
+  const markRef = createRef<HTMLElement>()
 
-  if (!annotations) {
+  if (Object.keys(annotationContextData).length === 0) {
     return node.textContent!
   }
 
-  const allowShowPopup = useRef(true)
-  const markRef = createRef<HTMLElement>()
+  const { annotations, onClickAnnotation, onSaveAnnotation, setNewAnnotation, newAnnotation } = annotationContextData
+
   const newAnnotationForThisNode = newAnnotation?.annotationAnchor === key ? newAnnotation : null
   const thisNodeAnnotations = (annotations?.[key] || []).concat(newAnnotationForThisNode || [])
 
@@ -119,7 +119,6 @@ function renderTextNode(node: Text, key: string) {
   }
 
   const mouseUpCallback = (annotation: ExamAnnotation) => {
-    allowShowPopup.current = true
     setNewAnnotation({ ...annotation, annotationAnchor: key })
   }
 
@@ -128,7 +127,6 @@ function renderTextNode(node: Text, key: string) {
     const clickIsInPopup = target.closest('.annotation-popup')
     if (!clickIsInPopup) {
       setNewAnnotation(null)
-      allowShowPopup.current = false
     }
     onMouseDownForAnnotation(e, mouseUpCallback)
   }

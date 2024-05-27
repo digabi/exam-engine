@@ -135,6 +135,9 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
                 item,
                 index: i
               })}
+              onClick={() => {}}
+              onMouseDown={() => {}}
+              onMouseMove={() => {}}
             >
               {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
               <span className={classNames('e-dropdown-answer__menu-item-inner e-block', { 'e-nowrap': measuring })}>
