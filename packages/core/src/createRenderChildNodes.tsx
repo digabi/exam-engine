@@ -97,8 +97,6 @@ export function createRenderChildNodes(
 }
 
 function renderTextNode(node: Text, key: string) {
-  const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
-
   const annotationContextData = useContext(AnnotationContext)
   const markRef = createRef<HTMLElement>()
 
@@ -114,6 +112,13 @@ function renderTextNode(node: Text, key: string) {
   const closeEditor = () => setNewAnnotation(null)
 
   function onUpdateComment(annotation: ExamAnnotation, comment: string) {
+    const isInReferences = key.includes('e:reference')
+    const isInInstruction = key.includes('e:exam-instruction') || key.includes('e:exam-grading-instruction')
+    const displayNumber = isInReferences
+      ? 'ref'
+      : isInInstruction
+        ? 'ins'
+        : queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
     onSaveAnnotation({ ...annotation, message: comment, annotationId: annotation.annotationId, displayNumber }, key)
     closeEditor()
   }
