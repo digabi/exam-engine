@@ -1,0 +1,44 @@
+import React from 'react'
+import { ExamAnnotation } from '../../types/Score'
+import { AnnotationProps } from '../exam/Exam'
+
+interface Props {
+  children: React.ReactNode
+}
+
+export interface AnnotationContextType {
+  annotations: Record<string, ExamAnnotation[]>
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
+  onSaveAnnotation: (a: ExamAnnotation, key: string) => void
+  setNewAnnotation: (a: ExamAnnotation | null) => void
+  newAnnotation: ExamAnnotation | null
+}
+
+export const AnnotationContext = React.createContext({} as AnnotationContextType)
+
+export const AnnotationProvider = ({
+  children,
+  annotations,
+  onClickAnnotation,
+  onSaveAnnotation
+}: Props & AnnotationProps) => {
+  const [newAnnotation, setNewAnnotation] = React.useState<ExamAnnotation | null>(null)
+
+  if (annotations === undefined) {
+    return children
+  }
+
+  return (
+    <AnnotationContext.Provider
+      value={{
+        annotations,
+        onClickAnnotation,
+        onSaveAnnotation,
+        setNewAnnotation,
+        newAnnotation
+      }}
+    >
+      {children}
+    </AnnotationContext.Provider>
+  )
+}
