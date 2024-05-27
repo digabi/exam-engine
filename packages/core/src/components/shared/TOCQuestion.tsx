@@ -77,16 +77,16 @@ export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ eleme
           <span>{renderChildNodes(questionTitle)}</span>
         </a>
       </span>
-
-      <div
-        className={classNames('numeric-answer-indicator', {
-          error: subQuestionError,
-          ok: subquestionsAnswered === requiredAnswers
-        })}
-      >
-        {subquestionsAnswered}/{requiredAnswers}
-      </div>
-
+      {isInSidebar && (
+        <div
+          className={classNames('numeric-answer-indicator', {
+            error: subQuestionError,
+            ok: subquestionsAnswered === requiredAnswers
+          })}
+        >
+          {subquestionsAnswered}/{requiredAnswers}
+        </div>
+      )}
       {!isInSidebar && externalMaterial && (
         <span className="e-column e-column--narrow e-external-material">
           <a
