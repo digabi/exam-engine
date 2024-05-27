@@ -19,9 +19,8 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
     }
   }
 
-  const isReadOnly = false
   // Do annotations only with left mouse buttons and when permitted
-  if (isReadOnly || e.button !== 0) {
+  if (e.button !== 0) {
     return
   }
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
@@ -29,6 +28,7 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
 
 export function hasTextSelectedInAnswerText(): boolean {
   const selection = window.getSelection()
+
   return (
     selection !== null &&
     selectionInAnswerText(selection) &&
@@ -56,15 +56,13 @@ export function hasTextSelectedInAnswerText(): boolean {
   }
 
   function textSelectedInRange(sel: Selection) {
-    const range = sel.getRangeAt(0)
+    const range = sel?.getRangeAt(0)
     return (
-      !!sel.rangeCount &&
-      (range.toString().length > 0 ||
-        isParentContainer(range.startContainer as Element) ||
-        isParentContainer(range.endContainer as Element))
+      (!!sel.rangeCount && range.toString().length > 0) ||
+      isParentContainer(range.startContainer as Element) ||
+      isParentContainer(range.endContainer as Element)
     )
   }
-
   function isParentContainer(container: Element) {
     return container.classList.contains('answer')
   }
