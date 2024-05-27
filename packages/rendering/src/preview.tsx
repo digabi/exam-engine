@@ -176,6 +176,12 @@ const App: React.FunctionComponent<{
     }
   }
 
+  const annotationProps = {
+    annotations: {},
+    onClickAnnotation: () => {},
+    onSaveAnnotation: () => {}
+  }
+
   return (
     <div ref={callback}>
       <Toolbar {...{ translation, translationFilename }} />
@@ -184,7 +190,7 @@ const App: React.FunctionComponent<{
       ) : route.name === 'attachments' ? (
         <Attachments {...examProps} />
       ) : route.name === 'grading-instructions' ? (
-        <GradingInstructions {...commonProps} />
+        <GradingInstructions {...commonProps} {...annotationProps} />
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (

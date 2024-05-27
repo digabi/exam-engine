@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { CommonExamProps } from '../exam/Exam'
+import { AnnotationProps, CommonExamProps } from '../exam/Exam'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { useCached } from '../../useCached'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
@@ -30,6 +30,7 @@ import Recording from './Recording'
 import QuestionInstruction from '../exam/QuestionInstruction'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
+import { AnnotationProvider } from '../context/AnnotationProvider'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -79,7 +80,12 @@ const renderChildNodes = createRenderChildNodes({
   video: Recording
 })
 
-const GradingInstructions: React.FunctionComponent<CommonExamProps> = ({ doc }) => {
+const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationProps> = ({
+  doc,
+  annotations,
+  onClickAnnotation,
+  onSaveAnnotation
+}) => {
   const root = doc.documentElement
   const { date, dateTimeFormatter, dayCode, examCode, language, subjectLanguage } = useContext(CommonExamContext)
 
@@ -98,26 +104,32 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps> = ({ doc }) 
   useEffect(scrollToHash, [])
 
   return (
-    <I18nextProvider i18n={i18n}>
-      <main className="e-exam e-grading-instructions" lang={subjectLanguage}>
-        <React.StrictMode />
-        <SectionElement aria-labelledby={examTitleId}>
-          <DocumentTitle id={examTitleId}>
-            <GradingInstructionsPageTitle /> {examTitle && renderChildNodes(examTitle)}
-          </DocumentTitle>
-          {date && (
-            <p>
-              <strong>{dateTimeFormatter.format(date)}</strong>
-            </p>
-          )}
-          {examGradingInstruction && (
-            <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
-          )}
-          {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
-        </SectionElement>
-        {renderChildNodes(root)}
-      </main>
-    </I18nextProvider>
+    <AnnotationProvider
+      annotations={annotations}
+      onClickAnnotation={onClickAnnotation}
+      onSaveAnnotation={onSaveAnnotation}
+    >
+      <I18nextProvider i18n={i18n}>
+        <main className="e-exam e-grading-instructions" lang={subjectLanguage}>
+          <React.StrictMode />
+          <SectionElement aria-labelledby={examTitleId}>
+            <DocumentTitle id={examTitleId}>
+              <GradingInstructionsPageTitle /> {examTitle && renderChildNodes(examTitle)}
+            </DocumentTitle>
+            {date && (
+              <p>
+                <strong>{dateTimeFormatter.format(date)}</strong>
+              </p>
+            )}
+            {examGradingInstruction && (
+              <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
+            )}
+            {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
+          </SectionElement>
+          {renderChildNodes(root)}
+        </main>
+      </I18nextProvider>
+    </AnnotationProvider>
   )
 }
 
