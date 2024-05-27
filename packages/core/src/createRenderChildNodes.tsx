@@ -114,7 +114,7 @@ function renderTextNode(node: Text, key: string) {
   const closeEditor = () => setNewAnnotation(null)
 
   function onUpdateComment(annotation: ExamAnnotation, comment: string) {
-    onSaveAnnotation({ ...annotation, message: comment, threadId: annotation.threadId, displayNumber }, key)
+    onSaveAnnotation({ ...annotation, message: comment, annotationId: annotation.annotationId, displayNumber }, key)
     closeEditor()
   }
 
@@ -164,7 +164,7 @@ function renderTextNode(node: Text, key: string) {
           <mark
             key={annotation.startIndex}
             className="e-annotation"
-            data-thread-id={annotation.threadId}
+            data-annotation-id={annotation.annotationId}
             data-hidden="true"
           />
         ) : (
@@ -172,7 +172,7 @@ function renderTextNode(node: Text, key: string) {
             key={annotation.startIndex}
             ref={markRef}
             className="e-annotation"
-            data-thread-id={annotation.threadId}
+            data-annotation-id={annotation.annotationId}
             data-hidden="false"
             onClick={e => onClickAnnotation(e, annotation)}
           >

@@ -44,7 +44,7 @@ export function hasTextSelectedInAnswerText(): boolean {
     const startParent = startContainer.parentElement
     const endParent = endContainer.parentElement
     const markTagExistsInSelection = Array.from(sel.getRangeAt(0).cloneContents().children).some(
-      child => child.tagName === 'MARK' && child.getAttribute('data-thread-id')
+      child => child.tagName === 'MARK' && child.getAttribute('data-annotation-id')
     )
     return (
       sel.rangeCount > 0 && startParent === endParent && startParent?.tagName !== 'MARK' && !markTagExistsInSelection
