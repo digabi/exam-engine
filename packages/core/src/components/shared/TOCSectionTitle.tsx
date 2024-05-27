@@ -9,13 +9,13 @@ import { AnswersState } from '../../store/answers/reducer'
 import AnsweringInstructions from '../AnsweringInstructions'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { SectionContext } from '../context/SectionContext'
-import { TOCContext } from '../context/TOCContext'
+import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
 export const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { sections } = useContext(CommonExamContext)
   const { childQuestions, displayNumber, minAnswers, maxAnswers } = useContext(SectionContext)
   const { t } = useExamTranslation()
-  const { isInSidebar } = useContext(TOCContext)
+  const { isInSidebar } = useContext(IsInSidebarContext)
   const showAnsweringInstructions = true
 
   const showSectionValidationErrors =

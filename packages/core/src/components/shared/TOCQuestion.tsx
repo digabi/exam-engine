@@ -12,14 +12,14 @@ import { url } from '../../url'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { QuestionContext } from '../context/QuestionContext'
 import { Indicator } from './AnswerIndicator'
-import { TOCContext } from '../context/TOCContext'
+import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
 export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const { attachmentsURL } = useContext(CommonExamContext)
   const { displayNumber, maxScore, level } = useContext(QuestionContext)
   const { t } = useExamTranslation()
   const showAttachmentLinks = true
-  const { isInSidebar } = useContext(TOCContext)
+  const { isInSidebar } = useContext(IsInSidebarContext)
 
   const questionTitle = findChildElement(element, 'question-title')!
   const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
