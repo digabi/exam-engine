@@ -40,11 +40,20 @@ interface BaseAnnotation {
   markNumber?: string
 }
 
+export interface TextAnnotation extends BaseAnnotation {
+  /** Legacy exams don't have this property, so it's marked as optional. */
+  type?: 'text'
+  /** A zero-indexed index of the character where the annotation starts at. Images are counted as 1 character. */
+  startIndex: number
+  /** The length of the annotation in characters. Images are counted as 1 character. */
+  length: number
+}
+
 export interface ExamAnnotation extends TextAnnotation {
   displayNumber?: string
-  threadId: number
-  hidden: boolean
+  annotationId: number
   annotationAnchor: string
+  hidden: boolean
 }
 
 interface ShapeAnnotation extends BaseAnnotation {
@@ -83,14 +92,5 @@ export interface RectAnnotation extends ShapeAnnotation {
  * corner of the image.
  */
 export type ImageAnnotation = LineAnnotation | RectAnnotation
-
-export interface TextAnnotation extends BaseAnnotation {
-  /** Legacy exams don't have this property, so it's marked as optional. */
-  type?: 'text'
-  /** A zero-indexed index of the character where the annotation starts at. Images are counted as 1 character. */
-  startIndex: number
-  /** The length of the annotation in characters. Images are counted as 1 character. */
-  length: number
-}
 
 export type Annotation = TextAnnotation | ImageAnnotation
