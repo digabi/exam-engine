@@ -11,11 +11,12 @@ import { withQuestionContext } from '../context/QuestionContext'
 import { withSectionContext } from '../context/SectionContext'
 import { TOCQuestion } from './TOCQuestion'
 import { TOCSection } from './TOCSection'
+import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
 export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
   showAnsweringInstructions: boolean
-  isInSidebar?: boolean
+  isInSidebar: boolean
 }) => {
   const { showAnsweringInstructions, isInSidebar } = options
 
@@ -72,8 +73,9 @@ export const mkTableOfContents = (options: {
             </div>
           </div>
         )}
-
-        <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
+        <IsInSidebarContext.Provider value={{ isInSidebar }}>
+          <ol className="e-list-plain e-pad-l-0">{renderChildNodes(root)}</ol>
+        </IsInSidebarContext.Provider>
         <div className="e-columns">
           <strong className="e-column e-total">{t('exam-total')}</strong>
           <strong className="e-column e-column--narrow table-of-contents--score-column">

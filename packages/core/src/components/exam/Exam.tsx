@@ -234,7 +234,6 @@ const Exam: React.FunctionComponent<ExamProps> = ({
         <TOCContext.Provider
           value={{
             visibleTOCElements: visibleElements,
-            isInSidebar: true,
             addRef
           }}
         >
