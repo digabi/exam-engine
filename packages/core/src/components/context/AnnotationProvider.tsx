@@ -7,9 +7,9 @@ interface Props {
 }
 
 export interface AnnotationContextType {
-  annotations: Record<string, ExamAnnotation[]>
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
-  onSaveAnnotation: (a: ExamAnnotation) => void
+  annotations?: Record<string, ExamAnnotation[]>
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
+  onSaveAnnotation?: (a: ExamAnnotation) => void
   newAnnotation: ExamAnnotation | null
   setNewAnnotation: (a: ExamAnnotation | null) => void
   newAnnotationRef: HTMLElement | undefined
@@ -27,7 +27,7 @@ export const AnnotationProvider = ({
   const [newAnnotation, setNewAnnotation] = React.useState<ExamAnnotation | null>(null)
   const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement>()
 
-  if (annotations === undefined) {
+  if (annotations === undefined || Object.keys(annotations)?.length === 0) {
     return children
   }
 

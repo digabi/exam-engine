@@ -71,9 +71,9 @@ export interface CommonExamProps {
 }
 
 export interface AnnotationProps {
-  annotations: Record<string, ExamAnnotation[]>
-  onClickAnnotation: () => void
-  onSaveAnnotation: () => void
+  annotations?: Record<string, ExamAnnotation[]>
+  onClickAnnotation?: () => void
+  onSaveAnnotation?: () => void
 }
 interface UndoViewProps {
   close: () => void

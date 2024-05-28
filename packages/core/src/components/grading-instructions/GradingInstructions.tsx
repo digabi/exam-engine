@@ -126,7 +126,11 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
             {examGradingInstruction && (
               <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
             )}
-            {tableOfContents && <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />}
+            {tableOfContents && (
+              <div className="main-toc-container">
+                <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
+              </div>
+            )}
           </SectionElement>
           {renderChildNodes(root)}
         </main>

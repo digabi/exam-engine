@@ -47,9 +47,6 @@ export function createRenderChildNodes(
       case Node.TEXT_NODE:
       case Node.CDATA_SECTION_NODE: {
         const path = getElementPath(node as Element)
-        if (node.textContent?.trim().length) {
-          //console.log(path, node.textContent.trim())
-        }
         return options === RenderOptions.RenderHTML ? renderTextNode(node as Text, path) : null
       }
       case Node.ELEMENT_NODE:
@@ -98,7 +95,11 @@ export function createRenderChildNodes(
 function renderTextNode(node: Text, key: string) {
   const annotationContextData = useContext(AnnotationContext)
 
-  if (Object.keys(annotationContextData).length === 0) {
+  if (
+    Object.keys(annotationContextData).length === 0 ||
+    node.textContent?.trim().length === 0 ||
+    node.parentElement?.closest('nav')
+  ) {
     return node.textContent!
   }
 
@@ -108,7 +109,7 @@ function renderTextNode(node: Text, key: string) {
   const thisNodeAnnotations = (annotations?.[key] || []).concat(newAnnotationForThisNode || [])
 
   const mouseUpCallback = (annotation: ExamAnnotation) => {
-    const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
+    const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || ''
     setNewAnnotation({ ...annotation, annotationAnchor: key, displayNumber })
   }
 
@@ -163,7 +164,7 @@ function renderTextNode(node: Text, key: string) {
             key={annotation.startIndex}
             annotation={annotation}
             markedText={markedText}
-            onClickAnnotation={onClickAnnotation}
+            onClickAnnotation={onClickAnnotation!}
             setNewAnnotationRef={setNewAnnotationRef}
           />
         )
