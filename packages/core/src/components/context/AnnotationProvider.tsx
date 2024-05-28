@@ -27,7 +27,7 @@ export const AnnotationProvider = ({
   const [newAnnotation, setNewAnnotation] = React.useState<ExamAnnotation | null>(null)
   const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement>()
 
-  if (annotations === undefined || Object.keys(annotations)?.length === 0) {
+  if (!onClickAnnotation && !onSaveAnnotation) {
     return children
   }
 
