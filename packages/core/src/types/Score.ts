@@ -50,10 +50,11 @@ export interface TextAnnotation extends BaseAnnotation {
 }
 
 export interface ExamAnnotation extends TextAnnotation {
-  displayNumber?: string
+  displayNumber: string
   annotationId: number
   annotationAnchor: string
   hidden: boolean
+  selectedText: string
 }
 
 interface ShapeAnnotation extends BaseAnnotation {

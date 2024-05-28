@@ -20,7 +20,7 @@ export function AnnotationPopup() {
   const closeEditor = () => setNewAnnotation(null)
 
   function updateComment(annotation: ExamAnnotation, comment: string) {
-    onSaveAnnotation({ ...annotation, message: comment, annotationId: annotation.annotationId })
+    onSaveAnnotation!({ ...annotation, message: comment, annotationId: annotation.annotationId })
     closeEditor()
   }
 

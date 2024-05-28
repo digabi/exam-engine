@@ -64,11 +64,7 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
           restoreAnswer: () => undefined
         }
       }
-      const annotationProps = {
-        annotations: {},
-        onClickAnnotation: () => {},
-        onSaveAnnotation: () => {}
-      }
+
       const resultsProps: ResultsProps = {
         ...commonProps,
         gradingStructure,
@@ -81,9 +77,7 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
       expect(create(<Exam {...examProps} />).toJSON()).toMatchSnapshot('<Exam />')
       expect(create(<Attachments {...examProps} />).toJSON()).toMatchSnapshot('<Attachments />')
       expect(create(<Results {...resultsProps} />).toJSON()).toMatchSnapshot('<Results />')
-      expect(create(<GradingInstructions {...commonProps} {...annotationProps} />).toJSON()).toMatchSnapshot(
-        '<GradingInstructions />'
-      )
+      expect(create(<GradingInstructions {...commonProps} />).toJSON()).toMatchSnapshot('<GradingInstructions />')
     }
   })
 })
