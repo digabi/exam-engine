@@ -9,9 +9,11 @@ interface Props {
 export interface AnnotationContextType {
   annotations: Record<string, ExamAnnotation[]>
   onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
-  onSaveAnnotation: (a: ExamAnnotation, key: string) => void
-  setNewAnnotation: (a: ExamAnnotation | null) => void
+  onSaveAnnotation: (a: ExamAnnotation) => void
   newAnnotation: ExamAnnotation | null
+  setNewAnnotation: (a: ExamAnnotation | null) => void
+  newAnnotationRef: HTMLElement | undefined
+  setNewAnnotationRef: (ref: HTMLElement | undefined) => void
 }
 
 export const AnnotationContext = React.createContext({} as AnnotationContextType)
@@ -23,6 +25,7 @@ export const AnnotationProvider = ({
   onSaveAnnotation
 }: Props & AnnotationProps) => {
   const [newAnnotation, setNewAnnotation] = React.useState<ExamAnnotation | null>(null)
+  const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement>()
 
   if (annotations === undefined) {
     return children
@@ -35,7 +38,9 @@ export const AnnotationProvider = ({
         onClickAnnotation,
         onSaveAnnotation,
         setNewAnnotation,
-        newAnnotation
+        newAnnotation,
+        newAnnotationRef,
+        setNewAnnotationRef
       }}
     >
       {children}

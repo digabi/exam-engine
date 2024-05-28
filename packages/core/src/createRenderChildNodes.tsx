@@ -1,9 +1,8 @@
-import React, { createRef, useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
+import { AnnotationContext } from './components/context/AnnotationProvider'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
-import { CreateAnnotationPopup } from './components/shared/CreateAnnotationPopup'
 import { mapChildNodes, queryAncestors } from './dom-utils'
 import { ExamAnnotation } from './types/Score'
-import { AnnotationContext } from './components/context/AnnotationProvider'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
@@ -98,33 +97,19 @@ export function createRenderChildNodes(
 
 function renderTextNode(node: Text, key: string) {
   const annotationContextData = useContext(AnnotationContext)
-  const markRef = createRef<HTMLElement>()
 
   if (Object.keys(annotationContextData).length === 0) {
     return node.textContent!
   }
 
-  const { annotations, onClickAnnotation, onSaveAnnotation, setNewAnnotation, newAnnotation } = annotationContextData
+  const { annotations, onClickAnnotation, setNewAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
 
   const newAnnotationForThisNode = newAnnotation?.annotationAnchor === key ? newAnnotation : null
   const thisNodeAnnotations = (annotations?.[key] || []).concat(newAnnotationForThisNode || [])
 
-  const closeEditor = () => setNewAnnotation(null)
-
-  function onUpdateComment(annotation: ExamAnnotation, comment: string) {
-    const isInReferences = key.includes('e:reference')
-    const isInInstruction = key.includes('e:exam-instruction') || key.includes('e:exam-grading-instruction')
-    const displayNumber = isInReferences
-      ? 'ref'
-      : isInInstruction
-        ? 'ins'
-        : queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
-    onSaveAnnotation({ ...annotation, message: comment, annotationId: annotation.annotationId, displayNumber }, key)
-    closeEditor()
-  }
-
   const mouseUpCallback = (annotation: ExamAnnotation) => {
-    setNewAnnotation({ ...annotation, annotationAnchor: key })
+    const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || undefined
+    setNewAnnotation({ ...annotation, annotationAnchor: key, displayNumber })
   }
 
   function onMouseDown(e: React.MouseEvent) {
@@ -156,6 +141,7 @@ function renderTextNode(node: Text, key: string) {
       if (annotation.startIndex < 0 || annotation.length <= 0) {
         return [text]
       }
+
       // Add unmarked text before this mark
       if (annotation.startIndex > lastIndex) {
         nodes.push(text.substring(lastIndex, annotation.startIndex))
@@ -173,24 +159,13 @@ function renderTextNode(node: Text, key: string) {
             data-hidden="true"
           />
         ) : (
-          <mark
+          <Mark
             key={annotation.startIndex}
-            ref={markRef}
-            className="e-annotation"
-            data-annotation-id={annotation.annotationId}
-            data-hidden="false"
-            onClick={e => onClickAnnotation(e, annotation)}
-          >
-            {markedText}
-            {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
-            {newAnnotationForThisNode && newAnnotationForThisNode.startIndex === annotation.startIndex && (
-              <CreateAnnotationPopup
-                updateComment={comment => onUpdateComment(annotation, comment)}
-                closeEditor={closeEditor}
-                markRef={markRef}
-              />
-            )}
-          </mark>
+            annotation={annotation}
+            markedText={markedText}
+            onClickAnnotation={onClickAnnotation}
+            setNewAnnotationRef={setNewAnnotationRef}
+          />
         )
       )
 
@@ -201,6 +176,38 @@ function renderTextNode(node: Text, key: string) {
     nodes.push(text.substring(lastIndex))
     return nodes
   }
+}
+
+const Mark = ({
+  annotation,
+  markedText,
+  onClickAnnotation,
+  setNewAnnotationRef
+}: {
+  annotation: ExamAnnotation
+  markedText: string
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
+  setNewAnnotationRef: (ref: HTMLElement | undefined) => void
+}) => {
+  const markRef = useRef<HTMLElement>(null)
+  useEffect(() => {
+    if (markRef.current && !annotation.annotationId) {
+      setNewAnnotationRef(markRef.current)
+    }
+  }, [])
+  return (
+    <mark
+      key={annotation.startIndex}
+      ref={markRef}
+      className="e-annotation"
+      data-annotation-id={annotation.annotationId || ''}
+      data-hidden="false"
+      onClick={e => onClickAnnotation(e, annotation)}
+    >
+      {markedText}
+      {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
+    </mark>
+  )
 }
 
 function htmlAttributes2props<T extends HTMLElement>(element: T, index: number): React.HTMLProps<T> {

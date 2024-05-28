@@ -15,11 +15,11 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
         return
       }
       const selectedText = selection.toString()
-      mouseUpCallback({ ...position, selectedText, range: selection.getRangeAt(0) })
+      mouseUpCallback({ ...position, selectedText })
     }
   }
 
-  // Do annotations only with left mouse buttons and when permitted
+  // Do annotations only with left mouse buttons
   if (e.button !== 0) {
     return
   }

@@ -31,6 +31,7 @@ import QuestionInstruction from '../exam/QuestionInstruction'
 import { QuestionNumber } from '../shared/QuestionNumber'
 import ExamTranslation from '../shared/ExamTranslation'
 import { AnnotationProvider } from '../context/AnnotationProvider'
+import { AnnotationPopup } from '../shared/AnnotationPopup'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -111,6 +112,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
     >
       <I18nextProvider i18n={i18n}>
         <main className="e-exam e-grading-instructions" lang={subjectLanguage}>
+          <AnnotationPopup />
           <React.StrictMode />
           <SectionElement aria-labelledby={examTitleId}>
             <DocumentTitle id={examTitleId}>
