@@ -27,7 +27,12 @@ export function AnnotationPopup() {
   }
 
   return (
-    <span className="annotation-popup" style={{ position: 'absolute', opacity: 0 }} ref={popupRef}>
+    <span
+      className="annotation-popup"
+      style={{ position: 'absolute', opacity: 0 }}
+      ref={popupRef}
+      data-testid="annotation-popup"
+    >
       <textarea
         className="comment-content"
         data-testid="edit-comment"
