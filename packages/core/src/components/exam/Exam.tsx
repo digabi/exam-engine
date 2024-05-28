@@ -1,5 +1,4 @@
 import React, { createRef, useContext, useEffect, useState } from 'react'
-import * as _ from 'lodash-es'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
@@ -15,6 +14,7 @@ import { useCached } from '../../useCached'
 import DocumentTitle from '../DocumentTitle'
 import RenderChildNodes from '../RenderChildNodes'
 import SectionElement from '../SectionElement'
+import { AnnotationProvider } from '../context/AnnotationProvider'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { withExamContext } from '../context/ExamContext'
 import { TOCContext } from '../context/TOCContext'
@@ -23,6 +23,7 @@ import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
 import AudioGroup from '../shared/AudioGroup'
 import AudioTest from '../shared/AudioTest'
+import { AnnotationPopup } from '../shared/AnnotationPopup'
 import ExamTranslation from '../shared/ExamTranslation'
 import File from '../shared/File'
 import { Footer } from '../shared/Footer'
@@ -53,7 +54,6 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
-import { AnnotationProvider } from '../context/AnnotationProvider'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -253,9 +253,9 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
         >
           <I18nextProvider i18n={i18n}>
             <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
+              <AnnotationPopup />
               <React.StrictMode />
               {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-
               <div className="e-toc-and-exam">
                 {tableOfContents && (
                   <div className="sidebar-toc-container" aria-hidden="true">
@@ -302,7 +302,6 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                   </div>
                 </div>
               </div>
-
               {(isPreview || isNewKoeVersion) && (
                 <Footer>
                   <div className="e-footer-version-number-container">
@@ -310,12 +309,10 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                   </div>
                 </Footer>
               )}
-
               <div className="e-indicators-container">
                 <ErrorIndicator />
                 <SaveIndicator />
               </div>
-
               {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
             </main>
           </I18nextProvider>

@@ -18,6 +18,7 @@ import RenderExamElements from '../RenderExamElements'
 import SectionElement from '../SectionElement'
 import { withSectionContext } from '../context/SectionContext'
 import { AnnotationProvider } from '../context/AnnotationProvider'
+import { AnnotationPopup } from '../shared/AnnotationPopup'
 
 const renderChildNodes = createRenderChildNodes({
   'audio-group': RenderExamElements,
@@ -52,6 +53,7 @@ const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
     >
       <I18nextProvider i18n={i18n}>
         <main className="e-exam attachments" lang={subjectLanguage} aria-labelledby={examTitleId}>
+          <AnnotationPopup />
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
           <SectionElement aria-labelledby={examTitleId}>
