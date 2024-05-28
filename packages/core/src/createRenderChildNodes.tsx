@@ -3,6 +3,7 @@ import { AnnotationContext } from './components/context/AnnotationProvider'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { mapChildNodes, queryAncestors } from './dom-utils'
 import { ExamAnnotation } from './types/Score'
+import { IsInSidebarContext } from './components/context/IsInSidebarContext'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
@@ -94,11 +95,12 @@ export function createRenderChildNodes(
 
 function renderTextNode(node: Text, key: string) {
   const annotationContextData = useContext(AnnotationContext)
+  const { isInSidebar } = useContext(IsInSidebarContext)
 
   if (
-    Object.keys(annotationContextData).length === 0 ||
+    annotationContextData?.annotations === undefined ||
     node.textContent?.trim().length === 0 ||
-    node.parentElement?.closest('nav')
+    isInSidebar !== undefined
   ) {
     return node.textContent!
   }
@@ -133,10 +135,9 @@ function renderTextNode(node: Text, key: string) {
       return [text]
     }
 
-    annotations.sort((a, b) => a.startIndex - b.startIndex)
-
     const nodes: React.ReactNode[] = []
     let lastIndex = 0
+    annotations.sort((a, b) => a.startIndex - b.startIndex)
 
     for (const annotation of annotations) {
       if (annotation.startIndex < 0 || annotation.length <= 0) {

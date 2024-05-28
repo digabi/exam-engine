@@ -3,29 +3,27 @@ import { AnnotationContext } from '../context/AnnotationProvider'
 import { ExamAnnotation } from '../../types/Score'
 
 export function AnnotationPopup() {
-  const [comment, setComment] = useState<string>('')
-
   const popupRef = React.createRef<HTMLElement>()
   const textAreaRef = React.createRef<HTMLTextAreaElement>()
   const { newAnnotation, setNewAnnotation, newAnnotationRef, onSaveAnnotation } = useContext(AnnotationContext)
+  const [comment, setComment] = useState<string>('')
 
   useEffect(() => {
-    console.log('newmark changed')
     if (newAnnotationRef) {
       showAndPositionElement(newAnnotationRef, popupRef)
       textAreaRef.current?.focus()
     }
   }, [newAnnotationRef])
 
+  if (!newAnnotation) {
+    return null
+  }
+
   const closeEditor = () => setNewAnnotation(null)
 
   function updateComment(annotation: ExamAnnotation, comment: string) {
     onSaveAnnotation!({ ...annotation, message: comment, annotationId: annotation.annotationId })
     closeEditor()
-  }
-
-  if (!newAnnotation) {
-    return null
   }
 
   return (
