@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from 'react'
-import { AnnotationContext } from './components/context/AnnotationProvider'
+import { AnnotationContext, AnnotationContextType } from './components/context/AnnotationProvider'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { mapChildNodes, queryAncestors } from './dom-utils'
 import { ExamAnnotation } from './types/Score'
@@ -47,8 +47,7 @@ export function createRenderChildNodes(
     switch (node.nodeType) {
       case Node.TEXT_NODE:
       case Node.CDATA_SECTION_NODE: {
-        const path = getElementPath(node as Element)
-        return options === RenderOptions.RenderHTML ? renderTextNode(node as Text, path) : null
+        return options === RenderOptions.RenderHTML ? renderTextNode(node) : null
       }
       case Node.ELEMENT_NODE:
         return renderElement(node as Element, index, options)
@@ -93,7 +92,7 @@ export function createRenderChildNodes(
   return renderChildNodes
 }
 
-function renderTextNode(node: Text, key: string) {
+function renderTextNode(node: Node) {
   const annotationContextData = useContext(AnnotationContext)
   const { isInSidebar } = useContext(IsInSidebarContext)
 
@@ -105,14 +104,25 @@ function renderTextNode(node: Text, key: string) {
     return node.textContent!
   }
 
+  return <AnnotatableText node={node} annotationContextData={annotationContextData} />
+}
+
+const AnnotatableText = ({
+  node,
+  annotationContextData
+}: {
+  node: Node
+  annotationContextData: AnnotationContextType
+}) => {
   const { annotations, onClickAnnotation, setNewAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
 
-  const newAnnotationForThisNode = newAnnotation?.annotationAnchor === key ? newAnnotation : null
-  const thisNodeAnnotations = (annotations?.[key] || []).concat(newAnnotationForThisNode || [])
+  const path = getElementPath(node as Element)
+  const newAnnotationForThisNode = newAnnotation?.annotationAnchor === path ? newAnnotation : null
+  const thisNodeAnnotations = (annotations?.[path] || []).concat(newAnnotationForThisNode || [])
 
   const mouseUpCallback = (annotation: ExamAnnotation) => {
     const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || ''
-    setNewAnnotation({ ...annotation, annotationAnchor: key, displayNumber })
+    setNewAnnotation({ ...annotation, annotationAnchor: path, displayNumber })
   }
 
   function onMouseDown(e: React.MouseEvent) {
@@ -125,7 +135,7 @@ function renderTextNode(node: Text, key: string) {
   }
 
   return (
-    <span onMouseDown={onMouseDown} className="e-annotatable" key={key}>
+    <span onMouseDown={onMouseDown} className="e-annotatable" key={path}>
       {thisNodeAnnotations?.length > 0 ? markText(node.textContent!, thisNodeAnnotations) : node.textContent!}
     </span>
   )
