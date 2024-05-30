@@ -49,12 +49,14 @@ export interface TextAnnotation extends BaseAnnotation {
   length: number
 }
 
-export interface ExamAnnotation extends TextAnnotation {
+export interface NewExamAnnotation extends TextAnnotation {
   displayNumber: string
-  annotationId: number
   annotationAnchor: string
   hidden: boolean
   selectedText: string
+}
+export interface ExamAnnotation extends NewExamAnnotation {
+  annotationId: number
 }
 
 interface ShapeAnnotation extends BaseAnnotation {
