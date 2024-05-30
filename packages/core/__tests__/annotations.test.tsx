@@ -1,4 +1,4 @@
-import { render, RenderResult } from '@testing-library/react'
+import { fireEvent, render, RenderResult } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Exam, { AnnotationProps, ExamProps } from '../src/components/exam/Exam'
 import GradingInstructions from '../src/components/grading-instructions/GradingInstructions'
@@ -73,8 +73,10 @@ describe('Annotations', () => {
     )
     await annotateText(exam, defaultTextToAnnotate)
 
-    const textArea = exam.getByTestId('edit-comment')
-    await userEvent.type(textArea, 'New Value')
+    const textbox = exam.getByTestId('edit-comment')
+    fireEvent.input(textbox, {
+      target: { innerText: 'New Value', innerHTML: 'New Value' }
+    })
     await userEvent.click(exam.getByText('Vastaa'))
 
     expect(saveAnnotationMock).toHaveBeenCalledTimes(1)
@@ -169,16 +171,14 @@ describe('Annotations', () => {
 
   function mockWindowSelection(text = 'mocked selection text', length = 5) {
     ;(window.getSelection as jest.Mock).mockImplementation(() => ({
-      // You can mock any methods used by your component:
       toString: () => text,
-      rangeCount: 1, // if your component logic uses rangeCount, you can set its mocked value too
+      rangeCount: 1,
       getRangeAt: jest.fn().mockReturnValue({
         startOffset: 0,
         endOffset: length,
         startContainer: {},
         endContainer: {},
         cloneContents: jest.fn().mockReturnValue({ children: [], childNodes: [] })
-        // You can set more properties of the range object as per your requirement
       })
     }))
   }
