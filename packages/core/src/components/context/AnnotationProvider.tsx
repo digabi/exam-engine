@@ -6,10 +6,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export interface AnnotationContextType {
-  annotations?: Record<string, ExamAnnotation[]>
-  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
-  onSaveAnnotation?: (a: ExamAnnotation) => void
+export interface AnnotationContextType extends AnnotationProps {
   newAnnotation: ExamAnnotation | null
   setNewAnnotation: (a: ExamAnnotation | null) => void
   newAnnotationRef: HTMLElement | undefined

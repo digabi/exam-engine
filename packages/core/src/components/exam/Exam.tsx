@@ -72,8 +72,8 @@ export interface CommonExamProps {
 
 export interface AnnotationProps {
   annotations?: Record<string, ExamAnnotation[]>
-  onClickAnnotation?: (e: MouseEvent, annotation: ExamAnnotation) => void
-  onSaveAnnotation?: (annotation: ExamAnnotation) => Promise<void>
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: ExamAnnotation) => void
+  onSaveAnnotation?: (annotation: ExamAnnotation) => void
 }
 interface UndoViewProps {
   close: () => void
