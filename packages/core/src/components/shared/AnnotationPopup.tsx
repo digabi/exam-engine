@@ -1,17 +1,31 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AnnotationContext } from '../context/AnnotationProvider'
 import { ExamAnnotation } from '../../types/Score'
+import { makeRichText } from 'rich-text-editor'
 
 export function AnnotationPopup() {
-  const popupRef = React.createRef<HTMLElement>()
-  const textAreaRef = React.createRef<HTMLTextAreaElement>()
+  const popupRef = React.createRef<HTMLDivElement>()
+  const textAreaRef = React.createRef<HTMLDivElement>()
   const { newAnnotation, setNewAnnotation, newAnnotationRef, onSaveAnnotation } = useContext(AnnotationContext)
   const [comment, setComment] = useState<string>('')
+  const [saveEnabled, setSaveEnabled] = useState<boolean>(false)
 
   useEffect(() => {
-    if (newAnnotationRef) {
+    if (newAnnotationRef && textAreaRef.current) {
       showAndPositionElement(newAnnotationRef, popupRef)
-      textAreaRef.current?.focus()
+      textAreaRef.current.innerHTML = comment
+      makeRichText(
+        textAreaRef.current,
+        {
+          locale: 'FI',
+          screenshotSaver: () => Promise.resolve('')
+        },
+        value => {
+          setComment(value.answerHTML)
+          setSaveEnabled(value.answerHTML.trim().length > 0)
+        }
+      )
+      textAreaRef.current.focus()
     }
   }, [newAnnotationRef])
 
@@ -27,19 +41,17 @@ export function AnnotationPopup() {
   }
 
   return (
-    <span
+    <div
       className="annotation-popup"
       style={{ position: 'absolute', opacity: 0 }}
       ref={popupRef}
       data-testid="annotation-popup"
     >
-      <textarea
+      <div
         className="comment-content"
         data-testid="edit-comment"
         role="textbox"
         aria-multiline="true"
-        onChange={e => setComment(e.target.value)}
-        value={comment}
         ref={textAreaRef}
       />
       <span className="comment-button-area">
@@ -51,7 +63,7 @@ export function AnnotationPopup() {
               updateComment(newAnnotation, comment)
             }}
             data-testid="save-comment"
-            disabled={comment.trim().length === 0}
+            disabled={!saveEnabled}
           >
             Vastaa
           </button>
@@ -60,9 +72,10 @@ export function AnnotationPopup() {
           </button>
         </span>
       </span>
-    </span>
+    </div>
   )
 }
+
 function showAndPositionElement(mark: HTMLElement | null, popupRef: React.RefObject<HTMLElement>) {
   const popup = popupRef.current
   if (mark && popup) {
