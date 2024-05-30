@@ -91,6 +91,20 @@ describe('Annotations', () => {
     })
   })
 
+  it('popup field is empty when creating new annotation', async () => {
+    const exam = render(
+      <Exam {...getExamProps()} annotations={{}} onClickAnnotation={() => {}} onSaveAnnotation={() => {}} />
+    )
+    await annotateText(exam, defaultTextToAnnotate)
+    const textbox = exam.getByTestId('edit-comment')
+    fireEvent.input(textbox, {
+      target: { innerText: 'New Value', innerHTML: 'New Value' }
+    })
+    await userEvent.click(exam.getByText('Vastaa'))
+    await annotateText(exam, 'Esitä jokin toinen käsitys filosofiasta ja vertaa sitä')
+    expect(exam.getByTestId('edit-comment').textContent).toHaveLength(0)
+  })
+
   it('callback is called when annotation is clicked', async () => {
     const clickAnnotationMock = jest.fn()
     const exam = render(
