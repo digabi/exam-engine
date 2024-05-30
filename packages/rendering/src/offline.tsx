@@ -34,10 +34,7 @@ root.render(
       examServerApi,
       language,
       resolveAttachment,
-      restrictedAudioPlaybackStats: [],
-      annotations: {},
-      onClickAnnotation: () => {},
-      onSaveAnnotation: () => {}
+      restrictedAudioPlaybackStats: []
     }}
   />
 )
