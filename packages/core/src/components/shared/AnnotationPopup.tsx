@@ -30,6 +30,9 @@ export function AnnotationPopup() {
   }, [newAnnotationRef])
 
   if (!newAnnotation) {
+    if (comment) {
+      setComment('')
+    }
     return null
   }
 
