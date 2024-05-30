@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react'
 import { AnnotationContext, AnnotationContextType } from './components/context/AnnotationProvider'
 import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
 import { mapChildNodes, queryAncestors } from './dom-utils'
-import { ExamAnnotation } from './types/Score'
+import { ExamAnnotation, NewExamAnnotation } from './types/Score'
 import { IsInSidebarContext } from './components/context/IsInSidebarContext'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
@@ -107,6 +107,9 @@ function renderTextNode(node: Node) {
   return <AnnotatableText node={node} annotationContextData={annotationContextData} />
 }
 
+const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
+  'displayNumber' in annotation
+
 const AnnotatableText = ({
   node,
   annotationContextData
@@ -118,9 +121,12 @@ const AnnotatableText = ({
 
   const path = getElementPath(node as Element)
   const newAnnotationForThisNode = newAnnotation?.annotationAnchor === path ? newAnnotation : null
-  const thisNodeAnnotations = (annotations?.[path] || []).concat(newAnnotationForThisNode || [])
+  const thisNodeAnnotations = [
+    ...(annotations?.[path] || []),
+    ...(newAnnotationForThisNode ? [newAnnotationForThisNode] : [])
+  ]
 
-  const mouseUpCallback = (annotation: ExamAnnotation) => {
+  const mouseUpCallback = (annotation: NewExamAnnotation) => {
     const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || ''
     setNewAnnotation({ ...annotation, annotationAnchor: path, displayNumber })
   }
@@ -140,7 +146,7 @@ const AnnotatableText = ({
     </span>
   )
 
-  function markText(text: string, annotations: ExamAnnotation[]): React.ReactNode[] {
+  function markText(text: string, annotations: (NewExamAnnotation | ExamAnnotation)[]): React.ReactNode[] {
     if (annotations.length === 0) {
       return [text]
     }
@@ -167,7 +173,7 @@ const AnnotatableText = ({
           <mark
             key={annotation.startIndex}
             className="e-annotation"
-            data-annotation-id={annotation.annotationId}
+            data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
             data-hidden="true"
           />
         ) : (
@@ -196,14 +202,14 @@ const Mark = ({
   onClickAnnotation,
   setNewAnnotationRef
 }: {
-  annotation: ExamAnnotation
+  annotation: NewExamAnnotation | ExamAnnotation
   markedText: string
   onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
   setNewAnnotationRef: (ref: HTMLElement | undefined) => void
 }) => {
   const markRef = useRef<HTMLElement>(null)
   useEffect(() => {
-    if (markRef.current && !annotation.annotationId) {
+    if (markRef.current && !isExamAnnotation(annotation)) {
       setNewAnnotationRef(markRef.current)
     }
   }, [])
@@ -212,9 +218,9 @@ const Mark = ({
       key={annotation.startIndex}
       ref={markRef}
       className="e-annotation"
-      data-annotation-id={annotation.annotationId || ''}
+      data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
       data-hidden="false"
-      onClick={e => onClickAnnotation(e, annotation)}
+      onClick={e => (isExamAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
     >
       {markedText}
       {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}

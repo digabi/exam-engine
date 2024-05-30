@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExamAnnotation } from '../../types/Score'
+import { NewExamAnnotation } from '../../types/Score'
 import { AnnotationProps } from '../exam/Exam'
 
 interface Props {
@@ -7,8 +7,8 @@ interface Props {
 }
 
 export interface AnnotationContextType extends AnnotationProps {
-  newAnnotation: ExamAnnotation | null
-  setNewAnnotation: (a: ExamAnnotation | null) => void
+  newAnnotation: NewExamAnnotation | null
+  setNewAnnotation: (a: NewExamAnnotation | null) => void
   newAnnotationRef: HTMLElement | undefined
   setNewAnnotationRef: (ref: HTMLElement | undefined) => void
 }
@@ -21,7 +21,7 @@ export const AnnotationProvider = ({
   onClickAnnotation,
   onSaveAnnotation
 }: Props & AnnotationProps) => {
-  const [newAnnotation, setNewAnnotation] = React.useState<ExamAnnotation | null>(null)
+  const [newAnnotation, setNewAnnotation] = React.useState<NewExamAnnotation | null>(null)
   const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement>()
 
   if (!onClickAnnotation && !onSaveAnnotation) {

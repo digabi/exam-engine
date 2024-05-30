@@ -5,7 +5,14 @@ import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
-import { ExamAnnotation, ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
+import {
+  ExamAnnotation,
+  ExamAnswer,
+  ExamServerAPI,
+  InitialCasStatus,
+  NewExamAnnotation,
+  RestrictedAudioPlaybackStats
+} from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeExamStore } from '../../store'
@@ -73,7 +80,7 @@ export interface CommonExamProps {
 export interface AnnotationProps {
   annotations?: Record<string, ExamAnnotation[]>
   onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: ExamAnnotation) => void
-  onSaveAnnotation?: (annotation: ExamAnnotation) => void
+  onSaveAnnotation?: (annotation: NewExamAnnotation) => void
 }
 interface UndoViewProps {
   close: () => void

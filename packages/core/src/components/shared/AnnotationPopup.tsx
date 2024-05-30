@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AnnotationContext } from '../context/AnnotationProvider'
-import { ExamAnnotation } from '../../types/Score'
 import { makeRichText } from 'rich-text-editor'
+import { NewExamAnnotation } from '../../types/Score'
+import { AnnotationContext } from '../context/AnnotationProvider'
 
 export function AnnotationPopup() {
   const popupRef = React.createRef<HTMLDivElement>()
@@ -40,8 +40,8 @@ export function AnnotationPopup() {
     setNewAnnotation(null)
   }
 
-  function updateComment(annotation: ExamAnnotation, comment: string) {
-    onSaveAnnotation!({ ...annotation, message: comment, annotationId: annotation.annotationId })
+  function updateComment(annotation: NewExamAnnotation, comment: string) {
+    onSaveAnnotation!({ ...annotation, message: comment })
     closeEditor()
   }
 
