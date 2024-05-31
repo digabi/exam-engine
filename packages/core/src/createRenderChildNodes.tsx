@@ -32,7 +32,8 @@ function getElementPath(element: Element): string {
     currentElement = currentElement.parentElement
     const displayNumber = currentElement.getAttribute('display-number')
     const index =
-      Number(displayNumber) || Array.from(currentElement.parentElement?.children || []).indexOf(currentElement)
+      Number(displayNumber) ||
+      Array.from(currentElement.parentElement?.children || [currentElement]).indexOf(currentElement)
     const elementId = currentElement.getAttribute('id')
     path = `${elementId || currentElement.nodeName}:${index} > ${path}`
   }
@@ -211,7 +212,6 @@ const Mark = ({
 }) => {
   const markRef = useRef<HTMLElement>(null)
   useEffect(() => {
-    console.log('MARK', markRef.current, annotation, isExamAnnotation(annotation))
     if (markRef.current && !isExamAnnotation(annotation)) {
       setNewAnnotationRef(markRef.current)
     }
