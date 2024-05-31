@@ -104,7 +104,9 @@ function renderTextNode(node: Node) {
     return node.textContent!
   }
 
-  return <AnnotatableText node={node} annotationContextData={annotationContextData} />
+  return (
+    <AnnotatableText node={node} annotationContextData={annotationContextData} key={getElementPath(node as Element)} />
+  )
 }
 
 const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
@@ -209,13 +211,13 @@ const Mark = ({
 }) => {
   const markRef = useRef<HTMLElement>(null)
   useEffect(() => {
+    console.log('MARK', markRef.current, annotation, isExamAnnotation(annotation))
     if (markRef.current && !isExamAnnotation(annotation)) {
       setNewAnnotationRef(markRef.current)
     }
   }, [])
   return (
     <mark
-      key={annotation.startIndex}
       ref={markRef}
       className="e-annotation"
       data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
