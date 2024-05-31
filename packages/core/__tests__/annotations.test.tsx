@@ -133,14 +133,42 @@ describe('Annotations', () => {
   it('annotations are added to dom when provided', () => {
     const annotationProps: AnnotationProps = {
       annotations: {
-        [defaultAnnotationAnchor]: [createAnnotation(1, 1, 1), createAnnotation(3, 4, 2)]
+        [defaultAnnotationAnchor]: [createAnnotation(1, 1, 3), createAnnotation(3, 4, 5)]
       },
       onClickAnnotation: () => {},
       onSaveAnnotation: () => {}
     }
     const exam = render(<Exam {...getExamProps()} {...annotationProps} />)
     expect(exam.container.querySelector('[data-annotation-id="1"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="1"]')?.textContent).toBe('ekä')
     expect(exam.container.querySelector('[data-annotation-id="3"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="3"]')?.textContent).toBe(' mora')
+  })
+
+  it('hidden annotation works correctly', () => {
+    const annotationProps: AnnotationProps = {
+      annotations: {
+        [defaultAnnotationAnchor]: [
+          {
+            annotationId: 1,
+            annotationAnchor: defaultAnnotationAnchor,
+            hidden: true,
+            startIndex: 0,
+            length: 10,
+            message: '',
+            displayNumber: '',
+            selectedText: ''
+          }
+        ]
+      },
+      onClickAnnotation: () => {},
+      onSaveAnnotation: () => {}
+    }
+    const exam = render(<Exam {...getExamProps()} {...annotationProps} />)
+    expect(exam.container.querySelector('[data-annotation-id="1"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="1"]')?.parentElement?.textContent).toBe(
+      'Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä.'
+    )
   })
 
   it('grading instructions can be annotated', async () => {
