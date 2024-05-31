@@ -1,5 +1,8 @@
-import React from 'react'
-import { mapChildNodes } from './dom-utils'
+import React, { useContext } from 'react'
+import { AnnotationContext } from './components/context/AnnotationProvider'
+import { IsInSidebarContext } from './components/context/IsInSidebarContext'
+import { getElementPath, mapChildNodes } from './dom-utils'
+import { AnnotatableText } from './components/shared/AnnotatableText'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
@@ -25,8 +28,9 @@ export function createRenderChildNodes(
   function renderChildNode(node: ChildNode, index: number, options: RenderOptions): React.ReactNode {
     switch (node.nodeType) {
       case Node.TEXT_NODE:
-      case Node.CDATA_SECTION_NODE:
-        return options === RenderOptions.RenderHTML ? renderTextNode(node as Text) : null
+      case Node.CDATA_SECTION_NODE: {
+        return options === RenderOptions.RenderHTML ? renderTextNode(node) : null
+      }
       case Node.ELEMENT_NODE:
         return renderElement(node as Element, index, options)
       default:
@@ -70,8 +74,21 @@ export function createRenderChildNodes(
   return renderChildNodes
 }
 
-function renderTextNode(node: Text) {
-  return node.textContent!
+function renderTextNode(node: Node) {
+  const annotationContextData = useContext(AnnotationContext)
+  const { isInSidebar } = useContext(IsInSidebarContext)
+
+  if (
+    annotationContextData?.annotations === undefined ||
+    node.textContent?.trim().length === 0 ||
+    isInSidebar !== undefined
+  ) {
+    return node.textContent!
+  }
+
+  return (
+    <AnnotatableText node={node} annotationContextData={annotationContextData} key={getElementPath(node as Element)} />
+  )
 }
 
 function htmlAttributes2props<T extends HTMLElement>(element: T, index: number): React.HTMLProps<T> {

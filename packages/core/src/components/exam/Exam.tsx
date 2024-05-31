@@ -5,7 +5,14 @@ import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
-import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
+import {
+  ExamAnnotation,
+  ExamAnswer,
+  ExamServerAPI,
+  InitialCasStatus,
+  NewExamAnnotation,
+  RestrictedAudioPlaybackStats
+} from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeExamStore } from '../../store'
@@ -14,6 +21,7 @@ import { useCached } from '../../useCached'
 import DocumentTitle from '../DocumentTitle'
 import RenderChildNodes from '../RenderChildNodes'
 import SectionElement from '../SectionElement'
+import { AnnotationProvider } from '../context/AnnotationProvider'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { withExamContext } from '../context/ExamContext'
 import { TOCContext } from '../context/TOCContext'
@@ -22,6 +30,7 @@ import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
 import AudioGroup from '../shared/AudioGroup'
 import AudioTest from '../shared/AudioTest'
+import { AnnotationPopup } from '../shared/AnnotationPopup'
 import ExamTranslation from '../shared/ExamTranslation'
 import File from '../shared/File'
 import { Footer } from '../shared/Footer'
@@ -68,6 +77,11 @@ export interface CommonExamProps {
   abitti2?: boolean
 }
 
+export interface AnnotationProps {
+  annotations?: Record<string, ExamAnnotation[]>
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: ExamAnnotation) => void
+  onSaveAnnotation?: (annotation: NewExamAnnotation) => void
+}
 interface UndoViewProps {
   close: () => void
   restoreAnswer: (examAnswer: TextAnswerType | RichTextAnswer) => void
@@ -125,7 +139,7 @@ const renderChildNodes = createRenderChildNodes({
   'image-overlay': ImageOverlay
 })
 
-const Exam: React.FunctionComponent<ExamProps> = ({
+const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   doc,
   casStatus,
   answers,
@@ -133,7 +147,10 @@ const Exam: React.FunctionComponent<ExamProps> = ({
   examServerApi,
   studentName,
   showUndoView,
-  undoViewProps
+  undoViewProps,
+  annotations,
+  onClickAnnotation,
+  onSaveAnnotation
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -230,81 +247,84 @@ const Exam: React.FunctionComponent<ExamProps> = ({
 
   return (
     <Provider store={store}>
-      <I18nextProvider i18n={i18n}>
+      <AnnotationProvider
+        annotations={annotations}
+        onClickAnnotation={onClickAnnotation}
+        onSaveAnnotation={onSaveAnnotation}
+      >
         <TOCContext.Provider
           value={{
             visibleTOCElements: visibleElements,
             addRef
           }}
         >
-          <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
-            <React.StrictMode />
-            {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+          <I18nextProvider i18n={i18n}>
+            <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
+              <AnnotationPopup />
+              <React.StrictMode />
+              {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
+              <div className="e-toc-and-exam">
+                {tableOfContents && (
+                  <div className="sidebar-toc-container" aria-hidden="true">
+                    <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
+                  </div>
+                )}
 
-            <div className="e-toc-and-exam">
-              {tableOfContents && (
-                <div className="sidebar-toc-container" aria-hidden="true">
-                  <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
-                </div>
-              )}
+                <div className="main-exam-container">
+                  <div className="main-exam">
+                    <StudentNameHeader studentName={studentName} />
+                    <SectionElement aria-labelledby={examTitleId}>
+                      {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+                      {date && (
+                        <p>
+                          <strong>{dateTimeFormatter.format(date)}</strong>
+                        </p>
+                      )}
+                      {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-              <div className="main-exam-container">
-                <div className="main-exam">
-                  <StudentNameHeader studentName={studentName} />
-                  <SectionElement aria-labelledby={examTitleId}>
-                    {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-                    {date && (
-                      <p>
-                        <strong>{dateTimeFormatter.format(date)}</strong>
-                      </p>
-                    )}
-                    {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+                      {tableOfContents && (
+                        <div className="main-toc-container">
+                          <TableOfContents
+                            {...{
+                              element: tableOfContents,
+                              renderChildNodes
+                            }}
+                          />
+                        </div>
+                      )}
 
-                    {tableOfContents && (
-                      <div className="main-toc-container">
-                        <TableOfContents
-                          {...{
-                            element: tableOfContents,
-                            renderChildNodes
-                          }}
-                        />
+                      {externalMaterial && (
+                        <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                      )}
+                    </SectionElement>
+
+                    {renderChildNodes(root)}
+
+                    {(isPreview || isNewKoeVersion) && (
+                      <div className="e-examine-exam">
+                        <GoToExamineAnswersButton />
+                        <ProceedToExamineAnswersText />
                       </div>
                     )}
-
-                    {externalMaterial && (
-                      <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                    )}
-                  </SectionElement>
-
-                  {renderChildNodes(root)}
-
-                  {(isPreview || isNewKoeVersion) && (
-                    <div className="e-examine-exam">
-                      <GoToExamineAnswersButton />
-                      <ProceedToExamineAnswersText />
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {(isPreview || isNewKoeVersion) && (
-              <Footer>
-                <div className="e-footer-version-number-container">
-                  <VersionNumber />
-                </div>
-              </Footer>
-            )}
-
-            <div className="e-indicators-container">
-              <ErrorIndicator />
-              <SaveIndicator />
-            </div>
-
-            {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
-          </main>
+              {(isPreview || isNewKoeVersion) && (
+                <Footer>
+                  <div className="e-footer-version-number-container">
+                    <VersionNumber />
+                  </div>
+                </Footer>
+              )}
+              <div className="e-indicators-container">
+                <ErrorIndicator />
+                <SaveIndicator />
+              </div>
+              {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
+            </main>
+          </I18nextProvider>
         </TOCContext.Provider>
-      </I18nextProvider>
+      </AnnotationProvider>
     </Provider>
   )
 }

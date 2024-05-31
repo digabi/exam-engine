@@ -6,6 +6,12 @@
     position: relative;
     vertical-align: middle;
 
+    &:has(mark.e-annotation):not(:has(.e-dropdown-answer__toggle-button--open)) {
+      background: @annotation-background;
+      outline: 2px solid rgba(241, 34, 40, 0.2);
+      border-radius: 1px;
+    }
+
     &__answered {
       border: 2px solid #bbb;
       vertical-align: middle;
@@ -114,6 +120,13 @@
     // Prevent formula shrinking within dropdown answers.
     .e-formula svg {
       max-width: inherit;
+    }
+
+    span.e-dropdown-answer__menu-item {
+      &.e-bg-color-link {
+        background-color: white;
+        color: #222;
+      }
     }
   }
 
