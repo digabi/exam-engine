@@ -67,12 +67,15 @@ export const AnnotatableText = ({
 
       nodes.push(
         annotation.hidden ? (
-          <mark
-            key={annotation.startIndex}
-            className="e-annotation"
-            data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
-            data-hidden="true"
-          />
+          <React.Fragment key={annotation.startIndex}>
+            <mark
+              key={annotation.startIndex}
+              className="e-annotation"
+              data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
+              data-hidden="true"
+            />
+            {markedText}
+          </React.Fragment>
         ) : (
           <Mark
             key={annotation.startIndex}
