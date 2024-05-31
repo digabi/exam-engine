@@ -108,7 +108,7 @@ function renderTextNode(node: Node) {
 }
 
 const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
-  'displayNumber' in annotation
+  'annotationId' in annotation
 
 const AnnotatableText = ({
   node,
