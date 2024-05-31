@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useRef } from 'react'
-import { AnnotationContext, AnnotationContextType } from './components/context/AnnotationProvider'
-import { onMouseDownForAnnotation } from './components/grading/examAnnotationUtils'
-import { mapChildNodes, queryAncestors } from './dom-utils'
-import { ExamAnnotation, NewExamAnnotation } from './types/Score'
+import React, { useContext } from 'react'
+import { AnnotationContext } from './components/context/AnnotationProvider'
 import { IsInSidebarContext } from './components/context/IsInSidebarContext'
+import { getElementPath, mapChildNodes } from './dom-utils'
+import { AnnotatableText } from './components/shared/AnnotatableText'
 
 export const ExamNamespaceURI = 'http://ylioppilastutkinto.fi/exam.xsd'
 export const XHTMLNamespaceURI = 'http://www.w3.org/1999/xhtml'
@@ -22,24 +21,6 @@ export const enum RenderOptions {
 }
 
 export type RenderChildNodes = (element: Element, options?: RenderOptions) => React.ReactNode[]
-
-function getElementPath(element: Element): string {
-  const temp = !element.tagName && Array.from(element.parentNode?.childNodes || []).indexOf(element)
-  const elementIndex = Array.from(element.parentElement?.children || []).indexOf(element)
-  let path = `${element.nodeName}:${elementIndex > 0 ? elementIndex : temp}`
-  let currentElement = element
-  while (currentElement.parentElement) {
-    currentElement = currentElement.parentElement
-    const displayNumber = currentElement.getAttribute('display-number')
-    const index =
-      Number(displayNumber) ||
-      Array.from(currentElement.parentElement?.children || [currentElement]).indexOf(currentElement)
-    const elementId = currentElement.getAttribute('id')
-    path = `${elementId || currentElement.nodeName}:${index} > ${path}`
-  }
-
-  return path
-}
 
 export function createRenderChildNodes(
   componentMap: Record<string, React.ComponentType<ExamComponentProps>>
@@ -107,126 +88,6 @@ function renderTextNode(node: Node) {
 
   return (
     <AnnotatableText node={node} annotationContextData={annotationContextData} key={getElementPath(node as Element)} />
-  )
-}
-
-const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
-  'annotationId' in annotation
-
-const AnnotatableText = ({
-  node,
-  annotationContextData
-}: {
-  node: Node
-  annotationContextData: AnnotationContextType
-}) => {
-  const { annotations, onClickAnnotation, setNewAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
-
-  const path = getElementPath(node as Element)
-  const newAnnotationForThisNode = newAnnotation?.annotationAnchor === path ? newAnnotation : null
-  const thisNodeAnnotations = [
-    ...(annotations?.[path] || []),
-    ...(newAnnotationForThisNode ? [newAnnotationForThisNode] : [])
-  ]
-
-  const mouseUpCallback = (annotation: NewExamAnnotation) => {
-    const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || ''
-    setNewAnnotation({ ...annotation, annotationAnchor: path, displayNumber })
-  }
-
-  function onMouseDown(e: React.MouseEvent) {
-    const target = e.target as Element
-    const clickIsInPopup = target.closest('.annotation-popup')
-    if (!clickIsInPopup) {
-      setNewAnnotation(null)
-    }
-    onMouseDownForAnnotation(e, mouseUpCallback)
-  }
-
-  return (
-    <span onMouseDown={onMouseDown} className="e-annotatable" key={path}>
-      {thisNodeAnnotations?.length > 0 ? markText(node.textContent!, thisNodeAnnotations) : node.textContent!}
-    </span>
-  )
-
-  function markText(text: string, annotations: (NewExamAnnotation | ExamAnnotation)[]): React.ReactNode[] {
-    if (annotations.length === 0) {
-      return [text]
-    }
-
-    const nodes: React.ReactNode[] = []
-    let lastIndex = 0
-    annotations.sort((a, b) => a.startIndex - b.startIndex)
-
-    for (const annotation of annotations) {
-      if (annotation.startIndex < 0 || annotation.length <= 0) {
-        return [text]
-      }
-
-      // Add unmarked text before this mark
-      if (annotation.startIndex > lastIndex) {
-        nodes.push(text.substring(lastIndex, annotation.startIndex))
-      }
-
-      // Add marked text
-      const markedText = text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
-
-      nodes.push(
-        annotation.hidden ? (
-          <mark
-            key={annotation.startIndex}
-            className="e-annotation"
-            data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
-            data-hidden="true"
-          />
-        ) : (
-          <Mark
-            key={annotation.startIndex}
-            annotation={annotation}
-            markedText={markedText}
-            onClickAnnotation={onClickAnnotation!}
-            setNewAnnotationRef={setNewAnnotationRef}
-          />
-        )
-      )
-
-      lastIndex = annotation.startIndex + annotation.length
-    }
-
-    // Add remaining unmarked text
-    nodes.push(text.substring(lastIndex))
-    return nodes
-  }
-}
-
-const Mark = ({
-  annotation,
-  markedText,
-  onClickAnnotation,
-  setNewAnnotationRef
-}: {
-  annotation: NewExamAnnotation | ExamAnnotation
-  markedText: string
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
-  setNewAnnotationRef: (ref: HTMLElement | undefined) => void
-}) => {
-  const markRef = useRef<HTMLElement>(null)
-  useEffect(() => {
-    if (markRef.current && !isExamAnnotation(annotation)) {
-      setNewAnnotationRef(markRef.current)
-    }
-  }, [])
-  return (
-    <mark
-      ref={markRef}
-      className="e-annotation"
-      data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
-      data-hidden="false"
-      onClick={e => (isExamAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
-    >
-      {markedText}
-      {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
-    </mark>
   )
 }
 

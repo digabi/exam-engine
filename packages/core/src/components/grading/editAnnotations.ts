@@ -65,7 +65,6 @@ export function showAndPositionElement(
     style.display = 'block'
     const containerRect = container.getBoundingClientRect()
     const popupRect = popup.getBoundingClientRect()
-    console.log('annotationRect', annotationRect, 'containerRect', containerRect, 'popupRect', popupRect)
     const left = annotationRect.left - containerRect.left
     const top = annotationRect.bottom - containerRect.top + topMargin
 
