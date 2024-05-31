@@ -38,6 +38,7 @@ export function AnnotationPopup() {
 
   const closeEditor = () => {
     setNewAnnotation(null)
+    closeMathEditor(textAreaRef.current!)
   }
 
   function updateComment(annotation: NewExamAnnotation, comment: string) {
@@ -65,6 +66,7 @@ export function AnnotationPopup() {
             className="button"
             onClick={e => {
               e.stopPropagation()
+              closeMathEditor(textAreaRef.current!)
               updateComment(newAnnotation, comment)
             }}
             data-testid="save-comment"
@@ -99,4 +101,11 @@ function showAndPositionElement(mark: HTMLElement | null, popupRef: React.RefObj
       style.left = `${markRect.left}px`
     }
   }
+}
+
+function closeMathEditor(element: HTMLDivElement) {
+  // rich-text-editor does not properly support several rich-text-editor instances created at different times.
+  // In order to close math editor that is open, we need to dispatch events like this.
+  element.dispatchEvent(new Event('focus', { bubbles: true, cancelable: true }))
+  element.dispatchEvent(new Event('blur', { bubbles: true, cancelable: true }))
 }
