@@ -1,6 +1,6 @@
 {
   "npmClient": "npm",
   "packages": ["packages/*"],
-  "version": "21.0.3-annoteta-react.0",
+  "version": "21.0.4-annoteta-react.0",
   "exact": true
 }
