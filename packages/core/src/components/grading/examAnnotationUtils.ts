@@ -1,5 +1,5 @@
-import { textAnnotationFromRange } from './editAnnotations'
 import React from 'react'
+import { textAnnotationFromRange } from './editAnnotations'
 
 export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
   function onMouseUpAfterAnswerMouseDown(e: MouseEvent) {
@@ -43,11 +43,14 @@ export function hasTextSelectedInAnswerText(): boolean {
     const endContainer = sel.getRangeAt(0).endContainer
     const startParent = startContainer.parentElement
     const endParent = endContainer.parentElement
-    const markTagExistsInSelection = Array.from(sel.getRangeAt(0).cloneContents().children).some(
-      child => child.tagName === 'MARK' && child.getAttribute('data-annotation-id')
+    const visibleMarkTagExistsInSelection = Array.from(sel.getRangeAt(0).cloneContents().children).some(
+      child => child.tagName === 'MARK' && child.getAttribute('data-hidden') === 'false'
     )
     return (
-      sel.rangeCount > 0 && startParent === endParent && startParent?.tagName !== 'MARK' && !markTagExistsInSelection
+      sel.rangeCount > 0 &&
+      startParent === endParent &&
+      startParent?.tagName !== 'MARK' &&
+      !visibleMarkTagExistsInSelection
     )
   }
 
