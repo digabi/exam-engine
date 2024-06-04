@@ -1,8 +1,9 @@
+import { partition } from 'lodash-es'
 import React, { useEffect, useRef } from 'react'
-import { AnnotationContextType } from '../context/AnnotationProvider'
 import { getElementPath, queryAncestors } from '../../dom-utils'
-import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { ExamAnnotation, NewExamAnnotation } from '../../types/Score'
+import { AnnotationContextType } from '../context/AnnotationProvider'
+import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 
 const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
   'annotationId' in annotation
@@ -48,14 +49,33 @@ export const AnnotatableText = ({
       return [text]
     }
 
+    function getMarkedText(annotation: NewExamAnnotation) {
+      return text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
+    }
+
     const nodes: React.ReactNode[] = []
     let lastIndex = 0
     annotations.sort((a, b) => a.startIndex - b.startIndex)
 
-    for (const annotation of annotations) {
-      if (annotation.startIndex < 0 || annotation.length <= 0) {
-        return [text]
-      }
+    const [validAnnotations, invalidAnnotations] = partition(
+      annotations,
+      annotation =>
+        annotation.startIndex >= 0 && annotation.length > 0 && annotation.selectedText === getMarkedText(annotation)
+    )
+
+    if (invalidAnnotations.length > 0) {
+      console.error(
+        'Invalid annotations:',
+        invalidAnnotations,
+        invalidAnnotations.map(
+          a =>
+            `selectedText (${a.selectedText}) does not match text picked by startIndex and length (${getMarkedText(a)})`
+        )
+      )
+    }
+
+    for (const annotation of validAnnotations) {
+      const markedText = getMarkedText(annotation)
 
       // Add unmarked text before this mark
       if (annotation.startIndex > lastIndex) {
@@ -63,22 +83,18 @@ export const AnnotatableText = ({
       }
 
       // Add marked text
-      const markedText = text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
-
+      const key = isExamAnnotation(annotation) ? annotation.annotationId : annotation.startIndex
       nodes.push(
         annotation.hidden ? (
-          <React.Fragment key={annotation.startIndex}>
-            <mark
-              key={annotation.startIndex}
-              className="e-annotation"
-              data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
-              data-hidden="true"
-            />
-            {markedText}
-          </React.Fragment>
+          <mark
+            key={key}
+            className="e-annotation"
+            data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
+            data-hidden="true"
+          />
         ) : (
           <Mark
-            key={annotation.startIndex}
+            key={key}
             annotation={annotation}
             markedText={markedText}
             onClickAnnotation={onClickAnnotation!}
@@ -87,7 +103,12 @@ export const AnnotatableText = ({
         )
       )
 
-      lastIndex = annotation.startIndex + annotation.length
+      // if annotation is hidden and it starts inside another annotation, we must not increment lastIndex (actually it would be decremented)
+      const hiddenAnnotationInsideCurrentAnnotation = annotation.startIndex < lastIndex && annotation.hidden
+
+      if (!hiddenAnnotationInsideCurrentAnnotation) {
+        lastIndex = annotation.startIndex + (annotation.hidden ? 0 : annotation.length)
+      }
     }
 
     // Add remaining unmarked text

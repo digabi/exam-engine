@@ -14,6 +14,7 @@ export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
   if (length <= 0) {
     return undefined
   }
+
   return {
     startIndex: charactersBefore,
     length
