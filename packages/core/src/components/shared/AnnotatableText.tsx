@@ -1,9 +1,9 @@
+import { partition } from 'lodash-es'
 import React, { useEffect, useRef } from 'react'
-import { AnnotationContextType } from '../context/AnnotationProvider'
 import { getElementPath, queryAncestors } from '../../dom-utils'
-import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { ExamAnnotation, NewExamAnnotation } from '../../types/Score'
-import { partition } from 'lodash'
+import { AnnotationContextType } from '../context/AnnotationProvider'
+import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 
 const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
   'annotationId' in annotation
