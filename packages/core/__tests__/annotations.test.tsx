@@ -87,7 +87,7 @@ describe('Annotations', () => {
       length: defaultTextToAnnotate.length,
       message: 'New Value',
       selectedText: defaultTextToAnnotate,
-      startIndex: 67
+      startIndex: 0
     })
   })
 
@@ -110,7 +110,7 @@ describe('Annotations', () => {
     const exam = render(
       <Exam
         {...getExamProps()}
-        annotations={{ [defaultAnnotationAnchor]: [createAnnotation(1, 1, 1)] }}
+        annotations={{ [defaultAnnotationAnchor]: [createAnnotation(1, 5, 12, 'moraali että')] }}
         onClickAnnotation={clickAnnotationMock}
         onSaveAnnotation={() => {}}
       />
@@ -123,26 +123,26 @@ describe('Annotations', () => {
       annotationId: 1,
       displayNumber: '',
       hidden: false,
-      length: 1,
+      length: 12,
       message: '',
-      selectedText: '',
-      startIndex: 1
+      selectedText: 'moraali että',
+      startIndex: 5
     })
   })
 
   it('annotations are added to dom when provided', () => {
     const annotationProps: AnnotationProps = {
       annotations: {
-        [defaultAnnotationAnchor]: [createAnnotation(1, 1, 3), createAnnotation(3, 4, 5)]
+        [defaultAnnotationAnchor]: [createAnnotation(1, 5, 7, 'moraali'), createAnnotation(3, 18, 5, 'tavat')]
       },
       onClickAnnotation: () => {},
       onSaveAnnotation: () => {}
     }
     const exam = render(<Exam {...getExamProps()} {...annotationProps} />)
     expect(exam.container.querySelector('[data-annotation-id="1"]')).toBeInTheDocument()
-    expect(exam.container.querySelector('[data-annotation-id="1"]')?.textContent).toBe('ekä')
+    expect(exam.container.querySelector('[data-annotation-id="1"]')?.textContent).toBe('moraali')
     expect(exam.container.querySelector('[data-annotation-id="3"]')).toBeInTheDocument()
-    expect(exam.container.querySelector('[data-annotation-id="3"]')?.textContent).toBe(' mora')
+    expect(exam.container.querySelector('[data-annotation-id="3"]')?.textContent).toBe('tavat')
   })
 
   it('hidden annotation works correctly', () => {
@@ -153,11 +153,11 @@ describe('Annotations', () => {
             annotationId: 1,
             annotationAnchor: defaultAnnotationAnchor,
             hidden: true,
-            startIndex: 0,
-            length: 10,
+            startIndex: 24,
+            length: 8,
             message: '',
             displayNumber: '',
-            selectedText: ''
+            selectedText: 'pyrkivät'
           }
         ]
       },
@@ -192,7 +192,7 @@ describe('Annotations', () => {
     expect(gi.getByTestId('annotation-popup')).toBeVisible()
   })
 
-  function createAnnotation(id: number, startIndex: number, length: number): ExamAnnotation {
+  function createAnnotation(id: number, startIndex: number, length: number, selectedText: string): ExamAnnotation {
     return {
       annotationId: id,
       annotationAnchor: defaultAnnotationAnchor,
@@ -201,25 +201,25 @@ describe('Annotations', () => {
       length,
       message: '',
       displayNumber: '',
-      selectedText: ''
+      selectedText
     }
   }
 
   async function annotateText(exam: RenderResult, text: string) {
-    mockWindowSelection(text, text.length)
     const textElement = exam.getByText(text)
+    mockWindowSelection(text, text.length, textElement)
     await userEvent.click(textElement)
   }
 
-  function mockWindowSelection(text = 'mocked selection text', length = 5) {
+  function mockWindowSelection(text = 'mocked selection text', length = 5, element: Element) {
     ;(window.getSelection as jest.Mock).mockImplementation(() => ({
       toString: () => text,
       rangeCount: 1,
       getRangeAt: jest.fn().mockReturnValue({
         startOffset: 0,
         endOffset: length,
-        startContainer: {},
-        endContainer: {},
+        startContainer: element,
+        endContainer: element,
         cloneContents: jest.fn().mockReturnValue({ children: [], childNodes: [] })
       })
     }))

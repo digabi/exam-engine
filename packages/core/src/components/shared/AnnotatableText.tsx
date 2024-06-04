@@ -3,6 +3,7 @@ import { AnnotationContextType } from '../context/AnnotationProvider'
 import { getElementPath, queryAncestors } from '../../dom-utils'
 import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { ExamAnnotation, NewExamAnnotation } from '../../types/Score'
+import { partition } from 'lodash'
 
 const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
   'annotationId' in annotation
@@ -56,10 +57,22 @@ export const AnnotatableText = ({
     let lastIndex = 0
     annotations.sort((a, b) => a.startIndex - b.startIndex)
 
-    const validAnnotations = annotations.filter(
+    const [validAnnotations, invalidAnnotations] = partition(
+      annotations,
       annotation =>
         annotation.startIndex >= 0 && annotation.length > 0 && annotation.selectedText === getMarkedText(annotation)
     )
+
+    if (invalidAnnotations.length > 0) {
+      console.error(
+        'Invalid annotations:',
+        invalidAnnotations,
+        invalidAnnotations.map(
+          a =>
+            `selectedText (${a.selectedText}) does not match text picked by startIndex and length (${getMarkedText(a)})`
+        )
+      )
+    }
 
     for (const annotation of validAnnotations) {
       const markedText = getMarkedText(annotation)
