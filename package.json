@@ -60,7 +60,7 @@
     "puppeteer": "^22.0.0",
     "tmp-promise": "^3.0.2",
     "typescript": "^5.0.4",
-    "uuid": "^9.0.0",
+    "uuid": "^10.0.0",
     "yauzl-promise": "^4.0.0"
   },
   "scripts": {
