@@ -100,6 +100,8 @@ const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, re
       role="radiogroup"
       aria-labelledby={questionLabelIds}
     >
+      <span className="anchor" id={`question-nr-${displayNumber}`} />
+
       {mapChildElements(element, childElement => {
         const optionId = childElement.getAttribute('option-id')!
         const isNoAnswer = childElement.getAttribute('type') === 'no-answer'

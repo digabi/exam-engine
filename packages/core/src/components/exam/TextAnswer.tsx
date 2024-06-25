@@ -13,11 +13,9 @@ function TextAnswer(props: ExamComponentProps) {
 
   const hasSiblings = hasSiblingQuestions(element)
 
-  const displayNumberHasThreeLevels = displayNumber.split('.').length === 3
-
   return (
     <>
-      {displayNumberHasThreeLevels && <span className="anchor" id={`question-nr-${displayNumber}`} />}
+      <span className="anchor" id={`question-nr-${displayNumber}`} />
       {hint ? (
         <label className="e-nowrap">
           {hasSiblings && (
