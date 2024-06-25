@@ -74,6 +74,20 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       expect(await questionSelector?.isIntersectingViewport()).toBe(true)
     })
 
+    it('navigates to 3rd level subquestion when clicking on it in sidebar', async () => {
+      ctx = await previewExam(resolveExam('SC/SC.xml'))
+      page = await createPage()
+      await loadExam(page, ctx.url)
+
+      const subQuestionLinkInSidebar = '.sidebar-toc-container div[data-indicator-id="40"]'
+      const questionInExam = 'span[id="question-nr-11.2.2"]'
+      const questionSelector = await page.waitForSelector(questionInExam)
+
+      expect(await questionSelector?.isIntersectingViewport()).not.toBe(true)
+      await page.click(subQuestionLinkInSidebar)
+      expect(await questionSelector?.isIntersectingViewport()).toBe(true)
+    })
+
     const type = (text: string, questionId = 89) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
   })
 
