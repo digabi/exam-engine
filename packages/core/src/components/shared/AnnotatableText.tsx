@@ -1,21 +1,27 @@
 import { partition } from 'lodash-es'
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { getElementPath, queryAncestors } from '../../dom-utils'
 import { ExamAnnotation, NewExamAnnotation } from '../../types/Score'
-import { AnnotationContextType } from '../context/AnnotationProvider'
+import { AnnotationContext } from '../context/AnnotationProvider'
 import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
+import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
 const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
   'annotationId' in annotation
 
-export const AnnotatableText = ({
-  node,
-  annotationContextData
-}: {
-  node: Node
-  annotationContextData: AnnotationContextType
-}) => {
+export const AnnotatableText = ({ node }: { node: Node }) => {
+  const annotationContextData = useContext(AnnotationContext)
+  const { isInSidebar } = useContext(IsInSidebarContext)
   const { annotations, onClickAnnotation, setNewAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
+
+  const canNotBeAnnotated =
+    annotationContextData?.annotations === undefined ||
+    node.textContent?.trim().length === 0 ||
+    isInSidebar !== undefined
+
+  if (canNotBeAnnotated) {
+    return node.textContent!
+  }
 
   const path = getElementPath(node as Element)
   const newAnnotationForThisNode = newAnnotation?.annotationAnchor === path ? newAnnotation : null
