@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
-import { AnnotationContext } from './components/context/AnnotationProvider'
-import { IsInSidebarContext } from './components/context/IsInSidebarContext'
+import React from 'react'
 import { getElementPath, mapChildNodes } from './dom-utils'
 import { AnnotatableText } from './components/shared/AnnotatableText'
 
@@ -75,20 +73,7 @@ export function createRenderChildNodes(
 }
 
 function renderTextNode(node: Node) {
-  const annotationContextData = useContext(AnnotationContext)
-  const { isInSidebar } = useContext(IsInSidebarContext)
-
-  if (
-    annotationContextData?.annotations === undefined ||
-    node.textContent?.trim().length === 0 ||
-    isInSidebar !== undefined
-  ) {
-    return node.textContent!
-  }
-
-  return (
-    <AnnotatableText node={node} annotationContextData={annotationContextData} key={getElementPath(node as Element)} />
-  )
+  return <AnnotatableText node={node} key={getElementPath(node as Element)} />
 }
 
 function htmlAttributes2props<T extends HTMLElement>(element: T, index: number): React.HTMLProps<T> {
