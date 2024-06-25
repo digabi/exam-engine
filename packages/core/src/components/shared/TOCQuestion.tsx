@@ -24,7 +24,7 @@ export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ eleme
   const questionTitle = findChildElement(element, 'question-title')!
   const externalMaterial = showAttachmentLinks && displayNumber != null && query(element, 'external-material')
 
-  const subquestions = [] as { id: number; type: string; error: boolean; displayNumber: number }[]
+  const subquestions = [] as { id: number; type: string; error: boolean; displayNumber: string }[]
 
   let answersById = {} as Record<QuestionId, ExamAnswer>
   let hasQuestionValidationError = false
@@ -53,7 +53,7 @@ export const TOCQuestion: React.FunctionComponent<ExamComponentProps> = ({ eleme
           id,
           type,
           error: hasError || (childQuestionHasError && hasAnswer),
-          displayNumber: Number(subQuestionDisplayNumber)
+          displayNumber: subQuestionDisplayNumber
         })
       }
     })

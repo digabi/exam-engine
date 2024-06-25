@@ -9,7 +9,7 @@ type Props = {
   type: string
   answer: ExamAnswer
   error: boolean
-  displayNumber: number
+  displayNumber: string
 }
 
 const AnswerIndicator = (props: Props) => {
