@@ -4,18 +4,46 @@ import { textAnnotationFromRange } from './editAnnotations'
 export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
   function onMouseUpAfterAnswerMouseDown(e: MouseEvent) {
     const target = e.target as HTMLElement
+    console.log(target)
     window.removeEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 
     // Text annotation
     const selection = window.getSelection()
-    if (selection && hasTextSelectedInAnswerText()) {
+    const startNode = selection?.anchorNode?.parentElement
+    const endNode = selection?.focusNode?.parentElement
+    const startNodePath = selection?.anchorNode?.parentElement?.getAttribute('data-annotation-path')
+    const endNodePath = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
+    const range2 = selection?.getRangeAt(0)
+    console.log('selection', selection)
+    console.log('startnode path', startNodePath)
+    console.log('endnode path', endNodePath)
+    console.log('R', range2)
+    console.log('same?', startNode === endNode && startNode !== null)
+
+    if (selection && endNodePath && hasOnlyOneTextElementSelected()) {
       const range = selection.getRangeAt(0)
-      const position = textAnnotationFromRange(target, range)
-      if (!position) {
+      const displayNumber =
+        startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
+
+      const length = Math.abs(selection.anchorOffset - selection.focusOffset)
+
+      console.log('Tgt', target, selection?.anchorNode?.parentElement, selection?.focusNode?.parentElement)
+
+      const position1 = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
+      //const position1 = textAnnotationFromRange(target, range)
+      console.log('Range', range.startOffset, range.endOffset)
+      console.log('Sel.', selection.anchorOffset, selection.focusOffset)
+      if (!position1 || !length) {
         return
       }
-      const selectedText = selection.toString()
-      mouseUpCallback({ ...position, selectedText })
+
+      const position = {
+        startIndex: position1.startIndex,
+        length: position1?.length,
+        selectedText: selection.toString()
+      }
+      console.log('position', position)
+      mouseUpCallback({ ...position, annotationAnchor: endNodePath, displayNumber })
     }
   }
 
@@ -24,6 +52,12 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
     return
   }
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
+}
+
+function hasOnlyOneTextElementSelected(): boolean {
+  const selection = window.getSelection()
+  const range = selection?.getRangeAt(0)
+  return range?.startContainer.parentElement === range?.endContainer.parentElement
 }
 
 export function hasTextSelectedInAnswerText(): boolean {
