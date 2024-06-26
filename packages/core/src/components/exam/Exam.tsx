@@ -21,16 +21,17 @@ import { useCached } from '../../useCached'
 import DocumentTitle from '../DocumentTitle'
 import RenderChildNodes from '../RenderChildNodes'
 import SectionElement from '../SectionElement'
-import { AnnotationProvider } from '../context/AnnotationProvider'
+import { AnnotationContext, AnnotationProvider } from '../context/AnnotationProvider'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { withExamContext } from '../context/ExamContext'
 import { TOCContext } from '../context/TOCContext'
+import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
+import { AnnotationPopup } from '../shared/AnnotationPopup'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
 import AudioGroup from '../shared/AudioGroup'
 import AudioTest from '../shared/AudioTest'
-import { AnnotationPopup } from '../shared/AnnotationPopup'
 import ExamTranslation from '../shared/ExamTranslation'
 import File from '../shared/File'
 import { Footer } from '../shared/Footer'
@@ -273,32 +274,35 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                 <div className="main-exam-container">
                   <div className="main-exam">
                     <StudentNameHeader studentName={studentName} />
-                    <SectionElement aria-labelledby={examTitleId}>
-                      {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-                      {date && (
-                        <p>
-                          <strong>{dateTimeFormatter.format(date)}</strong>
-                        </p>
-                      )}
-                      {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-                      {tableOfContents && (
-                        <div className="main-toc-container">
-                          <TableOfContents
-                            {...{
-                              element: tableOfContents,
-                              renderChildNodes
-                            }}
-                          />
-                        </div>
-                      )}
+                    <AnnotationWrapper>
+                      <SectionElement aria-labelledby={examTitleId}>
+                        {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+                        {date && (
+                          <p>
+                            <strong>{dateTimeFormatter.format(date)}</strong>
+                          </p>
+                        )}
+                        {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-                      {externalMaterial && (
-                        <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                      )}
-                    </SectionElement>
+                        {tableOfContents && (
+                          <div className="main-toc-container">
+                            <TableOfContents
+                              {...{
+                                element: tableOfContents,
+                                renderChildNodes
+                              }}
+                            />
+                          </div>
+                        )}
 
-                    {renderChildNodes(root)}
+                        {externalMaterial && (
+                          <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                        )}
+                      </SectionElement>
+
+                      {renderChildNodes(root)}
+                    </AnnotationWrapper>
 
                     {(isPreview || isNewKoeVersion) && (
                       <div className="e-examine-exam">
@@ -327,6 +331,27 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
       </AnnotationProvider>
     </Provider>
   )
+}
+
+export const AnnotationWrapper: React.FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
+  const { setNewAnnotation } = useContext(AnnotationContext)
+
+  const mouseUpCallback = (annotation: NewExamAnnotation) => {
+    setNewAnnotation(annotation)
+  }
+
+  function onMouseDown(e: React.MouseEvent) {
+    const target = e.target as Element
+    const clickIsInPopup = target.closest('.annotation-popup')
+    if (!clickIsInPopup) {
+      console.log('clear popup', target)
+      setNewAnnotation(null)
+    }
+
+    onMouseDownForAnnotation(e, mouseUpCallback)
+  }
+
+  return <span onMouseDown={onMouseDown}>{children}</span>
 }
 
 const ProceedToExamineAnswersText = () => {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { AnnotationProps, CommonExamProps } from '../exam/Exam'
+import { AnnotationProps, AnnotationWrapper, CommonExamProps } from '../exam/Exam'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { useCached } from '../../useCached'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
@@ -124,7 +124,9 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
               </p>
             )}
             {examGradingInstruction && (
-              <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
+              <AnnotationWrapper>
+                <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
+              </AnnotationWrapper>
             )}
             {tableOfContents && (
               <div className="main-toc-container">
@@ -132,7 +134,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
               </div>
             )}
           </SectionElement>
-          {renderChildNodes(root)}
+          <AnnotationWrapper>{renderChildNodes(root)}</AnnotationWrapper>
         </main>
       </I18nextProvider>
     </AnnotationProvider>
