@@ -6,7 +6,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
     <title>Hyvän vastauksen piirteet: FI – Saksa, lyhyt oppimäärä</title>
   <script defer="" src="./main-bundle.js"></script></head>
   <body>
-    <div id="app"><main class="e-exam e-grading-instructions" lang="de-DE"><section aria-labelledby="title" class="e-section e-bg-color-off-white e-pad-6"><h1 id="title"><span lang="fi-FI">Hyvän vastauksen piirteet:</span> <span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></h1><p><strong>1.1.1970</strong></p><div class="e-exam-grading-instruction notification e-pad-4" data-annotation-anchor="exam-grading-instruction">
+    <div id="app"><main class="e-exam e-grading-instructions" lang="de-DE"><section aria-labelledby="title" class="e-section e-bg-color-off-white e-pad-6"><h1 id="title"><span lang="fi-FI">Hyvän vastauksen piirteet:</span> <span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></h1><p><strong>1.1.1970</strong></p><span><div class="e-exam-grading-instruction notification e-pad-4" data-annotation-anchor="exam-grading-instruction">
     Lopullisista hyvän vastauksen piirteistä ilmenevät perusteet, joiden mukaan
     koesuorituksen lopullinen arvostelu on suoritettu. Tieto siitä, miten arvosteluperusteita on sovellettu kokelaan
     koesuoritukseen, muodostuu kokelaan koesuorituksestaan saamista pisteistä, lopullisista hyvän vastauksen
@@ -35,7 +35,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
       lisäksi väärää tetoa, vähennetään yksi piste.
     </p>
 
-  </div><div class="main-toc-container"><nav class="table-of-contents" aria-labelledby="toc-title"><h2 id="toc-title"><span class="e-toc-heading">Inhalt</span></h2><ol class="e-list-plain e-pad-l-0">
+  </div></span><div class="main-toc-container"><nav class="table-of-contents" aria-labelledby="toc-title"><h2 id="toc-title"><span class="e-toc-heading">Inhalt</span></h2><ol class="e-list-plain e-pad-l-0">
   
   
   
@@ -49,7 +49,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   <li data-section-id="4"><div class=""><div class="toc-section-header-container"><h4 class="toc-section-header" id="toc-section-title-4">Teil 4: Schriftliche Produktion</h4></div></div><ol class="e-list-data e-pad-l-0" aria-labelledby="toc-section-title-4"><li data-list-number="21." class="level-0"><span class="e-column e-question-title"><a href="#question-nr-21"><span>Kurze Schreibaufgabe</span></a></span><span class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">33 p.</span></span><div class="answers"> </div></li><li data-list-number="22." class="level-0"><span class="e-column e-question-title"><a href="#question-nr-22"><span>Lange Schreibaufgabe</span></a></span><span class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">66 p.</span></span><div class="answers"> </div></li></ol></li>
 
   
-</ol><div class="e-columns"><strong class="e-column e-total">Die Prüfung insgesamt</strong><strong class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">311 p.</span></strong></div></nav></div></section>
+</ol><div class="e-columns"><strong class="e-column e-total">Die Prüfung insgesamt</strong><strong class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">311 p.</span></strong></div></nav></div></section><span>
   
   
   
@@ -828,7 +828,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   </section>
 
   
-</main></div></body></html>"
+</span></main></div></body></html>"
 `;
 
 exports[`ee create-grading-instructions creates grading instructions 2`] = `
