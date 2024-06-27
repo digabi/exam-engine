@@ -44,7 +44,7 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
     onMouseDownForAnnotation(e, mouseUpCallback)
   }
 
-  const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n|\s+/g, ' ')
+  const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n/g, ' ').replace(/\s+/g, ' ')
 
   return (
     <span onMouseDown={onMouseDown} className="e-annotatable" key={path}>

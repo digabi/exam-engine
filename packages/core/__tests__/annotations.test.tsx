@@ -101,7 +101,8 @@ describe('Annotations', () => {
       target: { innerText: 'New Value', innerHTML: 'New Value' }
     })
     await userEvent.click(exam.getByText('Vastaa'))
-    await annotateText(exam, 'Esitä jokin toinen käsitys filosofiasta ja vertaa sitä')
+    // text picked by getMarkedText includes leading/trailing whitespace, so they must be here too
+    await annotateText(exam, ' Esitä jokin toinen käsitys filosofiasta ja vertaa sitä ')
     expect(exam.getByTestId('edit-comment').textContent).toHaveLength(0)
   })
 
@@ -206,7 +207,7 @@ describe('Annotations', () => {
   }
 
   async function annotateText(exam: RenderResult, text: string) {
-    const textElement = exam.getByText(text)
+    const textElement = exam.getByText(text.trim()) // text is not found unless trimmed
     mockWindowSelection(text, text.length, textElement)
     await userEvent.click(textElement)
   }
