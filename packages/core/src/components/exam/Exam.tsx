@@ -344,7 +344,6 @@ export const AnnotationWrapper: React.FunctionComponent<{ children: React.ReactN
     const target = e.target as Element
     const clickIsInPopup = target.closest('.annotation-popup')
     if (!clickIsInPopup) {
-      console.log('clear popup', target)
       setNewAnnotation(null)
     }
 

@@ -14,9 +14,7 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
     const startNodePath = selection?.anchorNode?.parentElement?.getAttribute('data-annotation-path')
     const endNodePath = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
     const range2 = selection?.getRangeAt(0)
-    console.log('selection', selection)
     console.log('startnode path', startNodePath)
-    console.log('endnode path', endNodePath)
     console.log('R', range2)
     console.log('same?', startNode === endNode && startNode !== null)
 
@@ -30,9 +28,6 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       console.log('Tgt', target, selection?.anchorNode?.parentElement, selection?.focusNode?.parentElement)
 
       const position1 = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
-      //const position1 = textAnnotationFromRange(target, range)
-      console.log('Range', range.startOffset, range.endOffset)
-      console.log('Sel.', selection.anchorOffset, selection.focusOffset)
       if (!position1 || !length) {
         return
       }
