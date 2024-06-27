@@ -9,7 +9,7 @@ type Props = {
   type: string
   answer: ExamAnswer
   error: boolean
-  displayNumber: number
+  displayNumber: string
 }
 
 const AnswerIndicator = (props: Props) => {
@@ -25,29 +25,28 @@ const AnswerIndicator = (props: Props) => {
     e.stopPropagation()
     window.location.href = `#question-nr-${displayNumber}`
   }
-
   return (
-    <div
-      key={id}
-      className={classNames('answer-indicator', {
-        ok: value,
-        error,
-        big: type === 'rich-text'
-      })}
-      data-indicator-id={id}
-      onClick={onClick}
-    >
-      {answer?.type === 'richText' && (
-        <>
-          {(answerIsLongText && answer?.characterCount && <span>{answer.characterCount}</span>) || ''}
-          {answerIsFormula && <span className="formula">∑</span>}
-          {answerIsImage && (
-            <span className="img">
-              <FontAwesomeIcon icon={faImage} size="lg" />
-            </span>
-          )}
-        </>
-      )}
+    <div className="answer-indicator-container" onClick={onClick} key={id}>
+      <div
+        className={classNames('answer-indicator', {
+          ok: value,
+          error,
+          big: type === 'rich-text'
+        })}
+        data-indicator-id={id}
+      >
+        {answer?.type === 'richText' && (
+          <>
+            {(answerIsLongText && answer?.characterCount && <span>{answer.characterCount}</span>) || ''}
+            {answerIsFormula && <span className="formula">∑</span>}
+            {answerIsImage && (
+              <span className="img">
+                <FontAwesomeIcon icon={faImage} size="lg" />
+              </span>
+            )}
+          </>
+        )}
+      </div>
     </div>
   )
 }

@@ -13,16 +13,21 @@ function TextAnswer(props: ExamComponentProps) {
 
   const hasSiblings = hasSiblingQuestions(element)
 
-  return hint ? (
-    <label className="e-nowrap">
-      {hasSiblings && (
-        <sup className="e-text-answer-display-number e-color-darkgrey">{shortDisplayNumber(displayNumber)}</sup>
+  return (
+    <>
+      <span className="anchor" id={`question-nr-${displayNumber}`} />
+      {hint ? (
+        <label className="e-nowrap">
+          {hasSiblings && (
+            <sup className="e-text-answer-display-number e-color-darkgrey">{shortDisplayNumber(displayNumber)}</sup>
+          )}
+          <ScreenReaderOnly>{renderChildNodes(hint)}</ScreenReaderOnly>
+          {textAnswer}
+        </label>
+      ) : (
+        textAnswer
       )}
-      <ScreenReaderOnly>{renderChildNodes(hint)}</ScreenReaderOnly>
-      {textAnswer}
-    </label>
-  ) : (
-    textAnswer
+    </>
   )
 }
 

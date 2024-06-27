@@ -209,56 +209,59 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 2px;
 
-      .answer-indicator {
-        display: block;
-        width: 7px;
-        height: 12px;
-        border-radius: 4px;
-        background: hsla(194, 100%, 15%, 0.1);
-        display: flex;
-        justify-content: center;
-        gap: 4px;
-        color: white;
-        line-height: 12px;
-        font-size: 10px;
+      .answer-indicator-container {
+        padding: 0 1px;
 
-        &:hover {
+        &:hover .answer-indicator {
           background: hsla(194, 100%, 15%, 0.3);
-        }
 
-        &.big {
-          padding: 0 3px;
-          width: auto;
-          min-width: 16px;
-
-          .img {
-            line-height: 11px;
-
-            svg {
-              height: 12px;
-            }
-          }
-
-          .formula {
-            line-height: 10px;
-          }
-        }
-
-        &.ok {
-          background: hsl(208, 80%, 54%);
-
-          &:hover {
+          &.ok {
             background: hsl(208, 80%, 64%);
           }
         }
 
-        &.error {
-          background: @error;
-          color: black;
-          border: 2px solid black;
-          box-sizing: content-box;
+        .answer-indicator {
+          display: block;
+          width: 7px;
+          height: 12px;
+          border-radius: 4px;
+          background: hsla(194, 100%, 15%, 0.1);
+          display: flex;
+          justify-content: center;
+          gap: 4px;
+          color: white;
+          line-height: 12px;
+          font-size: 10px;
+
+          &.big {
+            padding: 0 3px;
+            width: auto;
+            min-width: 16px;
+
+            .img {
+              line-height: 11px;
+
+              svg {
+                height: 12px;
+              }
+            }
+
+            .formula {
+              line-height: 10px;
+            }
+          }
+
+          &.ok {
+            background: hsl(208, 80%, 54%);
+          }
+
+          &.error {
+            background: @error;
+            color: black;
+            border: 2px solid black;
+            box-sizing: content-box;
+          }
         }
       }
     }
