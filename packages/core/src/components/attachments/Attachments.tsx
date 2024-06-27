@@ -11,7 +11,7 @@ import AttachmentsQuestion from './Question'
 import AttachmentsQuestionTitle from './QuestionTitle'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
-import { AnnotationProps, ExamProps } from '../exam/Exam'
+import { AnnotationProps, AnnotationWrapper, ExamProps } from '../exam/Exam'
 import { withExamContext } from '../context/ExamContext'
 import RenderChildNodes from '../RenderChildNodes'
 import RenderExamElements from '../RenderExamElements'
@@ -56,19 +56,21 @@ const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
           <AnnotationPopup />
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
-          <SectionElement aria-labelledby={examTitleId}>
-            {examTitle && (
-              <DocumentTitle id={examTitleId}>
-                <AttachmentsPageTitle />
-                {NBSP}
-                {renderChildNodes(examTitle)}
-              </DocumentTitle>
-            )}
-            <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
-            {externalMaterial && (
-              <AttachmentsExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-            )}
-          </SectionElement>
+          <AnnotationWrapper>
+            <SectionElement aria-labelledby={examTitleId}>
+              {examTitle && (
+                <DocumentTitle id={examTitleId}>
+                  <AttachmentsPageTitle />
+                  {NBSP}
+                  {renderChildNodes(examTitle)}
+                </DocumentTitle>
+              )}
+              <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
+              {externalMaterial && (
+                <AttachmentsExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+              )}
+            </SectionElement>
+          </AnnotationWrapper>
           {renderChildNodes(root)}
         </main>
       </I18nextProvider>
