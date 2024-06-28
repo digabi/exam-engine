@@ -2,20 +2,38 @@ import React from 'react'
 import { textAnnotationFromRange } from './editAnnotations'
 
 export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
-  function onMouseUpAfterAnswerMouseDown(e: MouseEvent) {
-    const target = e.target as HTMLElement
+  function onMouseUpAfterAnswerMouseDown() {
     window.removeEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 
-    // Text annotation
+    /**
+     * selection.anchorNode = where mouse is pressed down (chronologically first)
+     * selection.getRangeAt(0).startContainer = where selection starts (first in DOM)
+     */
+
     const selection = window.getSelection()
-    if (selection && hasTextSelectedInAnswerText()) {
+    const startNode = selection?.anchorNode?.parentElement
+    const endNode = selection?.focusNode?.parentElement
+    const endNodePath = endNode?.getAttribute('data-annotation-path')
+
+    if (selection && endNodePath && hasOnlyOneTextElementSelected()) {
       const range = selection.getRangeAt(0)
-      const position = textAnnotationFromRange(target, range)
-      if (!position) {
+      const displayNumber =
+        startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
+
+      //const length = Math.abs(selection.anchorOffset - selection.focusOffset)
+
+      const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
+
+      if (!startAndLength || !startAndLength?.length) {
         return
       }
-      const selectedText = selection.toString()
-      mouseUpCallback({ ...position, selectedText })
+
+      const position = {
+        startIndex: startAndLength.startIndex,
+        length: startAndLength?.length,
+        selectedText: selection.toString()
+      }
+      mouseUpCallback({ ...position, annotationAnchor: endNodePath, displayNumber })
     }
   }
 
@@ -24,6 +42,18 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
     return
   }
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
+}
+
+function hasOnlyOneTextElementSelected(): boolean {
+  const selection = window.getSelection()
+  const visibleMarkTagExistsInSelection =
+    selection &&
+    Array.from(selection?.getRangeAt(0).cloneContents().children).some(
+      child => child.tagName === 'MARK' && child.getAttribute('data-hidden') === 'false'
+    )
+  const startNode = selection?.anchorNode?.parentElement
+  const endNode = selection?.focusNode?.parentElement
+  return !visibleMarkTagExistsInSelection && startNode === endNode
 }
 
 export function hasTextSelectedInAnswerText(): boolean {

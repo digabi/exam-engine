@@ -1,24 +1,23 @@
 import React, { useContext, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
-import { findChildElement, NBSP } from '../../dom-utils'
+import { NBSP, findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import { scrollToHash } from '../../scrollToHash'
 import { useCached } from '../../useCached'
-import AttachmentsExternalMaterial from './ExternalMaterial'
-import AttachmentsQuestion from './Question'
-import AttachmentsQuestionTitle from './QuestionTitle'
-import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import DocumentTitle from '../DocumentTitle'
-import { AnnotationProps, ExamProps } from '../exam/Exam'
-import { withExamContext } from '../context/ExamContext'
 import RenderChildNodes from '../RenderChildNodes'
 import RenderExamElements from '../RenderExamElements'
 import SectionElement from '../SectionElement'
-import { withSectionContext } from '../context/SectionContext'
 import { AnnotationProvider } from '../context/AnnotationProvider'
-import { AnnotationPopup } from '../shared/AnnotationPopup'
+import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
+import { withExamContext } from '../context/ExamContext'
+import { withSectionContext } from '../context/SectionContext'
+import { AnnotationProps, ExamProps } from '../exam/Exam'
+import AttachmentsExternalMaterial from './ExternalMaterial'
+import AttachmentsQuestion from './Question'
+import AttachmentsQuestionTitle from './QuestionTitle'
 
 const renderChildNodes = createRenderChildNodes({
   'audio-group': RenderExamElements,
@@ -53,7 +52,6 @@ const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
     >
       <I18nextProvider i18n={i18n}>
         <main className="e-exam attachments" lang={subjectLanguage} aria-labelledby={examTitleId}>
-          <AnnotationPopup />
           <React.StrictMode />
           {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
           <SectionElement aria-labelledby={examTitleId}>
