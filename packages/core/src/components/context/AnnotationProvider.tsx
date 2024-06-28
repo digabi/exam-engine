@@ -27,12 +27,10 @@ export const AnnotationProvider = ({
   const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement>()
 
   const mouseUpCallback = (annotation: NewExamAnnotation) => {
-    console.log('UP')
     setNewAnnotation(annotation)
   }
 
   function onMouseDown(e: React.MouseEvent) {
-    console.log('DOWN')
     const target = e.target as Element
     const clickIsInPopup = target.closest('.annotation-popup')
     if (!clickIsInPopup) {
