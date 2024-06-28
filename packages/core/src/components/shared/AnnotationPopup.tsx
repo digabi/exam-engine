@@ -91,6 +91,8 @@ function showAndPositionElement(mark: HTMLElement | null, popupRef: React.RefObj
     const popupRect = popup.getBoundingClientRect()
     const top = markRect.height + markRect.top + window.scrollY
     const windowWidth = window.innerWidth
+    console.log('mark', markRect)
+    console.log('popup', popupRect)
     style.top = `${String(top)}px`
     style.opacity = '1'
     const popupHitsWindowRight = markRect.left + popupRect.width > windowWidth

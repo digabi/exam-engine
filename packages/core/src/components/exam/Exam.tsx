@@ -21,12 +21,10 @@ import { useCached } from '../../useCached'
 import DocumentTitle from '../DocumentTitle'
 import RenderChildNodes from '../RenderChildNodes'
 import SectionElement from '../SectionElement'
-import { AnnotationContext, AnnotationProvider } from '../context/AnnotationProvider'
+import { AnnotationProvider } from '../context/AnnotationProvider'
 import { CommonExamContext, withCommonExamContext } from '../context/CommonExamContext'
 import { withExamContext } from '../context/ExamContext'
 import { TOCContext } from '../context/TOCContext'
-import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
-import { AnnotationPopup } from '../shared/AnnotationPopup'
 import mkAttachmentLink from '../shared/AttachmentLink'
 import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
@@ -261,7 +259,6 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
         >
           <I18nextProvider i18n={i18n}>
             <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
-              <AnnotationPopup />
               <React.StrictMode />
               {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
               <div className="e-toc-and-exam">
@@ -275,34 +272,32 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                   <div className="main-exam">
                     <StudentNameHeader studentName={studentName} />
 
-                    <AnnotationWrapper>
-                      <SectionElement aria-labelledby={examTitleId}>
-                        {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
-                        {date && (
-                          <p>
-                            <strong>{dateTimeFormatter.format(date)}</strong>
-                          </p>
-                        )}
-                        {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+                    <SectionElement aria-labelledby={examTitleId}>
+                      {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
+                      {date && (
+                        <p>
+                          <strong>{dateTimeFormatter.format(date)}</strong>
+                        </p>
+                      )}
+                      {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
-                        {tableOfContents && (
-                          <div className="main-toc-container">
-                            <TableOfContents
-                              {...{
-                                element: tableOfContents,
-                                renderChildNodes
-                              }}
-                            />
-                          </div>
-                        )}
+                      {tableOfContents && (
+                        <div className="main-toc-container">
+                          <TableOfContents
+                            {...{
+                              element: tableOfContents,
+                              renderChildNodes
+                            }}
+                          />
+                        </div>
+                      )}
 
-                        {externalMaterial && (
-                          <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
-                        )}
-                      </SectionElement>
+                      {externalMaterial && (
+                        <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                      )}
+                    </SectionElement>
 
-                      {renderChildNodes(root)}
-                    </AnnotationWrapper>
+                    {renderChildNodes(root)}
 
                     {(isPreview || isNewKoeVersion) && (
                       <div className="e-examine-exam">
@@ -313,6 +308,7 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                   </div>
                 </div>
               </div>
+
               {(isPreview || isNewKoeVersion) && (
                 <Footer>
                   <div className="e-footer-version-number-container">
@@ -320,10 +316,12 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                   </div>
                 </Footer>
               )}
+
               <div className="e-indicators-container">
                 <ErrorIndicator />
                 <SaveIndicator />
               </div>
+
               {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
             </main>
           </I18nextProvider>
@@ -331,26 +329,6 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
       </AnnotationProvider>
     </Provider>
   )
-}
-
-export const AnnotationWrapper: React.FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
-  const { setNewAnnotation } = useContext(AnnotationContext)
-
-  const mouseUpCallback = (annotation: NewExamAnnotation) => {
-    setNewAnnotation(annotation)
-  }
-
-  function onMouseDown(e: React.MouseEvent) {
-    const target = e.target as Element
-    const clickIsInPopup = target.closest('.annotation-popup')
-    if (!clickIsInPopup) {
-      setNewAnnotation(null)
-    }
-
-    onMouseDownForAnnotation(e, mouseUpCallback)
-  }
-
-  return <span onMouseDown={onMouseDown}>{children}</span>
 }
 
 const ProceedToExamineAnswersText = () => {
