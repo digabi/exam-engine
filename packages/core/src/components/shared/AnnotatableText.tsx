@@ -32,7 +32,7 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
   const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n/g, ' ').replace(/\s+/g, ' ')
 
   return (
-    <span className="e-annotatable" key={path} data-annotation-path={path}>
+    <span className="e-annotatable" key={path} data-annotation-path={path} data-testid={path}>
       {thisNodeAnnotations?.length > 0
         ? markText(textWithoutLineBreaksAndExtraSpaces, thisNodeAnnotations)
         : textWithoutLineBreaksAndExtraSpaces}
