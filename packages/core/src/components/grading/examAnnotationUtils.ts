@@ -20,19 +20,19 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       const displayNumber =
         startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
 
-      const length = Math.abs(selection.anchorOffset - selection.focusOffset)
+      //const length = Math.abs(selection.anchorOffset - selection.focusOffset)
 
-      const position1 = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
-      if (!position1 || !length) {
+      const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
+
+      if (!startAndLength || !startAndLength?.length) {
         return
       }
 
       const position = {
-        startIndex: position1.startIndex,
-        length: position1?.length,
+        startIndex: startAndLength.startIndex,
+        length: startAndLength?.length,
         selectedText: selection.toString()
       }
-      console.log('position', position)
       mouseUpCallback({ ...position, annotationAnchor: endNodePath, displayNumber })
     }
   }

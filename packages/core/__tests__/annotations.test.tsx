@@ -131,6 +131,10 @@ describe('Annotations', () => {
     })
   })
 
+  it('Annotations can not overlap', async () => {
+    // TODO
+  })
+
   it('annotations are added to dom when provided', () => {
     const annotationProps: AnnotationProps = {
       annotations: {
@@ -216,6 +220,8 @@ describe('Annotations', () => {
     ;(window.getSelection as jest.Mock).mockImplementation(() => ({
       toString: () => text,
       rangeCount: 1,
+      anchorNode: element.firstChild,
+      focusNode: element.firstChild,
       getRangeAt: jest.fn().mockReturnValue({
         startOffset: 0,
         endOffset: length,

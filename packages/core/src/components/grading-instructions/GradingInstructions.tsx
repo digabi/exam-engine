@@ -130,7 +130,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
               </div>
             )}
           </SectionElement>
-            {renderChildNodes(root)}
+          {renderChildNodes(root)}
         </main>
       </I18nextProvider>
     </AnnotationProvider>
