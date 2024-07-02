@@ -40,7 +40,7 @@
     "uuid": "^10.0.0",
     "webpack": "^5.23.0",
     "webpack-dev-server": "^5.0.0",
-    "webpack-merge": "^5.0.9"
+    "webpack-merge": "^6.0.1"
   },
   "gitHead": "aadfbc9a62d1f1437992aaf2f0204f1eb24bb3a4"
 }
