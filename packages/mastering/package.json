@@ -15,7 +15,7 @@
     "cloneable-readable": "^3.0.0",
     "compare-versions": "^6.0.0",
     "ffprobe": "^1.1.0",
-    "glob": "^10.3.3",
+    "glob": "^11.0.0",
     "i18next": "^23.2.11",
     "libxmljs2": "^0.33.0",
     "mathjax-node": "^2.1.1",
