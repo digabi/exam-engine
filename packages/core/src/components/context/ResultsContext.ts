@@ -1,15 +1,7 @@
 import * as _ from 'lodash-es'
 import React from 'react'
 import { findChildrenAnswers, getNumericAttribute, parentElements, queryAll } from '../../dom-utils'
-import {
-  ChoiceAnswer,
-  ChoiceGroupChoice,
-  ChoiceGroupQuestion,
-  ExamAnswer,
-  GradingStructure,
-  QuestionId,
-  Score
-} from '../../index'
+import { ChoiceAnswer, ChoiceGroupChoice, ExamAnswer, GradingStructure, QuestionId, Score } from '../../index'
 import { withContext } from './withContext'
 import { ResultsProps } from '../results/Results'
 
@@ -49,7 +41,7 @@ export function findMultiChoiceFromGradingStructure(
   const choiceGroups = gradingStructure?.questions.filter(v => v.type === 'choicegroup') || []
 
   for (let i = 0, length = choiceGroups.length; i < length; i++) {
-    const choiceGroup = choiceGroups[i] as ChoiceGroupQuestion
+    const choiceGroup = choiceGroups[i]
     for (let j = 0, choicesLength = choiceGroup.choices.length; j < choicesLength; j++) {
       if (choiceGroup.choices[j].id === id) {
         return choiceGroup.choices[j]
