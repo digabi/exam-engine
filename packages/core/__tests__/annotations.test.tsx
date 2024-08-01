@@ -136,35 +136,6 @@ describe('Annotations', () => {
     })
   })
 
-  it.skip('Annotations can not overlap', async () => {
-    const saveAnnotationMock = jest.fn()
-    const exam = render(
-      <Exam {...getExamProps()} annotations={{}} onClickAnnotation={() => {}} onSaveAnnotation={saveAnnotationMock} />
-    )
-    await annotateText(exam, defaultAnnotationAnchor, 10, 40)
-
-    const textbox = exam.getByTestId('edit-comment')
-    fireEvent.input(textbox, {
-      target: { innerText: 'Kommentti', innerHTML: 'Kommentti' }
-    })
-    await userEvent.click(exam.getByText('Vastaa'))
-    expect(saveAnnotationMock).toHaveBeenCalledTimes(1)
-
-    /*    await annotateText(exam, defaultAnnotationAnchor, 10, 20)
-    expect(exam.getByTestId('annotation-popup')).not.toBeVisible()
-
-    await annotateText(exam, defaultAnnotationAnchor, 30, 20)
-    expect(exam.getByTestId('annotation-popup')).not.toBeVisible()
-
-    /*
-    await annotateText(exam, defaultAnnotationAnchor, 25, 10)
-    expect(exam.getByTestId('annotation-popup')).not.toBeVisible()
-
-    await annotateText(exam, defaultAnnotationAnchor, 10, 40)
-    expect(exam.getByTestId('annotation-popup')).not.toBeVisible()
-    */
-  })
-
   it('annotations are added to dom when provided', () => {
     const annotationProps: AnnotationProps = {
       annotations: {

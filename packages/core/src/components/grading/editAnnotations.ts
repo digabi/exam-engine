@@ -25,7 +25,8 @@ export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
     const container = containerIsTag ? rangeContainer.childNodes[offset] : rangeContainer
     const offsetInside: number = containerIsTag ? 0 : offset
     const nodesBeforeContainer = _.takeWhile(answerNodes, node => node !== container)
-    return offsetInside + _.sum(nodesBeforeContainer.map(toNodeLength))
+    const nodesBeforeLengthSum = _.sum(nodesBeforeContainer.map(toNodeLength))
+    return offsetInside + nodesBeforeLengthSum
   }
 }
 
