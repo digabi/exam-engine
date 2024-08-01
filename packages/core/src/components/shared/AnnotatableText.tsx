@@ -1,9 +1,8 @@
 import { partition } from 'lodash-es'
 import React, { useContext, useEffect, useRef } from 'react'
-import { getElementPath, queryAncestors } from '../../dom-utils'
+import { getElementPath } from '../../dom-utils'
 import { ExamAnnotation, NewExamAnnotation } from '../../types/Score'
 import { AnnotationContext } from '../context/AnnotationProvider'
-import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
 const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
@@ -12,7 +11,7 @@ const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annot
 export const AnnotatableText = ({ node }: { node: Node }) => {
   const annotationContextData = useContext(AnnotationContext)
   const { isInSidebar } = useContext(IsInSidebarContext)
-  const { annotations, onClickAnnotation, setNewAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
+  const { annotations, onClickAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
 
   const canNotBeAnnotated =
     annotationContextData?.annotations === undefined ||
@@ -30,24 +29,10 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
     ...(newAnnotationForThisNode ? [newAnnotationForThisNode] : [])
   ]
 
-  const mouseUpCallback = (annotation: NewExamAnnotation) => {
-    const displayNumber = queryAncestors(node.parentElement!, 'question')?.getAttribute('display-number') || ''
-    setNewAnnotation({ ...annotation, annotationAnchor: path, displayNumber })
-  }
-
-  function onMouseDown(e: React.MouseEvent) {
-    const target = e.target as Element
-    const clickIsInPopup = target.closest('.annotation-popup')
-    if (!clickIsInPopup) {
-      setNewAnnotation(null)
-    }
-    onMouseDownForAnnotation(e, mouseUpCallback)
-  }
-
   const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n/g, ' ').replace(/\s+/g, ' ')
 
   return (
-    <span onMouseDown={onMouseDown} className="e-annotatable" key={path}>
+    <span className="e-annotatable" key={path} data-annotation-path={path} data-testid={path}>
       {thisNodeAnnotations?.length > 0
         ? markText(textWithoutLineBreaksAndExtraSpaces, thisNodeAnnotations)
         : textWithoutLineBreaksAndExtraSpaces}

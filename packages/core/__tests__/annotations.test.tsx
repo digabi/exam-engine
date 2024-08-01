@@ -1,17 +1,17 @@
+import { resolveExam } from '@digabi/exam-engine-exams'
+import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
+import '@testing-library/jest-dom'
 import { fireEvent, render, RenderResult } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { promises as fs } from 'fs'
+import path from 'path'
+import React from 'react'
+import parseExam from '../dist/parser/parseExam'
+import { ExamAnnotation } from '../src'
+import Attachments from '../src/components/attachments/Attachments'
 import Exam, { AnnotationProps, ExamProps } from '../src/components/exam/Exam'
 import GradingInstructions from '../src/components/grading-instructions/GradingInstructions'
-import { promises as fs } from 'fs'
-import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
-import { resolveExam } from '@digabi/exam-engine-exams'
-import path from 'path'
-import parseExam from '../dist/parser/parseExam'
 import { examServerApi } from './examServerApi'
-import React from 'react'
-import '@testing-library/jest-dom'
-import Attachments from '../src/components/attachments/Attachments'
-import { ExamAnnotation } from '../src'
 
 class IntersectionObserver {
   root = null
@@ -56,13 +56,16 @@ describe('Annotations', () => {
     const exam = render(
       <Exam {...getExamProps()} annotations={{}} onClickAnnotation={() => {}} onSaveAnnotation={() => {}} />
     )
-    await annotateText(exam, defaultTextToAnnotate)
+    await annotateText(exam, defaultAnnotationAnchor)
     expect(exam.getByTestId('annotation-popup')).toBeVisible()
   })
 
   it('popup is not rendered if annotation props are not passed', async () => {
     const exam = render(<Exam {...getExamProps()} />)
-    await annotateText(exam, defaultTextToAnnotate)
+    const text = 'Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä.'
+    const textElement = exam.getByText(text)
+    mockWindowSelection(text, textElement, 0, text.length)
+    await userEvent.click(textElement)
     expect(exam.queryByTestId('annotation-popup')).not.toBeInTheDocument()
   })
 
@@ -71,7 +74,7 @@ describe('Annotations', () => {
     const exam = render(
       <Exam {...getExamProps()} annotations={{}} onClickAnnotation={() => {}} onSaveAnnotation={saveAnnotationMock} />
     )
-    await annotateText(exam, defaultTextToAnnotate)
+    await annotateText(exam, defaultAnnotationAnchor)
 
     const textbox = exam.getByTestId('edit-comment')
     fireEvent.input(textbox, {
@@ -92,17 +95,19 @@ describe('Annotations', () => {
   })
 
   it('popup field is empty when creating new annotation', async () => {
+    const annotationAnchor_7_1 =
+      'e:exam:0 > e:section:2 > e:question:7 > e:question:7.1 > e:question-title:0 > span:0 > #text:0'
     const exam = render(
       <Exam {...getExamProps()} annotations={{}} onClickAnnotation={() => {}} onSaveAnnotation={() => {}} />
     )
-    await annotateText(exam, defaultTextToAnnotate)
+    await annotateText(exam, defaultAnnotationAnchor)
     const textbox = exam.getByTestId('edit-comment')
     fireEvent.input(textbox, {
       target: { innerText: 'New Value', innerHTML: 'New Value' }
     })
     await userEvent.click(exam.getByText('Vastaa'))
     // text picked by getMarkedText includes leading/trailing whitespace, so they must be here too
-    await annotateText(exam, ' Esitä jokin toinen käsitys filosofiasta ja vertaa sitä ')
+    await annotateText(exam, annotationAnchor_7_1)
     expect(exam.getByTestId('edit-comment').textContent).toHaveLength(0)
   })
 
@@ -181,15 +186,17 @@ describe('Annotations', () => {
         onSaveAnnotation={() => {}}
       />
     )
-    await annotateText(gi, defaultTextToAnnotate)
+    await annotateText(gi, defaultAnnotationAnchor)
     expect(gi.getByTestId('annotation-popup')).toBeVisible()
   })
 
   it('attachments can be annotated', async () => {
+    const annotationAnchor_7_A =
+      'e:exam:0 > e:section:2 > e:question:7 > e:external-material:3 > e:attachment:0 > span:1 > p:3 > #text:0'
     const gi = render(
       <Attachments {...getCommonProps()} annotations={{}} onClickAnnotation={() => {}} onSaveAnnotation={() => {}} />
     )
-    await annotateText(gi, 'Mollit sint magna aliquip in.')
+    await annotateText(gi, annotationAnchor_7_A)
     expect(gi.getByTestId('annotation-popup')).toBeVisible()
   })
 
@@ -206,19 +213,24 @@ describe('Annotations', () => {
     }
   }
 
-  async function annotateText(exam: RenderResult, text: string) {
-    const textElement = exam.getByText(text.trim()) // text is not found unless trimmed
-    mockWindowSelection(text, text.length, textElement)
+  async function annotateText(exam: RenderResult, elementAnchor: string, startIndex = 0, length?: number) {
+    const textElement = exam.getByTestId(elementAnchor)
+    const fullText = textElement?.textContent || ''
+    const annotationLength = length || fullText.length
+    const text = fullText.substring(startIndex, startIndex + annotationLength)
+    mockWindowSelection(text, textElement, startIndex, annotationLength)
     await userEvent.click(textElement)
   }
 
-  function mockWindowSelection(text = 'mocked selection text', length = 5, element: Element) {
+  function mockWindowSelection(text = 'mocked selection text', element: Element, startOffset = 0, length: number) {
     ;(window.getSelection as jest.Mock).mockImplementation(() => ({
       toString: () => text,
       rangeCount: 1,
+      anchorNode: element.firstChild,
+      focusNode: element.firstChild,
       getRangeAt: jest.fn().mockReturnValue({
-        startOffset: 0,
-        endOffset: length,
+        startOffset,
+        endOffset: startOffset + length,
         startContainer: element,
         endContainer: element,
         cloneContents: jest.fn().mockReturnValue({ children: [], childNodes: [] })

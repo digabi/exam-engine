@@ -30,7 +30,6 @@ import mkAttachmentLinks from '../shared/AttachmentLinks'
 import Audio from '../shared/Audio'
 import AudioGroup from '../shared/AudioGroup'
 import AudioTest from '../shared/AudioTest'
-import { AnnotationPopup } from '../shared/AnnotationPopup'
 import ExamTranslation from '../shared/ExamTranslation'
 import File from '../shared/File'
 import { Footer } from '../shared/Footer'
@@ -260,7 +259,6 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
         >
           <I18nextProvider i18n={i18n}>
             <main className="e-exam" lang={subjectLanguage} aria-labelledby={examTitleId} ref={examRef}>
-              <AnnotationPopup />
               <React.StrictMode />
               {examStylesheet && <link rel="stylesheet" href={resolveAttachment(examStylesheet)} />}
               <div className="e-toc-and-exam">
@@ -273,6 +271,7 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                 <div className="main-exam-container">
                   <div className="main-exam">
                     <StudentNameHeader studentName={studentName} />
+
                     <SectionElement aria-labelledby={examTitleId}>
                       {examTitle && <DocumentTitle id={examTitleId}>{renderChildNodes(examTitle)}</DocumentTitle>}
                       {date && (
@@ -309,6 +308,7 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                   </div>
                 </div>
               </div>
+
               {(isPreview || isNewKoeVersion) && (
                 <Footer>
                   <div className="e-footer-version-number-container">
@@ -316,10 +316,12 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                   </div>
                 </Footer>
               )}
+
               <div className="e-indicators-container">
                 <ErrorIndicator />
                 <SaveIndicator />
               </div>
+
               {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
             </main>
           </I18nextProvider>
