@@ -19,6 +19,7 @@ function References(_props: ExamComponentProps) {
   return internalReferences.length > 0 ? (
     <SectionElement aria-labelledby={referencesTitleId}>
       <h2 id={referencesTitleId}>{t('references.heading')}</h2>
+      <div className="anchor" id="references" />
       <ol className="e-list-data" data-annotation-anchor={referencesTitleId}>
         {internalReferences.map((reference, i) => {
           const question = queryAncestors(reference, 'question')!
