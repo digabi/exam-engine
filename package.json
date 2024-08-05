@@ -37,7 +37,7 @@
     "@types/yargs": "^17.0.0",
     "@types/yauzl-promise": "^4.0.0",
     "@types/yazl": "^2.4.2",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^7.1.1",
     "bundlewatch": "^0.4.0",
     "concurrently": "^8.0.1",
