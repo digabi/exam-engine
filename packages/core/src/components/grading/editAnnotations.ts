@@ -11,6 +11,7 @@ export function textAnnotationFromRange(answerTextNode: Element, range: Range) {
   const charactersUntilEnd = charactersBeforeContainer(range.endContainer, range.endOffset, answerTextNode)
   const length = charactersUntilEnd - charactersBefore
   // selectionHasNothingToUnderline won't catch cases where empty selection is between images
+
   if (length <= 0) {
     return undefined
   }

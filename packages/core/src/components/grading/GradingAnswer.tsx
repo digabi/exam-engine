@@ -1,35 +1,35 @@
 import React, { FormEvent, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { Annotation, TextAnnotation } from '../..'
-import {
-  annotationFromMousePosition,
-  getOverlappingMessages,
-  hasTextSelectedInAnswerText,
-  imageAnnotationMouseDownInfo,
-  isDesktopVersion,
-  mergeAnnotation,
-  NewImageAnnotation,
-  preventDefaults,
-  showAndPositionElement,
-  textAnnotationFromRange,
-  toggle
-} from './editAnnotations'
+import { I18nextProvider } from 'react-i18next'
+import { Annotation, ExamAnnotation, NewExamAnnotation, TextAnnotation } from '../..'
+import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import {
   renderAnnotations,
   renderImageAnnotationByImage,
   updateImageAnnotationMarkSize,
   wrapAllImages
 } from '../../renderAnnotations'
-import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
-import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
-import { updateLargeImageWarnings } from './largeImageDetector'
-import { I18nextProvider } from 'react-i18next'
 import { useCached } from '../../useCached'
+import { AnnotationProvider } from '../context/AnnotationProvider'
+import { AnnotatableGradingAnswer } from './AnnotatableGradingAnswer'
 import { AnswerCharacterCounter } from './AnswerCharacterCounter'
+import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
+import {
+  NewImageAnnotation,
+  annotationFromMousePosition,
+  hasTextSelectedInAnswerText,
+  imageAnnotationMouseDownInfo,
+  isDesktopVersion,
+  mergeAnnotation,
+  preventDefaults,
+  showAndPositionElement,
+  toggle
+} from './editAnnotations'
+import { updateLargeImageWarnings } from './largeImageDetector'
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingRole = 'pregrading' | 'censoring'
 
-type GradingAnswerProps = {
+export type GradingAnswerProps = {
   answer: { type: 'richText' | 'text'; characterCount: number; value: string }
   language: string
   isReadOnly: boolean
@@ -43,9 +43,41 @@ type GradingAnswerProps = {
 export function GradingAnswer(props: GradingAnswerProps) {
   const i18n = useCached(() => initI18n(props.language))
   useEffect(changeLanguage(i18n, props.language))
+
+  const convertAnnotation = (annotation: Annotation | ExamAnnotation) => {
+    const a = annotation as TextAnnotation
+    return {
+      annotationId: a.startIndex,
+      annotationAnchor: 'pregrading',
+      startIndex: a.startIndex,
+      length: a.length,
+      selectedText: 'selectedText' in annotation ? annotation?.selectedText : '',
+      hidden: false,
+      displayNumber: '1',
+      message: annotation.message
+    }
+  }
+
+  const [savedAnnotations, setSavedAnnotations] = useState<Record<string, ExamAnnotation[]>>({})
+
+  useEffect(() => {
+    const converted = props.annotations.pregrading.map(convertAnnotation)
+    setSavedAnnotations({ pregrading: converted })
+  }, [props.annotations])
+
+  const onClickAnnotation = () => console.log('click')
+
+  const save = (annotation: NewExamAnnotation) => {
+    const nextAnnotations = [...(savedAnnotations.pregrading || []), annotation]
+    setSavedAnnotations({ pregrading: nextAnnotations.map(convertAnnotation) })
+  }
+
   return (
     <I18nextProvider i18n={i18n}>
-      <GradingAnswerWithTranslations {...props} />
+      <AnnotationProvider annotations={savedAnnotations} onClickAnnotation={onClickAnnotation} onSaveAnnotation={save}>
+        <GradingAnswerWithTranslations {...props} />
+        <AnnotatableGradingAnswer {...props} />
+      </AnnotationProvider>
     </I18nextProvider>
   )
 }
@@ -76,7 +108,6 @@ function GradingAnswerWithTranslations({
   let annotationPositionForPopup: DOMRect
   let hideTooltipTimeout: ReturnType<typeof setTimeout>
   let windowResizeTimeout: ReturnType<typeof setTimeout>
-  let selectionChangeTimeout: ReturnType<typeof setTimeout>
 
   const [loadedCount, setLoadedCount] = useState(0)
   const [totalImages, setTotalImages] = useState(0)
@@ -107,7 +138,6 @@ function GradingAnswerWithTranslations({
       toggle(popupRef.current, false)
       renderAnswerWithAnnotations(savedAnnotations)
       answerRef.current.setAttribute('lang', language)
-      document.addEventListener('selectionchange', onSelectionChangeForMobileDevices)
     }
 
     window.onresize = () => {
@@ -122,6 +152,7 @@ function GradingAnswerWithTranslations({
   })
 
   const { t } = useExamTranslation()
+  console.log(annotations)
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
       {totalImages !== 0 && loadedCount !== totalImages && (
@@ -136,6 +167,7 @@ function GradingAnswerWithTranslations({
         ref={answerRef}
         onMouseDown={e => onAnswerMouseDown(e)}
         onMouseOver={e => onMouseOverAnnotation(e.target as HTMLElement)}
+        data-annotation-path="grading"
       />
       <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />
       <GradingAnswerAnnotationList
@@ -312,24 +344,7 @@ function GradingAnswerWithTranslations({
     }
 
     // Text annotation
-    const selection = window.getSelection()
-    if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
-      const range = selection.getRangeAt(0)
-      const position = textAnnotationFromRange(answerRef.current, range)
-      if (!position) {
-        return
-      }
-      const message = getOverlappingMessages(savedAnnotations[gradingRole], position.startIndex, position.length)
-      newAnnotationObject = { ...position, type: 'text', message }
-      showAnnotationPopup(range.getBoundingClientRect(), message)
-      const newAnnotations = { ...savedAnnotations }
-      newAnnotations[gradingRole] = mergeAnnotation(
-        answerRef.current,
-        newAnnotationObject,
-        savedAnnotations[gradingRole] as TextAnnotation[]
-      )
-      renderAnswerWithAnnotations(newAnnotations)
-    }
+    // REMOVED
   }
   // Only used for touch devices
   function onNewAnnotationMessageFocus() {
@@ -346,30 +361,7 @@ function GradingAnswerWithTranslations({
       renderAnswerWithAnnotations(newAnnotations)
     }
   }
-  function onSelectionChangeForMobileDevices() {
-    if (isDesktopVersion()) {
-      return
-    }
-    clearTimeout(selectionChangeTimeout)
-    selectionChangeTimeout = setTimeout(onSelectionChangeAfterThrottle, 500)
-  }
 
-  function onSelectionChangeAfterThrottle() {
-    const selection = window.getSelection()
-    if (selection && answerRef.current !== null && hasTextSelectedInAnswerText()) {
-      const range = selection.getRangeAt(0)
-      const position = textAnnotationFromRange(answerRef.current, range)
-      if (!position) {
-        return
-      }
-      const message = getOverlappingMessages(savedAnnotations[gradingRole], position.startIndex, position.length)
-      isEditAnnotationPopupVisible = true
-      const inputElement = messageRef.current!
-      inputElement.value = message
-      showAndPositionElement(range.getBoundingClientRect(), answerRef.current, popupRef.current!, popupTopMargin)
-      newAnnotationObject = { ...position, type: 'text', message }
-    }
-  }
   function onMouseMoveForImageAnnotation(e: MouseEvent) {
     preventDefaults(e)
     newAnnotationObject = annotationFromMousePosition(e, imgAnnotationState.start!)
