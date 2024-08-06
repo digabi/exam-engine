@@ -40,6 +40,7 @@ export const AnnotationProvider = ({
   }
 
   if (!onClickAnnotation && !onSaveAnnotation) {
+    console.log(onClickAnnotation, onSaveAnnotation)
     return children
   }
 
