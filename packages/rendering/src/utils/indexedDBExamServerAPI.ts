@@ -65,7 +65,7 @@ export default function indexedDBExamServerAPI(
         }
         reader.onerror = () => {
           reader.abort()
-          reject(reader.error)
+          reject(reader.error as DOMException)
         }
         reader.readAsDataURL(file)
       })

@@ -14,6 +14,7 @@ const ProgressBar: React.FunctionComponent<{ duration: number; durationRemaining
     // "--animating" class which breaks the css transformation (the progress
     // bar is completely filled from start). By reading clientTop we force a
     // synchronous layout/reflow in a browser
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     progressBarRef.current!.clientTop
     setAnimating(true)
   }, [])

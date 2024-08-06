@@ -14,7 +14,7 @@ export interface ScreenshotError {
   options?: TOptions
 }
 
-type ErrorResponse = { response: { status: number } }
+type ErrorResponse = { response: { status: number } } & Error
 
 interface Props {
   answer?: RichTextAnswerT

@@ -17,6 +17,7 @@ import browserPlugin from 'router5-plugin-browser'
 import Grading from './PreviewGrading'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }
 
 interface RouteParams {

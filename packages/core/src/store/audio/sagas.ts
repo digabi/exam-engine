@@ -77,7 +77,9 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
       yield delay(5000)
       yield put(hideAudioError(audio))
     }
-    result.cleanup && result.cleanup()
+    if (result.cleanup) {
+      result.cleanup()
+    }
   } catch (error) {
     console.error(error)
   }

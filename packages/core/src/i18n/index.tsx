@@ -58,9 +58,7 @@ const resources = {
 
 declare module 'react-i18next' {
   type ExamEngineI18nResources = { translation: typeof fi_FI }
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface Resources extends ExamEngineI18nResources {}
+  type Resources = ExamEngineI18nResources
 }
 
 export function initI18n(language: string, examCode?: string, dayCode?: string): typeof i18n {

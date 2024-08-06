@@ -788,7 +788,7 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
   for (const formula of exam.find<Element>('//e:formula', ns)) {
     try {
       // Load render-formula lazily, since initializing mathjax-node is very expensive.
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-require-imports
       const svg = (await require('./render-formula')(
         formula.text(),
         getAttribute('mode', formula, null),
