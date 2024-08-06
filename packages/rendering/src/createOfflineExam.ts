@@ -77,7 +77,7 @@ async function runWebpack(result: MasteringResult, examOutputDirectory: string, 
   await new Promise<string | void>((resolve, reject) => {
     webpack(config, (err, stats) => {
       if (err || stats?.hasErrors()) {
-        reject(err || stats?.toString({ colors: true }))
+        reject(err || new Error(stats?.toString({ colors: true })))
       } else {
         resolve()
       }
@@ -102,8 +102,9 @@ async function copyAttachment(
     try {
       await fs.copyFile(cachedFilename, newTarget)
     } catch (err) {
-      ffmpeg &&
-        (await spawn(ffmpeg, ['-i', source, '-c:v', 'libx264', '-c:a', 'libmp3lame', '-q:a', '4', cachedFilename]))
+      if (ffmpeg) {
+        await spawn(ffmpeg, ['-i', source, '-c:v', 'libx264', '-c:a', 'libmp3lame', '-q:a', '4', cachedFilename])
+      }
       await fs.copyFile(cachedFilename, newTarget)
     }
   }

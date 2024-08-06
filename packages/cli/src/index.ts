@@ -135,7 +135,7 @@ function runCommand<T>(moduleName: string) {
   return async (args: T) => {
     const spinner = ora({ stream: process.stdout }).start()
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-require-imports
       const command = require(moduleName).default
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call
       const result = await command({ ...args, spinner })

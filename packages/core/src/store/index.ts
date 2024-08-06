@@ -35,7 +35,7 @@ export type AppState = ReturnType<typeof rootReducer>
 //
 // const foo = useSelector((state) => state.foo)
 declare module 'react-redux' {
-  interface DefaultRootState extends AppState {}
+  type DefaultRootState = AppState
 }
 
 export function initializeExamStore(

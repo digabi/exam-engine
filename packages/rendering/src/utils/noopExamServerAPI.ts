@@ -30,7 +30,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
         }
         reader.onerror = () => {
           reader.abort()
-          reject(reader.error)
+          reject(reader.error as DOMException)
         }
         reader.readAsDataURL(file)
       })
