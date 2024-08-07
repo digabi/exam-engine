@@ -61,7 +61,38 @@ export function GradingAnswer(props: GradingAnswerProps) {
   const [savedAnnotations, setSavedAnnotations] = useState<Record<string, ExamAnnotation[]>>({})
 
   useEffect(() => {
-    const converted = props.annotations.pregrading.map(convertAnnotation)
+    const converted = props.annotations.pregrading
+      .map(convertAnnotation)
+      .concat({
+        annotationId: 1,
+        annotationAnchor: 'pregrading',
+        startIndex: 5,
+        length: 8,
+        selectedText: 'ohjelmaa',
+        hidden: false,
+        displayNumber: '1',
+        message: 'message'
+      })
+      .concat({
+        annotationId: 2,
+        annotationAnchor: 'pregrading',
+        startIndex: 10,
+        length: 7,
+        selectedText: 'maa Nik',
+        hidden: false,
+        displayNumber: '1',
+        message: 'message'
+      })
+      .concat({
+        annotationId: 3,
+        annotationAnchor: 'pregrading',
+        startIndex: 29,
+        length: 8,
+        selectedText: 'tulevana',
+        hidden: false,
+        displayNumber: '1',
+        message: 'message'
+      })
     setSavedAnnotations({ pregrading: converted })
   }, [props.annotations])
 
@@ -152,7 +183,7 @@ function GradingAnswerWithTranslations({
   })
 
   const { t } = useExamTranslation()
-  console.log(annotations)
+
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
       {totalImages !== 0 && loadedCount !== totalImages && (
