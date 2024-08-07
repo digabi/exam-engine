@@ -21,8 +21,10 @@ export function AnnotatableGradingAnswer(props: GradingAnswerProps) {
     ...(newAnnotationForThisNode ? [newAnnotationForThisNode] : [])
   ]
 
+  console.log(thisNodeAnnotations)
+
   return (
-    <span className="e-annotatable" key="abc" data-annotation-path={path} data-testid="123">
+    <span className="e-annotatable" data-annotation-path={path} data-testid="123">
       {thisNodeAnnotations?.length > 0 && onClickAnnotation
         ? markText(textWithoutLineBreaksAndExtraSpaces, thisNodeAnnotations, onClickAnnotation, setNewAnnotationRef)
         : textWithoutLineBreaksAndExtraSpaces}
