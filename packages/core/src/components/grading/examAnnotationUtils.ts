@@ -15,7 +15,9 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
     const endNode = selection?.focusNode?.parentElement
     const endNodePath = endNode?.getAttribute('data-annotation-path')
 
-    if (selection && endNodePath && hasOnlyOneTextElementSelected()) {
+    const hasOneTextElementSelected = hasOnlyOneTextElementSelected()
+
+    if (selection && endNodePath && (true || hasOneTextElementSelected)) {
       const range = selection.getRangeAt(0)
       const displayNumber =
         startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
@@ -50,7 +52,42 @@ function hasOnlyOneTextElementSelected(): boolean {
     child => child.tagName === 'MARK' && child.getAttribute('data-hidden') === 'false'
   )
 
+  const temp = rangeChildren?.reduce((acc, child) => {
+    const childsAnnotationPath = child.getAttribute('data-annotation-path')
+    if (childsAnnotationPath) {
+      const newElement = { annotationPath: childsAnnotationPath || '', text: child.textContent || '' }
+      return [...acc, newElement]
+    } else {
+      const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
+      const kidElements = [] as AnnotationElement[]
+      allChildrenWithAnnotationPath?.forEach(kid => {
+        const dataAnnotationPath = kid.getAttribute('data-annotation-path')
+        if (!dataAnnotationPath) {
+          return acc
+        }
+        const newElement = { annotationPath: dataAnnotationPath, text: kid.textContent || '' }
+        kidElements.push(newElement)
+      })
+      return [...acc, ...kidElements]
+    }
+  }, [] as AnnotationElement[])
+
+  const annotations = temp?.map((element, index) => ({
+    ...element,
+    startOffset: index === 0 ? selection?.getRangeAt(0).startOffset : 0,
+    length: index === temp.length - 1 ? selection?.getRangeAt(0).endOffset : element.text.length
+  }))
+
+  console.log('annotations', annotations)
+
   const startNode = selection?.anchorNode?.parentElement
   const endNode = selection?.focusNode?.parentElement
-  return !visibleMarkTagExistsInSelection && startNode === endNode
+  console.log(startNode, endNode)
+  return !visibleMarkTagExistsInSelection //&& startNode === endNode
+}
+
+type AnnotationElement = {
+  annotationPath: string
+  text: string
+  index?: number
 }
