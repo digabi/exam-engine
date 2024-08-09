@@ -52,8 +52,8 @@ export interface TextAnnotation extends BaseAnnotation {
 export interface AnnotationPart {
   annotationAnchor: string
   selectedText: string
-  startOffset?: number
-  length?: number
+  startIndex: number
+  length: number
 }
 
 export interface NewExamAnnotation extends TextAnnotation {
