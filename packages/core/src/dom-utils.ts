@@ -171,9 +171,9 @@ export function useIsElementInViewport(elementType: 'question' | 'section', disp
 }
 
 export function getElementPath(element: Element): string {
-  const temp = !element.tagName && Array.from(element.parentNode?.childNodes || []).indexOf(element)
+  const index = !element.tagName && Array.from(element.parentNode?.childNodes || []).indexOf(element)
   const elementIndex = Array.from(element.parentElement?.children || []).indexOf(element)
-  let path = `${element.nodeName}:${elementIndex > 0 ? elementIndex : temp}`
+  let path = `${element.nodeName}:${elementIndex > 0 ? elementIndex : index}`
   let currentElement = element
   while (currentElement.parentElement) {
     currentElement = currentElement.parentElement
