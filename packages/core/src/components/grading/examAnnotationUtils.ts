@@ -20,7 +20,7 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       const displayNumber =
         startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
 
-      const annotations = collectAnnotations()
+      const annotations = collectAnnotationsFromSelection()
       console.log('annotations', annotations)
       mouseUpCallback({ annotationParts: annotations, displayNumber })
     }
@@ -33,19 +33,19 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 }
 
-const collectAnnotations = () => {
+const collectAnnotationsFromSelection = () => {
   const selection = window.getSelection()
+  const range = selection?.getRangeAt(0)
+  if (!selection || !range) {
+    return []
+  }
 
   const rangeChildren = selection && Array.from(selection?.getRangeAt(0).cloneContents().children)
 
-  let annotations: AnnotationPart[] = []
-
-  if (!rangeChildren?.length && selection) {
+  if (!rangeChildren?.length) {
+    // selection is in one element
     const annotationAnchor = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
-
-    const range = selection?.getRangeAt(0)
     const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
-
     return [
       {
         annotationAnchor,
@@ -55,32 +55,40 @@ const collectAnnotations = () => {
       }
     ]
   } else {
-    const temp = rangeChildren?.reduce((acc, child) => {
+    // selection is in multiple elements
+    const annotations = rangeChildren?.reduce((acc, child, index, arr) => {
       const childsAnnotationPath = child.getAttribute('data-annotation-path')
+      const isLastRangeChild = index === arr.length - 1
       if (childsAnnotationPath) {
-        const newElement = { annotationAnchor: childsAnnotationPath || '', selectedText: child.textContent || '' }
+        // child is a text node
+        const newElement = {
+          annotationAnchor: childsAnnotationPath || '',
+          selectedText: child.textContent || '',
+          startOffset: index === 0 ? range.startOffset : 0,
+          length: isLastRangeChild ? range.endOffset : child.textContent?.length
+        }
         return [...acc, newElement]
       } else {
+        // child has children
         const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
-        const kidElements = [] as AnnotationPart[]
-        allChildrenWithAnnotationPath?.forEach(kid => {
-          const dataAnnotationPath = kid.getAttribute('data-annotation-path')
-          if (!dataAnnotationPath) {
-            return acc
+        allChildrenWithAnnotationPath?.forEach((grandChild, kidIndex) => {
+          const dataAnnotationPath = grandChild.getAttribute('data-annotation-path')
+          if (dataAnnotationPath) {
+            const isFirstOfAll = index === 0 && kidIndex === 0
+            const isLastGrandCHild = kidIndex === allChildrenWithAnnotationPath.length - 1
+            const isLastOfAll = isLastRangeChild && isLastGrandCHild
+            const newElement = {
+              annotationAnchor: dataAnnotationPath,
+              selectedText: grandChild.textContent || '',
+              startOffset: isFirstOfAll ? range.startOffset : 0,
+              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length
+            }
+            acc.push(newElement)
           }
-          const newElement = { annotationAnchor: dataAnnotationPath, selectedText: kid.textContent || '' }
-          kidElements.push(newElement)
         })
-        return [...acc, ...kidElements]
+        return acc
       }
     }, [] as AnnotationPart[])
-
-    annotations =
-      temp?.map((element, index) => ({
-        ...element,
-        startOffset: index === 0 ? selection?.getRangeAt(0).startOffset : 0,
-        length: index === temp.length - 1 ? selection?.getRangeAt(0).endOffset : element.selectedText.length
-      })) || []
 
     return annotations
   }
