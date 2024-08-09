@@ -157,13 +157,19 @@ describe('Annotations', () => {
         [defaultAnnotationAnchor]: [
           {
             annotationId: 1,
-            annotationParts: [{ annotationAnchor: defaultAnnotationAnchor, selectedText: 'pyrkivät' }],
+            annotationParts: [
+              {
+                annotationAnchor: defaultAnnotationAnchor,
+                selectedText: 'pyrkivät',
+                length: 8,
+                startIndex: 24
+              }
+            ],
             hidden: true,
             startIndex: 24,
             length: 8,
             message: '',
             displayNumber: ''
-            //selectedText: 'pyrkivät'
           }
         ]
       },
@@ -203,8 +209,14 @@ describe('Annotations', () => {
   function createAnnotation(id: number, startIndex: number, length: number, selectedText: string): ExamAnnotation {
     return {
       annotationId: id,
-      //annotationAnchor: defaultAnnotationAnchor,
-      annotationParts: [{ annotationAnchor: defaultAnnotationAnchor, selectedText }],
+      annotationParts: [
+        {
+          annotationAnchor: defaultAnnotationAnchor,
+          selectedText,
+          length: 8,
+          startIndex: 24
+        }
+      ],
       hidden: false,
       startIndex,
       length,
