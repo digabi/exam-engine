@@ -49,13 +49,34 @@ export interface TextAnnotation extends BaseAnnotation {
   length: number
 }
 
+export interface AnnotationPart {
+  annotationAnchor: string
+  selectedText: string
+  startOffset?: number
+  length?: number
+}
+
 export interface NewExamAnnotation extends TextAnnotation {
   displayNumber: string
-  annotationAnchor: string
+  //annotationAnchor: string
   hidden: boolean
-  selectedText: string
+  //selectedText: string
+  annotationParts: AnnotationPart[]
 }
 export interface ExamAnnotation extends NewExamAnnotation {
+  annotationId: number
+}
+
+export interface NewNodeAnnotation {
+  annotationAnchor: string
+  selectedText: string
+  startIndex: number
+  length: number
+  hidden?: boolean
+  markNumber?: string
+}
+
+export interface NodeAnnotation extends NewNodeAnnotation {
   annotationId: number
 }
 

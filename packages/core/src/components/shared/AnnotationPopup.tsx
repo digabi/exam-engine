@@ -72,7 +72,7 @@ export function AnnotationPopup() {
             data-testid="save-comment"
             disabled={!saveEnabled}
           >
-            Vastaa
+            Tallenna
           </button>
           <button className="button text-button" onClick={closeEditor}>
             Peru

@@ -1,11 +1,11 @@
 import { partition } from 'lodash-es'
 import React, { useContext, useEffect, useRef } from 'react'
 import { getElementPath } from '../../dom-utils'
-import { ExamAnnotation, NewExamAnnotation } from '../../types/Score'
+import { NewNodeAnnotation, NodeAnnotation } from '../../types/Score'
 import { AnnotationContext } from '../context/AnnotationProvider'
 import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
-const isExamAnnotation = (annotation: NewExamAnnotation | ExamAnnotation): annotation is ExamAnnotation =>
+const isExamAnnotation = (annotation: NewNodeAnnotation | NodeAnnotation): annotation is NodeAnnotation =>
   'annotationId' in annotation
 
 export const AnnotatableText = ({ node }: { node: Node }) => {
@@ -23,19 +23,39 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
   }
 
   const path = getElementPath(node as Element)
-  const newAnnotationForThisNode = newAnnotation?.annotationAnchor === path ? newAnnotation : null
 
-  const thisNodeAnnotations = [
-    ...(annotations?.[path] || []),
-    ...(newAnnotationForThisNode ? [newAnnotationForThisNode] : [])
-  ]
+  const newAnnotationPartsForThisNode = newAnnotation?.annotationParts?.filter(p => p.annotationAnchor === path)
+
+  const newAnnotationsForThisNode: (NodeAnnotation | NewNodeAnnotation)[] =
+    newAnnotationPartsForThisNode?.map(a => ({
+      ...a,
+      startIndex: a.startOffset!,
+      length: a.length!,
+      selectedText: a.selectedText
+    })) || []
+
+  const forThisNode = annotations?.[path]
+
+  const examToNode = forThisNode?.flatMap(a =>
+    a.annotationParts.map(p => ({
+      annotationId: a.annotationId,
+      annotationAnchor: p.annotationAnchor,
+      selectedText: p.selectedText,
+      startIndex: p.startOffset!,
+      length: p.length!,
+      hidden: a.hidden,
+      markNumber: a.markNumber
+    }))
+  ) as NodeAnnotation[]
 
   const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n/g, ' ').replace(/\s+/g, ' ')
 
+  const allAnnotations = [...(examToNode || []), ...newAnnotationsForThisNode]
+
   return (
     <span className="e-annotatable" key={path} data-annotation-path={path} data-testid={path}>
-      {thisNodeAnnotations?.length > 0 && onClickAnnotation
-        ? markText(textWithoutLineBreaksAndExtraSpaces, thisNodeAnnotations, onClickAnnotation, setNewAnnotationRef)
+      {allAnnotations.length > 0 && onClickAnnotation
+        ? markText(textWithoutLineBreaksAndExtraSpaces, allAnnotations, onClickAnnotation, setNewAnnotationRef)
         : textWithoutLineBreaksAndExtraSpaces}
     </span>
   )
@@ -43,15 +63,15 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
 
 export function markText(
   text: string,
-  annotations: (NewExamAnnotation | ExamAnnotation)[],
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void,
+  annotations: (NodeAnnotation | NewNodeAnnotation)[],
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: NodeAnnotation) => void,
   setNewAnnotationRef: (ref: HTMLElement | undefined) => void
-): React.ReactNode[] {
+) {
   if (annotations.length === 0) {
     return [text]
   }
 
-  function getMarkedText(annotation: NewExamAnnotation) {
+  function getMarkedText(annotation: NodeAnnotation | NewNodeAnnotation) {
     return text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
   }
 
@@ -65,7 +85,7 @@ export function markText(
       annotation.startIndex >= 0 && annotation.length > 0 && annotation.selectedText === getMarkedText(annotation)
   )
 
-  if (invalidAnnotations.length > 0) {
+  if (invalidAnnotations?.length > 0) {
     console.error(
       'Invalid annotations:',
       invalidAnnotations,
@@ -124,9 +144,9 @@ const Mark = ({
   onClickAnnotation,
   setNewAnnotationRef
 }: {
-  annotation: NewExamAnnotation | ExamAnnotation
+  annotation: NodeAnnotation | NewNodeAnnotation
   markedText: string
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: ExamAnnotation) => void
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: NodeAnnotation) => void
   setNewAnnotationRef: (ref: HTMLElement | undefined) => void
 }) => {
   const markRef = useRef<HTMLElement>(null)

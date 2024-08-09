@@ -32,7 +32,7 @@ export const AnnotationProvider = ({
 
   function onMouseDown(e: React.MouseEvent) {
     const target = e.target as Element
-    const clickIsInPopup = target.closest('.annotation-popup')
+    const clickIsInPopup = !!target.closest('.annotation-popup')
     if (!clickIsInPopup) {
       setNewAnnotation(null)
     }
@@ -40,7 +40,7 @@ export const AnnotationProvider = ({
   }
 
   if (!onClickAnnotation && !onSaveAnnotation) {
-    console.log(onClickAnnotation, onSaveAnnotation)
+    console.log('No onClickAnnotation or onSaveAnnotation')
     return children
   }
 

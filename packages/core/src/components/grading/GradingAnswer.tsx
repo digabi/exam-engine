@@ -10,7 +10,6 @@ import {
 } from '../../renderAnnotations'
 import { useCached } from '../../useCached'
 import { AnnotationProvider } from '../context/AnnotationProvider'
-import { AnnotatableGradingAnswer } from './AnnotatableGradingAnswer'
 import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
 import {
@@ -58,56 +57,22 @@ export function GradingAnswer(props: GradingAnswerProps) {
     }
   }
 
-  const [savedAnnotations, setSavedAnnotations] = useState<Record<string, ExamAnnotation[]>>({})
+  const [savedAnnotations] = useState<Record<string, ExamAnnotation[]>>({})
 
-  useEffect(() => {
-    const converted = props.annotations.pregrading
-      .map(convertAnnotation)
-      .concat({
-        annotationId: 1,
-        annotationAnchor: 'pregrading',
-        startIndex: 5,
-        length: 8,
-        selectedText: 'ohjelmaa',
-        hidden: false,
-        displayNumber: '1',
-        message: 'message'
-      })
-      .concat({
-        annotationId: 2,
-        annotationAnchor: 'pregrading',
-        startIndex: 10,
-        length: 7,
-        selectedText: 'maa Nik',
-        hidden: false,
-        displayNumber: '1',
-        message: 'message'
-      })
-      .concat({
-        annotationId: 3,
-        annotationAnchor: 'pregrading',
-        startIndex: 29,
-        length: 8,
-        selectedText: 'tulevana',
-        hidden: false,
-        displayNumber: '1',
-        message: 'message'
-      })
-    setSavedAnnotations({ pregrading: converted })
-  }, [props.annotations])
+  useEffect(() => {}, [props.annotations])
 
   const onClickAnnotation = () => console.log('click')
 
   const save = (annotation: NewExamAnnotation) => {
-    const nextAnnotations = [...(savedAnnotations.pregrading || []), annotation]
-    setSavedAnnotations({ pregrading: nextAnnotations.map(convertAnnotation) })
+    console.log(annotation, convertAnnotation)
+    //const nextAnnotations = [...(savedAnnotations.pregrading || []), annotation]
+    //setSavedAnnotations({ pregrading: nextAnnotations.map(convertAnnotation) })
   }
 
   return (
     <I18nextProvider i18n={i18n}>
       <AnnotationProvider annotations={savedAnnotations} onClickAnnotation={onClickAnnotation} onSaveAnnotation={save}>
         <GradingAnswerWithTranslations {...props} />
-        <AnnotatableGradingAnswer {...props} />
       </AnnotationProvider>
     </I18nextProvider>
   )
