@@ -1,4 +1,5 @@
 import React from 'react'
+import { AnnotationPart } from '../../types/Score'
 import { textAnnotationFromRange } from './editAnnotations'
 
 export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
@@ -12,28 +13,16 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
 
     const selection = window.getSelection()
     const startNode = selection?.anchorNode?.parentElement
-    const endNode = selection?.focusNode?.parentElement
-    const endNodePath = endNode?.getAttribute('data-annotation-path')
+    // const endNode = selection?.focusNode?.parentElement
+    // const endNodePath = endNode?.getAttribute('data-annotation-path')
 
-    const hasOneTextElementSelected = hasOnlyOneTextElementSelected()
-
-    if (selection && endNodePath && (true || hasOneTextElementSelected)) {
-      const range = selection.getRangeAt(0)
+    if (selection && selection.toString().length > 0) {
       const displayNumber =
         startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
 
-      const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
-
-      if (!startAndLength || !startAndLength?.length) {
-        return
-      }
-
-      const position = {
-        startIndex: startAndLength.startIndex,
-        length: startAndLength?.length,
-        selectedText: selection.toString()
-      }
-      mouseUpCallback({ ...position, annotationAnchor: endNodePath, displayNumber })
+      const annotations = collectAnnotations()
+      console.log('annotations', annotations)
+      mouseUpCallback({ annotationParts: annotations, displayNumber })
     }
   }
 
@@ -44,50 +33,55 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 }
 
-function hasOnlyOneTextElementSelected(): boolean {
+const collectAnnotations = () => {
   const selection = window.getSelection()
 
   const rangeChildren = selection && Array.from(selection?.getRangeAt(0).cloneContents().children)
-  const visibleMarkTagExistsInSelection = rangeChildren?.some(
-    child => child.tagName === 'MARK' && child.getAttribute('data-hidden') === 'false'
-  )
 
-  const temp = rangeChildren?.reduce((acc, child) => {
-    const childsAnnotationPath = child.getAttribute('data-annotation-path')
-    if (childsAnnotationPath) {
-      const newElement = { annotationPath: childsAnnotationPath || '', text: child.textContent || '' }
-      return [...acc, newElement]
-    } else {
-      const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
-      const kidElements = [] as AnnotationElement[]
-      allChildrenWithAnnotationPath?.forEach(kid => {
-        const dataAnnotationPath = kid.getAttribute('data-annotation-path')
-        if (!dataAnnotationPath) {
-          return acc
-        }
-        const newElement = { annotationPath: dataAnnotationPath, text: kid.textContent || '' }
-        kidElements.push(newElement)
-      })
-      return [...acc, ...kidElements]
-    }
-  }, [] as AnnotationElement[])
+  let annotations: AnnotationPart[] = []
 
-  const annotations = temp?.map((element, index) => ({
-    ...element,
-    startOffset: index === 0 ? selection?.getRangeAt(0).startOffset : 0,
-    length: index === temp.length - 1 ? selection?.getRangeAt(0).endOffset : element.text.length
-  }))
+  if (!rangeChildren?.length && selection) {
+    const annotationAnchor = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
 
-  console.log('annotations', annotations)
+    const range = selection?.getRangeAt(0)
+    const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
 
-  const startNode = selection?.anchorNode?.parentElement
-  const endNode = selection?.focusNode?.parentElement
-  console.log(startNode, endNode)
-  return !visibleMarkTagExistsInSelection //&& startNode === endNode
-}
+    return [
+      {
+        annotationAnchor,
+        selectedText: selection?.toString() || '',
+        startOffset: startAndLength?.startIndex || 0,
+        length: startAndLength?.length
+      }
+    ]
+  } else {
+    const temp = rangeChildren?.reduce((acc, child) => {
+      const childsAnnotationPath = child.getAttribute('data-annotation-path')
+      if (childsAnnotationPath) {
+        const newElement = { annotationAnchor: childsAnnotationPath || '', selectedText: child.textContent || '' }
+        return [...acc, newElement]
+      } else {
+        const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
+        const kidElements = [] as AnnotationPart[]
+        allChildrenWithAnnotationPath?.forEach(kid => {
+          const dataAnnotationPath = kid.getAttribute('data-annotation-path')
+          if (!dataAnnotationPath) {
+            return acc
+          }
+          const newElement = { annotationAnchor: dataAnnotationPath, selectedText: kid.textContent || '' }
+          kidElements.push(newElement)
+        })
+        return [...acc, ...kidElements]
+      }
+    }, [] as AnnotationPart[])
 
-type AnnotationElement = {
-  annotationPath: string
-  text: string
-  index?: number
+    annotations =
+      temp?.map((element, index) => ({
+        ...element,
+        startOffset: index === 0 ? selection?.getRangeAt(0).startOffset : 0,
+        length: index === temp.length - 1 ? selection?.getRangeAt(0).endOffset : element.selectedText.length
+      })) || []
+
+    return annotations
+  }
 }
