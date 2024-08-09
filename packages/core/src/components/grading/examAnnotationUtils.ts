@@ -1,4 +1,5 @@
 import React from 'react'
+import { AnnotationPart } from '../../types/Score'
 import { textAnnotationFromRange } from './editAnnotations'
 
 export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
@@ -12,28 +13,16 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
 
     const selection = window.getSelection()
     const startNode = selection?.anchorNode?.parentElement
-    const endNode = selection?.focusNode?.parentElement
-    const endNodePath = endNode?.getAttribute('data-annotation-path')
+    // const endNode = selection?.focusNode?.parentElement
+    // const endNodePath = endNode?.getAttribute('data-annotation-path')
 
-    const hasOneTextElementSelected = hasOnlyOneTextElementSelected()
-
-    if (selection && endNodePath && (true || hasOneTextElementSelected)) {
-      const range = selection.getRangeAt(0)
+    if (selection && selection.toString().length > 0) {
       const displayNumber =
         startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
 
-      const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
-
-      if (!startAndLength || !startAndLength?.length) {
-        return
-      }
-
-      const position = {
-        startIndex: startAndLength.startIndex,
-        length: startAndLength?.length,
-        selectedText: selection.toString()
-      }
-      mouseUpCallback({ ...position, annotationAnchor: endNodePath, displayNumber })
+      const annotations = collectAnnotationsFromSelection()
+      console.log('annotations', annotations)
+      mouseUpCallback({ annotationParts: annotations, displayNumber })
     }
   }
 
@@ -44,50 +33,64 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 }
 
-function hasOnlyOneTextElementSelected(): boolean {
+const collectAnnotationsFromSelection = () => {
   const selection = window.getSelection()
+  const range = selection?.getRangeAt(0)
+  if (!selection || !range) {
+    return []
+  }
 
   const rangeChildren = selection && Array.from(selection?.getRangeAt(0).cloneContents().children)
-  const visibleMarkTagExistsInSelection = rangeChildren?.some(
-    child => child.tagName === 'MARK' && child.getAttribute('data-hidden') === 'false'
-  )
 
-  const temp = rangeChildren?.reduce((acc, child) => {
-    const childsAnnotationPath = child.getAttribute('data-annotation-path')
-    if (childsAnnotationPath) {
-      const newElement = { annotationPath: childsAnnotationPath || '', text: child.textContent || '' }
-      return [...acc, newElement]
-    } else {
-      const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
-      const kidElements = [] as AnnotationElement[]
-      allChildrenWithAnnotationPath?.forEach(kid => {
-        const dataAnnotationPath = kid.getAttribute('data-annotation-path')
-        if (!dataAnnotationPath) {
-          return acc
+  if (!rangeChildren?.length) {
+    // selection is in one element
+    const annotationAnchor = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
+    const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
+    return [
+      {
+        annotationAnchor,
+        selectedText: selection?.toString() || '',
+        startOffset: startAndLength?.startIndex || 0,
+        length: startAndLength?.length
+      }
+    ]
+  } else {
+    // selection is in multiple elements
+    const annotations = rangeChildren?.reduce((acc, child, index, arr) => {
+      const childsAnnotationPath = child.getAttribute('data-annotation-path')
+      const isLastRangeChild = index === arr.length - 1
+      if (childsAnnotationPath) {
+        // child is a text node
+        const newElement = {
+          annotationAnchor: childsAnnotationPath,
+          selectedText: child.textContent || '',
+          startOffset: index === 0 ? range.startOffset : 0,
+          length: isLastRangeChild ? range.endOffset : child.textContent?.length
         }
-        const newElement = { annotationPath: dataAnnotationPath, text: kid.textContent || '' }
-        kidElements.push(newElement)
-      })
-      return [...acc, ...kidElements]
-    }
-  }, [] as AnnotationElement[])
+        return [...acc, newElement]
+      } else {
+        // child has children
+        const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
+        allChildrenWithAnnotationPath?.forEach((grandChild, kidIndex) => {
+          const dataAnnotationPath = grandChild.getAttribute('data-annotation-path')
+          if (dataAnnotationPath) {
+            const isFirstOfAll = index === 0 && kidIndex === 0
+            const isLastGrandCHild = kidIndex === allChildrenWithAnnotationPath.length - 1
+            const isLastOfAll = isLastRangeChild && isLastGrandCHild
+            const newElement = {
+              annotationAnchor: dataAnnotationPath,
+              selectedText: grandChild.textContent || '',
+              startOffset: isFirstOfAll ? range.startOffset : 0,
+              // TODO: if selection end in non-selectable text, this should return textContent.length
+              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length
+            }
+            acc.push(newElement)
+          }
+        })
+        return acc
+      }
+    }, [] as AnnotationPart[])
 
-  const annotations = temp?.map((element, index) => ({
-    ...element,
-    startOffset: index === 0 ? selection?.getRangeAt(0).startOffset : 0,
-    length: index === temp.length - 1 ? selection?.getRangeAt(0).endOffset : element.text.length
-  }))
-
-  console.log('annotations', annotations)
-
-  const startNode = selection?.anchorNode?.parentElement
-  const endNode = selection?.focusNode?.parentElement
-  console.log(startNode, endNode)
-  return !visibleMarkTagExistsInSelection //&& startNode === endNode
-}
-
-type AnnotationElement = {
-  annotationPath: string
-  text: string
-  index?: number
+    return annotations
+  }
 }
