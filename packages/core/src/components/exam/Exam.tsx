@@ -6,6 +6,7 @@ import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import {
+  AnnotationPart,
   ExamAnnotation,
   ExamAnswer,
   ExamServerAPI,
@@ -247,30 +248,30 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
 
   console.log('Exam', annotations)
 
-  const testAnnotations = [
+  const testAnnotations: AnnotationPart[] = [
     {
       annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:0 > #text:0',
       selectedText: 'dista ',
-      startOffset: 24,
+      startIndex: 24,
       length: 6
     },
     {
       annotationAnchor:
         'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:0 > b:0 > #text:0',
       selectedText: 'vain toinen',
-      startOffset: 0,
+      startIndex: 0,
       length: 11
     },
     {
       annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:0 > #text:2',
       selectedText: ', johon vastaat saksaksi. ',
-      startOffset: 0,
+      startIndex: 0,
       length: 26
     },
     {
       annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:1 > #text:0',
       selectedText: ' Kirjoitussuorituksen pituus: 300–450 merkkiä. Välily',
-      startOffset: 0,
+      startIndex: 0,
       length: 53
     }
   ]
@@ -285,10 +286,10 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
           annotationAnchor: a.annotationAnchor,
           selectedText: a.selectedText,
           hidden: false,
-          startIndex: a.startOffset,
+          startIndex: a.startIndex,
           length: a.length,
           displayNumber: '22',
-          message: 'kykkyy'
+          message: 'kukkuu'
         }
       ]
     }),

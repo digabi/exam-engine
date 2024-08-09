@@ -24,33 +24,24 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
 
   const path = getElementPath(node as Element)
 
-  const newAnnotationPartsForThisNode = newAnnotation?.annotationParts?.filter(p => p.annotationAnchor === path)
+  const newAnnotationPartsForThisNode = newAnnotation?.annotationParts?.filter(p => p.annotationAnchor === path) || []
 
-  const newAnnotationsForThisNode: (NodeAnnotation | NewNodeAnnotation)[] =
-    newAnnotationPartsForThisNode?.map(a => ({
-      ...a,
-      startIndex: a.startOffset!,
-      length: a.length!,
-      selectedText: a.selectedText
-    })) || []
+  const savedAnnotationsForThisNode = annotations?.[path]
 
-  const forThisNode = annotations?.[path]
-
-  const examToNode = forThisNode?.flatMap(a =>
-    a.annotationParts.map(p => ({
-      annotationId: a.annotationId,
-      annotationAnchor: p.annotationAnchor,
-      selectedText: p.selectedText,
-      startIndex: p.startOffset!,
-      length: p.length!,
-      hidden: a.hidden,
-      markNumber: a.markNumber
-    }))
-  ) as NodeAnnotation[]
+  const examAnnotationsToNodeAnnotations =
+    savedAnnotationsForThisNode?.flatMap(a =>
+      a.annotationParts.map(p => ({
+        annotationId: a.annotationId,
+        annotationAnchor: p.annotationAnchor,
+        selectedText: p.selectedText,
+        startIndex: p.startIndex,
+        length: p.length
+      }))
+    ) || ([] as NodeAnnotation[])
 
   const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n/g, ' ').replace(/\s+/g, ' ')
 
-  const allAnnotations = [...(examToNode || []), ...newAnnotationsForThisNode]
+  const allAnnotations = [...examAnnotationsToNodeAnnotations, ...newAnnotationPartsForThisNode]
 
   return (
     <span className="e-annotatable" key={path} data-annotation-path={path} data-testid={path}>
@@ -76,8 +67,6 @@ export function markText(
   }
 
   const nodes: React.ReactNode[] = []
-  let lastIndex = 0
-  annotations.sort((a, b) => a.startIndex - b.startIndex)
 
   const [validAnnotations, invalidAnnotations] = partition(
     annotations,
@@ -95,6 +84,9 @@ export function markText(
       )
     )
   }
+
+  let lastIndex = 0
+  annotations.sort((a, b) => a.startIndex - b.startIndex)
 
   for (const annotation of validAnnotations) {
     const markedText = getMarkedText(annotation)
@@ -162,6 +154,7 @@ const Mark = ({
       className="e-annotation"
       data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
       data-hidden="false"
+      data-annotation-path={annotation.annotationAnchor}
       onClick={e => (isExamAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
     >
       {markedText}
