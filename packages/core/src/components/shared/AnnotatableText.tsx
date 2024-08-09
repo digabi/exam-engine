@@ -13,19 +13,6 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
   const { isInSidebar } = useContext(IsInSidebarContext)
   const { annotations, onClickAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
 
-  const anchor = 'e:exam:0 > e:section:4 > e:question:21 > e:question-instruction:1 > span:0 > p:0 > #text:2'
-
-  const temp: Record<string, NodeAnnotation> = {
-    [anchor]: {
-      annotationId: 1,
-      annotationAnchor: anchor,
-      selectedText: 'vastaat',
-      hidden: false,
-      startIndex: 8,
-      length: 7
-    }
-  }
-
   const canNotBeAnnotated =
     annotationContextData?.annotations === undefined ||
     node.textContent?.trim().length === 0 ||
@@ -47,27 +34,28 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
       selectedText: a.selectedText
     })) || []
 
-  const thisNodeAnnotations = [
-    ...(annotations?.[path] || []),
-    ...(newAnnotationsForThisNode ? [newAnnotationsForThisNode] : []),
-    temp[path]
-  ]
+  const forThisNode = annotations?.[path]
 
-  if (temp[path]) {
-    //console.log('temp', temp[path])
-  }
+  const examToNode = forThisNode?.flatMap(a =>
+    a.annotationParts.map(p => ({
+      annotationId: a.annotationId,
+      annotationAnchor: p.annotationAnchor,
+      selectedText: p.selectedText,
+      startIndex: p.startOffset!,
+      length: p.length!,
+      hidden: a.hidden,
+      markNumber: a.markNumber
+    }))
+  ) as NodeAnnotation[]
 
   const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n/g, ' ').replace(/\s+/g, ' ')
 
+  const allAnnotations = [...(examToNode || []), ...newAnnotationsForThisNode]
+
   return (
     <span className="e-annotatable" key={path} data-annotation-path={path} data-testid={path}>
-      {thisNodeAnnotations?.length > 0 && onClickAnnotation
-        ? markText(
-            textWithoutLineBreaksAndExtraSpaces,
-            [...newAnnotationsForThisNode, ...(anchor === path ? [temp[path]] : [])] as NewNodeAnnotation[],
-            onClickAnnotation,
-            setNewAnnotationRef
-          )
+      {allAnnotations.length > 0 && onClickAnnotation
+        ? markText(textWithoutLineBreaksAndExtraSpaces, allAnnotations, onClickAnnotation, setNewAnnotationRef)
         : textWithoutLineBreaksAndExtraSpaces}
     </span>
   )

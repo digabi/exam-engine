@@ -62,7 +62,7 @@ const collectAnnotationsFromSelection = () => {
       if (childsAnnotationPath) {
         // child is a text node
         const newElement = {
-          annotationAnchor: childsAnnotationPath || '',
+          annotationAnchor: childsAnnotationPath,
           selectedText: child.textContent || '',
           startOffset: index === 0 ? range.startOffset : 0,
           length: isLastRangeChild ? range.endOffset : child.textContent?.length
@@ -81,6 +81,7 @@ const collectAnnotationsFromSelection = () => {
               annotationAnchor: dataAnnotationPath,
               selectedText: grandChild.textContent || '',
               startOffset: isFirstOfAll ? range.startOffset : 0,
+              // TODO: if selection end in non-selectable text, this should return textContent.length
               length: isLastOfAll ? range.endOffset : grandChild.textContent?.length
             }
             acc.push(newElement)
