@@ -24,14 +24,28 @@
   }
 }
 
+.e-exam {
+  // elements that are not annotatable and are last children in the tree
+  *:not(.e-annotatable):not(mark) {
+    &:not(:has(*)) {
+      &:hover {
+        opacity: 0.8;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
 .e-annotatable:hover {
   &:not(:has(mark:hover)) {
+    /*
     outline-style: dashed;
     outline-offset: 1px;
     outline-width: 1px;
     border-radius: 1px;
     outline-color: rgba(241, 34, 40, 0.5);
     background-color: rgba(241, 34, 40, 0.025);
+    */
   }
 }
 

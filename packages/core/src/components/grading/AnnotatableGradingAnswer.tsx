@@ -1,33 +1,41 @@
 import React, { useContext } from 'react'
 import { AnnotationContext } from '../context/AnnotationProvider'
-import { markText } from '../shared/AnnotatableText'
 import { GradingAnswerProps } from './GradingAnswer'
 
 export function AnnotatableGradingAnswer(props: GradingAnswerProps) {
   const path = 'pregrading'
-  const textWithoutLineBreaksAndExtraSpaces = props.answer.value
-  const annotationContextData = useContext(AnnotationContext)
-  const { newAnnotation, annotations, onClickAnnotation, setNewAnnotationRef } = annotationContextData
+  const answer = props.answer.value
 
-  const canNotBeAnnotated =
-    annotationContextData?.annotations === undefined || textWithoutLineBreaksAndExtraSpaces.length === 0
+  console.log(props.answer)
+
+  const annotationContextData = useContext(AnnotationContext)
+  const { newAnnotation, annotations,  } = annotationContextData
+
+  const canNotBeAnnotated = annotationContextData?.annotations === undefined || answer.length === 0
+
   if (canNotBeAnnotated) {
-    return textWithoutLineBreaksAndExtraSpaces
+    return answer
   }
-  const newAnnotationForThisNode = newAnnotation?.annotationAnchor === path ? newAnnotation : null
+
+  const newAnnotationForThisNode = newAnnotation?.annotationParts.some(p => p.annotationAnchor === path)
+    ? newAnnotation
+    : null
 
   const thisNodeAnnotations = [
     ...(annotations?.[path] || []),
     ...(newAnnotationForThisNode ? [newAnnotationForThisNode] : [])
   ]
 
+  console.log(answer)
   console.log(thisNodeAnnotations)
 
   return (
     <span className="e-annotatable" data-annotation-path={path} data-testid="123">
-      {thisNodeAnnotations?.length > 0 && onClickAnnotation
-        ? markText(textWithoutLineBreaksAndExtraSpaces, thisNodeAnnotations, onClickAnnotation, setNewAnnotationRef)
-        : textWithoutLineBreaksAndExtraSpaces}
+      {/*
+      thisNodeAnnotations?.length > 0 && onClickAnnotation
+        ? markText(answer, thisNodeAnnotations, onClickAnnotation, setNewAnnotationRef)
+        : answer
+        */}
     </span>
   )
 }
