@@ -13,16 +13,20 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
 
     const selection = window.getSelection()
     const startNode = selection?.anchorNode?.parentElement
-    // const endNode = selection?.focusNode?.parentElement
-    // const endNodePath = endNode?.getAttribute('data-annotation-path')
+    const endNode = selection?.focusNode?.parentElement
 
-    if (selection && selection.toString().length > 0) {
-      const displayNumber =
-        startNode?.parentElement?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor') || ''
+    if (selection && startNode && endNode && selection.toString().length > 0) {
+      const getDisplayNumber = (node: HTMLElement) =>
+        node?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor')
 
-      const annotations = collectAnnotationsFromSelection()
-      console.log('annotations', annotations)
-      mouseUpCallback({ annotationParts: annotations, displayNumber })
+      const startNodedisplayNumber = getDisplayNumber(startNode)
+      const endNodeDisplayNumber = getDisplayNumber(endNode)
+
+      if (startNodedisplayNumber === endNodeDisplayNumber) {
+        const annotations = collectAnnotationsFromSelection()
+        console.log('annotations', annotations)
+        mouseUpCallback({ annotationParts: annotations, displayNumber: startNodedisplayNumber })
+      }
     }
   }
 

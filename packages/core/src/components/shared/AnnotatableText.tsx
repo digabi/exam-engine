@@ -162,6 +162,7 @@ const Mark = ({
       className="e-annotation"
       data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
       data-hidden="false"
+      data-annotation-path={annotation.annotationAnchor}
       onClick={e => (isExamAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
     >
       {markedText}
