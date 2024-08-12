@@ -19,12 +19,14 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       const getDisplayNumber = (node: HTMLElement) =>
         node?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor')
 
+      const isAnnotatable = (node: HTMLElement) => node?.getAttribute('data-annotation-path')
+
       const startNodedisplayNumber = getDisplayNumber(startNode)
       const endNodeDisplayNumber = getDisplayNumber(endNode)
 
-      if (startNodedisplayNumber === endNodeDisplayNumber) {
-        const annotations = collectAnnotationsFromSelection()
-        console.log('annotations', annotations)
+      if (startNodedisplayNumber === endNodeDisplayNumber && isAnnotatable(startNode) && isAnnotatable(endNode)) {
+        const annotations = extractAnnotationsFromSelection()
+        console.log('extracted annotations', annotations)
         mouseUpCallback({ annotationParts: annotations, displayNumber: startNodedisplayNumber })
       }
     }
@@ -37,7 +39,7 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 }
 
-const collectAnnotationsFromSelection = () => {
+const extractAnnotationsFromSelection = () => {
   const selection = window.getSelection()
   const range = selection?.getRangeAt(0)
   if (!selection || !range) {
@@ -45,6 +47,9 @@ const collectAnnotationsFromSelection = () => {
   }
 
   const rangeChildren = selection && Array.from(selection?.getRangeAt(0).cloneContents().children)
+
+  console.log('selection', selection)
+  console.log('rangeChildren', rangeChildren)
 
   if (!rangeChildren?.length) {
     // selection is in one element
@@ -54,8 +59,8 @@ const collectAnnotationsFromSelection = () => {
       {
         annotationAnchor,
         selectedText: selection?.toString() || '',
-        startOffset: startAndLength?.startIndex || 0,
-        length: startAndLength?.length
+        startIndex: startAndLength?.startIndex || 0,
+        length: startAndLength?.length || 0
       }
     ]
   } else {
@@ -68,25 +73,26 @@ const collectAnnotationsFromSelection = () => {
         const newElement = {
           annotationAnchor: childsAnnotationPath,
           selectedText: child.textContent || '',
-          startOffset: index === 0 ? range.startOffset : 0,
-          length: isLastRangeChild ? range.endOffset : child.textContent?.length
+          startIndex: index === 0 ? range.startOffset : 0,
+          length: isLastRangeChild ? range.endOffset : child.textContent?.length || 0
         }
         return [...acc, newElement]
       } else {
         // child has children
         const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
+        console.log('child', child)
         allChildrenWithAnnotationPath?.forEach((grandChild, kidIndex) => {
           const dataAnnotationPath = grandChild.getAttribute('data-annotation-path')
           if (dataAnnotationPath) {
             const isFirstOfAll = index === 0 && kidIndex === 0
-            const isLastGrandCHild = kidIndex === allChildrenWithAnnotationPath.length - 1
-            const isLastOfAll = isLastRangeChild && isLastGrandCHild
+            const isLastGrandChild = kidIndex === allChildrenWithAnnotationPath.length - 1
+            const isLastOfAll = isLastRangeChild && isLastGrandChild
+            console.log(isLastRangeChild, isLastGrandChild)
             const newElement = {
               annotationAnchor: dataAnnotationPath,
               selectedText: grandChild.textContent || '',
-              startOffset: isFirstOfAll ? range.startOffset : 0,
-              // TODO: if selection end in non-selectable text, this should return textContent.length
-              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length
+              startIndex: isFirstOfAll ? range.startOffset : 0,
+              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0
             }
             acc.push(newElement)
           }
