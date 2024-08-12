@@ -16,16 +16,17 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
     const endNode = selection?.focusNode?.parentElement
 
     if (selection && startNode && endNode && selection.toString().length > 0) {
-      const getDisplayNumber = (node: HTMLElement) =>
-        node?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor')
-
-      const isAnnotatable = (node: HTMLElement) => node?.getAttribute('data-annotation-path')
-
+      const hasMarks = selectionContainsNonhiddenMarks(selection)
       const startNodedisplayNumber = getDisplayNumber(startNode)
       const endNodeDisplayNumber = getDisplayNumber(endNode)
 
-      if (startNodedisplayNumber === endNodeDisplayNumber && isAnnotatable(startNode) && isAnnotatable(endNode)) {
-        const annotations = extractAnnotationsFromSelection()
+      if (
+        startNodedisplayNumber === endNodeDisplayNumber &&
+        isAnnotatable(startNode) &&
+        isAnnotatable(endNode) &&
+        !hasMarks
+      ) {
+        const annotations = extractAnnotationsFromSelection(selection)
         console.log('extracted annotations', annotations)
         mouseUpCallback({ annotationParts: annotations, displayNumber: startNodedisplayNumber })
       }
@@ -39,17 +40,23 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 }
 
-const extractAnnotationsFromSelection = () => {
-  const selection = window.getSelection()
-  const range = selection?.getRangeAt(0)
-  if (!selection || !range) {
-    return []
-  }
+const selectionContainsNonhiddenMarks = (selection: Selection) => {
+  const rangeChildren = Array.from(selection?.getRangeAt(0).cloneContents().children)
+  const childIsMark = rangeChildren?.some(
+    child => child.tagName === 'MARK' && child.getAttribute('data-hidden') === 'false'
+  )
+  const childContainsMark = rangeChildren.some(child => child.querySelector('mark[data-hidden="false"]'))
+  return childIsMark || childContainsMark
+}
 
-  const rangeChildren = selection && Array.from(selection?.getRangeAt(0).cloneContents().children)
+const getDisplayNumber = (node: HTMLElement) =>
+  node?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor')
 
-  console.log('selection', selection)
-  console.log('rangeChildren', rangeChildren)
+const isAnnotatable = (node: HTMLElement) => node?.getAttribute('data-annotation-path') && node.tagName !== 'MARK'
+
+const extractAnnotationsFromSelection = (selection: Selection) => {
+  const range = selection.getRangeAt(0)
+  const rangeChildren = Array.from(selection?.getRangeAt(0).cloneContents().children)
 
   if (!rangeChildren?.length) {
     // selection is in one element
@@ -80,14 +87,12 @@ const extractAnnotationsFromSelection = () => {
       } else {
         // child has children
         const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
-        console.log('child', child)
         allChildrenWithAnnotationPath?.forEach((grandChild, kidIndex) => {
           const dataAnnotationPath = grandChild.getAttribute('data-annotation-path')
           if (dataAnnotationPath) {
             const isFirstOfAll = index === 0 && kidIndex === 0
             const isLastGrandChild = kidIndex === allChildrenWithAnnotationPath.length - 1
             const isLastOfAll = isLastRangeChild && isLastGrandChild
-            console.log(isLastRangeChild, isLastGrandChild)
             const newElement = {
               annotationAnchor: dataAnnotationPath,
               selectedText: grandChild.textContent || '',

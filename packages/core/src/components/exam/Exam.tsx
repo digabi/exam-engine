@@ -273,6 +273,12 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
       selectedText: ' Kirjoitussuorituksen pituus: 300–450 merkkiä. Välily',
       startIndex: 0,
       length: 53
+    },
+    {
+      annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:2 > #text:0',
+      length: 6,
+      selectedText: 'toinen',
+      startIndex: 6
     }
   ]
 
