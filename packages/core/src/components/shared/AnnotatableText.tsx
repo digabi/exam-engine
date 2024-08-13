@@ -59,6 +59,7 @@ export function markText(
   }
 
   const nodes: React.ReactNode[] = []
+  annotations.sort((a, b) => a.startIndex - b.startIndex)
 
   const [validAnnotations, invalidAnnotations] = partition(
     annotations,
@@ -78,9 +79,22 @@ export function markText(
   }
 
   let lastIndex = 0
-  annotations.sort((a, b) => a.startIndex - b.startIndex)
 
-  for (const annotation of validAnnotations) {
+  const [hiddenAnnotations, visibleAnnotations] = partition(validAnnotations, a => a.hidden)
+
+  hiddenAnnotations.forEach(annotation => {
+    const key = isExamAnnotation(annotation) ? annotation.annotationId : annotation.startIndex
+    nodes.push(
+      <mark
+        key={key}
+        className="e-annotation"
+        data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
+        data-hidden="true"
+      />
+    )
+  })
+
+  for (const annotation of visibleAnnotations) {
     const markedText = getMarkedText(annotation)
 
     // Add unmarked text before this mark
@@ -140,8 +154,6 @@ const Mark = ({
       setNewAnnotationRef(markRef.current)
     }
   }, [])
-
-  console.log('<mark> annotation', annotation)
 
   return (
     <mark
