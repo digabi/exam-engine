@@ -35,27 +35,8 @@
   }
 }
 
-.e-annotatable:hover {
-  &:not(:has(mark:hover)) {
-    /*
-    outline-style: dashed;
-    outline-offset: 1px;
-    outline-width: 1px;
-    border-radius: 1px;
-    outline-color: rgba(241, 34, 40, 0.5);
-    background-color: rgba(241, 34, 40, 0.025);
-    */
-  }
-}
-
-.mark-bg-outline {
-  background: @annotation-background;
-  //outline: 1px solid rgba(241, 34, 40, 0.2);
-  border-radius: 1px;
-}
-
 mark.e-annotation {
-  .mark-bg-outline;
+  background: @annotation-background;
   cursor: pointer;
 
   &[data-hidden=''] {
@@ -64,12 +45,10 @@ mark.e-annotation {
 
   &:hover {
     background: rgba(241, 34, 40, 0.3);
-    //outline: 2px solid rgba(241, 34, 40, 0.3);
   }
 
   &.selected {
     background-color: @annotation-background-selected;
-    //outline: 2px solid @annotation-background-selected;
   }
 
   &[data-hidden='true'] {

@@ -46,11 +46,11 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
 
 const selectionContainsNonhiddenMarks = (selection: Selection) => {
   const rangeChildren = Array.from(selection?.getRangeAt(0).cloneContents().children)
-  const childIsMark = rangeChildren?.some(
+  const childIsNonHiddenMark = rangeChildren?.some(
     child => child.tagName === 'MARK' && child.getAttribute('data-hidden') === 'false'
   )
-  const childContainsMark = rangeChildren.some(child => child.querySelector('mark[data-hidden="false"]'))
-  return childIsMark || childContainsMark
+  const childContainsNonHiddenMark = rangeChildren.some(child => child.querySelector('mark[data-hidden="false"]'))
+  return childIsNonHiddenMark || childContainsNonHiddenMark
 }
 
 const getDisplayNumber = (node: HTMLElement) =>
@@ -99,10 +99,11 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
             const isFirstOfAll = index === 0 && kidIndex === 0
             const isLastGrandChild = kidIndex === allChildrenWithAnnotationPath.length - 1
             const isLastOfAll = isLastRangeChild && isLastGrandChild
+            const startAndLength = textAnnotationFromRange(selection.anchorNode?.parentElement as HTMLElement, range)
             const newElement = {
               annotationAnchor: dataAnnotationPath,
               selectedText: grandChild.textContent || '',
-              startIndex: isFirstOfAll ? range.startOffset : 0,
+              startIndex: isFirstOfAll ? startAndLength?.startIndex || 0 : 0,
               length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0,
               isLastChild: isLastOfAll
             }
