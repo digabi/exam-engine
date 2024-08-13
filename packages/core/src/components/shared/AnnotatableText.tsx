@@ -25,28 +25,20 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
   const path = getElementPath(node as Element)
 
   const newAnnotationPartsForThisNode = newAnnotation?.annotationParts?.filter(p => p.annotationAnchor === path) || []
-
-  const savedAnnotationsForThisNode = annotations?.[path]
-
-  const examAnnotationsToNodeAnnotations =
-    savedAnnotationsForThisNode?.flatMap(a =>
-      a.annotationParts.map(p => ({
-        annotationId: a.annotationId,
-        annotationAnchor: p.annotationAnchor,
-        selectedText: p.selectedText,
-        startIndex: p.startIndex,
-        length: p.length
-      }))
-    ) || ([] as NodeAnnotation[])
+  const savedAnnotationsForThisNode = annotations?.[path] || []
+  const allAnnotationsForThisNode = [...savedAnnotationsForThisNode, ...newAnnotationPartsForThisNode]
 
   const textWithoutLineBreaksAndExtraSpaces = node.textContent!.replace(/\n/g, ' ').replace(/\s+/g, ' ')
 
-  const allAnnotations = [...examAnnotationsToNodeAnnotations, ...newAnnotationPartsForThisNode]
-
   return (
     <span className="e-annotatable" key={path} data-annotation-path={path} data-testid={path}>
-      {allAnnotations.length > 0 && onClickAnnotation
-        ? markText(textWithoutLineBreaksAndExtraSpaces, allAnnotations, onClickAnnotation, setNewAnnotationRef)
+      {allAnnotationsForThisNode.length > 0 && onClickAnnotation
+        ? markText(
+            textWithoutLineBreaksAndExtraSpaces,
+            allAnnotationsForThisNode,
+            onClickAnnotation,
+            setNewAnnotationRef
+          )
         : textWithoutLineBreaksAndExtraSpaces}
     </span>
   )
@@ -148,6 +140,9 @@ const Mark = ({
       setNewAnnotationRef(markRef.current)
     }
   }, [])
+
+  console.log('<mark> annotation', annotation)
+
   return (
     <mark
       ref={markRef}
@@ -158,7 +153,9 @@ const Mark = ({
       onClick={e => (isExamAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
     >
       {markedText}
-      {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
+      {annotation?.markNumber && annotation.isLastChild && (
+        <sup className="e-annotation" data-content={annotation?.markNumber} />
+      )}
     </mark>
   )
 }
