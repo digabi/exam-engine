@@ -1,6 +1,6 @@
 import React, { FormEvent, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
-import { Annotation, ExamAnnotation, NewExamAnnotation, TextAnnotation } from '../..'
+import { Annotation, TextAnnotation } from '../..'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import {
   renderAnnotations,
@@ -9,7 +9,6 @@ import {
   wrapAllImages
 } from '../../renderAnnotations'
 import { useCached } from '../../useCached'
-import { AnnotationProvider } from '../context/AnnotationProvider'
 import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
 import {
@@ -43,37 +42,11 @@ export function GradingAnswer(props: GradingAnswerProps) {
   const i18n = useCached(() => initI18n(props.language))
   useEffect(changeLanguage(i18n, props.language))
 
-  const convertAnnotation = (annotation: Annotation | ExamAnnotation) => {
-    const a = annotation as TextAnnotation
-    return {
-      annotationId: a.startIndex,
-      annotationAnchor: 'pregrading',
-      startIndex: a.startIndex,
-      length: a.length,
-      selectedText: 'selectedText' in annotation ? annotation?.selectedText : '',
-      hidden: false,
-      displayNumber: '1',
-      message: annotation.message
-    }
-  }
-
-  const [savedAnnotations] = useState<Record<string, ExamAnnotation[]>>({})
-
   useEffect(() => {}, [props.annotations])
-
-  const onClickAnnotation = () => console.log('click')
-
-  const save = (annotation: NewExamAnnotation) => {
-    console.log(annotation, convertAnnotation)
-    //const nextAnnotations = [...(savedAnnotations.pregrading || []), annotation]
-    //setSavedAnnotations({ pregrading: nextAnnotations.map(convertAnnotation) })
-  }
 
   return (
     <I18nextProvider i18n={i18n}>
-      <AnnotationProvider annotations={savedAnnotations} onClickAnnotation={onClickAnnotation} onSaveAnnotation={save}>
-        <GradingAnswerWithTranslations {...props} />
-      </AnnotationProvider>
+      <GradingAnswerWithTranslations {...props} />
     </I18nextProvider>
   )
 }
