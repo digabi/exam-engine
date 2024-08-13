@@ -41,8 +41,9 @@ export function AnnotationPopup() {
     closeMathEditor(textAreaRef.current!)
   }
 
-  function updateComment(annotation: NewExamAnnotation, comment: string) {
-    onSaveAnnotation!({ ...annotation, message: comment })
+  function createNewAnnotation(annotation: NewExamAnnotation, comment: string) {
+    console.log('createNewAnnotation', annotation, comment)
+    onSaveAnnotation!(annotation, comment)
     closeEditor()
   }
 
@@ -67,7 +68,7 @@ export function AnnotationPopup() {
             onClick={e => {
               e.stopPropagation()
               closeMathEditor(textAreaRef.current!)
-              updateComment(newAnnotation, comment)
+              createNewAnnotation(newAnnotation, comment)
             }}
             data-testid="save-comment"
             disabled={!saveEnabled}

@@ -19,7 +19,13 @@ function PreviewGrading() {
       answerIds.map(id => [
         id,
         {
-          pregrading: [],
+          pregrading: [
+            {
+              startIndex: 2,
+              length: 5,
+              message: '+1'
+            }
+          ],
           censoring: []
         }
       ])
