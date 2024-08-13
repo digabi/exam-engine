@@ -1,13 +1,13 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import '@testing-library/jest-dom'
-import { fireEvent, render, RenderResult } from '@testing-library/react'
+import { RenderResult, fireEvent, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { promises as fs } from 'fs'
 import path from 'path'
 import React from 'react'
 import parseExam from '../dist/parser/parseExam'
-import { ExamAnnotation } from '../src'
+import { NodeAnnotation } from '../src'
 import Attachments from '../src/components/attachments/Attachments'
 import Exam, { AnnotationProps, ExamProps } from '../src/components/exam/Exam'
 import GradingInstructions from '../src/components/grading-instructions/GradingInstructions'
@@ -116,7 +116,7 @@ describe('Annotations', () => {
     const exam = render(
       <Exam
         {...getExamProps()}
-        annotations={{ [defaultAnnotationAnchor]: [createAnnotation(1, 5, 12, 'moraali että')] }}
+        annotations={{ [defaultAnnotationAnchor]: [createAnnotation(1, 5, 12)] }}
         onClickAnnotation={clickAnnotationMock}
         onSaveAnnotation={() => {}}
       />
@@ -139,7 +139,7 @@ describe('Annotations', () => {
   it('annotations are added to dom when provided', () => {
     const annotationProps: AnnotationProps = {
       annotations: {
-        [defaultAnnotationAnchor]: [createAnnotation(1, 5, 7, 'moraali'), createAnnotation(3, 18, 5, 'tavat')]
+        [defaultAnnotationAnchor]: [createAnnotation(1, 5, 7), createAnnotation(3, 18, 5)]
       },
       onClickAnnotation: () => {},
       onSaveAnnotation: () => {}
@@ -157,19 +157,11 @@ describe('Annotations', () => {
         [defaultAnnotationAnchor]: [
           {
             annotationId: 1,
-            annotationParts: [
-              {
-                annotationAnchor: defaultAnnotationAnchor,
-                selectedText: 'pyrkivät',
-                length: 8,
-                startIndex: 24
-              }
-            ],
-            hidden: true,
+            annotationAnchor: defaultAnnotationAnchor,
+            selectedText: defaultTextToAnnotate,
             startIndex: 24,
             length: 8,
-            message: '',
-            displayNumber: ''
+            isLastChild: true
           }
         ]
       },
@@ -206,22 +198,15 @@ describe('Annotations', () => {
     expect(gi.getByTestId('annotation-popup')).toBeVisible()
   })
 
-  function createAnnotation(id: number, startIndex: number, length: number, selectedText: string): ExamAnnotation {
+  function createAnnotation(id: number, startIndex: number, length: number): NodeAnnotation {
     return {
       annotationId: id,
-      annotationParts: [
-        {
-          annotationAnchor: defaultAnnotationAnchor,
-          selectedText,
-          length: 8,
-          startIndex: 24
-        }
-      ],
       hidden: false,
       startIndex,
       length,
-      message: '',
-      displayNumber: ''
+      annotationAnchor: defaultAnnotationAnchor,
+      selectedText: defaultTextToAnnotate,
+      isLastChild: true
     }
   }
 
