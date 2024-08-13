@@ -54,13 +54,13 @@ export interface AnnotationPart {
   selectedText: string
   startIndex: number
   length: number
+  isLastChild: boolean
 }
 
 export interface NewExamAnnotation extends TextAnnotation {
   displayNumber: string
-  //annotationAnchor: string
   hidden: boolean
-  //selectedText: string
+  selectedText: string
   annotationParts: AnnotationPart[]
 }
 export interface ExamAnnotation extends NewExamAnnotation {
@@ -74,6 +74,7 @@ export interface NewNodeAnnotation {
   length: number
   hidden?: boolean
   markNumber?: string
+  isLastChild: boolean
 }
 
 export interface NodeAnnotation extends NewNodeAnnotation {

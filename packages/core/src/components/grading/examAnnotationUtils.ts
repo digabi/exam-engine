@@ -28,7 +28,11 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       ) {
         const annotations = extractAnnotationsFromSelection(selection)
         console.log('extracted annotations', annotations)
-        mouseUpCallback({ annotationParts: annotations, displayNumber: startNodedisplayNumber })
+        mouseUpCallback({
+          annotationParts: annotations,
+          displayNumber: startNodedisplayNumber,
+          selectedText: annotations.map(a => a.selectedText).join(' ')
+        })
       }
     }
   }
@@ -67,7 +71,8 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
         annotationAnchor,
         selectedText: selection?.toString() || '',
         startIndex: startAndLength?.startIndex || 0,
-        length: startAndLength?.length || 0
+        length: startAndLength?.length || 0,
+        isLastChild: true
       }
     ]
   } else {
@@ -81,7 +86,8 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
           annotationAnchor: childsAnnotationPath,
           selectedText: child.textContent || '',
           startIndex: index === 0 ? range.startOffset : 0,
-          length: isLastRangeChild ? range.endOffset : child.textContent?.length || 0
+          length: isLastRangeChild ? range.endOffset : child.textContent?.length || 0,
+          isLastChild: isLastRangeChild
         }
         return [...acc, newElement]
       } else {
@@ -97,7 +103,8 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
               annotationAnchor: dataAnnotationPath,
               selectedText: grandChild.textContent || '',
               startIndex: isFirstOfAll ? range.startOffset : 0,
-              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0
+              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0,
+              isLastChild: isLastOfAll
             }
             acc.push(newElement)
           }

@@ -6,8 +6,6 @@ import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import {
-  AnnotationPart,
-  ExamAnnotation,
   ExamAnswer,
   ExamServerAPI,
   InitialCasStatus,
@@ -79,7 +77,7 @@ export interface CommonExamProps {
 }
 
 export interface AnnotationProps {
-  annotations?: Record<string, ExamAnnotation[]>
+  annotations?: Record<string, NodeAnnotation[]>
   onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: NodeAnnotation) => void
   onSaveAnnotation?: (annotation: NewExamAnnotation) => void
 }
@@ -246,66 +244,10 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
-  console.log('Exam', annotations)
-
-  const testAnnotations: AnnotationPart[] = [
-    {
-      annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:0 > #text:0',
-      selectedText: 'dista ',
-      startIndex: 24,
-      length: 6
-    },
-    {
-      annotationAnchor:
-        'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:0 > b:0 > #text:0',
-      selectedText: 'vain toinen',
-      startIndex: 0,
-      length: 11
-    },
-    {
-      annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:0 > #text:2',
-      selectedText: ', johon vastaat saksaksi. ',
-      startIndex: 0,
-      length: 26
-    },
-    {
-      annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:1 > #text:0',
-      selectedText: ' Kirjoitussuorituksen pituus: 300–450 merkkiä. Välily',
-      startIndex: 0,
-      length: 53
-    },
-    {
-      annotationAnchor: 'e:exam:0 > e:section:4 > e:question:22 > e:question-instruction:1 > span:0 > p:2 > #text:0',
-      length: 6,
-      selectedText: 'toinen',
-      startIndex: 6
-    }
-  ]
-
-  const annObject: Record<string, ExamAnnotation[]> = testAnnotations.reduce(
-    (acc, a) => ({
-      ...acc,
-      [a.annotationAnchor]: [
-        {
-          annotationParts: [{ ...a, annotationId: 123 }],
-          annotationId: 123,
-          annotationAnchor: a.annotationAnchor,
-          selectedText: a.selectedText,
-          hidden: false,
-          startIndex: a.startIndex,
-          length: a.length,
-          displayNumber: '22',
-          message: 'kukkuu'
-        }
-      ]
-    }),
-    {}
-  )
-
   return (
     <Provider store={store}>
       <AnnotationProvider
-        annotations={annObject}
+        annotations={annotations}
         onClickAnnotation={onClickAnnotation}
         onSaveAnnotation={onSaveAnnotation}
       >
