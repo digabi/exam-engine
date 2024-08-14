@@ -27,7 +27,6 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
         !hasMarks
       ) {
         const annotations = extractAnnotationsFromSelection(selection)
-        console.log('extracted annotations', annotations)
         mouseUpCallback({
           annotationParts: annotations,
           displayNumber: startNodedisplayNumber,

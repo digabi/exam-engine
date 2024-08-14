@@ -7,7 +7,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import React from 'react'
 import parseExam from '../dist/parser/parseExam'
-import { NodeAnnotation } from '../src'
+import { AnnotationPart, NodeAnnotation } from '../src'
 import Attachments from '../src/components/attachments/Attachments'
 import Exam, { AnnotationProps, ExamProps } from '../src/components/exam/Exam'
 import GradingInstructions from '../src/components/grading-instructions/GradingInstructions'
@@ -78,20 +78,27 @@ describe('Annotations', () => {
 
     const textbox = exam.getByTestId('edit-comment')
     fireEvent.input(textbox, {
-      target: { innerText: 'New Value', innerHTML: 'New Value' }
+      target: { innerText: 'New comment', innerHTML: 'New comment' }
     })
     await userEvent.click(exam.getByText('Tallenna'))
 
-    expect(saveAnnotationMock).toHaveBeenCalledTimes(1)
-    expect(saveAnnotationMock).toHaveBeenCalledWith({
+    const annotationPart: AnnotationPart = {
       annotationAnchor: defaultAnnotationAnchor,
-      annotationId: undefined,
-      displayNumber: '2',
-      length: defaultTextToAnnotate.length,
-      message: 'New Value',
       selectedText: defaultTextToAnnotate,
-      startIndex: 0
-    })
+      startIndex: 0,
+      length: defaultTextToAnnotate.length,
+      isLastChild: true
+    }
+
+    expect(saveAnnotationMock).toHaveBeenCalledTimes(1)
+    expect(saveAnnotationMock).toHaveBeenCalledWith(
+      {
+        annotationParts: [annotationPart],
+        displayNumber: '2',
+        selectedText: defaultTextToAnnotate
+      },
+      'New comment'
+    )
   })
 
   it('popup field is empty when creating new annotation', async () => {
@@ -116,30 +123,31 @@ describe('Annotations', () => {
     const exam = render(
       <Exam
         {...getExamProps()}
-        annotations={{ [defaultAnnotationAnchor]: [createAnnotation(1, 5, 12)] }}
+        annotations={{ [defaultAnnotationAnchor]: [createAnnotation(1, 5, 12, 'moraali että')] }}
         onClickAnnotation={clickAnnotationMock}
         onSaveAnnotation={() => {}}
       />
     )
     await userEvent.click(exam.container.querySelector('[data-annotation-id="1"]')!)
 
-    expect(clickAnnotationMock).toHaveBeenCalledTimes(1)
-    expect(clickAnnotationMock).toHaveBeenCalledWith(expect.anything(), {
+    const clickedAnnotation: NodeAnnotation = {
       annotationAnchor: defaultAnnotationAnchor,
       annotationId: 1,
-      displayNumber: '',
       hidden: false,
       length: 12,
-      message: '',
       selectedText: 'moraali että',
-      startIndex: 5
-    })
+      startIndex: 5,
+      isLastChild: true
+    }
+
+    expect(clickAnnotationMock).toHaveBeenCalledTimes(1)
+    expect(clickAnnotationMock).toHaveBeenCalledWith(expect.anything(), clickedAnnotation)
   })
 
   it('annotations are added to dom when provided', () => {
     const annotationProps: AnnotationProps = {
       annotations: {
-        [defaultAnnotationAnchor]: [createAnnotation(1, 5, 7), createAnnotation(3, 18, 5)]
+        [defaultAnnotationAnchor]: [createAnnotation(1, 5, 7, 'moraali'), createAnnotation(3, 18, 5, 'tavat')]
       },
       onClickAnnotation: () => {},
       onSaveAnnotation: () => {}
@@ -152,18 +160,17 @@ describe('Annotations', () => {
   })
 
   it('hidden annotation works correctly', () => {
+    const annotation: NodeAnnotation = {
+      annotationId: 1,
+      annotationAnchor: defaultAnnotationAnchor,
+      selectedText: 'pyrkivät',
+      startIndex: 24,
+      length: 8,
+      isLastChild: true
+    }
     const annotationProps: AnnotationProps = {
       annotations: {
-        [defaultAnnotationAnchor]: [
-          {
-            annotationId: 1,
-            annotationAnchor: defaultAnnotationAnchor,
-            selectedText: defaultTextToAnnotate,
-            startIndex: 24,
-            length: 8,
-            isLastChild: true
-          }
-        ]
+        [defaultAnnotationAnchor]: [annotation]
       },
       onClickAnnotation: () => {},
       onSaveAnnotation: () => {}
@@ -198,14 +205,14 @@ describe('Annotations', () => {
     expect(gi.getByTestId('annotation-popup')).toBeVisible()
   })
 
-  function createAnnotation(id: number, startIndex: number, length: number): NodeAnnotation {
+  function createAnnotation(id: number, startIndex: number, length: number, selectedText: string): NodeAnnotation {
     return {
       annotationId: id,
       hidden: false,
       startIndex,
       length,
       annotationAnchor: defaultAnnotationAnchor,
-      selectedText: defaultTextToAnnotate,
+      selectedText,
       isLastChild: true
     }
   }
