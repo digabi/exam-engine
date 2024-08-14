@@ -80,7 +80,7 @@ describe('Annotations', () => {
     fireEvent.input(textbox, {
       target: { innerText: 'New Value', innerHTML: 'New Value' }
     })
-    await userEvent.click(exam.getByText('Vastaa'))
+    await userEvent.click(exam.getByText('Tallenna'))
 
     expect(saveAnnotationMock).toHaveBeenCalledTimes(1)
     expect(saveAnnotationMock).toHaveBeenCalledWith({
@@ -105,7 +105,7 @@ describe('Annotations', () => {
     fireEvent.input(textbox, {
       target: { innerText: 'New Value', innerHTML: 'New Value' }
     })
-    await userEvent.click(exam.getByText('Vastaa'))
+    await userEvent.click(exam.getByText('Tallenna'))
     // text picked by getMarkedText includes leading/trailing whitespace, so they must be here too
     await annotateText(exam, annotationAnchor_7_1)
     expect(exam.getByTestId('edit-comment').textContent).toHaveLength(0)
