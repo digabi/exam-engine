@@ -61,11 +61,12 @@ const isAnnotatable = (node: HTMLElement) => node?.getAttribute('data-annotation
 const extractAnnotationsFromSelection = (selection: Selection) => {
   const range = selection.getRangeAt(0)
   const rangeChildren = Array.from(selection?.getRangeAt(0).cloneContents().children)
+  const firstSelectedNodeInDOM = range.startContainer.parentElement
 
   if (!rangeChildren?.length) {
-    // selection is in one element
+    // selection is plain text
     const annotationAnchor = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
-    const startAndLength = textAnnotationFromRange(selection.focusNode?.parentElement as HTMLElement, range)
+    const startAndLength = textAnnotationFromRange(firstSelectedNodeInDOM as HTMLElement, range)
     return [
       {
         annotationAnchor,
@@ -81,7 +82,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
       const childsAnnotationPath = child.getAttribute('data-annotation-path')
       const isLastRangeChild = index === arr.length - 1
       if (childsAnnotationPath) {
-        // child is a text node
+        // child is a text node, like <span> text </span>
         const newElement = {
           annotationAnchor: childsAnnotationPath,
           selectedText: child.textContent || '',
@@ -91,7 +92,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
         }
         return [...acc, newElement]
       } else {
-        // child has children
+        // child is a node with children, like <b> <span> text </span> </b>
         const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
         allChildrenWithAnnotationPath?.forEach((grandChild, kidIndex) => {
           const dataAnnotationPath = grandChild.getAttribute('data-annotation-path')
@@ -99,7 +100,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
             const isFirstOfAll = index === 0 && kidIndex === 0
             const isLastGrandChild = kidIndex === allChildrenWithAnnotationPath.length - 1
             const isLastOfAll = isLastRangeChild && isLastGrandChild
-            const startAndLength = textAnnotationFromRange(selection.anchorNode?.parentElement as HTMLElement, range)
+            const startAndLength = textAnnotationFromRange(firstSelectedNodeInDOM as HTMLElement, range)
             const newElement = {
               annotationAnchor: dataAnnotationPath,
               selectedText: grandChild.textContent || '',

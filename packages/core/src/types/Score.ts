@@ -49,6 +49,21 @@ export interface TextAnnotation extends BaseAnnotation {
   length: number
 }
 
+// React annotations only use annotation types below this line
+
+export interface NewExamAnnotation {
+  type: 'text'
+  displayNumber: string
+  selectedText: string
+  annotationParts: AnnotationPart[]
+  hidden: boolean
+  markNumber?: string
+}
+
+export interface ExamAnnotation extends NewExamAnnotation {
+  annotationId: number
+}
+
 export interface AnnotationPart {
   annotationAnchor: string
   selectedText: string
@@ -57,30 +72,16 @@ export interface AnnotationPart {
   isLastChild: boolean
 }
 
-export interface NewExamAnnotation extends TextAnnotation {
-  displayNumber: string
-  hidden: boolean
-  selectedText: string
-  annotationParts: AnnotationPart[]
-}
-export interface ExamAnnotation extends NewExamAnnotation {
-  annotationId: number
-}
-
-export interface NewNodeAnnotation {
-  annotationAnchor: string
-  selectedText: string
-  startIndex: number
-  length: number
+export interface NewNodeAnnotation extends AnnotationPart {
   hidden?: boolean
   markNumber?: string
-  isLastChild: boolean
 }
 
 export interface NodeAnnotation extends NewNodeAnnotation {
   annotationId: number
 }
 
+// Shape annotations
 interface ShapeAnnotation extends BaseAnnotation {
   /** A 0-indexed number describing which <img /> in the answer the annotation is attached to. */
   attachmentIndex: number

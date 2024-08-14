@@ -9,7 +9,7 @@ export function AnnotatableGradingAnswer(props: GradingAnswerProps) {
   console.log(props.answer)
 
   const annotationContextData = useContext(AnnotationContext)
-  const { newAnnotation, annotations,  } = annotationContextData
+  const { newAnnotation, annotations } = annotationContextData
 
   const canNotBeAnnotated = annotationContextData?.annotations === undefined || answer.length === 0
 
