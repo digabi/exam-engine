@@ -103,7 +103,7 @@ export function markText(
     }
 
     // Add marked text
-    const key = isExamAnnotation(annotation) ? annotation.annotationId : annotation.startIndex
+    const key = isExamAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
     nodes.push(
       annotation.hidden ? (
         <mark
@@ -165,9 +165,7 @@ const Mark = ({
       onClick={e => (isExamAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
     >
       {markedText}
-      {annotation?.markNumber && annotation.isLastChild && (
-        <sup className="e-annotation" data-content={annotation?.markNumber} />
-      )}
+      {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
     </mark>
   )
 }

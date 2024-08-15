@@ -1,5 +1,6 @@
+import { groupBy } from 'lodash'
 import React from 'react'
-import { NewExamAnnotation } from '../../types/Score'
+import { NewExamAnnotation, NodeAnnotation } from '../../types/Score'
 import { AnnotationProps } from '../exam/Exam'
 import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { AnnotationPopup } from '../shared/AnnotationPopup'
@@ -8,7 +9,13 @@ interface Props {
   children: React.ReactNode
 }
 
-export interface AnnotationContextType extends AnnotationProps {
+export interface NodeAnnotationProps {
+  annotations: Record<string, NodeAnnotation[]>
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: NodeAnnotation) => void
+  onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => void
+}
+
+export interface AnnotationContextType extends NodeAnnotationProps {
   newAnnotation: NewExamAnnotation | null
   setNewAnnotation: (a: NewExamAnnotation | null) => void
   newAnnotationRef: HTMLElement | undefined
@@ -43,10 +50,25 @@ export const AnnotationProvider = ({
     return children
   }
 
+  const annotationPartsToNodeAnnotations: Record<string, NodeAnnotation[]> = groupBy(
+    annotations?.flatMap(a =>
+      a.annotationParts.map((p, index, arr) => {
+        const isLastChild = index === arr.length - 1
+        return {
+          ...p,
+          annotationId: a.annotationId,
+          markNumber: isLastChild ? a.markNumber : undefined,
+          hidden: a.hidden
+        }
+      })
+    ) || [],
+    'annotationAnchor'
+  )
+
   return (
     <AnnotationContext.Provider
       value={{
-        annotations,
+        annotations: annotationPartsToNodeAnnotations,
         onClickAnnotation,
         onSaveAnnotation,
         newAnnotation,

@@ -71,8 +71,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
         annotationAnchor,
         selectedText: selection?.toString() || '',
         startIndex: startAndLength?.startIndex || 0,
-        length: startAndLength?.length || 0,
-        isLastChild: true
+        length: startAndLength?.length || 0
       }
     ]
   } else {
@@ -86,8 +85,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
           annotationAnchor: childsAnnotationPath,
           selectedText: child.textContent || '',
           startIndex: index === 0 ? range.startOffset : 0,
-          length: isLastRangeChild ? range.endOffset : child.textContent?.length || 0,
-          isLastChild: isLastRangeChild
+          length: isLastRangeChild ? range.endOffset : child.textContent?.length || 0
         }
         return [...acc, newElement]
       } else {
@@ -104,8 +102,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
               annotationAnchor: dataAnnotationPath,
               selectedText: grandChild.textContent || '',
               startIndex: isFirstOfAll ? startAndLength?.startIndex || 0 : 0,
-              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0,
-              isLastChild: isLastOfAll
+              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0
             }
             acc.push(newElement)
           }
