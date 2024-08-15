@@ -7,7 +7,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import React from 'react'
 import parseExam from '../dist/parser/parseExam'
-import { AnnotationPart, ExamAnnotation, NodeAnnotation } from '../src'
+import { AnnotationPart, ExamAnnotation, RenderableAnnotation } from '../src'
 import Attachments from '../src/components/attachments/Attachments'
 import Exam, { AnnotationProps, ExamProps } from '../src/components/exam/Exam'
 import GradingInstructions from '../src/components/grading-instructions/GradingInstructions'
@@ -49,9 +49,13 @@ describe('Annotations', () => {
     ;(document.execCommand as jest.Mock).mockReset()
   })
 
-  const defaultTextToAnnotate = 'Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä.'
+  // Do NOT modify the line breaks and indentations below
+  const defaultTextToAnnotate = `
+            Valitse jokin pienempi tai suurempi yhteisö – esimerkiksi jokin koulu, katsomuksellinen ryhmä tai valtio –
+            ja pohdi, mikä ero valitsemassasi yhteisössä on moraalin ja tapojen välillä.
+          `
   const defaultAnnotationAnchor =
-    'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > p:0 > #text:0'
+    'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > p:1 > #text:0'
 
   it('popup is rendered', async () => {
     const exam = render(
@@ -130,7 +134,7 @@ describe('Annotations', () => {
     )
     await userEvent.click(exam.container.querySelector('[data-annotation-id="1"]')!)
 
-    const clickedAnnotation: NodeAnnotation = {
+    const clickedAnnotation: RenderableAnnotation = {
       annotationAnchor: defaultAnnotationAnchor,
       annotationId: 1,
       hidden: false,
@@ -147,28 +151,44 @@ describe('Annotations', () => {
   it('annotations are added to dom when provided', () => {
     const annotationProps: AnnotationProps = {
       annotations: createAnnotations([
-        { id: 1, startIndex: 5, selectedText: 'moraali' },
-        { id: 3, startIndex: 18, selectedText: 'tavat' }
+        { id: 1, startIndex: 27, selectedText: 'pienempi' },
+        { id: 3, startIndex: 166, selectedText: 'yhteisössä' }
       ]),
       onClickAnnotation: () => {},
       onSaveAnnotation: () => {}
     }
     const exam = render(<Exam {...getExamProps()} {...annotationProps} />)
     expect(exam.container.querySelector('[data-annotation-id="1"]')).toBeInTheDocument()
-    expect(exam.container.querySelector('[data-annotation-id="1"]')?.textContent).toBe('moraali')
+    expect(exam.container.querySelector('[data-annotation-id="1"]')?.textContent).toBe('pienempi')
     expect(exam.container.querySelector('[data-annotation-id="1"] sup')).toHaveAttribute('data-content', '1')
     expect(exam.container.querySelector('[data-annotation-id="3"]')).toBeInTheDocument()
-    expect(exam.container.querySelector('[data-annotation-id="3"]')?.textContent).toBe('tavat')
+    expect(exam.container.querySelector('[data-annotation-id="3"]')?.textContent).toBe('yhteisössä')
     expect(exam.container.querySelector('[data-annotation-id="3"] sup')).toHaveAttribute('data-content', '2')
+  })
+
+  it('"August 2024" annotations are added to dom when provided', () => {
+    /** the difference of startIndex between an "August 2024 annotation" and a normal annotation
+     * (in this case, but the index varies depending on the exam content)
+     */
+    const startIndexDifference = 24
+    const annotationProps: AnnotationProps = {
+      annotations: createAnnotations([{ id: 1, startIndex: 166 - startIndexDifference, selectedText: 'yhteisössä' }]),
+      onClickAnnotation: () => {},
+      onSaveAnnotation: () => {}
+    }
+    const exam = render(<Exam {...getExamProps()} {...annotationProps} />)
+    expect(exam.container.querySelector('[data-annotation-id="1"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="1"]')?.textContent).toBe('yhteisössä')
+    expect(exam.container.querySelector('[data-annotation-id="1"] sup')).toHaveAttribute('data-content', '1')
   })
 
   it('if two annotations have same id, only latter renders <sup>', () => {
     const annotationProps: AnnotationProps = {
       annotations: createAnnotations([
-        { id: 1, startIndex: 5, selectedText: 'moraali' },
-        { id: 1, startIndex: 13, selectedText: 'että' },
-        { id: 2, startIndex: 43, selectedText: 'ihmisten' },
-        { id: 2, startIndex: 52, selectedText: 'käyttäytymistä' }
+        { id: 1, startIndex: 71, selectedText: 'jokin' },
+        { id: 1, startIndex: 77, selectedText: 'koulu' },
+        { id: 2, startIndex: 142, selectedText: 'mikä' },
+        { id: 2, startIndex: 147, selectedText: 'ero' }
       ]),
       onClickAnnotation: () => {},
       onSaveAnnotation: () => {}
@@ -178,21 +198,21 @@ describe('Annotations', () => {
     const marks = (id: string) => exam.container.querySelectorAll(`.e-annotation[data-annotation-id="${id}"]`)
     const marksId1 = marks('1')
     const marksId2 = marks('2')
-    expect(marksId1[0].textContent).toBe('moraali')
+    expect(marksId1[0].textContent).toBe('jokin')
     expect(marksId1[0].querySelector('sup')).not.toBeInTheDocument()
-    expect(marksId1[1].textContent).toBe('että')
+    expect(marksId1[1].textContent).toBe('koulu')
     expect(marksId1[1]).toBeInTheDocument()
     expect(marksId1[1].querySelector('sup')).toHaveAttribute('data-content', '1')
 
-    expect(marksId2[0].textContent).toBe('ihmisten')
+    expect(marksId2[0].textContent).toBe('mikä')
     expect(marksId2[0].querySelector('sup')).not.toBeInTheDocument()
-    expect(marksId2[1].textContent).toBe('käyttäytymistä')
+    expect(marksId2[1].textContent).toBe('ero')
     expect(marksId2[1]).toBeInTheDocument()
     expect(marksId2[1].querySelector('sup')).toHaveAttribute('data-content', '2')
   })
 
   it('hidden annotation works correctly', () => {
-    const annotations = createAnnotations([{ id: 1, startIndex: 24, selectedText: 'pyrkivät', hidden: true }])
+    const annotations = createAnnotations([{ id: 1, startIndex: 59, selectedText: 'esimerkiksi', hidden: true }])
     const annotationProps: AnnotationProps = {
       annotations,
       onClickAnnotation: () => {},
@@ -202,7 +222,7 @@ describe('Annotations', () => {
     expect(exam.container.querySelector('[data-annotation-id="1"]')).toBeInTheDocument()
     expect(exam.container.querySelector('[data-annotation-id="1"] sup')).not.toBeInTheDocument()
     expect(exam.container.querySelector('[data-annotation-id="1"]')?.parentElement?.textContent).toBe(
-      'Sekä moraali että tavat pyrkivät ohjaamaan ihmisten käyttäytymistä.'
+      defaultTextToAnnotate
     )
   })
 
