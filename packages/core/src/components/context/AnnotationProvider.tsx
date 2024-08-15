@@ -1,4 +1,4 @@
-import { groupBy } from 'lodash'
+import * as _ from 'lodash-es'
 import React from 'react'
 import { NewExamAnnotation, RenderableAnnotation } from '../../types/Score'
 import { AnnotationProps } from '../exam/Exam'
@@ -50,7 +50,7 @@ export const AnnotationProvider = ({
     return children
   }
 
-  const annotationPartsToRenderableAnnotations: Record<string, RenderableAnnotation[]> = groupBy(
+  const annotationPartsToRenderableAnnotations: Record<string, RenderableAnnotation[]> = _.groupBy(
     annotations?.flatMap(a =>
       a.annotationParts.map((p, index, arr) => {
         const isLastChild = index === arr.length - 1
