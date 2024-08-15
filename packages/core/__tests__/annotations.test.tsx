@@ -7,7 +7,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import React from 'react'
 import parseExam from '../dist/parser/parseExam'
-import { AnnotationPart, ExamAnnotation, NodeAnnotation } from '../src'
+import { AnnotationPart, ExamAnnotation, RenderableAnnotation } from '../src'
 import Attachments from '../src/components/attachments/Attachments'
 import Exam, { AnnotationProps, ExamProps } from '../src/components/exam/Exam'
 import GradingInstructions from '../src/components/grading-instructions/GradingInstructions'
@@ -130,7 +130,7 @@ describe('Annotations', () => {
     )
     await userEvent.click(exam.container.querySelector('[data-annotation-id="1"]')!)
 
-    const clickedAnnotation: NodeAnnotation = {
+    const clickedAnnotation: RenderableAnnotation = {
       annotationAnchor: defaultAnnotationAnchor,
       annotationId: 1,
       hidden: false,

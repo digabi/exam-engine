@@ -1,6 +1,6 @@
-import { groupBy } from 'lodash'
+import * as _ from 'lodash-es'
 import React from 'react'
-import { NewExamAnnotation, NodeAnnotation } from '../../types/Score'
+import { NewExamAnnotation, RenderableAnnotation } from '../../types/Score'
 import { AnnotationProps } from '../exam/Exam'
 import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { AnnotationPopup } from '../shared/AnnotationPopup'
@@ -9,13 +9,13 @@ interface Props {
   children: React.ReactNode
 }
 
-export interface NodeAnnotationProps {
-  annotations: Record<string, NodeAnnotation[]>
-  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: NodeAnnotation) => void
+export interface RenderableAnnotationProps {
+  annotations: Record<string, RenderableAnnotation[]>
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: RenderableAnnotation) => void
   onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => void
 }
 
-export interface AnnotationContextType extends NodeAnnotationProps {
+export interface AnnotationContextType extends RenderableAnnotationProps {
   newAnnotation: NewExamAnnotation | null
   setNewAnnotation: (a: NewExamAnnotation | null) => void
   newAnnotationRef: HTMLElement | undefined
@@ -50,7 +50,7 @@ export const AnnotationProvider = ({
     return children
   }
 
-  const annotationPartsToNodeAnnotations: Record<string, NodeAnnotation[]> = groupBy(
+  const annotationPartsToRenderableAnnotations: Record<string, RenderableAnnotation[]> = _.groupBy(
     annotations?.flatMap(a =>
       a.annotationParts.map((p, index, arr) => {
         const isLastChild = index === arr.length - 1
@@ -68,7 +68,7 @@ export const AnnotationProvider = ({
   return (
     <AnnotationContext.Provider
       value={{
-        annotations: annotationPartsToNodeAnnotations,
+        annotations: annotationPartsToRenderableAnnotations,
         onClickAnnotation,
         onSaveAnnotation,
         newAnnotation,
