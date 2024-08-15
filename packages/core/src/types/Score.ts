@@ -57,7 +57,7 @@ export interface NewExamAnnotation {
   selectedText: string
   annotationParts: AnnotationPart[]
   hidden: boolean
-  markNumber?: string
+  markNumber?: number
 }
 
 export interface ExamAnnotation extends NewExamAnnotation {
@@ -69,17 +69,15 @@ export interface AnnotationPart {
   selectedText: string
   startIndex: number
   length: number
-  isLastChild: boolean
-}
-
-export interface NewNodeAnnotation extends AnnotationPart {
+  markNumber?: number
   hidden?: boolean
-  markNumber?: string
 }
 
-export interface NodeAnnotation extends NewNodeAnnotation {
+export interface NodeAnnotation extends AnnotationPart {
   annotationId: number
 }
+
+export type NewNodeAnnotation = AnnotationPart
 
 // Shape annotations
 interface ShapeAnnotation extends BaseAnnotation {

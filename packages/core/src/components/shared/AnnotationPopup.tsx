@@ -42,7 +42,6 @@ export function AnnotationPopup() {
   }
 
   function createNewAnnotation(annotation: NewExamAnnotation, comment: string) {
-    console.log('createNewAnnotation', annotation, comment)
     onSaveAnnotation!(annotation, comment)
     closeEditor()
   }
