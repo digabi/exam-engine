@@ -62,6 +62,7 @@ export interface NewExamAnnotation {
 
 export interface ExamAnnotation extends NewExamAnnotation {
   annotationId: number
+  imported?: boolean
 }
 
 export interface AnnotationPart {
@@ -73,11 +74,11 @@ export interface AnnotationPart {
   hidden?: boolean
 }
 
-export interface NodeAnnotation extends AnnotationPart {
+export interface RenderableAnnotation extends AnnotationPart {
   annotationId: number
 }
 
-export type NewNodeAnnotation = AnnotationPart
+export type NewRenderableAnnotation = AnnotationPart
 
 // Shape annotations
 interface ShapeAnnotation extends BaseAnnotation {

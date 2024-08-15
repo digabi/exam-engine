@@ -11,7 +11,7 @@ import {
   ExamServerAPI,
   InitialCasStatus,
   NewExamAnnotation,
-  NodeAnnotation,
+  RenderableAnnotation,
   RestrictedAudioPlaybackStats
 } from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
@@ -79,7 +79,7 @@ export interface CommonExamProps {
 
 export interface AnnotationProps {
   annotations?: ExamAnnotation[]
-  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: NodeAnnotation) => void
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: RenderableAnnotation) => void
   onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => void
 }
 interface UndoViewProps {
