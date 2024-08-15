@@ -1,12 +1,13 @@
 import { partition } from 'lodash-es'
 import React, { useContext, useEffect, useRef } from 'react'
 import { getElementPath } from '../../dom-utils'
-import { NewNodeAnnotation, NodeAnnotation } from '../../types/Score'
+import { NewRenderableAnnotation, RenderableAnnotation } from '../../types/Score'
 import { AnnotationContext } from '../context/AnnotationProvider'
 import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
-const isExamAnnotation = (annotation: NewNodeAnnotation | NodeAnnotation): annotation is NodeAnnotation =>
-  'annotationId' in annotation
+const isExamAnnotation = (
+  annotation: NewRenderableAnnotation | RenderableAnnotation
+): annotation is RenderableAnnotation => 'annotationId' in annotation
 
 export const AnnotatableText = ({ node }: { node: Node }) => {
   const annotationContextData = useContext(AnnotationContext)
@@ -46,15 +47,15 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
 
 export function markText(
   text: string,
-  annotations: (NodeAnnotation | NewNodeAnnotation)[],
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: NodeAnnotation) => void,
+  annotations: (RenderableAnnotation | NewRenderableAnnotation)[],
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void,
   setNewAnnotationRef: (ref: HTMLElement | undefined) => void
 ) {
   if (annotations.length === 0) {
     return [text]
   }
 
-  function getMarkedText(annotation: NodeAnnotation | NewNodeAnnotation) {
+  function getMarkedText(annotation: RenderableAnnotation | NewRenderableAnnotation) {
     return text.substring(annotation.startIndex, annotation.startIndex + annotation.length)
   }
 
@@ -82,8 +83,11 @@ export function markText(
 
   const [hiddenAnnotations, visibleAnnotations] = partition(validAnnotations, a => a.hidden)
 
+  const getKey = (annotation: RenderableAnnotation | NewRenderableAnnotation) =>
+    isExamAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
+
   hiddenAnnotations.forEach(annotation => {
-    const key = isExamAnnotation(annotation) ? annotation.annotationId : annotation.startIndex
+    const key = getKey(annotation)
     nodes.push(
       <mark
         key={key}
@@ -103,7 +107,7 @@ export function markText(
     }
 
     // Add marked text
-    const key = isExamAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
+    const key = getKey(annotation)
     nodes.push(
       annotation.hidden ? (
         <mark
@@ -142,9 +146,9 @@ const Mark = ({
   onClickAnnotation,
   setNewAnnotationRef
 }: {
-  annotation: NodeAnnotation | NewNodeAnnotation
+  annotation: RenderableAnnotation | NewRenderableAnnotation
   markedText: string
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: NodeAnnotation) => void
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void
   setNewAnnotationRef: (ref: HTMLElement | undefined) => void
 }) => {
   const markRef = useRef<HTMLElement>(null)

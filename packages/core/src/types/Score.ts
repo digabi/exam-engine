@@ -73,11 +73,11 @@ export interface AnnotationPart {
   hidden?: boolean
 }
 
-export interface NodeAnnotation extends AnnotationPart {
+export interface RenderableAnnotation extends AnnotationPart {
   annotationId: number
 }
 
-export type NewNodeAnnotation = AnnotationPart
+export type NewRenderableAnnotation = AnnotationPart
 
 // Shape annotations
 interface ShapeAnnotation extends BaseAnnotation {
