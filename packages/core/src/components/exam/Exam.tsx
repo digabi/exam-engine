@@ -6,6 +6,7 @@ import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import {
+  ExamAnnotation,
   ExamAnswer,
   ExamServerAPI,
   InitialCasStatus,
@@ -77,7 +78,7 @@ export interface CommonExamProps {
 }
 
 export interface AnnotationProps {
-  annotations?: Record<string, NodeAnnotation[]>
+  annotations?: ExamAnnotation[]
   onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: NodeAnnotation) => void
   onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => void
 }
