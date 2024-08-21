@@ -185,7 +185,15 @@ const App: React.FunctionComponent<{
       ) : route.name === 'attachments' ? (
         <Attachments {...examProps} />
       ) : route.name === 'grading-instructions' ? (
-        <GradingInstructions {...commonProps} />
+        <GradingInstructions
+          {...commonProps}
+          editable={true}
+          onContentChange={(answerHTML, displayNumber) => console.info(displayNumber, answerHTML.substring(0, 100))}
+          saveScreenshot={(type, data, displayNumber) => {
+            console.info(displayNumber, type, data)
+            return Promise.resolve('/foo/bar.jpg')
+          }}
+        />
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (
