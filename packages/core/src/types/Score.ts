@@ -50,7 +50,6 @@ export interface TextAnnotation extends BaseAnnotation {
 }
 
 // React annotations only use annotation types below this line
-
 export interface NewExamAnnotation {
   type: 'text'
   displayNumber: string
