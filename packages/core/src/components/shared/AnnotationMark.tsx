@@ -1,7 +1,7 @@
 import * as _ from 'lodash-es'
 import React, { useEffect, useRef } from 'react'
 import { NewRenderableAnnotation, RenderableAnnotation } from '../../types/Score'
-import { isExamAnnotation } from './markText'
+import { isExistingAnnotation } from './markText'
 
 export const AnnotationMark = ({
   annotation,
@@ -17,7 +17,7 @@ export const AnnotationMark = ({
   const markRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    if (markRef.current && !isExamAnnotation(annotation)) {
+    if (markRef.current && !isExistingAnnotation(annotation)) {
       setNewAnnotationRef(markRef.current)
     }
   }, [])
@@ -26,10 +26,10 @@ export const AnnotationMark = ({
     <mark
       ref={markRef}
       className="e-annotation"
-      data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
+      data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
       data-hidden="false"
       data-annotation-path={annotation.annotationAnchor}
-      onClick={e => (isExamAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
+      onClick={e => (isExistingAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
     >
       {markedText}
       {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}

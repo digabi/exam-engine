@@ -4,10 +4,10 @@ import { NewRenderableAnnotation, RenderableAnnotation } from '../../types/Score
 import { AnnotationMark } from './AnnotationMark'
 
 function getKey(annotation: RenderableAnnotation | NewRenderableAnnotation) {
-  return isExamAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
+  return isExistingAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
 }
 
-export function isExamAnnotation(
+export function isExistingAnnotation(
   annotation: NewRenderableAnnotation | RenderableAnnotation
 ): annotation is RenderableAnnotation {
   return 'annotationId' in annotation
@@ -39,7 +39,7 @@ export function markText(
       <mark
         key={key}
         className="e-annotation"
-        data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
+        data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
         data-hidden="true"
       />
     )
@@ -54,6 +54,10 @@ export function markText(
     /* "August 2024 annotation" refers to annotations made on or after 7.8.2024, and on or before x.8.2024.
      * They use trimmed exam content (textWithoutLineBreaksAndExtraSpaces) for calculating startIndex.
      * Support for "August 2024 annotations" can be removed at least when S25 exams are held.
+     *
+     * When the support can be removed, just do:
+     * const correctStartIndex = annotation.startIndex
+     * and remove any unused code left behind
      */
 
     const textWithoutLineBreaksAndExtraSpaces = text.replace(/\n/g, ' ').replace(/\s+/g, ' ')
@@ -87,7 +91,7 @@ export function markText(
         <mark
           key={key}
           className="e-annotation"
-          data-annotation-id={isExamAnnotation(annotation) ? annotation.annotationId : ''}
+          data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
           data-hidden="true"
         />
       ) : (
