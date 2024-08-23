@@ -1,26 +1,12 @@
 import React from 'react'
-import { GradingInstructionContext } from '../context/GradingInstructionContext'
-
-export interface GradingInstructionProps {
-  children?: React.ReactNode
-  editable?: boolean
-  onContentChange?: (answerHTML: string, displayNumber?: string) => void
-  saveScreenshot?: (type: string, data: Buffer, displayNumber?: string) => Promise<string>
-}
+import { GradingInstructionContext, GradingInstructionProps } from '../context/GradingInstructionContext'
 
 export const GradingInstructionProvider = ({
   editable,
   onContentChange,
   saveScreenshot,
   children
-}: GradingInstructionProps) => (
-  <GradingInstructionContext.Provider
-    value={{
-      editable: editable ?? false,
-      onContentChange: onContentChange ? onContentChange : () => {},
-      saveScreenshot
-    }}
-  >
-    {children}
-  </GradingInstructionContext.Provider>
-)
+}: GradingInstructionProps) => {
+  const contextValue = editable ? { editable, onContentChange, saveScreenshot } : { editable }
+  return <GradingInstructionContext.Provider value={contextValue}>{children}</GradingInstructionContext.Provider>
+}

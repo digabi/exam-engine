@@ -31,7 +31,8 @@ import QuestionTitle from './QuestionTitle'
 import Recording from './Recording'
 import Section from './Section'
 import SectionTitle from './SectionTitle'
-import { GradingInstructionProps, GradingInstructionProvider } from './GradingInstructionProvider'
+import { GradingInstructionProvider } from './GradingInstructionProvider'
+import { GradingInstructionProps } from '../context/GradingInstructionContext'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -107,13 +108,15 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
 
   useEffect(scrollToHash, [])
 
+  const props = editable ? { editable, onContentChange, saveScreenshot } : { editable }
+
   return (
     <AnnotationProvider
       annotations={annotations}
       onClickAnnotation={onClickAnnotation}
       onSaveAnnotation={onSaveAnnotation}
     >
-      <GradingInstructionProvider {...{ editable, onContentChange, saveScreenshot }}>
+      <GradingInstructionProvider {...props}>
         <I18nextProvider i18n={i18n}>
           <main className="e-exam e-grading-instructions" lang={subjectLanguage}>
             <React.StrictMode />
