@@ -1,5 +1,5 @@
 import * as _ from 'lodash-es'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { NewExamAnnotation, RenderableAnnotation } from '../../types/Score'
 import { AnnotationProps } from '../exam/Exam'
 import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
@@ -50,19 +50,23 @@ export const AnnotationProvider = ({
     return children
   }
 
-  const annotationPartsToRenderableAnnotations: Record<string, RenderableAnnotation[]> = _.groupBy(
-    annotations?.flatMap(a =>
-      a.annotationParts.map((p, index, arr) => {
-        const isLastChild = index === arr.length - 1
-        return {
-          ...p,
-          annotationId: a.annotationId,
-          markNumber: isLastChild ? a.markNumber : undefined,
-          hidden: a.hidden
-        }
-      })
-    ) || [],
-    'annotationAnchor'
+  const annotationPartsToRenderableAnnotations: Record<string, RenderableAnnotation[]> = useMemo(
+    () =>
+      _.groupBy(
+        annotations?.flatMap(a =>
+          a.annotationParts.map((p, index, arr) => {
+            const isLastChild = index === arr.length - 1
+            return {
+              ...p,
+              annotationId: a.annotationId,
+              markNumber: isLastChild ? a.markNumber : undefined,
+              hidden: a.hidden
+            }
+          })
+        ) || [],
+        'annotationAnchor'
+      ),
+    [JSON.stringify(annotations)]
   )
 
   return (
