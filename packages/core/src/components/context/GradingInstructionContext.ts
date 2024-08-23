@@ -1,9 +1,21 @@
 import React from 'react'
 
-interface GradingInstructionContextProps {
-  editable: boolean
-  onContentChange: (answerHTML: string, displayNumber?: string) => void
-  saveScreenshot?: (type: string, data: Buffer, displayNumber?: string) => Promise<string>
+export interface GradingInstructionPropsBase {
+  children?: React.ReactNode
 }
 
-export const GradingInstructionContext = React.createContext({} as GradingInstructionContextProps)
+export interface EditableProps extends GradingInstructionPropsBase {
+  editable: true
+  onContentChange: (answerHTML: string, displayNumber?: string) => void
+  saveScreenshot: (type: string, data: Buffer, displayNumber?: string) => Promise<string>
+}
+
+export interface NotEditableProps extends GradingInstructionPropsBase {
+  editable?: false
+  onContentChange?: never
+  saveScreenshot?: never
+}
+
+export type GradingInstructionProps = EditableProps | NotEditableProps
+
+export const GradingInstructionContext = React.createContext({} as GradingInstructionProps)
