@@ -12,6 +12,7 @@ export function EditableGradingInstruction({ element }: { element: Element }) {
 
   useEffect(() => {
     if (answerGradingInstructionDiv.current) {
+      const xpath = answerGradingInstructionDiv.current.getAttribute('data-xpath')
       makeRichText(
         answerGradingInstructionDiv.current,
         {
@@ -20,10 +21,30 @@ export function EditableGradingInstruction({ element }: { element: Element }) {
           screenshotImageSelector: 'img[src^="data:image/png"], img[src^="data:image/jpeg"]',
           fileTypes: ['image/png', 'image/jpeg']
         },
-        ({ answerHTML }) => (onContentChange ? onContentChange(answerHTML, displayNumber) : () => {})
+        ({ answerHTML }) => (onContentChange ? onContentChange(answerHTML, xpath) : () => {})
       )
       answerGradingInstructionDiv.current.replaceChildren(element)
     }
   }, [language])
-  return <div ref={answerGradingInstructionDiv} />
+  return <div ref={answerGradingInstructionDiv} data-xpath={xpathOf(element, language)} />
+}
+
+function indexOf(element: Element) {
+  if (element.parentElement) {
+    const siblings = Array.from(
+      element.parentElement.querySelectorAll(`${element.parentElement.localName} > ${element.localName}`)
+    )
+    const index = siblings.findIndex(s => s == element)
+    return `[${index + 1}]`
+  }
+  return ''
+}
+
+function xpathOf(element: Element, language: string): string {
+  const index = indexOf(element)
+  if (element.parentElement) {
+    const localization = element.nodeName.includes('grading-instruction') ? `/e:localization[@lang="${language}"]` : ''
+    return `${xpathOf(element.parentElement, language)}/${element.nodeName}${index}${localization}`
+  }
+  return `/${element.nodeName}${index}`
 }

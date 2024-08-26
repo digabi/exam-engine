@@ -188,7 +188,7 @@ const App: React.FunctionComponent<{
         <GradingInstructions
           {...commonProps}
           editable={true}
-          onContentChange={(answerHTML, displayNumber) => console.info(displayNumber, answerHTML.substring(0, 100))}
+          onContentChange={(answerHTML, xpath) => console.info(answerHTML.substring(0, 500), xpath)}
           saveScreenshot={(type, data, displayNumber) => {
             console.info(displayNumber, type, data)
             return Promise.resolve('/foo/bar.jpg')
