@@ -13,6 +13,7 @@ export interface CommonExamContext {
   language: string
   /** The language of the subject matter. Differs from the language in foreign language exams. */
   subjectLanguage: string
+  examType: string
   maxAnswers?: number
   maxScore?: number
   sections: Element[]
@@ -30,6 +31,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
     const root = doc.documentElement
     const maybeDate = getAttribute(root, 'date')
     const language = getAttribute(root, 'exam-lang')!
+    const examType = getAttribute(root, 'exam-type') ?? 'normal'
     const subjectLanguage = getAttribute(root, 'lang') || language
 
     return {
@@ -40,6 +42,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
       examCode: getAttribute(root, 'exam-code'),
       language,
       subjectLanguage,
+      examType,
       maxAnswers: getNumericAttribute(root, 'max-answers'),
       maxScore: getNumericAttribute(root, 'max-score'),
       sections: queryAll(root, 'section'),
