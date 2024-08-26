@@ -17,7 +17,6 @@ export function EditableGradingInstruction({ element }: { element: Element }) {
         {
           locale: language.startsWith('sv') ? 'SV' : 'FI',
           screenshotSaver: saveScreenshot ? ({ type, data }) => saveScreenshot(type, data, displayNumber) : undefined,
-          forceInit: true,
           screenshotImageSelector: 'img[src^="data:image/png"], img[src^="data:image/jpeg"]',
           fileTypes: ['image/png', 'image/jpeg']
         },
