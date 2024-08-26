@@ -186,9 +186,10 @@ const App: React.FunctionComponent<{
         <Attachments {...examProps} />
       ) : route.name === 'grading-instructions' ? (
         <GradingInstructions
+          key={`${examCode}-${language}-${type}`}
           {...commonProps}
           editable={true}
-          onContentChange={(answerHTML, displayNumber) => console.info(displayNumber, answerHTML.substring(0, 100))}
+          onContentChange={(answerHTML, path) => console.info(answerHTML.substring(0, 500), path)}
           saveScreenshot={(type, data, displayNumber) => {
             console.info(displayNumber, type, data)
             return Promise.resolve('/foo/bar.jpg')

@@ -3,15 +3,17 @@ import { makeRichText } from 'rich-text-editor'
 import { GradingInstructionContext } from '../context/GradingInstructionContext'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { QuestionContext } from '../context/QuestionContext'
+import { ExamComponentProps } from '../../createRenderChildNodes'
 
-export function EditableGradingInstruction({ element }: { element: Element }) {
-  const { language } = useContext(CommonExamContext)
+const EditableGradingInstruction: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
+  const { language, examType } = useContext(CommonExamContext)
   const { displayNumber } = useContext(QuestionContext)
   const { onContentChange, saveScreenshot } = useContext(GradingInstructionContext)
   const answerGradingInstructionDiv = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (answerGradingInstructionDiv.current) {
+      const path = element.getAttribute('path') ?? ''
       makeRichText(
         answerGradingInstructionDiv.current,
         {
@@ -20,10 +22,11 @@ export function EditableGradingInstruction({ element }: { element: Element }) {
           screenshotImageSelector: 'img[src^="data:image/png"], img[src^="data:image/jpeg"]',
           fileTypes: ['image/png', 'image/jpeg']
         },
-        ({ answerHTML }) => (onContentChange ? onContentChange(answerHTML, displayNumber) : () => {})
+        ({ answerHTML }) => (onContentChange ? onContentChange(answerHTML, path) : () => {})
       )
-      answerGradingInstructionDiv.current.replaceChildren(element)
     }
-  }, [language])
-  return <div ref={answerGradingInstructionDiv} />
+  }, [language, examType])
+  return <div ref={answerGradingInstructionDiv}>{renderChildNodes(element)}</div>
 }
+
+export default EditableGradingInstruction
