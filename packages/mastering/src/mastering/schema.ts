@@ -15,6 +15,7 @@ export interface Exam {
   questions: Question[]
   topLevelQuestions: Question[]
   answers: Answer[]
+  examGradingInstruction?: GradingInstruction
 }
 
 export interface Section {
@@ -31,4 +32,10 @@ export interface Question {
 export interface Answer {
   element: Element
   question: Element
+  gradingInstruction?: GradingInstruction
+}
+
+export interface GradingInstruction {
+  element: Element
+  localizations: { element: Element }[]
 }
