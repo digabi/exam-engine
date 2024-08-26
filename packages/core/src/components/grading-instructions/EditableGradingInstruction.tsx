@@ -5,13 +5,14 @@ import { CommonExamContext } from '../context/CommonExamContext'
 import { QuestionContext } from '../context/QuestionContext'
 
 export function EditableGradingInstruction({ element }: { element: Element }) {
-  const { language } = useContext(CommonExamContext)
+  const { language, examType } = useContext(CommonExamContext)
   const { displayNumber } = useContext(QuestionContext)
   const { onContentChange, saveScreenshot } = useContext(GradingInstructionContext)
   const answerGradingInstructionDiv = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (answerGradingInstructionDiv.current) {
+      const path = element.getAttribute('path') ?? ''
       makeRichText(
         answerGradingInstructionDiv.current,
         {
@@ -20,10 +21,10 @@ export function EditableGradingInstruction({ element }: { element: Element }) {
           screenshotImageSelector: 'img[src^="data:image/png"], img[src^="data:image/jpeg"]',
           fileTypes: ['image/png', 'image/jpeg']
         },
-        ({ answerHTML }) => (onContentChange ? onContentChange(answerHTML, displayNumber) : () => {})
+        ({ answerHTML }) => (onContentChange ? onContentChange(answerHTML, path, language, examType) : () => {})
       )
       answerGradingInstructionDiv.current.replaceChildren(element)
     }
-  }, [language])
+  }, [language, examType])
   return <div ref={answerGradingInstructionDiv} />
 }

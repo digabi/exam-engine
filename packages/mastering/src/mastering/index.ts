@@ -15,6 +15,7 @@ import {
   choiceAnswerOptionTypes,
   choiceAnswerTypes,
   Exam,
+  GradingInstruction,
   ns,
   Question,
   Section
@@ -291,6 +292,7 @@ async function masterExamVersion(
   // in order to keep question ids same within different exam versions
   // It helps when grading productive questions.
   addQuestionIds(root, generateId)
+  addGradingInstructionAttributes(root, language)
   applyLocalizations(root, language, type)
 
   const exam = parseExamStructure(root)
@@ -677,6 +679,25 @@ function addQuestionIds(root: Element, generateId: GenerateId) {
   }
 }
 
+function addGradingInstructionAttributes(root: Element, language: string) {
+  const exam = parseExamStructure(root)
+  if (exam.examGradingInstruction) {
+    const localization = exam.examGradingInstruction.localizations.find(lo => lo.attr('lang')?.name() == language)
+    addPathAttribute(localization ?? exam.examGradingInstruction.element)
+  }
+  for (const answer of exam.answers) {
+    if (answer.gradingInstruction) {
+      const localization = answer.gradingInstruction.localizations.find(lo => lo.attr('lang')?.value() == language)
+      addPathAttribute(localization ?? answer.gradingInstruction.element)
+    }
+  }
+  function addPathAttribute(element?: Element) {
+    if (element) {
+      element.attr('path', element.path())
+    }
+  }
+}
+
 function countSectionMaxAndMinAnswers(exam: Exam) {
   const examMaxAnswers = getNumericAttribute('max-answers', exam.element, null)
   if (!examMaxAnswers) {
@@ -814,6 +835,9 @@ function mkError(message: string, element: Element): SyntaxError {
 
 function parseExamStructure(element: Element): Exam {
   const sections = element.find<Element>('//e:section', ns).map(parseSection)
+  const [examGradingInstruction] = element
+    .find<Element>('//e:exam-grading-instruction', ns)
+    .map(parseGradingInstruction)
   const topLevelQuestions = sections.flatMap(s => s.questions)
   const questions: Question[] = []
   const answers: Answer[] = []
@@ -826,7 +850,7 @@ function parseExamStructure(element: Element): Exam {
 
   topLevelQuestions.forEach(collect)
 
-  return { element, sections, questions, topLevelQuestions, answers }
+  return { element, sections, questions, topLevelQuestions, answers, examGradingInstruction }
 }
 
 function parseSection(element: Element): Section {
@@ -834,8 +858,9 @@ function parseSection(element: Element): Section {
   return { element, questions }
 }
 
-function parseAnswer(element: Element, question: Element) {
-  return { element, question }
+function parseAnswer(element: Element, question: Element): Answer {
+  const [gradingInstruction] = element.find<Element>('.//e:answer-grading-instruction', ns).map(parseGradingInstruction)
+  return { element, question, gradingInstruction }
 }
 
 function parseQuestion(question: Element): Question {
@@ -849,6 +874,11 @@ function parseQuestion(question: Element): Question {
     const answers = question.find<Element>(xpathOr(answerTypes), ns).map(element => parseAnswer(element, question))
     return { element: question, childQuestions: [], answers }
   }
+}
+
+function parseGradingInstruction(gradingInstruction: Element): GradingInstruction {
+  const localizations = gradingInstruction.find<Element>('.//e:localization', ns)
+  return { element: gradingInstruction, localizations }
 }
 
 function mkGenerateId(): GenerateId {
