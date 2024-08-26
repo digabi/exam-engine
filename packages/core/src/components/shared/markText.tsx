@@ -50,12 +50,30 @@ export function markText(
   const onlyLeadingSpacesRemoved = text.replace(/^\s+/, ' ')
   const indentationSize = text.length - onlyLeadingSpacesRemoved.length
 
-  for (const annotation of visibleAnnotations) {
+  const notOverlappingAnnotations = visibleAnnotations.reduce(
+    (acc, annotation) => {
+      const overlapsWithAnyVisibleAnnotation = acc.some(
+        a =>
+          annotation.startIndex < a.startIndex + a.length &&
+          a.startIndex < annotation.startIndex + annotation.length &&
+          !a.hidden
+      )
+      acc.push({
+        ...annotation,
+        hidden: annotation.hidden || overlapsWithAnyVisibleAnnotation
+      })
+      return acc
+    },
+    [] as (RenderableAnnotation | NewRenderableAnnotation)[]
+  )
+
+  for (const annotation of notOverlappingAnnotations) {
     /* "August 2024 annotation" refers to annotations made on or after 7.8.2024, and on or before x.8.2024.
      * They use trimmed exam content (textWithoutLineBreaksAndExtraSpaces) for calculating startIndex.
      * Support for "August 2024 annotations" can be removed at least when S25 exams are held.
      *
-     * When the support can be removed, just do:
+     * TODO:
+     * When support for Aug 2024 annotations can be removed, just do:
      * const correctStartIndex = annotation.startIndex
      * and remove any unused code left behind
      */

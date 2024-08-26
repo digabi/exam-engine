@@ -73,7 +73,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
         startIndex: startAndLength?.startIndex || 0,
         length: startAndLength?.length || 0
       }
-    ]
+    ] as AnnotationPart[]
   } else {
     // selection is in multiple elements
     const annotations = rangeChildren?.reduce((acc, child, index, arr) => {
