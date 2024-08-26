@@ -226,6 +226,36 @@ describe('Annotations', () => {
     )
   })
 
+  it('annotations can not overlap — overlapping annotations are not rendered', () => {
+    const annotations = createAnnotations([
+      { id: 1, startIndex: 59, selectedText: 'esimerkiksi' },
+      { id: 2, startIndex: 62, selectedText: 'merkiksi jo' },
+      { id: 3, startIndex: 65, selectedText: 'kiksi jokin' },
+      { id: 4, startIndex: 71, selectedText: 'jokin koulu' } // does NOT overlap with the first annotation
+    ])
+    const annotationProps: AnnotationProps = {
+      annotations,
+      onClickAnnotation: () => {},
+      onSaveAnnotation: () => {}
+    }
+    const exam = render(<Exam {...getExamProps()} {...annotationProps} />)
+    expect(exam.container.querySelector('[data-annotation-id="1"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="1"] sup')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="1"]')?.textContent).toBe('esimerkiksi')
+
+    expect(exam.container.querySelector('[data-annotation-id="2"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="2"] sup')).not.toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="2"]')?.textContent).toBe('')
+
+    expect(exam.container.querySelector('[data-annotation-id="3"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="3"] sup')).not.toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="2"]')?.textContent).toBe('')
+
+    expect(exam.container.querySelector('[data-annotation-id="4"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="4"]')).toBeInTheDocument()
+    expect(exam.container.querySelector('[data-annotation-id="4"]')?.textContent).toBe('jokin koulu')
+  })
+
   it('grading instructions can be annotated', async () => {
     const gi = render(
       <GradingInstructions
