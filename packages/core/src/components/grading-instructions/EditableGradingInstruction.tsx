@@ -25,5 +25,22 @@ export function EditableGradingInstruction({ element }: { element: Element }) {
       answerGradingInstructionDiv.current.replaceChildren(element)
     }
   }, [language])
-  return <div ref={answerGradingInstructionDiv} />
+  return <div ref={answerGradingInstructionDiv} data-xpath={xpathOf(element)} />
+}
+
+function indexOf(element: Element) {
+  if (element.parentElement) {
+    const siblings = Array.from(element.parentElement.querySelectorAll(element.localName))
+    const index = siblings.findIndex(s => s == element)
+    return `[${index + 1}]`
+  }
+  return ''
+}
+
+function xpathOf(element: Element): string {
+  const index = indexOf(element)
+  if (element.parentElement) {
+    return `${xpathOf(element.parentElement)}/${element.nodeName}${index}`
+  }
+  return `/${element.nodeName}${index}`
 }
