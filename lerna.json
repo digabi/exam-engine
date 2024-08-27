@@ -1,6 +1,6 @@
 {
   "npmClient": "npm",
   "packages": ["packages/*"],
-  "version": "21.0.4-alpha.0",
+  "version": "22.0.0",
   "exact": true
 }
