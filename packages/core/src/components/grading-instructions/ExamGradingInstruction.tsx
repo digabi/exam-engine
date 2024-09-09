@@ -8,11 +8,7 @@ const ExamGradingInstruction: React.FunctionComponent<ExamComponentProps> = ({ e
 
   return (
     <div className="e-exam-grading-instruction notification e-pad-4" data-annotation-anchor="exam-grading-instruction">
-      {editable ? (
-        <EditableGradingInstruction element={element} renderChildNodes={renderChildNodes} />
-      ) : (
-        renderChildNodes(element)
-      )}
+      {editable ? <EditableGradingInstruction element={element} /> : renderChildNodes(element)}
     </div>
   )
 }
