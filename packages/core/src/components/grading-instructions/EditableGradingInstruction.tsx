@@ -1,32 +1,46 @@
-import React, { useContext, useEffect, useRef } from 'react'
-import { makeRichText } from 'rich-text-editor'
+import React, { useContext, useState } from 'react'
+import { schema } from 'prosemirror-schema-basic'
+import { EditorState } from 'prosemirror-state'
+import { toggleMark, baseKeymap } from 'prosemirror-commands'
 import { GradingInstructionContext } from '../context/GradingInstructionContext'
-import { CommonExamContext } from '../context/CommonExamContext'
-import { QuestionContext } from '../context/QuestionContext'
-import { ExamComponentProps } from '../../createRenderChildNodes'
+import { ProseMirror, useEditorEventCallback } from '@nytimes/react-prosemirror'
+import { DOMParser as ProseDOMParser, DOMSerializer } from 'prosemirror-model'
+import { keymap } from 'prosemirror-keymap'
 
-const EditableGradingInstruction: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
-  const { language, examType } = useContext(CommonExamContext)
-  const { displayNumber } = useContext(QuestionContext)
-  const { onContentChange, saveScreenshot } = useContext(GradingInstructionContext)
-  const answerGradingInstructionDiv = useRef<HTMLDivElement>(null)
+function BoldButton() {
+  const onClick = useEditorEventCallback(view => {
+    const toggleBoldMark = toggleMark(view.state.schema.marks.strong)
+    toggleBoldMark(view.state, view.dispatch, view)
+  })
 
-  useEffect(() => {
-    if (answerGradingInstructionDiv.current) {
-      const path = element.getAttribute('path') ?? ''
-      makeRichText(
-        answerGradingInstructionDiv.current,
-        {
-          locale: language.startsWith('sv') ? 'SV' : 'FI',
-          screenshotSaver: saveScreenshot ? ({ type, data }) => saveScreenshot(type, data, displayNumber) : undefined,
-          screenshotImageSelector: 'img[src^="data:image/png"], img[src^="data:image/jpeg"]',
-          fileTypes: ['image/png', 'image/jpeg']
-        },
-        ({ answerHTML }) => (onContentChange ? onContentChange(answerHTML, path) : () => {})
-      )
-    }
-  }, [language, examType])
-  return <div ref={answerGradingInstructionDiv}>{renderChildNodes(element)}</div>
+  return <button onClick={onClick}>Bold</button>
+}
+
+function EditableGradingInstruction({ element }: { element: Element }) {
+  const { onContentChange } = useContext(GradingInstructionContext)
+  const doc = ProseDOMParser.fromSchema(schema).parse(element)
+  const [mount, setMount] = useState<HTMLElement | null>(null)
+  const [state, setState] = useState(EditorState.create({ schema, doc, plugins: [keymap(baseKeymap)] }))
+
+  return (
+    <ProseMirror
+      mount={mount}
+      state={state}
+      dispatchTransaction={tr => {
+        setState(s => s.apply(tr))
+        const fragment = DOMSerializer.fromSchema(state.schema).serializeFragment(tr.doc.content)
+        const div = document.createElement('div')
+        div.appendChild(fragment)
+        const path = element.getAttribute('path') ?? ''
+        if (onContentChange) {
+          onContentChange(div.innerHTML, path)
+        }
+      }}
+    >
+      <BoldButton />
+      <div ref={setMount} />
+    </ProseMirror>
+  )
 }
 
 export default EditableGradingInstruction
