@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { schema } from 'prosemirror-schema-basic'
 import { EditorState } from 'prosemirror-state'
-import { toggleMark } from 'prosemirror-commands'
+import { toggleMark, baseKeymap } from 'prosemirror-commands'
 import { GradingInstructionContext } from '../context/GradingInstructionContext'
 import { ProseMirror, useEditorEventCallback } from '@nytimes/react-prosemirror'
 import { DOMParser as ProseDOMParser, DOMSerializer } from 'prosemirror-model'
+import { keymap } from 'prosemirror-keymap'
 
 function BoldButton() {
   const onClick = useEditorEventCallback(view => {
@@ -19,7 +20,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
   const { onContentChange } = useContext(GradingInstructionContext)
   const doc = ProseDOMParser.fromSchema(schema).parse(element)
   const [mount, setMount] = useState<HTMLElement | null>(null)
-  const [state, setState] = useState(EditorState.create({ schema, doc }))
+  const [state, setState] = useState(EditorState.create({ schema, doc, plugins: [keymap(baseKeymap)] }))
 
   return (
     <ProseMirror
