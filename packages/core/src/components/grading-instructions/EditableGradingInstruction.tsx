@@ -16,6 +16,15 @@ function BoldButton() {
   return <button onClick={onClick}>Bold</button>
 }
 
+function ItalicButton() {
+  const onClick = useEditorEventCallback(view => {
+    const toggleItalicMark = toggleMark(view.state.schema.marks.em)
+    toggleItalicMark(view.state, view.dispatch, view)
+  })
+
+  return <button onClick={onClick}>Italic</button>
+}
+
 function EditableGradingInstruction({ element }: { element: Element }) {
   const { onContentChange } = useContext(GradingInstructionContext)
   const doc = ProseDOMParser.fromSchema(schema).parse(element)
@@ -38,6 +47,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       }}
     >
       <BoldButton />
+      <ItalicButton />
       <div ref={setMount} />
     </ProseMirror>
   )
