@@ -884,7 +884,7 @@ function parseSection(element: Element): Section {
 }
 
 function parseAnswer(element: Element, question: Element): Answer {
-  const [gradingInstruction] = element.find<Element>('.//e:answer-grading-instruction', ns).map(parseGradingInstruction)
+  const [gradingInstruction] = element.find<Element>('./e:answer-grading-instruction', ns).map(parseGradingInstruction)
   return { element, question, gradingInstruction }
 }
 
@@ -894,7 +894,7 @@ function parseQuestion(question: Element): Question {
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
   const [gradingInstruction] = question
-    .find<Element>('.//e:question-grading-instruction', ns)
+    .find<Element>('./e:question-grading-instruction', ns)
     .map(parseGradingInstruction)
   if (childQuestions.length) {
     return { element: question, childQuestions, answers: [], gradingInstruction }
