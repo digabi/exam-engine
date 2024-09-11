@@ -292,7 +292,7 @@ async function masterExamVersion(
   // in order to keep question ids same within different exam versions
   // It helps when grading productive questions.
   addQuestionIds(root, generateId)
-  addGradingInstructionAttributes(root, language)
+  addGradingInstructionAttributes(root, language, type)
   applyLocalizations(root, language, type)
 
   const exam = parseExamStructure(root)
@@ -679,18 +679,48 @@ function addQuestionIds(root: Element, generateId: GenerateId) {
   }
 }
 
-function addGradingInstructionAttributes(root: Element, language: string) {
-  const exam = parseExamStructure(root)
+function findLocalization(gradingInstruction: GradingInstruction, language: string, type: ExamType) {
+  return gradingInstruction.localizations.find(localization =>
+    localization.attr('exam-type') == null
+      ? localization.attr('lang')?.value() == language
+      : localization.attr('lang')?.value() == language && localization.attr('exam-type')?.value() == type
+  )
+}
+
+function addGradingInstructionAttributesForExam(exam: Exam, language: string, type: ExamType) {
   if (exam.examGradingInstruction) {
-    const localization = exam.examGradingInstruction.localizations.find(lo => lo.attr('lang')?.name() == language)
+    const localization = findLocalization(exam.examGradingInstruction, language, type)
     exam.examGradingInstruction.element.attr('path', localization?.path() ?? exam.examGradingInstruction.element.path())
   }
-  for (const answer of exam.answers) {
+}
+
+function addGradingInstructionAttributesForQuestions(questions: Question[], language: string, type: ExamType) {
+  for (const question of questions) {
+    if (question.gradingInstruction) {
+      const localization = findLocalization(question.gradingInstruction, language, type)
+      question.gradingInstruction.element.attr(
+        'path',
+        localization?.path() ?? question.gradingInstruction.element.path()
+      )
+    }
+    addGradingInstructionAttributesForQuestions(question.childQuestions, language, type)
+  }
+}
+
+function addGradingInstructionAttributesForAnswers(answers: Answer[], language: string, type: ExamType) {
+  for (const answer of answers) {
     if (answer.gradingInstruction) {
-      const localization = answer.gradingInstruction.localizations.find(lo => lo.attr('lang')?.value() == language)
+      const localization = findLocalization(answer.gradingInstruction, language, type)
       answer.gradingInstruction.element.attr('path', localization?.path() ?? answer.gradingInstruction.element.path())
     }
   }
+}
+
+function addGradingInstructionAttributes(root: Element, language: string, type: ExamType) {
+  const exam = parseExamStructure(root)
+  addGradingInstructionAttributesForExam(exam, language, type)
+  addGradingInstructionAttributesForQuestions(exam.questions, language, type)
+  addGradingInstructionAttributesForAnswers(exam.answers, language, type)
 }
 
 function countSectionMaxAndMinAnswers(exam: Exam) {
@@ -863,16 +893,19 @@ function parseQuestion(question: Element): Question {
     .find<Element>('.//e:question', ns)
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
+  const [gradingInstruction] = question
+    .find<Element>('.//e:question-grading-instruction', ns)
+    .map(parseGradingInstruction)
   if (childQuestions.length) {
-    return { element: question, childQuestions, answers: [] }
+    return { element: question, childQuestions, answers: [], gradingInstruction }
   } else {
     const answers = question.find<Element>(xpathOr(answerTypes), ns).map(element => parseAnswer(element, question))
-    return { element: question, childQuestions: [], answers }
+    return { element: question, childQuestions: [], answers, gradingInstruction }
   }
 }
 
 function parseGradingInstruction(gradingInstruction: Element): GradingInstruction {
-  const localizations = gradingInstruction.find<Element>('.//e:localization', ns)
+  const localizations = gradingInstruction.find<Element>('./e:localization', ns)
   return { element: gradingInstruction, localizations }
 }
 
