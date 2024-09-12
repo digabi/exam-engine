@@ -1,7 +1,8 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { render, cleanup, fireEvent, act as testAct } from '@testing-library/react'
+import { render, cleanup, act as testAct, within } from '@testing-library/react'
 import ProseMirrorWrapper from './utils/ProseMirrorWrapper'
+import { mockCreateRange, promisifiedFireEventInput } from './utils/prosemirror'
 import FormatButton from '../src/components/grading-instructions/editor/FormatButton'
 import userEvent from '@testing-library/user-event'
 
@@ -19,24 +20,14 @@ describe('FormatButton', () => {
   describe('Italics', () => {
     it('Renders italics button', () => {
       const props = { markName: 'em', displayName: 'Italic' }
-      const { getByRole } = render(
-        <ProseMirrorWrapper>
-          <FormatButton {...props} />
-        </ProseMirrorWrapper>
-      )
-      const button = getByRole('button')
+      const { button } = renderEditorWithFormatButton(props)
       expect(button).toHaveTextContent(props.displayName)
     })
 
     it('Toggles button active state when clicked', async () => {
       const props = { markName: 'em', displayName: 'Italic' }
+      const { button } = renderEditorWithFormatButton(props)
 
-      const { getByRole } = render(
-        <ProseMirrorWrapper>
-          <FormatButton {...props} />
-        </ProseMirrorWrapper>
-      )
-      const button = getByRole('button')
       expect(button).toHaveStyle('font-weight: normal')
 
       await userEvent.click(button)
@@ -48,54 +39,37 @@ describe('FormatButton', () => {
 
     it('formats text', async () => {
       const props = { markName: 'em', displayName: 'Italic' }
+      const { button, paragraph } = renderEditorWithFormatButton(props)
 
-      const { getByRole } = render(
-        <ProseMirrorWrapper>
-          <FormatButton {...props} />
-        </ProseMirrorWrapper>
-      )
-      const button = getByRole('button')
       await userEvent.click(button)
-
-      const paragraph = getByRole('paragraph')
-      expect(paragraph).toBeInTheDocument()
-      fireEvent.input(paragraph, { target: { innerHTML: 'hello' } })
       await act(async () => await promisifiedFireEventInput(paragraph, { target: { innerHTML: 'hello' } }))
-      expect(getByRole('emphasis')).toHaveTextContent('hello')
+      expect(within(paragraph).getByRole('emphasis')).toHaveTextContent('hello')
     })
 
     it('em tags are rendered as italic', () => {
-      const { getByRole } = render(<ProseMirrorWrapper innerHtml="<em>Italic text</em>"></ProseMirrorWrapper>)
-      expect(getByRole('emphasis')).toHaveTextContent('Italic text')
+      const props = { markName: 'em', displayName: 'Italic', innerHtml: '<em>Italic text</em>' }
+      const { paragraph } = renderEditorWithFormatButton(props)
+      expect(within(paragraph).getByRole('emphasis')).toHaveTextContent('Italic text')
     })
 
     it('i tags are rendered as italic', () => {
-      const { getByRole } = render(<ProseMirrorWrapper innerHtml="<i>Italic text</i>"></ProseMirrorWrapper>)
-      expect(getByRole('emphasis')).toHaveTextContent('Italic text')
+      const props = { markName: 'em', displayName: 'Italic', innerHtml: '<i>Italic text</i>' }
+      const { paragraph } = renderEditorWithFormatButton(props)
+      expect(within(paragraph).getByRole('emphasis')).toHaveTextContent('Italic text')
     })
   })
 
   describe('Bold', () => {
     it('Renders bold button', () => {
       const props = { markName: 'strong', displayName: 'Bold' }
-      const { getByRole } = render(
-        <ProseMirrorWrapper>
-          <FormatButton {...props} />
-        </ProseMirrorWrapper>
-      )
-      const button = getByRole('button')
-      expect(button).toHaveTextContent('Bold')
+      const { button } = renderEditorWithFormatButton(props)
+      expect(button).toHaveTextContent(props.displayName)
     })
 
     it('Toggles button active state when clicked', async () => {
       const props = { markName: 'strong', displayName: 'Bold' }
+      const { button } = renderEditorWithFormatButton(props)
 
-      const { getByRole } = render(
-        <ProseMirrorWrapper>
-          <FormatButton {...props} />
-        </ProseMirrorWrapper>
-      )
-      const button = getByRole('button')
       expect(button).toHaveStyle('font-weight: normal')
 
       await userEvent.click(button)
@@ -108,64 +82,33 @@ describe('FormatButton', () => {
     it('formats text', async () => {
       const props = { markName: 'strong', displayName: 'Bold' }
 
-      const { getByRole } = render(
-        <ProseMirrorWrapper>
-          <FormatButton {...props} />
-        </ProseMirrorWrapper>
-      )
-      const button = getByRole('button')
-      await userEvent.click(button)
+      const { button, paragraph } = renderEditorWithFormatButton(props)
 
-      const paragraph = getByRole('paragraph')
-      fireEvent.input(paragraph, { target: { innerHTML: 'hello' } })
+      await userEvent.click(button)
       await act(async () => await promisifiedFireEventInput(paragraph, { target: { innerHTML: 'hello' } }))
-      expect(getByRole('strong')).toHaveTextContent('hello')
+      expect(within(paragraph).getByRole('strong')).toHaveTextContent('hello')
+    })
+
+    it('b tags are rendered as bold', () => {
+      const props = { markName: 'strong', displayName: 'bold', innerHtml: '<b>Bold text</b>' }
+      const { paragraph } = renderEditorWithFormatButton(props)
+      expect(within(paragraph).getByRole('strong')).toHaveTextContent('Bold text')
+    })
+
+    it('strong tags are rendered as bold', () => {
+      const props = { markName: 'strong', displayName: 'bold', innerHtml: '<strong>Bold text</strong>' }
+      const { paragraph } = renderEditorWithFormatButton(props)
+      expect(within(paragraph).getByRole('strong')).toHaveTextContent('Bold text')
     })
   })
 
-  it('b tags are rendered as bold', () => {
-    const { getByRole } = render(<ProseMirrorWrapper innerHtml="<b>Bold text</b>"></ProseMirrorWrapper>)
-    expect(getByRole('strong')).toHaveTextContent('Bold text')
-  })
-
-  it('strong tags are rendered as bold', () => {
-    const { getByRole } = render(<ProseMirrorWrapper innerHtml="<strong>Bold text</strong>"></ProseMirrorWrapper>)
-    expect(getByRole('strong')).toHaveTextContent('Bold text')
-  })
+  function renderEditorWithFormatButton(props: { markName: string; displayName: string; innerHtml?: string }) {
+    const { markName, displayName, innerHtml = '' } = props
+    const { getByRole } = render(
+      <ProseMirrorWrapper innerHtml={innerHtml}>
+        <FormatButton markName={markName} displayName={displayName} />
+      </ProseMirrorWrapper>
+    )
+    return { button: getByRole('button'), paragraph: getByRole('paragraph') }
+  }
 })
-
-function mockCreateRange() {
-  const originalCreateRange = global.window.document.createRange
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  global.Range = function Range() {}
-
-  const createContextualFragment = (html: string) => {
-    const div = document.createElement('div')
-    div.innerHTML = html
-    return div.children[0]
-  }
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  Range.prototype.createContextualFragment = (html: string) => createContextualFragment(html)
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  global.window.document.createRange = function createRange() {
-    return {
-      setEnd: () => {},
-      setStart: () => {},
-      getBoundingClientRect: () => ({ right: 0 }),
-      getClientRects: () => [],
-      createContextualFragment
-    }
-  }
-  return () => (global.window.document.createRange = originalCreateRange)
-}
-
-function promisifiedFireEventInput(element: Element, options: object) {
-  return new Promise<void>(resolve => {
-    fireEvent.input(element, options)
-    resolve()
-  })
-}
