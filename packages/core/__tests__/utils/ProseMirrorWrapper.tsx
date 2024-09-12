@@ -1,15 +1,20 @@
 import React, { ReactNode, useState } from 'react'
 import { ProseMirror } from '@nytimes/react-prosemirror'
 import { schema } from 'prosemirror-schema-basic'
+import { DOMParser as ProseDOMParser } from 'prosemirror-model'
 import { EditorState } from 'prosemirror-state'
 
 interface WrapperProps {
-  children: ReactNode
+  children?: ReactNode
+  innerHtml?: string
 }
 
-const ProseMirrorWrapper: React.FC<WrapperProps> = ({ children }) => {
+const ProseMirrorWrapper: React.FC<WrapperProps> = ({ children, innerHtml = '' }) => {
   const [mount, setMount] = useState<HTMLElement | null>(null)
-  const [state, setState] = useState(EditorState.create({ schema }))
+  const container = document.createElement('div')
+  container.innerHTML = innerHtml
+  const doc = ProseDOMParser.fromSchema(schema).parse(container)
+  const [state, setState] = useState(EditorState.create({ schema, doc }))
 
   return (
     <ProseMirror
