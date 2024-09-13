@@ -1,19 +1,34 @@
 import React, { useContext, useState } from 'react'
-import { schema } from 'prosemirror-schema-basic'
+import { schema as baseSchema } from 'prosemirror-schema-basic'
 import { EditorState } from 'prosemirror-state'
 import { toggleMark, baseKeymap } from 'prosemirror-commands'
 import { GradingInstructionContext } from '../context/GradingInstructionContext'
 import { ProseMirror, useEditorEventCallback } from '@nytimes/react-prosemirror'
-import { DOMParser as ProseDOMParser, DOMSerializer } from 'prosemirror-model'
+import { DOMParser as ProseDOMParser, DOMSerializer, Schema } from 'prosemirror-model'
 import { keymap } from 'prosemirror-keymap'
+import { TableMenu, tableSchema } from './editor/Table'
+
+const schema = new Schema({
+  nodes: baseSchema.spec.nodes.append(tableSchema),
+  marks: baseSchema.spec.marks
+})
 
 function BoldButton() {
   const onClick = useEditorEventCallback(view => {
     const toggleBoldMark = toggleMark(view.state.schema.marks.strong)
     toggleBoldMark(view.state, view.dispatch, view)
   })
-
   return <button onClick={onClick}>Bold</button>
+}
+
+function Menu() {
+  return (
+    <>
+      <BoldButton />
+      <ItalicButton />
+      <TableMenu />
+    </>
+  )
 }
 
 function ItalicButton() {
@@ -46,8 +61,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
         }
       }}
     >
-      <BoldButton />
-      <ItalicButton />
+      <Menu />
       <div ref={setMount} />
     </ProseMirror>
   )
