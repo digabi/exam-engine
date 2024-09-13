@@ -20,9 +20,7 @@ export const tableSchema: NodeSpec = {
     parseDOM: [
       {
         tag: 'table',
-        getAttrs: (dom: HTMLElement) => {
-          return { class: dom.getAttribute('class') }
-        }
+        getAttrs: (dom: HTMLElement) => ({ class: dom.getAttribute('class') })
       }
     ],
     attrs: { class: { default: '' } },
