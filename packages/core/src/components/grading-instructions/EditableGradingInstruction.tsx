@@ -12,6 +12,7 @@ import { FormulaPopup } from './editor/FormulaPopup'
 import FormatButton from './editor/FormatButton'
 import { NbspButton, nbspPlugin } from './editor/NBSP'
 import { spanWithNowrap } from './editor/spanWithNowrap'
+import { ImageUploadButton } from './editor/ImageUploadButton'
 
 const schema = new Schema({
   nodes: baseSchema.spec.nodes.append(formulaSchema).append(tableSchema),
@@ -28,6 +29,7 @@ function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) 
     <>
       <FormatButton markName="strong" displayName="Bold" />
       <FormatButton markName="em" displayName="Italic" />
+      <ImageUploadButton />
       <TableMenu />
       <FormulaButton setFormulaState={props.setFormulaState} />
       <NbspButton />
