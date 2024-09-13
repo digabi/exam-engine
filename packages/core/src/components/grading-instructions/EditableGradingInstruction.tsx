@@ -8,6 +8,7 @@ import { DOMParser as ProseDOMParser, DOMSerializer, Schema } from 'prosemirror-
 import { keymap } from 'prosemirror-keymap'
 import { TableMenu, tableSchema } from './editor/Table'
 import FormatButton from './editor/FormatButton'
+import { ImageUploadButton } from './editor/ImageUploadButton'
 
 const schema = new Schema({
   nodes: baseSchema.spec.nodes.append(tableSchema),
@@ -19,6 +20,7 @@ function Menu() {
     <>
       <FormatButton markName="strong" displayName="Bold" />
       <FormatButton markName="em" displayName="Italic" />
+      <ImageUploadButton />
       <TableMenu />
     </>
   )
