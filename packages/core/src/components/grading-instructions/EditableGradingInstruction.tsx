@@ -4,16 +4,14 @@ import { EditorState } from 'prosemirror-state'
 import { baseKeymap } from 'prosemirror-commands'
 import { GradingInstructionContext } from '../context/GradingInstructionContext'
 import { ProseMirror } from '@nytimes/react-prosemirror'
-import { DOMParser as ProseDOMParser, DOMSerializer, Schema } from 'prosemirror-model'
+import { DOMParser as ProseDOMParser, Schema } from 'prosemirror-model'
 import { keymap } from 'prosemirror-keymap'
 import { TableMenu, tableSchema } from './editor/Table'
 import FormatButton from './editor/FormatButton'
 import { ImageUploadButton } from './editor/ImageUploadButton'
-
-const schema = new Schema({
-  nodes: baseSchema.spec.nodes.append(tableSchema),
-  marks: baseSchema.spec.marks
-})
+import { extendedImageNode } from './editor/schemas/image-schema'
+import { CommonExamContext } from '../context/CommonExamContext'
+import { serializeFragment } from './editor/util'
 
 function Menu() {
   return (
@@ -28,6 +26,13 @@ function Menu() {
 
 function EditableGradingInstruction({ element }: { element: Element }) {
   const { onContentChange } = useContext(GradingInstructionContext)
+  const { resolveAttachment } = useContext(CommonExamContext)
+
+  const schema = new Schema({
+    nodes: baseSchema.spec.nodes.append(tableSchema).update('image', extendedImageNode(resolveAttachment)),
+    marks: baseSchema.spec.marks
+  })
+
   const doc = ProseDOMParser.fromSchema(schema).parse(element)
   const [mount, setMount] = useState<HTMLElement | null>(null)
   const [state, setState] = useState(EditorState.create({ schema, doc, plugins: [keymap(baseKeymap)] }))
@@ -38,7 +43,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       state={state}
       dispatchTransaction={tr => {
         setState(s => s.apply(tr))
-        const fragment = DOMSerializer.fromSchema(state.schema).serializeFragment(tr.doc.content)
+        const fragment = serializeFragment(schema, tr.doc.content)
         const div = document.createElement('div')
         div.appendChild(fragment)
         const path = element.getAttribute('path') ?? ''
