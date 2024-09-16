@@ -13,16 +13,8 @@ import FormatButton from './editor/FormatButton'
 import { NbspButton, nbspPlugin } from './editor/NBSP'
 import { spanWithNowrap } from './editor/spanWithNowrap'
 import { ImageUploadButton } from './editor/ImageUploadButton'
-
-const schema = new Schema({
-  nodes: baseSchema.spec.nodes.append(formulaSchema).append(tableSchema),
-  marks: baseSchema.spec.marks.append(spanWithNowrap)
-})
-
-const outputSchema = new Schema({
-  nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema),
-  marks: baseSchema.spec.marks.append(spanWithNowrap)
-})
+import { extendedImageNode } from './editor/schemas/image-schema'
+import { CommonExamContext } from '../context/CommonExamContext'
 
 function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) {
   return (
@@ -39,6 +31,26 @@ function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) 
 
 function EditableGradingInstruction({ element }: { element: Element }) {
   const { onContentChange } = useContext(GradingInstructionContext)
+  const { resolveAttachment } = useContext(CommonExamContext)
+
+  const schema = new Schema({
+    nodes: baseSchema.spec.nodes
+      .append(formulaOutputSchema)
+      .append(tableSchema)
+      .append(spanWithNowrap)
+      .update('image', extendedImageNode(resolveAttachment)),
+    marks: baseSchema.spec.marks
+  })
+
+  const outputSchema = new Schema({
+    nodes: baseSchema.spec.nodes
+      .append(formulaOutputSchema)
+      .append(tableSchema)
+      .append(spanWithNowrap)
+      .update('image', extendedImageNode(resolveAttachment)),
+    marks: baseSchema.spec.marks
+  })
+
   const doc = ProseDOMParser.fromSchema(schema).parse(element)
   const [mount, setMount] = useState<HTMLElement | null>(null)
   const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
