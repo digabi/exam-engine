@@ -13,8 +13,6 @@ export function ImageUploadButton() {
 
   const updateEditor = useEditorEventCallback((view, url) => {
     const { state } = view
-    console.log('state', state)
-    console.log('state', url)
     const imageNode = state.schema.nodes.image.create({ src: url })
     const transaction = view.state.tr.replaceSelectionWith(imageNode)
     view.dispatch(transaction)
