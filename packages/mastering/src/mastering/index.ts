@@ -301,7 +301,7 @@ async function masterExamVersion(
   addSectionNumbers(exam)
   addQuestionNumbers(exam)
   addAnswerNumbers(exam)
-  addCustomTagsAsClasses(exam, ['e:image'])
+  // addCustomTagsAsClasses(exam, ['e:image'])
 
   validateAttachments(exam, language, type)
   addAttachmentNumbers(exam)
@@ -359,6 +359,10 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
         const audioMetadata = metadata as AudioMetadata
         attachment.attr('duration', String(audioMetadata.duration))
       } else {
+        if (type === 'image') {
+          const classes = attachment.attr('class')?.value() ?? ''
+          attachment.attr('class', `${classes} e-image`.trim())
+        }
         const imageOrVideoMetadata = metadata as ImageMetadata | VideoMetadata
         attachment.attr('width', String(imageOrVideoMetadata.width))
         attachment.attr('height', String(imageOrVideoMetadata.height))
@@ -367,15 +371,15 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
   }
 }
 
-function addCustomTagsAsClasses(exam: Exam, tags: string[]) {
-  const xpathExpression = tags.map(tag => `//${tag}`).join(' | ')
-  const elements = exam.element.find<Element>(xpathExpression, ns)
-  for (const element of elements) {
-    const classes = element.attr('class')?.value() ?? ''
-    const newClass = `e-${element.name()}`
-    element.attr('class', `${classes} ${newClass}`.trim())
-  }
-}
+// function addCustomTagsAsClasses(exam: Exam, tags: string[]) {
+//   const xpathExpression = tags.map(tag => `//${tag}`).join(' | ')
+//   const elements = exam.element.find<Element>(xpathExpression, ns)
+//   for (const element of elements) {
+//     const classes = element.attr('class')?.value() ?? ''
+//     const newClass = `e-${element.name()}`
+//     element.attr('class', `${classes} ${newClass}`.trim())
+//   }
+// }
 
 function collectAttachments(exam: Element, attachments: Element[]): Attachment[] {
   const mkAttachment = (
