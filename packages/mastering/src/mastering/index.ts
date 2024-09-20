@@ -301,6 +301,7 @@ async function masterExamVersion(
   addSectionNumbers(exam)
   addQuestionNumbers(exam)
   addAnswerNumbers(exam)
+  addCustomTagsAsClasses(exam, ['e:image'])
 
   validateAttachments(exam, language, type)
   addAttachmentNumbers(exam)
@@ -363,6 +364,16 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
         attachment.attr('height', String(imageOrVideoMetadata.height))
       }
     }
+  }
+}
+
+function addCustomTagsAsClasses(exam: Exam, tags: string[]) {
+  const xpathExpression = tags.map(tag => `//${tag}`).join(' | ')
+  const elements = exam.element.find<Element>(xpathExpression, ns)
+  for (const element of elements) {
+    const classes = element.attr('class')?.value() ?? ''
+    const newClass = `e-${element.name()}`
+    element.attr('class', `${classes} ${newClass}`.trim())
   }
 }
 
