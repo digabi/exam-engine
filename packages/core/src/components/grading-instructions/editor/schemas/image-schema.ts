@@ -7,20 +7,20 @@ export const extendedImageNode = (resolveAttachment: (filename: string) => strin
   ...existingImageNode,
   attrs: {
     ...existingImageNode?.attrs,
-    class: { default: 'e-image' }
+    width: { default: null },
+    height: { default: null },
+    class: { default: null },
+    lang: { default: null }
   },
   parseDOM: [
     {
-      tag: '[src]',
+      tag: '.e-image',
       getAttrs(element) {
-        if (element.nodeName.toLowerCase() === 'e:image') {
-          return {
-            ...Object.fromEntries(Array.from(element.attributes).map(attr => [attr.name, attr.value])),
-            src: resolveAttachment(element.getAttribute('src') || ''),
-            class: `${element.getAttribute('class')} e-image`
-          }
+        const attrs = {
+          ...Object.fromEntries(Array.from(element.attributes).map(attr => [attr.name, attr.value])),
+          src: resolveAttachment(element.getAttribute('src') || '')
         }
-        return false
+        return attrs
       }
     }
   ],
