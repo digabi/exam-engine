@@ -6,20 +6,28 @@ import { GradingInstructionContext } from '../context/GradingInstructionContext'
 import { ProseMirror } from '@nytimes/react-prosemirror'
 import { DOMParser as ProseDOMParser, DOMSerializer, Schema } from 'prosemirror-model'
 import { keymap } from 'prosemirror-keymap'
+import { FormulaButton, FormulaEditorState, formulaOutputSchema, FormulaPlugin, formulaSchema } from './editor/Formula'
 import { TableMenu, tableSchema } from './editor/Table'
+import { FormulaPopup } from './editor/FormulaPopup'
 import FormatButton from './editor/FormatButton'
 
 const schema = new Schema({
-  nodes: baseSchema.spec.nodes.append(tableSchema),
+  nodes: baseSchema.spec.nodes.append(formulaSchema).append(tableSchema),
   marks: baseSchema.spec.marks
 })
 
-function Menu() {
+const outputSchema = new Schema({
+  nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema),
+  marks: baseSchema.spec.marks
+})
+
+function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) {
   return (
     <>
       <FormatButton markName="strong" displayName="Bold" />
       <FormatButton markName="em" displayName="Italic" />
       <TableMenu />
+      <FormulaButton setFormulaState={props.setFormulaState} />
     </>
   )
 }
@@ -28,7 +36,9 @@ function EditableGradingInstruction({ element }: { element: Element }) {
   const { onContentChange } = useContext(GradingInstructionContext)
   const doc = ProseDOMParser.fromSchema(schema).parse(element)
   const [mount, setMount] = useState<HTMLElement | null>(null)
-  const [state, setState] = useState(EditorState.create({ schema, doc, plugins: [keymap(baseKeymap)] }))
+  const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
+  const formulaPlugin = new FormulaPlugin(setFormulaState)
+  const [state, setState] = useState(EditorState.create({ schema, doc, plugins: [keymap(baseKeymap), formulaPlugin] }))
 
   return (
     <ProseMirror
@@ -36,7 +46,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       state={state}
       dispatchTransaction={tr => {
         setState(s => s.apply(tr))
-        const fragment = DOMSerializer.fromSchema(state.schema).serializeFragment(tr.doc.content)
+        const fragment = DOMSerializer.fromSchema(outputSchema).serializeFragment(tr.doc.content)
         const div = document.createElement('div')
         div.appendChild(fragment)
         const path = element.getAttribute('path') ?? ''
@@ -45,8 +55,17 @@ function EditableGradingInstruction({ element }: { element: Element }) {
         }
       }}
     >
-      <Menu />
+      <Menu setFormulaState={setFormulaState} />
       <div ref={setMount} />
+
+      {formulaState && (
+        <FormulaPopup
+          state={formulaState}
+          onFinish={() => {
+            setFormulaState(null)
+          }}
+        />
+      )}
     </ProseMirror>
   )
 }
