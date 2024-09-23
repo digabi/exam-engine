@@ -13,7 +13,7 @@ import FormatButton from './editor/FormatButton'
 import { NbspButton, nbspPlugin } from './editor/NBSP'
 import { spanWithNowrap } from './editor/spanWithNowrap'
 import { ImageUploadButton } from './editor/ImageUploadButton'
-import { extendedImageNode } from './editor/schemas/image-schema'
+import { imageInputSchema, imageOutputSchema } from './editor/schemas/image-schema'
 import { CommonExamContext } from '../context/CommonExamContext'
 
 function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) {
@@ -33,12 +33,12 @@ function EditableGradingInstruction({ element }: { element: Element }) {
   const { onContentChange } = useContext(GradingInstructionContext)
   const { resolveAttachment } = useContext(CommonExamContext)
 
-  const schema = new Schema({
+  const inputSchema = new Schema({
     nodes: baseSchema.spec.nodes
       .append(formulaOutputSchema)
       .append(tableSchema)
       .append(spanWithNowrap)
-      .update('image', extendedImageNode(resolveAttachment)),
+      .update('image', imageInputSchema(resolveAttachment)),
     marks: baseSchema.spec.marks
   })
 
@@ -47,16 +47,16 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(formulaOutputSchema)
       .append(tableSchema)
       .append(spanWithNowrap)
-      .update('image', extendedImageNode(resolveAttachment)),
+      .update('image', imageOutputSchema),
     marks: baseSchema.spec.marks
   })
 
-  const doc = ProseDOMParser.fromSchema(schema).parse(element)
+  const doc = ProseDOMParser.fromSchema(inputSchema).parse(element)
   const [mount, setMount] = useState<HTMLElement | null>(null)
   const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
   const formulaPlugin = new FormulaPlugin(setFormulaState)
   const [state, setState] = useState(
-    EditorState.create({ schema, doc, plugins: [keymap(baseKeymap), formulaPlugin, nbspPlugin] })
+    EditorState.create({ schema: inputSchema, doc, plugins: [keymap(baseKeymap), formulaPlugin] })
   )
 
   return (
