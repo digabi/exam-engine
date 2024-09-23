@@ -1,3 +1,4 @@
+import * as _ from 'lodash-es'
 import { NodeSpec } from 'prosemirror-model'
 import { schema as baseSchema } from 'prosemirror-schema-basic'
 
@@ -10,8 +11,7 @@ export const imageInputSchema = (resolveAttachment: (filename: string) => string
     width: { default: null },
     height: { default: null },
     class: { default: null },
-    lang: { default: null },
-    'data-editor-id': { default: 'e-image' }
+    lang: { default: null }
   },
   parseDOM: [
     {
@@ -34,10 +34,14 @@ const pathToFilename = (path: string) => path.split('/').pop()
 
 export const imageOutputSchema: NodeSpec = {
   toDOM(node) {
-    const attributes = {
-      ...node.attrs,
-      src: typeof node.attrs.src == 'string' ? pathToFilename(node.attrs.src) : ''
-    }
+    const attrs = _.pick(node.attrs, ['lang', 'class', 'src'])
+    const filteredAttrs = _.pickBy(attrs, _.isString)
+    const attributes = _.mapValues(filteredAttrs, (value, key) => {
+      if (key === 'src') {
+        return pathToFilename(value)
+      }
+      return value
+    })
     return ['e:image', attributes]
   }
 }
