@@ -31,8 +31,8 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openGradingInstructionsPage()
       await addEquation('\\sqrt{1}')
       await openEquationEditor(`\\\\sqrt{1}`)
-      await page.click('[data-testid="delete-formula"]')
-      await page.click('[data-testid="delete-formula"]')
+      await page.click('[data-testid="e-popup-delete"]')
+      await page.click('[data-testid="e-popup-delete"]')
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
       expect(value).not.toContain('<img alt="\\sqrt{1}" src="/math.svg?latex=\\sqrt{1}" contenteditable="false">')
     })
@@ -56,7 +56,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openEquationEditor(`\\\\sqrt{1}`)
       await openMathEquationEditor('\\\\sqrt{1}')
       await replaceLatex('\\sqrt{2}')
-      await page.click('[data-testid="cancel-formula-changes"]')
+      await page.click('[data-testid="e-popup-cancel"]')
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
         `<img alt="\\sqrt{1}" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
@@ -67,9 +67,9 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openGradingInstructionsPage()
       await focusOnEditor()
       await addFormula()
-      await page.type('.formula-popup-content', 'text')
-      expect(await page.waitForSelector(`[data-testid="save-formula"]:disabled`)).toBeTruthy()
-      expect(await getInnerHtml('.formula-popup-error')).toBe('Ainoastaan yksi kaava sallittu')
+      await page.type('.e-popup-content', 'text')
+      expect(await page.waitForSelector(`[data-testid="e-popup-save"]:disabled`)).toBeTruthy()
+      expect(await getInnerHtml('.e-popup-error')).toBe('Ainoastaan yksi kaava sallittu')
     })
 
     async function replaceLatex(latex: string) {
@@ -82,7 +82,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
     }
 
     async function openMathEquationEditor(latex: string) {
-      await page.click(`.formula-popup img[alt="${latex}"]`)
+      await page.click(`.e-popup img[alt="${latex}"]`)
     }
 
     async function clearInput(selector: string) {
@@ -102,9 +102,9 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
     }
 
     async function saveEquation() {
-      await page.click(`.formula-popup-content`)
-      await page.waitForSelector(`[data-testid="save-formula"]:not(:disabled)`)
-      await page.click('[data-testid="save-formula"]')
+      await page.click(`.e-popup-button-area`)
+      await page.waitForSelector(`[data-testid="e-popup-save"]:not(:disabled)`)
+      await page.click('[data-testid="e-popup-save"]')
     }
 
     async function openGradingInstructionsPage() {
