@@ -16,6 +16,10 @@ import createRouter from 'router5'
 import browserPlugin from 'router5-plugin-browser'
 import Grading from './PreviewGrading'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
+import {
+  EditableProps,
+  NotEditableProps
+} from '@digabi/exam-engine-core/dist/components/context/GradingInstructionContext'
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }
@@ -177,6 +181,19 @@ const App: React.FunctionComponent<{
     }
   }
 
+  const gradingInstructionProps = {
+    ...commonProps,
+    ...(process.env.EDITABLE_GRADING_INSTRUCTIONS
+      ? ({
+          editable: true,
+          onContentChange: (answerHTML: string, path: string) => console.info(answerHTML.substring(0, 500), path),
+          saveScreenshot: (type: string, data: Buffer, displayNumber: string) => {
+            console.info(displayNumber, type, data)
+            return Promise.resolve('/foo/bar.jpg')
+          }
+        } as EditableProps)
+      : ({ editable: false } as NotEditableProps))
+  }
   return (
     <div ref={callback}>
       <Toolbar {...{ translation, translationFilename }} />
@@ -185,16 +202,7 @@ const App: React.FunctionComponent<{
       ) : route.name === 'attachments' ? (
         <Attachments {...examProps} />
       ) : route.name === 'grading-instructions' ? (
-        <GradingInstructions
-          key={`${examCode}-${language}-${type}`}
-          {...commonProps}
-          editable={true}
-          onContentChange={(answerHTML, path) => console.info(answerHTML.substring(0, 500), path)}
-          saveScreenshot={(type, data, displayNumber) => {
-            console.info(displayNumber, type, data)
-            return Promise.resolve('/foo/bar.jpg')
-          }}
-        />
+        <GradingInstructions key={`${examCode}-${language}-${type}`} {...commonProps} {...gradingInstructionProps} />
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (
