@@ -1,0 +1,75 @@
+.e-exam {
+  .e-menu-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .e-menu-dropdown-toggle {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .e-menu-dropdown-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1;
+    width: 120px;
+
+    li {
+      padding-left: 5px;
+      padding-right: 5px;
+      cursor: pointer;
+      margin-left: 0;
+    }
+
+    li:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+.ProseMirror {
+  img[alt] {
+    padding: 0;
+    vertical-align: middle;
+  }
+}
+
+.formula-popup {
+  background: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px 0px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 300;
+  padding: 0.5rem 0.75rem;
+  margin-top: 1rem;
+
+  .formula-popup-error {
+    color: red;
+  }
+
+  .formula-popup-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.25rem 0.75rem;
+    min-height: 0;
+    transition: all 0.5s;
+    width: initial;
+    min-width: 300px;
+    margin-bottom: 1rem;
+
+    &.rich-text-editor {
+      min-height: 40px;
+    }
+  }
+}
