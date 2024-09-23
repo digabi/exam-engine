@@ -841,6 +841,7 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
         throwOnLatexError
       )) as string
       formula.attr('svg', svg)
+      formula.attr('data-editor-id', 'e-formula')
     } catch (errors) {
       if (Array.isArray(errors) && errors.every(_.isString)) {
         throw mkError(errors.join(', '), formula)

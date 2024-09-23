@@ -12,7 +12,7 @@ export const AnnotationMark = ({
   annotation: RenderableAnnotation | NewRenderableAnnotation
   markedText: string
   onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void
-  setNewAnnotationRef: (ref: HTMLElement | undefined) => void
+  setNewAnnotationRef: (ref: HTMLElement | null) => void
 }) => {
   const markRef = useRef<HTMLElement>(null)
 
