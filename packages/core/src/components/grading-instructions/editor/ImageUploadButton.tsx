@@ -1,9 +1,10 @@
 import { useEditorEventCallback } from '@nytimes/react-prosemirror'
-import React, { useRef, ChangeEvent, useState } from 'react'
+import React, { useRef, ChangeEvent } from 'react'
+import { EditableProps } from '../../context/GradingInstructionContext'
+import { Buffer } from 'buffer'
 
-export function ImageUploadButton() {
+export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['saveScreenshot'] }) {
   const inputRef = useRef<HTMLInputElement | null>(null)
-  const [uploading, setUploading] = useState(false)
 
   const handleButtonClick = () => {
     if (inputRef.current) {
@@ -19,21 +20,16 @@ export function ImageUploadButton() {
     view.focus()
   })
 
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) {
-      // Create a Blob URL for local preview
       const blobUrl = URL.createObjectURL(file)
-      setUploading(true)
       updateEditor(blobUrl)
-
       try {
-        // Upload the file to S3 using the presigned URL
-        // Replace the Blob URL with the S3 URL
-      } catch (error) {
-        console.error('Error uploading file:', error)
-      } finally {
-        setUploading(false)
+        const permanentUrl = await saveImage('', Buffer.from(await file.arrayBuffer()))
+        updateEditor(permanentUrl)
+      } catch (e) {
+        console.error('error saving file', e)
       }
     }
   }
@@ -48,7 +44,6 @@ export function ImageUploadButton() {
         ref={inputRef}
         onChange={e => void handleFileChange(e)}
       />
-      {uploading && <p>Uploading...</p>}
     </>
   )
 }

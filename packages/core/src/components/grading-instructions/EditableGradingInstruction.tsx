@@ -17,11 +17,12 @@ import { imageInputSchema, imageOutputSchema } from './editor/schemas/image-sche
 import { CommonExamContext } from '../context/CommonExamContext'
 
 function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) {
+  const { saveScreenshot } = useContext(GradingInstructionContext)
   return (
     <>
       <FormatButton markName="strong" displayName="Bold" />
       <FormatButton markName="em" displayName="Italic" />
-      <ImageUploadButton />
+      {saveScreenshot && <ImageUploadButton saveImage={saveScreenshot} />}
       <TableMenu />
       <FormulaButton setFormulaState={props.setFormulaState} />
       <NbspButton />
@@ -35,7 +36,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
 
   const inputSchema = new Schema({
     nodes: baseSchema.spec.nodes
-      .append(formulaOutputSchema)
+      .append(formulaSchema)
       .append(tableSchema)
       .append(spanWithNowrap)
       .update('image', imageInputSchema(resolveAttachment)),
