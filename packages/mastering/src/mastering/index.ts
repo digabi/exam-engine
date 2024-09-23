@@ -301,7 +301,6 @@ async function masterExamVersion(
   addSectionNumbers(exam)
   addQuestionNumbers(exam)
   addAnswerNumbers(exam)
-  // addCustomTagsAsClasses(exam, ['e:image'])
 
   validateAttachments(exam, language, type)
   addAttachmentNumbers(exam)
@@ -360,8 +359,7 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
         attachment.attr('duration', String(audioMetadata.duration))
       } else {
         if (type === 'image') {
-          const classes = attachment.attr('class')?.value() ?? ''
-          attachment.attr('class', `${classes} e-image`.trim())
+          addDataAttributesForEditor([attachment], 'e-image')
         }
         const imageOrVideoMetadata = metadata as ImageMetadata | VideoMetadata
         attachment.attr('width', String(imageOrVideoMetadata.width))
@@ -371,15 +369,11 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
   }
 }
 
-// function addCustomTagsAsClasses(exam: Exam, tags: string[]) {
-//   const xpathExpression = tags.map(tag => `//${tag}`).join(' | ')
-//   const elements = exam.element.find<Element>(xpathExpression, ns)
-//   for (const element of elements) {
-//     const classes = element.attr('class')?.value() ?? ''
-//     const newClass = `e-${element.name()}`
-//     element.attr('class', `${classes} ${newClass}`.trim())
-//   }
-// }
+function addDataAttributesForEditor(elements: Element[], attribute: string) {
+  for (const element of elements) {
+    element.attr('data-editor-id', attribute)
+  }
+}
 
 function collectAttachments(exam: Element, attachments: Element[]): Attachment[] {
   const mkAttachment = (

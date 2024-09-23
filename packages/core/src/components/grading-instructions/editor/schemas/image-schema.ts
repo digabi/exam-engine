@@ -10,11 +10,12 @@ export const extendedImageNode = (resolveAttachment: (filename: string) => strin
     width: { default: null },
     height: { default: null },
     class: { default: null },
-    lang: { default: null }
+    lang: { default: null },
+    'data-editor-id': { default: null }
   },
   parseDOM: [
     {
-      tag: '.e-image',
+      tag: '[data-editor-id="e-image"]',
       getAttrs(element) {
         const attrs = {
           ...Object.fromEntries(Array.from(element.attributes).map(attr => [attr.name, attr.value])),
