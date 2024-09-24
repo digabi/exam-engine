@@ -1,8 +1,6 @@
-import React from 'react'
-import { fireEvent, render, act as testAct, RenderResult } from '@testing-library/react'
-import EditableGradingInstruction from '../src/components/grading-instructions/EditableGradingInstruction'
-import { GradingInstructionProvider } from '../src/components/grading-instructions/GradingInstructionProvider'
+import { fireEvent, act as testAct, RenderResult } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { renderGradingInstruction } from './utils/renderEditableGradingInstruction'
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
 
@@ -25,7 +23,7 @@ describe('EditableGradingInstruction', () => {
     it('Table is rendered as expected', () => {
       const inputData = '<table class="e-table"><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table class="e-table"><tbody><tr><td><p>foo</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData)
+      const result = renderGradingInstruction(inputData)
       const table = result.container.querySelector('.ProseMirror')
       expect(table!.innerHTML).toBe(expectedOutput)
     })
@@ -34,7 +32,7 @@ describe('EditableGradingInstruction', () => {
       cleanup = mockCreateRange()
       const inputData = '<table class="e-table"><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table class="e-table"><tbody><tr><td><p>bar</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await act(async () => {
         insertText(await result.findByText('foo'), 'bar')
       })
@@ -46,7 +44,7 @@ describe('EditableGradingInstruction', () => {
       const inputData = ''
       const expectedOutput =
         '<table class="e-table e-width-half"><tbody><tr><td><p></p></td><td><p></p></td></tr><tr><td><p></p></td><td><p></p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await act(async () => {
         await userEvent.click(await result.findByText('Lisää taulukko'))
       })
@@ -56,7 +54,7 @@ describe('EditableGradingInstruction', () => {
     it('Remove table removes table', async () => {
       const inputData = '<table><tr><td>foo</td></tr></table>'
       const expectedOutput = '<p></p>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista taulukko')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -64,7 +62,7 @@ describe('EditableGradingInstruction', () => {
     it('Insert column adds column', async () => {
       const inputData = '<table><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table><tbody><tr><td><p>foo</p></td><td><p></p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Lisää sarake')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -72,7 +70,7 @@ describe('EditableGradingInstruction', () => {
     it('Remove column removes column', async () => {
       const inputData = '<table><tr><td>foo</td><td>bar</td></tr></table>'
       const expectedOutput = '<table><tbody><tr><td><p>bar</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista sarake')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -80,7 +78,7 @@ describe('EditableGradingInstruction', () => {
     it('Insert row adds row', async () => {
       const inputData = '<table><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table><tbody><tr><td><p>foo</p></td></tr><tr><td><p></p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Lisää rivi')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -88,7 +86,7 @@ describe('EditableGradingInstruction', () => {
     it('Remove row removes row', async () => {
       const inputData = '<table><tr><td>foo</td></tr><tr><td>bar</td></tr></table>'
       const expectedOutput = '<table><tbody><tr><td><p>bar</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista rivi')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -96,7 +94,7 @@ describe('EditableGradingInstruction', () => {
     it('Full width changes full width class to table', async () => {
       const inputData = '<table class="e-width-half"><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table class="e-width-full"><tbody><tr><td><p>foo</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Täysi leveys')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -104,7 +102,7 @@ describe('EditableGradingInstruction', () => {
     it('Half width changes half width class to table', async () => {
       const inputData = '<table class="e-width-full"><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table class="e-width-half"><tbody><tr><td><p>foo</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Puolikas leveys')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -112,7 +110,7 @@ describe('EditableGradingInstruction', () => {
     it('Remove borders adds e-table--borderless class to table', async () => {
       const inputData = '<table><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table class="e-table--borderless"><tbody><tr><td><p>foo</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista reunat')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -120,7 +118,7 @@ describe('EditableGradingInstruction', () => {
     it('Add borders removes e-table--borderless class from table', async () => {
       const inputData = '<table class="e-table--borderless"><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table><tbody><tr><td><p>foo</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Lisää reunat')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -128,7 +126,7 @@ describe('EditableGradingInstruction', () => {
     it('Remove zebra removes class from table', async () => {
       const inputData = '<table class="e-table--zebra"><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table><tbody><tr><td><p>foo</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista kuviointi')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -136,7 +134,7 @@ describe('EditableGradingInstruction', () => {
     it('Add zebra adds e-table--zebra class to table', async () => {
       const inputData = '<table><tr><td>foo</td></tr></table>'
       const expectedOutput = '<table class="e-table--zebra"><tbody><tr><td><p>foo</p></td></tr></tbody></table>'
-      const result = renderGradinginstruction(inputData, onContentChangeMock)
+      const result = renderGradingInstruction(inputData, onContentChangeMock)
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Lisää kuviointi')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -160,19 +158,6 @@ function insertText(element: HTMLElement, text: string) {
   fireEvent.input(element, {
     target: { innerText: text, innerHTML: text }
   })
-}
-
-function renderGradinginstruction(inputData: string, onContentChangeMock = () => {}) {
-  const doc = new DOMParser().parseFromString(inputData, 'text/html')
-  return render(
-    <GradingInstructionProvider
-      editable={true}
-      onContentChange={onContentChangeMock}
-      saveScreenshot={() => Promise.resolve('')}
-    >
-      <EditableGradingInstruction element={doc.documentElement} />
-    </GradingInstructionProvider>
-  )
 }
 
 function mockCreateRange() {
