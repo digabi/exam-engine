@@ -2,7 +2,7 @@ import { Attachment, getMediaMetadataFromLocalFile, masterExam, MasteringResult 
 import { spawn } from 'child-process-promise'
 import { promises as fs } from 'fs'
 import path from 'path'
-import puppeteer from 'puppeteer'
+import * as cheerio from 'cheerio'
 import tmp from 'tmp-promise'
 import * as uuid from 'uuid'
 import webpack from 'webpack'
@@ -113,12 +113,7 @@ async function copyAttachment(
 }
 
 async function optimizeWithPuppeteer(examOutputDirectories: string[], options: CreateOfflineExamOptions) {
-  const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   try {
-    const context = await browser.createBrowserContext()
-    const page = await context.newPage()
-    await page.setViewport({ width: 1280, height: 800 })
-
     for (const examOutputDirectory of examOutputDirectories) {
       for (const htmlFile of [
         ...(options.type === 'offline'
@@ -128,26 +123,36 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[], options: C
             ]
           : [path.resolve(examOutputDirectory, 'grading-instructions.html')])
       ]) {
-        await page.goto(`file://${htmlFile}`)
-        await page.waitForSelector('.e-exam')
-        await page.evaluate(() => {
-          // Fix asset path on attachments page.
-          if (location.pathname.includes('attachments/index.html')) {
-            const style = document.head.querySelector(':scope > style')!
-            style.textContent = style.textContent!.replace(/url\(assets\//g, 'url(../assets/')
-          }
-          // Remove rich-text-editor injected styles
-          Array.from(document.head.querySelectorAll(':scope > style'))
-            .filter(e => !e.textContent!.includes('NotoSans'))
-            .forEach(e => e.remove())
-          // Remove rich-text-editor injected HTML.
-          document.body.querySelectorAll(':scope > :not(#app)').forEach(e => e.remove())
+        const file = await fs.readFile(htmlFile, 'utf-8')
+        const $ = cheerio.load(file)
+
+        // Fix asset path on attachments page.
+        if (htmlFile.includes('attachments/index.html')) {
+          $('head > style').each((_, element) => {
+            $(element).text(
+              $(element)
+                .text()
+                .replace(/url\(assets\//g, 'url(../assets/')
+            )
+          })
+        }
+
+        // Remove rich-text-editor injected styles
+        $('head > style')
+          .filter((_, element) => !$(element).text().includes('NotoSans'))
+          .each((_, element) => {
+            $(element).remove()
+          })
+
+        // Remove rich-text-editor injected HTML.
+        $('body > :not(#app)').each((_, element) => {
+          $(element).remove()
         })
-        const prerenderedContent = await page.content()
-        await fs.writeFile(htmlFile, prerenderedContent, 'utf-8')
+
+        await fs.writeFile(htmlFile, $.html(), 'utf-8')
       }
     }
-  } finally {
-    await browser.close()
+  } catch (e) {
+    console.error(e)
   }
 }

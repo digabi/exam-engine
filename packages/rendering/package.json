@@ -16,6 +16,7 @@
     "@digabi/exam-engine-core": "22.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "babel-loader": "^9.1.2",
+    "cheerio": "^1.0.0",
     "child-process-promise": "^2.2.1",
     "css-loader": "^7.0.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
