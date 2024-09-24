@@ -4,6 +4,7 @@ import path from 'path'
 import { Page } from 'puppeteer'
 import tmp from 'tmp-promise'
 import { getPageAndRequestErrors, initPuppeteer } from './puppeteerUtils'
+import * as fs from 'fs/promises'
 
 describe('testOfflineGeneration.ts - Offline version generation', () => {
   const createPage = initPuppeteer()
@@ -21,10 +22,12 @@ describe('testOfflineGeneration.ts - Offline version generation', () => {
 
   it('renders exam page without errors', async () => {
     await expectToRenderWithoutErrors(examHtmlFile)
+    expect(await fs.readFile(examHtmlFile, 'utf-8')).toMatchSnapshot()
   })
 
   it('renders attachment page without errors', async () => {
     await expectToRenderWithoutErrors(attachmentsHtmlFile)
+    expect(await fs.readFile(attachmentsHtmlFile, 'utf-8')).toMatchSnapshot()
   })
 
   async function expectToRenderWithoutErrors(filename: string) {
