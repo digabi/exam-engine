@@ -12,11 +12,27 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['sav
     }
   }
 
-  const updateEditor = useEditorEventCallback((view, url) => {
+  const updateEditor = useEditorEventCallback((view, blobUrl, permanentUrl = undefined) => {
     const { state } = view
-    const imageNode = state.schema.nodes.image.create({ src: url })
-    const transaction = view.state.tr.replaceSelectionWith(imageNode)
-    view.dispatch(transaction)
+    const { doc } = state
+    let tr = state.tr
+
+    if (permanentUrl) {
+      doc.descendants((node, pos) => {
+        if (node.type.name === 'image' && node.attrs.src === blobUrl) {
+          tr = tr.setNodeMarkup(pos, undefined, {
+            ...node.attrs,
+            src: permanentUrl
+          })
+        }
+      })
+    } else {
+      const imageNode = state.schema.nodes.image.create({ src: blobUrl })
+      tr = tr.replaceSelectionWith(imageNode)
+    }
+    if (tr.steps.length > 0) {
+      view.dispatch(tr)
+    }
     view.focus()
   })
 
@@ -27,9 +43,10 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['sav
       updateEditor(blobUrl)
       try {
         const permanentUrl = await saveImage('', Buffer.from(await file.arrayBuffer()))
-        updateEditor(permanentUrl)
+        updateEditor(blobUrl, permanentUrl)
       } catch (e) {
         console.error('error saving file', e)
+        updateEditor(blobUrl, 'no-image')
       }
     }
   }
