@@ -35,3 +35,11 @@ export function promisifiedFireEventInput(element: Element, options: object) {
     resolve()
   })
 }
+
+export function promisifiedFireEvent(method: () => void) {
+  return new Promise<void>(resolve => {
+    console.log('here', method())
+    method()
+    resolve()
+  })
+}
