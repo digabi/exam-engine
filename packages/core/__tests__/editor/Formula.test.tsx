@@ -1,8 +1,6 @@
-import React from 'react'
-import { fireEvent, render, act as testAct } from '@testing-library/react'
-import EditableGradingInstruction from '../../src/components/grading-instructions/EditableGradingInstruction'
-import { GradingInstructionProvider } from '../../src/components/grading-instructions/GradingInstructionProvider'
+import { fireEvent, act as testAct } from '@testing-library/react'
 import { mockCreateRange } from '../utils/prosemirror'
+import { renderGradingInstruction } from '../utils/renderEditableGradingInstruction'
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
 
@@ -25,7 +23,7 @@ describe('Editor - Formula', () => {
     const inputData = '<p>bar <e:formula data-editor-id="e-formula">foo</e:formula></p>'
     const expectedOutput =
       '<p>bar <img alt="foo" src="/math.svg?latex=foo"><img class="ProseMirror-separator" alt=""><br class="ProseMirror-trailingBreak"></p>'
-    const result = renderGradinginstruction(inputData)
+    const result = renderGradingInstruction(inputData)
     const table = result.container.querySelector('.ProseMirror')
     expect(table!.innerHTML).toBe(expectedOutput)
   })
@@ -34,7 +32,7 @@ describe('Editor - Formula', () => {
     cleanup = mockCreateRange()
     const inputData = '<p>bar</p><p><e:formula data-editor-id="e-formula" mode="inline">foo</e:formula></p>'
     const expectedOutput = '<p>foo</p><p><e:formula mode="inline">foo</e:formula></p>'
-    const result = renderGradinginstruction(inputData, onContentChangeMock)
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
     await act(async () => {
       insertText(await result.findByText('bar'), 'foo')
     })
@@ -47,17 +45,4 @@ function insertText(element: HTMLElement, text: string) {
   fireEvent.input(element, {
     target: { innerText: text, innerHTML: text }
   })
-}
-
-function renderGradinginstruction(inputData: string, onContentChangeMock = () => {}) {
-  const doc = new DOMParser().parseFromString(inputData, 'text/html')
-  return render(
-    <GradingInstructionProvider
-      editable={true}
-      onContentChange={onContentChangeMock}
-      saveScreenshot={() => Promise.resolve('')}
-    >
-      <EditableGradingInstruction element={doc.documentElement} />
-    </GradingInstructionProvider>
-  )
 }
