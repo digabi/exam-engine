@@ -4,7 +4,7 @@ import { renderGradingInstruction } from '../utils/renderEditableGradingInstruct
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
 
-describe('Editor - Formula', () => {
+describe('Editor - HR', () => {
   let cleanup: (() => void) | null
   let onContentChangeMock: jest.Mock
 
@@ -19,19 +19,18 @@ describe('Editor - Formula', () => {
     cleanup = null
   })
 
-  it('Formula is rendered as expected', () => {
-    const inputData = '<p>bar <e:formula data-editor-id="e-formula">foo</e:formula></p>'
-    const expectedOutput =
-      '<p>bar <img alt="foo" src="/math.svg?latex=foo"><img class="ProseMirror-separator" alt=""><br class="ProseMirror-trailingBreak"></p>'
+  it('HR is rendered as expected', () => {
+    const inputData = '<p>bar</p><hr/>'
+    const expectedOutput = '<p>bar</p><hr>'
     const result = renderGradingInstruction(inputData)
     const table = result.container.querySelector('.ProseMirror')
     expect(table!.innerHTML).toBe(expectedOutput)
   })
 
-  it('Change in content causes formula to be returned as expected', async () => {
+  it('Change in content causes HR to be returned as expected', async () => {
     cleanup = mockCreateRange()
-    const inputData = '<p>bar</p><p><e:formula data-editor-id="e-formula" mode="inline">foo</e:formula></p>'
-    const expectedOutput = '<p>foo</p><p><e:formula mode="inline">foo</e:formula></p>'
+    const inputData = '<p>foo</p><hr/><p>bar</p>'
+    const expectedOutput = '<p>foo</p><hr/><p>foo</p>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
     await act(async () => {
       insertText(await result.findByText('bar'), 'foo')
