@@ -53,7 +53,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['sav
 
   return (
     <>
-      <button onClick={handleButtonClick}>Upload Image</button>
+      <button onClick={handleButtonClick}>Lataa kuva</button>
       <input
         type="file"
         accept="image/*"

@@ -1,9 +1,9 @@
 import React from 'react'
 import '@testing-library/jest-dom'
 import { render, cleanup, act as testAct, within } from '@testing-library/react'
-import ProseMirrorWrapper from './utils/ProseMirrorWrapper'
-import { mockCreateRange, promisifiedFireEventInput } from './utils/prosemirror'
-import FormatButton from '../src/components/grading-instructions/editor/FormatButton'
+import ProseMirrorWrapper from '../utils/ProseMirrorWrapper'
+import { mockCreateRange, promisifiedFireEventInput } from '../utils/prosemirror'
+import FormatButton from '../../src/components/grading-instructions/editor/FormatButton'
 import userEvent from '@testing-library/user-event'
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
