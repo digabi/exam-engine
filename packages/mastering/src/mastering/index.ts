@@ -359,7 +359,7 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
         attachment.attr('duration', String(audioMetadata.duration))
       } else {
         if (type === 'image') {
-          addDataAttributesForEditor([attachment], 'e-image')
+          addDataAttributesForEditor(attachment, 'e-image')
         }
         const imageOrVideoMetadata = metadata as ImageMetadata | VideoMetadata
         attachment.attr('width', String(imageOrVideoMetadata.width))
@@ -369,10 +369,8 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
   }
 }
 
-function addDataAttributesForEditor(elements: Element[], attribute: string) {
-  for (const element of elements) {
-    element.attr('data-editor-id', attribute)
-  }
+function addDataAttributesForEditor(element: Element, attribute: string) {
+  element.attr('data-editor-id', attribute)
 }
 
 function collectAttachments(exam: Element, attachments: Element[]): Attachment[] {
@@ -850,7 +848,7 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
         throwOnLatexError
       )) as string
       formula.attr('svg', svg)
-      formula.attr('data-editor-id', 'e-formula')
+      addDataAttributesForEditor(formula, 'e-formula')
     } catch (errors) {
       if (Array.isArray(errors) && errors.every(_.isString)) {
         throw mkError(errors.join(', '), formula)
