@@ -11,15 +11,16 @@ import { TableMenu, tableSchema } from './editor/Table'
 import { FormulaPopup } from './editor/FormulaPopup'
 import FormatButton from './editor/FormatButton'
 import { NbspButton, nbspPlugin } from './editor/NBSP'
+import { spanWithNowrap } from './editor/spanWithNowrap'
 
 const schema = new Schema({
   nodes: baseSchema.spec.nodes.append(formulaSchema).append(tableSchema),
-  marks: baseSchema.spec.marks
+  marks: baseSchema.spec.marks.append(spanWithNowrap)
 })
 
 const outputSchema = new Schema({
   nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema),
-  marks: baseSchema.spec.marks
+  marks: baseSchema.spec.marks.append(spanWithNowrap)
 })
 
 function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) {
