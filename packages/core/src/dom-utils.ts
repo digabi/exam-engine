@@ -178,9 +178,10 @@ export function getElementPath(element: Element): string {
   while (currentElement.parentElement) {
     currentElement = currentElement.parentElement
     const displayNumber = currentElement.getAttribute('display-number')
-    const index =
-      Number(displayNumber) ||
-      Array.from(currentElement.parentElement?.children || [currentElement]).indexOf(currentElement)
+    const isNumber = Number(displayNumber)
+    const index = isNumber
+      ? displayNumber
+      : Array.from(currentElement.parentElement?.children || [currentElement]).indexOf(currentElement)
     const elementId = currentElement.getAttribute('id')
     path = `${elementId || currentElement.nodeName}:${index} > ${path}`
   }
