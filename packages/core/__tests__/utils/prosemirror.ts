@@ -1,5 +1,3 @@
-import { fireEvent } from '@testing-library/react'
-
 export function mockCreateRange() {
   const originalCreateRange = global.window.document.createRange
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

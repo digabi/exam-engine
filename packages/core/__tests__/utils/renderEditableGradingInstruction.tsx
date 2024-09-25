@@ -6,6 +6,9 @@ import { withCommonExamContext } from '../../src/components/context/CommonExamCo
 import { EditableProps } from '../../src/components/context/GradingInstructionContext'
 import { CommonExamProps } from '../../src/components/exam/Exam'
 
+export const mockedPermanentUrl = 'mocked-permanent-url'
+export const mockedResolvedPath = 'mock-resolved-path'
+
 const WrappedGradingInstructionProvider = withCommonExamContext<EditableProps & CommonExamProps>(
   GradingInstructionProvider
 )
@@ -16,10 +19,10 @@ export function renderGradingInstruction(inputData: string, onContentChangeMock 
     <WrappedGradingInstructionProvider
       editable={true}
       onContentChange={onContentChangeMock}
-      saveScreenshot={() => Promise.resolve('')}
+      saveScreenshot={() => Promise.resolve(mockedPermanentUrl)}
       answers={[]}
       attachmentsURL=""
-      resolveAttachment={filename => filename}
+      resolveAttachment={filename => `/${mockedResolvedPath}/${filename}`}
       doc={doc}
     >
       <EditableGradingInstruction element={doc.documentElement} />x
