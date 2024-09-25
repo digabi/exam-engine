@@ -12,14 +12,14 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['sav
     }
   }
 
-  const updateEditor = useEditorEventCallback((view, blobUrl, permanentUrl = undefined) => {
+  const updateEditor = useEditorEventCallback((view, tempUrl, permanentUrl = undefined) => {
     const { state } = view
     const { doc } = state
     let tr = state.tr
 
     if (permanentUrl) {
       doc.descendants((node, pos) => {
-        if (node.type.name === 'image' && node.attrs.src === blobUrl) {
+        if (node.type.name === 'image' && node.attrs.src === tempUrl) {
           tr = tr.setNodeMarkup(pos, undefined, {
             ...node.attrs,
             src: permanentUrl
@@ -27,7 +27,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['sav
         }
       })
     } else {
-      const imageNode = state.schema.nodes.image.create({ src: blobUrl })
+      const imageNode = state.schema.nodes.image.create({ src: tempUrl })
       tr = tr.replaceSelectionWith(imageNode)
     }
     if (tr.steps.length > 0) {
@@ -39,27 +39,28 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['sav
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) {
-      const blobUrl = URL.createObjectURL(file)
-      updateEditor(blobUrl)
+      const tempUrl = URL.createObjectURL(file)
+      updateEditor(tempUrl)
       try {
         const permanentUrl = await saveImage('', Buffer.from(await file.arrayBuffer()))
-        updateEditor(blobUrl, permanentUrl)
+        updateEditor(tempUrl, permanentUrl)
       } catch (e) {
         console.error('error saving file', e)
-        updateEditor(blobUrl, 'no-image')
+        updateEditor(tempUrl, 'no-image')
       }
     }
   }
 
   return (
     <>
-      <button onClick={handleButtonClick}>Lataa kuva</button>
+      <button onClick={handleButtonClick}>Lisää kuva</button>
       <input
         type="file"
         accept="image/*"
         style={{ display: 'none' }}
         ref={inputRef}
         onChange={e => void handleFileChange(e)}
+        data-testid="image-upload-button"
       />
     </>
   )
