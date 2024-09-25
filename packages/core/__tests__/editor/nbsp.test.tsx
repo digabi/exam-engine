@@ -1,7 +1,8 @@
-import { fireEvent, act as testAct } from '@testing-library/react'
+import { act as testAct } from '@testing-library/react'
 import { mockCreateRange } from '../utils/prosemirror'
 import { renderGradingInstruction } from '../utils/renderEditableGradingInstruction'
 import userEvent from '@testing-library/user-event'
+import { insertText } from '../utils/util'
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
 
@@ -53,9 +54,3 @@ describe('Editor - NBSP', () => {
     expect(onContentChangeMock).toHaveBeenLastCalledWith(expectedOutput, '')
   })
 })
-
-function insertText(element: HTMLElement, text: string) {
-  fireEvent.input(element, {
-    target: { innerText: text, innerHTML: text }
-  })
-}
