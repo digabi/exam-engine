@@ -28,18 +28,3 @@ export function mockCreateRange() {
   }
   return () => (global.window.document.createRange = originalCreateRange)
 }
-
-export function promisifiedFireEventInput(element: Element, options: object) {
-  return new Promise<void>(resolve => {
-    fireEvent.input(element, options)
-    resolve()
-  })
-}
-
-export function promisifiedFireEvent(method: () => void) {
-  return new Promise<void>(resolve => {
-    console.log('here', method())
-    method()
-    resolve()
-  })
-}
