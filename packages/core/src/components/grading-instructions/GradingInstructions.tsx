@@ -89,7 +89,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
   onSaveAnnotation,
   editable,
   onContentChange,
-  saveScreenshot
+  onSaveImage
 }) => {
   const root = doc.documentElement
   const { date, dateTimeFormatter, dayCode, examCode, language, subjectLanguage } = useContext(CommonExamContext)
@@ -108,7 +108,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
 
   useEffect(scrollToHash, [])
 
-  const props = editable ? { editable, onContentChange, saveScreenshot } : { editable }
+  const props = editable ? { editable, onContentChange, onSaveImage } : { editable }
 
   return (
     <AnnotationProvider

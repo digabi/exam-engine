@@ -19,7 +19,7 @@ export function renderGradingInstruction(inputData: string, onContentChangeMock 
     <WrappedGradingInstructionProvider
       editable={true}
       onContentChange={onContentChangeMock}
-      saveScreenshot={() => Promise.resolve(mockedPermanentUrl)}
+      onSaveImage={() => Promise.resolve(mockedPermanentUrl)}
       answers={[]}
       attachmentsURL=""
       resolveAttachment={filename => `/${mockedResolvedPath}/${filename}`}

@@ -17,12 +17,12 @@ import { imageInputSchema, imageOutputSchema } from './editor/schemas/image-sche
 import { CommonExamContext } from '../context/CommonExamContext'
 
 function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) {
-  const { saveScreenshot } = useContext(GradingInstructionContext)
+  const { onSaveImage } = useContext(GradingInstructionContext)
   return (
     <>
       <FormatButton markName="strong" displayName="Bold" />
       <FormatButton markName="em" displayName="Italic" />
-      {saveScreenshot && <ImageUploadButton saveImage={saveScreenshot} />}
+      {onSaveImage && <ImageUploadButton saveImage={onSaveImage} />}
       <TableMenu />
       <FormulaButton setFormulaState={props.setFormulaState} />
       <NbspButton />

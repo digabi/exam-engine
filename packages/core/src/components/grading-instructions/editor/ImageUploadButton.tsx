@@ -1,9 +1,8 @@
 import { useEditorEventCallback } from '@nytimes/react-prosemirror'
 import React, { useRef, ChangeEvent } from 'react'
 import { EditableProps } from '../../context/GradingInstructionContext'
-import { Buffer } from 'buffer'
 
-export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['saveScreenshot'] }) {
+export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onSaveImage'] }) {
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   const handleButtonClick = () => {
@@ -42,7 +41,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['sav
       const tempUrl = URL.createObjectURL(file)
       updateEditor(tempUrl)
       try {
-        const permanentUrl = await saveImage('', Buffer.from(await file.arrayBuffer()))
+        const permanentUrl = await saveImage(file)
         updateEditor(tempUrl, permanentUrl)
       } catch (e) {
         console.error('error saving file', e)
