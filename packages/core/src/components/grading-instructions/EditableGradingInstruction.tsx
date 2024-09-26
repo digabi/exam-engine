@@ -10,6 +10,7 @@ import { FormulaButton, FormulaEditorState, formulaOutputSchema, FormulaPlugin, 
 import { TableMenu, tableSchema } from './editor/Table'
 import { FormulaPopup } from './editor/FormulaPopup'
 import FormatButton from './editor/FormatButton'
+import { NbspButton, nbspPlugin } from './editor/NBSP'
 
 const schema = new Schema({
   nodes: baseSchema.spec.nodes.append(formulaSchema).append(tableSchema),
@@ -28,6 +29,7 @@ function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) 
       <FormatButton markName="em" displayName="Italic" />
       <TableMenu />
       <FormulaButton setFormulaState={props.setFormulaState} />
+      <NbspButton />
     </>
   )
 }
@@ -38,7 +40,9 @@ function EditableGradingInstruction({ element }: { element: Element }) {
   const [mount, setMount] = useState<HTMLElement | null>(null)
   const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
   const formulaPlugin = new FormulaPlugin(setFormulaState)
-  const [state, setState] = useState(EditorState.create({ schema, doc, plugins: [keymap(baseKeymap), formulaPlugin] }))
+  const [state, setState] = useState(
+    EditorState.create({ schema, doc, plugins: [keymap(baseKeymap), formulaPlugin, nbspPlugin] })
+  )
 
   return (
     <ProseMirror

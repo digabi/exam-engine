@@ -43,6 +43,7 @@
     "postcss-loader": "^8.1.0",
     "postcss-preset-env": "^10.0.0",
     "prosemirror-commands": "^1.6.0",
+    "@guardian/prosemirror-invisibles": "^3.1.1",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.22.3",
     "prosemirror-schema-basic": "^1.2.3",
