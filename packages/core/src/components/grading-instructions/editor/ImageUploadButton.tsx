@@ -40,6 +40,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
     if (file) {
       const tempUrl = URL.createObjectURL(file)
       updateEditor(tempUrl)
+      event.target.value = ''
       try {
         const permanentUrl = await saveImage(file)
         updateEditor(tempUrl, permanentUrl)
