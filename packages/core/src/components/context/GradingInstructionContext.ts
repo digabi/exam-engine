@@ -7,13 +7,13 @@ export interface GradingInstructionPropsBase {
 export interface EditableProps extends GradingInstructionPropsBase {
   editable: true
   onContentChange: (answerHTML: string, path: string) => void
-  saveScreenshot: (type: string, data: Buffer, displayNumber?: string) => Promise<string>
+  onSaveImage: (file: File, displayNumber?: string) => Promise<string>
 }
 
 export interface NotEditableProps extends GradingInstructionPropsBase {
   editable?: false
   onContentChange?: never
-  saveScreenshot?: never
+  onSaveImage?: never
 }
 
 export type GradingInstructionProps = EditableProps | NotEditableProps
