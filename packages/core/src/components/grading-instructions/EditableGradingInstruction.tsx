@@ -51,18 +51,23 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       mount={mount}
       state={state}
       dispatchTransaction={tr => {
-        setState(s => s.apply(tr))
-        const fragment = DOMSerializer.fromSchema(outputSchema).serializeFragment(tr.doc.content)
-        const div = document.createElement('div')
-        div.appendChild(fragment)
-        const path = element.getAttribute('path') ?? ''
-        if (onContentChange) {
-          const nbspFixed = div.innerHTML
-            .replace(/&nbsp;/g, '&#160;')
-            .replace(/<br>/g, '<br/>')
-            .replace(/<hr>/g, '<hr/>')
-          onContentChange(nbspFixed, path)
-        }
+        setState(s => {
+          const newContent = s.apply(tr)
+          if (tr.docChanged) {
+            const fragment = DOMSerializer.fromSchema(outputSchema).serializeFragment(tr.doc.content)
+            const div = document.createElement('div')
+            div.appendChild(fragment)
+            const path = element.getAttribute('path') ?? ''
+            if (onContentChange) {
+              const nbspFixed = div.innerHTML
+                .replace(/&nbsp;/g, '&#160;')
+                .replace(/<br>/g, '<br/>')
+                .replace(/<hr>/g, '<hr/>')
+              onContentChange(nbspFixed, path)
+            }
+          }
+          return newContent
+        })
       }}
     >
       <Menu setFormulaState={setFormulaState} />
