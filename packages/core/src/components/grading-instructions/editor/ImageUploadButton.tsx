@@ -1,10 +1,11 @@
 import { useEditorEventCallback } from '@nytimes/react-prosemirror'
-import React, { useRef, ChangeEvent } from 'react'
+import React, { useRef, ChangeEvent, useContext } from 'react'
 import { EditableProps } from '../../context/GradingInstructionContext'
+import { QuestionContext } from '../../context/QuestionContext'
 
 export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onSaveImage'] }) {
   const inputRef = useRef<HTMLInputElement | null>(null)
-
+  const { displayNumber } = useContext(QuestionContext)
   const handleButtonClick = () => {
     if (inputRef.current) {
       inputRef.current.click()
@@ -42,7 +43,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
       updateEditor(tempUrl)
       event.target.value = ''
       try {
-        const permanentUrl = await saveImage(file)
+        const permanentUrl = await saveImage(file, displayNumber)
         updateEditor(tempUrl, permanentUrl)
       } catch (e) {
         console.error('error saving file', e)
