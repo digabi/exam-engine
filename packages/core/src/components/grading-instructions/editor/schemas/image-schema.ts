@@ -17,6 +17,11 @@ export const imageInputSchema = (resolveAttachment: (filename: string) => string
     {
       tag: '[data-editor-id="e-image"], img',
       getAttrs(element) {
+        const src = element.getAttribute('src')
+
+        if (!src || src.startsWith('data:')) {
+          return false
+        }
         const attrs = {
           ...Object.fromEntries(Array.from(element.attributes).map(attr => [attr.name, attr.value])),
           src: resolveAttachment(element.getAttribute('src') || '')
