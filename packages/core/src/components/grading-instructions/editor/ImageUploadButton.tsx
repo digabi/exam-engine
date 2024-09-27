@@ -41,9 +41,10 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
       event.target.value = ''
       try {
         const permanentUrl = await saveImage(file, displayNumber)
+        if (!permanentUrl) throw new Error('no permanent image url provided')
         updateEditor(tempUrl, permanentUrl)
       } catch (e) {
-        console.error('error saving file', e)
+        console.error('error getting permanent url for image', e)
         updateEditor(tempUrl, 'no-image')
       }
     }
