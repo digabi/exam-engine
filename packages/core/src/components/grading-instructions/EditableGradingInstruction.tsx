@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { schema as baseSchema } from 'prosemirror-schema-basic'
 import { EditorState } from 'prosemirror-state'
 import { baseKeymap } from 'prosemirror-commands'
@@ -7,7 +7,7 @@ import { ProseMirror } from '@nytimes/react-prosemirror'
 import { DOMParser as ProseDOMParser, DOMSerializer, Schema } from 'prosemirror-model'
 import { keymap } from 'prosemirror-keymap'
 import { FormulaButton, FormulaEditorState, formulaOutputSchema, FormulaPlugin, formulaSchema } from './editor/Formula'
-import { TableMenu, tableSchema } from './editor/Table'
+import { TableMenu, tablePlugin, tableSchema } from './editor/Table'
 import { FormulaPopup } from './editor/FormulaPopup'
 import FormatButton from './editor/FormatButton'
 import { NbspButton, nbspPlugin } from './editor/NBSP'
@@ -15,21 +15,47 @@ import { spanWithNowrap } from './editor/spanWithNowrap'
 import { ImageUploadButton } from './editor/ImageUploadButton'
 import { imageInputSchema, imageOutputSchema } from './editor/schemas/image-schema'
 import { CommonExamContext } from '../context/CommonExamContext'
+import { faBold, faItalic } from '@fortawesome/free-solid-svg-icons'
 
 function Menu(props: {
   formulaState: FormulaEditorState | null
   setFormulaState: (values: FormulaEditorState) => void
+  editorElement: HTMLElement
 }) {
   const { onSaveImage } = useContext(GradingInstructionContext)
+  const [isFloating, setIsFloating] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const rect = props.editorElement.getBoundingClientRect()
+      if (rect.top < 25 && rect.bottom > 100) {
+        setIsFloating(true)
+      } else {
+        setIsFloating(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <>
-      <FormatButton markName="strong" displayName="Bold" />
-      <FormatButton markName="em" displayName="Italic" />
-      {onSaveImage && <ImageUploadButton saveImage={onSaveImage} />}
-      <TableMenu />
-      <FormulaButton disabled={!!props.formulaState} setFormulaState={props.setFormulaState} />
-      <NbspButton />
+      <div className="editor-menu-placeholder">
+        <div className={`editor-menu ${isFloating ? 'floating' : ''}`}>
+          <FormatButton markName="strong" icon={faBold} />
+          <FormatButton markName="em" icon={faItalic} />
+          <span className="editor-menu-separator" />
+          {onSaveImage && <ImageUploadButton saveImage={onSaveImage} />}
+          <span className="editor-menu-separator" />
+          <FormulaButton disabled={!!props.formulaState} setFormulaState={props.setFormulaState} />
+          <span className="editor-menu-separator" />
+          <TableMenu dropdownsBelow={isFloating} />
+          <span className="editor-menu-separator" />
+          <NbspButton />
+        </div>
+      </div>
     </>
   )
 }
@@ -56,7 +82,11 @@ function EditableGradingInstruction({ element }: { element: Element }) {
   const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
   const formulaPlugin = new FormulaPlugin(setFormulaState)
   const [state, setState] = useState(
-    EditorState.create({ schema: inputSchema, doc, plugins: [keymap(baseKeymap), formulaPlugin, nbspPlugin] })
+    EditorState.create({
+      schema: inputSchema,
+      doc,
+      plugins: [tablePlugin(), keymap(baseKeymap), formulaPlugin, nbspPlugin]
+    })
   )
 
   return (
@@ -83,7 +113,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
         })
       }}
     >
-      <Menu formulaState={formulaState} setFormulaState={setFormulaState} />
+      {mount && <Menu formulaState={formulaState} setFormulaState={setFormulaState} editorElement={mount} />}
       <div ref={setMount} />
 
       {formulaState && (

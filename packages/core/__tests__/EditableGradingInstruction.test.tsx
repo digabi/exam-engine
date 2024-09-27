@@ -2,6 +2,7 @@ import { act as testAct, RenderResult } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderGradingInstruction } from './utils/renderEditableGradingInstruction'
 import { insertText } from './utils/util'
+import '@testing-library/jest-dom'
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
 
@@ -47,7 +48,7 @@ describe('EditableGradingInstruction', () => {
         '<table class="e-table e-width-half"><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table>'
       const result = renderGradingInstruction(inputData, onContentChangeMock)
       await act(async () => {
-        await userEvent.click(await result.findByText('Lisää taulukko'))
+        await userEvent.click(await result.findByTestId('editor-menu-add-table'))
       })
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -96,6 +97,7 @@ describe('EditableGradingInstruction', () => {
       const inputData = '<table class="e-width-half"><tbody><tr><td>foo</td></tr></tbody></table>'
       const expectedOutput = '<table class="e-width-full"><tbody><tr><td>foo</td></tr></tbody></table>'
       const result = renderGradingInstruction(inputData, onContentChangeMock)
+      expect(result.queryByText('Puolikas leveys')).not.toBeInTheDocument()
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Täysi leveys')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -104,6 +106,7 @@ describe('EditableGradingInstruction', () => {
       const inputData = '<table class="e-width-full"><tbody><tr><td>foo</td></tr></tbody></table>'
       const expectedOutput = '<table class="e-width-half"><tbody><tr><td>foo</td></tr></tbody></table>'
       const result = renderGradingInstruction(inputData, onContentChangeMock)
+      expect(result.queryByText('Täysi leveys')).not.toBeInTheDocument()
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Puolikas leveys')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -112,6 +115,7 @@ describe('EditableGradingInstruction', () => {
       const inputData = '<table><tbody><tr><td>foo</td></tr></tbody></table>'
       const expectedOutput = '<table class="e-table--borderless"><tbody><tr><td>foo</td></tr></tbody></table>'
       const result = renderGradingInstruction(inputData, onContentChangeMock)
+      expect(result.queryByText('Lisää reunat')).not.toBeInTheDocument()
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista reunat')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -120,6 +124,7 @@ describe('EditableGradingInstruction', () => {
       const inputData = '<table class="e-table--borderless"><tbody><tr><td>foo</td></tr></tbody></table>'
       const expectedOutput = '<table><tbody><tr><td>foo</td></tr></tbody></table>'
       const result = renderGradingInstruction(inputData, onContentChangeMock)
+      expect(result.queryByText('Poista reunat')).not.toBeInTheDocument()
       await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Lisää reunat')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
@@ -128,7 +133,8 @@ describe('EditableGradingInstruction', () => {
       const inputData = '<table class="e-table--zebra"><tbody><tr><td>foo</td></tr></tbody></table>'
       const expectedOutput = '<table><tbody><tr><td>foo</td></tr></tbody></table>'
       const result = renderGradingInstruction(inputData, onContentChangeMock)
-      await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista kuviointi')
+      expect(result.queryByText('Lisää raidat')).not.toBeInTheDocument()
+      await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Poista raidat')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
 
@@ -136,7 +142,8 @@ describe('EditableGradingInstruction', () => {
       const inputData = '<table><tbody><tr><td>foo</td></tr></tbody></table>'
       const expectedOutput = '<table class="e-table--zebra"><tbody><tr><td>foo</td></tr></tbody></table>'
       const result = renderGradingInstruction(inputData, onContentChangeMock)
-      await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Lisää kuviointi')
+      expect(result.queryByText('Poista raidat')).not.toBeInTheDocument()
+      await clickTableMenuButtonWithFocusOnCell(result, 'foo', 'Lisää raidat')
       expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
     })
   })
