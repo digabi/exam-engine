@@ -15,7 +15,6 @@ export interface Exam {
   questions: Question[]
   topLevelQuestions: Question[]
   answers: Answer[]
-  examGradingInstruction?: GradingInstruction
 }
 
 export interface Section {
