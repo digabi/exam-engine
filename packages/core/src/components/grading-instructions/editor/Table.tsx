@@ -9,7 +9,7 @@ import type { EditorView } from 'prosemirror-view'
 
 const defaultSchema = tableNodes({
   tableGroup: 'block',
-  cellContent: 'block+',
+  cellContent: 'inline*',
   cellAttributes: { class: { default: '' } }
 })
 
