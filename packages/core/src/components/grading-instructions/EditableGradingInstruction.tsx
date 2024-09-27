@@ -16,6 +16,7 @@ import { ImageUploadButton } from './editor/ImageUploadButton'
 import { imageInputSchema, imageOutputSchema } from './editor/schemas/image-schema'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { faBold, faItalic } from '@fortawesome/free-solid-svg-icons'
+import { localization } from './editor/localization'
 
 function Menu(props: {
   formulaState: FormulaEditorState | null
@@ -69,12 +70,12 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(formulaSchema)
       .append(tableSchema)
       .update('image', imageInputSchema(resolveAttachment)),
-    marks: baseSchema.spec.marks.append(spanWithNowrap)
+    marks: baseSchema.spec.marks.append(spanWithNowrap).append(localization(true))
   })
 
   const outputSchema = new Schema({
     nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema).update('image', imageOutputSchema),
-    marks: baseSchema.spec.marks.append(spanWithNowrap)
+    marks: baseSchema.spec.marks.append(spanWithNowrap).append(localization(false))
   })
 
   const doc = ProseDOMParser.fromSchema(inputSchema).parse(element)
