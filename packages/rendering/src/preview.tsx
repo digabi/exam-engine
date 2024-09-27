@@ -186,7 +186,7 @@ const App: React.FunctionComponent<{
     ...(process.env.EDITABLE_GRADING_INSTRUCTIONS
       ? ({
           editable: true,
-          onContentChange: (answerHTML: string, path: string) => console.info(answerHTML.substring(0, 500), path),
+          onContentChange: (answerHTML: string, path: string) => console.info(answerHTML, path),
           saveScreenshot: (type: string, data: Buffer, displayNumber: string) => {
             console.info(displayNumber, type, data)
             return Promise.resolve('/foo/bar.jpg')
