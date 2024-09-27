@@ -95,6 +95,11 @@ export interface MasteringOptions {
    * This enables minus point handling within a single choicegroup.
    */
   groupChoiceAnswers?: boolean
+
+  /**
+   * Master exams differently when supporting editable grading instructions
+   */
+  editableGradingInstructions?: boolean
 }
 
 const defaultOptions = {
@@ -293,7 +298,7 @@ async function masterExamVersion(
   // It helps when grading productive questions.
   addQuestionIds(root, generateId)
   addGradingInstructionAttributes(root, language, type)
-  applyLocalizations(root, language, type)
+  applyLocalizations(root, language, type, options.editableGradingInstructions)
 
   const exam = parseExamStructure(root)
 
@@ -589,24 +594,97 @@ function removeTableWhitespaceNodes(exam: Element) {
   }
 }
 
-function applyLocalizations(exam: Element, language: string, type: ExamType) {
-  exam.get('./e:exam-versions', ns)?.remove()
+function applyReadOnlyLocalization(localization: Element, language: string, type: ExamType) {
+  if (
+    getAttribute('lang', localization, language) !== language ||
+    !getAttribute('exam-type', localization, type).includes(type) ||
+    localization.childNodes().every(c => c instanceof Text && c.text().trim().length === 0)
+  ) {
+    localization.remove()
+  } else {
+    localization.name('span').namespace(ns.xhtml).attr('exam-type')?.remove()
+  }
+}
 
-  for (const localization of exam.find<Element>('//e:localization', ns)) {
-    if (
-      getAttribute('lang', localization, language) !== language ||
-      !getAttribute('exam-type', localization, type).includes(type) ||
-      localization.childNodes().every(c => c instanceof Text && c.text().trim().length === 0)
-    ) {
-      localization.remove()
-    } else {
-      localization.name('span').namespace(ns.xhtml).attr('exam-type')?.remove()
+function applyEditableLocalization(
+  localization: Element,
+  language: string,
+  type: ExamType,
+  parentLocalization?: Element
+) {
+  // traverse children first
+  localization.childNodes().forEach(node => {
+    const child = node as Element
+    const childName = child.name()
+    if (childName == 'localization') {
+      applyEditableLocalization(child, language, type, localization)
+    }
+  })
+
+  // ProseMirrors makes flat localizations, so take parent attributes for children to preverve them
+  if (parentLocalization) {
+    const parentLang = getAttribute('lang', parentLocalization, undefined)
+    if (parentLang) {
+      localization.attr('lang', parentLang)
+    }
+    const parentExamType = getAttribute('exam-type', parentLocalization, undefined)
+    if (parentExamType) {
+      localization.attr('exam-type', parentExamType)
     }
   }
 
-  exam
-    .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}')))]`, ns)
-    .forEach(element => element.remove())
+  const localizationLang = getAttribute('lang', localization, undefined)
+  const localizationExamType = getAttribute('exam-type', localization, undefined)
+
+  const hidden =
+    (localizationLang && localizationLang !== language) ||
+    (localizationExamType && !localizationExamType.includes(type))
+      ? 'hidden'
+      : undefined
+  localization.attr('e-localization', '1')
+  if (hidden) {
+    localization.attr('hidden', hidden)
+  }
+}
+
+function isGradingInstructionLocalization(localization: Element) {
+  const parent = localization.parent() as Element
+  if (!parent || !parent.name) {
+    return false
+  }
+  if (['question-grading-instruction', 'answer-grading-instruction'].includes(parent.name())) {
+    return true
+  }
+  return isGradingInstructionLocalization(parent)
+}
+
+function applyLocalizations(exam: Element, language: string, type: ExamType, editableGradingInstructions?: boolean) {
+  exam.get('./e:exam-versions', ns)?.remove()
+
+  for (const localization of exam.find<Element>('//e:localization', ns)) {
+    if (editableGradingInstructions) {
+      const parent = localization.parent() as Element
+      if (isGradingInstructionLocalization(localization)) {
+        applyEditableLocalization(localization, language, type)
+      } else if (parent.name() != 'localization') {
+        applyReadOnlyLocalization(localization, language, type)
+      }
+    } else {
+      applyReadOnlyLocalization(localization, language, type)
+    }
+  }
+  if (editableGradingInstructions) {
+    exam
+      .find(
+        `//e:*[not(@e-localization='1') and ((@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}'))))]`,
+        ns
+      )
+      .forEach(element => element.remove())
+  } else {
+    exam
+      .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}')))]`, ns)
+      .forEach(element => element.remove())
+  }
 }
 
 function addSectionNumbers(exam: Exam) {
