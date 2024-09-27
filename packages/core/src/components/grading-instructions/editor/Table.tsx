@@ -1,11 +1,21 @@
-import { addColumnAfter, addRowAfter, deleteColumn, deleteRow, deleteTable, tableNodes } from 'prosemirror-tables'
-import { Fragment, Node, NodeSpec } from 'prosemirror-model'
-import React, { useState } from 'react'
-import { useEditorEventCallback } from '@nytimes/react-prosemirror'
+import {
+  addColumnAfter,
+  addRowAfter,
+  deleteColumn,
+  deleteRow,
+  deleteTable,
+  goToNextCell,
+  tableNodes
+} from 'prosemirror-tables'
+import { Fragment, Node, NodeSpec, ResolvedPos } from 'prosemirror-model'
+import React, { useEffect, useState } from 'react'
+import { useEditorEventCallback, useEditorState } from '@nytimes/react-prosemirror'
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state'
-import { faTable } from '@fortawesome/free-solid-svg-icons'
+import { faTable, faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { EditorView } from 'prosemirror-view'
+import classNames from 'classnames'
+import { keymap } from 'prosemirror-keymap'
 
 const defaultSchema = tableNodes({
   tableGroup: 'block',
@@ -50,7 +60,40 @@ export const tableSchema: NodeSpec = {
   }
 }
 
-export function TableMenu() {
+export function tablePlugin() {
+  return keymap({
+    Tab: goToNextCell(1),
+    'Shift-Tab': goToNextCell(-1)
+  })
+}
+
+export function TableMenu(props: { dropdownsBelow: boolean }) {
+  const [isActive, setIsActive] = useState(false)
+  const [isOpen, setIsOpen] = useState({ add: false, remove: false, styles: false })
+  const [classes, setClasses] = useState<string[]>([])
+  const editorState = useEditorState()
+
+  const getTableFromPosition = (pos: ResolvedPos) => {
+    for (let d = pos.depth; d > 0; d--) {
+      const node = pos.node(d)
+      if (node.type.name === 'table') {
+        return node
+      }
+    }
+    return null
+  }
+
+  useEffect(() => {
+    const table = getTableFromPosition(editorState.selection.$from)
+    setIsActive(!!table)
+    if (table) {
+      setIsOpen({ add: false, remove: false, styles: false })
+      setClasses(table.attrs.class ? (table.attrs.class as string).split(' ') : [])
+    } else {
+      setClasses([])
+    }
+  }, [editorState])
+
   const withFocus = (
     view: EditorView,
     action: (state: EditorState, dispatch?: (tr: Transaction) => void) => boolean
@@ -60,7 +103,14 @@ export function TableMenu() {
     return result
   }
 
-  const menuOptions = {
+  const menuOptions: {
+    [key: string]: {
+      title: string
+      onClick: () => boolean | undefined
+      className?: string
+      shouldShowOption?: () => boolean
+    }
+  } = {
     addTable: {
       title: 'Lisää taulukko',
       onClick: useEditorEventCallback(view => {
@@ -107,37 +157,47 @@ export function TableMenu() {
     },
     setFullWidth: {
       title: 'Täysi leveys',
-      onClick: useEditorEventCallback(view => changeWidthClass(view, 'e-width-full'))
+      className: 'e-width-full',
+      shouldShowOption: () => !classes.includes(menuOptions.setFullWidth.className!),
+      onClick: useEditorEventCallback(view => changeWidthClass(view, menuOptions.setFullWidth.className!))
     },
     setHalfWidth: {
       title: 'Puolikas leveys',
-      onClick: useEditorEventCallback(view => changeWidthClass(view, 'e-width-half'))
+      className: 'e-width-half',
+      shouldShowOption: () => !classes.includes(menuOptions.setHalfWidth.className!),
+      onClick: useEditorEventCallback(view => changeWidthClass(view, menuOptions.setHalfWidth.className!))
     },
     removeBorder: {
       title: 'Poista reunat',
-      onClick: useEditorEventCallback(view => addClass(view, 'e-table--borderless'))
+      className: 'e-table--borderless',
+      shouldShowOption: () => !classes.includes(menuOptions.removeBorder.className!),
+      onClick: useEditorEventCallback(view => addClass(view, menuOptions.removeBorder.className!))
     },
     addBorder: {
       title: 'Lisää reunat',
-      onClick: useEditorEventCallback(view => removeClass(view, 'e-table--borderless'))
+      className: 'e-table--borderless',
+      shouldShowOption: () => classes.includes(menuOptions.addBorder.className!),
+      onClick: useEditorEventCallback(view => removeClass(view, menuOptions.addBorder.className!))
     },
     removeZebra: {
-      title: 'Poista kuviointi',
-      onClick: useEditorEventCallback(view => removeClass(view, 'e-table--zebra'))
+      title: 'Poista raidat',
+      className: 'e-table--zebra',
+      shouldShowOption: () => classes.includes(menuOptions.removeZebra.className!),
+      onClick: useEditorEventCallback(view => removeClass(view, menuOptions.removeZebra.className!))
     },
     addZebra: {
-      title: 'Lisää kuviointi',
-      onClick: useEditorEventCallback(view => addClass(view, 'e-table--zebra'))
+      title: 'Lisää raidat',
+      className: 'e-table--zebra',
+      shouldShowOption: () => !classes.includes(menuOptions.addZebra.className!),
+      onClick: useEditorEventCallback(view => addClass(view, menuOptions.addZebra.className!))
     }
   }
-
-  const [isOpen, setIsOpen] = useState(false)
 
   const Option = ({ title, onClick }: { title: string; onClick: () => void }) => (
     <li
       onClick={() => {
         onClick()
-        setIsOpen(false)
+        setIsOpen({ add: false, remove: false, styles: false })
       }}
     >
       {title}
@@ -146,23 +206,88 @@ export function TableMenu() {
 
   return (
     <>
+      <button
+        onClick={() => menuOptions.addTable.onClick()}
+        className={classNames({ active: isActive })}
+        data-testid="editor-menu-add-table"
+      >
+        <FontAwesomeIcon size="lg" icon={faTable} className="editor-menu-icon" fixedWidth />
+      </button>
+
+      {isActive && (
+        <>
+          <DropdownMenu
+            title="Tyylit"
+            openState={isOpen.styles}
+            setOpen={state => setIsOpen({ add: false, remove: false, styles: state })}
+            dropdownsBelow={props.dropdownsBelow}
+          >
+            {menuOptions.setFullWidth.shouldShowOption!() && <Option {...menuOptions.setFullWidth} />}
+            {menuOptions.setHalfWidth.shouldShowOption!() && <Option {...menuOptions.setHalfWidth} />}
+            {menuOptions.addBorder.shouldShowOption!() && <Option {...menuOptions.addBorder} />}
+            {menuOptions.removeBorder.shouldShowOption!() && <Option {...menuOptions.removeBorder} />}
+            {menuOptions.addZebra.shouldShowOption!() && <Option {...menuOptions.addZebra} />}
+            {menuOptions.removeZebra.shouldShowOption!() && <Option {...menuOptions.removeZebra} />}
+          </DropdownMenu>
+          <DropdownMenu
+            title="Lisää"
+            openState={isOpen.add}
+            setOpen={state => setIsOpen({ add: state, remove: false, styles: false })}
+            dropdownsBelow={props.dropdownsBelow}
+          >
+            <Option {...menuOptions.addRowAfter} />
+            <Option {...menuOptions.addColumnAfter} />
+          </DropdownMenu>
+
+          <DropdownMenu
+            title="Poista"
+            openState={isOpen.remove}
+            setOpen={state => setIsOpen({ add: false, remove: state, styles: false })}
+            dropdownsBelow={props.dropdownsBelow}
+          >
+            <Option {...menuOptions.deleteRow} />
+            <Option {...menuOptions.deleteColumn} />
+            <Option {...menuOptions.deleteTable} />
+          </DropdownMenu>
+        </>
+      )}
+    </>
+  )
+}
+
+function DropdownMenu({
+  title,
+  openState,
+  setOpen,
+  dropdownsBelow,
+  children
+}: {
+  title: string
+  openState: boolean
+  setOpen: (state: boolean) => void
+  dropdownsBelow: boolean
+  children: React.ReactNode
+}) {
+  const menuClosedIcon = dropdownsBelow ? faAngleDown : faAngleUp
+  const menuOpenIcon = dropdownsBelow ? faAngleUp : faAngleDown
+
+  return (
+    <>
+      <button onClick={() => setOpen(!openState)}>
+        {title}
+        <FontAwesomeIcon
+          size="lg"
+          className="editor-menu-icon-open-close"
+          icon={openState ? menuClosedIcon : menuOpenIcon}
+          fixedWidth
+        />
+      </button>
       <span className="e-menu-dropdown">
-        <button onClick={() => setIsOpen(!isOpen)}>
-          <FontAwesomeIcon size="sm" icon={faTable} fixedWidth />
-        </button>
-        <ul className="e-menu-dropdown-menu" style={{ display: isOpen ? 'block' : 'none' }}>
-          <Option {...menuOptions.addTable} />
-          <Option {...menuOptions.addRowAfter} />
-          <Option {...menuOptions.addColumnAfter} />
-          <Option {...menuOptions.deleteRow} />
-          <Option {...menuOptions.deleteColumn} />
-          <Option {...menuOptions.deleteTable} />
-          <Option {...menuOptions.setFullWidth} />
-          <Option {...menuOptions.setHalfWidth} />
-          <Option {...menuOptions.removeBorder} />
-          <Option {...menuOptions.addBorder} />
-          <Option {...menuOptions.removeZebra} />
-          <Option {...menuOptions.addZebra} />
+        <ul
+          style={{ display: openState ? 'block' : 'none' }}
+          className={classNames({ 'e-menu-dropdown-menu': true, ['dropdowns-below']: dropdownsBelow })}
+        >
+          {children}
         </ul>
       </span>
     </>
