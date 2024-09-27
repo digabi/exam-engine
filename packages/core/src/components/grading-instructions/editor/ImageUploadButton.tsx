@@ -20,10 +20,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
     if (permanentUrl) {
       doc.descendants((node, pos) => {
         if (node.type.name === 'image' && node.attrs.src === tempUrl) {
-          tr = tr.setNodeMarkup(pos, undefined, {
-            ...node.attrs,
-            src: permanentUrl
-          })
+          tr = tr.setNodeAttribute(pos, 'src', permanentUrl)
         }
       })
     } else {
