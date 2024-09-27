@@ -38,18 +38,13 @@ function EditableGradingInstruction({ element }: { element: Element }) {
     nodes: baseSchema.spec.nodes
       .append(formulaSchema)
       .append(tableSchema)
-      .append(spanWithNowrap)
       .update('image', imageInputSchema(resolveAttachment)),
-    marks: baseSchema.spec.marks
+    marks: baseSchema.spec.marks.append(spanWithNowrap)
   })
 
   const outputSchema = new Schema({
-    nodes: baseSchema.spec.nodes
-      .append(formulaOutputSchema)
-      .append(tableSchema)
-      .append(spanWithNowrap)
-      .update('image', imageOutputSchema),
-    marks: baseSchema.spec.marks
+    nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema).update('image', imageOutputSchema),
+    marks: baseSchema.spec.marks.append(spanWithNowrap)
   })
 
   const doc = ProseDOMParser.fromSchema(inputSchema).parse(element)
@@ -57,7 +52,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
   const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
   const formulaPlugin = new FormulaPlugin(setFormulaState)
   const [state, setState] = useState(
-    EditorState.create({ schema: inputSchema, doc, plugins: [keymap(baseKeymap), formulaPlugin] })
+    EditorState.create({ schema: inputSchema, doc, plugins: [keymap(baseKeymap), formulaPlugin, nbspPlugin] })
   )
 
   return (
