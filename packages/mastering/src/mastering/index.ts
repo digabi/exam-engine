@@ -687,13 +687,6 @@ function findLocalization(gradingInstruction: GradingInstruction, language: stri
   )
 }
 
-function addGradingInstructionAttributesForExam(exam: Exam, language: string, type: ExamType) {
-  if (exam.examGradingInstruction) {
-    const localization = findLocalization(exam.examGradingInstruction, language, type)
-    exam.examGradingInstruction.element.attr('path', localization?.path() ?? exam.examGradingInstruction.element.path())
-  }
-}
-
 function addGradingInstructionAttributesForQuestions(questions: Question[], language: string, type: ExamType) {
   for (const question of questions) {
     if (question.gradingInstruction) {
@@ -718,7 +711,6 @@ function addGradingInstructionAttributesForAnswers(answers: Answer[], language: 
 
 function addGradingInstructionAttributes(root: Element, language: string, type: ExamType) {
   const exam = parseExamStructure(root)
-  addGradingInstructionAttributesForExam(exam, language, type)
   addGradingInstructionAttributesForQuestions(exam.questions, language, type)
   addGradingInstructionAttributesForAnswers(exam.answers, language, type)
 }
@@ -861,9 +853,6 @@ function mkError(message: string, element: Element): SyntaxError {
 
 function parseExamStructure(element: Element): Exam {
   const sections = element.find<Element>('//e:section', ns).map(parseSection)
-  const [examGradingInstruction] = element
-    .find<Element>('//e:exam-grading-instruction', ns)
-    .map(parseGradingInstruction)
   const topLevelQuestions = sections.flatMap(s => s.questions)
   const questions: Question[] = []
   const answers: Answer[] = []
@@ -876,7 +865,7 @@ function parseExamStructure(element: Element): Exam {
 
   topLevelQuestions.forEach(collect)
 
-  return { element, sections, questions, topLevelQuestions, answers, examGradingInstruction }
+  return { element, sections, questions, topLevelQuestions, answers }
 }
 
 function parseSection(element: Element): Section {
