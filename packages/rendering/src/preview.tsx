@@ -189,7 +189,7 @@ const App: React.FunctionComponent<{
           onContentChange: (answerHTML: string, path: string) => console.info(answerHTML.substring(0, 500), path),
           onSaveImage: (file: File, displayNumber: string) => {
             console.info(displayNumber, file)
-            return Promise.resolve('preview')
+            return Promise.resolve('/foo/bar.jpg')
           }
         } as EditableProps)
       : ({ editable: false } as NotEditableProps))
