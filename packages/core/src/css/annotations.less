@@ -35,9 +35,10 @@
   }
 }
 
-mark.e-annotation {
+.e-annotation {
   background: @annotation-background;
   cursor: pointer;
+  position: relative; // The index is positioned absolutely with respect to this element.
 
   &[data-hidden=''] {
     cursor: pointer;
@@ -76,17 +77,18 @@ mark.e-annotation {
       white-space: nowrap;
     }
   }
-}
 
-.e-annotation {
-  position: relative; // The index is positioned absolutely with respect to this element.
-
+  // Below: styles created for the "old" annotation system — the one that renders them using vanilla JS.
   &--pregrading {
     .annotation-styles(rgba(241, 34, 40, 0.2));
   }
 
   &--censoring {
     .annotation-styles(rgba(28, 135, 177, 0.2));
+
+    &:hover {
+      background-color: rgba(28, 135, 177, 0.3);
+    }
   }
 
   &--shape {
