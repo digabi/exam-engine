@@ -4,6 +4,12 @@ import { EditableProps } from '../../context/GradingInstructionContext'
 import { QuestionContext } from '../../context/QuestionContext'
 import { CommonExamContext } from '../../context/CommonExamContext'
 
+enum EditorAction {
+  REMOVE_IMAGE = 'REMOVE_IMAGE',
+  UPDATE_IMAGE = 'UPDATE_IMAGE',
+  INSERT_IMAGE = 'INSERT_IMAGE'
+}
+
 export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onSaveImage'] }) {
   const inputRef = useRef<HTMLInputElement | null>(null)
   const { displayNumber } = useContext(QuestionContext)
@@ -14,40 +20,56 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
     }
   }
 
-  const updateEditor = useEditorEventCallback((view, tempPath, permanentPath = undefined) => {
-    const { state } = view
-    const { doc } = state
-    let tr = state.tr
+  const updateEditor = useEditorEventCallback(
+    (view, action: EditorAction, tempPath: string, permanentPath?: string) => {
+      const { state } = view
+      const {
+        doc,
+        schema: { nodes }
+      } = state
+      let tr = state.tr
 
-    if (permanentPath) {
-      doc.descendants((node, pos) => {
-        if (node.type.name === 'image' && node.attrs.src === tempPath) {
-          tr = tr.setNodeAttribute(pos, 'src', permanentPath)
-        }
-      })
-    } else {
-      const imageNode = state.schema.nodes.image.create({ src: tempPath })
-      tr = tr.replaceSelectionWith(imageNode)
+      switch (action) {
+        case EditorAction.INSERT_IMAGE:
+          tr = tr.replaceSelectionWith(nodes.image.create({ src: tempPath }))
+          break
+        case EditorAction.UPDATE_IMAGE:
+          doc.descendants((node, pos) => {
+            if (node.type.name === 'image' && node.attrs.src === tempPath) {
+              tr = tr.setNodeAttribute(pos, 'src', permanentPath)
+            }
+          })
+          break
+        case EditorAction.REMOVE_IMAGE:
+          doc.descendants((node, pos) => {
+            if (node.type.name === 'image' && node.attrs.src === tempPath) {
+              tr = tr.delete(pos, pos + node.nodeSize)
+            }
+          })
+          break
+        default:
+          console.error('Unsupported action:', action)
+      }
+      if (tr.steps.length > 0) {
+        view.dispatch(tr)
+      }
+      view.focus()
     }
-    if (tr.steps.length > 0) {
-      view.dispatch(tr)
-    }
-    view.focus()
-  })
+  )
 
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) {
       const tempPath = URL.createObjectURL(file)
-      updateEditor(tempPath)
+      updateEditor(EditorAction.INSERT_IMAGE, tempPath)
       event.target.value = ''
       try {
         const permanentPath = await saveImage(file, displayNumber)
-        if (!permanentPath) throw new Error('no permanent image url provided')
-        updateEditor(tempPath, resolveAttachment(permanentPath))
+        if (!permanentPath) throw new Error('no permanent image path provided')
+        updateEditor(EditorAction.UPDATE_IMAGE, tempPath, resolveAttachment(permanentPath))
       } catch (e) {
-        console.error('error getting permanent url for image', e)
-        updateEditor(tempPath, 'no-image')
+        console.error('error getting permanent path for image', e)
+        updateEditor(EditorAction.REMOVE_IMAGE, tempPath)
       }
     }
   }
