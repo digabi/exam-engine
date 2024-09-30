@@ -81,7 +81,7 @@ describe('ImageUploadButton', () => {
           ''
         )
         const image = container.getByRole('img')
-        expect(image).toHaveAttribute('src', mockedPermanentUrl)
+        expect(image).toHaveAttribute('src', `/${mockedResolvedPath}/${mockedPermanentUrl}`)
       })
     })
   })
