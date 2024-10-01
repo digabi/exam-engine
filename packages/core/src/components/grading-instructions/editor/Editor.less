@@ -47,8 +47,36 @@
     top: 5px;
     left:0;
   }
+
+  e\:localization[exam-type="visually-impaired"] {
+    background-color: #d9edf6;
+  }
+
+  e\:localization[exam-type="hearing-impaired"] {
+    background-color: #e1f6d9;
+  }
 }
 
 .ProseMirror-focused {
   padding: 3px;
+}
+
+
+.ProseMirror-menu {
+  height: 40px;
+  .element-target {
+
+    span {
+      margin-left: 10px;
+      border-radius: 3px;
+    }
+
+    .enabled {
+      background-color: #e8eff2;
+      padding: 10px;
+    }
+    .disabled {
+      background-color: transparent;
+    }
+  }
 }
