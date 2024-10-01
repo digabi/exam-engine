@@ -28,14 +28,14 @@ do not yet work in Abitti. Breaking changes are also still possible without prio
 
 Make sure the following are installed in your system:
 
-- [Node.js](https://nodejs.org/en/) (Version 12 or later)
+- [Node.js](https://nodejs.org/en/) `nvm install` and/or `nvm use`
 - [Firefox](https://www.mozilla.org/fi-FI/firefox/new/)
 
 After Node.js has been installed, open a new terminal window and type the
 following command.
 
 ```
-$ npm install -g @digabi/exam-engine-cli
+$ npm install -g @digabi/exam-engine-cli
 ```
 
 This installs the `ee` command-line program to your system.
@@ -83,7 +83,7 @@ To create an offline version of the exam, navigate to the exam directory and
 use
 
 ```
-$ ee create-offline
+$ ee create-offline
 ```
 
 # Intellectual property rights
@@ -159,21 +159,15 @@ you need to update the test snapshots by running. Review changes the snapshots m
 $ npm run test -- -u
 ```
 
-Travis CI runs tests on all branches and pull requests in https://travis-ci.org/digabi/exam-engine
-
 ## NPM releases
 
-First, login to npm using:
+Requires setting [.npmrc](https://github.com/digabi/digabi-top/wiki/Users-onboarding#devausymp%C3%A4rist%C3%B6-voi-tehd%C3%A4-itse) with YTL NPM Publish Token.
 
-```
-$ npm login
-```
-
-When publishing a (pre)release, use:
+Publish a (pre)release:
 
 ```bash
 $ npm run lerna publish
 ```
 
-The commands prompt you for details about the release: just running them does not publish
+The command prompts you for details about the release: just running them does not publish
 anything yet.
