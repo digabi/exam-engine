@@ -9,26 +9,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Install nodejs
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
-      - name: Restore cache
+      - name: Restore puppeteer cache
         uses: actions/cache@v4
         with:
-          path: |
-            **/node_modules
-            ~/.cache/puppeteer
-          key: ${{ matrix.node-version }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ matrix.node-version }}-
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - run: npm ci
       - run: npm rebuild full-icu
@@ -39,20 +33,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js 18
+      - name: Install nodejs
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
-      - name: Restore cache
+      - name: Restore puppeteer cache
         uses: actions/cache@v4
         with:
-          path: |
-            **/node_modules
-            ~/.cache/puppeteer
-          key: 18.x-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            18.x-
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - run: npm ci
       - name: "run linter"
