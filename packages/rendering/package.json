@@ -38,7 +38,7 @@
     "router5-plugin-browser": "^8.0.1",
     "tmp-promise": "^3.0.2",
     "uuid": "^10.0.0",
-    "webpack": "^5.23.0",
+    "webpack": "^5.95.0",
     "webpack-dev-server": "^5.0.0",
     "webpack-merge": "^6.0.1"
   },
