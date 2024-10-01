@@ -161,17 +161,13 @@ $ npm run test -- -u
 
 ## NPM releases
 
-First, login to npm using:
+Requires setting [.npmrc](https://github.com/digabi/digabi-top/wiki/Users-onboarding#devausymp%C3%A4rist%C3%B6-voi-tehd%C3%A4-itse) with YTL NPM Publish Token.
 
-```
-$ npm login
-```
-
-When publishing a (pre)release, use:
+Publish a (pre)release:
 
 ```bash
 $ npm run lerna publish
 ```
 
-The commands prompt you for details about the release: just running them does not publish
+The command prompts you for details about the release: just running them does not publish
 anything yet.
