@@ -35,7 +35,7 @@ After Node.js has been installed, open a new terminal window and type the
 following command.
 
 ```
-$ npm install -g @digabi/exam-engine-cli
+$ npm install -g @digabi/exam-engine-cli
 ```
 
 This installs the `ee` command-line program to your system.
@@ -83,7 +83,7 @@ To create an offline version of the exam, navigate to the exam directory and
 use
 
 ```
-$ ee create-offline
+$ ee create-offline
 ```
 
 # Intellectual property rights
