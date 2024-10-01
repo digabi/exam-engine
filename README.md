@@ -28,7 +28,7 @@ do not yet work in Abitti. Breaking changes are also still possible without prio
 
 Make sure the following are installed in your system:
 
-- [Node.js](https://nodejs.org/en/) (Version 12 or later)
+- [Node.js](https://nodejs.org/en/) `nvm install` and/or `nvm use`
 - [Firefox](https://www.mozilla.org/fi-FI/firefox/new/)
 
 After Node.js has been installed, open a new terminal window and type the
@@ -158,8 +158,6 @@ you need to update the test snapshots by running. Review changes the snapshots m
 ```
 $ npm run test -- -u
 ```
-
-Travis CI runs tests on all branches and pull requests in https://travis-ci.org/digabi/exam-engine
 
 ## NPM releases
 
