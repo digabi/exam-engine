@@ -13,7 +13,8 @@ export const formulaSchema: NodeSpec = {
     atom: true,
     attrs: {
       latex: {},
-      mode: { default: '' }
+      mode: { default: '' },
+      assistiveTitle: { default: '' }
     },
     parseDOM: [
       {
@@ -21,7 +22,8 @@ export const formulaSchema: NodeSpec = {
         getAttrs(dom: HTMLElement) {
           return {
             latex: dom.textContent,
-            mode: dom.getAttribute('mode')
+            mode: dom.getAttribute('mode'),
+            assistiveTitle: dom.getAttribute('assistive-title')
           }
         }
       }
@@ -41,14 +43,25 @@ export const formulaOutputSchema: NodeSpec = {
   formula: {
     ...(formulaSchema.formula as AttributeSpec),
     toDOM(node: Node) {
+      if (!node.attrs.latex) {
+        return ''
+      }
+      const formulaElement = document.createElement('e:formula')
+      if (node.attrs.mode) {
+        formulaElement.setAttribute('mode', node.attrs.mode as string)
+      }
+      if (node.attrs.assistiveTitle) {
+        formulaElement.setAttribute('assistive-title', node.attrs.assistiveTitle as string)
+      }
+      formulaElement.textContent = node.attrs.latex as string
       const container = document.createElement('span')
-      container.innerHTML = `<e:formula ${node.attrs.mode ? `mode="${node.attrs.mode}"` : ''}>${node.attrs.latex}</e:formula>`
+      container.appendChild(formulaElement)
       return container.firstElementChild!
     }
   }
 }
 
-export function FormulaButton(props: { setFormulaState: (values: FormulaEditorState) => void }) {
+export function FormulaButton(props: { disabled: boolean; setFormulaState: (values: FormulaEditorState) => void }) {
   const onClick = useEditorEventCallback(view => {
     const transaction: Transaction = view.state.tr
     const formula = view.state.schema.nodes.formula.create({ latex: '' }, Fragment.empty)
@@ -64,7 +77,7 @@ export function FormulaButton(props: { setFormulaState: (values: FormulaEditorSt
   })
 
   return (
-    <button onClick={onClick} data-testid="add-formula">
+    <button onClick={onClick} data-testid="add-formula" disabled={props.disabled}>
       Lisää kaava
     </button>
   )

@@ -32,8 +32,21 @@ describe('Editor - Formula', () => {
   it('Change in content causes formula to be returned as expected', async () => {
     cleanup = mockCreateRange()
     const inputData =
-      '<p>bar</p><p><e:formula data-editor-id="e-formula" mode="inline">foo</e:formula><e:formula data-editor-id="e-formula">bar</e:formula></p>'
-    const expectedOutput = '<p>foo</p><p><e:formula mode="inline">foo</e:formula><e:formula>bar</e:formula></p>'
+      '<p>bar</p><p><e:formula data-editor-id="e-formula" mode="inline">foo</e:formula><e:formula data-editor-id="e-formula" assistive-title="foobar">bar</e:formula></p>'
+    const expectedOutput =
+      '<p>foo</p><p><e:formula mode="inline">foo</e:formula><e:formula assistive-title="foobar">bar</e:formula></p>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    await act(async () => {
+      insertText(await result.findByText('bar'), 'foo')
+    })
+    expect(onContentChangeMock).toHaveBeenCalledTimes(1)
+    expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
+  })
+
+  it('Empty formula is removed when sending changed content', async () => {
+    cleanup = mockCreateRange()
+    const inputData = '<p>bar</p><p><e:formula data-editor-id="e-formula"></e:formula></p>'
+    const expectedOutput = '<p>foo</p><p></p>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
     await act(async () => {
       insertText(await result.findByText('bar'), 'foo')
