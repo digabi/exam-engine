@@ -13,7 +13,8 @@ export const formulaSchema: NodeSpec = {
     atom: true,
     attrs: {
       latex: {},
-      mode: { default: '' }
+      mode: { default: '' },
+      assistiveTitle: { default: '' }
     },
     parseDOM: [
       {
@@ -21,7 +22,8 @@ export const formulaSchema: NodeSpec = {
         getAttrs(dom: HTMLElement) {
           return {
             latex: dom.textContent,
-            mode: dom.getAttribute('mode')
+            mode: dom.getAttribute('mode'),
+            assistiveTitle: dom.getAttribute('assistive-title')
           }
         }
       }
@@ -44,8 +46,16 @@ export const formulaOutputSchema: NodeSpec = {
       if (!node.attrs.latex) {
         return ''
       }
+      const formulaElement = document.createElement('e:formula')
+      if (node.attrs.mode) {
+        formulaElement.setAttribute('mode', node.attrs.mode as string)
+      }
+      if (node.attrs.assistiveTitle) {
+        formulaElement.setAttribute('assistive-title', node.attrs.assistiveTitle as string)
+      }
+      formulaElement.textContent = node.attrs.latex as string
       const container = document.createElement('span')
-      container.innerHTML = `<e:formula ${node.attrs.mode ? `mode="${node.attrs.mode}"` : ''}>${node.attrs.latex}</e:formula>`
+      container.appendChild(formulaElement)
       return container.firstElementChild!
     }
   }
