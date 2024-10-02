@@ -48,7 +48,7 @@ export const formulaOutputSchema: NodeSpec = {
   }
 }
 
-export function FormulaButton(props: { setFormulaState: (values: FormulaEditorState) => void }) {
+export function FormulaButton(props: { disabled: boolean; setFormulaState: (values: FormulaEditorState) => void }) {
   const onClick = useEditorEventCallback(view => {
     const transaction: Transaction = view.state.tr
     const formula = view.state.schema.nodes.formula.create({ latex: '' }, Fragment.empty)
@@ -64,7 +64,7 @@ export function FormulaButton(props: { setFormulaState: (values: FormulaEditorSt
   })
 
   return (
-    <button onClick={onClick} data-testid="add-formula">
+    <button onClick={onClick} data-testid="add-formula" disabled={props.disabled}>
       Lisää kaava
     </button>
   )
