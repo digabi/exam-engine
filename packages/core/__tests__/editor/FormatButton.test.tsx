@@ -1,10 +1,11 @@
 import React from 'react'
 import '@testing-library/jest-dom'
 import { render, cleanup, act as testAct, within } from '@testing-library/react'
-import ProseMirrorWrapper from './utils/ProseMirrorWrapper'
-import { mockCreateRange, promisifiedFireEventInput } from './utils/prosemirror'
-import FormatButton from '../src/components/grading-instructions/editor/FormatButton'
+import ProseMirrorWrapper from '../utils/ProseMirrorWrapper'
+import { mockCreateRange } from '../utils/prosemirror'
+import FormatButton from '../../src/components/grading-instructions/editor/FormatButton'
 import userEvent from '@testing-library/user-event'
+import { insertText } from '../utils/util'
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
 
@@ -39,10 +40,10 @@ describe('FormatButton', () => {
 
     it('formats text', async () => {
       const props = { markName: 'em', displayName: 'Italic' }
-      const { button, paragraph } = renderEditorWithFormatButton(props)
+      const { button, paragraph, container } = renderEditorWithFormatButton(props)
 
       await userEvent.click(button)
-      await act(async () => await promisifiedFireEventInput(paragraph, { target: { innerHTML: 'hello' } }))
+      await act(async () => insertText(await container.findByRole('paragraph'), 'hello'))
       expect(within(paragraph).getByRole('emphasis')).toHaveTextContent('hello')
     })
 
@@ -82,10 +83,12 @@ describe('FormatButton', () => {
     it('formats text', async () => {
       const props = { markName: 'strong', displayName: 'Bold' }
 
-      const { button, paragraph } = renderEditorWithFormatButton(props)
+      const { button, container, paragraph } = renderEditorWithFormatButton(props)
 
       await userEvent.click(button)
-      await act(async () => await promisifiedFireEventInput(paragraph, { target: { innerHTML: 'hello' } }))
+      await act(async () => {
+        insertText(await container.findByRole('paragraph'), 'hello')
+      })
       expect(within(paragraph).getByRole('strong')).toHaveTextContent('hello')
     })
 
@@ -104,11 +107,11 @@ describe('FormatButton', () => {
 
   function renderEditorWithFormatButton(props: { markName: string; displayName: string; innerHtml?: string }) {
     const { markName, displayName, innerHtml = '' } = props
-    const { getByRole } = render(
+    const container = render(
       <ProseMirrorWrapper innerHtml={innerHtml}>
         <FormatButton markName={markName} displayName={displayName} />
       </ProseMirrorWrapper>
     )
-    return { button: getByRole('button'), paragraph: getByRole('paragraph') }
+    return { button: container.getByRole('button'), paragraph: container.getByRole('paragraph'), container }
   }
 })

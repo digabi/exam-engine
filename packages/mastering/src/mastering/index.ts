@@ -358,12 +358,19 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
         const audioMetadata = metadata as AudioMetadata
         attachment.attr('duration', String(audioMetadata.duration))
       } else {
+        if (type === 'image') {
+          addDataAttributesForEditor(attachment, 'e-image')
+        }
         const imageOrVideoMetadata = metadata as ImageMetadata | VideoMetadata
         attachment.attr('width', String(imageOrVideoMetadata.width))
         attachment.attr('height', String(imageOrVideoMetadata.height))
       }
     }
   }
+}
+
+function addDataAttributesForEditor(element: Element, attribute: string) {
+  element.attr('data-editor-id', attribute)
 }
 
 function collectAttachments(exam: Element, attachments: Element[]): Attachment[] {
@@ -841,7 +848,7 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
         throwOnLatexError
       )) as string
       formula.attr('svg', svg)
-      formula.attr('data-editor-id', 'e-formula')
+      addDataAttributesForEditor(formula, 'e-formula')
     } catch (errors) {
       if (Array.isArray(errors) && errors.every(_.isString)) {
         throw mkError(errors.join(', '), formula)

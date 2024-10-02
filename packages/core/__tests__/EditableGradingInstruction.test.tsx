@@ -1,6 +1,7 @@
-import { fireEvent, act as testAct, RenderResult } from '@testing-library/react'
+import { act as testAct, RenderResult } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderGradingInstruction } from './utils/renderEditableGradingInstruction'
+import { insertText } from './utils/util'
 
 const act = testAct as (func: () => Promise<void>) => Promise<void>
 
@@ -152,12 +153,6 @@ async function focusOnTablesCell(result: RenderResult, text: string) {
   // Replace cell's text with same text
   // Hack to get focus on cell without need to mock createRange
   insertText(await result.findByText(text), text)
-}
-
-function insertText(element: HTMLElement, text: string) {
-  fireEvent.input(element, {
-    target: { innerText: text, innerHTML: text }
-  })
 }
 
 function mockCreateRange() {

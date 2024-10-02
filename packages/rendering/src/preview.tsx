@@ -187,8 +187,8 @@ const App: React.FunctionComponent<{
       ? ({
           editable: true,
           onContentChange: (answerHTML: string, path: string) => console.info(answerHTML.substring(0, 500), path),
-          saveScreenshot: (type: string, data: Buffer, displayNumber: string) => {
-            console.info(displayNumber, type, data)
+          onSaveImage: (file: File, displayNumber: string) => {
+            console.info(displayNumber, file)
             return Promise.resolve('/foo/bar.jpg')
           }
         } as EditableProps)

@@ -1,5 +1,3 @@
-import { fireEvent } from '@testing-library/react'
-
 export function mockCreateRange() {
   const originalCreateRange = global.window.document.createRange
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -27,11 +25,4 @@ export function mockCreateRange() {
     }
   }
   return () => (global.window.document.createRange = originalCreateRange)
-}
-
-export function promisifiedFireEventInput(element: Element, options: object) {
-  return new Promise<void>(resolve => {
-    fireEvent.input(element, options)
-    resolve()
-  })
 }

@@ -1567,7 +1567,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
           <span lang="fi-FI">
             <h4>Consectetur cupidatat et non occaecat voluptate laboris</h4>
             <p>Nostrud laborum aute reprehenderit eiusmod ex do aute.</p>
-            <e:image src="4A.jpg" width="999" height="999"><e:image-title>Elit elit laborum tempor reprehenderit excepteur excepteur commodo nostrud.
+            <e:image src="4A.jpg" data-editor-id="e-image" width="999" height="999"><e:image-title>Elit elit laborum tempor reprehenderit excepteur excepteur commodo nostrud.
             </e:image-title></e:image>
             <p>Dolore est occaecat ex est culpa minim quis incididunt excepteur eiusmod
               officia occaecat qui cupidatat. Duis sunt ad minim dolore amet veniam anim sunt amet
@@ -1598,7 +1598,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
             
           </e:attachment-title>
 
-          <e:image src="4B.png" width="999" height="999"/>
+          <e:image src="4B.png" data-editor-id="e-image" width="999" height="999"/>
 
           <e:reference>
             <e:publisher>Consequat dolor laboris anim do culpa consequat</e:publisher>
@@ -2587,7 +2587,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
           <span lang="sv-FI">
             <h4>Consectetur cupidatat et non occaecat voluptate laboris</h4>
             <p>Dolore ea commodo nostrud nulla deserunt ullamco ad commodo.</p>
-            <e:image src="4A.jpg" width="999" height="999"><e:image-title>Culpa reprehenderit laborum dolor aliqua velit.
+            <e:image src="4A.jpg" data-editor-id="e-image" width="999" height="999"><e:image-title>Culpa reprehenderit laborum dolor aliqua velit.
             </e:image-title></e:image>
             <p>Pariatur irure incididunt ipsum reprehenderit veniam do elit aliqua enim sunt. Eiusmod ea
               proident irure voluptate quis laboris velit eiusmod. Sint do occaecat irure exercitation
@@ -2617,7 +2617,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
             <span lang="sv-FI">Aliqua magna deserunt eu laboris nulla aliqua</span>
           </e:attachment-title>
 
-          <e:image src="4B.png" width="999" height="999"/>
+          <e:image src="4B.png" data-editor-id="e-image" width="999" height="999"/>
 
           <e:reference>
             <e:publisher>Consequat dolor laboris anim do culpa consequat</e:publisher>
@@ -8151,15 +8151,15 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           
           
         <e:choice-answer-option option-id="25">
-            <e:image src="example.jpg" width="999" height="999"/>
+            <e:image src="example.jpg" data-editor-id="e-image" width="999" height="999"/>
           </e:choice-answer-option><e:choice-answer-option option-id="26">
-            <e:image src="example_small.jpg" width="999" height="999"/>
+            <e:image src="example_small.jpg" data-editor-id="e-image" width="999" height="999"/>
           </e:choice-answer-option><e:choice-answer-option option-id="27">
-            <e:image src="example_high.jpg" width="999" height="999"/>
+            <e:image src="example_high.jpg" data-editor-id="e-image" width="999" height="999"/>
           </e:choice-answer-option><e:choice-answer-option option-id="28">
-            <e:image src="example.jpg" width="999" height="999"/>
+            <e:image src="example.jpg" data-editor-id="e-image" width="999" height="999"/>
           </e:choice-answer-option><e:choice-answer-option option-id="29">
-            <e:image src="example.jpg" width="999" height="999"/>
+            <e:image src="example.jpg" data-editor-id="e-image" width="999" height="999"/>
           </e:choice-answer-option></e:choice-answer>
       </div>
     </e:question>
@@ -8396,7 +8396,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         <e:attachment>
           <e:attachment-title>Title</e:attachment-title>
           <p>...HTML code...</p>
-          <e:image src="example.jpg" width="999" height="999"/>
+          <e:image src="example.jpg" data-editor-id="e-image" width="999" height="999"/>
           <p>...More HTML code...</p>
           <e:reference>
             <e:author>Dolor Tempor</e:author>
@@ -8447,7 +8447,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         <e:attachment name="test-material" display-number="11.A">
           <e:attachment-title>Title 1</e:attachment-title>
           <p>...HTML code...</p>
-          <e:image src="example.jpg" width="999" height="999"/>
+          <e:image src="example.jpg" data-editor-id="e-image" width="999" height="999"/>
           <p>...More HTML code...</p>
           <e:reference>
             <e:author>Matriculation examination board</e:author>
@@ -8508,7 +8508,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   <e:image-title>Optional image title text</e:image-title>
 </e:image>]]></pre>
       <div class="example">
-        <e:image src="example.jpg" width="999" height="999">
+        <e:image src="example.jpg" data-editor-id="e-image" width="999" height="999">
           <e:image-title>Optional image title text</e:image-title>
         </e:image>
       </div>
@@ -8548,13 +8548,13 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 </e:image-overlay>]]></pre>
       <div class="example">
         <e:image-overlay>
-          <e:image src="map-example-1.jpg" width="999" height="999">
+          <e:image src="map-example-1.jpg" data-editor-id="e-image" width="999" height="999">
             <e:image-title>Topographic Map</e:image-title>
           </e:image>
-          <e:image src="map-example-2.jpg" width="999" height="999">
+          <e:image src="map-example-2.jpg" data-editor-id="e-image" width="999" height="999">
             <e:image-title>Public Transport Map</e:image-title>
           </e:image>
-          <e:image src="map-example-3.jpg" width="999" height="999">
+          <e:image src="map-example-3.jpg" data-editor-id="e-image" width="999" height="999">
             <e:image-title>Bike Lanes Map</e:image-title>
           </e:image>
         </e:image-overlay>
@@ -9183,11 +9183,11 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 </div>]]></pre>
       <div class="example">
         <div class="e-clearfix">
-          <e:image src="example.jpg" class="e-width-half e-mrg-r-2 e-float-left" width="999" height="999"/>
+          <e:image src="example.jpg" class="e-width-half e-mrg-r-2 e-float-left" data-editor-id="e-image" width="999" height="999"/>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="e-clearfix">
-          <e:image src="example.jpg" class="e-width-third e-mrg-l-2 e-float-right" width="999" height="999"/>
+          <e:image src="example.jpg" class="e-width-third e-mrg-l-2 e-float-right" data-editor-id="e-image" width="999" height="999"/>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
@@ -9227,7 +9227,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   voluptas tempora accusamus voluptate culpa!
 </p>]]></pre>
       <div class="example e-clearfix">
-        <e:image src="example.jpg" class="e-illustration-right e-width-third" width="999" height="999"/>
+        <e:image src="example.jpg" class="e-illustration-right e-width-third" data-editor-id="e-image" width="999" height="999"/>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
           dolores quam facere vel cum eos enim eaque soluta? Ullam doloribus
@@ -11174,7 +11174,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
             
         </e:attachment-title>
 
-        <e:image src="13A.jpg" class="e-width-threequarters" width="999" height="999"/>
+        <e:image src="13A.jpg" class="e-width-threequarters" data-editor-id="e-image" width="999" height="999"/>
 
         <e:reference>
           <e:author>
@@ -11719,7 +11719,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
             <span lang="sv-FI">Figur: Träskulpturer</span>
         </e:attachment-title>
 
-        <e:image src="13A.jpg" class="e-width-threequarters" width="999" height="999"/>
+        <e:image src="13A.jpg" class="e-width-threequarters" data-editor-id="e-image" width="999" height="999"/>
 
         <e:reference>
           <e:author>
@@ -20236,7 +20236,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="172">
               <e:attachment>
                 <e:attachment-title>7.1.7279.jpg</e:attachment-title>
-                <e:image src="7.1.7279.jpg" width="999" height="999"/>
+                <e:image src="7.1.7279.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>mashed potatoes for perogies</e:title>
                   <e:author>Gail</e:author>
@@ -20250,7 +20250,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="173">
               <e:attachment>
                 <e:attachment-title>7.1.4327.jpg</e:attachment-title>
-                <e:image src="7.1.4327.jpg" width="999" height="999"/>
+                <e:image src="7.1.4327.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:author>jules</e:author>
                   <e:title>potato rosti</e:title>
@@ -20264,7 +20264,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="174">
               <e:attachment>
                 <e:attachment-title>7.1.0478.jpg</e:attachment-title>
-                <e:image src="7.1.0478.jpg" width="999" height="999"/>
+                <e:image src="7.1.0478.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Fried Potatoes</e:title>
                   <e:author>jeffhutchison</e:author>
@@ -20299,7 +20299,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="175">
               <e:attachment>
                 <e:attachment-title>7.2.7276.jpg</e:attachment-title>
-                <e:image src="7.2.7276.jpg" width="999" height="999"/>
+                <e:image src="7.2.7276.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Scrambled Eggs</e:title>
                   <e:author>Steve Garfield</e:author>
@@ -20313,7 +20313,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="176">
               <e:attachment>
                 <e:attachment-title>7.2.1617.jpg</e:attachment-title>
-                <e:image src="7.2.1617.jpg" width="999" height="999"/>
+                <e:image src="7.2.1617.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:author>Aaron Headly</e:author>
                   <e:title>Poached egg</e:title>
@@ -20327,7 +20327,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="177">
               <e:attachment>
                 <e:attachment-title>7.2.7291.jpg</e:attachment-title>
-                <e:image src="7.2.7291.jpg" width="999" height="999"/>
+                <e:image src="7.2.7291.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:author>Marco Verch</e:author>
                   <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
@@ -20362,7 +20362,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="178">
               <e:attachment>
                 <e:attachment-title>7.3.4927.jpg</e:attachment-title>
-                <e:image src="7.3.4927.jpg" width="999" height="999"/>
+                <e:image src="7.3.4927.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Coffee Maker</e:title>
                   <e:author>Neil</e:author>
@@ -20376,7 +20376,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="179">
               <e:attachment>
                 <e:attachment-title>7.3.7459.jpg</e:attachment-title>
-                <e:image src="7.3.7459.jpg" width="999" height="999"/>
+                <e:image src="7.3.7459.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Man using the French Press to make coffee</e:title>
                   <e:author>Marco Verch</e:author>
@@ -20390,7 +20390,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="180">
               <e:attachment>
                 <e:attachment-title>7.3.4375.jpg</e:attachment-title>
-                <e:image src="7.3.4375.jpg" width="999" height="999"/>
+                <e:image src="7.3.4375.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Coffee By The Cup @ Madeline's</e:title>
                   <e:author>Troy Tolley</e:author>
@@ -21073,7 +21073,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       </e:question-instruction>
       <e:attachment>
         <e:attachment-title>Auswahl-kuva</e:attachment-title>
-        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right" width="999" height="999"/>
+        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right" data-editor-id="e-image" width="999" height="999"/>
         <e:reference>
           <e:title>Max und Moritz</e:title>
           <e:author>Wilhelm Busch</e:author>
@@ -21382,7 +21382,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.2. kuva</e:attachment-title>
-                  <e:image src="7.2.jpg" width="999" height="999"/>
+                  <e:image src="7.2.jpg" data-editor-id="e-image" width="999" height="999"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a
@@ -21420,7 +21420,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.4. kuva</e:attachment-title>
-                  <e:image src="7.4.jpg" width="999" height="999"/>
+                  <e:image src="7.4.jpg" data-editor-id="e-image" width="999" height="999"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda
@@ -21516,7 +21516,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
         <p>
           <e:attachment>
             <e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title>
-            <e:image src="24.1.jpg" width="999" height="999"/>
+            <e:image src="24.1.jpg" data-editor-id="e-image" width="999" height="999"/>
             <e:reference>
               <e:author>Riik@mctr</e:author>
               <e:title>Manchester Airport (EGCC)</e:title>
@@ -22109,7 +22109,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="172">
               <e:attachment>
                 <e:attachment-title>7.1.7279.jpg</e:attachment-title>
-                <e:image src="7.1.7279.jpg" width="999" height="999"/>
+                <e:image src="7.1.7279.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>mashed potatoes for perogies</e:title>
                   <e:author>Gail</e:author>
@@ -22123,7 +22123,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="173">
               <e:attachment>
                 <e:attachment-title>7.1.4327.jpg</e:attachment-title>
-                <e:image src="7.1.4327.jpg" width="999" height="999"/>
+                <e:image src="7.1.4327.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:author>jules</e:author>
                   <e:title>potato rosti</e:title>
@@ -22137,7 +22137,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="174">
               <e:attachment>
                 <e:attachment-title>7.1.0478.jpg</e:attachment-title>
-                <e:image src="7.1.0478.jpg" width="999" height="999"/>
+                <e:image src="7.1.0478.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Fried Potatoes</e:title>
                   <e:author>jeffhutchison</e:author>
@@ -22172,7 +22172,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="175">
               <e:attachment>
                 <e:attachment-title>7.2.7276.jpg</e:attachment-title>
-                <e:image src="7.2.7276.jpg" width="999" height="999"/>
+                <e:image src="7.2.7276.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Scrambled Eggs</e:title>
                   <e:author>Steve Garfield</e:author>
@@ -22186,7 +22186,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="176">
               <e:attachment>
                 <e:attachment-title>7.2.1617.jpg</e:attachment-title>
-                <e:image src="7.2.1617.jpg" width="999" height="999"/>
+                <e:image src="7.2.1617.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:author>Aaron Headly</e:author>
                   <e:title>Poached egg</e:title>
@@ -22200,7 +22200,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="177">
               <e:attachment>
                 <e:attachment-title>7.2.7291.jpg</e:attachment-title>
-                <e:image src="7.2.7291.jpg" width="999" height="999"/>
+                <e:image src="7.2.7291.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:author>Marco Verch</e:author>
                   <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
@@ -22235,7 +22235,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="178">
               <e:attachment>
                 <e:attachment-title>7.3.4927.jpg</e:attachment-title>
-                <e:image src="7.3.4927.jpg" width="999" height="999"/>
+                <e:image src="7.3.4927.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Coffee Maker</e:title>
                   <e:author>Neil</e:author>
@@ -22249,7 +22249,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="179">
               <e:attachment>
                 <e:attachment-title>7.3.7459.jpg</e:attachment-title>
-                <e:image src="7.3.7459.jpg" width="999" height="999"/>
+                <e:image src="7.3.7459.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Man using the French Press to make coffee</e:title>
                   <e:author>Marco Verch</e:author>
@@ -22263,7 +22263,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option><e:choice-answer-option option-id="180">
               <e:attachment>
                 <e:attachment-title>7.3.4375.jpg</e:attachment-title>
-                <e:image src="7.3.4375.jpg" width="999" height="999"/>
+                <e:image src="7.3.4375.jpg" data-editor-id="e-image" width="999" height="999"/>
                 <e:reference>
                   <e:title>Coffee By The Cup @ Madeline's</e:title>
                   <e:author>Troy Tolley</e:author>
@@ -22947,7 +22947,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       </e:question-instruction>
       <e:attachment>
         <e:attachment-title>Auswahl-kuva</e:attachment-title>
-        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right" width="999" height="999"/>
+        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right" data-editor-id="e-image" width="999" height="999"/>
         <e:reference>
           <e:title>Max und Moritz</e:title>
           <e:author>Wilhelm Busch</e:author>
@@ -23256,7 +23256,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.2. kuva</e:attachment-title>
-                  <e:image src="7.2.jpg" width="999" height="999"/>
+                  <e:image src="7.2.jpg" data-editor-id="e-image" width="999" height="999"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a
@@ -23294,7 +23294,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.4. kuva</e:attachment-title>
-                  <e:image src="7.4.jpg" width="999" height="999"/>
+                  <e:image src="7.4.jpg" data-editor-id="e-image" width="999" height="999"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda
@@ -23391,7 +23391,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
         <p>
           <e:attachment>
             <e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title>
-            <e:image src="24.1.jpg" width="999" height="999"/>
+            <e:image src="24.1.jpg" data-editor-id="e-image" width="999" height="999"/>
             <e:reference>
               <e:author>Riik@mctr</e:author>
               <e:title>Manchester Airport (EGCC)</e:title>
@@ -24149,7 +24149,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
       </e:question-instruction>
       <e:attachment>
         <e:attachment-title>Auswahl-kuva</e:attachment-title>
-        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right" width="999" height="999"/>
+        <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right" data-editor-id="e-image" width="999" height="999"/>
         <e:reference>
           <e:title>Max und Moritz</e:title>
           <e:author>Wilhelm Busch</e:author>
@@ -24458,7 +24458,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.2. kuva</e:attachment-title>
-                  <e:image src="7.2.jpg" width="999" height="999"/>
+                  <e:image src="7.2.jpg" data-editor-id="e-image" width="999" height="999"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/safetyparachute/2089553059/in/photolist-4bDvjT-48tAQt-2hffur7-bmyCbR-8M7oUH-7TdLKy-83JThq-n2Cj9n-n2ChtP-n2DWGb-9zHqm6-Ed22H-qLsPYG-8b1L5G-7XrXhz-7JC6xs-2hMJbHe-7JC8ZY-2hNBtX3-8xJEhB-4SNGrm-e4hsF2-8bL8Cf-9cjSvz-8wwMK9-7JC4aQ-83JTjd-5nXim2-8m4om-ZgsKgs-9cjSiH-8JUTVE-8HWxEy-5HyK4b-7Jy9ic-7JC7MW-7u1j-b8a64-7E3U4g-PsfKsY-2hMTZWv-dRhRss-nbo1g5-P9QL9m-2hMXEkC-2hMU144-2hMXEdy-2hMa9yb-bFcmxe-2hMU12a
@@ -24496,7 +24496,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
               <e:hint>
                 <e:attachment>
                   <e:attachment-title>7.4. kuva</e:attachment-title>
-                  <e:image src="7.4.jpg" width="999" height="999"/>
+                  <e:image src="7.4.jpg" data-editor-id="e-image" width="999" height="999"/>
                   <e:reference>
                     <e:url>
                       https://www.flickr.com/photos/cemillerphotography/40352339360/in/photolist-24tNhCY-26DVm8Z-bb6KnX-HSuNVr-qmbq1k-2eyZwoT-24JYK56-25RRRfk-zgMSh7-P5EHKc-28QnmwW-e3WSmu-9H99fA-9mENve-28og4pU-vn29zf-dYbUfJ-BTn7fA-TPYED1-MEnbmi-aFQ64k-9CFAz6-7Yp593-FjvJPB-7YkPMD-26U5YWb-XQfxq2-THEbZo-6QNXQR-2funk47-26HVjXA-P7fWzg-FMHB7M-28pepWY-21AmEPm-ZnqgHu-vWgFGN-nk1CKX-25FdLC-2UomSu-J1te8Y-eeAdu-eRJnM-9GaQ-NcNZV-cCcuTf-nQJQp-Jhfusm-NZU83q-LzvYda
@@ -24592,7 +24592,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         <p>
           <e:attachment>
             <e:attachment-title>Bilder: Lange Schreibaufgabe</e:attachment-title>
-            <e:image src="24.1.jpg" width="999" height="999"/>
+            <e:image src="24.1.jpg" data-editor-id="e-image" width="999" height="999"/>
             <e:reference>
               <e:author>Riik@mctr</e:author>
               <e:title>Manchester Airport (EGCC)</e:title>

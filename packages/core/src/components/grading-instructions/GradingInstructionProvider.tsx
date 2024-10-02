@@ -4,9 +4,9 @@ import { GradingInstructionContext, GradingInstructionProps } from '../context/G
 export const GradingInstructionProvider = ({
   editable,
   onContentChange,
-  saveScreenshot,
+  onSaveImage,
   children
 }: GradingInstructionProps) => {
-  const contextValue = editable ? { editable, onContentChange, saveScreenshot } : { editable }
+  const contextValue = editable ? { editable, onContentChange, onSaveImage } : { editable }
   return <GradingInstructionContext.Provider value={contextValue}>{children}</GradingInstructionContext.Provider>
 }

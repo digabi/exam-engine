@@ -12,22 +12,17 @@ import { FormulaPopup } from './editor/FormulaPopup'
 import FormatButton from './editor/FormatButton'
 import { NbspButton, nbspPlugin } from './editor/NBSP'
 import { spanWithNowrap } from './editor/spanWithNowrap'
-
-const schema = new Schema({
-  nodes: baseSchema.spec.nodes.append(formulaSchema).append(tableSchema),
-  marks: baseSchema.spec.marks.append(spanWithNowrap)
-})
-
-const outputSchema = new Schema({
-  nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema),
-  marks: baseSchema.spec.marks.append(spanWithNowrap)
-})
+import { ImageUploadButton } from './editor/ImageUploadButton'
+import { imageInputSchema, imageOutputSchema } from './editor/schemas/image-schema'
+import { CommonExamContext } from '../context/CommonExamContext'
 
 function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) {
+  const { onSaveImage } = useContext(GradingInstructionContext)
   return (
     <>
       <FormatButton markName="strong" displayName="Bold" />
       <FormatButton markName="em" displayName="Italic" />
+      {onSaveImage && <ImageUploadButton saveImage={onSaveImage} />}
       <TableMenu />
       <FormulaButton setFormulaState={props.setFormulaState} />
       <NbspButton />
@@ -37,12 +32,27 @@ function Menu(props: { setFormulaState: (values: FormulaEditorState) => void }) 
 
 function EditableGradingInstruction({ element }: { element: Element }) {
   const { onContentChange } = useContext(GradingInstructionContext)
-  const doc = ProseDOMParser.fromSchema(schema).parse(element)
+  const { resolveAttachment } = useContext(CommonExamContext)
+
+  const inputSchema = new Schema({
+    nodes: baseSchema.spec.nodes
+      .append(formulaSchema)
+      .append(tableSchema)
+      .update('image', imageInputSchema(resolveAttachment)),
+    marks: baseSchema.spec.marks.append(spanWithNowrap)
+  })
+
+  const outputSchema = new Schema({
+    nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema).update('image', imageOutputSchema),
+    marks: baseSchema.spec.marks.append(spanWithNowrap)
+  })
+
+  const doc = ProseDOMParser.fromSchema(inputSchema).parse(element)
   const [mount, setMount] = useState<HTMLElement | null>(null)
   const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
   const formulaPlugin = new FormulaPlugin(setFormulaState)
   const [state, setState] = useState(
-    EditorState.create({ schema, doc, plugins: [keymap(baseKeymap), formulaPlugin, nbspPlugin] })
+    EditorState.create({ schema: inputSchema, doc, plugins: [keymap(baseKeymap), formulaPlugin, nbspPlugin] })
   )
 
   return (
