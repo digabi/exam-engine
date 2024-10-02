@@ -41,4 +41,16 @@ describe('Editor - Formula', () => {
     expect(onContentChangeMock).toHaveBeenCalledTimes(1)
     expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
   })
+
+  it('Empty formula is removed when sending changed content', async () => {
+    cleanup = mockCreateRange()
+    const inputData = '<p>bar</p><p><e:formula data-editor-id="e-formula"></e:formula></p>'
+    const expectedOutput = '<p>foo</p><p></p>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    await act(async () => {
+      insertText(await result.findByText('bar'), 'foo')
+    })
+    expect(onContentChangeMock).toHaveBeenCalledTimes(1)
+    expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
+  })
 })
