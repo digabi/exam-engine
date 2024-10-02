@@ -27,6 +27,14 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       )
     })
 
+    it('New equation cannot be added if formula popup is already open', async () => {
+      await openGradingInstructionsPage()
+      await focusOnEditor()
+      expect(await getDisabledStatus(page, '.e-answer-grading-instruction [data-testid="add-formula"]')).toBeFalsy()
+      await addFormula()
+      expect(await getDisabledStatus(page, '.e-answer-grading-instruction [data-testid="add-formula"]')).toBeTruthy()
+    })
+
     it('Equation can be deleted', async () => {
       await openGradingInstructionsPage()
       await addEquation('\\sqrt{1}')
@@ -71,6 +79,15 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       expect(await page.waitForSelector(`[data-testid="e-popup-save"]:disabled`)).toBeTruthy()
       expect(await getInnerHtml('.e-popup-error')).toBe('Ainoastaan yksi kaava sallittu')
     })
+
+    async function getDisabledStatus(page: Page, selector: string): Promise<boolean> {
+      return page.$eval(selector, e => {
+        if (e instanceof HTMLButtonElement) {
+          return e.disabled
+        }
+        throw new Error('Not a button')
+      })
+    }
 
     async function replaceLatex(latex: string) {
       await clearInput('.math-editor-latex-field')
