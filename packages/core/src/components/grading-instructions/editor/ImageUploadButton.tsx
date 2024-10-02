@@ -79,7 +79,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
       <button onClick={handleButtonClick}>Lisää kuva</button>
       <input
         type="file"
-        accept="image/*"
+        accept="image/png, image/jpeg, image/tiff"
         style={{ display: 'none' }}
         ref={inputRef}
         onChange={e => void handleFileChange(e)}
