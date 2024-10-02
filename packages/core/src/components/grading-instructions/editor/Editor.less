@@ -17,6 +17,48 @@
     border-radius: 4px;
     outline-offset: 5px;
   }
+
+  e\:localization[exam-type] {
+    position: relative;
+  }
+
+  e\:localization[exam-type="visually-impaired"] {
+    // due to cursor blinking to be visible in editor, bg color must be semi-transparent (converted from #d9edf6 at https://jsfiddle.net/z42r2vv0/2/)
+    background-color: rgba(0, 134, 195, 0.149);
+  }
+
+  e\:localization[exam-type="hearing-impaired"] {
+    background-color: rgba(54, 195, 0, 0.149)
+  }
+
+  e\:localization[exam-type]:hover:after {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    color: black;
+    font-size: 50%;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: solid gray 1px;
+  }
+
+  e\:localization[lang][exam-type="hearing-impaired"]:hover:after {
+    content: attr(lang) + ' KV';
+  }
+
+  e\:localization[lang][exam-type="visually-impaired"]:hover:after {
+    content: attr(lang) + ' NV';
+  }
+
+  e\:localization[exam-type="visually-impaired"]:hover:after {
+    content: 'NV';
+    background-color: #d9edf6;
+  }
+
+  e\:localization[exam-type="hearing-impaired"]:hover:after {
+    content: 'KV';
+    background-color: #e1f6d9;
+  }
 }
 
 .editor-menu-placeholder {
