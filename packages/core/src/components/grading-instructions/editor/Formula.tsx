@@ -41,6 +41,9 @@ export const formulaOutputSchema: NodeSpec = {
   formula: {
     ...(formulaSchema.formula as AttributeSpec),
     toDOM(node: Node) {
+      if (!node.attrs.latex) {
+        return ''
+      }
       const container = document.createElement('span')
       container.innerHTML = `<e:formula ${node.attrs.mode ? `mode="${node.attrs.mode}"` : ''}>${node.attrs.latex}</e:formula>`
       return container.firstElementChild!
