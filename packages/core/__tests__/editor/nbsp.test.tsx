@@ -50,7 +50,7 @@ describe('Editor - NBSP', () => {
     await act(async () => {
       await userEvent.click(await result.findByText('NBSP'))
     })
-    expect(onContentChangeMock).toHaveBeenCalledTimes(2) // focus causes another call
+    expect(onContentChangeMock).toHaveBeenCalledTimes(1)
     expect(onContentChangeMock).toHaveBeenLastCalledWith(expectedOutput, '')
   })
 })
