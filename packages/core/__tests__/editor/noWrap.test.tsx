@@ -36,7 +36,7 @@ describe('Editor - e-nowrap', () => {
   it('e:formula is rendered as expected when wrapped inside e-nowrap', async () => {
     const inputData = '<p>bar</p><span class="e-nowrap"><e:formula data-editor-id=e-formula>foo</e:formula></span>'
     const expectedDom =
-      '<p>foo</p><p><span class="e-nowrap"><img alt="foo" src="/math.svg?latex=foo"><img class="ProseMirror-separator" alt=""></span><br class="ProseMirror-trailingBreak"></p>'
+      '<p>foo</p><p><span class="e-nowrap"><img alt="foo" formula="true" src="/math.svg?latex=foo"><img class="ProseMirror-separator" alt=""></span><br class="ProseMirror-trailingBreak"></p>'
     const expectedOutput = '<p>foo</p><p><span class="e-nowrap"><e:formula>foo</e:formula></span></p>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
     await act(async () => {

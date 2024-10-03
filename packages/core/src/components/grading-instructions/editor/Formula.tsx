@@ -32,6 +32,7 @@ export const formulaSchema: NodeSpec = {
       const container = document.createElement('img')
       if (node.attrs.latex) {
         container.setAttribute('alt', node.attrs.latex as string)
+        container.setAttribute('formula', 'true')
         container.setAttribute('src', `/math.svg?latex=${encodeURIComponent(node.attrs.latex as string)}`)
       }
       return container
