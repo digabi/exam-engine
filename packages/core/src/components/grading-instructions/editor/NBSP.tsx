@@ -15,5 +15,9 @@ export function NbspButton() {
     return true
   })
 
-  return <button onClick={onClick}>NBSP</button>
+  return (
+    <button onClick={onClick} title="sitova välilyönti">
+      NBSP
+    </button>
+  )
 }
