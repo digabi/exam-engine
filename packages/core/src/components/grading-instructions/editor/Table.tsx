@@ -1,13 +1,5 @@
-import {
-  addColumnAfter,
-  addRowAfter,
-  deleteColumn,
-  deleteRow,
-  deleteTable,
-  goToNextCell,
-  tableNodes
-} from 'prosemirror-tables'
-import { Fragment, Node, NodeSpec, ResolvedPos } from 'prosemirror-model'
+import { addColumnAfter, addRowAfter, deleteColumn, deleteRow, deleteTable, goToNextCell } from 'prosemirror-tables'
+import { Fragment, Node, ResolvedPos } from 'prosemirror-model'
 import React, { useEffect, useState } from 'react'
 import { useEditorEventCallback, useEditorState } from '@nytimes/react-prosemirror'
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state'
@@ -16,49 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { EditorView } from 'prosemirror-view'
 import classNames from 'classnames'
 import { keymap } from 'prosemirror-keymap'
-
-const defaultSchema = tableNodes({
-  tableGroup: 'block',
-  cellContent: 'inline*',
-  cellAttributes: { class: { default: '' } }
-})
-
-export const tableSchema: NodeSpec = {
-  ...defaultSchema,
-  table: {
-    ...defaultSchema.table,
-    parseDOM: [
-      {
-        tag: 'table',
-        getAttrs: (dom: HTMLElement) => ({ class: dom.getAttribute('class') })
-      }
-    ],
-    attrs: { class: { default: '' } },
-    toDOM(node: Node) {
-      const classNames = (node.attrs.class as string) || undefined
-      return [
-        'table',
-        {
-          class: classNames
-        },
-        ['tbody', 0]
-      ]
-    }
-  },
-  table_cell: {
-    ...defaultSchema.table_cell,
-    parseDOM: [
-      {
-        tag: 'td',
-        getAttrs: (dom: HTMLElement) => ({ class: dom.getAttribute('class') })
-      }
-    ],
-    toDOM(node: Node) {
-      const classNames = (node.attrs.class as string) || undefined
-      return ['td', { class: classNames }, 0]
-    }
-  }
-}
 
 export function tablePlugin() {
   return keymap({
