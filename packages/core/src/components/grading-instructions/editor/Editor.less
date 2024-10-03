@@ -1,42 +1,6 @@
-.e-exam {
-  .e-menu-dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .e-menu-dropdown-toggle {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  .e-menu-dropdown-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    z-index: 1;
-    width: 120px;
-
-    li {
-      padding-left: 5px;
-      padding-right: 5px;
-      cursor: pointer;
-      margin-left: 0;
-    }
-
-    li:hover {
-      background-color: #f1f1f1;
-    }
-  }
-}
 
 .ProseMirror {
-  img[alt] {
+  img[formula] {
     padding: 0;
     vertical-align: middle;
   }
@@ -46,6 +10,111 @@
     color: blue;
     top: 5px;
     left:0;
+  }
+
+  &:focus {
+    outline: 2px solid #2c90e8;
+    border-radius: 4px;
+    outline-offset: 5px;
+  }
+}
+
+.editor-menu-placeholder {
+  height: 56px;
+}
+
+.editor-menu-style {
+  border: 1px #CCCCCC;
+  border-radius: 4px;
+  box-shadow: 0 0 10px -2px #CCCCCC;
+  background-color: white;
+}
+
+.editor-menu {
+  padding: 5px 15px;
+  display: flex;
+  margin-bottom: 20px;
+
+  .editor-menu-style();
+
+  &.floating {
+    position: fixed;
+    top: 25px;
+  }
+
+  .editor-menu-icon-open-close {
+    color: #CCCCCC;
+  }
+
+  .editor-menu-icon {
+    font-size: 12px;
+  }
+
+  .e-menu-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .e-menu-dropdown-toggle {
+    padding: 5px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .e-menu-dropdown-menu {
+    .editor-menu-style();
+
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    bottom: 30px;
+    left: -50px;
+    z-index: 1;
+    width: 120px;
+
+    &.dropdowns-below {
+      bottom: unset;
+      top: 30px;
+    }
+
+    li {
+      padding: 3px 10px;
+      margin: 0;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    li:hover {
+      background-color: #f1f1f1;
+    }
+  }
+
+  button {
+    border: none;
+    margin: 0 1px;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+
+    &.active{
+      background-color: #E8EFF2;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: #F4F4F4;
+    }
+  }
+
+  .editor-menu-separator {
+    width: 1px;
+    height: 21px;
+    background-color: #CCCCCC;
+    margin: 0 10px;
   }
 }
 

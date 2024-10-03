@@ -23,7 +23,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await addEquation('\\sqrt{1}')
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
-        `<img alt="\\sqrt{1}" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
+        `<img alt="\\sqrt{1}" formula="true" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
       )
     })
 
@@ -42,7 +42,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await page.click('[data-testid="e-popup-delete"]')
       await page.click('[data-testid="e-popup-delete"]')
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
-      expect(value).not.toContain('<img alt="\\sqrt{1}" src="/math.svg?latex=\\sqrt{1}" contenteditable="false">')
+      expect(value).not.toContain('src="/math.svg?latex=\\sqrt{1}"')
     })
 
     it('Added equation can be modified', async () => {
@@ -54,7 +54,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await saveEquation()
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
-        `<img alt="\\sqrt{2}" src="/math.svg?latex=${encodeURIComponent('\\sqrt{2}')}" contenteditable="false">`
+        `<img alt="\\sqrt{2}" formula="true" src="/math.svg?latex=${encodeURIComponent('\\sqrt{2}')}" contenteditable="false">`
       )
     })
 
@@ -67,7 +67,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await page.click('[data-testid="e-popup-cancel"]')
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
-        `<img alt="\\sqrt{1}" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
+        `<img alt="\\sqrt{1}" formula="true" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
       )
     })
 

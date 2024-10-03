@@ -3,15 +3,18 @@ import { toggleMark } from 'prosemirror-commands'
 import { MarkType } from 'prosemirror-model'
 import { EditorState } from 'prosemirror-state'
 import React, { useEffect, useState } from 'react'
+import classNames from 'classnames'
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface Props {
   markName: string
-  displayName: string
+  icon?: IconDefinition
 }
 
 const getMarkType = (state: EditorState, markName: string): MarkType => state.schema.marks[markName]
 
-function FormatButton({ markName, displayName }: Props) {
+function FormatButton({ markName, icon }: Props) {
   const editorState = useEditorState()
   const [isActive, setIsActive] = useState(false)
 
@@ -30,8 +33,8 @@ function FormatButton({ markName, displayName }: Props) {
   }, [editorState])
 
   return (
-    <button onClick={onClick} style={{ fontWeight: isActive ? 'bold' : 'normal' }}>
-      {displayName}
+    <button onClick={onClick} className={classNames({ active: isActive })}>
+      <FontAwesomeIcon size="lg" className="editor-menu-icon" icon={icon!} />
     </button>
   )
 }
