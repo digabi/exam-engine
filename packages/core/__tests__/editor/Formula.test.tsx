@@ -23,7 +23,7 @@ describe('Editor - Formula', () => {
   it('Formula is rendered as expected', () => {
     const inputData = '<p>bar <e:formula data-editor-id="e-formula">foo</e:formula></p>'
     const expectedOutput =
-      '<p>bar <img alt="foo" src="/math.svg?latex=foo"><img class="ProseMirror-separator" alt=""><br class="ProseMirror-trailingBreak"></p>'
+      '<p>bar <img alt="foo" formula="true" src="/math.svg?latex=foo"><img class="ProseMirror-separator" alt=""><br class="ProseMirror-trailingBreak"></p>'
     const result = renderGradingInstruction(inputData)
     const table = result.container.querySelector('.ProseMirror')
     expect(table!.innerHTML).toBe(expectedOutput)
