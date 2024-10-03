@@ -3,6 +3,8 @@ import React, { useRef, ChangeEvent, useContext } from 'react'
 import { EditableProps } from '../../context/GradingInstructionContext'
 import { QuestionContext } from '../../context/QuestionContext'
 import { CommonExamContext } from '../../context/CommonExamContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faImage } from '@fortawesome/free-solid-svg-icons'
 
 enum EditorAction {
   REMOVE_IMAGE = 'REMOVE_IMAGE',
@@ -76,7 +78,10 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
 
   return (
     <>
-      <button onClick={handleButtonClick}>Lisää kuva</button>
+      <button onClick={handleButtonClick}>
+        {' '}
+        <FontAwesomeIcon size="lg" icon={faImage} className="editor-menu-icon" fixedWidth />
+      </button>
       <input
         type="file"
         accept="image/png, image/jpeg, image/tiff"
