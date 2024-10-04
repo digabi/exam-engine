@@ -70,7 +70,7 @@ describe('ImageUploadButton', () => {
     it('image can be uploaded', async () => {
       const container = renderGradingInstruction('', onContentChangeMock)
       const file = new File(['hello'], 'hello.png', { type: 'image/png' })
-      const input = container.queryByTestId('image-upload-button')
+      const input = container.queryByTestId('image-upload-input')
       await userEvent.upload(input!, file)
       await waitFor(() => {
         expect(onContentChangeMock).toHaveBeenCalledTimes(2)
