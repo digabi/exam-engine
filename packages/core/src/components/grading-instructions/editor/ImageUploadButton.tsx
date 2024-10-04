@@ -78,7 +78,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
 
   return (
     <>
-      <button onClick={handleButtonClick}>
+      <button onClick={handleButtonClick} title="Lisää kuva">
         {' '}
         <FontAwesomeIcon size="lg" icon={faImage} className="editor-menu-icon" fixedWidth />
       </button>
@@ -88,7 +88,7 @@ export function ImageUploadButton({ saveImage }: { saveImage: EditableProps['onS
         style={{ display: 'none' }}
         ref={inputRef}
         onChange={e => void handleFileChange(e)}
-        data-testid="image-upload-button"
+        data-testid="image-upload-input"
       />
     </>
   )
