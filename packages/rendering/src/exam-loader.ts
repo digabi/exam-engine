@@ -22,7 +22,10 @@ export default async function examLoader(this: any, source: string): Promise<voi
   const generateUuid = () => UUID
 
   try {
-    const results = await masterExam(source, generateUuid, getMediaMetadata, { removeCorrectAnswers: false })
+    const results = await masterExam(source, generateUuid, getMediaMetadata, {
+      removeCorrectAnswers: false,
+      editableGradingInstructions: !!process.env.EDITABLE_GRADING_INSTRUCTIONS
+    })
     const module = { original: source, results }
 
     const attachments = _.chain(results)
