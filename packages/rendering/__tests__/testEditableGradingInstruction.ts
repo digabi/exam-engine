@@ -36,6 +36,22 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       expect(value).toContain(`<ul><li><p>foo</p></li><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`)
     })
 
+    it('List can be splitted in half with double enter', async () => {
+      await openGradingInstructionsPage()
+      await focusOnEditor()
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
+      await page.keyboard.press('Enter')
+      await page.type('.e-answer-grading-instruction .ProseMirror li:nth-child(2)', 'bar')
+      await page.click('.e-answer-grading-instruction .ProseMirror li:nth-child(1)')
+      await page.keyboard.press('Enter')
+      await page.keyboard.press('Enter')
+      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      expect(value).toContain(
+        `<ul><li><p>foo</p></li></ul><p><br class="ProseMirror-trailingBreak"></p><ul><li><p>bar</p></li></ul>`
+      )
+    })
+
     it('Indentation can be changed with tab and shift-tab', async () => {
       await openGradingInstructionsPage()
       await focusOnEditor()
