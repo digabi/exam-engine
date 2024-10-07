@@ -1567,7 +1567,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
           <span lang="fi-FI">
             <h4>Consectetur cupidatat et non occaecat voluptate laboris</h4>
             <p>Nostrud laborum aute reprehenderit eiusmod ex do aute.</p>
-            <e:image src="4A.jpg" data-editor-id="e-image" width="999" height="999"><e:image-title>Elit elit laborum tempor reprehenderit excepteur excepteur commodo nostrud.
+            <e:image src="4A.jpg" data-editor-id="e-image" width="999" height="999"><e:image-title data-editor-id="e-image-title">Elit elit laborum tempor reprehenderit excepteur excepteur commodo nostrud.
             </e:image-title></e:image>
             <p>Dolore est occaecat ex est culpa minim quis incididunt excepteur eiusmod
               officia occaecat qui cupidatat. Duis sunt ad minim dolore amet veniam anim sunt amet
@@ -2587,7 +2587,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
           <span lang="sv-FI">
             <h4>Consectetur cupidatat et non occaecat voluptate laboris</h4>
             <p>Dolore ea commodo nostrud nulla deserunt ullamco ad commodo.</p>
-            <e:image src="4A.jpg" data-editor-id="e-image" width="999" height="999"><e:image-title>Culpa reprehenderit laborum dolor aliqua velit.
+            <e:image src="4A.jpg" data-editor-id="e-image" width="999" height="999"><e:image-title data-editor-id="e-image-title">Culpa reprehenderit laborum dolor aliqua velit.
             </e:image-title></e:image>
             <p>Pariatur irure incididunt ipsum reprehenderit veniam do elit aliqua enim sunt. Eiusmod ea
               proident irure voluptate quis laboris velit eiusmod. Sint do occaecat irure exercitation
@@ -8509,7 +8509,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 </e:image>]]></pre>
       <div class="example">
         <e:image src="example.jpg" data-editor-id="e-image" width="999" height="999">
-          <e:image-title>Optional image title text</e:image-title>
+          <e:image-title data-editor-id="e-image-title">Optional image title text</e:image-title>
         </e:image>
       </div>
     </e:question>
@@ -8549,13 +8549,13 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       <div class="example">
         <e:image-overlay>
           <e:image src="map-example-1.jpg" data-editor-id="e-image" width="999" height="999">
-            <e:image-title>Topographic Map</e:image-title>
+            <e:image-title data-editor-id="e-image-title">Topographic Map</e:image-title>
           </e:image>
           <e:image src="map-example-2.jpg" data-editor-id="e-image" width="999" height="999">
-            <e:image-title>Public Transport Map</e:image-title>
+            <e:image-title data-editor-id="e-image-title">Public Transport Map</e:image-title>
           </e:image>
           <e:image src="map-example-3.jpg" data-editor-id="e-image" width="999" height="999">
-            <e:image-title>Bike Lanes Map</e:image-title>
+            <e:image-title data-editor-id="e-image-title">Bike Lanes Map</e:image-title>
           </e:image>
         </e:image-overlay>
         <p>Example maps © OpenStreetMap contributors</p>
