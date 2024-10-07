@@ -17,6 +17,46 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
     await ctx.close()
   })
 
+  describe('list', () => {
+    it('New list can be added', async () => {
+      await openGradingInstructionsPage()
+      await focusOnEditor()
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      expect(value).toContain(`<ul><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`)
+    })
+
+    it('New list item can be added with enter', async () => {
+      await openGradingInstructionsPage()
+      await focusOnEditor()
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
+      await page.keyboard.press('Enter')
+      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      expect(value).toContain(`<ul><li><p>foo</p></li><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`)
+    })
+
+    it('Indentation can be changed with tab and shift-tab', async () => {
+      await openGradingInstructionsPage()
+      await focusOnEditor()
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
+      await page.keyboard.press('Enter')
+      await page.keyboard.press('Tab')
+      const valueTab = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      expect(valueTab).toContain(
+        `<ul><li><p>foo</p><ul><li><p><br class="ProseMirror-trailingBreak"></p></li></ul></li></ul>`
+      )
+      await page.keyboard.down('Shift')
+      await page.keyboard.press('Tab')
+      await page.keyboard.up('Shift')
+      const valueShiftTab = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      expect(valueShiftTab).toContain(
+        `<ul><li><p>foo</p></li><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`
+      )
+    })
+  })
+
   describe('e:formula', () => {
     it('New equation can be added', async () => {
       await openGradingInstructionsPage()
@@ -124,15 +164,6 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await page.click('[data-testid="e-popup-save"]')
     }
 
-    async function openGradingInstructionsPage() {
-      await loadExam(page, ctx.url)
-      await page.goto(`${ctx.url}/fi-FI/normal/grading-instructions`)
-    }
-
-    async function focusOnEditor() {
-      await page.click(`.e-answer-grading-instruction .ProseMirror`)
-    }
-
     async function addFormula() {
       await page.click('.e-answer-grading-instruction [data-testid="add-formula"]')
     }
@@ -143,10 +174,19 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await page.keyboard.press('KeyE')
       await page.keyboard.up('Control')
     }
-
-    async function getInnerHtml(selector: string) {
-      const element = await page.waitForSelector(selector)
-      return element!.evaluate(el => el.innerHTML)
-    }
   })
+
+  async function focusOnEditor() {
+    await page.click(`.e-answer-grading-instruction .ProseMirror`)
+  }
+
+  async function openGradingInstructionsPage() {
+    await loadExam(page, ctx.url)
+    await page.goto(`${ctx.url}/fi-FI/normal/grading-instructions`)
+  }
+
+  async function getInnerHtml(selector: string) {
+    const element = await page.waitForSelector(selector)
+    return element!.evaluate(el => el.innerHTML)
+  }
 })
