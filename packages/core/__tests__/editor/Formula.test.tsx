@@ -43,6 +43,19 @@ describe('Editor - Formula', () => {
     expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
   })
 
+  it('assistive-tile supports < and > characters correctly', async () => {
+    cleanup = mockCreateRange()
+    const inputData =
+      '<p>bar</p><p><e:formula data-editor-id="e-formula" assistive-title="foobar > 0 < x">bar</e:formula></p>'
+    const expectedOutput = '<p>foo</p><p><e:formula assistive-title="foobar &gt; 0 &lt; x">bar</e:formula></p>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    await act(async () => {
+      insertText(await result.findByText('bar'), 'foo')
+    })
+    expect(onContentChangeMock).toHaveBeenCalledTimes(1)
+    expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
+  })
+
   it('Empty formula is removed when sending changed content', async () => {
     cleanup = mockCreateRange()
     const inputData = '<p>bar</p><p><e:formula data-editor-id="e-formula"></e:formula></p>'
