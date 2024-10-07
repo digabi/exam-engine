@@ -1,7 +1,7 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
-import { initPuppeteer, loadExam } from './puppeteerUtils'
+import { getInnerHtml, initPuppeteer, loadExam } from './puppeteerUtils'
 
 describe('testEditableGradingInstruction.ts — Grading instruction editing', () => {
   const createPage = initPuppeteer()
@@ -22,7 +22,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openGradingInstructionsPage()
       await focusOnEditor()
       await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-bullet_list"]')
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(`<ul><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`)
     })
 
@@ -30,7 +30,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openGradingInstructionsPage()
       await focusOnEditor()
       await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-ordered_list"]')
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(`<ol><li><p><br class="ProseMirror-trailingBreak"></p></li></ol>`)
     })
 
@@ -40,7 +40,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-bullet_list"]')
       await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
       await page.keyboard.press('Enter')
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(`<ul><li><p>foo</p></li><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`)
     })
 
@@ -54,7 +54,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await page.click('.e-answer-grading-instruction .ProseMirror li:nth-child(1)')
       await page.keyboard.press('Enter')
       await page.keyboard.press('Enter')
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
         `<ul><li><p>foo</p></li></ul><p><br class="ProseMirror-trailingBreak"></p><ul><li><p>bar</p></li></ul>`
       )
@@ -67,14 +67,14 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
       await page.keyboard.press('Enter')
       await page.keyboard.press('Tab')
-      const valueTab = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const valueTab = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(valueTab).toContain(
         `<ul><li><p>foo</p><ul><li><p><br class="ProseMirror-trailingBreak"></p></li></ul></li></ul>`
       )
       await page.keyboard.down('Shift')
       await page.keyboard.press('Tab')
       await page.keyboard.up('Shift')
-      const valueShiftTab = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const valueShiftTab = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(valueShiftTab).toContain(
         `<ul><li><p>foo</p></li><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`
       )
@@ -85,7 +85,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
     it('New equation can be added', async () => {
       await openGradingInstructionsPage()
       await addEquation('\\sqrt{1}')
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
         `<img alt="\\sqrt{1}" formula="true" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
       )
@@ -105,7 +105,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openEquationEditor(`\\\\sqrt{1}`)
       await page.click('[data-testid="e-popup-delete"]')
       await page.click('[data-testid="e-popup-delete"]')
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).not.toContain('src="/math.svg?latex=\\sqrt{1}"')
     })
 
@@ -116,7 +116,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openMathEquationEditor('\\\\sqrt{1}')
       await replaceLatex('\\sqrt{2}')
       await saveEquation()
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
         `<img alt="\\sqrt{2}" formula="true" src="/math.svg?latex=${encodeURIComponent('\\sqrt{2}')}" contenteditable="false">`
       )
@@ -129,7 +129,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await openMathEquationEditor('\\\\sqrt{1}')
       await replaceLatex('\\sqrt{2}')
       await page.click('[data-testid="e-popup-cancel"]')
-      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(
         `<img alt="\\sqrt{1}" formula="true" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
       )
@@ -141,7 +141,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       await addFormula()
       await page.type('.e-popup-content', 'text')
       expect(await page.waitForSelector(`[data-testid="e-popup-save"]:disabled`)).toBeTruthy()
-      expect(await getInnerHtml('.e-popup-error')).toBe('Ainoastaan yksi kaava sallittu')
+      expect(await getInnerHtml(page, '.e-popup-error')).toBe('Ainoastaan yksi kaava sallittu')
     })
 
     async function getDisabledStatus(page: Page, selector: string): Promise<boolean> {
@@ -207,10 +207,5 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
   async function openGradingInstructionsPage() {
     await loadExam(page, ctx.url)
     await page.goto(`${ctx.url}/fi-FI/normal/grading-instructions`)
-  }
-
-  async function getInnerHtml(selector: string) {
-    const element = await page.waitForSelector(selector)
-    return element!.evaluate(el => el.innerHTML)
   }
 })
