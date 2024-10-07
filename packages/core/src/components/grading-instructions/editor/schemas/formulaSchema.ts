@@ -46,7 +46,7 @@ export const formulaOutputSchema: NodeSpec = {
         formulaElement.setAttribute('mode', node.attrs.mode as string)
       }
       if (node.attrs.assistiveTitle) {
-        formulaElement.setAttribute('assistive-title', node.attrs.assistiveTitle as string)
+        formulaElement.setAttribute('assistive-title', escapeHtml(node.attrs.assistiveTitle as string))
       }
       formulaElement.textContent = node.attrs.latex as string
       const container = document.createElement('span')
@@ -54,4 +54,12 @@ export const formulaOutputSchema: NodeSpec = {
       return container.firstElementChild!
     }
   }
+}
+
+function escapeHtml(input: string) {
+  const map: Record<string, string> = {
+    '<': '&lt;',
+    '>': '&gt;'
+  }
+  return input.replace(/[<>]/g, char => map[char])
 }
