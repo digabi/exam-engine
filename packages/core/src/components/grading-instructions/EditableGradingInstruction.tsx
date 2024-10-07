@@ -6,16 +6,18 @@ import { GradingInstructionContext } from '../context/GradingInstructionContext'
 import { ProseMirror } from '@nytimes/react-prosemirror'
 import { DOMParser as ProseDOMParser, DOMSerializer, Schema } from 'prosemirror-model'
 import { keymap } from 'prosemirror-keymap'
-import { FormulaButton, FormulaEditorState, formulaOutputSchema, FormulaPlugin, formulaSchema } from './editor/Formula'
-import { TableMenu, tablePlugin, tableSchema } from './editor/Table'
+import { FormulaButton, FormulaEditorState, FormulaPlugin } from './editor/Formula'
+import { TableMenu, tablePlugin } from './editor/Table'
 import { FormulaPopup } from './editor/FormulaPopup'
 import FormatButton from './editor/FormatButton'
 import { NbspButton, nbspPlugin } from './editor/NBSP'
-import { spanWithNowrap } from './editor/spanWithNowrap'
 import { ImageUploadButton } from './editor/ImageUploadButton'
-import { imageInputSchema, imageOutputSchema } from './editor/schemas/image-schema'
+import { imageInputSchema, imageOutputSchema } from './editor/schemas/imageSchema'
 import { CommonExamContext } from '../context/CommonExamContext'
 import { faBold, faItalic } from '@fortawesome/free-solid-svg-icons'
+import { formulaOutputSchema, formulaSchema } from './editor/schemas/formulaSchema'
+import { tableSchema } from './editor/schemas/tableSchema'
+import { spanWithNowrapSchema } from './editor/schemas/spanWithNowrapSchema'
 import { localization } from './editor/localization'
 
 function Menu(props: {
@@ -70,12 +72,12 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(formulaSchema)
       .append(tableSchema)
       .update('image', imageInputSchema(resolveAttachment)),
-    marks: baseSchema.spec.marks.append(spanWithNowrap).append(localization(true))
+    marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(localization(true))
   })
 
   const outputSchema = new Schema({
     nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema).update('image', imageOutputSchema),
-    marks: baseSchema.spec.marks.append(spanWithNowrap).append(localization(false))
+    marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(localization(false))
   })
 
   const doc = ProseDOMParser.fromSchema(inputSchema).parse(element)
