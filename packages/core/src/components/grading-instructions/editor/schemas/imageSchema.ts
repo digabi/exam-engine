@@ -6,12 +6,15 @@ const existingImageNode = baseSchema.spec.nodes.get('image')
 
 export const imageInputSchema = (resolveAttachment: (filename: string) => string): NodeSpec => ({
   ...existingImageNode,
+  content: 'inline*',
+  marks: '_',
   attrs: {
     ...existingImageNode?.attrs,
     width: { default: null },
     height: { default: null },
     class: { default: null },
-    lang: { default: null }
+    lang: { default: null },
+    hasTitle: { default: false }
   },
   parseDOM: [
     {
@@ -24,14 +27,19 @@ export const imageInputSchema = (resolveAttachment: (filename: string) => string
         }
         const attrs = {
           ...Object.fromEntries(Array.from(element.attributes).map(attr => [attr.name, attr.value])),
-          src: resolveAttachment(element.getAttribute('src') || '')
+          src: resolveAttachment(element.getAttribute('src') || ''),
+          hasTitle: !!element.querySelector('[data-editor-id="e-image-title"]')
         }
         return attrs
       }
     }
   ],
   toDOM(node) {
-    return ['img', node.attrs]
+    if (node.attrs.hasTitle) {
+      return ['figure', {}, ['img', node.attrs], ['figcaption', {}, 0]]
+    } else {
+      return ['img', node.attrs]
+    }
   }
 })
 
@@ -47,6 +55,10 @@ export const imageOutputSchema: NodeSpec = {
       }
       return value
     })
-    return ['e:image', attributes]
+    if (node.attrs.hasTitle) {
+      return ['e:image', attributes, ['e:image-title', {}, 0]]
+    } else {
+      return ['e:image', attributes]
+    }
   }
 }

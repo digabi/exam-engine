@@ -365,6 +365,8 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
       } else {
         if (type === 'image') {
           addDataAttributesForEditor(attachment, 'e-image')
+          const imageTitle = attachment.get<Element>('./e:image-title', ns)
+          if (imageTitle) addDataAttributesForEditor(imageTitle, 'e-image-title')
         }
         const imageOrVideoMetadata = metadata as ImageMetadata | VideoMetadata
         attachment.attr('width', String(imageOrVideoMetadata.width))
