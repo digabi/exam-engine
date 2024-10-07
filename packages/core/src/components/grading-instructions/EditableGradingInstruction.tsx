@@ -105,11 +105,13 @@ function EditableGradingInstruction({ element }: { element: Element }) {
             div.appendChild(fragment)
             const path = element.getAttribute('path') ?? ''
             if (onContentChange) {
-              const nbspFixed = div.innerHTML
+              const fixedHtml = div.innerHTML
                 .replace(/&nbsp;/g, '&#160;')
                 .replace(/<br>/g, '<br/>')
                 .replace(/<hr>/g, '<hr/>')
-              onContentChange(nbspFixed, path)
+                .replace(/&amp;gt;/g, '&gt;')
+                .replace(/&amp;lt;/g, '&lt;')
+              onContentChange(fixedHtml, path)
             }
           }
           return newContent
