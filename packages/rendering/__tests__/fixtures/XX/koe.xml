@@ -1,0 +1,94 @@
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
+        exam-schema-version="0.5">
+    <e:exam-versions>
+        <e:exam-version lang="fi-FI"/>
+        <e:exam-version lang="sv-FI"/>
+        <e:exam-version lang="fi-FI" exam-type="hearing-impaired"/>
+        <e:exam-version lang="fi-FI" exam-type="visually-impaired"/>
+        <e:exam-version lang="sv-FI" exam-type="hearing-impaired"/>
+        <e:exam-version lang="sv-FI" exam-type="visually-impaired"/>
+    </e:exam-versions>
+    <e:exam-title>Koe HVP</e:exam-title>
+    <e:exam-instruction/>
+    <e:exam-grading-instruction>
+        Normaali tekstikappale
+        <br/>
+        <e:localization>Lokalisaatio: Ei attribuutteja
+            <br/>
+        </e:localization>
+        <e:localization lang="fi-FI">Lokalisaatio: FI only
+            <br/>
+        </e:localization>
+        <e:localization lang="fi-FI" exam-type="hearing-impaired">Lokalisaatio: FI KV
+            <br/>
+        </e:localization>
+        <e:localization lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV
+            <br/>
+        </e:localization>
+        <e:localization lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV
+            <br/>
+        </e:localization>
+        <e:localization lang="sv-FI">Lokalisaatio: SV only
+            <br/>
+        </e:localization>
+        <e:localization lang="sv-FI" exam-type="hearing-impaired">Lokalisaatio: SV KV
+            <br/>
+        </e:localization>
+        <e:localization lang="sv-FI" exam-type="visually-impaired">Lokalisaatio: SV NV
+            <br/>
+        </e:localization>
+        <e:localization exam-type="hearing-impaired">Lokalisaatio: KV only
+            <br/>
+        </e:localization>
+        <e:localization exam-type="visually-impaired">Lokalisaatio: NV only
+            <br/>
+        </e:localization>
+    </e:exam-grading-instruction>
+    <e:table-of-contents/>
+    <e:section>
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question>
+            <e:question-title>Tehtävä</e:question-title>
+            <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            <e:text-answer type="rich-text" max-score="6">
+                <e:answer-grading-instruction>
+                    Normaali tekstikappale
+                    <br/>
+                    <e:localization>Lokalisaatio: Ei attribuutteja
+                        <br/>
+                    </e:localization>
+                    <e:localization lang="fi-FI">Lokalisaatio: FI only
+                        <br/>
+                        <e:localization exam-type="hearing-impaired">Lokalisaatio: FI KV (supports localization nesting)
+                            <br/>
+                        </e:localization>
+                    </e:localization>
+                    <e:localization lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV
+                        <br/>
+                    </e:localization>
+                    <e:localization lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV
+                        <br/>
+                    </e:localization>
+                    <e:localization lang="sv-FI">Lokalisaatio: SV only
+                        <br/>
+                    </e:localization>
+                    <e:localization lang="sv-FI" exam-type="hearing-impaired">Lokalisaatio: SV KV
+                        <br/>
+                    </e:localization>
+                    <e:localization lang="sv-FI" exam-type="visually-impaired">Lokalisaatio: SV NV
+                        <br/>
+                    </e:localization>
+                    <e:localization exam-type="hearing-impaired">Lokalisaatio: KV only
+                        <br/>
+                    </e:localization>
+                    <e:localization exam-type="visually-impaired">Lokalisaatio: NV only
+                        <br/>
+                    </e:localization>
+                </e:answer-grading-instruction>
+            </e:text-answer>
+        </e:question>
+    </e:section>
+</e:exam>
