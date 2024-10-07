@@ -1,5 +1,5 @@
 import { addColumnAfter, addRowAfter, deleteColumn, deleteRow, deleteTable, goToNextCell } from 'prosemirror-tables'
-import { Fragment, Node, ResolvedPos } from 'prosemirror-model'
+import { Fragment, Node } from 'prosemirror-model'
 import React, { useEffect, useState } from 'react'
 import { useEditorEventCallback, useEditorState } from '@nytimes/react-prosemirror'
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state'
@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { EditorView } from 'prosemirror-view'
 import classNames from 'classnames'
 import { keymap } from 'prosemirror-keymap'
+import { getNodeFromPosition } from './findNode'
 
 export function tablePlugin() {
   return keymap({
@@ -22,18 +23,8 @@ export function TableMenu(props: { dropdownsBelow: boolean }) {
   const [classes, setClasses] = useState<string[]>([])
   const editorState = useEditorState()
 
-  const getTableFromPosition = (pos: ResolvedPos) => {
-    for (let d = pos.depth; d > 0; d--) {
-      const node = pos.node(d)
-      if (node.type.name === 'table') {
-        return node
-      }
-    }
-    return null
-  }
-
   useEffect(() => {
-    const table = getTableFromPosition(editorState.selection.$from)
+    const table = getNodeFromPosition(editorState.selection.$from, 'table')
     setIsActive(!!table)
     if (table) {
       setIsOpen({ add: false, remove: false, styles: false })

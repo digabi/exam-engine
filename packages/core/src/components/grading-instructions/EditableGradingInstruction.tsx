@@ -19,8 +19,11 @@ import { formulaOutputSchema, formulaSchema } from './editor/schemas/formulaSche
 import { tableSchema } from './editor/schemas/tableSchema'
 import { spanWithNowrapSchema } from './editor/schemas/spanWithNowrapSchema'
 import { localization } from './editor/localization'
+import { listSchema } from './editor/schemas/listSchema'
+import { createListPlugin, ListButton } from './editor/List'
 
 function Menu(props: {
+  schema: Schema
   formulaState: FormulaEditorState | null
   setFormulaState: (values: FormulaEditorState) => void
   editorElement: HTMLElement
@@ -50,6 +53,7 @@ function Menu(props: {
           <FormatButton markName="strong" icon={faBold} />
           <FormatButton markName="em" icon={faItalic} />
           <span className="editor-menu-separator" />
+          <ListButton schema={props.schema} />
           {onSaveImage && <ImageUploadButton saveImage={onSaveImage} />}
           <span className="editor-menu-separator" />
           <FormulaButton disabled={!!props.formulaState} setFormulaState={props.setFormulaState} />
@@ -71,12 +75,17 @@ function EditableGradingInstruction({ element }: { element: Element }) {
     nodes: baseSchema.spec.nodes
       .append(formulaSchema)
       .append(tableSchema)
+      .append(listSchema)
       .update('image', imageInputSchema(resolveAttachment)),
     marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(localization(true))
   })
 
   const outputSchema = new Schema({
-    nodes: baseSchema.spec.nodes.append(formulaOutputSchema).append(tableSchema).update('image', imageOutputSchema),
+    nodes: baseSchema.spec.nodes
+      .append(formulaOutputSchema)
+      .append(tableSchema)
+      .append(listSchema)
+      .update('image', imageOutputSchema),
     marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(localization(false))
   })
 
@@ -88,7 +97,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
     EditorState.create({
       schema: inputSchema,
       doc,
-      plugins: [tablePlugin(), keymap(baseKeymap), formulaPlugin, nbspPlugin]
+      plugins: [tablePlugin(), createListPlugin(inputSchema), keymap(baseKeymap), formulaPlugin, nbspPlugin]
     })
   )
 
@@ -116,7 +125,14 @@ function EditableGradingInstruction({ element }: { element: Element }) {
         })
       }}
     >
-      {mount && <Menu formulaState={formulaState} setFormulaState={setFormulaState} editorElement={mount} />}
+      {mount && (
+        <Menu
+          schema={inputSchema}
+          formulaState={formulaState}
+          setFormulaState={setFormulaState}
+          editorElement={mount}
+        />
+      )}
       <div ref={setMount} />
 
       {formulaState && (
