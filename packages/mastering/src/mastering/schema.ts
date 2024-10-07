@@ -37,5 +37,4 @@ export interface Answer {
 
 export interface GradingInstruction {
   element: Element
-  localizations: Element[]
 }

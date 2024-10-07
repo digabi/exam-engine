@@ -297,7 +297,7 @@ async function masterExamVersion(
   // in order to keep question ids same within different exam versions
   // It helps when grading productive questions.
   addQuestionIds(root, generateId)
-  addGradingInstructionAttributes(root, language, type)
+  addGradingInstructionAttributes(root)
   applyLocalizations(root, language, type, options.editableGradingInstructions)
 
   const exam = parseExamStructure(root)
@@ -764,40 +764,27 @@ function addQuestionIds(root: Element, generateId: GenerateId) {
   }
 }
 
-function findLocalization(gradingInstruction: GradingInstruction, language: string, type: ExamType) {
-  return gradingInstruction.localizations.find(localization =>
-    localization.attr('exam-type') == null
-      ? localization.attr('lang')?.value() == language
-      : localization.attr('lang')?.value() == language && localization.attr('exam-type')?.value() == type
-  )
-}
-
-function addGradingInstructionAttributesForQuestions(questions: Question[], language: string, type: ExamType) {
+function addGradingInstructionAttributesForQuestions(questions: Question[]) {
   for (const question of questions) {
     if (question.gradingInstruction) {
-      const localization = findLocalization(question.gradingInstruction, language, type)
-      question.gradingInstruction.element.attr(
-        'path',
-        localization?.path() ?? question.gradingInstruction.element.path()
-      )
+      question.gradingInstruction.element.attr('path', question.gradingInstruction.element.path())
     }
-    addGradingInstructionAttributesForQuestions(question.childQuestions, language, type)
+    addGradingInstructionAttributesForQuestions(question.childQuestions)
   }
 }
 
-function addGradingInstructionAttributesForAnswers(answers: Answer[], language: string, type: ExamType) {
+function addGradingInstructionAttributesForAnswers(answers: Answer[]) {
   for (const answer of answers) {
     if (answer.gradingInstruction) {
-      const localization = findLocalization(answer.gradingInstruction, language, type)
-      answer.gradingInstruction.element.attr('path', localization?.path() ?? answer.gradingInstruction.element.path())
+      answer.gradingInstruction.element.attr('path', answer.gradingInstruction.element.path())
     }
   }
 }
 
-function addGradingInstructionAttributes(root: Element, language: string, type: ExamType) {
+function addGradingInstructionAttributes(root: Element) {
   const exam = parseExamStructure(root)
-  addGradingInstructionAttributesForQuestions(exam.questions, language, type)
-  addGradingInstructionAttributesForAnswers(exam.answers, language, type)
+  addGradingInstructionAttributesForQuestions(exam.questions)
+  addGradingInstructionAttributesForAnswers(exam.answers)
 }
 
 function countSectionMaxAndMinAnswers(exam: Exam) {
@@ -980,8 +967,7 @@ function parseQuestion(question: Element): Question {
 }
 
 function parseGradingInstruction(gradingInstruction: Element): GradingInstruction {
-  const localizations = gradingInstruction.find<Element>('./e:localization', ns)
-  return { element: gradingInstruction, localizations }
+  return { element: gradingInstruction }
 }
 
 function mkGenerateId(): GenerateId {
