@@ -1,9 +1,9 @@
 import { keymap } from 'prosemirror-keymap'
 import { liftListItem, sinkListItem, splitListItem } from 'prosemirror-schema-list'
-import { Fragment, Node, Schema } from 'prosemirror-model'
+import { Fragment, Node, NodeType, Schema } from 'prosemirror-model'
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList } from '@fortawesome/free-solid-svg-icons'
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect, useState } from 'react'
 import { useEditorEventCallback, useEditorState } from '@nytimes/react-prosemirror'
 import { TextSelection, Transaction } from 'prosemirror-state'
@@ -17,12 +17,12 @@ export function createListPlugin(schema: Schema) {
   })
 }
 
-export function ListButton(props: { schema: Schema }) {
+export function ListButton(props: { nodeType: NodeType; icon: IconDefinition }) {
   const [isActive, setIsActive] = useState(false)
   const editorState = useEditorState()
 
   useEffect(() => {
-    const node = getNodeFromPosition(editorState.selection.$from, props.schema.nodes.bullet_list.name)
+    const node = getNodeFromPosition(editorState.selection.$from, props.nodeType.name)
     setIsActive(!!node)
   }, [editorState])
 
@@ -30,11 +30,13 @@ export function ListButton(props: { schema: Schema }) {
     const offset: number = view.state.selection.anchor + 1
     const transaction: Transaction = view.state.tr
     const cell = view.state.schema.nodes.list_item.createAndFill(null, Fragment.empty) as Node
-    const bulletList = view.state.schema.nodes.bullet_list.create({}, Fragment.fromArray([cell]))
+    const sss =
+      props.nodeType.name === 'bullet_list' ? view.state.schema.nodes.bullet_list : view.state.schema.nodes.ordered_list
+    const list = sss.create({}, Fragment.fromArray([cell]))
     if (view.dispatch) {
       view.dispatch(
         transaction
-          .insert(view.state.selection.to, bulletList)
+          .insert(view.state.selection.to, list)
           .scrollIntoView()
           .setSelection(TextSelection.near(transaction.doc.resolve(offset)))
       )
@@ -43,8 +45,12 @@ export function ListButton(props: { schema: Schema }) {
   })
 
   return (
-    <button onClick={onClick} className={classNames({ active: isActive })} data-testid="editor-menu-add-list">
-      <FontAwesomeIcon size="lg" icon={faList} className="editor-menu-icon" fixedWidth />
+    <button
+      onClick={onClick}
+      className={classNames({ active: isActive })}
+      data-testid={`editor-menu-add-${props.nodeType.name}`}
+    >
+      <FontAwesomeIcon size="lg" icon={props.icon} className="editor-menu-icon" fixedWidth />
     </button>
   )
 }

@@ -18,18 +18,26 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
   })
 
   describe('list', () => {
-    it('New list can be added', async () => {
+    it('New bullet list can be added', async () => {
       await openGradingInstructionsPage()
       await focusOnEditor()
-      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-bullet_list"]')
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
       expect(value).toContain(`<ul><li><p><br class="ProseMirror-trailingBreak"></p></li></ul>`)
+    })
+
+    it('New ordered list can be added', async () => {
+      await openGradingInstructionsPage()
+      await focusOnEditor()
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-ordered_list"]')
+      const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
+      expect(value).toContain(`<ol><li><p><br class="ProseMirror-trailingBreak"></p></li></ol>`)
     })
 
     it('New list item can be added with enter', async () => {
       await openGradingInstructionsPage()
       await focusOnEditor()
-      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-bullet_list"]')
       await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
       await page.keyboard.press('Enter')
       const value = await getInnerHtml('.e-answer-grading-instruction .ProseMirror')
@@ -39,7 +47,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
     it('List can be splitted in half with double enter', async () => {
       await openGradingInstructionsPage()
       await focusOnEditor()
-      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-bullet_list"]')
       await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
       await page.keyboard.press('Enter')
       await page.type('.e-answer-grading-instruction .ProseMirror li:nth-child(2)', 'bar')
@@ -55,7 +63,7 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
     it('Indentation can be changed with tab and shift-tab', async () => {
       await openGradingInstructionsPage()
       await focusOnEditor()
-      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-list"]')
+      await page.click('.e-answer-grading-instruction [data-testid="editor-menu-add-bullet_list"]')
       await page.type('.e-answer-grading-instruction .ProseMirror li', 'foo')
       await page.keyboard.press('Enter')
       await page.keyboard.press('Tab')
