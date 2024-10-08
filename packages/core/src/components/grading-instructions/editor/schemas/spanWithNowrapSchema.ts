@@ -1,7 +1,7 @@
 import { Node, MarkSpec } from 'prosemirror-model'
 
 export const spanWithNowrapSchema: MarkSpec = {
-  spanWithClass: {
+  spanWithNowrap: {
     attrs: {
       class: { default: null }
     },
