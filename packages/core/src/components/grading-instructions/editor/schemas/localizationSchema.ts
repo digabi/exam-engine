@@ -1,8 +1,11 @@
-import { Node, MarkSpec } from 'prosemirror-model'
+import { Node, NodeSpec } from 'prosemirror-model'
 
-export function localization(hideable: boolean): MarkSpec {
+export function localizationSchema(hideable: boolean, mode: 'inline' | 'block'): NodeSpec {
   return {
     localization: {
+      content: `${mode}*`,
+      inline: mode === 'inline',
+      group: mode,
       attrs: {
         lang: { default: null },
         examType: { default: null },
@@ -10,7 +13,7 @@ export function localization(hideable: boolean): MarkSpec {
       },
       parseDOM: [
         {
-          tag: '[e-localization]',
+          tag: `[data-editor-id=e-localization-${mode}], [e-localization]`,
           getAttrs(dom: HTMLElement) {
             return {
               lang: dom.getAttribute('lang') ?? null,

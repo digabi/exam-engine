@@ -18,7 +18,7 @@ import { faBold, faItalic, faList, faListOl } from '@fortawesome/free-solid-svg-
 import { formulaOutputSchema, formulaSchema } from './editor/schemas/formulaSchema'
 import { tableSchema } from './editor/schemas/tableSchema'
 import { spanWithNowrapSchema } from './editor/schemas/spanWithNowrapSchema'
-import { localization } from './editor/localization'
+import { localizationSchema } from './editor/schemas/localizationSchema'
 import { listSchema } from './editor/schemas/listSchema'
 import { createListPlugin, ListButton } from './editor/List'
 import { subSupSchema } from './editor/schemas/subSupSchema'
@@ -79,12 +79,10 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(formulaSchema)
       .append(tableSchema)
       .append(listSchema)
-      .update('image', imageInputSchema(resolveAttachment)),
-    marks: baseSchema.spec.marks
-      .append(spanWithNowrapSchema)
-      .append(localization(true))
-      .append(subSupSchema)
-      .append(spanWithLangSchema)
+      .update('image', imageInputSchema(resolveAttachment))
+      .append(localizationSchema(true, 'block'))
+      .append(localizationSchema(true, 'inline')),
+    marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(subSupSchema).append(spanWithLangSchema)
   })
 
   const outputSchema = new Schema({
@@ -92,12 +90,10 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(formulaOutputSchema)
       .append(tableSchema)
       .append(listSchema)
-      .update('image', imageOutputSchema),
-    marks: baseSchema.spec.marks
-      .append(spanWithNowrapSchema)
-      .append(localization(false))
-      .append(subSupSchema)
-      .append(spanWithLangSchema)
+      .update('image', imageOutputSchema)
+      .append(localizationSchema(false, 'block'))
+      .append(localizationSchema(false, 'inline')),
+    marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(subSupSchema).append(spanWithLangSchema)
   })
 
   const doc = ProseDOMParser.fromSchema(inputSchema).parse(element)
