@@ -21,7 +21,7 @@ describe('Editor - List', () => {
     cleanup = null
   })
 
-  it('List is rendered as expected', () => {
+  it('Bullet list is rendered as expected', () => {
     const inputData = '<p>bar</p><ul><li>foo</li></ul>'
     const expectedDom = '<p>bar</p><ul><li><p>foo</p></li></ul>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
@@ -29,7 +29,15 @@ describe('Editor - List', () => {
     expect(table!.innerHTML).toBe(expectedDom)
   })
 
-  it('Change in content causes list to be returned as expected', async () => {
+  it('Ordered list is rendered as expected', () => {
+    const inputData = '<p>bar</p><ol><li>foo</li></ol>'
+    const expectedDom = '<p>bar</p><ol><li><p>foo</p></li></ol>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    const table = result.container.querySelector('.ProseMirror')
+    expect(table!.innerHTML).toBe(expectedDom)
+  })
+
+  it('Change in content causes bullet list to be returned as expected', async () => {
     cleanup = mockCreateRange()
     const inputData = '<p>bar</p><ul><li>foo</li></ul>'
     const expectedOutput = '<p>foo</p><ul><li><p>foo</p></li></ul>'
@@ -41,13 +49,25 @@ describe('Editor - List', () => {
     expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
   })
 
-  it('Insert list adds expected string', async () => {
+  it('Change in content causes ordered list to be returned as expected', async () => {
+    cleanup = mockCreateRange()
+    const inputData = '<p>bar</p><ol><li>foo</li></ol>'
+    const expectedOutput = '<p>foo</p><ol><li><p>foo</p></li></ol>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    await act(async () => {
+      insertText(await result.findByText('bar'), 'foo')
+    })
+    expect(onContentChangeMock).toHaveBeenCalledTimes(1)
+    expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
+  })
+
+  it('Insert bullet list adds expected string', async () => {
     cleanup = mockCreateRange()
     const inputData = '<p>foo</p><p>bar</p>'
     const expectedOutput = '<p></p><ul><li><p></p></li></ul><p>foo</p><p>bar</p>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
     await act(async () => {
-      await userEvent.click(await result.findByTestId('editor-menu-add-list'))
+      await userEvent.click(await result.findByTestId('editor-menu-add-bullet_list'))
     })
     expect(onContentChangeMock).toHaveBeenCalledTimes(1)
     expect(onContentChangeMock).toHaveBeenLastCalledWith(expectedOutput, '')
