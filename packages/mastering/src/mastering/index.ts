@@ -608,6 +608,56 @@ function applyReadOnlyLocalization(localization: Element, language: string, type
   }
 }
 
+const blockElements = [
+  'address',
+  'article',
+  'aside',
+  'blockquote',
+  'canvas',
+  'dd',
+  'div',
+  'dl',
+  'dt',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h6',
+  'header',
+  'hr',
+  'li',
+  'main',
+  'nav',
+  'noscript',
+  'ol',
+  'p',
+  'pre',
+  'section',
+  'table',
+  'tfoot',
+  'ul',
+  'video'
+]
+
+enum LocalizationModes {
+  BLOCK = 'e-localization-block',
+  INLINE = 'e-localization-inline'
+}
+
+function localizationMode(element: Element): string {
+  const childElements = element.childNodes().filter(child => child.type() == 'element') as Element[]
+
+  if (childElements.length == 0) {
+    return blockElements.includes(element.name()) ? LocalizationModes.BLOCK : LocalizationModes.INLINE
+  }
+  const childrenLocalizationModes = childElements.map(child => localizationMode(child))
+  return childrenLocalizationModes.includes(LocalizationModes.BLOCK)
+    ? LocalizationModes.BLOCK
+    : LocalizationModes.INLINE
+}
+
 function applyEditableLocalization(
   localization: Element,
   language: string,
@@ -643,7 +693,7 @@ function applyEditableLocalization(
     (localizationExamType && !localizationExamType.includes(type))
       ? 'hidden'
       : undefined
-  localization.attr('e-localization', '1')
+  addDataAttributesForEditor(localization, localizationMode(localization))
   if (hidden) {
     localization.attr('hidden', hidden)
   }
@@ -678,7 +728,7 @@ function applyLocalizations(exam: Element, language: string, type: ExamType, edi
   if (editableGradingInstructions) {
     exam
       .find(
-        `//e:*[not(@e-localization='1') and ((@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}'))))]`,
+        `//e:*[not(@data-editor-id='${LocalizationModes.BLOCK}' or @data-editor-id='${LocalizationModes.INLINE}') and ((@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}'))))]`,
         ns
       )
       .forEach(element => element.remove())

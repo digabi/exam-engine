@@ -93,8 +93,8 @@ describe('ImageUploadButton', () => {
           <e:image data-editor-id="e-image" width=${htmlAttrs.width} height=${htmlAttrs.height} lang=${htmlAttrs.lang} class=${htmlAttrs.class} src=${xmlAttrs.src}>
             <e:image-title data-editor-id="e-image-title">
               ${imageTitle.default}
-              <e:localization lang="fi-FI" exam-type="hearing-impaired" e-localization="1">${imageTitle.fi}</e:localization>
-              <e:localization lang="sv-FI" exam-type="hearing-impaired" e-localization="1">${imageTitle.sv}</e:localization>
+              <e:localization lang="fi-FI" exam-type="hearing-impaired" data-editor-id="e-localization-inline">${imageTitle.fi}</e:localization>
+              <e:localization lang="sv-FI" exam-type="hearing-impaired" data-editor-id="e-localization-inline">${imageTitle.sv}</e:localization>
             </e:image-title>
           </e:image>
         </div>`,
