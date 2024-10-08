@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { cleanup, act as testAct, waitFor } from '@testing-library/react'
+import { cleanup, act as testAct, waitFor, within } from '@testing-library/react'
 import { mockCreateRange } from '../utils/prosemirror'
 import {
   renderGradingInstruction,
@@ -47,7 +47,7 @@ describe('ImageUploadButton', () => {
       src: 'foo.bar'
     }
 
-    it('e:image tags are rendered in and rendered out with correct attributes and tags', async () => {
+    it('e:image tag is rendered in and out with correct attributes and tags', async () => {
       const container = renderGradingInstruction(
         `<div><p>hello</p><e:image data-editor-id="e-image" width=${htmlAttrs.width} height=${htmlAttrs.height} lang=${htmlAttrs.lang} class=${htmlAttrs.class} src=${xmlAttrs.src}></e:image></div>`,
         onContentChangeMock
@@ -83,6 +83,42 @@ describe('ImageUploadButton', () => {
         const image = container.getByRole('img')
         expect(image).toHaveAttribute('src', `/${mockedResolvedPath}/${mockedPermanentUrl}`)
       })
+    })
+
+    it('e:image-title tag is rendered in and out with correct attributes and tags', async () => {
+      const imageTitle = { default: 'Image title text', fi: 'title fi', sv: 'title sv' }
+      const container = renderGradingInstruction(
+        `<div>
+          <p>hello</p>
+          <e:image data-editor-id="e-image" width=${htmlAttrs.width} height=${htmlAttrs.height} lang=${htmlAttrs.lang} class=${htmlAttrs.class} src=${xmlAttrs.src}>
+            <e:image-title data-editor-id="e-image-title">
+              ${imageTitle.default}
+              <e:localization lang="fi-FI" exam-type="hearing-impaired" e-localization="1">${imageTitle.fi}</e:localization>
+              <e:localization lang="sv-FI" exam-type="hearing-impaired" e-localization="1">${imageTitle.sv}</e:localization>
+            </e:image-title>
+          </e:image>
+        </div>`,
+        onContentChangeMock
+      )
+      const figure = container.getByRole('figure')
+      for (const [key, value] of Object.entries(htmlAttrs)) {
+        expect(within(figure).getByRole('img')).toHaveAttribute(key, value)
+      }
+      expect(figure.querySelector('figcaption')).toHaveTextContent(
+        `${imageTitle.default} ${imageTitle.fi} ${imageTitle.sv}`
+      )
+      expect(figure.querySelector('figcaption [lang="fi-FI"]')).toHaveTextContent(imageTitle.fi)
+      expect(figure.querySelector('figcaption [lang="sv-FI"]')).toHaveTextContent(imageTitle.sv)
+
+      await act(async () => {
+        insertText(await container.findByText('hello'), 'hello world')
+      })
+
+      expect(onContentChangeMock).toHaveBeenCalledTimes(1)
+      expect(onContentChangeMock).toHaveBeenCalledWith(
+        `<p>hello world</p><p><e:image lang="${xmlAttrs.lang}" class="${xmlAttrs.class}" src="${xmlAttrs.src}"><e:image-title>${imageTitle.default} <e:localization lang="fi-FI" exam-type="hearing-impaired">${imageTitle.fi}</e:localization> <e:localization lang="sv-FI" exam-type="hearing-impaired">${imageTitle.sv}</e:localization></e:image-title></e:image></p>`,
+        ''
+      )
     })
   })
 })
