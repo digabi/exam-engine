@@ -21,6 +21,8 @@ import { spanWithNowrapSchema } from './editor/schemas/spanWithNowrapSchema'
 import { localization } from './editor/localization'
 import { listSchema } from './editor/schemas/listSchema'
 import { createListPlugin, ListButton } from './editor/List'
+import { subSupSchema } from './editor/schemas/subSupSchema'
+import { spanWithLangSchema } from './editor/schemas/spanWithLangSchema'
 
 function Menu(props: {
   schema: Schema
@@ -78,7 +80,11 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(tableSchema)
       .append(listSchema)
       .update('image', imageInputSchema(resolveAttachment)),
-    marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(localization(true))
+    marks: baseSchema.spec.marks
+      .append(spanWithNowrapSchema)
+      .append(localization(true))
+      .append(subSupSchema)
+      .append(spanWithLangSchema)
   })
 
   const outputSchema = new Schema({
@@ -87,7 +93,11 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(tableSchema)
       .append(listSchema)
       .update('image', imageOutputSchema),
-    marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(localization(false))
+    marks: baseSchema.spec.marks
+      .append(spanWithNowrapSchema)
+      .append(localization(false))
+      .append(subSupSchema)
+      .append(spanWithLangSchema)
   })
 
   const doc = ProseDOMParser.fromSchema(inputSchema).parse(element)
