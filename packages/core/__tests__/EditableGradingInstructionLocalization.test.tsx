@@ -21,10 +21,10 @@ describe('EditableGradingInstructionLocalization', () => {
     cleanup = null
   })
 
-  it('preserves localization tags with e-localization attribute on save', async () => {
-    // e-localization attribute is added on mastering exam
+  it('preserves localization tags with data-editor-id attribute on save', async () => {
+    // data-editor-id attribute is added on mastering exam
     const inputData =
-      '<p><e:localization lang="sv-FI" exam-type="hearing-impaired" e-localization="1">placeholder</e:localization></p>'
+      '<p><e:localization lang="sv-FI" exam-type="hearing-impaired" data-editor-id="e-localization-inline">placeholder</e:localization></p>'
     const expectedOutput =
       '<p><e:localization lang="sv-FI" exam-type="hearing-impaired">lokalisaatio</e:localization></p>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
@@ -34,7 +34,7 @@ describe('EditableGradingInstructionLocalization', () => {
     expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
   })
 
-  it('localization tags without e-localization attribute are ignored', async () => {
+  it('localization tags without data-editor attribute are ignored', async () => {
     const inputData = '<p><e:localization lang="sv-FI" exam-type="hearing-impaired">placeholder</e:localization></p>'
     const expectedOutput = '<p>lokalisaatio</p>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
@@ -44,9 +44,20 @@ describe('EditableGradingInstructionLocalization', () => {
     expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
   })
 
-  it("removes localization's e-localization and hidden attributes on save", async () => {
+  it('localization tags without unknown data-editor attribute are ignored', async () => {
     const inputData =
-      '<p>Tämä <e:localization exam-type="visually-impaired" e-localization="1" hidden="hidden">on</e:localization> piilossa</p>'
+      '<p><e:localization lang="sv-FI" exam-type="hearing-impaired" data-editor-id="foo">placeholder</e:localization></p>'
+    const expectedOutput = '<p>lokalisaatio</p>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    await act(async () => {
+      insertText(await result.findByText('placeholder'), 'lokalisaatio')
+    })
+    expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
+  })
+
+  it("removes localization's data-editor-id and hidden attributes on save", async () => {
+    const inputData =
+      '<p>Tämä <e:localization exam-type="visually-impaired" data-editor-id="e-localization-inline" hidden="hidden">on</e:localization> piilossa</p>'
     const expectedOutput = '<p>Tämä <e:localization exam-type="visually-impaired">ei ole</e:localization> piilossa</p>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
     await act(async () => {
@@ -59,10 +70,10 @@ describe('EditableGradingInstructionLocalization', () => {
     const inputData = ` 
 <p>Not localized</p>
 <p>
-<e:localization e-localization="1">Localized without attributes</e:localization>
-<e:localization e-localization="1" lang="fi-FI">Localized with language</e:localization>
-<e:localization e-localization="1" exam-type="visually-impaired">Localized with exam-type</e:localization>
-<e:localization e-localization="1" lang="sv-FI" exam-type="visually-impaired">Localized with language and exam-type</e:localization>
+<e:localization data-editor-id="e-localization-inline">Localized without attributes</e:localization>
+<e:localization data-editor-id="e-localization-inline" lang="fi-FI">Localized with language</e:localization>
+<e:localization data-editor-id="e-localization-inline" exam-type="visually-impaired">Localized with exam-type</e:localization>
+<e:localization data-editor-id="e-localization-inline" lang="sv-FI" exam-type="visually-impaired">Localized with language and exam-type</e:localization>
 </p>
 `.replace(/\n/g, '')
     const expectedOutput = `

@@ -2,7 +2,7 @@ import { Node, NodeSpec } from 'prosemirror-model'
 
 export function localizationSchema(hideable: boolean, mode: 'inline' | 'block'): NodeSpec {
   return {
-    localization: {
+    [`localization_${mode}`]: {
       content: `${mode}*`,
       inline: mode === 'inline',
       group: mode,
@@ -13,7 +13,7 @@ export function localizationSchema(hideable: boolean, mode: 'inline' | 'block'):
       },
       parseDOM: [
         {
-          tag: `[data-editor-id=e-localization-${mode}], [e-localization]`,
+          tag: `[data-editor-id="e-localization-${mode}"]`,
           getAttrs(dom: HTMLElement) {
             return {
               lang: dom.getAttribute('lang') ?? null,

@@ -80,8 +80,8 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(tableSchema)
       .append(listSchema)
       .update('image', imageInputSchema(resolveAttachment))
-      .append(localizationSchema(true, 'block'))
-      .append(localizationSchema(true, 'inline')),
+      .append(localizationSchema(true, 'inline'))
+      .append(localizationSchema(true, 'block')),
     marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(subSupSchema).append(spanWithLangSchema)
   })
 
@@ -91,8 +91,8 @@ function EditableGradingInstruction({ element }: { element: Element }) {
       .append(tableSchema)
       .append(listSchema)
       .update('image', imageOutputSchema)
-      .append(localizationSchema(false, 'block'))
-      .append(localizationSchema(false, 'inline')),
+      .append(localizationSchema(false, 'inline'))
+      .append(localizationSchema(false, 'block')),
     marks: baseSchema.spec.marks.append(spanWithNowrapSchema).append(subSupSchema).append(spanWithLangSchema)
   })
 
