@@ -646,7 +646,7 @@ enum LocalizationModes {
   INLINE = 'e-localization-inline'
 }
 
-function localizationMode(element: Element): string {
+function localizationMode(element: Element): LocalizationModes {
   const childElements = element.childNodes().filter(child => child.type() == 'element') as Element[]
 
   if (childElements.length == 0) {
@@ -694,7 +694,9 @@ function applyEditableLocalization(
     (localizationExamType && !localizationExamType.includes(type))
       ? 'hidden'
       : undefined
-  addDataAttributesForEditor(localization, localizationMode(localization))
+  const mode = localizationMode(localization)
+  localization.name(mode == LocalizationModes.INLINE ? 'span' : 'div')
+  addDataAttributesForEditor(localization, mode)
   if (hidden) {
     localization.attr('hidden', hidden)
   }
