@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "22.0.3",
+  "version": "22.0.4-alpha.0",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@guardian/prosemirror-invisibles": "^3.1.1",
     "@nytimes/react-prosemirror": "^0.6.2",
     "classnames": "^2.2.6",
     "css-loader": "^7.0.0",
@@ -43,7 +44,6 @@
     "postcss-loader": "^8.1.0",
     "postcss-preset-env": "^10.0.0",
     "prosemirror-commands": "^1.6.0",
-    "@guardian/prosemirror-invisibles": "^3.1.1",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.22.3",
     "prosemirror-schema-basic": "^1.2.3",
