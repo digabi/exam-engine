@@ -72,8 +72,8 @@
                     <e:localization lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV
                         <br/>
                     </e:localization>
-                    <e:localization lang="sv-FI">Lokalisaatio: SV only
-                        <br/>
+                    <e:localization lang="sv-FI">
+                        <p>Lokalisaatio: SV only</p>
                     </e:localization>
                     <e:localization lang="sv-FI" exam-type="hearing-impaired">Lokalisaatio: SV KV
                         <br/>
@@ -86,6 +86,15 @@
                     </e:localization>
                     <e:localization exam-type="visually-impaired">Lokalisaatio: NV only
                         <br/>
+                    </e:localization>
+                    <e:localization lang="sv-FI">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Testitaulukko</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </e:localization>
                 </e:answer-grading-instruction>
             </e:text-answer>
