@@ -34,6 +34,30 @@ describe('EditableGradingInstructionLocalization', () => {
     expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
   })
 
+  it('block localization preserves block elements (like <p>) on save', async () => {
+    // data-editor-id attribute is added on mastering exam
+    const inputData =
+      '<e:localization lang="sv-FI" exam-type="hearing-impaired" data-editor-id="e-localization-block"><p>placeholder</p></e:localization>'
+    const expectedOutput =
+      '<e:localization lang="sv-FI" exam-type="hearing-impaired"><p>lokalisaatio</p></e:localization>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    await act(async () => {
+      insertText(await result.findByText('placeholder'), 'lokalisaatio')
+    })
+    expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
+  })
+
+  it('localization tags with wrong block type are ignored', async () => {
+    const inputData =
+      '<p><e:localization lang="sv-FI" exam-type="hearing-impaired" data-editor-id="e-localization-block">placeholder</e:localization></p>'
+    const expectedOutput = '<p>lokalisaatio</p>'
+    const result = renderGradingInstruction(inputData, onContentChangeMock)
+    await act(async () => {
+      insertText(await result.findByText('placeholder'), 'lokalisaatio')
+    })
+    expect(onContentChangeMock).toHaveBeenCalledWith(expectedOutput, '')
+  })
+
   it('localization tags without data-editor attribute are ignored', async () => {
     const inputData = '<p><e:localization lang="sv-FI" exam-type="hearing-impaired">placeholder</e:localization></p>'
     const expectedOutput = '<p>lokalisaatio</p>'
