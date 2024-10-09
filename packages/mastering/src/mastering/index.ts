@@ -647,6 +647,9 @@ enum LocalizationModes {
 }
 
 function localizationMode(element: Element): LocalizationModes {
+  if (blockElements.includes(element.name())) {
+    return LocalizationModes.BLOCK
+  }
   const childElements = element.childNodes().filter(child => child.type() == 'element') as Element[]
 
   if (childElements.length == 0) {
