@@ -7,7 +7,7 @@ export const spanWithLangSchema: MarkSpec = {
     },
     parseDOM: [
       {
-        tag: 'span[lang]',
+        tag: 'span[lang]:not([data-editor-id])',
         getAttrs(dom: HTMLElement) {
           return { lang: dom.getAttribute('lang') || null }
         }
