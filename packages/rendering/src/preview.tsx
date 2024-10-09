@@ -185,13 +185,13 @@ const App: React.FunctionComponent<{
     ...commonProps,
     ...(process.env.EDITABLE_GRADING_INSTRUCTIONS
       ? ({
-          editable: true,
+          editable: <div>foo</div>,
           onContentChange: (answerHTML: string, path: string) => console.info(answerHTML, path),
           onSaveImage: (file: File, displayNumber: string) => {
             console.info(displayNumber, file)
             return Promise.resolve('/foo/bar.jpg')
           }
-        } as EditableProps)
+        } as unknown as EditableProps)
       : ({ editable: false } as NotEditableProps))
   }
   return (

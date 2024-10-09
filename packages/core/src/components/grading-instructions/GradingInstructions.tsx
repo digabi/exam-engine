@@ -87,7 +87,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
   annotations,
   onClickAnnotation,
   onSaveAnnotation,
-  editable,
+  EditorComponent,
   onContentChange,
   onSaveImage
 }) => {
@@ -108,7 +108,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
 
   useEffect(scrollToHash, [])
 
-  const props = editable ? { editable, onContentChange, onSaveImage } : { editable }
+  const props = EditorComponent ? { EditorComponent, onContentChange, onSaveImage } : { EditorComponent }
 
   return (
     <AnnotationProvider

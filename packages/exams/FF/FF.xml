@@ -5,12 +5,12 @@
     <e:exam-version lang="sv-FI"/>
   </e:exam-versions>
   <e:exam-instruction>
-    <e:localization lang="fi-FI">
+    <e:localization mode="block" lang="fi-FI">
       <p>
         Koe on kaksiosainen. Osassa I on kuusi 20 pisteen tehtävää ja osassa II kolme 30 pisteen tehtävää. Saat vastata
         enintään viiteen tehtävään. Näistä tehtävistä enintään kaksi saa olla osasta II. Kokeen maksimipistemäärä on
         120. Sen saavuttaminen edellyttää, että vastaat kolmeen osan I tehtävään ja kahteen osan II tehtävään.
-        Vastauksiin ei ole mahdollista liittää kuvakaappauksia.
+        Vastauksiin ei ole mahdollista <e:localization mode="inline" lang="fi-FI"> liittää </e:localization> kuvakaappauksia.
       </p>
       <p>
         Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää

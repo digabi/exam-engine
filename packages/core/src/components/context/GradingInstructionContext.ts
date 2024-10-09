@@ -5,13 +5,13 @@ export interface GradingInstructionPropsBase {
 }
 
 export interface EditableProps extends GradingInstructionPropsBase {
-  editable: true
+  EditorComponent: React.ComponentType<{ element: Element }>
   onContentChange: (answerHTML: string, path: string) => void
   onSaveImage: (file: File, displayNumber?: string) => Promise<string>
 }
 
 export interface NotEditableProps extends GradingInstructionPropsBase {
-  editable?: false
+  EditorComponent?: null | undefined
   onContentChange?: never
   onSaveImage?: never
 }

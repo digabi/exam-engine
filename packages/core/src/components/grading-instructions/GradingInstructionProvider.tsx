@@ -2,11 +2,13 @@ import React from 'react'
 import { GradingInstructionContext, GradingInstructionProps } from '../context/GradingInstructionContext'
 
 export const GradingInstructionProvider = ({
-  editable,
+  EditorComponent,
   onContentChange,
   onSaveImage,
   children
 }: GradingInstructionProps) => {
-  const contextValue = editable ? { editable, onContentChange, onSaveImage } : { editable }
+  const contextValue = EditorComponent
+    ? { EditorComponent, onContentChange: onContentChange, onSaveImage }
+    : { EditorComponent }
   return <GradingInstructionContext.Provider value={contextValue}>{children}</GradingInstructionContext.Provider>
 }
