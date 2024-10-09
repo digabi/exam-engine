@@ -653,7 +653,8 @@ function localizationMode(element: Element): string {
     return blockElements.includes(element.name()) ? LocalizationModes.BLOCK : LocalizationModes.INLINE
   }
   const childrenLocalizationModes = childElements.map(child => localizationMode(child))
-  return childrenLocalizationModes.includes(LocalizationModes.BLOCK)
+  return childrenLocalizationModes.includes(LocalizationModes.BLOCK) ||
+    childElements.some(child => child.name() == 'localization')
     ? LocalizationModes.BLOCK
     : LocalizationModes.INLINE
 }
