@@ -31,6 +31,8 @@ import QuestionTitle from './QuestionTitle'
 import Recording from './Recording'
 import Section from './Section'
 import SectionTitle from './SectionTitle'
+import { GradingInstructionProvider } from './GradingInstructionProvider'
+import { GradingInstructionProps } from '../context/GradingInstructionContext'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -80,11 +82,14 @@ const renderChildNodes = createRenderChildNodes({
   video: Recording
 })
 
-const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationProps> = ({
+const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationProps & GradingInstructionProps> = ({
   doc,
   annotations,
   onClickAnnotation,
-  onSaveAnnotation
+  onSaveAnnotation,
+  editable,
+  onContentChange,
+  onSaveImage
 }) => {
   const root = doc.documentElement
   const { date, dateTimeFormatter, dayCode, examCode, language, subjectLanguage } = useContext(CommonExamContext)
@@ -103,36 +108,40 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
 
   useEffect(scrollToHash, [])
 
+  const props = editable ? { editable, onContentChange, onSaveImage } : { editable }
+
   return (
     <AnnotationProvider
       annotations={annotations}
       onClickAnnotation={onClickAnnotation}
       onSaveAnnotation={onSaveAnnotation}
     >
-      <I18nextProvider i18n={i18n}>
-        <main className="e-exam e-grading-instructions" lang={subjectLanguage}>
-          <React.StrictMode />
-          <SectionElement aria-labelledby={examTitleId}>
-            <DocumentTitle id={examTitleId}>
-              <GradingInstructionsPageTitle /> {examTitle && renderChildNodes(examTitle)}
-            </DocumentTitle>
-            {date && (
-              <p>
-                <strong>{dateTimeFormatter.format(date)}</strong>
-              </p>
-            )}
-            {examGradingInstruction && (
-              <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
-            )}
-            {tableOfContents && (
-              <div className="main-toc-container">
-                <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
-              </div>
-            )}
-          </SectionElement>
-          {renderChildNodes(root)}
-        </main>
-      </I18nextProvider>
+      <GradingInstructionProvider {...props}>
+        <I18nextProvider i18n={i18n}>
+          <main className="e-exam e-grading-instructions" lang={subjectLanguage}>
+            <React.StrictMode />
+            <SectionElement aria-labelledby={examTitleId}>
+              <DocumentTitle id={examTitleId}>
+                <GradingInstructionsPageTitle /> {examTitle && renderChildNodes(examTitle)}
+              </DocumentTitle>
+              {date && (
+                <p>
+                  <strong>{dateTimeFormatter.format(date)}</strong>
+                </p>
+              )}
+              {examGradingInstruction && (
+                <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
+              )}
+              {tableOfContents && (
+                <div className="main-toc-container">
+                  <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
+                </div>
+              )}
+            </SectionElement>
+            {renderChildNodes(root)}
+          </main>
+        </I18nextProvider>
+      </GradingInstructionProvider>
     </AnnotationProvider>
   )
 }

@@ -21,7 +21,7 @@ export function markText(
   text: string,
   annotations: (RenderableAnnotation | NewRenderableAnnotation)[],
   onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void,
-  setNewAnnotationRef: (ref: HTMLElement | undefined) => void
+  setNewAnnotationRef: (ref: HTMLElement | null) => void
 ) {
   if (annotations.length === 0) {
     return [text]

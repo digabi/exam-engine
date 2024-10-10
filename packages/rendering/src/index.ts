@@ -1,5 +1,6 @@
 export interface RenderingOptions {
   casCountdownDurationSeconds?: number
+  editableGradingInstructions?: boolean
   openBrowser?: boolean
   port?: number
 }
