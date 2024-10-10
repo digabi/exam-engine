@@ -5,7 +5,7 @@ export interface GradingInstructionPropsBase {
 }
 
 export type GradingInstructionProps = GradingInstructionPropsBase & {
-  EditorComponent?: React.ComponentType<{ element: Element }>
+  EditorComponent?: React.ComponentType<{ element: Element; displayNumber: string }>
 }
 
 export const GradingInstructionContext = React.createContext({} as GradingInstructionProps)
