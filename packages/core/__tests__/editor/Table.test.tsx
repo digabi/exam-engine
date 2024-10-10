@@ -22,8 +22,10 @@ describe('Table', () => {
   })
 
   it('Table is rendered as expected', () => {
-    const inputData = '<table class="e-table"><tbody><tr><td>foo</td></tr></tbody></table>'
-    const expectedOutput = '<table class="e-table"><tbody><tr><td>foo</td></tr></tbody></table>'
+    const inputData =
+      '<table class="e-table"><tbody><tr class="e-text-top"><td scope="row">foo</td></tr></tbody></table>'
+    const expectedOutput =
+      '<table class="e-table"><tbody><tr class="e-text-top"><td scope="row">foo</td></tr></tbody></table>'
     const result = renderGradingInstruction(inputData)
     const table = result.container.querySelector('.ProseMirror')
     expect(table!.innerHTML).toBe(expectedOutput)
@@ -31,8 +33,10 @@ describe('Table', () => {
 
   it('Change in table is returned as expected', async () => {
     cleanup = mockCreateRange()
-    const inputData = '<table class="e-table"><tbody><tr><td>foo</td></tr></tbody></table>'
-    const expectedOutput = '<table class="e-table"><tbody><tr><td>bar</td></tr></tbody></table>'
+    const inputData =
+      '<table class="e-table"><tbody><tr class="e-text-top"><td scope="row">foo</td></tr></tbody></table>'
+    const expectedOutput =
+      '<table class="e-table"><tbody><tr class="e-text-top"><td scope="row">bar</td></tr></tbody></table>'
     const result = renderGradingInstruction(inputData, onContentChangeMock)
     await act(async () => {
       insertText(await result.findByText('foo'), 'bar')
