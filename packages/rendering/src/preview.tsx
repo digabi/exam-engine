@@ -16,10 +16,6 @@ import createRouter from 'router5'
 import browserPlugin from 'router5-plugin-browser'
 import Grading from './PreviewGrading'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
-import {
-  EditableProps,
-  NotEditableProps
-} from '@digabi/exam-engine-core/dist/components/context/GradingInstructionContext'
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }
@@ -181,18 +177,10 @@ const App: React.FunctionComponent<{
     }
   }
 
+  const EditorComponent = (_props: { element: Element }) => <div>placeholder</div>
   const gradingInstructionProps = {
     ...commonProps,
-    ...(process.env.EDITABLE_GRADING_INSTRUCTIONS
-      ? ({
-          editable: true,
-          onContentChange: (answerHTML: string, path: string) => console.info(answerHTML, path),
-          onSaveImage: (file: File, displayNumber: string) => {
-            console.info(displayNumber, file)
-            return Promise.resolve('/foo/bar.jpg')
-          }
-        } as EditableProps)
-      : ({ editable: false } as NotEditableProps))
+    ...(process.env.EDITABLE_GRADING_INSTRUCTIONS ? { EditorComponent } : {})
   }
   return (
     <div ref={callback}>
