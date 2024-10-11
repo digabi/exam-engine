@@ -702,7 +702,7 @@ function applyEditableLocalization(
       ? 'hidden'
       : undefined
   const mode = localizationMode(localization)
-  localization.name(mode == LocalizationModes.INLINE ? 'span' : 'div')
+  localization.name(mode == LocalizationModes.INLINE ? 'span' : 'div').namespace(ns.xhtml)
   addDataAttributesForEditor(localization, mode)
   if (hidden) {
     localization.attr('hidden', hidden)
