@@ -122,6 +122,31 @@ describe('testEditableGradingInstruction.ts — Grading instruction editing', ()
       )
     })
 
+    it('Saving existing formula without changes keeps old formula intact', async () => {
+      await openGradingInstructionsPage()
+      await addEquation('\\sqrt{1}')
+      await openEquationEditor(`\\\\sqrt{1}`)
+      await saveEquation()
+      const value = await getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
+      expect(value).toContain(
+        `<img alt="\\sqrt{1}" formula="true" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}" contenteditable="false">`
+      )
+    })
+
+    it('New equation is shown, when new popup is clicked open', async () => {
+      await openGradingInstructionsPage()
+      await addEquation('\\sqrt{1}')
+      await addEquation('\\sqrt{2}')
+      await openEquationEditor(`\\\\sqrt{1}`)
+      expect(await getInnerHtml(page, '.e-popup-content')).toContain(
+        `<img alt="\\sqrt{1}" src="/math.svg?latex=${encodeURIComponent('\\sqrt{1}')}">`
+      )
+      await openEquationEditor(`\\\\sqrt{2}`)
+      expect(await getInnerHtml(page, '.e-popup-content')).toContain(
+        `<img alt="\\sqrt{2}" src="/math.svg?latex=${encodeURIComponent('\\sqrt{2}')}">`
+      )
+    })
+
     it('Changes can be cancelled', async () => {
       await openGradingInstructionsPage()
       await addEquation('\\sqrt{1}')

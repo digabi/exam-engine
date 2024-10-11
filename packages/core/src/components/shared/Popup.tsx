@@ -25,7 +25,7 @@ export function Popup(props: PopupProps) {
   useEffect(() => {
     if (props.element && textAreaRef.current) {
       showAndPositionElement(props.element, popupRef)
-      textAreaRef.current.innerHTML = textContent
+      textAreaRef.current.innerHTML = props.initialTextContent || ''
       makeRichText(
         textAreaRef.current,
         {
@@ -43,7 +43,7 @@ export function Popup(props: PopupProps) {
       )
       textAreaRef.current.focus()
     }
-    setTextContent('')
+    setTextContent(props.initialTextContent || '')
     setSaveEnabled(props.initialTextContent.length > 0)
   }, [props.element])
 
