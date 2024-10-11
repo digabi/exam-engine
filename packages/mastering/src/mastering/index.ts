@@ -335,8 +335,8 @@ async function masterExamVersion(
 
   const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
   addRestrictedAudioMetadata(attachments)
-  await renderFormulas(root, options.throwOnLatexError)
-  await addMediaMetadata(attachments, getMediaMetadata)
+  await renderFormulas(root, options.throwOnLatexError, options.editableGradingInstructions)
+  await addMediaMetadata(attachments, getMediaMetadata, options.editableGradingInstructions)
 
   return {
     attachments: collectAttachments(root, attachments),
@@ -353,7 +353,11 @@ async function masterExamVersion(
   }
 }
 
-async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMediaMetadata) {
+async function addMediaMetadata(
+  attachments: Element[],
+  getMediaMetadata: GetMediaMetadata,
+  editableGradingInstructions?: boolean
+) {
   for (const attachment of attachments) {
     const name = attachment.name()
     if (name === 'audio' || name === 'video' || name === 'image' || name === 'audio-test') {
@@ -363,7 +367,7 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
         const audioMetadata = metadata as AudioMetadata
         attachment.attr('duration', String(audioMetadata.duration))
       } else {
-        if (type === 'image') {
+        if (type === 'image' && editableGradingInstructions) {
           addDataAttributesForEditor(attachment, 'e-image')
           const imageTitle = attachment.get<Element>('./e:image-title', ns)
           if (imageTitle) addDataAttributesForEditor(imageTitle, 'e-image-title')
@@ -698,7 +702,7 @@ function applyEditableLocalization(
       ? 'hidden'
       : undefined
   const mode = localizationMode(localization)
-  localization.name(mode == LocalizationModes.INLINE ? 'span' : 'div')
+  localization.name(mode == LocalizationModes.INLINE ? 'span' : 'div').namespace(ns.xhtml)
   addDataAttributesForEditor(localization, mode)
   if (hidden) {
     localization.attr('hidden', hidden)
@@ -824,8 +828,10 @@ function addQuestionIds(root: Element, generateId: GenerateId) {
 
 function addGradingInstructionAttributesForQuestions(questions: Question[]) {
   for (const question of questions) {
-    if (question.gradingInstruction) {
-      question.gradingInstruction.element.attr('path', question.gradingInstruction.element.path())
+    if (question.gradingInstructions) {
+      for (const gradingInstruction of question.gradingInstructions) {
+        gradingInstruction.element.attr('path', gradingInstruction.element.path())
+      }
     }
     addGradingInstructionAttributesForQuestions(question.childQuestions)
   }
@@ -952,7 +958,7 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
     })
 }
 
-async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
+async function renderFormulas(exam: Element, throwOnLatexError?: boolean, editableGradingInstructions?: boolean) {
   for (const formula of exam.find<Element>('//e:formula', ns)) {
     try {
       // Load render-formula lazily, since initializing mathjax-node is very expensive.
@@ -963,7 +969,9 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
         throwOnLatexError
       )) as string
       formula.attr('svg', svg)
-      addDataAttributesForEditor(formula, 'e-formula')
+      if (editableGradingInstructions) {
+        addDataAttributesForEditor(formula, 'e-formula')
+      }
     } catch (errors) {
       if (Array.isArray(errors) && errors.every(_.isString)) {
         throw mkError(errors.join(', '), formula)
@@ -1013,14 +1021,14 @@ function parseQuestion(question: Element): Question {
     .find<Element>('.//e:question', ns)
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
-  const [gradingInstruction] = question
+  const gradingInstructions = question
     .find<Element>('./e:question-grading-instruction', ns)
     .map(parseGradingInstruction)
   if (childQuestions.length) {
-    return { element: question, childQuestions, answers: [], gradingInstruction }
+    return { element: question, childQuestions, answers: [], gradingInstructions }
   } else {
     const answers = question.find<Element>(xpathOr(answerTypes), ns).map(element => parseAnswer(element, question))
-    return { element: question, childQuestions: [], answers, gradingInstruction }
+    return { element: question, childQuestions: [], answers, gradingInstructions }
   }
 }
 

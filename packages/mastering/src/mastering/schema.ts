@@ -26,7 +26,7 @@ export interface Question {
   element: Element
   childQuestions: Question[]
   answers: Answer[]
-  gradingInstruction?: GradingInstruction
+  gradingInstructions?: GradingInstruction[]
 }
 
 export interface Answer {

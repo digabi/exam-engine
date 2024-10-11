@@ -99,9 +99,25 @@ describe('testEditableGradingInstructionLocalization.ts — Grading instruction 
     }
   })
 
-  async function getProseMirrorContent(page: Page, url: string) {
+  it('support multiple question grading instructions on the same question', async () => {
+    const values = await getProseMirrorContent(page, `${ctx.url}/fi-FI/normal/grading-instructions`, [
+      '.e-grading-instructions-question .e-answer-grading-instruction',
+      '.e-grading-instructions-question .e-answer-grading-instruction ~ .e-answer-grading-instruction',
+      '.e-grading-instructions-question .e-answer-grading-instruction ~ .e-answer-grading-instruction ~ .e-answer-grading-instruction'
+    ])
+    expect(values).toEqual(['<p>1</p>', '<p>2</p>', '<p>3</p>'])
+  })
+
+  async function getProseMirrorContent(
+    page: Page,
+    url: string,
+    selectors: string[] = ['.e-answer-grading-instruction:last-of-type']
+  ) {
     await page.goto(url)
-    await page.waitForSelector('.e-answer-grading-instruction .ProseMirror')
-    return getInnerHtml(page, '.e-answer-grading-instruction .ProseMirror')
+    await page.waitForSelector('.e-answer-grading-instruction')
+    if (selectors.length == 1) {
+      return getInnerHtml(page, `${selectors[0]} .ProseMirror`)
+    }
+    return Promise.all(selectors.map(selector => getInnerHtml(page, `${selector} .ProseMirror`)))
   }
 })
