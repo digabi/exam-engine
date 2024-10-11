@@ -824,8 +824,10 @@ function addQuestionIds(root: Element, generateId: GenerateId) {
 
 function addGradingInstructionAttributesForQuestions(questions: Question[]) {
   for (const question of questions) {
-    if (question.gradingInstruction) {
-      question.gradingInstruction.element.attr('path', question.gradingInstruction.element.path())
+    if (question.gradingInstructions) {
+      for (const gradingInstruction of question.gradingInstructions) {
+        gradingInstruction.element.attr('path', gradingInstruction.element.path())
+      }
     }
     addGradingInstructionAttributesForQuestions(question.childQuestions)
   }
@@ -1013,14 +1015,14 @@ function parseQuestion(question: Element): Question {
     .find<Element>('.//e:question', ns)
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
-  const [gradingInstruction] = question
+  const gradingInstructions = question
     .find<Element>('./e:question-grading-instruction', ns)
     .map(parseGradingInstruction)
   if (childQuestions.length) {
-    return { element: question, childQuestions, answers: [], gradingInstruction }
+    return { element: question, childQuestions, answers: [], gradingInstructions }
   } else {
     const answers = question.find<Element>(xpathOr(answerTypes), ns).map(element => parseAnswer(element, question))
-    return { element: question, childQuestions: [], answers, gradingInstruction }
+    return { element: question, childQuestions: [], answers, gradingInstructions }
   }
 }
 

@@ -53,6 +53,9 @@
         <e:question>
             <e:question-title>Tehtävä</e:question-title>
             <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            <e:question-grading-instruction>1</e:question-grading-instruction>
+            <e:question-grading-instruction>2</e:question-grading-instruction>
+            <e:question-grading-instruction>3</e:question-grading-instruction>
             <e:text-answer type="rich-text" max-score="6">
                 <e:answer-grading-instruction>
                     Normaali tekstikappale
