@@ -50,7 +50,7 @@
     "redux": "^5.0.1",
     "redux-saga": "^1.2.3",
     "redux-saga-test-plan": "^4.0.6",
-    "rich-text-editor": "^7.2.3",
+    "rich-text-editor": "file:/Users/heikkihonkanen/work/ytl/rich-text-editor/rich-text-editor-8.0.0-alpha3.tgz",
     "sanitize-html": "^2.0.0",
     "typesafe-actions": "^5.1.0",
     "utility-types": "^3.10.0",

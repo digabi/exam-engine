@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { makeRichText } from 'rich-text-editor'
+// import { makeRichText } from 'rich-text-editor'
 import { NewExamAnnotation } from '../../types/Score'
 import { AnnotationContext } from '../context/AnnotationProvider'
 
@@ -14,17 +14,17 @@ export function AnnotationPopup() {
     if (newAnnotationRef && textAreaRef.current) {
       showAndPositionElement(newAnnotationRef, popupRef)
       textAreaRef.current.innerHTML = comment
-      makeRichText(
-        textAreaRef.current,
-        {
-          locale: 'FI',
-          screenshotSaver: () => Promise.resolve('')
-        },
-        value => {
-          setComment(value.answerHTML)
-          setSaveEnabled(value.answerHTML.trim().length > 0)
-        }
-      )
+      // makeRichText(
+      //   textAreaRef.current,
+      //   {
+      //     locale: 'FI',
+      //     screenshotSaver: () => Promise.resolve('')
+      //   },
+      //   value => {
+      //     setComment(value.answerHTML)
+      //     setSaveEnabled(value.answerHTML.trim().length > 0)
+      //   }
+      // )
       textAreaRef.current.focus()
     }
   }, [newAnnotationRef])
