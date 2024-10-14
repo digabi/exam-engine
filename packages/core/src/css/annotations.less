@@ -140,21 +140,13 @@
   padding: 0.5rem 0.75rem;
   margin-top: 1rem;
 
-  .comment-content {
-    .comment-content;
+  & > .rich-text-editor {
+    min-height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.25rem 0.75rem;
+    transition: all 0.5s;
     margin-bottom: 1rem;
     width: 300px;
-  }
-}
-
-.comment-content {
-  background-color: white;
-  border-radius: 10px;
-  padding: 0.25rem 0.75rem;
-  min-height: 0;
-  transition: all 0.5s;
-
-  &.rich-text-editor {
-    min-height: 40px;
   }
 }

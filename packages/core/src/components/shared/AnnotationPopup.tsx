@@ -1,31 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
-// import { makeRichText } from 'rich-text-editor'
 import { NewExamAnnotation } from '../../types/Score'
 import { AnnotationContext } from '../context/AnnotationProvider'
+import RichTextEditor from 'rich-text-editor'
 
 export function AnnotationPopup() {
   const popupRef = React.createRef<HTMLDivElement>()
-  const textAreaRef = React.createRef<HTMLDivElement>()
   const { newAnnotation, setNewAnnotation, newAnnotationRef, onSaveAnnotation } = useContext(AnnotationContext)
   const [comment, setComment] = useState<string>('')
   const [saveEnabled, setSaveEnabled] = useState<boolean>(false)
 
   useEffect(() => {
-    if (newAnnotationRef && textAreaRef.current) {
+    if (newAnnotationRef) {
       showAndPositionElement(newAnnotationRef, popupRef)
-      textAreaRef.current.innerHTML = comment
-      // makeRichText(
-      //   textAreaRef.current,
-      //   {
-      //     locale: 'FI',
-      //     screenshotSaver: () => Promise.resolve('')
-      //   },
-      //   value => {
-      //     setComment(value.answerHTML)
-      //     setSaveEnabled(value.answerHTML.trim().length > 0)
-      //   }
-      // )
-      textAreaRef.current.focus()
     }
   }, [newAnnotationRef])
 
@@ -38,7 +24,6 @@ export function AnnotationPopup() {
 
   const closeEditor = () => {
     setNewAnnotation(null)
-    closeMathEditor(textAreaRef.current!)
   }
 
   function createNewAnnotation(annotation: NewExamAnnotation, comment: string) {
@@ -53,12 +38,14 @@ export function AnnotationPopup() {
       ref={popupRef}
       data-testid="annotation-popup"
     >
-      <div
-        className="comment-content"
-        data-testid="edit-comment"
-        role="textbox"
-        aria-multiline="true"
-        ref={textAreaRef}
+      <RichTextEditor
+        language="FI"
+        baseUrl={''}
+        initialValue={comment}
+        onValueChange={answer => {
+          setComment(answer.answerHtml)
+          setSaveEnabled(answer.answerHtml.trim().length > 0)
+        }}
       />
       <span className="comment-button-area">
         <span>
@@ -66,7 +53,6 @@ export function AnnotationPopup() {
             className="button"
             onClick={e => {
               e.stopPropagation()
-              closeMathEditor(textAreaRef.current!)
               createNewAnnotation(newAnnotation, comment)
             }}
             data-testid="save-comment"
@@ -101,11 +87,4 @@ function showAndPositionElement(mark: HTMLElement | null, popupRef: React.RefObj
       style.left = `${markRect.left}px`
     }
   }
-}
-
-function closeMathEditor(element: HTMLDivElement) {
-  // rich-text-editor does not properly support several rich-text-editor instances created at different times.
-  // In order to close math editor that is open, we need to dispatch events like this.
-  element.dispatchEvent(new Event('focus', { bubbles: true, cancelable: true }))
-  element.dispatchEvent(new Event('blur', { bubbles: true, cancelable: true }))
 }
