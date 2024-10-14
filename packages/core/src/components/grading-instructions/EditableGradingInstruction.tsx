@@ -23,12 +23,15 @@ import { listSchema } from './editor/schemas/listSchema'
 import { createListPlugin, ListButton } from './editor/List'
 import { subSupSchema } from './editor/schemas/subSupSchema'
 import { spanWithLangSchema } from './editor/schemas/spanWithLangSchema'
+import { UndoRedoButtons } from './editor/UndoRedoButtons'
+import { history } from 'prosemirror-history'
 
 function Menu(props: {
   schema: Schema
   formulaState: FormulaEditorState | null
   setFormulaState: (values: FormulaEditorState) => void
   editorElement: HTMLElement
+  state: EditorState
 }) {
   const { onSaveImage } = useContext(GradingInstructionContext)
   const [isFloating, setIsFloating] = useState(false)
@@ -54,6 +57,8 @@ function Menu(props: {
         <div className={`editor-menu ${isFloating ? 'floating' : ''}`}>
           <FormatButton markName="strong" icon={faBold} />
           <FormatButton markName="em" icon={faItalic} />
+          <span className="editor-menu-separator" />
+          <UndoRedoButtons state={props.state} />
           <span className="editor-menu-separator" />
           <ListButton nodeType={props.schema.nodes.bullet_list} icon={faList} />
           <ListButton nodeType={props.schema.nodes.ordered_list} icon={faListOl} />
@@ -100,11 +105,19 @@ function EditableGradingInstruction({ element }: { element: Element }) {
   const [mount, setMount] = useState<HTMLElement | null>(null)
   const [formulaState, setFormulaState] = useState<FormulaEditorState | null>(null)
   const formulaPlugin = new FormulaPlugin(setFormulaState)
+  const historyPlugin = history()
   const [state, setState] = useState(
     EditorState.create({
       schema: inputSchema,
       doc,
-      plugins: [tablePlugin(), createListPlugin(inputSchema), keymap(baseKeymap), formulaPlugin, nbspPlugin]
+      plugins: [
+        tablePlugin(),
+        createListPlugin(inputSchema),
+        keymap(baseKeymap),
+        formulaPlugin,
+        nbspPlugin,
+        historyPlugin
+      ]
     })
   )
 
@@ -140,6 +153,7 @@ function EditableGradingInstruction({ element }: { element: Element }) {
           formulaState={formulaState}
           setFormulaState={setFormulaState}
           editorElement={mount}
+          state={state}
         />
       )}
       <div ref={setMount} />
