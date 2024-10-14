@@ -43,22 +43,22 @@ describe('testEditableGradingInstructionLocalization.ts — Grading instruction 
   it('renders all grading instructions regardless the localization (language or exam type)', async () => {
     const valueFi = await getProseMirrorContent(page, `${ctx.url}/fi-FI/visually-impaired/grading-instructions`)
     expect(valueFi).toContain(
-      '<p>Normaali tekstikappale <br> <span>Lokalisaatio: Ei attribuutteja <br></span> <span lang="fi-FI">Lokalisaatio: FI only <br> <span lang="fi-FI" exam-type="hearing-impaired" hidden="hidden">Lokalisaatio: FI KV (supports localization nesting) <br></span></span> <span lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV <br></span> <span lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV <br></span><br class="ProseMirror-trailingBreak"></p><div lang="sv-FI" hidden="hidden"><p>Lokalisaatio: SV only</p></div><p><span lang="sv-FI" exam-type="hearing-impaired" hidden="hidden">Lokalisaatio: SV KV <br></span> <span lang="sv-FI" exam-type="visually-impaired" hidden="hidden">Lokalisaatio: SV NV <br></span> <span exam-type="hearing-impaired" hidden="hidden">Lokalisaatio: KV only <br></span> <span exam-type="visually-impaired">Lokalisaatio: NV only <br></span><br class="ProseMirror-trailingBreak"></p><div lang="sv-FI" hidden="hidden"><table><tbody><tr><td>Testitaulukko</td></tr></tbody></table></div>'
+      '<p>Normaali tekstikappale</p><div><p>Lokalisaatio: Ei attribuutteja</p></div><div lang="fi-FI"><p>Lokalisaatio: FI only <br> <span lang="fi-FI" exam-type="hearing-impaired" hidden="hidden">Lokalisaatio: FI KV (supports localization nesting) <br></span><br class="ProseMirror-trailingBreak"></p></div><div lang="fi-FI" exam-type="visually-impaired"><p>Lokalisaatio: FI NV</p></div><div lang="fi-FI" exam-type="visually-impaired"><p>Lokalisaatio: FI NV</p></div><div lang="sv-FI" hidden="hidden"><p>Lokalisaatio: SV only</p></div><div lang="sv-FI" exam-type="hearing-impaired" hidden="hidden"><p>Lokalisaatio: SV KV</p></div><div lang="sv-FI" exam-type="visually-impaired" hidden="hidden"><p>Lokalisaatio: SV NV</p></div><div exam-type="hearing-impaired" hidden="hidden"><p>Lokalisaatio: KV only</p></div><div exam-type="visually-impaired"><p>Lokalisaatio: NV only</p></div><div lang="sv-FI" hidden="hidden"><table><tbody><tr><td>Testitaulukko</td></tr></tbody></table></div>'
     )
 
     const valueSv = await getProseMirrorContent(page, `${ctx.url}/sv-FI/hearing-impaired/grading-instructions`)
     expect(valueSv).toContain(
-      '<p>Normaali tekstikappale <br> <span>Lokalisaatio: Ei attribuutteja <br></span> <span lang="fi-FI" hidden="hidden">Lokalisaatio: FI only <br> <span lang="fi-FI" exam-type="hearing-impaired" hidden="hidden">Lokalisaatio: FI KV (supports localization nesting) <br></span></span> <span lang="fi-FI" exam-type="visually-impaired" hidden="hidden">Lokalisaatio: FI NV <br></span> <span lang="fi-FI" exam-type="visually-impaired" hidden="hidden">Lokalisaatio: FI NV <br></span><br class="ProseMirror-trailingBreak"></p><div lang="sv-FI"><p>Lokalisaatio: SV only</p></div><p><span lang="sv-FI" exam-type="hearing-impaired">Lokalisaatio: SV KV <br></span> <span lang="sv-FI" exam-type="visually-impaired" hidden="hidden">Lokalisaatio: SV NV <br></span> <span exam-type="hearing-impaired">Lokalisaatio: KV only <br></span> <span exam-type="visually-impaired" hidden="hidden">Lokalisaatio: NV only <br></span><br class="ProseMirror-trailingBreak"></p><div lang="sv-FI"><table><tbody><tr><td>Testitaulukko</td></tr></tbody></table></div>'
+      '<p>Normaali tekstikappale</p><div><p>Lokalisaatio: Ei attribuutteja</p></div><div lang="fi-FI" hidden="hidden"><p>Lokalisaatio: FI only <br> <span lang="fi-FI" exam-type="hearing-impaired" hidden="hidden">Lokalisaatio: FI KV (supports localization nesting) <br></span><br class="ProseMirror-trailingBreak"></p></div><div lang="fi-FI" exam-type="visually-impaired" hidden="hidden"><p>Lokalisaatio: FI NV</p></div><div lang="fi-FI" exam-type="visually-impaired" hidden="hidden"><p>Lokalisaatio: FI NV</p></div><div lang="sv-FI"><p>Lokalisaatio: SV only</p></div><div lang="sv-FI" exam-type="hearing-impaired"><p>Lokalisaatio: SV KV</p></div><div lang="sv-FI" exam-type="visually-impaired" hidden="hidden"><p>Lokalisaatio: SV NV</p></div><div exam-type="hearing-impaired"><p>Lokalisaatio: KV only</p></div><div exam-type="visually-impaired" hidden="hidden"><p>Lokalisaatio: NV only</p></div><div lang="sv-FI"><table><tbody><tr><td>Testitaulukko</td></tr></tbody></table></div>'
     )
   })
 
   it('hides grading instruction localizations not belonging to the opened page', async () => {
     const value = await getProseMirrorContent(page, `${ctx.url}/fi-FI/normal/grading-instructions`)
     expect(value).toContain('<span lang="fi-FI" exam-type="hearing-impaired" hidden="hidden">')
-    expect(value).toContain('<span lang="fi-FI" exam-type="visually-impaired" hidden="hidden">')
+    expect(value).toContain('<div lang="fi-FI" exam-type="visually-impaired" hidden="hidden">')
     expect(value).toContain('<div lang="sv-FI" hidden="hidden">')
-    expect(value).toContain('<span lang="sv-FI" exam-type="hearing-impaired" hidden="hidden">')
-    expect(value).toContain('<span lang="sv-FI" exam-type="visually-impaired" hidden="hidden">')
+    expect(value).toContain('<div lang="sv-FI" exam-type="hearing-impaired" hidden="hidden">')
+    expect(value).toContain('<div lang="sv-FI" exam-type="visually-impaired" hidden="hidden">')
   })
 
   it('grading instruction without localization is shown on all pages', async () => {
