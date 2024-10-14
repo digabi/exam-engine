@@ -59,10 +59,7 @@
             <e:text-answer type="rich-text" max-score="6">
                 <e:answer-grading-instruction>
                     Normaali tekstikappale
-                    <br/>
-                    <e:localization>Lokalisaatio: Ei attribuutteja
-                        <br/>
-                    </e:localization>
+                    <e:localization>Lokalisaatio: Ei attribuutteja</e:localization>
                     <e:localization lang="fi-FI">Lokalisaatio: FI only
                         <br/>
                         <e:localization exam-type="hearing-impaired">Lokalisaatio: FI KV (supports localization nesting)
@@ -70,25 +67,19 @@
                         </e:localization>
                     </e:localization>
                     <e:localization lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV
-                        <br/>
                     </e:localization>
                     <e:localization lang="fi-FI" exam-type="visually-impaired">Lokalisaatio: FI NV
-                        <br/>
                     </e:localization>
                     <e:localization lang="sv-FI">
                         <p>Lokalisaatio: SV only</p>
                     </e:localization>
                     <e:localization lang="sv-FI" exam-type="hearing-impaired">Lokalisaatio: SV KV
-                        <br/>
                     </e:localization>
                     <e:localization lang="sv-FI" exam-type="visually-impaired">Lokalisaatio: SV NV
-                        <br/>
                     </e:localization>
                     <e:localization exam-type="hearing-impaired">Lokalisaatio: KV only
-                        <br/>
                     </e:localization>
                     <e:localization exam-type="visually-impaired">Lokalisaatio: NV only
-                        <br/>
                     </e:localization>
                     <e:localization lang="sv-FI">
                         <table>

@@ -651,7 +651,11 @@ enum LocalizationModes {
 }
 
 function localizationMode(element: Element): LocalizationModes {
-  if (blockElements.includes(element.name())) {
+  const parent = element.parent()
+  if (
+    blockElements.includes(element.name()) ||
+    (element.name() == 'localization' && parent instanceof Element && parent.name().endsWith('-grading-instruction'))
+  ) {
     return LocalizationModes.BLOCK
   }
   const childElements = element.childNodes().filter(child => child.type() == 'element') as Element[]
