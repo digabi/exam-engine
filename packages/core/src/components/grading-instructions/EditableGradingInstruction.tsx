@@ -14,7 +14,7 @@ import { NbspButton, nbspPlugin } from './editor/NBSP'
 import { ImageUploadButton } from './editor/ImageUploadButton'
 import { imageInputSchema, imageOutputSchema } from './editor/schemas/imageSchema'
 import { CommonExamContext } from '../context/CommonExamContext'
-import { faBold, faItalic, faList, faListOl } from '@fortawesome/free-solid-svg-icons'
+import { faBold, faItalic, faList, faListOl, faSubscript, faSuperscript } from '@fortawesome/free-solid-svg-icons'
 import { formulaOutputSchema, formulaSchema } from './editor/schemas/formulaSchema'
 import { tableSchema } from './editor/schemas/tableSchema'
 import { spanWithNowrapSchema } from './editor/schemas/spanWithNowrapSchema'
@@ -59,6 +59,9 @@ function Menu(props: {
           <FormatButton markName="em" icon={faItalic} />
           <span className="editor-menu-separator" />
           <UndoRedoButtons state={props.state} />
+          <span className="editor-menu-separator" />
+          <FormatButton markName="sup" icon={faSuperscript} />
+          <FormatButton markName="sub" icon={faSubscript} />
           <span className="editor-menu-separator" />
           <ListButton nodeType={props.schema.nodes.bullet_list} icon={faList} />
           <ListButton nodeType={props.schema.nodes.ordered_list} icon={faListOl} />
