@@ -14,7 +14,7 @@
     "@digabi/exam-engine-rendering": "22.0.3",
     "lodash": "^4.17.15",
     "ora": "^5.0.0",
-    "rich-text-editor": "file:/Users/heikkihonkanen/work/ytl/rich-text-editor/rich-text-editor-8.0.0-alpha3.tgz",
+    "rich-text-editor": "file:/Users/heikkihonkanen/work/ytl/rich-text-editor/rich-text-editor-8.0.0-alpha14.tgz",
     "uuid": "^10.0.0",
     "yargs": "^17.0.1"
   },

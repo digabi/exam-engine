@@ -53,26 +53,25 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
     onChange(answer.answerHtml, answer.answerText)
   }
 
-  // componentDidUpdate(): void {
-  //   const { current } = this.ref
-  //
-  //   // Don't update element unless value has changed from last known value to prevent cursor jumping
-  //   if (current && this.props.answer && this.props.answer.value !== this.lastHTML) {
-  //     current.innerHTML = this.lastHTML = this.props.answer.value
-  //   }
-  // }
-
   render(): React.ReactNode {
-    const { questionId } = this.props
+    const { questionId, className, labelledBy, answer, lang, invalid } = this.props
     return (
       <ExpandQuestionContext.Consumer>
         {({ expanded, toggleWriterMode }) => (
           <>
             <RichTextEditor
+              baseUrl={''}
+              initialValue={answer?.value}
               language={this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV'}
               onValueChange={this.handleChange}
-              baseUrl={''}
-              initialValue={this.props.answer?.value}
+              textAreaProps={{
+                ariaInvalid: invalid,
+                ariaLabelledBy: labelledBy,
+                id: questionId.toString(),
+                questionId,
+                className,
+                lang
+              }}
             ></RichTextEditor>
             {!expanded && (
               <button

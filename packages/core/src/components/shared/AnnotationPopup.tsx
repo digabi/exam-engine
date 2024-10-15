@@ -46,6 +46,9 @@ export function AnnotationPopup() {
           setComment(answer.answerHtml)
           setSaveEnabled(answer.answerHtml.trim().length > 0)
         }}
+        textAreaProps={{
+          className: 'comment-content'
+        }}
       />
       <span className="comment-button-area">
         <span>

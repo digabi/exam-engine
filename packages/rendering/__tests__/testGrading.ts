@@ -25,7 +25,7 @@ describe('testGrading.ts', () => {
     await page.keyboard.press('Enter')
     await answer(7, 'Aliquam non dapibus augue, interdum dapibus tellus. Ut at est eu ex pharetra ultricies')
     await page.keyboard.press('Enter')
-    await page.click('[data-js="newEquation"]')
+    await page.click('button::-p-text(Σ Lisää kaava)', {})
     await page.keyboard.type('1/x+2x^2')
     await page.keyboard.press('Escape')
 
