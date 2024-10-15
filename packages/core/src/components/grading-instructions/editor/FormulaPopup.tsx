@@ -5,15 +5,15 @@ import { Popup } from '../../shared/Popup'
 
 export function FormulaPopup({ state, onFinish }: { state: FormulaEditorState; onFinish: () => void }) {
   const onValueChange = (text: string) => {
-    if (text.length && !containsOnlyOneImgTag(text)) {
-      return 'Ainoastaan yksi kaava sallittu'
+    if (containsOnlyOneImgTag(text) || !text.length || text == '\\' || text.match(/^\\[^<]/)) {
+      return null
     }
-    return null
+    return 'Ainoastaan yksi kaava sallittu'
   }
 
   const onContentChange = useEditorEventCallback((view, textField: string) => {
     const node = view.state.doc.nodeAt(state.pos)
-    const latex = extractLatex(textField) || ''
+    const latex = textField.startsWith('\\') ? textField : extractLatex(textField) || ''
     const { schema } = view.state
 
     if (node) {
@@ -70,5 +70,5 @@ function extractLatex(value: string) {
 function containsOnlyOneImgTag(htmlString: string) {
   const imgTagPattern = /^<img\s+[^>]*>$/g
   const matches = htmlString.trim().match(imgTagPattern)
-  return matches && matches.length === 1
+  return matches?.length === 1
 }
