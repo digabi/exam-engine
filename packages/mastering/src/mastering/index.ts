@@ -297,10 +297,9 @@ async function masterExamVersion(
   // in order to keep question ids same within different exam versions
   // It helps when grading productive questions.
   addQuestionIds(root, generateId)
-  addGradingInstructionAttributes(root)
-  applyLocalizations(root, language, type, options.editableGradingInstructions)
-
   const exam = parseExamStructure(root)
+  addGradingInstructionAttributes(exam)
+  applyLocalizations(root, language, type, options.editableGradingInstructions)
 
   addYoCustomizations(root, language, type)
   addSectionNumbers(exam)
@@ -849,8 +848,7 @@ function addGradingInstructionAttributesForAnswers(answers: Answer[]) {
   }
 }
 
-function addGradingInstructionAttributes(root: Element) {
-  const exam = parseExamStructure(root)
+function addGradingInstructionAttributes(exam: Exam) {
   addGradingInstructionAttributesForQuestions(exam.questions)
   addGradingInstructionAttributesForAnswers(exam.answers)
 }
