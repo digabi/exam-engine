@@ -82,6 +82,7 @@
     "packages/**"
   ],
   "dependencies": {
+    "@dnd-kit/core": "^6.1.0",
     "focus-trap-react": "^10.2.2"
   }
 }
