@@ -44,6 +44,7 @@ import { VersionNumber } from '../shared/VersionNumber'
 import Video from '../shared/Video'
 import ExamAttachment from './Attachment'
 import ChoiceAnswer from './ChoiceAnswer'
+import { DragAndDrop } from './DragAndDrop'
 import DropdownAnswer from './DropdownAnswer'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
@@ -282,6 +283,8 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                       )}
                       {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
 
+                      <DragAndDrop />
+
                       {tableOfContents && (
                         <div className="main-toc-container">
                           <TableOfContents
@@ -292,7 +295,6 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                           />
                         </div>
                       )}
-
                       {externalMaterial && (
                         <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
                       )}
