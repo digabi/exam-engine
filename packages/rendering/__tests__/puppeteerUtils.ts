@@ -44,6 +44,16 @@ export async function getInnerText(page: Page, selector: string): Promise<string
   })
 }
 
+export async function getInnerHtml(page: Page, selector: string): Promise<string> {
+  return page.$eval(selector, e => {
+    if (e instanceof HTMLElement) {
+      return e.innerHTML
+    } else {
+      throw new Error(`Expected a HTML element, got ${e.localName}`)
+    }
+  })
+}
+
 export async function getOuterHtml(page: Page, selector: string): Promise<string> {
   return page.$eval(selector, e => {
     if (e instanceof HTMLElement) {

@@ -15,6 +15,7 @@ import {
   choiceAnswerOptionTypes,
   choiceAnswerTypes,
   Exam,
+  GradingInstruction,
   ns,
   Question,
   Section
@@ -94,6 +95,11 @@ export interface MasteringOptions {
    * This enables minus point handling within a single choicegroup.
    */
   groupChoiceAnswers?: boolean
+
+  /**
+   * Master exams differently when supporting editable grading instructions
+   */
+  editableGradingInstructions?: boolean
 }
 
 const defaultOptions = {
@@ -291,7 +297,8 @@ async function masterExamVersion(
   // in order to keep question ids same within different exam versions
   // It helps when grading productive questions.
   addQuestionIds(root, generateId)
-  applyLocalizations(root, language, type)
+  addGradingInstructionAttributes(root)
+  applyLocalizations(root, language, type, options.editableGradingInstructions)
 
   const exam = parseExamStructure(root)
 
@@ -328,8 +335,8 @@ async function masterExamVersion(
 
   const attachments = root.find<Element>(xpathOr(attachmentTypes), ns)
   addRestrictedAudioMetadata(attachments)
-  await renderFormulas(root, options.throwOnLatexError)
-  await addMediaMetadata(attachments, getMediaMetadata)
+  await renderFormulas(root, options.throwOnLatexError, options.editableGradingInstructions)
+  await addMediaMetadata(attachments, getMediaMetadata, options.editableGradingInstructions)
 
   return {
     attachments: collectAttachments(root, attachments),
@@ -346,7 +353,11 @@ async function masterExamVersion(
   }
 }
 
-async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMediaMetadata) {
+async function addMediaMetadata(
+  attachments: Element[],
+  getMediaMetadata: GetMediaMetadata,
+  editableGradingInstructions?: boolean
+) {
   for (const attachment of attachments) {
     const name = attachment.name()
     if (name === 'audio' || name === 'video' || name === 'image' || name === 'audio-test') {
@@ -356,12 +367,21 @@ async function addMediaMetadata(attachments: Element[], getMediaMetadata: GetMed
         const audioMetadata = metadata as AudioMetadata
         attachment.attr('duration', String(audioMetadata.duration))
       } else {
+        if (type === 'image' && editableGradingInstructions) {
+          addDataAttributesForEditor(attachment, 'e-image')
+          const imageTitle = attachment.get<Element>('./e:image-title', ns)
+          if (imageTitle) addDataAttributesForEditor(imageTitle, 'e-image-title')
+        }
         const imageOrVideoMetadata = metadata as ImageMetadata | VideoMetadata
         attachment.attr('width', String(imageOrVideoMetadata.width))
         attachment.attr('height', String(imageOrVideoMetadata.height))
       }
     }
   }
+}
+
+function addDataAttributesForEditor(element: Element, attribute: string) {
+  element.attr('data-editor-id', attribute)
 }
 
 function collectAttachments(exam: Element, attachments: Element[]): Attachment[] {
@@ -580,24 +600,157 @@ function removeTableWhitespaceNodes(exam: Element) {
   }
 }
 
-function applyLocalizations(exam: Element, language: string, type: ExamType) {
-  exam.get('./e:exam-versions', ns)?.remove()
+function applyReadOnlyLocalization(localization: Element, language: string, type: ExamType) {
+  if (
+    getAttribute('lang', localization, language) !== language ||
+    !getAttribute('exam-type', localization, type).includes(type) ||
+    localization.childNodes().every(c => c instanceof Text && c.text().trim().length === 0)
+  ) {
+    localization.remove()
+  } else {
+    localization.name('span').namespace(ns.xhtml).attr('exam-type')?.remove()
+  }
+}
 
-  for (const localization of exam.find<Element>('//e:localization', ns)) {
-    if (
-      getAttribute('lang', localization, language) !== language ||
-      !getAttribute('exam-type', localization, type).includes(type) ||
-      localization.childNodes().every(c => c instanceof Text && c.text().trim().length === 0)
-    ) {
-      localization.remove()
-    } else {
-      localization.name('span').namespace(ns.xhtml).attr('exam-type')?.remove()
+const blockElements = [
+  'address',
+  'article',
+  'aside',
+  'blockquote',
+  'canvas',
+  'dd',
+  'div',
+  'dl',
+  'dt',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h6',
+  'header',
+  'hr',
+  'li',
+  'main',
+  'nav',
+  'noscript',
+  'ol',
+  'p',
+  'pre',
+  'section',
+  'table',
+  'tfoot',
+  'ul',
+  'video'
+]
+
+enum LocalizationModes {
+  BLOCK = 'e-localization-block',
+  INLINE = 'e-localization-inline'
+}
+
+function localizationMode(element: Element): LocalizationModes {
+  const parent = element.parent()
+  if (
+    blockElements.includes(element.name()) ||
+    (element.name() == 'localization' && parent instanceof Element && parent.name().endsWith('-grading-instruction'))
+  ) {
+    return LocalizationModes.BLOCK
+  }
+  const childElements = element.childNodes().filter(child => child.type() == 'element') as Element[]
+
+  if (childElements.length == 0) {
+    return blockElements.includes(element.name()) ? LocalizationModes.BLOCK : LocalizationModes.INLINE
+  }
+  const childrenLocalizationModes = childElements.map(child => localizationMode(child))
+  return childrenLocalizationModes.includes(LocalizationModes.BLOCK) ||
+    childElements.some(child => child.name() == 'localization')
+    ? LocalizationModes.BLOCK
+    : LocalizationModes.INLINE
+}
+
+function applyEditableLocalization(
+  localization: Element,
+  language: string,
+  type: ExamType,
+  parentLocalization?: Element
+) {
+  // traverse children first
+  localization.childNodes().forEach(node => {
+    const child = node as Element
+    const childName = child.name()
+    if (childName == 'localization') {
+      applyEditableLocalization(child, language, type, localization)
+    }
+  })
+
+  // ProseMirrors makes flat localizations, so take parent attributes for children to preverve them
+  if (parentLocalization) {
+    const parentLang = getAttribute('lang', parentLocalization, undefined)
+    if (parentLang) {
+      localization.attr('lang', parentLang)
+    }
+    const parentExamType = getAttribute('exam-type', parentLocalization, undefined)
+    if (parentExamType) {
+      localization.attr('exam-type', parentExamType)
     }
   }
 
-  exam
-    .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}')))]`, ns)
-    .forEach(element => element.remove())
+  const localizationLang = getAttribute('lang', localization, undefined)
+  const localizationExamType = getAttribute('exam-type', localization, undefined)
+
+  const hidden =
+    (localizationLang && localizationLang !== language) ||
+    (localizationExamType && !localizationExamType.includes(type))
+      ? 'hidden'
+      : undefined
+  const mode = localizationMode(localization)
+  localization.name(mode == LocalizationModes.INLINE ? 'span' : 'div').namespace(ns.xhtml)
+  addDataAttributesForEditor(localization, mode)
+  if (hidden) {
+    localization.attr('hidden', hidden)
+  }
+}
+
+function isGradingInstructionLocalization(localization: Element) {
+  const parent = localization.parent() as Element
+  if (!parent || !parent.name) {
+    return false
+  }
+  if (['question-grading-instruction', 'answer-grading-instruction'].includes(parent.name())) {
+    return true
+  }
+  return isGradingInstructionLocalization(parent)
+}
+
+function applyLocalizations(exam: Element, language: string, type: ExamType, editableGradingInstructions?: boolean) {
+  exam.get('./e:exam-versions', ns)?.remove()
+
+  for (const localization of exam.find<Element>('//e:localization', ns)) {
+    if (editableGradingInstructions) {
+      const parent = localization.parent() as Element
+      if (isGradingInstructionLocalization(localization)) {
+        applyEditableLocalization(localization, language, type)
+      } else if (parent.name() != 'localization') {
+        applyReadOnlyLocalization(localization, language, type)
+      }
+    } else {
+      applyReadOnlyLocalization(localization, language, type)
+    }
+  }
+  if (editableGradingInstructions) {
+    exam
+      .find(
+        `//e:*[not(@data-editor-id='${LocalizationModes.BLOCK}' or @data-editor-id='${LocalizationModes.INLINE}') and ((@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}'))))]`,
+        ns
+      )
+      .forEach(element => element.remove())
+  } else {
+    exam
+      .find(`//e:*[(@lang and @lang!='${language}') or (@exam-type and not(contains(@exam-type, '${type}')))]`, ns)
+      .forEach(element => element.remove())
+  }
 }
 
 function addSectionNumbers(exam: Exam) {
@@ -675,6 +828,31 @@ function addQuestionIds(root: Element, generateId: GenerateId) {
   for (const answer of exam.answers) {
     answer.element.attr('question-id', String(generateId()))
   }
+}
+
+function addGradingInstructionAttributesForQuestions(questions: Question[]) {
+  for (const question of questions) {
+    if (question.gradingInstructions) {
+      for (const gradingInstruction of question.gradingInstructions) {
+        gradingInstruction.element.attr('path', gradingInstruction.element.path())
+      }
+    }
+    addGradingInstructionAttributesForQuestions(question.childQuestions)
+  }
+}
+
+function addGradingInstructionAttributesForAnswers(answers: Answer[]) {
+  for (const answer of answers) {
+    if (answer.gradingInstruction) {
+      answer.gradingInstruction.element.attr('path', answer.gradingInstruction.element.path())
+    }
+  }
+}
+
+function addGradingInstructionAttributes(root: Element) {
+  const exam = parseExamStructure(root)
+  addGradingInstructionAttributesForQuestions(exam.questions)
+  addGradingInstructionAttributesForAnswers(exam.answers)
 }
 
 function countSectionMaxAndMinAnswers(exam: Exam) {
@@ -784,7 +962,7 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
     })
 }
 
-async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
+async function renderFormulas(exam: Element, throwOnLatexError?: boolean, editableGradingInstructions?: boolean) {
   for (const formula of exam.find<Element>('//e:formula', ns)) {
     try {
       // Load render-formula lazily, since initializing mathjax-node is very expensive.
@@ -795,6 +973,9 @@ async function renderFormulas(exam: Element, throwOnLatexError?: boolean) {
         throwOnLatexError
       )) as string
       formula.attr('svg', svg)
+      if (editableGradingInstructions) {
+        addDataAttributesForEditor(formula, 'e-formula')
+      }
     } catch (errors) {
       if (Array.isArray(errors) && errors.every(_.isString)) {
         throw mkError(errors.join(', '), formula)
@@ -834,8 +1015,9 @@ function parseSection(element: Element): Section {
   return { element, questions }
 }
 
-function parseAnswer(element: Element, question: Element) {
-  return { element, question }
+function parseAnswer(element: Element, question: Element): Answer {
+  const [gradingInstruction] = element.find<Element>('./e:answer-grading-instruction', ns).map(parseGradingInstruction)
+  return { element, question, gradingInstruction }
 }
 
 function parseQuestion(question: Element): Question {
@@ -843,12 +1025,19 @@ function parseQuestion(question: Element): Question {
     .find<Element>('.//e:question', ns)
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
+  const gradingInstructions = question
+    .find<Element>('./e:question-grading-instruction', ns)
+    .map(parseGradingInstruction)
   if (childQuestions.length) {
-    return { element: question, childQuestions, answers: [] }
+    return { element: question, childQuestions, answers: [], gradingInstructions }
   } else {
     const answers = question.find<Element>(xpathOr(answerTypes), ns).map(element => parseAnswer(element, question))
-    return { element: question, childQuestions: [], answers }
+    return { element: question, childQuestions: [], answers, gradingInstructions }
   }
+}
+
+function parseGradingInstruction(gradingInstruction: Element): GradingInstruction {
+  return { element: gradingInstruction }
 }
 
 function mkGenerateId(): GenerateId {

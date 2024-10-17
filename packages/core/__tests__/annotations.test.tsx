@@ -62,7 +62,7 @@ describe('Annotations', () => {
       <Exam {...getExamProps()} annotations={[]} onClickAnnotation={() => {}} onSaveAnnotation={() => {}} />
     )
     await annotateText(exam, defaultAnnotationAnchor)
-    expect(exam.getByTestId('annotation-popup')).toBeVisible()
+    expect(exam.getByTestId('e-popup')).toBeVisible()
   })
 
   it('popup is not rendered if annotation props are not passed', async () => {
@@ -71,7 +71,7 @@ describe('Annotations', () => {
     const textElement = exam.getByText(text)
     mockWindowSelection(text, textElement, text.length)
     await userEvent.click(textElement)
-    expect(exam.queryByTestId('annotation-popup')).not.toBeInTheDocument()
+    expect(exam.queryByTestId('e-popup')).not.toBeInTheDocument()
   })
 
   it('callback is called when annotation is saved', async () => {
@@ -266,7 +266,7 @@ describe('Annotations', () => {
       />
     )
     await annotateText(gi, defaultAnnotationAnchor)
-    expect(gi.getByTestId('annotation-popup')).toBeVisible()
+    expect(gi.getByTestId('e-popup')).toBeVisible()
   })
 
   it('attachments can be annotated', async () => {
@@ -276,7 +276,7 @@ describe('Annotations', () => {
       <Attachments {...getCommonProps()} annotations={[]} onClickAnnotation={() => {}} onSaveAnnotation={() => {}} />
     )
     await annotateText(gi, annotationAnchor_7_A)
-    expect(gi.getByTestId('annotation-popup')).toBeVisible()
+    expect(gi.getByTestId('e-popup')).toBeVisible()
   })
 
   function createAnnotations(annotations: Annotation[]): ExamAnnotation[] {

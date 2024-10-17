@@ -18,8 +18,8 @@ export interface RenderableAnnotationProps {
 export interface AnnotationContextType extends RenderableAnnotationProps {
   newAnnotation: NewExamAnnotation | null
   setNewAnnotation: (a: NewExamAnnotation | null) => void
-  newAnnotationRef: HTMLElement | undefined
-  setNewAnnotationRef: (ref: HTMLElement | undefined) => void
+  newAnnotationRef: HTMLElement | null
+  setNewAnnotationRef: (ref: HTMLElement | null) => void
 }
 
 export const AnnotationContext = React.createContext({} as AnnotationContextType)
@@ -31,7 +31,7 @@ export const AnnotationProvider = ({
   onSaveAnnotation
 }: Props & AnnotationProps) => {
   const [newAnnotation, setNewAnnotation] = React.useState<NewExamAnnotation | null>(null)
-  const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement>()
+  const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement | null>(null)
 
   const mouseUpCallback = (annotation: NewExamAnnotation) => {
     setNewAnnotation(annotation)
@@ -39,9 +39,10 @@ export const AnnotationProvider = ({
 
   function onMouseDown(e: React.MouseEvent) {
     const target = e.target as Element
-    const clickIsInPopup = !!target.closest('.annotation-popup')
+    const clickIsInPopup = !!target.closest('.e-popup')
     if (!clickIsInPopup) {
       setNewAnnotation(null)
+      setNewAnnotationRef(null)
     }
     onMouseDownForAnnotation(e, mouseUpCallback)
   }
