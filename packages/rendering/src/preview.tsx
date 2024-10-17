@@ -9,7 +9,7 @@ import {
 } from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { ExamType, MasteringResult } from '@digabi/exam-engine-mastering'
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Link, RouterProvider, useRoute, useRouter } from 'react-router5'
 import createRouter from 'router5'
@@ -177,6 +177,12 @@ const App: React.FunctionComponent<{
     }
   }
 
+  const gradingInstructionProps = {
+    ...commonProps,
+    ...(process.env.EDITABLE_GRADING_INSTRUCTIONS
+      ? { EditorComponent: (props: { element: Element }) => <ElementRenderer element={props.element} /> }
+      : {})
+  }
   return (
     <div ref={callback}>
       <Toolbar {...{ translation, translationFilename }} />
@@ -185,7 +191,7 @@ const App: React.FunctionComponent<{
       ) : route.name === 'attachments' ? (
         <Attachments {...examProps} />
       ) : route.name === 'grading-instructions' ? (
-        <GradingInstructions {...commonProps} />
+        <GradingInstructions key={`${examCode}-${language}-${type}`} {...commonProps} {...gradingInstructionProps} />
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (
@@ -236,4 +242,22 @@ onload = async () => {
       <App {...{ examServerApi, answers, resolveAttachment, callback }} />
     </RouterProvider>
   )
+}
+
+function ElementRenderer({ element }: { element: Element }) {
+  const elementRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (elementRef.current && element) {
+      elementRef.current.appendChild(element)
+    }
+
+    return () => {
+      if (elementRef.current && elementRef.current.contains(element)) {
+        elementRef.current.removeChild(element)
+      }
+    }
+  }, [element])
+
+  return <div ref={elementRef}></div>
 }
