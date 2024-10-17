@@ -81,7 +81,7 @@ describe('Annotations', () => {
     )
     await annotateText(exam, defaultAnnotationAnchor)
 
-    const textbox = exam.getByTestId('e-popup-content')
+    const textbox = exam.container.querySelector('.comment-content')!
     fireEvent.input(textbox, {
       target: { innerText: 'New comment', innerHTML: 'New comment' }
     })
@@ -112,14 +112,14 @@ describe('Annotations', () => {
       <Exam {...getExamProps()} annotations={[]} onClickAnnotation={() => {}} onSaveAnnotation={() => {}} />
     )
     await annotateText(exam, defaultAnnotationAnchor)
-    const textbox = exam.getByTestId('e-popup-content')
+    const textbox = exam.container.querySelector('.comment-content')!
     fireEvent.input(textbox, {
       target: { innerText: 'New Value', innerHTML: 'New Value' }
     })
     await userEvent.click(exam.getByText('Tallenna'))
     // text picked by getMarkedText includes leading/trailing whitespace, so they must be here too
     await annotateText(exam, annotationAnchor_7_1)
-    expect(exam.getByTestId('e-popup-content').textContent).toHaveLength(0)
+    expect(exam.container.querySelector('.comment-content')?.textContent).toHaveLength(0)
   })
 
   it('callback is called when annotation is clicked', async () => {
