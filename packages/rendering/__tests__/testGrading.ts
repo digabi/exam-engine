@@ -61,6 +61,8 @@ describe('testGrading.ts', () => {
 
   it('creates and modifies annotations', async () => {
     await navigateToAnswer('2')
+    // Small timeout here to ensure that the text is actually visible in the ui. This is really flaky without the timeout
+    await new Promise(resolve => setTimeout(resolve, 100))
     await drag(300, 210, 502, 210)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('first annotation message')
@@ -83,6 +85,8 @@ describe('testGrading.ts', () => {
 
   it('removes annotations', async () => {
     await navigateToAnswer('2')
+    // Small timeout here to ensure that the text is actually visible in the ui. This is really flaky without the timeout
+    await new Promise(resolve => setTimeout(resolve, 100))
     await drag(300, 210, 502, 210)
     await page.waitForSelector('.e-grading-answer-add-annotation', VISIBLE)
     await page.keyboard.type('second annotation message')
