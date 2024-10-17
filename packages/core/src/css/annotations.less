@@ -24,17 +24,6 @@
   }
 }
 
-#exam-preview .e-exam {
-  // elements that are not annotatable and are last children in the tree
-  *:not(.e-annotatable):not(mark) {
-    &:not(:has(*)) {
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
-  }
-}
-
 .e-annotation {
   background: @annotation-background;
   cursor: pointer;
