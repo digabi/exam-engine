@@ -87,9 +87,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
   annotations,
   onClickAnnotation,
   onSaveAnnotation,
-  editable,
-  onContentChange,
-  onSaveImage
+  EditorComponent
 }) => {
   const root = doc.documentElement
   const { date, dateTimeFormatter, dayCode, examCode, language, subjectLanguage } = useContext(CommonExamContext)
@@ -108,15 +106,13 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
 
   useEffect(scrollToHash, [])
 
-  const props = editable ? { editable, onContentChange, onSaveImage } : { editable }
-
   return (
     <AnnotationProvider
       annotations={annotations}
       onClickAnnotation={onClickAnnotation}
       onSaveAnnotation={onSaveAnnotation}
     >
-      <GradingInstructionProvider {...props}>
+      <GradingInstructionProvider EditorComponent={EditorComponent}>
         <I18nextProvider i18n={i18n}>
           <main className="e-exam e-grading-instructions" lang={subjectLanguage}>
             <React.StrictMode />

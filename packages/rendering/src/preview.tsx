@@ -9,17 +9,13 @@ import {
 } from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { ExamType, MasteringResult } from '@digabi/exam-engine-mastering'
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Link, RouterProvider, useRoute, useRouter } from 'react-router5'
 import createRouter from 'router5'
 import browserPlugin from 'router5-plugin-browser'
 import Grading from './PreviewGrading'
 import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
-import {
-  EditableProps,
-  NotEditableProps
-} from '@digabi/exam-engine-core/dist/components/context/GradingInstructionContext'
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }
@@ -184,15 +180,8 @@ const App: React.FunctionComponent<{
   const gradingInstructionProps = {
     ...commonProps,
     ...(process.env.EDITABLE_GRADING_INSTRUCTIONS
-      ? ({
-          editable: true,
-          onContentChange: (answerHTML: string, path: string) => console.info(answerHTML, path),
-          onSaveImage: (file: File, displayNumber: string) => {
-            console.info(displayNumber, file)
-            return Promise.resolve('/foo/bar.jpg')
-          }
-        } as EditableProps)
-      : ({ editable: false } as NotEditableProps))
+      ? { EditorComponent: (props: { element: Element }) => <ElementRenderer element={props.element} /> }
+      : {})
   }
   return (
     <div ref={callback}>
@@ -253,4 +242,22 @@ onload = async () => {
       <App {...{ examServerApi, answers, resolveAttachment, callback }} />
     </RouterProvider>
   )
+}
+
+function ElementRenderer({ element }: { element: Element }) {
+  const elementRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (elementRef.current && element) {
+      elementRef.current.appendChild(element)
+    }
+
+    return () => {
+      if (elementRef.current && elementRef.current.contains(element)) {
+        elementRef.current.removeChild(element)
+      }
+    }
+  }, [element])
+
+  return <div ref={elementRef}></div>
 }
