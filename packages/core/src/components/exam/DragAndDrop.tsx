@@ -1,137 +1,248 @@
-import { DndContext, DragEndEvent, useDraggable, useDroppable } from '@dnd-kit/core'
+import {
+  closestCenter,
+  DndContext,
+  DragEndEvent,
+  DragOverEvent,
+  DragOverlay,
+  DragStartEvent,
+  KeyboardSensor,
+  MeasuringStrategy,
+  PointerSensor,
+  UniqueIdentifier,
+  useSensor,
+  useSensors
+} from '@dnd-kit/core'
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy
+} from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import React, { ForwardedRef, forwardRef, useState } from 'react'
 
-import React, { useState } from 'react'
+type Items = Record<UniqueIdentifier, ContainerContents[]>
+
+type ContainerContents = {
+  id: UniqueIdentifier
+  value: React.ReactNode
+}
 
 export function DragAndDrop() {
-  const [itemsInContainers, setItemsInContainers] = useState<{
-    containers: {
-      id: string
-      items: {
-        id: string
-      }[]
-    }[]
-  }>({
-    containers: [
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const [items, setItems] = useState<Items>({
+    a: [
       {
-        id: 'droppable1',
-        items: []
+        id: 1,
+        value: <span>moi</span>
       },
       {
-        id: 'droppable2',
-        items: []
+        id: 2,
+        value: (
+          <img src="https://its-finland.fi/wp-content/uploads/2023/06/ytl-toimiliitto-1-uai-780x438-1.jpg" width="50" />
+        )
+      }
+    ],
+    b: [
+      {
+        id: 3,
+        value: <span>hej</span>
+      },
+      {
+        id: 4,
+        value: <span>hello</span>
       }
     ]
   })
 
-  function handleDragEnd(event: DragEndEvent) {
-    if (event.over) {
-      setItemsInContainers(prev => {
-        const newContainers = prev.containers.map(container => {
-          if (container.id === event.over?.id.toString()) {
-            // Add item to new container
-            return { ...container, items: [...container.items, { id: event.active.id.toString() }] }
-          } else {
-            // Remove item from original container
-            return {
-              ...container,
-              items: container.items.filter(item => item.id !== event.active.id.toString())
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates
+    })
+  )
+
+  const findContainerId = (id: UniqueIdentifier) => {
+    if (id in items) {
+      return id
+    }
+    return Object.keys(items).find(key => items[key].flatMap(i => i.id).includes(id))
+  }
+
+  return (
+    <DndContext
+      sensors={sensors}
+      collisionDetection={closestCenter}
+      onDragEnd={handleDragEnd}
+      onDragStart={handleDragStart}
+      onDragOver={handleDragOver}
+      measuring={{
+        droppable: {
+          strategy: MeasuringStrategy.Always
+        }
+      }}
+    >
+      {Object.keys(items).map((containerId, index) => (
+        <SortableContext items={items[containerId]} strategy={verticalListSortingStrategy} key={containerId}>
+          <div
+            style={{
+              display: 'inline-flex',
+              flexDirection: 'column',
+              gap: '.5rem',
+              padding: '1rem',
+              background: index === 0 ? '#ffa' : '#faf',
+              minWidth: '200px',
+              minHeight: '50px'
+            }}
+          >
+            {items[containerId].map(item => (
+              <SortableItem key={item.id} id={item.id} active={activeId === item.id.toString()}>
+                {item.value}
+              </SortableItem>
+            ))}
+          </div>
+        </SortableContext>
+      ))}
+      <DragOverlay>
+        {activeId ? (
+          <Item id={activeId}>
+            {
+              Object.values(items)
+                .flat()
+                .find(i => i.id.toString() === activeId)?.value
             }
-          }
-        })
-        return { ...prev, containers: newContainers }
-      })
-    } else {
-      // If dropped outside any container, remove from original container
-      setItemsInContainers(prev => {
-        const newContainers = prev.containers.map(container => ({
-          ...container,
-          items: container.items.filter(item => item.id !== event.active.id.toString())
-        }))
-        return { ...prev, containers: newContainers }
+          </Item>
+        ) : (
+          'null'
+        )}
+      </DragOverlay>
+    </DndContext>
+  )
+
+  function handleDragOver(event: DragOverEvent) {
+    const { over, active } = event
+    const overId = over?.id
+
+    if (overId == null || active.id in items) {
+      return
+    }
+
+    const overContainer = findContainerId(overId)
+    const activeContainer = findContainerId(active.id)
+
+    if (!overContainer || !activeContainer) {
+      return
+    }
+
+    if (activeContainer !== overContainer) {
+      setItems(items => {
+        const activeItems = items[activeContainer].flatMap(item => item.id)
+        const overItems = items[overContainer].flatMap(item => item.id)
+        const activeIndex = activeItems.indexOf(active.id)
+        const overIndex = overItems.indexOf(overId)
+
+        const isBelowOverItem =
+          over &&
+          active.rect.current.translated &&
+          active.rect.current.translated.top > over.rect.top + over.rect.height
+
+        const modifier = isBelowOverItem ? 1 : 0
+        const newIndex = overIndex >= 0 ? overIndex + modifier : overItems.length + 1
+
+        const newActiveItems = items[activeContainer].filter(item => item.id !== active.id)
+        const newOverItems = [
+          ...items[overContainer].slice(0, newIndex),
+          items[activeContainer][activeIndex],
+          ...items[overContainer].slice(newIndex, items[overContainer].length)
+        ]
+
+        return {
+          ...items,
+          [activeContainer]: newActiveItems,
+          [overContainer]: newOverItems
+        }
       })
     }
   }
 
-  const draggableItems = [
-    { id: 'draggable1', content: 'Answer 1' },
-    { id: 'draggable2', content: 'Answer 2' }
-  ]
+  function handleDragEnd(event: DragEndEvent) {
+    console.log('end', event)
+    const { active, over } = event
 
-  const itemIsNotInAnyContainer = (itemId: string) =>
-    itemsInContainers.containers.every(container => container.items.every(item => item.id !== itemId))
+    const activeContainer = findContainerId(active.id)
+    if (!activeContainer) {
+      setActiveId(null)
+      return
+    }
 
-  const itemIsInContainer = (itemId: string, containerId: string) =>
-    itemsInContainers.containers.some(
-      container => container.id === containerId && container.items.some(item => item.id === itemId)
+    const overId = over?.id
+    if (overId == null) {
+      setActiveId(null)
+      return
+    }
+
+    const overContainer = findContainerId(overId)
+
+    if (overContainer) {
+      const activeIndex = items[activeContainer].flatMap(i => i.id).indexOf(active.id)
+      const overIndex = items[overContainer].flatMap(i => i.id).indexOf(overId)
+
+      if (activeIndex !== overIndex) {
+        setItems(items => ({
+          ...items,
+          [overContainer]: arrayMove(items[overContainer], activeIndex, overIndex)
+        }))
+      }
+    }
+
+    setActiveId(null)
+  }
+
+  function handleDragStart(event: DragStartEvent) {
+    const { active } = event
+    console.log('START', active.id)
+    setActiveId(active.id.toString())
+  }
+}
+
+function SortableItem({ id, active, children }: { id: UniqueIdentifier; active: boolean; children: React.ReactNode }) {
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id })
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    opacity: active ? 0.5 : 1,
+    transition
+  }
+
+  return (
+    <div style={style}>
+      <Item ref={setNodeRef} {...attributes} {...listeners} id={id}>
+        {children}
+      </Item>
+    </div>
+  )
+}
+
+const Item = forwardRef(
+  (
+    { id, children, ...props }: { id: UniqueIdentifier; children: React.ReactNode },
+    ref: ForwardedRef<HTMLDivElement>
+  ) => {
+    const style = {
+      border: '1px solid black',
+      padding: '.5rem',
+      display: 'inline-block',
+      background: 'pink',
+      minWidth: '100px'
+    }
+    //console.log('item children', children)
+    return (
+      <div {...props} ref={ref} style={style}>
+        {children} {id}
+      </div>
     )
-
-  return (
-    <DndContext onDragEnd={handleDragEnd}>
-      {draggableItems.map(item =>
-        itemIsNotInAnyContainer(item.id) ? (
-          <Draggable key={item.id} id={item.id}>
-            {item.content}
-          </Draggable>
-        ) : null
-      )}
-      <br />
-      {itemsInContainers.containers.map(container => (
-        <Droppable key={container.id} id={container.id}>
-          Drop answers here...
-          {draggableItems.map(item =>
-            itemIsInContainer(item.id, container.id) ? (
-              <Draggable key={item.id} id={item.id}>
-                {item.content}
-              </Draggable>
-            ) : null
-          )}
-        </Droppable>
-      ))}
-    </DndContext>
-  )
-}
-
-function Droppable(props: { children: React.ReactNode; id: string }) {
-  const { isOver, setNodeRef } = useDroppable({
-    id: props.id
-  })
-  const style = {
-    color: isOver ? 'green' : undefined,
-    backgroundColor: isOver ? '#fc06' : undefined,
-    padding: '1rem',
-    border: '1px solid black',
-    display: 'inline-flex',
-    gap: '.25rem',
-    flexDirection: 'column' as const
   }
+)
 
-  return (
-    <div ref={setNodeRef} style={style}>
-      {props.children}
-    </div>
-  )
-}
-
-function Draggable(props: { children: React.ReactNode; id: string }) {
-  const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: props.id
-  })
-  const style = {
-    padding: '.5rem',
-    border: '1px solid black',
-    backgroundColor: '#acf',
-    display: 'inline-block',
-    ...(transform
-      ? {
-          transform: CSS.Translate.toString(transform)
-        }
-      : undefined)
-  }
-
-  return (
-    <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
-      {props.children}
-    </div>
-  )
-}
+Item.displayName = 'Item'
