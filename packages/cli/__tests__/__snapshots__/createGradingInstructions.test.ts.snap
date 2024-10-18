@@ -865,13 +865,7 @@ exports[`ee create-grading-instructions creates grading instructions 2`] = `
   "Symbola.ttf",
   "Symbola.woff",
   "Symbola.woff2",
-  "closeButton.svg",
-  "collapse.svg",
-  "expand.svg",
-  "helpButton.svg",
   "logo.png",
-  "redoButton.svg",
-  "undoButton.svg",
 ]
 `;
 

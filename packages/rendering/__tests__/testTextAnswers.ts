@@ -1,7 +1,7 @@
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'
-import { getTextContent, initPuppeteer, loadExam } from './puppeteerUtils'
+import { initPuppeteer, loadExam } from './puppeteerUtils'
 
 const DEFAULT_QUESTION_ID = 95
 
@@ -12,11 +12,18 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
 
   beforeAll(async () => {
     ctx = await previewExam(resolveExam('SC/SC.xml'))
-    page = await createPage()
   })
 
   afterAll(async () => {
     await ctx.close()
+  })
+
+  beforeEach(async () => {
+    page = await createPage()
+  })
+
+  afterEach(async () => {
+    await page.close()
   })
 
   it('updates the character count', async () => {
@@ -54,7 +61,6 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
 
   it('shows the error indicator when too many answers', async () => {
     await loadExam(page, ctx.url)
-    await expectErrorIndicatorToDisappear()
     await type('oikea vastaus', DEFAULT_QUESTION_ID)
     await type('oikea vastaus 2', DEFAULT_QUESTION_ID + 1)
     await expectErrorIndicator('Tehtävä 21: Vastaa joko kohtaan 21.1 tai 21.2.')
@@ -73,7 +79,6 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
 
   it('shows the error indicator when answer is too long', async () => {
     await loadExam(page, ctx.url)
-    await expectErrorIndicatorToDisappear()
     await type('o'.repeat(250), DEFAULT_QUESTION_ID)
     await expectErrorIndicator('Tehtävä 21.1: Vastaus on liian pitkä.')
 
@@ -107,7 +112,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   it('Tab key does not change focus in writing mode', async () => {
     await loadExam(page, ctx.url)
 
-    const textareaFocusedSelector = 'div[data-full-screen-id="1.2"] .text-answer--rich-text.rich-text-focused'
+    const textareaFocusedSelector = '.rich-text-editor:focus'
 
     await openWriterMode(page)
     const textareaFocused = await page.$(textareaFocusedSelector)
@@ -135,23 +140,16 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   it('a text answer indicator has correct state in side navigation', async () => {
     await loadExam(page, ctx.url)
     await clearInput(DEFAULT_QUESTION_ID)
-    const indicator = await page.$(`.sidebar-toc-container div[data-indicator-id="${DEFAULT_QUESTION_ID}"]`)
+    const indicatorSelector = `.sidebar-toc-container div[data-indicator-id="${DEFAULT_QUESTION_ID}"]`
 
-    const className = await (await indicator?.getProperty('className'))?.jsonValue()
-    const indicatorValue = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
+    await page.waitForSelector(`${indicatorSelector}:not(.ok)`)
+    expect(await page.$eval(indicatorSelector, element => element.innerHTML)).toBe('')
     await type('testivastaus', DEFAULT_QUESTION_ID)
-    const classNameThen = await (await indicator?.getProperty('className'))?.jsonValue()
-    const indicatorValueThen = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
+    await page.waitForSelector(`${indicatorSelector}.ok`)
+    await page.waitForSelector(`${indicatorSelector}.ok > span::-p-text(12)`)
     await clearInput(DEFAULT_QUESTION_ID)
-    const classNameFinally = await (await indicator?.getProperty('className'))?.jsonValue()
-    const indicatorValueFinally = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
-
-    expect(className).not.toContain('ok')
-    expect(indicatorValue).toContain('')
-    expect(classNameThen).toContain('answer-indicator ok')
-    expect(indicatorValueThen).toContain('12')
-    expect(classNameFinally).not.toContain('ok')
-    expect(indicatorValueFinally).toContain('')
+    await page.waitForSelector(`${indicatorSelector}:not(.ok)`)
+    await page.waitForSelector(`${indicatorSelector}:empty`)
   })
 
   describe('Test integer answer', () => {
@@ -202,9 +200,9 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   }
 
   async function expectCharacterCountToBe(expectedCount: number, questionId = DEFAULT_QUESTION_ID) {
-    const text = await getTextContent(page, `.text-answer[data-question-id="${questionId}"] ~ .answer-toolbar`)
-    const count = Number(/\d+/.exec(text))
-    expect(count).toEqual(expectedCount)
+    await page.waitForSelector(
+      `.text-answer[data-question-id="${questionId}"] ~ .answer-toolbar span::-p-text(Vastauksen pituus: ${expectedCount})`
+    )
   }
 
   async function setIntegerAnswer(page: Page, questionId: number, value: number): Promise<void> {
