@@ -195,7 +195,7 @@ const App: React.FunctionComponent<{
       ) : route.name === 'grading' ? (
         <Grading {...resultsProps} />
       ) : (
-        <Exam {...examProps} onSaveAnnotation={console.log} onClickAnnotation={() => {}} />
+        <Exam {...examProps} />
       )}
     </div>
   )
