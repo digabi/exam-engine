@@ -1,5 +1,4 @@
 import {
-  closestCenter,
   DndContext,
   DragEndEvent,
   DragOverEvent,
@@ -8,12 +7,15 @@ import {
   KeyboardSensor,
   MeasuringStrategy,
   PointerSensor,
+  rectIntersection,
   UniqueIdentifier,
   useSensor,
   useSensors
 } from '@dnd-kit/core'
 import {
+  AnimateLayoutChanges,
   arrayMove,
+  defaultAnimateLayoutChanges,
   SortableContext,
   sortableKeyboardCoordinates,
   useSortable,
@@ -73,7 +75,7 @@ export function DragAndDrop() {
   return (
     <DndContext
       sensors={sensors}
-      collisionDetection={closestCenter}
+      collisionDetection={rectIntersection}
       onDragEnd={handleDragEnd}
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
@@ -83,27 +85,42 @@ export function DragAndDrop() {
         }
       }}
     >
-      {Object.keys(items).map((containerId, index) => (
-        <SortableContext items={items[containerId]} strategy={verticalListSortingStrategy} key={containerId}>
-          <div
-            style={{
-              display: 'inline-flex',
-              flexDirection: 'column',
-              gap: '.5rem',
-              padding: '1rem',
-              background: index === 0 ? '#ffa' : '#faf',
-              minWidth: '200px',
-              minHeight: '50px'
-            }}
+      <div
+        style={{
+          display: 'flex',
+          gap: '1rem'
+        }}
+      >
+        {Object.keys(items).map((containerId, index) => (
+          <DroppableContainer
+            key={containerId}
+            //containerId={containerId}
+            //index={index}
+            id={containerId}
+            items={items[containerId]}
           >
-            {items[containerId].map(item => (
-              <SortableItem key={item.id} id={item.id} active={activeId === item.id.toString()}>
-                {item.value}
-              </SortableItem>
-            ))}
-          </div>
-        </SortableContext>
-      ))}
+            <SortableContext items={items[containerId]} strategy={verticalListSortingStrategy} key={containerId}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  flexDirection: 'column',
+                  gap: '.5rem',
+                  padding: '1rem',
+                  background: index === 0 ? '#ffa' : '#faf',
+                  minWidth: '200px',
+                  minHeight: '100px'
+                }}
+              >
+                {items[containerId].map(item => (
+                  <SortableItem key={item.id} id={item.id} active={activeId === item.id.toString()}>
+                    {item.value}
+                  </SortableItem>
+                ))}
+              </div>
+            </SortableContext>
+          </DroppableContainer>
+        ))}
+      </div>
       <DragOverlay>
         {activeId ? (
           <Item id={activeId}>
@@ -123,6 +140,8 @@ export function DragAndDrop() {
   function handleDragOver(event: DragOverEvent) {
     const { over, active } = event
     const overId = over?.id
+
+    console.log('over', over)
 
     if (overId == null || active.id in items) {
       return
@@ -246,3 +265,50 @@ const Item = forwardRef(
 )
 
 Item.displayName = 'Item'
+
+const animateLayoutChanges: AnimateLayoutChanges = args => defaultAnimateLayoutChanges({ ...args, wasDragging: true })
+
+function DroppableContainer({
+  children,
+  id,
+  items,
+  ...props
+}: {
+  disabled?: boolean
+  id: UniqueIdentifier
+  items: ContainerContents[]
+  style?: React.CSSProperties
+  children: React.ReactNode
+}) {
+  const { isDragging, setNodeRef, transition, transform, over } = useSortable({
+    id,
+    data: {
+      type: 'container',
+      children: items
+    },
+    animateLayoutChanges
+  })
+
+  console.log('droppable, over', over)
+  /*
+  const isOverContainer = over
+    ? (id === over.id && active?.data.current?.type !== 'container') || items.includes(over.id)
+    : false
+    */
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={{
+        transition,
+        transform: CSS.Translate.toString(transform),
+        opacity: isDragging ? 0.5 : undefined,
+        display: 'inline-block'
+      }}
+      //hover={isOverContainer}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
