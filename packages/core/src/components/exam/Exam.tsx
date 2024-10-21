@@ -62,6 +62,7 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
+import { NativeDND } from './NativeDND'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -282,6 +283,8 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                         </p>
                       )}
                       {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+
+                      <NativeDND />
 
                       <DragAndDrop />
 
