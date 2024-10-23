@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-mastering",
-  "version": "22.2.0-alpha.1",
+  "version": "22.2.0-alpha.2",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
@@ -9,8 +9,8 @@
     "schema"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "22.2.0-alpha.1",
-    "@digabi/exam-engine-rendering": "22.2.0-alpha.1",
+    "@digabi/exam-engine-core": "22.2.0-alpha.2",
+    "@digabi/exam-engine-rendering": "22.2.0-alpha.2",
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "cloneable-readable": "^3.0.0",
     "compare-versions": "^6.0.0",
