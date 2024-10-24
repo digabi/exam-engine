@@ -54,7 +54,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
   }
 
   render(): React.ReactNode {
-    const { questionId, className, labelledBy, answer, lang, invalid } = this.props
+    const { questionId, className, labelledBy, answer, lang, invalid, saveScreenshot } = this.props
     return (
       <ExpandQuestionContext.Consumer>
         {({ expanded, toggleWriterMode }) => (
@@ -64,6 +64,12 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
               initialValue={answer?.value}
               language={this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV'}
               onValueChange={this.handleChange}
+              getPasteSource={(file: File) =>
+                saveScreenshot(file).catch((err: ErrorResponse) => {
+                  this.handleSaveError(err)
+                  throw err // Rethrow error so rich-text-editor can handle it.
+                })
+              }
               textAreaProps={{
                 ariaInvalid: invalid,
                 ariaLabelledBy: labelledBy,

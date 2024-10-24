@@ -39,6 +39,7 @@ export function Popup(props: PopupProps) {
         language="FI"
         baseUrl={''}
         initialValue={props.initialTextContent}
+        getPasteSource={() => Promise.resolve('')}
         onValueChange={value => {
           if (props.onValueChange) {
             const error = props.onValueChange(value.answerHtml)
