@@ -38,7 +38,7 @@ export const sv_FI: Translations = {
     annotate: 'Markera',
     'non-answer-not-graded': 'Lämnats utan bedömning',
     'loading-images': 'Vänta, bilder laddas...',
-    'some-images-failed': 'TODO.'
+    'some-images-failed': 'Laddning av vissa bilder misslyckades. Var god uppdatera sidan.'
   },
   references: {
     heading: 'Källor',
