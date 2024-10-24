@@ -501,10 +501,46 @@
       <xs:element ref="e:hints" />
       <xs:element ref="e:scored-text-answers" />
       <xs:element ref="e:scored-text-answer" />
+      <xs:element ref="e:dnd-answer" />
       <xs:element ref="e:choice-answer" />
       <xs:element ref="e:dropdown-answer" />
     </xs:choice>
   </xs:group>
+
+  <xs:element name="dnd-answer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="e:dnd-answer-group" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="direction" type="e:direction" />
+      <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dnd-answer-group">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded">
+        <xs:group ref="xhtml:xhtml.Flow.mix" />
+        <xs:element ref="e:dnd-answer-option" maxOccurs="unbounded" />
+      </xs:choice>
+      <xs:attribute name="max-score" type="xs:positiveInteger" />
+      <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dnd-answer-option">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded">
+        <xs:group ref="xhtml:xhtml.Flow.mix" />
+      </xs:choice>
+      <xs:attribute name="max-score" type="xs:positiveInteger" />
+      <xs:attributeGroup ref="e:orderable" />
+      <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
 
   <xs:element name="text-answer">
     <xs:complexType>
