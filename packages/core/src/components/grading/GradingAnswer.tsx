@@ -1,5 +1,15 @@
 import React, { FormEvent, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { I18nextProvider } from 'react-i18next'
 import { Annotation, TextAnnotation } from '../..'
+import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
+import {
+  renderAnnotations,
+  renderImageAnnotationByImage,
+  updateImageAnnotationMarkSize,
+  wrapAllImages
+} from '../../renderAnnotations'
+import { useCached } from '../../useCached'
+import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 import {
   annotationFromMousePosition,
   getOverlappingMessages,
@@ -13,18 +23,8 @@ import {
   textAnnotationFromRange,
   toggle
 } from './editAnnotations'
-import {
-  renderAnnotations,
-  renderImageAnnotationByImage,
-  updateImageAnnotationMarkSize,
-  wrapAllImages
-} from '../../renderAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
-import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { updateLargeImageWarnings } from './largeImageDetector'
-import { I18nextProvider } from 'react-i18next'
-import { useCached } from '../../useCached'
-import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingRole = 'pregrading' | 'censoring'
@@ -143,18 +143,16 @@ function GradingAnswerWithTranslations({
 
   const { t } = useExamTranslation()
 
-  const notAllImagesLoaded = totalImages !== 0 && loadedCount !== totalImages
+  const allImagesLoaded = totalImages > 0 && loadedCount === totalImages
   const someImagesFailedToLoad = failedImages > 0
 
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
-      {(notAllImagesLoaded || someImagesFailedToLoad) && (
+      {!allImagesLoaded && (
         <div className="loading-images">
-          {notAllImagesLoaded && (
-            <span className="loading">
-              {t('grading.loading-images')} ({loadedCount + failedImages}/{totalImages})
-            </span>
-          )}
+          <span className="loading">
+            {t('grading.loading-images')} ({loadedCount}/{totalImages})
+          </span>
           {someImagesFailedToLoad && <span className="failed">{t('grading.some-images-failed')}</span>}
         </div>
       )}
