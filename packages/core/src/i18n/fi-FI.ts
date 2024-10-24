@@ -48,7 +48,8 @@ export const fi_FI = {
     'round.3': '3.s',
     annotate: 'Merkitse',
     'non-answer-not-graded': 'Jätetty arvostelematta',
-    'loading-images': 'Odota, kuvia ladataan...'
+    'loading-images': 'Odota, kuvia ladataan...',
+    'some-images-failed': 'Joidenkin kuvien lataaminen epäonnistui. Päivitä sivu.'
   },
   references: {
     heading: 'Lähteet',
