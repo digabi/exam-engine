@@ -3,7 +3,7 @@ import * as _ from 'lodash-es'
 import React from 'react'
 import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
-import RichTextEditor, { Answer } from 'rich-text-editor'
+import RichTextEditor, { Answer, RichTextEditorHandle } from 'rich-text-editor'
 import { ExpandQuestionContext } from './Question'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
@@ -31,6 +31,14 @@ interface Props {
 export default class RichTextAnswer extends React.PureComponent<Props> {
   static contextType = CommonExamContext
   declare context: React.ContextType<typeof CommonExamContext>
+  private editorRef: React.RefObject<RichTextEditorHandle>
+  private lastHTML: string
+
+  constructor(props: Props) {
+    super(props)
+    this.editorRef = React.createRef()
+    this.lastHTML = this.props.answer ? this.props.answer.value : ''
+  }
 
   handleSaveError = (err: ErrorResponse): void => {
     const key = (() => {
@@ -50,7 +58,20 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
   handleChange = (answer: Answer): void => {
     const { onChange } = this.props
 
+    this.lastHTML = answer.answerHtml
     onChange(answer.answerHtml, answer.answerText)
+  }
+
+  componentDidUpdate(): void {
+    /**
+     * Don't update element unless value has changed from last known value to prevent cursor jumping
+     * This implementation is _primarily_ intended to be used by AnswerToolbar's answerHistory, which
+     * will update the value of `answer` without the user making edits to the rich-text-editor input field
+     * */
+    if (this.editorRef.current && this.props.answer && this.props.answer.value !== this.lastHTML) {
+      this.lastHTML = this.props.answer.value
+      this.editorRef.current.setValue(this.props.answer.value)
+    }
   }
 
   render(): React.ReactNode {
@@ -60,6 +81,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
         {({ expanded, toggleWriterMode }) => (
           <>
             <RichTextEditor
+              ref={this.editorRef}
               baseUrl={''}
               initialValue={answer?.value}
               language={this.context.language.slice(0, 2).toUpperCase() as 'FI' | 'SV'}
