@@ -44,7 +44,6 @@ import { VersionNumber } from '../shared/VersionNumber'
 import Video from '../shared/Video'
 import ExamAttachment from './Attachment'
 import ChoiceAnswer from './ChoiceAnswer'
-import { DragAndDrop } from './DragAndDrop'
 import DropdownAnswer from './DropdownAnswer'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
@@ -62,7 +61,6 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
-import { NativeDND } from './NativeDND'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -283,10 +281,6 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                         </p>
                       )}
                       {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
-
-                      <NativeDND />
-
-                      <DragAndDrop />
 
                       {tableOfContents && (
                         <div className="main-toc-container">
