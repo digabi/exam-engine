@@ -265,6 +265,7 @@ export async function masterExam(
   getMediaMetadata: GetMediaMetadata,
   options?: MasteringOptions
 ): Promise<MasteringResult[]> {
+  console.log('masterExam...')
   const doc = parseExam(xml, true)
   const examVersions = doc.find<Element>('./e:exam-versions/e:exam-version', ns).map(examVersion => ({
     language: getAttribute('lang', examVersion),
@@ -1006,6 +1007,8 @@ function parseExamStructure(element: Element): Exam {
   }
 
   topLevelQuestions.forEach(collect)
+
+  console.log('parseExamStructure', { element, sections, questions, topLevelQuestions, answers })
 
   return { element, sections, questions, topLevelQuestions, answers }
 }
