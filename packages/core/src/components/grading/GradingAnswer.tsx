@@ -143,12 +143,12 @@ function GradingAnswerWithTranslations({
 
   const { t } = useExamTranslation()
 
-  const allImagesLoaded = totalImages > 0 && loadedCount === totalImages
+  const allImagesNotLoaded = totalImages > 0 && loadedCount !== totalImages
   const someImagesFailedToLoad = failedImages > 0
 
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
-      {!allImagesLoaded && (
+      {allImagesNotLoaded && (
         <div className="loading-images">
           <span className="loading">
             {t('grading.loading-images')} ({loadedCount}/{totalImages})
