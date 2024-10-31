@@ -510,7 +510,7 @@
   <xs:element name="dnd-answer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="e:dnd-answer-group" maxOccurs="unbounded" />
+        <xs:element ref="e:dnd-answer-group" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="direction" type="e:direction" />
       <xs:attributeGroup ref="e:stylable" />
@@ -521,7 +521,7 @@
   <xs:element name="dnd-answer-group">
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded">
-        <xs:group ref="xhtml:xhtml.Flow.mix" />
+        <xs:element name="dnd-answer-title" type="e:Flow" />
         <xs:element ref="e:dnd-answer-option" maxOccurs="unbounded" />
       </xs:choice>
       <xs:attribute name="max-score" type="xs:positiveInteger" />
@@ -533,7 +533,7 @@
   <xs:element name="dnd-answer-option">
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded">
-        <xs:group ref="xhtml:xhtml.Flow.mix" />
+        <xs:element name="dnd-option-title" type="e:Flow" />
       </xs:choice>
       <xs:attribute name="max-score" type="xs:positiveInteger" />
       <xs:attributeGroup ref="e:orderable" />
