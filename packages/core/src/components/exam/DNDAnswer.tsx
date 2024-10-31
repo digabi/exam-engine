@@ -1,9 +1,29 @@
 import React from 'react'
 import { ExamComponentProps } from '../..'
-import { mapChildElements } from '../../dom-utils'
+import { getNumericAttribute, mapChildElements, queryAll } from '../../dom-utils'
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
   console.log('answer', element)
+  const questionId = getNumericAttribute(element, 'question-id')!
+  const displayNumber = element.getAttribute('display-number')!
+  console.log('questionId', questionId)
+  console.log('displayNumber', displayNumber)
+
+  const dndAnswerGroups = queryAll(element, 'dnd-answer-group')
+  console.log('dndAnswerGroups', dndAnswerGroups)
+  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
+  console.log('dndAnswerOptions', dndAnswerOptions)
+
+  const defaultItems = {
+    root: dndAnswerOptions.map((_option, index) => index),
+    ...dndAnswerGroups.reduce((acc, group, groupIndex) => {
+      const options = queryAll(group, 'dnd-answer-option')
+      return { ...acc, [groupIndex]: options.map((_option, index) => index) }
+    })
+  }
+
+  console.log('defaultItems', defaultItems)
+
   return (
     <div>
       {mapChildElements(element, childElement => (
@@ -14,9 +34,10 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 }
 
 const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('group', element)
+  console.log('group')
   return (
-    <div>
+    <div className="e-dnd-answer-group">
+      Group:
       {renderChildNodes(element)}
       {mapChildElements(element, childElement => (
         <DNDAnswerOption element={childElement} renderChildNodes={renderChildNodes} />
@@ -26,6 +47,6 @@ const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps) => {
 }
 
 const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('option', element)
-  return <div>{renderChildNodes(element)}</div>
+  console.log('option')
+  return <div className="e-dnd-answer-option">Option: {renderChildNodes(element)}</div>
 }

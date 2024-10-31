@@ -38,6 +38,8 @@ export function createGradingStructure(
               return options?.groupChoiceAnswers
                 ? [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
                 : answers.map(answer => mkSingleChoiceGroupQuestion(answer, generateId))
+            case 'drag-and-drop':
+              return []
             default:
               throw new Error(`Bug: grading structure generation not implemented for ${questionType}`)
           }
@@ -54,7 +56,7 @@ function collectAnswers(question: Question): Answer[] {
   return question.childQuestions.length ? _.flatMap(question.childQuestions, collectAnswers) : question.answers
 }
 
-function getQuestionType(answer: Answer): 'text' | 'choice' {
+function getQuestionType(answer: Answer): 'text' | 'choice' | 'drag-and-drop' {
   const answerType = answer.element.name()
 
   switch (answerType) {
@@ -64,6 +66,8 @@ function getQuestionType(answer: Answer): 'text' | 'choice' {
     case 'choice-answer':
     case 'dropdown-answer':
       return 'choice'
+    case 'dnd-answer':
+      return 'drag-and-drop'
     default:
       throw new Error(`getQuestionType not implemented for ${answerType}`)
   }

@@ -2,9 +2,10 @@ import * as _ from 'lodash-es'
 import { findChildElement, getAttribute, queryAll } from '../dom-utils'
 
 export default function parseExam(examXml: string, deterministicRendering = false): XMLDocument {
+  console.log('EE: parseExam, examXml: ', examXml)
   const doc = new DOMParser().parseFromString(examXml, 'application/xml')
   if (!deterministicRendering) {
-    queryAll(doc.documentElement, ['choice-answer', 'dropdown-answer'])
+    queryAll(doc.documentElement, ['choice-answer', 'dropdown-answer', 'dnd-answer'], true)
       .filter(e => getAttribute(e, 'ordering') !== 'fixed')
       .forEach(randomizeOptions)
   }
@@ -17,6 +18,8 @@ export default function parseExam(examXml: string, deterministicRendering = fals
   queryAll(doc.documentElement, 'reference').forEach(reference => {
     queryAll(reference, () => true, false).forEach(trimWhitespace)
   })
+
+  console.log('EE: parseExam, return doc: ', doc)
 
   return doc
 }
