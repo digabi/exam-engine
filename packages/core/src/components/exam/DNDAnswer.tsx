@@ -30,24 +30,55 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   )
 }
 
-const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps) => {
+export const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps) => {
   const questionId = getNumericAttribute(element, 'question-id')!
   const displayNumber = element.getAttribute('display-number')!
-  console.log('group questionId', questionId)
-  console.log('group displayNumber', displayNumber)
+  console.log('GROUP', element)
 
   return (
     <div className="e-dnd-answer-group">
-      Group:
+      Group: questionId = {questionId}, displayNumber = {displayNumber}
+      <br />
+      Groups child elements:
+      {mapChildElements(element, childElement => {
+        console.log('CHILD', childElement, childElement.nodeName, childElement.tagName, childElement.nodeType)
+        return childElement.nodeName === 'e:dnd-answer-title' ? (
+          <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} />
+        ) : (
+          <DNDAnswerOption element={childElement} renderChildNodes={renderChildNodes} />
+        )
+      })}
+    </div>
+  )
+}
+
+const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => {
+  console.log('DNDAnswerTitle', element)
+  return (
+    <div className="e-dnd-answer-option">
+      Answer title:
       {renderChildNodes(element)}
-      {mapChildElements(element, childElement => (
-        <DNDAnswerOption element={childElement} renderChildNodes={renderChildNodes} />
-      ))}
+      {/*mapChildElements(element, childElement => (
+        <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} />
+      ))*/}
     </div>
   )
 }
 
 const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('option')
-  return <div className="e-dnd-answer-option">Option: {renderChildNodes(element)}</div>
+  const optionId = element.getAttribute('option-id')!
+  console.log('OPTION', element)
+  return (
+    <div className="e-dnd-answer-option">
+      Option {optionId} child elements:
+      {mapChildElements(element, childElement => (
+        <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} />
+      ))}
+    </div>
+  )
+}
+
+const DNDAnswerOptionContent = ({ element, renderChildNodes }: ExamComponentProps) => {
+  console.log('option content')
+  return <div className="e-dnd-answer-option">Option content: {renderChildNodes(element)}</div>
 }
