@@ -61,7 +61,7 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
-import { DNDAnswer } from './DNDAnswer'
+import { DNDAnswer, DNDAnswerGroup } from './DNDAnswer'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -118,6 +118,7 @@ const renderChildNodes = createRenderChildNodes({
   'audio-test': AudioTest,
   'choice-answer': ChoiceAnswer,
   'dnd-answer': DNDAnswer,
+  'dnd-answer-group': DNDAnswerGroup,
   'dropdown-answer': DropdownAnswer,
   'exam-footer': ExamFooter,
   'external-material': ExternalMaterial,
