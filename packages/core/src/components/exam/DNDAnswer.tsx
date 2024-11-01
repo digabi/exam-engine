@@ -3,14 +3,11 @@ import { ExamComponentProps } from '../..'
 import { getNumericAttribute, mapChildElements, queryAll } from '../../dom-utils'
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
-  const questionId = getNumericAttribute(element, 'question-id')!
-  const displayNumber = element.getAttribute('display-number')!
-  console.log('Answer questionId', questionId)
-  console.log('Answer displayNumber', displayNumber)
-
+  console.log('DNDAnswer', element)
   const dndAnswerGroups = queryAll(element, 'dnd-answer-group')
   const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-
+  console.log('dndAnswerGroups', dndAnswerGroups, 'dndAnswerOptions', dndAnswerOptions)
+  /*
   const defaultItems = {
     root: dndAnswerOptions.map((_option, index) => index),
     ...dndAnswerGroups.reduce((acc, group, groupIndex) => {
@@ -20,12 +17,12 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   }
 
   console.log('defaultItems', defaultItems)
+*/
 
   return (
     <div>
-      {mapChildElements(element, childElement => (
-        <DNDAnswerGroup element={childElement} renderChildNodes={renderChildNodes} />
-      ))}
+      <b>{element.tagName}</b>
+      {renderChildNodes(element)}
     </div>
   )
 }
@@ -33,20 +30,21 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 export const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps) => {
   const questionId = getNumericAttribute(element, 'question-id')!
   const displayNumber = element.getAttribute('display-number')!
-  console.log('GROUP', element)
+  console.log('GROUP', questionId, displayNumber, element)
 
   return (
-    <div className="e-dnd-answer-group">
-      Group: questionId = {questionId}, displayNumber = {displayNumber}
+    <div className="e-dnd-answer-group" data-question-id={questionId}>
+      <span className="anchor" id={`question-nr-${displayNumber}`} />
+
+      <b>{element.tagName}</b>
       <br />
-      Groups child elements:
       {mapChildElements(element, childElement => {
-        console.log('CHILD', childElement, childElement.nodeName, childElement.tagName, childElement.nodeType)
+        console.log('CHILD', childElement, childElement.nodeName)
         return childElement.nodeName === 'e:dnd-answer-title' ? (
           <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} />
-        ) : (
+        ) : childElement.nodeName === 'e:dnd-answer-option' ? (
           <DNDAnswerOption element={childElement} renderChildNodes={renderChildNodes} />
-        )
+        ) : null
       })}
     </div>
   )
@@ -55,22 +53,18 @@ export const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps
 const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => {
   console.log('DNDAnswerTitle', element)
   return (
-    <div className="e-dnd-answer-option">
-      Answer title:
+    <div className="e-dnd-answer-title">
+      <b>{element.tagName}</b>
       {renderChildNodes(element)}
-      {/*mapChildElements(element, childElement => (
-        <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} />
-      ))*/}
     </div>
   )
 }
 
 const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
-  const optionId = element.getAttribute('option-id')!
   console.log('OPTION', element)
   return (
     <div className="e-dnd-answer-option">
-      Option {optionId} child elements:
+      <b>{element.tagName}:</b>
       {mapChildElements(element, childElement => (
         <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} />
       ))}
@@ -80,5 +74,5 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
 
 const DNDAnswerOptionContent = ({ element, renderChildNodes }: ExamComponentProps) => {
   console.log('option content')
-  return <div className="e-dnd-answer-option">Option content: {renderChildNodes(element)}</div>
+  return <div>{renderChildNodes(element)}</div>
 }
