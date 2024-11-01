@@ -1,4 +1,6 @@
-<xs:schema xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://ylioppilastutkinto.fi/exam.xsd" elementFormDefault="qualified" version="1.0" xml:lang="fi">
+<xs:schema xmlns:e="http://ylioppilastutkinto.fi/exam.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://ylioppilastutkinto.fi/exam.xsd" elementFormDefault="qualified" version="1.0" xml:lang="fi">
 
   <!-- Import relevant XHTML subset -->
   <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="xhtml11.xsd" />
@@ -510,7 +512,9 @@
   <xs:element name="dnd-answer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="e:dnd-answer-group" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="e:question">
+          <xs:element ref="e:dnd-answer-group" minOccurs="0" maxOccurs="unbounded" />
+        </xs:element ref="e:question">
       </xs:sequence>
       <xs:attribute name="direction" type="e:direction" />
       <xs:attributeGroup ref="e:stylable" />
