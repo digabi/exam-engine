@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { getNumericAttribute, query } from '../../dom-utils'
+import { getNumericAttribute, query, queryAll } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { CasState } from '../../store/cas/reducer'
 import { ExamContext } from '../context/ExamContext'
@@ -23,6 +23,9 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level } = useContext(QuestionContext)
   const { examServerApi } = useContext(ExamContext)
   const [expanded, setExpanded] = useState<boolean>(false)
+
+  const isDND = queryAll(element, 'dnd-answer-group')
+  console.log('isDND', isDND)
 
   const { t } = useExamTranslation()
 

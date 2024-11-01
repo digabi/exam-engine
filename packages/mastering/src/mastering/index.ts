@@ -137,7 +137,15 @@ function assertExamIsValid(doc: Document): Document {
   for (const answer of doc.find<Element>(xpathOr(answerTypes), ns)) {
     // Ensure that the each answer element is directly within a question,
     // ignoring a few special HTML-like exam elements.
-    const htmlLikeExamElements = ['hints', 'scored-text-answers', 'localization', 'attachment', 'audio-group']
+    const htmlLikeExamElements = [
+      'hints',
+      'scored-text-answers',
+      'localization',
+      'attachment',
+      'audio-group',
+      'dnd-answer-group',
+      'dnd-answer'
+    ]
     const maybeParentQuestion = queryAncestors(
       answer,
       e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
@@ -838,7 +846,7 @@ function addAttachmentNumbers(exam: Exam) {
 function addQuestionIds(root: Element, generateId: GenerateId) {
   const exam = parseExamStructure(root)
   for (const answer of exam.answers) {
-    console.log('addQuestionIds answer', answer)
+    console.log('addQuestionId', generateId(), 'to answer', answer)
     answer.element.attr('question-id', String(generateId()))
   }
 }
@@ -1041,7 +1049,7 @@ function parseAnswer(element: Element, question: Element): Answer {
 
 function parseQuestion(question: Element): Question {
   const childQuestions = question
-    .find<Element>('.//e:question', ns)
+    .find<Element>('.//e:question | .//e:dnd-answer-group', ns)
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
   const gradingInstructions = question
