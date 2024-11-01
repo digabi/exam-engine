@@ -3,16 +3,13 @@ import { ExamComponentProps } from '../..'
 import { getNumericAttribute, mapChildElements, queryAll } from '../../dom-utils'
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('answer', element)
   const questionId = getNumericAttribute(element, 'question-id')!
   const displayNumber = element.getAttribute('display-number')!
-  console.log('questionId', questionId)
-  console.log('displayNumber', displayNumber)
+  console.log('Answer questionId', questionId)
+  console.log('Answer displayNumber', displayNumber)
 
   const dndAnswerGroups = queryAll(element, 'dnd-answer-group')
-  console.log('dndAnswerGroups', dndAnswerGroups)
   const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-  console.log('dndAnswerOptions', dndAnswerOptions)
 
   const defaultItems = {
     root: dndAnswerOptions.map((_option, index) => index),
@@ -34,7 +31,11 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 }
 
 const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('group')
+  const questionId = getNumericAttribute(element, 'question-id')!
+  const displayNumber = element.getAttribute('display-number')!
+  console.log('group questionId', questionId)
+  console.log('group displayNumber', displayNumber)
+
   return (
     <div className="e-dnd-answer-group">
       Group:
