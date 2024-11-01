@@ -143,6 +143,8 @@ function assertExamIsValid(doc: Document): Document {
       e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
     )
 
+    console.log('maybeParentQuestion', maybeParentQuestion)
+
     if (maybeParentQuestion?.name() !== 'question') {
       throw mkError('All answers must be within a question.', answer)
     }
@@ -289,6 +291,7 @@ async function masterExamVersion(
   getMediaMetadata: GetMediaMetadata,
   options: MasteringOptions
 ): Promise<MasteringResult> {
+  console.log('masterExamVersion...')
   const root = doc.root()!
   const generateId = mkGenerateId()
   const translation = createTranslationFile(doc)
@@ -297,6 +300,7 @@ async function masterExamVersion(
   // Add question ids before removing questions in wrong language and for other exam-types
   // in order to keep question ids same within different exam versions
   // It helps when grading productive questions.
+
   addQuestionIds(root, generateId)
   addGradingInstructionAttributes(root)
   applyLocalizations(root, language, type, options.editableGradingInstructions)
@@ -557,10 +561,14 @@ function updateMaxScoresToAnswers(exam: Exam) {
     switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
+      case 'dnd-answer':
       case 'scored-text-answer': {
         if (element.attr('max-score') == null) {
           const scores = element
-            .find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
+            .find<Element>(
+              './e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer | ./e:dnd-answer-option',
+              ns
+            )
             .map(option => getNumericAttribute('score', option, 0))
           const maxScore = _.max(scores)
           element.attr('max-score', String(maxScore))
@@ -576,7 +584,10 @@ function removeCorrectAnswers(exam: Exam) {
       case 'choice-answer':
       case 'dropdown-answer':
         {
-          for (const option of element.find<Element>('//e:choice-answer-option | //e:dropdown-answer-option', ns)) {
+          for (const option of element.find<Element>(
+            '//e:choice-answer-option | //e:dropdown-answer-option | ./e:dnd-answer-option',
+            ns
+          )) {
             option.attr('score')?.remove()
           }
         }
@@ -827,6 +838,7 @@ function addAttachmentNumbers(exam: Exam) {
 function addQuestionIds(root: Element, generateId: GenerateId) {
   const exam = parseExamStructure(root)
   for (const answer of exam.answers) {
+    console.log('addQuestionIds answer', answer)
     answer.element.attr('question-id', String(generateId()))
   }
 }
@@ -921,9 +933,13 @@ function countMaxScores(exam: Exam) {
 }
 
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
+  console.log('addAnswerOptionIds...')
   for (const { element } of exam.answers) {
+    console.log('addAnswerOptionIds element', element)
     if (_.includes(choiceAnswerTypes, element.name())) {
+      console.log('add option-id')
       element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
+        console.log('add option-id', answerOption, generateId())
         answerOption.attr('option-id', String(generateId()))
       })
     }
@@ -1008,7 +1024,7 @@ function parseExamStructure(element: Element): Exam {
 
   topLevelQuestions.forEach(collect)
 
-  console.log('parseExamStructure', { element, sections, questions, topLevelQuestions, answers })
+  console.log('parseExamStructure, questions', questions, questions.toString())
 
   return { element, sections, questions, topLevelQuestions, answers }
 }
