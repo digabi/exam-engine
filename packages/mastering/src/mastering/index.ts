@@ -159,8 +159,11 @@ function assertExamIsValid(doc: Document): Document {
 
     // Ensure that the question containing the answer doesn't have any child questions.
     const maybeChildQuestion = maybeParentQuestion.get<Element>('.//e:question', ns)
-    if (maybeChildQuestion != null) {
-      throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion)
+
+    if (maybeChildQuestion != null && answer.name() !== 'dnd-answer') {
+      // dnd-answer saa sisältää question-elementtejä
+      console.log('virhe elementissä', answer, answer.name, answer.name(), answer.toString())
+      throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion || answer)
     }
 
     // Ensure that scored-text-answer has either max-score or accepted-answers.

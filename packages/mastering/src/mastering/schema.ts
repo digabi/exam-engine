@@ -3,7 +3,7 @@ import { Element } from 'libxmljs2'
 export const ns = { e: 'http://ylioppilastutkinto.fi/exam.xsd', xhtml: 'http://www.w3.org/1999/xhtml' }
 
 export const textAnswerTypes = ['text-answer', 'scored-text-answer'] as const
-export const choiceAnswerTypes = ['choice-answer', 'dropdown-answer', 'dnd-answer-group', 'dnd-answer'] as const
+export const choiceAnswerTypes = ['choice-answer', 'dropdown-answer', 'dnd-answer'] as const
 export const choiceAnswerOptionTypes = ['choice-answer-option', 'dropdown-answer-option', 'dnd-answer-option'] as const
 export const dndAnswerTypes = ['dnd-answer'] as const
 export const answerTypes = [...textAnswerTypes, ...choiceAnswerTypes, ...dndAnswerTypes]
