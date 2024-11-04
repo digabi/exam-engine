@@ -503,18 +503,17 @@
       <xs:element ref="e:hints" />
       <xs:element ref="e:scored-text-answers" />
       <xs:element ref="e:scored-text-answer" />
+      <xs:element ref="e:dnd-answer-container" />
       <xs:element ref="e:dnd-answer" />
-      <xs:element ref="e:dnd-answer-group" />
       <xs:element ref="e:choice-answer" />
       <xs:element ref="e:dropdown-answer" />
     </xs:choice>
   </xs:group>
 
-  <xs:element name="dnd-answer">
+  <xs:element name="dnd-answer-container">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="e:question" maxOccurs="unbounded" />
-        <!--<xs:element ref="e:dnd-answer-group" minOccurs="0" maxOccurs="unbounded" />-->
       </xs:sequence>
       <xs:attribute name="direction" type="e:direction" />
       <xs:attributeGroup ref="e:stylable" />
@@ -522,7 +521,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="dnd-answer-group">
+  <xs:element name="dnd-answer">
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded">
         <xs:element name="dnd-answer-title" type="e:Flow" />
