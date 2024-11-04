@@ -3,15 +3,13 @@ import { ExamComponentProps } from '../..'
 import { getNumericAttribute, mapChildElements, queryAll } from '../../dom-utils'
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
-  const dndAnswerGroups = queryAll(element, 'dnd-answer-group')
-  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-  console.log('dndAnswerGroups', dndAnswerGroups, 'dndAnswerOptions', dndAnswerOptions)
+  const dndAnswerGroupIds = queryAll(element, 'dnd-answer-group').map(e => e.getAttribute('question-id')!)
+  const dndAnswerOptionIds = queryAll(element, 'dnd-answer-option').map(e => e.getAttribute('option-id')!)
+  console.log('dndAnswerGroupIds', dndAnswerGroupIds, 'dndAnswerOptionIds', dndAnswerOptionIds)
+
   const defaultItems = {
-    root: dndAnswerOptions.map((_option, index) => index),
-    ...dndAnswerGroups.reduce((acc, group, groupIndex) => {
-      const options = queryAll(group, 'dnd-answer-option')
-      return { ...acc, [groupIndex]: options.map((_option, index) => index) }
-    })
+    root: dndAnswerOptionIds.map((_option, index) => index),
+    ...dndAnswerGroupIds.reduce((acc, _group, groupIndex) => ({ ...acc, [groupIndex]: [] }), {})
   }
 
   console.log('defaultItems', defaultItems)
@@ -20,6 +18,15 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     <div>
       <b>{element.tagName}</b>
       {renderChildNodes(element)}
+
+      <h4>Render default container here:</h4>
+      <div className="e-dnd-answer-group">
+        {defaultItems.root.map((_item, index) => (
+          <div key={index}>
+            <b>item {index}</b>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -32,14 +39,13 @@ export const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps
         {element.tagName} (id {questionId}):
       </b>
       <br />
-      {mapChildElements(element, (childElement, index) => {
-        console.log('CHILD =', childElement.nodeName)
-        return childElement.nodeName === 'e:dnd-answer-title' ? (
+      {mapChildElements(element, (childElement, index) =>
+        childElement.nodeName === 'e:dnd-answer-title' ? (
           <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ) : childElement.nodeName === 'e:dnd-answer-option' ? (
           <DNDAnswerOption element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ) : null
-      })}
+      )}
     </div>
   )
 }
