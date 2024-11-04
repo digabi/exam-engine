@@ -117,7 +117,7 @@ const renderChildNodes = createRenderChildNodes({
   'audio-group': AudioGroup,
   'audio-test': AudioTest,
   'choice-answer': ChoiceAnswer,
-  'dnd-answer': DNDAnswer,
+  'dnd-answer-container': DNDAnswer,
   'dropdown-answer': DropdownAnswer,
   'exam-footer': ExamFooter,
   'external-material': ExternalMaterial,
