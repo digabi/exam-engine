@@ -67,6 +67,7 @@ function getQuestionType(answer: Answer): 'text' | 'choice' | 'drag-and-drop' {
     case 'dropdown-answer':
       return 'choice'
     case 'dnd-answer':
+    case 'dnd-answer-group':
       return 'drag-and-drop'
     default:
       throw new Error(`getQuestionType not implemented for ${answerType}`)

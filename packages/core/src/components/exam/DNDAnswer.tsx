@@ -3,11 +3,9 @@ import { ExamComponentProps } from '../..'
 import { getNumericAttribute, mapChildElements, queryAll } from '../../dom-utils'
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('DNDAnswer', element)
   const dndAnswerGroups = queryAll(element, 'dnd-answer-group')
   const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
   console.log('dndAnswerGroups', dndAnswerGroups, 'dndAnswerOptions', dndAnswerOptions)
-  /*
   const defaultItems = {
     root: dndAnswerOptions.map((_option, index) => index),
     ...dndAnswerGroups.reduce((acc, group, groupIndex) => {
@@ -17,7 +15,6 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   }
 
   console.log('defaultItems', defaultItems)
-*/
 
   return (
     <div>
@@ -29,15 +26,14 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 
 export const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps) => {
   const questionId = getNumericAttribute(element, 'question-id')!
-  const displayNumber = element.getAttribute('display-number')!
-  console.log('GROUP', questionId, displayNumber, element)
-
   return (
     <div className="e-dnd-answer-group" data-question-id={questionId}>
-      <b>{element.tagName}</b>
+      <b>
+        {element.tagName} (id {questionId}):
+      </b>
       <br />
       {mapChildElements(element, (childElement, index) => {
-        console.log('CHILD', childElement, childElement.nodeName)
+        console.log('CHILD =', childElement.nodeName)
         return childElement.nodeName === 'e:dnd-answer-title' ? (
           <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ) : childElement.nodeName === 'e:dnd-answer-option' ? (
@@ -48,21 +44,20 @@ export const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps
   )
 }
 
-const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('DNDAnswerTitle', element)
-  return (
-    <div className="e-dnd-answer-title">
-      <b>{element.tagName}</b>
-      {renderChildNodes(element)}
-    </div>
-  )
-}
+const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => (
+  <div className="e-dnd-answer-title">
+    <b>{element.tagName}</b>
+    {renderChildNodes(element)}
+  </div>
+)
 
 const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('OPTION', element)
+  const optionId = getNumericAttribute(element, 'option-id')!
   return (
     <div className="e-dnd-answer-option">
-      <b>{element.tagName}:</b>
+      <b>
+        {element.tagName} (id {optionId}):
+      </b>
       {mapChildElements(element, (childElement, index) => (
         <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} key={index} />
       ))}
@@ -70,7 +65,6 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   )
 }
 
-const DNDAnswerOptionContent = ({ element, renderChildNodes }: ExamComponentProps) => {
-  console.log('option content')
-  return <div>{renderChildNodes(element)}</div>
-}
+const DNDAnswerOptionContent = ({ element, renderChildNodes }: ExamComponentProps) => (
+  <div>{renderChildNodes(element)}</div>
+)
