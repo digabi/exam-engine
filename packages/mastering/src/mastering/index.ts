@@ -300,7 +300,6 @@ async function masterExamVersion(
   getMediaMetadata: GetMediaMetadata,
   options: MasteringOptions
 ): Promise<MasteringResult> {
-  console.log('masterExamVersion...')
   const root = doc.root()!
   const generateId = mkGenerateId()
   const translation = createTranslationFile(doc)
@@ -570,7 +569,7 @@ function updateMaxScoresToAnswers(exam: Exam) {
     switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
-      case 'dnd-answer':
+      case 'dnd-answer-group':
       case 'scored-text-answer': {
         if (element.attr('max-score') == null) {
           const scores = element
@@ -945,9 +944,9 @@ function countMaxScores(exam: Exam) {
 }
 
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
-  console.log('addAnswerOptionIds...')
+  console.log('addAnswerOptionIds..., exam has', exam.answers.length, 'answers')
   for (const { element } of exam.answers) {
-    console.log('addAnswerOptionIds element', element.name())
+    console.log('addAnswerOptionIds for element', element.name())
     if (_.includes(choiceAnswerTypes, element.name())) {
       element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
         const optionId = generateId()
@@ -1036,8 +1035,6 @@ function parseExamStructure(element: Element): Exam {
 
   topLevelQuestions.forEach(collect)
 
-  //console.log('parseExamStructure, questions', questions)
-
   return { element, sections, questions, topLevelQuestions, answers }
 }
 
@@ -1054,7 +1051,6 @@ function parseAnswer(element: Element, question: Element): Answer {
 function parseQuestion(question: Element): Question {
   const childQuestions = question
     .find<Element>('.//e:question', ns)
-    //.find<Element>('.//e:question | .//e:dnd-answer-group', ns)
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
   const gradingInstructions = question
