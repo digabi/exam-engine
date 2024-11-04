@@ -34,16 +34,14 @@ export const DNDAnswerGroup = ({ element, renderChildNodes }: ExamComponentProps
 
   return (
     <div className="e-dnd-answer-group" data-question-id={questionId}>
-      <span className="anchor" id={`question-nr-${displayNumber}`} />
-
       <b>{element.tagName}</b>
       <br />
-      {mapChildElements(element, childElement => {
+      {mapChildElements(element, (childElement, index) => {
         console.log('CHILD', childElement, childElement.nodeName)
         return childElement.nodeName === 'e:dnd-answer-title' ? (
-          <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} />
+          <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ) : childElement.nodeName === 'e:dnd-answer-option' ? (
-          <DNDAnswerOption element={childElement} renderChildNodes={renderChildNodes} />
+          <DNDAnswerOption element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ) : null
       })}
     </div>
@@ -65,8 +63,8 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   return (
     <div className="e-dnd-answer-option">
       <b>{element.tagName}:</b>
-      {mapChildElements(element, childElement => (
-        <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} />
+      {mapChildElements(element, (childElement, index) => (
+        <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} key={index} />
       ))}
     </div>
   )
