@@ -29,25 +29,27 @@ type ItemsState = {
 }
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
-  const groupsWithItems = queryAll(element, 'dnd-answer').reduce(
+  const groupsWithItemIds = queryAll(element, 'dnd-answer').reduce(
     (acc, group) => {
       const questionId = group.getAttribute('question-id')!
-      const items = queryAll(group, 'dnd-answer-option').map(e => Number(e.getAttribute('option-id')!))
-      return { ...acc, [questionId]: items }
+      //const items = queryAll(group, 'dnd-answer-option').map(e => Number(e.getAttribute('option-id')!))
+      return { ...acc, [questionId]: [] }
     },
-    { root: [] }
+    { root: queryAll(element, 'dnd-answer-option').map(e => Number(e.getAttribute('option-id')!)) }
+  )
+  const [items, setItems] = useState<ItemsState>(groupsWithItemIds)
+
+  console.log('groupsWithItems', groupsWithItemIds)
+
+  const answerOptionsById = queryAll(element, 'dnd-answer-option').reduce(
+    (acc, el) => {
+      const questionId = el.getAttribute('option-id')!
+      return { ...acc, [questionId]: el }
+    },
+    {} as Record<UniqueIdentifier, Element>
   )
 
-  console.log('groupsWithItems', groupsWithItems)
-
-  const [items, setItems] = useState<ItemsState>(groupsWithItems)
-
-  const answerOptionsById = queryAll(element, 'dnd-answer-option').reduce((acc, el) => {
-    const questionId = el.getAttribute('option-id')!
-    return { ...acc, [questionId]: el }
-  }, {})
-
-  console.log('elementsById', answerOptionsById)
+  console.log('answerOptionsById', answerOptionsById)
 
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
 
@@ -62,7 +64,6 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     if (id in items) {
       return id
     }
-
     return Object.keys(items).find(key => items[key].includes(id))
   }
 
@@ -81,17 +82,6 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     // Find the containers
     const activeContainer = findContainer(id)
     const overContainer = overId ? findContainer(overId) : null
-
-    console.log(
-      'handleDragOver',
-      id,
-      'over',
-      overId,
-      'activeContainer',
-      activeContainer,
-      'overContainer',
-      overContainer
-    )
 
     if (!activeContainer || !overContainer || activeContainer === overContainer) {
       return
@@ -139,12 +129,22 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   }
 
   const dndAnswerGroups = queryAll(element, 'dnd-answer')
-  console.log('ITEMS =', items)
 
   // We can not render the prop element (XML) here, because the DOM structure will change when we move the items, but XML is static
 
+  const { setNodeRef } = useDroppable({
+    id: 'root'
+  })
+
+  const rootIds = items.root || []
+  const rootAnswerOptions = rootIds.map(id => answerOptionsById[id])
+
+  console.log('ITEMS =', items)
+  console.log('rootIds', rootIds)
+  console.log('rootAnswerOptions', rootAnswerOptions)
+
   return (
-    <div>
+    <div className="e-dnd-answer-container">
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}
@@ -152,19 +152,26 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        <b>{element.tagName}</b>
-
         {dndAnswerGroups.map((element, index) => (
-          <DNDAnswerGroup element={element} renderChildNodes={renderChildNodes} key={index} items={items} />
+          <DNDAnswerGroup
+            element={element}
+            renderChildNodes={renderChildNodes}
+            key={index}
+            items={items}
+            answerOptionsById={answerOptionsById}
+          />
         ))}
 
-        <h4>Render default container here:</h4>
+        {/*root items */}
         <div className="e-dnd-answer">
-          {groupsWithItems.root.map((_item, index) => (
-            <div key={index}>
-              <b>item {index}</b>
+          Not answers: <br />
+          <SortableContext id="root" items={items.root} strategy={verticalListSortingStrategy}>
+            <div ref={setNodeRef}>
+              {rootAnswerOptions.map((element, index) => (
+                <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={index} />
+              ))}
             </div>
-          ))}
+          </SortableContext>
         </div>
         <DragOverlay>{activeId ? <div>DragOverlay</div> : null}</DragOverlay>
       </DndContext>
@@ -175,32 +182,36 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 export const DNDAnswerGroup = ({
   element,
   renderChildNodes,
-  items
+  items,
+  answerOptionsById
 }: ExamComponentProps & {
   items: ItemsState
+  answerOptionsById: Record<UniqueIdentifier, Element>
 }) => {
   const questionId = getNumericAttribute(element, 'question-id')!
-  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
+  //const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
 
-  const { setNodeRef } = useDroppable({
+  const groudIds = items[questionId] || []
+  const dndAnswerOptions = groudIds.map(id => answerOptionsById[id])
+  //console.log('Group = ', questionId, dndAnswerOptions)
+
+  const { setNodeRef, isOver } = useDroppable({
     id: questionId
   })
-
-  const groupItems = items[questionId] || []
 
   return (
     <div className="e-dnd-answer" data-question-id={questionId}>
       <b>
-        {element.tagName} (id {questionId}):
+        Answer (id {questionId}) isOver: {isOver ? 'yes' : 'no'}
       </b>
       <br />
-      {mapChildElements(element, (childElement, index) =>
+      {mapChildElements(element, childElement =>
         childElement.nodeName === 'e:dnd-answer-title' ? (
-          <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} key={index} />
+          <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} />
         ) : null
       )}
 
-      <SortableContext id={String(questionId)} items={groupItems} strategy={verticalListSortingStrategy}>
+      <SortableContext id={String(questionId)} items={groudIds} strategy={verticalListSortingStrategy}>
         <div ref={setNodeRef}>
           {dndAnswerOptions.map((element, index) => (
             <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={index} />
@@ -212,10 +223,7 @@ export const DNDAnswerGroup = ({
 }
 
 const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => (
-  <div className="e-dnd-answer-title">
-    <b>{element.tagName}</b>
-    {renderChildNodes(element)}
-  </div>
+  <div className="e-dnd-answer-title">{renderChildNodes(element)}</div>
 )
 
 const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
@@ -231,9 +239,7 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <div className="e-dnd-answer-option">
-        <b>
-          {element.tagName} (id {optionId}):
-        </b>
+        <b>(id {optionId}):</b>
         {mapChildElements(element, (childElement, index) => (
           <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ))}
@@ -243,5 +249,5 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
 }
 
 const DNDAnswerOptionContent = ({ element, renderChildNodes }: ExamComponentProps) => (
-  <div>{renderChildNodes(element)}</div>
+  <span>{renderChildNodes(element)}</span>
 )
