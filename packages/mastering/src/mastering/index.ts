@@ -151,7 +151,7 @@ function assertExamIsValid(doc: Document): Document {
       e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
     )
 
-    console.log('maybeParentQuestion', maybeParentQuestion)
+    //console.log('maybeParentQuestion', maybeParentQuestion)
 
     if (maybeParentQuestion?.name() !== 'question') {
       throw mkError('All answers must be within a question.', answer)
@@ -161,8 +161,7 @@ function assertExamIsValid(doc: Document): Document {
     const maybeChildQuestion = maybeParentQuestion.get<Element>('.//e:question', ns)
 
     if (maybeChildQuestion != null && answer.name() !== 'dnd-answer') {
-      // dnd-answer saa sisältää question-elementtejä
-      console.log('virhe elementissä', answer, answer.name, answer.name(), answer.toString())
+      // dnd-answer may contain question elements
       throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion || answer)
     }
 
@@ -278,7 +277,6 @@ export async function masterExam(
   getMediaMetadata: GetMediaMetadata,
   options?: MasteringOptions
 ): Promise<MasteringResult[]> {
-  console.log('masterExam...')
   const doc = parseExam(xml, true)
   const examVersions = doc.find<Element>('./e:exam-versions/e:exam-version', ns).map(examVersion => ({
     language: getAttribute('lang', examVersion),
@@ -783,6 +781,7 @@ function addSectionNumbers(exam: Exam) {
 function addQuestionNumbers(exam: Exam) {
   function addQuestionNumber(question: Question, index: number, prefix = '') {
     const displayNumber = `${prefix ? `${prefix}.` : ''}${index + 1}`
+    console.log('addQuestionNumber', displayNumber, question.element.name())
     question.element.attr('display-number', displayNumber)
     question.childQuestions.forEach((q, i) => addQuestionNumber(q, i, displayNumber))
   }
@@ -794,6 +793,7 @@ function addAnswerNumbers(exam: Exam) {
   function addAnswerNumber(question: Question) {
     const questionNumber = getAttribute('display-number', question.element)
     question.answers.forEach((answer, i, answers) => {
+      console.log('addAnswerNumber', questionNumber, question.element.name())
       answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
     })
     question.childQuestions.forEach(addAnswerNumber)
@@ -849,8 +849,9 @@ function addAttachmentNumbers(exam: Exam) {
 function addQuestionIds(root: Element, generateId: GenerateId) {
   const exam = parseExamStructure(root)
   for (const answer of exam.answers) {
-    console.log('addQuestionId', generateId(), 'to answer', answer)
-    answer.element.attr('question-id', String(generateId()))
+    const questionId = generateId()
+    console.log('addQuestionId', questionId, 'to answer', answer.element.name())
+    answer.element.attr('question-id', String(questionId))
   }
 }
 
@@ -946,12 +947,12 @@ function countMaxScores(exam: Exam) {
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
   console.log('addAnswerOptionIds...')
   for (const { element } of exam.answers) {
-    console.log('addAnswerOptionIds element', element)
+    console.log('addAnswerOptionIds element', element.name())
     if (_.includes(choiceAnswerTypes, element.name())) {
-      console.log('add option-id')
       element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
-        console.log('add option-id', answerOption, generateId())
-        answerOption.attr('option-id', String(generateId()))
+        const optionId = generateId()
+        console.log('add option-id for', answerOption.name(), optionId)
+        answerOption.attr('option-id', String(optionId))
       })
     }
   }
@@ -1035,7 +1036,7 @@ function parseExamStructure(element: Element): Exam {
 
   topLevelQuestions.forEach(collect)
 
-  console.log('parseExamStructure, questions', questions, questions.toString())
+  //console.log('parseExamStructure, questions', questions)
 
   return { element, sections, questions, topLevelQuestions, answers }
 }
@@ -1052,7 +1053,8 @@ function parseAnswer(element: Element, question: Element): Answer {
 
 function parseQuestion(question: Element): Question {
   const childQuestions = question
-    .find<Element>('.//e:question | .//e:dnd-answer-group', ns)
+    .find<Element>('.//e:question', ns)
+    //.find<Element>('.//e:question | .//e:dnd-answer-group', ns)
     .filter(childQuestion => childQuestion.get('./ancestor::e:question[1]', ns) === question)
     .map(parseQuestion)
   const gradingInstructions = question
