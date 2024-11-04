@@ -143,15 +143,12 @@ function assertExamIsValid(doc: Document): Document {
       'localization',
       'attachment',
       'audio-group',
-      'dnd-answer-group',
-      'dnd-answer'
+      'dnd-answer-container'
     ]
     const maybeParentQuestion = queryAncestors(
       answer,
       e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
     )
-
-    //console.log('maybeParentQuestion', maybeParentQuestion)
 
     if (maybeParentQuestion?.name() !== 'question') {
       throw mkError('All answers must be within a question.', answer)
@@ -160,8 +157,7 @@ function assertExamIsValid(doc: Document): Document {
     // Ensure that the question containing the answer doesn't have any child questions.
     const maybeChildQuestion = maybeParentQuestion.get<Element>('.//e:question', ns)
 
-    if (maybeChildQuestion != null && answer.name() !== 'dnd-answer') {
-      // dnd-answer may contain question elements
+    if (maybeChildQuestion != null) {
       throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion || answer)
     }
 
@@ -569,7 +565,7 @@ function updateMaxScoresToAnswers(exam: Exam) {
     switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
-      case 'dnd-answer-group':
+      case 'dnd-answer':
       case 'scored-text-answer': {
         if (element.attr('max-score') == null) {
           const scores = element
