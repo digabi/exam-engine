@@ -24,16 +24,12 @@ import {
 import { CSS } from '@dnd-kit/utilities'
 
 type ItemsState = {
-  //root: UniqueIdentifier[]
+  root: UniqueIdentifier[]
   [key: string]: UniqueIdentifier[]
 }
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
-  const dndAnswerGroupIds = queryAll(element, 'dnd-answer-group').map(e => e.getAttribute('question-id')!)
-  const dndAnswerOptionIds = queryAll(element, 'dnd-answer-option').map(e => e.getAttribute('option-id')!)
-  //console.log('dndAnswerGroupIds', dndAnswerGroupIds, 'dndAnswerOptionIds', dndAnswerOptionIds)
-
-  const groupsWithItems = queryAll(element, 'dnd-answer-group').reduce(
+  const groupsWithItems = queryAll(element, 'dnd-answer').reduce(
     (acc, group) => {
       const questionId = group.getAttribute('question-id')!
       const items = queryAll(group, 'dnd-answer-option').map(e => Number(e.getAttribute('option-id')!))
@@ -42,15 +38,16 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     { root: [] }
   )
 
-  const defaultItems = {
-    root: dndAnswerOptionIds,
-    ...dndAnswerGroupIds.reduce((acc, group) => ({ ...acc, [group]: [] }), {})
-  }
-
-  console.log('defaultItems', defaultItems)
   console.log('groupsWithItems', groupsWithItems)
 
   const [items, setItems] = useState<ItemsState>(groupsWithItems)
+
+  const answerOptionsById = queryAll(element, 'dnd-answer-option').reduce((acc, el) => {
+    const questionId = el.getAttribute('option-id')!
+    return { ...acc, [questionId]: el }
+  }, {})
+
+  console.log('elementsById', answerOptionsById)
 
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
 
@@ -66,17 +63,12 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
       return id
     }
 
-    console.log('find container for id', id)
-    console.log('items = ', items)
-
     return Object.keys(items).find(key => items[key].includes(id))
   }
 
   function handleDragStart(event: DragStartEvent) {
     const { active } = event
     const { id } = active
-
-    console.log('handleDragStart', id)
 
     setActiveId(id)
   }
@@ -85,7 +77,6 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     const { active, over } = event
     const { id } = active
     const overId = over?.id
-    //const { id: overId } = over
 
     // Find the containers
     const activeContainer = findContainer(id)
@@ -111,7 +102,6 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     const { active, over } = event
     const { id } = active
     const overId = over?.id
-    //const { id: overId } = over
 
     const activeContainer = findContainer(id)
     const overContainer = overId ? findContainer(overId) : null
@@ -137,9 +127,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     } else {
       // If the target container is not empty, move the existing value back to root
       if (newState[to].length > 0) {
-        console.log("target container isn't empty")
         const existingValue = newState[to][0]
-        console.log('existingValue was', existingValue)
         newState.root = [...newState.root, existingValue]
       }
       // Move the new value to the target container
@@ -150,10 +138,10 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     return newState
   }
 
-  const dndAnswerGroups = queryAll(element, 'dnd-answer-group')
-  //console.log('dndAnswerGroups', dndAnswerGroups)
-
+  const dndAnswerGroups = queryAll(element, 'dnd-answer')
   console.log('ITEMS =', items)
+
+  // We can not render the prop element (XML) here, because the DOM structure will change when we move the items, but XML is static
 
   return (
     <div>
@@ -165,15 +153,14 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
         onDragEnd={handleDragEnd}
       >
         <b>{element.tagName}</b>
-        {renderChildNodes(element)}
 
         {dndAnswerGroups.map((element, index) => (
           <DNDAnswerGroup element={element} renderChildNodes={renderChildNodes} key={index} items={items} />
         ))}
 
         <h4>Render default container here:</h4>
-        <div className="e-dnd-answer-group">
-          {defaultItems.root.map((_item, index) => (
+        <div className="e-dnd-answer">
+          {groupsWithItems.root.map((_item, index) => (
             <div key={index}>
               <b>item {index}</b>
             </div>
@@ -194,7 +181,6 @@ export const DNDAnswerGroup = ({
 }) => {
   const questionId = getNumericAttribute(element, 'question-id')!
   const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-  //console.log('dndAnswerOptions', dndAnswerOptions)
 
   const { setNodeRef } = useDroppable({
     id: questionId
@@ -203,7 +189,7 @@ export const DNDAnswerGroup = ({
   const groupItems = items[questionId] || []
 
   return (
-    <div className="e-dnd-answer-group" data-question-id={questionId}>
+    <div className="e-dnd-answer" data-question-id={questionId}>
       <b>
         {element.tagName} (id {questionId}):
       </b>
