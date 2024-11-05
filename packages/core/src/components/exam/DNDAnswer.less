@@ -5,8 +5,18 @@
     gap: 0.5rem;
 
     .e-dnd-answer {
-      display: block;
       padding: 0.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+
+      &.root {
+        display: block;
+      }
+
+      & > * {
+        flex: 1;
+      }
 
       .e-dnd-answer-droppable {
         border: 1px dashed #999;
