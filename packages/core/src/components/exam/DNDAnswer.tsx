@@ -151,6 +151,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
           items={items}
           answerOptionsById={answerOptionsById}
         />
+
         <DragOverlay
           dropAnimation={{
             duration: 250,
@@ -158,7 +159,8 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
           }}
           style={{
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-            display: 'inline-block'
+            display: 'inline-block',
+            opacity: 0.7
           }}
         >
           {activeId ? (
@@ -190,12 +192,12 @@ export const DNDAnswerGroup = ({
   return (
     <div
       className={classNames('e-dnd-answer', {
-        hovered: isOver
+        hovered: isOver,
+        root: id === 'root'
       })}
       data-question-id={id}
     >
       <div>
-        <b>id {id}:</b>
         {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
         {id === 'root' && <div>Tässä on kaikki vaihtoehdot</div>}
       </div>
@@ -236,7 +238,6 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <div className="e-dnd-answer-option">
-        <b>id {optionId}:</b>{' '}
         {mapChildElements(element, (childElement, index) => (
           <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ))}
