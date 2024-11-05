@@ -8,17 +8,12 @@ import {
   PointerSensor,
   pointerWithin,
   UniqueIdentifier,
+  useDraggable,
   useDroppable,
   useSensor,
   useSensors
 } from '@dnd-kit/core'
-import {
-  SortableContext,
-  sortableKeyboardCoordinates,
-  useSortable,
-  verticalListSortingStrategy
-} from '@dnd-kit/sortable'
-import { CSS } from '@dnd-kit/utilities'
+import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 import { ExamComponentProps } from '../..'
@@ -160,6 +155,10 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
           answerOptionsById={answerOptionsById}
         />
         <DragOverlay
+          dropAnimation={{
+            duration: 250,
+            easing: 'ease-in-out'
+          }}
           style={{
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)'
           }}
@@ -230,18 +229,21 @@ const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => (
 const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   const optionId = getNumericAttribute(element, 'option-id')!
 
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging, isOver, over } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, isDragging, over } = useDraggable({
     id: optionId
   })
 
+  console.log(transform)
+
   const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
+    //transform: CSS.Transform.toString(transform),
+    //transition,
     display: 'inline-block',
-    opacity: isDragging ? 0.6 : 1
+    opacity: isDragging ? 0.6 : 1,
+    cursor: 'grab'
   }
 
-  console.log('optionId', optionId, isOver, over)
+  console.log('optionId', optionId, over)
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
