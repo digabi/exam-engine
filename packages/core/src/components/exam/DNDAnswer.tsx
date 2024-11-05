@@ -67,48 +67,44 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 
   function handleDragStart(event: DragStartEvent) {
     setActiveId(event.active.id)
+    document.body.style.cursor = 'grabbing'
   }
 
-  function handleDragOver(event: DragOverEvent) {
+  function getContainers(event: DragOverEvent | DragEndEvent) {
     const { active, over } = event
     const activeId = active.id
     const overId = over?.id
 
-    // Find the containers
     const activeContainer = findContainer(activeId)
     const overContainer = overId ? findContainer(overId) : null
-    console.log('over – overContainer', overContainer)
 
+    return { activeId, activeContainer, overContainer }
+  }
+
+  function handleDragOver(event: DragOverEvent) {
+    const { activeContainer, overContainer } = getContainers(event)
     if (!activeContainer || !overContainer || activeContainer === overContainer) {
       return
     }
   }
 
   function handleDragEnd(event: DragEndEvent) {
-    const { active, over } = event
-    const activeId = active.id
-    const overId = over?.id
-
-    const activeContainer = findContainer(activeId)
-    const overContainer = overId ? findContainer(overId) : null
-
-    if (!activeContainer || !overContainer) {
+    const { activeId, activeContainer, overContainer } = getContainers(event)
+    if (!activeContainer || !overContainer || activeContainer === overContainer) {
       return
     }
-
     setItems(items => moveValue(items, activeContainer, overContainer, activeId))
     setActiveId(null)
+    document.body.style.cursor = ''
   }
 
   function moveValue(state: ItemsState, from: UniqueIdentifier, to: UniqueIdentifier, value: UniqueIdentifier) {
-    // Clone the state to ensure immutability
     const newState: ItemsState = { ...state }
-
     // Remove the value from its current container
     newState[from] = newState[from].filter(item => item !== value)
 
-    // If moving to root, simply add the value to root
     if (to === 'root') {
+      // add the value to root
       newState.root = [...newState.root, value]
     } else {
       // If the target container is not empty, move the existing value back to root
@@ -119,7 +115,6 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
       // Move the new value to the target container
       newState[to] = [value]
     }
-
     return newState
   }
 
@@ -136,19 +131,21 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        {dndAnswerGroups.map((element, index) => (
-          <DNDAnswerGroup
-            element={element}
-            renderChildNodes={renderChildNodes}
-            key={index}
-            items={items}
-            answerOptionsById={answerOptionsById}
-            id={element.getAttribute('question-id')!}
-          />
-        ))}
+        {dndAnswerGroups.map((element, index) => {
+          const titleElement = query(element, 'dnd-answer-title')
+          return (
+            <DNDAnswerGroup
+              titleElement={titleElement}
+              renderChildNodes={renderChildNodes}
+              key={index}
+              items={items}
+              answerOptionsById={answerOptionsById}
+              id={element.getAttribute('question-id')!}
+            />
+          )
+        })}
         <hr />
         <DNDAnswerGroup
-          element={element}
           renderChildNodes={renderChildNodes}
           id="root"
           items={items}
@@ -160,7 +157,8 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
             easing: 'ease-in-out'
           }}
           style={{
-            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)'
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+            display: 'inline-block'
           }}
         >
           {activeId ? (
@@ -173,26 +171,21 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 }
 
 export const DNDAnswerGroup = ({
-  element,
+  titleElement,
   renderChildNodes,
   items,
   answerOptionsById,
   id
-}: ExamComponentProps & {
+}: {
   items: ItemsState
   answerOptionsById: Record<UniqueIdentifier, Element>
   id: UniqueIdentifier
+  titleElement?: Element
+  renderChildNodes: ExamComponentProps['renderChildNodes']
 }) => {
   const groudIds = items[id] || []
   const dndAnswerOptions = groudIds.map(id => answerOptionsById[id])
-
-  const { setNodeRef, isOver, over } = useDroppable({
-    id
-  })
-
-  const answerTitle = query(element, 'dnd-answer-title')
-
-  console.log('group', id, isOver, over)
+  const { setNodeRef, isOver } = useDroppable({ id })
 
   return (
     <div
@@ -202,8 +195,9 @@ export const DNDAnswerGroup = ({
       data-question-id={id}
     >
       <div>
-        <b>id {id}:</b>{' '}
-        {answerTitle ? <DNDAnswerTitle element={answerTitle} renderChildNodes={renderChildNodes} /> : null}
+        <b>id {id}:</b>
+        {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
+        {id === 'root' && <div>Tässä on kaikki vaihtoehdot</div>}
       </div>
 
       <SortableContext id={String(id)} items={groudIds} strategy={verticalListSortingStrategy}>
@@ -229,21 +223,15 @@ const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => (
 const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   const optionId = getNumericAttribute(element, 'option-id')!
 
-  const { attributes, listeners, setNodeRef, transform, isDragging, over } = useDraggable({
+  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
     id: optionId
   })
 
-  console.log(transform)
-
   const style = {
-    //transform: CSS.Transform.toString(transform),
-    //transition,
     display: 'inline-block',
     opacity: isDragging ? 0.6 : 1,
     cursor: 'grab'
   }
-
-  console.log('optionId', optionId, over)
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
@@ -252,6 +240,7 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
         {mapChildElements(element, (childElement, index) => (
           <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} key={index} />
         ))}
+        <i className="fa fa-up-down-left-right" />
       </div>
     </div>
   )
