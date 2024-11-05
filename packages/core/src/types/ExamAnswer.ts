@@ -23,7 +23,7 @@ export interface ChoiceAnswer extends AnswerCommon {
 }
 
 export interface DNDAnswer extends AnswerCommon {
-  type: 'dnd'
+  type: 'drag-and-drop'
 }
 
-export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
+export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer | DNDAnswer

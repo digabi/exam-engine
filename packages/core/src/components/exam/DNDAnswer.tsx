@@ -16,8 +16,10 @@ import {
 import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { ExamComponentProps } from '../..'
 import { getNumericAttribute, query, queryAll } from '../../dom-utils'
+import { saveAnswer } from '../../store/answers/actions'
 
 type ItemsState = {
   root: UniqueIdentifier[]
@@ -28,9 +30,13 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
   const [items, setItems] = useState<ItemsState>({} as ItemsState)
   const [answerOptionsById, setAnswerOptionsById] = useState<Record<UniqueIdentifier, Element>>({})
+  const [displayNumbersById, setDisplayNumbersById] = useState<Record<UniqueIdentifier, string>>({})
+  const dispatch = useDispatch()
 
   useEffect(() => {
+    console.log(element)
     const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
+    const dndAnswers = queryAll(element, 'dnd-answer')
 
     const answerOptionIdsByGroupId = queryAll(element, 'dnd-answer').reduce(
       (acc, group) => {
@@ -39,7 +45,6 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
       },
       { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
     )
-    setItems(answerOptionIdsByGroupId)
 
     const answerOptionsById = dndAnswerOptions.reduce(
       (acc, el) => {
@@ -48,7 +53,19 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
       },
       {} as Record<UniqueIdentifier, Element>
     )
+
+    const displayNumbersById = dndAnswers.reduce(
+      (acc, el) => {
+        const questionId = el.getAttribute('question-id')!
+        const displayNumber = el.getAttribute('display-number')!
+        return { ...acc, [questionId]: displayNumber }
+      },
+      {} as Record<UniqueIdentifier, string>
+    )
+
+    setItems(answerOptionIdsByGroupId)
     setAnswerOptionsById(answerOptionsById)
+    setDisplayNumbersById(displayNumbersById)
   }, [element])
 
   const sensors = useSensors(
@@ -66,8 +83,8 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   }
 
   function handleDragStart(event: DragStartEvent) {
-    setActiveId(event.active.id)
     document.body.style.cursor = 'grabbing'
+    setActiveId(event.active.id)
   }
 
   function getContainers(event: DragOverEvent | DragEndEvent) {
@@ -96,6 +113,17 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     setItems(items => moveValue(items, activeContainer, overContainer, activeId))
     setActiveId(null)
     document.body.style.cursor = ''
+
+    if (overContainer !== 'root') {
+      saveAnswerToStore(overContainer, activeId)
+    }
+  }
+
+  function saveAnswerToStore(overContainer: UniqueIdentifier, activeId: UniqueIdentifier) {
+    const questionId = Number(overContainer)
+    const value = activeId.toString()
+    const displayNumber = displayNumbersById[questionId]
+    dispatch(saveAnswer({ type: 'drag-and-drop', questionId, value, displayNumber }))
   }
 
   function moveValue(state: ItemsState, from: UniqueIdentifier, to: UniqueIdentifier, value: UniqueIdentifier) {
@@ -159,12 +187,16 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
           }}
           style={{
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-            display: 'inline-block',
+            //display: 'inline-block',
             opacity: 0.7
           }}
         >
           {activeId ? (
-            <DNDAnswerOption element={answerOptionsById[activeId]} renderChildNodes={renderChildNodes} />
+            <DNDAnswerOption
+              element={answerOptionsById[activeId]}
+              renderChildNodes={renderChildNodes}
+              value={activeId}
+            />
           ) : null}
         </DragOverlay>
       </DndContext>
@@ -209,9 +241,12 @@ export const DNDAnswerGroup = ({
             hovered: isOver
           })}
         >
-          {dndAnswerOptions.map((element, index) => (
-            <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={index} />
-          ))}
+          {dndAnswerOptions.map(element => {
+            const optionId = element.getAttribute('option-id')!
+            return (
+              <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={optionId} value={optionId} />
+            )
+          })}
         </div>
       </SortableContext>
     </div>
@@ -222,7 +257,12 @@ const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => (
   <span className="e-dnd-answer-title">{renderChildNodes(element)}</span>
 )
 
-const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
+const DNDAnswerOption = ({
+  element,
+  renderChildNodes
+}: ExamComponentProps & {
+  value: UniqueIdentifier
+}) => {
   const optionId = getNumericAttribute(element, 'option-id')!
 
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
