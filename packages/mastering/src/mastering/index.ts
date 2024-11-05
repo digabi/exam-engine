@@ -788,7 +788,15 @@ function addAnswerNumbers(exam: Exam) {
   function addAnswerNumber(question: Question) {
     const questionNumber = getAttribute('display-number', question.element)
     question.answers.forEach((answer, i, answers) => {
-      console.log('addAnswerNumber', questionNumber, question.element.name())
+      const displayNumber = answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`
+      console.log(
+        'addAnswerNumber(), questionNumber =',
+        questionNumber,
+        'displayNumber =',
+        displayNumber,
+        'answer name =',
+        answer.element.name()
+      )
       answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
     })
     question.childQuestions.forEach(addAnswerNumber)
