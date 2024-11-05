@@ -86,6 +86,8 @@ function PreviewGrading() {
         <div className="score-margin">Ei arvosteltu</div>
         {answer.type === 'choice' ? (
           <div>choice answer</div>
+        ) : answer.type === 'drag-and-drop' ? (
+          <div>drag and drop answer</div>
         ) : (
           <GradingAnswer
             {...{
