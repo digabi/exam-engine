@@ -1,6 +1,3 @@
-import React, { useState } from 'react'
-import { ExamComponentProps } from '../..'
-import { getNumericAttribute, mapChildElements, queryAll } from '../../dom-utils'
 import {
   closestCorners,
   DndContext,
@@ -22,24 +19,25 @@ import {
   verticalListSortingStrategy
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import classNames from 'classnames'
+import React, { useState } from 'react'
+import { ExamComponentProps } from '../..'
+import { getNumericAttribute, mapChildElements, query, queryAll } from '../../dom-utils'
 
 type ItemsState = {
   root: UniqueIdentifier[]
-  [key: string]: UniqueIdentifier[]
+  [key: UniqueIdentifier]: UniqueIdentifier[]
 }
 
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const groupsWithItemIds = queryAll(element, 'dnd-answer').reduce(
     (acc, group) => {
       const questionId = group.getAttribute('question-id')!
-      //const items = queryAll(group, 'dnd-answer-option').map(e => Number(e.getAttribute('option-id')!))
       return { ...acc, [questionId]: [] }
     },
     { root: queryAll(element, 'dnd-answer-option').map(e => Number(e.getAttribute('option-id')!)) }
   )
   const [items, setItems] = useState<ItemsState>(groupsWithItemIds)
-
-  console.log('groupsWithItems', groupsWithItemIds)
 
   const answerOptionsById = queryAll(element, 'dnd-answer-option').reduce(
     (acc, el) => {
@@ -49,7 +47,8 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     {} as Record<UniqueIdentifier, Element>
   )
 
-  console.log('answerOptionsById', answerOptionsById)
+  //console.log('groupsWithItems', groupsWithItemIds)
+  //console.log('answerOptionsById', answerOptionsById)
 
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
 
@@ -68,20 +67,19 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   }
 
   function handleDragStart(event: DragStartEvent) {
-    const { active } = event
-    const { id } = active
-
-    setActiveId(id)
+    setActiveId(event.active.id)
   }
 
   function handleDragOver(event: DragOverEvent) {
     const { active, over } = event
-    const { id } = active
+    const activeId = active.id
     const overId = over?.id
 
     // Find the containers
-    const activeContainer = findContainer(id)
+    const activeContainer = findContainer(activeId)
     const overContainer = overId ? findContainer(overId) : null
+
+    console.log('over container', overContainer)
 
     if (!activeContainer || !overContainer || activeContainer === overContainer) {
       return
@@ -90,17 +88,17 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event
-    const { id } = active
+    const activeId = active.id
     const overId = over?.id
 
-    const activeContainer = findContainer(id)
+    const activeContainer = findContainer(activeId)
     const overContainer = overId ? findContainer(overId) : null
 
     if (!activeContainer || !overContainer) {
       return
     }
 
-    setItems(items => moveValue(items, activeContainer, overContainer, active.id))
+    setItems(items => moveValue(items, activeContainer, overContainer, activeId))
     setActiveId(null)
   }
 
@@ -110,6 +108,8 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
 
     // Remove the value from its current container
     newState[from] = newState[from].filter(item => item !== value)
+
+    console.log('move value to', to)
 
     // If moving to root, simply add the value to root
     if (to === 'root') {
@@ -124,24 +124,12 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
       newState[to] = [value]
     }
 
-    console.log('new state after moving value', newState)
     return newState
   }
 
   const dndAnswerGroups = queryAll(element, 'dnd-answer')
 
-  // We can not render the prop element (XML) here, because the DOM structure will change when we move the items, but XML is static
-
-  const { setNodeRef } = useDroppable({
-    id: 'root'
-  })
-
-  const rootIds = items.root || []
-  const rootAnswerOptions = rootIds.map(id => answerOptionsById[id])
-
-  console.log('ITEMS =', items)
-  console.log('rootIds', rootIds)
-  console.log('rootAnswerOptions', rootAnswerOptions)
+  // We can not render the prop 'element' (XML) here, because we will change the DOM structure when we move items, but the XML can not be changed
 
   return (
     <div className="e-dnd-answer-container">
@@ -159,21 +147,23 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
             key={index}
             items={items}
             answerOptionsById={answerOptionsById}
+            id={element.getAttribute('question-id')!}
           />
         ))}
-
-        {/*root items */}
-        <div className="e-dnd-answer">
-          Not answers: <br />
-          <SortableContext id="root" items={items.root} strategy={verticalListSortingStrategy}>
-            <div ref={setNodeRef}>
-              {rootAnswerOptions.map((element, index) => (
-                <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={index} />
-              ))}
-            </div>
-          </SortableContext>
-        </div>
-        <DragOverlay>{activeId ? <div>DragOverlay</div> : null}</DragOverlay>
+        <hr />
+        <DNDAnswerGroup
+          element={element}
+          renderChildNodes={renderChildNodes}
+          key="root"
+          id="root"
+          items={items}
+          answerOptionsById={answerOptionsById}
+        />
+        <DragOverlay>
+          {activeId ? (
+            <DNDAnswerOption element={answerOptionsById[activeId]} renderChildNodes={renderChildNodes} />
+          ) : null}
+        </DragOverlay>
       </DndContext>
     </div>
   )
@@ -183,35 +173,36 @@ export const DNDAnswerGroup = ({
   element,
   renderChildNodes,
   items,
-  answerOptionsById
+  answerOptionsById,
+  id
 }: ExamComponentProps & {
   items: ItemsState
   answerOptionsById: Record<UniqueIdentifier, Element>
+  id: UniqueIdentifier
 }) => {
-  const questionId = getNumericAttribute(element, 'question-id')!
-  //const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-
-  const groudIds = items[questionId] || []
+  const groudIds = items[id] || []
   const dndAnswerOptions = groudIds.map(id => answerOptionsById[id])
-  //console.log('Group = ', questionId, dndAnswerOptions)
 
   const { setNodeRef, isOver } = useDroppable({
-    id: questionId
+    id
   })
 
-  return (
-    <div className="e-dnd-answer" data-question-id={questionId}>
-      <b>
-        Answer (id {questionId}) isOver: {isOver ? 'yes' : 'no'}
-      </b>
-      <br />
-      {mapChildElements(element, childElement =>
-        childElement.nodeName === 'e:dnd-answer-title' ? (
-          <DNDAnswerTitle element={childElement} renderChildNodes={renderChildNodes} />
-        ) : null
-      )}
+  console.log('group', id, isOver)
 
-      <SortableContext id={String(questionId)} items={groudIds} strategy={verticalListSortingStrategy}>
+  const answerTitle = query(element, 'dnd-answer-title')
+
+  return (
+    <div
+      className={classNames('e-dnd-answer', {
+        hovered: isOver
+      })}
+      data-question-id={id}
+    >
+      <b>
+        Answer (id {id}) isOver: {isOver ? 'yes' : 'no'}
+      </b>
+      {answerTitle ? <DNDAnswerTitle element={answerTitle} renderChildNodes={renderChildNodes} /> : null}
+      <SortableContext id={String(id)} items={groudIds} strategy={verticalListSortingStrategy}>
         <div ref={setNodeRef}>
           {dndAnswerOptions.map((element, index) => (
             <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={index} />
