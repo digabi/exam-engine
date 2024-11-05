@@ -17,7 +17,7 @@ import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrate
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 import { ExamComponentProps } from '../..'
-import { getNumericAttribute, mapChildElements, query, queryAll } from '../../dom-utils'
+import { getNumericAttribute, query, queryAll } from '../../dom-utils'
 
 type ItemsState = {
   root: UniqueIdentifier[]
@@ -238,15 +238,9 @@ const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <div className="e-dnd-answer-option">
-        {mapChildElements(element, (childElement, index) => (
-          <DNDAnswerOptionContent element={childElement} renderChildNodes={renderChildNodes} key={index} />
-        ))}
+        {renderChildNodes(element)}
         <i className="fa fa-up-down-left-right" />
       </div>
     </div>
   )
 }
-
-const DNDAnswerOptionContent = ({ element, renderChildNodes }: ExamComponentProps) => (
-  <span>{renderChildNodes(element)}</span>
-)
