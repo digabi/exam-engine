@@ -20,13 +20,14 @@ import { useDispatch } from 'react-redux'
 import { ExamComponentProps } from '../..'
 import { getNumericAttribute, query, queryAll } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
+import { Score } from '../shared/Score'
 
 type ItemsState = {
   root: UniqueIdentifier[]
   [key: UniqueIdentifier]: UniqueIdentifier[]
 }
 
-export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
+export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
   const [items, setItems] = useState<ItemsState>({} as ItemsState)
   const [answerOptionsByQuestionId, setAnswerOptionsByQuestionId] = useState<Record<UniqueIdentifier, Element>>({})
@@ -165,19 +166,22 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
       >
         {dndAnswersWithQuestion.map((element, index) => {
           const titleElement = query(element, 'dnd-answer-title')
+          const maxScore = getNumericAttribute(element, 'max-score')
+
           return (
-            <DNDAnswerGroup
+            <DNDAnswer
               titleElement={titleElement}
               renderChildNodes={renderChildNodes}
               key={index}
               items={items}
               answerOptionsByQuestionId={answerOptionsByQuestionId}
+              maxScore={maxScore}
               id={element.getAttribute('question-id')!}
             />
           )
         })}
-        <hr />
-        <DNDAnswerGroup
+
+        <DNDAnswer
           renderChildNodes={renderChildNodes}
           id="root"
           items={items}
@@ -208,17 +212,19 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
   )
 }
 
-export const DNDAnswerGroup = ({
+export const DNDAnswer = ({
   titleElement,
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
-  id
+  id,
+  maxScore
 }: {
   items: ItemsState
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   id: UniqueIdentifier
   titleElement?: Element
+  maxScore?: number
   renderChildNodes: ExamComponentProps['renderChildNodes']
 }) => {
   const idsInGroup = items[id] || []
@@ -235,7 +241,7 @@ export const DNDAnswerGroup = ({
     >
       <div>
         {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
-        {id === 'root' && <div>Tässä on kaikki vaihtoehdot</div>}
+        {maxScore && <Score score={maxScore} size="small" />}
       </div>
 
       <SortableContext id={String(id)} items={idsInGroup} strategy={verticalListSortingStrategy}>
@@ -245,6 +251,12 @@ export const DNDAnswerGroup = ({
             hovered: isOver
           })}
         >
+          <div className="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">
+            ✲✲✲
+          </div>
+
+          {id === 'root' && <div>Tässä on kaikki vastausvaihtoehdot</div>}
+
           {dndAnswerOptions?.map(element => {
             const optionId = element.getAttribute('option-id')!
             return (
