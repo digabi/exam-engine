@@ -44,7 +44,7 @@ import { VersionNumber } from '../shared/VersionNumber'
 import Video from '../shared/Video'
 import ExamAttachment from './Attachment'
 import ChoiceAnswer from './ChoiceAnswer'
-import { DNDAnswer } from './DNDAnswer'
+import { DNDAnswerContainer } from './DNDAnswer'
 import DropdownAnswer from './DropdownAnswer'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
@@ -117,7 +117,7 @@ const renderChildNodes = createRenderChildNodes({
   'audio-group': AudioGroup,
   'audio-test': AudioTest,
   'choice-answer': ChoiceAnswer,
-  'dnd-answer-container': DNDAnswer,
+  'dnd-answer-container': DNDAnswerContainer,
   'dropdown-answer': DropdownAnswer,
   'exam-footer': ExamFooter,
   'external-material': ExternalMaterial,
