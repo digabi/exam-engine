@@ -123,7 +123,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     const questionId = Number(overContainer)
     const value = activeId.toString()
     const displayNumber = displayNumbersById[questionId]
-    dispatch(saveAnswer({ type: 'drag-and-drop', questionId, value, displayNumber }))
+    dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))
   }
 
   function moveValue(state: ItemsState, from: UniqueIdentifier, to: UniqueIdentifier, value: UniqueIdentifier) {
