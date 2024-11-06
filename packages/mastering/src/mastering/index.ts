@@ -954,7 +954,7 @@ function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
     if (_.includes(choiceAnswerTypes, element.name())) {
       element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
         const optionId = generateId()
-        console.log('add option-id for', answerOption.name(), optionId)
+        console.log('add option-id for', answerOption.name(), ':', optionId)
         answerOption.attr('option-id', String(optionId))
       })
     }
@@ -1033,8 +1033,11 @@ function parseExamStructure(element: Element): Exam {
 
   const collect = (question: Question) => {
     questions.push(question)
-    if (question.answers.length) answers.push(...question.answers)
-    else question.childQuestions.forEach(collect)
+    if (question.answers.length) {
+      answers.push(...question.answers)
+    } else {
+      question.childQuestions.forEach(collect)
+    }
   }
 
   topLevelQuestions.forEach(collect)
