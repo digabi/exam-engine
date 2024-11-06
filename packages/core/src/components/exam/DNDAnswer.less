@@ -9,6 +9,11 @@
       display: flex;
       gap: 1rem;
       align-items: flex-start;
+      border: 1px solid transparent;
+
+      &:has(.hovered) {
+        border: 1px dashed #1f2e93;
+      }
 
       &.root {
         display: block;
@@ -30,6 +35,8 @@
 
         &.hovered {
           background: #09f3;
+          outline: 2px solid #1f2e93;
+          border: 1px solid transparent;
         }
       }
 
@@ -45,12 +52,14 @@
   border: 1px solid #ccc;
   padding: 0.5rem;
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
   background: white;
   border-radius: 4px;
+  cursor: grab;
 
   &:hover {
-    border-color: #467fb1;
+    border-color: #1f2e93;
   }
 
   i.fa {
