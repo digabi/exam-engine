@@ -195,8 +195,8 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           }}
           style={{
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-            //display: 'inline-block',
-            opacity: 0.7
+            opacity: 0.85,
+            cursor: 'grabbing'
           }}
         >
           {activeId ? (
@@ -269,9 +269,12 @@ export const DNDAnswer = ({
   )
 }
 
-const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => (
-  <span className="e-dnd-answer-title">{renderChildNodes(element)}</span>
-)
+const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) =>
+  !renderChildNodes(element).length ? (
+    <i>Tähän tulee kysymys...</i>
+  ) : (
+    <span className="e-dnd-answer-title">{renderChildNodes(element)}</span>
+  )
 
 const DNDAnswerOption = ({
   element,
