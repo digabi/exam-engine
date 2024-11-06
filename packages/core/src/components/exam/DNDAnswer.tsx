@@ -113,15 +113,19 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     setItems(items => moveValue(items, activeContainer, overContainer, activeId))
     setActiveId(null)
     document.body.style.cursor = ''
-
-    if (overContainer !== 'root') {
-      saveAnswerToStore(overContainer, activeId)
-    }
   }
+
+  useEffect(() => {
+    Object.entries(items).forEach(([questionId, answerValue]) => {
+      if (questionId !== 'root') {
+        saveAnswerToStore(questionId, answerValue?.[0])
+      }
+    })
+  }, [items])
 
   function saveAnswerToStore(overContainer: UniqueIdentifier, activeId: UniqueIdentifier) {
     const questionId = Number(overContainer)
-    const value = activeId.toString()
+    const value = activeId?.toString() || ''
     const displayNumber = displayNumbersById[questionId]
     dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))
   }
