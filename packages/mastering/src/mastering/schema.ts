@@ -5,7 +5,7 @@ export const ns = { e: 'http://ylioppilastutkinto.fi/exam.xsd', xhtml: 'http://w
 export const textAnswerTypes = ['text-answer', 'scored-text-answer'] as const
 export const choiceAnswerTypes = ['choice-answer', 'dropdown-answer', 'dnd-answer'] as const
 export const choiceAnswerOptionTypes = ['choice-answer-option', 'dropdown-answer-option', 'dnd-answer-option'] as const
-export const answerTypes = [...textAnswerTypes, ...choiceAnswerTypes /*, ...dndAnswerTypes*/]
+export const answerTypes = [...textAnswerTypes, ...choiceAnswerTypes]
 
 export const attachmentTypes = ['image', 'video', 'file', 'audio', 'audio-test'] as const
 
