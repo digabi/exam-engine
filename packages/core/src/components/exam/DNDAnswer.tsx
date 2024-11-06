@@ -29,16 +29,16 @@ type ItemsState = {
 export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
   const [items, setItems] = useState<ItemsState>({} as ItemsState)
-  const [answerOptionsById, setAnswerOptionsById] = useState<Record<UniqueIdentifier, Element>>({})
+  const [answerOptionsByQuestionId, setAnswerOptionsByQuestionId] = useState<Record<UniqueIdentifier, Element>>({})
   const [displayNumbersById, setDisplayNumbersById] = useState<Record<UniqueIdentifier, string>>({})
   const dispatch = useDispatch()
 
   useEffect(() => {
     console.log(element)
+    const dndAnswers = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
     const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-    const dndAnswers = queryAll(element, 'dnd-answer')
 
-    const answerOptionIdsByGroupId = queryAll(element, 'dnd-answer').reduce(
+    const answerOptionIdsByGroupId = dndAnswers.reduce(
       (acc, group) => {
         const questionId = group.getAttribute('question-id')!
         return { ...acc, [questionId]: [] }
@@ -46,7 +46,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
       { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
     )
 
-    const answerOptionsById = dndAnswerOptions.reduce(
+    const answerOptionsByQuestionId = dndAnswerOptions.reduce(
       (acc, el) => {
         const questionId = el.getAttribute('option-id')!
         return { ...acc, [questionId]: el }
@@ -64,7 +64,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     )
 
     setItems(answerOptionIdsByGroupId)
-    setAnswerOptionsById(answerOptionsById)
+    setAnswerOptionsByQuestionId(answerOptionsByQuestionId)
     setDisplayNumbersById(displayNumbersById)
   }, [element])
 
@@ -146,7 +146,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
     return newState
   }
 
-  const dndAnswerGroups = queryAll(element, 'dnd-answer')
+  const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
 
   // We can not render the prop 'element' (XML) here, because we will change the DOM structure when we move items, but the XML can not be changed
 
@@ -159,7 +159,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        {dndAnswerGroups.map((element, index) => {
+        {dndAnswersWithQuestion.map((element, index) => {
           const titleElement = query(element, 'dnd-answer-title')
           return (
             <DNDAnswerGroup
@@ -167,7 +167,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
               renderChildNodes={renderChildNodes}
               key={index}
               items={items}
-              answerOptionsById={answerOptionsById}
+              answerOptionsByQuestionId={answerOptionsByQuestionId}
               id={element.getAttribute('question-id')!}
             />
           )
@@ -177,7 +177,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
           renderChildNodes={renderChildNodes}
           id="root"
           items={items}
-          answerOptionsById={answerOptionsById}
+          answerOptionsByQuestionId={answerOptionsByQuestionId}
         />
 
         <DragOverlay
@@ -193,7 +193,7 @@ export const DNDAnswer = ({ element, renderChildNodes }: ExamComponentProps) => 
         >
           {activeId ? (
             <DNDAnswerOption
-              element={answerOptionsById[activeId]}
+              element={answerOptionsByQuestionId[activeId]}
               renderChildNodes={renderChildNodes}
               value={activeId}
             />
@@ -208,17 +208,17 @@ export const DNDAnswerGroup = ({
   titleElement,
   renderChildNodes,
   items,
-  answerOptionsById,
+  answerOptionsByQuestionId,
   id
 }: {
   items: ItemsState
-  answerOptionsById: Record<UniqueIdentifier, Element>
+  answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   id: UniqueIdentifier
   titleElement?: Element
   renderChildNodes: ExamComponentProps['renderChildNodes']
 }) => {
-  const groudIds = items[id] || []
-  const dndAnswerOptions = groudIds.map(id => answerOptionsById[id])
+  const idsInGroup = items[id] || []
+  const dndAnswerOptions = idsInGroup.map(id => answerOptionsByQuestionId[id])
   const { setNodeRef, isOver } = useDroppable({ id })
 
   return (
@@ -234,14 +234,14 @@ export const DNDAnswerGroup = ({
         {id === 'root' && <div>Tässä on kaikki vaihtoehdot</div>}
       </div>
 
-      <SortableContext id={String(id)} items={groudIds} strategy={verticalListSortingStrategy}>
+      <SortableContext id={String(id)} items={idsInGroup} strategy={verticalListSortingStrategy}>
         <div
           ref={setNodeRef}
           className={classNames('e-dnd-answer-droppable', {
             hovered: isOver
           })}
         >
-          {dndAnswerOptions.map(element => {
+          {dndAnswerOptions?.map(element => {
             const optionId = element.getAttribute('option-id')!
             return (
               <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={optionId} value={optionId} />
