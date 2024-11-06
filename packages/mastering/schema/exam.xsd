@@ -522,10 +522,10 @@
 
   <xs:element name="dnd-answer">
     <xs:complexType mixed="true">
-      <xs:choice maxOccurs="unbounded">
-        <xs:element name="dnd-answer-title" type="e:Flow" />
-        <xs:element name="dnd-answer-option" type="e:Flow" />
-      </xs:choice>
+      <xs:sequence>
+        <xs:element name="dnd-answer-title" minOccurs="0" maxOccurs="1" type="e:Flow" />
+        <xs:element name="dnd-answer-option" minOccurs="1" maxOccurs="unbounded" type="e:Flow" />
+      </xs:sequence>
       <xs:attribute name="max-score" type="xs:positiveInteger" />
       <xs:attributeGroup ref="e:stylable" />
       <xs:attribute name="meta" type="xs:string" />
