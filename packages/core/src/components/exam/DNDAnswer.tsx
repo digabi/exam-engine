@@ -281,22 +281,38 @@ const DNDAnswerOption = ({
 }) => {
   const optionId = getNumericAttribute(element, 'option-id')!
 
+  return (
+    <Draggable id={optionId}>
+      <div className="e-dnd-answer-option">
+        {!renderChildNodes(element).length ? <i>Tähän tulee vastaus...</i> : renderChildNodes(element)}
+        <i className="fa fa-up-down-left-right" />
+      </div>
+    </Draggable>
+  )
+}
+
+const Draggable = ({
+  element,
+  id,
+  children
+}: {
+  element?: React.ElementType
+  id: UniqueIdentifier
+  children: React.ReactNode
+}) => {
+  const Element = element || 'div'
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
-    id: optionId
+    id
   })
 
   const style = {
-    display: 'inline-block',
-    opacity: isDragging ? 0.6 : 1,
-    cursor: 'grab'
+    //display: 'flex',
+    opacity: isDragging ? 0.6 : 1
   }
 
   return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <div className="e-dnd-answer-option">
-        {renderChildNodes(element)}
-        <i className="fa fa-up-down-left-right" />
-      </div>
-    </div>
+    <Element ref={setNodeRef} {...listeners} {...attributes} style={style}>
+      {children}
+    </Element>
   )
 }
