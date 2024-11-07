@@ -84,7 +84,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   }
 
   function handleDragStart(event: DragStartEvent) {
-    document.body.style.cursor = 'grabbing'
     setActiveId(event.active.id)
   }
 
@@ -101,6 +100,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
   function handleDragOver(event: DragOverEvent) {
     const { activeContainer, overContainer } = getContainers(event)
+
     if (!activeContainer || !overContainer || activeContainer === overContainer) {
       return
     }
@@ -113,13 +113,12 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     }
     setItems(items => moveValue(items, activeContainer, overContainer, activeId))
     setActiveId(null)
-    document.body.style.cursor = ''
   }
 
   useEffect(() => {
     Object.entries(items).forEach(([questionId, answerValue]) => {
       if (questionId !== 'root') {
-        saveAnswerToStore(questionId, answerValue?.[0])
+        saveAnswerToStore(questionId, answerValue?.toString())
       }
     })
   }, [items])
@@ -181,6 +180,10 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           )
         })}
 
+        <div className="e-font-size-xl e-color-link" role="separator">
+          ✲✲✲
+        </div>
+
         <DNDAnswer
           renderChildNodes={renderChildNodes}
           id="root"
@@ -229,7 +232,7 @@ export const DNDAnswer = ({
 }) => {
   const idsInGroup = items[id] || []
   const dndAnswerOptions = idsInGroup.map(id => answerOptionsByQuestionId[id])
-  const { setNodeRef, isOver } = useDroppable({ id })
+  const { setNodeRef, isOver, active } = useDroppable({ id })
 
   return (
     <div
@@ -239,28 +242,28 @@ export const DNDAnswer = ({
       })}
       data-question-id={id}
     >
-      <div>
+      <div className="answer-title-and-score">
         {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
-        {maxScore && <Score score={maxScore} size="small" />}
+        {maxScore ? <Score score={maxScore} size="small" /> : null}
       </div>
 
       <SortableContext id={String(id)} items={idsInGroup} strategy={verticalListSortingStrategy}>
         <div
           ref={setNodeRef}
           className={classNames('e-dnd-answer-droppable', {
-            hovered: isOver
+            hovered: isOver,
+            'ready-for-drop': !!active?.id
           })}
         >
-          <div className="e-audio-group--separator e-font-size-xl e-mrg-y-4 e-color-link" role="separator">
-            ✲✲✲
-          </div>
-
-          {id === 'root' && <div>Tässä on kaikki vastausvaihtoehdot</div>}
-
-          {dndAnswerOptions?.map(element => {
+          {dndAnswerOptions?.map((element, index) => {
             const optionId = element.getAttribute('option-id')!
             return (
-              <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={optionId} value={optionId} />
+              <DNDAnswerOption
+                element={element}
+                renderChildNodes={renderChildNodes}
+                key={optionId + index}
+                value={optionId}
+              />
             )
           })}
         </div>
@@ -286,10 +289,7 @@ const DNDAnswerOption = ({
 
   return (
     <Draggable id={optionId}>
-      <div className="e-dnd-answer-option">
-        {!renderChildNodes(element).length ? <i>Tähän tulee vastaus...</i> : renderChildNodes(element)}
-        <i className="fa fa-up-down-left-right" />
-      </div>
+      {!renderChildNodes(element).length ? <i>Tähän tulee vastaus...</i> : renderChildNodes(element)}
     </Draggable>
   )
 }
@@ -309,13 +309,17 @@ const Draggable = ({
   })
 
   const style = {
-    //display: 'flex',
-    opacity: isDragging ? 0.6 : 1
+    opacity: isDragging ? 0.3 : 1
   }
 
   return (
-    <Element ref={setNodeRef} {...listeners} {...attributes} style={style}>
-      {children}
+    <Element ref={setNodeRef}>
+      <div className="e-dnd-answer-option" style={style}>
+        <div className="option-content">{children}</div>
+        <div {...listeners} {...attributes} className="drag-handle">
+          <i className="fa fa-up-down-left-right" />
+        </div>
+      </div>
     </Element>
   )
 }
