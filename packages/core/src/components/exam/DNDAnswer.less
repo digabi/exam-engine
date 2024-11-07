@@ -2,7 +2,6 @@
   .e-dnd-answer-container {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
 
     .e-dnd-answer {
       padding: 0.5rem;
@@ -10,39 +9,66 @@
       gap: 1rem;
       align-items: flex-start;
       border: 1px solid transparent;
+      border-radius: 5px;
+      border-top: 5px dotted #ddd;
+      align-items: center;
 
-      &:has(.hovered) {
+      /*
+      &:not(.root):has(.hovered) {
         border: 1px dashed #1f2e93;
       }
+      */
 
       &.root {
         display: block;
       }
 
-      & > * {
-        flex: 1;
+      .answer-title-and-score {
+        flex: auto;
+      }
+
+      &.image-text-pair {
+        flex: 1 0 100px;
+      }
+
+      &.text-image-pair {
+        flex: auto;
       }
 
       .e-dnd-answer-droppable {
         border: 1px dashed #999;
         padding: 0.5rem;
-        background: #09f1;
+        background: hsl(201deg 88% 96%);
         border-radius: 4px;
         min-height: 60px;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        flex: 1 0 100px;
+
+        &.for-images {
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          & > * {
+            max-width: 180px;
+          }
+        }
+
+        &.ready-for-drop {
+          outline: 2px dashed #1f2e93;
+          border: 1px solid transparent;
+        }
 
         &.hovered {
-          background: #09f3;
-          outline: 2px solid #1f2e93;
+          background: hsl(201deg 98% 80%);
+          outline: 3px solid #1f2e93;
           border: 1px solid transparent;
         }
       }
 
       .e-dnd-answer-title {
         display: inline-block;
-        margin-bottom: 0.5rem;
       }
     }
   }
@@ -50,19 +76,44 @@
 
 .e-dnd-answer-option {
   border: 1px solid #ccc;
-  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   background: white;
-  border-radius: 4px;
-  cursor: grab;
+  border-radius: 5px;
+  overflow: hidden;
+  gap: 1rem;
 
-  &:hover {
+  .option-content {
+    padding: 0.5rem;
+  }
+
+  .audio {
+    margin-bottom: 0 !important;
+  }
+
+  &:hover .drag-handle {
+    background: #d8ebf5;
+    color: black;
+
+    &:hover {
+      background: #1f2e93;
+      color: white;
+    }
+  }
+
+  &:has(.drag-handle:hover) {
     border-color: #1f2e93;
   }
 
-  i.fa {
-    margin-left: 1rem;
+  .drag-handle {
+    color: #999;
+    cursor: grab;
+    border: 1px solid transparent;
+    padding: 0.5rem;
+    align-self: stretch;
+    display: grid;
+    place-content: center;
+    transition: background-color 0.1s;
   }
 }
