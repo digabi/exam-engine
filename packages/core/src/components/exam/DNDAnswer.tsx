@@ -13,7 +13,7 @@ import {
   useSensor,
   useSensors
 } from '@dnd-kit/core'
-import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable'
+import { SortableContext, sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -167,17 +167,32 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         {dndAnswersWithQuestion.map((element, index) => {
           const titleElement = query(element, 'dnd-answer-title')
           const maxScore = getNumericAttribute(element, 'max-score')
+          const id = element.getAttribute('question-id')!
+          const { isOver } = useDroppable({ id })
 
           return (
-            <DNDAnswer
-              titleElement={titleElement}
-              renderChildNodes={renderChildNodes}
-              key={index}
-              items={items}
-              answerOptionsByQuestionId={answerOptionsByQuestionId}
-              maxScore={maxScore}
-              id={element.getAttribute('question-id')!}
-            />
+            <div
+              className={classNames('e-dnd-answer', {
+                hovered: isOver,
+                root: id === 'root'
+              })}
+              data-question-id={id}
+              key={id}
+            >
+              <div className="title-and-line">
+                {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
+                <div className="connection-line" />
+              </div>
+              <DNDAnswer
+                titleElement={titleElement}
+                renderChildNodes={renderChildNodes}
+                key={index}
+                items={items}
+                answerOptionsByQuestionId={answerOptionsByQuestionId}
+                id={element.getAttribute('question-id')!}
+              />
+              {maxScore ? <Score score={maxScore} size="small" /> : null}
+            </div>
           )
         })}
 
@@ -217,18 +232,15 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 }
 
 export const DNDAnswer = ({
-  titleElement,
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
-  id,
-  maxScore
+  id
 }: {
   items: ItemsState
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   id: UniqueIdentifier
   titleElement?: Element
-  maxScore?: number
   renderChildNodes: ExamComponentProps['renderChildNodes']
 }) => {
   const idsInGroup = items[id] || []
@@ -240,17 +252,8 @@ export const DNDAnswer = ({
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
 
   return (
-    <div
-      className={classNames('e-dnd-answer', {
-        hovered: isOver,
-        root: id === 'root'
-      })}
-      data-question-id={id}
-    >
-      {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
-      <div className="connection-line" />
-
-      <SortableContext id={String(id)} items={idsInGroup} strategy={verticalListSortingStrategy}>
+    <div style={{ display: 'contents' }}>
+      <SortableContext id={String(id)} items={idsInGroup}>
         <div
           ref={setNodeRef}
           className={classNames('e-dnd-answer-droppable', {
@@ -258,7 +261,8 @@ export const DNDAnswer = ({
             'ready-for-drop': !!active?.id,
             'has-images': hasImages,
             'has-audio': hasAudio,
-            'has-formula': hasFormula
+            'has-formula': hasFormula,
+            root: id === 'root'
           })}
         >
           {dndAnswerOptions?.map((element, index) => {
@@ -274,7 +278,6 @@ export const DNDAnswer = ({
           })}
         </div>
       </SortableContext>
-      {maxScore ? <Score score={maxScore} size="small" /> : null}
     </div>
   )
 }
