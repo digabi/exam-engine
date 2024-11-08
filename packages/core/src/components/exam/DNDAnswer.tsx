@@ -126,6 +126,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   function saveAnswerToStore(overContainer: UniqueIdentifier, activeId: UniqueIdentifier) {
     const questionId = Number(overContainer)
     const value = activeId?.toString() || ''
+
     const displayNumber = displayNumbersById[questionId]
     dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))
   }
@@ -234,6 +235,10 @@ export const DNDAnswer = ({
   const dndAnswerOptions = idsInGroup.map(id => answerOptionsByQuestionId[id])
   const { setNodeRef, isOver, active } = useDroppable({ id })
 
+  const hasImages = dndAnswerOptions.some(option => query(option, 'image'))
+  const hasAudio = dndAnswerOptions.some(option => query(option, 'audio'))
+  const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
+
   return (
     <div
       className={classNames('e-dnd-answer', {
@@ -242,17 +247,18 @@ export const DNDAnswer = ({
       })}
       data-question-id={id}
     >
-      <div className="answer-title-and-score">
-        {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
-        {maxScore ? <Score score={maxScore} size="small" /> : null}
-      </div>
+      {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
+      <div className="connection-line" />
 
       <SortableContext id={String(id)} items={idsInGroup} strategy={verticalListSortingStrategy}>
         <div
           ref={setNodeRef}
           className={classNames('e-dnd-answer-droppable', {
             hovered: isOver,
-            'ready-for-drop': !!active?.id
+            'ready-for-drop': !!active?.id,
+            'has-images': hasImages,
+            'has-audio': hasAudio,
+            'has-formula': hasFormula
           })}
         >
           {dndAnswerOptions?.map((element, index) => {
@@ -268,16 +274,25 @@ export const DNDAnswer = ({
           })}
         </div>
       </SortableContext>
+      {maxScore ? <Score score={maxScore} size="small" /> : null}
     </div>
   )
 }
 
-const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) =>
-  !renderChildNodes(element).length ? (
+const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => {
+  const hasImages = !!query(element, 'image')
+  return !renderChildNodes(element).length ? (
     <i>Tähän tulee kysymys...</i>
   ) : (
-    <span className="e-dnd-answer-title">{renderChildNodes(element)}</span>
+    <span
+      className={classNames('e-dnd-answer-title', {
+        'has-images': hasImages
+      })}
+    >
+      {renderChildNodes(element)}
+    </span>
   )
+}
 
 const DNDAnswerOption = ({
   element,
@@ -287,39 +302,33 @@ const DNDAnswerOption = ({
 }) => {
   const optionId = getNumericAttribute(element, 'option-id')!
 
-  return (
-    <Draggable id={optionId}>
-      {!renderChildNodes(element).length ? <i>Tähän tulee vastaus...</i> : renderChildNodes(element)}
-    </Draggable>
-  )
-}
-
-const Draggable = ({
-  element,
-  id,
-  children
-}: {
-  element?: React.ElementType
-  id: UniqueIdentifier
-  children: React.ReactNode
-}) => {
-  const Element = element || 'div'
-  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
-    id
+  const { attributes, listeners, setNodeRef, isDragging, setActivatorNodeRef } = useDraggable({
+    id: optionId
   })
 
   const style = {
     opacity: isDragging ? 0.3 : 1
   }
 
+  const hasImages = !!query(element, 'image')
+  const hasFormula = !!query(element, 'formula')
+
   return (
-    <Element ref={setNodeRef}>
-      <div className="e-dnd-answer-option" style={style}>
-        <div className="option-content">{children}</div>
-        <div {...listeners} {...attributes} className="drag-handle">
+    <div ref={setNodeRef}>
+      <div
+        className={classNames('e-dnd-answer-option', {
+          'has-images': hasImages,
+          'has-formula': hasFormula
+        })}
+        style={style}
+      >
+        <div className="option-content">
+          {!renderChildNodes(element).length ? <i>Tähän tulee vastaus...</i> : renderChildNodes(element)}
+        </div>
+        <div {...listeners} {...attributes} ref={setActivatorNodeRef} className="drag-handle">
           <i className="fa fa-up-down-left-right" />
         </div>
       </div>
-    </Element>
+    </div>
   )
 }
