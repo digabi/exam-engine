@@ -515,8 +515,6 @@
         <xs:element ref="e:dnd-answer" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="direction" type="e:direction" />
-      <xs:attribute name="question-type" type="xs:string" />
-      <xs:attribute name="answer-type" type="xs:string" />
       <xs:attributeGroup ref="e:stylable" />
       <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
