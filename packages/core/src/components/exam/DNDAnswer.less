@@ -8,11 +8,8 @@
     .e-dnd-answer {
       padding: 0.5rem;
       display: flex;
-      //gap: 1rem;
       align-items: flex-start;
-      border: 1px solid transparent;
       border-radius: 5px;
-      //border-top: 5px dotted #ddd;
       align-items: center;
 
       &.root {
@@ -20,16 +17,23 @@
       }
 
       &.hovered {
-        .answer-title-and-score .e-dnd-answer-title {
+        .title-and-line .e-dnd-answer-title {
           border: 1px dashed #999;
         }
       }
 
-      .connection-line {
-        display: inline-block;
-        height: 1px;
-        background: #307f9a;
-        flex: 0 0 50px;
+      .title-and-line {
+        gap: 1rem;
+        flex: 1 1 100px;
+        display: flex;
+        align-items: center;
+
+        .connection-line {
+          display: inline-block;
+          height: 1px;
+          background: #307f9a;
+          flex: 1 0 50px;
+        }
       }
 
       .e-dnd-answer-title {
@@ -40,61 +44,56 @@
         flex: 1 1 auto;
 
         &.has-images {
-          //max-width: @image-max-width;
           flex: 0 0 200px;
         }
-      }
-
-      .answer-title-and-score {
-        //gap: 1rem;
-        //flex: 1;
-        //display: flex;
-        //align-items: center;
       }
 
       .e-score {
         margin-left: 0.5rem;
       }
+    }
 
-      .e-dnd-answer-droppable {
-        border: 1px dashed #999;
-        padding: 0.5rem;
-        background: hsl(201deg 88% 96%);
-        border-radius: 4px;
-        min-height: 60px;
-        //min-width: 60px;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        //flex: 1 1 auto;
-        flex: 1 0 80px;
+    .e-dnd-answer-droppable {
+      border: 1px dashed #999;
+      padding: 0.5rem;
+      background: hsl(201deg 88% 96%);
+      border-radius: 4px;
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1 0 80px;
 
-        &.has-images {
-          flex: 0 0 calc(@image-max-width + 1rem);
-        }
+      &.has-images {
+        flex: 0 0 calc(@image-max-width + 1rem);
+      }
 
-        &.has-images,
-        &.has-audio {
-          flex-direction: row;
-          flex-wrap: wrap;
-          flex: none;
-        }
+      &.has-images,
+      &.has-audio {
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: none;
+      }
 
-        &.has-formula {
-          flex: none;
-          max-width: 60%;
-        }
+      &.has-formula {
+        flex: none;
+        max-width: 60%;
+      }
 
-        &.ready-for-drop {
-          outline: 2px dashed #1f2e93;
-          border: 1px solid transparent;
-        }
+      &.root {
+        flex: none;
+        max-width: unset;
+      }
 
-        &.hovered {
-          background: hsl(201deg 98% 80%);
-          outline: 3px solid #1f2e93;
-          border: 1px solid transparent;
-        }
+      &.ready-for-drop {
+        outline: 2px dashed #1f2e93;
+        border: 1px solid transparent;
+      }
+
+      &.hovered {
+        background: hsl(201deg 98% 80%);
+        outline: 3px solid #1f2e93;
+        border: 1px solid transparent;
       }
     }
   }
