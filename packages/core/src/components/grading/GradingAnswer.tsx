@@ -1,5 +1,15 @@
 import React, { FormEvent, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { I18nextProvider } from 'react-i18next'
 import { Annotation, TextAnnotation } from '../..'
+import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
+import {
+  renderAnnotations,
+  renderImageAnnotationByImage,
+  updateImageAnnotationMarkSize,
+  wrapAllImages
+} from '../../renderAnnotations'
+import { useCached } from '../../useCached'
+import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 import {
   annotationFromMousePosition,
   getOverlappingMessages,
@@ -13,18 +23,8 @@ import {
   textAnnotationFromRange,
   toggle
 } from './editAnnotations'
-import {
-  renderAnnotations,
-  renderImageAnnotationByImage,
-  updateImageAnnotationMarkSize,
-  wrapAllImages
-} from '../../renderAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
-import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { updateLargeImageWarnings } from './largeImageDetector'
-import { I18nextProvider } from 'react-i18next'
-import { useCached } from '../../useCached'
-import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingRole = 'pregrading' | 'censoring'
@@ -80,22 +80,42 @@ function GradingAnswerWithTranslations({
 
   const [loadedCount, setLoadedCount] = useState(0)
   const [totalImages, setTotalImages] = useState(0)
+  const [failedImages, setFailedImages] = useState(0)
 
   useEffect(() => {
-    const nonEmptyImages = document.querySelectorAll('img[src]')
-    setLoadedCount(0)
-    setTotalImages(nonEmptyImages.length)
-    function checkAllImagesLoaded() {
+    const nonEmptyImages = document.querySelectorAll('.e-grading-answer img[src]')
+    function handleImageLoaded() {
       setLoadedCount(prevCount => prevCount + 1)
     }
 
-    nonEmptyImages.forEach(img => {
-      img.addEventListener('load', checkAllImagesLoaded)
+    function handleImageError(img: HTMLImageElement) {
+      console.error('Image failed to load:', img.src)
+      setFailedImages(prevCount => prevCount + 1)
+      img.alt = 'Image failed to load'
+      img.style.border = '1px solid red'
+    }
+
+    setTotalImages(nonEmptyImages?.length || 0)
+    setLoadedCount(0)
+    setFailedImages(0)
+
+    nonEmptyImages?.forEach(img => {
+      if (img instanceof HTMLImageElement) {
+        if (img.complete) {
+          handleImageLoaded()
+        } else {
+          img.addEventListener('load', handleImageLoaded)
+          img.addEventListener('error', () => handleImageError(img))
+        }
+      }
     })
 
     return () => {
-      nonEmptyImages.forEach(img => {
-        img.removeEventListener('load', checkAllImagesLoaded)
+      nonEmptyImages?.forEach(img => {
+        if (img instanceof HTMLImageElement) {
+          img.removeEventListener('load', handleImageLoaded)
+          img.removeEventListener('error', () => handleImageError(img))
+        }
       })
     }
   }, [value])
@@ -122,13 +142,18 @@ function GradingAnswerWithTranslations({
   })
 
   const { t } = useExamTranslation()
+
+  const allImagesNotLoaded = totalImages > 0 && loadedCount !== totalImages
+  const someImagesFailedToLoad = failedImages > 0
+
   return (
     <div onClick={e => onAnnotationOrListClick(e)} className="e-grading-answer-wrapper">
-      {totalImages !== 0 && loadedCount !== totalImages && (
+      {allImagesNotLoaded && (
         <div className="loading-images">
-          <span>
+          <span className="loading">
             {t('grading.loading-images')} ({loadedCount}/{totalImages})
           </span>
+          {someImagesFailedToLoad && <span className="failed">{t('grading.some-images-failed')}</span>}
         </div>
       )}
       <div
