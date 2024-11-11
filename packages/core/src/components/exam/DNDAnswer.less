@@ -16,14 +16,7 @@
         display: block;
       }
 
-      &.hovered {
-        .title-and-line .e-dnd-answer-title {
-          border: 1px dashed #999;
-        }
-      }
-
       .title-and-line {
-        gap: 1rem;
         flex: 1 1 100px;
         display: flex;
         align-items: center;
@@ -44,8 +37,12 @@
         flex: 1 1 auto;
 
         &.has-images {
-          flex: 0 0 200px;
+          flex: 0 0 150px;
         }
+      }
+
+      &:has(.e-dnd-answer-droppable.hovered) .e-dnd-answer-title {
+        border: 1px dashed #1f2e93;
       }
 
       .e-score {
@@ -117,7 +114,7 @@
   }
 
   &.has-images {
-    max-width: @image-max-width;
+    max-width: calc(@image-max-width + 50px);
   }
 
   &:hover .drag-handle {
