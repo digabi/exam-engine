@@ -227,12 +227,11 @@ const DNDTitleAndAnswer = ({
   const titleElement = query(element, 'dnd-answer-title')
   const maxScore = getNumericAttribute(element, 'max-score')
   const id = element.getAttribute('question-id')!
-  const { isOver } = useDroppable({ id })
 
   return (
     <div
       className={classNames('e-dnd-answer', {
-        hovered: isOver,
+        //hovered: isOver,
         root: id === 'root'
       })}
       data-question-id={id}
@@ -242,12 +241,13 @@ const DNDTitleAndAnswer = ({
         {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
         <div className="connection-line" />
       </div>
+
       <DNDAnswer
         titleElement={titleElement}
         renderChildNodes={renderChildNodes}
         items={items}
         answerOptionsByQuestionId={answerOptionsByQuestionId}
-        id={element.getAttribute('question-id')!}
+        id={id}
       />
       {maxScore ? <Score score={maxScore} size="small" /> : null}
     </div>
@@ -275,33 +275,31 @@ export const DNDAnswer = ({
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
 
   return (
-    <div style={{ display: 'contents' }}>
-      <SortableContext id={String(id)} items={idsInGroup}>
-        <div
-          ref={setNodeRef}
-          className={classNames('e-dnd-answer-droppable', {
-            hovered: isOver,
-            'ready-for-drop': !!active?.id,
-            'has-images': hasImages,
-            'has-audio': hasAudio,
-            'has-formula': hasFormula,
-            root: id === 'root'
-          })}
-        >
-          {dndAnswerOptions?.map((element, index) => {
-            const optionId = element.getAttribute('option-id')!
-            return (
-              <DNDAnswerOption
-                element={element}
-                renderChildNodes={renderChildNodes}
-                key={optionId + index}
-                value={optionId}
-              />
-            )
-          })}
-        </div>
-      </SortableContext>
-    </div>
+    <SortableContext id={String(id)} items={idsInGroup}>
+      <div
+        ref={setNodeRef}
+        className={classNames('e-dnd-answer-droppable', {
+          hovered: isOver,
+          'ready-for-drop': !!active?.id,
+          'has-images': hasImages,
+          'has-audio': hasAudio,
+          'has-formula': hasFormula,
+          root: id === 'root'
+        })}
+      >
+        {dndAnswerOptions?.map((element, index) => {
+          const optionId = element.getAttribute('option-id')!
+          return (
+            <DNDAnswerOption
+              element={element}
+              renderChildNodes={renderChildNodes}
+              key={optionId + index}
+              value={optionId}
+            />
+          )
+        })}
+      </div>
+    </SortableContext>
   )
 }
 
