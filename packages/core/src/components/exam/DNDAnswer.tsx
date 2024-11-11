@@ -164,35 +164,17 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        {dndAnswersWithQuestion.map((element, index) => {
-          const titleElement = query(element, 'dnd-answer-title')
-          const maxScore = getNumericAttribute(element, 'max-score')
+        {dndAnswersWithQuestion.map(element => {
           const id = element.getAttribute('question-id')!
-          const { isOver } = useDroppable({ id })
 
           return (
-            <div
-              className={classNames('e-dnd-answer', {
-                hovered: isOver,
-                root: id === 'root'
-              })}
-              data-question-id={id}
+            <DNDTitleAndAnswer
               key={id}
-            >
-              <div className="title-and-line">
-                {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
-                <div className="connection-line" />
-              </div>
-              <DNDAnswer
-                titleElement={titleElement}
-                renderChildNodes={renderChildNodes}
-                key={index}
-                items={items}
-                answerOptionsByQuestionId={answerOptionsByQuestionId}
-                id={element.getAttribute('question-id')!}
-              />
-              {maxScore ? <Score score={maxScore} size="small" /> : null}
-            </div>
+              element={element}
+              renderChildNodes={renderChildNodes}
+              items={items}
+              answerOptionsByQuestionId={answerOptionsByQuestionId}
+            />
           )
         })}
 
@@ -227,6 +209,47 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           ) : null}
         </DragOverlay>
       </DndContext>
+    </div>
+  )
+}
+
+const DNDTitleAndAnswer = ({
+  element,
+  renderChildNodes,
+  items,
+  answerOptionsByQuestionId
+}: {
+  element: Element
+  renderChildNodes: ExamComponentProps['renderChildNodes']
+  items: ItemsState
+  answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
+}) => {
+  const titleElement = query(element, 'dnd-answer-title')
+  const maxScore = getNumericAttribute(element, 'max-score')
+  const id = element.getAttribute('question-id')!
+  const { isOver } = useDroppable({ id })
+
+  return (
+    <div
+      className={classNames('e-dnd-answer', {
+        hovered: isOver,
+        root: id === 'root'
+      })}
+      data-question-id={id}
+      key={id}
+    >
+      <div className="title-and-line">
+        {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
+        <div className="connection-line" />
+      </div>
+      <DNDAnswer
+        titleElement={titleElement}
+        renderChildNodes={renderChildNodes}
+        items={items}
+        answerOptionsByQuestionId={answerOptionsByQuestionId}
+        id={element.getAttribute('question-id')!}
+      />
+      {maxScore ? <Score score={maxScore} size="small" /> : null}
     </div>
   )
 }
