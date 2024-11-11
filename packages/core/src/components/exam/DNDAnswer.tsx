@@ -138,7 +138,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
     if (to === 'root') {
       // add the value to root
-      newState.root = [...newState.root, value]
+      newState.root = [value, ...newState.root]
     } else {
       // If the target container is not empty, move the existing value back to root
       if (newState[to].length > 0) {
@@ -306,7 +306,7 @@ export const DNDAnswer = ({
 const DNDAnswerTitle = ({ element, renderChildNodes }: ExamComponentProps) => {
   const hasImages = !!query(element, 'image')
   return !renderChildNodes(element).length ? (
-    <i>Tähän tulee kysymys...</i>
+    <i style={{ color: 'grey' }}>Tähän tulee kysymys...</i>
   ) : (
     <span
       className={classNames('e-dnd-answer-title', {
@@ -347,7 +347,11 @@ const DNDAnswerOption = ({
         style={style}
       >
         <div className="option-content">
-          {!renderChildNodes(element).length ? <i>Tähän tulee vastaus...</i> : renderChildNodes(element)}
+          {!renderChildNodes(element).length ? (
+            <i style={{ color: 'grey' }}>Tähän tulee vastaus...</i>
+          ) : (
+            renderChildNodes(element)
+          )}
         </div>
         <div {...listeners} {...attributes} ref={setActivatorNodeRef} className="drag-handle">
           <i className="fa fa-up-down-left-right" />
