@@ -153,7 +153,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
   const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
 
-  // We can not render the prop 'element' (XML) here, because we will change the DOM structure when we move items, but the XML can not be changed
+  // We can not render the prop 'element' (XML) here, because we will change the DOM structure when items are dragged around¯, but the XML can not be changed
 
   return (
     <div className="e-dnd-answer-container">
@@ -227,20 +227,22 @@ const DNDTitleAndAnswer = ({
   const titleElement = query(element, 'dnd-answer-title')
   const maxScore = getNumericAttribute(element, 'max-score')
   const id = element.getAttribute('question-id')!
+  const displayNumber = element.getAttribute('display-number')!
 
   return (
     <div
       className={classNames('e-dnd-answer', {
-        //hovered: isOver,
         root: id === 'root'
       })}
       data-question-id={id}
       key={id}
     >
+      {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
+      <div className="connection-line" />
+      {/*
       <div className="title-and-line">
-        {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
-        <div className="connection-line" />
       </div>
+      */}
 
       <DNDAnswer
         titleElement={titleElement}
@@ -248,6 +250,7 @@ const DNDTitleAndAnswer = ({
         items={items}
         answerOptionsByQuestionId={answerOptionsByQuestionId}
         id={id}
+        displayNumber={displayNumber}
       />
       {maxScore ? <Score score={maxScore} size="small" /> : null}
     </div>
@@ -258,13 +261,15 @@ export const DNDAnswer = ({
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
-  id
+  id,
+  displayNumber
 }: {
   items: ItemsState
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   id: UniqueIdentifier
-  titleElement?: Element
   renderChildNodes: ExamComponentProps['renderChildNodes']
+  titleElement?: Element
+  displayNumber?: string
 }) => {
   const idsInGroup = items[id] || []
   const dndAnswerOptions = idsInGroup.map(id => answerOptionsByQuestionId[id])
@@ -276,6 +281,7 @@ export const DNDAnswer = ({
 
   return (
     <SortableContext id={String(id)} items={idsInGroup}>
+      <div className="anchor" id={`question-nr-${displayNumber}`} />
       <div
         ref={setNodeRef}
         className={classNames('e-dnd-answer-droppable', {
