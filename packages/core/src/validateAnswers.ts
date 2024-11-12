@@ -119,7 +119,6 @@ function validateExtraAnswers(
       }
     }
   }
-
   return go(examStructure).extraAnswers
 }
 

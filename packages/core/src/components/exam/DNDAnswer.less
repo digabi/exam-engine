@@ -17,22 +17,22 @@
       }
 
       .title-and-line {
-        flex: 1 1 100px;
+        flex: auto;
         display: flex;
         align-items: center;
+      }
 
-        .connection-line {
-          display: inline-block;
-          height: 1px;
-          background: #307f9a;
-          flex: 1 0 50px;
-        }
+      .connection-line {
+        display: inline-block;
+        height: 1px;
+        background: #307f9a;
+        flex: 1 0 50px;
       }
 
       .e-dnd-answer-title {
         display: inline-block;
         border-radius: 5px;
-        padding: 0 0.5rem;
+        padding: 0;
         border: 1px solid transparent;
         flex: 1 1 auto;
 
@@ -42,7 +42,8 @@
       }
 
       &:has(.e-dnd-answer-droppable.hovered) .e-dnd-answer-title {
-        border: 1px dashed #1f2e93;
+        //border: 1px dashed #1f2e93;
+        outline: 3px solid #1f2e93;
       }
 
       .e-score {
@@ -59,7 +60,11 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      flex: 1 0 80px;
+      flex: auto;
+      min-width: 100px;
+      transition:
+        border 0.2s,
+        background 0.2s;
 
       &.has-images {
         flex: 0 0 calc(@image-max-width + 1rem);
@@ -85,6 +90,25 @@
       &.ready-for-drop {
         outline: 2px dashed #1f2e93;
         border: 1px solid transparent;
+        position: relative;
+
+        &:not(:has(.e-dnd-answer-option)) {
+          &:before {
+            content: 'Pudota tänne...';
+            color: grey;
+            font-style: italic;
+            position: absolute;
+            font-size: 16px;
+            left: 0;
+            top: 0;
+            display: grid;
+            place-content: center;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            transition: all 0.2s;
+          }
+        }
       }
 
       &.hovered {
