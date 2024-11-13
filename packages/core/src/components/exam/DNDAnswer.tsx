@@ -16,10 +16,11 @@ import {
 import { SortableContext, sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { ExamComponentProps } from '../..'
 import { getNumericAttribute, query, queryAll } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
+import { AnswersState } from '../../store/answers/reducer'
 import { Score } from '../shared/Score'
 
 type ItemsState = {
@@ -30,9 +31,11 @@ type ItemsState = {
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
   const [items, setItems] = useState<ItemsState>({} as ItemsState)
-  const [answerOptionsByQuestionId, setAnswerOptionsByQuestionId] = useState<Record<UniqueIdentifier, Element>>({})
+  const [answerOptionsByOptionId, setAnswerOptionsByOptionId] = useState<Record<UniqueIdentifier, Element>>({})
   const [displayNumbersById, setDisplayNumbersById] = useState<Record<UniqueIdentifier, string>>({})
   const dispatch = useDispatch()
+
+  const answers = useSelector((state: { answers: AnswersState }) => state.answers)
 
   useEffect(() => {
     console.log(element)
@@ -42,15 +45,20 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     const answerOptionIdsByGroupId = dndAnswers.reduce(
       (acc, group) => {
         const questionId = group.getAttribute('question-id')!
-        return { ...acc, [questionId]: [] }
+        const answer = answers.answersById[Number(questionId)]?.value
+        return {
+          ...acc,
+          [questionId]: answer ? [Number(answer)] : [],
+          root: acc.root.filter(e => e !== Number(answer))
+        }
       },
       { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
     )
 
-    const answerOptionsByQuestionId = dndAnswerOptions.reduce(
+    const answerOptionsByOptionId = dndAnswerOptions.reduce(
       (acc, el) => {
-        const questionId = el.getAttribute('option-id')!
-        return { ...acc, [questionId]: el }
+        const optionId = el.getAttribute('option-id')!
+        return { ...acc, [optionId]: el }
       },
       {} as Record<UniqueIdentifier, Element>
     )
@@ -65,7 +73,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     )
 
     setItems(answerOptionIdsByGroupId)
-    setAnswerOptionsByQuestionId(answerOptionsByQuestionId)
+    setAnswerOptionsByOptionId(answerOptionsByOptionId)
     setDisplayNumbersById(displayNumbersById)
   }, [element])
 
@@ -173,7 +181,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               element={element}
               renderChildNodes={renderChildNodes}
               items={items}
-              answerOptionsByQuestionId={answerOptionsByQuestionId}
+              answerOptionsByQuestionId={answerOptionsByOptionId}
             />
           )
         })}
@@ -186,7 +194,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           renderChildNodes={renderChildNodes}
           id="root"
           items={items}
-          answerOptionsByQuestionId={answerOptionsByQuestionId}
+          answerOptionsByQuestionId={answerOptionsByOptionId}
         />
 
         <DragOverlay
@@ -202,7 +210,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         >
           {activeId ? (
             <DNDAnswerOption
-              element={answerOptionsByQuestionId[activeId]}
+              element={answerOptionsByOptionId[activeId]}
               renderChildNodes={renderChildNodes}
               value={activeId}
             />
@@ -239,10 +247,6 @@ const DNDTitleAndAnswer = ({
     >
       {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
       <div className="connection-line" />
-      {/*
-      <div className="title-and-line">
-      </div>
-      */}
 
       <DNDAnswer
         titleElement={titleElement}
