@@ -788,6 +788,8 @@ function addAnswerNumbers(exam: Exam) {
   function addAnswerNumber(question: Question) {
     const questionNumber = getAttribute('display-number', question.element)
     question.answers.forEach((answer, i, answers) => {
+      const dndAnswerTitle = answer.element.get('e:dnd-answer-title', ns)
+      console.log('addAnswerNumbers: dndAnswerTitle =', dndAnswerTitle)
       const displayNumber = answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`
       console.log(
         'addAnswerNumber(), questionNumber =',
@@ -797,7 +799,10 @@ function addAnswerNumbers(exam: Exam) {
         'answer name =',
         answer.element.name()
       )
-      answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
+      // don't add display-number to extra answers container (it has no title)
+      //if (dndAnswerTitle) {
+        answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
+      //}
     })
     question.childQuestions.forEach(addAnswerNumber)
   }
