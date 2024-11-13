@@ -89,9 +89,10 @@ function mkTextQuestion(answer: Answer): TextQuestion {
   if (type === 'text-answer') {
     return question
   } else {
-    const correctAnswers = answer.element
-      .find<Element>('./e:accepted-answer', ns)
-      .map(e => ({ text: e.text(), score: getNumericAttribute('score', e) }))
+    const correctAnswers = answer.element.find<Element>('./e:accepted-answer', ns).map(e => ({
+      text: e.text(),
+      score: getNumericAttribute('score', e)
+    }))
     return { ...question, correctAnswers }
   }
 }
@@ -119,6 +120,7 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
   const questionId = getNumericAttribute('question-id', answer.element)
   const displayNumber = getAttribute('display-number', answer.element)
   const maxScore = getNumericAttribute('max-score', answer.element)
+  console.log(answer.element.name(), 'maxScore for answer.element', maxScore)
 
   const options: ChoiceGroupOption[] = answer.element
     .find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
