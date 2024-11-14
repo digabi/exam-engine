@@ -74,7 +74,8 @@
     "lint": "prettier packages/core/src/**/*.less --check && eslint .",
     "ee": "node packages/cli/dist/index.js",
     "test": "NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
-    "prepare": "tsc --build --force && npm run --workspace @digabi/exam-engine-core build"
+    "prepare": "tsc --build --force && npm run --workspace @digabi/exam-engine-core build",
+    "test-ct": "playwright test -c packages/core/playwright-ct.config.ts"
   },
   "workspaces": [
     "packages/**"

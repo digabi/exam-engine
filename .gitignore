@@ -77,3 +77,9 @@ eslint3.xml
 
 # Webpack bundle stats
 packages/core/stats.json
+
+# Playwright
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/**/.cache/
