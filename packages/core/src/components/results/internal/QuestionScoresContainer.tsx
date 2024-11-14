@@ -30,6 +30,9 @@ function QuestionScoresContainer({
   if (isStudentsExamineExamPage) {
     return null
   }
+
+  const showSup = answers.length > 1 && displayNumber
+
   return (
     <span
       className={classnames('e-result-scorecount', 'e-float-right', {
@@ -39,7 +42,7 @@ function QuestionScoresContainer({
     >
       {isNonAnswer && <div className="non-answer">{t('grading.non-answer-not-graded')}</div>}
       <span className="e-result-scorecount-border-wrap">
-        {answers.length > 1 && displayNumber && (
+        {showSup && (
           <sup className="e-result-scorecount-sup e-mrg-r-1" aria-hidden="true">
             {displayNumber}
           </sup>
