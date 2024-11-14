@@ -120,7 +120,6 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
   const questionId = getNumericAttribute('question-id', answer.element)
   const displayNumber = getAttribute('display-number', answer.element)
   const maxScore = getNumericAttribute('max-score', answer.element)
-  console.log(answer.element.name(), 'maxScore for answer.element', maxScore)
 
   const options: ChoiceGroupOption[] = answer.element
     .find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
