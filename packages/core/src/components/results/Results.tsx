@@ -34,6 +34,7 @@ import { useIsStudentsExamineExamPage } from './isExamineExamPageHook'
 import classNames from 'classnames'
 import { EndExamSession } from './EndExamSession'
 import { Footer } from '../shared/Footer'
+import { DNDAnswerContainer } from './DNDAnswerContainer'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -55,11 +56,12 @@ const renderChildNodes = createRenderChildNodes({
   'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
   'choice-answer': ResultsChoiceAnswer,
+  'dnd-answer-container': DNDAnswerContainer,
   'dropdown-answer': DropdownAnswer,
   formula: Formula,
   question: Question,
   hints: RenderChildNodes,
-  image: renderIf(({ element }) => queryAncestors(element, 'choice-answer') != null)(Image),
+  image: renderIf(({ element }) => queryAncestors(element, ['choice-answer', 'dnd-answer']) != null)(Image),
   'question-instruction': ExamQuestionInstruction,
   'question-number': QuestionNumber,
   translation: ExamTranslation,
