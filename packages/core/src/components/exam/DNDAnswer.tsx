@@ -25,16 +25,16 @@ export const DNDTitleAndAnswer = ({
 }) => {
   const titleElement = query(element, 'dnd-answer-title')
   const maxScore = getNumericAttribute(element, 'max-score')
-  const id = element.getAttribute('question-id')!
+  const questionId = element.getAttribute('question-id')!
   const displayNumber = element.getAttribute('display-number')!
 
   return (
     <div
       className={classNames('e-dnd-answer', {
-        root: id === 'root'
+        root: questionId === 'root'
       })}
-      data-question-id={id}
-      key={id}
+      data-question-id={questionId}
+      key={questionId}
     >
       {titleElement && <DNDAnswerTitle element={titleElement} renderChildNodes={renderChildNodes} />}
       <div className="connection-line" />
@@ -44,7 +44,7 @@ export const DNDTitleAndAnswer = ({
         renderChildNodes={renderChildNodes}
         items={items}
         answerOptionsByQuestionId={answerOptionsByQuestionId}
-        id={id}
+        questionId={questionId}
         displayNumber={displayNumber}
       />
 
@@ -74,26 +74,26 @@ export const DNDAnswer = ({
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
-  id,
+  questionId,
   displayNumber
 }: {
   items: ItemsState
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
-  id: UniqueIdentifier
+  questionId: UniqueIdentifier
   renderChildNodes: ExamComponentProps['renderChildNodes']
   titleElement?: Element
   displayNumber?: string
 }) => {
-  const idsInGroup = items[id] || []
+  const idsInGroup = items[questionId] || []
   const dndAnswerOptions = idsInGroup.map(id => answerOptionsByQuestionId[id])
-  const { setNodeRef, isOver, active } = useDroppable({ id })
+  const { setNodeRef, isOver, active } = useDroppable({ id: questionId })
 
   const hasImages = dndAnswerOptions.some(option => query(option, 'image'))
   const hasAudio = dndAnswerOptions.some(option => query(option, 'audio'))
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
 
   return (
-    <SortableContext id={String(id)} items={idsInGroup}>
+    <SortableContext id={String(questionId)} items={idsInGroup}>
       <div className="anchor" id={`question-nr-${displayNumber}`} />
       <div
         ref={setNodeRef}
@@ -103,18 +103,13 @@ export const DNDAnswer = ({
           'has-images': hasImages,
           'has-audio': hasAudio,
           'has-formula': hasFormula,
-          root: id === 'root'
+          root: questionId === 'root'
         })}
       >
-        {dndAnswerOptions?.map((element, index) => {
+        {dndAnswerOptions?.map(element => {
           const optionId = element.getAttribute('option-id')!
           return (
-            <DNDAnswerOption
-              element={element}
-              renderChildNodes={renderChildNodes}
-              key={optionId + index}
-              value={optionId}
-            />
+            <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} key={optionId} value={optionId} />
           )
         })}
       </div>

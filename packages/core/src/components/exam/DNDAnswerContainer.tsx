@@ -41,7 +41,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     const dndAnswers = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
     const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
 
-    const answerOptionIdsByGroupId = dndAnswers.reduce(
+    const answerOptionIdsByQuestionId = dndAnswers.reduce(
       (acc, group) => {
         const questionId = group.getAttribute('question-id')!
         const answer = answers.answersById[Number(questionId)]?.value
@@ -71,7 +71,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
       {} as Record<UniqueIdentifier, string>
     )
 
-    setItems(answerOptionIdsByGroupId)
+    setItems(answerOptionIdsByQuestionId)
     setAnswerOptionsByOptionId(answerOptionsByOptionId)
     setDisplayNumbersById(displayNumbersById)
   }, [element])
@@ -152,11 +152,11 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         onDragEnd={handleDragEnd}
       >
         {dndAnswersWithQuestion.map(element => {
-          const id = element.getAttribute('question-id')!
+          const questionId = element.getAttribute('question-id')!
 
           return (
             <DNDTitleAndAnswer
-              key={id}
+              key={questionId}
               element={element}
               renderChildNodes={renderChildNodes}
               items={items}
@@ -167,7 +167,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
         <DNDAnswer
           renderChildNodes={renderChildNodes}
-          id="root"
+          questionId="root"
           items={items}
           answerOptionsByQuestionId={answerOptionsByOptionId}
         />
