@@ -3,6 +3,8 @@ import { UniqueIdentifier, useDraggable } from '@dnd-kit/core'
 import classNames from 'classnames'
 import { ExamComponentProps } from '../..'
 import { getNumericAttribute, query } from '../../dom-utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
 
 export const DNDAnswerOption = ({
   element,
@@ -37,7 +39,7 @@ export const DNDAnswerOption = ({
           )}
         </div>
         <div {...listeners} {...attributes} ref={setActivatorNodeRef} className="drag-handle">
-          <i className="fa fa-up-down-left-right" />
+          <FontAwesomeIcon size="1x" icon={faUpDownLeftRight} />
         </div>
       </div>
     </div>
