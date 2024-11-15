@@ -1,17 +1,12 @@
-import React from 'react'
-import { UniqueIdentifier, useDraggable } from '@dnd-kit/core'
-import classNames from 'classnames'
-import { ExamComponentProps } from '../..'
-import { getNumericAttribute, query } from '../../dom-utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useDraggable } from '@dnd-kit/core'
 import { faUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
+import { ExamComponentProps } from '../..'
+import { getNumericAttribute } from '../../dom-utils'
+import { DNDAnswerOptionCommon } from '../shared/DNDAnswerOptionCommon'
 
-export const DNDAnswerOption = ({
-  element,
-  renderChildNodes
-}: ExamComponentProps & {
-  value: UniqueIdentifier
-}) => {
+export const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
   const optionId = getNumericAttribute(element, 'option-id')!
 
   const { attributes, listeners, setNodeRef, isDragging, setActivatorNodeRef } = useDraggable({
@@ -19,28 +14,13 @@ export const DNDAnswerOption = ({
   })
 
   const style = { opacity: isDragging ? 0.3 : 1 }
-  const hasImages = !!query(element, 'image')
-  const hasFormula = !!query(element, 'formula')
 
   return (
-    <div ref={setNodeRef}>
-      <div
-        className={classNames('e-dnd-answer-option', {
-          'has-images': hasImages,
-          'has-formula': hasFormula
-        })}
-        style={style}
-      >
-        <div className="option-content">
-          {!renderChildNodes(element).length ? (
-            <i style={{ color: 'grey' }}>Tähän tulee vastaus...</i>
-          ) : (
-            renderChildNodes(element)
-          )}
-        </div>
-        <div {...listeners} {...attributes} ref={setActivatorNodeRef} className="drag-handle">
-          <FontAwesomeIcon size="1x" icon={faUpDownLeftRight} />
-        </div>
+    <div ref={setNodeRef} className="e-dnd-answer-option">
+      <DNDAnswerOptionCommon element={element} renderChildNodes={renderChildNodes} style={style} />
+
+      <div {...listeners} {...attributes} ref={setActivatorNodeRef} className="drag-handle">
+        <FontAwesomeIcon size="1x" icon={faUpDownLeftRight} />
       </div>
     </div>
   )
