@@ -587,9 +587,10 @@ function removeCorrectAnswers(exam: Exam) {
     switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
+      case 'dnd-answer':
         {
           for (const option of element.find<Element>(
-            '//e:choice-answer-option | //e:dropdown-answer-option | ./e:dnd-answer-option',
+            '//e:choice-answer-option | //e:dropdown-answer-option | .//e:dnd-answer-option',
             ns
           )) {
             option.attr('score')?.remove()
@@ -801,7 +802,7 @@ function addAnswerNumbers(exam: Exam) {
       )
       // don't add display-number to extra answers container (it has no title)
       //if (dndAnswerTitle) {
-        answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
+      answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
       //}
     })
     question.childQuestions.forEach(addAnswerNumber)
