@@ -36,15 +36,17 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   return (
     <div className="e-dnd-answer-container">
       {dndAnswersWithQuestion.map(element => {
-        const id = element.getAttribute('question-id')!
+        const questionId = element.getAttribute('question-id')!
+        const hasAnswer = !!answersByQuestionId[Number(questionId)]?.value
 
         return (
           <DNDTitleAndAnswerCommon
-            key={id}
+            key={questionId}
             element={element}
             renderChildNodes={renderChildNodes}
             items={answerOptionIdsByQuestionId}
             answerOptionsByQuestionId={answerOptionsByOptionId}
+            hasAnswer={hasAnswer}
           />
         )
       })}
