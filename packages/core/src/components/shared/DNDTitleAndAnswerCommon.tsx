@@ -11,13 +11,15 @@ export const DNDTitleAndAnswerCommon = ({
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
-  isInExam
+  isInExam,
+  hasAnswer
 }: {
   element: Element
   renderChildNodes: ExamComponentProps['renderChildNodes']
   items: ItemsState
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   isInExam?: boolean
+  hasAnswer?: boolean
 }) => {
   const questionId = element.getAttribute('question-id')!
   const displayNumber = element.getAttribute('display-number')!
@@ -29,7 +31,8 @@ export const DNDTitleAndAnswerCommon = ({
   return (
     <div
       className={classNames('e-dnd-answer', {
-        root: questionId === 'root'
+        root: questionId === 'root',
+        'no-answer': !hasAnswer
       })}
       data-question-id={questionId}
       key={questionId}
