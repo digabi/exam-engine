@@ -320,7 +320,9 @@ async function masterExamVersion(
   addAttachmentNumbers(exam)
 
   // Perform shuffling before adding answer options ids, so the student can't guess the original order.
-  if (options.multiChoiceShuffleSecret) shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
+  if (options.multiChoiceShuffleSecret) {
+    shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
+  }
   addAnswerOptionIds(exam, generateId)
 
   updateMaxScoresToAnswers(exam)
@@ -980,12 +982,16 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
     hash.update(value)
     return hash.digest('hex')
   }
+
   return exam.answers
     .map(a => a.element)
     .filter(byName(...choiceAnswerTypes))
     .filter(_.negate(byAttribute('ordering', 'fixed')))
     .forEach(answer => {
-      const options = answer.find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option', ns)
+      const options = answer
+        .find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option', ns)
+        .concat(answer.parent().find<Element>('.//e:dnd-answer-option', ns))
+
       const answerKey = String(options.length) + getAttribute('question-id', answer)
       const sortedOptions = _.sortBy(options, option =>
         createHash(answerKey + String(options.indexOf(option)) + multichoiceShuffleSecret)
