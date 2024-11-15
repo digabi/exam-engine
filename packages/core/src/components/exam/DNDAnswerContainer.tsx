@@ -18,7 +18,8 @@ import { ExamComponentProps } from '../..'
 import { query, queryAll } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
 import { AnswersState } from '../../store/answers/reducer'
-import { DNDAnswer, DNDTitleAndAnswer } from './DNDAnswer'
+import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
+import { DNDAnswer } from './DNDAnswer'
 import { DNDAnswerOption } from './DNDAnswerOption'
 
 type ItemsState = {
@@ -34,7 +35,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   const dispatch = useDispatch()
 
   const answers = useSelector((state: { answers: AnswersState }) => state.answers)
-  console.log('answers', answers)
 
   useEffect(() => {
     console.log(element)
@@ -155,12 +155,13 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           const questionId = element.getAttribute('question-id')!
 
           return (
-            <DNDTitleAndAnswer
+            <DNDTitleAndAnswerCommon
               key={questionId}
               element={element}
               renderChildNodes={renderChildNodes}
               items={items}
               answerOptionsByQuestionId={answerOptionsByOptionId}
+              isInExam={true}
             />
           )
         })}
@@ -184,11 +185,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           }}
         >
           {activeId ? (
-            <DNDAnswerOption
-              element={answerOptionsByOptionId[activeId]}
-              renderChildNodes={renderChildNodes}
-              value={activeId}
-            />
+            <DNDAnswerOption element={answerOptionsByOptionId[activeId]} renderChildNodes={renderChildNodes} />
           ) : null}
         </DragOverlay>
       </DndContext>

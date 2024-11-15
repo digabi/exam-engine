@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { ExamComponentProps } from '../..'
 import { query, queryAll } from '../../dom-utils'
 import { ResultsContext } from '../context/ResultsContext'
-import { DNDTitleAndAnswer } from './DNDAnswer'
+import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -39,7 +39,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         const id = element.getAttribute('question-id')!
 
         return (
-          <DNDTitleAndAnswer
+          <DNDTitleAndAnswerCommon
             key={id}
             element={element}
             renderChildNodes={renderChildNodes}
