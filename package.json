@@ -73,8 +73,9 @@
     "lerna": "lerna",
     "lint": "prettier packages/core/src/**/*.less --check && eslint .",
     "ee": "node packages/cli/dist/index.js",
-    "test": "NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
+    "test": "npm run test-jest && npm run test-ct",
     "prepare": "tsc --build --force && npm run --workspace @digabi/exam-engine-core build",
+    "test-jest": "NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
     "test-ct": "playwright test -c packages/core/playwright-ct.config.ts"
   },
   "workspaces": [

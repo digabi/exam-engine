@@ -9,7 +9,7 @@ on:
       - feature/*
 
 jobs:
-  test:
+  jest-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,9 +26,33 @@ jobs:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
+
       - run: npm rebuild full-icu
-      - run: npm run test --ci --runInBand
+    
+      - name: Run Jest Tests
+        run: npm run test-jest -- --ci
+
+  playwright-component-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright Component Tests
+        run: CI=true npm run test-ct
 
   lint:
     runs-on: ubuntu-latest
