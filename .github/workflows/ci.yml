@@ -13,21 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install nodejs
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+      
+      - name: Node.js Setup
+        uses: ./.github/actions/node-setup
 
       - name: Restore puppeteer cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-
-      - name: Install dependencies
-        run: npm ci
 
       - run: npm rebuild full-icu
     
@@ -38,15 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install nodejs
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
       
-      - name: Install dependencies
-        run: npm ci
+      - name: Node.js Setup
+        uses: ./.github/actions/node-setup
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
@@ -58,12 +46,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install nodejs
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+      
+      - name: Node.js Setup
+        uses: ./.github/actions/node-setup
 
       - name: Restore puppeteer cache
         uses: actions/cache@v4
@@ -71,7 +56,6 @@ jobs:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - run: npm ci
       - name: "run linter"
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
