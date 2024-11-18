@@ -37,6 +37,8 @@ export const DNDTitleAndAnswerCommon = ({
       data-question-id={questionId}
       key={questionId}
     >
+      <div className="anchor" id={`question-nr-${displayNumber}`} />
+
       {titleElement &&
         (!hasTitle ? (
           <i style={{ color: 'grey' }}>Tästä puuttuu kysymys...</i>

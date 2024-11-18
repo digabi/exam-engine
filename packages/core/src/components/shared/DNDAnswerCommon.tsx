@@ -12,7 +12,6 @@ export const DNDAnswerCommon = ({
   items,
   answerOptionsByQuestionId,
   questionId,
-  displayNumber,
   classes,
   isInExam
 }: {
@@ -31,27 +30,32 @@ export const DNDAnswerCommon = ({
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
 
   return (
-    <>
-      <div className="anchor" id={`question-nr-${displayNumber}`} />
-      <div
-        className={classNames('e-dnd-answer-droppable', {
-          'has-images': hasImages,
-          'has-audio': hasAudio,
-          'has-formula': hasFormula,
-          ...classes
-        })}
-      >
-        {dndAnswerOptions?.map(element => {
-          const optionId = element.getAttribute('option-id')!
-          return isInExam ? (
-            <DNDAnswerOptionExam element={element} renderChildNodes={renderChildNodes} key={optionId} />
-          ) : (
-            <div className="e-dnd-answer-option">
+    <div
+      className={classNames('e-dnd-answer-droppable', {
+        'has-images': hasImages,
+        'has-audio': hasAudio,
+        'has-formula': hasFormula,
+        ...classes
+      })}
+    >
+      {dndAnswerOptions?.map(element => {
+        const optionId = element.getAttribute('option-id')!
+        const hasImage = query(element, 'image')
+        return (
+          <div
+            className={classNames('e-dnd-answer-option', {
+              'has-image': hasImage
+            })}
+            key={element.getAttribute('option-id')}
+          >
+            {isInExam ? (
+              <DNDAnswerOptionExam element={element} renderChildNodes={renderChildNodes} key={optionId} />
+            ) : (
               <DNDAnswerOptionCommon element={element} renderChildNodes={renderChildNodes} key={optionId} />
-            </div>
-          )
-        })}
-      </div>
-    </>
+            )}
+          </div>
+        )
+      })}
+    </div>
   )
 }
