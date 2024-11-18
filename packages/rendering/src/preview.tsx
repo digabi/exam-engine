@@ -136,8 +136,6 @@ const App: React.FunctionComponent<{
   const { xml, translation, examCode, gradingStructure } = findExam({ language, type })
   const doc = useMemo(() => parseExam(xml, true), [xml])
 
-  console.log(gradingStructure)
-
   useEffect(() => {
     document.documentElement.lang = language
   }, [language])
