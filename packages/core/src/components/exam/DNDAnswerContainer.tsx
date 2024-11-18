@@ -37,7 +37,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   const answers = useSelector((state: { answers: AnswersState }) => state.answers)
 
   useEffect(() => {
-    console.log(element)
     const dndAnswers = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
     const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
 
