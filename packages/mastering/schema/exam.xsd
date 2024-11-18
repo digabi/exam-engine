@@ -513,6 +513,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="e:dnd-answer" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="e:dnd-answer-option" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="direction" type="e:direction" />
       <xs:attributeGroup ref="e:stylable" />
@@ -523,7 +524,7 @@
   <xs:element name="dnd-answer">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:element name="dnd-answer-title" minOccurs="0" maxOccurs="1" type="e:Flow" />
+        <xs:element name="dnd-answer-title" minOccurs="1" maxOccurs="1" type="e:Flow" />
         <xs:element ref="e:dnd-answer-option" minOccurs="1" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="max-score" type="xs:positiveInteger" />
