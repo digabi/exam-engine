@@ -31,7 +31,7 @@ export const DNDAnswer = ({
 
   return (
     <SortableContext id={String(questionId)} items={idsInGroup}>
-      <div ref={setNodeRef}>
+      <div ref={setNodeRef} style={{ flex: 'none' }}>
         <DNDAnswerCommon
           renderChildNodes={renderChildNodes}
           items={items}
