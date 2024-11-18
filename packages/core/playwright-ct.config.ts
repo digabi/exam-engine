@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/experimental-ct-react'
+import { defineConfig, devices } from '@playwright/experimental-ct-react'
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -18,8 +18,16 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'component',
-      use: { viewport: { width: 800, height: 600 } }
+      name: 'chrome',
+      use: {
+        ...devices['Desktop Chrome']
+      }
+    },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox']
+      }
     }
   ]
 })
