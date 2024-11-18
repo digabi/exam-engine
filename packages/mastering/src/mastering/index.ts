@@ -779,7 +779,6 @@ function addSectionNumbers(exam: Exam) {
 function addQuestionNumbers(exam: Exam) {
   function addQuestionNumber(question: Question, index: number, prefix = '') {
     const displayNumber = `${prefix ? `${prefix}.` : ''}${index + 1}`
-    console.log('addQuestionNumber', displayNumber, question.element.name())
     question.element.attr('display-number', displayNumber)
     question.childQuestions.forEach((q, i) => addQuestionNumber(q, i, displayNumber))
   }
@@ -791,21 +790,7 @@ function addAnswerNumbers(exam: Exam) {
   function addAnswerNumber(question: Question) {
     const questionNumber = getAttribute('display-number', question.element)
     question.answers.forEach((answer, i, answers) => {
-      const dndAnswerTitle = answer.element.get('e:dnd-answer-title', ns)
-      console.log('addAnswerNumbers: dndAnswerTitle =', dndAnswerTitle)
-      const displayNumber = answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`
-      console.log(
-        'addAnswerNumber(), questionNumber =',
-        questionNumber,
-        'displayNumber =',
-        displayNumber,
-        'answer name =',
-        answer.element.name()
-      )
-      // don't add display-number to extra answers container (it has no title)
-      //if (dndAnswerTitle) {
       answer.element.attr('display-number', answers.length === 1 ? questionNumber : `${questionNumber}.${i + 1}`)
-      //}
     })
     question.childQuestions.forEach(addAnswerNumber)
   }
@@ -861,7 +846,6 @@ function addQuestionIds(root: Element, generateId: GenerateId) {
   const exam = parseExamStructure(root)
   for (const answer of exam.answers) {
     const questionId = generateId()
-    console.log('addQuestionId', questionId, 'to answer', answer.element.name())
     answer.element.attr('question-id', String(questionId))
   }
 }
@@ -956,13 +940,10 @@ function countMaxScores(exam: Exam) {
 }
 
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
-  console.log('addAnswerOptionIds..., exam has', exam.answers.length, 'answers')
   for (const { element } of exam.answers) {
-    console.log('addAnswerOptionIds for element', element.name())
     if (_.includes(choiceAnswerTypes, element.name())) {
       element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
         const optionId = generateId()
-        console.log('add option-id for', answerOption.name(), ':', optionId)
         answerOption.attr('option-id', String(optionId))
       })
     }
