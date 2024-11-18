@@ -32,9 +32,9 @@
       .e-dnd-answer-title {
         display: inline-block;
         border-radius: 5px;
-        padding: 0;
+        padding: 0 0.5rem;
         border: 1px solid transparent;
-        flex: 1 1 auto;
+        flex: 0 1 auto;
 
         &.has-images {
           flex: 0 0 150px;
@@ -85,6 +85,9 @@
       &.root {
         flex: none;
         max-width: unset;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
       }
 
       &.ready-for-drop {
@@ -127,17 +130,25 @@
   align-items: center;
   background: white;
   border-radius: 5px;
-  gap: 1rem;
+  gap: 0.5rem;
 
   .option-content {
     padding: 0.5rem;
+  }
+
+  .responsive-media-container__inner {
+    padding-bottom: 0 !important;
+
+    img {
+      position: static !important;
+    }
   }
 
   .audio {
     margin-bottom: 0 !important;
   }
 
-  &.has-images {
+  &.has-image {
     max-width: calc(@image-max-width + 50px);
   }
 
