@@ -35,9 +35,15 @@ jobs:
       
       - name: Node.js Setup
         uses: ./.github/actions/node-setup
+        
+      - name: Restore Playwright Browser Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-browsers
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      - name: Install Specific Playwright Browsers (Chromium and Firefox)
+        run: npx playwright install chromium firefox
 
       - name: Run Playwright Component Tests
         run: CI=true npm run test-ct
