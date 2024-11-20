@@ -1,0 +1,29 @@
+<e:dnd-answer-container xmlns:e="http://ylioppilastutkinto.fi/exam.xsd">
+  <e:dnd-answer max-score="6" question-id="1" display-number="1.1">
+      <e:dnd-answer-title>q1</e:dnd-answer-title>
+  </e:dnd-answer>
+  <e:dnd-answer max-score="6" question-id="2" display-number="1.2">
+      <e:dnd-answer-title>q2</e:dnd-answer-title>
+  </e:dnd-answer>
+  <e:dnd-answer max-score="6" question-id="3" display-number="1.3">
+      <e:dnd-answer-title>q3</e:dnd-answer-title>
+  </e:dnd-answer>
+  <e:dnd-answer max-score="6" question-id="4" display-number="1.4">
+      <e:dnd-answer-title>q4</e:dnd-answer-title>
+  </e:dnd-answer>
+  <e:dnd-answer max-score="6" question-id="5" display-number="1.5">
+      <e:dnd-answer-title>q5</e:dnd-answer-title>
+  </e:dnd-answer>
+  <e:dnd-answer question-id="6" display-number="1.6" max-score="6">
+      <e:dnd-answer-option score="6" option-id="7">a1</e:dnd-answer-option>
+      <e:dnd-answer-option option-id="8">a7</e:dnd-answer-option>
+      <e:dnd-answer-option option-id="9">a10</e:dnd-answer-option>
+      <e:dnd-answer-option option-id="10">a9</e:dnd-answer-option>
+      <e:dnd-answer-option score="6" option-id="11">a2</e:dnd-answer-option>
+      <e:dnd-answer-option score="6" option-id="12">a4</e:dnd-answer-option>
+      <e:dnd-answer-option score="6" option-id="13">a5</e:dnd-answer-option>
+      <e:dnd-answer-option option-id="14">a8</e:dnd-answer-option>
+      <e:dnd-answer-option score="6" option-id="15">a3</e:dnd-answer-option>
+      <e:dnd-answer-option option-id="16">a6</e:dnd-answer-option>
+  </e:dnd-answer>
+</e:dnd-answer-container>
