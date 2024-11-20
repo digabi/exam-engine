@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "22.1.3",
+  "version": "22.3.1-alpha.2",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -13,7 +13,7 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
-    "@digabi/exam-engine-core": "22.1.3",
+    "@digabi/exam-engine-core": "22.3.1-alpha.2",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "babel-loader": "^9.1.2",
     "child-process-promise": "^2.2.1",
@@ -33,7 +33,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router5": "^8.0.1",
-    "rich-text-editor": "^7.2.3",
+    "rich-text-editor": "8.1.7",
     "router5": "^8.0.1",
     "router5-plugin-browser": "^8.0.1",
     "tmp-promise": "^3.0.2",
