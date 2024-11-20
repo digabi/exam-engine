@@ -23,6 +23,7 @@ import {
 import {
   byAttribute,
   byLocalName as byName,
+  getAnswerOptions,
   getAttribute,
   getNumericAttribute,
   hasAttribute,
@@ -589,13 +590,17 @@ function removeCorrectAnswers(exam: Exam) {
     switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
+        {
+          for (const option of element.find<Element>('//e:choice-answer-option | //e:dropdown-answer-option', ns)) {
+            option.attr('score')?.remove()
+          }
+        }
+        break
       case 'dnd-answer':
         {
-          for (const option of element.find<Element>(
-            '//e:choice-answer-option | //e:dropdown-answer-option | .//e:dnd-answer-option',
-            ns
-          )) {
+          for (const option of element.parent().find<Element>('.//e:dnd-answer-option', ns)) {
             option.attr('score')?.remove()
+            option.attr('for-question-id')?.remove()
           }
         }
         break
@@ -942,10 +947,21 @@ function countMaxScores(exam: Exam) {
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
   for (const { element } of exam.answers) {
     if (_.includes(choiceAnswerTypes, element.name())) {
-      element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
-        const optionId = generateId()
-        answerOption.attr('option-id', String(optionId))
-      })
+      if (element.name() === 'dnd-answer') {
+        const parent = element.parent() as Element
+        parent.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
+          const maybeOptionId = getAttribute('option-id', answerOption, null)
+          if (maybeOptionId === null) {
+            const optionId = generateId()
+            answerOption.attr('option-id', String(optionId))
+          }
+        })
+      } else {
+        element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
+          const optionId = generateId()
+          answerOption.attr('option-id', String(optionId))
+        })
+      }
     }
   }
 }
@@ -969,16 +985,24 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
     .filter(byName(...choiceAnswerTypes))
     .filter(_.negate(byAttribute('ordering', 'fixed')))
     .forEach(answer => {
-      const options = answer
-        .find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option', ns)
-        .concat(answer.parent().find<Element>('.//e:dnd-answer-option', ns))
-
+      const options = getAnswerOptions(answer)
       const answerKey = String(options.length) + getAttribute('question-id', answer)
       const sortedOptions = _.sortBy(options, option =>
         createHash(answerKey + String(options.indexOf(option)) + multichoiceShuffleSecret)
       )
+
       for (const option of sortedOptions) {
-        answer.addChild(option)
+        if (answer.name() === 'dnd-answer') {
+          const answerContainer = answer.parent() as Element
+          const optionParent = option.parent() as Element
+          if (optionParent.name() === 'dnd-answer') {
+            const questionId = getAttribute('question-id', optionParent)
+            option.attr('for-question-id', questionId)
+          }
+          answerContainer.addChild(option)
+        } else {
+          answer.addChild(option)
+        }
       }
 
       // A no-answer option should always be the last
