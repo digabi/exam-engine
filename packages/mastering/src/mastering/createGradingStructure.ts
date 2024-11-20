@@ -1,6 +1,5 @@
 import {
   ChoiceGroupChoice,
-  ChoiceGroupOption,
   ChoiceGroupQuestion,
   GradingStructure,
   GradingStructureQuestion,
@@ -9,8 +8,8 @@ import {
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
 import { GenerateId } from '.'
-import { Answer, choiceAnswerOptionTypes, Exam, ns, Question } from './schema'
-import { getAttribute, getNumericAttribute, xpathOr } from './utils'
+import { Answer, Exam, ns, Question } from './schema'
+import { getAnswerOptions, getAttribute, getNumericAttribute } from './utils'
 
 export interface GradingStructureOptions {
   /**
@@ -64,7 +63,7 @@ function getQuestionType(answer: Answer): 'text' | 'choice' {
     case 'choice-answer':
     case 'dropdown-answer':
     case 'dnd-answer':
-    case 'dnd-extra-answers':
+    case 'dnd-answer-container':
       return 'choice'
     default:
       throw new Error(`getQuestionType not implemented for ${answerType}`)
@@ -121,14 +120,16 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
   const displayNumber = getAttribute('display-number', answer.element)
   const maxScore = getNumericAttribute('max-score', answer.element)
 
-  const options: ChoiceGroupOption[] = answer.element
-    .find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
-    .map(option => {
-      const id = getNumericAttribute('option-id', option)
-      const score = getNumericAttribute('score', option, 0)
-      const correct = score > 0 && score === maxScore
-      return { id, score, correct }
-    })
+  const answerOptions = getAnswerOptions(answer.element)
+
+  const options = answerOptions.map(option => {
+    const id = getNumericAttribute('option-id', option)
+    const score = getNumericAttribute('score', option, 0)
+    const forQuestionId = getNumericAttribute('for-question-id', option, null)
+    const isDndAnswer = option.name() === 'dnd-answer-option'
+    const correct = score > 0 && score === maxScore && (!isDndAnswer || forQuestionId === questionId)
+    return { id, score, correct }
+  })
 
   return {
     id: questionId,
