@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/experimental-ct-react'
+import { resolve } from 'path'
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -14,7 +15,15 @@ export default defineConfig({
   use: {
     trace: 'on-first-retry',
     ctPort: 3100,
-    ctTemplateDir: './__tests__/playwright/template'
+    ctTemplateDir: './__tests__/playwright/template',
+    ctViteConfig: {
+      resolve: {
+        alias: {
+          '~@digabi': resolve(__dirname, '../../node_modules/@digabi'),
+          '~rich-text-editor': resolve(__dirname, '../../node_modules/rich-text-editor')
+        }
+      }
+    }
   },
   projects: [
     {
