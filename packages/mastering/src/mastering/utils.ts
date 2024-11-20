@@ -1,5 +1,6 @@
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
+import { choiceAnswerOptionTypes, ns } from './schema'
 
 type ElementPredicate = (e: Element) => boolean
 type Query = string | string[] | ElementPredicate
@@ -70,4 +71,10 @@ function _getAttr<T, U>(element: Element, name: string, transform: (value: strin
   } else {
     throw new Error(`Bug: ${element.toString()} doesn't have a ${name} attribute and a default value was not supplied`)
   }
+}
+
+export function getAnswerOptions(answer: Element) {
+  const choiceAndDropDownOptions = answer.find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
+  const dndAnswerOptions = answer.parent().find<Element>('./e:dnd-answer-option', ns)
+  return choiceAndDropDownOptions.concat(dndAnswerOptions)
 }
