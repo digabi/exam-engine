@@ -108,7 +108,7 @@ export interface ExamProps extends CommonExamProps {
   undoViewProps: UndoViewProps
 }
 
-const renderChildNodes = createRenderChildNodes({
+export const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
   'attachment-link': mkAttachmentLink('link'),
   'attachment-links': mkAttachmentLinks('link'),
