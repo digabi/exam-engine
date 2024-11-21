@@ -1,5 +1,4 @@
 [![Build](https://github.com/digabi/exam-engine/workflows/Build/badge.svg)](https://github.com/digabi/exam-engine/actions?query=workflow%3ABuild)
-[![Gitter](https://badges.gitter.im/abitti-dev/exam-engine.svg)](https://gitter.im/abitti-dev/exam-engine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 [![Abitti.net](https://abitti.net/images/abittinet_logo.svg)](https://abitti.net/)
 
