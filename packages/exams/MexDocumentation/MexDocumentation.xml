@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.5" exam-stylesheet="custom.css" date="2022-01-27">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5" exam-stylesheet="custom.css" date="2022-01-27">
   <e:exam-versions>
     <e:exam-version lang="fi-FI"/>
   </e:exam-versions>
@@ -399,7 +399,7 @@
   xmlns:e="http://ylioppilastutkinto.fi/exam.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://www.w3.org/1999/xhtml"
-  xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
+  xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd"
   exam-schema-version="0.1"
   date="2018-09-29"
   exam-code="EA"
@@ -3215,7 +3215,7 @@
       <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <p>
-      <a href="https://abitti.dev/abitti-trademark.html">Use of Abitti Trademark policy</a>
+      <a href="https://abitti.net/abitti-trademark.html">Use of Abitti Trademark policy</a>
     </p>
   </e:exam-footer>
 </e:exam>

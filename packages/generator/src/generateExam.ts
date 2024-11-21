@@ -143,7 +143,7 @@ export function generateExam(options: GenerateExamOptions): string {
   const exam = createElement(doc, 'exam', undefined, {
     xmlns: 'http://www.w3.org/1999/xhtml',
     'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
-    'xsi:schemaLocation': 'http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd',
+    'xsi:schemaLocation': 'http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd',
     'exam-schema-version': '0.5',
     'exam-code': options.examCode,
     'day-code': options.dayCode,
