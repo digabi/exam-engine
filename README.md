@@ -1,11 +1,11 @@
 [![Build](https://github.com/digabi/exam-engine/workflows/Build/badge.svg)](https://github.com/digabi/exam-engine/actions?query=workflow%3ABuild)
 [![Gitter](https://badges.gitter.im/abitti-dev/exam-engine.svg)](https://gitter.im/abitti-dev/exam-engine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-[![Abitti.dev](https://abitti.dev/images/abittidev_logo.svg)](https://abitti.dev/)
+[![Abitti.net](https://abitti.net/images/abittinet_logo.svg)](https://abitti.net/)
 
-[Abitti.dev](https://abitti.dev)
+[Abitti.net](https://abitti.net)
 
-[Use of Abitti Trademark policy](https://abitti.dev/abitti-trademark.html)
+[Use of Abitti Trademark policy](https://abitti.net/abitti-trademark.html)
 
 [Documentation](https://digabi.github.io/exam-engine/MexDocumentation/)
 
@@ -94,7 +94,7 @@ Most of the artifacts in this repository are licensed under [LICENSE](LICENSE). 
   See [packages/mastering/schema/xhtml11.xsd](packages/mastering/schema/xhtml11.xsd) for the license.
 - Abitti and the Abitti logo are EU trademarks registered by the Finnish Matriculation Examination
   Board (FMEB) under the codes 015833742 and 015838915.
-  For detailed use rights, see [https://abitti.dev/abitti-trademark.html](https://abitti.dev/abitti-trademark.html)
+  For detailed use rights, see [https://abitti.net/abitti-trademark.html](https://abitti.net/abitti-trademark.html)
 - Several attachments in the SC sample exam [packages/exams/SC/](packages/exams/SC/) are third party material. See
   the `<e:reference>` tags in [packages/exams/SC/SC.xml](packages/exams/SC/SC.xml) for details.
 
