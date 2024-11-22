@@ -19,7 +19,6 @@ export const DNDAnswer = ({
   items,
   answerOptionsByQuestionId,
   questionId,
-  displayNumber,
   maxScore
 }: {
   items: UniqueIdentifier[]
@@ -34,13 +33,12 @@ export const DNDAnswer = ({
 
   return (
     <SortableContext id={String(questionId)} items={items || []}>
-      <div ref={setNodeRef} style={{ flex: 'none' }}>
+      <span ref={setNodeRef} style={{ alignSelf: 'flex-end' }}>
+        {questionId === 'root' && <span className="droppable-title">Vastausvaihtoehdot:</span>}
         <DNDAnswerCommon
           renderChildNodes={renderChildNodes}
           items={items}
           answerOptionsByQuestionId={answerOptionsByQuestionId}
-          questionId={questionId}
-          displayNumber={displayNumber}
           classes={{
             hovered: isOver,
             root: questionId === 'root',
@@ -48,7 +46,7 @@ export const DNDAnswer = ({
           }}
           isInExam={true}
         />
-      </div>
+      </span>
 
       {maxScore ? <Score score={maxScore} size="small" /> : null}
     </SortableContext>
