@@ -2,29 +2,28 @@ import { UniqueIdentifier } from '@dnd-kit/core'
 import classNames from 'classnames'
 import React from 'react'
 import { ExamComponentProps } from '../..'
-import { ItemsState } from '../exam/DNDAnswer'
-import { DNDAnswerOption as DNDAnswerOptionExam } from '../exam/DNDAnswerOption'
 import { query } from '../../dom-utils'
+import { DNDAnswerOption as DNDAnswerOptionExam } from '../exam/DNDAnswerOption'
 import { DNDAnswerOptionCommon } from './DNDAnswerOptionCommon'
 
 export const DNDAnswerCommon = ({
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
-  questionId,
-  classes,
-  isInExam
+  isInExam,
+  correctIds,
+  classes
 }: {
-  items: ItemsState
+  items: UniqueIdentifier[]
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   questionId: UniqueIdentifier
   renderChildNodes: ExamComponentProps['renderChildNodes']
   displayNumber?: string
-  classes?: Record<string, boolean>
   isInExam?: boolean
+  correctIds?: UniqueIdentifier[]
+  classes?: Record<string, boolean>
 }) => {
-  const idsInGroup = items[questionId] || []
-  const dndAnswerOptions = idsInGroup.map(id => answerOptionsByQuestionId[id])
+  const dndAnswerOptions = items?.map(id => answerOptionsByQuestionId[id]) || []
   const hasImages = dndAnswerOptions.some(option => query(option, 'image'))
   const hasAudio = dndAnswerOptions.some(option => query(option, 'audio'))
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
@@ -39,19 +38,23 @@ export const DNDAnswerCommon = ({
       })}
     >
       {dndAnswerOptions?.map(element => {
-        const optionId = element.getAttribute('option-id')!
+        const optionId = Number(element.getAttribute('option-id')!)
         const hasImage = query(element, 'image')
+        const isCorrect = correctIds?.includes(optionId)
         return (
           <div
-            className={classNames('e-dnd-answer-option', {
-              'has-image': hasImage
-            })}
+            className={classNames('e-dnd-answer-option', { 'has-image': hasImage })}
             key={element.getAttribute('option-id')}
           >
             {isInExam ? (
               <DNDAnswerOptionExam element={element} renderChildNodes={renderChildNodes} key={optionId} />
             ) : (
-              <DNDAnswerOptionCommon element={element} renderChildNodes={renderChildNodes} key={optionId} />
+              <DNDAnswerOptionCommon
+                element={element}
+                renderChildNodes={renderChildNodes}
+                key={optionId}
+                classes={[isCorrect ? 'correct-answer' : 'wrong-answer']}
+              />
             )}
           </div>
         )

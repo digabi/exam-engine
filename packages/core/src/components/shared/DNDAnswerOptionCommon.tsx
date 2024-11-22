@@ -6,9 +6,11 @@ import { query } from '../../dom-utils'
 export const DNDAnswerOptionCommon = ({
   element,
   renderChildNodes,
-  style
+  style,
+  classes = []
 }: ExamComponentProps & {
   style?: React.CSSProperties
+  classes?: string[]
 }) => {
   const hasImages = !!query(element, 'image')
   const hasFormula = !!query(element, 'formula')
@@ -17,7 +19,7 @@ export const DNDAnswerOptionCommon = ({
 
   return (
     <div
-      className={classNames({
+      className={classNames([...classes], {
         'has-images': hasImages,
         'has-formula': hasFormula
       })}
