@@ -7,7 +7,7 @@ import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
 import { DNDAnswerCommon } from '../shared/DNDAnswerCommon'
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
-  const { answersByQuestionId } = useContext(ResultsContext)
+  const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const dndAnswers = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
   const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
 
@@ -34,8 +34,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
   const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
 
-  const { gradingStructure } = useContext(ResultsContext)
-
   return (
     <div className="e-dnd-answer-container">
       {dndAnswersWithQuestion.map(element => {
@@ -59,17 +57,14 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               hasAnswer={hasAnswer}
             />
 
-            <div className="correct-answers">
-              <b>Oikeat vastaukset</b>
-              <DNDAnswerCommon
-                renderChildNodes={renderChildNodes}
-                items={correctOptionIds}
-                answerOptionsByQuestionId={answerOptionsByOptionId}
-                questionId={questionId}
-                displayNumber={displayNumber}
-                correctIds={correctOptionIds}
-              />
-            </div>
+            <span className="droppable-title align-right">Oikeat vastaukset</span>
+            <DNDAnswerCommon
+              renderChildNodes={renderChildNodes}
+              items={correctOptionIds}
+              answerOptionsByQuestionId={answerOptionsByOptionId}
+              correctIds={correctOptionIds}
+              classes={{ 'correct-answers': true }}
+            />
           </>
         )
       })}
