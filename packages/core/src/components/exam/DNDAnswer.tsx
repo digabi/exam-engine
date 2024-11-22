@@ -10,6 +10,10 @@ export type ItemsState = {
   [key: UniqueIdentifier]: UniqueIdentifier[]
 }
 
+export type PartialItemsState = {
+  [key: UniqueIdentifier]: UniqueIdentifier[]
+}
+
 export const DNDAnswer = ({
   renderChildNodes,
   items,
@@ -18,7 +22,7 @@ export const DNDAnswer = ({
   displayNumber,
   maxScore
 }: {
-  items: ItemsState
+  items: UniqueIdentifier[]
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   questionId: UniqueIdentifier
   renderChildNodes: ExamComponentProps['renderChildNodes']
@@ -26,11 +30,10 @@ export const DNDAnswer = ({
   displayNumber?: string
   maxScore?: number
 }) => {
-  const idsInGroup = items[questionId] || []
   const { setNodeRef, isOver, active } = useDroppable({ id: questionId })
 
   return (
-    <SortableContext id={String(questionId)} items={idsInGroup}>
+    <SortableContext id={String(questionId)} items={items || []}>
       <div ref={setNodeRef} style={{ flex: 'none' }}>
         <DNDAnswerCommon
           renderChildNodes={renderChildNodes}
