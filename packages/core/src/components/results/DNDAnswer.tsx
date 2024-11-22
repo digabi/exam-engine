@@ -1,14 +1,9 @@
 import { UniqueIdentifier } from '@dnd-kit/core'
 import React, { useContext } from 'react'
-import { ExamComponentProps } from '../..'
+import { ChoiceGroupQuestion, ExamComponentProps } from '../..'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from '../context/ResultsContext'
 import { DNDAnswerCommon } from '../shared/DNDAnswerCommon'
 import ResultsExamQuestionAutoScore from './internal/QuestionAutoScore'
-
-type ItemsState = {
-  root: UniqueIdentifier[]
-  [key: UniqueIdentifier]: UniqueIdentifier[]
-}
 
 export const DNDAnswer = ({
   renderChildNodes,
@@ -19,7 +14,7 @@ export const DNDAnswer = ({
   maxScore
 }: {
   renderChildNodes: ExamComponentProps['renderChildNodes']
-  items: ItemsState
+  items: UniqueIdentifier[]
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   questionId: UniqueIdentifier
   displayNumber: string
@@ -30,26 +25,35 @@ export const DNDAnswer = ({
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const answer = answersByQuestionId[questionIdNumber]
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionIdNumber)!
-  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))?.score) || 0
+  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))?.score) ?? undefined
+
+  //console.log(gradingStructure)
+  const thisQuestion = gradingStructure.questions.find(q => q.displayNumber === displayNumber) as ChoiceGroupQuestion
+  const options = thisQuestion.choices.find(c => c.id === questionIdNumber)?.options || []
+  const correctOptionIds = options.filter(o => o.correct).map(o => o.id)
+
+  console.log(displayNumber)
+  console.log('answers, correct, both', items, correctOptionIds)
 
   return (
     <>
-      <DNDAnswerCommon
-        renderChildNodes={renderChildNodes}
-        items={items}
-        answerOptionsByQuestionId={answerOptionsByQuestionId}
-        questionId={questionId}
-        displayNumber={displayNumber}
-      />
-
-      {scoreValue != null && (
-        <ResultsExamQuestionAutoScore
-          score={scoreValue}
-          maxScore={maxScore}
+      <div>
+        <DNDAnswerCommon
+          renderChildNodes={renderChildNodes}
+          items={items}
+          answerOptionsByQuestionId={answerOptionsByQuestionId}
+          questionId={questionId}
           displayNumber={displayNumber}
-          questionId={questionIdNumber}
+          correctIds={correctOptionIds}
         />
-      )}
+      </div>
+
+      <ResultsExamQuestionAutoScore
+        score={scoreValue}
+        maxScore={maxScore}
+        displayNumber={displayNumber}
+        questionId={questionIdNumber}
+      />
     </>
   )
 }
