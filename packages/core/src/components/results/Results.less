@@ -217,6 +217,11 @@
   .e-dnd-answer.no-answer {
     background: hsl(30, 42%, 92%);
     opacity: 0.9;
+    margin-bottom: 0.5rem;
+
+    .e-dnd-answer-droppable {
+      border: 2px dashed @colors[wrong-answer];
+    }
   }
 
   .text-answer--single-line:not(.no-answer) {
