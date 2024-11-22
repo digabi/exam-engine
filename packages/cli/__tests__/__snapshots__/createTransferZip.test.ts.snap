@@ -7,6 +7,10 @@ exports[`ee create-transfer-zip creates hi transfer zip 1`] = `
   "7.2.jpg",
   "7.4.jpg",
   "24.1.jpg",
+  "6.ogg",
+  "6.1.ogg",
+  "6.2.ogg",
+  "6.3.ogg",
   "custom.css",
 ]
 `;
@@ -1367,6 +1371,67 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
 
     </e:question>
 
+  </e:section>
+
+  <e:section>
+    <e:section-title>Termine als drag-and-drop</e:section-title>
+    
+    <e:question>
+      <e:question-title>Termine</e:question-title>
+      <e:question-instruction>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
+        Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
+      </e:question-instruction>
+      <p>Marit möchte mit Katarina und Lars eine Party für die Klasse planen. Sie versuchen einen gemeinsamen freien
+        Zeitpunkt zu finden. Das ist aber sehr schwer.
+      </p>
+
+      <e:audio-group>
+        <e:attachment>
+          <e:attachment-title>6. audio</e:attachment-title>
+          <e:audio src="6.ogg" times="1"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+          <e:reference>
+            <e:author>
+              YTL
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:audio-group>
+
+
+      <e:question>
+          <e:question-title/>
+          <e:question-instruction/>
+          <e:dnd-answer-container meta="dnd answer container">
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Lars am besten?
+                    <e:audio src="6.1.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 15:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Katarina am besten?
+                    <e:audio src="6.2.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Dienstag, 13:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Marit am besten?          
+                    <e:audio src="6.3.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 16:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer-option>Montag, 13.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Montag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 15.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 16.00 Uhr</e:dnd-answer-option>
+          </e:dnd-answer-container>
+      </e:question>
+    </e:question>
   </e:section>
 
   <e:references/>
@@ -3495,6 +3560,67 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
 
     </e:question>
 
+  </e:section>
+
+  <e:section>
+    <e:section-title>Termine als drag-and-drop</e:section-title>
+    
+    <e:question>
+      <e:question-title>Termine</e:question-title>
+      <e:question-instruction>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
+        Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
+      </e:question-instruction>
+      <p>Marit möchte mit Katarina und Lars eine Party für die Klasse planen. Sie versuchen einen gemeinsamen freien
+        Zeitpunkt zu finden. Das ist aber sehr schwer.
+      </p>
+
+      <e:audio-group>
+        <e:attachment>
+          <e:attachment-title>6. audio</e:attachment-title>
+          <e:audio src="6.ogg" times="1"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+          <e:reference>
+            <e:author>
+              YTL
+              
+            </e:author>
+          </e:reference>
+        </e:attachment>
+      </e:audio-group>
+
+
+      <e:question>
+          <e:question-title/>
+          <e:question-instruction/>
+          <e:dnd-answer-container meta="dnd answer container">
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Lars am besten?
+                    <e:audio src="6.1.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 15:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Katarina am besten?
+                    <e:audio src="6.2.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Dienstag, 13:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Marit am besten?          
+                    <e:audio src="6.3.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 16:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer-option>Montag, 13.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Montag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 15.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 16.00 Uhr</e:dnd-answer-option>
+          </e:dnd-answer-container>
+      </e:question>
+    </e:question>
   </e:section>
 
   <e:references/>
