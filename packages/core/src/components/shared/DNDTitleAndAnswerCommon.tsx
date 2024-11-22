@@ -53,7 +53,7 @@ export const DNDTitleAndAnswerCommon = ({
       {isInExam ? (
         <DNDAnswerExam
           renderChildNodes={renderChildNodes}
-          items={items}
+          items={items[questionId as UniqueIdentifier]}
           answerOptionsByQuestionId={answerOptionsByQuestionId}
           questionId={questionId}
           displayNumber={displayNumber}
@@ -62,7 +62,7 @@ export const DNDTitleAndAnswerCommon = ({
       ) : (
         <DNDAnswerResults
           renderChildNodes={renderChildNodes}
-          items={items}
+          items={items[questionId]}
           answerOptionsByQuestionId={answerOptionsByQuestionId}
           questionId={questionId}
           displayNumber={displayNumber}

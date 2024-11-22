@@ -168,7 +168,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         <DNDAnswer
           renderChildNodes={renderChildNodes}
           questionId="root"
-          items={items}
+          items={items['root']}
           answerOptionsByQuestionId={answerOptionsByOptionId}
         />
 
