@@ -16,9 +16,7 @@ export const DNDAnswerCommon = ({
 }: {
   items: UniqueIdentifier[]
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
-  questionId: UniqueIdentifier
   renderChildNodes: ExamComponentProps['renderChildNodes']
-  displayNumber?: string
   isInExam?: boolean
   correctIds?: UniqueIdentifier[]
   classes?: Record<string, boolean>

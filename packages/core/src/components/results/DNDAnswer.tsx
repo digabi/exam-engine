@@ -27,26 +27,18 @@ export const DNDAnswer = ({
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionIdNumber)!
   const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))?.score) ?? undefined
 
-  //console.log(gradingStructure)
   const thisQuestion = gradingStructure.questions.find(q => q.displayNumber === displayNumber) as ChoiceGroupQuestion
   const options = thisQuestion.choices.find(c => c.id === questionIdNumber)?.options || []
   const correctOptionIds = options.filter(o => o.correct).map(o => o.id)
 
-  console.log(displayNumber)
-  console.log('answers, correct, both', items, correctOptionIds)
-
   return (
     <>
-      <div>
-        <DNDAnswerCommon
-          renderChildNodes={renderChildNodes}
-          items={items}
-          answerOptionsByQuestionId={answerOptionsByQuestionId}
-          questionId={questionId}
-          displayNumber={displayNumber}
-          correctIds={correctOptionIds}
-        />
-      </div>
+      <DNDAnswerCommon
+        renderChildNodes={renderChildNodes}
+        items={items}
+        answerOptionsByQuestionId={answerOptionsByQuestionId}
+        correctIds={correctOptionIds}
+      />
 
       <ResultsExamQuestionAutoScore
         score={scoreValue}
