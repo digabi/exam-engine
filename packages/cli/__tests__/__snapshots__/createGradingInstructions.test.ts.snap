@@ -48,8 +48,10 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
 
   <li data-section-id="4"><div class=""><div class="toc-section-header-container"><h4 class="toc-section-header" id="toc-section-title-4">Teil 4: Schriftliche Produktion</h4></div></div><ol class="e-list-data e-pad-l-0" aria-labelledby="toc-section-title-4"><li data-list-number="21." class="level-0"><span class="e-column e-question-title"><a href="#question-nr-21"><span>Kurze Schreibaufgabe</span></a></span><span class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">33 p.</span></span><div class="answers"> </div></li><li data-list-number="22." class="level-0"><span class="e-column e-question-title"><a href="#question-nr-22"><span>Lange Schreibaufgabe</span></a></span><span class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">66 p.</span></span><div class="answers"> </div></li></ol></li>
 
+  <li data-section-id="5"><div class=""><div class="toc-section-header-container"><h4 class="toc-section-header" id="toc-section-title-5">Teil 5: Termine als drag-and-drop</h4></div></div><ol class="e-list-data e-pad-l-0" aria-labelledby="toc-section-title-5"><li data-list-number="23." class="level-0"><span class="e-column e-question-title"><a href="#question-nr-23"><span>Termine</span></a></span><span class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">6 p.</span></span><div class="answers"> </div></li></ol></li>
+
   
-</ol><div class="e-columns"><strong class="e-column e-total">Die Prüfung insgesamt</strong><strong class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">311 p.</span></strong></div></nav></div></section>
+</ol><div class="e-columns"><strong class="e-column e-total">Die Prüfung insgesamt</strong><strong class="e-column e-column--narrow table-of-contents--score-column"><span lang="fi-FI">317 p.</span></strong></div></nav></div></section>
   
   
   
@@ -825,6 +827,14 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
             
           </div><ul></ul></div></div>
 
+  </section>
+
+  <section class="e-section e-bg-color-off-white e-pad-6 e-grading-instruction-section" aria-labelledby="section-title-5">
+    <h2 class="e-grading-instructions-section-title" id="section-title-5">Teil 5: Termine als drag-and-drop</h2>
+    
+    <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="23" data-annotation-anchor="23"><div class="anchor" id="question-nr-23"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">23. </strong>Termine <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">6 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-27">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
+        Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
+      </div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="23.1" data-annotation-anchor="23.1"><div class="anchor" id="question-nr-23.1"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">23.1 </strong> <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">6 p.</span></span></h4><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-28"></div></div></div>
   </section>
 
   
