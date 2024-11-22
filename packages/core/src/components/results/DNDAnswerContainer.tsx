@@ -1,9 +1,10 @@
 import { UniqueIdentifier } from '@dnd-kit/core'
 import React, { useContext } from 'react'
-import { ExamComponentProps } from '../..'
+import { ChoiceGroupQuestion, ExamComponentProps } from '../..'
 import { query, queryAll } from '../../dom-utils'
 import { ResultsContext } from '../context/ResultsContext'
 import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
+import { DNDAnswerCommon } from '../shared/DNDAnswerCommon'
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const { answersByQuestionId } = useContext(ResultsContext)
@@ -33,21 +34,43 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
   const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
 
+  const { gradingStructure } = useContext(ResultsContext)
+
   return (
     <div className="e-dnd-answer-container">
       {dndAnswersWithQuestion.map(element => {
-        const questionId = element.getAttribute('question-id')!
-        const hasAnswer = !!answersByQuestionId[Number(questionId)]?.value
+        const displayNumber = element.getAttribute('display-number')!
+        const questionId = Number(element.getAttribute('question-id')!)
+        const hasAnswer = !!answersByQuestionId[questionId]?.value
+        const thisQuestion = gradingStructure.questions.find(
+          q => q.displayNumber === displayNumber
+        ) as ChoiceGroupQuestion
+        const options = thisQuestion.choices.find(c => c.id === questionId)?.options || []
+        const correctOptionIds = options.filter(o => o.correct).map(o => o.id)
 
         return (
-          <DNDTitleAndAnswerCommon
-            key={questionId}
-            element={element}
-            renderChildNodes={renderChildNodes}
-            items={answerOptionIdsByQuestionId}
-            answerOptionsByQuestionId={answerOptionsByOptionId}
-            hasAnswer={hasAnswer}
-          />
+          <>
+            <DNDTitleAndAnswerCommon
+              key={questionId}
+              element={element}
+              renderChildNodes={renderChildNodes}
+              items={answerOptionIdsByQuestionId}
+              answerOptionsByQuestionId={answerOptionsByOptionId}
+              hasAnswer={hasAnswer}
+            />
+
+            <div className="correct-answers">
+              <b>Oikeat vastaukset</b>
+              <DNDAnswerCommon
+                renderChildNodes={renderChildNodes}
+                items={correctOptionIds}
+                answerOptionsByQuestionId={answerOptionsByOptionId}
+                questionId={questionId}
+                displayNumber={displayNumber}
+                correctIds={correctOptionIds}
+              />
+            </div>
+          </>
         )
       })}
     </div>
