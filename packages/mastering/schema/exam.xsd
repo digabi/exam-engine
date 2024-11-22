@@ -512,8 +512,8 @@
   <xs:element name="dnd-answer-container">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="e:dnd-answer" minOccurs="0" maxOccurs="unbounded" />
-        <xs:element ref="e:dnd-answer-option" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="e:dnd-answer" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element ref="e:dnd-answer-option" minOccurs="1" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="direction" type="e:direction" />
       <xs:attributeGroup ref="e:stylable" />
