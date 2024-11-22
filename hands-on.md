@@ -4,7 +4,7 @@
 
 - WiFi: ReittiPublic
 - Tämä esitys: https://bit.ly/abittidev
-- Gitter: https://gitter.im/abitti-dev/exam-engine
+- Gitter: https://gitter.im/abitti-dev/exam-engine (NB! The MEB team is not actively following this channel - updated 2024-NOV-21)
 
 Pasi Huhtiniemi / Sakumatti Luukkonen / Aleksi Ahtiainen / Mikko Reinikainen / Eero Anttila
 

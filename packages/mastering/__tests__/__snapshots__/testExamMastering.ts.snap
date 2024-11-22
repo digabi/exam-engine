@@ -57,7 +57,7 @@ exports[`Exam mastering masters A_E.xml exam correctly: translation 1`] = ``;
 
 exports[`Exam mastering masters A_E.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="E" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="E" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">FI – Äidinkieli ja kirjallisuus, kirjoitustaidon koe</span></e:exam-title>
     
     <e:exam-instruction>
         <p>Kirjoitustaidon kokeessa kirjoitetaan yksi pohtiva tai kantaa
@@ -314,7 +314,7 @@ exports[`Exam mastering masters A_X.xml exam correctly: translation 1`] = ``;
 
 exports[`Exam mastering masters A_X.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">FI – Äidinkieli ja kirjallisuus, lukutaidon koe</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-19" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="60"><e:exam-title><span lang="fi-FI">FI – Äidinkieli ja kirjallisuus, lukutaidon koe</span></e:exam-title>
   
   <e:exam-instruction>
     <p>Lukutaidon kokeessa vastataan kahteen tehtävään, joista toinen on osasta I ja toinen osasta II. Kummassakin
@@ -1376,7 +1376,7 @@ Valitse yksi tieteellinen malli esimerkiksi jostain lukiossa opiskelemastasi ain
 
 exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Filosofia</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Filosofia</span></e:exam-title>
   
   <e:exam-instruction>
     <span lang="fi-FI">
@@ -2396,7 +2396,7 @@ exports[`Exam mastering masters FF.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters FF.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Filosofi</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2018-09-29" exam-code="FF" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Filosofi</span></e:exam-title>
   
   <e:exam-instruction>
     
@@ -4984,7 +4984,7 @@ Vertaile aineistojen perusteella, millaista alueen maankäyttö on ollut kyseisi
 
 exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Maantiede</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Maantiede</span></e:exam-title>
   
 
   <e:exam-instruction>
@@ -6017,7 +6017,7 @@ exports[`Exam mastering masters GE.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters GE.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Geografi</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-09-17" exam-code="GE" max-answers="5" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Geografi</span></e:exam-title>
   
 
   <e:exam-instruction>
@@ -7484,7 +7484,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: translation
 
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" exam-stylesheet="custom.css" date="2022-01-27" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="25">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-stylesheet="custom.css" date="2022-01-27" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="25">
   
   <e:exam-title>MEX format documentation</e:exam-title>
   <e:exam-instruction>
@@ -7795,7 +7795,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   xmlns:e="http://ylioppilastutkinto.fi/exam.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://www.w3.org/1999/xhtml"
-  xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"
+  xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd"
   exam-schema-version="0.1"
   date="2018-09-29"
   exam-code="EA"
@@ -9634,7 +9634,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       <a href="https://github.com/digabi/exam-engine">https://github.com/digabi/exam-engine</a>
     </p>
     <p>
-      <a href="https://abitti.dev/abitti-trademark.html">Use of Abitti Trademark policy</a>
+      <a href="https://abitti.net/abitti-trademark.html">Use of Abitti Trademark policy</a>
     </p>
   </e:exam-footer>
 </e:exam>
@@ -10656,7 +10656,7 @@ Tarkastellaan tahkoa, joka on neliö. Tahkolla on kahdeksankulmio ja kulmista po
 
 exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2022-03-23" exam-code="N" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Matematiikka, lyhyt oppimäärä</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2022-03-23" exam-code="N" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="fi-FI">FI – Matematiikka, lyhyt oppimäärä</span></e:exam-title>
 
 
 <e:exam-instruction>
@@ -11216,7 +11216,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2022-03-23" exam-code="N" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Matematik, kort lärokurs</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2022-03-23" exam-code="N" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="120"><e:exam-title><span lang="sv-FI">SV – Matematik, kort lärokurs</span></e:exam-title>
 
 
 <e:exam-instruction>
@@ -11760,7 +11760,7 @@ exports[`Exam mastering masters N.xml exam correctly: xml 2`] = `
 
 exports[`Exam mastering masters N.xml exam correctly: xml 3`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2022-03-23" exam-code="N" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="120"><e:exam-title><span lang="fi-FI">FI – Matematiikka, lyhyt oppimäärä (näkövammaiset)</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2022-03-23" exam-code="N" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="120"><e:exam-title><span lang="fi-FI">FI – Matematiikka, lyhyt oppimäärä (näkövammaiset)</span></e:exam-title>
 
 
 <e:exam-instruction>
@@ -19716,7 +19716,7 @@ Ylimääräinen tehtävä
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" lang="de-DE" max-score="311"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" lang="de-DE" max-score="311"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></e:exam-title>
   
   <e:exam-instruction>
     <e:translation key="audio-test.instructions"/>
@@ -21592,7 +21592,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" lang="de-DE" max-score="311"><e:exam-title><span lang="sv-FI">SV – Tyska, kort lärokurs</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" lang="de-DE" max-score="311"><e:exam-title><span lang="sv-FI">SV – Tyska, kort lärokurs</span></e:exam-title>
   
   <e:exam-instruction>
     <e:translation key="audio-test.instructions"/>
@@ -23467,7 +23467,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
 
 exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" lang="de-DE" max-score="240"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä (kuulovammaiset)</span></e:exam-title>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-code="SC" exam-stylesheet="custom.css" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" lang="de-DE" max-score="240"><e:exam-title><span lang="fi-FI">FI – Saksa, lyhyt oppimäärä (kuulovammaiset)</span></e:exam-title>
   
   <e:exam-instruction>
     <e:translation key="audio-test.instructions"/>
@@ -24668,7 +24668,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 
 exports[`Exam mastering shuffles choice answers but keeps no-answer options last 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">
   
   <e:exam-title/>
   <e:exam-instruction/>
@@ -24690,7 +24690,7 @@ exports[`Exam mastering shuffles choice answers but keeps no-answer options last
 
 exports[`Exam mastering supports arbitrarily nested questions: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="36">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="36">
   
   <e:exam-title>Kokeen otsikko</e:exam-title>
   <e:section display-number="1" max-score="36">
@@ -24744,7 +24744,7 @@ exports[`Exam mastering supports arbitrarily nested questions: xml 1`] = `
 
 exports[`Exam mastering supports multiple exam-type attributes: hearing-impaired 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" max-score="0">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" max-score="0">
   
   <e:exam-instruction>
     
@@ -24776,7 +24776,7 @@ exports[`Exam mastering supports multiple exam-type attributes: hearing-impaired
 
 exports[`Exam mastering supports multiple exam-type attributes: normal 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">
   
   <e:exam-instruction>
     <span>
@@ -24808,7 +24808,7 @@ exports[`Exam mastering supports multiple exam-type attributes: normal 1`] = `
 
 exports[`Exam mastering supports multiple exam-type attributes: visually-impaired 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="0">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="0">
   
   <e:exam-instruction>
     <span>

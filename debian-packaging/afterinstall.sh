@@ -23,7 +23,7 @@ EOF
         mkdir -p /home/digabi/Työpöytä/mex-demo/$exam
         cp /home/digabi/exam-engine/packages/exams/$exam/$exam.xml /home/digabi/Työpöytä/mex-demo/$exam/koe.xml
         sed -i 's|xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd ../../packages/mastering/schema/exam.xsd"|xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd"|' /home/digabi/Työpöytä/mex-demo/$exam/koe.xml
-        sed -i 's|xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd"|xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd"|' /home/digabi/Työpöytä/mex-demo/$exam/koe.xml
+        sed -i 's|xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd"|xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd"|' /home/digabi/Työpöytä/mex-demo/$exam/koe.xml
         cp -r /home/digabi/exam-engine/packages/exams/$exam/attachments /home/digabi/Työpöytä/mex-demo/$exam
     done
 
