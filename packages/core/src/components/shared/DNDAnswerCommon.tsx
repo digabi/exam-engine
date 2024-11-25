@@ -40,19 +40,18 @@ export const DNDAnswerCommon = ({
         const hasImage = query(element, 'image')
         const isCorrect = correctIds?.includes(optionId)
         return (
-          <div
-            className={classNames('e-dnd-answer-option', { 'has-image': hasImage })}
-            key={element.getAttribute('option-id')}
-          >
+          <div className={classNames({ 'has-image': hasImage })} key={element.getAttribute('option-id')}>
             {isInExam ? (
               <DNDAnswerOptionExam element={element} renderChildNodes={renderChildNodes} key={optionId} />
             ) : (
-              <DNDAnswerOptionCommon
-                element={element}
-                renderChildNodes={renderChildNodes}
-                key={optionId}
-                classes={[isCorrect ? 'correct-answer' : 'wrong-answer']}
-              />
+              <div className="e-dnd-answer-option">
+                <DNDAnswerOptionCommon
+                  element={element}
+                  renderChildNodes={renderChildNodes}
+                  key={optionId}
+                  classes={[isCorrect ? 'correct-answer' : 'wrong-answer']}
+                />
+              </div>
             )}
           </div>
         )
