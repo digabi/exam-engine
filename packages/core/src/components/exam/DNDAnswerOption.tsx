@@ -16,7 +16,7 @@ export const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProp
   const style = { opacity: isDragging ? 0.3 : 1 }
 
   return (
-    <div ref={setNodeRef} style={{ display: 'flex' }}>
+    <div ref={setNodeRef} className="e-dnd-answer-option">
       <DNDAnswerOptionCommon element={element} renderChildNodes={renderChildNodes} style={style} />
 
       <div {...listeners} {...attributes} ref={setActivatorNodeRef} className="drag-handle">
