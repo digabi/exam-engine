@@ -513,13 +513,22 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="e:dnd-answer" minOccurs="1" maxOccurs="unbounded" />
-        <xs:element ref="e:dnd-answer-option" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element ref="e:dnd-answer-option" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
+      <xs:attribute name="dnd-type" type="e:dnd-type" />
       <xs:attribute name="direction" type="e:direction" />
       <xs:attributeGroup ref="e:stylable" />
       <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
+
+  <xs:simpleType name="dnd-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="connect" />
+      <xs:enumeration value="classify" />
+      <xs:enumeration value="order" />
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:element name="dnd-answer">
     <xs:complexType mixed="true">
