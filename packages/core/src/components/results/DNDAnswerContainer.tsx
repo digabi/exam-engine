@@ -47,7 +47,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         const correctOptionIds = options.filter(o => o.correct).map(o => o.id)
 
         return (
-          <>
+          <React.Fragment key={questionId}>
             <DNDTitleAndAnswerCommon
               key={questionId}
               element={element}
@@ -65,7 +65,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               correctIds={correctOptionIds}
               classes={{ 'correct-answers': true }}
             />
-          </>
+          </React.Fragment>
         )
       })}
     </div>
