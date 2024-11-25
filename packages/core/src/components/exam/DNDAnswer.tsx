@@ -33,7 +33,7 @@ export const DNDAnswer = ({
 
   return (
     <SortableContext id={String(questionId)} items={items || []}>
-      <span ref={setNodeRef} style={{ alignSelf: 'flex-end' }}>
+      <span ref={setNodeRef}>
         {questionId === 'root' && <span className="droppable-title">Vastausvaihtoehdot:</span>}
         <DNDAnswerCommon
           renderChildNodes={renderChildNodes}
