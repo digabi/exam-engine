@@ -11,10 +11,6 @@
       border-radius: 5px;
       align-items: center;
 
-      &.root {
-        display: block;
-      }
-
       .title-and-line {
         flex: auto;
         display: flex;
@@ -37,13 +33,13 @@
         border: 1px solid #0032;
         border-bottom: 2px solid #0032;
 
+        &.hovered {
+          outline: 3px solid #1f2e93;
+        }
+
         &.has-images {
           flex: 0 0 150px;
         }
-      }
-
-      &:has(.e-dnd-answer-droppable.hovered) .e-dnd-answer-title {
-        outline: 3px solid #1f2e93;
       }
 
       .e-score {
@@ -56,8 +52,6 @@
       padding: 0.5rem;
       background: hsl(201deg 88% 96%);
       border-radius: 4px;
-      min-height: 60px;
-      min-width: 80px;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -75,15 +69,15 @@
         margin: 0 0.5rem 3rem;
       }
 
-      &.has-images {
-        flex: 0 0 calc(@image-max-width + 1rem);
-      }
-
       &.has-images,
       &.has-audio {
         flex-direction: row;
         flex-wrap: wrap;
         flex: none;
+      }
+
+      &.has-images {
+        flex: 0 0 calc(@image-max-width + 1rem);
       }
 
       &.has-formula {
@@ -106,30 +100,22 @@
         outline: 2px dashed #1f2e93;
         border: 1px solid transparent;
         position: relative;
-
-        &:not(:has(.e-dnd-answer-option)) {
-          &:before {
-            content: 'Pudota tänne...';
-            color: grey;
-            font-style: italic;
-            position: absolute;
-            font-size: 16px;
-            left: 0;
-            top: 0;
-            display: grid;
-            place-content: center;
-            height: 100%;
-            width: 100%;
-            text-align: center;
-            transition: all 0.2s;
-          }
-        }
       }
 
       &.hovered {
         background: hsl(201deg 88% 80%);
         outline: 3px solid #1f2e93;
         border: 1px solid transparent;
+      }
+
+      .droppable-no-answer {
+        color: #0004;
+        white-space: nowrap;
+      }
+
+      .droppable-drop-here {
+        color: #1f2e93;
+        white-space: nowrap;
       }
     }
 
@@ -141,6 +127,10 @@
       &.align-right {
         text-align: right;
       }
+    }
+
+    .audio.e-mrg-b-2 {
+      margin-bottom: 0;
     }
   }
 }
@@ -186,6 +176,7 @@
   &:hover .drag-handle {
     background: #d8ebf5;
     color: black;
+    border-radius: 0 3px 3px 0;
 
     &:hover {
       background: #1f2e93;
@@ -206,5 +197,17 @@
     display: grid;
     place-content: center;
     transition: background-color 0.1s;
+  }
+}
+
+.e-dnd-answer-drag-overlay {
+  box-shadow: 0 10px 15px -10px hsla(232, 25%, 35%, 1);
+  opacity: 0.85;
+  cursor: grabbing;
+  border-radius: 5px;
+  outline: 3px solid #1f2e93;
+
+  .drag-handle {
+    display: none;
   }
 }

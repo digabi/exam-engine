@@ -63,6 +63,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               items={correctOptionIds}
               answerOptionsByQuestionId={answerOptionsByOptionId}
               correctIds={correctOptionIds}
+              questionId={questionId}
               classes={{ 'correct-answers': true }}
             />
           </React.Fragment>

@@ -1,5 +1,4 @@
-import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
-import { SortableContext } from '@dnd-kit/sortable'
+import { UniqueIdentifier } from '@dnd-kit/core'
 import React from 'react'
 import { ExamComponentProps } from '../..'
 import { DNDAnswerCommon } from '../shared/DNDAnswerCommon'
@@ -28,27 +27,17 @@ export const DNDAnswer = ({
   titleElement?: Element
   displayNumber?: string
   maxScore?: number
-}) => {
-  const { setNodeRef, isOver, active } = useDroppable({ id: questionId })
+}) => (
+  <>
+    <DNDAnswerCommon
+      renderChildNodes={renderChildNodes}
+      items={items}
+      answerOptionsByQuestionId={answerOptionsByQuestionId}
+      classes={{ root: questionId === 'root' }}
+      isInExam={true}
+      questionId={questionId}
+    />
 
-  return (
-    <SortableContext id={String(questionId)} items={items || []}>
-      <span ref={setNodeRef}>
-        {questionId === 'root' && <span className="droppable-title">Vastausvaihtoehdot:</span>}
-        <DNDAnswerCommon
-          renderChildNodes={renderChildNodes}
-          items={items}
-          answerOptionsByQuestionId={answerOptionsByQuestionId}
-          classes={{
-            hovered: isOver,
-            root: questionId === 'root',
-            'ready-for-drop': !!active?.id
-          }}
-          isInExam={true}
-        />
-      </span>
-
-      {maxScore ? <Score score={maxScore} size="small" /> : null}
-    </SortableContext>
-  )
-}
+    {maxScore ? <Score score={maxScore} size="small" /> : null}
+  </>
+)
