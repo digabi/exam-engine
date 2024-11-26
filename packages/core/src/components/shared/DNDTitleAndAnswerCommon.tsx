@@ -1,10 +1,11 @@
-import { UniqueIdentifier } from '@dnd-kit/core'
+import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import classNames from 'classnames'
 import React from 'react'
 import { ExamComponentProps } from '../..'
 import { getNumericAttribute, query } from '../../dom-utils'
 import { DNDAnswer as DNDAnswerExam, ItemsState } from '../exam/DNDAnswer'
 import { DNDAnswer as DNDAnswerResults } from '../results/DNDAnswer'
+import { SortableContext } from '@dnd-kit/sortable'
 
 export const DNDTitleAndAnswerCommon = ({
   element,
@@ -28,47 +29,52 @@ export const DNDTitleAndAnswerCommon = ({
   const titleElement = query(element, 'dnd-answer-title')
   const hasTitle = titleElement && renderChildNodes(titleElement).length > 0
 
+  const { setNodeRef, isOver } = useDroppable({ id: questionId })
+
   return (
-    <div
-      className={classNames('e-dnd-answer', {
-        root: questionId === 'root',
-        'no-answer': !hasAnswer
-      })}
-      data-question-id={questionId}
-      key={questionId}
-    >
-      <div className="anchor" id={`question-nr-${displayNumber}`} />
+    <SortableContext id={String(questionId)} items={items[questionId] || []}>
+      <span ref={setNodeRef}>
+        <div
+          className={classNames('e-dnd-answer', {
+            'no-answer': !hasAnswer
+          })}
+          data-question-id={questionId}
+          key={questionId}
+        >
+          <div className="anchor" id={`question-nr-${displayNumber}`} />
 
-      {titleElement &&
-        (!hasTitle ? (
-          <i style={{ color: 'grey' }}>Tästä puuttuu kysymys...</i>
-        ) : (
-          <span className={classNames('e-dnd-answer-title', { 'has-images': hasImages })}>
-            {renderChildNodes(titleElement)}
-          </span>
-        ))}
+          {titleElement &&
+            (!hasTitle ? (
+              <i style={{ color: 'grey' }}>Tästä puuttuu kysymys...</i>
+            ) : (
+              <span className={classNames('e-dnd-answer-title', { 'has-images': hasImages, hovered: isOver })}>
+                {renderChildNodes(titleElement)}
+              </span>
+            ))}
 
-      <div className="connection-line" />
+          <div className="connection-line" />
 
-      {isInExam ? (
-        <DNDAnswerExam
-          renderChildNodes={renderChildNodes}
-          items={items[questionId as UniqueIdentifier]}
-          answerOptionsByQuestionId={answerOptionsByQuestionId}
-          questionId={questionId}
-          displayNumber={displayNumber}
-          maxScore={maxScore}
-        />
-      ) : (
-        <DNDAnswerResults
-          renderChildNodes={renderChildNodes}
-          items={items[questionId]}
-          answerOptionsByQuestionId={answerOptionsByQuestionId}
-          questionId={questionId}
-          displayNumber={displayNumber}
-          maxScore={maxScore}
-        />
-      )}
-    </div>
+          {isInExam ? (
+            <DNDAnswerExam
+              renderChildNodes={renderChildNodes}
+              items={items[questionId as UniqueIdentifier]}
+              answerOptionsByQuestionId={answerOptionsByQuestionId}
+              questionId={questionId}
+              displayNumber={displayNumber}
+              maxScore={maxScore}
+            />
+          ) : (
+            <DNDAnswerResults
+              renderChildNodes={renderChildNodes}
+              items={items[questionId]}
+              answerOptionsByQuestionId={answerOptionsByQuestionId}
+              questionId={questionId}
+              displayNumber={displayNumber}
+              maxScore={maxScore}
+            />
+          )}
+        </div>
+      </span>
+    </SortableContext>
   )
 }
