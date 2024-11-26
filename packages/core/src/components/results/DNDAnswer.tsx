@@ -38,6 +38,7 @@ export const DNDAnswer = ({
         items={items}
         answerOptionsByQuestionId={answerOptionsByQuestionId}
         correctIds={correctOptionIds}
+        questionId={questionId}
       />
 
       <ResultsExamQuestionAutoScore
