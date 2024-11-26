@@ -6,18 +6,20 @@ import { parseExamStructure } from '../../../src/parser/parseExamStructure'
 import { useCached } from '../../../src/useCached'
 import { examServerApi } from '../../examServerApi'
 import { initI18n } from '../../../src/i18n'
+import { withCommonExamContext } from '../../../src/components/context/CommonExamContext'
+import { withExamContext } from '../../../src/components/context/ExamContext'
+import { CommonExamProps } from '../../../src/components/exam/Exam'
 import '../../../src/css/main.less'
 
-interface ComponentWrapperProps {
-  exam: string
+export interface ComponentWrapperProps extends CommonExamProps {
+  doc: XMLDocument
   children: React.ReactElement
 }
 
-export const ComponentWrapper: React.FC<ComponentWrapperProps> = ({ exam, children }) => {
-  const parser = new DOMParser()
-  const examXml = parser.parseFromString(exam, 'application/xml')
+const WrappedComponent: React.FC<ComponentWrapperProps> = ({ doc, children }) => {
   const i18n = useCached(() => initI18n('fi-FI'))
-  const store = useCached(() => initializeExamStore(parseExamStructure(examXml), 'allowed', [], [], examServerApi))
+  const store = useCached(() => initializeExamStore(parseExamStructure(doc), 'allowed', [], [], examServerApi))
+
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
@@ -26,3 +28,5 @@ export const ComponentWrapper: React.FC<ComponentWrapperProps> = ({ exam, childr
     </Provider>
   )
 }
+
+export const ComponentWrapper = withExamContext(withCommonExamContext(WrappedComponent))
