@@ -25,7 +25,9 @@ export const DNDAnswer = ({
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const answer = answersByQuestionId[questionIdNumber]
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionIdNumber)!
-  const scoreValue = (answer && choice?.options.find(option => option.id === Number(answer.value))?.score) ?? undefined
+  const scoreValue = answer?.value
+    ? undefined
+    : (choice?.options.find(option => option.id === Number(answer.value) && option.correct)?.score ?? 0)
 
   const thisQuestion = gradingStructure.questions.find(q => q.displayNumber === displayNumber) as ChoiceGroupQuestion
   const options = thisQuestion.choices.find(c => c.id === questionIdNumber)?.options || []
