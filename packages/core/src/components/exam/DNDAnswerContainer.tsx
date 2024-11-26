@@ -6,7 +6,6 @@ import {
   DragStartEvent,
   KeyboardSensor,
   PointerSensor,
-  pointerWithin,
   UniqueIdentifier,
   useSensor,
   useSensors
@@ -19,7 +18,7 @@ import { query, queryAll } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
 import { AnswersState } from '../../store/answers/reducer'
 import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
-import { DNDAnswer } from './DNDAnswer'
+import { AllDNDOptions } from './AllDNDOptions'
 import { DNDAnswerOption } from './DNDAnswerOption'
 
 type ItemsState = {
@@ -143,13 +142,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
   return (
     <div className="e-dnd-answer-container">
-      <DndContext
-        sensors={sensors}
-        collisionDetection={pointerWithin}
-        onDragStart={handleDragStart}
-        onDragOver={handleDragOver}
-        onDragEnd={handleDragEnd}
-      >
+      <DndContext sensors={sensors} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
         {dndAnswersWithQuestion.map(element => {
           const questionId = element.getAttribute('question-id')!
 
@@ -165,22 +158,17 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           )
         })}
 
-        <DNDAnswer
+        <AllDNDOptions
+          items={items.root || []}
           renderChildNodes={renderChildNodes}
-          questionId="root"
-          items={items['root']}
-          answerOptionsByQuestionId={answerOptionsByOptionId}
+          answerOptionsByOptionId={answerOptionsByOptionId}
         />
 
         <DragOverlay
+          className="e-dnd-answer-drag-overlay"
           dropAnimation={{
             duration: 250,
             easing: 'ease-in-out'
-          }}
-          style={{
-            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-            opacity: 0.85,
-            cursor: 'grabbing'
           }}
         >
           {activeId ? (

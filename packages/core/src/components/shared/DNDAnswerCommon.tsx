@@ -1,4 +1,4 @@
-import { UniqueIdentifier } from '@dnd-kit/core'
+import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import classNames from 'classnames'
 import React from 'react'
 import { ExamComponentProps } from '../..'
@@ -12,7 +12,8 @@ export const DNDAnswerCommon = ({
   answerOptionsByQuestionId,
   isInExam,
   correctIds,
-  classes
+  classes,
+  questionId
 }: {
   items: UniqueIdentifier[]
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
@@ -20,11 +21,13 @@ export const DNDAnswerCommon = ({
   isInExam?: boolean
   correctIds?: UniqueIdentifier[]
   classes?: Record<string, boolean>
+  questionId: UniqueIdentifier
 }) => {
   const dndAnswerOptions = items?.map(id => answerOptionsByQuestionId[id]) || []
   const hasImages = dndAnswerOptions.some(option => query(option, 'image'))
   const hasAudio = dndAnswerOptions.some(option => query(option, 'audio'))
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
+  const { active, isOver } = useDroppable({ id: questionId })
 
   return (
     <div
@@ -32,6 +35,7 @@ export const DNDAnswerCommon = ({
         'has-images': hasImages,
         'has-audio': hasAudio,
         'has-formula': hasFormula,
+        hovered: isOver,
         ...classes
       })}
     >
@@ -56,6 +60,12 @@ export const DNDAnswerCommon = ({
           </div>
         )
       })}
+      {!dndAnswerOptions.length &&
+        (active ? (
+          <i className="droppable-drop-here">Pudota tänne</i>
+        ) : (
+          <i className="droppable-no-answer">(Ei vastausta)</i>
+        ))}
     </div>
   )
 }
