@@ -22,7 +22,8 @@ export default defineConfig({
           '~@digabi': resolve(__dirname, '../../node_modules/@digabi'),
           '~rich-text-editor': resolve(__dirname, '../../node_modules/rich-text-editor')
         }
-      }
+      },
+      publicDir: resolve(__dirname, '../../packages/exams')
     }
   },
   projects: [
