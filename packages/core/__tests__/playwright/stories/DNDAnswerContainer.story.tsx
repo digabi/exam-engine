@@ -5,19 +5,27 @@ import { renderChildNodes } from '../../../src/components/exam/Exam'
 import { DNDAnswerContainer } from '../../../src/components/exam/DNDAnswerContainer'
 import { ComponentWrapper } from '../utils/ComponentWrapper'
 import parseExam from '../../../src/parser/parseExam'
-import { query } from '../../../src/dom-utils'
+import { queryAll } from '../../../src/dom-utils'
+
+export type answerMediaType = 'text' | 'image'
 
 interface DNDAnswerContainerStoryProps {
-  masteredExam: MasteringResult[]
-  exam: string
+  masteredExam: MasteringResult
+  answerMediaType: answerMediaType
 }
 
-export const DNDAnswerContainerStory: React.FC<DNDAnswerContainerStoryProps> = ({ masteredExam, exam }) => {
-  const doc = parseExam(masteredExam[0].xml, true)
-  const element = query(doc.documentElement, 'dnd-answer-container')!
+export const DNDAnswerContainerStory: React.FC<DNDAnswerContainerStoryProps> = ({ masteredExam, answerMediaType }) => {
+  const doc = parseExam(masteredExam.xml, true)
+  const [textAnswers, imageAnswers] = queryAll(doc.documentElement, 'dnd-answer-container')
   return (
-    <ComponentWrapper exam={exam}>
-      <DNDAnswerContainer element={element} renderChildNodes={renderChildNodes}></DNDAnswerContainer>
+    <ComponentWrapper
+      doc={doc}
+      resolveAttachment={(filename: string) => `/${masteredExam.examCode}/attachments/${filename}`}
+    >
+      <DNDAnswerContainer
+        element={answerMediaType === 'text' ? textAnswers : imageAnswers}
+        renderChildNodes={renderChildNodes}
+      ></DNDAnswerContainer>
     </ComponentWrapper>
   )
 }
