@@ -21,7 +21,7 @@ import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
 import { AllDNDOptions } from './AllDNDOptions'
 import { DNDAnswerOption } from './DNDAnswerOption'
 
-type ItemsState = {
+export type ItemsState = {
   root: UniqueIdentifier[]
   [key: UniqueIdentifier]: UniqueIdentifier[]
 }
@@ -153,7 +153,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               renderChildNodes={renderChildNodes}
               items={items}
               answerOptionsByQuestionId={answerOptionsByOptionId}
-              isInExam={true}
             />
           )
         })}
