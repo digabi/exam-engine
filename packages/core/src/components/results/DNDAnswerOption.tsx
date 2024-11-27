@@ -14,8 +14,7 @@ export const DNDAnswerOption = ({
 }) => {
   const hasImages = !!query(element, 'image')
   const hasFormula = !!query(element, 'formula')
-
-  const hasTitle = renderChildNodes(element).length > 0
+  const hasContent = renderChildNodes(element).length > 0
 
   return (
     <div
@@ -26,7 +25,7 @@ export const DNDAnswerOption = ({
       style={style}
     >
       <div className="option-content">
-        {!hasTitle ? <i style={{ color: 'grey' }}>Tähän tulee vastaus...</i> : renderChildNodes(element)}
+        {!hasContent ? <i style={{ color: 'grey' }}>Tähän tulee vastaus...</i> : renderChildNodes(element)}
       </div>
     </div>
   )
