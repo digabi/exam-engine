@@ -1,8 +1,9 @@
+import { UniqueIdentifier } from '@dnd-kit/core'
 import React, { useContext } from 'react'
 import { ChoiceGroupQuestion, ExamComponentProps } from '../..'
 import { ResultsContext } from '../context/ResultsContext'
 import { DNDDroppable } from '../shared/DNDDroppable'
-import { UniqueIdentifier } from '@dnd-kit/core'
+import { useExamTranslation } from '../../i18n'
 
 export const CorrectDNDAnswers = ({
   element,
@@ -19,10 +20,11 @@ export const CorrectDNDAnswers = ({
   const options = thisQuestion?.choices.find(c => c.id === questionId)?.options || []
   const correctOptionIds = options?.filter(o => o.correct).map(o => o.id)
   const correctDNDAnswerOptions = correctOptionIds?.map(id => answerOptionsById?.[id] || null).filter(Boolean)
+  const { t } = useExamTranslation()
 
   return (
     <>
-      <span className="droppable-title align-right">Oikeat vastaukset</span>
+      <span className="droppable-title align-right">{t('dnd-answers.correct-answers')}</span>
       <DNDDroppable
         renderChildNodes={renderChildNodes}
         answerOptionElements={correctDNDAnswerOptions}

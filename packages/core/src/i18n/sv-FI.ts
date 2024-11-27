@@ -69,6 +69,14 @@ export const sv_FI: Translations = {
     examine: 'Kontrollera dina svar',
     instructions: 'Efter att du granskat dina svar kan du ännu gå tillbaka och redigera svaren eller avsluta provet.'
   },
+  'dnd-answers': {
+    'all-answer-options': 'TODO TODO:',
+    'correct-answers': 'TODO TODO',
+    'question-missing': 'Här saknas ett objekt...',
+    'answer-missing': 'Här kommer rätta alternativet...',
+    'drop-here': 'TODO TODO',
+    'no-answer': '(TODO TODO)'
+  },
   undo: {
     loading: 'Laddar...',
     close: 'Stäng',
