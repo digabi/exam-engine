@@ -17,9 +17,9 @@ import { ExamComponentProps } from '../..'
 import { query, queryAll } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
 import { AnswersState } from '../../store/answers/reducer'
-import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
-import { AllDNDOptions } from './AllDNDOptions'
-import { DNDAnswerOption } from './DNDAnswerOption'
+import { DNDTitleAndDroppable } from '../shared/DNDTitleAndDroppable'
+import { AllDNDOptions } from './DNDAllOptions'
+import { DNDAnswerOptionDraggable } from './DNDAnswerOptionDraggable'
 
 export type ItemsState = {
   root: UniqueIdentifier[]
@@ -147,12 +147,13 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           const questionId = element.getAttribute('question-id')!
 
           return (
-            <DNDTitleAndAnswerCommon
+            <DNDTitleAndDroppable
               key={questionId}
               element={element}
               renderChildNodes={renderChildNodes}
               items={items}
               answerOptionsByQuestionId={answerOptionsByOptionId}
+              page="exam"
             />
           )
         })}
@@ -171,7 +172,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           }}
         >
           {activeId ? (
-            <DNDAnswerOption element={answerOptionsByOptionId[activeId]} renderChildNodes={renderChildNodes} />
+            <DNDAnswerOptionDraggable element={answerOptionsByOptionId[activeId]} renderChildNodes={renderChildNodes} />
           ) : null}
         </DragOverlay>
       </DndContext>

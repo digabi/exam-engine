@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { ExamComponentProps } from '../..'
 import { query, queryAll } from '../../dom-utils'
 import { ResultsContext } from '../context/ResultsContext'
-import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
+import { DNDTitleAndDroppable } from '../shared/DNDTitleAndDroppable'
 import { CorrectDNDAnswers } from './CorrectDNDAnswers'
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
@@ -41,12 +41,13 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
         return (
           <React.Fragment key={questionId}>
-            <DNDTitleAndAnswerCommon
+            <DNDTitleAndDroppable
               key={questionId}
               element={element}
               renderChildNodes={renderChildNodes}
               items={answerOptionIdsByQuestionId}
               answerOptionsByQuestionId={answerOptionsByOptionId}
+              page="results"
             />
 
             {gradingStructure && (

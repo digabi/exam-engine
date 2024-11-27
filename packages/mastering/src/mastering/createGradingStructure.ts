@@ -102,7 +102,12 @@ function mkChoiceGroupQuestion(
   generateId: GenerateId
 ): ChoiceGroupQuestion {
   const choices: ChoiceGroupChoice[] = answers.map(mkChoiceGroupChoice)
-  return { id: generateId(), displayNumber: questionDisplayNumber, type: 'choicegroup', choices }
+  return {
+    id: generateId(),
+    displayNumber: questionDisplayNumber,
+    type: 'choicegroup',
+    choices
+  }
 }
 
 function mkSingleChoiceGroupQuestion(answer: Answer, generateId: GenerateId): ChoiceGroupQuestion {
