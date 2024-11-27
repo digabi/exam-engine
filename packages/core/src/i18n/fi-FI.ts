@@ -79,6 +79,14 @@ export const fi_FI = {
     examine: 'Siirry tarkastelemaan vastauksiasi',
     instructions: 'Tarkastelun jälkeen voit vielä palata muokkaamaan vastauksia, tai päättää kokeen.'
   },
+  'dnd-answers': {
+    'all-answer-options': 'Vastausvaihtoehdot:',
+    'correct-answers': 'Oikeat vastaukset',
+    'question-missing': 'Tästä puuttuu tehtävä...',
+    'answer-missing': 'Tästä puuttuu vastaus...',
+    'drop-here': 'Pudota tänne',
+    'no-answer': '(Ei vastausta)'
+  },
   undo: {
     loading: 'Ladataan...',
     close: 'Sulje',

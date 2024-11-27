@@ -8,6 +8,7 @@ import { findMultiChoiceFromGradingStructure, ResultsContext } from '../context/
 import ResultsExamQuestionAutoScore from '../results/internal/QuestionAutoScore'
 import { DNDDroppable } from './DNDDroppable'
 import { Score } from './Score'
+import { useExamTranslation } from '../../i18n'
 
 export const DNDTitleAndDroppable = ({
   element,
@@ -22,6 +23,7 @@ export const DNDTitleAndDroppable = ({
   page: 'exam' | 'results'
   answerOptionElements: Element[]
 }) => {
+  const { t } = useExamTranslation()
   const questionId = element.getAttribute('question-id')!
   const questionIdNumber = Number(questionId)
   const displayNumber = element.getAttribute('display-number')!
@@ -50,7 +52,7 @@ export const DNDTitleAndDroppable = ({
 
           {titleElement &&
             (!hasTitle ? (
-              <i style={{ color: 'grey' }}>Tästä puuttuu kysymys...</i>
+              <i style={{ color: 'grey' }}>{t('dnd-answers.question-missing')}</i>
             ) : (
               <span className={classNames('e-dnd-answer-title', { 'has-images': hasImages, hovered: isOver })}>
                 {renderChildNodes(titleElement)}
