@@ -1,26 +1,25 @@
 import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import classNames from 'classnames'
-import React from 'react'
+import React, { useContext } from 'react'
 import { ExamComponentProps } from '../..'
 import { getNumericAttribute, query } from '../../dom-utils'
-import { DNDAnswer as DNDAnswerExam, ItemsState } from '../exam/DNDAnswer'
 import { DNDAnswer as DNDAnswerResults } from '../results/DNDAnswer'
 import { SortableContext } from '@dnd-kit/sortable'
+import { ResultsContext } from '../context/ResultsContext'
+import { Score } from './Score'
+import { DNDAnswerDroppableCommon } from './DNDAnswerDroppableCommon'
+import { ItemsState } from '../exam/DNDAnswerContainer'
 
 export const DNDTitleAndAnswerCommon = ({
   element,
   renderChildNodes,
   items,
-  answerOptionsByQuestionId,
-  isInExam,
-  hasAnswer
+  answerOptionsByQuestionId
 }: {
   element: Element
   renderChildNodes: ExamComponentProps['renderChildNodes']
   items: ItemsState
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
-  isInExam?: boolean
-  hasAnswer?: boolean
 }) => {
   const questionId = element.getAttribute('question-id')!
   const displayNumber = element.getAttribute('display-number')!
@@ -28,6 +27,10 @@ export const DNDTitleAndAnswerCommon = ({
   const hasImages = !!query(element, 'image')
   const titleElement = query(element, 'dnd-answer-title')
   const hasTitle = titleElement && renderChildNodes(titleElement).length > 0
+
+  const { gradingStructure, answersByQuestionId } = useContext(ResultsContext)
+  const isInExam = !gradingStructure
+  const hasAnswer = answersByQuestionId && !!answersByQuestionId[Number(questionId)]?.value
 
   const { setNodeRef, isOver } = useDroppable({ id: questionId })
 
@@ -55,20 +58,21 @@ export const DNDTitleAndAnswerCommon = ({
           <div className="connection-line" />
 
           {isInExam ? (
-            <DNDAnswerExam
-              renderChildNodes={renderChildNodes}
-              items={items[questionId as UniqueIdentifier]}
-              answerOptionsByQuestionId={answerOptionsByQuestionId}
-              questionId={questionId}
-              displayNumber={displayNumber}
-              maxScore={maxScore}
-            />
+            <>
+              <DNDAnswerDroppableCommon
+                renderChildNodes={renderChildNodes}
+                items={items[questionId as UniqueIdentifier] || []}
+                answerOptionsByQuestionId={answerOptionsByQuestionId}
+                questionId={questionId}
+              />
+              {maxScore ? <Score score={maxScore} size="small" /> : null}
+            </>
           ) : (
             <DNDAnswerResults
               renderChildNodes={renderChildNodes}
               items={items[questionId]}
               answerOptionsByQuestionId={answerOptionsByQuestionId}
-              questionId={questionId}
+              questionId={Number(questionId)}
               displayNumber={displayNumber}
               maxScore={maxScore}
             />
