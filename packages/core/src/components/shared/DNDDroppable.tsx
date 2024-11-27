@@ -5,6 +5,7 @@ import { ExamComponentProps } from '../..'
 import { query } from '../../dom-utils'
 import { DNDAnswerOptionDraggable } from '../exam/DNDAnswerOptionDraggable'
 import { DNDAnswerOption } from '../results/DNDAnswerOption'
+import { useExamTranslation } from '../../i18n'
 
 export const DNDDroppable = ({
   renderChildNodes,
@@ -26,6 +27,7 @@ export const DNDDroppable = ({
   const hasFormula = answerOptionElements.some(option => query(option, 'formula'))
 
   const { active, isOver } = useDroppable({ id: questionId })
+  const { t } = useExamTranslation()
 
   return (
     <div
@@ -60,9 +62,9 @@ export const DNDDroppable = ({
 
       {!answerOptionElements.length &&
         (active ? (
-          <i className="droppable-drop-here">Pudota tänne</i>
+          <i className="droppable-drop-here">{t('dnd-answers.drop-here')}</i>
         ) : (
-          <i className="droppable-no-answer">(Ei vastausta)</i>
+          <i className="droppable-no-answer">{t('dnd-answers.no-answer')}</i>
         ))}
     </div>
   )
