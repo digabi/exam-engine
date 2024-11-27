@@ -5,13 +5,14 @@ import { query, queryAll } from '../../dom-utils'
 import { ResultsContext } from '../context/ResultsContext'
 import { DNDTitleAndDroppable } from '../shared/DNDTitleAndDroppable'
 import { CorrectDNDAnswers } from './CorrectDNDAnswers'
+import { ItemsState } from '../exam/DNDAnswerContainer'
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const dndAnswers = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
   const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
 
-  const answerOptionIdsByQuestionId = dndAnswers.reduce(
+  const answerOptionIdsByQuestionId: ItemsState = dndAnswers.reduce(
     (acc, group) => {
       const questionId = group.getAttribute('question-id')!
       const answer = answersByQuestionId[Number(questionId)]?.value
@@ -24,7 +25,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
   )
 
-  const answerOptionsByOptionId = dndAnswerOptions.reduce(
+  const answerOptionsById = dndAnswerOptions.reduce(
     (acc, el) => {
       const optionId = el.getAttribute('option-id')!
       return { ...acc, [optionId]: el }
@@ -37,16 +38,20 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   return (
     <div className="e-dnd-answer-container">
       {dndAnswersWithQuestion.map(element => {
-        const questionId = Number(element.getAttribute('question-id')!)
+        const questionId = element.getAttribute('question-id')!
 
+        const answerOptionElements = (answerOptionIdsByQuestionId[questionId] || [])
+          ?.map(id => answerOptionsById?.[id] || null)
+          .filter(Boolean)
+        const itemIds = answerOptionIdsByQuestionId[questionId] || []
         return (
           <React.Fragment key={questionId}>
             <DNDTitleAndDroppable
               key={questionId}
               element={element}
+              answerOptionElements={answerOptionElements}
               renderChildNodes={renderChildNodes}
-              items={answerOptionIdsByQuestionId}
-              answerOptionsByQuestionId={answerOptionsByOptionId}
+              itemIds={itemIds}
               page="results"
             />
 
@@ -55,7 +60,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
                 key={`${questionId}-correct`}
                 element={element}
                 renderChildNodes={renderChildNodes}
-                dndAnswerOptions={dndAnswerOptions}
+                answerOptionsById={answerOptionsById}
               />
             )}
           </React.Fragment>
