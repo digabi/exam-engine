@@ -24,7 +24,6 @@ export const DNDDroppable = ({
 }) => {
   const hasImages = answerOptionElements.some(option => query(option, 'image'))
   const hasAudio = answerOptionElements.some(option => query(option, 'audio'))
-  const hasFormula = answerOptionElements.some(option => query(option, 'formula'))
 
   const { active, isOver } = useDroppable({ id: questionId })
   const { t } = useExamTranslation()
@@ -34,16 +33,14 @@ export const DNDDroppable = ({
       className={classNames(['e-dnd-answer-droppable', ...classes], {
         'has-images': hasImages,
         'has-audio': hasAudio,
-        'has-formula': hasFormula,
         hovered: isOver
       })}
     >
       {answerOptionElements?.map(element => {
         const optionId = Number(element.getAttribute('option-id')!)
-        const hasImage = query(element, 'image')
         const isCorrect = correctIds?.includes(optionId)
         return (
-          <div className={classNames({ 'has-image': hasImage })} key={element.getAttribute('option-id')}>
+          <React.Fragment key={element.getAttribute('option-id')}>
             {page === 'exam' ? (
               <DNDAnswerOptionDraggable element={element} renderChildNodes={renderChildNodes} key={optionId} />
             ) : (
@@ -56,7 +53,7 @@ export const DNDDroppable = ({
                 />
               </div>
             )}
-          </div>
+          </React.Fragment>
         )
       })}
 
