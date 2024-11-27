@@ -44,6 +44,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           ?.map(id => answerOptionsById?.[id] || null)
           .filter(Boolean)
         const itemIds = answerOptionIdsByQuestionId[questionId] || []
+
         return (
           <React.Fragment key={questionId}>
             <DNDTitleAndDroppable
