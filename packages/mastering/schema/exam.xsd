@@ -544,7 +544,7 @@
 
   <xs:element name="dnd-answer-option">
     <xs:complexType mixed="true">
-      <xs:choice minOccurs="1" maxOccurs="1">
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
         <xs:group ref="xhtml:xhtml.Flow.mix" />
       </xs:choice>
       <xs:attribute name="score" type="xs:positiveInteger" />

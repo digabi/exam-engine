@@ -61,7 +61,7 @@ const renderChildNodes = createRenderChildNodes({
   formula: Formula,
   question: Question,
   hints: RenderChildNodes,
-  image: renderIf(({ element }) => queryAncestors(element, ['choice-answer', 'dnd-answer']) != null)(Image),
+  image: renderIf(({ element }) => queryAncestors(element, ['choice-answer', 'dnd-answer-container']) != null)(Image),
   'question-instruction': ExamQuestionInstruction,
   'question-number': QuestionNumber,
   translation: ExamTranslation,
