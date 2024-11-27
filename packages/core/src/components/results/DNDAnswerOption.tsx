@@ -1,7 +1,6 @@
-import classNames from 'classnames'
 import React from 'react'
 import { ExamComponentProps } from '../..'
-import { query } from '../../dom-utils'
+import { useExamTranslation } from '../../i18n'
 
 export const DNDAnswerOption = ({
   element,
@@ -15,6 +14,7 @@ export const DNDAnswerOption = ({
   const hasImages = !!query(element, 'image')
   const hasFormula = !!query(element, 'formula')
   const hasContent = renderChildNodes(element).length > 0
+  const { t } = useExamTranslation()
 
   return (
     <div
@@ -25,7 +25,7 @@ export const DNDAnswerOption = ({
       style={style}
     >
       <div className="option-content">
-        {!hasContent ? <i style={{ color: 'grey' }}>Tähän tulee vastaus...</i> : renderChildNodes(element)}
+        {!hasContent ? <i style={{ color: 'grey' }}>{t('dnd-answers.answer-missing')}</i> : renderChildNodes(element)}
       </div>
     </div>
   )
