@@ -5,23 +5,22 @@ import React, { useContext } from 'react'
 import { ChoiceGroupQuestion, ExamComponentProps } from '../..'
 import { getNumericAttribute, query } from '../../dom-utils'
 import { findMultiChoiceFromGradingStructure, ResultsContext } from '../context/ResultsContext'
-import { ItemsState } from '../exam/DNDAnswerContainer'
 import ResultsExamQuestionAutoScore from '../results/internal/QuestionAutoScore'
+import { DNDDroppable } from './DNDDroppable'
 import { Score } from './Score'
-import { DNDAnswerDroppable } from './DNDAnswerDroppable'
 
 export const DNDTitleAndDroppable = ({
   element,
   renderChildNodes,
-  items,
-  answerOptionsByQuestionId,
-  page
+  itemIds,
+  page,
+  answerOptionElements
 }: {
   element: Element
   renderChildNodes: ExamComponentProps['renderChildNodes']
-  items: ItemsState
-  answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
+  itemIds: UniqueIdentifier[]
   page: 'exam' | 'results'
+  answerOptionElements: Element[]
 }) => {
   const questionId = element.getAttribute('question-id')!
   const questionIdNumber = Number(questionId)
@@ -40,7 +39,7 @@ export const DNDTitleAndDroppable = ({
   const { setNodeRef, isOver } = useDroppable({ id: questionId })
 
   return (
-    <SortableContext id={String(questionId)} items={items[questionId] || []}>
+    <SortableContext id={questionId} items={itemIds}>
       <span ref={setNodeRef}>
         <div
           className={classNames('e-dnd-answer', { 'no-answer': !hasAnswer })}
@@ -60,13 +59,12 @@ export const DNDTitleAndDroppable = ({
 
           <div className="connection-line" />
 
-          <DNDAnswerDroppable
+          <DNDDroppable
             renderChildNodes={renderChildNodes}
-            items={items[questionId] || []}
-            answerOptionsByQuestionId={answerOptionsByQuestionId}
             questionId={questionId}
             correctIds={correctOptionIds}
             page={page}
+            answerOptionElements={answerOptionElements}
           />
 
           {isStudentsExam ? (
@@ -76,7 +74,7 @@ export const DNDTitleAndDroppable = ({
               score={scoreValue}
               maxScore={maxScore}
               displayNumber={displayNumber}
-              questionId={Number(questionId)}
+              questionId={questionIdNumber}
             />
           )}
         </div>

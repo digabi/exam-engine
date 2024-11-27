@@ -6,41 +6,37 @@ import { query } from '../../dom-utils'
 import { DNDAnswerOptionDraggable } from '../exam/DNDAnswerOptionDraggable'
 import { DNDAnswerOption } from '../results/DNDAnswerOption'
 
-export const DNDAnswerDroppable = ({
+export const DNDDroppable = ({
   renderChildNodes,
-  items,
-  answerOptionsByQuestionId,
   correctIds,
-  classes,
+  classes = [],
   questionId,
-  page
+  page,
+  answerOptionElements = []
 }: {
-  items: UniqueIdentifier[]
-  answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   renderChildNodes: ExamComponentProps['renderChildNodes']
   correctIds?: UniqueIdentifier[]
-  classes?: Record<string, boolean>
+  classes?: string[]
   questionId: UniqueIdentifier
   page: 'exam' | 'results'
+  answerOptionElements: Element[]
 }) => {
-  const dndAnswerOptions = items?.map(id => answerOptionsByQuestionId?.[id] || null).filter(Boolean)
-  const hasImages = dndAnswerOptions.some(option => query(option, 'image'))
-  const hasAudio = dndAnswerOptions.some(option => query(option, 'audio'))
-  const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
+  const hasImages = answerOptionElements.some(option => query(option, 'image'))
+  const hasAudio = answerOptionElements.some(option => query(option, 'audio'))
+  const hasFormula = answerOptionElements.some(option => query(option, 'formula'))
 
   const { active, isOver } = useDroppable({ id: questionId })
 
   return (
     <div
-      className={classNames('e-dnd-answer-droppable', {
+      className={classNames(['e-dnd-answer-droppable', ...classes], {
         'has-images': hasImages,
         'has-audio': hasAudio,
         'has-formula': hasFormula,
-        hovered: isOver,
-        ...classes
+        hovered: isOver
       })}
     >
-      {dndAnswerOptions?.map(element => {
+      {answerOptionElements?.map(element => {
         const optionId = Number(element.getAttribute('option-id')!)
         const hasImage = query(element, 'image')
         const isCorrect = correctIds?.includes(optionId)
@@ -62,7 +58,7 @@ export const DNDAnswerDroppable = ({
         )
       })}
 
-      {!dndAnswerOptions.length &&
+      {!answerOptionElements.length &&
         (active ? (
           <i className="droppable-drop-here">Pudota tänne</i>
         ) : (
