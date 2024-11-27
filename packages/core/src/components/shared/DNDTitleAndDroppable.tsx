@@ -60,11 +60,11 @@ export const DNDTitleAndDroppable = ({
           <div className="connection-line" />
 
           <DNDDroppable
-            renderChildNodes={renderChildNodes}
-            questionId={questionId}
-            correctIds={correctOptionIds}
             page={page}
             answerOptionElements={answerOptionElements}
+            questionId={questionId}
+            renderChildNodes={renderChildNodes}
+            correctIds={correctOptionIds}
           />
 
           {isStudentsExam ? (
