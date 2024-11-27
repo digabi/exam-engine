@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { ExamComponentProps } from '../..'
 import { getNumericAttribute } from '../../dom-utils'
-import { DNDAnswerOptionCommon } from '../shared/DNDAnswerOptionCommon'
+import { DNDAnswerOption } from '../results/DNDAnswerOption'
 
-export const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProps) => {
+export const DNDAnswerOptionDraggable = ({ element, renderChildNodes }: ExamComponentProps) => {
   const optionId = getNumericAttribute(element, 'option-id')!
 
   const { attributes, listeners, setNodeRef, isDragging, setActivatorNodeRef } = useDraggable({
@@ -17,7 +17,7 @@ export const DNDAnswerOption = ({ element, renderChildNodes }: ExamComponentProp
 
   return (
     <div ref={setNodeRef} className="e-dnd-answer-option">
-      <DNDAnswerOptionCommon element={element} renderChildNodes={renderChildNodes} style={style} />
+      <DNDAnswerOption element={element} renderChildNodes={renderChildNodes} style={style} />
 
       <div {...listeners} {...attributes} ref={setActivatorNodeRef} className="drag-handle">
         <FontAwesomeIcon size="1x" icon={faUpDownLeftRight} />

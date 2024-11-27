@@ -2,7 +2,7 @@ import { UniqueIdentifier } from '@dnd-kit/core'
 import React, { useContext } from 'react'
 import { ChoiceGroupQuestion, ExamComponentProps } from '../..'
 import { ResultsContext } from '../context/ResultsContext'
-import { DNDAnswerDroppableCommon } from '../shared/DNDAnswerDroppableCommon'
+import { DNDAnswerDroppable } from '../shared/DNDAnswerDroppable'
 
 export const CorrectDNDAnswers = ({
   element,
@@ -30,12 +30,13 @@ export const CorrectDNDAnswers = ({
   return (
     <>
       <span className="droppable-title align-right">Oikeat vastaukset</span>
-      <DNDAnswerDroppableCommon
+      <DNDAnswerDroppable
         renderChildNodes={renderChildNodes}
         items={correctOptionIds}
         answerOptionsByQuestionId={answerOptionsByOptionId}
         correctIds={correctOptionIds}
         questionId={questionId}
+        page="results"
         classes={{ 'correct-answers': true }}
       />
     </>
