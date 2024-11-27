@@ -1,19 +1,19 @@
 import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import classNames from 'classnames'
-import React, { useContext } from 'react'
+import React from 'react'
 import { ExamComponentProps } from '../..'
 import { query } from '../../dom-utils'
-import { DNDAnswerOption as DNDAnswerOptionExam } from '../exam/DNDAnswerOption'
-import { DNDAnswerOptionCommon } from './DNDAnswerOptionCommon'
-import { ResultsContext } from '../context/ResultsContext'
+import { DNDAnswerOptionDraggable } from '../exam/DNDAnswerOptionDraggable'
+import { DNDAnswerOption } from '../results/DNDAnswerOption'
 
-export const DNDAnswerDroppableCommon = ({
+export const DNDAnswerDroppable = ({
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
   correctIds,
   classes,
-  questionId
+  questionId,
+  page
 }: {
   items: UniqueIdentifier[]
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
@@ -21,6 +21,7 @@ export const DNDAnswerDroppableCommon = ({
   correctIds?: UniqueIdentifier[]
   classes?: Record<string, boolean>
   questionId: UniqueIdentifier
+  page: 'exam' | 'results'
 }) => {
   const dndAnswerOptions = items?.map(id => answerOptionsByQuestionId?.[id] || null).filter(Boolean)
   const hasImages = dndAnswerOptions.some(option => query(option, 'image'))
@@ -28,9 +29,6 @@ export const DNDAnswerDroppableCommon = ({
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
 
   const { active, isOver } = useDroppable({ id: questionId })
-
-  const { gradingStructure } = useContext(ResultsContext)
-  const isInExam = !gradingStructure
 
   return (
     <div
@@ -48,15 +46,15 @@ export const DNDAnswerDroppableCommon = ({
         const isCorrect = correctIds?.includes(optionId)
         return (
           <div className={classNames({ 'has-image': hasImage })} key={element.getAttribute('option-id')}>
-            {isInExam ? (
-              <DNDAnswerOptionExam element={element} renderChildNodes={renderChildNodes} key={optionId} />
+            {page === 'exam' ? (
+              <DNDAnswerOptionDraggable element={element} renderChildNodes={renderChildNodes} key={optionId} />
             ) : (
               <div className="e-dnd-answer-option">
-                <DNDAnswerOptionCommon
+                <DNDAnswerOption
                   element={element}
                   renderChildNodes={renderChildNodes}
                   key={optionId}
-                  classes={[isCorrect ? 'correct-answer' : 'wrong-answer']}
+                  className={!correctIds ? undefined : isCorrect ? 'correct-answer' : 'wrong-answer'}
                 />
               </div>
             )}
