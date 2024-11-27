@@ -1,16 +1,16 @@
 import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import classNames from 'classnames'
-import React from 'react'
+import React, { useContext } from 'react'
 import { ExamComponentProps } from '../..'
 import { query } from '../../dom-utils'
 import { DNDAnswerOption as DNDAnswerOptionExam } from '../exam/DNDAnswerOption'
 import { DNDAnswerOptionCommon } from './DNDAnswerOptionCommon'
+import { ResultsContext } from '../context/ResultsContext'
 
-export const DNDAnswerCommon = ({
+export const DNDAnswerDroppableCommon = ({
   renderChildNodes,
   items,
   answerOptionsByQuestionId,
-  isInExam,
   correctIds,
   classes,
   questionId
@@ -18,16 +18,19 @@ export const DNDAnswerCommon = ({
   items: UniqueIdentifier[]
   answerOptionsByQuestionId: Record<UniqueIdentifier, Element>
   renderChildNodes: ExamComponentProps['renderChildNodes']
-  isInExam?: boolean
   correctIds?: UniqueIdentifier[]
   classes?: Record<string, boolean>
   questionId: UniqueIdentifier
 }) => {
-  const dndAnswerOptions = items?.map(id => answerOptionsByQuestionId[id]) || []
+  const dndAnswerOptions = items?.map(id => answerOptionsByQuestionId?.[id] || null).filter(Boolean)
   const hasImages = dndAnswerOptions.some(option => query(option, 'image'))
   const hasAudio = dndAnswerOptions.some(option => query(option, 'audio'))
   const hasFormula = dndAnswerOptions.some(option => query(option, 'formula'))
+
   const { active, isOver } = useDroppable({ id: questionId })
+
+  const { gradingStructure } = useContext(ResultsContext)
+  const isInExam = !gradingStructure
 
   return (
     <div
@@ -60,6 +63,7 @@ export const DNDAnswerCommon = ({
           </div>
         )
       })}
+
       {!dndAnswerOptions.length &&
         (active ? (
           <i className="droppable-drop-here">Pudota tänne</i>

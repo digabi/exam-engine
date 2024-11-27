@@ -1,10 +1,10 @@
 import { UniqueIdentifier } from '@dnd-kit/core'
 import React, { useContext } from 'react'
-import { ChoiceGroupQuestion, ExamComponentProps } from '../..'
+import { ExamComponentProps } from '../..'
 import { query, queryAll } from '../../dom-utils'
 import { ResultsContext } from '../context/ResultsContext'
 import { DNDTitleAndAnswerCommon } from '../shared/DNDTitleAndAnswerCommon'
-import { DNDAnswerCommon } from '../shared/DNDAnswerCommon'
+import { CorrectDNDAnswers } from './CorrectDNDAnswers'
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
@@ -37,14 +37,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   return (
     <div className="e-dnd-answer-container">
       {dndAnswersWithQuestion.map(element => {
-        const displayNumber = element.getAttribute('display-number')!
         const questionId = Number(element.getAttribute('question-id')!)
-        const hasAnswer = !!answersByQuestionId[questionId]?.value
-        const thisQuestion = gradingStructure.questions.find(
-          q => q.displayNumber === displayNumber
-        ) as ChoiceGroupQuestion
-        const options = thisQuestion.choices.find(c => c.id === questionId)?.options || []
-        const correctOptionIds = options.filter(o => o.correct).map(o => o.id)
 
         return (
           <React.Fragment key={questionId}>
@@ -54,18 +47,16 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               renderChildNodes={renderChildNodes}
               items={answerOptionIdsByQuestionId}
               answerOptionsByQuestionId={answerOptionsByOptionId}
-              hasAnswer={hasAnswer}
             />
 
-            <span className="droppable-title align-right">Oikeat vastaukset</span>
-            <DNDAnswerCommon
-              renderChildNodes={renderChildNodes}
-              items={correctOptionIds}
-              answerOptionsByQuestionId={answerOptionsByOptionId}
-              correctIds={correctOptionIds}
-              questionId={questionId}
-              classes={{ 'correct-answers': true }}
-            />
+            {gradingStructure && (
+              <CorrectDNDAnswers
+                key={`${questionId}-correct`}
+                element={element}
+                renderChildNodes={renderChildNodes}
+                dndAnswerOptions={dndAnswerOptions}
+              />
+            )}
           </React.Fragment>
         )
       })}

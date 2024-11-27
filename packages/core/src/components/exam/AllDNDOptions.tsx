@@ -1,8 +1,8 @@
 import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
 import React from 'react'
-import { DNDAnswer } from './DNDAnswer'
 import { RenderChildNodes } from '../../createRenderChildNodes'
+import { DNDAnswerDroppableCommon } from '../shared/DNDAnswerDroppableCommon'
 
 export const AllDNDOptions = ({
   items,
@@ -19,7 +19,7 @@ export const AllDNDOptions = ({
     <SortableContext items={items}>
       <span className="droppable-title">Vastausvaihtoehdot:</span>
       <span ref={setNodeRef}>
-        <DNDAnswer
+        <DNDAnswerDroppableCommon
           renderChildNodes={renderChildNodes}
           questionId="root"
           items={items}
