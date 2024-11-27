@@ -15,7 +15,7 @@ test.describe('DNDAnswerContainer', () => {
     const resolveAttachment = (filename: string) => path.resolve(path.dirname(examPath), 'attachments', filename)
     examXml = readFileSync(examPath, 'utf-8')
     ;[masteredExam] = await masterExam(examXml, () => '', getMediaMetadataFromLocalFile(resolveAttachment), {
-      removeCorrectAnswers: false
+      removeCorrectAnswers: true
     })
   })
 
