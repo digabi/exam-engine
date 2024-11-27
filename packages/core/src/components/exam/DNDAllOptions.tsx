@@ -3,6 +3,7 @@ import { SortableContext } from '@dnd-kit/sortable'
 import React from 'react'
 import { RenderChildNodes } from '../../createRenderChildNodes'
 import { DNDDroppable } from '../shared/DNDDroppable'
+import { useExamTranslation } from '../../i18n'
 
 export const AllDNDOptions = ({
   items,
@@ -14,10 +15,11 @@ export const AllDNDOptions = ({
   answerOptionElements: Element[]
 }) => {
   const { setNodeRef } = useDroppable({ id: 'root' })
+  const { t } = useExamTranslation()
 
   return (
     <SortableContext items={items}>
-      <span className="droppable-title">Vastausvaihtoehdot:</span>
+      <span className="droppable-title">{t('dnd-answers.all-answer-options')}</span>
       <span ref={setNodeRef}>
         <DNDDroppable
           renderChildNodes={renderChildNodes}
