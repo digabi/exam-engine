@@ -1403,7 +1403,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
               </e:reference>
             </e:attachment>
           </e:audio-group>
-          <e:dnd-answer-container meta="dnd answer container">
+          <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     Welche Zeit passt Lars am besten?
@@ -1437,7 +1437,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         <e:question-instruction>       
           <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
         </e:question-instruction>
-        <e:dnd-answer-container meta="dnd answer container">
+        <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
             <e:dnd-answer max-score="2">
                 <e:dnd-answer-title>
                   <e:attachment>
@@ -3656,7 +3656,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
               </e:reference>
             </e:attachment>
           </e:audio-group>
-          <e:dnd-answer-container meta="dnd answer container">
+          <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     Welche Zeit passt Lars am besten?
@@ -3690,7 +3690,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
         <e:question-instruction>       
           <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
         </e:question-instruction>
-        <e:dnd-answer-container meta="dnd answer container">
+        <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
             <e:dnd-answer max-score="2">
                 <e:dnd-answer-title>
                   <e:attachment>

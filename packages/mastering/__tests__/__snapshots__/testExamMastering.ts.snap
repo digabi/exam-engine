@@ -22280,7 +22280,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
               </e:reference>
             </e:attachment>
           </e:audio-group>
-          <e:dnd-answer-container>
+          <e:dnd-answer-container dnd-type="connect">
               <e:dnd-answer max-score="2" question-id="100" display-number="23.1.1">
                   <e:dnd-answer-title>
                     Welche Zeit passt Lars am besten?
@@ -22314,7 +22314,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
         <e:question-instruction>       
           <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
         </e:question-instruction>
-        <e:dnd-answer-container>
+        <e:dnd-answer-container dnd-type="connect">
             <e:dnd-answer max-score="2" question-id="103" display-number="23.2">
                 <e:dnd-answer-title>
                   <e:attachment>
@@ -24280,7 +24280,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               </e:reference>
             </e:attachment>
           </e:audio-group>
-          <e:dnd-answer-container>
+          <e:dnd-answer-container dnd-type="connect">
               <e:dnd-answer max-score="2" question-id="100" display-number="23.1.1">
                   <e:dnd-answer-title>
                     Welche Zeit passt Lars am besten?
@@ -24314,7 +24314,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
         <e:question-instruction>       
           <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
         </e:question-instruction>
-        <e:dnd-answer-container>
+        <e:dnd-answer-container dnd-type="connect">
             <e:dnd-answer max-score="2" question-id="103" display-number="23.2">
                 <e:dnd-answer-title>
                   <e:attachment>
@@ -25606,7 +25606,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
               </e:reference>
             </e:attachment>
           </e:audio-group>
-          <e:dnd-answer-container>
+          <e:dnd-answer-container dnd-type="connect">
               <e:dnd-answer max-score="2" question-id="100" display-number="16.1.1">
                   <e:dnd-answer-title>
                     Welche Zeit passt Lars am besten?
@@ -25640,7 +25640,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
         <e:question-instruction>       
           <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
         </e:question-instruction>
-        <e:dnd-answer-container>
+        <e:dnd-answer-container dnd-type="connect">
             <e:dnd-answer max-score="2" question-id="103" display-number="16.2">
                 <e:dnd-answer-title>
                   <e:attachment>
