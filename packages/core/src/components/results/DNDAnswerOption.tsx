@@ -11,19 +11,11 @@ export const DNDAnswerOption = ({
   style?: React.CSSProperties
   className?: 'correct-answer' | 'wrong-answer'
 }) => {
-  const hasImages = !!query(element, 'image')
-  const hasFormula = !!query(element, 'formula')
   const hasContent = renderChildNodes(element).length > 0
   const { t } = useExamTranslation()
 
   return (
-    <div
-      className={classNames(className, {
-        'has-images': hasImages,
-        'has-formula': hasFormula
-      })}
-      style={style}
-    >
+    <div className={className} style={style}>
       <div className="option-content">
         {!hasContent ? <i style={{ color: 'grey' }}>{t('dnd-answers.answer-missing')}</i> : renderChildNodes(element)}
       </div>
