@@ -28,8 +28,8 @@ export type ItemsState = {
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
-  const [items, setItems] = useState<ItemsState>({} as ItemsState)
-  const [answerOptionsByOptionId, setAnswerOptionsByOptionId] = useState<Record<UniqueIdentifier, Element>>({})
+  const [optionIdsByQuestionId, setOptionIdsByQuestionId] = useState<ItemsState>({} as ItemsState)
+  const [answerOptionsById, setAnswerOptionsById] = useState<Record<UniqueIdentifier, Element>>({})
   const [displayNumbersById, setDisplayNumbersById] = useState<Record<UniqueIdentifier, string>>({})
   const dispatch = useDispatch()
 
@@ -69,8 +69,8 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
       {} as Record<UniqueIdentifier, string>
     )
 
-    setItems(answerOptionIdsByQuestionId)
-    setAnswerOptionsByOptionId(answerOptionsByOptionId)
+    setOptionIdsByQuestionId(answerOptionIdsByQuestionId)
+    setAnswerOptionsById(answerOptionsByOptionId)
     setDisplayNumbersById(displayNumbersById)
   }, [element])
 
@@ -82,10 +82,10 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   )
 
   function findContainer(id: UniqueIdentifier) {
-    if (id in items) {
+    if (id in optionIdsByQuestionId) {
       return id
     }
-    return Object.keys(items).find(key => items[key].includes(id))
+    return Object.keys(optionIdsByQuestionId).find(key => optionIdsByQuestionId[key].includes(id))
   }
 
   function handleDragStart(event: DragStartEvent) {
@@ -116,27 +116,30 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     if (!activeContainer || !overContainer || activeContainer === overContainer) {
       return
     }
-    setItems(items => moveValue(items, activeContainer, overContainer, activeId))
+    setOptionIdsByQuestionId(optionIdsByQuestionId =>
+      moveValue(optionIdsByQuestionId, activeContainer, overContainer, activeId)
+    )
     setActiveId(null)
   }
 
   useEffect(() => {
-    Object.entries(items).forEach(([questionId, answerValue]) => {
+    Object.entries(optionIdsByQuestionId).forEach(([questionId, answerValue]) => {
       if (questionId !== 'root') {
         saveAnswerToStore(questionId, answerValue?.toString())
       }
     })
-  }, [items])
+  }, [optionIdsByQuestionId])
 
   function saveAnswerToStore(overContainer: UniqueIdentifier, activeId: UniqueIdentifier) {
     const questionId = Number(overContainer)
     const value = activeId?.toString() || ''
-
     const displayNumber = displayNumbersById[questionId]
     dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))
   }
 
   const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
+
+  const allAnswerOptionElements = optionIdsByQuestionId.root?.map(id => answerOptionsById[id] || null).filter(Boolean)
 
   // We can not render the prop 'element' (XML) here, because we will change the DOM structure when items are dragged around¯, but the XML can not be changed
 
@@ -145,23 +148,27 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
       <DndContext sensors={sensors} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
         {dndAnswersWithQuestion.map(element => {
           const questionId = element.getAttribute('question-id')!
+          const dndAnswerOptions = (optionIdsByQuestionId[questionId] || [])
+            ?.map(id => answerOptionsById?.[id] || null)
+            .filter(Boolean)
+          const itemIds = optionIdsByQuestionId[questionId] || []
 
           return (
             <DNDTitleAndDroppable
               key={questionId}
               element={element}
               renderChildNodes={renderChildNodes}
-              items={items}
-              answerOptionsByQuestionId={answerOptionsByOptionId}
+              itemIds={itemIds}
+              answerOptionElements={dndAnswerOptions}
               page="exam"
             />
           )
         })}
 
         <AllDNDOptions
-          items={items.root || []}
+          items={optionIdsByQuestionId.root || []}
           renderChildNodes={renderChildNodes}
-          answerOptionsByOptionId={answerOptionsByOptionId}
+          answerOptionElements={allAnswerOptionElements}
         />
 
         <DragOverlay
@@ -172,7 +179,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           }}
         >
           {activeId ? (
-            <DNDAnswerOptionDraggable element={answerOptionsByOptionId[activeId]} renderChildNodes={renderChildNodes} />
+            <DNDAnswerOptionDraggable element={answerOptionsById[activeId]} renderChildNodes={renderChildNodes} />
           ) : null}
         </DragOverlay>
       </DndContext>
