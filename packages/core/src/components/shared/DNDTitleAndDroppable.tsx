@@ -44,7 +44,7 @@ export const DNDTitleAndDroppable = ({
     <SortableContext id={questionId} items={itemIds}>
       <span ref={setNodeRef}>
         <div
-          className={classNames('e-dnd-answer', { 'no-answer': !hasAnswer })}
+          className={classNames('e-dnd-answer', { 'no-answer': page === 'results' && !hasAnswer })}
           data-question-id={questionId}
           key={questionId}
         >
