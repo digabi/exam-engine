@@ -36,10 +36,6 @@
         &.hovered {
           outline: 3px solid #1f2e93;
         }
-
-        &.has-images {
-          flex: 0 0 150px;
-        }
       }
 
       .e-score {
@@ -53,7 +49,8 @@
       background: hsl(201deg 88% 96%);
       border-radius: 4px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       gap: 0.5rem;
       flex: 0 1 auto;
       transition:
@@ -69,26 +66,12 @@
         margin: 0 0.5rem 3rem;
       }
 
-      &.has-images,
-      &.has-audio {
-        flex-direction: row;
-        flex-wrap: wrap;
-        flex: none;
-      }
-
-      &.has-formula {
-        flex: none;
-        max-width: 60%;
-      }
-
       &.root {
         flex: none;
         max-width: unset;
-        flex-direction: row;
-        flex-wrap: wrap;
         align-items: center;
-        margin-right: 60px;
         background: #f5f5f5;
+        margin-right: 60px;
         margin-left: 0.5rem;
       }
 
@@ -113,10 +96,6 @@
         color: #1f2e93;
         white-space: nowrap;
       }
-
-      .has-image {
-        max-width: calc(@image-max-width + 50px);
-      }
     }
 
     .droppable-title {
@@ -132,6 +111,11 @@
     .audio.e-mrg-b-2 {
       margin-bottom: 0;
     }
+  }
+
+  .responsive-media-container {
+    width: 180px !important;
+    max-width: 180px !important;
   }
 }
 
