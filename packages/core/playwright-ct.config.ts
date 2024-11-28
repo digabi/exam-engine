@@ -23,6 +23,7 @@ export default defineConfig({
           '~rich-text-editor': resolve(__dirname, '../../node_modules/rich-text-editor')
         }
       },
+      // TODO: This should be refactored to only include the necessary parts i.e. the attachment folders within the exam folders so the tests have access to them.
       publicDir: resolve(__dirname, '../../packages/exams')
     }
   },
