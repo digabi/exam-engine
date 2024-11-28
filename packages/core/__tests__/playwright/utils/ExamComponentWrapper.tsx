@@ -11,12 +11,12 @@ import { withExamContext } from '../../../src/components/context/ExamContext'
 import { CommonExamProps } from '../../../src/components/exam/Exam'
 import '../../../src/css/main.less'
 
-export interface ComponentWrapperProps extends CommonExamProps {
+export interface ExamComponentWrapperProps extends CommonExamProps {
   doc: XMLDocument
   children: React.ReactElement
 }
 
-const WrappedComponent: React.FC<ComponentWrapperProps> = ({ doc, children }) => {
+const WrappedComponent: React.FC<ExamComponentWrapperProps> = ({ doc, children }) => {
   const i18n = useCached(() => initI18n('fi-FI'))
   const store = useCached(() => initializeExamStore(parseExamStructure(doc), 'allowed', [], [], examServerApi))
 
@@ -29,4 +29,4 @@ const WrappedComponent: React.FC<ComponentWrapperProps> = ({ doc, children }) =>
   )
 }
 
-export const ComponentWrapper = withExamContext(withCommonExamContext(WrappedComponent))
+export const ExamComponentWrapper = withExamContext(withCommonExamContext(WrappedComponent))

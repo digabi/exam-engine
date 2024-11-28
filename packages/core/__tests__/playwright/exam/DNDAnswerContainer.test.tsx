@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/experimental-ct-react'
 import { Locator } from '@playwright/test'
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
-import { DNDAnswerContainerStory } from './stories/DNDAnswerContainer.story'
+import { DNDAnswerContainerStory } from '../stories/exam/DNDAnswerContainer.story'
 
 test.describe('DNDAnswerContainer', () => {
   let masteredExam: MasteringResult
