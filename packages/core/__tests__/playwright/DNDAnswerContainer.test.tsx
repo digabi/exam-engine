@@ -68,10 +68,10 @@ async function assertContentMatches(answerContainer: Locator, content: string, m
 }
 
 async function setupAnswerContext(component: Locator, answerMediaType: 'text' | 'image') {
-  const answerContainer = component.locator('.e-dnd-answer-droppable').first()
-  const answerOptionsLocator = component.locator('.e-dnd-answer-droppable').last()
-  const firstAnswerLocator = component.locator('.e-dnd-answer-option').nth(0)
-  const secondAnswerLocator = component.locator('.e-dnd-answer-option').nth(1)
+  const answerContainer = component.getByTestId('dnd-droppable').first()
+  const answerOptionsLocator = component.getByTestId('dnd-droppable').last()
+  const firstAnswerLocator = component.getByTestId('dnd-answer-option').nth(0)
+  const secondAnswerLocator = component.getByTestId('dnd-answer-option').nth(1)
 
   const firstAnswerContent =
     answerMediaType === 'text'
