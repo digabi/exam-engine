@@ -35,6 +35,7 @@ export const DNDDroppable = ({
         'has-audio': hasAudio,
         hovered: isOver
       })}
+      data-testid="dnd-droppable"
     >
       {answerOptionElements?.map(element => {
         const optionId = Number(element.getAttribute('option-id')!)
