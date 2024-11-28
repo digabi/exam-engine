@@ -35,6 +35,7 @@ import classNames from 'classnames'
 import { EndExamSession } from './EndExamSession'
 import { Footer } from '../shared/Footer'
 import { DNDAnswerContainer } from './DNDAnswerContainer'
+import { AudioPlaceholder } from './AudioPlaceholder'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -55,6 +56,7 @@ const renderChildNodes = createRenderChildNodes({
   'attachment-link': mkAttachmentLink('plain'),
   'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
+  audio: AudioPlaceholder,
   'choice-answer': ResultsChoiceAnswer,
   'dnd-answer-container': DNDAnswerContainer,
   'dropdown-answer': DropdownAnswer,
