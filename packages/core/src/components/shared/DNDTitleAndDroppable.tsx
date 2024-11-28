@@ -9,6 +9,7 @@ import ResultsExamQuestionAutoScore from '../results/internal/QuestionAutoScore'
 import { DNDDroppable } from './DNDDroppable'
 import { Score } from './Score'
 import { useExamTranslation } from '../../i18n'
+import { shortDisplayNumber } from '../../shortDisplayNumber'
 
 export const DNDTitleAndDroppable = ({
   element,
@@ -39,6 +40,8 @@ export const DNDTitleAndDroppable = ({
   const { correctOptionIds, scoreValue } = getCorrectOptionIds(questionIdNumber, displayNumber)
 
   const { setNodeRef, isOver } = useDroppable({ id: questionId })
+
+  const lastLevelOfDisplayNumber = shortDisplayNumber(displayNumber)
 
   return (
     <SortableContext id={questionId} items={itemIds}>
@@ -75,7 +78,7 @@ export const DNDTitleAndDroppable = ({
             <ResultsExamQuestionAutoScore
               score={scoreValue}
               maxScore={maxScore}
-              displayNumber={displayNumber}
+              displayNumber={lastLevelOfDisplayNumber}
               questionId={questionIdNumber}
             />
           )}
