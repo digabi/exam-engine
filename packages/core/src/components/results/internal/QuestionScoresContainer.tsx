@@ -31,8 +31,7 @@ function QuestionScoresContainer({
     return null
   }
 
-  const answerTagName = answers.find(a => a.getAttribute('question-id') === questionId.toString())?.tagName
-  const showSup = answers.length > 1 && displayNumber && answerTagName !== 'e:dnd-answer'
+  const showSup = answers.length > 1 && displayNumber
 
   return (
     <span
