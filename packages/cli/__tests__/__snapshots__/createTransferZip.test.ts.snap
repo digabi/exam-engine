@@ -1442,7 +1442,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
                 <e:dnd-answer-title>
                   <e:attachment>
                     <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg" times="2"/>
+                    <e:audio src="7.2.ogg"/>
                     <e:reference>
                       <e:author>
                         YTL
@@ -3695,7 +3695,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
                 <e:dnd-answer-title>
                   <e:attachment>
                     <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg" times="2"/>
+                    <e:audio src="7.2.ogg"/>
                     <e:reference>
                       <e:author>
                         YTL
