@@ -509,49 +509,6 @@
     </xs:choice>
   </xs:group>
 
-  <xs:element name="dnd-answer-container">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="e:dnd-answer" minOccurs="1" maxOccurs="unbounded" />
-        <xs:element ref="e:dnd-answer-option" minOccurs="0" maxOccurs="unbounded" />
-      </xs:sequence>
-      <xs:attribute name="dnd-type" type="e:dnd-type" />
-      <xs:attribute name="direction" type="e:direction" />
-      <xs:attributeGroup ref="e:stylable" />
-      <xs:attribute name="meta" type="xs:string" />
-    </xs:complexType>
-  </xs:element>
-
-  <xs:simpleType name="dnd-type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="connect" />
-      <xs:enumeration value="classify" />
-      <xs:enumeration value="order" />
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:element name="dnd-answer">
-    <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element name="dnd-answer-title" minOccurs="1" maxOccurs="1" type="e:Flow" />
-        <xs:element ref="e:dnd-answer-option" minOccurs="1" maxOccurs="unbounded" />
-      </xs:sequence>
-      <xs:attribute name="max-score" type="xs:positiveInteger" />
-      <xs:attributeGroup ref="e:stylable" />
-      <xs:attribute name="meta" type="xs:string" />
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="dnd-answer-option">
-    <xs:complexType mixed="true">
-      <xs:choice minOccurs="1" maxOccurs="unbounded">
-        <xs:group ref="xhtml:xhtml.Flow.mix" />
-      </xs:choice>
-      <xs:attribute name="score" type="xs:positiveInteger" />
-      <xs:attribute name="meta" type="xs:string" />
-    </xs:complexType>
-  </xs:element>
-
   <xs:element name="text-answer">
     <xs:complexType>
       <xs:sequence>
@@ -705,6 +662,49 @@
       </xs:choice>
       <xs:attribute name="score" type="xs:integer" />
       <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dnd-answer-container">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="e:dnd-answer" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element ref="e:dnd-answer-option" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="dnd-type" type="e:dnd-type" />
+      <xs:attribute name="direction" type="e:direction" />
+      <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="dnd-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="connect" />
+      <xs:enumeration value="classify" />
+      <xs:enumeration value="order" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="dnd-answer">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element name="dnd-answer-title" minOccurs="1" maxOccurs="1" type="e:Flow" />
+        <xs:element ref="e:dnd-answer-option" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="max-score" type="xs:positiveInteger" />
+      <xs:attributeGroup ref="e:stylable" />
+      <xs:attribute name="meta" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dnd-answer-option">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+        <xs:group ref="xhtml:xhtml.Flow.mix" />
+      </xs:choice>
+      <xs:attribute name="score" type="xs:positiveInteger" />
       <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
