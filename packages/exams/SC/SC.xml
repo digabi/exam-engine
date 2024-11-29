@@ -2336,7 +2336,7 @@
                 <e:dnd-answer-title>
                   <e:attachment>
                     <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg" times="2"></e:audio>
+                    <e:audio src="7.2.ogg"></e:audio>
                     <e:reference>
                       <e:author>
                         <e:localization lang="fi-FI">YTL</e:localization>
