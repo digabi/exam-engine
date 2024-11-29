@@ -12520,6 +12520,12 @@ exports[`Exam mastering masters SC.xml exam correctly 1`] = `
       "withinGradingInstruction": false,
     },
     {
+      "filename": "7.2.ogg",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
       "filename": "7.2.1617.jpg",
       "restricted": false,
       "visibleInGradingInstructions": false,
@@ -15368,6 +15374,12 @@ exports[`Exam mastering masters SC.xml exam correctly 2`] = `
       "withinGradingInstruction": false,
     },
     {
+      "filename": "7.2.ogg",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
       "filename": "7.2.1617.jpg",
       "restricted": false,
       "visibleInGradingInstructions": false,
@@ -18049,7 +18061,7 @@ exports[`Exam mastering masters SC.xml exam correctly 3`] = `
     },
     {
       "filename": "7.2.ogg",
-      "restricted": true,
+      "restricted": false,
       "visibleInGradingInstructions": false,
       "withinGradingInstruction": false,
     },
@@ -22319,7 +22331,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
                 <e:dnd-answer-title>
                   <e:attachment>
                     <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg" times="2" restricted-audio-id="25" duration="999"/>
+                    <e:audio src="7.2.ogg" duration="999"/>
                     <e:reference>
                       <e:author>
                         <span lang="fi-FI">YTL</span>
@@ -24319,7 +24331,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
                 <e:dnd-answer-title>
                   <e:attachment>
                     <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg" times="2" restricted-audio-id="25" duration="999"/>
+                    <e:audio src="7.2.ogg" duration="999"/>
                     <e:reference>
                       <e:author>
                         
@@ -25645,7 +25657,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
                 <e:dnd-answer-title>
                   <e:attachment>
                     <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg" times="2" restricted-audio-id="4" duration="999"/>
+                    <e:audio src="7.2.ogg" duration="999"/>
                     <e:reference>
                       <e:author>
                         <span lang="fi-FI">YTL</span>
