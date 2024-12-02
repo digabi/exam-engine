@@ -70,12 +70,12 @@ export const sv_FI: Translations = {
     instructions: 'Efter att du granskat dina svar kan du ännu gå tillbaka och redigera svaren eller avsluta provet.'
   },
   'dnd-answers': {
-    'all-answer-options': 'TODO TODO:',
-    'correct-answers': 'TODO TODO',
-    'question-missing': 'Här saknas ett objekt...',
-    'answer-missing': 'Här kommer rätta alternativet...',
-    'drop-here': 'TODO TODO',
-    'no-answer': '(TODO TODO)'
+    'all-answer-options': 'Svarsalternativ:',
+    'correct-answers': 'Rätta svar',
+    'question-missing': 'Här fattas en item...',
+    'answer-missing': 'Här fattas svaret...',
+    'drop-here': 'Släpp här',
+    'no-answer': '(Inget svar)'
   },
   undo: {
     loading: 'Laddar...',

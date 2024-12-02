@@ -82,7 +82,7 @@ export const fi_FI = {
   'dnd-answers': {
     'all-answer-options': 'Vastausvaihtoehdot:',
     'correct-answers': 'Oikeat vastaukset',
-    'question-missing': 'Tästä puuttuu tehtävä...',
+    'question-missing': 'Tästä puuttuu osio...',
     'answer-missing': 'Tästä puuttuu vastaus...',
     'drop-here': 'Pudota tänne',
     'no-answer': '(Ei vastausta)'
