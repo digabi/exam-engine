@@ -56,7 +56,7 @@ const renderChildNodes = createRenderChildNodes({
   'attachment-link': mkAttachmentLink('plain'),
   'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
-  audio: AudioPlaceholder,
+  audio: renderIf(({ element }) => queryAncestors(element, 'dnd-answer-container') != null)(AudioPlaceholder),
   'choice-answer': ResultsChoiceAnswer,
   'dnd-answer-container': DNDAnswerContainer,
   'dropdown-answer': DropdownAnswer,
