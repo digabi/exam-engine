@@ -7082,6 +7082,54 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
       "withinGradingInstruction": false,
     },
     {
+      "filename": "6.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "6.1.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "6.2.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "6.3.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "7.2.ogg",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "7.2.7276.jpg",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "7.2.7291.jpg",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "7.2.1617.jpg",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
       "filename": "example.jpg",
       "restricted": false,
       "visibleInGradingInstructions": false,
@@ -7175,40 +7223,6 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
             "options": [
               {
                 "correct": false,
-                "id": 18,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 19,
-                "score": 0,
-              },
-              {
-                "correct": true,
-                "id": 20,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 21,
-                "score": -1,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "8.1",
-        "id": 46,
-        "type": "choicegroup",
-      },
-      {
-        "choices": [
-          {
-            "displayNumber": "8.2",
-            "id": 6,
-            "options": [
-              {
-                "correct": false,
                 "id": 22,
                 "score": 0,
               },
@@ -7218,29 +7232,29 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
                 "score": 0,
               },
               {
-                "correct": false,
+                "correct": true,
                 "id": 24,
-                "score": 0,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 25,
+                "score": -1,
               },
             ],
             "type": "choice",
           },
         ],
-        "displayNumber": "8.2",
-        "id": 47,
+        "displayNumber": "8.1",
+        "id": 61,
         "type": "choicegroup",
       },
       {
         "choices": [
           {
-            "displayNumber": "8.3",
-            "id": 7,
+            "displayNumber": "8.2",
+            "id": 6,
             "options": [
-              {
-                "correct": false,
-                "id": 25,
-                "score": 0,
-              },
               {
                 "correct": false,
                 "id": 26,
@@ -7256,9 +7270,43 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
                 "id": 28,
                 "score": 0,
               },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "8.2",
+        "id": 62,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "8.3",
+            "id": 7,
+            "options": [
               {
                 "correct": false,
                 "id": 29,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 30,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 31,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 32,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 33,
                 "score": 0,
               },
             ],
@@ -7266,7 +7314,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
           },
         ],
         "displayNumber": "8.3",
-        "id": 48,
+        "id": 63,
         "type": "choicegroup",
       },
       {
@@ -7277,22 +7325,22 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
             "options": [
               {
                 "correct": false,
-                "id": 30,
+                "id": 34,
                 "score": -1,
               },
               {
                 "correct": true,
-                "id": 31,
+                "id": 35,
                 "score": 2,
               },
               {
                 "correct": false,
-                "id": 32,
+                "id": 36,
                 "score": 0,
               },
               {
                 "correct": false,
-                "id": 33,
+                "id": 37,
                 "score": -1,
               },
             ],
@@ -7300,7 +7348,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
           },
         ],
         "displayNumber": "9",
-        "id": 49,
+        "id": 64,
         "type": "choicegroup",
       },
       {
@@ -7373,47 +7421,13 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
       {
         "choices": [
           {
-            "displayNumber": "15.1",
+            "displayNumber": "11.1",
             "id": 15,
             "options": [
               {
-                "correct": true,
-                "id": 34,
-                "score": 2,
-              },
-              {
                 "correct": false,
-                "id": 35,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 36,
-                "score": -1,
-              },
-              {
-                "correct": false,
-                "id": 37,
-                "score": 0,
-              },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "15.1",
-        "id": 50,
-        "type": "choicegroup",
-      },
-      {
-        "choices": [
-          {
-            "displayNumber": "15.2",
-            "id": 16,
-            "options": [
-              {
-                "correct": true,
                 "id": 38,
-                "score": 2,
+                "score": 0,
               },
               {
                 "correct": false,
@@ -7423,27 +7437,13 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
               {
                 "correct": false,
                 "id": 40,
-                "score": -1,
-              },
-              {
-                "correct": false,
-                "id": 41,
                 "score": 0,
               },
-            ],
-            "type": "choice",
-          },
-        ],
-        "displayNumber": "15.2",
-        "id": 51,
-        "type": "choicegroup",
-      },
-      {
-        "choices": [
-          {
-            "displayNumber": "15.3",
-            "id": 17,
-            "options": [
+              {
+                "correct": true,
+                "id": 41,
+                "score": 2,
+              },
               {
                 "correct": false,
                 "id": 42,
@@ -7452,7 +7452,61 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
               {
                 "correct": false,
                 "id": 43,
-                "score": -1,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 44,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 45,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "11.1",
+        "id": 65,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "11.2",
+            "id": 16,
+            "options": [
+              {
+                "correct": false,
+                "id": 38,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 39,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 40,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 41,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 42,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 43,
+                "score": 2,
               },
               {
                 "correct": true,
@@ -7468,8 +7522,193 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
             "type": "choice",
           },
         ],
-        "displayNumber": "15.3",
-        "id": 52,
+        "displayNumber": "11.2",
+        "id": 66,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "11.3",
+            "id": 17,
+            "options": [
+              {
+                "correct": false,
+                "id": 38,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 39,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 40,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 41,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 42,
+                "score": 0,
+              },
+              {
+                "correct": true,
+                "id": 43,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 44,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 45,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "11.3",
+        "id": 67,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "11.4",
+            "id": 18,
+            "options": [
+              {
+                "correct": false,
+                "id": 46,
+                "score": 0,
+              },
+              {
+                "correct": true,
+                "id": 47,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 48,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "11.4",
+        "id": 68,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "16.1",
+            "id": 19,
+            "options": [
+              {
+                "correct": false,
+                "id": 49,
+                "score": -1,
+              },
+              {
+                "correct": true,
+                "id": 50,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 51,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 52,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "16.1",
+        "id": 69,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "16.2",
+            "id": 20,
+            "options": [
+              {
+                "correct": false,
+                "id": 53,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 54,
+                "score": -1,
+              },
+              {
+                "correct": true,
+                "id": 55,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 56,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "16.2",
+        "id": 70,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "16.3",
+            "id": 21,
+            "options": [
+              {
+                "correct": false,
+                "id": 57,
+                "score": 0,
+              },
+              {
+                "correct": false,
+                "id": 58,
+                "score": -1,
+              },
+              {
+                "correct": true,
+                "id": 59,
+                "score": 2,
+              },
+              {
+                "correct": false,
+                "id": 60,
+                "score": 0,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "16.3",
+        "id": 71,
         "type": "choicegroup",
       },
     ],
@@ -7480,11 +7719,17 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
 }
 `;
 
-exports[`Exam mastering masters MexDocumentation.xml exam correctly: translation 1`] = `Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.`;
+exports[`Exam mastering masters MexDocumentation.xml exam correctly: translation 1`] = `
+Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.
+
+YTL
+
+YTL
+`;
 
 exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-stylesheet="custom.css" date="2022-01-27" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="25">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-stylesheet="custom.css" date="2022-01-27" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="33">
   
   <e:exam-title>MEX format documentation</e:exam-title>
   <e:exam-instruction>
@@ -7988,7 +8233,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     </e:question>
   </e:section>
 
-  <e:section display-number="4" max-score="19">
+  <e:section display-number="4" max-score="27">
     <e:section-title>Answer types</e:section-title>
     <e:question display-number="7" max-score="7">
       <e:question-title>text-answer</e:question-title>
@@ -8098,7 +8343,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           
           
           
-        <e:choice-answer-option option-id="18">Ipsum</e:choice-answer-option><e:choice-answer-option option-id="19">Dolor</e:choice-answer-option><e:choice-answer-option option-id="20">Lorem</e:choice-answer-option><e:choice-answer-option option-id="21">Sit</e:choice-answer-option></e:choice-answer>
+        <e:choice-answer-option option-id="22">Ipsum</e:choice-answer-option><e:choice-answer-option option-id="23">Dolor</e:choice-answer-option><e:choice-answer-option option-id="24">Lorem</e:choice-answer-option><e:choice-answer-option option-id="25">Sit</e:choice-answer-option></e:choice-answer>
       </div>
       <p>Options can contain any HTML code, like images or formulas</p>
       <pre class="code"><![CDATA[<e:choice-answer direction="vertical">
@@ -8117,11 +8362,11 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           
           
           
-        <e:choice-answer-option option-id="22">
+        <e:choice-answer-option option-id="26">
             <e:formula svg="&lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;11.84ex&quot; height=&quot;3.232ex&quot; style=&quot;vertical-align: -0.782ex;&quot; viewBox=&quot;0 -1054.5 5098 1391.3&quot; role=&quot;img&quot; focusable=&quot;false&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-labelledby=&quot;MathJax-SVG-1-Title&quot;&gt;&#10;&lt;title id=&quot;MathJax-SVG-1-Title&quot;&gt;f(x) = \\sqrt{x^2}&lt;/title&gt;&#10;&lt;defs aria-hidden=&quot;true&quot;&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNNORMAL-1D453&quot; d=&quot;M552 636c0 -38 -29 -60 -55 -60c-19 0 -37 12 -37 35c0 15 10 50 54 54c-19 18 -45 18 -49 18c-21 0 -38 -15 -47 -34c-6 -12 -20 -83 -24 -104c-11 -58 -10 -56 -21 -114h83c17 0 27 0 27 -11c0 -20 -10 -20 -30 -20h-86l-60 -317c-1 -7 -24 -128 -56 -191 c-18 -38 -58 -97 -113 -97c-41 0 -85 24 -85 69c0 38 29 60 55 60c19 0 37 -12 37 -35c0 -15 -9 -51 -55 -54c19 -18 44 -18 48 -18c52 0 69 91 87 188l75 395h-66c-19 0 -28 0 -28 12c0 19 11 19 30 19h69c24 126 27 136 33 157c30 99 93 117 127 117c41 0 87 -23 87 -69Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-28&quot; d=&quot;M332 -238c0 -5 -5 -10 -10 -10c-2 0 -4 1 -6 2c-110 83 -215 283 -215 454v84c0 171 105 371 215 454c2 1 4 2 6 2c5 0 10 -5 10 -10c0 -3 -2 -6 -4 -8c-104 -78 -173 -278 -173 -438v-84c0 -160 69 -360 173 -438c2 -2 4 -5 4 -8Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNNORMAL-1D465&quot; d=&quot;M527 376c0 -40 -32 -58 -54 -58c-27 0 -38 19 -38 35c0 24 20 49 48 54c-21 13 -45 13 -50 13c-70 0 -93 -92 -99 -118l-34 -137c-11 -44 -17 -66 -17 -88c0 -34 16 -66 55 -66c32 0 100 24 133 131c2 7 4 11 13 11c3 0 12 0 12 -10c0 -25 -57 -154 -160 -154 c-60 0 -96 39 -108 76c-3 -6 -39 -76 -105 -76c-44 0 -94 20 -94 66c0 32 25 58 55 58c15 0 37 -8 37 -35c0 -28 -22 -49 -47 -54c21 -13 44 -13 50 -13c44 0 79 42 95 104c37 140 54 207 54 238c0 58 -35 67 -54 67c-34 0 -100 -25 -134 -131c-2 -9 -5 -11 -13 -11 c0 0 -12 0 -12 10c0 25 57 154 161 154c29 0 83 -10 108 -76c12 23 47 76 105 76c34 0 93 -14 93 -66Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-29&quot; d=&quot;M288 208c0 -171 -105 -371 -215 -454c-2 -1 -4 -2 -6 -2c-5 0 -10 5 -10 10c0 3 2 6 4 8c104 78 173 278 173 438v84c0 160 -69 360 -173 438c-2 2 -4 5 -4 8c0 5 5 10 10 10c2 0 4 -1 6 -2c110 -83 215 -283 215 -454v-84Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-3D&quot; d=&quot;M722 347c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20zM722 153c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-32&quot; d=&quot;M449 174l-28 -174h-371c0 24 0 26 11 37l192 214c55 62 105 141 105 221c0 82 -43 163 -134 163c-58 0 -112 -37 -135 -102c3 1 5 1 13 1c35 0 53 -26 53 -52c0 -41 -35 -53 -52 -53c-3 0 -53 0 -53 56c0 89 74 181 187 181c122 0 212 -80 212 -194 c0 -100 -60 -154 -216 -292l-106 -103h180c22 0 88 0 95 8c10 15 17 59 22 89h25Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-221A&quot; d=&quot;M853 20c0 -5 -1 -6 -6 -17l-456 -944c-7 -15 -9 -19 -25 -19c-11 0 -13 1 -19 15l-198 435l-52 -39c-9 -8 -11 -8 -14 -8c-6 0 -10 4 -10 11c0 4 1 5 12 14l99 75c9 8 11 8 14 8c7 0 9 -6 13 -14l178 -392l423 876c6 12 9 19 21 19s20 -9 20 -20Z&quot;&gt;&lt;/path&gt;&#10;&lt;/defs&gt;&#10;&lt;g stroke=&quot;currentColor&quot; fill=&quot;currentColor&quot; stroke-width=&quot;0&quot; transform=&quot;matrix(1 0 0 -1 0 0)&quot; aria-hidden=&quot;true&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D453&quot; x=&quot;0&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-28&quot; x=&quot;552&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D465&quot; x=&quot;942&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-29&quot; x=&quot;1514&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-3D&quot; x=&quot;2181&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10;&lt;g transform=&quot;translate(3238,0)&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-221A&quot; x=&quot;0&quot; y=&quot;856&quot;&gt;&lt;/use&gt;&#10;&lt;rect stroke=&quot;none&quot; width=&quot;1026&quot; height=&quot;60&quot; x=&quot;833&quot; y=&quot;837&quot;&gt;&lt;/rect&gt;&#10;&lt;g transform=&quot;translate(833,0)&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D465&quot; x=&quot;0&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use transform=&quot;scale(0.707)&quot; xlink:href=&quot;#E1-LATINMODERNMAIN-32&quot; x=&quot;809&quot; y=&quot;408&quot;&gt;&lt;/use&gt;&#10;&lt;/g&gt;&#10;&lt;/g&gt;&#10;&lt;/g&gt;&#10;&lt;/svg&gt;">f(x) = \\sqrt{x^2}</e:formula>
-          </e:choice-answer-option><e:choice-answer-option option-id="23">
+          </e:choice-answer-option><e:choice-answer-option option-id="27">
             <e:formula svg="&lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;19.24ex&quot; height=&quot;2.898ex&quot; style=&quot;vertical-align: -0.782ex;&quot; viewBox=&quot;0 -910.9 8283.9 1247.8&quot; role=&quot;img&quot; focusable=&quot;false&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-labelledby=&quot;MathJax-SVG-1-Title&quot;&gt;&#10;&lt;title id=&quot;MathJax-SVG-1-Title&quot;&gt;f(x) = x^4 + 3x + 5&lt;/title&gt;&#10;&lt;defs aria-hidden=&quot;true&quot;&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNNORMAL-1D453&quot; d=&quot;M552 636c0 -38 -29 -60 -55 -60c-19 0 -37 12 -37 35c0 15 10 50 54 54c-19 18 -45 18 -49 18c-21 0 -38 -15 -47 -34c-6 -12 -20 -83 -24 -104c-11 -58 -10 -56 -21 -114h83c17 0 27 0 27 -11c0 -20 -10 -20 -30 -20h-86l-60 -317c-1 -7 -24 -128 -56 -191 c-18 -38 -58 -97 -113 -97c-41 0 -85 24 -85 69c0 38 29 60 55 60c19 0 37 -12 37 -35c0 -15 -9 -51 -55 -54c19 -18 44 -18 48 -18c52 0 69 91 87 188l75 395h-66c-19 0 -28 0 -28 12c0 19 11 19 30 19h69c24 126 27 136 33 157c30 99 93 117 127 117c41 0 87 -23 87 -69Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-28&quot; d=&quot;M332 -238c0 -5 -5 -10 -10 -10c-2 0 -4 1 -6 2c-110 83 -215 283 -215 454v84c0 171 105 371 215 454c2 1 4 2 6 2c5 0 10 -5 10 -10c0 -3 -2 -6 -4 -8c-104 -78 -173 -278 -173 -438v-84c0 -160 69 -360 173 -438c2 -2 4 -5 4 -8Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNNORMAL-1D465&quot; d=&quot;M527 376c0 -40 -32 -58 -54 -58c-27 0 -38 19 -38 35c0 24 20 49 48 54c-21 13 -45 13 -50 13c-70 0 -93 -92 -99 -118l-34 -137c-11 -44 -17 -66 -17 -88c0 -34 16 -66 55 -66c32 0 100 24 133 131c2 7 4 11 13 11c3 0 12 0 12 -10c0 -25 -57 -154 -160 -154 c-60 0 -96 39 -108 76c-3 -6 -39 -76 -105 -76c-44 0 -94 20 -94 66c0 32 25 58 55 58c15 0 37 -8 37 -35c0 -28 -22 -49 -47 -54c21 -13 44 -13 50 -13c44 0 79 42 95 104c37 140 54 207 54 238c0 58 -35 67 -54 67c-34 0 -100 -25 -134 -131c-2 -9 -5 -11 -13 -11 c0 0 -12 0 -12 10c0 25 57 154 161 154c29 0 83 -10 108 -76c12 23 47 76 105 76c34 0 93 -14 93 -66Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-29&quot; d=&quot;M288 208c0 -171 -105 -371 -215 -454c-2 -1 -4 -2 -6 -2c-5 0 -10 5 -10 10c0 3 2 6 4 8c104 78 173 278 173 438v84c0 160 -69 360 -173 438c-2 2 -4 5 -4 8c0 5 5 10 10 10c2 0 4 -1 6 -2c110 -83 215 -283 215 -454v-84Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-3D&quot; d=&quot;M722 347c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20zM722 153c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-34&quot; d=&quot;M471 165h-100v-87c0 -36 2 -47 76 -47h21v-31c-41 3 -94 3 -136 3s-94 0 -135 -3v31h21c74 0 76 11 76 47v87h-266v31l307 469c8 12 11 12 20 12c16 0 16 -6 16 -26v-455h100v-31zM300 196v373l-244 -373h244Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-2B&quot; d=&quot;M722 250c0 -11 -9 -20 -20 -20h-293v-293c0 -11 -9 -20 -20 -20s-20 9 -20 20v293h-293c-11 0 -20 9 -20 20s9 20 20 20h293v293c0 11 9 20 20 20s20 -9 20 -20v-293h293c11 0 20 -9 20 -20Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-33&quot; d=&quot;M457 171c0 -102 -91 -193 -213 -193c-109 0 -202 66 -202 157c0 44 32 58 56 58c29 0 56 -20 56 -56c0 -38 -31 -60 -66 -55c35 -59 110 -76 153 -76c44 0 113 29 113 165c0 98 -37 166 -119 166h-44c-17 0 -24 0 -24 11c0 10 7 11 15 12c7 0 31 2 39 3c25 1 59 4 89 52 c26 44 28 102 28 114c0 90 -55 112 -96 112c-36 0 -102 -13 -133 -62c15 0 62 0 62 -50c0 -29 -20 -51 -51 -51c-29 0 -51 19 -51 52c0 76 76 136 177 136c96 0 184 -56 184 -138c0 -79 -58 -149 -140 -176c104 -21 167 -99 167 -181Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-35&quot; d=&quot;M449 201c0 -127 -102 -223 -218 -223c-112 0 -181 97 -181 183c0 46 35 53 49 53c33 0 50 -25 50 -49s-17 -49 -50 -49c-11 0 -14 1 -17 2c17 -59 74 -112 147 -112c46 0 83 26 107 65c24 42 24 102 24 137c0 50 -2 89 -18 126c-8 18 -33 64 -85 64 c-81 0 -118 -54 -129 -70c-4 -6 -6 -9 -13 -9c-14 0 -14 8 -14 26v296c0 16 0 24 10 24c0 0 4 0 12 -3c47 -21 93 -28 133 -28c67 0 116 20 136 29c5 3 8 3 8 3c7 0 10 -5 10 -11c0 -13 -70 -104 -193 -104c-32 0 -65 7 -85 13v-195c36 35 79 51 127 51 c108 0 190 -100 190 -219Z&quot;&gt;&lt;/path&gt;&#10;&lt;/defs&gt;&#10;&lt;g stroke=&quot;currentColor&quot; fill=&quot;currentColor&quot; stroke-width=&quot;0&quot; transform=&quot;matrix(1 0 0 -1 0 0)&quot; aria-hidden=&quot;true&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D453&quot; x=&quot;0&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-28&quot; x=&quot;552&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D465&quot; x=&quot;942&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-29&quot; x=&quot;1514&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-3D&quot; x=&quot;2181&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10;&lt;g transform=&quot;translate(3238,0)&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D465&quot; x=&quot;0&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use transform=&quot;scale(0.707)&quot; xlink:href=&quot;#E1-LATINMODERNMAIN-34&quot; x=&quot;809&quot; y=&quot;513&quot;&gt;&lt;/use&gt;&#10;&lt;/g&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-2B&quot; x=&quot;4486&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-33&quot; x=&quot;5487&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D465&quot; x=&quot;5987&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-2B&quot; x=&quot;6782&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-35&quot; x=&quot;7783&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10;&lt;/g&gt;&#10;&lt;/svg&gt;">f(x) = x^4 + 3x + 5</e:formula>
-          </e:choice-answer-option><e:choice-answer-option option-id="24">
+          </e:choice-answer-option><e:choice-answer-option option-id="28">
             <e:formula svg="&lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;9.905ex&quot; height=&quot;2.898ex&quot; style=&quot;vertical-align: -0.782ex;&quot; viewBox=&quot;0 -910.9 4264.5 1247.8&quot; role=&quot;img&quot; focusable=&quot;false&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-labelledby=&quot;MathJax-SVG-1-Title&quot;&gt;&#10;&lt;title id=&quot;MathJax-SVG-1-Title&quot;&gt;f(x) = x^3&lt;/title&gt;&#10;&lt;defs aria-hidden=&quot;true&quot;&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNNORMAL-1D453&quot; d=&quot;M552 636c0 -38 -29 -60 -55 -60c-19 0 -37 12 -37 35c0 15 10 50 54 54c-19 18 -45 18 -49 18c-21 0 -38 -15 -47 -34c-6 -12 -20 -83 -24 -104c-11 -58 -10 -56 -21 -114h83c17 0 27 0 27 -11c0 -20 -10 -20 -30 -20h-86l-60 -317c-1 -7 -24 -128 -56 -191 c-18 -38 -58 -97 -113 -97c-41 0 -85 24 -85 69c0 38 29 60 55 60c19 0 37 -12 37 -35c0 -15 -9 -51 -55 -54c19 -18 44 -18 48 -18c52 0 69 91 87 188l75 395h-66c-19 0 -28 0 -28 12c0 19 11 19 30 19h69c24 126 27 136 33 157c30 99 93 117 127 117c41 0 87 -23 87 -69Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-28&quot; d=&quot;M332 -238c0 -5 -5 -10 -10 -10c-2 0 -4 1 -6 2c-110 83 -215 283 -215 454v84c0 171 105 371 215 454c2 1 4 2 6 2c5 0 10 -5 10 -10c0 -3 -2 -6 -4 -8c-104 -78 -173 -278 -173 -438v-84c0 -160 69 -360 173 -438c2 -2 4 -5 4 -8Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNNORMAL-1D465&quot; d=&quot;M527 376c0 -40 -32 -58 -54 -58c-27 0 -38 19 -38 35c0 24 20 49 48 54c-21 13 -45 13 -50 13c-70 0 -93 -92 -99 -118l-34 -137c-11 -44 -17 -66 -17 -88c0 -34 16 -66 55 -66c32 0 100 24 133 131c2 7 4 11 13 11c3 0 12 0 12 -10c0 -25 -57 -154 -160 -154 c-60 0 -96 39 -108 76c-3 -6 -39 -76 -105 -76c-44 0 -94 20 -94 66c0 32 25 58 55 58c15 0 37 -8 37 -35c0 -28 -22 -49 -47 -54c21 -13 44 -13 50 -13c44 0 79 42 95 104c37 140 54 207 54 238c0 58 -35 67 -54 67c-34 0 -100 -25 -134 -131c-2 -9 -5 -11 -13 -11 c0 0 -12 0 -12 10c0 25 57 154 161 154c29 0 83 -10 108 -76c12 23 47 76 105 76c34 0 93 -14 93 -66Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-29&quot; d=&quot;M288 208c0 -171 -105 -371 -215 -454c-2 -1 -4 -2 -6 -2c-5 0 -10 5 -10 10c0 3 2 6 4 8c104 78 173 278 173 438v84c0 160 -69 360 -173 438c-2 2 -4 5 -4 8c0 5 5 10 10 10c2 0 4 -1 6 -2c110 -83 215 -283 215 -454v-84Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-3D&quot; d=&quot;M722 347c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20zM722 153c0 -11 -9 -20 -20 -20h-626c-11 0 -20 9 -20 20s9 20 20 20h626c11 0 20 -9 20 -20Z&quot;&gt;&lt;/path&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNMAIN-33&quot; d=&quot;M457 171c0 -102 -91 -193 -213 -193c-109 0 -202 66 -202 157c0 44 32 58 56 58c29 0 56 -20 56 -56c0 -38 -31 -60 -66 -55c35 -59 110 -76 153 -76c44 0 113 29 113 165c0 98 -37 166 -119 166h-44c-17 0 -24 0 -24 11c0 10 7 11 15 12c7 0 31 2 39 3c25 1 59 4 89 52 c26 44 28 102 28 114c0 90 -55 112 -96 112c-36 0 -102 -13 -133 -62c15 0 62 0 62 -50c0 -29 -20 -51 -51 -51c-29 0 -51 19 -51 52c0 76 76 136 177 136c96 0 184 -56 184 -138c0 -79 -58 -149 -140 -176c104 -21 167 -99 167 -181Z&quot;&gt;&lt;/path&gt;&#10;&lt;/defs&gt;&#10;&lt;g stroke=&quot;currentColor&quot; fill=&quot;currentColor&quot; stroke-width=&quot;0&quot; transform=&quot;matrix(1 0 0 -1 0 0)&quot; aria-hidden=&quot;true&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D453&quot; x=&quot;0&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-28&quot; x=&quot;552&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D465&quot; x=&quot;942&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-29&quot; x=&quot;1514&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNMAIN-3D&quot; x=&quot;2181&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10;&lt;g transform=&quot;translate(3238,0)&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D465&quot; x=&quot;0&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10; &lt;use transform=&quot;scale(0.707)&quot; xlink:href=&quot;#E1-LATINMODERNMAIN-33&quot; x=&quot;809&quot; y=&quot;513&quot;&gt;&lt;/use&gt;&#10;&lt;/g&gt;&#10;&lt;/g&gt;&#10;&lt;/svg&gt;">f(x) = x^3</e:formula>
           </e:choice-answer-option></e:choice-answer>
       </div>
@@ -8150,15 +8395,15 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           
           
           
-        <e:choice-answer-option option-id="25">
+        <e:choice-answer-option option-id="29">
             <e:image src="example.jpg" width="999" height="999"/>
-          </e:choice-answer-option><e:choice-answer-option option-id="26">
+          </e:choice-answer-option><e:choice-answer-option option-id="30">
             <e:image src="example_small.jpg" width="999" height="999"/>
-          </e:choice-answer-option><e:choice-answer-option option-id="27">
+          </e:choice-answer-option><e:choice-answer-option option-id="31">
             <e:image src="example_high.jpg" width="999" height="999"/>
-          </e:choice-answer-option><e:choice-answer-option option-id="28">
+          </e:choice-answer-option><e:choice-answer-option option-id="32">
             <e:image src="example.jpg" width="999" height="999"/>
-          </e:choice-answer-option><e:choice-answer-option option-id="29">
+          </e:choice-answer-option><e:choice-answer-option option-id="33">
             <e:image src="example.jpg" width="999" height="999"/>
           </e:choice-answer-option></e:choice-answer>
       </div>
@@ -8206,7 +8451,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
           
           
           
-        <e:dropdown-answer-option option-id="30">Ipsum</e:dropdown-answer-option><e:dropdown-answer-option option-id="31">Lorem</e:dropdown-answer-option><e:dropdown-answer-option option-id="32">Sit</e:dropdown-answer-option><e:dropdown-answer-option option-id="33">Dolor</e:dropdown-answer-option></e:dropdown-answer>
+        <e:dropdown-answer-option option-id="34">Ipsum</e:dropdown-answer-option><e:dropdown-answer-option option-id="35">Lorem</e:dropdown-answer-option><e:dropdown-answer-option option-id="36">Sit</e:dropdown-answer-option><e:dropdown-answer-option option-id="37">Dolor</e:dropdown-answer-option></e:dropdown-answer>
       </div>
     </e:question>
 
@@ -8324,11 +8569,227 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         <e:scored-text-answer max-score="3" question-id="14" display-number="10.6"/>
       </div>
     </e:question>
+    <e:question display-number="11" max-score="8">
+      <e:question-title>
+        dnd-answer
+      </e:question-title>
+      <e:question-instruction>
+        <p>
+          <code>e:dnd-answer</code>
+      is a <code>connect</code> type of drag-and-drop element. The correct answer is defined by placing a question in the <code>e:dnd-answer-title</code> element and the
+ correct answer option in the <code>e:dnd-answer-option</code> within the <code>e:dnd-answer</code> element.
+      <code>e:dnd-answer</code> elements are placed within the <code>e:dnd-answer-container</code> element. Wrong answers are defined by placing <code>e:dnd-answer-optio
+n</code> elements within the <code>e:dnd-answer-container</code> element.<br/>
+      <code>e:dnd-answer</code> is automatically graded based on a set of correct answers
+        </p>
+      </e:question-instruction>
+
+      <table class="e-table e-width-full"><caption>
+      Element attributes (
+      <code>e:dnd-answer-container</code>
+      )
+    </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>dnd-type</td><td><code>connect</code></td><td>Yes</td><td>connect</td><td>Drag-and-Drop type</td></tr></tbody></table>
+
+    <table class="e-table e-width-full"><caption>
+      Element attributes (
+      <code>e:dnd-answer</code>
+      )
+    </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>max-score</td><td>Integer</td><td>Yes</td><td>3</td><td>Maximum score</td></tr></tbody></table>
+
+    <table class="e-table e-width-full"><caption>
+      Element attributes (
+      <code>e:dnd-answer-option</code>
+      )
+    </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>score</td><td>Integer</td><td>Yes</td><td>3</td><td>Answer score</td></tr></tbody></table>
+
+      <h4>
+        Example of
+        <code>e:dnd-answer</code>
+      </h4>
+      <pre class="code"><![CDATA[<e:question>
+          <e:question-title></e:question-title>
+          <e:question-instruction></e:question-instruction>
+          <e:audio-group>
+            <e:attachment>
+              <e:attachment-title>6. audio</e:attachment-title>
+              <e:audio src="6.ogg" times="1"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
+            </e:attachment>
+          </e:audio-group>
+          <e:dnd-answer-container meta='dnd answer container' dnd-type='connect'>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Lars best?
+                    <e:audio src="6.1.ogg" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Monday, 3:00 PM</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Katarina best?
+                    <e:audio src="6.2.ogg" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Tuesday, 1:00 p.m.</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Marit best?
+                    <e:audio src="6.3.ogg" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Monday, 4:00 PM</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer-option>Monday, 1:00 PM</e:dnd-answer-option>
+              <e:dnd-answer-option>Monday, 2:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 2:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 3:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 4:00 pm</e:dnd-answer-option>
+          </e:dnd-answer-container>
+      </e:question>]]></pre>
+
+          <div class="example">
+          <e:audio-group>
+            <e:attachment>
+              <e:attachment-title>6. audio</e:attachment-title>
+              <e:audio src="6.ogg" times="1" restricted-audio-id="0" duration="999"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
+              <e:reference>
+                <e:author>
+                  <span lang="fi-FI">YTL</span>
+                  
+                </e:author>
+              </e:reference>
+            </e:attachment>
+          </e:audio-group>
+
+          <e:dnd-answer-container dnd-type="connect">
+              <e:dnd-answer max-score="2" question-id="15" display-number="11.1">
+                  <e:dnd-answer-title>
+                    What time suits Lars best?
+                    <e:audio src="6.1.ogg" times="1" restricted-audio-id="1" duration="999"/>
+                  </e:dnd-answer-title>
+                  
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2" question-id="16" display-number="11.2">
+                  <e:dnd-answer-title>
+                    What time suits Katarina best?
+                    <e:audio src="6.2.ogg" times="1" restricted-audio-id="2" duration="999"/>
+                  </e:dnd-answer-title>
+                  
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2" question-id="17" display-number="11.3">
+                  <e:dnd-answer-title>
+                    What time suits Marit best?
+                    <e:audio src="6.3.ogg" times="1" restricted-audio-id="3" duration="999"/>
+                  </e:dnd-answer-title>
+                  
+              </e:dnd-answer>
+              
+              
+              
+              
+              
+          <e:dnd-answer-option option-id="38">Tuesday, 2:00 pm</e:dnd-answer-option><e:dnd-answer-option option-id="39">Tuesday, 4:00 pm</e:dnd-answer-option><e:dnd-answer-option option-id="40">Tuesday, 3:00 pm</e:dnd-answer-option><e:dnd-answer-option option-id="41">Monday, 3:00 PM</e:dnd-answer-option><e:dnd-answer-option option-id="42">Monday, 2:00 pm</e:dnd-answer-option><e:dnd-answer-option option-id="43">Monday, 4:00 PM</e:dnd-answer-option><e:dnd-answer-option option-id="44">Tuesday, 1:00 p.m.</e:dnd-answer-option><e:dnd-answer-option option-id="45">Monday, 1:00 PM</e:dnd-answer-option></e:dnd-answer-container>
+          </div>
+        <pre class="code"><![CDATA[<e:question>
+        <e:question-title></e:question-title>
+        <e:question-instruction></e:question-instruction>
+        <e:dnd-answer-container dnd-type='connect'>
+            <e:dnd-answer max-score="2">
+                <e:dnd-answer-title>
+                  <e:attachment>
+                    <e:attachment-title>7.2. audio</e:attachment-title>
+                    <e:audio src="7.2.ogg"></e:audio>
+                  </e:attachment>
+                </e:dnd-answer-title>
+                <e:dnd-answer-option score="2">
+                  <e:attachment>
+                    <e:attachment-title>7.2.7291.jpg</e:attachment-title>
+                    <e:image src="7.2.7291.jpg"/>
+                  </e:attachment>
+                </e:dnd-answer-option>
+            </e:dnd-answer>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>7.2.1617.jpg</e:attachment-title>
+                <e:image src="7.2.1617.jpg"/>
+              </e:attachment>
+            </e:dnd-answer-option>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>7.2.7276.jpg</e:attachment-title>
+                <e:image src="7.2.7276.jpg"/>
+              </e:attachment>
+            </e:dnd-answer-option>
+        </e:dnd-answer-container>
+      </e:question>]]></pre>
+
+        <div class="example">
+        <e:dnd-answer-container dnd-type="connect">
+            <e:dnd-answer max-score="2" question-id="18" display-number="11.4">
+                <e:dnd-answer-title>
+                  <e:attachment>
+                    <e:attachment-title>7.2. audio</e:attachment-title>
+                    <e:audio src="7.2.ogg" duration="999"/>
+                    <e:reference>
+                      <e:author>
+                        <span lang="fi-FI">YTL</span>
+                        
+                      </e:author>
+                    </e:reference>
+                  </e:attachment>
+                </e:dnd-answer-title>
+                
+            </e:dnd-answer>
+            
+            
+        <e:dnd-answer-option option-id="46">
+              <e:attachment>
+                <e:attachment-title>7.2.7276.jpg</e:attachment-title>
+                <e:image src="7.2.7276.jpg" width="999" height="999"/>
+                <e:reference>
+                  <e:title>Scrambled Eggs</e:title>
+                  <e:author>Steve Garfield</e:author>
+                  <e:url>
+                    http://www.lecker.de/assets/styles/563x422/public/lecker/kochen_2/gemuese_1/kochkurse_3/wiemachtmanruehrei/wie-macht-man-ruehrei.jpg?itok=jKVlV_IS
+                  </e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:dnd-answer-option><e:dnd-answer-option option-id="47">
+                  <e:attachment>
+                    <e:attachment-title>7.2.7291.jpg</e:attachment-title>
+                    <e:image src="7.2.7291.jpg" width="999" height="999"/>
+                    <e:reference>
+                      <e:author>Marco Verch</e:author>
+                      <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
+                      <e:url>
+                        https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc
+                      </e:url>
+                      <e:reference-date>2019-11-25</e:reference-date>
+                      <e:howpublished>CC BY 2.0</e:howpublished>
+                    </e:reference>
+                  </e:attachment>
+                </e:dnd-answer-option><e:dnd-answer-option option-id="48">
+              <e:attachment>
+                <e:attachment-title>7.2.1617.jpg</e:attachment-title>
+                <e:image src="7.2.1617.jpg" width="999" height="999"/>
+                <e:reference>
+                  <e:author>Aaron Headly</e:author>
+                  <e:title>Poached egg</e:title>
+                  <e:url>
+                    https://www.flickr.com/photos/mugland/32246233434/in/photolist-R8unKY-oSTr5y-dNBKEZ-Qx3Lvn-972jpe-9K3xaD-9yN1JE-aoPvR7-HS6jsx-5LQxtf-bAichD-b78K3F-25Feweo-4ZhiwT-JHSps8-7sriMy-4Zmwed-4ZhixX-6Gs1y8-a7Mra1-8oSD7D-nixb3o-4XhKTa-EWChYm-4yC8Qn-7YoNPX-8pMyDi-4Lr4m7-9oWr8-6wJ9nt-2htUekX-5JFQhL-24vrvUk-8pQGrh-rBSFW-4Xn2Uh-6Gs1CR-8pMwVn-9ybL7s-FSMmiu-6Gs228-8pQHj1-7D8pEr-7hxmsP-6Gs1Vg-6Gw5EW-7Aqi85-6A8Lyw-JdXn3-ZLVPMm
+                  </e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:dnd-answer-option></e:dnd-answer-container>
+      </div>
+    </e:question>
   </e:section>
 
   <e:section display-number="5" max-score="6">
     <e:section-title>Material</e:section-title>
-    <e:question display-number="11" max-score="0">
+    <e:question display-number="12" max-score="0">
       <e:question-title>attachment</e:question-title>
       <e:question-instruction>
         <p>
@@ -8444,7 +8905,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   </e:attachment>
 </e:external-material>]]></pre>
       <e:external-material>
-        <e:attachment name="test-material" display-number="11.A">
+        <e:attachment name="test-material" display-number="12.A">
           <e:attachment-title>Title 1</e:attachment-title>
           <p>...HTML code...</p>
           <e:image src="example.jpg" width="999" height="999"/>
@@ -8453,7 +8914,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
             <e:author>Matriculation examination board</e:author>
           </e:reference>
         </e:attachment>
-        <e:attachment name="another-test-material" display-number="11.B">
+        <e:attachment name="another-test-material" display-number="12.B">
           <e:attachment-title>Title 2</e:attachment-title>
           <e:video src="example1.webm" width="999" height="999"/>
           <e:reference>
@@ -8492,7 +8953,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
     ...]]></pre>
 
     </e:question>
-    <e:question display-number="12" max-score="0">
+    <e:question display-number="13" max-score="0">
       <e:question-title>image</e:question-title>
       <e:question-instruction>
         <code>e:image</code>
@@ -8513,7 +8974,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         </e:image>
       </div>
     </e:question>
-    <e:question display-number="13" max-score="0">
+    <e:question display-number="14" max-score="0">
       <e:question-title>image-overlay</e:question-title>
       <e:question-instruction>
         <p>
@@ -8561,7 +9022,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
         <p>Example maps © OpenStreetMap contributors</p>
       </div>
     </e:question>
-    <e:question display-number="14" max-score="0">
+    <e:question display-number="15" max-score="0">
       <e:question-title>audio</e:question-title>
       <e:question-instruction>
         <code>e:audio</code>
@@ -8577,10 +9038,10 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   <e:audio-title>Optional description</e:audio-title>
 </e:audio>]]></pre>
       <div class="example">
-        <e:audio src="example1.webm" times="2" restricted-audio-id="0" duration="999"><e:audio-title>Optional description</e:audio-title></e:audio>
+        <e:audio src="example1.webm" times="2" restricted-audio-id="4" duration="999"><e:audio-title>Optional description</e:audio-title></e:audio>
       </div>
     </e:question>
-    <e:question display-number="15" max-score="6">
+    <e:question display-number="16" max-score="6">
       <e:question-title>audio-group</e:question-title>
       <e:question-instruction>
         <code>e:audio-group</code>
@@ -8632,44 +9093,44 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 </e:audio-group>]]></pre>
       <div class="example">
         <e:audio-group>
-          <e:audio src="example1.webm" times="2" restricted-audio-id="1" duration="999"><e:audio-title>The whole recording</e:audio-title></e:audio>
+          <e:audio src="example1.webm" times="2" restricted-audio-id="5" duration="999"><e:audio-title>The whole recording</e:audio-title></e:audio>
         </e:audio-group>
         <e:audio-group>
-          <e:question display-number="15.1" max-score="2">
+          <e:question display-number="16.1" max-score="2">
             <e:question-title>Listening comprehension choice question</e:question-title>
-            <e:choice-answer question-id="15" display-number="15.1" max-score="2">
+            <e:choice-answer question-id="19" display-number="16.1" max-score="2">
               
               
               
               
-            <e:choice-answer-option option-id="34">Lorem</e:choice-answer-option><e:choice-answer-option option-id="35">Ipsum</e:choice-answer-option><e:choice-answer-option option-id="36">Sit</e:choice-answer-option><e:choice-answer-option option-id="37">Dolor</e:choice-answer-option></e:choice-answer>
+            <e:choice-answer-option option-id="49">Sit</e:choice-answer-option><e:choice-answer-option option-id="50">Lorem</e:choice-answer-option><e:choice-answer-option option-id="51">Dolor</e:choice-answer-option><e:choice-answer-option option-id="52">Ipsum</e:choice-answer-option></e:choice-answer>
           </e:question>
-          <e:question display-number="15.2" max-score="2">
+          <e:question display-number="16.2" max-score="2">
             <e:question-title>Listening comprehension choice question</e:question-title>
-            <e:choice-answer question-id="16" display-number="15.2" max-score="2">
+            <e:choice-answer question-id="20" display-number="16.2" max-score="2">
               
               
               
               
-            <e:choice-answer-option option-id="38">Lorem</e:choice-answer-option><e:choice-answer-option option-id="39">Ipsum</e:choice-answer-option><e:choice-answer-option option-id="40">Sit</e:choice-answer-option><e:choice-answer-option option-id="41">Dolor</e:choice-answer-option></e:choice-answer>
+            <e:choice-answer-option option-id="53">Dolor</e:choice-answer-option><e:choice-answer-option option-id="54">Sit</e:choice-answer-option><e:choice-answer-option option-id="55">Lorem</e:choice-answer-option><e:choice-answer-option option-id="56">Ipsum</e:choice-answer-option></e:choice-answer>
           </e:question>
-          <e:audio src="example2.webm" times="2" restricted-audio-id="2" duration="999"><e:audio-title>The passage related to the two sub-questions immediately above.</e:audio-title></e:audio>
+          <e:audio src="example2.webm" times="2" restricted-audio-id="6" duration="999"><e:audio-title>The passage related to the two sub-questions immediately above.</e:audio-title></e:audio>
         </e:audio-group>
         <e:audio-group>
-          <e:question display-number="15.3" max-score="2">
+          <e:question display-number="16.3" max-score="2">
             <e:question-title>Listening comprehension</e:question-title>
-            <e:choice-answer question-id="17" display-number="15.3" max-score="2">
+            <e:choice-answer question-id="21" display-number="16.3" max-score="2">
               
               
               
               
-            <e:choice-answer-option option-id="42">Ipsum</e:choice-answer-option><e:choice-answer-option option-id="43">Sit</e:choice-answer-option><e:choice-answer-option option-id="44">Lorem</e:choice-answer-option><e:choice-answer-option option-id="45">Dolor</e:choice-answer-option></e:choice-answer>
+            <e:choice-answer-option option-id="57">Dolor</e:choice-answer-option><e:choice-answer-option option-id="58">Sit</e:choice-answer-option><e:choice-answer-option option-id="59">Lorem</e:choice-answer-option><e:choice-answer-option option-id="60">Ipsum</e:choice-answer-option></e:choice-answer>
           </e:question>
-          <e:audio src="example3.webm" times="2" restricted-audio-id="3" duration="999"><e:audio-title>The passage related to the sub-question immediately above.</e:audio-title></e:audio>
+          <e:audio src="example3.webm" times="2" restricted-audio-id="7" duration="999"><e:audio-title>The passage related to the sub-question immediately above.</e:audio-title></e:audio>
         </e:audio-group>
       </div>
     </e:question>
-    <e:question display-number="16" max-score="0">
+    <e:question display-number="17" max-score="0">
       <e:question-title>video</e:question-title>
       <e:question-instruction>
         <code>e:video</code>
@@ -8687,7 +9148,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       </div>
     </e:question>
 
-    <e:question display-number="17" max-score="0">
+    <e:question display-number="18" max-score="0">
       <e:question-title>file</e:question-title>
       <e:question-instruction>
         <code>e:file</code>
@@ -8708,7 +9169,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
   <e:section display-number="6" max-score="0">
     <e:section-title>Links to material</e:section-title>
-    <e:question display-number="18" max-score="0">
+    <e:question display-number="19" max-score="0">
       <e:question-title>attachment-link</e:question-title>
       <e:question-instruction>
         Material on external material page can be linked to from exam page by using
@@ -8745,7 +9206,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="19" max-score="0">
+    <e:question display-number="20" max-score="0">
       <e:question-title>attachment-links</e:question-title>
       <e:question-instruction>
         Use
@@ -8778,7 +9239,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
   <e:section display-number="7" max-score="0">
     <e:section-title>Formulas</e:section-title>
-    <e:question display-number="20" max-score="0">
+    <e:question display-number="21" max-score="0">
       <e:question-title>Adding formulas</e:question-title>
       <e:question-instruction>
         <p>
@@ -8870,7 +9331,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
   <e:section display-number="8" max-score="0">
     <e:section-title>CSS styles</e:section-title>
 
-    <e:question display-number="21" max-score="0">
+    <e:question display-number="22" max-score="0">
       <e:question-title>Typography</e:question-title>
 
       <h3>Title</h3>
@@ -9043,7 +9504,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="22" max-score="0">
+    <e:question display-number="23" max-score="0">
       <e:question-title>Lists</e:question-title>
       <e:question-instruction>There are helper classes for various ordered lists.</e:question-instruction>
 
@@ -9130,7 +9591,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="23" max-score="0">
+    <e:question display-number="24" max-score="0">
       <e:question-title>Floating</e:question-title>
 
       <table class="e-table e-width-full"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td>
@@ -9194,7 +9655,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="24" max-score="0">
+    <e:question display-number="25" max-score="0">
       <e:question-title>Illustration images</e:question-title>
       <e:question-instruction>
         For images aligned to the right there is a helper class
@@ -9249,7 +9710,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       </div>
     </e:question>
 
-    <e:question display-number="25" max-score="0">
+    <e:question display-number="26" max-score="0">
       <e:question-title>Margins and paddings</e:question-title>
       <e:question-instruction>
         <p>
@@ -9400,7 +9861,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="26" max-score="0">
+    <e:question display-number="27" max-score="0">
       <e:question-title>Tables</e:question-title>
       <e:question-instruction>
         Use classes
@@ -9539,7 +10000,7 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
 
     </e:question>
 
-    <e:question display-number="27" max-score="0">
+    <e:question display-number="28" max-score="0">
       <e:question-title>Text columns</e:question-title>
       <e:question-instruction>
         <p>
