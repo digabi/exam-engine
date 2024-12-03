@@ -37,12 +37,12 @@ export const DNDTitleAndDroppable = ({
   const { gradingStructure, answersByQuestionId } = useContext(ResultsContext)
   const isStudentsExam = !gradingStructure
 
-  const hasAnswer = answersByQuestionId && !!answersByQuestionId[questionIdNumber]?.value
   const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionIdNumber)!
   const correctOptionIds = choice?.options?.filter(o => o.correct).map(o => o.id)
 
-  const answer = hasAnswer ? answersByQuestionId[questionIdNumber] : undefined
-  const scoreValue = answer && choice?.options?.find(option => option.id === Number(answer.value))?.score
+  const answer = answersByQuestionId?.[questionIdNumber] ?? undefined
+  const scoreValue =
+    (answer && choice?.options?.find(option => option.id === Number(answer.value) && option.correct)?.score) || 0
 
   const lastLevelOfDisplayNumber = shortDisplayNumber(displayNumber)
 
@@ -52,7 +52,7 @@ export const DNDTitleAndDroppable = ({
     <SortableContext id={questionId} items={itemIds}>
       <span ref={setNodeRef}>
         <div
-          className={classNames('e-dnd-answer', { 'no-answer': page === 'results' && !hasAnswer })}
+          className={classNames('e-dnd-answer', { 'no-answer': page === 'results' && !answer.value })}
           data-question-id={questionId}
           key={questionId}
         >
@@ -81,7 +81,7 @@ export const DNDTitleAndDroppable = ({
             maxScore && <Score score={maxScore} size="small" />
           ) : (
             <ResultsExamQuestionAutoScore
-              score={scoreValue}
+              score={answer?.value ? scoreValue : undefined}
               maxScore={maxScore}
               displayNumber={lastLevelOfDisplayNumber}
               questionId={questionIdNumber}
