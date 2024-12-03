@@ -673,8 +673,6 @@
         <xs:element ref="e:dnd-answer-option" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="dnd-type" type="e:dnd-type" />
-      <xs:attribute name="direction" type="e:direction" />
-      <xs:attributeGroup ref="e:stylable" />
       <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
@@ -694,7 +692,6 @@
         <xs:element ref="e:dnd-answer-option" minOccurs="1" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="max-score" type="xs:positiveInteger" />
-      <xs:attributeGroup ref="e:stylable" />
       <xs:attribute name="meta" type="xs:string" />
     </xs:complexType>
   </xs:element>
