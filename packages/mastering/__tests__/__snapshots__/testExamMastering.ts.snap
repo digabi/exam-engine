@@ -1,5 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Exam mastering generates correct grading structure for dnd answers 1`] = `
+{
+  "questions": [
+    {
+      "id": 8,
+      "displayNumber": "1.1",
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 1,
+          "displayNumber": "1.1",
+          "type": "choice",
+          "options": [
+            {
+              "id": 3,
+              "score": 0,
+              "correct": false
+            },
+            {
+              "id": 4,
+              "score": 2,
+              "correct": true
+            },
+            {
+              "id": 5,
+              "score": 0,
+              "correct": false
+            },
+            {
+              "id": 6,
+              "score": 2,
+              "correct": false
+            },
+            {
+              "id": 7,
+              "score": 0,
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "displayNumber": "1.2",
+      "type": "choicegroup",
+      "choices": [
+        {
+          "id": 2,
+          "displayNumber": "1.2",
+          "type": "choice",
+          "options": [
+            {
+              "id": 3,
+              "score": 0,
+              "correct": false
+            },
+            {
+              "id": 4,
+              "score": 2,
+              "correct": false
+            },
+            {
+              "id": 5,
+              "score": 0,
+              "correct": false
+            },
+            {
+              "id": 6,
+              "score": 2,
+              "correct": true
+            },
+            {
+              "id": 7,
+              "score": 0,
+              "correct": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+`;
+
 exports[`Exam mastering masters A_E.xml exam correctly 1`] = `
 {
   "attachments": [],
@@ -26199,6 +26284,49 @@ exports[`Exam mastering shuffles choice answers but keeps no-answer options last
         
         
       <e:choice-answer-option option-id="2">A</e:choice-answer-option><e:choice-answer-option option-id="3">C</e:choice-answer-option><e:choice-answer-option option-id="4">B</e:choice-answer-option><e:choice-answer-option type="no-answer" option-id="5">En vastaa</e:choice-answer-option></e:choice-answer>
+    </e:question>
+  </e:section>
+<e:exam-footer><p lang="fi-FI" class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>
+
+`;
+
+exports[`Exam mastering shuffles dnd answers 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="4">
+  
+  <e:exam-title/>
+  <e:exam-instruction/>
+  <e:section display-number="1" max-score="4">
+    <e:section-title/>
+    <e:question display-number="1" max-score="4">
+      <e:question-title/>
+        <e:dnd-answer-container dnd-type="connect">
+            <e:dnd-answer max-score="2" question-id="1" display-number="1.1">
+                <e:dnd-answer-title>
+                    Kysymys 1
+                </e:dnd-answer-title>
+                
+            </e:dnd-answer>
+            <e:dnd-answer max-score="2" question-id="2" display-number="1.2">
+                <e:dnd-answer-title>
+                    Kysymys 2
+                </e:dnd-answer-title>
+                
+            </e:dnd-answer>
+            
+            
+            
+        <e:dnd-answer-option option-id="3">
+              Ylimääräinen vastaus 2
+            </e:dnd-answer-option><e:dnd-answer-option option-id="4">
+                  Vastaus 1
+                </e:dnd-answer-option><e:dnd-answer-option option-id="5">
+              Ylimääräinen vastaus 3
+            </e:dnd-answer-option><e:dnd-answer-option option-id="6">
+                  Vastaus 2
+                </e:dnd-answer-option><e:dnd-answer-option option-id="7">
+              Ylimääräinen vastaus 1 
+            </e:dnd-answer-option></e:dnd-answer-container>
     </e:question>
   </e:section>
 <e:exam-footer><p lang="fi-FI" class="e-text-center e-semibold">Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.</p></e:exam-footer></e:exam>

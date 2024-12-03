@@ -1,6 +1,7 @@
 import {
   GenerateAnswerOptions,
   GenerateChoiceAnswerOptions,
+  GenerateDNDAnswerOptions,
   GenerateDropdownAnswerOptions,
   GenerateQuestionOptions,
   GenerateScoredTextAnswerOptions,
@@ -105,6 +106,22 @@ export function dropdownAnswer(options?: Partial<GenerateDropdownAnswerOptions>)
       },
       {
         text: 'Väärä vaihtoehto',
+        score: 0
+      }
+    ],
+    ...options
+  }
+}
+export function dndAnswer(options?: Partial<GenerateDNDAnswerOptions>): GenerateDNDAnswerOptions {
+  return {
+    name: 'dnd-answer',
+    options: [
+      {
+        text: 'Answer 1',
+        score: 3
+      },
+      {
+        text: 'Wrong answer',
         score: 0
       }
     ],
