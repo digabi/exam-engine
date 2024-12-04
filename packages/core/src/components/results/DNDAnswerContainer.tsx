@@ -25,13 +25,10 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
   )
 
-  const answerOptionsById = dndAnswerOptions.reduce(
-    (acc, el) => {
-      const optionId = el.getAttribute('option-id')!
-      return { ...acc, [optionId]: el }
-    },
-    {} as Record<UniqueIdentifier, Element>
-  )
+  const answerOptionsById: Record<UniqueIdentifier, Element> = dndAnswerOptions.reduce((acc, el) => {
+    const optionId = el.getAttribute('option-id')!
+    return { ...acc, [optionId]: el }
+  }, {})
 
   const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
 
