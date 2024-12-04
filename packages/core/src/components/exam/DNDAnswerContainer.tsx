@@ -52,22 +52,16 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
       { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
     )
 
-    const answerOptionsByOptionId = dndAnswerOptions.reduce(
-      (acc, el) => {
-        const optionId = el.getAttribute('option-id')!
-        return { ...acc, [optionId]: el }
-      },
-      {} as Record<UniqueIdentifier, Element>
-    )
+    const answerOptionsByOptionId: Record<UniqueIdentifier, Element> = dndAnswerOptions.reduce((acc, el) => {
+      const optionId = el.getAttribute('option-id')!
+      return { ...acc, [optionId]: el }
+    }, {})
 
-    const displayNumbersById = dndAnswers.reduce(
-      (acc, el) => {
-        const questionId = el.getAttribute('question-id')!
-        const displayNumber = el.getAttribute('display-number')!
-        return { ...acc, [questionId]: displayNumber }
-      },
-      {} as Record<UniqueIdentifier, string>
-    )
+    const displayNumbersById: Record<UniqueIdentifier, string> = dndAnswers.reduce((acc, el) => {
+      const questionId = el.getAttribute('question-id')!
+      const displayNumber = el.getAttribute('display-number')!
+      return { ...acc, [questionId]: displayNumber }
+    }, {})
 
     setOptionIdsByQuestionId(answerOptionIdsByQuestionId)
     setAnswerOptionsById(answerOptionsByOptionId)
