@@ -1206,11 +1206,12 @@
       <e:question-instruction>
         <p>
           <code>e:dnd-answer</code>
-      is a <code>connect</code> type of drag-and-drop element. The correct answer is defined by placing a question in the <code>e:dnd-answer-title</code> element and the
- correct answer option in the <code>e:dnd-answer-option</code> within the <code>e:dnd-answer</code> element.
-      <code>e:dnd-answer</code> elements are placed within the <code>e:dnd-answer-container</code> element. Wrong answers are defined by placing <code>e:dnd-answer-optio
-n</code> elements within the <code>e:dnd-answer-container</code> element.<br />
-      <code>e:dnd-answer</code> is automatically graded based on a set of correct answers
+          is a <code>connect</code> type of drag-and-drop element. 
+          The correct answer is defined by placing a question in the <code>e:dnd-answer-title</code> element and the correct answer option in the <code>e:dnd-answer-option</code> within the <code>e:dnd-answer</code> element. 
+          <code>e:dnd-answer</code> elements are placed within the <code>e:dnd-answer-container</code> element.
+          Wrong answers are defined by placing <code>e:dnd-answer-option</code> elements within the <code>e:dnd-answer-container</code> element. 
+          <code>e:dnd-answer-title</code> and <code>e:dnd-answer-option</code> can contain text, images, formulas and audio.
+          <br /><br /><code>e:dnd-answer</code> is automatically graded based on a set of correct answers
         </p>
       </e:question-instruction>
 
@@ -1247,29 +1248,29 @@ n</code> elements within the <code>e:dnd-answer-container</code> element.<br />
           <e:question-instruction></e:question-instruction>
           <e:audio-group>
             <e:attachment>
-              <e:attachment-title>6. audio</e:attachment-title>
-              <e:audio src="6.ogg" times="1"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
+              <e:attachment-title>example audio</e:attachment-title>
+              <e:audio src="example1.webm" times="1"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
             </e:attachment>
           </e:audio-group>
           <e:dnd-answer-container meta='dnd answer container' dnd-type='connect'>
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     What time suits Lars best?
-                    <e:audio src="6.1.ogg" times="1"></e:audio>
+                    <e:audio src="example1.webm" times="1"></e:audio>
                   </e:dnd-answer-title>
                   <e:dnd-answer-option score="2">Monday, 3:00 PM</e:dnd-answer-option>
               </e:dnd-answer>
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     What time suits Katarina best?
-                    <e:audio src="6.2.ogg" times="1"></e:audio>
+                    <e:audio src="example1.webm" times="1"></e:audio>
                   </e:dnd-answer-title>
                   <e:dnd-answer-option score="2">Tuesday, 1:00 p.m.</e:dnd-answer-option>
               </e:dnd-answer>
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     What time suits Marit best?
-                    <e:audio src="6.3.ogg" times="1"></e:audio>
+                    <e:audio src="example1.webm" times="1"></e:audio>
                   </e:dnd-answer-title>
                   <e:dnd-answer-option score="2">Monday, 4:00 PM</e:dnd-answer-option>
               </e:dnd-answer>
@@ -1285,7 +1286,7 @@ n</code> elements within the <code>e:dnd-answer-container</code> element.<br />
           <e:audio-group>
             <e:attachment>
               <e:attachment-title>6. audio</e:attachment-title>
-              <e:audio src="6.ogg" times="1"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
+              <e:audio src="example1.webm" times="1"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
               <e:reference>
                 <e:author>
                   <e:localization lang="fi-FI">YTL</e:localization>
@@ -1299,21 +1300,21 @@ n</code> elements within the <code>e:dnd-answer-container</code> element.<br />
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     What time suits Lars best?
-                    <e:audio src="6.1.ogg" times="1"></e:audio>
+                    <e:audio src="example1.webm" times="1"></e:audio>
                   </e:dnd-answer-title>
                   <e:dnd-answer-option score="2">Monday, 3:00 PM</e:dnd-answer-option>
               </e:dnd-answer>
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     What time suits Katarina best?
-                    <e:audio src="6.2.ogg" times="1"></e:audio>
+                    <e:audio src="example1.webm" times="1"></e:audio>
                   </e:dnd-answer-title>
                   <e:dnd-answer-option score="2">Tuesday, 1:00 p.m.</e:dnd-answer-option>
               </e:dnd-answer>
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
                     What time suits Marit best?
-                    <e:audio src="6.3.ogg" times="1"></e:audio>
+                    <e:audio src="example1.webm" times="1"></e:audio>
                   </e:dnd-answer-title>
                   <e:dnd-answer-option score="2">Monday, 4:00 PM</e:dnd-answer-option>
               </e:dnd-answer>
@@ -1331,27 +1332,27 @@ n</code> elements within the <code>e:dnd-answer-container</code> element.<br />
             <e:dnd-answer max-score="2">
                 <e:dnd-answer-title>
                   <e:attachment>
-                    <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg"></e:audio>
+                    <e:attachment-title>example audio</e:attachment-title>
+                    <e:audio src="example1.webm"></e:audio>
                   </e:attachment>
                 </e:dnd-answer-title>
                 <e:dnd-answer-option score="2">
                   <e:attachment>
-                    <e:attachment-title>7.2.7291.jpg</e:attachment-title>
-                    <e:image src="7.2.7291.jpg"/>
+                    <e:attachment-title>example.jpg</e:attachment-title>
+                    <e:image src="example.jpg"/>
                   </e:attachment>
                 </e:dnd-answer-option>
             </e:dnd-answer>
             <e:dnd-answer-option>
               <e:attachment>
-                <e:attachment-title>7.2.1617.jpg</e:attachment-title>
-                <e:image src="7.2.1617.jpg"/>
+                <e:attachment-title>example.jpg</e:attachment-title>
+                <e:image src="example.jpg"/>
               </e:attachment>
             </e:dnd-answer-option>
             <e:dnd-answer-option>
               <e:attachment>
-                <e:attachment-title>7.2.7276.jpg</e:attachment-title>
-                <e:image src="7.2.7276.jpg"/>
+                <e:attachment-title>example.jpg</e:attachment-title>
+                <e:image src="example.jpg"/>
               </e:attachment>
             </e:dnd-answer-option>
         </e:dnd-answer-container>
@@ -1362,8 +1363,8 @@ n</code> elements within the <code>e:dnd-answer-container</code> element.<br />
             <e:dnd-answer max-score="2">
                 <e:dnd-answer-title>
                   <e:attachment>
-                    <e:attachment-title>7.2. audio</e:attachment-title>
-                    <e:audio src="7.2.ogg"></e:audio>
+                    <e:attachment-title> audio</e:attachment-title>
+                    <e:audio src="example1.webm"></e:audio>
                     <e:reference>
                       <e:author>
                         <e:localization lang="fi-FI">YTL</e:localization>
@@ -1375,47 +1376,20 @@ n</code> elements within the <code>e:dnd-answer-container</code> element.<br />
                 <e:dnd-answer-option score="2">
                   <e:attachment>
                     <e:attachment-title>7.2.7291.jpg</e:attachment-title>
-                    <e:image src="7.2.7291.jpg"/>
-                    <e:reference>
-                      <e:author>Marco Verch</e:author>
-                      <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
-                      <e:url>
-                        https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc
-                      </e:url>
-                      <e:reference-date>2019-11-25</e:reference-date>
-                      <e:howpublished>CC BY 2.0</e:howpublished>
-                    </e:reference>
+                    <e:image src="example.jpg"/>
                   </e:attachment>
                 </e:dnd-answer-option>
             </e:dnd-answer>
             <e:dnd-answer-option>
               <e:attachment>
                 <e:attachment-title>7.2.1617.jpg</e:attachment-title>
-                <e:image src="7.2.1617.jpg"/>
-                <e:reference>
-                  <e:author>Aaron Headly</e:author>
-                  <e:title>Poached egg</e:title>
-                  <e:url>
-                    https://www.flickr.com/photos/mugland/32246233434/in/photolist-R8unKY-oSTr5y-dNBKEZ-Qx3Lvn-972jpe-9K3xaD-9yN1JE-aoPvR7-HS6jsx-5LQxtf-bAichD-b78K3F-25Feweo-4ZhiwT-JHSps8-7sriMy-4Zmwed-4ZhixX-6Gs1y8-a7Mra1-8oSD7D-nixb3o-4XhKTa-EWChYm-4yC8Qn-7YoNPX-8pMyDi-4Lr4m7-9oWr8-6wJ9nt-2htUekX-5JFQhL-24vrvUk-8pQGrh-rBSFW-4Xn2Uh-6Gs1CR-8pMwVn-9ybL7s-FSMmiu-6Gs228-8pQHj1-7D8pEr-7hxmsP-6Gs1Vg-6Gw5EW-7Aqi85-6A8Lyw-JdXn3-ZLVPMm
-                  </e:url>
-                  <e:reference-date>2019-11-25</e:reference-date>
-                  <e:howpublished>CC BY 2.0</e:howpublished>
-                </e:reference>
+                <e:image src="example.jpg"/>
               </e:attachment>
             </e:dnd-answer-option>
             <e:dnd-answer-option>
               <e:attachment>
                 <e:attachment-title>7.2.7276.jpg</e:attachment-title>
-                <e:image src="7.2.7276.jpg"/>
-                <e:reference>
-                  <e:title>Scrambled Eggs</e:title>
-                  <e:author>Steve Garfield</e:author>
-                  <e:url>
-                    http://www.lecker.de/assets/styles/563x422/public/lecker/kochen_2/gemuese_1/kochkurse_3/wiemachtmanruehrei/wie-macht-man-ruehrei.jpg?itok=jKVlV_IS
-                  </e:url>
-                  <e:reference-date>2019-11-25</e:reference-date>
-                  <e:howpublished>CC BY 2.0</e:howpublished>
-                </e:reference>
+                <e:image src="example.jpg"/>
               </e:attachment>
             </e:dnd-answer-option>
         </e:dnd-answer-container>
