@@ -13,7 +13,7 @@ import {
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ExamComponentProps } from '../..'
+import { ExamAnswer, ExamComponentProps, QuestionId } from '../..'
 import { query, queryAll } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
 import { AnswersState } from '../../store/answers/reducer'
@@ -26,36 +26,46 @@ export type ItemsState = {
   [key: UniqueIdentifier]: UniqueIdentifier[]
 }
 
+export const getAnswerOptionIdsByQuestionId = (element: Element, answersById: Record<QuestionId, ExamAnswer>) => {
+  const dndAnswers = queryAll(element, 'dnd-answer')
+  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
+
+  const answerOptionIdsByQuestionId: ItemsState = dndAnswers.reduce(
+    (acc, group) => {
+      const questionId = group.getAttribute('question-id')!
+      const answer = answersById[Number(questionId)]?.value
+      return {
+        ...acc,
+        [questionId]: answer ? [Number(answer)] : [],
+        root: acc.root.filter(e => e !== Number(answer))
+      }
+    },
+    { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
+  )
+  return answerOptionIdsByQuestionId
+}
+
+export const getAnswerOptionsByOptionId = (element: Element) => {
+  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
+  const answerOptionsByOptionId: Record<UniqueIdentifier, Element> = dndAnswerOptions.reduce((acc, el) => {
+    const optionId = el.getAttribute('option-id')!
+    return { ...acc, [optionId]: el }
+  }, {})
+  return answerOptionsByOptionId
+}
+
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
+  const dispatch = useDispatch()
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
   const [optionIdsByQuestionId, setOptionIdsByQuestionId] = useState<ItemsState>({} as ItemsState)
   const [answerOptionsById, setAnswerOptionsById] = useState<Record<UniqueIdentifier, Element>>({})
   const [displayNumbersById, setDisplayNumbersById] = useState<Record<UniqueIdentifier, string>>({})
-  const dispatch = useDispatch()
-
   const answers = useSelector((state: { answers: AnswersState }) => state.answers)
 
   useEffect(() => {
     const dndAnswers = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
-    const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-
-    const answerOptionIdsByQuestionId = dndAnswers.reduce(
-      (acc, group) => {
-        const questionId = group.getAttribute('question-id')!
-        const answer = answers.answersById[Number(questionId)]?.value
-        return {
-          ...acc,
-          [questionId]: answer ? [Number(answer)] : [],
-          root: acc.root.filter(e => e !== Number(answer))
-        }
-      },
-      { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
-    )
-
-    const answerOptionsByOptionId: Record<UniqueIdentifier, Element> = dndAnswerOptions.reduce((acc, el) => {
-      const optionId = el.getAttribute('option-id')!
-      return { ...acc, [optionId]: el }
-    }, {})
+    const answerOptionIdsByQuestionId = getAnswerOptionIdsByQuestionId(element, answers.answersById)
+    const answerOptionsByOptionId = getAnswerOptionsByOptionId(element)
 
     const displayNumbersById: Record<UniqueIdentifier, string> = dndAnswers.reduce((acc, el) => {
       const questionId = el.getAttribute('question-id')!
