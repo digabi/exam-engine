@@ -1375,20 +1375,20 @@
                 </e:dnd-answer-title>
                 <e:dnd-answer-option score="2">
                   <e:attachment>
-                    <e:attachment-title>7.2.7291.jpg</e:attachment-title>
+                    <e:attachment-title>example.jpg</e:attachment-title>
                     <e:image src="example.jpg"/>
                   </e:attachment>
                 </e:dnd-answer-option>
             </e:dnd-answer>
             <e:dnd-answer-option>
               <e:attachment>
-                <e:attachment-title>7.2.1617.jpg</e:attachment-title>
+                <e:attachment-title>example.jpg</e:attachment-title>
                 <e:image src="example.jpg"/>
               </e:attachment>
             </e:dnd-answer-option>
             <e:dnd-answer-option>
               <e:attachment>
-                <e:attachment-title>7.2.7276.jpg</e:attachment-title>
+                <e:attachment-title>example.jpg</e:attachment-title>
                 <e:image src="example.jpg"/>
               </e:attachment>
             </e:dnd-answer-option>
