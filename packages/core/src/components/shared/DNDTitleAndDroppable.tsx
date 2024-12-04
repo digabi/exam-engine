@@ -42,7 +42,7 @@ export const DNDTitleAndDroppable = ({
 
   const answer = answersByQuestionId?.[questionIdNumber] ?? undefined
   const scoreValue =
-    (answer && choice?.options?.find(option => option.id === Number(answer.value) && option.correct)?.score) || 0
+    (answer && choice?.options?.find(option => option.id === Number(answer?.value) && option.correct)?.score) || 0
 
   const lastLevelOfDisplayNumber = shortDisplayNumber(displayNumber)
 
@@ -52,7 +52,7 @@ export const DNDTitleAndDroppable = ({
     <SortableContext id={questionId} items={itemIds}>
       <span ref={setNodeRef}>
         <div
-          className={classNames('e-dnd-answer', { 'no-answer': page === 'results' && !answer.value })}
+          className={classNames('e-dnd-answer', { 'no-answer': page === 'results' && !answer?.value })}
           data-question-id={questionId}
           key={questionId}
         >

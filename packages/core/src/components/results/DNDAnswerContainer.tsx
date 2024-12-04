@@ -15,7 +15,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   const answerOptionIdsByQuestionId: ItemsState = dndAnswers.reduce(
     (acc, group) => {
       const questionId = group.getAttribute('question-id')!
-      const answer = answersByQuestionId[Number(questionId)]?.value
+      const answer = answersByQuestionId?.[Number(questionId)]?.value
       return {
         ...acc,
         [questionId]: answer ? [Number(answer)] : [],
