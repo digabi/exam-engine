@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react'
 import { MasteringResult } from '@digabi/exam-engine-mastering'
 import { renderChildNodes } from '../../../../src/components/exam/Exam'
