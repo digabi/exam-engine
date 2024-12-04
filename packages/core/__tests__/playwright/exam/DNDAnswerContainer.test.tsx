@@ -72,16 +72,8 @@ async function setupAnswerContext(component: Locator, answerMediaType: 'text' | 
   const answerOptionsLocator = component.getByTestId('dnd-droppable').last()
   const firstAnswerLocator = component.getByTestId('dnd-answer-option').nth(0)
   const secondAnswerLocator = component.getByTestId('dnd-answer-option').nth(1)
-
-  const firstAnswerContent =
-    answerMediaType === 'text'
-      ? await firstAnswerLocator.textContent()
-      : await firstAnswerLocator.locator('img').getAttribute('src')
-
-  const secondAnswerContent =
-    answerMediaType === 'text'
-      ? await secondAnswerLocator.textContent()
-      : await secondAnswerLocator.locator('img').getAttribute('src')
+  const firstAnswerContent = await getAnswerContent(firstAnswerLocator, answerMediaType)
+  const secondAnswerContent = await getAnswerContent(secondAnswerLocator, answerMediaType)
 
   return {
     answerContainer,
@@ -90,5 +82,13 @@ async function setupAnswerContext(component: Locator, answerMediaType: 'text' | 
     secondAnswerLocator,
     firstAnswerContent: firstAnswerContent as string,
     secondAnswerContent: secondAnswerContent as string
+  }
+}
+
+async function getAnswerContent(answerLocator: Locator, mediaType: 'text' | 'image') {
+  if (mediaType === 'text') {
+    return await answerLocator.textContent()
+  } else if (mediaType === 'image') {
+    return await answerLocator.locator('img').getAttribute('src')
   }
 }
