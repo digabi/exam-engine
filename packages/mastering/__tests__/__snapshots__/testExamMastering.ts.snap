@@ -8780,17 +8780,17 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
             
         <e:dnd-answer-option option-id="46">
               <e:attachment>
-                <e:attachment-title>7.2.7276.jpg</e:attachment-title>
+                <e:attachment-title>example.jpg</e:attachment-title>
                 <e:image src="example.jpg" width="999" height="999"/>
               </e:attachment>
             </e:dnd-answer-option><e:dnd-answer-option option-id="47">
                   <e:attachment>
-                    <e:attachment-title>7.2.7291.jpg</e:attachment-title>
+                    <e:attachment-title>example.jpg</e:attachment-title>
                     <e:image src="example.jpg" width="999" height="999"/>
                   </e:attachment>
                 </e:dnd-answer-option><e:dnd-answer-option option-id="48">
               <e:attachment>
-                <e:attachment-title>7.2.1617.jpg</e:attachment-title>
+                <e:attachment-title>example.jpg</e:attachment-title>
                 <e:image src="example.jpg" width="999" height="999"/>
               </e:attachment>
             </e:dnd-answer-option></e:dnd-answer-container>
