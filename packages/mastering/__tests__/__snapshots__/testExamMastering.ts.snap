@@ -14,29 +14,9 @@ exports[`Exam mastering generates correct grading structure for dnd answers 1`] 
           "type": "choice",
           "options": [
             {
-              "id": 3,
-              "score": 0,
-              "correct": false
-            },
-            {
               "id": 4,
               "score": 2,
               "correct": true
-            },
-            {
-              "id": 5,
-              "score": 0,
-              "correct": false
-            },
-            {
-              "id": 6,
-              "score": 2,
-              "correct": false
-            },
-            {
-              "id": 7,
-              "score": 0,
-              "correct": false
             }
           ]
         }
@@ -53,29 +33,9 @@ exports[`Exam mastering generates correct grading structure for dnd answers 1`] 
           "type": "choice",
           "options": [
             {
-              "id": 3,
-              "score": 0,
-              "correct": false
-            },
-            {
-              "id": 4,
-              "score": 2,
-              "correct": false
-            },
-            {
-              "id": 5,
-              "score": 0,
-              "correct": false
-            },
-            {
               "id": 6,
               "score": 2,
               "correct": true
-            },
-            {
-              "id": 7,
-              "score": 0,
-              "correct": false
             }
           ]
         }
@@ -7462,44 +7422,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
             "id": 15,
             "options": [
               {
-                "correct": false,
-                "id": 38,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 39,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 40,
-                "score": 0,
-              },
-              {
                 "correct": true,
                 "id": 41,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 42,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 43,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 44,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 45,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -7516,44 +7441,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
             "id": 16,
             "options": [
               {
-                "correct": false,
-                "id": 38,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 39,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 40,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 41,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 42,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 43,
-                "score": 2,
-              },
-              {
                 "correct": true,
                 "id": 44,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 45,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -7570,44 +7460,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
             "id": 17,
             "options": [
               {
-                "correct": false,
-                "id": 38,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 39,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 40,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 41,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 42,
-                "score": 0,
-              },
-              {
                 "correct": true,
                 "id": 43,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 44,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 45,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -7624,19 +7479,9 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
             "id": 18,
             "options": [
               {
-                "correct": false,
-                "id": 46,
-                "score": 0,
-              },
-              {
                 "correct": true,
                 "id": 47,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 48,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -15434,44 +15279,9 @@ exports[`Exam mastering masters SC.xml exam correctly 1`] = `
             "id": 100,
             "options": [
               {
-                "correct": false,
-                "id": 341,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 342,
-                "score": 2,
-              },
-              {
                 "correct": true,
                 "id": 343,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 344,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 345,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 346,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 347,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 348,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -15492,41 +15302,6 @@ exports[`Exam mastering masters SC.xml exam correctly 1`] = `
                 "id": 341,
                 "score": 2,
               },
-              {
-                "correct": false,
-                "id": 342,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 343,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 344,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 345,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 346,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 347,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 348,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
@@ -15542,44 +15317,9 @@ exports[`Exam mastering masters SC.xml exam correctly 1`] = `
             "id": 102,
             "options": [
               {
-                "correct": false,
-                "id": 341,
-                "score": 2,
-              },
-              {
                 "correct": true,
                 "id": 342,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 343,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 344,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 345,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 346,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 347,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 348,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -15596,19 +15336,9 @@ exports[`Exam mastering masters SC.xml exam correctly 1`] = `
             "id": 103,
             "options": [
               {
-                "correct": false,
-                "id": 349,
-                "score": 0,
-              },
-              {
                 "correct": true,
                 "id": 350,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 351,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -18288,44 +18018,9 @@ exports[`Exam mastering masters SC.xml exam correctly 2`] = `
             "id": 100,
             "options": [
               {
-                "correct": false,
-                "id": 341,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 342,
-                "score": 2,
-              },
-              {
                 "correct": true,
                 "id": 343,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 344,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 345,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 346,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 347,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 348,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -18346,41 +18041,6 @@ exports[`Exam mastering masters SC.xml exam correctly 2`] = `
                 "id": 341,
                 "score": 2,
               },
-              {
-                "correct": false,
-                "id": 342,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 343,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 344,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 345,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 346,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 347,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 348,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
@@ -18396,44 +18056,9 @@ exports[`Exam mastering masters SC.xml exam correctly 2`] = `
             "id": 102,
             "options": [
               {
-                "correct": false,
-                "id": 341,
-                "score": 2,
-              },
-              {
                 "correct": true,
                 "id": 342,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 343,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 344,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 345,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 346,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 347,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 348,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -18450,19 +18075,9 @@ exports[`Exam mastering masters SC.xml exam correctly 2`] = `
             "id": 103,
             "options": [
               {
-                "correct": false,
-                "id": 349,
-                "score": 0,
-              },
-              {
                 "correct": true,
                 "id": 350,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 351,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -20243,44 +19858,9 @@ exports[`Exam mastering masters SC.xml exam correctly 3`] = `
             "id": 100,
             "options": [
               {
-                "correct": false,
-                "id": 260,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 261,
-                "score": 2,
-              },
-              {
                 "correct": true,
                 "id": 262,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 263,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 264,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 265,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 266,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 267,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -20301,41 +19881,6 @@ exports[`Exam mastering masters SC.xml exam correctly 3`] = `
                 "id": 260,
                 "score": 2,
               },
-              {
-                "correct": false,
-                "id": 261,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 262,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 263,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 264,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 265,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 266,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 267,
-                "score": 0,
-              },
             ],
             "type": "choice",
           },
@@ -20351,44 +19896,9 @@ exports[`Exam mastering masters SC.xml exam correctly 3`] = `
             "id": 102,
             "options": [
               {
-                "correct": false,
-                "id": 260,
-                "score": 2,
-              },
-              {
                 "correct": true,
                 "id": 261,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 262,
-                "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 263,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 264,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 265,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 266,
-                "score": 0,
-              },
-              {
-                "correct": false,
-                "id": 267,
-                "score": 0,
               },
             ],
             "type": "choice",
@@ -20405,19 +19915,9 @@ exports[`Exam mastering masters SC.xml exam correctly 3`] = `
             "id": 103,
             "options": [
               {
-                "correct": false,
-                "id": 268,
-                "score": 0,
-              },
-              {
                 "correct": true,
                 "id": 269,
                 "score": 2,
-              },
-              {
-                "correct": false,
-                "id": 270,
-                "score": 0,
               },
             ],
             "type": "choice",
