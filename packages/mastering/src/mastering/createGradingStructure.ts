@@ -127,14 +127,19 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
 
   const answerOptions = getAnswerOptions(answer.element)
 
-  const options = answerOptions.map(option => {
-    const id = getNumericAttribute('option-id', option)
-    const score = getNumericAttribute('score', option, 0)
-    const forQuestionId = getNumericAttribute('for-question-id', option, null)
-    const isDndAnswer = option.name() === 'dnd-answer-option'
-    const correct = score > 0 && score === maxScore && (!isDndAnswer || forQuestionId === questionId)
-    return { id, score, correct }
-  })
+  const options = answerOptions
+    .map(option => {
+      const id = getNumericAttribute('option-id', option)
+      const score = getNumericAttribute('score', option, 0)
+      const forQuestionId = getNumericAttribute('for-question-id', option, null)
+      const isDndAnswer = option.name() === 'dnd-answer-option'
+      const correct = score > 0 && score === maxScore && (!isDndAnswer || forQuestionId === questionId)
+      if (!isDndAnswer || correct) {
+        return { id, score, correct }
+      }
+      return null
+    })
+    .filter(Boolean) as ChoiceGroupChoice['options']
 
   return {
     id: questionId,
