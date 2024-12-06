@@ -1199,6 +1199,202 @@
         <e:scored-text-answer max-score="3"/>
       </div>
     </e:question>
+    <e:question>
+      <e:question-title>
+        dnd-answer
+      </e:question-title>
+      <e:question-instruction>
+        <p>
+          <code>e:dnd-answer</code>
+          is a <code>connect</code> type of drag-and-drop element. 
+          The correct answer is defined by placing a question in the <code>e:dnd-answer-title</code> element and the correct answer option in the <code>e:dnd-answer-option</code> within the <code>e:dnd-answer</code> element. 
+          <code>e:dnd-answer</code> elements are placed within the <code>e:dnd-answer-container</code> element.
+          Wrong answers are defined by placing <code>e:dnd-answer-option</code> elements within the <code>e:dnd-answer-container</code> element. 
+          <code>e:dnd-answer-title</code> and <code>e:dnd-answer-option</code> can contain text, images, formulas and audio.
+          <br /><br /><code>e:dnd-answer</code> is automatically graded based on a set of correct answers
+        </p>
+      </e:question-instruction>
+
+      <table class="e-table e-width-full"><caption>
+      Element attributes (
+      <code>e:dnd-answer-container</code>
+      )
+    </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody>
+      <tr><td>dnd-type</td><td><code>connect</code></td><td>Yes</td><td>connect</td><td>Drag-and-Drop type</td></tr>
+    </tbody></table>
+
+    <table class="e-table e-width-full"><caption>
+      Element attributes (
+      <code>e:dnd-answer</code>
+      )
+    </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody>
+        <tr><td>max-score</td><td>Integer</td><td>Yes</td><td>3</td><td>Maximum score</td></tr>
+      </tbody></table>
+
+    <table class="e-table e-width-full"><caption>
+      Element attributes (
+      <code>e:dnd-answer-option</code>
+      )
+    </caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody>
+        <tr><td>score</td><td>Integer</td><td>Yes</td><td>3</td><td>Answer score</td></tr>
+        </tbody></table>
+
+      <h4>
+        Example of
+        <code>e:dnd-answer</code>
+      </h4>
+      <pre class="code"><![CDATA[<e:question>
+          <e:question-title></e:question-title>
+          <e:question-instruction></e:question-instruction>
+          <e:audio-group>
+            <e:attachment>
+              <e:attachment-title>example audio</e:attachment-title>
+              <e:audio src="example1.webm" times="1"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
+            </e:attachment>
+          </e:audio-group>
+          <e:dnd-answer-container meta='dnd answer container' dnd-type='connect'>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Lars best?
+                    <e:audio src="example1.webm" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Monday, 3:00 PM</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Katarina best?
+                    <e:audio src="example1.webm" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Tuesday, 1:00 p.m.</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Marit best?
+                    <e:audio src="example1.webm" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Monday, 4:00 PM</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer-option>Monday, 1:00 PM</e:dnd-answer-option>
+              <e:dnd-answer-option>Monday, 2:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 2:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 3:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 4:00 pm</e:dnd-answer-option>
+          </e:dnd-answer-container>
+      </e:question>]]></pre>
+
+          <div class="example">
+          <e:audio-group>
+            <e:attachment>
+              <e:attachment-title>6. audio</e:attachment-title>
+              <e:audio src="example1.webm" times="1"><e:audio-title>Listen to the text as a whole first.</e:audio-title></e:audio>
+              <e:reference>
+                <e:author>
+                  <e:localization lang="fi-FI">YTL</e:localization>
+                  <e:localization lang="sv-FI">SEN</e:localization>
+                </e:author>
+              </e:reference>
+            </e:attachment>
+          </e:audio-group>
+
+          <e:dnd-answer-container meta='dnd answer container' dnd-type='connect'>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Lars best?
+                    <e:audio src="example1.webm" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Monday, 3:00 PM</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Katarina best?
+                    <e:audio src="example1.webm" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Tuesday, 1:00 p.m.</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    What time suits Marit best?
+                    <e:audio src="example1.webm" times="1"></e:audio>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Monday, 4:00 PM</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer-option>Monday, 1:00 PM</e:dnd-answer-option>
+              <e:dnd-answer-option>Monday, 2:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 2:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 3:00 pm</e:dnd-answer-option>
+              <e:dnd-answer-option>Tuesday, 4:00 pm</e:dnd-answer-option>
+          </e:dnd-answer-container>
+          </div>
+        <pre class="code"><![CDATA[<e:question>
+        <e:question-title></e:question-title>
+        <e:question-instruction></e:question-instruction>
+        <e:dnd-answer-container dnd-type='connect'>
+            <e:dnd-answer max-score="2">
+                <e:dnd-answer-title>
+                  <e:attachment>
+                    <e:attachment-title>example audio</e:attachment-title>
+                    <e:audio src="example1.webm"></e:audio>
+                  </e:attachment>
+                </e:dnd-answer-title>
+                <e:dnd-answer-option score="2">
+                  <e:attachment>
+                    <e:attachment-title>example.jpg</e:attachment-title>
+                    <e:image src="example.jpg"/>
+                  </e:attachment>
+                </e:dnd-answer-option>
+            </e:dnd-answer>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>example.jpg</e:attachment-title>
+                <e:image src="example.jpg"/>
+              </e:attachment>
+            </e:dnd-answer-option>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>example.jpg</e:attachment-title>
+                <e:image src="example.jpg"/>
+              </e:attachment>
+            </e:dnd-answer-option>
+        </e:dnd-answer-container>
+      </e:question>]]></pre>
+
+        <div class="example">
+        <e:dnd-answer-container meta='dnd answer container' dnd-type='connect'>
+            <e:dnd-answer max-score="2">
+                <e:dnd-answer-title>
+                  <e:attachment>
+                    <e:attachment-title> audio</e:attachment-title>
+                    <e:audio src="example1.webm"></e:audio>
+                    <e:reference>
+                      <e:author>
+                        <e:localization lang="fi-FI">YTL</e:localization>
+                        <e:localization lang="sv-FI">SEN</e:localization>
+                      </e:author>
+                    </e:reference>
+                  </e:attachment>
+                </e:dnd-answer-title>
+                <e:dnd-answer-option score="2">
+                  <e:attachment>
+                    <e:attachment-title>example.jpg</e:attachment-title>
+                    <e:image src="example.jpg"/>
+                  </e:attachment>
+                </e:dnd-answer-option>
+            </e:dnd-answer>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>example.jpg</e:attachment-title>
+                <e:image src="example.jpg"/>
+              </e:attachment>
+            </e:dnd-answer-option>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>example.jpg</e:attachment-title>
+                <e:image src="example.jpg"/>
+              </e:attachment>
+            </e:dnd-answer-option>
+        </e:dnd-answer-container>
+      </div>
+    </e:question>
   </e:section>
 
   <e:section>

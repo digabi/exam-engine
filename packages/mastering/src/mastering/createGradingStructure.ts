@@ -1,6 +1,5 @@
 import {
   ChoiceGroupChoice,
-  ChoiceGroupOption,
   ChoiceGroupQuestion,
   GradingStructure,
   GradingStructureQuestion,
@@ -9,8 +8,8 @@ import {
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
 import { GenerateId } from '.'
-import { Answer, choiceAnswerOptionTypes, Exam, ns, Question } from './schema'
-import { getAttribute, getNumericAttribute, xpathOr } from './utils'
+import { Answer, Exam, ns, Question } from './schema'
+import { getAnswerOptions, getAttribute, getNumericAttribute } from './utils'
 
 export interface GradingStructureOptions {
   /**
@@ -63,6 +62,8 @@ function getQuestionType(answer: Answer): 'text' | 'choice' {
       return 'text'
     case 'choice-answer':
     case 'dropdown-answer':
+    case 'dnd-answer':
+    case 'dnd-answer-container':
       return 'choice'
     default:
       throw new Error(`getQuestionType not implemented for ${answerType}`)
@@ -87,9 +88,10 @@ function mkTextQuestion(answer: Answer): TextQuestion {
   if (type === 'text-answer') {
     return question
   } else {
-    const correctAnswers = answer.element
-      .find<Element>('./e:accepted-answer', ns)
-      .map(e => ({ text: e.text(), score: getNumericAttribute('score', e) }))
+    const correctAnswers = answer.element.find<Element>('./e:accepted-answer', ns).map(e => ({
+      text: e.text(),
+      score: getNumericAttribute('score', e)
+    }))
     return { ...question, correctAnswers }
   }
 }
@@ -100,7 +102,12 @@ function mkChoiceGroupQuestion(
   generateId: GenerateId
 ): ChoiceGroupQuestion {
   const choices: ChoiceGroupChoice[] = answers.map(mkChoiceGroupChoice)
-  return { id: generateId(), displayNumber: questionDisplayNumber, type: 'choicegroup', choices }
+  return {
+    id: generateId(),
+    displayNumber: questionDisplayNumber,
+    type: 'choicegroup',
+    choices
+  }
 }
 
 function mkSingleChoiceGroupQuestion(answer: Answer, generateId: GenerateId): ChoiceGroupQuestion {
@@ -118,14 +125,21 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
   const displayNumber = getAttribute('display-number', answer.element)
   const maxScore = getNumericAttribute('max-score', answer.element)
 
-  const options: ChoiceGroupOption[] = answer.element
-    .find<Element>(xpathOr(choiceAnswerOptionTypes), ns)
+  const answerOptions = getAnswerOptions(answer.element)
+
+  const options = answerOptions
     .map(option => {
       const id = getNumericAttribute('option-id', option)
       const score = getNumericAttribute('score', option, 0)
-      const correct = score > 0 && score === maxScore
-      return { id, score, correct }
+      const forQuestionId = getNumericAttribute('for-question-id', option, null)
+      const isDndAnswer = option.name() === 'dnd-answer-option'
+      const correct = score > 0 && score === maxScore && (!isDndAnswer || forQuestionId === questionId)
+      if (!isDndAnswer || correct) {
+        return { id, score, correct }
+      }
+      return null
     })
+    .filter(Boolean) as ChoiceGroupChoice['options']
 
   return {
     id: questionId,

@@ -77,7 +77,7 @@ function RestrictedAudioPlayer({
 
 export default React.memo(RestrictedAudioPlayer)
 
-function formatDuration(duration: number): string {
+export function formatDuration(duration: number): string {
   const minutes = Math.floor(duration / 60)
   const seconds = duration % 60
 

@@ -23,6 +23,7 @@ import {
 import {
   byAttribute,
   byLocalName as byName,
+  getAnswerOptions,
   getAttribute,
   getNumericAttribute,
   hasAttribute,
@@ -137,7 +138,14 @@ function assertExamIsValid(doc: Document): Document {
   for (const answer of doc.find<Element>(xpathOr(answerTypes), ns)) {
     // Ensure that the each answer element is directly within a question,
     // ignoring a few special HTML-like exam elements.
-    const htmlLikeExamElements = ['hints', 'scored-text-answers', 'localization', 'attachment', 'audio-group']
+    const htmlLikeExamElements = [
+      'hints',
+      'scored-text-answers',
+      'localization',
+      'attachment',
+      'audio-group',
+      'dnd-answer-container'
+    ]
     const maybeParentQuestion = queryAncestors(
       answer,
       e => e.namespace()?.href() === ns.e && !htmlLikeExamElements.includes(e.name())
@@ -149,6 +157,7 @@ function assertExamIsValid(doc: Document): Document {
 
     // Ensure that the question containing the answer doesn't have any child questions.
     const maybeChildQuestion = maybeParentQuestion.get<Element>('.//e:question', ns)
+
     if (maybeChildQuestion != null) {
       throw mkError('A question may not contain both answer elements and child questions', maybeChildQuestion)
     }
@@ -296,6 +305,7 @@ async function masterExamVersion(
   // Add question ids before removing questions in wrong language and for other exam-types
   // in order to keep question ids same within different exam versions
   // It helps when grading productive questions.
+
   addQuestionIds(root, generateId)
   addGradingInstructionAttributes(root)
   applyLocalizations(root, language, type, options.editableGradingInstructions)
@@ -311,7 +321,9 @@ async function masterExamVersion(
   addAttachmentNumbers(exam)
 
   // Perform shuffling before adding answer options ids, so the student can't guess the original order.
-  if (options.multiChoiceShuffleSecret) shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
+  if (options.multiChoiceShuffleSecret) {
+    shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
+  }
   addAnswerOptionIds(exam, generateId)
 
   updateMaxScoresToAnswers(exam)
@@ -556,10 +568,14 @@ function updateMaxScoresToAnswers(exam: Exam) {
     switch (element.name()) {
       case 'choice-answer':
       case 'dropdown-answer':
+      case 'dnd-answer':
       case 'scored-text-answer': {
         if (element.attr('max-score') == null) {
           const scores = element
-            .find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer', ns)
+            .find<Element>(
+              './e:choice-answer-option | ./e:dropdown-answer-option | ./e:accepted-answer | ./e:dnd-answer-option',
+              ns
+            )
             .map(option => getNumericAttribute('score', option, 0))
           const maxScore = _.max(scores)
           element.attr('max-score', String(maxScore))
@@ -577,6 +593,14 @@ function removeCorrectAnswers(exam: Exam) {
         {
           for (const option of element.find<Element>('//e:choice-answer-option | //e:dropdown-answer-option', ns)) {
             option.attr('score')?.remove()
+          }
+        }
+        break
+      case 'dnd-answer':
+        {
+          for (const option of element.parent().find<Element>('.//e:dnd-answer-option', ns)) {
+            option.attr('score')?.remove()
+            option.attr('for-question-id')?.remove()
           }
         }
         break
@@ -826,7 +850,8 @@ function addAttachmentNumbers(exam: Exam) {
 function addQuestionIds(root: Element, generateId: GenerateId) {
   const exam = parseExamStructure(root)
   for (const answer of exam.answers) {
-    answer.element.attr('question-id', String(generateId()))
+    const questionId = generateId()
+    answer.element.attr('question-id', String(questionId))
   }
 }
 
@@ -922,9 +947,21 @@ function countMaxScores(exam: Exam) {
 function addAnswerOptionIds(exam: Exam, generateId: GenerateId) {
   for (const { element } of exam.answers) {
     if (_.includes(choiceAnswerTypes, element.name())) {
-      element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
-        answerOption.attr('option-id', String(generateId()))
-      })
+      if (element.name() === 'dnd-answer') {
+        const parent = element.parent() as Element
+        parent.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
+          const maybeOptionId = getAttribute('option-id', answerOption, null)
+          if (maybeOptionId === null) {
+            const optionId = generateId()
+            answerOption.attr('option-id', String(optionId))
+          }
+        })
+      } else {
+        element.find<Element>(xpathOr(choiceAnswerOptionTypes), ns).forEach(answerOption => {
+          const optionId = generateId()
+          answerOption.attr('option-id', String(optionId))
+        })
+      }
     }
   }
 }
@@ -942,18 +979,30 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
     hash.update(value)
     return hash.digest('hex')
   }
+
   return exam.answers
     .map(a => a.element)
     .filter(byName(...choiceAnswerTypes))
     .filter(_.negate(byAttribute('ordering', 'fixed')))
     .forEach(answer => {
-      const options = answer.find<Element>('./e:choice-answer-option | ./e:dropdown-answer-option', ns)
+      const options = getAnswerOptions(answer)
       const answerKey = String(options.length) + getAttribute('question-id', answer)
       const sortedOptions = _.sortBy(options, option =>
         createHash(answerKey + String(options.indexOf(option)) + multichoiceShuffleSecret)
       )
+
       for (const option of sortedOptions) {
-        answer.addChild(option)
+        if (answer.name() === 'dnd-answer') {
+          const answerContainer = answer.parent() as Element
+          const optionParent = option.parent() as Element
+          if (optionParent.name() === 'dnd-answer') {
+            const questionId = getAttribute('question-id', optionParent)
+            option.attr('for-question-id', questionId)
+          }
+          answerContainer.addChild(option)
+        } else {
+          answer.addChild(option)
+        }
       }
 
       // A no-answer option should always be the last
@@ -1001,8 +1050,11 @@ function parseExamStructure(element: Element): Exam {
 
   const collect = (question: Question) => {
     questions.push(question)
-    if (question.answers.length) answers.push(...question.answers)
-    else question.childQuestions.forEach(collect)
+    if (question.answers.length) {
+      answers.push(...question.answers)
+    } else {
+      question.childQuestions.forEach(collect)
+    }
   }
 
   topLevelQuestions.forEach(collect)

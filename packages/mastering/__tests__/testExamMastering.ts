@@ -1,5 +1,12 @@
 import { listExams } from '@digabi/exam-engine-exams'
-import { choiceAnswer, dropdownAnswer, generateExam, question, textAnswer } from '@digabi/exam-engine-generator'
+import {
+  choiceAnswer,
+  dndAnswer,
+  dropdownAnswer,
+  generateExam,
+  question,
+  textAnswer
+} from '@digabi/exam-engine-generator'
 import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
 import { wrap } from 'jest-snapshot-serializer-raw'
@@ -19,24 +26,28 @@ describe('Exam mastering', () => {
         "Start tag expected, '<' not found\n"
       )
     })
+
     it('XML has invalid exam code', async () => {
       const xml = await readFixture('invalid_exam_code.xml')
       return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
         'Invalid exam-code BI for day-code X'
       )
     })
+
     it('XML has invalid day code', async () => {
       const xml = await readFixture('invalid_day_code.xml')
       return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
         "The value 'Z' is not an element of the set"
       )
     })
+
     it('XML has invalid empty day code', async () => {
       const xml = await readFixture('invalid_empty_day_code.xml')
       return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
         'Invalid empty day-code for exam-code A'
       )
     })
+
     it('other than first section is cas restricted', async () => {
       const xml = await readFixture('cas.xml')
       expect(await masterExam(xml, generateUuid, getMediaMetadata)).toHaveLength(1)
@@ -58,12 +69,14 @@ describe('Exam mastering', () => {
         masterExam(xml.replace(/<e:section>/g, '<e:section cas-forbidden="true">'), generateUuid, getMediaMetadata)
       ).rejects.toThrow('cas-forbidden attribute can be true only on first section')
     })
+
     it('XML has missing attachment', async () => {
       const xml = await readFixture('missing_attachments.xml')
       return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
         'Reference "1A" not found from available attachments: [] (fi-FI, visually-impaired)'
       )
     })
+
     it('has non-rich text questions with a max length', async () => {
       const xml = await readFixture('unallowed_max_length.xml')
       return expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
@@ -160,7 +173,7 @@ describe('Exam mastering', () => {
 
   it('does not combine choice-answers and dropdown-answers to the same question in grading structure', async () => {
     const xml = generateExam({
-      sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }]
+      sections: [{ questions: [question([choiceAnswer(), dropdownAnswer(), dndAnswer()])] }]
     })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
     expect(masteringResult.gradingStructure.questions).toMatchObject([
@@ -173,12 +186,17 @@ describe('Exam mastering', () => {
         type: 'choicegroup',
         displayNumber: '1.2',
         choices: [{ type: 'choice', displayNumber: '1.2' }]
+      },
+      {
+        type: 'choicegroup',
+        displayNumber: '1.3',
+        choices: [{ type: 'choice', displayNumber: '1.3' }]
       }
     ])
   })
 
   it('combines choice-answers and dropdown-answers to the same question in grading structure when groupChoiceAnswers option is set', async () => {
-    const xml = generateExam({ sections: [{ questions: [question([choiceAnswer(), dropdownAnswer()])] }] })
+    const xml = generateExam({ sections: [{ questions: [question([choiceAnswer(), dropdownAnswer(), dndAnswer()])] }] })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata, { groupChoiceAnswers: true })
     expect(masteringResult.gradingStructure.questions).toMatchObject([
       {
@@ -186,7 +204,8 @@ describe('Exam mastering', () => {
         displayNumber: '1',
         choices: [
           { type: 'choice', displayNumber: '1.1' },
-          { type: 'choice', displayNumber: '1.2' }
+          { type: 'choice', displayNumber: '1.2' },
+          { type: 'choice', displayNumber: '1.3' }
         ]
       }
     ])
@@ -212,6 +231,18 @@ describe('Exam mastering', () => {
     const xml = await readFixture('choice_answer_with_no_answer.xml')
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
     expect(wrap(masteringResult.xml)).toMatchSnapshot()
+  })
+
+  it('shuffles dnd answers', async () => {
+    const xml = await readFixture('dnd-answer.xml')
+    const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
+    expect(wrap(masteringResult.xml)).toMatchSnapshot()
+  })
+
+  it('generates correct grading structure for dnd answers', async () => {
+    const xml = await readFixture('dnd-answer.xml')
+    const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
+    expect(wrap(JSON.stringify(masteringResult.gradingStructure, null, 2))).toMatchSnapshot()
   })
 
   it('adds a suffix to exam title for special exams', async () => {

@@ -109,6 +109,7 @@ function validateExtraAnswers(
       case 'text-answer':
       case 'scored-text-answer':
       case 'choice-answer':
+      case 'dnd-answer':
       case 'dropdown-answer': {
         const maybeAnswer = answersById[element.attributes.questionId]
         // An answer whose value is '' is considered to be empty, so we ignore
@@ -118,7 +119,6 @@ function validateExtraAnswers(
       }
     }
   }
-
   return go(examStructure).extraAnswers
 }
 

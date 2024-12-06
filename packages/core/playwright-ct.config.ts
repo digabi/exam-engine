@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/experimental-ct-react'
+import { resolve } from 'path'
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -14,7 +15,17 @@ export default defineConfig({
   use: {
     trace: 'on-first-retry',
     ctPort: 3100,
-    ctTemplateDir: './__tests__/playwright/template'
+    ctTemplateDir: './__tests__/playwright/template',
+    ctViteConfig: {
+      resolve: {
+        alias: {
+          '~@digabi': resolve(__dirname, '../../node_modules/@digabi'),
+          '~rich-text-editor': resolve(__dirname, '../../node_modules/rich-text-editor')
+        }
+      },
+      // TODO: This should be refactored to only include the necessary parts i.e. the attachment folders within the exam folders so the tests have access to them.
+      publicDir: resolve(__dirname, '../../packages/exams')
+    }
   },
   projects: [
     {

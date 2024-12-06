@@ -44,6 +44,7 @@ import { VersionNumber } from '../shared/VersionNumber'
 import Video from '../shared/Video'
 import ExamAttachment from './Attachment'
 import ChoiceAnswer from './ChoiceAnswer'
+import { DNDAnswerContainer } from './DNDAnswerContainer'
 import DropdownAnswer from './DropdownAnswer'
 import ExamFooter from './ExamFooter'
 import ExamInstruction from './ExamInstruction'
@@ -107,7 +108,7 @@ export interface ExamProps extends CommonExamProps {
   undoViewProps: UndoViewProps
 }
 
-const renderChildNodes = createRenderChildNodes({
+export const renderChildNodes = createRenderChildNodes({
   attachment: ExamAttachment,
   'attachment-link': mkAttachmentLink('link'),
   'attachment-links': mkAttachmentLinks('link'),
@@ -116,6 +117,7 @@ const renderChildNodes = createRenderChildNodes({
   'audio-group': AudioGroup,
   'audio-test': AudioTest,
   'choice-answer': ChoiceAnswer,
+  'dnd-answer-container': DNDAnswerContainer,
   'dropdown-answer': DropdownAnswer,
   'exam-footer': ExamFooter,
   'external-material': ExternalMaterial,
@@ -292,7 +294,6 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                           />
                         </div>
                       )}
-
                       {externalMaterial && (
                         <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
                       )}

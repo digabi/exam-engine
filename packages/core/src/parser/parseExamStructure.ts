@@ -62,9 +62,22 @@ export interface DropdownAnswerElement extends BaseElement {
   }
 }
 
+export interface DragAndDropAnswerElement extends BaseElement {
+  name: 'dnd-answer'
+  attributes: {
+    displayNumber: string
+    questionId: number
+  }
+}
+
 export type ExamElement = RootElement | SectionElement | QuestionElement | AnswerElement
 
-export type AnswerElement = TextAnswerElement | ScoredTextAnswerElement | ChoiceAnswerElement | DropdownAnswerElement
+export type AnswerElement =
+  | TextAnswerElement
+  | ScoredTextAnswerElement
+  | ChoiceAnswerElement
+  | DropdownAnswerElement
+  | DragAndDropAnswerElement
 
 export function parseExamStructure(doc: XMLDocument): RootElement {
   const root = doc.documentElement
@@ -85,9 +98,11 @@ function parseQuestion(question: Element): QuestionElement {
   const childQuestions = queryAll(question, 'question', false)
   const childElements = childQuestions.length
     ? childQuestions.map(parseQuestion)
-    : queryAll(question, ['text-answer', 'scored-text-answer', 'choice-answer', 'dropdown-answer'], false).map(
-        parseAnswer
-      )
+    : queryAll(
+        question,
+        ['text-answer', 'scored-text-answer', 'choice-answer', 'dropdown-answer', 'dnd-answer'],
+        false
+      ).map(parseAnswer)
   return parseElement<QuestionElement>(question, childElements, {
     displayNumber: getAttribute(question, 'display-number')!,
     maxAnswers: getNumericAttribute(question, 'max-answers')

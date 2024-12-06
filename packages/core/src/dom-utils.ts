@@ -120,7 +120,11 @@ export function mapChildElements<T>(element: Element, fn: (childElement: Element
 }
 
 export function findChildrenAnswers(element: Element): Element[] {
-  return queryAll(element, ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer'], true)
+  return queryAll(
+    element,
+    ['choice-answer', 'dropdown-answer', 'text-answer', 'scored-text-answer', 'dnd-answer'],
+    true
+  )
 }
 
 export function hasSiblingQuestions(answer: Element) {

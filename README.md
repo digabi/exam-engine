@@ -155,7 +155,7 @@ If you've made changes to the code that affect exam mastering or rendering,
 you need to update the test snapshots by running. Review changes the snapshots manually.
 
 ```
-$ npm run test -- -u
+$ npm run test-jest -- -u
 ```
 
 ## NPM releases
