@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5" date="2020-01-01" exam-code="A" day-code="X">
+  <e:exam-versions>
+    <e:exam-version lang="fi-FI"/>
+    <e:exam-version lang="sv-FI"/>
+  </e:exam-versions>
+  <e:exam-title/>
+  <e:exam-instruction/>
+  <e:section>
+    <e:section-title/>
+    <e:question>
+      <e:question-title></e:question-title>
+        <e:dnd-answer-container meta='dnd answer container' dnd-type='connect'>
+            <e:dnd-answer max-score="2">
+                <e:dnd-answer-title>
+                    Kysymys 1
+                </e:dnd-answer-title>
+                <e:dnd-answer-option score="2">
+                  Vastaus 1
+                </e:dnd-answer-option>
+            </e:dnd-answer>
+            <e:dnd-answer max-score="2">
+                <e:dnd-answer-title>
+                    Kysymys 2
+                </e:dnd-answer-title>
+                <e:dnd-answer-option score="2">
+                  Vastaus 2
+                </e:dnd-answer-option>
+            </e:dnd-answer>
+            <e:dnd-answer-option>
+              Ylimääräinen vastaus 1 
+            </e:dnd-answer-option>
+            <e:dnd-answer-option>
+              Ylimääräinen vastaus 2
+            </e:dnd-answer-option>
+            <e:dnd-answer-option>
+              Ylimääräinen vastaus 3
+            </e:dnd-answer-option>
+        </e:dnd-answer-container>
+    </e:question>
+  </e:section>
+</e:exam>

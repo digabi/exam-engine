@@ -7,6 +7,14 @@ exports[`ee create-transfer-zip creates hi transfer zip 1`] = `
   "7.2.jpg",
   "7.4.jpg",
   "24.1.jpg",
+  "6.ogg",
+  "6.1.ogg",
+  "6.2.ogg",
+  "6.3.ogg",
+  "7.2.ogg",
+  "7.2.7291.jpg",
+  "7.2.1617.jpg",
+  "7.2.7276.jpg",
   "custom.css",
 ]
 `;
@@ -1367,6 +1375,131 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
 
     </e:question>
 
+  </e:section>
+
+  <e:section>
+    <e:section-title>Termine und Wissenstest als drag-and-drop</e:section-title>
+    
+    <e:question>
+      <e:question-title>Termine und Wissenstest</e:question-title>
+      <e:question-instruction>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
+        Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
+      </e:question-instruction>
+      <e:question>
+          <e:question-title>Termine</e:question-title>
+          <e:question-instruction>Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.</e:question-instruction>
+          <p>Marit möchte mit Katarina und Lars eine Party für die Klasse planen. Sie versuchen einen gemeinsamen freien
+            Zeitpunkt zu finden. Das ist aber sehr schwer.
+          </p>
+          <e:audio-group>
+            <e:attachment>
+              <e:attachment-title>6. audio</e:attachment-title>
+              <e:audio src="6.ogg" times="1"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+              <e:reference>
+                <e:author>
+                  YTL
+                  
+                </e:author>
+              </e:reference>
+            </e:attachment>
+          </e:audio-group>
+          <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Lars am besten?
+                    <e:audio src="6.1.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 15:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Katarina am besten?
+                    <e:audio src="6.2.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Dienstag, 13:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Marit am besten?          
+                    <e:audio src="6.3.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 16:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer-option>Montag, 13.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Montag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 15.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 16.00 Uhr</e:dnd-answer-option>
+          </e:dnd-answer-container>
+      </e:question>
+      <e:question>
+        <e:question-title>Wissenstest für Hobbyköche</e:question-title>
+        <e:question-instruction>       
+          <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
+        </e:question-instruction>
+        <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
+            <e:dnd-answer max-score="2">
+                <e:dnd-answer-title>
+                  <e:attachment>
+                    <e:attachment-title>7.2. audio</e:attachment-title>
+                    <e:audio src="7.2.ogg"/>
+                    <e:reference>
+                      <e:author>
+                        YTL
+                        
+                      </e:author>
+                    </e:reference>
+                  </e:attachment>
+                </e:dnd-answer-title>
+                <e:dnd-answer-option score="2">
+                  <e:attachment>
+                    <e:attachment-title>7.2.7291.jpg</e:attachment-title>
+                    <e:image src="7.2.7291.jpg"/>
+                    <e:reference>
+                      <e:author>Marco Verch</e:author>
+                      <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
+                      <e:url>
+                        https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc
+                      </e:url>
+                      <e:reference-date>2019-11-25</e:reference-date>
+                      <e:howpublished>CC BY 2.0</e:howpublished>
+                    </e:reference>
+                  </e:attachment>
+                </e:dnd-answer-option>
+            </e:dnd-answer>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>7.2.1617.jpg</e:attachment-title>
+                <e:image src="7.2.1617.jpg"/>
+                <e:reference>
+                  <e:author>Aaron Headly</e:author>
+                  <e:title>Poached egg</e:title>
+                  <e:url>
+                    https://www.flickr.com/photos/mugland/32246233434/in/photolist-R8unKY-oSTr5y-dNBKEZ-Qx3Lvn-972jpe-9K3xaD-9yN1JE-aoPvR7-HS6jsx-5LQxtf-bAichD-b78K3F-25Feweo-4ZhiwT-JHSps8-7sriMy-4Zmwed-4ZhixX-6Gs1y8-a7Mra1-8oSD7D-nixb3o-4XhKTa-EWChYm-4yC8Qn-7YoNPX-8pMyDi-4Lr4m7-9oWr8-6wJ9nt-2htUekX-5JFQhL-24vrvUk-8pQGrh-rBSFW-4Xn2Uh-6Gs1CR-8pMwVn-9ybL7s-FSMmiu-6Gs228-8pQHj1-7D8pEr-7hxmsP-6Gs1Vg-6Gw5EW-7Aqi85-6A8Lyw-JdXn3-ZLVPMm
+                  </e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:dnd-answer-option>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>7.2.7276.jpg</e:attachment-title>
+                <e:image src="7.2.7276.jpg"/>
+                <e:reference>
+                  <e:title>Scrambled Eggs</e:title>
+                  <e:author>Steve Garfield</e:author>
+                  <e:url>
+                    http://www.lecker.de/assets/styles/563x422/public/lecker/kochen_2/gemuese_1/kochkurse_3/wiemachtmanruehrei/wie-macht-man-ruehrei.jpg?itok=jKVlV_IS
+                  </e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:dnd-answer-option>
+        </e:dnd-answer-container>
+      </e:question>
+    </e:question>
   </e:section>
 
   <e:references/>
@@ -3495,6 +3628,131 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
 
     </e:question>
 
+  </e:section>
+
+  <e:section>
+    <e:section-title>Termine und Wissenstest als drag-and-drop</e:section-title>
+    
+    <e:question>
+      <e:question-title>Termine und Wissenstest</e:question-title>
+      <e:question-instruction>Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
+        Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
+      </e:question-instruction>
+      <e:question>
+          <e:question-title>Termine</e:question-title>
+          <e:question-instruction>Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.</e:question-instruction>
+          <p>Marit möchte mit Katarina und Lars eine Party für die Klasse planen. Sie versuchen einen gemeinsamen freien
+            Zeitpunkt zu finden. Das ist aber sehr schwer.
+          </p>
+          <e:audio-group>
+            <e:attachment>
+              <e:attachment-title>6. audio</e:attachment-title>
+              <e:audio src="6.ogg" times="1"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+              <e:reference>
+                <e:author>
+                  YTL
+                  
+                </e:author>
+              </e:reference>
+            </e:attachment>
+          </e:audio-group>
+          <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Lars am besten?
+                    <e:audio src="6.1.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 15:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Katarina am besten?
+                    <e:audio src="6.2.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Dienstag, 13:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer max-score="2">
+                  <e:dnd-answer-title>
+                    Welche Zeit passt Marit am besten?          
+                    <e:audio src="6.3.ogg" times="1"/>
+                  </e:dnd-answer-title>
+                  <e:dnd-answer-option score="2">Montag, 16:00 Uhr</e:dnd-answer-option>
+              </e:dnd-answer>
+              <e:dnd-answer-option>Montag, 13.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Montag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 14.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 15.00 Uhr</e:dnd-answer-option>
+              <e:dnd-answer-option>Dienstag, 16.00 Uhr</e:dnd-answer-option>
+          </e:dnd-answer-container>
+      </e:question>
+      <e:question>
+        <e:question-title>Wissenstest für Hobbyköche</e:question-title>
+        <e:question-instruction>       
+          <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
+        </e:question-instruction>
+        <e:dnd-answer-container meta="dnd answer container" dnd-type="connect">
+            <e:dnd-answer max-score="2">
+                <e:dnd-answer-title>
+                  <e:attachment>
+                    <e:attachment-title>7.2. audio</e:attachment-title>
+                    <e:audio src="7.2.ogg"/>
+                    <e:reference>
+                      <e:author>
+                        YTL
+                        
+                      </e:author>
+                    </e:reference>
+                  </e:attachment>
+                </e:dnd-answer-title>
+                <e:dnd-answer-option score="2">
+                  <e:attachment>
+                    <e:attachment-title>7.2.7291.jpg</e:attachment-title>
+                    <e:image src="7.2.7291.jpg"/>
+                    <e:reference>
+                      <e:author>Marco Verch</e:author>
+                      <e:title>Die Ebene lag über dem Spiegelei in der Pfanne</e:title>
+                      <e:url>
+                        https://www.flickr.com/photos/160866001@N07/32392709047/in/photolist-Rmr6Rz-9dmSLp-2gBURAc-DMrABB-cFtnwd-2hkGRzX-2httEkF-6AwJdL-2hbqYZi-9UhtDj-9pWUdf-2gmXGrz-9UhtNh-2gTrLKx-24UZTgr-6wZNh9-27RzAFB-7kFmwV-9tF1T6-fk6HWR-2dHXEKK-2e4sgq2-7BB38-9UhtZj-5rrYvb-S9B7q4-oaVgAL-dRtC7B-eFC4XE-4PeuTo-7G24mA-9dpYq7-ynGMx-cufnQj-2henJEE-oaGrdB-4CVF9Z-EX4e9-4CZUR9-cXmZ9w-4VNj64-RaErbd-nAbMdn-2dZ1B7g-4CVDGT-dPngjZ-2cNFxSX-oxhsa2-9dmTmt-fevMRc
+                      </e:url>
+                      <e:reference-date>2019-11-25</e:reference-date>
+                      <e:howpublished>CC BY 2.0</e:howpublished>
+                    </e:reference>
+                  </e:attachment>
+                </e:dnd-answer-option>
+            </e:dnd-answer>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>7.2.1617.jpg</e:attachment-title>
+                <e:image src="7.2.1617.jpg"/>
+                <e:reference>
+                  <e:author>Aaron Headly</e:author>
+                  <e:title>Poached egg</e:title>
+                  <e:url>
+                    https://www.flickr.com/photos/mugland/32246233434/in/photolist-R8unKY-oSTr5y-dNBKEZ-Qx3Lvn-972jpe-9K3xaD-9yN1JE-aoPvR7-HS6jsx-5LQxtf-bAichD-b78K3F-25Feweo-4ZhiwT-JHSps8-7sriMy-4Zmwed-4ZhixX-6Gs1y8-a7Mra1-8oSD7D-nixb3o-4XhKTa-EWChYm-4yC8Qn-7YoNPX-8pMyDi-4Lr4m7-9oWr8-6wJ9nt-2htUekX-5JFQhL-24vrvUk-8pQGrh-rBSFW-4Xn2Uh-6Gs1CR-8pMwVn-9ybL7s-FSMmiu-6Gs228-8pQHj1-7D8pEr-7hxmsP-6Gs1Vg-6Gw5EW-7Aqi85-6A8Lyw-JdXn3-ZLVPMm
+                  </e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:dnd-answer-option>
+            <e:dnd-answer-option>
+              <e:attachment>
+                <e:attachment-title>7.2.7276.jpg</e:attachment-title>
+                <e:image src="7.2.7276.jpg"/>
+                <e:reference>
+                  <e:title>Scrambled Eggs</e:title>
+                  <e:author>Steve Garfield</e:author>
+                  <e:url>
+                    http://www.lecker.de/assets/styles/563x422/public/lecker/kochen_2/gemuese_1/kochkurse_3/wiemachtmanruehrei/wie-macht-man-ruehrei.jpg?itok=jKVlV_IS
+                  </e:url>
+                  <e:reference-date>2019-11-25</e:reference-date>
+                  <e:howpublished>CC BY 2.0</e:howpublished>
+                </e:reference>
+              </e:attachment>
+            </e:dnd-answer-option>
+        </e:dnd-answer-container>
+      </e:question>
+    </e:question>
   </e:section>
 
   <e:references/>

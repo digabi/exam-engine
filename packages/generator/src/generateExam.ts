@@ -40,6 +40,7 @@ export type GenerateAnswerOptions =
   | GenerateScoredTextAnswerOptions
   | GenerateChoiceAnswerOptions
   | GenerateDropdownAnswerOptions
+  | GenerateDNDAnswerOptions
 
 interface TextAnswerBase {
   hint?: string
@@ -68,6 +69,11 @@ export interface GenerateAcceptedAnswer {
 
 export interface GenerateChoiceAnswerOptions {
   name: 'choice-answer'
+  options: GenerateChoiceAnswerOption[]
+}
+
+export interface GenerateDNDAnswerOptions {
+  name: 'dnd-answer'
   options: GenerateChoiceAnswerOption[]
 }
 
@@ -207,6 +213,10 @@ function addQuestion(parent: libxml.Element, languages: Language[], options: Gen
           addChoiceAnswer(question, answer)
           break
         }
+        case 'dnd-answer': {
+          addDNDAnswer(question, answer)
+          break
+        }
       }
     }
   }
@@ -243,6 +253,20 @@ function addChoiceAnswer(
 
   for (const { text, score } of options.options) {
     createElement(answer, optionType, text, { score })
+  }
+}
+
+function addDNDAnswer(question: libxml.Element, options: GenerateDNDAnswerOptions): void {
+  const container = createElement(question, 'dnd-answer-container')
+  for (const { text, score } of options.options) {
+    const optionType = 'dnd-answer-option'
+    if (score === 0) {
+      createElement(container, optionType, text)
+    } else {
+      const answer = createElement(container, options.name, '', { 'max-score': score })
+      createElement(answer, 'dnd-answer-title', `Title for ${text}`)
+      createElement(answer, optionType, text, { score })
+    }
   }
 }
 

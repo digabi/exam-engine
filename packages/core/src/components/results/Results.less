@@ -27,6 +27,8 @@
     margin-right: -9rem;
     width: 8rem;
     position: relative;
+    flex: none;
+    margin-left: 1rem;
   }
 
   .e-result-scorecount-border-wrap {
@@ -210,6 +212,28 @@
       border: none;
       background-color: @no-answer-bg;
     }
+  }
+
+  .e-dnd-answer.no-answer {
+    background: hsl(30, 42%, 92%);
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+
+    .e-dnd-answer-droppable {
+      border: 2px dashed @colors[wrong-answer];
+    }
+  }
+
+  .audio-placeholder {
+    background: #f1f3f4;
+    border-radius: 50px;
+    height: 54px;
+    text-align: center;
+    font-size: 14px;
+    display: grid;
+    place-content: center;
+    padding: 0 1.5rem;
+    color: #666;
   }
 
   .text-answer--single-line:not(.no-answer) {

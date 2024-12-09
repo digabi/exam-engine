@@ -86,6 +86,7 @@ describe(`Total score calculation for ${testExam}`, () => {
       calculateQuestionsTotalSumScore(topLevelQuestions, result.gradingStructure, allScores, answersByQuestionId)
     ).toBe(5)
   })
+
   it('get text answer score with pregrading only', () => {
     const textAnswerScorePregradingOnly: Score[] = [
       {
@@ -105,6 +106,7 @@ describe(`Total score calculation for ${testExam}`, () => {
       )
     ).toBe(1)
   })
+
   it('get text answer score with one censoring score', () => {
     const textAnswerScoreOneCensor: Score[] = [
       {
@@ -127,6 +129,7 @@ describe(`Total score calculation for ${testExam}`, () => {
       )
     ).toBe(2)
   })
+
   it('get text answer score with two censoring scores', () => {
     const textAnswerScoreTwoCensors: Score[] = [
       {
@@ -152,6 +155,7 @@ describe(`Total score calculation for ${testExam}`, () => {
       )
     ).toBe(3)
   })
+
   it('get text answer score with inspection score', () => {
     const textAnswerScoreInspection: Score[] = [
       {
@@ -178,17 +182,19 @@ describe(`Total score calculation for ${testExam}`, () => {
       )
     ).toBe(7)
   })
+
   it('get choice answer score', () => {
     const choiceAnswer: ExamAnswer = {
       type: 'choice',
       questionId: 1,
-      value: '100',
+      value: '104',
       displayNumber: '1.1'
     }
     expect(
       calculateQuestionSumScore(topLevelQuestions[0], result.gradingStructure, [], keyBy([choiceAnswer], 'questionId'))
     ).toBe(3)
   })
+
   it('get scored text answer score', () => {
     const scoredTextAnswer: ExamAnswer[] = [
       {
