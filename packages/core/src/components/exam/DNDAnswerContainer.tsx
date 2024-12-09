@@ -113,16 +113,16 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     setOptionIdsByQuestionId(optionIdsByQuestionId =>
       moveValue(optionIdsByQuestionId, questionIdFrom, questionIdTo, optionId)
     )
+
+    if (questionIdFrom !== 'root') {
+      saveAnswerToStore(questionIdFrom, '')
+    }
+    if (questionIdTo !== 'root') {
+      saveAnswerToStore(questionIdTo, optionId)
+    }
+
     setActiveId(null)
   }
-
-  useEffect(() => {
-    Object.entries(optionIdsByQuestionId).forEach(([questionId, answerValue]) => {
-      if (questionId !== 'root') {
-        saveAnswerToStore(questionId, answerValue?.toString())
-      }
-    })
-  }, [optionIdsByQuestionId])
 
   function saveAnswerToStore(questionId: UniqueIdentifier, optionId: UniqueIdentifier) {
     const questionIdNumber = Number(questionId)
