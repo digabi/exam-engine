@@ -94,13 +94,10 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
   function getContainers(event: DragOverEvent | DragEndEvent) {
     const { active, over } = event
-    const activeId = active.id
-    const overId = over?.id
-
-    const activeContainer = findContainer(activeId)
-    const overContainer = overId ? findContainer(overId) : null
-
-    return { activeId, activeContainer, overContainer }
+    const optionId = active.id
+    const questionIdFrom = findContainer(optionId)
+    const questionIdTo = over?.id
+    return { optionId, questionIdFrom, questionIdTo }
   }
 
   function handleDragStart(event: DragStartEvent) {
@@ -108,12 +105,13 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   }
 
   function handleDragEnd(event: DragEndEvent) {
-    const { activeId, activeContainer, overContainer } = getContainers(event)
-    if (!activeContainer || !overContainer || activeContainer === overContainer) {
+    const { optionId, questionIdFrom, questionIdTo } = getContainers(event)
+
+    if (!questionIdFrom || !questionIdTo || questionIdFrom === questionIdTo) {
       return
     }
     setOptionIdsByQuestionId(optionIdsByQuestionId =>
-      moveValue(optionIdsByQuestionId, activeContainer, overContainer, activeId)
+      moveValue(optionIdsByQuestionId, questionIdFrom, questionIdTo, optionId)
     )
     setActiveId(null)
   }
@@ -126,11 +124,11 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     })
   }, [optionIdsByQuestionId])
 
-  function saveAnswerToStore(overContainer: UniqueIdentifier, activeId: UniqueIdentifier) {
-    const questionId = Number(overContainer)
-    const value = activeId?.toString() || ''
+  function saveAnswerToStore(questionId: UniqueIdentifier, optionId: UniqueIdentifier) {
+    const questionIdNumber = Number(questionId)
+    const value = optionId?.toString() || ''
     const displayNumber = displayNumbersById[questionId]
-    dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))
+    dispatch(saveAnswer({ type: 'choice', questionId: questionIdNumber, value, displayNumber }))
   }
 
   const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
