@@ -92,10 +92,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     return Object.keys(optionIdsByQuestionId).find(key => optionIdsByQuestionId[key].includes(id))
   }
 
-  function handleDragStart(event: DragStartEvent) {
-    setActiveId(event.active.id)
-  }
-
   function getContainers(event: DragOverEvent | DragEndEvent) {
     const { active, over } = event
     const activeId = active.id
@@ -107,12 +103,8 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
     return { activeId, activeContainer, overContainer }
   }
 
-  function handleDragOver(event: DragOverEvent) {
-    const { activeContainer, overContainer } = getContainers(event)
-
-    if (!activeContainer || !overContainer || activeContainer === overContainer) {
-      return
-    }
+  function handleDragStart(event: DragStartEvent) {
+    setActiveId(event.active.id)
   }
 
   function handleDragEnd(event: DragEndEvent) {
@@ -149,7 +141,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
   return (
     <div className="e-dnd-answer-container">
-      <DndContext sensors={sensors} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
+      <DndContext sensors={sensors} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
         {dndAnswersWithQuestion.map(element => {
           const questionId = element.getAttribute('question-id')!
           const dndAnswerOptions = (optionIdsByQuestionId[questionId] || [])
