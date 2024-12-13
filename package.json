@@ -31,7 +31,7 @@
     "@types/react-css-transition-replace": "^2.1.3",
     "@types/react-dom": "^18.0.1",
     "@types/react-redux": "^7.1.5",
-    "@types/react-test-renderer": "^18.0.0",
+    "@types/react-test-renderer": "^19.0.0",
     "@types/tmp": "^0.2.0",
     "@types/uuid": "^10.0.0",
     "@types/webpack-dev-server": "^4.7.2",
