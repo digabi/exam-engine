@@ -76,9 +76,8 @@ export function calculateQuestionSumScore(
 ): number {
   const choiceQuestionScore = (questionId: number, scoredAnswer: ChoiceAnswer) => {
     const choice = findMultiChoiceFromGradingStructure(gradingStructure, questionId)
-    const option = choice?.options.find(o => o.id === Number(scoredAnswer.value))
-    const score = option?.score ?? 0
-    return option?.correct || score < 0 ? score : 0
+    const option = choice?.options.find(o => o.id === Number(scoredAnswer.value) && choice.id === questionId)
+    return option?.score ?? 0
   }
 
   const textQuestionScore = (questionId: number) => {
