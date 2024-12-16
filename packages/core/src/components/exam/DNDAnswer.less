@@ -112,6 +112,15 @@
 
     .responsive-media-container {
       max-width: 180px !important;
+      min-width: 80px;
+    }
+
+    .responsive-media-container__inner {
+      padding-bottom: 0 !important;
+
+      img {
+        position: static !important;
+      }
     }
   }
 }
@@ -136,14 +145,6 @@
 
   .option-content {
     padding: 0.5rem;
-  }
-
-  .responsive-media-container__inner {
-    padding-bottom: 0 !important;
-
-    img {
-      position: static !important;
-    }
   }
 
   .audio {
