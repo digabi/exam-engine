@@ -25694,6 +25694,198 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 
 `;
 
+exports[`Exam mastering masters img.xml exam correctly 1`] = `
+{
+  "attachments": [
+    {
+      "filename": "845e2b52f68c8aa101afff56dfd32173.jpg",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "small.png",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+  ],
+  "date": null,
+  "dayCode": null,
+  "examCode": null,
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "choices": [
+          {
+            "displayNumber": "1.1",
+            "id": 1,
+            "options": [
+              {
+                "correct": true,
+                "id": 6,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.1",
+        "id": 11,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "1.2",
+            "id": 2,
+            "options": [
+              {
+                "correct": true,
+                "id": 10,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.2",
+        "id": 12,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "1.3",
+            "id": 3,
+            "options": [
+              {
+                "correct": true,
+                "id": 8,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.3",
+        "id": 13,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "1.4",
+            "id": 4,
+            "options": [
+              {
+                "correct": true,
+                "id": 9,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.4",
+        "id": 14,
+        "type": "choicegroup",
+      },
+      {
+        "choices": [
+          {
+            "displayNumber": "1.5",
+            "id": 5,
+            "options": [
+              {
+                "correct": true,
+                "id": 7,
+                "score": 3,
+              },
+            ],
+            "type": "choice",
+          },
+        ],
+        "displayNumber": "1.5",
+        "id": 15,
+        "type": "choicegroup",
+      },
+    ],
+  },
+  "language": "fi-FI",
+  "title": "pelkkä kuva",
+  "type": "normal",
+}
+`;
+
+exports[`Exam mastering masters img.xml exam correctly: translation 1`] = ``;
+
+exports[`Exam mastering masters img.xml exam correctly: xml 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.dev/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="15">
+    
+    <e:exam-title>pelkkä kuva</e:exam-title>
+    <e:exam-instruction/>
+    <e:table-of-contents/>
+    <e:section display-number="1" max-score="15">
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question display-number="1" max-score="15">
+            <e:question-title/>
+            <e:question-instruction/>
+            <e:dnd-answer-container dnd-type="connect">
+                <e:dnd-answer max-score="3" question-id="1" display-number="1.1">
+                    <e:dnd-answer-title>
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    </e:dnd-answer-title>
+                    
+                </e:dnd-answer>
+                <e:dnd-answer max-score="3" question-id="2" display-number="1.2">
+                    <e:dnd-answer-title>
+                    jee 
+                        <e:image src="small.png" width="999" height="999"/>
+                    </e:dnd-answer-title>
+                    
+                </e:dnd-answer>
+                <e:dnd-answer max-score="3" question-id="3" display-number="1.3">
+                    <e:dnd-answer-title>
+                    jee
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    </e:dnd-answer-title>
+                    
+                </e:dnd-answer>
+                <e:dnd-answer max-score="3" question-id="4" display-number="1.4">
+                    <e:dnd-answer-title>
+                    jee
+                        <e:formula svg="&lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;1.488ex&quot; height=&quot;1.454ex&quot; style=&quot;vertical-align: -0.227ex;&quot; viewBox=&quot;0 -528.2 640.5 625.9&quot; role=&quot;img&quot; focusable=&quot;false&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; aria-labelledby=&quot;MathJax-SVG-1-Title&quot;&gt;&#10;&lt;title id=&quot;MathJax-SVG-1-Title&quot;&gt;\\alpha&lt;/title&gt;&#10;&lt;defs aria-hidden=&quot;true&quot;&gt;&#10;&lt;path stroke-width=&quot;1&quot; id=&quot;E1-LATINMODERNNORMAL-1D6FC&quot; d=&quot;M602 383c0 0 -21 -117 -115 -235c-10 -12 -10 -14 -10 -35c0 -24 0 -102 31 -102c0 0 38 0 56 49c3 7 6 10 13 10c6 0 12 -3 12 -10c0 -16 -31 -71 -84 -71c-45 0 -78 31 -91 84c-76 -61 -148 -84 -211 -84c-102 0 -162 76 -162 169c0 141 132 284 269 284 c74 0 167 -49 167 -206v-62c47 59 80 135 98 198c5 18 5 21 15 21c11 0 12 -10 12 -10zM410 99c-2 17 -2 75 -2 112c0 78 0 209 -99 209c-35 0 -89 -19 -136 -92c-32 -51 -58 -159 -58 -208c0 -64 30 -109 90 -109c40 0 117 11 205 88Z&quot;&gt;&lt;/path&gt;&#10;&lt;/defs&gt;&#10;&lt;g stroke=&quot;currentColor&quot; fill=&quot;currentColor&quot; stroke-width=&quot;0&quot; transform=&quot;matrix(1 0 0 -1 0 0)&quot; aria-hidden=&quot;true&quot;&gt;&#10; &lt;use xlink:href=&quot;#E1-LATINMODERNNORMAL-1D6FC&quot; x=&quot;0&quot; y=&quot;0&quot;&gt;&lt;/use&gt;&#10;&lt;/g&gt;&#10;&lt;/svg&gt;">\\alpha</e:formula>
+                    </e:dnd-answer-title>
+                    
+                </e:dnd-answer>
+                <e:dnd-answer max-score="3" question-id="5" display-number="1.5">
+                    <e:dnd-answer-title>
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    jee jee jee jee jee jee jee jee jee jee jee
+                    </e:dnd-answer-title>
+                    
+                </e:dnd-answer>
+            <e:dnd-answer-option option-id="6">
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    </e:dnd-answer-option><e:dnd-answer-option option-id="7">
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    </e:dnd-answer-option><e:dnd-answer-option option-id="8">
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    </e:dnd-answer-option><e:dnd-answer-option option-id="9">
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    </e:dnd-answer-option><e:dnd-answer-option option-id="10">
+                        <e:image src="845e2b52f68c8aa101afff56dfd32173.jpg" width="999" height="999"/>
+                    </e:dnd-answer-option></e:dnd-answer-container>
+        </e:question>
+    </e:section>
+</e:exam>
+
+`;
+
 exports[`Exam mastering shuffles choice answers but keeps no-answer options last 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">
