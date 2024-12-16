@@ -834,9 +834,22 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
     
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="23" data-annotation-anchor="23"><div class="anchor" id="question-nr-23"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">23. </strong>Termine und Wissenstest <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-27">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
         Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
-      </div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="23.1" data-annotation-anchor="23.1"><div class="anchor" id="question-nr-23.1"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">23.1 </strong>Termine <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">6 p.</span></span></h4><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-28">Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.</div></div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="23.2" data-annotation-anchor="23.2"><div class="anchor" id="question-nr-23.2"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">23.2 </strong>Wissenstest für Hobbyköche <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-29">       
+      </div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="23.1" data-annotation-anchor="23.1"><div class="anchor" id="question-nr-23.1"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">23.1 </strong>Termine <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">6 p.</span></span></h4><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-28">Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.</div><div class="e-mrg-l-8"><p class="exam-question-title"><span class="exam-question-title__display-number--indented e-semibold"> </span> <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI"> p.</span></span></p><ul>
+              
+              
+              
+              
+              
+              
+              
+              
+          </ul></div></div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="23.2" data-annotation-anchor="23.2"><div class="anchor" id="question-nr-23.2"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">23.2 </strong>Wissenstest für Hobbyköche <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-29">       
           <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
-        </div></div></div>
+        </div><ul>
+            
+            
+            
+        </ul></div></div>
   </section>
 
   
