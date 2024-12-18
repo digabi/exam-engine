@@ -4,6 +4,8 @@ import { Locator } from '@playwright/test'
 import { DNDAnswerContainerStory } from '../stories/exam/DNDAnswerContainer.story'
 import { setupMasteredExam } from '../utils/utils'
 
+test.describe.configure({ mode: 'serial' })
+
 test.describe('DNDAnswerContainer', () => {
   let masteredExam: Awaited<ReturnType<typeof setupMasteredExam>>
 
