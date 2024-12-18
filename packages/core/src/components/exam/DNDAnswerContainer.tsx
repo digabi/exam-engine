@@ -13,8 +13,8 @@ import {
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ExamAnswer, ExamComponentProps, QuestionId } from '../..'
-import { query, queryAll } from '../../dom-utils'
+import { ExamComponentProps } from '../..'
+import { getAnswerOptionIdsByQuestionId, getAnswerOptionsByOptionId, query, queryAll } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
 import { AnswersState } from '../../store/answers/reducer'
 import { DNDTitleAndDroppable } from '../shared/DNDTitleAndDroppable'
@@ -24,34 +24,6 @@ import { DNDAnswerOptionDraggable } from './DNDAnswerOptionDraggable'
 export type ItemsState = {
   root: UniqueIdentifier[]
   [key: UniqueIdentifier]: UniqueIdentifier[]
-}
-
-export const getAnswerOptionIdsByQuestionId = (element: Element, answersById: Record<QuestionId, ExamAnswer>) => {
-  const dndAnswers = queryAll(element, 'dnd-answer')
-  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-
-  const answerOptionIdsByQuestionId: ItemsState = dndAnswers.reduce(
-    (acc, group) => {
-      const questionId = group.getAttribute('question-id')!
-      const answer = answersById[Number(questionId)]?.value
-      return {
-        ...acc,
-        [questionId]: answer ? [Number(answer)] : [],
-        root: acc.root.filter(e => e !== Number(answer))
-      }
-    },
-    { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
-  )
-  return answerOptionIdsByQuestionId
-}
-
-export const getAnswerOptionsByOptionId = (element: Element) => {
-  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
-  const answerOptionsByOptionId: Record<UniqueIdentifier, Element> = dndAnswerOptions.reduce((acc, el) => {
-    const optionId = el.getAttribute('option-id')!
-    return { ...acc, [optionId]: el }
-  }, {})
-  return answerOptionsByOptionId
 }
 
 export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {

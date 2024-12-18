@@ -1,16 +1,30 @@
 import React, { useContext } from 'react'
 import { ExamComponentProps } from '../..'
-import { query, queryAll } from '../../dom-utils'
+import {
+  getAnswerOptionIdsByQuestionId,
+  getAnswerOptionsByOptionId,
+  getCorrectAnswerOptionIdsByQuestionId,
+  query,
+  queryAll
+} from '../../dom-utils'
 import { ResultsContext } from '../context/ResultsContext'
-import { getAnswerOptionIdsByQuestionId, getAnswerOptionsByOptionId } from '../exam/DNDAnswerContainer'
-import { DNDTitleAndDroppable } from '../shared/DNDTitleAndDroppable'
-import { CorrectDNDAnswers } from './CorrectDNDAnswers'
+import { CorrectDNDAnswers } from '../results/CorrectDNDAnswers'
+import { DNDTitleAndDroppable } from './DNDTitleAndDroppable'
 
-export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
+export const DNDAnswerContainer = ({
+  element,
+  renderChildNodes,
+  page
+}: ExamComponentProps & {
+  page: 'results' | 'grading-instructions'
+}) => {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
-  const answerOptionIdsByQuestionId = getAnswerOptionIdsByQuestionId(element, answersByQuestionId)
-  const answerOptionsByOptionId = getAnswerOptionsByOptionId(element)
   const dndAnswersWithQuestion = queryAll(element, 'dnd-answer').filter(e => !!query(e, 'dnd-answer-title'))
+  const answerOptionsByOptionId = getAnswerOptionsByOptionId(element)
+  const answerOptionIdsByQuestionId =
+    page === 'results'
+      ? getAnswerOptionIdsByQuestionId(element, answersByQuestionId)
+      : getCorrectAnswerOptionIdsByQuestionId(element)
 
   return (
     <div className="e-dnd-answer-container">
@@ -28,10 +42,10 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               answerOptionElements={answerOptionElements}
               renderChildNodes={renderChildNodes}
               itemIds={itemIds}
-              page="results"
+              page={page}
             />
 
-            {gradingStructure && (
+            {page === 'results' && gradingStructure && (
               <CorrectDNDAnswers
                 element={element}
                 renderChildNodes={renderChildNodes}
