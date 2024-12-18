@@ -12,6 +12,9 @@ export * from './types/ExamAnswer'
 export * from './types/ExamServerAPI'
 export * from './types/GradingStructure'
 export * from './types/Score'
+export * from './i18n/exams'
+export * from './i18n/exam_titles_fi-FI'
+export * from './i18n/exam_titles_sv-FI'
 
 export interface ExamBundle {
   Attachments: typeof Attachments
