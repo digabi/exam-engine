@@ -24,7 +24,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         return (
           <React.Fragment key={questionId}>
             <DNDTitleAndDroppable
-              key={questionId}
               element={element}
               answerOptionElements={answerOptionElements}
               renderChildNodes={renderChildNodes}
@@ -34,7 +33,6 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
 
             {gradingStructure && (
               <CorrectDNDAnswers
-                key={`${questionId}-correct`}
                 element={element}
                 renderChildNodes={renderChildNodes}
                 answerOptionsById={answerOptionsByOptionId}

@@ -33,6 +33,7 @@ import Section from './Section'
 import SectionTitle from './SectionTitle'
 import { GradingInstructionProvider } from './GradingInstructionProvider'
 import { GradingInstructionProps } from '../context/GradingInstructionContext'
+import { DNDAnswerContainer } from './DNDAnswerContainer'
 
 const renderIfWithinGradingInstructionContent = renderIf(
   ({ element }) =>
@@ -45,7 +46,9 @@ const renderIfWithinGradingInstructionContent = renderIf(
       'question-grading-instruction',
       'hint',
       'question-title',
-      'question-instruction'
+      'question-instruction',
+      'dnd-answer-title',
+      'dnd-answer-option'
     ]) != null
 )
 
@@ -64,6 +67,7 @@ const renderChildNodes = createRenderChildNodes({
   'choice-answer-option': AutogradedAnswerOption,
   'dropdown-answer': AutogradedAnswer,
   'dropdown-answer-option': AutogradedAnswerOption,
+  'dnd-answer-container': DNDAnswerContainer,
   'external-material': RenderExamElements,
   file: renderIfWithinGradingInstructionContent(File),
   formula: renderIfWithinGradingInstructionContent(Formula),
