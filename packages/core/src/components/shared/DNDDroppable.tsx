@@ -1,7 +1,7 @@
 import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import classNames from 'classnames'
 import React from 'react'
-import { ExamComponentProps } from '../..'
+import { ExamComponentProps, ExamPage } from '../..'
 import { query } from '../../dom-utils'
 import { DNDAnswerOptionDraggable } from '../exam/DNDAnswerOptionDraggable'
 import { DNDAnswerOption } from '../results/DNDAnswerOption'
@@ -19,7 +19,7 @@ export const DNDDroppable = ({
   correctIds?: UniqueIdentifier[]
   classes?: string[]
   questionId: UniqueIdentifier
-  page: 'exam' | 'results'
+  page: ExamPage
   answerOptionElements: Element[]
 }) => {
   const hasImages = answerOptionElements.some(option => query(option, 'image'))
