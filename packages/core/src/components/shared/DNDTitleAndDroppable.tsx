@@ -2,7 +2,7 @@ import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { ExamComponentProps } from '../..'
+import { ExamComponentProps, ExamPage } from '../..'
 import { getNumericAttribute, query } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
@@ -21,7 +21,7 @@ export const DNDTitleAndDroppable = ({
   element: Element
   renderChildNodes: ExamComponentProps['renderChildNodes']
   itemIds: UniqueIdentifier[]
-  page: 'exam' | 'results'
+  page: ExamPage
   answerOptionElements: Element[]
 }) => {
   const { t } = useExamTranslation()
@@ -52,7 +52,9 @@ export const DNDTitleAndDroppable = ({
     <SortableContext id={questionId} items={itemIds}>
       <span ref={setNodeRef}>
         <div
-          className={classNames('e-dnd-answer', { 'no-answer': page === 'results' && !answer?.value })}
+          className={classNames('e-dnd-answer', {
+            'no-answer': page === 'results' && !answer?.value
+          })}
           data-question-id={questionId}
           key={questionId}
         >

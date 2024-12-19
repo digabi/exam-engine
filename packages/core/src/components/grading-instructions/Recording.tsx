@@ -1,6 +1,6 @@
 import React from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { findChildElement } from '../../dom-utils'
+import { findChildElement, queryAncestors } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 
 export const Recording: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
@@ -20,7 +20,8 @@ export const Recording: React.FunctionComponent<ExamComponentProps> = ({ element
     )
   }
 
-  return null
+  const isInDndAnswer = queryAncestors(element, 'dnd-answer')
+  return isInDndAnswer ? '[Audio]' : null
 }
 
 export default Recording

@@ -5,7 +5,9 @@ import { useExamTranslation } from '../../i18n'
 
 const AutogradedAnswerOption: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
   const score = getNumericAttribute(element, 'score')
-  if (!score) return null
+  if (!score) {
+    return null
+  }
 
   const { t } = useExamTranslation()
 
