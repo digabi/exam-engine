@@ -508,7 +508,7 @@ function addYoCustomizations(exam: Element, language: string, type: ExamType) {
 
   const examTitle = exam.get('./e:exam-title', ns)
   if (!examTitle) {
-    const title = i18n.t(`codes.${key}`, { ns: 'exam-title' })
+    const title = i18n.t(key, { ns: 'exam-title' })
     if (title) {
       const suffix = i18n.t(type, { ns: 'exam-title', defaultValue: '' })
       const fullTitle = title + (suffix ? ` ${suffix}` : '')

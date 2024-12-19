@@ -2,7 +2,8 @@ import i18n from 'i18next'
 import _ from 'lodash'
 import examFootersFi from './exam_footers_fi-FI.json'
 import examFootersSv from './exam_footers_sv-FI.json'
-import { examTitlesFi, examTitlesSv } from '@digabi/exam-engine-core'
+import examTitlesFi from './exam_titles_fi-FI.json'
+import examTitlesSv from './exam_titles_sv-FI.json'
 
 const resources = {
   'fi-FI': {
