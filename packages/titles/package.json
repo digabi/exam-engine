@@ -1,0 +1,11 @@
+{
+  "name": "@digabi/exam-engine-titles",
+  "version": "23.2.2",
+  "author": "Matriculation Examination Board, Finland",
+  "license": "EUPL-1.1",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "gitHead": "aadfbc9a62d1f1437992aaf2f0204f1eb24bb3a4"
+}

@@ -29,6 +29,7 @@
     { "path": "./packages/mastering/__tests__" },
     { "path": "./packages/rendering" },
     { "path": "./packages/rendering/__tests__" },
-    { "path": "./packages/cli" }
+    { "path": "./packages/cli" },
+    { "path": "./packages/titles" }
   ]
 }
