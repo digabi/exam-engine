@@ -1,14 +1,13 @@
 import React from 'react'
-import { readFileSync } from 'fs'
-import path from 'path'
 import { test, expect } from '@playwright/experimental-ct-react'
 import { Locator } from '@playwright/test'
-import { resolveExam } from '@digabi/exam-engine-exams'
-import { getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
 import { DNDAnswerContainerStory } from '../stories/exam/DNDAnswerContainer.story'
+import { setupMasteredExam } from '../utils/utils'
+
+test.describe.configure({ mode: 'serial' })
 
 test.describe('DNDAnswerContainer', () => {
-  let masteredExam: MasteringResult
+  let masteredExam: Awaited<ReturnType<typeof setupMasteredExam>>
 
   test.beforeAll(async () => {
     masteredExam = await setupMasteredExam()
@@ -48,16 +47,6 @@ test.describe('DNDAnswerContainer', () => {
     })
   }
 })
-
-async function setupMasteredExam() {
-  const examPath = resolveExam('SC/SC.xml')
-  const resolveAttachment = (filename: string) => path.resolve(path.dirname(examPath), 'attachments', filename)
-  const examXml = readFileSync(examPath, 'utf-8')
-  const [masteredExam] = await masterExam(examXml, () => '', getMediaMetadataFromLocalFile(resolveAttachment), {
-    removeCorrectAnswers: true
-  })
-  return masteredExam
-}
 
 async function assertContentMatches(answerContainer: Locator, content: string, mediaType: 'text' | 'image') {
   if (mediaType === 'text') {
