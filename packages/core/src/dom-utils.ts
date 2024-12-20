@@ -2,6 +2,9 @@ import * as _ from 'lodash-es'
 import { ExamNamespaceURI } from './createRenderChildNodes'
 import { useContext, useEffect, useState } from 'react'
 import { TOCContext } from './components/context/TOCContext'
+import { ExamAnswer, QuestionId } from './types/ExamAnswer'
+import { ItemsState } from './components/exam/DNDAnswerContainer'
+import { UniqueIdentifier } from '@dnd-kit/core'
 
 export const NBSP = '\u00A0'
 
@@ -191,4 +194,50 @@ export function getElementPath(element: Element): string {
   }
 
   return path
+}
+
+// For DND answers
+
+export const getAnswerOptionIdsByQuestionId = (element: Element, answersById: Record<QuestionId, ExamAnswer>) => {
+  const dndAnswers = queryAll(element, 'dnd-answer')
+  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
+
+  const answerOptionIdsByQuestionId: ItemsState = dndAnswers.reduce(
+    (acc, group) => {
+      const questionId = group.getAttribute('question-id')!
+      const answer = answersById[Number(questionId)]?.value
+      return {
+        ...acc,
+        [questionId]: answer ? [Number(answer)] : [],
+        root: acc.root.filter(e => e !== Number(answer))
+      }
+    },
+    { root: dndAnswerOptions.map(e => Number(e.getAttribute('option-id')!)) }
+  )
+  return answerOptionIdsByQuestionId
+}
+
+export const getAnswerOptionsByOptionId = (element: Element) => {
+  const dndAnswerOptions = queryAll(element, 'dnd-answer-option')
+  const answerOptionsByOptionId: Record<UniqueIdentifier, Element> = dndAnswerOptions.reduce((acc, el) => {
+    const optionId = el.getAttribute('option-id')!
+    return { ...acc, [optionId]: el }
+  }, {})
+  return answerOptionsByOptionId
+}
+
+export const getCorrectAnswerOptionIdsByQuestionId = (element: Element) => {
+  const correctAnswerOptionsByQuestionId = queryAll(element, 'dnd-answer-option').reduce(
+    (acc: Omit<ItemsState, 'root'>, el) => {
+      const questionId = el.getAttribute('for-question-id')!
+      const optionId = el.getAttribute('option-id')!
+      if (!questionId) {
+        return acc
+      }
+      const current = acc[questionId] || []
+      return { ...acc, [questionId]: current.concat(optionId) }
+    },
+    {}
+  )
+  return correctAnswerOptionsByQuestionId
 }

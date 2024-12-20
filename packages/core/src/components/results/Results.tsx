@@ -34,7 +34,7 @@ import { useIsStudentsExamineExamPage } from './isExamineExamPageHook'
 import classNames from 'classnames'
 import { EndExamSession } from './EndExamSession'
 import { Footer } from '../shared/Footer'
-import { DNDAnswerContainer } from './DNDAnswerContainer'
+import { DNDAnswerContainer } from '../shared/DNDAnswerContainer'
 import { AudioContainer } from './AudioContainer'
 
 export interface ResultsProps extends CommonExamProps {
@@ -58,7 +58,7 @@ const renderChildNodes = createRenderChildNodes({
   'audio-group': RenderChildNodes,
   audio: renderIf(({ element }) => queryAncestors(element, 'dnd-answer-container') != null)(AudioContainer),
   'choice-answer': ResultsChoiceAnswer,
-  'dnd-answer-container': DNDAnswerContainer,
+  'dnd-answer-container': props => <DNDAnswerContainer {...props} page="results" />,
   'dropdown-answer': DropdownAnswer,
   formula: Formula,
   question: Question,
