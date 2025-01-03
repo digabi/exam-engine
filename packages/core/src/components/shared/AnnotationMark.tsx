@@ -25,7 +25,7 @@ export const AnnotationMark = ({
   return (
     <mark
       ref={markRef}
-      className="e-annotation"
+      className={`e-annotation ${annotation.resolved ? 'resolved' : ''}`}
       data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
       data-hidden="false"
       data-annotation-path={annotation.annotationAnchor}
