@@ -61,7 +61,8 @@ export const AnnotationProvider = ({
               ...p,
               annotationId: a.annotationId,
               markNumber: isLastChild ? a.markNumber : undefined,
-              hidden: a.hidden
+              hidden: a.hidden,
+              resolved: a?.resolved
             }
           })
         ) || [],
