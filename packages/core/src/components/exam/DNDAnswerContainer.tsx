@@ -10,7 +10,6 @@ import {
   useSensor,
   useSensors
 } from '@dnd-kit/core'
-import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ExamAnswer, ExamComponentProps, QuestionId } from '../..'
@@ -20,6 +19,7 @@ import { AnswersState } from '../../store/answers/reducer'
 import { DNDTitleAndDroppable } from '../shared/DNDTitleAndDroppable'
 import { AllDNDOptions } from './DNDAllOptions'
 import { DNDAnswerOptionDraggable } from './DNDAnswerOptionDraggable'
+import { coordinateGetter } from './multipleContainersKeyboardCoordinates'
 
 export type ItemsState = {
   root: UniqueIdentifier[]
@@ -81,7 +81,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates
+      coordinateGetter
     })
   )
 
