@@ -12,9 +12,6 @@
     "@digabi/eslint-config": "^3.0.0",
     "@swc-node/jest": "^1.1.1",
     "@swc/helpers": "^0.5.2",
-    "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^16.0.0",
-    "@testing-library/user-event": "^14.5.2",
     "@types/child-process-promise": "^2.2.1",
     "@types/cloneable-readable": "^2.0.0",
     "@types/ffmpeg-static": "^3.0.0",
@@ -74,7 +71,8 @@
     "test": "npm run test-jest && npm run test-ct -- --project=chrome",
     "prepare": "tsc --build --force && npm run --workspace @digabi/exam-engine-core build",
     "test-jest": "NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
-    "test-ct": "playwright test -c packages/core/playwright-ct.config.ts"
+    "test-ct": "playwright test -c packages/core/playwright-ct.config.ts",
+    "clear-ct-cache": "rm -rf packages/core/__tests__/playwright/template/.cache"
   },
   "workspaces": [
     "packages/**"
