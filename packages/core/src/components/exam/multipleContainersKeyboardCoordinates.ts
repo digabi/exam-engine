@@ -12,18 +12,8 @@ export const coordinateGetter: KeyboardCoordinateGetter = (
   event,
   { context: { active, droppableRects, droppableContainers, collisionRect } }
 ) => {
-  window.addEventListener('mousewheel', () => {
-    console.log('scroll')
-    return {
-      x: 0,
-      y: 0
-    }
-  })
-
   if (directions.includes(event.code as KeyboardCode)) {
     event.preventDefault()
-
-    console.log('key')
 
     if (!active || !collisionRect) {
       return
