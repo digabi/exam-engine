@@ -44,6 +44,18 @@ test.describe('DNDAnswerContainer', () => {
         await draggableLocator.dragTo(answerOptionsLocator)
         await expect(answerContainer).toContainText('Ei vastausta')
       })
+
+      await test.step('Move first answer to answer container using keyboard', async () => {
+        await firstAnswerLocator.locator('.drag-handle').focus()
+        await firstAnswerLocator.locator('.drag-handle').press('Enter')
+        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates root container
+        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates 3rd answer container
+        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates 2nd answer container
+        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates 1st answer container
+        await firstAnswerLocator.locator('.drag-handle').press('Enter')
+        const firstAnswerContent = (await getAnswerContent(firstAnswerLocator, answerMediaType)) || ''
+        await assertContentMatches(answerContainer, firstAnswerContent, answerMediaType)
+      })
     })
   }
 })
