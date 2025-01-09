@@ -21,39 +21,46 @@ test.describe('DNDAnswerContainer', () => {
       const {
         answerContainer,
         answerOptionsLocator,
-        firstAnswerLocator,
-        secondAnswerLocator,
+        firstOptionLocator,
+        secondOptionLocator,
         firstAnswerContent,
         secondAnswerContent
       } = await setupAnswerContext(component, answerMediaType)
 
       await test.step('Drag first answer to answer container', async () => {
-        const draggableLocator = firstAnswerLocator.locator('.drag-handle')
+        const draggableLocator = firstOptionLocator.locator('.drag-handle')
         await draggableLocator.dragTo(answerContainer)
         await assertContentMatches(answerContainer, firstAnswerContent, answerMediaType)
+        await assertContentDoesNotMatch(answerOptionsLocator, firstAnswerContent, answerMediaType)
+        await assertContentMatches(answerOptionsLocator, secondAnswerContent, answerMediaType)
       })
 
       await test.step('Replace first answer with second answer in answer container', async () => {
-        const draggableLocator = secondAnswerLocator.locator('.drag-handle')
+        const draggableLocator = secondOptionLocator.locator('.drag-handle')
         await draggableLocator.dragTo(answerContainer)
         await assertContentMatches(answerContainer, secondAnswerContent, answerMediaType)
+        await assertContentDoesNotMatch(answerContainer, firstAnswerContent, answerMediaType)
+        await assertContentMatches(answerOptionsLocator, firstAnswerContent, answerMediaType)
       })
 
       await test.step('Drag second answer back to options', async () => {
         const draggableLocator = answerContainer.locator('.drag-handle')
         await draggableLocator.dragTo(answerOptionsLocator)
         await expect(answerContainer).toContainText('Ei vastausta')
+        await assertContentMatches(answerOptionsLocator, firstAnswerContent, answerMediaType)
+        await assertContentMatches(answerOptionsLocator, secondAnswerContent, answerMediaType)
       })
 
       await test.step('Move first answer to answer container using keyboard', async () => {
-        await firstAnswerLocator.locator('.drag-handle').focus()
-        await firstAnswerLocator.locator('.drag-handle').press('Enter')
-        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates root container
-        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates 3rd answer container
-        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates 2nd answer container
-        await firstAnswerLocator.locator('.drag-handle').press('ArrowUp') // activates 1st answer container
-        await firstAnswerLocator.locator('.drag-handle').press('Enter')
-        const firstAnswerContent = (await getAnswerContent(firstAnswerLocator, answerMediaType)) || ''
+        const handle = firstOptionLocator.locator('.drag-handle')
+        await handle.focus()
+        await handle.press('Enter')
+        await handle.press('ArrowUp') // activates root container
+        await handle.press('ArrowUp') // activates 3rd answer
+        await handle.press('ArrowUp') // activates 2nd answer
+        await handle.press('ArrowUp') // activates 1st answer
+        await handle.press('Enter')
+        const firstAnswerContent = (await getAnswerContent(firstOptionLocator, answerMediaType)) || '' // first option has changed
         await assertContentMatches(answerContainer, firstAnswerContent, answerMediaType)
       })
     })
@@ -64,23 +71,43 @@ async function assertContentMatches(answerContainer: Locator, content: string, m
   if (mediaType === 'text') {
     await expect(answerContainer).toContainText(content)
   } else if (mediaType === 'image') {
-    await expect(answerContainer.locator('img')).toHaveAttribute('src', content)
+    const images = await answerContainer.locator('img').all()
+    let found = false
+    for (const img of images) {
+      const src = await img.getAttribute('src')
+      if (src === content) {
+        found = true
+        break
+      }
+    }
+    expect(found).toBe(true)
+  }
+}
+
+async function assertContentDoesNotMatch(answerContainer: Locator, content: string, mediaType: 'text' | 'image') {
+  if (mediaType === 'text') {
+    await expect(answerContainer).not.toContainText(content)
+  } else if (mediaType === 'image') {
+    const images = await answerContainer.locator('img').all()
+    for (const img of images) {
+      await expect(img).not.toHaveAttribute('src', content)
+    }
   }
 }
 
 async function setupAnswerContext(component: Locator, answerMediaType: 'text' | 'image') {
   const answerContainer = component.getByTestId('dnd-droppable').first()
   const answerOptionsLocator = component.getByTestId('dnd-droppable').last()
-  const firstAnswerLocator = component.getByTestId('dnd-answer-option').nth(0)
-  const secondAnswerLocator = component.getByTestId('dnd-answer-option').nth(1)
-  const firstAnswerContent = await getAnswerContent(firstAnswerLocator, answerMediaType)
-  const secondAnswerContent = await getAnswerContent(secondAnswerLocator, answerMediaType)
+  const firstOptionLocator = component.getByTestId('dnd-answer-option').nth(0)
+  const secondOptionLocator = component.getByTestId('dnd-answer-option').nth(1)
+  const firstAnswerContent = await getAnswerContent(firstOptionLocator, answerMediaType)
+  const secondAnswerContent = await getAnswerContent(secondOptionLocator, answerMediaType)
 
   return {
     answerContainer,
     answerOptionsLocator,
-    firstAnswerLocator,
-    secondAnswerLocator,
+    firstOptionLocator,
+    secondOptionLocator,
     firstAnswerContent: firstAnswerContent as string,
     secondAnswerContent: secondAnswerContent as string
   }
