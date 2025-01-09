@@ -5,9 +5,6 @@
   "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
-  "engines": {
-    "node": "18.17.0"
-  },
   "devDependencies": {
     "@digabi/eslint-config": "^3.0.0",
     "@swc-node/jest": "^1.1.1",
