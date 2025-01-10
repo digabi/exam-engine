@@ -1,5 +1,7 @@
 export type QuestionId = number
 
+export type ExamPage = 'exam' | 'results' | 'grading-instructions'
+
 interface AnswerCommon {
   questionId: QuestionId
   value: string

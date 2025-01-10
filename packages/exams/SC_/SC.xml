@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd file:///home/digabi/exam-engine/schema/exam.xsd" exam-schema-version="0.5" date="2023-03-13" exam-code="SC" exam-stylesheet="custom.css">
+    <e:exam-versions>
+        <e:exam-version lang="fi-FI"/>
+        <e:exam-version lang="sv-FI"/>
+        <e:exam-version lang="fi-FI" exam-type="visually-impaired"/>
+        <e:exam-version lang="fi-FI" exam-type="hearing-impaired"/>
+    </e:exam-versions>
+    <e:exam-instruction>
+        <e:localization lang="fi-FI">
+            <p> Onnea kokeeseen! </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+            <p> Lycka till i provet! </p>
+        </e:localization>
+    </e:exam-instruction>
+    <e:table-of-contents/>
+
+    <e:section type="T" exam-type="normal hearing-impaired">
+        <e:section-title>Textverständnis</e:section-title>
+
+        <e:question>
+            <e:question-title>Hausaufgaben</e:question-title>
+            <e:question-instruction>Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.</e:question-instruction>
+
+            <e:question>
+                <e:question-title>Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat?</e:question-title>
+                <e:choice-answer>
+                    <e:choice-answer-option>Sie hat ihre Notizen in der Schule</e:choice-answer-option>
+                    <e:choice-answer-option>Sie war nicht im Unterricht <e:formula>E=mc^2</e:formula>
+                    </e:choice-answer-option>
+                    <e:choice-answer-option score="2">Sie kann sich daran nicht mehr erinnern <e:image src="maxmoritz.png"/>
+                    </e:choice-answer-option>
+                </e:choice-answer>
+            </e:question>
+
+            <e:question>
+                <e:question-title>Welche Hausaufgaben wird Maren für morgen machen?</e:question-title>
+                <e:choice-answer>
+                    <e:choice-answer-option>Mathe</e:choice-answer-option>
+                    <e:choice-answer-option score="2">Geschichte</e:choice-answer-option>
+                    <e:choice-answer-option>Chemie</e:choice-answer-option>
+                </e:choice-answer>
+            </e:question>
+
+            <e:question>
+                <e:question-title/>
+                <e:question-instruction/>
+                <e:dnd-answer-container dnd-type="connect">
+                    <e:dnd-answer max-score="1">
+                        <e:dnd-answer-title>Yksi</e:dnd-answer-title>
+                        <e:dnd-answer-option score="1">Eins</e:dnd-answer-option>
+                    </e:dnd-answer>
+                    <e:dnd-answer max-score="1">
+                        <e:dnd-answer-title>Kaksi</e:dnd-answer-title>
+                        <e:dnd-answer-option score="1">Zwei</e:dnd-answer-option>
+                    </e:dnd-answer>
+                    <e:dnd-answer max-score="1">
+                        <e:dnd-answer-title>Kolme</e:dnd-answer-title>
+                        <e:dnd-answer-option score="1">Drei</e:dnd-answer-option>
+                    </e:dnd-answer>
+                    <e:dnd-answer-option>Vier</e:dnd-answer-option>
+                    <e:dnd-answer-option>Fünf</e:dnd-answer-option>
+                </e:dnd-answer-container>
+            </e:question>
+        </e:question>
+    </e:section>
+
+    <e:section type="H" exam-type="normal visually-impaired">
+        <e:section-title>Hörverständnis</e:section-title>
+
+        <e:audio-test src="audio-test.ogg"/>
+
+        <e:question>
+            <e:question-title>Picknick</e:question-title>
+            <e:question-instruction>Paula, Alina, Kevin und Niklas sind in einer WhatsApp-Gruppe.</e:question-instruction>
+            <e:audio-group>
+                <e:attachment>
+                    <e:attachment-title>1. audio</e:attachment-title>
+                    <e:audio src="1.ogg" times="1">
+                        <e:audio-title>Hören Sie den Text zuerst als Ganzes</e:audio-title>
+                    </e:audio>
+                    <e:reference>
+                        <e:author>
+                            <e:localization lang="fi-FI">YTL</e:localization>
+                            <e:localization lang="sv-FI">SEN</e:localization>
+                        </e:author>
+                    </e:reference>
+                </e:attachment>
+            </e:audio-group>
+
+            <e:audio-group>
+                <e:question>
+                    <e:question-title>Warum findet Alina den Stadtpark nicht gut für das Picknick?</e:question-title>
+                    <e:choice-answer>
+                        <e:choice-answer-option>Sie denkt, dass der Weg zu weit ist</e:choice-answer-option>
+                        <e:choice-answer-option score="3">Sie meint, dass dort zu viele Leute sind</e:choice-answer-option>
+                        <e:choice-answer-option>Sie weiß, dass Kevin der Stadtpark nicht gefällt</e:choice-answer-option>
+                    </e:choice-answer>
+                    <e:audio src="1.1.ogg" times="1">
+                        <e:audio-title>Hören Sie den Abschnitt für die Frage 1.1.</e:audio-title>
+                    </e:audio>
+                </e:question>
+            </e:audio-group>
+
+            <e:audio-group>
+                <e:question>
+                    <e:question-title>
+                        <e:localization lang="fi-FI">Mitä ohjelmaa Niklaksella on tulevana viikonloppuna, ja miten ohjelma vaikuttaa piknikkiin?</e:localization>
+                        <e:localization lang="sv-FI">Vad har Niklas för program under det inkommande veckoslutet, och hur påverkar det picknicken?</e:localization>
+                    </e:question-title>
+                    <e:text-answer type="rich-text" max-score="6"/>
+                    <e:audio src="1.2.ogg" times="1">
+                        <e:audio-title>Hören Sie den Abschnitt für die Frage 1.2.</e:audio-title>
+                    </e:audio>
+                </e:question>
+            </e:audio-group>
+        </e:question>
+    </e:section>
+
+    <e:section type="T" exam-type="normal hearing-impaired">
+        <e:section-title>Struktur und Vokabular</e:section-title>
+        <e:question>
+            <e:question-title>Auswahl-Antwort-Test</e:question-title>
+            <e:question-instruction>Lesen Sie den folgenden Text und wählen Sie jeweils auf der Drop-Down-Liste die in den Textzusammenhang am besten passende Antwortalternative aus.</e:question-instruction>
+            <e:attachment>
+                <e:attachment-title>Auswahl-kuva</e:attachment-title>
+                <e:image src="maxmoritz.png" class="e-width-quarter e-illustration-right"/>
+            </e:attachment>
+            <br/>
+            <e:attachment>
+                <e:attachment-title>Auswahl-teksti</e:attachment-title>
+                <h4>Max und Moritz, Vorwort</h4>
+                <p>
+                    Ach, was
+                    <e:dropdown-answer>
+                        <e:dropdown-answer-option score="1">muß</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>kann</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>darf</e:dropdown-answer-option>
+                    </e:dropdown-answer>
+                    man oft von
+                    <e:dropdown-answer>
+                        <e:dropdown-answer-option score="1">bösen</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>netten</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>gelben</e:dropdown-answer-option>
+                    </e:dropdown-answer>
+                    <br/>
+                    Kindern hören oder lesen!!
+                    <br/>
+                    Wie zum Beispiel hier
+                    <e:dropdown-answer>
+                        <e:dropdown-answer-option score="1">von</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>zu</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>nach</e:dropdown-answer-option>
+                    </e:dropdown-answer>
+                    diesen,
+                    <br/>
+                    Welche Max und Moritz
+                    <span class="e-nowrap">
+                        <e:dropdown-answer>
+                            <e:dropdown-answer-option score="1">hießen</e:dropdown-answer-option>
+                            <e:dropdown-answer-option score="1">heißen</e:dropdown-answer-option>
+                            <e:dropdown-answer-option>sind</e:dropdown-answer-option>
+                        </e:dropdown-answer>;
+                    </span>
+                    <br/>
+                    <span class="e-nowrap">
+                        <e:dropdown-answer>
+                            <e:dropdown-answer-option score="1">Die</e:dropdown-answer-option>
+                            <e:dropdown-answer-option>Der</e:dropdown-answer-option>
+                            <e:dropdown-answer-option>Das</e:dropdown-answer-option>
+                        </e:dropdown-answer>,
+                    </span>
+                    anstatt durch weise Lehren
+                    <br/>
+                    Sich
+                    <e:dropdown-answer>
+                        <e:dropdown-answer-option score="1">zum</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>zur</e:dropdown-answer-option>
+                        <e:dropdown-answer-option>zu den</e:dropdown-answer-option>
+                    </e:dropdown-answer>
+                    Guten zu bekehren,
+                    <br/>
+                    Abgemalt und aufgeschrieben.
+                </p>
+            </e:attachment>
+        </e:question>
+
+        <e:question>
+            <e:question-title>Dialog</e:question-title>
+            <e:question-instruction>
+                <e:localization lang="fi-FI">Tässä tehtävässä on kaksi lyhyttä dialogia.</e:localization>
+                <e:localization lang="sv-FI">I den här uppgiften finns det två korta dialoger.</e:localization>
+            </e:question-instruction>
+            <e:attachment>
+                <e:attachment-title>7. teksti</e:attachment-title>
+                <br/>
+                <e:hints>
+                    <h4>Dialog 1</h4>
+                    <p>
+                        Tim sitzt am Küchentisch.
+                    </p>
+                    <p>
+                        Tim fragt: <e:scored-text-answer max-score="2">
+                        <e:hint>
+                            <e:localization lang="fi-FI">Voitko auttaa minua?</e:localization>
+                            <e:localization lang="sv-FI">Kan du hjälpa mig?</e:localization>
+                        </e:hint>
+                    </e:scored-text-answer>
+                    <br/>
+                        Jan: Ja, klar. Was ist denn?
+                    <br/>
+                        Tim antwortet: <e:scored-text-answer max-score="3">
+                    <e:hint>
+                        <e:attachment>
+                            <e:attachment-title>7.2. kuva</e:attachment-title>
+                            <e:image src="7.2.jpg"/>
+                        </e:attachment>
+                    </e:hint>
+                </e:scored-text-answer>
+            </p>
+            <br/>
+        </e:hints>
+    </e:attachment>
+</e:question>
+</e:section>
+
+<e:section type="T">
+<e:section-title>Schriftliche Produktion</e:section-title>
+<e:question max-answers="1">
+    <e:question-title>Kurze Schreibaufgabe</e:question-title>
+    <e:question-instruction>
+        <e:localization lang="fi-FI">
+            <p> Jätä toinen vastauskenttä tyhjäksi. </p>
+        </e:localization>
+        <e:localization lang="sv-FI">
+            <p> Lämna det andra svarsfältet tomt. </p>
+        </e:localization>
+    </e:question-instruction>
+
+    <e:question exam-type="normal hearing-impaired">
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+            <e:localization lang="fi-FI">
+                                Ystäväsi on kipeänä.
+            </e:localization>
+            <e:localization lang="sv-FI">
+                                Din vän är lite sjuk.
+            </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="33"/>
+    </e:question>
+    <e:question exam-type="normal hearing-impaired">
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+            <e:localization lang="fi-FI">
+                                Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan.
+            </e:localization>
+            <e:localization lang="sv-FI">
+                                Du har kommit långt med förberedelserna för din grillfest men du har glömt att bjuda in den tyska utbyteseleven på din klass.
+            </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="33"/>
+    </e:question>
+
+    <e:question exam-type="visually-impaired">
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+            <e:localization lang="fi-FI">
+                                Ystäväsi on kipeänä.
+            </e:localization>
+            <e:localization lang="sv-FI">
+                                Din vän är lite sjuk.
+            </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="51"/>
+    </e:question>
+    <e:question exam-type="visually-impaired">
+        <e:question-title>Kurze Schreibaufgabe</e:question-title>
+        <e:question-instruction>
+            <e:localization lang="fi-FI">
+                                Grillijuhlasi järjestelyt ovat jo hyvässä vauhdissa, mutta unohdit kutsua luokallasi olevan saksalaisen vaihto-oppilaan mukaan.
+            </e:localization>
+            <e:localization lang="sv-FI">
+                                Du har kommit långt med förberedelserna för din grillfest men du har glömt att bjuda in den tyska utbyteseleven på din klass.
+            </e:localization>
+        </e:question-instruction>
+        <e:text-answer type="rich-text" max-score="51"/>
+    </e:question>
+</e:question>
+</e:section>
+
+<e:references/>
+</e:exam>
