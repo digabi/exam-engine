@@ -12,7 +12,7 @@ interface AnnotationsStoryProps {
   masteredExam: MasteringResult
   annotations?: ExamAnnotation[]
   onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: RenderableAnnotation) => void
-  onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => void
+  onSaveAnnotation?: { fn: (annotation: NewExamAnnotation, comment: string) => void; result?: string }
 }
 
 export const AnnotationsStory: React.FC<AnnotationsStoryProps> = ({
@@ -31,7 +31,14 @@ export const AnnotationsStory: React.FC<AnnotationsStoryProps> = ({
       <AnnotationProvider
         annotations={annotations}
         onClickAnnotation={onClickAnnotation}
-        onSaveAnnotation={onSaveAnnotation}
+        onSaveAnnotation={
+          onSaveAnnotation
+            ? (...args) => {
+                onSaveAnnotation.fn(...args)
+                return Promise.resolve(onSaveAnnotation.result)
+              }
+            : undefined
+        }
       >
         <Question element={question2} renderChildNodes={renderChildNodes} />
       </AnnotationProvider>

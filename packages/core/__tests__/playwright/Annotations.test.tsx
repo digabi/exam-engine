@@ -43,8 +43,10 @@ test.describe('Annotations', () => {
         onClickAnnotation={(_event, renderableAnnotation) => {
           callbackArgs = { ...callbackArgs, renderableAnnotation }
         }}
-        onSaveAnnotation={(newAnnotation, comment: string) => {
-          callbackArgs = { ...callbackArgs, newAnnotation, comment }
+        onSaveAnnotation={{
+          fn: (newAnnotation, comment: string) => {
+            callbackArgs = { ...callbackArgs, newAnnotation, comment }
+          }
         }}
       />
     )
@@ -165,12 +167,31 @@ test.describe('Annotations', () => {
         masteredExam={masteredExam}
         annotations={createAnnotations([{ id: 1, startIndex: 166 - startIndexDifference, selectedText: 'yhteisössä' }])}
         onClickAnnotation={() => {}}
-        onSaveAnnotation={() => {}}
+        onSaveAnnotation={{ fn: () => {} }}
       />
     )
     await expect(component.locator('[data-annotation-id="1"]')).toBeVisible()
     await expect(component.locator('[data-annotation-id="1"]')).toHaveText('yhteisössä')
     await expect(component.locator('[data-annotation-id="1"] sup')).toHaveAttribute('data-content', '1')
+  })
+
+  test('annotation popup is not closed when annotation save fails', async ({ mount, page }) => {
+    const errorMessage = 'save failed'
+    const component = await mount(
+      <AnnotationsStory
+        masteredExam={masteredExam}
+        annotations={[]}
+        onClickAnnotation={() => {}}
+        onSaveAnnotation={{ fn: () => {}, result: errorMessage }}
+      />
+    )
+
+    await expect(component.getByTestId('e-popup')).not.toBeVisible()
+    await annotate(component.locator('.exam-question-instruction'), page)
+    await component.locator('.comment-content').fill('New comment')
+    await component.getByText('Tallenna').click()
+    await expect(component.getByTestId('e-popup')).toBeVisible()
+    await expect(component.getByText(errorMessage)).toBeVisible()
   })
 
   function createAnnotations(annotations: Annotation[]): ExamAnnotation[] {

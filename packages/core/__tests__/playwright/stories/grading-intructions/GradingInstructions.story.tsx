@@ -27,7 +27,9 @@ export const GradingInstructionStory: React.FC<GradingInstructionsStoryProps> = 
       attachmentsURL="/attachments"
       annotations={annotations}
       onClickAnnotation={onClickAnnotation}
-      onSaveAnnotation={onSaveAnnotation}
+      onSaveAnnotation={
+        onSaveAnnotation ? (...args) => Promise.resolve(onSaveAnnotation(...args) ?? undefined) : undefined
+      }
     />
   )
 }
