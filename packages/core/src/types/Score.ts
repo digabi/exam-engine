@@ -57,6 +57,7 @@ export interface NewExamAnnotation {
   annotationParts: AnnotationPart[]
   hidden: boolean
   markNumber?: number
+  resolved?: boolean
 }
 
 export interface ExamAnnotation extends NewExamAnnotation {
@@ -71,6 +72,7 @@ export interface AnnotationPart {
   length: number
   markNumber?: number
   hidden?: boolean
+  resolved?: boolean
 }
 
 export interface RenderableAnnotation extends AnnotationPart {

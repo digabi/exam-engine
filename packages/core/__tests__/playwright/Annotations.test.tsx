@@ -146,6 +146,7 @@ test.describe('Annotations', () => {
           annotationId: 1,
           hidden: false,
           length: 8,
+          resolved: undefined,
           selectedText: 'pienempi',
           startIndex: 27,
           markNumber: 1
