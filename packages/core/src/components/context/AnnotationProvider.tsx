@@ -12,7 +12,7 @@ interface Props {
 export interface RenderableAnnotationProps {
   annotations: Record<string, RenderableAnnotation[]>
   onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: RenderableAnnotation) => void
-  onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => void
+  onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => Promise<string | undefined>
 }
 
 export interface AnnotationContextType extends RenderableAnnotationProps {

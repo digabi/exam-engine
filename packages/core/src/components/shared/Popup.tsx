@@ -8,7 +8,7 @@ type PopupProps = {
   element: Element | null
   initialTextContent: string
   onValueChange?: (text: string) => string | null
-  onValueSave: (text: string) => void
+  onValueSave: (text: string) => Promise<string | undefined>
   enableDelete: boolean
   onDelete?: () => void
   onCancel: () => void
@@ -19,7 +19,8 @@ export function Popup(props: PopupProps) {
   const [textContent, setTextContent] = useState<string>(props.initialTextContent || '')
   const [saveEnabled, setSaveEnabled] = useState<boolean>(false)
   const [verifyDelete, setVerifyDelete] = useState<boolean>(false)
-  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [valueError, setValueError] = useState<string | null>(null)
+  const [saveError, setSaveError] = useState<string>()
 
   useEffect(() => {
     if (props.element) {
@@ -33,6 +34,8 @@ export function Popup(props: PopupProps) {
     return null
   }
 
+  const errorMessage = valueError ?? saveError
+
   return (
     <div className="e-popup" style={{ position: 'absolute', opacity: 0 }} ref={popupRef} data-testid="e-popup">
       <RichTextEditor
@@ -43,7 +46,7 @@ export function Popup(props: PopupProps) {
         onValueChange={value => {
           if (props.onValueChange) {
             const error = props.onValueChange(value.answerHtml)
-            setErrorMessage(error)
+            setValueError(error)
           }
           setTextContent(value.answerHtml)
           setSaveEnabled(value.answerHtml.trim().length > 0)
@@ -59,10 +62,10 @@ export function Popup(props: PopupProps) {
             className="button"
             onClick={e => {
               e.stopPropagation()
-              props.onValueSave(textContent)
+              void props.onValueSave(textContent).then(setSaveError)
             }}
             data-testid="e-popup-save"
-            disabled={!saveEnabled || !!errorMessage}
+            disabled={!saveEnabled || !!valueError}
           >
             Tallenna
           </button>

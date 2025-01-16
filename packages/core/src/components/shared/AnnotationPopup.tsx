@@ -9,10 +9,13 @@ export function AnnotationPopup() {
     <Popup
       element={newAnnotationRef}
       initialTextContent={''}
-      onValueSave={(comment: string) => {
-        onSaveAnnotation!(newAnnotation!, comment)
-        setNewAnnotation(null)
-        setNewAnnotationRef(null)
+      onValueSave={async (comment: string) => {
+        const error = await onSaveAnnotation!(newAnnotation!, comment)
+        if (!error) {
+          setNewAnnotation(null)
+          setNewAnnotationRef(null)
+        }
+        return error
       }}
       enableDelete={false}
       onCancel={() => {
