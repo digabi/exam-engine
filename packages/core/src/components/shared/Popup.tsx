@@ -24,6 +24,10 @@ export function Popup(props: PopupProps) {
 
   useEffect(() => {
     showAndPositionElement(props.element, popupRef)
+    const child = popupRef.current?.querySelector('.rich-text-editor')
+    if (child) {
+      ;(child as HTMLElement).focus()
+    }
   }, [props.element])
 
   const errorMessage = valueError ?? saveError
