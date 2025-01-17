@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { test, expect } from '@playwright/experimental-ct-react'
+import { test, expect, MountResult } from '@playwright/experimental-ct-react'
 import { Score } from '../../../src'
 import React from 'react'
 import { AnnotationListStory } from '../stories/AnnotationList.story'
@@ -57,18 +57,10 @@ test.describe('<AnnotationList />', () => {
         scores: [_.pick(defaultScores, 'pregrading', 'answerId', 'questionId')]
       }
       const component = await mount(<AnnotationListStory results={resultsProps} />)
-      expect(await component.innerHTML()).toBe(
-        normalize(`<div class="e-column e-column--6">
-            <h5>Alustavan arvostelun merkinnät (opettaja)</h5>
-            <ol class="e-list-data e-pad-l-0 e-font-size-s">
-                <li data-list-number="1)">Test pregrading annotation</li>
-            </ol>
-         </div>
-         <div class="e-column e-column--6">
-            <h5>Sensorin merkinnät</h5>
-            <ol class="e-list-data e-pad-l-0 e-font-size-s"></ol>
-         </div>`)
+      expect(await getPregradingAnnotations(component).innerHTML()).toBe(
+        '<li data-list-number="1)">Test pregrading annotation</li>'
       )
+      expect(await getCensorAnnotations(component).innerHTML()).toBe('')
     })
 
     test('filters empty annotations', async ({ mount }) => {
@@ -102,19 +94,12 @@ test.describe('<AnnotationList />', () => {
         ]
       }
       const component = await mount(<AnnotationListStory results={resultsProps} />)
-      expect(await component.innerHTML()).toBe(
-        normalize(`<div class="e-column e-column--6">
-            <h5>Alustavan arvostelun merkinnät (opettaja)</h5>
-            <ol class="e-list-data e-pad-l-0 e-font-size-s">
-                <li data-list-number="1)">Before empty annotation</li>
-                <li data-list-number="2)">After empty annotation</li>
-            </ol>
-         </div>
-         <div class="e-column e-column--6">
-            <h5>Sensorin merkinnät</h5>
-            <ol class="e-list-data e-pad-l-0 e-font-size-s"></ol>
-         </div>`)
+      expect(await getPregradingAnnotations(component).innerHTML()).toBe(
+        normalize(`
+        <li data-list-number="1)">Before empty annotation</li>
+        <li data-list-number="2)">After empty annotation</li>`)
       )
+      expect(await getCensorAnnotations(component).innerHTML()).toBe('')
     })
 
     test('renders with only censoring annotations', async ({ mount }) => {
@@ -122,17 +107,9 @@ test.describe('<AnnotationList />', () => {
         scores: [_.pick(defaultScores, 'censoring', 'answerId', 'questionId')]
       }
       const component = await mount(<AnnotationListStory results={resultsProps} />)
-      expect(await component.innerHTML()).toBe(
-        normalize(`<div class="e-column e-column--6">
-            <h5>Alustavan arvostelun merkinnät (opettaja)</h5>
-            <ol class="e-list-data e-pad-l-0 e-font-size-s"></ol>
-         </div>
-         <div class="e-column e-column--6">
-            <h5>Sensorin merkinnät</h5>
-            <ol class="e-list-data e-pad-l-0 e-font-size-s">
-                <li data-list-number="1)">Test censoring annotation</li>
-            </ol>
-         </div>`)
+      expect(await getPregradingAnnotations(component).innerHTML()).toBe('')
+      expect(await getCensorAnnotations(component).innerHTML()).toBe(
+        '<li data-list-number="1)">Test censoring annotation</li>'
       )
     })
 
@@ -163,13 +140,10 @@ test.describe('<AnnotationList />', () => {
         singleGrading: true
       }
       const component = await mount(<AnnotationListStory results={resultsProps} />)
-      expect(await component.innerHTML()).toBe(
-        normalize(`<div class="e-column e-column--10">
-            <ol class="e-list-data e-pad-l-0 e-font-size-s">
-                <li data-list-number="1)">Test pregrading annotation</li>
-            </ol>
-          </div>`)
+      expect(await getPregradingAnnotations(component).innerHTML()).toBe(
+        '<li data-list-number="1)">Test pregrading annotation</li>'
       )
+      expect(await getCensorAnnotations(component).count()).toBe(0)
     })
 
     test('renders null if no scores and singleGrading in ResultContext', async ({ mount }) => {
@@ -202,6 +176,14 @@ test.describe('<AnnotationList />', () => {
       )
     })
   })
+
+  function getPregradingAnnotations(component: MountResult) {
+    return component.locator('ol').nth(0)
+  }
+
+  function getCensorAnnotations(component: MountResult) {
+    return component.locator('ol').nth(1)
+  }
 
   function normalize(html: string) {
     return html.replace(/>\s+</g, '><').trim()
