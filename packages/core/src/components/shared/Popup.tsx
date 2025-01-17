@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 type PopupProps = {
-  element: Element | null
+  element: Element
   initialTextContent: string
   onValueChange?: (text: string) => string | null
   onValueSave: (text: string) => Promise<string | undefined>
@@ -17,22 +17,14 @@ type PopupProps = {
 export function Popup(props: PopupProps) {
   const popupRef = React.createRef<HTMLDivElement>()
   const [textContent, setTextContent] = useState<string>(props.initialTextContent || '')
-  const [saveEnabled, setSaveEnabled] = useState<boolean>(false)
+  const [saveEnabled, setSaveEnabled] = useState<boolean>(props.initialTextContent.length > 0)
   const [verifyDelete, setVerifyDelete] = useState<boolean>(false)
   const [valueError, setValueError] = useState<string | null>(null)
   const [saveError, setSaveError] = useState<string>()
 
   useEffect(() => {
-    if (props.element) {
-      showAndPositionElement(props.element, popupRef)
-    }
-    setTextContent(props.initialTextContent || '')
-    setSaveEnabled(props.initialTextContent.length > 0)
+    showAndPositionElement(props.element, popupRef)
   }, [props.element])
-
-  if (!props.element) {
-    return null
-  }
 
   const errorMessage = valueError ?? saveError
 
@@ -44,6 +36,7 @@ export function Popup(props: PopupProps) {
         initialValue={props.initialTextContent}
         getPasteSource={() => Promise.resolve('')}
         onValueChange={value => {
+          setValueError(null)
           if (props.onValueChange) {
             const error = props.onValueChange(value.answerHtml)
             setValueError(error)
@@ -62,6 +55,7 @@ export function Popup(props: PopupProps) {
             className="button"
             onClick={e => {
               e.stopPropagation()
+              setSaveError(undefined)
               void props.onValueSave(textContent).then(setSaveError)
             }}
             data-testid="e-popup-save"
@@ -101,9 +95,9 @@ export function Popup(props: PopupProps) {
   )
 }
 
-export function showAndPositionElement(mark: Element | null, popupRef: React.RefObject<HTMLElement>) {
+export function showAndPositionElement(mark: Element, popupRef: React.RefObject<HTMLElement>) {
   const popup = popupRef.current
-  if (mark && popup) {
+  if (popup) {
     const style = popup.style
     const markRect = mark?.getBoundingClientRect()
     const popupRect = popup.getBoundingClientRect()
