@@ -1,19 +1,20 @@
 import * as _ from 'lodash-es'
-import React, { useEffect, useRef } from 'react'
+import React, { PropsWithChildren, useEffect, useRef } from 'react'
 import { NewRenderableAnnotation, RenderableAnnotation } from '../../types/Score'
 import { isExistingAnnotation } from './markText'
 
-export const AnnotationMark = ({
+function AnnotationMark({
   annotation,
-  markedText,
   onClickAnnotation,
-  setNewAnnotationRef
-}: {
+  setNewAnnotationRef,
+  __html,
+  children
+}: PropsWithChildren<{
   annotation: RenderableAnnotation | NewRenderableAnnotation
-  markedText: string
   onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void
   setNewAnnotationRef: (ref: HTMLElement | null) => void
-}) => {
+  __html?: string
+}>) {
   const markRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -22,17 +23,29 @@ export const AnnotationMark = ({
     }
   }, [])
 
+  const dangerouslySetInnerHTML = __html ? { dangerouslySetInnerHTML: { __html } } : {}
+
   return (
-    <mark
-      ref={markRef}
-      className={`e-annotation ${annotation.resolved ? 'resolved' : ''}`}
-      data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
-      data-hidden="false"
-      data-annotation-path={annotation.annotationAnchor}
-      onClick={e => (isExistingAnnotation(annotation) ? onClickAnnotation(e, annotation) : undefined)}
-    >
-      {markedText}
+    <>
+      <mark
+        ref={markRef}
+        className={`e-annotation ${annotation.resolved ? 'resolved' : ''}`}
+        data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
+        data-hidden="false"
+        data-annotation-path={annotation.annotationAnchor}
+        onClick={e => {
+          if (isExistingAnnotation(annotation)) {
+            e.stopPropagation()
+            onClickAnnotation(e, annotation)
+          }
+        }}
+        {...dangerouslySetInnerHTML}
+      >
+        {__html ? null : children}
+      </mark>
       {annotation?.markNumber && <sup className="e-annotation" data-content={annotation?.markNumber} />}
-    </mark>
+    </>
   )
 }
+
+export default React.memo(AnnotationMark)

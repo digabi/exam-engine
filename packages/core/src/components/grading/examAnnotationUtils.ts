@@ -80,12 +80,13 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
       const childsAnnotationPath = child.getAttribute('data-annotation-path')
       const isLastRangeChild = index === arr.length - 1
       if (childsAnnotationPath) {
-        // child is a text node, like <span> text </span>
+        // child is an annotable node, like <span> text </span> or <e:formula>...</e:formula>
+        const textContent = child.getAttribute('data-annotation-content') ?? child.textContent ?? ''
         const newElement = {
           annotationAnchor: childsAnnotationPath,
-          selectedText: child.textContent || '',
+          selectedText: textContent,
           startIndex: index === 0 ? range.startOffset : 0,
-          length: isLastRangeChild ? range.endOffset : child.textContent?.length || 0
+          length: isLastRangeChild ? range.endOffset : textContent.length
         }
         return [...acc, newElement]
       } else {
@@ -93,6 +94,7 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
         const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
         allChildrenWithAnnotationPath?.forEach((grandChild, kidIndex) => {
           const dataAnnotationPath = grandChild.getAttribute('data-annotation-path')
+          const textContent = grandChild.getAttribute('data-annotation-content') ?? grandChild.textContent ?? ''
           if (dataAnnotationPath) {
             const isFirstOfAll = index === 0 && kidIndex === 0
             const isLastGrandChild = kidIndex === allChildrenWithAnnotationPath.length - 1
@@ -100,9 +102,9 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
             const startAndLength = textAnnotationFromRange(firstSelectedNodeInDOM as HTMLElement, range)
             const newElement = {
               annotationAnchor: dataAnnotationPath,
-              selectedText: grandChild.textContent || '',
+              selectedText: textContent,
               startIndex: isFirstOfAll ? startAndLength?.startIndex || 0 : 0,
-              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0
+              length: isLastOfAll ? range.endOffset : textContent.length
             }
             acc.push(newElement)
           }

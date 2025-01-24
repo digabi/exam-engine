@@ -58,7 +58,7 @@ test.describe('Annotations', () => {
         for (const annotation of existingAnnotations.slice(0, 2)) {
           await expect(annotationLocator(annotation.id)).toBeVisible()
           await expect(annotationLocator(annotation.id)).toHaveText(annotation.selectedText)
-          await expect(annotationLocator(annotation.id).locator('sup')).toHaveAttribute(
+          await expect(annotationLocator(annotation.id).locator('+ sup')).toHaveAttribute(
             'data-content',
             annotation.id.toString()
           )
@@ -67,7 +67,7 @@ test.describe('Annotations', () => {
 
       await test.step('hidden annotations are hidden', async () => {
         await expect(annotationLocator(3)).toBeHidden()
-        await expect(annotationLocator(3).locator('sup')).toBeHidden()
+        await expect(annotationLocator(3).locator('+ sup')).toBeHidden()
         await expect(annotationLocator(3).locator('..')).toHaveAttribute(
           'data-annotation-path',
           'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > p:1 > #text:0'
@@ -77,27 +77,27 @@ test.describe('Annotations', () => {
       await test.step('if two annotations have same id, only latter renders <sup>', async () => {
         const marks = await annotationLocator(4).all()
         await expect(marks[0]).toHaveText('mikä')
-        await expect(marks[0].locator('sup')).not.toBeVisible()
+        await expect(marks[0].locator('+ sup')).not.toBeVisible()
         await expect(marks[1]).toHaveText('ero')
         await expect(marks[1]).toBeVisible()
-        await expect(marks[1].locator('sup')).toHaveAttribute('data-content', '4')
+        await expect(marks[1].locator('+ sup')).toHaveAttribute('data-content', '4')
       })
 
       await test.step('annotations can not overlap — overlapping annotations are not rendered', async () => {
         await expect(annotationLocator(5)).toBeVisible()
-        await expect(annotationLocator(5).locator('sup')).toBeVisible()
+        await expect(annotationLocator(5).locator('+ sup')).toBeVisible()
         await expect(annotationLocator(5)).toHaveText('esimerkiksi')
 
         await expect(annotationLocator(6)).toBeHidden()
-        await expect(annotationLocator(6).locator('sup')).toBeHidden()
+        await expect(annotationLocator(6).locator('+ sup')).toBeHidden()
         await expect(annotationLocator(6)).toHaveText('')
 
         await expect(annotationLocator(7)).toBeHidden()
-        await expect(annotationLocator(7).locator('sup')).toBeHidden()
+        await expect(annotationLocator(7).locator('+ sup')).toBeHidden()
         await expect(annotationLocator(7)).toHaveText('')
 
         await expect(annotationLocator(8)).toBeVisible()
-        await expect(annotationLocator(8).locator('sup')).toBeVisible()
+        await expect(annotationLocator(8).locator('+ sup')).toBeVisible()
         await expect(annotationLocator(8)).toHaveText('jokin koulu')
       })
     })
@@ -172,7 +172,7 @@ test.describe('Annotations', () => {
     )
     await expect(component.locator('[data-annotation-id="1"]')).toBeVisible()
     await expect(component.locator('[data-annotation-id="1"]')).toHaveText('yhteisössä')
-    await expect(component.locator('[data-annotation-id="1"] sup')).toHaveAttribute('data-content', '1')
+    await expect(component.locator('[data-annotation-id="1"] + sup')).toHaveAttribute('data-content', '1')
   })
 
   test('annotation popup is not closed when annotation save fails', async ({ mount, page }) => {
