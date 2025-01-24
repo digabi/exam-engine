@@ -1,19 +1,22 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "23.4.6",
+  "version": "23.4.7-rte-peer-dep.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
   "files": [
     "dist",
     "public"
   ],
+  "peerDependencies": {
+    "rich-text-editor": ">=8.2.3"
+  },
   "dependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
-    "@digabi/exam-engine-core": "23.4.6",
+    "@digabi/exam-engine-core": "23.4.7-rte-peer-dep.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "babel-loader": "^9.1.2",
     "child-process-promise": "^2.2.1",
@@ -33,7 +36,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router5": "^8.0.1",
-    "rich-text-editor": "8.2.3",
     "router5": "^8.0.1",
     "router5-plugin-browser": "^8.0.1",
     "tmp-promise": "^3.0.2",
