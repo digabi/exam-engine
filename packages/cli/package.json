@@ -9,12 +9,14 @@
   "bin": {
     "ee": "./dist/index.js"
   },
+  "peerDependencies": {
+    "rich-text-editor": ">=8.2.3"
+  },
   "dependencies": {
     "@digabi/exam-engine-mastering": "23.4.6",
     "@digabi/exam-engine-rendering": "23.4.6",
     "lodash": "^4.17.15",
     "ora": "^5.0.0",
-    "rich-text-editor": "8.2.3",
     "uuid": "^11.0.2",
     "yargs": "^17.0.1"
   },

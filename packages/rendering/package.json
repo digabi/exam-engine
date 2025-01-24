@@ -7,6 +7,9 @@
     "dist",
     "public"
   ],
+  "peerDependencies": {
+    "rich-text-editor": ">=8.2.3"
+  },
   "dependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-transform-runtime": "^7.8.3",
@@ -33,7 +36,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router5": "^8.0.1",
-    "rich-text-editor": "8.2.3",
     "router5": "^8.0.1",
     "router5-plugin-browser": "^8.0.1",
     "tmp-promise": "^3.0.2",
