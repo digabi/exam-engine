@@ -1,9 +1,10 @@
 import * as _ from 'lodash-es'
 import React from 'react'
 import { NewRenderableAnnotation, RenderableAnnotation } from '../../types/Score'
-import { AnnotationMark } from './AnnotationMark'
+import AnnotationMark from './AnnotationMark'
+import HiddenAnnotationMark from './HiddenAnnotationMark'
 
-function getKey(annotation: RenderableAnnotation | NewRenderableAnnotation) {
+export function getKey(annotation: RenderableAnnotation | NewRenderableAnnotation) {
   return isExistingAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
 }
 
@@ -23,10 +24,6 @@ export function markText(
   onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void,
   setNewAnnotationRef: (ref: HTMLElement | null) => void
 ) {
-  if (annotations.length === 0) {
-    return [text]
-  }
-
   annotations.sort((a, b) => a.startIndex - b.startIndex)
 
   const [hiddenAnnotations, visibleAnnotations] = _.partition(annotations, a => a.hidden)
@@ -106,20 +103,16 @@ export function markText(
     const key = getKey(annotation)
     nodes.push(
       annotation.hidden ? (
-        <mark
-          key={key}
-          className="e-annotation"
-          data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
-          data-hidden="true"
-        />
+        <HiddenAnnotationMark annotationId={isExistingAnnotation(annotation) ? annotation.annotationId : null} />
       ) : (
         <AnnotationMark
           key={key}
           annotation={annotation}
-          markedText={annotatedTextWithCorrectedStartIndex}
           onClickAnnotation={onClickAnnotation}
           setNewAnnotationRef={setNewAnnotationRef}
-        />
+        >
+          {annotatedTextWithCorrectedStartIndex}
+        </AnnotationMark>
       )
     )
 
