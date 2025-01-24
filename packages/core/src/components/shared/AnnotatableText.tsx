@@ -9,10 +9,7 @@ export const AnnotatableText = ({ node }: { node: Node }) => {
   const { isInSidebar } = useContext(IsInSidebarContext)
   const { annotations, onClickAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
 
-  const canNotBeAnnotated =
-    annotationContextData?.annotations === undefined ||
-    node.textContent?.trim().length === 0 ||
-    isInSidebar !== undefined
+  const canNotBeAnnotated = node.textContent?.trim().length === 0 || isInSidebar !== undefined
 
   if (canNotBeAnnotated) {
     return node.textContent!
