@@ -24,7 +24,7 @@ test.describe('Annotations', () => {
     mount,
     page
   }) => {
-    let callbackArgs = { newAnnotation: {}, comment: '', renderableAnnotation: {} }
+    let callbackArgs = { newAnnotation: {}, comment: '', annotationId: -1 }
     const existingAnnotations = [
       { id: 1, startIndex: 27, selectedText: 'pienempi' },
       { id: 2, startIndex: 166, selectedText: 'yhteisössä' },
@@ -39,9 +39,9 @@ test.describe('Annotations', () => {
     const component = await mount(
       <AnnotationsStory
         masteredExam={masteredExam}
-        annotations={createAnnotations(existingAnnotations)}
-        onClickAnnotation={(_event, renderableAnnotation) => {
-          callbackArgs = { ...callbackArgs, renderableAnnotation }
+        annotations={createTextAnnotations(existingAnnotations)}
+        onClickAnnotation={(_event, annotationId) => {
+          callbackArgs = { ...callbackArgs, annotationId }
         }}
         onSaveAnnotation={{
           fn: (newAnnotation, comment: string) => {
@@ -125,6 +125,7 @@ test.describe('Annotations', () => {
               length: 27
             }
           ],
+          annotationType: 'text',
           displayNumber: '2',
           selectedText: 'Sekä moraali että tavat pyr'
         })
@@ -143,16 +144,7 @@ test.describe('Annotations', () => {
       await test.step('callback is called when annotation is clicked', async () => {
         await component.locator('[data-annotation-id="1"]').click()
 
-        expect(callbackArgs.renderableAnnotation).toStrictEqual({
-          annotationAnchor: 'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > p:1 > #text:0',
-          annotationId: 1,
-          hidden: false,
-          length: 8,
-          resolved: undefined,
-          selectedText: 'pienempi',
-          startIndex: 27,
-          markNumber: 1
-        })
+        expect(callbackArgs.annotationId).toStrictEqual(1)
       })
     })
   })
@@ -165,7 +157,9 @@ test.describe('Annotations', () => {
     const component = await mount(
       <AnnotationsStory
         masteredExam={masteredExam}
-        annotations={createAnnotations([{ id: 1, startIndex: 166 - startIndexDifference, selectedText: 'yhteisössä' }])}
+        annotations={createTextAnnotations([
+          { id: 1, startIndex: 166 - startIndexDifference, selectedText: 'yhteisössä' }
+        ])}
         onClickAnnotation={() => {}}
         onSaveAnnotation={{ fn: () => {} }}
       />
@@ -194,11 +188,12 @@ test.describe('Annotations', () => {
     await expect(component.getByText(errorMessage)).toBeVisible()
   })
 
-  function createAnnotations(annotations: Annotation[]): ExamAnnotation[] {
+  function createTextAnnotations(annotations: Annotation[]): ExamAnnotation[] {
     const annotationsById = groupBy(annotations, 'id')
     return Object.keys(annotationsById).map((id, index) => {
       const annotationParts = annotationsById[id]
       return {
+        annotationType: 'text',
         annotationId: Number(id),
         selectedText: annotations.map(a => a.selectedText).join(' '),
         type: 'text',

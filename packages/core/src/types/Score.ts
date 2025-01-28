@@ -49,37 +49,6 @@ export interface TextAnnotation extends BaseAnnotation {
   length: number
 }
 
-// React annotations only use annotation types below this line
-export interface NewExamAnnotation {
-  displayNumber: string
-  selectedText: string
-  annotationParts: AnnotationPart[]
-  hidden: boolean
-  markNumber?: number
-  resolved?: boolean
-}
-
-export interface ExamAnnotation extends NewExamAnnotation {
-  annotationId: number
-  imported?: boolean
-}
-
-export interface AnnotationPart {
-  annotationAnchor: string
-  selectedText: string
-  startIndex: number
-  length: number
-  markNumber?: number
-  hidden?: boolean
-  resolved?: boolean
-}
-
-export interface RenderableAnnotation extends AnnotationPart {
-  annotationId: number
-}
-
-export type NewRenderableAnnotation = AnnotationPart
-
 // Shape annotations
 interface ShapeAnnotation extends BaseAnnotation {
   /** A 0-indexed number describing which <img /> in the answer the annotation is attached to. */

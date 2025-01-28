@@ -1,6 +1,6 @@
 import * as _ from 'lodash-es'
 import React, { PropsWithChildren, useEffect, useRef } from 'react'
-import { NewRenderableAnnotation, RenderableAnnotation } from '../../types/Score'
+import { AnnotationPart } from '../../types/ExamAnnotations'
 import { isExistingAnnotation } from './markText'
 
 function AnnotationMark({
@@ -10,8 +10,8 @@ function AnnotationMark({
   __html,
   children
 }: PropsWithChildren<{
-  annotation: RenderableAnnotation | NewRenderableAnnotation
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void
+  annotation: AnnotationPart
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotationId: number) => void
   setNewAnnotationRef: (ref: HTMLElement | null) => void
   __html?: string
 }>) {
@@ -36,7 +36,7 @@ function AnnotationMark({
         onClick={e => {
           if (isExistingAnnotation(annotation)) {
             e.stopPropagation()
-            onClickAnnotation(e, annotation)
+            onClickAnnotation(e, annotation.annotationId)
           }
         }}
         {...dangerouslySetInnerHTML}

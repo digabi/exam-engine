@@ -1,8 +1,8 @@
 import React from 'react'
-import { AnnotationPart } from '../../types/Score'
+import { AnnotationPart, NewExamAnnotation } from '../../types/ExamAnnotations'
 import { textAnnotationFromRange } from './editAnnotations'
 
-export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
+export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (a: NewExamAnnotation) => void) {
   function onMouseUpAfterAnswerMouseDown() {
     window.removeEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 
@@ -28,8 +28,9 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       ) {
         const annotations = extractAnnotationsFromSelection(selection)
         mouseUpCallback({
+          annotationType: 'text',
           annotationParts: annotations,
-          displayNumber: startNodedisplayNumber,
+          displayNumber: startNodedisplayNumber ?? '',
           selectedText: annotations.map(a => a.selectedText).join(' ')
         })
       }

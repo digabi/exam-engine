@@ -6,12 +6,12 @@ import parseExam from '../../../src/parser/parseExam'
 import { queryAll } from '../../../src/dom-utils'
 import Question from '../../../src/components/exam/Question'
 import { AnnotationProvider } from '../../../src/components/context/AnnotationProvider'
-import { ExamAnnotation, NewExamAnnotation, RenderableAnnotation } from '../../../src'
+import { ExamAnnotation, NewExamAnnotation } from '../../../src'
 
 interface AnnotationsStoryProps {
   masteredExam: MasteringResult
   annotations?: ExamAnnotation[]
-  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: RenderableAnnotation) => void
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotationId: number) => void
   onSaveAnnotation?: { fn: (annotation: NewExamAnnotation, comment: string) => void; result?: string }
 }
 

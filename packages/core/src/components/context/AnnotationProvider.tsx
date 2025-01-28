@@ -1,6 +1,6 @@
 import * as _ from 'lodash-es'
 import React, { useMemo } from 'react'
-import { NewExamAnnotation, RenderableAnnotation } from '../../types/Score'
+import { AnnotationPart, ExamImageAnnotation, NewExamAnnotation, WithAnnotationId } from '../../types/ExamAnnotations'
 import { AnnotationProps } from '../exam/Exam'
 import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { AnnotationPopup } from '../shared/AnnotationPopup'
@@ -9,20 +9,21 @@ interface Props {
   children: React.ReactNode
 }
 
-export interface RenderableAnnotationProps {
-  annotations: Record<string, RenderableAnnotation[]>
-  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: RenderableAnnotation) => void
-  onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => Promise<string | undefined>
-}
-
-export interface AnnotationContextType extends RenderableAnnotationProps {
+export type AnnotationContextType = {
+  annotationsEnabled: true
   newAnnotation: NewExamAnnotation | null
   setNewAnnotation: (a: NewExamAnnotation | null) => void
   newAnnotationRef: HTMLElement | null
   setNewAnnotationRef: (ref: HTMLElement | null) => void
+  textAnnotations: Record<string, WithAnnotationId<AnnotationPart>[]>
+  imageAnnotations: Record<string, ExamImageAnnotation[]>
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotationId: number) => void
+  onSaveAnnotation: (annotation: NewExamAnnotation, comment: string) => Promise<string | undefined>
 }
 
-export const AnnotationContext = React.createContext({} as AnnotationContextType)
+export const AnnotationContext = React.createContext<AnnotationContextType | { annotationsEnabled: false }>({
+  annotationsEnabled: false
+})
 
 export const AnnotationProvider = ({
   children,
@@ -47,34 +48,55 @@ export const AnnotationProvider = ({
     onMouseDownForAnnotation(e, mouseUpCallback)
   }
 
-  if (!onClickAnnotation && !onSaveAnnotation) {
+  const annotationsEnabled = !!annotations && !!onClickAnnotation && !!onSaveAnnotation
+
+  if (!annotationsEnabled) {
     return children
   }
 
-  const annotationPartsToRenderableAnnotations: Record<string, RenderableAnnotation[]> = useMemo(
+  const textAnnotations: AnnotationContextType['textAnnotations'] = useMemo(
     () =>
       _.groupBy(
-        annotations?.flatMap(a =>
-          a.annotationParts.map((p, index, arr) => {
-            const isLastChild = index === arr.length - 1
-            return {
-              ...p,
-              annotationId: a.annotationId,
-              markNumber: isLastChild ? a.markNumber : undefined,
-              hidden: a.hidden,
-              resolved: a?.resolved
-            }
-          })
-        ) || [],
-        'annotationAnchor'
+        annotations.flatMap(a => {
+          if (a.annotationType === 'text') {
+            return a.annotationParts.map((p, index, arr) => {
+              const isLastChild = index === arr.length - 1
+              return {
+                ...p,
+                annotationId: a.annotationId,
+                markNumber: isLastChild ? a.markNumber : undefined,
+                hidden: a.hidden,
+                resolved: a?.resolved
+              }
+            })
+          }
+          return []
+        }),
+        a => a.annotationAnchor
       ),
-    [JSON.stringify(annotations)]
+    [annotations]
+  )
+
+  const imageAnnotations: AnnotationContextType['imageAnnotations'] = useMemo(
+    () =>
+      _.groupBy(
+        annotations.flatMap(a => {
+          if (a.annotationType === 'image') {
+            return a
+          }
+          return []
+        }),
+        a => a.annotationAnchor
+      ),
+    [annotations]
   )
 
   return (
     <AnnotationContext.Provider
       value={{
-        annotations: annotationPartsToRenderableAnnotations,
+        annotationsEnabled: true,
+        textAnnotations: textAnnotations,
+        imageAnnotations: imageAnnotations,
         onClickAnnotation,
         onSaveAnnotation,
         newAnnotation,
