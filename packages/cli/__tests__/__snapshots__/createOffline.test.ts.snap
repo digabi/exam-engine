@@ -65,7 +65,7 @@ exports[`ee create-offline creates offline 1`] = `
   
   
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-1">
-    <h2 class="exam-section-title" id="section-title-1" data-toc-id="section-1">Teil 1: Hörverständnis</h2>
+    <h2 class="exam-section-title" id="section-title-1" data-toc-id="section-1" data-annotation-anchor="section-title-1">Teil 1: Hörverständnis</h2>
 
     <div class="e-audio-test notification e-pad-2 e-mrg-b-4"><p><span lang="fi-FI">Koe sisältää kuullunymmärtämisen tehtäviä.</span></p><div class="e-columns e-columns--center-v e-mrg-b-2"><div class="e-column e-column--narrow"><button class="e-button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-fw e-mrg-r-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg><span lang="fi-FI">Testaa äänitteiden kuuluvuus</span></button></div><div class="e-column"><div><span><div>&nbsp;</div></span></div></div></div><div><span lang="fi-FI">Äänen voimakkuutta voit säätää ruudun oikeasta yläkulmasta.</span></div></div>
 
@@ -469,7 +469,7 @@ exports[`ee create-offline creates offline 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-2">
-    <h2 class="exam-section-title" id="section-title-2" data-toc-id="section-2">Teil 2: Textverständnis</h2>
+    <h2 class="exam-section-title" id="section-title-2" data-toc-id="section-2" data-annotation-anchor="section-title-2">Teil 2: Textverständnis</h2>
 
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="8" data-toc-id="question-8"><div class="anchor" id="question-nr-8"></div>
       <h3 id="question-title-8" class="exam-question-title"><strong class="exam-question-title__display-number">8. </strong>Hausaufgaben <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">4 p.</span></span></h3>
@@ -831,7 +831,7 @@ exports[`ee create-offline creates offline 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-3">
-    <h2 class="exam-section-title" id="section-title-3" data-toc-id="section-3">Teil 3: Struktur und Vokabular</h2>
+    <h2 class="exam-section-title" id="section-title-3" data-toc-id="section-3" data-annotation-anchor="section-title-3">Teil 3: Struktur und Vokabular</h2>
 
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="17" data-toc-id="question-17"><div class="anchor" id="question-nr-17"></div>
       <h3 id="question-title-17" class="exam-question-title"><strong class="exam-question-title__display-number">17. </strong>Auswahl-Antwort-Test <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">16 p.</span></span></h3>
@@ -1091,7 +1091,7 @@ exports[`ee create-offline creates offline 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-4">
-    <h2 class="exam-section-title" id="section-title-4" data-toc-id="section-4">Teil 4: Schriftliche Produktion</h2>
+    <h2 class="exam-section-title" id="section-title-4" data-toc-id="section-4" data-annotation-anchor="section-title-4">Teil 4: Schriftliche Produktion</h2>
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="21" data-toc-id="question-21"><div class="anchor" id="question-nr-21"></div>
       <h3 id="question-title-21" class="exam-question-title"><strong class="exam-question-title__display-number">21. </strong>Kurze Schreibaufgabe <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">33 p.</span></span></h3><p class="e-italic"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" class="svg-inline--fa fa-circle-info fa-fw fa-lg e-color-link e-mrg-r-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg><span lang="fi-FI">Vastaa joko kohtaan 21.1 tai 21.2.</span></p>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-20">
@@ -1196,7 +1196,7 @@ exports[`ee create-offline creates offline 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 exam-section" aria-labelledby="section-title-5">
-    <h2 class="exam-section-title" id="section-title-5" data-toc-id="section-5">Teil 5: Termine und Wissenstest als drag-and-drop</h2>
+    <h2 class="exam-section-title" id="section-title-5" data-toc-id="section-5" data-annotation-anchor="section-title-5">Teil 5: Termine und Wissenstest als drag-and-drop</h2>
     
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="23" data-toc-id="question-23"><div class="anchor" id="question-nr-23"></div>
       <h3 id="question-title-23" class="exam-question-title"><strong class="exam-question-title__display-number">23. </strong>Termine und Wissenstest <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3>
