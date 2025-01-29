@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "23.4.6",
+  "version": "23.4.7-rte-peer-dep.0",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
@@ -19,7 +19,8 @@
     "prepublishOnly": "webpack --mode=production && perl -pi -e 's|&&define.amd||' dist/main-bundle.js # Compatibility with our 💩 AMD loader"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "rich-text-editor": ">=8.2.3"
   },
   "devDependencies": {
     "@digabi/noto-sans": "^2.1.0",
@@ -51,7 +52,6 @@
     "redux": "^5.0.1",
     "redux-saga": "^1.2.3",
     "redux-saga-test-plan": "^4.0.6",
-    "rich-text-editor": "8.2.3",
     "sanitize-html": "^2.0.0",
     "typesafe-actions": "^5.1.0",
     "utility-types": "^3.10.0",
