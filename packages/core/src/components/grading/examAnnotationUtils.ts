@@ -53,7 +53,7 @@ const selectionContainsNonhiddenMarks = (selection: Selection) => {
 }
 
 const getDisplayNumber = (node: HTMLElement) =>
-  node?.closest('div[data-annotation-anchor]')?.getAttribute('data-annotation-anchor')
+  node?.closest('[data-annotation-anchor]')?.getAttribute('data-annotation-anchor')
 
 const isAnnotatable = (node: HTMLElement) => node?.getAttribute('data-annotation-path') && node.tagName !== 'MARK'
 

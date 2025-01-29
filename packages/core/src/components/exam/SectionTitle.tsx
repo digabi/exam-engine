@@ -31,6 +31,7 @@ function SectionTitle({ element, renderChildNodes }: ExamComponentProps) {
           id={sectionTitleId(displayNumber)}
           data-toc-id={`section-${displayNumber}`}
           ref={ref}
+          data-annotation-anchor={`section-title-${displayNumber}`}
         >
           {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
         </h2>

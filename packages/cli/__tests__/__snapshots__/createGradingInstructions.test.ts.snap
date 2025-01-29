@@ -57,7 +57,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   
   
   <section class="e-section e-bg-color-off-white e-pad-6 e-grading-instruction-section" aria-labelledby="section-title-1">
-    <h2 class="e-grading-instructions-section-title" id="section-title-1">Teil 1: Hörverständnis</h2>
+    <h2 class="e-grading-instructions-section-title" id="section-title-1" data-annotation-anchor="section-title-1">Teil 1: Hörverständnis</h2>
 
     
 
@@ -281,7 +281,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 e-grading-instruction-section" aria-labelledby="section-title-2">
-    <h2 class="e-grading-instructions-section-title" id="section-title-2">Teil 2: Textverständnis</h2>
+    <h2 class="e-grading-instructions-section-title" id="section-title-2" data-annotation-anchor="section-title-2">Teil 2: Textverständnis</h2>
 
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="8" data-annotation-anchor="8"><div class="anchor" id="question-nr-8"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">8. </strong>Hausaufgaben <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">4 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-8">Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.
       </div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="8.1" data-annotation-anchor="8.1"><div class="anchor" id="question-nr-8.1"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">8.1 </strong>Warum weiß Maren nicht, was für Hausaufgaben sie aufbekommen hat? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4><ul>
@@ -557,7 +557,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 e-grading-instruction-section" aria-labelledby="section-title-3">
-    <h2 class="e-grading-instructions-section-title" id="section-title-3">Teil 3: Struktur und Vokabular</h2>
+    <h2 class="e-grading-instructions-section-title" id="section-title-3" data-annotation-anchor="section-title-3">Teil 3: Struktur und Vokabular</h2>
 
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="17" data-annotation-anchor="17"><div class="anchor" id="question-nr-17"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">17. </strong>Auswahl-Antwort-Test <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">16 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-17">Lesen Sie den folgenden Text und wählen Sie jeweils auf der Drop-Down-Liste die in den
         Textzusammenhang am besten passende Antwortalternative aus.
@@ -770,7 +770,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 e-grading-instruction-section" aria-labelledby="section-title-4">
-    <h2 class="e-grading-instructions-section-title" id="section-title-4">Teil 4: Schriftliche Produktion</h2>
+    <h2 class="e-grading-instructions-section-title" id="section-title-4" data-annotation-anchor="section-title-4">Teil 4: Schriftliche Produktion</h2>
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="21" data-annotation-anchor="21"><div class="anchor" id="question-nr-21"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">21. </strong>Kurze Schreibaufgabe <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">33 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-20">
         <span lang="fi-FI">
           <p>
@@ -830,7 +830,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   </section>
 
   <section class="e-section e-bg-color-off-white e-pad-6 e-grading-instruction-section" aria-labelledby="section-title-5">
-    <h2 class="e-grading-instructions-section-title" id="section-title-5">Teil 5: Termine und Wissenstest als drag-and-drop</h2>
+    <h2 class="e-grading-instructions-section-title" id="section-title-5" data-annotation-anchor="section-title-5">Teil 5: Termine und Wissenstest als drag-and-drop</h2>
     
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="23" data-annotation-anchor="23"><div class="anchor" id="question-nr-23"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">23. </strong>Termine und Wissenstest <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-27">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
         Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
