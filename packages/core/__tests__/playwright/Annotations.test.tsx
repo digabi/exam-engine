@@ -1,6 +1,6 @@
 import React from 'react'
 import { test, expect } from '@playwright/experimental-ct-react'
-import { setupMasteredExam, annotate } from './utils/utils'
+import { annotateText, annotateImage, setupMasteredExam } from './utils/utils'
 import { AnnotationsStory } from './stories/Annotations.story'
 import { ExamAnnotation } from '../../src'
 import { groupBy } from 'lodash'
@@ -16,7 +16,7 @@ test.describe('Annotations', () => {
     const component = await mount(<AnnotationsStory masteredExam={masteredExam} />)
     const element = component.locator('.exam-question-instruction')
 
-    await annotate(element, page)
+    await annotateText(element, page)
     await expect(component.getByTestId('e-popup')).not.toBeVisible()
   })
 
@@ -24,7 +24,7 @@ test.describe('Annotations', () => {
     mount,
     page
   }) => {
-    let callbackArgs = { newAnnotation: {}, comment: '', renderableAnnotation: {} }
+    let callbackArgs = { newAnnotation: {}, comment: '', annotationId: -1 }
     const existingAnnotations = [
       { id: 1, startIndex: 27, selectedText: 'pienempi' },
       { id: 2, startIndex: 166, selectedText: 'yhteisössä' },
@@ -39,9 +39,9 @@ test.describe('Annotations', () => {
     const component = await mount(
       <AnnotationsStory
         masteredExam={masteredExam}
-        annotations={createAnnotations(existingAnnotations)}
-        onClickAnnotation={(_event, renderableAnnotation) => {
-          callbackArgs = { ...callbackArgs, renderableAnnotation }
+        annotations={createTextAnnotations(existingAnnotations)}
+        onClickAnnotation={(_event, annotationId) => {
+          callbackArgs = { ...callbackArgs, annotationId }
         }}
         onSaveAnnotation={{
           fn: (newAnnotation, comment: string) => {
@@ -58,7 +58,7 @@ test.describe('Annotations', () => {
         for (const annotation of existingAnnotations.slice(0, 2)) {
           await expect(annotationLocator(annotation.id)).toBeVisible()
           await expect(annotationLocator(annotation.id)).toHaveText(annotation.selectedText)
-          await expect(annotationLocator(annotation.id).locator('sup')).toHaveAttribute(
+          await expect(annotationLocator(annotation.id).locator('+ sup')).toHaveAttribute(
             'data-content',
             annotation.id.toString()
           )
@@ -67,7 +67,7 @@ test.describe('Annotations', () => {
 
       await test.step('hidden annotations are hidden', async () => {
         await expect(annotationLocator(3)).toBeHidden()
-        await expect(annotationLocator(3).locator('sup')).toBeHidden()
+        await expect(annotationLocator(3).locator('+ sup')).toBeHidden()
         await expect(annotationLocator(3).locator('..')).toHaveAttribute(
           'data-annotation-path',
           'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > p:1 > #text:0'
@@ -77,27 +77,27 @@ test.describe('Annotations', () => {
       await test.step('if two annotations have same id, only latter renders <sup>', async () => {
         const marks = await annotationLocator(4).all()
         await expect(marks[0]).toHaveText('mikä')
-        await expect(marks[0].locator('sup')).not.toBeVisible()
+        await expect(marks[0].locator('+ sup')).not.toBeVisible()
         await expect(marks[1]).toHaveText('ero')
         await expect(marks[1]).toBeVisible()
-        await expect(marks[1].locator('sup')).toHaveAttribute('data-content', '4')
+        await expect(marks[1].locator('+ sup')).toHaveAttribute('data-content', '4')
       })
 
       await test.step('annotations can not overlap — overlapping annotations are not rendered', async () => {
         await expect(annotationLocator(5)).toBeVisible()
-        await expect(annotationLocator(5).locator('sup')).toBeVisible()
+        await expect(annotationLocator(5).locator('+ sup')).toBeVisible()
         await expect(annotationLocator(5)).toHaveText('esimerkiksi')
 
         await expect(annotationLocator(6)).toBeHidden()
-        await expect(annotationLocator(6).locator('sup')).toBeHidden()
+        await expect(annotationLocator(6).locator('+ sup')).toBeHidden()
         await expect(annotationLocator(6)).toHaveText('')
 
         await expect(annotationLocator(7)).toBeHidden()
-        await expect(annotationLocator(7).locator('sup')).toBeHidden()
+        await expect(annotationLocator(7).locator('+ sup')).toBeHidden()
         await expect(annotationLocator(7)).toHaveText('')
 
         await expect(annotationLocator(8)).toBeVisible()
-        await expect(annotationLocator(8).locator('sup')).toBeVisible()
+        await expect(annotationLocator(8).locator('+ sup')).toBeVisible()
         await expect(annotationLocator(8)).toHaveText('jokin koulu')
       })
     })
@@ -105,7 +105,7 @@ test.describe('Annotations', () => {
     await test.step('creating annotations', async () => {
       await test.step('annotation popup appears when text is selected', async () => {
         await expect(component.getByTestId('e-popup')).not.toBeVisible()
-        await annotate(annottatableElement, page)
+        await annotateText(annottatableElement, page)
         await expect(component.getByTestId('e-popup')).toBeVisible()
       })
 
@@ -125,13 +125,14 @@ test.describe('Annotations', () => {
               length: 27
             }
           ],
+          annotationType: 'text',
           displayNumber: '2',
           selectedText: 'Sekä moraali että tavat pyr'
         })
       })
 
       await test.step('popup field is empty when creating new annotation', async () => {
-        await annotate(annottatableElement, page)
+        await annotateText(annottatableElement, page)
         await expect(component.locator('.comment-content')).toHaveText('')
       })
 
@@ -143,16 +144,7 @@ test.describe('Annotations', () => {
       await test.step('callback is called when annotation is clicked', async () => {
         await component.locator('[data-annotation-id="1"]').click()
 
-        expect(callbackArgs.renderableAnnotation).toStrictEqual({
-          annotationAnchor: 'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > p:1 > #text:0',
-          annotationId: 1,
-          hidden: false,
-          length: 8,
-          resolved: undefined,
-          selectedText: 'pienempi',
-          startIndex: 27,
-          markNumber: 1
-        })
+        expect(callbackArgs.annotationId).toStrictEqual(1)
       })
     })
   })
@@ -165,14 +157,16 @@ test.describe('Annotations', () => {
     const component = await mount(
       <AnnotationsStory
         masteredExam={masteredExam}
-        annotations={createAnnotations([{ id: 1, startIndex: 166 - startIndexDifference, selectedText: 'yhteisössä' }])}
+        annotations={createTextAnnotations([
+          { id: 1, startIndex: 166 - startIndexDifference, selectedText: 'yhteisössä' }
+        ])}
         onClickAnnotation={() => {}}
         onSaveAnnotation={{ fn: () => {} }}
       />
     )
     await expect(component.locator('[data-annotation-id="1"]')).toBeVisible()
     await expect(component.locator('[data-annotation-id="1"]')).toHaveText('yhteisössä')
-    await expect(component.locator('[data-annotation-id="1"] sup')).toHaveAttribute('data-content', '1')
+    await expect(component.locator('[data-annotation-id="1"] + sup')).toHaveAttribute('data-content', '1')
   })
 
   test('annotation popup is not closed when annotation save fails', async ({ mount, page }) => {
@@ -187,18 +181,134 @@ test.describe('Annotations', () => {
     )
 
     await expect(component.getByTestId('e-popup')).not.toBeVisible()
-    await annotate(component.locator('.exam-question-instruction'), page)
+    await annotateText(component.locator('.exam-question-instruction'), page)
     await component.locator('.comment-content').fill('New comment')
     await component.getByText('Tallenna').click()
     await expect(component.getByTestId('e-popup')).toBeVisible()
     await expect(component.getByText(errorMessage)).toBeVisible()
   })
 
-  function createAnnotations(annotations: Annotation[]): ExamAnnotation[] {
+  test('formulas can be annotated with image annotations', async ({ mount, page }) => {
+    const masteredExam = await setupMasteredExam('N')
+
+    let callbackArgs = { newAnnotation: {}, comment: '', annotationId: -1 }
+    const component = await mount(
+      <AnnotationsStory
+        masteredExam={masteredExam}
+        annotations={[]}
+        onClickAnnotation={(_event, annotationId) => {
+          callbackArgs = { ...callbackArgs, annotationId }
+        }}
+        onSaveAnnotation={{
+          fn: (newAnnotation, comment: string) => {
+            callbackArgs = { ...callbackArgs, newAnnotation, comment }
+          }
+        }}
+      />
+    )
+    const annottatableElement = component.locator('.e-formula.e-annotatable').nth(0)
+
+    await test.step('creating annotations', async () => {
+      await test.step('annotation popup appears when text is selected', async () => {
+        await expect(component.getByTestId('e-popup')).not.toBeVisible()
+        await annotateImage(annottatableElement, page)
+        await expect(component.getByTestId('e-popup')).toBeVisible()
+      })
+
+      await test.step('callback is called when annotation is saved', async () => {
+        const textbox = component.locator('.comment-content')
+        await textbox.fill('New comment')
+        await component.getByText('Tallenna').click()
+
+        expect(callbackArgs.comment).toBe('New comment')
+        expect(callbackArgs.newAnnotation).toStrictEqual({
+          annotationType: 'image',
+          displayNumber: '2',
+          annotationAnchor:
+            'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > p:1 > e:formula:false',
+          description: 'kaava 4(x+1)=4x+4',
+          rect: {
+            x1: 0,
+            x2: 1,
+            y1: 0,
+            y2: 1
+          }
+        })
+      })
+    })
+  })
+
+  test('formulas can be annotated with text annotations', async ({ mount, page }) => {
+    const masteredExam = await setupMasteredExam('N')
+
+    let callbackArgs = { newAnnotation: {}, comment: '', annotationId: -1 }
+    const component = await mount(
+      <AnnotationsStory
+        masteredExam={masteredExam}
+        annotations={[]}
+        onClickAnnotation={(_event, annotationId) => {
+          callbackArgs = { ...callbackArgs, annotationId }
+        }}
+        onSaveAnnotation={{
+          fn: (newAnnotation, comment: string) => {
+            callbackArgs = { ...callbackArgs, newAnnotation, comment }
+          }
+        }}
+      />
+    )
+    const annottatableElement = component.locator('span.e-annotatable').nth(4)
+
+    await test.step('creating annotations', async () => {
+      await test.step('annotation popup appears when text is selected', async () => {
+        await expect(component.getByTestId('e-popup')).not.toBeVisible()
+        await annotateText(annottatableElement, page, 401)
+        await expect(component.getByTestId('e-popup')).toBeVisible()
+      })
+
+      await test.step('callback is called when annotation is saved', async () => {
+        const textbox = component.locator('.comment-content')
+        await textbox.fill('New comment')
+        await component.getByText('Tallenna').click()
+
+        expect(callbackArgs.comment).toBe('New comment')
+        expect(callbackArgs.newAnnotation).toStrictEqual({
+          annotationType: 'text',
+          displayNumber: '2',
+          selectedText: 'Ratkaise yhtälö  12(x-7)=24  kahdella eri tavalla, ',
+          annotationParts: [
+            {
+              annotationAnchor:
+                'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > ol:4 > li:0 > p:0 > #text:0',
+              length: 16,
+              selectedText: 'Ratkaise yhtälö ',
+              startIndex: 11
+            },
+            {
+              annotationAnchor:
+                'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > ol:4 > li:0 > p:0 > e:formula:false',
+              length: 10,
+              selectedText: '12(x-7)=24',
+              startIndex: 0
+            },
+            {
+              annotationAnchor:
+                'e:exam:0 > e:section:1 > e:question:2 > e:question-instruction:1 > span:0 > ol:4 > li:0 > p:0 > #text:2',
+              length: 23,
+              selectedText: ' kahdella eri tavalla, ',
+              startIndex: 0
+            }
+          ]
+        })
+      })
+    })
+  })
+
+  function createTextAnnotations(annotations: Annotation[]): ExamAnnotation[] {
     const annotationsById = groupBy(annotations, 'id')
     return Object.keys(annotationsById).map((id, index) => {
       const annotationParts = annotationsById[id]
       return {
+        annotationType: 'text',
         annotationId: Number(id),
         selectedText: annotations.map(a => a.selectedText).join(' '),
         type: 'text',

@@ -3,13 +3,13 @@ import { MasteringResult } from '@digabi/exam-engine-mastering'
 import Exam, { renderChildNodes } from '../../../../src/components/exam/Exam'
 import { ExamComponentWrapper } from '../../utils/ExamComponentWrapper'
 import parseExam from '../../../../src/parser/parseExam'
-import { ExamAnnotation, NewExamAnnotation, RenderableAnnotation } from '../../../../src'
+import { ExamAnnotation, NewExamAnnotation } from '../../../../src'
 import { examServerApi } from '../../../examServerApi'
 
 interface ExamStoryProps {
   masteredExam: MasteringResult
   annotations?: ExamAnnotation[]
-  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotation: RenderableAnnotation) => void
+  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotationId: number) => void
   onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => void
 }
 

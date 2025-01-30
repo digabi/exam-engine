@@ -3,19 +3,24 @@ import { AnnotationContext } from '../context/AnnotationProvider'
 import { Popup } from './Popup'
 
 export function AnnotationPopup() {
-  const { newAnnotation, setNewAnnotation, newAnnotationRef, setNewAnnotationRef, onSaveAnnotation } =
-    useContext(AnnotationContext)
+  const annotationContext = useContext(AnnotationContext)
 
-  if (!newAnnotation || !newAnnotationRef) {
+  if (
+    !annotationContext.annotationsEnabled ||
+    !annotationContext.newAnnotation ||
+    !annotationContext.newAnnotationRef
+  ) {
     return null
   }
+
+  const { newAnnotation, newAnnotationRef, setNewAnnotation, setNewAnnotationRef, onSaveAnnotation } = annotationContext
 
   return (
     <Popup
       element={newAnnotationRef}
       initialTextContent={''}
       onValueSave={async (comment: string) => {
-        const error = await onSaveAnnotation!(newAnnotation, comment)
+        const error = await onSaveAnnotation(newAnnotation, comment)
         if (!error) {
           setNewAnnotation(null)
           setNewAnnotationRef(null)

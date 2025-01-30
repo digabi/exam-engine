@@ -7,21 +7,23 @@ import { markText } from './markText'
 export const AnnotatableText = ({ node }: { node: Node }) => {
   const annotationContextData = useContext(AnnotationContext)
   const { isInSidebar } = useContext(IsInSidebarContext)
-  const { annotations, onClickAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
 
   const canNotBeAnnotated =
-    annotationContextData?.annotations === undefined ||
-    node.textContent?.trim().length === 0 ||
-    isInSidebar !== undefined
+    !annotationContextData.annotationsEnabled || node.textContent?.trim().length === 0 || isInSidebar !== undefined
 
   if (canNotBeAnnotated) {
     return node.textContent!
   }
 
+  const { textAnnotations, onClickAnnotation, setNewAnnotationRef, newAnnotation } = annotationContextData
+
   const path = getElementPath(node as Element)
 
-  const newAnnotationPartsForThisNode = newAnnotation?.annotationParts?.filter(p => p.annotationAnchor === path) || []
-  const savedAnnotationsForThisNode = annotations?.[path] || []
+  const newAnnotationPartsForThisNode =
+    newAnnotation?.annotationType === 'text'
+      ? newAnnotation?.annotationParts?.filter(p => p.annotationAnchor === path) || []
+      : []
+  const savedAnnotationsForThisNode = textAnnotations?.[path] || []
   const allAnnotationsForThisNode = [...savedAnnotationsForThisNode, ...newAnnotationPartsForThisNode]
 
   return (

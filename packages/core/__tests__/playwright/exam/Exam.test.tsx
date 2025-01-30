@@ -1,6 +1,6 @@
 import React from 'react'
 import { test, expect } from '@playwright/experimental-ct-react'
-import { setupMasteredExam, annotate } from '../utils/utils'
+import { setupMasteredExam, annotateText } from '../utils/utils'
 import { ExamStory } from '../stories/exam/Exam.story'
 
 test.describe('Annotations', () => {
@@ -26,7 +26,7 @@ test.describe('Annotations', () => {
     const textbox = component.locator('.comment-content')
 
     await expect(annottatableElement).toBeVisible()
-    await annotate(annottatableElement, page)
+    await annotateText(annottatableElement, page)
     await expect(component.getByTestId('e-popup')).toBeVisible()
 
     await textbox.fill('New comment')

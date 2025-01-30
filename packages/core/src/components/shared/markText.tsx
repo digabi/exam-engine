@@ -1,15 +1,14 @@
 import * as _ from 'lodash-es'
 import React from 'react'
-import { NewRenderableAnnotation, RenderableAnnotation } from '../../types/Score'
-import { AnnotationMark } from './AnnotationMark'
+import { AnnotationPart, WithAnnotationId } from '../../types/ExamAnnotations'
+import AnnotationMark from './AnnotationTextMark'
+import HiddenAnnotationMark from './HiddenAnnotationMark'
 
-function getKey(annotation: RenderableAnnotation | NewRenderableAnnotation) {
+export function getKey(annotation: AnnotationPart) {
   return isExistingAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
 }
 
-export function isExistingAnnotation(
-  annotation: NewRenderableAnnotation | RenderableAnnotation
-): annotation is RenderableAnnotation {
+export function isExistingAnnotation(annotation: AnnotationPart): annotation is WithAnnotationId<AnnotationPart> {
   return 'annotationId' in annotation
 }
 
@@ -19,8 +18,8 @@ function getMarkedText(text: string, startIndex: number, length: number) {
 
 export function markText(
   text: string,
-  annotations: (RenderableAnnotation | NewRenderableAnnotation)[],
-  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, a: RenderableAnnotation) => void,
+  annotations: AnnotationPart[],
+  onClickAnnotation: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotationId: number) => void,
   setNewAnnotationRef: (ref: HTMLElement | null) => void
 ) {
   if (annotations.length === 0) {
@@ -50,22 +49,19 @@ export function markText(
   const onlyLeadingSpacesRemoved = text.replace(/^\s+/, ' ')
   const indentationSize = text.length - onlyLeadingSpacesRemoved.length
 
-  const notOverlappingAnnotations = visibleAnnotations.reduce(
-    (acc, annotation) => {
-      const overlapsWithAnyVisibleAnnotation = acc.some(
-        a =>
-          annotation.startIndex < a.startIndex + a.length &&
-          a.startIndex < annotation.startIndex + annotation.length &&
-          !a.hidden
-      )
-      acc.push({
-        ...annotation,
-        hidden: annotation.hidden || overlapsWithAnyVisibleAnnotation
-      })
-      return acc
-    },
-    [] as (RenderableAnnotation | NewRenderableAnnotation)[]
-  )
+  const notOverlappingAnnotations = visibleAnnotations.reduce((acc, annotation) => {
+    const overlapsWithAnyVisibleAnnotation = acc.some(
+      a =>
+        annotation.startIndex < a.startIndex + a.length &&
+        a.startIndex < annotation.startIndex + annotation.length &&
+        !a.hidden
+    )
+    acc.push({
+      ...annotation,
+      hidden: annotation.hidden || overlapsWithAnyVisibleAnnotation
+    })
+    return acc
+  }, [] as AnnotationPart[])
 
   for (const annotation of notOverlappingAnnotations) {
     /* "August 2024 annotation" refers to annotations made on or after 7.8.2024, and on or before x.8.2024.
@@ -106,20 +102,16 @@ export function markText(
     const key = getKey(annotation)
     nodes.push(
       annotation.hidden ? (
-        <mark
-          key={key}
-          className="e-annotation"
-          data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
-          data-hidden="true"
-        />
+        <HiddenAnnotationMark annotationId={isExistingAnnotation(annotation) ? annotation.annotationId : null} />
       ) : (
         <AnnotationMark
           key={key}
           annotation={annotation}
-          markedText={annotatedTextWithCorrectedStartIndex}
           onClickAnnotation={onClickAnnotation}
           setNewAnnotationRef={setNewAnnotationRef}
-        />
+        >
+          {annotatedTextWithCorrectedStartIndex}
+        </AnnotationMark>
       )
     )
 

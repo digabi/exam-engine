@@ -1,8 +1,8 @@
 import React from 'react'
-import { AnnotationPart } from '../../types/Score'
+import { AnnotationPart, NewExamAnnotation } from '../../types/ExamAnnotations'
 import { textAnnotationFromRange } from './editAnnotations'
 
-export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (e: any) => void) {
+export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (a: NewExamAnnotation) => void) {
   function onMouseUpAfterAnswerMouseDown() {
     window.removeEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
 
@@ -12,10 +12,12 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
      */
 
     const selection = window.getSelection()
-    const startNode = selection?.anchorNode?.parentElement
-    const endNode = selection?.focusNode?.parentElement
+    if (selection === null) return
 
-    if (selection && startNode && endNode && selection.toString().length > 0) {
+    const startNode = selection.getRangeAt(0).startContainer.parentElement
+    const endNode = selection.getRangeAt(selection.rangeCount - 1).endContainer.parentElement
+
+    if (startNode && endNode && selection.toString().length > 0) {
       const hasMarks = selectionContainsNonhiddenMarks(selection)
       const startNodedisplayNumber = getDisplayNumber(startNode)
       const endNodeDisplayNumber = getDisplayNumber(endNode)
@@ -28,8 +30,9 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       ) {
         const annotations = extractAnnotationsFromSelection(selection)
         mouseUpCallback({
+          annotationType: 'text',
           annotationParts: annotations,
-          displayNumber: startNodedisplayNumber,
+          displayNumber: startNodedisplayNumber ?? '',
           selectedText: annotations.map(a => a.selectedText).join(' ')
         })
       }
@@ -58,59 +61,66 @@ const getDisplayNumber = (node: HTMLElement) =>
 const isAnnotatable = (node: HTMLElement) => node?.getAttribute('data-annotation-path') && node.tagName !== 'MARK'
 
 const extractAnnotationsFromSelection = (selection: Selection) => {
-  const range = selection.getRangeAt(0)
-  const rangeChildren = Array.from(selection?.getRangeAt(0).cloneContents().children)
-  const firstSelectedNodeInDOM = range.startContainer.parentElement
+  const ranges: Range[] = []
+  for (let i = 0; i < selection.rangeCount; i++) {
+    const range = selection.getRangeAt(i)
+    ranges.push(range)
+  }
 
-  if (!rangeChildren?.length) {
-    // selection is plain text
-    const annotationAnchor = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
-    const startAndLength = textAnnotationFromRange(firstSelectedNodeInDOM as HTMLElement, range)
-    return [
-      {
+  const annotations = ranges.reduce((annotations, range, rangeIndex) => {
+    const firstNode = range.startContainer.parentElement
+    const rangeElements = Array.from(range.cloneContents().children)
+
+    if (!firstNode) return annotations
+
+    if (rangeElements.length === 0) {
+      const annotationAnchor = firstNode.getAttribute('data-annotation-path')
+      if (!annotationAnchor) return annotations
+
+      const startAndLength = textAnnotationFromRange(firstNode, range)
+      annotations.push({
         annotationAnchor,
-        selectedText: selection?.toString() || '',
-        startIndex: startAndLength?.startIndex || 0,
-        length: startAndLength?.length || 0
-      }
-    ] as AnnotationPart[]
-  } else {
-    // selection is in multiple elements
-    const annotations = rangeChildren?.reduce((acc, child, index, arr) => {
-      const childsAnnotationPath = child.getAttribute('data-annotation-path')
-      const isLastRangeChild = index === arr.length - 1
+        selectedText: selection?.toString() ?? '',
+        startIndex: startAndLength?.startIndex ?? 0,
+        length: startAndLength?.length ?? 0
+      })
+    }
+
+    rangeElements.forEach((element, elementIndex) => {
+      const childsAnnotationPath = element.getAttribute('data-annotation-path')
+      const isFirstRangeChild = rangeIndex === 0 && elementIndex === 0
+      const isLastRangeChild = rangeIndex === ranges.length - 1 && elementIndex === rangeElements.length - 1
       if (childsAnnotationPath) {
-        // child is a text node, like <span> text </span>
-        const newElement = {
+        // child is an annotable node, like <span> text </span> or <e:formula>...</e:formula>
+        const textContent = element.getAttribute('data-annotation-content') ?? element.textContent ?? ''
+        const annotationPart = {
           annotationAnchor: childsAnnotationPath,
-          selectedText: child.textContent || '',
-          startIndex: index === 0 ? range.startOffset : 0,
-          length: isLastRangeChild ? range.endOffset : child.textContent?.length || 0
+          selectedText: textContent,
+          startIndex: isFirstRangeChild ? range.startOffset : 0,
+          length: isLastRangeChild ? range.endOffset : textContent.length
         }
-        return [...acc, newElement]
+        annotations.push(annotationPart)
       } else {
         // child is a node with children, like <b> <span> text </span> </b>
-        const allChildrenWithAnnotationPath = child.querySelectorAll('[data-annotation-path]')
-        allChildrenWithAnnotationPath?.forEach((grandChild, kidIndex) => {
-          const dataAnnotationPath = grandChild.getAttribute('data-annotation-path')
+        const allChildrenWithAnnotationPath = element.querySelectorAll('[data-annotation-path]')
+        allChildrenWithAnnotationPath.forEach(child => {
+          const dataAnnotationPath = child.getAttribute('data-annotation-path')
+          const textContent = child.getAttribute('data-annotation-content') ?? child.textContent ?? ''
           if (dataAnnotationPath) {
-            const isFirstOfAll = index === 0 && kidIndex === 0
-            const isLastGrandChild = kidIndex === allChildrenWithAnnotationPath.length - 1
-            const isLastOfAll = isLastRangeChild && isLastGrandChild
-            const startAndLength = textAnnotationFromRange(firstSelectedNodeInDOM as HTMLElement, range)
-            const newElement = {
+            const startAndLength = textAnnotationFromRange(firstNode, range)
+            const annotationPart = {
               annotationAnchor: dataAnnotationPath,
-              selectedText: grandChild.textContent || '',
-              startIndex: isFirstOfAll ? startAndLength?.startIndex || 0 : 0,
-              length: isLastOfAll ? range.endOffset : grandChild.textContent?.length || 0
+              selectedText: textContent,
+              startIndex: isFirstRangeChild ? (startAndLength?.startIndex ?? 0) : 0,
+              length: isLastRangeChild ? range.endOffset : textContent.length
             }
-            acc.push(newElement)
+            annotations.push(annotationPart)
           }
         })
-        return acc
       }
-    }, [] as AnnotationPart[])
-
+    })
     return annotations
-  }
+  }, [] as AnnotationPart[])
+
+  return annotations
 }
