@@ -1,13 +1,9 @@
 import * as _ from 'lodash-es'
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { AnnotationPart, ExamImageAnnotation, NewExamAnnotation, WithAnnotationId } from '../../types/ExamAnnotations'
 import { AnnotationProps } from '../exam/Exam'
 import { onMouseDownForAnnotation } from '../grading/examAnnotationUtils'
 import { AnnotationPopup } from '../shared/AnnotationPopup'
-
-interface Props {
-  children: React.ReactNode
-}
 
 export type AnnotationContextType = {
   annotationsEnabled: true
@@ -30,29 +26,51 @@ export const AnnotationProvider = ({
   annotations,
   onClickAnnotation,
   onSaveAnnotation
-}: Props & AnnotationProps) => {
-  const [newAnnotation, setNewAnnotation] = React.useState<NewExamAnnotation | null>(null)
-  const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement | null>(null)
-
-  const mouseUpCallback = (annotation: NewExamAnnotation) => {
-    setNewAnnotation(annotation)
-  }
-
-  function onMouseDown(e: React.MouseEvent) {
-    const target = e.target as Element
-    const clickIsInPopup = !!target.closest('.e-popup')
-    if (!clickIsInPopup) {
-      setNewAnnotation(null)
-      setNewAnnotationRef(null)
-    }
-    onMouseDownForAnnotation(e, mouseUpCallback)
-  }
-
+}: React.PropsWithChildren<AnnotationProps>) => {
   const annotationsEnabled = !!annotations && !!onClickAnnotation && !!onSaveAnnotation
 
   if (!annotationsEnabled) {
     return children
   }
+
+  return (
+    <AnnotationContextProvider
+      annotations={annotations}
+      onClickAnnotation={onClickAnnotation}
+      onSaveAnnotation={onSaveAnnotation}
+    >
+      {children}
+    </AnnotationContextProvider>
+  )
+}
+
+type NonNullableAnnotationProps = {
+  annotations: NonNullable<AnnotationProps['annotations']>
+  onClickAnnotation: NonNullable<AnnotationProps['onClickAnnotation']>
+  onSaveAnnotation: NonNullable<AnnotationProps['onSaveAnnotation']>
+}
+
+function AnnotationContextProvider({
+  children,
+  annotations,
+  onClickAnnotation,
+  onSaveAnnotation
+}: React.PropsWithChildren<NonNullableAnnotationProps>) {
+  const [newAnnotation, setNewAnnotation] = React.useState<NewExamAnnotation | null>(null)
+  const [newAnnotationRef, setNewAnnotationRef] = React.useState<HTMLElement | null>(null)
+
+  const onMouseDown = useCallback(
+    (e: React.MouseEvent) => {
+      const target = e.target as Element
+      const clickIsInPopup = !!target.closest('.e-popup')
+      if (!clickIsInPopup) {
+        setNewAnnotation(null)
+        setNewAnnotationRef(null)
+      }
+      onMouseDownForAnnotation(e, setNewAnnotation)
+    },
+    [setNewAnnotation, setNewAnnotationRef, onMouseDownForAnnotation]
+  )
 
   const textAnnotations: AnnotationContextType['textAnnotations'] = useMemo(
     () =>
