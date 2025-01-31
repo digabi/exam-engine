@@ -73,48 +73,51 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
 
     if (!firstNode) return annotations
 
+    const getAnnotationPart = (node: Element, isFirst: boolean, isLast: boolean) => {
+      const annotationAnchor = node.getAttribute('data-annotation-path')
+      if (!annotationAnchor) {
+        return undefined
+      }
+
+      const selectedText = node.getAttribute('data-annotation-content') ?? node.textContent ?? ''
+      if (isFirst) {
+        const { startIndex, length } = textAnnotationFromRange(firstNode, range) ?? { startIndex: 0, length: 0 }
+        return { annotationAnchor, selectedText, startIndex, length }
+      }
+      if (isLast) {
+        return { annotationAnchor, selectedText, startIndex: 0, length: range.endOffset }
+      }
+      return { annotationAnchor, selectedText, startIndex: 0, length: selectedText.length }
+    }
+
     if (rangeElements.length === 0) {
       const annotationAnchor = firstNode.getAttribute('data-annotation-path')
       if (!annotationAnchor) return annotations
 
-      const startAndLength = textAnnotationFromRange(firstNode, range)
-      annotations.push({
-        annotationAnchor,
-        selectedText: selection?.toString() ?? '',
-        startIndex: startAndLength?.startIndex ?? 0,
-        length: startAndLength?.length ?? 0
-      })
+      const annotationPart = getAnnotationPart(firstNode, true, true)
+      if (annotationPart) {
+        annotations.push(annotationPart)
+      }
     }
 
     rangeElements.forEach((element, elementIndex) => {
-      const childsAnnotationPath = element.getAttribute('data-annotation-path')
-      const isFirstRangeChild = rangeIndex === 0 && elementIndex === 0
-      const isLastRangeChild = rangeIndex === ranges.length - 1 && elementIndex === rangeElements.length - 1
-      if (childsAnnotationPath) {
-        // child is an annotable node, like <span> text </span> or <e:formula>...</e:formula>
-        const textContent = element.getAttribute('data-annotation-content') ?? element.textContent ?? ''
-        const annotationPart = {
-          annotationAnchor: childsAnnotationPath,
-          selectedText: textContent,
-          startIndex: isFirstRangeChild ? range.startOffset : 0,
-          length: isLastRangeChild ? range.endOffset : textContent.length
-        }
+      const isFirstRangeElement = rangeIndex === 0 && elementIndex === 0
+      const isLastRangeElement = rangeIndex === ranges.length - 1 && elementIndex === rangeElements.length - 1
+
+      const annotationPart = getAnnotationPart(element, isFirstRangeElement, isLastRangeElement)
+      if (annotationPart) {
         annotations.push(annotationPart)
       } else {
         // child is a node with children, like <b> <span> text </span> </b>
         const allChildrenWithAnnotationPath = element.querySelectorAll('[data-annotation-path]')
-        allChildrenWithAnnotationPath.forEach(child => {
-          const dataAnnotationPath = child.getAttribute('data-annotation-path')
-          const textContent = child.getAttribute('data-annotation-content') ?? child.textContent ?? ''
-          if (dataAnnotationPath) {
-            const startAndLength = textAnnotationFromRange(firstNode, range)
-            const annotationPart = {
-              annotationAnchor: dataAnnotationPath,
-              selectedText: textContent,
-              startIndex: isFirstRangeChild ? (startAndLength?.startIndex ?? 0) : 0,
-              length: isLastRangeChild ? range.endOffset : textContent.length
-            }
-            annotations.push(annotationPart)
+
+        allChildrenWithAnnotationPath.forEach((child, childIndex) => {
+          const isFirstChildOfFirstElement = isFirstRangeElement && childIndex === 0
+          const isLastChildOfLastElement = isLastRangeElement && childIndex === allChildrenWithAnnotationPath.length - 1
+
+          const childAnnotationPart = getAnnotationPart(child, isFirstChildOfFirstElement, isLastChildOfLastElement)
+          if (childAnnotationPart) {
+            annotations.push(childAnnotationPart)
           }
         })
       }
