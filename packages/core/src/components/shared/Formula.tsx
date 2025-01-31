@@ -6,7 +6,7 @@ import { getAttribute, getElementPath } from '../../dom-utils'
 import { AnnotationContext, AnnotationContextType } from '../context/AnnotationProvider'
 import { IsInSidebarContext } from '../context/IsInSidebarContext'
 import { isExistingAnnotation } from './markText'
-import AnnotationMark from './AnnotationTextMark'
+import AnnotationTextMark from './AnnotationTextMark'
 import HiddenAnnotationMark from './HiddenAnnotationMark'
 import { AnnotationImageMark, useImageAnnotation } from './AnnotationImageMark'
 
@@ -59,12 +59,12 @@ const AnnotatableFormula = React.memo(function AnnotatableFormula(
 
   const textMarks = textElementAnnotations.map(annotation => {
     const annotationId = isExistingAnnotation(annotation) ? annotation.annotationId : null
-    const key = `${annotationId ?? 0}_${annotation.startIndex}`
+    const key = `${annotationId ?? 0}_${annotation.annotationAnchor}`
     if (annotation.hidden) {
       return <HiddenAnnotationMark key={key} annotationId={annotationId} />
     }
     return (
-      <AnnotationMark
+      <AnnotationTextMark
         key={key}
         annotation={annotation}
         onClickAnnotation={onClickAnnotation}
@@ -93,28 +93,28 @@ const AnnotatableFormula = React.memo(function AnnotatableFormula(
       )
     })
     .concat(
-      newAnnotation?.annotationType === 'image' && newAnnotation.annotationAnchor === path
-        ? [
-            <AnnotationImageMark
-              key="new-annotation-mark"
-              rect={newAnnotation.rect}
-              onClickAnnotation={onClickAnnotation}
-              setNewAnnotationRef={setNewAnnotationRef}
-            />
-          ]
-        : []
+      newAnnotation?.annotationType === 'image' && newAnnotation.annotationAnchor === path ? (
+        <AnnotationImageMark
+          key="new-annotation-mark"
+          rect={newAnnotation.rect}
+          onClickAnnotation={onClickAnnotation}
+          setNewAnnotationRef={setNewAnnotationRef}
+        />
+      ) : (
+        []
+      )
     )
     .concat(
-      annotationRect
-        ? [
-            <AnnotationImageMark
-              key="annotation-rect"
-              rect={annotationRect}
-              onClickAnnotation={onClickAnnotation}
-              setNewAnnotationRef={setNewAnnotationRef}
-            />
-          ]
-        : []
+      annotationRect ? (
+        <AnnotationImageMark
+          key="annotation-rect"
+          rect={annotationRect}
+          onClickAnnotation={onClickAnnotation}
+          setNewAnnotationRef={setNewAnnotationRef}
+        />
+      ) : (
+        []
+      )
     )
 
   return (
