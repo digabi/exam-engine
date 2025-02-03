@@ -12,10 +12,16 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
      */
 
     const selection = window.getSelection()
-    const startNode = selection?.anchorNode?.parentElement
-    const endNode = selection?.focusNode?.parentElement
+    const initialStartNode = selection?.anchorNode?.parentElement
+    const initialEndNode = selection?.focusNode?.parentElement
 
-    if (selection && startNode && endNode && selection.toString().length > 0) {
+    if (selection && initialStartNode && initialEndNode && selection.toString().length > 0) {
+      const isReversed = initialStartNode.compareDocumentPosition(initialEndNode) & Node.DOCUMENT_POSITION_PRECEDING
+      const startNode = findAnnotatableNode(
+        initialStartNode,
+        isReversed ? 'previousElementSibling' : 'nextElementSibling'
+      )
+      const endNode = findAnnotatableNode(initialEndNode, isReversed ? 'nextElementSibling' : 'previousElementSibling')
       const hasMarks = selectionContainsNonhiddenMarks(selection)
       const startNodedisplayNumber = getDisplayNumber(startNode)
       const endNodeDisplayNumber = getDisplayNumber(endNode)
@@ -42,6 +48,23 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
     return
   }
   window.addEventListener('mouseup', onMouseUpAfterAnswerMouseDown)
+}
+
+const findAnnotatableNode = (
+  node: HTMLElement,
+  siblingDirection: 'nextElementSibling' | 'previousElementSibling'
+): HTMLElement => {
+  if (node.matches('.e-annotatable')) {
+    return node
+  }
+  const sibling = node[siblingDirection] as HTMLElement | null
+  if (sibling instanceof HTMLElement) {
+    if (sibling.matches('.e-annotatable')) {
+      return sibling
+    }
+    return (sibling.querySelector('.e-annotatable') as HTMLElement) || findAnnotatableNode(sibling, siblingDirection)
+  }
+  return node
 }
 
 const selectionContainsNonhiddenMarks = (selection: Selection) => {

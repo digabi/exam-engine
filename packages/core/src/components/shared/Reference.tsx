@@ -33,7 +33,7 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
     return (
       childElement && (
         <React.Fragment key={childElement.localName}>
-          {t(translationKey)}{' '}
+          <span>{t(translationKey)} </span>
           <Component {...{ element: childElement, renderChildNodes, key: childElement.localName }} />
         </React.Fragment>
       )
@@ -42,8 +42,9 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
 
   return (
     <span className={classNames('e-break-word', { 'e-line-through': getBooleanAttribute(element, 'hidden') })}>
-      {t('references.source')}
-      {NBSP}
+      <span>
+        {t('references.source')} {NBSP}
+      </span>
       {intersperse('. ', [
         renderWith('author', RenderChildNodes),
         renderWith('title', Italic),
@@ -72,12 +73,12 @@ function Link({ element, renderChildNodes }: ExamComponentProps) {
 function AsDate({ element }: ExamComponentProps) {
   const textContent = element.textContent!
   if (/^[0-9]{4}$/.test(textContent)) {
-    return <>{textContent}</>
+    return <span>{textContent}</span>
   } else {
     // The XML tag might contain leading or trailing whitespace, which breaks Date parsing.
     const date = new Date(textContent.trim())
     const { dateTimeFormatter } = useContext(CommonExamContext)
-    return <>{dateTimeFormatter.format(date)}</>
+    return <span>{dateTimeFormatter.format(date)}</span>
   }
 }
 
@@ -85,7 +86,7 @@ function intersperse(separator: string, contents: React.ReactNode[]): React.Reac
   return contents.filter(Boolean).reduce<React.ReactNode[]>((acc, curr, i) => {
     acc.push(curr)
     if (i !== contents.length - 1) {
-      acc.push(separator)
+      acc.push(<span key={i}>{separator}</span>)
     }
     return acc
   }, [])
