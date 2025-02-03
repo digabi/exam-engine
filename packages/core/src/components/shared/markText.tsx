@@ -1,11 +1,13 @@
 import * as _ from 'lodash-es'
 import React from 'react'
 import { AnnotationPart, WithAnnotationId } from '../../types/ExamAnnotations'
-import AnnotationMark from './AnnotationTextMark'
+import AnnotationTextMark from './AnnotationTextMark'
 import HiddenAnnotationMark from './HiddenAnnotationMark'
 
 export function getKey(annotation: AnnotationPart) {
-  return isExistingAnnotation(annotation) ? annotation.annotationId + annotation.startIndex : annotation.startIndex
+  return isExistingAnnotation(annotation)
+    ? annotation.annotationId + annotation.annotationAnchor
+    : annotation.annotationAnchor
 }
 
 export function isExistingAnnotation(annotation: AnnotationPart): annotation is WithAnnotationId<AnnotationPart> {
@@ -34,14 +36,8 @@ export function markText(
 
   hiddenAnnotations.forEach(annotation => {
     const key = getKey(annotation)
-    nodes.push(
-      <mark
-        key={key}
-        className="e-annotation"
-        data-annotation-id={isExistingAnnotation(annotation) ? annotation.annotationId : ''}
-        data-hidden="true"
-      />
-    )
+    const annotationId = isExistingAnnotation(annotation) ? annotation.annotationId : null
+    nodes.push(<HiddenAnnotationMark key={key} annotationId={annotationId} />)
   })
 
   let lastIndex = 0
@@ -100,18 +96,19 @@ export function markText(
 
     // Add marked text
     const key = getKey(annotation)
+    const annotationId = isExistingAnnotation(annotation) ? annotation.annotationId : null
     nodes.push(
       annotation.hidden ? (
-        <HiddenAnnotationMark annotationId={isExistingAnnotation(annotation) ? annotation.annotationId : null} />
+        <HiddenAnnotationMark key={key} annotationId={annotationId} />
       ) : (
-        <AnnotationMark
+        <AnnotationTextMark
           key={key}
           annotation={annotation}
           onClickAnnotation={onClickAnnotation}
           setNewAnnotationRef={setNewAnnotationRef}
         >
           {annotatedTextWithCorrectedStartIndex}
-        </AnnotationMark>
+        </AnnotationTextMark>
       )
     )
 

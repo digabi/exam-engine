@@ -5,8 +5,6 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getAttribute, getElementPath } from '../../dom-utils'
 import { AnnotationContext, AnnotationContextType } from '../context/AnnotationProvider'
 import { IsInSidebarContext } from '../context/IsInSidebarContext'
-import { isExistingAnnotation } from './markText'
-import AnnotationMark from './AnnotationTextMark'
 import HiddenAnnotationMark from './HiddenAnnotationMark'
 import { AnnotationImageMark, useImageAnnotation } from './AnnotationImageMark'
 
@@ -26,10 +24,14 @@ export default React.memo(function Formula({ element, className }: Props) {
 
 // eslint-disable-next-line prefer-arrow-callback
 const PlainFormula = React.memo(function PlainFormula(props: Props) {
-  const { svg, assistiveTitle, className } = useElementAttributes(props)
+  const { svg, assistiveTitle, isDisplayFormula } = useElementAttributes(props)
   return (
     <>
-      <span className={className} dangerouslySetInnerHTML={{ __html: svg }} aria-hidden="true" />
+      <span
+        className={classNames('e-formula', { 'e-block e-text-center': isDisplayFormula }, props.className)}
+        dangerouslySetInnerHTML={{ __html: svg }}
+        aria-hidden="true"
+      />
       <AssistiveTitle assistiveTitle={assistiveTitle} />
     </>
   )
@@ -44,35 +46,11 @@ const AssistiveTitle = React.memo(function AssistiveTitle({ assistiveTitle }: { 
 const AnnotatableFormula = React.memo(function AnnotatableFormula(
   props: Props & { annotationContext: AnnotationContextType }
 ) {
-  const { textAnnotations, imageAnnotations, onClickAnnotation, setNewAnnotationRef, newAnnotation, setNewAnnotation } =
+  const { imageAnnotations, onClickAnnotation, setNewAnnotationRef, newAnnotation, setNewAnnotation } =
     props.annotationContext
-  const { svg, assistiveTitle, textContent, className } = useElementAttributes(props)
+  const { svg, assistiveTitle, isDisplayFormula, textContent } = useElementAttributes(props)
   const path = getElementPath(props.element)
   const { elementRef, annotationRect, onMouseDown } = useImageAnnotation(path, `kaava ${textContent}`, setNewAnnotation)
-
-  const textElementAnnotations = [
-    ...(textAnnotations[path] ?? []),
-    ...(newAnnotation?.annotationType === 'text'
-      ? (newAnnotation?.annotationParts?.filter(p => p.annotationAnchor === path) ?? [])
-      : [])
-  ]
-
-  const textMarks = textElementAnnotations.map(annotation => {
-    const annotationId = isExistingAnnotation(annotation) ? annotation.annotationId : null
-    const key = `${annotationId ?? 0}_${annotation.startIndex}`
-    if (annotation.hidden) {
-      return <HiddenAnnotationMark key={key} annotationId={annotationId} />
-    }
-    return (
-      <AnnotationMark
-        key={key}
-        annotation={annotation}
-        onClickAnnotation={onClickAnnotation}
-        setNewAnnotationRef={setNewAnnotationRef}
-        __html={svg}
-      />
-    )
-  })
 
   const imageMarks = (imageAnnotations[path] ?? [])
     .map(({ annotationId, markNumber, resolved, hidden, rect }) => {
@@ -93,43 +71,44 @@ const AnnotatableFormula = React.memo(function AnnotatableFormula(
       )
     })
     .concat(
-      newAnnotation?.annotationType === 'image' && newAnnotation.annotationAnchor === path
-        ? [
-            <AnnotationImageMark
-              key="new-annotation-mark"
-              rect={newAnnotation.rect}
-              onClickAnnotation={onClickAnnotation}
-              setNewAnnotationRef={setNewAnnotationRef}
-            />
-          ]
-        : []
+      newAnnotation?.annotationType === 'image' && newAnnotation.annotationAnchor === path ? (
+        <AnnotationImageMark
+          key="new-annotation-mark"
+          rect={newAnnotation.rect}
+          onClickAnnotation={onClickAnnotation}
+          setNewAnnotationRef={setNewAnnotationRef}
+        />
+      ) : (
+        []
+      )
     )
     .concat(
-      annotationRect
-        ? [
-            <AnnotationImageMark
-              key="annotation-rect"
-              rect={annotationRect}
-              onClickAnnotation={onClickAnnotation}
-              setNewAnnotationRef={setNewAnnotationRef}
-            />
-          ]
-        : []
+      annotationRect ? (
+        <AnnotationImageMark
+          key="annotation-rect"
+          rect={annotationRect}
+          onClickAnnotation={onClickAnnotation}
+          setNewAnnotationRef={setNewAnnotationRef}
+        />
+      ) : (
+        []
+      )
     )
 
   return (
     <>
       <span
         ref={elementRef}
-        className={className}
+        className={classNames(
+          'e-formula e-annotatable',
+          { 'e-block e-text-center': isDisplayFormula },
+          props.className
+        )}
         aria-hidden="true"
-        data-annotation-path={path}
-        data-annotation-content={textContent}
         data-testid={path}
         onMouseDown={onMouseDown}
       >
-        {textMarks.length > 0 ? null : <span dangerouslySetInnerHTML={{ __html: svg }} />}
-        {textMarks}
+        <span dangerouslySetInnerHTML={{ __html: svg }} />
         {imageMarks}
       </span>
       <AssistiveTitle assistiveTitle={assistiveTitle} />
@@ -142,11 +121,6 @@ function useElementAttributes(props: Props) {
   const textContent = props.element.textContent?.trim()
   const assistiveTitle = (getAttribute(props.element, 'assistive-title') || textContent) ?? ''
   const isDisplayFormula = getAttribute(props.element, 'mode') === 'display'
-  const className = classNames(
-    'e-formula e-annotatable',
-    { 'e-block e-text-center': isDisplayFormula },
-    props.className
-  )
 
-  return { svg, assistiveTitle, textContent, className }
+  return { svg, assistiveTitle, isDisplayFormula, textContent }
 }
