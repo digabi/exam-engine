@@ -43,7 +43,8 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
   return (
     <span className={classNames('e-break-word', { 'e-line-through': getBooleanAttribute(element, 'hidden') })}>
       <span>
-        {t('references.source')} {NBSP}
+        {t('references.source')}
+        {NBSP}
       </span>
       {intersperse('. ', [
         renderWith('author', RenderChildNodes),
