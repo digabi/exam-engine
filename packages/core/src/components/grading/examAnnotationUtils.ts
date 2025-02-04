@@ -62,7 +62,6 @@ const extractAnnotationsFromSelection = (selection: Selection) => {
   const range = selection.getRangeAt(0)
   const rangeChildren = Array.from(selection?.getRangeAt(0).cloneContents().children)
   const firstSelectedNodeInDOM = range.startContainer.parentElement
-
   if (!rangeChildren?.length) {
     // selection is plain text
     const annotationAnchor = selection?.focusNode?.parentElement?.getAttribute('data-annotation-path')
