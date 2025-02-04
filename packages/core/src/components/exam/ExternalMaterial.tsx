@@ -10,7 +10,7 @@ import { CommonExamContext } from '../context/CommonExamContext'
 const renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),
   'attachment-title': AttachmentTitle
-})
+})()
 
 function Attachment({ element }: ExamComponentProps) {
   const { displayNumber } = useContext(AttachmentContext)

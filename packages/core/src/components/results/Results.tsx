@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useMemo } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { GradingStructure, Score } from '../..'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
@@ -51,7 +51,7 @@ export interface ResultsProps extends CommonExamProps {
   isPreviewPage?: boolean
 }
 
-const renderChildNodes = createRenderChildNodes({
+const _renderChildNodes = createRenderChildNodes({
   attachment: RenderChildNodes,
   'attachment-link': mkAttachmentLink('plain'),
   'attachment-links': mkAttachmentLinks('plain'),
@@ -80,11 +80,13 @@ const Results: React.FunctionComponent<ResultsProps> = ({
   returnToExam,
   endSession,
   studentSessionEnded = false,
-  isPreviewPage
+  isPreviewPage,
+  renderComponentOverrides
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
   const { answersByQuestionId } = useContext(ResultsContext)
+  const renderChildNodes = useMemo(() => _renderChildNodes(renderComponentOverrides), [renderComponentOverrides])
 
   const examTitle = findChildElement(root, 'exam-title')
   const examStylesheet = root.getAttribute('exam-stylesheet')

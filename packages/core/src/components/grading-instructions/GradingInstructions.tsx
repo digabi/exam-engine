@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useMemo } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { findChildElement, queryAncestors } from '../../dom-utils'
@@ -56,7 +56,7 @@ const renderIfNotWithinExternalMaterial = renderIf(
   ({ element }) => queryAncestors(element, ['external-material']) == null
 )
 
-const renderChildNodes = createRenderChildNodes({
+const _renderChildNodes = createRenderChildNodes({
   'accepted-answer': AutogradedAnswerOption,
   attachment: RenderExamElements,
   'attachment-link': renderIfNotWithinExternalMaterial(mkAttachmentLink('plain')),
@@ -88,13 +88,13 @@ const renderChildNodes = createRenderChildNodes({
 
 const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationProps & GradingInstructionProps> = ({
   doc,
-  annotations,
-  onClickAnnotation,
-  onSaveAnnotation,
-  EditorComponent
+  EditorComponent,
+  annotationsEnabled,
+  renderComponentOverrides
 }) => {
   const root = doc.documentElement
   const { date, dateTimeFormatter, dayCode, examCode, language, subjectLanguage } = useContext(CommonExamContext)
+  const renderChildNodes = useMemo(() => _renderChildNodes(renderComponentOverrides), [renderComponentOverrides])
 
   const examTitle = findChildElement(root, 'exam-title')
   const examGradingInstruction = findChildElement(root, 'exam-grading-instruction')
@@ -111,11 +111,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
   useEffect(scrollToHash, [])
 
   return (
-    <AnnotationProvider
-      annotations={annotations}
-      onClickAnnotation={onClickAnnotation}
-      onSaveAnnotation={onSaveAnnotation}
-    >
+    <AnnotationProvider annotationsEnabled={annotationsEnabled}>
       <GradingInstructionProvider EditorComponent={EditorComponent}>
         <I18nextProvider i18n={i18n}>
           <main className="e-exam e-grading-instructions" lang={subjectLanguage}>

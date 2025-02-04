@@ -13,17 +13,17 @@ import { TOCQuestion } from './TOCQuestion'
 import { TOCSection } from './TOCSection'
 import { IsInSidebarContext } from '../context/IsInSidebarContext'
 
+const renderChildNodes = createRenderChildNodes({
+  section: withSectionContext(TOCSection),
+  question: withQuestionContext(TOCQuestion)
+})()
+
 export const mkTableOfContents = (options: {
   showAttachmentLinks: boolean
   showAnsweringInstructions: boolean
   isInSidebar: boolean
 }) => {
   const { showAnsweringInstructions, isInSidebar } = options
-
-  const renderChildNodes = createRenderChildNodes({
-    section: withSectionContext(TOCSection),
-    question: withQuestionContext(TOCQuestion)
-  })
 
   const TableOfContents: React.FunctionComponent<ExamComponentProps> = () => {
     const { root, maxScore } = useContext(CommonExamContext)

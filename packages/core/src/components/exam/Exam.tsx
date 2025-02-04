@@ -1,4 +1,4 @@
-import React, { createRef, useContext, useEffect, useState } from 'react'
+import React, { createRef, useContext, useEffect, useMemo, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
@@ -6,11 +6,10 @@ import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import {
-  ExamAnnotation,
   ExamAnswer,
+  ExamComponentProps,
   ExamServerAPI,
   InitialCasStatus,
-  NewExamAnnotation,
   RestrictedAudioPlaybackStats
 } from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
@@ -75,13 +74,13 @@ export interface CommonExamProps {
   /** @deprecated Not used anymore */
   language?: string
   abitti2?: boolean
+  renderComponentOverrides?: Record<string, React.ComponentType<ExamComponentProps>>
 }
 
 export interface AnnotationProps {
-  annotations?: ExamAnnotation[]
-  onClickAnnotation?: (e: React.MouseEvent<HTMLElement, MouseEvent>, annotationId: number) => void
-  onSaveAnnotation?: (annotation: NewExamAnnotation, comment: string) => Promise<string | undefined>
+  annotationsEnabled?: boolean
 }
+
 interface UndoViewProps {
   close: () => void
   restoreAnswer: (examAnswer: TextAnswerType | RichTextAnswer) => void
@@ -107,7 +106,7 @@ export interface ExamProps extends CommonExamProps {
   undoViewProps: UndoViewProps
 }
 
-export const renderChildNodes = createRenderChildNodes({
+export const renderChildNodesBase = createRenderChildNodes({
   attachment: ExamAttachment,
   'attachment-link': mkAttachmentLink('link'),
   'attachment-links': mkAttachmentLinks('link'),
@@ -149,12 +148,12 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   studentName,
   showUndoView,
   undoViewProps,
-  annotations,
-  onClickAnnotation,
-  onSaveAnnotation
+  annotationsEnabled,
+  renderComponentOverrides
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
+  const renderChildNodes = useMemo(() => renderChildNodesBase(renderComponentOverrides), [renderComponentOverrides])
 
   const examTitle = findChildElement(root, 'exam-title')
   const examInstruction = findChildElement(root, 'exam-instruction')
@@ -248,11 +247,7 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
 
   return (
     <Provider store={store}>
-      <AnnotationProvider
-        annotations={annotations}
-        onClickAnnotation={onClickAnnotation}
-        onSaveAnnotation={onSaveAnnotation}
-      >
+      <AnnotationProvider annotationsEnabled={annotationsEnabled}>
         <TOCContext.Provider
           value={{
             visibleTOCElements: visibleElements,
