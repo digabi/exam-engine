@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useMemo } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { createRenderChildNodes } from '../../createRenderChildNodes'
 import { NBSP, findChildElement } from '../../dom-utils'
@@ -19,7 +19,7 @@ import AttachmentsExternalMaterial from './ExternalMaterial'
 import AttachmentsQuestion from './Question'
 import AttachmentsQuestionTitle from './QuestionTitle'
 
-const renderChildNodes = createRenderChildNodes({
+const _renderChildNodes = createRenderChildNodes({
   'audio-group': RenderExamElements,
   'external-material': AttachmentsExternalMaterial,
   'question-title': AttachmentsQuestionTitle,
@@ -28,12 +28,12 @@ const renderChildNodes = createRenderChildNodes({
 })
 
 const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
-  annotations,
-  onClickAnnotation,
-  onSaveAnnotation
+  annotationsEnabled,
+  renderComponentOverrides
 }) => {
   const { root, language, date, dateTimeFormatter, dayCode, examCode, resolveAttachment, subjectLanguage } =
     useContext(CommonExamContext)
+  const renderChildNodes = useMemo(() => _renderChildNodes(renderComponentOverrides), [renderComponentOverrides])
 
   const examTitle = findChildElement(root, 'exam-title')!
   const examStylesheet = root.getAttribute('exam-stylesheet')
@@ -45,11 +45,7 @@ const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   useEffect(scrollToHash, [])
 
   return (
-    <AnnotationProvider
-      annotations={annotations}
-      onClickAnnotation={onClickAnnotation}
-      onSaveAnnotation={onSaveAnnotation}
-    >
+    <AnnotationProvider annotationsEnabled={annotationsEnabled}>
       <I18nextProvider i18n={i18n}>
         <main className="e-exam attachments" lang={subjectLanguage} aria-labelledby={examTitleId}>
           <React.StrictMode />

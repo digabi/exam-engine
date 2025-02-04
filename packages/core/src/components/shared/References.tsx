@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { createRenderChildNodes, ExamComponentProps } from '../../createRenderChildNodes'
+import { ExamComponentProps } from '../../createRenderChildNodes'
 import { queryAll, queryAncestors } from '../../dom-utils'
 import { formatQuestionDisplayNumber } from '../../formatting'
 import { useExamTranslation } from '../../i18n'
@@ -8,8 +8,7 @@ import { CommonExamContext } from '../context/CommonExamContext'
 import Reference from './Reference'
 import SectionElement from '../SectionElement'
 
-const renderChildNodes = createRenderChildNodes({})
-function References(_props: ExamComponentProps) {
+function References({ renderChildNodes }: ExamComponentProps) {
   const { root } = useContext(CommonExamContext)
   const { t } = useExamTranslation()
   const internalReferences = queryAll(root, 'reference').filter(

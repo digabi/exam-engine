@@ -33,7 +33,7 @@ const renderChildNodes = createRenderChildNodes({
   translation: ExamTranslation,
   reference: surround(Reference, 'div', { className: 'e-mrg-y-2 e-font-size-s' }),
   'image-overlay': ImageOverlay
-})
+})()
 
 interface AttachmentsExternalMaterialProps extends ExamComponentProps {
   forceRender?: boolean // TODO: Figure out a better way to selectively not render some XML elements.

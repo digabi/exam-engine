@@ -1,6 +1,6 @@
 import React from 'react'
 import { MasteringResult } from '@digabi/exam-engine-mastering'
-import { renderChildNodes } from '../../../../src/components/exam/Exam'
+import { renderChildNodesBase } from '../../../../src/components/exam/Exam'
 import { DNDAnswerContainer } from '../../../../src/components/exam/DNDAnswerContainer'
 import { ExamComponentWrapper } from '../../utils/ExamComponentWrapper'
 import parseExam from '../../../../src/parser/parseExam'
@@ -23,7 +23,7 @@ export const DNDAnswerContainerStory: React.FC<DNDAnswerContainerStoryProps> = (
     >
       <DNDAnswerContainer
         element={answerMediaType === 'text' ? textAnswers : imageAnswers}
-        renderChildNodes={renderChildNodes}
+        renderChildNodes={renderChildNodesBase()}
       ></DNDAnswerContainer>
     </ExamComponentWrapper>
   )

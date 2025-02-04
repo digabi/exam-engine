@@ -81,8 +81,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   const { t } = useExamTranslation()
   const scoreId = answerScoreId(element)
 
-  const annotationContextData = useContext(AnnotationContext)
-  const canBeAnnotated = Object.keys(annotationContextData).length !== 0
+  const annotationsEnabled = useContext(AnnotationContext)
   const mouseHandlerOverrides = {
     onClick: () => {},
     onMouseDown: () => {},
@@ -144,7 +143,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
                 item,
                 index: i
               })}
-              {...(canBeAnnotated ? mouseHandlerOverrides : {})}
+              {...(annotationsEnabled ? mouseHandlerOverrides : {})}
             >
               {/* Use a wrapper element to exclude menu item padding when calculating the scroll width. */}
               <span className={classNames('e-dropdown-answer__menu-item-inner e-block', { 'e-nowrap': measuring })}>
