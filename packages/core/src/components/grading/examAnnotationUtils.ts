@@ -25,7 +25,6 @@ export function onMouseDownForAnnotation(e: React.MouseEvent, mouseUpCallback: (
       const hasMarks = selectionContainsNonhiddenMarks(selection)
       const startNodedisplayNumber = getDisplayNumber(startNode)
       const endNodeDisplayNumber = getDisplayNumber(endNode)
-
       if (
         startNodedisplayNumber === endNodeDisplayNumber &&
         isAnnotatable(startNode) &&
