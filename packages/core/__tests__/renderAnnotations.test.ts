@@ -162,20 +162,20 @@ describe('renderAnnotations()', () => {
     ).toMatchSnapshot()
   })
 
-  it('throws an error if the answer is too short for the annotations', () => {
-    expect(() =>
+  it('annotation is too long for answer', () => {
+    expect(
       render(
         'Lorem ipsum dolor sit amet',
         [
           {
             startIndex: 5,
             length: 999,
-            message: 'Boom!'
+            message: 'Invalid annotation'
           }
         ],
         []
       )
-    ).toThrow(new Error('Bug: the answer seems to be too short for the current set of annotations.'))
+    ).toMatchSnapshot()
   })
 })
 
