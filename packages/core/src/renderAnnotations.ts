@@ -145,14 +145,18 @@ function renderTextAnnotation(
       const stillRemaining = move(mark, node, remaining)
 
       // If we have run out of sibling nodes but still have characters to mark,
-      // create another mark at the next text node. This means that marks have
-      // been nested.
-      if (stillRemaining > 0) {
-        go(nextSibling(mark), currentIndex + annotationLength - stillRemaining, stillRemaining)
+      // create another mark at the next text node if we can find one. This means
+      // that marks have been nested.
+      const nextNode = nextSibling(mark)
+      if (stillRemaining > 0 && nextNode) {
+        go(nextNode, currentIndex + annotationLength - stillRemaining, stillRemaining)
       }
       // We know that we're at the last mark of this annotation.
       // Render the superscript index after it, if necessary.
       else if (index) {
+        if (stillRemaining > 0) {
+          console.error('Bug: the answer seems to be too short for the current set of annotations.')
+        }
         mark.appendChild(createSup(index, 'text', annotation.message))
       }
     } else {
@@ -161,7 +165,10 @@ function renderTextAnnotation(
         node.splitText(startIndex - currentIndex)
       }
 
-      go(next(node), currentIndex + length(node), remaining)
+      const nextNode = next(node)
+      if (nextNode) {
+        go(nextNode, currentIndex + length(node), remaining)
+      }
     }
   }
 
@@ -183,11 +190,11 @@ function renderTextAnnotation(
     return node.nodeName === 'IMG' || node.nodeName === 'SPAN'
   }
 
-  function next(node: ChildNode): ChildNode {
+  function next(node: ChildNode): ChildNode | null {
     return isMark(node) ? node.childNodes[0] : nextSibling(node)
   }
 
-  function nextSibling(node: ChildNode): ChildNode {
+  function nextSibling(node: ChildNode): ChildNode | null {
     const sibling = node.nextSibling
 
     if (sibling) {
@@ -198,9 +205,9 @@ function renderTextAnnotation(
 
     // If we encounter the root element, we've run out of text to annotate. This
     // could be a bug in the annotation code or perhaps the annotations are invalid.
-    // To err on the side of caution, throw an exception in this case.
+    // Return null instead of throwing an exception to stop adding additional marks.
     if (parent === null || parent === rootElement) {
-      throw new Error('Bug: the answer seems to be too short for the current set of annotations.')
+      return null
     }
 
     return nextSibling(parent)
