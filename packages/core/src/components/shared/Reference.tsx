@@ -6,13 +6,13 @@ import { CommonExamContext } from '../context/CommonExamContext'
 import RenderChildNodes from '../RenderChildNodes'
 import classNames from 'classnames'
 
-function Reference({ element, renderChildNodes }: ExamComponentProps) {
+function Reference({ element, renderChildNodes, renderComponentOverrides }: ExamComponentProps) {
   const { t } = useExamTranslation()
   function renderWith(localName: string, Component: React.ComponentType<ExamComponentProps>) {
     const childElement = findChildElement(element, localName)
     if (childElement) {
       const key = childElement.localName
-      const content = <Component {...{ element: childElement, renderChildNodes, key }} />
+      const content = <Component {...{ element: childElement, renderChildNodes, renderComponentOverrides, key }} />
       if (content) {
         const isHidden = getBooleanAttribute(childElement, 'hidden')
         return isHidden ? <del key={key}>{content}</del> : content
@@ -34,7 +34,9 @@ function Reference({ element, renderChildNodes }: ExamComponentProps) {
       childElement && (
         <React.Fragment key={childElement.localName}>
           <span>{t(translationKey)} </span>
-          <Component {...{ element: childElement, renderChildNodes, key: childElement.localName }} />
+          <Component
+            {...{ element: childElement, renderChildNodes, renderComponentOverrides, key: childElement.localName }}
+          />
         </React.Fragment>
       )
     )

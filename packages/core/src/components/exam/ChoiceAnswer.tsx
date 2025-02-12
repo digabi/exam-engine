@@ -73,7 +73,11 @@ const ChoiceAnswerOption = ({
   )
 }
 
-const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, renderChildNodes }) => {
+const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({
+  element,
+  renderChildNodes,
+  renderComponentOverrides
+}) => {
   const questionId = getNumericAttribute(element, 'question-id')!
   const displayNumber = element.getAttribute('display-number')!
   const direction = element.getAttribute('direction') || 'vertical'
@@ -114,6 +118,7 @@ const ChoiceAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, re
               element: childElement,
               onSelect,
               renderChildNodes,
+              renderComponentOverrides,
               questionId,
               key: optionId,
               direction,

@@ -6,7 +6,7 @@ import { Score } from '../shared/Score'
 import AnswerGradingInstruction from './AnswerGradingInstruction'
 import AnswerLengthInfo from '../shared/AnswerLengthInfo'
 
-const AutogradedAnswer: React.FC<ExamComponentProps> = ({ element, renderChildNodes }) => {
+const AutogradedAnswer: React.FC<ExamComponentProps> = ({ element, renderChildNodes, renderComponentOverrides }) => {
   const { answers } = useContext(QuestionContext)
   const gradingInstructions = findChildElement(element, 'answer-grading-instruction')
   const maxLength = getNumericAttribute(element, 'max-length')
@@ -15,7 +15,9 @@ const AutogradedAnswer: React.FC<ExamComponentProps> = ({ element, renderChildNo
     <>
       {maxLength != null && <AnswerLengthInfo {...{ maxLength }} />}
       <ul>{renderChildNodes(element)}</ul>
-      {gradingInstructions && <AnswerGradingInstruction {...{ element: gradingInstructions, renderChildNodes }} />}
+      {gradingInstructions && (
+        <AnswerGradingInstruction {...{ element: gradingInstructions, renderChildNodes, renderComponentOverrides }} />
+      )}
     </>
   )
 

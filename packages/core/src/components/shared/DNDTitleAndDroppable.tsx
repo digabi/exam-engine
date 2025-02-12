@@ -2,7 +2,8 @@ import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
 import classNames from 'classnames'
 import React, { useContext } from 'react'
-import { ExamComponentProps, ExamPage } from '../..'
+import { ExamPage } from '../..'
+import { RenderChildNodes, RenderComponentOverrides } from '../../createRenderChildNodes'
 import { getNumericAttribute, query } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { shortDisplayNumber } from '../../shortDisplayNumber'
@@ -14,12 +15,14 @@ import { Score } from './Score'
 export const DNDTitleAndDroppable = ({
   element,
   renderChildNodes,
+  renderComponentOverrides,
   itemIds,
   page,
   answerOptionElements
 }: {
   element: Element
-  renderChildNodes: ExamComponentProps['renderChildNodes']
+  renderChildNodes: RenderChildNodes
+  renderComponentOverrides: RenderComponentOverrides
   itemIds: UniqueIdentifier[]
   page: ExamPage
   answerOptionElements: Element[]
@@ -76,6 +79,7 @@ export const DNDTitleAndDroppable = ({
             answerOptionElements={answerOptionElements}
             questionId={questionId}
             renderChildNodes={renderChildNodes}
+            renderComponentOverrides={renderComponentOverrides}
             correctIds={correctOptionIds}
           />
 

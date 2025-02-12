@@ -72,7 +72,7 @@ function ChoiceAnswerOption({
   )
 }
 
-function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
+function ChoiceAnswer({ element, renderChildNodes, renderComponentOverrides }: ExamComponentProps) {
   const { answersByQuestionId, gradingStructure } = useContext(ResultsContext)
   const questionId = getNumericAttribute(element, 'question-id')!
   const answer = answersByQuestionId[questionId]
@@ -101,6 +101,7 @@ function ChoiceAnswer({ element, renderChildNodes }: ExamComponentProps) {
               {...{
                 element: childElement,
                 renderChildNodes,
+                renderComponentOverrides,
                 questionId,
                 key: optionId,
                 direction,

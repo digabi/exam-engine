@@ -9,7 +9,8 @@ import { tocSectionTitleId } from '../../ids'
 export const TOCSection: React.FunctionComponent<ExamComponentProps & { answers: AnswersState }> = ({
   element,
   answers,
-  renderChildNodes
+  renderChildNodes,
+  renderComponentOverrides
 }) => {
   const { displayNumber } = useContext(SectionContext)
   const sectionTitle = findChildElement(element, 'section-title')
@@ -21,6 +22,7 @@ export const TOCSection: React.FunctionComponent<ExamComponentProps & { answers:
           {...{
             element: sectionTitle,
             renderChildNodes,
+            renderComponentOverrides,
             answers
           }}
         />

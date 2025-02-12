@@ -24,6 +24,7 @@ export const DNDAnswerContainerStory: React.FC<DNDAnswerContainerStoryProps> = (
       <DNDAnswerContainer
         element={answerMediaType === 'text' ? textAnswers : imageAnswers}
         renderChildNodes={renderChildNodesBase()}
+        renderComponentOverrides={{}}
       ></DNDAnswerContainer>
     </ExamComponentWrapper>
   )

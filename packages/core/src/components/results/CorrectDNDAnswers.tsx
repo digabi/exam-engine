@@ -8,6 +8,7 @@ import { DNDDroppable } from '../shared/DNDDroppable'
 export const CorrectDNDAnswers = ({
   element,
   renderChildNodes,
+  renderComponentOverrides,
   answerOptionsById
 }: ExamComponentProps & {
   answerOptionsById: Record<UniqueIdentifier, Element>
@@ -25,6 +26,7 @@ export const CorrectDNDAnswers = ({
       <span className="droppable-title align-right">{t('dnd-answers.correct-answers')}</span>
       <DNDDroppable
         renderChildNodes={renderChildNodes}
+        renderComponentOverrides={renderComponentOverrides}
         answerOptionElements={correctDNDAnswerOptions}
         correctIds={correctOptionIds}
         questionId={questionId}
