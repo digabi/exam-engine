@@ -29,7 +29,7 @@ const _renderChildNodes = createRenderChildNodes({
 
 const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   annotationsEnabled,
-  renderComponentOverrides
+  renderComponentOverrides = {}
 }) => {
   const { root, language, date, dateTimeFormatter, dayCode, examCode, resolveAttachment, subjectLanguage } =
     useContext(CommonExamContext)
@@ -60,7 +60,9 @@ const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
             )}
             <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
             {externalMaterial && (
-              <AttachmentsExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+              <AttachmentsExternalMaterial
+                {...{ element: externalMaterial, renderChildNodes, renderComponentOverrides, forceRender: true }}
+              />
             )}
           </SectionElement>
           {renderChildNodes(root)}

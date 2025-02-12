@@ -1,7 +1,8 @@
 import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import classNames from 'classnames'
 import React from 'react'
-import { ExamComponentProps, ExamPage } from '../..'
+import { ExamPage } from '../..'
+import { RenderChildNodes, RenderComponentOverrides } from '../../createRenderChildNodes'
 import { query } from '../../dom-utils'
 import { DNDAnswerOptionDraggable } from '../exam/DNDAnswerOptionDraggable'
 import { DNDAnswerOption } from '../results/DNDAnswerOption'
@@ -9,13 +10,15 @@ import { useExamTranslation } from '../../i18n'
 
 export const DNDDroppable = ({
   renderChildNodes,
+  renderComponentOverrides,
   correctIds,
   classes = [],
   questionId,
   page,
   answerOptionElements = []
 }: {
-  renderChildNodes: ExamComponentProps['renderChildNodes']
+  renderChildNodes: RenderChildNodes
+  renderComponentOverrides: RenderComponentOverrides
   correctIds?: UniqueIdentifier[]
   classes?: string[]
   questionId: UniqueIdentifier
@@ -43,12 +46,18 @@ export const DNDDroppable = ({
         return (
           <React.Fragment key={element.getAttribute('option-id')}>
             {page === 'exam' ? (
-              <DNDAnswerOptionDraggable element={element} renderChildNodes={renderChildNodes} key={optionId} />
+              <DNDAnswerOptionDraggable
+                element={element}
+                renderChildNodes={renderChildNodes}
+                renderComponentOverrides={renderComponentOverrides}
+                key={optionId}
+              />
             ) : (
               <div className="e-dnd-answer-option">
                 <DNDAnswerOption
                   element={element}
                   renderChildNodes={renderChildNodes}
+                  renderComponentOverrides={renderComponentOverrides}
                   key={optionId}
                   className={!correctIds ? undefined : isCorrect ? 'correct-answer' : 'wrong-answer'}
                 />

@@ -7,7 +7,11 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { formatDuration } from '../shared/internal/RestrictedAudioPlayer'
 
-export const AudioContainer: React.FC<ExamComponentProps> = ({ element, renderChildNodes }) => {
+export const AudioContainer: React.FC<ExamComponentProps> = ({
+  element,
+  renderChildNodes,
+  renderComponentOverrides
+}) => {
   const restricted = !!getNumericAttribute(element, 'times')
   const duration = getNumericAttribute(element, 'duration')!
   const labelId = audioLabelId(element)
@@ -15,7 +19,13 @@ export const AudioContainer: React.FC<ExamComponentProps> = ({ element, renderCh
   if (restricted) {
     return <AudioPlaceholder duration={duration} labelId={labelId} />
   } else {
-    return <Audio element={element} renderChildNodes={renderChildNodes} />
+    return (
+      <Audio
+        element={element}
+        renderChildNodes={renderChildNodes}
+        renderComponentOverrides={renderComponentOverrides}
+      />
+    )
   }
 }
 

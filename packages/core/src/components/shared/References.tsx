@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { ExamComponentProps } from '../../createRenderChildNodes'
+import React, { useContext, useMemo } from 'react'
+import { createRenderChildNodes, ExamComponentProps } from '../../createRenderChildNodes'
 import { queryAll, queryAncestors } from '../../dom-utils'
 import { formatQuestionDisplayNumber } from '../../formatting'
 import { useExamTranslation } from '../../i18n'
@@ -8,9 +8,12 @@ import { CommonExamContext } from '../context/CommonExamContext'
 import Reference from './Reference'
 import SectionElement from '../SectionElement'
 
-function References({ renderChildNodes }: ExamComponentProps) {
+const _renderChildNodes = createRenderChildNodes({})
+
+function References({ renderComponentOverrides }: ExamComponentProps) {
   const { root } = useContext(CommonExamContext)
   const { t } = useExamTranslation()
+  const renderChildNodes = useMemo(() => _renderChildNodes(renderComponentOverrides), [renderComponentOverrides])
   const internalReferences = queryAll(root, 'reference').filter(
     reference => queryAncestors(reference, 'external-material') == null
   )
@@ -25,7 +28,11 @@ function References({ renderChildNodes }: ExamComponentProps) {
           const displayNumber = question.getAttribute('display-number')!
           return (
             <li data-list-number={formatQuestionDisplayNumber(displayNumber)} key={`${displayNumber}${i}`}>
-              <Reference element={reference} renderChildNodes={renderChildNodes} />
+              <Reference
+                element={reference}
+                renderChildNodes={renderChildNodes}
+                renderComponentOverrides={renderComponentOverrides}
+              />
             </li>
           )
         })}

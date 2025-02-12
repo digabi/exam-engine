@@ -8,7 +8,7 @@ import { findChildElement, getNumericAttribute, mapChildElements } from '../../d
 import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
 
-function ImageOverlay({ element, renderChildNodes }: ExamComponentProps) {
+function ImageOverlay({ element, renderChildNodes, renderComponentOverrides }: ExamComponentProps) {
   const [opacities, setOpacities] = useState<number[]>(() => _.times(element.children.length, i => (i === 0 ? 1 : 0)))
   const mkSetOpacity = (index: number) => (opacity: number) => {
     const updatedOpacities = [...opacities]
@@ -27,6 +27,7 @@ function ImageOverlay({ element, renderChildNodes }: ExamComponentProps) {
               element={child}
               setOpacity={mkSetOpacity(index)}
               renderChildNodes={renderChildNodes}
+              renderComponentOverrides={renderComponentOverrides}
             />
           ))}
         </div>
@@ -38,6 +39,7 @@ function ImageOverlay({ element, renderChildNodes }: ExamComponentProps) {
               key={index}
               element={child}
               renderChildNodes={renderChildNodes}
+              renderComponentOverrides={renderComponentOverrides}
               opacity={opacities[index]}
               absolute={index > 0}
             />

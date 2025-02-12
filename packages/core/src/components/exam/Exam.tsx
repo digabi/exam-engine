@@ -1,17 +1,11 @@
 import React, { createRef, useContext, useEffect, useMemo, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
-import { createRenderChildNodes } from '../../createRenderChildNodes'
+import { createRenderChildNodes, RenderComponentOverrides } from '../../createRenderChildNodes'
 import { findChildElement } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
-import {
-  ExamAnswer,
-  ExamComponentProps,
-  ExamServerAPI,
-  InitialCasStatus,
-  RestrictedAudioPlaybackStats
-} from '../../index'
+import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
 import { parseExamStructure } from '../../parser/parseExamStructure'
 import { scrollToHash } from '../../scrollToHash'
 import { initializeExamStore } from '../../store'
@@ -74,7 +68,7 @@ export interface CommonExamProps {
   /** @deprecated Not used anymore */
   language?: string
   abitti2?: boolean
-  renderComponentOverrides?: Record<string, React.ComponentType<ExamComponentProps>>
+  renderComponentOverrides?: RenderComponentOverrides
 }
 
 export interface AnnotationProps {
@@ -149,7 +143,7 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   showUndoView,
   undoViewProps,
   annotationsEnabled,
-  renderComponentOverrides
+  renderComponentOverrides = {}
 }) => {
   const { date, dateTimeFormatter, dayCode, examCode, language, resolveAttachment, root, subjectLanguage } =
     useContext(CommonExamContext)
@@ -261,7 +255,9 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
               <div className="e-toc-and-exam">
                 {tableOfContents && (
                   <div className="sidebar-toc-container" aria-hidden="true">
-                    <TableOfContentsSidebar {...{ element: tableOfContents, renderChildNodes }} />
+                    <TableOfContentsSidebar
+                      {...{ element: tableOfContents, renderChildNodes, renderComponentOverrides }}
+                    />
                   </div>
                 )}
 
@@ -276,20 +272,32 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                           <strong>{dateTimeFormatter.format(date)}</strong>
                         </p>
                       )}
-                      {examInstruction && <ExamInstruction {...{ element: examInstruction, renderChildNodes }} />}
+                      {examInstruction && (
+                        <ExamInstruction
+                          {...{ element: examInstruction, renderChildNodes, renderComponentOverrides }}
+                        />
+                      )}
 
                       {tableOfContents && (
                         <div className="main-toc-container">
                           <TableOfContents
                             {...{
                               element: tableOfContents,
-                              renderChildNodes
+                              renderChildNodes,
+                              renderComponentOverrides
                             }}
                           />
                         </div>
                       )}
                       {externalMaterial && (
-                        <ExternalMaterial {...{ element: externalMaterial, renderChildNodes, forceRender: true }} />
+                        <ExternalMaterial
+                          {...{
+                            element: externalMaterial,
+                            renderChildNodes,
+                            renderComponentOverrides,
+                            forceRender: true
+                          }}
+                        />
                       )}
                     </SectionElement>
 

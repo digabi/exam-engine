@@ -1,17 +1,19 @@
 import { UniqueIdentifier, useDroppable } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
 import React from 'react'
-import { RenderChildNodes } from '../../createRenderChildNodes'
+import { RenderChildNodes, RenderComponentOverrides } from '../../createRenderChildNodes'
 import { DNDDroppable } from '../shared/DNDDroppable'
 import { useExamTranslation } from '../../i18n'
 
 export const AllDNDOptions = ({
   items,
   renderChildNodes,
+  renderComponentOverrides,
   answerOptionElements
 }: {
   items: UniqueIdentifier[]
   renderChildNodes: RenderChildNodes
+  renderComponentOverrides: RenderComponentOverrides
   answerOptionElements: Element[]
 }) => {
   const { setNodeRef } = useDroppable({ id: 'root' })
@@ -23,6 +25,7 @@ export const AllDNDOptions = ({
       <span ref={setNodeRef}>
         <DNDDroppable
           renderChildNodes={renderChildNodes}
+          renderComponentOverrides={renderComponentOverrides}
           questionId="root"
           page="exam"
           classes={['root']}

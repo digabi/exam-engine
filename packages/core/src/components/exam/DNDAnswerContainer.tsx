@@ -26,7 +26,7 @@ export type ItemsState = {
   [key: UniqueIdentifier]: UniqueIdentifier[]
 }
 
-export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentProps) => {
+export const DNDAnswerContainer = ({ element, renderChildNodes, renderComponentOverrides }: ExamComponentProps) => {
   const dispatch = useDispatch()
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>()
   const [optionIdsByQuestionId, setOptionIdsByQuestionId] = useState<ItemsState>({} as ItemsState)
@@ -124,6 +124,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
               key={questionId}
               element={element}
               renderChildNodes={renderChildNodes}
+              renderComponentOverrides={renderComponentOverrides}
               itemIds={itemIds}
               answerOptionElements={dndAnswerOptions}
               page="exam"
@@ -134,6 +135,7 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
         <AllDNDOptions
           items={optionIdsByQuestionId.root || []}
           renderChildNodes={renderChildNodes}
+          renderComponentOverrides={renderComponentOverrides}
           answerOptionElements={allAnswerOptionElements}
         />
 
@@ -145,7 +147,11 @@ export const DNDAnswerContainer = ({ element, renderChildNodes }: ExamComponentP
           }}
         >
           {activeId ? (
-            <DNDAnswerOptionDraggable element={answerOptionsById[activeId]} renderChildNodes={renderChildNodes} />
+            <DNDAnswerOptionDraggable
+              element={answerOptionsById[activeId]}
+              renderChildNodes={renderChildNodes}
+              renderComponentOverrides={renderComponentOverrides}
+            />
           ) : null}
         </DragOverlay>
       </DndContext>

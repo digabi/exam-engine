@@ -10,6 +10,8 @@ export interface ExamComponentProps {
   element: Element
   /** A function that knows how to render the child nodes of this element. */
   renderChildNodes: RenderChildNodes
+  /** A map of component overrides for rendering nodes  */
+  renderComponentOverrides: RenderComponentOverrides
 }
 
 export const enum RenderOptions {
@@ -18,10 +20,11 @@ export const enum RenderOptions {
 }
 
 export type RenderChildNodes = (element: Element, options?: RenderOptions) => React.ReactNode[]
+export type RenderComponentOverrides = Record<string, React.ComponentType<ExamComponentProps>>
 
 export function createRenderChildNodes(baseComponentMap: Record<string, React.ComponentType<ExamComponentProps>>) {
-  return (componentOverrides: Record<string, React.ComponentType<ExamComponentProps>> = {}): RenderChildNodes => {
-    const componentMap = { ...baseComponentMap, ...componentOverrides }
+  return (renderComponentOverrides: Record<string, React.ComponentType<ExamComponentProps>> = {}): RenderChildNodes => {
+    const componentMap = { ...baseComponentMap, ...renderComponentOverrides }
 
     function renderChildNode(node: ChildNode, index: number, options: RenderOptions): React.ReactNode {
       switch (node.nodeType) {
@@ -39,7 +42,12 @@ export function createRenderChildNodes(baseComponentMap: Record<string, React.Co
     function renderTextNode(element: Element) {
       const Component = componentMap['text']
       return Component ? (
-        <Component key={getElementPath(element)} element={element} renderChildNodes={renderChildNodes} />
+        <Component
+          key={getElementPath(element)}
+          element={element}
+          renderChildNodes={renderChildNodes}
+          renderComponentOverrides={renderComponentOverrides}
+        />
       ) : (
         element.textContent
       )
@@ -71,7 +79,17 @@ export function createRenderChildNodes(baseComponentMap: Record<string, React.Co
     function renderExamElement(element: Element, index: number) {
       const Component = componentMap[element.localName]
       const className = element.getAttribute('class') || undefined
-      return Component ? <Component {...{ element, className, renderChildNodes, key: key(element, index) }} /> : null
+      return Component ? (
+        <Component
+          {...{
+            element,
+            className,
+            renderChildNodes,
+            renderComponentOverrides,
+            key: key(element, index)
+          }}
+        />
+      ) : null
     }
 
     function renderChildNodes(element: Element, options: RenderOptions = RenderOptions.RenderHTML): React.ReactNode[] {

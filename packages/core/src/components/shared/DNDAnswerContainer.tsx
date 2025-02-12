@@ -14,6 +14,7 @@ import { DNDTitleAndDroppable } from './DNDTitleAndDroppable'
 export const DNDAnswerContainer = ({
   element,
   renderChildNodes,
+  renderComponentOverrides,
   page
 }: ExamComponentProps & {
   page: 'results' | 'grading-instructions'
@@ -41,6 +42,7 @@ export const DNDAnswerContainer = ({
               element={element}
               answerOptionElements={answerOptionElements}
               renderChildNodes={renderChildNodes}
+              renderComponentOverrides={renderComponentOverrides}
               itemIds={itemIds}
               page={page}
             />
@@ -49,6 +51,7 @@ export const DNDAnswerContainer = ({
               <CorrectDNDAnswers
                 element={element}
                 renderChildNodes={renderChildNodes}
+                renderComponentOverrides={renderComponentOverrides}
                 answerOptionsById={answerOptionsByOptionId}
               />
             )}

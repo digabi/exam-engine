@@ -90,7 +90,7 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
   doc,
   EditorComponent,
   annotationsEnabled,
-  renderComponentOverrides
+  renderComponentOverrides = {}
 }) => {
   const root = doc.documentElement
   const { date, dateTimeFormatter, dayCode, examCode, language, subjectLanguage } = useContext(CommonExamContext)
@@ -126,11 +126,13 @@ const GradingInstructions: React.FunctionComponent<CommonExamProps & AnnotationP
                 </p>
               )}
               {examGradingInstruction && (
-                <ExamGradingInstruction {...{ element: examGradingInstruction, renderChildNodes }} />
+                <ExamGradingInstruction
+                  {...{ element: examGradingInstruction, renderChildNodes, renderComponentOverrides }}
+                />
               )}
               {tableOfContents && (
                 <div className="main-toc-container">
-                  <TableOfContents {...{ element: tableOfContents, renderChildNodes }} />
+                  <TableOfContents {...{ element: tableOfContents, renderChildNodes, renderComponentOverrides }} />
                 </div>
               )}
             </SectionElement>
