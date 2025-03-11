@@ -22,10 +22,8 @@ export const enum RenderOptions {
 export type RenderChildNodes = (element: Element, options?: RenderOptions) => React.ReactNode[]
 export type RenderComponentOverrides = Record<string, React.ComponentType<ExamComponentProps>>
 
-export function createRenderChildNodes(baseComponentMap: Record<string, React.ComponentType<ExamComponentProps>>) {
+export function createRenderChildNodes(componentMap: Record<string, React.ComponentType<ExamComponentProps>>) {
   return (renderComponentOverrides: Record<string, React.ComponentType<ExamComponentProps>> = {}): RenderChildNodes => {
-    const componentMap = { ...baseComponentMap, ...renderComponentOverrides }
-
     function renderChildNode(node: ChildNode, index: number, options: RenderOptions): React.ReactNode {
       switch (node.nodeType) {
         case Node.TEXT_NODE:
@@ -40,7 +38,7 @@ export function createRenderChildNodes(baseComponentMap: Record<string, React.Co
     }
 
     function renderTextNode(element: Element) {
-      const Component = componentMap['text']
+      const Component = renderComponentOverrides['text']
       return Component ? (
         <Component
           key={getElementPath(element)}
@@ -77,7 +75,11 @@ export function createRenderChildNodes(baseComponentMap: Record<string, React.Co
     }
 
     function renderExamElement(element: Element, index: number) {
-      const Component = componentMap[element.localName]
+      const Component =
+        element.localName in componentMap
+          ? (renderComponentOverrides[element.localName] ?? componentMap[element.localName])
+          : undefined
+
       const className = element.getAttribute('class') || undefined
       return Component ? (
         <Component
