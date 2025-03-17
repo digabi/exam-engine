@@ -162,8 +162,12 @@ $ npm run test-jest -- -u
 
 Requires setting [.npmrc](https://github.com/digabi/digabi-top/wiki/Users-onboarding#devausymp%C3%A4rist%C3%B6-voi-tehd%C3%A4-itse) with YTL NPM Publish Token.
 
-Publish a (pre)release:
+Publish a prerelease:
+```bash
+$ npm run lerna publish -- --dist-tag next
+```
 
+Publish a release:
 ```bash
 $ npm run lerna publish
 ```
