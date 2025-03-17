@@ -132,7 +132,7 @@ function renderTextAnnotation(
     /* The remaining number of characters from the annotation to render. */
     remaining: number
   ): void {
-    if (!isMark(node) && !isSup(node) && !isBr(node) && currentIndex >= startIndex) {
+    if (!isDiv(node) && !isMark(node) && !isSup(node) && !isBr(node) && currentIndex >= startIndex) {
       // We found the correct spot to start an annotation. So let's create a mark element.
       const mark = mkMark()
       // Insert it before the node.
@@ -160,6 +160,9 @@ function renderTextAnnotation(
         mark.appendChild(createSup(index, 'text', annotation.message))
       }
     } else {
+      if (node instanceof HTMLDivElement) {
+        return go(node.childNodes[0], currentIndex, remaining)
+      }
       if (node instanceof Text && currentIndex + length(node) > startIndex) {
         // The annotation should start in the middle of this text node. We need to split it in two.
         node.splitText(startIndex - currentIndex)
@@ -172,6 +175,9 @@ function renderTextAnnotation(
     }
   }
 
+  function isDiv(node: ChildNode): node is HTMLDivElement {
+    return node.nodeName === 'DIV'
+  }
   function isBr(node: ChildNode): node is HTMLBRElement {
     return node.nodeName === 'BR'
   }
