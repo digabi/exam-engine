@@ -49,6 +49,21 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
     expect(classNameThen).toContain('answer-indicator ok')
     expect(indicatorValueThen).toContain('')
   })
+
+  it('clicks on audio player inside choice answer option do not trigger input selection', async () => {
+    await loadExam(page, ctx.url)
+
+    await page.click('.e-choice-answer-option .audio')
+    expect(await getRadioButtonValue(page, 9)).toBeUndefined()
+
+    const option = await page.waitForSelector('.e-radio-button[value="124"] + .e-choice-answer-option')
+    // the clickable text is not inside a tag, so we need to click at the right coordinates
+    const optionRect = await option?.boundingBox()
+    if (optionRect) {
+      await page.mouse.click(optionRect.x + 50, optionRect.y + 5)
+    }
+    expect(await getRadioButtonValue(page, 9)).toBe('124')
+  })
 })
 
 async function getRadioButtonValue(page: Page, questionId: number): Promise<string | undefined> {

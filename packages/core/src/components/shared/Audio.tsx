@@ -26,7 +26,10 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
   const labelId = audioLabelId(element)
 
   return (
-    <div className={classNames('audio e-columns e-columns--center-v e-mrg-b-2', className)}>
+    <div
+      className={classNames('audio e-columns e-columns--center-v e-pad-b-2 e-cursor-default', className)}
+      onClick={e => e.preventDefault()}
+    >
       {restrictedAudioId != null && times != null ? (
         <RestrictedAudioPlayer {...{ src, restrictedAudioId, duration, times, labelId }} />
       ) : (
