@@ -21,7 +21,11 @@ export const withQuestionContext = withContext<QuestionContext, ExamComponentPro
   const childQuestions = queryAll(element, 'question', false)
   const answers = childQuestions.length
     ? []
-    : queryAll(element, ['text-answer', 'scored-text-answer', 'dropdown-answer', 'choice-answer', 'dnd-answer'], false)
+    : queryAll(
+        element,
+        ['text-answer', 'scored-text-answer', 'dropdown-answer', 'choice-answer', 'dnd-answer', 'audio-answer'],
+        false
+      )
   const questionInstructions = queryAll(element, 'question-instruction', false)
   const displayNumber = element.getAttribute('display-number')!
   const questionLabelIds =
