@@ -5,13 +5,8 @@
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
-  "sideEffects": [
-    "*.less",
-    "*.css"
-  ],
-  "files": [
-    "dist"
-  ],
+  "sideEffects": ["*.less", "*.css"],
+  "files": ["dist"],
   "scripts": {
     "build": "webpack --mode=production",
     "build:analyze": "webpack --mode=production --profile --json --display normal > stats.json",
@@ -27,7 +22,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@playwright/experimental-ct-react": "^1.51.1",
-    "@playwright/test": "^1.51.1",
     "classnames": "^2.2.6",
     "css-loader": "^7.0.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
@@ -52,7 +46,7 @@
     "redux": "^5.0.1",
     "redux-saga": "^1.2.3",
     "redux-saga-test-plan": "^4.0.6",
-    "rich-text-editor": "8.2.3",
+    "rich-text-editor": "8.3.0",
     "sanitize-html": "^2.0.0",
     "typesafe-actions": "^5.1.0",
     "utility-types": "^3.10.0",
