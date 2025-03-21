@@ -2,7 +2,7 @@ export interface GradingStructure {
   questions: GradingStructureQuestion[]
 }
 
-export type GradingStructureQuestion = TextQuestion | ChoiceGroupQuestion
+export type GradingStructureQuestion = TextQuestion | ChoiceGroupQuestion | AudioQuestion
 
 export interface TextQuestion {
   type: 'text'
@@ -17,6 +17,13 @@ export interface TextQuestion {
    * If omitted, the question will be graded manually.
    */
   correctAnswers?: CorrectAnswer[]
+}
+
+export interface AudioQuestion {
+  type: 'audio'
+  id: number
+  displayNumber: string
+  maxScore: number
 }
 
 export interface CorrectAnswer {

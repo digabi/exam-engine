@@ -268,6 +268,12 @@ describe('Exam mastering', () => {
     ])
   })
 
+  it('supports audio-answers', async () => {
+    const xml = await readFixture('audio-answer.xml')
+    const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
+    expect(wrap(JSON.stringify(masteringResult.gradingStructure, null, 2))).toMatchSnapshot()
+  })
+
   for (const exam of listExams()) {
     it(`masters ${path.basename(exam)} exam correctly`, async () => {
       const source = await fs.readFile(exam, 'utf-8')

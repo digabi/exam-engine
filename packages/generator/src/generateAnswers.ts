@@ -8,6 +8,8 @@ export function generateAnswers(gradingStructure: GradingStructure): ExamAnswer[
         return generateTextAnswer(question)
       case 'choicegroup':
         return generateChoiceAnswer(question)
+      case 'audio':
+        return []
     }
   })
 }
