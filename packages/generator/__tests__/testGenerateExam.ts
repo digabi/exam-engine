@@ -273,7 +273,14 @@ describe('generateExam()', () => {
     })
     const sections = fc.array(section, { minLength: 1, maxLength: 3 })
     const exam: fc.Arbitrary<GenerateExamOptions> = fc.record({
-      date: optional(fc.date().map(d => formatISO(d, { representation: 'date' }))),
+      date: optional(
+        fc
+          .date({
+            min: new Date('2000-01-01'),
+            max: new Date('2030-12-31')
+          })
+          .map(d => formatISO(d, { representation: 'date' }))
+      ),
       examCode: optional(fc.constantFrom('EA', 'M', 'N')),
       maxAnswers: optional(maxAnswers),
       languages: optional(

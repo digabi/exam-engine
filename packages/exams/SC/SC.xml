@@ -301,9 +301,12 @@
         <e:question>
           <e:question-title>Was sagt Toni weiter?</e:question-title>
           <e:choice-answer>
-            <e:choice-answer-option score="3">... Einverstanden!</e:choice-answer-option>
-            <e:choice-answer-option>... Geschlossen!</e:choice-answer-option>
-            <e:choice-answer-option>... Vergiss es!</e:choice-answer-option>
+            <e:choice-answer-option score="3">Einverstanden! <e:audio src="2.2.ogg" times="1"/>
+            </e:choice-answer-option>
+            <e:choice-answer-option>Geschlossen! <e:audio src="2.3.ogg" times="1"/>
+            </e:choice-answer-option>
+            <e:choice-answer-option>Vergiss es! <e:audio src="2.4.ogg" times="1"/>
+            </e:choice-answer-option>
           </e:choice-answer>
           <e:attachment>
             <e:attachment-title>2.4. audio</e:attachment-title>

@@ -153,7 +153,8 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
             
             
             
-          <li>... Einverstanden!&nbsp;(<span lang="fi-FI">3 p.</span>)</li></ul></div></div>
+          <li>Einverstanden! 
+            &nbsp;(<span lang="fi-FI">3 p.</span>)</li></ul></div></div>
 
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="3" data-annotation-anchor="3"><div class="anchor" id="question-nr-3"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">3. </strong>Heimat <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">15 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-3">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
         Beantworten Sie die Fragen. Sie können jeden Abschnitt zweimal hören.
@@ -896,6 +897,9 @@ exports[`ee create-grading-instructions creates grading instructions 2`] = `
 
 exports[`ee create-grading-instructions creates grading instructions 3`] = `
 [
+  "2.2.ogg",
+  "2.3.ogg",
+  "2.4.ogg",
   "7.1.0478.jpg",
   "7.1.4327.jpg",
   "7.1.7279.jpg",

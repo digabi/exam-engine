@@ -12675,6 +12675,24 @@ exports[`Exam mastering masters SC.xml exam correctly 1`] = `
       "withinGradingInstruction": false,
     },
     {
+      "filename": "2.3.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "2.4.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "2.2.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
       "filename": "2.4.ogg",
       "restricted": true,
       "visibleInGradingInstructions": false,
@@ -15411,6 +15429,24 @@ exports[`Exam mastering masters SC.xml exam correctly 2`] = `
       "filename": "2.3.ogg",
       "restricted": true,
       "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "2.3.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "2.4.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "2.2.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
@@ -21938,10 +21974,13 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             
             
             
-          <e:choice-answer-option option-id="122">... Geschlossen!</e:choice-answer-option><e:choice-answer-option option-id="123">... Vergiss es!</e:choice-answer-option><e:choice-answer-option option-id="124">... Einverstanden!</e:choice-answer-option></e:choice-answer>
+          <e:choice-answer-option option-id="122">Geschlossen! <e:audio src="2.3.ogg" times="1" restricted-audio-id="8" duration="999"/>
+            </e:choice-answer-option><e:choice-answer-option option-id="123">Vergiss es! <e:audio src="2.4.ogg" times="1" restricted-audio-id="9" duration="999"/>
+            </e:choice-answer-option><e:choice-answer-option option-id="124">Einverstanden! <e:audio src="2.2.ogg" times="1" restricted-audio-id="10" duration="999"/>
+            </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>2.4. audio</e:attachment-title>
-            <e:audio src="2.4.ogg" times="1" restricted-audio-id="8" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.4.</e:audio-title></e:audio>
+            <e:audio src="2.4.ogg" times="1" restricted-audio-id="11" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.4.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -21973,7 +22012,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="125">Die ganze Welt</e:choice-answer-option><e:choice-answer-option option-id="126">Verwandte und Freunde</e:choice-answer-option><e:choice-answer-option option-id="127">Das Geburtsland der Mutter</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.1. audio</e:attachment-title>
-            <e:audio src="3.1.ogg" times="2" restricted-audio-id="9" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 3.1.</e:audio-title></e:audio>
+            <e:audio src="3.1.ogg" times="2" restricted-audio-id="12" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 3.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -22002,7 +22041,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="131">Er möchte nach dem Studium in die Heimatstadt zurückkommen</e:choice-answer-option><e:choice-answer-option option-id="132">Er möchte vielleicht in einer anderen Stadt leben</e:choice-answer-option><e:choice-answer-option option-id="133">Er möchte am liebsten in der Heimatstadt bleiben</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.2.–3.3. audio</e:attachment-title>
-            <e:audio src="3.2_3.3.ogg" times="2" restricted-audio-id="10" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio-title></e:audio>
+            <e:audio src="3.2_3.3.ogg" times="2" restricted-audio-id="13" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -22031,7 +22070,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="137">Sie machte mit den New Yorkern gute Erfahrungen</e:choice-answer-option><e:choice-answer-option option-id="138">Sie lernte in New York andere Deutsche kennen</e:choice-answer-option><e:choice-answer-option option-id="139">Sie traf einige Bekannte von früheren Kursen</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.4.–3.5. audio</e:attachment-title>
-            <e:audio src="3.4_3.5.ogg" times="2" restricted-audio-id="11" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio-title></e:audio>
+            <e:audio src="3.4_3.5.ogg" times="2" restricted-audio-id="14" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -22067,7 +22106,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="140">Sie ist schwarz-gelb</e:choice-answer-option><e:choice-answer-option option-id="141">Sie ist schwarz-grau</e:choice-answer-option><e:choice-answer-option option-id="142">Sie ist grau-gelb</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>4.1. audio</e:attachment-title>
-            <e:audio src="4.1.ogg" times="2" restricted-audio-id="12" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.1.</e:audio-title></e:audio>
+            <e:audio src="4.1.ogg" times="2" restricted-audio-id="15" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -22088,7 +22127,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:choice-answer-option option-id="143">Studenten in der Mittagspause</e:choice-answer-option><e:choice-answer-option option-id="144">Besucher beim Motorrad-Treffen</e:choice-answer-option><e:choice-answer-option option-id="145">Mechaniker von der Werkstatt</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>4.2. audio</e:attachment-title>
-            <e:audio src="4.2.ogg" times="2" restricted-audio-id="13" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.2.</e:audio-title></e:audio>
+            <e:audio src="4.2.ogg" times="2" restricted-audio-id="16" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.2.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -22179,7 +22218,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
       <e:audio-group>
         <e:attachment>
           <e:attachment-title>6. audio</e:attachment-title>
-          <e:audio src="6.ogg" times="1" restricted-audio-id="14" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+          <e:audio src="6.ogg" times="1" restricted-audio-id="17" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
           <e:reference>
             <e:author>
               <span lang="fi-FI">YTL</span>
@@ -22202,7 +22241,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:choice-answer-option option-id="158">Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option option-id="159">Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src="6.1.ogg" times="1" restricted-audio-id="15" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.1.</e:audio-title></e:audio>
+          <e:audio src="6.1.ogg" times="1" restricted-audio-id="18" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.1.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -22219,7 +22258,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:choice-answer-option option-id="166">Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option option-id="167">Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src="6.2.ogg" times="1" restricted-audio-id="16" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.2.</e:audio-title></e:audio>
+          <e:audio src="6.2.ogg" times="1" restricted-audio-id="19" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.2.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -22236,7 +22275,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             <e:choice-answer-option option-id="174">Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option option-id="175">Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src="6.3.ogg" times="1" restricted-audio-id="17" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.3.</e:audio-title></e:audio>
+          <e:audio src="6.3.ogg" times="1" restricted-audio-id="20" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.3.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -22303,7 +22342,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.1. audio</e:attachment-title>
-            <e:audio src="7.1.ogg" times="2" restricted-audio-id="18" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.1.</e:audio-title></e:audio>
+            <e:audio src="7.1.ogg" times="2" restricted-audio-id="21" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -22366,7 +22405,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.2. audio</e:attachment-title>
-            <e:audio src="7.2.ogg" times="2" restricted-audio-id="19" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.2.</e:audio-title></e:audio>
+            <e:audio src="7.2.ogg" times="2" restricted-audio-id="22" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.2.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -22429,7 +22468,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
             </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.3. audio</e:attachment-title>
-            <e:audio src="7.3.ogg" times="2" restricted-audio-id="20" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.3.</e:audio-title></e:audio>
+            <e:audio src="7.3.ogg" times="2" restricted-audio-id="23" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.3.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 <span lang="fi-FI">YTL</span>
@@ -23627,7 +23666,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:audio-group>
             <e:attachment>
               <e:attachment-title>6. audio</e:attachment-title>
-              <e:audio src="6.ogg" times="1" restricted-audio-id="21" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+              <e:audio src="6.ogg" times="1" restricted-audio-id="24" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
               <e:reference>
                 <e:author>
                   <span lang="fi-FI">YTL</span>
@@ -23640,21 +23679,21 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
               <e:dnd-answer max-score="2" question-id="100" display-number="23.1.1">
                   <e:dnd-answer-title>
                     Welche Zeit passt Lars am besten?
-                    <e:audio src="6.1.ogg" times="1" restricted-audio-id="22" duration="999"/>
+                    <e:audio src="6.1.ogg" times="1" restricted-audio-id="25" duration="999"/>
                   </e:dnd-answer-title>
                   
               </e:dnd-answer>
               <e:dnd-answer max-score="2" question-id="101" display-number="23.1.2">
                   <e:dnd-answer-title>
                     Welche Zeit passt Katarina am besten?
-                    <e:audio src="6.2.ogg" times="1" restricted-audio-id="23" duration="999"/>
+                    <e:audio src="6.2.ogg" times="1" restricted-audio-id="26" duration="999"/>
                   </e:dnd-answer-title>
                   
               </e:dnd-answer>
               <e:dnd-answer max-score="2" question-id="102" display-number="23.1.3">
                   <e:dnd-answer-title>
                     Welche Zeit passt Marit am besten?          
-                    <e:audio src="6.3.ogg" times="1" restricted-audio-id="24" duration="999"/>
+                    <e:audio src="6.3.ogg" times="1" restricted-audio-id="27" duration="999"/>
                   </e:dnd-answer-title>
                   
               </e:dnd-answer>
@@ -23937,10 +23976,13 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             
             
             
-          <e:choice-answer-option option-id="122">... Geschlossen!</e:choice-answer-option><e:choice-answer-option option-id="123">... Vergiss es!</e:choice-answer-option><e:choice-answer-option option-id="124">... Einverstanden!</e:choice-answer-option></e:choice-answer>
+          <e:choice-answer-option option-id="122">Geschlossen! <e:audio src="2.3.ogg" times="1" restricted-audio-id="8" duration="999"/>
+            </e:choice-answer-option><e:choice-answer-option option-id="123">Vergiss es! <e:audio src="2.4.ogg" times="1" restricted-audio-id="9" duration="999"/>
+            </e:choice-answer-option><e:choice-answer-option option-id="124">Einverstanden! <e:audio src="2.2.ogg" times="1" restricted-audio-id="10" duration="999"/>
+            </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>2.4. audio</e:attachment-title>
-            <e:audio src="2.4.ogg" times="1" restricted-audio-id="8" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.4.</e:audio-title></e:audio>
+            <e:audio src="2.4.ogg" times="1" restricted-audio-id="11" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 2.4.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -23972,7 +24014,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="125">Die ganze Welt</e:choice-answer-option><e:choice-answer-option option-id="126">Verwandte und Freunde</e:choice-answer-option><e:choice-answer-option option-id="127">Das Geburtsland der Mutter</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.1. audio</e:attachment-title>
-            <e:audio src="3.1.ogg" times="2" restricted-audio-id="9" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 3.1.</e:audio-title></e:audio>
+            <e:audio src="3.1.ogg" times="2" restricted-audio-id="12" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 3.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -24001,7 +24043,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="131">Er möchte nach dem Studium in die Heimatstadt zurückkommen</e:choice-answer-option><e:choice-answer-option option-id="132">Er möchte vielleicht in einer anderen Stadt leben</e:choice-answer-option><e:choice-answer-option option-id="133">Er möchte am liebsten in der Heimatstadt bleiben</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.2.–3.3. audio</e:attachment-title>
-            <e:audio src="3.2_3.3.ogg" times="2" restricted-audio-id="10" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio-title></e:audio>
+            <e:audio src="3.2_3.3.ogg" times="2" restricted-audio-id="13" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.2. und 3.3.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -24030,7 +24072,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="137">Sie machte mit den New Yorkern gute Erfahrungen</e:choice-answer-option><e:choice-answer-option option-id="138">Sie lernte in New York andere Deutsche kennen</e:choice-answer-option><e:choice-answer-option option-id="139">Sie traf einige Bekannte von früheren Kursen</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>3.4.–3.5. audio</e:attachment-title>
-            <e:audio src="3.4_3.5.ogg" times="2" restricted-audio-id="11" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio-title></e:audio>
+            <e:audio src="3.4_3.5.ogg" times="2" restricted-audio-id="14" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Fragen 3.4. und 3.5.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -24066,7 +24108,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="140">Sie ist schwarz-gelb</e:choice-answer-option><e:choice-answer-option option-id="141">Sie ist schwarz-grau</e:choice-answer-option><e:choice-answer-option option-id="142">Sie ist grau-gelb</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>4.1. audio</e:attachment-title>
-            <e:audio src="4.1.ogg" times="2" restricted-audio-id="12" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.1.</e:audio-title></e:audio>
+            <e:audio src="4.1.ogg" times="2" restricted-audio-id="15" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -24087,7 +24129,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:choice-answer-option option-id="143">Studenten in der Mittagspause</e:choice-answer-option><e:choice-answer-option option-id="144">Besucher beim Motorrad-Treffen</e:choice-answer-option><e:choice-answer-option option-id="145">Mechaniker von der Werkstatt</e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>4.2. audio</e:attachment-title>
-            <e:audio src="4.2.ogg" times="2" restricted-audio-id="13" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.2.</e:audio-title></e:audio>
+            <e:audio src="4.2.ogg" times="2" restricted-audio-id="16" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 4.2.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -24177,7 +24219,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
       <e:audio-group>
         <e:attachment>
           <e:attachment-title>6. audio</e:attachment-title>
-          <e:audio src="6.ogg" times="1" restricted-audio-id="14" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+          <e:audio src="6.ogg" times="1" restricted-audio-id="17" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
           <e:reference>
             <e:author>
               
@@ -24200,7 +24242,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:choice-answer-option option-id="158">Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option option-id="159">Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src="6.1.ogg" times="1" restricted-audio-id="15" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.1.</e:audio-title></e:audio>
+          <e:audio src="6.1.ogg" times="1" restricted-audio-id="18" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.1.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -24217,7 +24259,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:choice-answer-option option-id="166">Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option option-id="167">Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src="6.2.ogg" times="1" restricted-audio-id="16" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.2.</e:audio-title></e:audio>
+          <e:audio src="6.2.ogg" times="1" restricted-audio-id="19" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.2.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -24234,7 +24276,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             <e:choice-answer-option option-id="174">Dienstag, 15.00 Uhr</e:choice-answer-option>
             <e:choice-answer-option option-id="175">Dienstag, 16.00 Uhr</e:choice-answer-option>
           </e:choice-answer>
-          <e:audio src="6.3.ogg" times="1" restricted-audio-id="17" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.3.</e:audio-title></e:audio>
+          <e:audio src="6.3.ogg" times="1" restricted-audio-id="20" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 6.3.</e:audio-title></e:audio>
         </e:question>
       </e:audio-group>
 
@@ -24301,7 +24343,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.1. audio</e:attachment-title>
-            <e:audio src="7.1.ogg" times="2" restricted-audio-id="18" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.1.</e:audio-title></e:audio>
+            <e:audio src="7.1.ogg" times="2" restricted-audio-id="21" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.1.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -24364,7 +24406,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.2. audio</e:attachment-title>
-            <e:audio src="7.2.ogg" times="2" restricted-audio-id="19" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.2.</e:audio-title></e:audio>
+            <e:audio src="7.2.ogg" times="2" restricted-audio-id="22" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.2.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -24427,7 +24469,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
             </e:choice-answer-option></e:choice-answer>
           <e:attachment>
             <e:attachment-title>7.3. audio</e:attachment-title>
-            <e:audio src="7.3.ogg" times="2" restricted-audio-id="20" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.3.</e:audio-title></e:audio>
+            <e:audio src="7.3.ogg" times="2" restricted-audio-id="23" duration="999"><e:audio-title>Hören Sie den Abschnitt für die Frage 7.3.</e:audio-title></e:audio>
             <e:reference>
               <e:author>
                 
@@ -25627,7 +25669,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:audio-group>
             <e:attachment>
               <e:attachment-title>6. audio</e:attachment-title>
-              <e:audio src="6.ogg" times="1" restricted-audio-id="21" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
+              <e:audio src="6.ogg" times="1" restricted-audio-id="24" duration="999"><e:audio-title>Hören Sie den Text zuerst als Ganzes.</e:audio-title></e:audio>
               <e:reference>
                 <e:author>
                   
@@ -25640,21 +25682,21 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
               <e:dnd-answer max-score="2" question-id="100" display-number="23.1.1">
                   <e:dnd-answer-title>
                     Welche Zeit passt Lars am besten?
-                    <e:audio src="6.1.ogg" times="1" restricted-audio-id="22" duration="999"/>
+                    <e:audio src="6.1.ogg" times="1" restricted-audio-id="25" duration="999"/>
                   </e:dnd-answer-title>
                   
               </e:dnd-answer>
               <e:dnd-answer max-score="2" question-id="101" display-number="23.1.2">
                   <e:dnd-answer-title>
                     Welche Zeit passt Katarina am besten?
-                    <e:audio src="6.2.ogg" times="1" restricted-audio-id="23" duration="999"/>
+                    <e:audio src="6.2.ogg" times="1" restricted-audio-id="26" duration="999"/>
                   </e:dnd-answer-title>
                   
               </e:dnd-answer>
               <e:dnd-answer max-score="2" question-id="102" display-number="23.1.3">
                   <e:dnd-answer-title>
                     Welche Zeit passt Marit am besten?          
-                    <e:audio src="6.3.ogg" times="1" restricted-audio-id="24" duration="999"/>
+                    <e:audio src="6.3.ogg" times="1" restricted-audio-id="27" duration="999"/>
                   </e:dnd-answer-title>
                   
               </e:dnd-answer>

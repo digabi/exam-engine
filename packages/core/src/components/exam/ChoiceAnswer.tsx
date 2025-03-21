@@ -29,7 +29,7 @@ const ChoiceAnswerOption = ({
 
   const content = (
     <div
-      className={classNames('e-choice-answer-option e-column', className, {
+      className={classNames('e-choice-answer-option e-column e-pointer', className, {
         'e-choice-answer-option--selected': selected
       })}
     >
