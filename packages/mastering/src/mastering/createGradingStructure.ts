@@ -1,4 +1,5 @@
 import {
+  AudioQuestion,
   ChoiceGroupChoice,
   ChoiceGroupQuestion,
   GradingStructure,
@@ -37,6 +38,8 @@ export function createGradingStructure(
               return options?.groupChoiceAnswers
                 ? [mkChoiceGroupQuestion(answers, questionDisplayNumber, generateId)]
                 : answers.map(answer => mkSingleChoiceGroupQuestion(answer, generateId))
+            case 'audio':
+              return answers.map(mkAudioQuestion)
             default:
               throw new Error(`Bug: grading structure generation not implemented for ${questionType}`)
           }
@@ -53,7 +56,7 @@ function collectAnswers(question: Question): Answer[] {
   return question.childQuestions.length ? _.flatMap(question.childQuestions, collectAnswers) : question.answers
 }
 
-function getQuestionType(answer: Answer): 'text' | 'choice' {
+function getQuestionType(answer: Answer): 'text' | 'choice' | 'audio' {
   const answerType = answer.element.name()
 
   switch (answerType) {
@@ -65,6 +68,8 @@ function getQuestionType(answer: Answer): 'text' | 'choice' {
     case 'dnd-answer':
     case 'dnd-answer-container':
       return 'choice'
+    case 'audio-answer':
+      return 'audio'
     default:
       throw new Error(`getQuestionType not implemented for ${answerType}`)
   }
@@ -85,7 +90,7 @@ function mkTextQuestion(answer: Answer): TextQuestion {
     ...(maxLength && { maxLength })
   }
 
-  if (type === 'text-answer') {
+  if (type === 'text-answer' || type == 'audio-answer') {
     return question
   } else {
     const correctAnswers = answer.element.find<Element>('./e:accepted-answer', ns).map(e => ({
@@ -148,6 +153,20 @@ function mkChoiceGroupChoice(answer: Answer): ChoiceGroupChoice {
     options
   }
 }
+
+function mkAudioQuestion(answer: Answer): AudioQuestion {
+  const id = getNumericAttribute('question-id', answer.element)
+  const displayNumber = getAttribute('display-number', answer.element)
+  const maxScore = getNumericAttribute('max-score', answer.element)
+
+  return {
+    type: 'audio',
+    id,
+    displayNumber,
+    maxScore
+  }
+}
+
 const getDigit =
   (digit: number) =>
   (question: GradingStructureQuestion): number =>
