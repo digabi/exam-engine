@@ -25,27 +25,29 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       let errorMark = await page.$(errorMarkLocator)
       expect(errorMark).toBeFalsy()
 
-      await type('testivastaus', 21)
-      await type('testivastaus', 23)
-      await type('testivastaus', 26)
-      await type('testivastaus', 32)
-      await type('testivastaus', 37)
-      await type('testivastaus', 41)
+      await type(page, 'testivastaus', 21)
+      await type(page, 'testivastaus', 23)
+      await type(page, 'testivastaus', 26)
+      await type(page, 'testivastaus', 32)
+      await type(page, 'testivastaus', 37)
+      await type(page, 'testivastaus', 41)
       errorMark = await page.waitForSelector(errorMarkLocator)
       expect(errorMark).toBeTruthy()
     })
 
     it('shows a section-level error when section has too many questions answered', async () => {
+      // only two answers are allowed in questions 2 — 4
+
       await loadExam(page, ctx.url)
 
       const errorMarkLocator = '.sidebar-toc-container li[data-section-id="2"] .error-mark'
 
-      await type('testivastaus', 21)
-      await type('testivastaus', 23)
+      await type(page, 'testivastaus', 21) // 2.1
+      await type(page, 'testivastaus', 23) // 3.1
       let errorMark = await page.$(errorMarkLocator)
-      expect(errorMark).toBeFalsy()
+      expect(errorMark).toBeNull()
 
-      await type('testivastaus', 26)
+      await type(page, 'testivastaus', 26) // 4.1
       errorMark = await page.waitForSelector(errorMarkLocator)
       expect(errorMark).toBeTruthy()
     })
@@ -88,8 +90,6 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       expect(await questionSelector?.isIntersectingViewport()).toBe(true)
       await ctx.close()
     })
-
-    const type = (text: string, questionId = 89) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
   })
 
   describe('question level errors', () => {
@@ -113,17 +113,17 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       const indicator98 = '.sidebar-toc-container div[data-indicator-id="98"]'
       const indicator99 = '.sidebar-toc-container div[data-indicator-id="99"]'
 
-      await type('testivastaus', 97)
+      await type(page, 'testivastaus', 97)
       expect(getElement(indicator97)).not.toContain('error')
       expect(getElement(indicator98)).not.toContain('error')
       expect(getElement(indicator99)).not.toContain('error')
 
-      await type('testivastaus', 98)
+      await type(page, 'testivastaus', 98)
       expect(await page.waitForSelector(`${indicator97}.error`)).toBeTruthy()
       expect(await page.waitForSelector(`${indicator98}.error`)).toBeTruthy()
       expect(getElement(indicator99)).not.toContain('error')
 
-      await type('testivastaus', 99)
+      await type(page, 'testivastaus', 99)
       expect(await page.waitForSelector(`${indicator97}.error`)).toBeTruthy()
       expect(await page.waitForSelector(`${indicator98}.error`)).toBeTruthy()
       expect(await page.waitForSelector(`${indicator99}.error`)).toBeTruthy()
@@ -131,7 +131,10 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
 
     const getElement = async (selector: string, error = false) =>
       await page.waitForSelector(`${selector}${error ? '.error' : ''}`)
-
-    const type = (text: string, questionId = 89) => page.type(`.text-answer[data-question-id="${questionId}"]`, text)
   })
 })
+
+const type = async (page: Page, text: string, questionId = 89) => {
+  const selector = `.text-answer[data-question-id="${questionId}"]`
+  await page.locator(selector).fill(text)
+}
