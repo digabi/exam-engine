@@ -65,7 +65,7 @@
     "lerna": "lerna",
     "lint": "prettier packages/core/src/**/*.less --check && eslint .",
     "ee": "node packages/cli/dist/index.js",
-    "test": "npm run test-jest && npm run test-ct -- --project=chrome",
+    "test": "npm run test-ct -- --project=chrome && npm run test-jest",
     "prepare": "tsc --build --force && npm run --workspace @digabi/exam-engine-core build",
     "test-jest": "NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
     "test-ct": "playwright test -c packages/core/playwright-ct.config.ts",
