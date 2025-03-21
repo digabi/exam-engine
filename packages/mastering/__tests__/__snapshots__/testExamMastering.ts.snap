@@ -25855,6 +25855,19 @@ exports[`Exam mastering supports arbitrarily nested questions: xml 1`] = `
 
 `;
 
+exports[`Exam mastering supports audio-answers 1`] = `
+{
+  "questions": [
+    {
+      "type": "audio",
+      "id": 1,
+      "displayNumber": "1",
+      "maxScore": 5
+    }
+  ]
+}
+`;
+
 exports[`Exam mastering supports multiple exam-type attributes: hearing-impaired 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" max-score="0">
