@@ -2397,6 +2397,10 @@
         </e:dnd-answer-container>
       </e:question>
     </e:question>
+    <e:question>
+      <e:question-title>Audio answer</e:question-title>
+      <e:audio-answer max-score="1"/>
+    </e:question>
   </e:section>
 
   <e:references/>
