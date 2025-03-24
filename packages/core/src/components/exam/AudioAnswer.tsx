@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
 import { useDispatch } from 'react-redux'
 import { ReactMediaRecorder } from 'react-media-recorder'
+import { ExamContext } from '../context/ExamContext'
 
 interface AudioAnswerRecorderProps {
-  onSave: (blobUrl: string, blob: Blob | null) => void
+  onSave: (blob: Blob) => void
   bitsPerSecond?: number
 }
 
@@ -17,7 +18,7 @@ function AudioAnswerRecorder({ onSave, bitsPerSecond }: AudioAnswerRecorderProps
     <ReactMediaRecorder
       audio={true}
       mediaRecorderOptions={{ audioBitsPerSecond: bitsPerSecond ?? 65536 }}
-      onStop={(blobUrl, blob) => onSave(blobUrl, blob)}
+      onStop={(_blobUrl, blob) => onSave(blob)}
       render={({ status, error, startRecording, stopRecording, clearBlobUrl, mediaBlobUrl }) => (
         <>
           <div>
@@ -35,7 +36,6 @@ function AudioAnswerRecorder({ onSave, bitsPerSecond }: AudioAnswerRecorderProps
                 onClick={() => {
                   clearBlobUrl()
                   setBlobSize(0)
-                  onSave('', null)
                 }}
                 disabled={status != 'stopped' || !mediaBlobUrl}
               >
@@ -63,14 +63,16 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const questionId = getNumericAttribute(element, 'question-id')!
   const displayNumber = element.getAttribute('display-number')!
   const dispatch = useDispatch()
+  const { examServerApi } = useContext(ExamContext)
 
   return (
     <>
       <span className="anchor" id={`question-nr-${displayNumber}`} />
       <AudioAnswerRecorder
-        onSave={(blobUrl: string, blob: Blob | null) => {
-          console.info('save', blob)
-          dispatch(saveAnswer({ type: 'audio', questionId, displayNumber, value: blobUrl }))
+        onSave={async audio => {
+          const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
+          const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
+          dispatch(saveAnswer(answer))
         }}
       />
     </>
