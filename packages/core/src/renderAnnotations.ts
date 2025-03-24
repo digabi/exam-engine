@@ -160,7 +160,7 @@ function renderTextAnnotation(
         mark.appendChild(createSup(index, 'text', annotation.message))
       }
     } else {
-      if (node instanceof HTMLDivElement) {
+      if (node instanceof HTMLDivElement && node.childNodes.length > 0) {
         return go(node.childNodes[0], currentIndex, remaining)
       }
       if (node instanceof Text && currentIndex + length(node) > startIndex) {

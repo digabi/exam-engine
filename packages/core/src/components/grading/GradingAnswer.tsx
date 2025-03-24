@@ -83,7 +83,9 @@ function GradingAnswerWithTranslations({
   const [failedImages, setFailedImages] = useState(0)
 
   useEffect(() => {
-    const nonEmptyImages = document.querySelectorAll('.e-grading-answer img[src]')
+    const nonEmptyImages = Array.from(document.querySelectorAll('.e-grading-answer img[src]')).filter(
+      e => !(e as HTMLImageElement).src.endsWith('/math.svg?latex=')
+    )
     function handleImageLoaded() {
       setLoadedCount(prevCount => prevCount + 1)
     }
@@ -102,7 +104,11 @@ function GradingAnswerWithTranslations({
     nonEmptyImages?.forEach(img => {
       if (img instanceof HTMLImageElement) {
         if (img.complete) {
-          handleImageLoaded()
+          if (!img.naturalWidth || !img.naturalHeight) {
+            handleImageError(img)
+          } else {
+            handleImageLoaded()
+          }
         } else {
           img.addEventListener('load', handleImageLoaded)
           img.addEventListener('error', () => handleImageError(img))
