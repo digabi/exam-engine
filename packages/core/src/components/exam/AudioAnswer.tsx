@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
+import { getNumericAttribute } from '../../dom-utils'
+import { saveAnswer } from '../../store/answers/actions'
+import { useDispatch } from 'react-redux'
 import { ReactMediaRecorder } from 'react-media-recorder'
 
 interface AudioAnswerRecorderProps {
-  onSave: (blob: Blob) => void
+  onSave: (blobUrl: string, blob: Blob | null) => void
   bitsPerSecond?: number
 }
 
@@ -14,7 +17,7 @@ function AudioAnswerRecorder({ onSave, bitsPerSecond }: AudioAnswerRecorderProps
     <ReactMediaRecorder
       audio={true}
       mediaRecorderOptions={{ audioBitsPerSecond: bitsPerSecond ?? 65536 }}
-      onStop={(_blobUrl, blob) => onSave(blob)}
+      onStop={(blobUrl, blob) => onSave(blobUrl, blob)}
       render={({ status, error, startRecording, stopRecording, clearBlobUrl, mediaBlobUrl }) => (
         <>
           <div>
@@ -32,6 +35,7 @@ function AudioAnswerRecorder({ onSave, bitsPerSecond }: AudioAnswerRecorderProps
                 onClick={() => {
                   clearBlobUrl()
                   setBlobSize(0)
+                  onSave('', null)
                 }}
                 disabled={status != 'stopped' || !mediaBlobUrl}
               >
@@ -56,12 +60,19 @@ function AudioAnswerRecorder({ onSave, bitsPerSecond }: AudioAnswerRecorderProps
 
 function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const { element } = audioAnswerProps
+  const questionId = getNumericAttribute(element, 'question-id')!
   const displayNumber = element.getAttribute('display-number')!
+  const dispatch = useDispatch()
 
   return (
     <>
       <span className="anchor" id={`question-nr-${displayNumber}`} />
-      <AudioAnswerRecorder onSave={(blob: Blob) => console.info(blob)} />
+      <AudioAnswerRecorder
+        onSave={(blobUrl: string, blob: Blob | null) => {
+          console.info('save', blob)
+          dispatch(saveAnswer({ type: 'audio', questionId, displayNumber, value: blobUrl }))
+        }}
+      />
     </>
   )
 }

@@ -6,10 +6,14 @@
     <e:exam-title>Audio answer</e:exam-title>
     <e:exam-instruction/>
     <e:table-of-contents/>
-    <e:section>
+    <e:section max-answers="1">
         <e:section-title />
         <e:question>
-            <e:question-title>Audio answer</e:question-title>
+            <e:question-title>Audio answer 1</e:question-title>
+            <e:audio-answer max-score="5"/>
+        </e:question>
+        <e:question>
+            <e:question-title>Audio answer 2</e:question-title>
             <e:audio-answer max-score="5"/>
         </e:question>
     </e:section>
