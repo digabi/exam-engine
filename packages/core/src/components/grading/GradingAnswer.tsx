@@ -1,6 +1,6 @@
 import React, { FormEvent, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
-import { Annotation, TextAnnotation } from '../..'
+import { Annotation, AudioAnswer, RichTextAnswer, TextAnnotation, TextAnswer } from '../..'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import {
   renderAnnotations,
@@ -30,7 +30,7 @@ type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 type GradingRole = 'pregrading' | 'censoring'
 
 type GradingAnswerProps = {
-  answer: { type: 'richText' | 'text'; characterCount: number; value: string }
+  answer: RichTextAnswer | TextAnswer | AudioAnswer
   language: string
   isReadOnly: boolean
   gradingRole: GradingRole
@@ -168,7 +168,7 @@ function GradingAnswerWithTranslations({
         onMouseDown={e => onAnswerMouseDown(e)}
         onMouseOver={e => onMouseOverAnnotation(e.target as HTMLElement)}
       />
-      <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />
+      {type == 'audio' ? null : <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />}
       <GradingAnswerAnnotationList
         censoring={annotations.censoring}
         pregrading={annotations.pregrading}
