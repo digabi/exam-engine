@@ -11,7 +11,6 @@ import File from '../shared/File'
 import Formula from '../shared/Formula'
 import Image from '../shared/Image'
 import Reference from '../shared/Reference'
-import surround from '../surround'
 import Video from '../shared/Video'
 import ImageOverlay from '../shared/ImageOverlay'
 import RenderChildNodes from '../RenderChildNodes'
@@ -31,7 +30,10 @@ const _renderChildNodes = createRenderChildNodes({
   formula: Formula,
   'question-number': QuestionNumber,
   translation: ExamTranslation,
-  reference: surround(Reference, 'div', { className: 'e-mrg-y-2 e-font-size-s' }),
+  reference: {
+    component: Reference,
+    wrapper: ({ children }) => <div className="e-mrg-y-2 e-font-size-s">{children}</div>
+  },
   'image-overlay': ImageOverlay
 })
 

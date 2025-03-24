@@ -1,11 +1,10 @@
-import { ExamComponentProps } from '../createRenderChildNodes'
 import React from 'react'
-import { getDisplayName } from '../getDisplayName'
 
-export const renderIf =
-  (predicate: (props: ExamComponentProps) => boolean) =>
-  (Component: React.ComponentType<ExamComponentProps>): React.FunctionComponent<ExamComponentProps> => {
-    const Wrapped = (props: ExamComponentProps) => (predicate(props) ? <Component {...props} /> : null)
-    Wrapped.displayName = `RenderIf(${getDisplayName(Component)})`
-    return Wrapped
-  }
+export const renderIf = (predicate: (element: Element) => boolean) =>
+  // eslint-disable-next-line prefer-arrow-callback
+  React.memo(function RenderIf({ element, children }: React.PropsWithChildren<{ element: Element }>) {
+    if (predicate(element)) {
+      return children
+    }
+    return null
+  })
