@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-exams",
-  "version": "23.7.2-fixes.0",
+  "version": "23.7.3-fixes.0",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "main": "dist/index.js",
