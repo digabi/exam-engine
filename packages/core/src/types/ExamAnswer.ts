@@ -24,4 +24,9 @@ export interface ChoiceAnswer extends AnswerCommon {
   type: 'choice'
 }
 
-export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer
+export interface AudioAnswer extends AnswerCommon {
+  type: 'audio'
+  characterCount: 0
+}
+
+export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer | AudioAnswer
