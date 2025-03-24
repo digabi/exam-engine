@@ -26253,6 +26253,12 @@ exports[`Exam mastering supports audio-answers 1`] = `
       "id": 1,
       "displayNumber": "1",
       "maxScore": 5
+    },
+    {
+      "type": "audio",
+      "id": 2,
+      "displayNumber": "2",
+      "maxScore": 5
     }
   ]
 }
