@@ -35,8 +35,8 @@ import { GradingInstructionProvider } from './GradingInstructionProvider'
 import { GradingInstructionProps } from '../context/GradingInstructionContext'
 import { DNDAnswerContainer } from '../shared/DNDAnswerContainer'
 
-const renderIfWithinGradingInstructionContent = renderIf(
-  ({ element }) =>
+const RenderIfWithinGradingInstructionContent = renderIf(
+  element =>
     queryAncestors(element, [
       // Keep in sync with lists in mastering/index.ts
       'answer-grading-instruction',
@@ -52,15 +52,13 @@ const renderIfWithinGradingInstructionContent = renderIf(
     ]) != null
 )
 
-const renderIfNotWithinExternalMaterial = renderIf(
-  ({ element }) => queryAncestors(element, ['external-material']) == null
-)
+const RenderIfNotWithinExternalMaterial = renderIf(element => queryAncestors(element, ['external-material']) == null)
 
 const _renderChildNodes = createRenderChildNodes({
   'accepted-answer': AutogradedAnswerOption,
   attachment: RenderExamElements,
-  'attachment-link': renderIfNotWithinExternalMaterial(mkAttachmentLink('plain')),
-  'attachment-links': renderIfNotWithinExternalMaterial(mkAttachmentLinks('plain')),
+  'attachment-link': { component: mkAttachmentLink('plain'), wrapper: RenderIfNotWithinExternalMaterial },
+  'attachment-links': { component: mkAttachmentLinks('plain'), wrapper: RenderIfNotWithinExternalMaterial },
   audio: Recording,
   'audio-group': RenderExamElements,
   'choice-answer': AutogradedAnswer,
@@ -69,10 +67,10 @@ const _renderChildNodes = createRenderChildNodes({
   'dropdown-answer-option': AutogradedAnswerOption,
   'dnd-answer-container': props => <DNDAnswerContainer {...props} page="grading-instructions" />,
   'external-material': RenderExamElements,
-  file: renderIfWithinGradingInstructionContent(File),
-  formula: renderIfWithinGradingInstructionContent(Formula),
+  file: { component: File, wrapper: RenderIfWithinGradingInstructionContent },
+  formula: { component: Formula, wrapper: RenderIfWithinGradingInstructionContent },
   hints: RenderExamElements,
-  image: renderIfWithinGradingInstructionContent(Image),
+  image: { component: Image, wrapper: RenderIfWithinGradingInstructionContent },
   question: Question,
   'question-title': QuestionTitle,
   'question-instruction': QuestionInstruction,

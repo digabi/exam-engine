@@ -21,8 +21,14 @@ export const enum RenderOptions {
 
 export type RenderChildNodes = (element: Element, options?: RenderOptions) => React.ReactNode[]
 export type RenderComponentOverrides = Record<string, React.ComponentType<ExamComponentProps>>
+type ComponentDefinition =
+  | React.ComponentType<ExamComponentProps>
+  | {
+      component: React.ComponentType<ExamComponentProps>
+      wrapper: React.ComponentType<React.PropsWithChildren<{ element: Element }>>
+    }
 
-export function createRenderChildNodes(componentMap: Record<string, React.ComponentType<ExamComponentProps>>) {
+export function createRenderChildNodes(componentMap: Record<string, ComponentDefinition>) {
   return (renderComponentOverrides: Record<string, React.ComponentType<ExamComponentProps>> = {}): RenderChildNodes => {
     function renderChildNode(node: ChildNode, index: number, options: RenderOptions): React.ReactNode {
       switch (node.nodeType) {
@@ -75,23 +81,36 @@ export function createRenderChildNodes(componentMap: Record<string, React.Compon
     }
 
     function renderExamElement(element: Element, index: number) {
+      if (!(element.localName in componentMap)) {
+        return null
+      }
+
+      const elementComponentDefinition = componentMap[element.localName]
+
+      const Wrapper = 'wrapper' in elementComponentDefinition ? elementComponentDefinition.wrapper : undefined
       const Component =
-        element.localName in componentMap
-          ? (renderComponentOverrides[element.localName] ?? componentMap[element.localName])
-          : undefined
+        renderComponentOverrides[element.localName] ??
+        ('component' in elementComponentDefinition ? elementComponentDefinition.component : elementComponentDefinition)
 
       const className = element.getAttribute('class') || undefined
-      return Component ? (
+      const content = (
         <Component
           {...{
             element,
             className,
             renderChildNodes,
             renderComponentOverrides,
-            key: key(element, index)
+            key: Wrapper ? undefined : key(element, index)
           }}
         />
-      ) : null
+      )
+      return Wrapper ? (
+        <Wrapper key={key(element, index)} element={element}>
+          {content}
+        </Wrapper>
+      ) : (
+        content
+      )
     }
 
     function renderChildNodes(element: Element, options: RenderOptions = RenderOptions.RenderHTML): React.ReactNode[] {

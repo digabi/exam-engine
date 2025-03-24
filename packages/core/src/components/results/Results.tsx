@@ -56,14 +56,20 @@ const _renderChildNodes = createRenderChildNodes({
   'attachment-link': mkAttachmentLink('plain'),
   'attachment-links': mkAttachmentLinks('plain'),
   'audio-group': RenderChildNodes,
-  audio: renderIf(({ element }) => queryAncestors(element, 'dnd-answer-container') != null)(AudioContainer),
+  audio: {
+    component: AudioContainer,
+    wrapper: renderIf(element => queryAncestors(element, 'dnd-answer-container') != null)
+  },
   'choice-answer': ResultsChoiceAnswer,
   'dnd-answer-container': props => <DNDAnswerContainer {...props} page="results" />,
   'dropdown-answer': DropdownAnswer,
   formula: Formula,
   question: Question,
   hints: RenderChildNodes,
-  image: renderIf(({ element }) => queryAncestors(element, ['choice-answer', 'dnd-answer-container']) != null)(Image),
+  image: {
+    component: Image,
+    wrapper: renderIf(element => queryAncestors(element, ['choice-answer', 'dnd-answer-container']) != null)
+  },
   'question-instruction': ExamQuestionInstruction,
   'question-number': QuestionNumber,
   translation: ExamTranslation,
