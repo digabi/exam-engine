@@ -1,12 +1,17 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "23.7.0",
+  "version": "23.7.1-alpha.0",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
-  "sideEffects": ["*.less", "*.css"],
-  "files": ["dist"],
+  "sideEffects": [
+    "*.less",
+    "*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "webpack --mode=production",
     "build:analyze": "webpack --mode=production --profile --json --display normal > stats.json",
