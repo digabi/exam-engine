@@ -70,6 +70,14 @@ export interface DragAndDropAnswerElement extends BaseElement {
   }
 }
 
+export interface AudioAnswerElement extends BaseElement {
+  name: 'audio-answer'
+  attributes: {
+    displayNumber: string
+    questionId: number
+  }
+}
+
 export type ExamElement = RootElement | SectionElement | QuestionElement | AnswerElement
 
 export type AnswerElement =
@@ -78,6 +86,7 @@ export type AnswerElement =
   | ChoiceAnswerElement
   | DropdownAnswerElement
   | DragAndDropAnswerElement
+  | AudioAnswerElement
 
 export function parseExamStructure(doc: XMLDocument): RootElement {
   const root = doc.documentElement
@@ -100,7 +109,7 @@ function parseQuestion(question: Element): QuestionElement {
     ? childQuestions.map(parseQuestion)
     : queryAll(
         question,
-        ['text-answer', 'scored-text-answer', 'choice-answer', 'dropdown-answer', 'dnd-answer'],
+        ['text-answer', 'scored-text-answer', 'choice-answer', 'dropdown-answer', 'dnd-answer', 'audio-answer'],
         false
       ).map(parseAnswer)
   return parseElement<QuestionElement>(question, childElements, {
