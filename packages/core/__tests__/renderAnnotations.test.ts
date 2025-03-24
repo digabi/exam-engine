@@ -177,6 +177,22 @@ describe('renderAnnotations()', () => {
       )
     ).toMatchSnapshot()
   })
+
+  it('annotation can be shown when answer has divs', () => {
+    expect(
+      render(
+        '<div>foo</div> <div></div> Lorem ipsum dolor sit amet',
+        [
+          {
+            startIndex: 10,
+            length: 1,
+            message: 'test'
+          }
+        ],
+        []
+      )
+    ).toMatchSnapshot()
+  })
 })
 
 function createAnswer(html: string) {
