@@ -58,7 +58,6 @@ export const coordinateGetter: KeyboardCoordinateGetter = (
         case KeyboardCode.Left:
           if (collisionRect.left >= rect.left + rect.width) {
             return
-            filteredContainers.push(entry)
           }
           break
         case KeyboardCode.Right:
