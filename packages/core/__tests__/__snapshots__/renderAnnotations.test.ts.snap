@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renderAnnotations() annotation can be shown when answer has divs 1`] = `<div>foo</div> <div></div> Lorem<mark class="e-annotation e-annotation--pregrading" title="test" data-list-index="0" data-type="pregrading" data-index="1" data-message="test"> <sup class="e-annotation__index e-annotation__index--text" data-content="test" data-message="test"></sup></mark>ipsum dolor sit amet`;
+exports[`renderAnnotations() annotation can be shown when answer has div with content and empty div 1`] = `<div>foo</div> <div></div> Lorem<mark class="e-annotation e-annotation--pregrading" title="test" data-list-index="0" data-type="pregrading" data-index="1" data-message="test"> <sup class="e-annotation__index e-annotation__index--text" data-content="test" data-message="test"></sup></mark>ipsum dolor sit amet`;
 
 exports[`renderAnnotations() annotation is too long for answer 1`] = `Lorem<mark class="e-annotation e-annotation--pregrading" title="Invalid annotation" data-list-index="0" data-type="pregrading" data-index="1" data-message="Invalid annotation"> ipsum dolor sit amet<sup class="e-annotation__index e-annotation__index--text" data-content="1)" data-message="Invalid annotation"></sup></mark>`;
 
