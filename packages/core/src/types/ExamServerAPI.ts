@@ -75,6 +75,8 @@ export interface ExamServerAPI {
   selectAnswerVersion?: (questionId: QuestionId, questionTitle: string) => Promise<ExamAnswer | undefined>
   /** Save screenshot to server. Should return the URL to the saved screenshot. */
   saveScreenshot: (questionId: QuestionId, screenshot: Blob) => Promise<string>
+  /** Save audio to server. Should return the URL to the saved audio. */
+  saveAudio: (questionId: QuestionId, audio: Blob) => Promise<string>
   examineExam?: () => void
   /** Log client activity to server. Message format is free. Optional feature. */
   logActivity?: (message: string) => void
