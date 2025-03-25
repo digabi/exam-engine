@@ -6,6 +6,7 @@ export const examServerApi: ExamServerAPI = {
   saveAnswer: () => Promise.resolve(),
   saveScreenshot: () => Promise.resolve('ok'),
   saveAudio: () => Promise.resolve('ok'),
+  deleteAudio: () => Promise.resolve(),
   playAudio: () => Promise.resolve('ok'),
   playRestrictedAudio: () => Promise.resolve('ok'),
   getRestrictedAudio: () => Promise.resolve(new Blob()),
