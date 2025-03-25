@@ -39,6 +39,24 @@ export default function indexedDBExamServerAPI(
     saveAnswer: async answer => {
       await db.answer.put({ ...answer, examUuid })
     },
+    async saveAudio(_, audio: Blob) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => {
+          resolve(String(reader.result))
+        }
+        reader.onerror = () => {
+          reader.abort()
+          reject(reader.error as DOMException)
+        }
+        reader.readAsDataURL(audio)
+      })
+    },
+    async deleteAudio() {
+      return new Promise<void>(resolve => {
+        resolve()
+      })
+    },
     async playAudio(src) {
       audioPlayer.src = resolveAttachment(src)
 
