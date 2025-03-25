@@ -77,6 +77,9 @@ export interface ExamServerAPI {
   saveScreenshot: (questionId: QuestionId, screenshot: Blob) => Promise<string>
   /** Save audio to server. Should return the URL to the saved audio. */
   saveAudio: (questionId: QuestionId, audio: Blob) => Promise<string>
+  /** Delete audio from server */
+  deleteAudio: (questionId: QuestionId) => Promise<void>
+
   examineExam?: () => void
   /** Log client activity to server. Message format is free. Optional feature. */
   logActivity?: (message: string) => void
