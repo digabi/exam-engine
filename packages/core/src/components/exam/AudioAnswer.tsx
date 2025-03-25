@@ -29,7 +29,7 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
             <p>status: {status}</p>
             {error && <p>error: {error}</p>}
             {blobSize > 0 && <p>size: {blobSize} bytes</p>}
-            {audioUrl && <p>audiourl: {audioUrl}</p>}
+            {audioUrl && <p>audiourl: {audioUrl.slice(0, 50)}...</p>}
             <p>
               <button onClick={startRecording} disabled={status == 'recording' || !!audioUrl}>
                 Tallenna ääntä
