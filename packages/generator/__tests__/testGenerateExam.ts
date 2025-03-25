@@ -279,7 +279,10 @@ describe('generateExam()', () => {
             min: new Date('2000-01-01'),
             max: new Date('2030-12-31')
           })
-          .map(d => formatISO(d, { representation: 'date' }))
+          .map(d => {
+            console.log(d)
+            return formatISO(d, { representation: 'date' })
+          })
       ),
       examCode: optional(fc.constantFrom('EA', 'M', 'N')),
       maxAnswers: optional(maxAnswers),
