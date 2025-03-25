@@ -7,7 +7,6 @@
   "license": "EUPL-1.1",
   "devDependencies": {
     "@digabi/eslint-config": "^3.0.0",
-    "@digabi/noto-sans": "^2.2.0",
     "@swc-node/jest": "^1.1.1",
     "@swc/helpers": "^0.5.2",
     "@types/child-process-promise": "^2.2.1",
