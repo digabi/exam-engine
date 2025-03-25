@@ -31,7 +31,7 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
             {blobSize > 0 && <p>size: {blobSize} bytes</p>}
             {audioUrl && <p>audiourl: {audioUrl}</p>}
             <p>
-              <button onClick={startRecording} disabled={status != 'idle' || !!audioUrl}>
+              <button onClick={startRecording} disabled={status == 'recording' || !!audioUrl}>
                 Tallenna ääntä
               </button>
               <button onClick={stopRecording} disabled={status != 'recording'}>
