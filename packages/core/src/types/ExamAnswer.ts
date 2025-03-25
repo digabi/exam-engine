@@ -26,7 +26,7 @@ export interface ChoiceAnswer extends AnswerCommon {
 
 export interface AudioAnswer extends AnswerCommon {
   type: 'audio'
-  characterCount: 0
+  characterCount?: never
 }
 
 export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer | AudioAnswer
