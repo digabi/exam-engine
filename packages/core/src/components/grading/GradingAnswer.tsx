@@ -162,13 +162,21 @@ function GradingAnswerWithTranslations({
           {someImagesFailedToLoad && <span className="failed">{t('grading.some-images-failed')}</span>}
         </div>
       )}
-      <div
-        className="e-grading-answer e-line-height-l e-mrg-b-1"
-        ref={answerRef}
-        onMouseDown={e => onAnswerMouseDown(e)}
-        onMouseOver={e => onMouseOverAnnotation(e.target as HTMLElement)}
-      />
-      {type == 'audio' ? null : <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />}
+      {type == 'audio' ? (
+        <div className="e-grading-answer e-line-height-l e-mrg-b-1">
+          {value && <audio src={value} className="e-column e-column--narrow" controls controlsList="nodownload" />}
+        </div>
+      ) : (
+        <>
+          <div
+            className="e-grading-answer e-line-height-l e-mrg-b-1"
+            ref={answerRef}
+            onMouseDown={e => onAnswerMouseDown(e)}
+            onMouseOver={e => onMouseOverAnnotation(e.target as HTMLElement)}
+          />
+          <AnswerCharacterCounter characterCount={characterCount} maxLength={maxLength} />
+        </>
+      )}
       <GradingAnswerAnnotationList
         censoring={annotations.censoring}
         pregrading={annotations.pregrading}
@@ -424,7 +432,7 @@ function GradingAnswerWithTranslations({
       container.innerHTML = value
       wrapAllImages(container)
       updateLargeImageWarnings(container)
-    } else {
+    } else if (type != 'audio') {
       container.textContent = value
     }
     renderAnnotations(container, annotations.pregrading, annotations.censoring, false)
