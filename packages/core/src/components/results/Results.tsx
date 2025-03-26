@@ -36,6 +36,7 @@ import { EndExamSession } from './EndExamSession'
 import { Footer } from '../shared/Footer'
 import { DNDAnswerContainer } from '../shared/DNDAnswerContainer'
 import { AudioContainer } from './AudioContainer'
+import AudioAnswer from './AudioAnswer'
 
 export interface ResultsProps extends CommonExamProps {
   /** Contains grading structure for the exam, and in addition scores and metadata (comments and annotations) */
@@ -78,7 +79,8 @@ const _renderChildNodes = createRenderChildNodes({
   'section-title': ExamSectionTitle,
   'text-answer': TextAnswer,
   'scored-text-answer': ScoredTextAnswer,
-  'scored-text-answers': RenderChildNodes
+  'scored-text-answers': RenderChildNodes,
+  'audio-answer': AudioAnswer
 })
 
 const Results: React.FunctionComponent<ResultsProps> = ({
