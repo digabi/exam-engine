@@ -277,7 +277,8 @@ describe('generateExam()', () => {
         fc
           .date({
             min: new Date('2000-01-01'),
-            max: new Date('2030-12-31')
+            max: new Date('2030-12-31'),
+            noInvalidDate: true
           })
           .map(d => {
             console.log(d)
