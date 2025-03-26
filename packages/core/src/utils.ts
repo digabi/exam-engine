@@ -14,7 +14,6 @@ export function mapMaybe<T, U>(array: T[], fn: (value: T, index: number) => U | 
       result.push(value)
     }
   }
-
   return result
 }
 
