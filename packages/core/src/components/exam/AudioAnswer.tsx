@@ -22,6 +22,7 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
     <ReactMediaRecorder
       audio={true}
       mediaRecorderOptions={{ audioBitsPerSecond: bitsPerSecond ?? 65536 }}
+      blobPropertyBag={{ type: 'audio/mpeg' }}
       onStop={(_blobUrl, blob) => onSave(blob)}
       render={({ status, error, startRecording, stopRecording }) => (
         <>
@@ -80,6 +81,7 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
       <AudioAnswerRecorder
         audioUrl={answer?.value === '' ? undefined : answer?.value}
         onSave={async audio => {
+          console.info(audio)
           const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
           const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
           dispatch(saveAnswer(answer))
