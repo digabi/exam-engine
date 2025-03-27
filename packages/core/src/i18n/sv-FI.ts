@@ -127,6 +127,9 @@ export const sv_FI: Translations = {
   'previous-answer-versions': 'Tidigare utkast till svar',
   'zoom-in': 'Förstora bilden',
   'end-of-exam': 'Uppgifterna i provet slutar här.',
+  'start.recording': 'Spela in svaret',
+  'stop.recording': 'Stoppa inspelningen',
+  'remove.recording': 'Radera inspelningen',
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.
