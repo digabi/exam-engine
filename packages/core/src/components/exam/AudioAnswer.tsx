@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
@@ -7,6 +7,9 @@ import { ReactMediaRecorder } from 'react-media-recorder'
 import { ExamContext } from '../context/ExamContext'
 import { AnswersState } from '../../store/answers/reducer'
 import type { AudioAnswer } from '../../types/ExamAnswer'
+import { useExamTranslation } from '../../i18n'
+import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface AudioAnswerRecorderProps {
   audioUrl?: string
@@ -16,7 +19,7 @@ interface AudioAnswerRecorderProps {
 }
 
 function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: AudioAnswerRecorderProps) {
-  const [blobSize, setBlobSize] = useState<number>(0)
+  const { t } = useExamTranslation()
 
   return (
     <ReactMediaRecorder
@@ -27,36 +30,36 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
       render={({ status, error, startRecording, stopRecording }) => (
         <>
           <div>
-            <p>status: {status}</p>
             {error && <p>error: {error}</p>}
-            {blobSize > 0 && <p>size: {blobSize} bytes</p>}
-            {audioUrl && <p>audiourl: {audioUrl.slice(0, 50)}...</p>}
             <p>
-              <button onClick={startRecording} disabled={status == 'recording' || !!audioUrl}>
-                Tallenna ääntä
-              </button>
-              <button onClick={stopRecording} disabled={status != 'recording'}>
-                Lopeta tallennus
-              </button>
-              <button
-                onClick={() => {
-                  setBlobSize(0)
-                  onDelete()
-                }}
-                disabled={!audioUrl}
-              >
-                Poista äänite
-              </button>
+              {status != 'recording' && !audioUrl && (
+                <button className="e-button" onClick={startRecording}>
+                  <FontAwesomeIcon size="sm" icon={faMicrophone} fixedWidth />
+                  {t('start.recording')}
+                </button>
+              )}
+              {status == 'recording' && (
+                <button className="e-button" onClick={stopRecording}>
+                  <FontAwesomeIcon size="sm" icon={faStop} fixedWidth />
+                  {t('stop.recording')}
+                </button>
+              )}
             </p>
           </div>
           {audioUrl && (
-            <audio
-              src={audioUrl}
-              className="e-column e-column--narrow"
-              preload="metadata"
-              controls
-              controlsList="nodownload"
-            />
+            <div className="audio-answer-controls">
+              <audio
+                src={audioUrl}
+                className="e-column e-column--narrow"
+                preload="metadata"
+                controls
+                controlsList="nodownload"
+              />
+              <span>&nbsp;</span>
+              <button className="e-button-secondary" onClick={onDelete}>
+                {t('remove.recording')}
+              </button>
+            </div>
           )}
         </>
       )}
@@ -81,7 +84,6 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
       <AudioAnswerRecorder
         audioUrl={answer?.value === '' ? undefined : answer?.value}
         onSave={async audio => {
-          console.info(audio)
           const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
           const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
           dispatch(saveAnswer(answer))
