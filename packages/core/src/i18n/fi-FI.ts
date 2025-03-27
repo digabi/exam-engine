@@ -119,6 +119,7 @@ export const fi_FI = {
     returnUsbStick: 'Kun kone on sammunut, irrota USB-muisti ja palauta se kokeen valvojalle.'
   },
   'toc-heading': 'Sisällys',
+  'no-attachments': 'Tämä koe ei sisällä aineistoja.',
   'answer-saved': 'Tallennettu',
   'too-many-answers': 'Vastattu liian moneen tehtävään:',
   'max-answers-warning': 'Vastaa enintään {{count}} tehtävään.',

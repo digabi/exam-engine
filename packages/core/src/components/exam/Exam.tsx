@@ -2,7 +2,7 @@ import React, { createRef, useContext, useEffect, useMemo, useState } from 'reac
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { createRenderChildNodes, RenderComponentOverrides } from '../../createRenderChildNodes'
-import { findChildElement } from '../../dom-utils'
+import { findChildElement, queryAncestors } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
@@ -54,6 +54,7 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
+import NotificationIcon from '../NotificationIcon'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -239,6 +240,8 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   const isNewKoeVersion = examServerApi.examineExam !== undefined
   const isPreview = studentName === '[Kokelaan Nimi]'
 
+  const hasAttachments = queryAncestors(root, 'external-material') != null
+
   return (
     <Provider store={store}>
       <AnnotationProvider annotationsEnabled={annotationsEnabled}>
@@ -272,6 +275,9 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                           <strong>{dateTimeFormatter.format(date)}</strong>
                         </p>
                       )}
+
+                      {!hasAttachments && <NoAttachments />}
+
                       {examInstruction && (
                         <ExamInstruction
                           {...{ element: examInstruction, renderChildNodes, renderComponentOverrides }}
@@ -335,6 +341,15 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
   )
 }
 
+const NoAttachments = () => {
+  const { t } = useExamTranslation()
+  return (
+    <span className="notification notification--inline">
+      <NotificationIcon />
+      {t('no-attachments')}
+    </span>
+  )
+}
 const ProceedToExamineAnswersText = () => {
   const { t } = useExamTranslation()
   return (
