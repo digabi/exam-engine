@@ -115,9 +115,11 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
           dispatch(saveAnswer(answer))
         }}
         onDelete={async () => {
-          await examServerApi.deleteAudio(questionId)
-          const answer = { questionId, type: 'audio' as const, value: '' }
-          dispatch(saveAnswer(answer))
+          if (!answer) return
+          const audioId = answer.value.split('/').pop()!
+          await examServerApi.deleteAudio(audioId)
+          const answerObj = { questionId, type: 'audio' as const, value: '' }
+          dispatch(saveAnswer(answerObj))
         }}
       />
     </div>
