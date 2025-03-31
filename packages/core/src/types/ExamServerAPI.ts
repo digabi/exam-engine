@@ -78,7 +78,7 @@ export interface ExamServerAPI {
   /** Save audio to server. Should return the URL to the saved audio. */
   saveAudio: (questionId: QuestionId, audio: Blob) => Promise<string>
   /** Delete audio from server */
-  deleteAudio: (questionId: QuestionId) => Promise<void>
+  deleteAudio: (audioId: string) => Promise<void>
 
   examineExam?: () => void
   /** Log client activity to server. Message format is free. Optional feature. */
