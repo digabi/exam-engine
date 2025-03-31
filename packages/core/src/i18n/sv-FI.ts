@@ -18,6 +18,8 @@ export const sv_FI: Translations = {
     'already-playing': 'Lyssna först inspelningen till slut.',
     'permission-denied': 'Inte tillräckliga rättigheter',
     'other-recorder-error': 'Muu äänitevirhe',
+    'save-error': 'Äänitteen tallennus epäonnistui',
+    'delete-error': 'Äänitteen poisto epäonnistui',
     'other-error': 'Uppspelning misslyckades, be övervakaren om hjälp.'
   },
   'audio-test': {

@@ -110,25 +110,42 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const displayNumber = element.getAttribute('display-number')!
   const dispatch = useDispatch()
   const { examServerApi } = useContext(ExamContext)
+  const [error, setError] = useState<AudioError | null>(null)
 
   return (
     <div className="audio-answer">
       <span className="anchor" id={`question-nr-${displayNumber}`} />
       <AudioAnswerRecorder
         audioUrl={answer?.value === '' ? undefined : answer?.value}
-        onSave={async audio => {
-          const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
-          const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
-          dispatch(saveAnswer(answer))
+        onSave={audio => {
+          if (!audio) return
+          setError(null)
+          void (async function () {
+            try {
+              const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
+              const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
+              dispatch(saveAnswer(answer))
+            } catch (err) {
+              setError('save-error')
+            }
+          })()
         }}
-        onDelete={async () => {
+        onDelete={() => {
           if (!answer) return
-          const audioId = answer.value.split('/').pop()!
-          await examServerApi.deleteAudio(audioId)
-          const answerObj = { questionId, type: 'audio' as const, value: '' }
-          dispatch(saveAnswer(answerObj))
+          void (async function () {
+            try {
+              setError(null)
+              const audioId = answer.value.split('/').pop()!
+              await examServerApi.deleteAudio(audioId)
+              const answerObj = { questionId, type: 'audio' as const, value: '' }
+              dispatch(saveAnswer(answerObj))
+            } catch (err) {
+              setError('delete-error')
+            }
+          })()
         }}
       />
+      {error && <AudioError error={error}>{NBSP}</AudioError>}
     </div>
   )
 }

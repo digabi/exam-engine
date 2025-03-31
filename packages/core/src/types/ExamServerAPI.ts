@@ -25,6 +25,10 @@ export type AudioError =
   | 'already-playing'
   /** Permission to use microphone denied */
   | 'permission_denied'
+  /** Failure in saving audio */
+  | 'save-error'
+  /** Failure in deleting audio */
+  | 'delete-error'
   /** Other error, e.g. a network issue */
   | 'other-error'
 export type AudioPlaybackResponse = 'ok' | AudioError

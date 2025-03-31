@@ -29,6 +29,8 @@ export const fi_FI = {
     'already-playing': 'Kuuntele äänite ensin loppuun.',
     'permission-denied': 'Ei tarvittavia käyttöoikeuksia',
     'other-recorder-error': 'Muu äänitevirhe',
+    'save-error': 'Äänitteen tallennuksessa tapahtui virhe',
+    'delete-error': 'Äänitteen poistossa tapahtui virhe',
     'other-error': 'Äänitteen toistaminen epäonnistui, pyydä apua valvojalta.'
   },
   'audio-test': {
