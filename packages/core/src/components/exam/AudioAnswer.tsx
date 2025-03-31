@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
@@ -20,13 +20,37 @@ interface AudioAnswerRecorderProps {
 
 function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: AudioAnswerRecorderProps) {
   const { t } = useExamTranslation()
+  const timer = useRef<{ id: NodeJS.Timeout; startTime: Date }>()
+  const [timeElapsed, setTimeElapsed] = useState<number>(0)
+
+  function startTimer() {
+    const timerId = setInterval(() => {
+      const timeElapsedMs = new Date().getTime() - (timer?.current?.startTime ?? new Date()).getTime()
+      setTimeElapsed(Math.floor(timeElapsedMs / 1000))
+    }, 1000)
+    timer.current = { id: timerId, startTime: new Date() }
+  }
+
+  function saveAndStopTimer(blob: Blob) {
+    clearInterval(timer.current?.id)
+    setTimeElapsed(0)
+    onSave(blob)
+  }
+
+  function renderTimeElapsed() {
+    const minutes = Math.floor(timeElapsed / 60)
+    const sec = timeElapsed - minutes * 60
+    const seconds = `00${sec}`.slice(-2)
+    return `${minutes}:${seconds}`
+  }
 
   return (
     <ReactMediaRecorder
       audio={true}
       mediaRecorderOptions={{ audioBitsPerSecond: bitsPerSecond ?? 65536 }}
       blobPropertyBag={{ type: 'audio/mpeg' }}
-      onStop={(_blobUrl, blob) => onSave(blob)}
+      onStart={startTimer}
+      onStop={(_blobUrl, blob) => saveAndStopTimer(blob)}
       render={({ status, error, startRecording, stopRecording }) => (
         <>
           <div>
@@ -39,10 +63,13 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
                 </button>
               )}
               {status == 'recording' && (
-                <button className="e-button" onClick={stopRecording}>
-                  <FontAwesomeIcon size="sm" icon={faStop} fixedWidth />
-                  {t('stop.recording')}
-                </button>
+                <>
+                  <button className="e-button" onClick={stopRecording}>
+                    <FontAwesomeIcon size="sm" icon={faStop} fixedWidth />
+                    {t('stop.recording')}
+                  </button>
+                  <span className="time-elapsed">{renderTimeElapsed()}</span>
+                </>
               )}
             </p>
           </div>
@@ -55,8 +82,7 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
                 controls
                 controlsList="nodownload"
               />
-              <span>&nbsp;</span>
-              <button className="e-button-reversed" onClick={onDelete}>
+              <button className="e-button-reversed delete-recording" onClick={onDelete}>
                 {t('remove.recording')}
               </button>
             </div>
@@ -79,7 +105,7 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const { examServerApi } = useContext(ExamContext)
 
   return (
-    <>
+    <div className="audio-answer">
       <span className="anchor" id={`question-nr-${displayNumber}`} />
       <AudioAnswerRecorder
         audioUrl={answer?.value === '' ? undefined : answer?.value}
@@ -94,7 +120,7 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
           dispatch(saveAnswer(answer))
         }}
       />
-    </>
+    </div>
   )
 }
 
