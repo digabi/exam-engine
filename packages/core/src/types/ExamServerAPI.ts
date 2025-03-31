@@ -12,20 +12,22 @@ export type SaveState = 'initial' | 'saving' | 'saved'
  *
  * When the user clicks the "Palauta A-osa" button, we start a 60s countdown
  * and transition the state from `'forbidden'` to `'allowing'`. When the timer reaches
- * zero, we transition the state from from `'allowing'` to `'allowed'`. Cancelling
+ * zero, we transition the state from `'allowing'` to `'allowed'`. Cancelling
  * the countdown transitions the state back from `'allowing'` to `'forbidden'`.
  */
 export type CasStatus = InitialCasStatus | 'allowing'
 export type InitialCasStatus = 'allowed' | 'forbidden'
 export type RestrictedAudioId = number
-export type AudioPlaybackError =
+export type AudioError =
   /** The user has already accessed this restricted audio */
   | 'already-accessed'
   /** There already is an audio file playing */
   | 'already-playing'
+  /** Permission to use microphone denied */
+  | 'permission_denied'
   /** Other error, e.g. a network issue */
   | 'other-error'
-export type AudioPlaybackResponse = 'ok' | AudioPlaybackError
+export type AudioPlaybackResponse = 'ok' | AudioError
 
 export interface RestrictedAudioPlaybackStats {
   /** An unique identifier for each restricted audio element */

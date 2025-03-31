@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react'
 import { ExamComponentProps } from '../../createRenderChildNodes'
-import { getNumericAttribute } from '../../dom-utils'
+import { getNumericAttribute, NBSP } from '../../dom-utils'
 import { saveAnswer } from '../../store/answers/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { ReactMediaRecorder } from 'react-media-recorder'
@@ -10,6 +10,7 @@ import type { AudioAnswer } from '../../types/ExamAnswer'
 import { useExamTranslation } from '../../i18n'
 import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AudioError from '../shared/internal/AudioError'
 
 interface AudioAnswerRecorderProps {
   audioUrl?: string
@@ -54,7 +55,6 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
       render={({ status, error, startRecording, stopRecording }) => (
         <>
           <div>
-            {error && <p>error: {error}</p>}
             <p>
               {status != 'recording' && !audioUrl && (
                 <button className="e-button" onClick={startRecording}>
@@ -86,6 +86,13 @@ function AudioAnswerRecorder({ onSave, onDelete, bitsPerSecond, audioUrl }: Audi
                 {t('remove.recording')}
               </button>
             </div>
+          )}
+          {error && (
+            <AudioError
+              error={(error == 'permission_denied' ? 'permission-denied' : 'other-recorder-error') as AudioError}
+            >
+              {NBSP}
+            </AudioError>
           )}
         </>
       )}
