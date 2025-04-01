@@ -2,7 +2,7 @@ import React, { createRef, useContext, useEffect, useMemo, useState } from 'reac
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { createRenderChildNodes, RenderComponentOverrides } from '../../createRenderChildNodes'
-import { findChildElement } from '../../dom-utils'
+import { findChildElement, query } from '../../dom-utils'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
 import { examTitleId } from '../../ids'
 import { ExamAnswer, ExamServerAPI, InitialCasStatus, RestrictedAudioPlaybackStats } from '../../index'
@@ -12,6 +12,7 @@ import { initializeExamStore } from '../../store'
 import { RichTextAnswer, TextAnswer as TextAnswerType } from '../../types/ExamAnswer'
 import { useCached } from '../../useCached'
 import DocumentTitle from '../DocumentTitle'
+import NotificationIcon from '../NotificationIcon'
 import RenderChildNodes from '../RenderChildNodes'
 import SectionElement from '../SectionElement'
 import { AnnotationProvider } from '../context/AnnotationProvider'
@@ -272,6 +273,9 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                           <strong>{dateTimeFormatter.format(date)}</strong>
                         </p>
                       )}
+
+                      <NoAttachmentsNotification root={root} />
+
                       {examInstruction && (
                         <ExamInstruction
                           {...{ element: examInstruction, renderChildNodes, renderComponentOverrides }}
@@ -332,6 +336,17 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
         </TOCContext.Provider>
       </AnnotationProvider>
     </Provider>
+  )
+}
+
+const NoAttachmentsNotification = ({ root }: { root: Element }) => {
+  const { t } = useExamTranslation()
+  const hasAttachments = query(root, 'external-material')
+  return hasAttachments ? null : (
+    <span className="notification notification--inline">
+      <NotificationIcon />
+      {t('no-attachments')}
+    </span>
   )
 }
 

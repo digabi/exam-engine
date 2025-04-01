@@ -25736,6 +25736,396 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 
 `;
 
+exports[`Exam mastering masters no_attachments.xml exam correctly 1`] = `
+{
+  "attachments": [],
+  "date": null,
+  "dayCode": null,
+  "examCode": null,
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "displayNumber": "1",
+        "id": 1,
+        "maxScore": 6,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "fi-FI",
+  "title": "Koe HVP",
+  "type": "normal",
+}
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly 2`] = `
+{
+  "attachments": [],
+  "date": null,
+  "dayCode": null,
+  "examCode": null,
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "displayNumber": "1",
+        "id": 1,
+        "maxScore": 6,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "sv-FI",
+  "title": "Koe HVP",
+  "type": "normal",
+}
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly 3`] = `
+{
+  "attachments": [],
+  "date": null,
+  "dayCode": null,
+  "examCode": null,
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "displayNumber": "1",
+        "id": 1,
+        "maxScore": 6,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "fi-FI",
+  "title": "Koe HVP",
+  "type": "hearing-impaired",
+}
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly 4`] = `
+{
+  "attachments": [],
+  "date": null,
+  "dayCode": null,
+  "examCode": null,
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "displayNumber": "1",
+        "id": 1,
+        "maxScore": 6,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "fi-FI",
+  "title": "Koe HVP",
+  "type": "visually-impaired",
+}
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly 5`] = `
+{
+  "attachments": [],
+  "date": null,
+  "dayCode": null,
+  "examCode": null,
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "displayNumber": "1",
+        "id": 1,
+        "maxScore": 6,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "sv-FI",
+  "title": "Koe HVP",
+  "type": "hearing-impaired",
+}
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly 6`] = `
+{
+  "attachments": [],
+  "date": null,
+  "dayCode": null,
+  "examCode": null,
+  "examUuid": "00000000-0000-0000-0000-000000000000",
+  "gradingStructure": {
+    "questions": [
+      {
+        "displayNumber": "1",
+        "id": 1,
+        "maxScore": 6,
+        "type": "text",
+      },
+    ],
+  },
+  "language": "sv-FI",
+  "title": "Koe HVP",
+  "type": "visually-impaired",
+}
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: translation 1`] = `
+Lokalisaatio: FI only
+
+Lokalisaatio: FI KV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI only Lokalisaatio: FI KV (supports localization nesting)
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: translation 2`] = `
+Lokalisaatio: FI only
+
+Lokalisaatio: FI KV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI only Lokalisaatio: FI KV (supports localization nesting)
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: translation 3`] = `
+Lokalisaatio: FI only
+
+Lokalisaatio: FI KV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI only Lokalisaatio: FI KV (supports localization nesting)
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: translation 4`] = `
+Lokalisaatio: FI only
+
+Lokalisaatio: FI KV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI only Lokalisaatio: FI KV (supports localization nesting)
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: translation 5`] = `
+Lokalisaatio: FI only
+
+Lokalisaatio: FI KV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI only Lokalisaatio: FI KV (supports localization nesting)
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: translation 6`] = `
+Lokalisaatio: FI only
+
+Lokalisaatio: FI KV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI only Lokalisaatio: FI KV (supports localization nesting)
+
+Lokalisaatio: FI NV
+
+Lokalisaatio: FI NV
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: xml 1`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="6">
+    
+    <e:exam-title>Koe HVP</e:exam-title>
+    <e:exam-instruction/>
+    
+    <e:table-of-contents/>
+    <e:section display-number="1" max-score="6">
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question display-number="1" max-score="6">
+            <e:question-title>Tehtävä</e:question-title>
+            <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            
+            
+            
+            <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1">
+                
+            </e:text-answer>
+        </e:question>
+    </e:section>
+</e:exam>
+
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: xml 2`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="6">
+    
+    <e:exam-title>Koe HVP</e:exam-title>
+    <e:exam-instruction/>
+    
+    <e:table-of-contents/>
+    <e:section display-number="1" max-score="6">
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question display-number="1" max-score="6">
+            <e:question-title>Tehtävä</e:question-title>
+            <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            
+            
+            
+            <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1">
+                
+            </e:text-answer>
+        </e:question>
+    </e:section>
+</e:exam>
+
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: xml 3`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" max-score="6">
+    
+    <e:exam-title>Koe HVP</e:exam-title>
+    <e:exam-instruction/>
+    
+    <e:table-of-contents/>
+    <e:section display-number="1" max-score="6">
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question display-number="1" max-score="6">
+            <e:question-title>Tehtävä</e:question-title>
+            <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            
+            
+            
+            <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1">
+                
+            </e:text-answer>
+        </e:question>
+    </e:section>
+</e:exam>
+
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: xml 4`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="6">
+    
+    <e:exam-title>Koe HVP</e:exam-title>
+    <e:exam-instruction/>
+    
+    <e:table-of-contents/>
+    <e:section display-number="1" max-score="6">
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question display-number="1" max-score="6">
+            <e:question-title>Tehtävä</e:question-title>
+            <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            
+            
+            
+            <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1">
+                
+            </e:text-answer>
+        </e:question>
+    </e:section>
+</e:exam>
+
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: xml 5`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="hearing-impaired" max-score="6">
+    
+    <e:exam-title>Koe HVP</e:exam-title>
+    <e:exam-instruction/>
+    
+    <e:table-of-contents/>
+    <e:section display-number="1" max-score="6">
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question display-number="1" max-score="6">
+            <e:question-title>Tehtävä</e:question-title>
+            <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            
+            
+            
+            <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1">
+                
+            </e:text-answer>
+        </e:question>
+    </e:section>
+</e:exam>
+
+`;
+
+exports[`Exam mastering masters no_attachments.xml exam correctly: xml 6`] = `
+<?xml version="1.0" encoding="UTF-8"?>
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="visually-impaired" max-score="6">
+    
+    <e:exam-title>Koe HVP</e:exam-title>
+    <e:exam-instruction/>
+    
+    <e:table-of-contents/>
+    <e:section display-number="1" max-score="6">
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question display-number="1" max-score="6">
+            <e:question-title>Tehtävä</e:question-title>
+            <e:question-instruction>Tee tehtävä.</e:question-instruction>
+            
+            
+            
+            <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1">
+                
+            </e:text-answer>
+        </e:question>
+    </e:section>
+</e:exam>
+
+`;
+
 exports[`Exam mastering shuffles choice answers but keeps no-answer options last 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="2020-01-01" exam-code="A" day-code="X" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="0">

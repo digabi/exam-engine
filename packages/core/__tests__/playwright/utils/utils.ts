@@ -4,8 +4,8 @@ import { Locator, Page } from '@playwright/test'
 import path from 'path'
 import { getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
 
-export async function setupMasteredExam(subject: string = 'SC'): Promise<MasteringResult> {
-  const examPath = resolveExam(`${subject}/${subject}.xml`)
+export async function setupMasteredExam(filePath: string = 'SC/SC.xml'): Promise<MasteringResult> {
+  const examPath = resolveExam(`${filePath}`)
   const resolveAttachment = (filename: string) => path.resolve(path.dirname(examPath), 'attachments', filename)
   const examXml = await readFile(examPath, 'utf-8')
   const [masteredExam] = await masterExam(examXml, () => '', getMediaMetadataFromLocalFile(resolveAttachment), {

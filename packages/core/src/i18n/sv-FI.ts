@@ -111,6 +111,7 @@ export const sv_FI: Translations = {
     returnUsbStick: 'När datorn har är avstängd, ta bort USB-minnet och ge det till provets övervakare.'
   },
   'toc-heading': 'Innehåll',
+  'no-attachments': 'Detta prov innehåller inget material.',
   'answer-saved': 'Sparad',
   'too-many-answers': 'Svar på för många uppgifter:',
   'max-answers-warning': 'Besvara högst {{count}} uppgift.',
