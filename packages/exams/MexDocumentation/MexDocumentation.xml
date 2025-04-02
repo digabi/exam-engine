@@ -1395,6 +1395,44 @@
         </e:dnd-answer-container>
       </div>
     </e:question>
+    <e:question>
+      <e:question-title>audio-answer</e:question-title>
+      <p>
+        An <code>audio-answer</code> answer type is for answering a question verbally. Microphone is required and browser
+        has to have permission to use it. Note that operating system may also deny applications from using the microphone.
+      </p>
+      <table class="e-table e-width-full">
+        <caption>Element attributes</caption>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Mandatory</th>
+            <th>Default value</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>max-score</td>
+            <td>Integer</td>
+            <td>Yes</td>
+            <td>—</td>
+            <td>Maximum score</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>
+        Example of
+        <code>e:audio-answer</code>
+      </h4>
+      <pre class="code"><![CDATA[<e:question>
+    <e:question-title></e:question-title>
+    <e:question-instruction></e:question-instruction>
+    <e:audio-answer max-score="5"/>
+</e:question>]]></pre>
+      <e:audio-answer max-score="6"/>
+    </e:question>
   </e:section>
 
   <e:section>
