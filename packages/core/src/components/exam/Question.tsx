@@ -1,7 +1,7 @@
 import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute, query } from '../../dom-utils'
@@ -23,6 +23,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level } = useContext(QuestionContext)
   const { examServerApi } = useContext(ExamContext)
   const [expanded, setExpanded] = useState<boolean>(false)
+  const dialogRef = useRef<HTMLDialogElement>(null)
 
   const { t } = useExamTranslation()
 
@@ -35,33 +36,30 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
           : `Writer mode closed for display number ${displayNumber}`
       )
     }
-    const body = document.querySelector('body')
-    if (expand) {
-      body?.classList.add('writer-mode')
-    } else {
-      body?.classList.remove('writer-mode')
-      body?.classList.remove('rich-text-editor-focus')
+    if (!expand) {
+      dialogRef.current?.close()
       setTimeout(() => document.getElementById(`question-nr-${displayNumber}`)?.scrollIntoView(), 10)
     }
   }
 
-  const preventTabKey = (e: KeyboardEvent) => {
-    if (e.code === 'Tab') {
-      e.preventDefault()
-    }
-  }
   const textAnswerElement = query(element, 'text-answer')
   const questionId = textAnswerElement ? getNumericAttribute(textAnswerElement, 'question-id') : null
 
   useEffect(() => {
+    const closeFullScreenOnEsc = (e: KeyboardEvent) => {
+      if (e.code === 'Escape') {
+        toggleWriterMode(false)
+      }
+    }
     if (expanded) {
-      window.addEventListener('keydown', preventTabKey)
+      dialogRef.current?.showModal()
+      window.addEventListener('keydown', closeFullScreenOnEsc)
       const textInput = questionId
         ? document.querySelector<HTMLElement>(`[data-question-id="${questionId}"]`)
         : undefined
       textInput?.focus()
     }
-    return () => window.removeEventListener('keydown', preventTabKey)
+    return () => window.removeEventListener('keydown', closeFullScreenOnEsc)
   }, [expanded])
 
   const ref = React.createRef<HTMLDivElement>()
@@ -89,13 +87,13 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         <div className="anchor" id={`question-nr-${displayNumber}`} />
 
         {expanded ? (
-          <div className="full-screen" data-full-screen-id={displayNumber}>
+          <dialog ref={dialogRef} className="full-screen" data-full-screen-id={displayNumber}>
             <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
               {t('close-writing-mode')}
             </button>
             {renderChildNodes(element)}
-          </div>
+          </dialog>
         ) : (
           renderChildNodes(element)
         )}
