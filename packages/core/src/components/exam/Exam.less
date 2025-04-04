@@ -34,9 +34,14 @@
     container-type: inline-size;
     container-name: exam-container;
 
-    .full-screen {
+    dialog.full-screen {
       margin-left: ~'max(2.5rem, (100cqw - 55rem)/2)';
       margin-right: ~'max(2.5rem, (100cqw - 55rem)/2)';
+      border: none;
+
+      &::backdrop {
+        background: inherit;
+      }
     }
   }
 }
@@ -81,7 +86,7 @@
       }
     }
 
-    .full-screen {
+    dialog.full-screen {
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -91,6 +96,11 @@
       position: relative;
       transition: padding 0.3s 0.05s;
       height: 100%;
+      border: none;
+
+      &::backdrop {
+        background: inherit;
+      }
     }
 
     .expand {
@@ -111,7 +121,7 @@
       }
 
       &.close {
-        right: 0;
+        right: 2px;
         padding: 0.25rem 1rem;
         display: flex;
         align-items: center;
@@ -266,14 +276,6 @@
   }
   @media (max-width: 952px) {
     padding-top: 7rem;
-  }
-}
-
-body.writer-mode {
-  overflow: hidden;
-
-  .e-toc-and-exam {
-    container-type: normal;
   }
 }
 

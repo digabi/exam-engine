@@ -91,15 +91,12 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
   it('opens rich text answer in writer mode, and exits', async () => {
     await loadExam(page, ctx.url)
 
-    const body = await page.$('body')
-    const fullScreenSelector = 'div[data-full-screen-id="1.2"]'
+    const fullScreenSelector = 'dialog[data-full-screen-id="1.2"]'
     const answerText = 'vastaukseni'
 
     await openWriterMode(page)
     await type(answerText, 2)
     await page.click(`${fullScreenSelector} .expand.close`)
-    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
-    expect(bodyClass).not.toContain('writer-mode')
 
     const fullScreen = await page.$(fullScreenSelector)
     expect(fullScreen).toBeFalsy()
@@ -109,7 +106,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     expect(answer).toBe(answerText)
   })
 
-  it('Tab key does not change focus in writing mode', async () => {
+  it('can navigate to close button using tab in writer mode', async () => {
     await loadExam(page, ctx.url)
 
     const textareaFocusedSelector = '.rich-text-editor:focus'
@@ -117,6 +114,10 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     await openWriterMode(page)
     const textareaFocused = await page.$(textareaFocusedSelector)
     expect(textareaFocused).toBeTruthy()
+
+    await page.keyboard.press('Tab') // should focus browser controls
+    await page.keyboard.press('Tab') // should focus close button
+    expect(await page.$('.expand.close:focus')).toBeTruthy()
 
     await page.keyboard.press('Tab')
     const textareaFocusedThen = await page.$(textareaFocusedSelector)
@@ -127,14 +128,10 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     // focus the textarea first, because it's z-index may affect clickability of the expand button
     await page.click('.text-answer[data-question-id="2"]')
     await page.click('.text-answer[data-question-id="2"] + .expand')
-    const body = await page.$('body')
-    const fullScreenSelector = 'div[data-full-screen-id="1.2"]'
+    const fullScreenSelector = 'dialog[data-full-screen-id="1.2"]'
 
     const fullScreen = await page.$(fullScreenSelector)
     expect(fullScreen).toBeTruthy()
-
-    const bodyClass = await (await body?.getProperty('className'))?.jsonValue()
-    expect(bodyClass).toContain('writer-mode')
   }
 
   it('a text answer indicator has correct state in side navigation', async () => {
