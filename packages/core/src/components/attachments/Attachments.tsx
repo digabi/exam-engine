@@ -58,7 +58,7 @@ const Attachments: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                 {renderChildNodes(examTitle)}
               </DocumentTitle>
             )}
-            <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>
+            {date && <div className="e-semibold e-mrg-b-6">{dateTimeFormatter.format(date)}</div>}
             {externalMaterial && (
               <AttachmentsExternalMaterial
                 {...{ element: externalMaterial, renderChildNodes, renderComponentOverrides, forceRender: true }}
