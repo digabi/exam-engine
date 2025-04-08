@@ -55,6 +55,7 @@ import TextAnswer from './TextAnswer'
 import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
+import AudioAnswer from './AudioAnswer'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -131,7 +132,8 @@ export const renderChildNodesBase = createRenderChildNodes({
   'section-title': SectionTitle,
   'text-answer': TextAnswer,
   video: Video,
-  'image-overlay': ImageOverlay
+  'image-overlay': ImageOverlay,
+  'audio-answer': AudioAnswer
 })
 
 const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
