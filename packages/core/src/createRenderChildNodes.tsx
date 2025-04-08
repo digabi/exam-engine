@@ -12,6 +12,8 @@ export interface ExamComponentProps {
   renderChildNodes: RenderChildNodes
   /** A map of component overrides for rendering nodes  */
   renderComponentOverrides: RenderComponentOverrides
+  /** Option to inform whether element should be rendered **/
+  options?: RenderOptions
 }
 
 export const enum RenderOptions {
@@ -62,7 +64,7 @@ export function createRenderChildNodes(componentMap: Record<string, ComponentDef
         case XHTMLNamespaceURI:
           return renderXHTMLElement(element as HTMLElement, index, options)
         case ExamNamespaceURI:
-          return renderExamElement(element, index)
+          return renderExamElement(element, index, options)
         default:
           throw new Error(`Unrecognized element: ${element.localName}`)
       }
@@ -80,7 +82,7 @@ export function createRenderChildNodes(componentMap: Record<string, ComponentDef
       }
     }
 
-    function renderExamElement(element: Element, index: number) {
+    function renderExamElement(element: Element, index: number, options: RenderOptions) {
       if (!(element.localName in componentMap)) {
         return null
       }
@@ -100,7 +102,8 @@ export function createRenderChildNodes(componentMap: Record<string, ComponentDef
             className,
             renderChildNodes,
             renderComponentOverrides,
-            key: Wrapper ? undefined : key(element, index)
+            key: Wrapper ? undefined : key(element, index),
+            options
           }}
         />
       )
