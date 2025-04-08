@@ -25739,7 +25739,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
 exports[`Exam mastering masters no_attachments.xml exam correctly 1`] = `
 {
   "attachments": [],
-  "date": null,
+  "date": "1970-01-01",
   "dayCode": null,
   "examCode": null,
   "examUuid": "00000000-0000-0000-0000-000000000000",
@@ -25762,7 +25762,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly 1`] = `
 exports[`Exam mastering masters no_attachments.xml exam correctly 2`] = `
 {
   "attachments": [],
-  "date": null,
+  "date": "1970-01-01",
   "dayCode": null,
   "examCode": null,
   "examUuid": "00000000-0000-0000-0000-000000000000",
@@ -25785,7 +25785,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly 2`] = `
 exports[`Exam mastering masters no_attachments.xml exam correctly 3`] = `
 {
   "attachments": [],
-  "date": null,
+  "date": "1970-01-01",
   "dayCode": null,
   "examCode": null,
   "examUuid": "00000000-0000-0000-0000-000000000000",
@@ -25808,7 +25808,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly 3`] = `
 exports[`Exam mastering masters no_attachments.xml exam correctly 4`] = `
 {
   "attachments": [],
-  "date": null,
+  "date": "1970-01-01",
   "dayCode": null,
   "examCode": null,
   "examUuid": "00000000-0000-0000-0000-000000000000",
@@ -25831,7 +25831,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly 4`] = `
 exports[`Exam mastering masters no_attachments.xml exam correctly 5`] = `
 {
   "attachments": [],
-  "date": null,
+  "date": "1970-01-01",
   "dayCode": null,
   "examCode": null,
   "examUuid": "00000000-0000-0000-0000-000000000000",
@@ -25854,7 +25854,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly 5`] = `
 exports[`Exam mastering masters no_attachments.xml exam correctly 6`] = `
 {
   "attachments": [],
-  "date": null,
+  "date": "1970-01-01",
   "dayCode": null,
   "examCode": null,
   "examUuid": "00000000-0000-0000-0000-000000000000",
@@ -25972,7 +25972,7 @@ Lokalisaatio: FI NV
 
 exports[`Exam mastering masters no_attachments.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="6">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="6">
     
     <e:exam-title>Koe HVP</e:exam-title>
     <e:exam-instruction/>
@@ -25998,7 +25998,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly: xml 1`] = `
 
 exports[`Exam mastering masters no_attachments.xml exam correctly: xml 2`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="6">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="normal" max-score="6">
     
     <e:exam-title>Koe HVP</e:exam-title>
     <e:exam-instruction/>
@@ -26024,7 +26024,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly: xml 2`] = `
 
 exports[`Exam mastering masters no_attachments.xml exam correctly: xml 3`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" max-score="6">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="hearing-impaired" max-score="6">
     
     <e:exam-title>Koe HVP</e:exam-title>
     <e:exam-instruction/>
@@ -26050,7 +26050,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly: xml 3`] = `
 
 exports[`Exam mastering masters no_attachments.xml exam correctly: xml 4`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="6">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="visually-impaired" max-score="6">
     
     <e:exam-title>Koe HVP</e:exam-title>
     <e:exam-instruction/>
@@ -26076,7 +26076,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly: xml 4`] = `
 
 exports[`Exam mastering masters no_attachments.xml exam correctly: xml 5`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="hearing-impaired" max-score="6">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="hearing-impaired" max-score="6">
     
     <e:exam-title>Koe HVP</e:exam-title>
     <e:exam-instruction/>
@@ -26102,7 +26102,7 @@ exports[`Exam mastering masters no_attachments.xml exam correctly: xml 5`] = `
 
 exports[`Exam mastering masters no_attachments.xml exam correctly: xml 6`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="visually-impaired" max-score="6">
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" date="1970-01-01" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="sv-FI" exam-type="visually-impaired" max-score="6">
     
     <e:exam-title>Koe HVP</e:exam-title>
     <e:exam-instruction/>

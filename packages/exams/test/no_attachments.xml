@@ -1,7 +1,8 @@
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd"
-        exam-schema-version="0.5">
+        exam-schema-version="0.5"
+        date="1970-01-01">
     <e:exam-versions>
         <e:exam-version lang="fi-FI"/>
         <e:exam-version lang="sv-FI"/>
