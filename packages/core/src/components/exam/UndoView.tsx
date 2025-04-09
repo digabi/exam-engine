@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { UndoHistoryEntry } from './UndoHistoryEntry'
-import FocusTrap from 'focus-trap-react'
+import ModalDialog from '../shared/internal/ModalDialog'
 import { useExamTranslation } from '../../i18n'
 import { QuestionId, RichTextAnswer, TextAnswer } from '../../types/ExamAnswer'
 
@@ -199,7 +199,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
     const selectedAnswer = this.state.answers[this.state.selectedAnswerIndex]
     const now = new Date().getTime()
     return (
-      <FocusTrap>
+      <ModalDialog onClose={this.close.bind(this)} parentCssSelectorPath={['e-exam']}>
         <div onClick={this.overlayClicked.bind(this)} className="e-overlay js-undo-overlay" aria-modal="true">
           <div id="undo" className="e-undo-view">
             <CloseButton close={this.close.bind(this)} />
@@ -242,7 +242,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
             )}
           </div>
         </div>
-      </FocusTrap>
+      </ModalDialog>
     )
   }
 }
