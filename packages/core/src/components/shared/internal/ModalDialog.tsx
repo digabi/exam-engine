@@ -1,17 +1,21 @@
 import dialogPolyfill from 'dialog-polyfill'
-import React, { forwardRef, memo, PropsWithChildren, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { memo, PropsWithChildren, RefObject, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 type Props = {
   onClose: () => void
+  className?: string
+  parentCssSelectorPath?: string[]
 }
 
 // eslint-disable-next-line prefer-arrow-callback
-export default memo(function ModalDialog({ onClose, children }: PropsWithChildren<Props>) {
-  const [Dialog] = useState<'dialog' | typeof PolyfillDialog>(
-    // @ts-expect-error window.HTMLDialogElement might not exist in older browsers
-    window.HTMLDialogElement?.prototype.showModal ? 'dialog' : PolyfillDialog
-  )
+export default memo(function ModalDialog({
+  onClose,
+  className,
+  parentCssSelectorPath,
+  children
+}: PropsWithChildren<Props>) {
+  const [requiresPolyfill] = useState(!window.HTMLDialogElement?.prototype.showModal)
   const ref = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
@@ -22,7 +26,10 @@ export default memo(function ModalDialog({ onClose, children }: PropsWithChildre
     }
 
     if (ref.current) {
-      dialogPolyfill.registerDialog(ref.current)
+      if (requiresPolyfill) {
+        dialogPolyfill.registerDialog(ref.current)
+      }
+
       window.addEventListener('keydown', closeFullScreenOnEsc)
       ref.current.showModal()
     }
@@ -33,35 +40,58 @@ export default memo(function ModalDialog({ onClose, children }: PropsWithChildre
     }
   }, [])
 
-  return (
-    <Dialog ref={ref} className="full-screen">
+  return requiresPolyfill ? (
+    <PolyfillDialog dialogRef={ref} className={className} parentCssSelectorPath={parentCssSelectorPath}>
       {children}
-    </Dialog>
+    </PolyfillDialog>
+  ) : (
+    <dialog ref={ref} className={className}>
+      {children}
+    </dialog>
   )
 })
 
-const PolyfillDialog = memo(
-  // eslint-disable-next-line prefer-arrow-callback
-  forwardRef<HTMLDialogElement>(function PolyfillDialog(
-    { children, className }: PropsWithChildren<{ className?: string }>,
-    ref
-  ) {
-    const [container] = useState(document.createElement('div'))
+// eslint-disable-next-line prefer-arrow-callback
+const PolyfillDialog = memo(function PolyfillDialog({
+  dialogRef,
+  className,
+  parentCssSelectorPath,
+  children
+}: PropsWithChildren<{
+  dialogRef: RefObject<HTMLDialogElement>
+  className?: string
+  parentCssSelectorPath?: string[]
+}>) {
+  const [{ container, removeContainer }] = useState(() => {
+    const rootContainer = document.createElement('div')
+    document.body.insertBefore(rootContainer, document.body.firstChild)
 
-    useLayoutEffect(() => {
-      container.className = 'e-exam'
-      document.body.insertBefore(container, document.body.firstChild)
-      return () => container.remove()
-    })
+    let container = rootContainer
+    if (parentCssSelectorPath?.length) {
+      const [firstSelector, ...restSelectors] = parentCssSelectorPath
+      rootContainer.className = firstSelector
 
-    // These wrapper elements are added so that styles are applied correctly
-    return createPortal(
-      <div className="e-exam-question">
-        <dialog ref={ref} className={className}>
-          {children}
-        </dialog>
-      </div>,
-      container
-    )
+      for (const selector of restSelectors) {
+        const el = document.createElement('div')
+        el.className = selector
+        container.appendChild(el)
+        container = el
+      }
+    }
+
+    return {
+      container,
+      removeContainer: () => rootContainer.remove()
+    }
   })
-)
+
+  useEffect(() => removeContainer, [])
+
+  // These wrapper elements are added so that styles are applied correctly
+  return createPortal(
+    <dialog ref={dialogRef} className={className}>
+      {children}
+    </dialog>,
+    container
+  )
+})

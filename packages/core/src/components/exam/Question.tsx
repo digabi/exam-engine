@@ -78,7 +78,11 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         <div className="anchor" id={`question-nr-${displayNumber}`} />
 
         {expanded ? (
-          <ModalDialog onClose={() => toggleWriterMode(false)}>
+          <ModalDialog
+            className="full-screen"
+            onClose={() => toggleWriterMode(false)}
+            parentCssSelectorPath={['e-exam', 'e-exam-question']}
+          >
             <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
               {t('close-writing-mode')}
