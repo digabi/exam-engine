@@ -62,9 +62,11 @@ const PolyfillDialog = memo(function PolyfillDialog({
   className?: string
   parentCssSelectorPath?: string[]
 }>) {
+  const rootContainerId = 'modal-dialog-root'
   const [{ container, removeContainer }] = useState(() => {
     const rootContainer = document.createElement('div')
     document.body.insertBefore(rootContainer, document.body.firstChild)
+    rootContainer.id = rootContainerId
 
     let container = rootContainer
     if (parentCssSelectorPath?.length) {
@@ -85,7 +87,20 @@ const PolyfillDialog = memo(function PolyfillDialog({
     }
   })
 
-  useEffect(() => removeContainer, [])
+  useEffect(() => {
+    const hiddenElements: HTMLElement[] = []
+    document.body.childNodes.forEach(child => {
+      if (child instanceof HTMLElement && !child.hasAttribute('aria-hidden') && child.id !== rootContainerId) {
+        child.setAttribute('aria-hidden', 'true')
+        hiddenElements.push(child)
+      }
+    })
+
+    return () => {
+      hiddenElements.forEach(el => el.removeAttribute('aria-hidden'))
+      removeContainer()
+    }
+  }, [])
 
   // These wrapper elements are added so that styles are applied correctly
   return createPortal(
