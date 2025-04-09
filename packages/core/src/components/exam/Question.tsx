@@ -1,7 +1,7 @@
 import { faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { ExamComponentProps } from '../../createRenderChildNodes'
 import { getNumericAttribute, query } from '../../dom-utils'
@@ -11,6 +11,7 @@ import { ExamContext } from '../context/ExamContext'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext } from '../context/SectionContext'
 import { TOCContext } from '../context/TOCContext'
+import ModalDialog from '../shared/internal/ModalDialog'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -23,7 +24,6 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const { displayNumber, level } = useContext(QuestionContext)
   const { examServerApi } = useContext(ExamContext)
   const [expanded, setExpanded] = useState<boolean>(false)
-  const dialogRef = useRef<HTMLDialogElement>(null)
 
   const { t } = useExamTranslation()
 
@@ -37,7 +37,6 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
       )
     }
     if (!expand) {
-      dialogRef.current?.close()
       setTimeout(() => document.getElementById(`question-nr-${displayNumber}`)?.scrollIntoView(), 10)
     }
   }
@@ -46,20 +45,12 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
   const questionId = textAnswerElement ? getNumericAttribute(textAnswerElement, 'question-id') : null
 
   useEffect(() => {
-    const closeFullScreenOnEsc = (e: KeyboardEvent) => {
-      if (e.code === 'Escape') {
-        toggleWriterMode(false)
-      }
-    }
     if (expanded) {
-      dialogRef.current?.showModal()
-      window.addEventListener('keydown', closeFullScreenOnEsc)
       const textInput = questionId
         ? document.querySelector<HTMLElement>(`[data-question-id="${questionId}"]`)
         : undefined
       textInput?.focus()
     }
-    return () => window.removeEventListener('keydown', closeFullScreenOnEsc)
   }, [expanded])
 
   const ref = React.createRef<HTMLDivElement>()
@@ -87,13 +78,13 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         <div className="anchor" id={`question-nr-${displayNumber}`} />
 
         {expanded ? (
-          <dialog ref={dialogRef} className="full-screen" data-full-screen-id={displayNumber}>
+          <ModalDialog onClose={() => toggleWriterMode(false)}>
             <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
               {t('close-writing-mode')}
             </button>
             {renderChildNodes(element)}
-          </dialog>
+          </ModalDialog>
         ) : (
           renderChildNodes(element)
         )}
