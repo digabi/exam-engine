@@ -54,6 +54,7 @@ export type GenerateAnswerOptions =
   | GenerateChoiceAnswerOptions
   | GenerateDropdownAnswerOptions
   | GenerateDNDAnswerOptions
+  | GenerateAudioAnswerOptions
 
 interface TextAnswerBase {
   hint?: string
@@ -100,6 +101,10 @@ export interface GenerateChoiceAnswerOption {
   text: string
 }
 
+export interface GenerateAudioAnswerOptions {
+  name: 'audio-answer'
+  maxScore: number
+}
 /**
  * Generates an exam XML file (mostly for testing purposes) based on a
  * description of the exam structure.
@@ -237,6 +242,10 @@ function addQuestion(parent: libxml.Element, languages: Language[], options: Gen
           addDNDAnswer(question, answer)
           break
         }
+        case 'audio-answer': {
+          addAudioAnswer(question, answer)
+          break
+        }
       }
     }
   }
@@ -288,6 +297,12 @@ function addDNDAnswer(question: libxml.Element, options: GenerateDNDAnswerOption
       createElement(answer, optionType, text, { score })
     }
   }
+}
+
+function addAudioAnswer(question: libxml.Element, options: GenerateAudioAnswerOptions): void {
+  createElement(question, options.name, undefined, {
+    'max-score': options.maxScore
+  })
 }
 
 function createElement(
