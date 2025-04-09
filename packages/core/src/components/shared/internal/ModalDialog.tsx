@@ -19,24 +19,17 @@ export default memo(function ModalDialog({
   const ref = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
-    const closeFullScreenOnEsc = (e: KeyboardEvent) => {
-      if (e.code === 'Escape') {
-        onClose()
-      }
-    }
-
     if (ref.current) {
       if (requiresPolyfill) {
         dialogPolyfill.registerDialog(ref.current)
       }
 
-      window.addEventListener('keydown', closeFullScreenOnEsc)
       ref.current.showModal()
       document.body.style.overflow = 'hidden'
+      ref.current.addEventListener('close', onClose)
     }
 
     return () => {
-      window.removeEventListener('keydown', closeFullScreenOnEsc)
       ref.current?.close()
       document.body.style.overflow = ''
     }

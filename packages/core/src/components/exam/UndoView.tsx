@@ -162,8 +162,6 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
       const selectedAnswer: AnswerHistoryEntry = this.state.answers[this.state.selectedAnswerIndex]
       this.props.restoreAnswer({ ...selectedAnswer, questionId: this.props.questionId })
       this.close()
-    } else if (event.keyCode === 27) {
-      this.close()
     }
   }
 
