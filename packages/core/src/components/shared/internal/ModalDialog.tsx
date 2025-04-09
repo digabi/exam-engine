@@ -32,11 +32,13 @@ export default memo(function ModalDialog({
 
       window.addEventListener('keydown', closeFullScreenOnEsc)
       ref.current.showModal()
+      document.body.style.overflow = 'hidden'
     }
 
     return () => {
       window.removeEventListener('keydown', closeFullScreenOnEsc)
       ref.current?.close()
+      document.body.style.overflow = ''
     }
   }, [])
 

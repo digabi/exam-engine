@@ -37,11 +37,6 @@
     dialog.full-screen {
       margin-left: ~'max(2.5rem, (100cqw - 55rem)/2)';
       margin-right: ~'max(2.5rem, (100cqw - 55rem)/2)';
-      border: none;
-
-      &::backdrop, & + .backdrop {
-        background: inherit;
-      }
     }
   }
 }
@@ -59,11 +54,24 @@
       position: fixed;
       z-index: 5;
       inset: 0;
-      transition: padding-top 0.2s;
       background: white;
       margin: 0;
       padding: 0;
-      overflow-y: auto;
+    }
+
+    dialog.full-screen {
+      padding-top: 3rem;
+      margin-top: 18px;
+      margin-left: ~'max(2.5rem, (100vw - 55rem)/2)';
+      margin-right: ~'max(2.5rem, (100vw - 55rem)/2)';
+      transition: padding 0.3s 0.05s;
+      height: 100vh;
+      border: none;
+      overflow-y: scroll;
+
+      &::backdrop, & + .backdrop {
+        background: inherit;
+      }
 
       .exam-question-title {
         margin-right: 13rem;
@@ -83,23 +91,6 @@
           line-height: ~'clamp(24px, 7vw, 2rem)';
           padding: ~'min(4rem, 6vw)' ~'min(6rem, 9vw)';
         }
-      }
-    }
-
-    dialog.full-screen {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding-top: 3rem;
-      margin-left: ~'max(2.5rem, (100vw - 55rem)/2)';
-      margin-right: ~'max(2.5rem, (100vw - 55rem)/2)';
-      position: relative;
-      transition: padding 0.3s 0.05s;
-      height: 100%;
-      border: none;
-
-      &::backdrop, & + .backdrop {
-        background: inherit;
       }
     }
 
