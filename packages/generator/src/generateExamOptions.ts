@@ -5,7 +5,8 @@ import {
   GenerateDropdownAnswerOptions,
   GenerateQuestionOptions,
   GenerateScoredTextAnswerOptions,
-  GenerateTextAnswerOptions
+  GenerateTextAnswerOptions,
+  GenerateAudioAnswerOptions
 } from './generateExam'
 
 /**
@@ -125,6 +126,14 @@ export function dndAnswer(options?: Partial<GenerateDNDAnswerOptions>): Generate
         score: 0
       }
     ],
+    ...options
+  }
+}
+
+export function audioAnswer(options?: Partial<GenerateAudioAnswerOptions>): GenerateAudioAnswerOptions {
+  return {
+    name: 'audio-answer',
+    maxScore: 6,
     ...options
   }
 }
