@@ -11,6 +11,7 @@ import { ExamContext } from '../context/ExamContext'
 import { QuestionContext, withQuestionContext } from '../context/QuestionContext'
 import { SectionContext } from '../context/SectionContext'
 import { TOCContext } from '../context/TOCContext'
+import ModalDialog from '../shared/internal/ModalDialog'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -35,33 +36,21 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
           : `Writer mode closed for display number ${displayNumber}`
       )
     }
-    const body = document.querySelector('body')
-    if (expand) {
-      body?.classList.add('writer-mode')
-    } else {
-      body?.classList.remove('writer-mode')
-      body?.classList.remove('rich-text-editor-focus')
+    if (!expand) {
       setTimeout(() => document.getElementById(`question-nr-${displayNumber}`)?.scrollIntoView(), 10)
     }
   }
 
-  const preventTabKey = (e: KeyboardEvent) => {
-    if (e.code === 'Tab') {
-      e.preventDefault()
-    }
-  }
   const textAnswerElement = query(element, 'text-answer')
   const questionId = textAnswerElement ? getNumericAttribute(textAnswerElement, 'question-id') : null
 
   useEffect(() => {
     if (expanded) {
-      window.addEventListener('keydown', preventTabKey)
       const textInput = questionId
         ? document.querySelector<HTMLElement>(`[data-question-id="${questionId}"]`)
         : undefined
       textInput?.focus()
     }
-    return () => window.removeEventListener('keydown', preventTabKey)
   }, [expanded])
 
   const ref = React.createRef<HTMLDivElement>()
@@ -89,13 +78,17 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         <div className="anchor" id={`question-nr-${displayNumber}`} />
 
         {expanded ? (
-          <div className="full-screen" data-full-screen-id={displayNumber}>
+          <ModalDialog
+            className="full-screen"
+            onClose={() => toggleWriterMode(false)}
+            parentCssSelectorPath={['e-exam', 'e-exam-question']}
+          >
             <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
               {t('close-writing-mode')}
             </button>
             {renderChildNodes(element)}
-          </div>
+          </ModalDialog>
         ) : (
           renderChildNodes(element)
         )}

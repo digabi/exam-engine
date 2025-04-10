@@ -34,9 +34,9 @@
     container-type: inline-size;
     container-name: exam-container;
 
-    .full-screen {
-      margin-left: ~'max(2.5rem, (100cqw - 55rem)/2)';
-      margin-right: ~'max(2.5rem, (100cqw - 55rem)/2)';
+    dialog.full-screen {
+      margin-left: ~'max(2.5rem, (100cqw - 63rem)/2)';
+      margin-right: ~'max(2.5rem, (100cqw - 63rem)/2)';
     }
   }
 }
@@ -54,11 +54,24 @@
       position: fixed;
       z-index: 5;
       inset: 0;
-      transition: padding-top 0.2s;
       background: white;
       margin: 0;
       padding: 0;
-      overflow-y: auto;
+    }
+
+    dialog.full-screen {
+      padding: 3rem 4rem;
+      margin-top: 0;
+      margin-left: ~'max(2.5rem, (100vw - 63rem)/2)';
+      margin-right: ~'max(2.5rem, (100vw - 63rem)/2)';
+      transition: padding 0.3s 0.05s;
+      height: 100vh;
+      border: none;
+      overflow-y: scroll;
+
+      &::backdrop, & + .backdrop {
+        background: inherit;
+      }
 
       .exam-question-title {
         margin-right: 13rem;
@@ -81,18 +94,6 @@
       }
     }
 
-    .full-screen {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding-top: 3rem;
-      margin-left: ~'max(2.5rem, (100vw - 55rem)/2)';
-      margin-right: ~'max(2.5rem, (100vw - 55rem)/2)';
-      position: relative;
-      transition: padding 0.3s 0.05s;
-      height: 100%;
-    }
-
     .expand {
       position: absolute;
       border-radius: 4px;
@@ -111,7 +112,7 @@
       }
 
       &.close {
-        right: 0;
+        right: 4rem;
         padding: 0.25rem 1rem;
         display: flex;
         align-items: center;
@@ -266,14 +267,6 @@
   }
   @media (max-width: 952px) {
     padding-top: 7rem;
-  }
-}
-
-body.writer-mode {
-  overflow: hidden;
-
-  .e-toc-and-exam {
-    container-type: normal;
   }
 }
 
