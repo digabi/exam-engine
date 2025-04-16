@@ -12,6 +12,8 @@ import { QuestionContext, withQuestionContext } from '../context/QuestionContext
 import { SectionContext } from '../context/SectionContext'
 import { TOCContext } from '../context/TOCContext'
 import ModalDialog from '../shared/internal/ModalDialog'
+import ErrorIndicator from './internal/ErrorIndicator'
+import SaveIndicator from './internal/SaveIndicator'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -88,6 +90,8 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
               {t('close-writing-mode')}
             </button>
             {renderChildNodes(element)}
+            <ErrorIndicator />
+            <SaveIndicator />
           </ModalDialog>
         ) : (
           renderChildNodes(element)
