@@ -22,7 +22,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@digabi/noto-sans": "^2.1.0",
+    "@digabi/noto-sans": "2.2.1-beta.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
