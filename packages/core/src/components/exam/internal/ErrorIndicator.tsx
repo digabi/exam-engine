@@ -39,7 +39,8 @@ export function ErrorIndicatorForErrors({
   inExam: boolean
 }) {
   return validationErrors.length > 0 ? (
-    <div
+    <dialog
+      open
       className={classNames(
         { 'error-indicator e-bg-color-error e-color-off-white': inExam, 'e-font-size-xs': inExam },
         'e-columns e-columns--inline  e-pad-1 e-mrg-r-1'
@@ -60,7 +61,7 @@ export function ErrorIndicatorForErrors({
           }
         })}
       </div>
-    </div>
+    </dialog>
   ) : null
 }
 const ErrorIndicator: React.FunctionComponent = () => {
