@@ -1,5 +1,8 @@
 import * as libxml from 'libxmljs2'
 
+type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never }
+type XOR<T, U> = T | U extends object ? (Without<T, U> & U) | (Without<U, T> & T) : T | U
+
 export type Language = 'fi-FI' | 'sv-FI'
 
 export interface ExamVersion {
@@ -7,14 +10,24 @@ export interface ExamVersion {
   type?: 'normal' | 'visually-impaired' | 'hearing-impaired'
 }
 
-export interface GenerateExamOptions {
+type GenerateExamOptionsCommon = {
+  maxAnswers?: number
+  instructions?: string
+  sections: GenerateSectionOptions[]
+}
+
+type GenerateYOExamOptions = GenerateExamOptionsCommon & {
   date?: string
   examCode?: string
   dayCode?: string
-  maxAnswers?: number
   examVersions?: ExamVersion[]
-  sections: GenerateSectionOptions[]
 }
+
+type GenerateCourseExamOptions = GenerateExamOptionsCommon & {
+  title?: string
+}
+
+export type GenerateExamOptions = XOR<GenerateYOExamOptions, GenerateCourseExamOptions>
 
 export interface GenerateSectionOptions {
   maxAnswers?: number
@@ -165,7 +178,14 @@ export function generateExam(options: GenerateExamOptions): string {
   }
 
   if (!options.examCode) {
-    createLocalizedElement(exam, 'exam-title', languages, { 'fi-FI': 'Kokeen otsikko', 'sv-FI': 'Provets titel' })
+    const titles = options.title
+      ? { 'fi-FI': options.title, 'sv-FI': options.title }
+      : { 'fi-FI': 'Kokeen otsikko', 'sv-FI': 'Provets titel' }
+    createLocalizedElement(exam, 'exam-title', languages, titles)
+  }
+
+  if (options.instructions) {
+    createElement(exam, 'exam-instruction', options.instructions)
   }
 
   for (const section of options.sections) {
