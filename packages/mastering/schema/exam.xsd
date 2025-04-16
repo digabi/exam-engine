@@ -506,6 +506,7 @@
       <xs:element ref="e:dnd-answer-container" />
       <xs:element ref="e:choice-answer" />
       <xs:element ref="e:dropdown-answer" />
+      <xs:element ref="e:audio-answer" />
     </xs:choice>
   </xs:group>
 
@@ -703,6 +704,12 @@
       </xs:choice>
       <xs:attribute name="score" type="xs:positiveInteger" />
       <xs:attribute name="meta" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="audio-answer">
+    <xs:complexType>
+      <xs:attribute name="max-score" type="xs:positiveInteger" use="required" />
     </xs:complexType>
   </xs:element>
 

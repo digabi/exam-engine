@@ -11,7 +11,7 @@
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 
-    &:hover  {
+    &:hover {
       background: @colors[link-hover];
     }
 
@@ -34,5 +34,16 @@
     padding: 0;
     text-align: inherit;
     text-transform: inherit;
+  }
+
+  .e-button-reversed {
+    .e-button;
+    background-color: @colors[off-white];
+    color: @colors[button];
+    border: solid @colors[button] 1px;
+
+    &:hover {
+      background: @colors[lightblue];
+    }
   }
 }

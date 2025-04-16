@@ -22,6 +22,22 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
     getAnswers: () => Promise.resolve([]),
     setCasStatus: casStatus => Promise.resolve(casStatus),
     saveAnswer: () => Promise.resolve(),
+    saveAudio(_, audio) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => {
+          resolve(String(reader.result))
+        }
+        reader.onerror = () => {
+          reader.abort()
+          reject(reader.error as DOMException)
+        }
+        reader.readAsDataURL(audio)
+      })
+    },
+    deleteAudio() {
+      return Promise.resolve()
+    },
     saveScreenshot(_, file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
