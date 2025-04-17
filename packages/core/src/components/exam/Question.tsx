@@ -12,6 +12,8 @@ import { QuestionContext, withQuestionContext } from '../context/QuestionContext
 import { SectionContext } from '../context/SectionContext'
 import { TOCContext } from '../context/TOCContext'
 import ModalDialog from '../shared/internal/ModalDialog'
+import ErrorIndicator from './internal/ErrorIndicator'
+import SaveIndicator from './internal/SaveIndicator'
 
 export const ExpandQuestionContext = createContext<{
   expanded: boolean
@@ -68,8 +70,7 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
       <div
         className={classNames('e-exam-question', {
           'e-level-0 e-pad-b-8 e-clearfix': level === 0,
-          'e-mrg-l-8 e-mrg-y-4': level > 0,
-          'e-expanded': expanded
+          'e-mrg-l-8 e-mrg-y-4': level > 0
         })}
         data-annotation-anchor={displayNumber}
         data-toc-id={`question-${displayNumber}`}
@@ -78,16 +79,14 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
         <div className="anchor" id={`question-nr-${displayNumber}`} />
 
         {expanded ? (
-          <ModalDialog
-            className="full-screen"
-            onClose={() => toggleWriterMode(false)}
-            parentCssSelectorPath={['e-exam', 'e-exam-question']}
-          >
+          <ModalDialog className="full-screen" onClose={() => toggleWriterMode(false)}>
             <button className="expand close" onClick={() => toggleWriterMode(false)}>
               <FontAwesomeIcon icon={faCompressAlt} />
               {t('close-writing-mode')}
             </button>
             {renderChildNodes(element)}
+            <ErrorIndicator />
+            <SaveIndicator />
           </ModalDialog>
         ) : (
           renderChildNodes(element)

@@ -197,7 +197,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
     const selectedAnswer = this.state.answers[this.state.selectedAnswerIndex]
     const now = new Date().getTime()
     return (
-      <ModalDialog onClose={this.close.bind(this)} parentCssSelectorPath={['e-exam']}>
+      <ModalDialog onClose={this.close.bind(this)}>
         <div onClick={this.overlayClicked.bind(this)} className="e-overlay js-undo-overlay" aria-modal="true">
           <div id="undo" className="e-undo-view">
             <CloseButton close={this.close.bind(this)} />

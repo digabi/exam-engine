@@ -50,15 +50,6 @@
   .e-exam-question {
     position: relative;
 
-    &.e-expanded {
-      position: fixed;
-      z-index: 5;
-      inset: 0;
-      background: white;
-      margin: 0;
-      padding: 0;
-    }
-
     dialog.full-screen {
       padding: 3rem 4rem;
       margin-top: 0;
@@ -66,10 +57,11 @@
       margin-right: ~'max(2.5rem, (100vw - 63rem)/2)';
       transition: padding 0.3s 0.05s;
       height: 100vh;
+      width: auto;
       border: none;
       overflow-y: scroll;
 
-      &::backdrop, & + .backdrop {
+      &::backdrop {
         background: inherit;
       }
 
