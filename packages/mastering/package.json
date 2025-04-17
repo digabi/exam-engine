@@ -4,10 +4,7 @@
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
-  "files": [
-    "dist",
-    "schema"
-  ],
+  "files": ["dist", "schema"],
   "dependencies": {
     "@digabi/exam-engine-core": "23.9.1",
     "@digabi/exam-engine-rendering": "23.9.1",
