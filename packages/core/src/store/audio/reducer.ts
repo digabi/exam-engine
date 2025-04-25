@@ -1,7 +1,7 @@
 import * as _ from 'lodash-es'
 import { ActionType } from 'typesafe-actions'
 import * as actions from './actions'
-import { AudioPlaybackError, RestrictedAudioId } from '../..'
+import { AudioError, RestrictedAudioId } from '../..'
 import { MutableRefObject } from 'react'
 
 type AudioAction = ActionType<typeof actions>
@@ -23,7 +23,7 @@ export interface NowPlaying {
 }
 
 export interface AudioState {
-  errors: Record<string | RestrictedAudioId, AudioPlaybackError>
+  errors: Record<string | RestrictedAudioId, AudioError>
   nowPlaying: NowPlaying | null
   playbackTimes: Record<RestrictedAudioId, number>
 }

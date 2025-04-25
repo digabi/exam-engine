@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons'
 import { useExamTranslation } from '../../../i18n'
+import AudioError from '../../shared/internal/AudioError'
+import { AudioError as AudioErrorType } from '../../../types/ExamServerAPI'
+import { NBSP } from '../../../dom-utils'
 
 type AudioRecorderOptions = Omit<MediaRecorderOptions, 'bitsPerSecond' | 'videoBitsPerSecond'>
 
@@ -12,10 +15,17 @@ interface AudioRecorderProps {
   audioRecorderOptions?: AudioRecorderOptions
 }
 
+class UserMediaError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'UserMediaError'
+  }
+}
+
 export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions }: AudioRecorderProps) {
   const [timeElapsed, setTimeElapsed] = useState<number>(0)
   const [status, setStatus] = useState<RecordingState>('inactive')
-  const [error, setError] = useState<Error | null>(null)
+  const [error, setError] = useState<AudioErrorType | null>(null)
   const mediaRecorder = useRef<MediaRecorder>()
   const timer = useRef<{ id: NodeJS.Timeout; startTime: Date }>()
   const { t } = useExamTranslation()
@@ -37,7 +47,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
         mediaRecorder.current = new MediaRecorder(mediaStream, audioRecorderOptions)
         return mediaRecorder.current
       } else {
-        showError(new Error('Cannot get media stream, possibly insecure context'))
+        showError(new UserMediaError('Cannot get media stream, possibly insecure context'))
       }
     } catch (err) {
       showError(err)
@@ -100,7 +110,15 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
 
   function showError(err: unknown) {
     stopTimer()
-    setError(err instanceof Error ? err : new Error('unknown error'))
+    const error = err instanceof Error ? err : new Error('unknown error')
+    switch (error.name) {
+      case 'UserMediaError':
+      case 'NotAllowedError':
+        return setError('permission-denied')
+      default:
+        console.error(error.name, error.message)
+        return setError('other-recording-error')
+    }
   }
 
   function deleteRecording() {
@@ -149,7 +167,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
           </button>
         </div>
       )}
-      {error && <div>{error.message}</div>}
+      {error && <AudioError error={error}>{NBSP}</AudioError>}
     </>
   )
 }
