@@ -1,6 +1,6 @@
 import * as _ from 'lodash-es'
 import { AppState } from '.'
-import { AudioPlaybackError, ExamAnswer, QuestionId, RestrictedAudioId, SaveState } from '..'
+import { AudioError, ExamAnswer, QuestionId, RestrictedAudioId, SaveState } from '..'
 
 export const getAudioState =
   (src: string, restrictedAudioId?: RestrictedAudioId) =>
@@ -16,7 +16,7 @@ export const getAudioState =
 
 export const getAudioPlaybackError =
   (src: string, restrictedAudioId?: RestrictedAudioId) =>
-  (state: AppState): AudioPlaybackError | undefined =>
+  (state: AppState): AudioError | undefined =>
     state.audio.errors[restrictedAudioId != null ? restrictedAudioId : src]
 
 export const getDurationRemaining =

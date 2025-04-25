@@ -2,11 +2,11 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import ReactCSSTransitionReplace from 'react-css-transition-replace'
-import { AudioPlaybackError } from '../../../index'
+import { AudioError } from '../../../index'
 import { useExamTranslation } from '../../../i18n'
 
-const AudioPlaybackError: React.FunctionComponent<{
-  error?: AudioPlaybackError
+const AudioError: React.FunctionComponent<{
+  error?: AudioError
   children: React.ReactNode[] | React.ReactNode
 }> = ({ error, children }) => {
   const { t } = useExamTranslation()
@@ -28,4 +28,4 @@ const AudioPlaybackError: React.FunctionComponent<{
   )
 }
 
-export default AudioPlaybackError
+export default AudioError
