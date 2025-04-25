@@ -272,7 +272,7 @@ describe('generateExam()', () => {
       questions
     })
     const sections = fc.array(section, { minLength: 1, maxLength: 3 })
-    const exam: fc.Arbitrary<GenerateExamOptions> = fc.record({
+    const yoExam: fc.Arbitrary<GenerateExamOptions> = fc.record({
       date: optional(
         fc
           .date({
@@ -287,12 +287,11 @@ describe('generateExam()', () => {
       languages: optional(
         fc.uniqueArray(fc.constantFrom('fi-FI' as const, 'sv-FI' as const), { minLength: 1, maxLength: 2 })
       ),
-      title: optional(fc.string()),
       sections
     })
 
     fc.assert(
-      fc.property(exam, examOptions => {
+      fc.property(yoExam, examOptions => {
         expect(() => generateAndParseExam(examOptions)).not.toThrow()
       })
     )
