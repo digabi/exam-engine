@@ -2,7 +2,7 @@
 
 import { action } from 'typesafe-actions'
 import { Audio } from './reducer'
-import { AudioPlaybackError } from '../..'
+import { AudioError } from '../..'
 
 export const playAudio = (audio: Audio) => action('PLAY_AUDIO', audio)
 
@@ -10,7 +10,7 @@ export const playAudioStarted = (audio: Audio) => action('PLAY_AUDIO_STARTED', a
 
 export const playAudioFinished = () => action('PLAY_AUDIO_FINISHED')
 
-export const showAudioError = (audio: Audio, error: AudioPlaybackError) => action('SHOW_AUDIO_ERROR', { audio, error })
+export const showAudioError = (audio: Audio, error: AudioError) => action('SHOW_AUDIO_ERROR', { audio, error })
 
 export const hideAudioError = (audio: Audio) => action('HIDE_AUDIO_ERROR', audio)
 

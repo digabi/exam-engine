@@ -7,7 +7,7 @@ import { getNumericAttribute, NBSP } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { playAudio } from '../../store/audio/actions'
 import { getAudioPlaybackError, getAudioState } from '../../store/selectors'
-import AudioPlaybackError from './internal/AudioPlaybackError'
+import AudioError from './internal/AudioError'
 import { CommonExamContext } from '../context/CommonExamContext'
 
 function AudioTest({ element }: ExamComponentProps) {
@@ -40,7 +40,7 @@ function AudioTest({ element }: ExamComponentProps) {
           </button>
         </div>
         <div className="e-column">
-          <AudioPlaybackError error={audioPlaybackError}>{NBSP}</AudioPlaybackError>
+          <AudioError error={audioPlaybackError}>{NBSP}</AudioError>
         </div>
       </div>
       <div>{t('audio-test.volume')}</div>

@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons'
 import { useExamTranslation } from '../../../i18n'
+import AudioError from '../../shared/internal/AudioError'
+import { AudioError as AudioErrorType } from '../../../types/ExamServerAPI'
+import { NBSP } from '../../../dom-utils'
 
 type AudioRecorderOptions = Omit<MediaRecorderOptions, 'bitsPerSecond' | 'videoBitsPerSecond'>
 
@@ -16,7 +19,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
   const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder>()
   const [timeElapsed, setTimeElapsed] = useState<number>(0)
   const [status, setStatus] = useState<RecordingState>('inactive')
-  const [error, setError] = useState<Error | null>(null)
+  const [error, setError] = useState<AudioErrorType | null>(null)
   const timer = useRef<{ id: NodeJS.Timeout; startTime: Date }>()
   const { t } = useExamTranslation()
 
@@ -92,7 +95,14 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
 
   function showError(err: unknown) {
     stopTimer()
-    setError(err instanceof Error ? err : new Error('unknown error'))
+    const error = err instanceof Error ? err : new Error('unknown error')
+    switch (error.name) {
+      case 'NotAllowedError':
+        return setError('permission-denied')
+      default:
+        console.error(error.name, error.message)
+        return setError('other-recording-error')
+    }
   }
 
   function deleteRecording() {
@@ -137,7 +147,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
           </button>
         </div>
       )}
-      {error && <div>{error.message}</div>}
+      {error && <AudioError error={error}>{NBSP}</AudioError>}
     </>
   )
 }
