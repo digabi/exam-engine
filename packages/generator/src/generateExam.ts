@@ -16,14 +16,14 @@ type GenerateExamOptionsCommon = {
   sections: GenerateSectionOptions[]
 }
 
-type GenerateYOExamOptions = GenerateExamOptionsCommon & {
+export type GenerateYOExamOptions = GenerateExamOptionsCommon & {
   date?: string
   examCode?: string
   dayCode?: string
   examVersions?: ExamVersion[]
 }
 
-type GenerateCourseExamOptions = GenerateExamOptionsCommon & {
+export type GenerateCourseExamOptions = GenerateExamOptionsCommon & {
   title?: string
 }
 
