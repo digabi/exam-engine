@@ -40,7 +40,7 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
             dispatch(saveAnswer(answerObj))
           })()
         }}
-        audioRecorderOptions={{ audioBitsPerSecond: 65536 }}
+        audioRecorderOptions={{ audioBitsPerSecond: 65536, saveIntervalMs: 1000 }}
       />
     </div>
   )
