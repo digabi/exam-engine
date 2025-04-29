@@ -8,10 +8,12 @@ export default function indexedDBExamServerAPI(
 ): ExamServerAPI {
   const db = new (class extends Dexie {
     answer!: Dexie.Table<ExamAnswer & { examUuid: string }, string>
+    audio!: Dexie.Table<{ blob: Blob; dataUrl: string; audioId: string }, string>
     constructor() {
       super('exam')
       this.version(1).stores({
-        answer: '[examUuid+questionId], examUuid'
+        answer: '[examUuid+questionId], examUuid',
+        audio: 'audioId'
       })
     }
   })()
@@ -39,23 +41,36 @@ export default function indexedDBExamServerAPI(
     saveAnswer: async answer => {
       await db.answer.put({ ...answer, examUuid })
     },
-    async saveAudio(_, audio: Blob) {
+    async saveAudio(questionId: number, audio: Blob) {
+      const audioId = `${examUuid}-${questionId}`
+      const previouslySavedAudio = await db.audio.get(audioId)
+      const combinedAudio = previouslySavedAudio
+        ? new Blob([previouslySavedAudio.blob, audio], { type: audio.type })
+        : audio
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
-        reader.onload = () => {
-          resolve(String(reader.result))
+        reader.onload = async () => {
+          const dataUrl = String(reader.result)
+          await db.audio.put({ blob: combinedAudio, dataUrl, audioId })
+          resolve(dataUrl)
         }
         reader.onerror = () => {
           reader.abort()
           reject(reader.error as DOMException)
         }
-        reader.readAsDataURL(audio)
+        reader.readAsDataURL(combinedAudio)
       })
     },
-    async deleteAudio() {
-      return new Promise<void>(resolve => {
-        resolve()
-      })
+    async deleteAudio(dataUrl: string) {
+      const audio = await db.audio
+        .filter(
+          audio => audio.dataUrl.includes(dataUrl) // operator == does not find audio, because of value.split('/') in AudioAnswer.tsx
+        )
+        .first()
+      if (audio) {
+        await db.audio.delete(audio.audioId)
+      }
+      return Promise.resolve()
     },
     async playAudio(src) {
       audioPlayer.src = resolveAttachment(src)

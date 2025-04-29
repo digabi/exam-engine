@@ -6,10 +6,13 @@ import AudioError from '../../shared/internal/AudioError'
 import { AudioError as AudioErrorType } from '../../../types/ExamServerAPI'
 import { NBSP } from '../../../dom-utils'
 
-type AudioRecorderOptions = Omit<MediaRecorderOptions, 'bitsPerSecond' | 'videoBitsPerSecond'>
+type AudioRecorderOptions = Omit<MediaRecorderOptions, 'bitsPerSecond' | 'videoBitsPerSecond'> & {
+  saveIntervalMs?: number
+}
 
 interface AudioRecorderProps {
   audioUrl?: string
+  saveIntervalMs?: number
   onSave: (blob: Blob) => void
   onDelete: () => void
   audioRecorderOptions?: AudioRecorderOptions
@@ -60,7 +63,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
       const mediaRecorder = await getMediaRecorder()
       if (mediaRecorder) {
         startTimer()
-        mediaRecorder.start()
+        mediaRecorder.start(audioRecorderOptions?.saveIntervalMs)
         setStatus(mediaRecorder.state)
         mediaRecorder.ondataavailable = onData
         mediaRecorder.onerror = (ev: ErrorEvent) => showError(new Error(ev.message))
@@ -153,7 +156,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
           </>
         </p>
       </div>
-      {audioUrl && (
+      {audioUrl && status != 'recording' && (
         <div className="audio-answer-controls">
           <audio
             src={audioUrl}
