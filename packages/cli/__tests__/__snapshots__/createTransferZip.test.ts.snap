@@ -1500,6 +1500,10 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
         </e:dnd-answer-container>
       </e:question>
     </e:question>
+    <e:question>
+      <e:question-title>Audio answer</e:question-title>
+      <e:audio-answer max-score="5"/>
+    </e:question>
   </e:section>
 
   <e:references/>
@@ -3755,6 +3759,10 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
             </e:dnd-answer-option>
         </e:dnd-answer-container>
       </e:question>
+    </e:question>
+    <e:question>
+      <e:question-title>Audio answer</e:question-title>
+      <e:audio-answer max-score="5"/>
     </e:question>
   </e:section>
 
