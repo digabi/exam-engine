@@ -92,7 +92,7 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
     event => {
       event.preventDefault()
       event.currentTarget.classList.remove('text-answer--integer--input-error')
-      const patternForIntegers = /^-?\d*$/
+      const patternForIntegers = /^(\u002D|\u2212)?\d*$/
       const value = event.currentTarget.value.trim()
       if (patternForIntegers.test(value)) {
         setIntegerValue(value)
