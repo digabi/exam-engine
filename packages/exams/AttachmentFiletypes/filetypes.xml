@@ -1,0 +1,68 @@
+<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5">
+    <e:exam-versions>
+        <e:exam-version lang="fi-FI"/>
+    </e:exam-versions>
+    <e:exam-title>Filetypes<br/></e:exam-title>
+    <e:exam-instruction/>
+    <e:table-of-contents/>
+    <e:section>
+        <e:section-title/>
+        <e:section-instruction/>
+        <e:question>
+            <e:question-title>Liitteitä</e:question-title>
+            <e:question-instruction/>
+            <e:external-material>
+                <e:attachment>
+                    <e:attachment-title>Tiedostotyypit</e:attachment-title>
+                    <e:file src="drawio.drawio"/>
+                    <br/>
+                    <e:file src="kleki.psd"/>
+                    <br/>
+                    <e:file src="writer.odt"/>
+                    <br/>
+                    <e:file src="impress.odp"/>
+                    <br/>
+                    <e:file src="calc.ods"/>
+                    <br/>
+                    <e:file src="draw.odg"/>
+                    <br/>
+                    <e:file src="geogebra.ggb"/>
+                    <br/>
+                    <e:file src="TINspireCAS.tns"/>
+                    <br/>
+                    <e:file src="vernier.vga"/>
+                    <br/>
+                    <e:file src="python.py"/>
+                    <br/>
+                    <e:file src="ketcher.mol"/>
+                    <br/>
+                    <e:file src="certificate.pdf"/>
+                </e:attachment>
+            </e:external-material>
+            <e:file src="python.py"/>
+            <br/>
+            <e:file src="ketcher.mol"/>
+            <br/>
+            <e:file src="vernier.vga"/>
+            <br/>
+            <e:file src="TINspireCAS.tns"/>
+            <br/>
+            <e:file src="geogebra.ggb"/>
+            <br/>
+            <e:file src="draw.odg"/>
+            <br/>
+            <e:file src="calc.ods"/>
+            <br/>
+            <e:file src="impress.odp"/>
+            <br/>
+            <e:file src="writer.odt"/>
+            <br/>
+            <e:file src="kleki.psd"/>
+            <br/>
+            <e:file src="drawio.drawio"/>
+            <br/>
+            <e:file src="certificate.pdf"/>
+            <e:text-answer type="rich-text" max-score="6"/>
+        </e:question>
+    </e:section>
+</e:exam>
