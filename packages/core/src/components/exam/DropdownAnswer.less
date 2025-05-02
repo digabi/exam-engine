@@ -4,7 +4,7 @@
     display: inline-block;
     max-width: 100%;
     position: relative;
-    vertical-align: middle;
+    vertical-align: baseline;
 
     &:has(mark.e-annotation):not(:has(.e-dropdown-answer__toggle-button--open)) {
       background: @annotation-background;
@@ -14,7 +14,7 @@
 
     &__answered {
       border: 2px solid #bbb;
-      vertical-align: middle;
+      vertical-align: baseline;
       padding: 0 6px;
       border-radius: 4px;
       display: inline-block;
@@ -36,7 +36,7 @@
       min-height: 24px;
       background: @colors[no-answer-bg];
       border-color: @colors[no-answer-border];
-      vertical-align: middle;
+      vertical-align: baseline;
     }
 
     &__correct {
@@ -44,7 +44,7 @@
       box-shadow: 0 -4px 0 -2px inset @colors[correct-answer];
       border-bottom: 1px solid @colors[correct-answer];
       font-style: italic;
-      vertical-align: middle;
+      vertical-align: baseline;
     }
 
     &__label {
