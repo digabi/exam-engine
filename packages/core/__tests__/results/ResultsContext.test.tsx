@@ -187,7 +187,7 @@ describe(`Total score calculation for ${testExam}`, () => {
     const choiceAnswer: ExamAnswer = {
       type: 'choice',
       questionId: 1,
-      value: '105',
+      value: '106',
       displayNumber: '1.1'
     }
     expect(

@@ -1420,6 +1420,20 @@
             <td>—</td>
             <td>Maximum score</td>
           </tr>
+          <tr>
+            <td>bit-rate</td>
+            <td>Integer</td>
+            <td>No</td>
+            <td>65536</td>
+            <td>Bitrate to use saving audio</td>
+          </tr>
+          <tr>
+            <td>save-interval</td>
+            <td>Integer</td>
+            <td>No</td>
+            <td>—</td>
+            <td>Interval to save audio in chuck. If missing, recoding needs to be stopped in order to save the audio.</td>
+          </tr>
         </tbody>
       </table>
       <h4>
@@ -1429,7 +1443,7 @@
       <pre class="code"><![CDATA[<e:question>
     <e:question-title></e:question-title>
     <e:question-instruction></e:question-instruction>
-    <e:audio-answer max-score="5"/>
+    <e:audio-answer max-score="5" bit-rate="32768" save-interval="1000"/>
 </e:question>]]></pre>
       <e:audio-answer max-score="6"/>
     </e:question>
