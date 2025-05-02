@@ -7,6 +7,7 @@ import { ExamContext } from '../context/ExamContext'
 import { AnswersState } from '../../store/answers/reducer'
 import type { AudioAnswer } from '../../types/ExamAnswer'
 import { AudioRecorder } from './internal/AudioRecorder'
+import { AudioContext, withAudioContext } from '../context/AudioContext'
 
 function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const { element } = audioAnswerProps
@@ -18,6 +19,7 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const displayNumber = element.getAttribute('display-number')!
   const dispatch = useDispatch()
   const { examServerApi } = useContext(ExamContext)
+  const { bitRate, saveInterval } = useContext(AudioContext)
 
   return (
     <div className="audio-answer">
@@ -40,10 +42,13 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
             dispatch(saveAnswer(answerObj))
           })()
         }}
-        audioRecorderOptions={{ audioBitsPerSecond: 65536, saveIntervalMs: 1000 }}
+        audioRecorderOptions={{
+          audioBitsPerSecond: bitRate ?? 65536,
+          saveIntervalMs: saveInterval
+        }}
       />
     </div>
   )
 }
 
-export default React.memo(AudioAnswer)
+export default React.memo(withAudioContext(AudioAnswer))
