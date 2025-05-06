@@ -107,6 +107,7 @@ function validateExtraAnswers(
         return { answerCount, displayNumber, extraAnswers }
       }
       case 'text-answer':
+      case 'audio-answer':
       case 'scored-text-answer':
       case 'choice-answer':
       case 'dnd-answer':

@@ -27,6 +27,8 @@ export const fi_FI = {
   'audio-errors': {
     'already-accessed': 'Olet jo toistanut tämän äänitteen. Päivitä sivu.',
     'already-playing': 'Kuuntele äänite ensin loppuun.',
+    'permission-denied': 'Ei tarvittavia käyttöoikeuksia',
+    'other-recording-error': 'Muu äänitevirhe',
     'other-error': 'Äänitteen toistaminen epäonnistui, pyydä apua valvojalta.'
   },
   'audio-test': {
@@ -135,6 +137,9 @@ export const fi_FI = {
   'previous-answer-versions': 'Aiemmat vastausluonnokset',
   'zoom-in': 'Suurenna kuva',
   'end-of-exam': 'Kokeen tehtävät loppuvat tähän.',
+  'start.recording': 'Äänitä vastaus',
+  'stop.recording': 'Lopeta äänitys',
+  'remove.recording': 'Poista äänitys',
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.

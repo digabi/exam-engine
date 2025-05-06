@@ -25,22 +25,22 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
   it('remembers the choices after reloading', async () => {
     await loadExam(page, ctx.url)
 
+    await setChoiceAnswer(page, 1, '108')
+    await loadExam(page, ctx.url)
+    expect(await getRadioButtonValue(page, 1)).toBe('108')
+
     await setChoiceAnswer(page, 1, '106')
     await loadExam(page, ctx.url)
     expect(await getRadioButtonValue(page, 1)).toBe('106')
-
-    await setChoiceAnswer(page, 1, '104')
-    await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('104')
   })
 
   it('a choice answer indicator has correct state in side navigation', async () => {
     await loadExam(page, ctx.url)
-    const indicator = await page.$('.sidebar-toc-container div[data-indicator-id="44"]')
+    const indicator = await page.$('.sidebar-toc-container div[data-indicator-id="43"]')
 
     const className = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValue = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
-    await setChoiceAnswer(page, 44, '218')
+    await setChoiceAnswer(page, 43, '218')
     const classNameThen = await (await indicator?.getProperty('className'))?.jsonValue()
     const indicatorValueThen = await (await indicator?.getProperty('innerHTML'))?.jsonValue()
 

@@ -12,20 +12,24 @@ export type SaveState = 'initial' | 'saving' | 'saved'
  *
  * When the user clicks the "Palauta A-osa" button, we start a 60s countdown
  * and transition the state from `'forbidden'` to `'allowing'`. When the timer reaches
- * zero, we transition the state from from `'allowing'` to `'allowed'`. Cancelling
+ * zero, we transition the state from `'allowing'` to `'allowed'`. Cancelling
  * the countdown transitions the state back from `'allowing'` to `'forbidden'`.
  */
 export type CasStatus = InitialCasStatus | 'allowing'
 export type InitialCasStatus = 'allowed' | 'forbidden'
 export type RestrictedAudioId = number
-export type AudioPlaybackError =
+export type AudioError =
   /** The user has already accessed this restricted audio */
   | 'already-accessed'
   /** There already is an audio file playing */
   | 'already-playing'
+  /** Permission to use microphone denied */
+  | 'permission-denied'
+  /** Other recording error, e.g. a network issue */
+  | 'other-recording-error'
   /** Other error, e.g. a network issue */
   | 'other-error'
-export type AudioPlaybackResponse = 'ok' | AudioPlaybackError
+export type AudioPlaybackResponse = 'ok' | AudioError
 
 export interface RestrictedAudioPlaybackStats {
   /** An unique identifier for each restricted audio element */
@@ -75,6 +79,11 @@ export interface ExamServerAPI {
   selectAnswerVersion?: (questionId: QuestionId, questionTitle: string) => Promise<ExamAnswer | undefined>
   /** Save screenshot to server. Should return the URL to the saved screenshot. */
   saveScreenshot: (questionId: QuestionId, screenshot: Blob) => Promise<string>
+  /** Save audio to server. Should return the URL to the saved audio. */
+  saveAudio: (questionId: QuestionId, audio: Blob) => Promise<string>
+  /** Delete audio from server */
+  deleteAudio: (audioId: string) => Promise<void>
+
   examineExam?: () => void
   /** Log client activity to server. Message format is free. Optional feature. */
   logActivity?: (message: string) => void
