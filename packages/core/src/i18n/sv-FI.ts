@@ -16,8 +16,8 @@ export const sv_FI: Translations = {
   'audio-errors': {
     'already-accessed': 'Du har redan spelat denna inspelning. Uppdatera sidan',
     'already-playing': 'Lyssna först inspelningen till slut.',
-    'permission-denied': 'Inte tillräckliga rättigheter',
-    'other-recording-error': 'Muu äänitevirhe',
+    'permission-denied': 'Ge mikrofonen nödvändiga användarrättigheter. Be övervakaren om hjälp vid behov."',
+    'other-recording-error': 'Ett fel uppstod. Uppdatera sidan.',
     'other-error': 'Uppspelning misslyckades, be övervakaren om hjälp.'
   },
   'audio-test': {

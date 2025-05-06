@@ -27,8 +27,8 @@ export const fi_FI = {
   'audio-errors': {
     'already-accessed': 'Olet jo toistanut tämän äänitteen. Päivitä sivu.',
     'already-playing': 'Kuuntele äänite ensin loppuun.',
-    'permission-denied': 'Ei tarvittavia käyttöoikeuksia',
-    'other-recording-error': 'Muu äänitevirhe',
+    'permission-denied': 'Anna mikrofonille tarvittavat käyttöoikeudet. Pyydä tarvittaessa apua valvojalta.',
+    'other-recording-error': 'Tapahtui virhe. Päivitä sivu.',
     'other-error': 'Äänitteen toistaminen epäonnistui, pyydä apua valvojalta.'
   },
   'audio-test': {
