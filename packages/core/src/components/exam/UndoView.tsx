@@ -129,11 +129,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
     }
   }
 
-  toggleBodyScroll = (scrollEnabled: boolean) =>
-    document.documentElement.classList.toggle('e-exam-body-no-scroll', !scrollEnabled)
-
   public componentDidMount() {
-    this.toggleBodyScroll(false)
     document.addEventListener('keydown', this.keydownListener, false)
     void this.fetchAnswerHistory(this.props.questionId)
   }
@@ -141,7 +137,6 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
   public componentWillUnmount() {
     this.source.cancel()
     document.removeEventListener('keydown', this.keydownListener, false)
-    this.toggleBodyScroll(true)
   }
 
   public componentDidUpdate(prevProps: UndoViewProps) {
