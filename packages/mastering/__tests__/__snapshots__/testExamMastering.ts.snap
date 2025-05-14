@@ -25872,7 +25872,7 @@ exports[`Exam mastering masters filetypes.xml exam correctly 1`] = `
       "withinGradingInstruction": false,
     },
     {
-      "filename": "vernier.vga",
+      "filename": "vernier.gambl",
       "restricted": false,
       "visibleInGradingInstructions": false,
       "withinGradingInstruction": false,
@@ -25950,7 +25950,7 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
                     <br/>
                     <e:file src="TINspireCAS.tns"/>
                     <br/>
-                    <e:file src="vernier.vga"/>
+                    <e:file src="vernier.gambl"/>
                     <br/>
                     <e:file src="python.py"/>
                     <br/>
@@ -25963,7 +25963,7 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
             <br/>
             <e:file src="ketcher.mol"/>
             <br/>
-            <e:file src="vernier.vga"/>
+            <e:file src="vernier.gambl"/>
             <br/>
             <e:file src="TINspireCAS.tns"/>
             <br/>
