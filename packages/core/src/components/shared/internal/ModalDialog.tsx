@@ -12,13 +12,13 @@ export default memo(function ModalDialog({ onClose, className, children }: Props
   useEffect(() => {
     if (ref.current) {
       ref.current.showModal()
-      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
       ref.current.addEventListener('close', onClose)
     }
 
     return () => {
       ref.current?.close()
-      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
     }
   }, [])
 

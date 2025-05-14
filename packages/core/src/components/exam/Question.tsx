@@ -38,9 +38,6 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
           : `Writer mode closed for display number ${displayNumber}`
       )
     }
-    if (!expand) {
-      setTimeout(() => document.getElementById(`question-nr-${displayNumber}`)?.scrollIntoView(), 10)
-    }
   }
 
   const textAnswerElement = query(element, 'text-answer')
