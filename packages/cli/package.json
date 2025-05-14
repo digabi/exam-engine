@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-cli",
-  "version": "23.13.4",
+  "version": "23.13.5",
   "main": "index.js",
   "license": "EUPL-1.1",
   "files": [
@@ -10,8 +10,8 @@
     "ee": "./dist/index.js"
   },
   "dependencies": {
-    "@digabi/exam-engine-mastering": "23.13.4",
-    "@digabi/exam-engine-rendering": "23.13.4",
+    "@digabi/exam-engine-mastering": "23.13.5",
+    "@digabi/exam-engine-rendering": "23.13.5",
     "lodash": "^4.17.15",
     "ora": "^5.0.0",
     "rich-text-editor": "8.4.3",
