@@ -30,7 +30,7 @@
                     <br/>
                     <e:file src="TINspireCAS.tns"/>
                     <br/>
-                    <e:file src="vernier.vga"/>
+                    <e:file src="vernier.gambl"/>
                     <br/>
                     <e:file src="python.py"/>
                     <br/>
@@ -43,7 +43,7 @@
             <br/>
             <e:file src="ketcher.mol"/>
             <br/>
-            <e:file src="vernier.vga"/>
+            <e:file src="vernier.gambl"/>
             <br/>
             <e:file src="TINspireCAS.tns"/>
             <br/>
