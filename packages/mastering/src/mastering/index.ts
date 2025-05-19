@@ -319,6 +319,7 @@ async function masterExamVersion(
 
   validateAttachments(exam, language, type)
   addAttachmentNumbers(exam)
+  moveDNDCorrectAnswers(exam)
 
   // Perform shuffling before adding answer options ids, so the student can't guess the original order.
   if (options.multiChoiceShuffleSecret) {
@@ -363,6 +364,19 @@ async function masterExamVersion(
     type,
     xml: doc.toString(false)
   }
+}
+
+function moveDNDCorrectAnswers(exam: Exam) {
+  exam.element.find(xpathOr(['dnd-answer']), ns).forEach(answer => {
+    const answerElement = answer as Element
+    const answerContainer = answer.parent() as Element
+    const option = answerElement.find('dnd-answer-option')[0] as Element
+    if (option) {
+      const questionId = getAttribute('question-id', answerElement)
+      option.attr('for-question-id', questionId)
+      answerContainer.addChild(option)
+    }
+  })
 }
 
 async function addMediaMetadata(
@@ -992,17 +1006,7 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
       )
 
       for (const option of sortedOptions) {
-        if (answer.name() === 'dnd-answer') {
-          const answerContainer = answer.parent() as Element
-          const optionParent = option.parent() as Element
-          if (optionParent.name() === 'dnd-answer') {
-            const questionId = getAttribute('question-id', optionParent)
-            option.attr('for-question-id', questionId)
-          }
-          answerContainer.addChild(option)
-        } else {
-          answer.addChild(option)
-        }
+        answer.addChild(option)
       }
 
       // A no-answer option should always be the last
