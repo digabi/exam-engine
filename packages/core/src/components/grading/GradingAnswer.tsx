@@ -25,6 +25,7 @@ import {
 } from './editAnnotations'
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
 import { updateLargeImageWarnings } from './largeImageDetector'
+import AudioPlayer from '../shared/internal/AudioPlayer'
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingRole = 'pregrading' | 'censoring'
@@ -164,7 +165,7 @@ function GradingAnswerWithTranslations({
       )}
       {type == 'audio' ? (
         <div className="e-grading-answer e-line-height-l e-mrg-b-1">
-          {value && <audio src={value} className="e-column e-column--narrow" controls controlsList="nodownload" />}
+          {value && <AudioPlayer variant="recorded" src={value} />}
         </div>
       ) : (
         <>
