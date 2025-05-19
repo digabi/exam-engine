@@ -323,7 +323,10 @@ async function masterExamVersion(
   // Perform shuffling before adding answer options ids, so the student can't guess the original order.
   if (options.multiChoiceShuffleSecret) {
     shuffleAnswerOptions(exam, options.multiChoiceShuffleSecret)
+  } else {
+    moveDNDCorrectAnswers(exam)
   }
+
   addAnswerOptionIds(exam, generateId)
 
   updateMaxScoresToAnswers(exam)
@@ -363,6 +366,20 @@ async function masterExamVersion(
     type,
     xml: doc.toString(false)
   }
+}
+
+function moveDNDCorrectAnswers(exam: Exam) {
+  exam.answers
+    .map(a => a.element)
+    .filter(byName('dnd-answer'))
+    .forEach(answer => {
+      const answerContainer = answer.parent() as Element
+      const options = getAnswerOptions(answer)
+      for (const option of options) {
+        addForQuestionIdAttr(option)
+        answerContainer.addChild(option)
+      }
+    })
 }
 
 async function addMediaMetadata(
@@ -994,11 +1011,7 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
       for (const option of sortedOptions) {
         if (answer.name() === 'dnd-answer') {
           const answerContainer = answer.parent() as Element
-          const optionParent = option.parent() as Element
-          if (optionParent.name() === 'dnd-answer') {
-            const questionId = getAttribute('question-id', optionParent)
-            option.attr('for-question-id', questionId)
-          }
+          addForQuestionIdAttr(option)
           answerContainer.addChild(option)
         } else {
           answer.addChild(option)
@@ -1009,6 +1022,14 @@ function shuffleAnswerOptions(exam: Exam, multichoiceShuffleSecret: string) {
       const noAnswerOption = options.find(option => getAttribute('type', option, 'normal') === 'no-answer')
       if (noAnswerOption) answer.addChild(noAnswerOption)
     })
+}
+
+function addForQuestionIdAttr(option: Element) {
+  const optionParent = option.parent() as Element
+  if (optionParent.name() === 'dnd-answer') {
+    const questionId = getAttribute('question-id', optionParent)
+    option.attr('for-question-id', questionId)
+  }
 }
 
 async function renderFormulas(exam: Element, throwOnLatexError?: boolean, editableGradingInstructions?: boolean) {
