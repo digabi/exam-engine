@@ -5,6 +5,7 @@ import { useExamTranslation } from '../../../i18n'
 import AudioError from '../../shared/internal/AudioError'
 import { AudioError as AudioErrorType } from '../../../types/ExamServerAPI'
 import { NBSP } from '../../../dom-utils'
+import AudioPlayer from '../../shared/internal/AudioPlayer'
 
 type AudioRecorderOptions = Omit<MediaRecorderOptions, 'bitsPerSecond' | 'videoBitsPerSecond'> & {
   saveIntervalMs?: number
@@ -158,13 +159,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
       </div>
       {audioUrl && status != 'recording' && (
         <div className="audio-answer-controls">
-          <audio
-            src={audioUrl}
-            className="e-column e-column--narrow"
-            preload="metadata"
-            controls
-            controlsList="nodownload"
-          />
+          <AudioPlayer src={audioUrl} variant={'recorded'} />
           <button className="e-button-secondary delete-recording" onClick={deleteRecording}>
             {t('remove.recording')}
           </button>

@@ -8913,12 +8913,18 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly: xml 1`] = `
       <table class="e-table e-width-full"><caption>Element attributes</caption><thead><tr><th>Attribute</th><th>Type</th><th>Mandatory</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>String</td><td>Yes</td><td>–</td><td>Audio file name</td></tr><tr><td>times</td><td>Integer</td><td>No</td><td>∞</td><td>Maximum number of times the audio can be played by the examinee</td></tr><tr><td>lang</td><td>String</td><td>No</td><td>–</td><td>Exam language code. Use when audio should be included only in certain language version.
             </td></tr><tr><td>class</td><td>CSS class</td><td>No</td><td>-</td><td>CSS class name</td></tr></tbody></table>
 
-      <h4>Example</h4>
+      <h4>Examples</h4>
       <pre class="code"><![CDATA[<e:audio src="example1.webm" times="2">
   <e:audio-title>Optional description</e:audio-title>
 </e:audio>]]></pre>
       <div class="example">
         <e:audio src="example1.webm" times="2" restricted-audio-id="4" duration="999"><e:audio-title>Optional description</e:audio-title></e:audio>
+      </div>
+      <pre class="code"><![CDATA[<e:audio src="example1.webm">
+  <e:audio-title>Optional description</e:audio-title>
+</e:audio>]]></pre>
+      <div class="example">
+        <e:audio src="example1.webm" duration="999"><e:audio-title>Optional description</e:audio-title></e:audio>
       </div>
     </e:question>
     <e:question display-number="17" max-score="6">

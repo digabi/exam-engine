@@ -9,6 +9,7 @@ import { getAudioPlaybackError, getPlaybackTimesRemaining } from '../../store/se
 import AudioError from './internal/AudioError'
 import { CommonExamContext } from '../context/CommonExamContext'
 import RestrictedAudioPlayer from './internal/RestrictedAudioPlayer'
+import AudioPlayer from './internal/AudioPlayer'
 
 function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
   const src = element.getAttribute('src')!
@@ -33,15 +34,7 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
       {restrictedAudioId != null && times != null ? (
         <RestrictedAudioPlayer {...{ src, restrictedAudioId, duration, times, labelId }} />
       ) : (
-        <audio
-          className="e-column e-column--narrow"
-          aria-describedby={labelId}
-          preload="metadata"
-          controls
-          controlsList="nodownload"
-        >
-          <source src={resolveAttachment(src)} />
-        </audio>
+        <AudioPlayer src={resolveAttachment(src)} labelId={labelId} />
       )}
       <div className="e-column" id={labelId}>
         <AudioError error={audioPlaybackError}>{renderChildNodes(element)}</AudioError>
