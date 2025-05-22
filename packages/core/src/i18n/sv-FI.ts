@@ -130,9 +130,14 @@ export const sv_FI: Translations = {
   'previous-answer-versions': 'Tidigare utkast till svar',
   'zoom-in': 'Förstora bilden',
   'end-of-exam': 'Uppgifterna i provet slutar här.',
-  'start.recording': 'Spela in svaret',
-  'stop.recording': 'Stoppa inspelningen',
-  'remove.recording': 'Radera inspelningen',
+  'audio-recorder': {
+    start: 'Spela in svaret',
+    stop: 'Stoppa inspelningen',
+    remove: 'Radera inspelningen',
+    close: 'Stäng',
+    'already-recording':
+      'Det pågår redan en inspelning i en annan uppgift. Stoppa den innan du kan börja spela in i denna uppgift.'
+  },
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.

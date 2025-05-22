@@ -137,9 +137,14 @@ export const fi_FI = {
   'previous-answer-versions': 'Aiemmat vastausluonnokset',
   'zoom-in': 'Suurenna kuva',
   'end-of-exam': 'Kokeen tehtävät loppuvat tähän.',
-  'start.recording': 'Äänitä vastaus',
-  'stop.recording': 'Lopeta äänitys',
-  'remove.recording': 'Poista äänitys',
+  'audio-recorder': {
+    start: 'Äänitä vastaus',
+    stop: 'Lopeta äänitys',
+    remove: 'Poista äänitys',
+    close: 'Sulje',
+    'already-recording':
+      'Toisessa tehtävässä on jo käynnissä äänitys. Lopeta se ennen kuin voit aloittaa äänityksen tässä tehtävässä.'
+  },
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.
