@@ -140,7 +140,8 @@ export const fi_FI = {
   recorder: {
     start: 'Äänitä vastaus',
     stop: 'Lopeta äänitys',
-    delete: 'Poista äänitteesi'
+    delete: 'Poista äänitteesi',
+    'already-recording': 'Äänitys on käynnissä toisessa tehtävässä'
   },
   'audio-player': {
     aria: {
