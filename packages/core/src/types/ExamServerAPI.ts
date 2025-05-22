@@ -25,6 +25,8 @@ export type AudioError =
   | 'already-playing'
   /** Permission to use microphone denied */
   | 'permission-denied'
+  /** Other audio answer is already being recorded */
+  | 'already-recording'
   /** Other recording error, e.g. a network issue */
   | 'other-recording-error'
   /** Other error, e.g. a network issue */

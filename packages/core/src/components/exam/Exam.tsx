@@ -56,6 +56,7 @@ import { UndoView } from './UndoView'
 import ErrorIndicator from './internal/ErrorIndicator'
 import SaveIndicator from './internal/SaveIndicator'
 import AudioAnswer from './AudioAnswer'
+import { withAudioRecorderContext } from '../context/AudioRecorderContext'
 
 /** Props common to taking the exams and viewing results */
 export interface CommonExamProps {
@@ -359,4 +360,4 @@ const ProceedToExamineAnswersText = () => {
   )
 }
 
-export default React.memo(withExamContext(withCommonExamContext(Exam)))
+export default React.memo(withExamContext(withCommonExamContext(withAudioRecorderContext(Exam))))

@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons'
+import { faInfoCircle, faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons'
 import { useExamTranslation } from '../../../i18n'
 import AudioError from '../../shared/internal/AudioError'
 import { AudioError as AudioErrorType } from '../../../types/ExamServerAPI'
 import { NBSP } from '../../../dom-utils'
 import AudioPlayer from '../../shared/internal/AudioPlayer'
+import { AudioRecorderContext } from '../../context/AudioRecorderContext'
 
 type AudioRecorderOptions = Omit<MediaRecorderOptions, 'bitsPerSecond' | 'videoBitsPerSecond'> & {
   saveIntervalMs?: number
@@ -19,19 +20,14 @@ interface AudioRecorderProps {
   audioRecorderOptions?: AudioRecorderOptions
 }
 
-class UserMediaError extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'UserMediaError'
-  }
-}
-
 export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions }: AudioRecorderProps) {
   const [timeElapsed, setTimeElapsed] = useState<number>(0)
   const [status, setStatus] = useState<RecordingState>('inactive')
   const [error, setError] = useState<AudioErrorType | null>(null)
   const mediaRecorder = useRef<MediaRecorder>()
   const timer = useRef<{ id: NodeJS.Timeout; startTime: Date }>()
+  const { alreadyRecordingState } = useContext(AudioRecorderContext)
+  const [alreadyRecording, setAlreadyRecording] = alreadyRecordingState
   const { t } = useExamTranslation()
 
   useEffect(
@@ -54,7 +50,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
         mediaRecorder.current = newMediaRecorder
         return mediaRecorder.current
       } else {
-        showError(new UserMediaError('Cannot get media stream, possibly insecure context'))
+        setError('permission-denied') // Cannot get media stream, possibly insecure context
       }
     } catch (err) {
       showError(err)
@@ -69,6 +65,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
         startTimer()
         mediaRecorder.start(audioRecorderOptions?.saveIntervalMs)
         setStatus(mediaRecorder.state)
+        setAlreadyRecording(true)
       }
     } catch (err) {
       showError(err)
@@ -77,6 +74,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
 
   async function stopRecording() {
     try {
+      setAlreadyRecording(false)
       setError(null)
       const mediaRecorder = await getMediaRecorder()
       if (mediaRecorder) {
@@ -117,7 +115,6 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
     stopTimer()
     const error = err instanceof Error ? err : new Error('unknown error')
     switch (error.name) {
-      case 'UserMediaError':
       case 'NotAllowedError':
         return setError('permission-denied')
       default:
@@ -136,7 +133,11 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
       <div>
         <p>
           {status != 'recording' && !audioUrl && (
-            <button className="e-button start-recording" onClick={() => void startRecording()} disabled={error != null}>
+            <button
+              className="e-button start-recording"
+              onClick={() => void startRecording()}
+              disabled={error != null || alreadyRecording}
+            >
               <FontAwesomeIcon size="sm" icon={faMicrophone} fixedWidth />
               {t('recorder.start')}
             </button>
@@ -166,7 +167,18 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
           </button>
         </div>
       )}
-      {error && <AudioError error={error}>{NBSP}</AudioError>}
+
+      {error ? (
+        <AudioError error={error}>{NBSP}</AudioError>
+      ) : alreadyRecording && status != 'recording' && !audioUrl ? (
+        <>
+          <FontAwesomeIcon icon={faInfoCircle} />
+          {NBSP}
+          <span>{t('audio-recorder.already-recording')}</span>
+        </>
+      ) : (
+        NBSP
+      )}
     </>
   )
 }
