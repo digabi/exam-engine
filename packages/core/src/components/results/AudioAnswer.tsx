@@ -8,6 +8,7 @@ import { shortDisplayNumber } from '../../shortDisplayNumber'
 import { QuestionContext } from '../context/QuestionContext'
 import { useExamTranslation } from '../../i18n'
 import classNames from 'classnames'
+import AudioPlayer from '../shared/internal/AudioPlayer'
 
 function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const { element } = audioAnswerProps
@@ -31,13 +32,7 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
         })}
         aria-description={!value ? i18n.t('examineExam.questionHasNoAnswer') : undefined}
       >
-        <audio
-          src={value}
-          className="e-column e-column--narrow"
-          preload="metadata"
-          controls
-          controlsList="nodownload"
-        />
+        <AudioPlayer src={value!} variant="recorded" />
       </div>
       {comment && (
         <>

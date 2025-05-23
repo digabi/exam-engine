@@ -1921,12 +1921,18 @@
         </tbody>
       </table>
 
-      <h4>Example</h4>
+      <h4>Examples</h4>
       <pre class="code"><![CDATA[<e:audio src="example1.webm" times="2">
   <e:audio-title>Optional description</e:audio-title>
 </e:audio>]]></pre>
       <div class="example">
         <e:audio src="example1.webm" times="2"><e:audio-title>Optional description</e:audio-title></e:audio>
+      </div>
+      <pre class="code"><![CDATA[<e:audio src="example1.webm">
+  <e:audio-title>Optional description</e:audio-title>
+</e:audio>]]></pre>
+      <div class="example">
+        <e:audio src="example1.webm"><e:audio-title>Optional description</e:audio-title></e:audio>
       </div>
     </e:question>
     <e:question>
