@@ -137,7 +137,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
           {status != 'recording' && !audioUrl && (
             <button className="e-button start-recording" onClick={() => void startRecording()} disabled={error != null}>
               <FontAwesomeIcon size="sm" icon={faMicrophone} fixedWidth />
-              {t('start.recording')}
+              {t('recorder.start')}
             </button>
           )}
           <>
@@ -149,7 +149,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
                   disabled={error != null}
                 >
                   <FontAwesomeIcon size="sm" icon={faStop} fixedWidth />
-                  {t('stop.recording')}
+                  {t('recorder.stop')}
                 </button>
                 <span className="time-elapsed">{renderTimeElapsed()}</span>
               </>
@@ -161,7 +161,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
         <div className="audio-answer-controls">
           <AudioPlayer src={audioUrl} variant={'recorded'} />
           <button className="e-button-secondary delete-recording" onClick={deleteRecording}>
-            {t('remove.recording')}
+            {t('recorder.delete')}
           </button>
         </div>
       )}
