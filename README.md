@@ -1,11 +1,22 @@
-[![Build](https://github.com/digabi/exam-engine/workflows/Build/badge.svg)](https://github.com/digabi/exam-engine/actions?query=workflow%3ABuild)
+[![Digabi logo](https://digabi.fi/images/digabi-logo.png)](https://digabi.fi)
 
-[![Abitti.net](https://abitti.net/images/abittinet_logo.svg)](https://abitti.net/)
+# Digabi
 
-[Abitti.net](https://abitti.net)
+Digabi is a codebase used in the Abitti exam system, the digital exam environment for the [Finnish Matriculation Examination](https://www.ylioppilastutkinto.fi/en).
 
-[Use of Abitti Trademark policy](https://abitti.net/abitti-trademark.html)
+All bug reports, feature requests, and pull requests are appreciated. However, the following should be kept in mind:
 
+- Pull requests based on submitted issues cannot be implemented due to limited resources. Similarly, upstream issues related to third-party projects in use are not forwarded.
+- No guarantee can be given that submitted pull requests will be reviewed.
+- Our focus is strictly on the Finnish Matriculation Examination, as defined by law. Issues or pull requests unrelated to this mission will not be addressed.
+- Official channels should be used for inquiries. The issue tracker and pull requests are not to be used for general questions or support requests.
+
+Before any contribution is accepted to the codebase, to clarify the intellectual property rights associated with contributions to open-source projects owned by the Finnish Matriculation Examination Board, all contributors must sign and submit a Contribution License Agreement (CLA):
+
+- Individuals should sign and send the [Personal CLA](https://digabi.fi/YTL%20Personal%20CLA.pdf) to [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi).
+- Organizations or corporations should sign and send the [Corporate CLA](https://digabi.fi/YTL%20Corporate%20CLA.pdf) to the same address.
+
+# Digabi Exam Engine
 [Documentation](https://digabi.github.io/exam-engine/MexDocumentation/)
 
 Engine for the MEX exam format.
