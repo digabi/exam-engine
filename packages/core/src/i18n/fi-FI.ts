@@ -139,7 +139,7 @@ export const fi_FI = {
   'end-of-exam': 'Kokeen tehtävät loppuvat tähän.',
   'start.recording': 'Äänitä vastaus',
   'stop.recording': 'Lopeta äänitys',
-  'remove.recording': 'Poista äänitys',
+  'remove.recording': 'Poista äänitteesi',
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.
