@@ -74,14 +74,22 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
     <div
       className={`custom-audio-player custom-audio-player--${variant} e-column e-column--narrow`}
       aria-describedby={labelId}
+      data-testid="audio-player-container"
     >
       <audio ref={audioRef} src={src} preload="metadata" />
 
-      <button className={`play-button`} onClick={togglePlay}>
+      <button
+        className={`play-button`}
+        onClick={togglePlay}
+        data-testid="audio-player-play-pause-button"
+        aria-label={isPlaying ? 'Pause' : 'Play'}
+      >
         <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="icon" />
       </button>
 
-      <span className={`time`}>{formatDuration(currentTime)}</span>
+      <span className={`time`} data-testid="audio-player-current-time">
+        {formatDuration(currentTime)}
+      </span>
 
       <input
         ref={progressBarRef}
@@ -92,8 +100,11 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
         value={currentTime}
         onChange={onSeek}
         aria-label={formatDuration(currentTime)}
+        data-testid="audio-player-progress-bar"
       />
-      <span className={`time`}>{formatDuration(duration)}</span>
+      <span className={`time`} data-testid="audio-player-duration">
+        {formatDuration(duration)}
+      </span>
 
       <FontAwesomeIcon icon={faVolumeHigh} className={`audio-icon`} />
     </div>
