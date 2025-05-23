@@ -31,13 +31,19 @@ export default defineConfig({
     {
       name: 'chrome',
       use: {
-        ...devices['Desktop Chrome']
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          args: ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream']
+        }
       }
     },
     {
       name: 'firefox',
       use: {
-        ...devices['Desktop Firefox']
+        ...devices['Desktop Firefox'],
+        launchOptions: {
+          firefoxUserPrefs: { 'media.navigator.streams.fake': true, 'media.navigator.permission.disabled': true }
+        }
       }
     }
   ]
