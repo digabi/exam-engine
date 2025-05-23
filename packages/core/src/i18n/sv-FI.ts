@@ -133,7 +133,8 @@ export const sv_FI: Translations = {
   recorder: {
     start: 'Spela in svaret',
     stop: 'Stoppa inspelningen',
-    delete: 'Radera din inspelning'
+    delete: 'Radera din inspelning',
+    'already-recording': 'Inspelningen pågår i en annan uppgift.'
   },
   'audio-player': {
     aria: {

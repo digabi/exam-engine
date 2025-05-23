@@ -153,7 +153,9 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
                   <FontAwesomeIcon size="sm" icon={faStop} fixedWidth />
                   {t('recorder.stop')}
                 </button>
-                <span className="time-elapsed">{renderTimeElapsed()}</span>
+                <span className="time-elapsed" data-testid="audio-answer-time-elapsed">
+                  {renderTimeElapsed()}
+                </span>
               </>
             )}
           </>
@@ -174,7 +176,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
         <>
           <FontAwesomeIcon icon={faInfoCircle} />
           {NBSP}
-          <span>{t('audio-recorder.already-recording')}</span>
+          <span>{t('recorder.already-recording')}</span>
         </>
       ) : (
         NBSP

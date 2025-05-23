@@ -20,7 +20,7 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
   const { examServerApi } = useContext(ExamContext)
 
   return (
-    <div className="audio-answer">
+    <div className="audio-answer" data-testid="audio-answer">
       <span className="anchor" id={`question-nr-${displayNumber}`} />
       <AudioRecorder
         audioUrl={answer?.value === '' ? undefined : answer?.value}
