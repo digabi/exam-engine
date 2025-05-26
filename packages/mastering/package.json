@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-mastering",
-  "version": "23.13.7",
+  "version": "23.13.8-alpha.0",
   "main": "dist/index.js",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
