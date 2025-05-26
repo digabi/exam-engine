@@ -1506,7 +1506,7 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
     </e:question>
     <e:question>
       <e:question-title>Audio answer autosave</e:question-title>
-      <e:audio-answer max-score="5" save-interval="1000"/>
+      <e:audio-answer max-score="5" save-interval="2000"/>
     </e:question>
   </e:section>
 
@@ -3770,7 +3770,7 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
     </e:question>
     <e:question>
       <e:question-title>Audio answer autosave</e:question-title>
-      <e:audio-answer max-score="5" save-interval="1000"/>
+      <e:audio-answer max-score="5" save-interval="2000"/>
     </e:question>
   </e:section>
 

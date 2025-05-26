@@ -22466,7 +22466,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
     </e:question>
     <e:question display-number="25" max-score="5">
       <e:question-title>Audio answer autosave</e:question-title>
-      <e:audio-answer max-score="5" save-interval="1000" question-id="105" display-number="25"/>
+      <e:audio-answer max-score="5" save-interval="2000" question-id="105" display-number="25"/>
     </e:question>
   </e:section>
 
@@ -24477,7 +24477,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
     </e:question>
     <e:question display-number="25" max-score="5">
       <e:question-title>Audio answer autosave</e:question-title>
-      <e:audio-answer max-score="5" save-interval="1000" question-id="105" display-number="25"/>
+      <e:audio-answer max-score="5" save-interval="2000" question-id="105" display-number="25"/>
     </e:question>
   </e:section>
 
@@ -25811,7 +25811,7 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
     </e:question>
     <e:question display-number="18" max-score="5">
       <e:question-title>Audio answer autosave</e:question-title>
-      <e:audio-answer max-score="5" save-interval="1000" question-id="105" display-number="18"/>
+      <e:audio-answer max-score="5" save-interval="2000" question-id="105" display-number="18"/>
     </e:question>
   </e:section>
 
