@@ -25,13 +25,13 @@ describe('testChoiceAnswer.ts - choice answer interactions', () => {
   it('remembers the choices after reloading', async () => {
     await loadExam(page, ctx.url)
 
-    await setChoiceAnswer(page, 1, '108')
+    await setChoiceAnswer(page, 1, '107')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('108')
+    expect(await getRadioButtonValue(page, 1)).toBe('107')
 
-    await setChoiceAnswer(page, 1, '106')
+    await setChoiceAnswer(page, 1, '105')
     await loadExam(page, ctx.url)
-    expect(await getRadioButtonValue(page, 1)).toBe('106')
+    expect(await getRadioButtonValue(page, 1)).toBe('105')
   })
 
   it('a choice answer indicator has correct state in side navigation', async () => {
