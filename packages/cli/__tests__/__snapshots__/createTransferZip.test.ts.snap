@@ -1501,12 +1501,24 @@ exports[`ee create-transfer-zip creates hi transfer zip 2`] = `
       </e:question>
     </e:question>
     <e:question>
-      <e:question-title>Audio answer</e:question-title>
+      <e:question-title>Audio answer (no autosave)</e:question-title>
       <e:audio-answer max-score="5"/>
     </e:question>
     <e:question>
-      <e:question-title>Audio answer autosave</e:question-title>
+      <e:question-title>Audio answer (autosave 1s)</e:question-title>
       <e:audio-answer max-score="5" save-interval="1000"/>
+    </e:question>
+    <e:question>
+      <e:question-title>Audio answer (autosave 2s)</e:question-title>
+      <e:audio-answer max-score="5" save-interval="2000"/>
+    </e:question>
+    <e:question>
+      <e:question-title>Audio answer (autosave 5s)</e:question-title>
+      <e:audio-answer max-score="5" save-interval="5000"/>
+    </e:question>
+    <e:question>
+      <e:question-title>Audio answer (autosave 10s)</e:question-title>
+      <e:audio-answer max-score="5" save-interval="10000"/>
     </e:question>
   </e:section>
 
@@ -3765,12 +3777,24 @@ exports[`ee create-transfer-zip creates transfer zip 2`] = `
       </e:question>
     </e:question>
     <e:question>
-      <e:question-title>Audio answer</e:question-title>
+      <e:question-title>Audio answer (no autosave)</e:question-title>
       <e:audio-answer max-score="5"/>
     </e:question>
     <e:question>
-      <e:question-title>Audio answer autosave</e:question-title>
+      <e:question-title>Audio answer (autosave 1s)</e:question-title>
       <e:audio-answer max-score="5" save-interval="1000"/>
+    </e:question>
+    <e:question>
+      <e:question-title>Audio answer (autosave 2s)</e:question-title>
+      <e:audio-answer max-score="5" save-interval="2000"/>
+    </e:question>
+    <e:question>
+      <e:question-title>Audio answer (autosave 5s)</e:question-title>
+      <e:audio-answer max-score="5" save-interval="5000"/>
+    </e:question>
+    <e:question>
+      <e:question-title>Audio answer (autosave 10s)</e:question-title>
+      <e:audio-answer max-score="5" save-interval="10000"/>
     </e:question>
   </e:section>
 
