@@ -1,0 +1,131 @@
+.custom-audio-player {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 30px;
+  height: 60px;
+
+  // Mixin for variant styles
+  .variant-styles(@bg-color, @button-color, @icon-color, @text-color, @progress-color, @track-color) {
+    background: @bg-color;
+
+    .play-button {
+      background: @button-color;
+      .icon {
+        color: @icon-color;
+      }
+    }
+
+    .time {
+      color: @text-color;
+    }
+
+    input[type='range'] {
+      background: @track-color;
+
+      &::before {
+        // Chrome, Safari progress
+        background: @progress-color;
+      }
+
+      &::-moz-range-track {
+        // Firefox track
+        background: @track-color;
+      }
+
+      &::-moz-range-progress {
+        // Firefox progress
+        background: @progress-color;
+      }
+    }
+
+    .audio-icon {
+      color: @text-color;
+    }
+  }
+
+  &--repeatable {
+    .variant-styles(@blue-050, @blue-800, @grey-010, @blue-800, @blue-800, @grey-010);
+  }
+
+  &--recorded {
+    .variant-styles(@grey-050, @grey-100, @grey-900, @grey-900, @grey-900, @grey-100);
+  }
+
+  .play-button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+  }
+
+  .time {
+    font-size: 14px;
+    margin-left: 8px;
+    margin-right: 8px;
+    text-align: right;
+  }
+
+  /* =========================
+    Custom Input range 
+  =============================*/
+
+  @progress-height: 4px;
+  @progress-radius: 2px;
+  /* Input range - chrome and safari */
+  input[type='range'] {
+    --range-progress: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    height: @progress-height;
+    border-radius: @progress-radius;
+    cursor: pointer;
+  }
+
+  /* Input range - firefox track */
+  input[type='range']::-moz-range-track {
+    position: relative;
+    height: @progress-height;
+    border-radius: @progress-radius;
+    cursor: pointer;
+  }
+
+  /* played progress length - Chrome & safari*/
+  input[type='range']::before {
+    content: '';
+    height: @progress-height;
+    width: var(--range-progress);
+    border-bottom-left-radius: @progress-radius;
+    border-top-left-radius: @progress-radius;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* played progress length - firefox */
+  input[type='range']::-moz-range-progress {
+    border-bottom-left-radius: @progress-radius;
+    border-top-left-radius: @progress-radius;
+    height: @progress-height;
+  }
+
+  /* slider thumb - chrome and safari */
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    // shows no thumb but the size affects the clickable area
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
+
+  /* slider thumb - firefox */
+  input[type='range']::-moz-range-thumb {
+    // shows no thumb but the size affects the clickable area
+    opacity: 0;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
+}
