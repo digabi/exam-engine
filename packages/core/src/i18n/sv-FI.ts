@@ -135,6 +135,13 @@ export const sv_FI: Translations = {
     stop: 'Stoppa inspelningen',
     delete: 'Radera din inspelning'
   },
+  'audio-player': {
+    aria: {
+      play: 'Spela upp inspelningen',
+      pause: 'Pausa uppspelningen',
+      'seek-slider-aria-label': 'Tidslinje'
+    }
+  },
   /**
    * These keys have the following pattern: `{question|section|toc-fi}_{childQuestionCount}_{minAnswers}_${maxAnswers}`
    * The `*` character serves as a wildcard.
