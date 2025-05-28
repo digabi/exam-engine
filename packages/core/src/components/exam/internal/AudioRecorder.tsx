@@ -5,6 +5,7 @@ import { useExamTranslation } from '../../../i18n'
 import AudioError from '../../shared/internal/AudioError'
 import { AudioError as AudioErrorType } from '../../../types/ExamServerAPI'
 import { NBSP } from '../../../dom-utils'
+import ModalDialog from '../../shared/internal/ModalDialog'
 
 type AudioRecorderOptions = Omit<MediaRecorderOptions, 'bitsPerSecond' | 'videoBitsPerSecond'> & {
   saveIntervalMs?: number
@@ -16,13 +17,6 @@ interface AudioRecorderProps {
   onSave: (blob: Blob) => void
   onDelete: () => void
   audioRecorderOptions?: AudioRecorderOptions
-}
-
-class UserMediaError extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'UserMediaError'
-  }
 }
 
 export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions }: AudioRecorderProps) {
@@ -50,7 +44,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
         mediaRecorder.current = new MediaRecorder(mediaStream, audioRecorderOptions)
         return mediaRecorder.current
       } else {
-        showError(new UserMediaError('Cannot get media stream, possibly insecure context'))
+        setError('permission-denied') // Cannot get media stream, possibly insecure context
       }
     } catch (err) {
       showError(err)
@@ -59,6 +53,10 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
 
   async function startRecording() {
     try {
+      const activeRecordings = Array.from(document.querySelectorAll('[class="audio-recorder recording"]')).length
+      if (activeRecordings > 0) {
+        return setError('already-recording')
+      }
       setError(null)
       const mediaRecorder = await getMediaRecorder()
       if (mediaRecorder) {
@@ -115,7 +113,6 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
     stopTimer()
     const error = err instanceof Error ? err : new Error('unknown error')
     switch (error.name) {
-      case 'UserMediaError':
       case 'NotAllowedError':
         return setError('permission-denied')
       default:
@@ -131,12 +128,12 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
 
   return (
     <>
-      <div>
+      <div className={`audio-recorder ${status}`}>
         <p>
           {status != 'recording' && !audioUrl && (
             <button className="e-button start-recording" onClick={() => void startRecording()} disabled={error != null}>
               <FontAwesomeIcon size="sm" icon={faMicrophone} fixedWidth />
-              {t('start.recording')}
+              {t('audio-recorder.start')}
             </button>
           )}
           <>
@@ -148,7 +145,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
                   disabled={error != null}
                 >
                   <FontAwesomeIcon size="sm" icon={faStop} fixedWidth />
-                  {t('stop.recording')}
+                  {t('audio-recorder.stop')}
                 </button>
                 <span className="time-elapsed">{renderTimeElapsed()}</span>
               </>
@@ -166,11 +163,25 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
             controlsList="nodownload"
           />
           <button className="e-button-secondary delete-recording" onClick={deleteRecording}>
-            {t('remove.recording')}
+            {t('audio-recorder.remove')}
           </button>
         </div>
       )}
-      {error && <AudioError error={error}>{NBSP}</AudioError>}
+
+      {error ? (
+        error == 'already-recording' ? (
+          <ModalDialog className="already-recording-error" onClose={() => setError(null)}>
+            <p>{t('audio-recorder.already-recording')}</p>
+            <div className="buttons">
+              <button className="e-button e-button-primary" onClick={() => setError(null)}>
+                {t('audio-recorder.close')}
+              </button>
+            </div>
+          </ModalDialog>
+        ) : (
+          <AudioError error={error}>{NBSP}</AudioError>
+        )
+      ) : null}
     </>
   )
 }
