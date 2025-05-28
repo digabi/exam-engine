@@ -34,29 +34,18 @@ import SectionTitle from './SectionTitle'
 import { GradingInstructionProvider } from './GradingInstructionProvider'
 import { GradingInstructionProps } from '../context/GradingInstructionContext'
 import { DNDAnswerContainer } from '../shared/DNDAnswerContainer'
+import RenderAttachmentElements from './RenderAttachmentElements'
+import { gradingInstructionContent } from './gradingInstructionContent'
 
 const RenderIfWithinGradingInstructionContent = renderIf(
-  element =>
-    queryAncestors(element, [
-      // Keep in sync with lists in mastering/index.ts
-      'answer-grading-instruction',
-      'choice-answer-option',
-      'dropdown-answer-option',
-      'exam-grading-instruction',
-      'question-grading-instruction',
-      'hint',
-      'question-title',
-      'question-instruction',
-      'dnd-answer-title',
-      'dnd-answer-option'
-    ]) != null
+  element => queryAncestors(element, gradingInstructionContent) != null
 )
 
 const RenderIfNotWithinExternalMaterial = renderIf(element => queryAncestors(element, ['external-material']) == null)
 
 const _renderChildNodes = createRenderChildNodes({
   'accepted-answer': AutogradedAnswerOption,
-  attachment: RenderExamElements,
+  attachment: RenderAttachmentElements,
   'attachment-link': { component: mkAttachmentLink('plain'), wrapper: RenderIfNotWithinExternalMaterial },
   'attachment-links': { component: mkAttachmentLinks('plain'), wrapper: RenderIfNotWithinExternalMaterial },
   audio: Recording,

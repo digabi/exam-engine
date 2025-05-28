@@ -2303,7 +2303,13 @@
           <e:dnd-answer-container meta='dnd answer container' dnd-type='connect'>
               <e:dnd-answer max-score="2">
                   <e:dnd-answer-title>
-                    Welche Zeit passt Lars am besten?
+                    <e:attachment>
+                      <e:attachment-title>Attachment inside dnd</e:attachment-title>
+                      <span>Welche Zeit passt Lars am besten?</span>
+                      <e:reference>
+                        <e:author>YTL</e:author>
+                      </e:reference>
+                    </e:attachment>
                     <e:audio src="6.1.ogg" times="1"></e:audio>
                   </e:dnd-answer-title>
                   <e:dnd-answer-option score="2">Montag, 15:00 Uhr</e:dnd-answer-option>
