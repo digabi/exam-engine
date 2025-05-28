@@ -24,21 +24,17 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
       <span className="anchor" id={`question-nr-${displayNumber}`} />
       <AudioRecorder
         audioUrl={answer?.value === '' ? undefined : answer?.value}
-        onSave={audio => {
-          void (async function () {
-            const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
-            const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
-            dispatch(saveAnswer(answer))
-          })()
+        onSave={async audio => {
+          const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
+          const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
+          dispatch(saveAnswer(answer))
         }}
-        onDelete={() => {
+        onDelete={async () => {
           if (!answer) return
-          void (async function () {
-            const audioId = answer.value.split('/').pop()!
-            await examServerApi.deleteAudio(audioId)
-            const answerObj = { questionId, type: 'audio' as const, value: '' }
-            dispatch(saveAnswer(answerObj))
-          })()
+          const audioId = answer.value.split('/').pop()!
+          await examServerApi.deleteAudio(audioId)
+          const answerObj = { questionId, type: 'audio' as const, value: '' }
+          dispatch(saveAnswer(answerObj))
         }}
         audioRecorderOptions={{
           audioBitsPerSecond: 65536,
