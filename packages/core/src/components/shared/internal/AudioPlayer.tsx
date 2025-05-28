@@ -23,7 +23,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
     if (!audio) return
 
     const onDurationChange = () => {
-      setDuration(audio.duration)
+      setDuration(audio.duration === Infinity ? 0 : audio.duration || 0)
       onTimeUpdate()
     }
 
@@ -67,13 +67,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
       if (seekTime) audioRef.current.currentTime = seekTime
       const newTime = audioRef.current.currentTime
       // for some reason duration is 0 here, so we use the audioRef
-      const dur = audioRef.current.duration
+      // Ensure duration is not NaN or 0 before division to prevent issues
+      const dur = audioRef.current.duration === Infinity ? 0 : audioRef.current.duration || 0
       setCurrentTime(newTime)
       if (progressBarRef.current) {
-        progressBarRef.current.style.setProperty('--range-progress', `${(newTime / dur) * 100}%`)
+        progressBarRef.current.style.setProperty('--range-progress', `${dur > 0 ? (newTime / dur) * 100 : 0}%`)
       }
     },
-    [duration, audioRef, progressBarRef]
+    [audioRef, progressBarRef]
   )
 
   return (
