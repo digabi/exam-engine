@@ -48,7 +48,10 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
       }
       if (navigator.mediaDevices?.getUserMedia) {
         const mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true })
-        mediaRecorder.current = new MediaRecorder(mediaStream, audioRecorderOptions)
+        const newMediaRecorder = new MediaRecorder(mediaStream, audioRecorderOptions)
+        newMediaRecorder.ondataavailable = onData
+        newMediaRecorder.onerror = (ev: ErrorEvent) => showError(new Error(ev.message))
+        mediaRecorder.current = newMediaRecorder
         return mediaRecorder.current
       } else {
         showError(new UserMediaError('Cannot get media stream, possibly insecure context'))
@@ -66,8 +69,6 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
         startTimer()
         mediaRecorder.start(audioRecorderOptions?.saveIntervalMs)
         setStatus(mediaRecorder.state)
-        mediaRecorder.ondataavailable = onData
-        mediaRecorder.onerror = (ev: ErrorEvent) => showError(new Error(ev.message))
       }
     } catch (err) {
       showError(err)
