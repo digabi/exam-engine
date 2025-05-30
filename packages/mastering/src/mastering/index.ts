@@ -446,7 +446,7 @@ function collectAttachments(exam: Element, attachments: Element[]): Attachment[]
 function isVisibleInGradingInstructions(attachment: Element) {
   return !!queryAncestors(attachment, e =>
     [
-      // Keep in sync with lists in core's GradingInstructions.tsx
+      // Keep in sync with lists in core's gradingInstructionContent.ts
       'answer-grading-instruction',
       'choice-answer-option',
       'dropdown-answer-option',
@@ -454,7 +454,9 @@ function isVisibleInGradingInstructions(attachment: Element) {
       'question-grading-instruction',
       'hint',
       'question-title',
-      'question-instruction'
+      'question-instruction',
+      'dnd-answer-title',
+      'dnd-answer-option'
     ].includes(e.name())
   )
 }
