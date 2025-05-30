@@ -454,7 +454,9 @@ function isVisibleInGradingInstructions(attachment: Element) {
       'question-grading-instruction',
       'hint',
       'question-title',
-      'question-instruction'
+      'question-instruction',
+      'dnd-answer-title',
+      'dnd-answer-option'
     ].includes(e.name())
   )
 }
