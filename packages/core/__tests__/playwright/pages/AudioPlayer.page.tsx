@@ -9,9 +9,9 @@ export class AudioPlayerPage {
   public readonly currentTimeDisplay: Locator
   public readonly durationDisplay: Locator
 
-  constructor(mountResult: MountResult) {
+  constructor(mountResult: MountResult, nth: number = 0) {
     this.mountResult = mountResult
-    this.baseLocator = this.mountResult.getByTestId('audio-player-container')
+    this.baseLocator = this.mountResult.getByTestId('audio-player-container').nth(nth)
     this.playPauseButton = this.baseLocator.getByTestId('audio-player-play-pause-button')
     this.progressBar = this.baseLocator.getByTestId('audio-player-progress-bar')
     this.currentTimeDisplay = this.baseLocator.getByTestId('audio-player-current-time')
