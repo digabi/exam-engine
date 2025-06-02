@@ -26,8 +26,10 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
         audioUrl={answer?.value === '' ? undefined : answer?.value}
         onSave={async audio => {
           const audioAttachmentUrl = await examServerApi.saveAudio(questionId, audio)
-          const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
-          dispatch(saveAnswer(answer))
+          if (audioAttachmentUrl != answer?.value) {
+            const answer = { questionId, type: 'audio' as const, value: audioAttachmentUrl }
+            dispatch(saveAnswer(answer))
+          }
         }}
         onDelete={async () => {
           if (!answer) return
