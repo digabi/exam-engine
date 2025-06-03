@@ -264,19 +264,31 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
             
             
           <li>
-              <span class="responsive-media-container responsive-media-container--bordered"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.1.4327.jpg" alt=""></span></span>
+              
+                
+                <span class="responsive-media-container responsive-media-container--bordered"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.1.4327.jpg" alt=""></span></span>
+                
+              
             &nbsp;(<span lang="fi-FI">2 p.</span>)</li></ul></div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="7.2" data-annotation-anchor="7.2"><div class="anchor" id="question-nr-7.2"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">7.2 </strong>Welches Bild passt? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4><ul>
             
             
             
           <li>
-              <span class="responsive-media-container responsive-media-container--bordered"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.2.7291.jpg" alt=""></span></span>
+              
+                
+                <span class="responsive-media-container responsive-media-container--bordered"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.2.7291.jpg" alt=""></span></span>
+                
+              
             &nbsp;(<span lang="fi-FI">2 p.</span>)</li></ul></div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="7.3" data-annotation-anchor="7.3"><div class="anchor" id="question-nr-7.3"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">7.3 </strong>Welches Bild passt? <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4><ul>
             
             
             
           <li>
-              <span class="responsive-media-container responsive-media-container--bordered"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.3.4927.jpg" alt=""></span></span>
+              
+                
+                <span class="responsive-media-container responsive-media-container--bordered"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.3.4927.jpg" alt=""></span></span>
+                
+              
             &nbsp;(<span lang="fi-FI">2 p.</span>)</li></ul></div></div>
 
   </section>
@@ -747,7 +759,11 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
               
               <li>Kannst du mir helfen?&nbsp;(<span lang="fi-FI">2 p.</span>)</li>
             </ul></div><div class="e-mrg-l-8"><p class="exam-question-title"><span class="exam-question-title__display-number--indented e-semibold">20.2 </span>
-                <span class="responsive-media-container"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.2.jpg" alt=""></span></span>
+                
+                  
+                  <span class="responsive-media-container"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.2.jpg" alt=""></span></span>
+                  
+                
                <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></p><ul>
               
               <li>Mathe ist immer so schwierig.&nbsp;(<span lang="fi-FI">3 p.</span>)</li>
@@ -761,7 +777,11 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
               <li>Was ist heute für Wetter?&nbsp;(<span lang="fi-FI">2 p.</span>)</li>
               <li>Was für ein Wetter ist heute?&nbsp;(<span lang="fi-FI">2 p.</span>)</li>
             </ul></div><div class="e-mrg-l-8"><p class="exam-question-title"><span class="exam-question-title__display-number--indented e-semibold">20.4 </span>
-                <span class="responsive-media-container"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.4.jpg" alt=""></span></span>
+                
+                  
+                  <span class="responsive-media-container"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.4.jpg" alt=""></span></span>
+                  
+                
                <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">3 p.</span></span></p><ul>
               
               <li>Du brauchst einen Regenschirm, denn es regnet stark.&nbsp;(<span lang="fi-FI">3 p.</span>)</li>
@@ -836,7 +856,11 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="23" data-annotation-anchor="23"><div class="anchor" id="question-nr-23"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">23. </strong>Termine und Wissenstest <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-27">Lesen Sie zuerst die Anweisungen und Fragen und starten Sie erst dann das Audiofile.
         Beantworten Sie die Fragen. Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.
       </div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="23.1" data-annotation-anchor="23.1"><div class="anchor" id="question-nr-23.1"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">23.1 </strong>Termine <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">6 p.</span></span></h4><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-28">Hören Sie den Text zuerst als Ganzes und dann in Abschnitten.</div><div class="e-dnd-answer-container"><span><div class="e-dnd-answer" data-question-id="100"><div class="anchor" id="question-nr-23.1.1"></div><span class="e-dnd-answer-title">
-                    Welche Zeit passt Lars am besten?
+                    
+                      
+                      <span>Welche Zeit passt Lars am besten?</span>
+                      
+                    
                     [Audio]
                   </span><div class="connection-line"></div><div class="e-dnd-answer-droppable" data-testid="dnd-droppable"><div class="e-dnd-answer-option"><div><div class="option-content">Montag, 15:00 Uhr</div></div></div></div><span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></div></span><span><div class="e-dnd-answer" data-question-id="101"><div class="anchor" id="question-nr-23.1.2"></div><span class="e-dnd-answer-title">
                     Welche Zeit passt Katarina am besten?
@@ -847,9 +871,17 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
                   </span><div class="connection-line"></div><div class="e-dnd-answer-droppable" data-testid="dnd-droppable"><div class="e-dnd-answer-option"><div><div class="option-content">Montag, 16:00 Uhr</div></div></div></div><span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></div></span></div></div><div class="e-grading-instructions-question e-mrg-l-8 e-mrg-y-4" id="23.2" data-annotation-anchor="23.2"><div class="anchor" id="question-nr-23.2"></div><h4 class="exam-question-title e-normal e-font-size-m"><strong class="exam-question-title__display-number exam-question-title__display-number--indented">23.2 </strong>Wissenstest für Hobbyköche <span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></h4><div class="exam-question-instruction e-mrg-b-2" id="question-instruction-29">       
           <p>Testen Sie Ihr Wissen! Hören Sie jeden Text zweimal. Wählen Sie jeweils zum Text das passende Bild aus.</p>
         </div><div class="e-dnd-answer-container"><span><div class="e-dnd-answer" data-question-id="103"><div class="anchor" id="question-nr-23.2"></div><span class="e-dnd-answer-title">
-                  [Audio]
+                  
+                    
+                    [Audio]
+                    
+                  
                 </span><div class="connection-line"></div><div class="e-dnd-answer-droppable has-images" data-testid="dnd-droppable"><div class="e-dnd-answer-option"><div><div class="option-content">
-                  <span class="responsive-media-container"><span class="responsive-media-container__inner"><a title="Suurenna kuva" href="attachments/7.2.7291.jpg" target="original-picture" class="e-zoomable" aria-hidden="true" tabindex="-1"><img class="e-image" src="attachments/7.2.7291.jpg" alt=""></a></span></span>
+                  
+                    
+                    <span class="responsive-media-container"><span class="responsive-media-container__inner"><a title="Suurenna kuva" href="attachments/7.2.7291.jpg" target="original-picture" class="e-zoomable" aria-hidden="true" tabindex="-1"><img class="e-image" src="attachments/7.2.7291.jpg" alt=""></a></span></span>
+                    
+                  
                 </div></div></div></div><span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></div></span></div></div></div>
     <div class="e-grading-instructions-question e-mrg-b-8 e-clearfix" id="24" data-annotation-anchor="24"><div class="anchor" id="question-nr-24"></div><h3 class="exam-question-title"><strong class="exam-question-title__display-number">24. </strong>Audio answer <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">5 p.</span></span></h3></div>
   </section>
@@ -892,6 +924,9 @@ exports[`ee create-grading-instructions creates grading instructions 3`] = `
   "2.2.ogg",
   "2.3.ogg",
   "2.4.ogg",
+  "6.1.ogg",
+  "6.2.ogg",
+  "6.3.ogg",
   "7.1.0478.jpg",
   "7.1.4327.jpg",
   "7.1.7279.jpg",
@@ -899,6 +934,7 @@ exports[`ee create-grading-instructions creates grading instructions 3`] = `
   "7.2.7276.jpg",
   "7.2.7291.jpg",
   "7.2.jpg",
+  "7.2.ogg",
   "7.3.4375.jpg",
   "7.3.4927.jpg",
   "7.3.7459.jpg",

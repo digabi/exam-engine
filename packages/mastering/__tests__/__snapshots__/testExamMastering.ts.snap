@@ -7134,12 +7134,24 @@ exports[`Exam mastering masters MexDocumentation.xml exam correctly 1`] = `
     },
     {
       "filename": "example1.webm",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "example1.webm",
+      "restricted": false,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "example.jpg",
       "restricted": false,
       "visibleInGradingInstructions": false,
       "withinGradingInstruction": false,
     },
     {
-      "filename": "example.jpg",
+      "filename": "example1.webm",
       "restricted": false,
       "visibleInGradingInstructions": false,
       "withinGradingInstruction": false,
@@ -12885,27 +12897,27 @@ exports[`Exam mastering masters SC.xml exam correctly 1`] = `
       "withinGradingInstruction": false,
     },
     {
+      "filename": "6.1.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "6.2.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "6.3.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
       "filename": "7.2.ogg",
       "restricted": false,
-      "visibleInGradingInstructions": false,
-      "withinGradingInstruction": false,
-    },
-    {
-      "filename": "7.2.1617.jpg",
-      "restricted": false,
-      "visibleInGradingInstructions": false,
-      "withinGradingInstruction": false,
-    },
-    {
-      "filename": "7.2.7291.jpg",
-      "restricted": false,
-      "visibleInGradingInstructions": false,
-      "withinGradingInstruction": false,
-    },
-    {
-      "filename": "7.2.7276.jpg",
-      "restricted": false,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
@@ -15648,27 +15660,27 @@ exports[`Exam mastering masters SC.xml exam correctly 2`] = `
       "withinGradingInstruction": false,
     },
     {
+      "filename": "6.1.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "6.2.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "6.3.ogg",
+      "restricted": true,
+      "visibleInGradingInstructions": true,
+      "withinGradingInstruction": false,
+    },
+    {
       "filename": "7.2.ogg",
       "restricted": false,
-      "visibleInGradingInstructions": false,
-      "withinGradingInstruction": false,
-    },
-    {
-      "filename": "7.2.1617.jpg",
-      "restricted": false,
-      "visibleInGradingInstructions": false,
-      "withinGradingInstruction": false,
-    },
-    {
-      "filename": "7.2.7291.jpg",
-      "restricted": false,
-      "visibleInGradingInstructions": false,
-      "withinGradingInstruction": false,
-    },
-    {
-      "filename": "7.2.7276.jpg",
-      "restricted": false,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
@@ -18209,43 +18221,43 @@ exports[`Exam mastering masters SC.xml exam correctly 3`] = `
     {
       "filename": "6.1.ogg",
       "restricted": true,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
       "filename": "6.2.ogg",
       "restricted": true,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
       "filename": "6.3.ogg",
       "restricted": true,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
       "filename": "7.2.ogg",
       "restricted": false,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
       "filename": "7.2.1617.jpg",
       "restricted": false,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
       "filename": "7.2.7291.jpg",
       "restricted": false,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
       "filename": "7.2.7276.jpg",
       "restricted": false,
-      "visibleInGradingInstructions": false,
+      "visibleInGradingInstructions": true,
       "withinGradingInstruction": false,
     },
     {
@@ -22354,7 +22366,13 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 1`] = `
           <e:dnd-answer-container dnd-type="connect">
               <e:dnd-answer max-score="2" question-id="100" display-number="23.1.1">
                   <e:dnd-answer-title>
-                    Welche Zeit passt Lars am besten?
+                    <e:attachment>
+                      <e:attachment-title>Attachment inside dnd</e:attachment-title>
+                      <span>Welche Zeit passt Lars am besten?</span>
+                      <e:reference>
+                        <e:author>YTL</e:author>
+                      </e:reference>
+                    </e:attachment>
                     <e:audio src="6.1.ogg" times="1" restricted-audio-id="25" duration="999"/>
                   </e:dnd-answer-title>
                   
@@ -24361,7 +24379,13 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 2`] = `
           <e:dnd-answer-container dnd-type="connect">
               <e:dnd-answer max-score="2" question-id="100" display-number="23.1.1">
                   <e:dnd-answer-title>
-                    Welche Zeit passt Lars am besten?
+                    <e:attachment>
+                      <e:attachment-title>Attachment inside dnd</e:attachment-title>
+                      <span>Welche Zeit passt Lars am besten?</span>
+                      <e:reference>
+                        <e:author>YTL</e:author>
+                      </e:reference>
+                    </e:attachment>
                     <e:audio src="6.1.ogg" times="1" restricted-audio-id="25" duration="999"/>
                   </e:dnd-answer-title>
                   
@@ -25691,7 +25715,13 @@ exports[`Exam mastering masters SC.xml exam correctly: xml 3`] = `
           <e:dnd-answer-container dnd-type="connect">
               <e:dnd-answer max-score="2" question-id="100" display-number="16.1.1">
                   <e:dnd-answer-title>
-                    Welche Zeit passt Lars am besten?
+                    <e:attachment>
+                      <e:attachment-title>Attachment inside dnd</e:attachment-title>
+                      <span>Welche Zeit passt Lars am besten?</span>
+                      <e:reference>
+                        <e:author>YTL</e:author>
+                      </e:reference>
+                    </e:attachment>
                     <e:audio src="6.1.ogg" times="1" restricted-audio-id="1" duration="999"/>
                   </e:dnd-answer-title>
                   
