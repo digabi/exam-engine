@@ -94,6 +94,7 @@ test.describe('AudioAnswer', () => {
   async function startRecording(nth: number = 0) {
     await expectButtonToBeVisible(RECORD, nth)
     await pushButton(RECORD, nth)
+    await expectButtonToBeVisible(STOP, nth)
   }
 
   async function stopRecording(nth: number = 0) {

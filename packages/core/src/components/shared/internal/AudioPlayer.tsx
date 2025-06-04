@@ -23,8 +23,20 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
     if (!audio) return
 
     const onDurationChange = () => {
-      setDuration(audio.duration === Infinity ? 0 : audio.duration || 0)
-      onTimeUpdate()
+      if (audio.duration !== Infinity) {
+        setDuration(audio.duration)
+        // After the hacky 'seek to infinity', Seek audio back to the start.
+        // Also causes seek back to beginning if duration updates for some other reason.
+        // But this should not happen in practice once we have the non-infinite duration.
+        if (audio.currentTime === audio.duration) {
+          onTimeUpdate(0)
+        } else {
+          onTimeUpdate()
+        }
+      } else {
+        // Hack to force chromium to get the real duration by seeking far beyond the end
+        onTimeUpdate(Number.MAX_SAFE_INTEGER)
+      }
     }
 
     const onTime = () => onTimeUpdate()
@@ -64,7 +76,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
   const onTimeUpdate = useCallback(
     (seekTime?: number) => {
       if (!audioRef.current) return
-      if (seekTime) audioRef.current.currentTime = seekTime
+      if (seekTime !== undefined) audioRef.current.currentTime = seekTime
       const newTime = audioRef.current.currentTime
       // for some reason duration is 0 here, so we use the audioRef
       // Ensure duration is not NaN or 0 before division to prevent issues
