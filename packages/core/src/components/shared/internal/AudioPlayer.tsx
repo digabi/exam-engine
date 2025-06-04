@@ -80,7 +80,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
       const newTime = audioRef.current.currentTime
       // for some reason duration is 0 here, so we use the audioRef
       // Ensure duration is not NaN or 0 before division to prevent issues
-      const dur = audioRef.current.duration === Infinity ? 0 : audioRef.current.duration || 0
+      const dur = !Number.isFinite(audioRef.current.duration) ? 0 : audioRef.current.duration
       setCurrentTime(newTime)
       if (progressBarRef.current) {
         progressBarRef.current.style.setProperty('--range-progress', `${dur > 0 ? (newTime / dur) * 100 : 0}%`)
@@ -114,7 +114,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
         ref={progressBarRef}
         type="range"
         min={0}
-        max={duration}
+        max={Number.isFinite(duration) ? duration : 0} // Use 100 as a fallback for infinite duration
         step={0.01}
         value={currentTime}
         onChange={onSeek}
