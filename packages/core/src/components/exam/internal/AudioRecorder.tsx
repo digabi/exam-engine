@@ -28,6 +28,23 @@ interface AudioRecorderProps {
   audioRecorderOptions?: AudioRecorderOptions
 }
 
+const getSupportedAudioMediaType = (): string => {
+  const mimeTypes = [
+    // Can be recorded in Firefox. Playable in Chromium, Firefox and Safari
+    'audio/ogg;codecs=opus',
+    // Can be recorded in Chromium and Safari. Playable in Chromium, Firefox and Safari
+    // If recorded in Firefox, firefox can't parse duration correctly, thus default to ogg
+    'audio/webm;codecs=opus'
+  ]
+
+  for (const mimeType of mimeTypes) {
+    if (MediaRecorder.isTypeSupported(mimeType)) {
+      return mimeType
+    }
+  }
+  return ''
+}
+
 export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions }: AudioRecorderProps) {
   const [timeElapsed, setTimeElapsed] = useState<number>(0)
   const [status, setStatus] = useState<RecordingState>('inactive')
@@ -54,7 +71,10 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
       }
       if (navigator.mediaDevices?.getUserMedia) {
         const mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true })
-        const newMediaRecorder = new MediaRecorder(mediaStream, audioRecorderOptions)
+        const newMediaRecorder = new MediaRecorder(mediaStream, {
+          mimeType: getSupportedAudioMediaType(),
+          ...audioRecorderOptions
+        })
         newMediaRecorder.ondataavailable = onData
         newMediaRecorder.onerror = (ev: ErrorEvent) => showError(new Error(ev.message))
         mediaRecorder.current = newMediaRecorder
