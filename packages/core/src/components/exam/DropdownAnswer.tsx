@@ -115,7 +115,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
           </span>
           <span
             className={classNames(
-              'e-dropdown-answer__toggle-icon e-text-center e-column e-column--narrow e-column--gapless e-color-link'
+              'e-dropdown-answer__toggle-icon e-text-center e-column e-column--narrow e-column--gapless'
             )}
           >
             <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />

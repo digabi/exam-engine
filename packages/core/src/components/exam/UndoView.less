@@ -1,3 +1,5 @@
+@import '../../css/colors.less';
+
 .e-overlay {
   position: fixed;
   top: 0;
@@ -18,15 +20,13 @@
   bottom: 40px;
   left: 0;
   right: 0;
-  background: #eee;
+  background: @grey-050;
   overflow: hidden;
   border-radius: 6px;
   width: 100%;
   max-width: 1080px;
   min-width: 400px;
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  overflow: hidden;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .e-undo-view-close-overlay-button {
@@ -46,7 +46,7 @@
   font-size: 15px;
   line-height: 1.3em;
   min-height: 50px;
-  overflow: scroll-y;
+  overflow-y: scroll;
   display: flex;
   flex: 1;
 }
@@ -68,8 +68,8 @@
 }
 
 .e-undo-view-entry-tab:checked ~ .e-undo-view-entry {
-  background: #fff;
-  border-color: @colors[link];
+  background: @grey-010;
+  border-color: @blue-800;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -78,22 +78,22 @@
   border-left: 10px solid transparent;
   padding: 8px 12px;
   width: 100%;
-  color: #333;
+  color: @grey-900;
   user-select: none;
   cursor: pointer;
   word-wrap: break-word;
 
   &:hover {
-    background: #fff;
+    background: @grey-010;
   }
 
   .js-undo-history-entry-time {
-    color: @colors[link];
+    color: @blue-800;
     font-size: 14px;
   }
 
   .e-undo-view-answer-length {
-    color: #666;
+    color: @grey-700;
     font-size: 12px;
     line-height: 1.35em;
     margin-top: 3px;
@@ -103,11 +103,11 @@
 .e-undo-view-answer-index label:first-child .js-undo-history-entry-time:after {
   content: ' \25CF';
   font-size: 20px;
-  color: #2c8da8;
+  color: @blue-800;
 }
 
 .e-undo-view-right-panel {
-  background: #fff;
+  background: @grey-010;
   display: flex;
   flex-direction: column;
   flex: 2;
