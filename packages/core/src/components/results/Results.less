@@ -1,6 +1,4 @@
-@readonly: #f9f9f9;
-@no-answer-bg: @colors[no-answer-bg];
-@no-answer-border: @colors[no-answer-border];
+@import '../../css/colors.less';
 
 .e-results {
   input,
@@ -71,7 +69,7 @@
     display: inline-block;
     height: 1ex;
     width: 1.5ch;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid @grey-900;
   }
 
   // If several questions are on same row, scores overlap next question. Hack to prevent it.
@@ -101,7 +99,7 @@
   .shadow-box {
     box-shadow: 0 15px 22px -10px rgb(156 188 206);
     border-radius: 5px;
-    border: 5px solid hsl(201 40% 84% / 1);
+    border: 2px solid @blue-800;
     width: 80%;
     padding: 1.5rem 2rem;
     background: white;
@@ -116,7 +114,7 @@
       .no-answer-example {
         border-radius: 6px;
         padding: 0.25rem 0.5rem;
-        background-color: @no-answer-bg;
+        background-color: @colors[no-answer-bg];
         margin: 0 0.5rem 0.25rem -0.75rem;
         display: inline-block;
       }
@@ -152,13 +150,13 @@
     }
 
     &.no-answer {
-      background: @no-answer-bg;
+      background: @colors[no-answer-bg];
       opacity: 0.9;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       border-radius: 6px;
       padding-right: 1rem;
-      margin-left: 0rem !important;
+      margin-left: 0 !important;
 
       &.e-level-0 {
         padding-left: 1rem;
@@ -187,11 +185,11 @@
   .e-dropdown-answer__no-answer {
     display: inline-block;
     height: 24px;
-    border-color: @no-answer-border;
+    border-color: @colors[no-answer-border];
   }
 
   label input:not(:checked) + div {
-    opacity: 0.5;
+    color: @grey-500;
   }
 
   .e-logout-container {
@@ -204,18 +202,18 @@
 
   .e-multiline-results-text-answer,
   .text-answer--single-line {
-    border-color: #ddd;
-    background-color: @readonly;
+    border-color: @grey-500;
+    background-color: @grey-050;
 
     &.no-answer {
-      box-shadow: inset 0 0 0 2px @no-answer-border;
+      box-shadow: inset 0 0 0 2px @colors[no-answer-border];
       border: none;
-      background-color: @no-answer-bg;
+      background-color: @colors[no-answer-bg];
     }
   }
 
   .e-dnd-answer.no-answer {
-    background: hsl(30, 42%, 92%);
+    background: @colors[no-answer-bg];
     opacity: 0.9;
     margin-bottom: 0.5rem;
 
@@ -239,24 +237,23 @@
   .text-answer--single-line:not(.no-answer) {
     word-break: break-word;
     border-radius: 3px;
-    color: #333;
+    color: @grey-700;
     border: none;
   }
 
   .e-dropdown-answer__answered {
-    background-color: @readonly;
-    border-color: #ddd;
+    background-color: @grey-050;
   }
 
   .e-dropdown-answer__no-answer {
-    background-color: @no-answer-bg;
-    border-color: @no-answer-border;
+    background-color: @colors[no-answer-bg];
+    border-color: @colors[no-answer-border];
   }
 
   .no-answer {
     .e-dropdown-answer__no-answer,
     .e-multiline-results-text-answer.no-answer {
-      background-color: @readonly;
+      background-color: @grey-050;
     }
   }
 }
