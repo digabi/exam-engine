@@ -1,10 +1,5 @@
+@import "../../css/colors";
 @import './Breakpoints.less';
-@error: #f90;
-@currentBg: rgb(236 242 247);
-
-#bertta .sidebar-toc-container .table-of-contents {
-  padding: 1rem 1cqw 2rem important;
-}
 
 .e-exam {
   .table-of-contents {
@@ -26,7 +21,7 @@
     }
 
     .answer-instructions.error {
-      color: @error;
+      color: @yellow-900;
     }
 
     .numeric-answer-indicator {
@@ -68,7 +63,7 @@
       display: flex;
       align-self: flex-start;
       flex-direction: column;
-      background: white;
+      background: @grey-010;
       padding: 2rem 1vw 2rem;
       z-index: 1;
       margin-left: auto;
@@ -78,8 +73,8 @@
       max-height: 100vh;
 
       .current {
-        background: @currentBg;
-        outline: 2px solid @currentBg;
+        background: @grey-050;
+        outline: 2px solid @grey-050;
         border-radius: 1px;
       }
 
@@ -118,24 +113,24 @@
         }
 
         &.error:before {
-          color: @error;
+          color: @yellow-900;
           font-weight: 600;
         }
 
         &.current {
           .e-question-title,
           a {
-            color: #1b4a5a;
+            color: @blue-800;
           }
         }
 
         &.error .e-question-title * {
-          color: @error;
+          color: @yellow-900;
         }
 
         &:hover {
           cursor: pointer;
-          background: hsla(194, 41%, 82%, 0.75);
+          background: @blue-050;
         }
 
         .e-question-title {
@@ -197,8 +192,8 @@
       font-weight: bold;
       font-size: 10px;
       margin: 0 8px 0 2px;
-      background: black;
-      color: white;
+      background: @yellow-900;
+      color: @grey-010;
     }
 
     .answers {
@@ -214,23 +209,25 @@
         padding: 0 1px;
 
         &:hover .answer-indicator {
-          background: hsla(194, 100%, 15%, 0.3);
+          background: @grey-600;
 
           &.ok {
-            background: hsl(208, 80%, 64%);
+            background: @blue-400;
+            &:hover  {
+              background: @blue-600;
+            }
           }
         }
 
         .answer-indicator {
-          display: block;
           width: 7px;
           height: 12px;
           border-radius: 4px;
-          background: hsla(194, 100%, 15%, 0.1);
+          background: @grey-500;
           display: flex;
           justify-content: center;
           gap: 4px;
-          color: white;
+          color: @grey-010;
           line-height: 12px;
           font-size: 10px;
 
@@ -253,14 +250,17 @@
           }
 
           &.ok {
-            background: hsl(208, 80%, 54%);
+            background: @blue-400;
           }
 
           &.error {
-            background: @error;
-            color: black;
-            border: 2px solid black;
+            background: @yellow-600;
+            color: @grey-900;
+            border: 2px solid @grey-900;
             box-sizing: content-box;
+            &:hover  {
+              background: @yellow-900;
+            }
           }
         }
       }
@@ -386,11 +386,11 @@
         font-size: 14px;
 
         &.ok {
-          color: rgb(80, 138, 189);
+          color: @blue-400;
         }
 
         &.error {
-          color: @error;
+          color: @yellow-600;
           font-weight: 600;
         }
       }
