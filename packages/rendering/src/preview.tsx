@@ -141,7 +141,7 @@ const App: React.FunctionComponent<{
   }, [language])
 
   useEffect(() => {
-    document.body.style.backgroundColor = route.name === 'attachments' ? '#f0f0f0' : '#e0f4fe'
+    document.body.style.backgroundColor = route.name === 'attachments' ? '#f0f0f0' : '#e6efff'
   }, [route.name])
 
   const attachmentsURL = router.buildPath('attachments', route.params)
