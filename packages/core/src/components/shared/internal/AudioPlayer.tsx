@@ -51,6 +51,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
     audio.addEventListener('pause', setPlayingFalse)
     audio.addEventListener('ended', setPlayingFalse)
     return () => {
+      setIsPlaying(false)
       audio.removeEventListener('loadeddata', onDurationChange)
       audio.removeEventListener('loadedmetadata', onDurationChange)
       audio.removeEventListener('durationchange', onDurationChange)
