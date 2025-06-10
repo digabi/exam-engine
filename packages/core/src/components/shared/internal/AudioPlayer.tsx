@@ -79,6 +79,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, variant = 'repeatable', 
       if (!audioRef.current) return
       if (seekTime !== undefined) audioRef.current.currentTime = seekTime
       const newTime = audioRef.current.currentTime
+      if (!Number.isFinite(newTime)) return
       // for some reason duration is 0 here, so we use the audioRef
       // Ensure duration is not NaN or 0 before division to prevent issues
       const dur = !Number.isFinite(audioRef.current.duration) ? 0 : audioRef.current.duration
