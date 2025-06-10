@@ -32,7 +32,11 @@ function AudioAnswer(audioAnswerProps: ExamComponentProps) {
         })}
         aria-description={!value ? i18n.t('examineExam.questionHasNoAnswer') : undefined}
       >
-        <AudioPlayer src={value!} variant="recorded" />
+        {value ? (
+          <AudioPlayer src={value} variant="recorded" />
+        ) : (
+          <span className="e-normal"> {i18n.t('examineExam.questionHasNoAnswer')}</span>
+        )}
       </div>
       {comment && (
         <>
