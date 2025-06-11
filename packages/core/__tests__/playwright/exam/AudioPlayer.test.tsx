@@ -51,8 +51,7 @@ const test = baseTest.extend<CustomFixtures>({
 })
 
 test('all UI elements are visible and in correct state', async ({ audioPlayerPage }) => {
-  await expect(audioPlayerPage.playPauseButton).toBeVisible()
-  await expect(audioPlayerPage.playPauseButton).toHaveAttribute('aria-label', 'Toista äänite')
+  await expect(audioPlayerPage.playButton).toBeVisible()
   await expect(audioPlayerPage.progressBar).toBeVisible()
   await expect(audioPlayerPage.progressBar).toHaveAttribute('aria-label', 'Aikajana')
   await expect(audioPlayerPage.progressBar).toHaveAttribute('aria-valuetext', '00:00/00:05')
@@ -62,13 +61,13 @@ test('all UI elements are visible and in correct state', async ({ audioPlayerPag
 })
 
 test('player is in correct state after playing whole audio', async ({ page, audioPlayerPage }) => {
-  await audioPlayerPage.playPauseButton.click()
-  await expect(audioPlayerPage.playPauseButton).toHaveAttribute('aria-label', 'Keskeytä äänite')
+  await audioPlayerPage.playButton.click()
+  await expect(audioPlayerPage.pauseButton).toBeVisible()
 
   await page.waitForTimeout(6000)
   await expect(audioPlayerPage.currentTimeDisplay).toHaveText('00:05')
   await expect(audioPlayerPage.durationDisplay).toHaveText('00:05')
-  await expect(audioPlayerPage.playPauseButton).toHaveAttribute('aria-label', 'Toista äänite')
+  await expect(audioPlayerPage.playButton).toBeVisible()
   await expect(audioPlayerPage.progressBar).toHaveValue(/5\.\d*/)
   await expect(audioPlayerPage.progressBar).toHaveAttribute('aria-label', 'Aikajana')
   await expect(audioPlayerPage.progressBar).toHaveAttribute('aria-valuetext', '00:05/00:05')
