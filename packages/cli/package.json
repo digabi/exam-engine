@@ -16,7 +16,7 @@
     "ora": "^5.0.0",
     "rich-text-editor": "8.7.0",
     "uuid": "^11.0.2",
-    "yargs": "^17.0.1"
+    "yargs": "^18.0.0"
   },
   "gitHead": "aadfbc9a62d1f1437992aaf2f0204f1eb24bb3a4"
 }
