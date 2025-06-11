@@ -1,8 +1,7 @@
 import React from 'react'
-import { Exam } from '../../../../src'
-import { examServerApi } from '../../../examServerApi'
+import { Exam, indexedDBExamServerAPI } from '../../../../src'
 
 export const AudioAnswerStory = ({ examXml }: { examXml: string }) => {
   const doc = new DOMParser().parseFromString(examXml, 'application/xml')
-  return <Exam doc={doc} examServerApi={examServerApi} />
+  return <Exam doc={doc} examServerApi={indexedDBExamServerAPI('examUUID', () => '')} />
 }

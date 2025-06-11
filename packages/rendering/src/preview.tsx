@@ -5,7 +5,8 @@ import {
   ExamServerAPI,
   GradingInstructions,
   Results,
-  parseExam
+  parseExam,
+  indexedDBExamServerAPI
 } from '@digabi/exam-engine-core'
 import '@digabi/exam-engine-core/dist/main.css'
 import { ExamType, MasteringResult } from '@digabi/exam-engine-mastering'
@@ -15,7 +16,6 @@ import { Link, RouterProvider, useRoute, useRouter } from 'react-router5'
 import createRouter from 'router5'
 import browserPlugin from 'router5-plugin-browser'
 import Grading from './PreviewGrading'
-import indexedDBExamServerAPI from './utils/indexedDBExamServerAPI'
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { original, results } = require(process.env.EXAM_FILENAME!) as { original: string; results: MasteringResult[] }

@@ -1,11 +1,8 @@
-import { ExamAnswer, ExamServerAPI } from '@digabi/exam-engine-core'
+import { ExamAnswer, ExamServerAPI } from '.'
 import Dexie from 'dexie'
 
 /** Creates a mock Exam Server API, backed by a local IndexedDB database. */
-export default function indexedDBExamServerAPI(
-  examUuid: string,
-  resolveAttachment: (s: string) => string
-): ExamServerAPI {
+export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: string) => string): ExamServerAPI {
   const db = new (class extends Dexie {
     answer!: Dexie.Table<ExamAnswer & { examUuid: string }, string>
     audio!: Dexie.Table<{ blob: Blob; dataUrl: string; audioId: string }, string>
