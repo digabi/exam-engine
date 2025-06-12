@@ -41,6 +41,34 @@ test.describe('AudioAnswer', () => {
     await stopRecording()
   })
 
+  test('audio player shows same duration as elapsed recording time', async ({ browserName }) => {
+    test.skip(
+      browserName === 'firefox',
+      'Does not work in Firefox for some reason in test browser, in real browser it works'
+    )
+    await startRecording()
+    await expectTimeElapsed('0:03')
+    await stopRecording()
+    const audioPlayer = new AudioPlayerPage(component)
+    await expect(audioPlayer.durationDisplay).toHaveText('00:03')
+    await expect(audioPlayer.playButton).toBeVisible()
+  })
+
+  test('recorded audio can be played', async ({ page, browserName }) => {
+    test.skip(
+      browserName === 'firefox',
+      'Does not work in Firefox for some reason in test browser, in real browser it works'
+    )
+    await startRecording()
+    await expectTimeElapsed('0:02')
+    await stopRecording()
+    const audioPlayer = new AudioPlayerPage(component)
+    await expect(audioPlayer.currentTimeDisplay).toHaveText('00:00')
+    await audioPlayer.playButton.click()
+    await page.waitForTimeout(3000)
+    await expect(audioPlayer.currentTimeDisplay).toHaveText('00:02')
+  })
+
   test('recorded audio can be deleted', async () => {
     await startRecording()
     await expectTimeElapsed('0:03')

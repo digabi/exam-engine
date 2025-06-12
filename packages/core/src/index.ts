@@ -12,6 +12,7 @@ export * from './types/ExamAnswer'
 export * from './types/ExamServerAPI'
 export * from './types/GradingStructure'
 export * from './types/Score'
+export { indexedDBExamServerAPI } from './indexedDBExamServerAPI'
 
 export interface ExamBundle {
   Attachments: typeof Attachments
