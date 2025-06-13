@@ -1,3 +1,6 @@
+@import '../../css/colors.less';
+@import '../../css/typography.less';
+
 .e-text-answer-display-number {
   margin-right: 0.125rem;
 }
@@ -43,12 +46,12 @@
 
   @keyframes blink-animation {
     to {
-      background-color: rgba(255, 0, 0, 0.5);
+      background-color: @red-800;
     }
   }
   @-webkit-keyframes blink-animation {
     to {
-      background-color: rgba(255, 0, 0, 0.5);
+      background-color: @red-800;
     }
   }
 
@@ -58,8 +61,7 @@
     width: 100%;
     min-height: calc(6rem + 2px);
     overflow-y: hidden;
-    padding: 0.75rem 1rem;
-    padding-right: 2.5rem;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
     margin-bottom: 0.5rem;
     resize: none;
     word-break: break-word;

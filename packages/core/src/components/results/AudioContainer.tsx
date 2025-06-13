@@ -39,7 +39,9 @@ const AudioPlaceholder: React.FC<{ duration: number; labelId: string }> = ({ dur
       >
         <FontAwesomeIcon icon={faPlay} fixedWidth />
       </button>
-      <span className="e-column e-text-right e-column">{formatDuration(duration)}</span>
+      <span className="e-column restricted-audio-player__duration e-text-right e-column">
+        {formatDuration(duration)}
+      </span>
     </div>
 
     <span className="e-pad-l-2" id={labelId}>
