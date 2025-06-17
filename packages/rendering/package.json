@@ -1,16 +1,19 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "23.15.0",
+  "version": "23.15.1",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
-  "files": ["dist", "public"],
+  "files": [
+    "dist",
+    "public"
+  ],
   "dependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
-    "@digabi/exam-engine-core": "23.15.0",
+    "@digabi/exam-engine-core": "23.15.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "babel-loader": "^10.0.0",
     "child-process-promise": "^2.2.1",
