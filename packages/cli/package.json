@@ -3,9 +3,7 @@
   "version": "23.15.0",
   "main": "index.js",
   "license": "EUPL-1.1",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "bin": {
     "ee": "./dist/index.js"
   },
@@ -14,7 +12,7 @@
     "@digabi/exam-engine-rendering": "23.15.0",
     "lodash": "^4.17.15",
     "ora": "^5.0.0",
-    "rich-text-editor": "8.9.0",
+    "rich-text-editor": "8.9.1",
     "uuid": "^11.0.2",
     "yargs": "^17.0.1"
   },
