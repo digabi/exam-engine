@@ -72,7 +72,7 @@ export const DNDTitleAndDroppable = ({
               </span>
             ))}
 
-          <div className="connection-line" />
+          <div className={classNames('connection-line', { hovered: isOver })} />
 
           <DNDDroppable
             page={page}

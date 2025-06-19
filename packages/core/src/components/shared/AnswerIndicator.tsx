@@ -29,7 +29,7 @@ const AnswerIndicator = (props: Props) => {
     <div className="answer-indicator-container" onClick={onClick} key={id}>
       <div
         className={classNames('answer-indicator', {
-          ok: value,
+          ok: value && !error,
           error,
           big: type === 'rich-text'
         })}
