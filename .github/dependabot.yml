@@ -19,3 +19,7 @@ updates:
       time: '02:00'
       timezone: 'Europe/Helsinki'
     open-pull-requests-limit: 99
+    groups:
+      playwright-packages:
+        patterns:
+          - "@playwright/*"
