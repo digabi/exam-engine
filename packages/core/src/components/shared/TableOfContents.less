@@ -1,6 +1,6 @@
 @import './Breakpoints.less';
 @error: #f90;
-@currentBg: rgb(236 242 247);
+@currentBg: hsl(207, 41%, 91%);
 
 #bertta .sidebar-toc-container .table-of-contents {
   padding: 1rem 1cqw 2rem important;
@@ -209,12 +209,13 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      gap: 1px 0;
 
       .answer-indicator-container {
         padding: 0 1px;
 
         &:hover .answer-indicator {
-          background: hsla(194, 100%, 15%, 0.3);
+          background: hsla(194, 100%, 15%, 0.5);
 
           &.ok {
             background: hsl(208, 80%, 64%);
@@ -226,7 +227,7 @@
           width: 7px;
           height: 12px;
           border-radius: 4px;
-          background: hsla(194, 100%, 15%, 0.1);
+          background: hsla(194, 100%, 15%, 0.2);
           display: flex;
           justify-content: center;
           gap: 4px;
@@ -304,6 +305,7 @@
 @container exam-container (max-width: @break-point-smaller-navi-font) {
   .smaller-navi-font();
 }
+
 @media (max-width: @break-point-smaller-navi-font) {
   .smaller-navi-font();
 }
@@ -338,6 +340,7 @@
 @container exam-container (max-width: @break-point-numeric-navi) {
   .numeric-navi();
 }
+
 @media (max-width: @break-point-numeric-navi) {
   .numeric-navi();
 }
@@ -360,7 +363,7 @@
 
       .toc-section-header-container {
         .toc-section-header {
-          font-size: 15px;
+          font-size: 14px;
           padding: 0.5rem 0;
         }
       }
@@ -376,23 +379,7 @@
       }
 
       li.level-0 {
-        grid-template-columns: 23px 40px;
-      }
-
-      .numeric-answer-indicator {
-        display: flex;
-        justify-content: flex-end;
-        white-space: nowrap;
-        font-size: 14px;
-
-        &.ok {
-          color: rgb(80, 138, 189);
-        }
-
-        &.error {
-          color: @error;
-          font-weight: 600;
-        }
+        grid-template-columns: 23px auto;
       }
 
       .answer-instructions {
@@ -409,11 +396,26 @@
         margin-bottom: 0;
       }
 
+      .answers {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0;
+        padding: 3px 0;
+
+        .answer-indicator {
+          height: 8px;
+          width: 8px;
+
+          &.big span {
+            display: none;
+          }
+        }
+      }
+
       .e-external-material,
       .e-question-title,
       .table-of-contents--score-column,
       .e-columns,
-      .answers,
       h2 {
         display: none;
       }
@@ -461,6 +463,10 @@
 
       ol li:not(:first-child):not(.level-0) {
         border-top: 1px solid #ddd;
+      }
+
+      .answers {
+        display: none;
       }
     }
 
