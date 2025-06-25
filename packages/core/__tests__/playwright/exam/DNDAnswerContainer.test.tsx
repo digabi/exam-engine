@@ -54,24 +54,22 @@ test.describe('DNDAnswerContainer', () => {
       await test.step('Move first answer to answer container using keyboard', async () => {
         // We test DOM changes between key presses to make sure that DOM is updated correctly.
         // For text answers: the answer option #343 is moved to answer containers 102 -> 101 -> 100.
-        // For image answers: the answer option #351 is moved to answer containers 100 -> 100 -> 100.
+        // For image answers: the answer option #351 is moved to answer containers 103 -> 103 -> 103.
         const handle = firstOptionLocator.locator('.drag-handle')
         const helperText = component.locator('#DndLiveRegion-0')
         const isTextAnswer = answerMediaType === 'text'
-        const itemNumber = isTextAnswer ? 343 : 351
-        const areaNumber = isTextAnswer ? 102 : 103
-        const baseText = `Draggable item ${itemNumber} was moved over droppable area`
+        const baseText = `Draggable item ${isTextAnswer ? 343 : 351} was moved over droppable area`
         await handle.focus()
         await handle.press('Enter')
         await expect(helperText).toContainText(`${baseText} root.`)
         await handle.press('ArrowUp') // activates root container
         await expect(helperText).toContainText(`${baseText} root.`)
         await handle.press('ArrowUp') // activates 3rd answer
-        await expect(helperText).toContainText(`${baseText} ${isTextAnswer ? areaNumber : 103}.`)
+        await expect(helperText).toContainText(`${baseText} ${isTextAnswer ? 102 : 103}.`)
         await handle.press('ArrowUp') // activates 2nd answer
-        await expect(helperText).toContainText(`${baseText} ${isTextAnswer ? areaNumber - 1 : 103}.`)
+        await expect(helperText).toContainText(`${baseText} ${isTextAnswer ? 101 : 103}.`)
         await handle.press('ArrowUp') // activates 1st answer
-        await expect(helperText).toContainText(`${baseText} ${isTextAnswer ? areaNumber - 2 : 103}.`)
+        await expect(helperText).toContainText(`${baseText} ${isTextAnswer ? 100 : 103}.`)
         await handle.press('Enter')
         const firstAnswerContent = (await getAnswerContent(firstOptionLocator, answerMediaType)) || '' // first option has changed
         await assertContentMatches(answerContainer, firstAnswerContent, answerMediaType)
