@@ -36,10 +36,13 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
       ) : (
         <AudioPlayer src={resolveAttachment(src)} labelId={labelId} />
       )}
-      <div className="e-column" id={labelId}>
-        <AudioError error={audioPlaybackError}>{renderChildNodes(element)}</AudioError>
-        {playbackTimesRemaining != null && <em>{t('listen-times-remaining', { count: playbackTimesRemaining })}</em>}
-      </div>
+
+      {(playbackTimesRemaining != null || audioPlaybackError != null) && (
+        <div className="e-column" id={labelId}>
+          <AudioError error={audioPlaybackError}>{renderChildNodes(element)}</AudioError>
+          {playbackTimesRemaining != null && <em>{t('listen-times-remaining', { count: playbackTimesRemaining })}</em>}
+        </div>
+      )}
     </div>
   )
 }

@@ -1,3 +1,5 @@
+@import '../shared/Breakpoints.less';
+
 .e-exam {
   .e-dnd-answer-container {
     display: flex;
@@ -33,6 +35,10 @@
 
         &.hovered {
           outline: 3px solid #1f2e93;
+        }
+
+        .audio:last-child {
+          padding-bottom: 0;
         }
       }
 
@@ -184,4 +190,12 @@
   cursor: grabbing;
   border-radius: 5px;
   outline: 3px solid #1f2e93;
+}
+
+@media (max-width: @break-point-no-question-titles) {
+  .e-dnd-answer-title {
+    .custom-audio-player input[type='range'] {
+      width: 60px;
+    }
+  }
 }
