@@ -1,4 +1,5 @@
 @import '../shared/Breakpoints.less';
+@import '../../css/colors.less';
 
 .e-exam {
   .e-dnd-answer-container {
@@ -20,21 +21,24 @@
       .connection-line {
         display: inline-block;
         height: 1px;
-        background: #307f9a;
+        background: @blue-400;
         flex: 1 0 50px;
+        &.hovered {
+          height: 3px;
+          background: @blue-800;
+        }
       }
 
       .e-dnd-answer-title {
         display: inline-block;
         border-radius: 5px;
-        border: 1px solid transparent;
         flex: 0 1 auto;
         padding: 0.25rem 0.75rem;
-        border: 1px solid #0032;
-        border-bottom: 2px solid #0032;
+        border: 1px solid @grey-100;
+        border-bottom: 2px solid @grey-100;
 
         &.hovered {
-          outline: 3px solid #1f2e93;
+          outline: 3px solid @blue-800;
         }
 
         .audio:last-child {
@@ -48,9 +52,9 @@
     }
 
     .e-dnd-answer-droppable {
-      border: 1px dashed #bcd;
+      border: 1px dashed @blue-400;
       padding: 0.5rem;
-      background: hsl(201deg 88% 96%);
+      background: @blue-050;
       border-radius: 4px;
       display: flex;
       flex-direction: row;
@@ -64,8 +68,8 @@
       &.correct-answers {
         display: inline-flex;
         flex-wrap: wrap;
-        background-color: #f6f9fb;
-        border-color: #ccc;
+        background-color: @grey-050;
+        border-color: @grey-100;
         align-self: flex-end;
         margin: 0 0.5rem 3rem;
       }
@@ -74,37 +78,37 @@
         flex: none;
         max-width: unset;
         align-items: center;
-        background: #f5f5f5;
+        background: @blue-050;
         margin-right: 60px;
         margin-left: 0.5rem;
       }
 
       &.ready-for-drop {
-        outline: 2px dashed #1f2e93;
+        outline: 2px dashed @blue-800;
         border: 1px solid transparent;
         position: relative;
       }
 
       &.hovered {
-        background: hsl(201deg 88% 80%);
-        outline: 3px solid #1f2e93;
+        background: @blue-050;
+        outline: 3px solid @blue-800;
         border: 1px solid transparent;
       }
 
       .droppable-no-answer {
-        color: #0004;
+        color: @grey-600;
         white-space: nowrap;
       }
 
       .droppable-drop-here {
-        color: #1f2e93;
+        color: @blue-800;
         white-space: nowrap;
       }
     }
 
     .droppable-title {
       font-size: 14px;
-      color: #666;
+      color: @grey-900;
       margin: 0 0.5rem;
 
       &.align-right {
@@ -132,12 +136,12 @@
 }
 
 .e-dnd-answer-option {
-  border: 1px solid #0034;
-  border-bottom: 2px solid #0034;
+  border: 1px solid @grey-700;
+  border-bottom: 2px solid @grey-700;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: @grey-010;
   border-radius: 5px;
   gap: 0.5rem;
 
@@ -158,22 +162,22 @@
   }
 
   &:hover .drag-handle {
-    background: #d8ebf5;
-    color: black;
+    background: @blue-050;
+    color: @grey-900;
     border-radius: 0 3px 3px 0;
 
     &:hover {
-      background: #1f2e93;
-      color: white;
+      background: @blue-800;
+      color: @grey-010;
     }
   }
 
   &:has(.drag-handle:hover) {
-    border-color: #1f2e93;
+    border-color: @blue-800;
   }
 
   .drag-handle {
-    color: #999;
+    color: @grey-900;
     cursor: grab;
     border: 1px solid transparent;
     padding: 0.5rem;
@@ -189,7 +193,7 @@
   opacity: 0.85;
   cursor: grabbing;
   border-radius: 5px;
-  outline: 3px solid #1f2e93;
+  outline: 3px solid @blue-800;
 }
 
 @media (max-width: @break-point-no-question-titles) {
