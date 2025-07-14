@@ -1,7 +1,9 @@
+@import './colors.less';
+
 .e-popup {
-  background: #f5f5f5;
+  background-color: @grey-050;
   border-radius: 5px;
-  box-shadow: 0 5px 30px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 30px 0 rgba(@grey-900, 0.3);
   font-size: 16px;
   font-weight: 400;
   position: absolute;
@@ -15,7 +17,7 @@
   }
 
   .e-popup-error {
-    color: red;
+    color: @red-500;
   }
 
   .e-popup-content {
@@ -26,7 +28,7 @@
 
   & > .rich-text-editor {
     min-height: 40px;
-    background-color: white;
+    background-color: @grey-050;
     border-radius: 10px;
     padding: 0.25rem 0.75rem;
     transition: all 0.5s;
@@ -36,7 +38,7 @@
 }
 
 .e-popup-content {
-  background-color: white;
+  background-color: @grey-050;
   border-radius: 10px;
   padding: 0.25rem 0.75rem;
   min-height: 0;
