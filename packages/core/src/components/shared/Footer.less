@@ -1,7 +1,10 @@
+@import '../../css/colors.less';
+@import '../../css/typography.less';
+
 .e-footer {
   position: relative;
   padding-right: 1rem;
-  background-color: #fafafa;
+  background-color: @grey-050;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -11,12 +14,12 @@
   background-position: left center;
   height: 93px;
   margin-top: 2rem;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 1px 1px rgba(@grey-900, 0.08);
 }
 
 .e-footer-version-number-container {
   .e-exam.e-sans-serif();
   font-size: 10px;
   font-weight: 400;
-  color: #6d6d6d;
+  color: @grey-600;
 }
