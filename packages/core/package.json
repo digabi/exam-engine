@@ -10,7 +10,8 @@
     "*.css"
   ],
   "files": [
-    "dist"
+    "dist",
+    "src/css/colors.less"
   ],
   "scripts": {
     "build": "webpack --mode=production",
