@@ -171,17 +171,20 @@ $ npm run test-jest -- -u
 
 ## NPM releases
 
-Requires setting [.npmrc](https://github.com/digabi/digabi-top/wiki/Users-onboarding#devausymp%C3%A4rist%C3%B6-voi-tehd%C3%A4-itse) with YTL NPM Publish Token.
-
-Publish a prerelease:
+### Prerelease
+Increase version number of the packages:
 ```bash
-$ npm run lerna publish -- --dist-tag next
+$ npx lerna version premajor | preminor | prepatch | prerelease [--force-publish] [--yes]
 ```
+Use `--force-publish` to set new version even when there are no changes and `--yes` to auto-confirm
+version to be set. This will create a tag for new version and push it to the remote repository.
 
-Publish a release:
+GitHub Action will be triggered to publish new version to npm repository after successfully building
+the repositories and running tests.
+
+### Production release
+Similar to prerelease, just
+
 ```bash
-$ npm run lerna publish
+$ npx lerna version major | minor | patch [--force-publish] [--yes]
 ```
-
-The command prompts you for details about the release: just running them does not publish
-anything yet.
