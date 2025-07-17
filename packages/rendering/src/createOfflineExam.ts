@@ -1,5 +1,5 @@
 import { Attachment, getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
-import { spawn } from 'child-process-promise'
+import { spawn } from 'promisify-child-process'
 import { promises as fs } from 'fs'
 import path from 'path'
 import puppeteer from 'puppeteer'
