@@ -1,0 +1,32 @@
+name: Publish exam-engine
+
+on:
+  push:
+    tags:
+    - 'v*.*.*'
+    - 'v*.*.*-alpha.*'
+
+jobs:
+  lerna-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Authenticate with private NPM package
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN_EXAM_ENGINE }}" > ~/.npmrc
+      - name: Node.js Setup
+        uses: ./.github/actions/node-setup
+      - name: Run eslint
+        run: npm run lint
+      - name: Build repo
+        run: npm run build
+      - name: Install playwright
+        run: npx playwright install
+      - name: Run tests
+        run: npm run test
+      - name: Publish release
+        run: npx lerna publish --yes from-git
+        if: "!contains(github.ref_name, '-alpha')"
+      - name: Publish alpha release
+        run: npx lerna publish --yes --dist-tag alpha from-git
+        if: contains(github.ref_name, '-alpha')
