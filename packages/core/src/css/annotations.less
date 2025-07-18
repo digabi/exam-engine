@@ -1,5 +1,4 @@
-@annotation-background: rgba(241, 34, 40, 0.2);
-@annotation-background-selected: hsla(46, 85%, 64%, 0.5);
+@import '../css/colors.less';
 
 .e-annotation-wrapper {
   display: inline-block;
@@ -7,10 +6,10 @@
   max-width: 100%;
 }
 
-.annotation-styles(@annotation-color) {
-  background-color: @annotation-color;
+.annotation-styles(@annotation-color, @alpha) {
+  background-color: rgba(@annotation-color, @alpha);
   .e-annotation-wrapper {
-    background: #fff;
+    background: @grey-010;
     &:before {
       background: @annotation-color;
       content: '';
@@ -25,7 +24,7 @@
 }
 
 .e-annotation {
-  background: @annotation-background;
+  background: rgba(@red-500, 0.2);
   cursor: pointer;
   position: relative; // The index is positioned absolutely with respect to this element.
 
@@ -34,16 +33,16 @@
   }
 
   &:hover {
-    background: rgba(241, 34, 40, 0.3);
+    .annotation-styles(@red-500, 0.3);
   }
 
   &.selected {
-    background-color: @annotation-background-selected;
+    background-color: rgba(@orange-900, 0.2);
   }
 
   &.resolved {
-    background-color: #1112;
-    outline-color: #1112;
+    background-color: @grey-900;
+    outline-color: @grey-900;
   }
 
   &[data-hidden='true'] {
@@ -74,14 +73,14 @@
 
   // Below: styles created for the "old" annotation system — the one that renders them using vanilla JS.
   &--pregrading {
-    .annotation-styles(rgba(241, 34, 40, 0.2));
+    .annotation-styles(@red-500, 0.2);
   }
 
   &--censoring {
-    .annotation-styles(rgba(28, 135, 177, 0.2));
+    .annotation-styles(@blue-400, 0.2);
 
     &:hover {
-      background-color: rgba(28, 135, 177, 0.3);
+      background-color: rgba(@blue-600, 0.3);
     }
   }
 

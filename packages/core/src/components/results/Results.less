@@ -97,12 +97,12 @@
   }
 
   .shadow-box {
-    box-shadow: 0 15px 22px -10px rgb(156 188 206);
+    box-shadow: 0 15px 22px -10px @blue-200;
     border-radius: 5px;
     border: 2px solid @blue-800;
     width: 80%;
     padding: 1.5rem 2rem;
-    background: white;
+    background: @grey-010;
     margin: 0 auto 3rem;
   }
 
@@ -130,8 +130,8 @@
       padding-bottom: 0.5rem;
       opacity: 1;
       border-radius: 5px;
-      background-image: repeating-linear-gradient(-45deg, transparent 0 10px, rgba(0, 0, 0, 0.05) 10px 13px);
-      border: 3px solid #f5f5f5;
+      background-image: repeating-linear-gradient(-45deg, transparent 0 10px, rgba(@grey-900, 0.05) 10px 13px);
+      border: 3px solid @grey-100;
 
       .e-result-scorecount {
         .non-answer {
@@ -140,7 +140,7 @@
           font-style: italic;
           padding-left: 1.5rem;
           white-space: normal;
-          color: #888;
+          color: @grey-500;
 
           + * {
             display: none;
@@ -223,7 +223,7 @@
   }
 
   .audio-placeholder {
-    background: #f1f3f4;
+    background: @grey-050;
     border-radius: 50px;
     height: 54px;
     text-align: center;
@@ -231,7 +231,7 @@
     display: grid;
     place-content: center;
     padding: 0 1.5rem;
-    color: #666;
+    color: @grey-600;
   }
 
   .text-answer--single-line:not(.no-answer) {

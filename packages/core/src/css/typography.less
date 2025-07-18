@@ -1,3 +1,5 @@
+@import '../css/colors.less';
+
 .e-exam {
   // Font weight
   font-weight: 400;
@@ -9,10 +11,13 @@
     font-family: 'Noto Sans', sans-serif;
   }
 
-  .e-monospace,
+  .e-monospace {
+    font-family: 'Noto Mono', monospace;
+  }
+
   code,
   pre {
-    font-family: 'Noto Mono', monospace;
+    .e-monospace();
   }
 
   // Override form element defaults
@@ -20,7 +25,7 @@
   select,
   textarea,
   button {
-    .e-sans-serif;
+    .e-sans-serif();
   }
 
   mark {

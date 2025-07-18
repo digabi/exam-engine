@@ -1,5 +1,7 @@
+@import '../../css/colors.less';
+
 .e-grading-answer-wrapper {
-  background: #fff;
+  background: @grey-010;
   position: relative;
   padding: 0;
   width: calc(100% - 10px);
@@ -7,15 +9,15 @@
   .e-annotation-list li {
     &:hover {
       cursor: pointer;
-      color: #000;
+      color: @grey-900;
     }
   }
   .e-annotation--censoring > .e-annotation__index {
-    color: #1c87b1;
+    color: @blue-400;
     z-index: 1;
   }
   .e-annotation--pregrading > .e-annotation__index {
-    color: #f12228;
+    color: @red-500;
   }
   .e-annotation--pregrading:hover > .e-annotation__index {
     z-index: 2;
@@ -25,11 +27,11 @@
   }
 }
 .e-grading-answer-popup {
-  background: #fff;
-  box-shadow: 0 0 7px 0 rgba(74, 144, 226, 0.5);
+  background: @grey-010;
+  box-shadow: 0 0 7px 0 rgba(@blue-600, 0.5);
   position: absolute;
   padding: 2px 8px;
-  color: #333;
+  color: @grey-700;
   border-radius: 5px;
   z-index: 300;
   font-size: 16px;
@@ -37,14 +39,14 @@
   white-space: nowrap;
 
   input[type='text'] {
-    background: white;
-    border: 2px solid #e6e6e6;
+    background: @grey-010;
+    border: 2px solid @grey-100;
     padding: 3px;
     margin-right: 4px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #333333;
+    color: @grey-700;
   }
 }
 .e-grading-answer-add-annotation-button {
@@ -53,21 +55,20 @@
   font-size: 18px;
   line-height: 26px;
   text-align: center;
-  background: #006ed2;
-  color: white;
+  background: @blue-600;
+  color: @grey-010;
   padding: 0 8px;
   border: 0;
   margin-left: 5px;
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 5px rgba(@grey-900, 0.15);
 }
 .e-grading-answer-add-annotation {
   padding: 8px 10px;
 }
 
 .loading-images {
-  display: inline-block;
   font-size: 16px;
   overflow: hidden;
   display: flex;
@@ -82,13 +83,13 @@
     padding: 0.25rem 0.75rem;
 
     &.loading {
-      border: 1px solid orange;
-      background: #fff8eb;
+      border: 1px solid @orange-600;
+      background: @grey-050;
     }
 
     &.failed {
-      border: 1px solid rgb(189, 0, 0);
-      background: #ffebeb;
+      border: 1px solid @red-500;
+      background: @grey-050;
     }
   }
 
@@ -107,11 +108,11 @@
 }
 
 .e-grading-answer {
-  border-left: 2px solid #aaa;
+  border-left: 2px solid @grey-500;
   margin: 20px 0;
   padding: 10px;
   word-break: break-word;
-  background: #fff;
+  background: @grey-010;
   .e-annotation-wrapper {
     line-height: 0;
     sup {
@@ -120,7 +121,7 @@
   }
 
   .e-large-image {
-    box-shadow: 0 1px 8px -3px #004dd0;
+    box-shadow: 0 1px 8px -3px @blue-800;
   }
   .full-size-image {
     position: relative;
@@ -131,8 +132,8 @@
         content: '+';
         font-family: monospace;
         font-size: 17px;
-        color: #fff;
-        background: #004dd0;
+        color: @grey-050;
+        background: @blue-800;
         border-radius: 50%;
         width: 17px;
         height: 17px;
@@ -143,7 +144,7 @@
       &::after {
         content: '';
         height: 3px;
-        background: #004dd0;
+        background: @blue-800;
         width: 9px;
         display: block;
         transform: rotate(45deg);
@@ -156,12 +157,12 @@
       bottom: 10px;
       right: 100%;
       margin-right: 13px;
-      color: #004dd0;
+      color: @blue-800;
       padding: 3px 7px;
-      background: #fff;
+      background: @grey-050;
       font-size: 22px;
       &:hover {
-        color: #00235e;
+        color: @blue-900;
         background: none;
         text-decoration: none;
       }
@@ -189,7 +190,7 @@
   }
 }
 .e-grading-answer-tooltip {
-  background: #fff;
+  background: @grey-050;
   position: absolute;
 }
 .e-grading-answer-tooltip-remove {
@@ -202,11 +203,11 @@
   font-size: 22px;
   padding: 0 5px;
   cursor: pointer;
-  color: #666;
+  color: @grey-600;
   line-height: 1;
   vertical-align: top;
   &:hover {
-    color: #ce0000;
+    color: @red-500;
   }
 }
 .e-grading-answer-tooltip-label {
@@ -214,24 +215,24 @@
   border: 1px solid transparent;
   padding: 0 4px;
   .editable &:hover {
-    border: 1px dashed #aaa;
+    border: 1px dashed @grey-500;
     cursor: pointer;
   }
 }
 .e-grading-answer-length {
-  color: gray;
+  color: @grey-600;
 }
 .e-grading-answer-max-length-surplus {
-  color: #ce0000;
+  color: @red-500;
   font-weight: 600;
   margin-left: 1ex;
 }
 .e-grading-answer-close-popup {
   &:hover {
-    color: #ce0000;
+    color: @red-500;
   }
-  background: #fff;
-  border: 1px solid #aaa;
+  background: @grey-050;
+  border: 1px solid @grey-500;
   border-radius: 50px;
   line-height: 0;
   text-align: center;
@@ -249,7 +250,7 @@
 
 .e-answer-grading-instruction {
   border: none;
-  border-left: 5px solid #ddd;
+  border-left: 5px solid @grey-100;
   border-radius: 0;
   margin-left: 0.5rem;
 }
