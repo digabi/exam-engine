@@ -249,15 +249,22 @@ const CloseButton = ({ close }: { close: () => void }) => {
   const { t } = useExamTranslation()
   return (
     <div>
-      <img
-        src="img/closeButton.svg"
+      <svg
         id="closeUndoDialogButton"
         className="e-undo-view-close-overlay-button js-close-undo-dialog-button"
         onClick={close}
         tabIndex={0}
         role="button"
         aria-label={t('undo.close') as string}
-      />
+        width="30"
+        height="30"
+        viewBox="0 0 30 30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="30" height="30" fill="#fff" opacity="0" />
+        <line x1="25" y1="5" x2="5" y2="25" fill="none" stroke="#6d6d6d" strokeMiterlimit="10" strokeWidth="3" />
+        <line x1="5" y1="5" x2="25" y2="25" fill="none" stroke="#6d6d6d" strokeMiterlimit="10" strokeWidth="3" />
+      </svg>
     </div>
   )
 }
