@@ -11,7 +11,6 @@
     "@swc-node/jest": "^1.1.1",
     "@swc/helpers": "^0.5.2",
     "@types/cloneable-readable": "^2.0.0",
-    "@types/ffmpeg-static": "^5.1.0",
     "@types/fontfaceobserver": "^2.1.0",
     "@types/jest": "^29.5.3",
     "@types/loader-utils": "^2.0.0",
