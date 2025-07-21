@@ -26452,54 +26452,54 @@ exports[`Exam mastering shuffles dnd answers 1`] = `
 
 exports[`Exam mastering supports arbitrarily nested questions: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
-<e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="36">
-  
-  <e:exam-title>Kokeen otsikko</e:exam-title>
-  <e:section display-number="1" max-score="36">
-    <e:section-title>Osan otsikko</e:section-title>
-    <e:question display-number="1" max-score="12">
-      <e:question-title>Kysymyksen otsikko</e:question-title>
-      <e:question display-number="1.1" max-score="6">
-        <e:question-title>Kysymyksen otsikko</e:question-title>
-        <e:text-answer max-score="6" type="rich-text" question-id="1" display-number="1.1"/>
-      </e:question>
-      <e:question display-number="1.2" max-score="6">
-        <e:question-title>Kysymyksen otsikko</e:question-title>
-        <e:text-answer max-score="6" type="rich-text" question-id="2" display-number="1.2"/>
-      </e:question>
-    </e:question>
-    <e:question display-number="2" max-score="12">
-      <e:question-title>Kysymyksen otsikko</e:question-title>
-      <e:question display-number="2.1" max-score="12">
-        <e:question-title>Kysymyksen otsikko</e:question-title>
-        <e:question display-number="2.1.1" max-score="6">
-          <e:question-title>Kysymyksen otsikko</e:question-title>
-          <e:text-answer max-score="6" type="rich-text" question-id="3" display-number="2.1.1"/>
-        </e:question>
-        <e:question display-number="2.1.2" max-score="6">
-          <e:question-title>Kysymyksen otsikko</e:question-title>
-          <e:text-answer max-score="6" type="rich-text" question-id="4" display-number="2.1.2"/>
-        </e:question>
-      </e:question>
-    </e:question>
-    <e:question display-number="3" max-score="12">
-      <e:question-title>Kysymyksen otsikko</e:question-title>
-      <e:question display-number="3.1" max-score="12">
-        <e:question-title>Kysymyksen otsikko</e:question-title>
-        <e:question display-number="3.1.1" max-score="12">
-          <e:question-title>Kysymyksen otsikko</e:question-title>
-          <e:question display-number="3.1.1.1" max-score="6">
+<e:exam xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="36">
+    
+    <e:exam-title>Kokeen otsikko</e:exam-title>
+    <e:section display-number="1" max-score="36">
+        <e:section-title>Osan otsikko</e:section-title>
+        <e:question display-number="1" max-score="12">
             <e:question-title>Kysymyksen otsikko</e:question-title>
-            <e:text-answer max-score="6" type="rich-text" question-id="5" display-number="3.1.1.1"/>
-          </e:question>
-          <e:question display-number="3.1.1.2" max-score="6">
-            <e:question-title>Kysymyksen otsikko</e:question-title>
-            <e:text-answer max-score="6" type="rich-text" question-id="6" display-number="3.1.1.2"/>
-          </e:question>
+            <e:question display-number="1.1" max-score="6">
+                <e:question-title>Kysymyksen otsikko</e:question-title>
+                <e:text-answer max-score="6" type="rich-text" question-id="1" display-number="1.1"/>
+            </e:question>
+            <e:question display-number="1.2" max-score="6">
+                <e:question-title>Kysymyksen otsikko</e:question-title>
+                <e:text-answer max-score="6" type="rich-text" question-id="2" display-number="1.2"/>
+            </e:question>
         </e:question>
-      </e:question>
-    </e:question>
-  </e:section>
+        <e:question display-number="2" max-score="12">
+            <e:question-title>Kysymyksen otsikko</e:question-title>
+            <e:question display-number="2.1" max-score="12">
+                <e:question-title>Kysymyksen otsikko</e:question-title>
+                <e:question display-number="2.1.1" max-score="6">
+                    <e:question-title>Kysymyksen otsikko</e:question-title>
+                    <e:text-answer max-score="6" type="rich-text" question-id="3" display-number="2.1.1"/>
+                </e:question>
+                <e:question display-number="2.1.2" max-score="6">
+                    <e:question-title>Kysymyksen otsikko</e:question-title>
+                    <e:text-answer max-score="6" type="rich-text" question-id="4" display-number="2.1.2"/>
+                </e:question>
+            </e:question>
+        </e:question>
+        <e:question display-number="3" max-score="12">
+            <e:question-title>Kysymyksen otsikko</e:question-title>
+            <e:question display-number="3.1" max-score="12">
+                <e:question-title>Kysymyksen otsikko</e:question-title>
+                <e:question display-number="3.1.1" max-score="12">
+                    <e:question-title>Kysymyksen otsikko</e:question-title>
+                    <e:question display-number="3.1.1.1" max-score="6">
+                        <e:question-title>Kysymyksen otsikko</e:question-title>
+                        <e:text-answer max-score="6" type="rich-text" question-id="5" display-number="3.1.1.1"/>
+                    </e:question>
+                    <e:question display-number="3.1.1.2" max-score="6">
+                        <e:question-title>Kysymyksen otsikko</e:question-title>
+                        <e:text-answer max-score="6" type="rich-text" question-id="6" display-number="3.1.1.2"/>
+                    </e:question>
+                </e:question>
+            </e:question>
+        </e:question>
+    </e:section>
 </e:exam>
 
 `;

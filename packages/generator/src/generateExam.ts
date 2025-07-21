@@ -1,4 +1,5 @@
-import * as libxml from 'libxmljs2'
+import { DOMImplementation, Document, Element, XMLSerializer } from '@xmldom/xmldom'
+import xmlFormat from 'xml-formatter'
 
 type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never }
 type XOR<T, U> = T | U extends object ? (Without<T, U> & U) | (Without<U, T> & T) : T | U
@@ -163,8 +164,13 @@ export interface GenerateAudioAnswerOptions {
  * ```
  */
 export function generateExam(options: GenerateExamOptions): string {
-  const doc = new libxml.Document()
-  const exam = createElement(doc, 'exam', undefined, {
+  const doc: Document = new DOMImplementation().createDocument('http://ylioppilastutkinto.fi/exam.xsd', 'e:exam')
+  if (!doc.documentElement) {
+    throw new Error('Failed to create document element')
+  }
+
+  const exam = doc.documentElement
+  addAttributes(exam, {
     xmlns: 'http://www.w3.org/1999/xhtml',
     'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
     'xsi:schemaLocation': 'http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd',
@@ -174,6 +180,7 @@ export function generateExam(options: GenerateExamOptions): string {
     date: options.date,
     'max-answers': options.maxAnswers
   })
+
   const examVersions = options.examVersions ?? [{ language: 'fi-FI' }]
   const languages = examVersions.map(v => v.language)
   const examVersionsElement = createElement(exam, 'exam-versions')
@@ -197,10 +204,10 @@ export function generateExam(options: GenerateExamOptions): string {
     addSection(exam, languages, section)
   }
 
-  return doc.toString(true)
+  return xmlFormat(new XMLSerializer().serializeToString(doc), { collapseContent: true })
 }
 
-function addSection(exam: libxml.Element, languages: Language[], options: GenerateSectionOptions): void {
+function addSection(exam: Element, languages: Language[], options: GenerateSectionOptions): void {
   const section = createElement(exam, 'section', undefined, {
     'max-answers': options.maxAnswers,
     'cas-forbidden': options.casForbidden,
@@ -214,7 +221,7 @@ function addSection(exam: libxml.Element, languages: Language[], options: Genera
   }
 }
 
-function addQuestion(parent: libxml.Element, languages: Language[], options: GenerateQuestionOptions): void {
+function addQuestion(parent: Element, languages: Language[], options: GenerateQuestionOptions): void {
   const question = createElement(parent, 'question', undefined, { 'max-answers': options.maxAnswers })
   createLocalizedElement(question, 'question-title', languages, {
     'fi-FI': 'Kysymyksen otsikko',
@@ -251,10 +258,7 @@ function addQuestion(parent: libxml.Element, languages: Language[], options: Gen
   }
 }
 
-function addTextAnswer(
-  question: libxml.Element,
-  options: GenerateTextAnswerOptions | GenerateScoredTextAnswerOptions
-): void {
+function addTextAnswer(question: Element, options: GenerateTextAnswerOptions | GenerateScoredTextAnswerOptions): void {
   const answer = createElement(question, options.name, undefined, {
     'max-score': options.maxScore,
     'max-length': options.maxLength,
@@ -274,7 +278,7 @@ function addTextAnswer(
 }
 
 function addChoiceAnswer(
-  question: libxml.Element,
+  question: Element,
   options: GenerateChoiceAnswerOptions | GenerateDropdownAnswerOptions
 ): void {
   const answer = createElement(question, options.name)
@@ -285,7 +289,7 @@ function addChoiceAnswer(
   }
 }
 
-function addDNDAnswer(question: libxml.Element, options: GenerateDNDAnswerOptions): void {
+function addDNDAnswer(question: Element, options: GenerateDNDAnswerOptions): void {
   const container = createElement(question, 'dnd-answer-container')
   for (const { text, score } of options.options) {
     const optionType = 'dnd-answer-option'
@@ -299,31 +303,37 @@ function addDNDAnswer(question: libxml.Element, options: GenerateDNDAnswerOption
   }
 }
 
-function addAudioAnswer(question: libxml.Element, options: GenerateAudioAnswerOptions): void {
+function addAudioAnswer(question: Element, options: GenerateAudioAnswerOptions): void {
   createElement(question, options.name, undefined, {
     'max-score': options.maxScore
   })
 }
+function addAttributes(element: Element, attrs: Record<string, unknown>): void {
+  Object.entries(attrs)
+    .filter(([, value]) => value != null)
+    .forEach(([name, value]) => element.setAttribute(name, String(value)))
+}
 
-function createElement(
-  parent: libxml.Element | libxml.Document,
-  localName: string,
-  content?: string,
-  attrs?: Record<string, unknown>
-): libxml.Element {
-  const element = parent.node(localName, content).namespace('e', 'http://ylioppilastutkinto.fi/exam.xsd')
+function createElement(parent: Element, localName: string, content?: string, attrs?: Record<string, unknown>): Element {
+  const doc = parent.ownerDocument!
+
+  const element = doc.createElementNS('http://ylioppilastutkinto.fi/exam.xsd', localName)
+  if (content) {
+    const textNode = doc.createTextNode(content)
+    element.appendChild(textNode)
+  }
 
   if (attrs) {
-    Object.entries(attrs)
-      .filter(([, value]) => value != null)
-      .forEach(([name, value]) => element.attr(name, String(value)))
+    addAttributes(element, attrs)
   }
+
+  parent.appendChild(element)
 
   return element
 }
 
 function createLocalizedElement(
-  parent: libxml.Element,
+  parent: Element,
   localName: string,
   languages: Language[],
   content: Record<Language, string>,
