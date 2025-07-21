@@ -47,7 +47,7 @@ export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: 
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = async () => {
-          const dataUrl = String(reader.result)
+          const dataUrl = String(reader.result as string)
           await db.audio.put({ blob: combinedAudio, dataUrl, audioId })
           resolve(dataUrl)
         }
@@ -91,7 +91,7 @@ export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: 
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = () => {
-          resolve(String(reader.result))
+          resolve(String(reader.result as string))
         }
         reader.onerror = () => {
           reader.abort()
