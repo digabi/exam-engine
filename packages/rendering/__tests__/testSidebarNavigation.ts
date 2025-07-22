@@ -114,14 +114,14 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       const indicator99 = '.sidebar-toc-container div[data-indicator-id="99"]'
 
       await type(page, 'testivastaus', 97)
-      expect(getElement(indicator97)).not.toContain('error')
-      expect(getElement(indicator98)).not.toContain('error')
-      expect(getElement(indicator99)).not.toContain('error')
+      await expectNoError(indicator97)
+      await expectNoError(indicator98)
+      await expectNoError(indicator99)
 
       await type(page, 'testivastaus', 98)
       expect(await page.waitForSelector(`${indicator97}.error`)).toBeTruthy()
       expect(await page.waitForSelector(`${indicator98}.error`)).toBeTruthy()
-      expect(getElement(indicator99)).not.toContain('error')
+      await expectNoError(indicator99)
 
       await type(page, 'testivastaus', 99)
       expect(await page.waitForSelector(`${indicator97}.error`)).toBeTruthy()
@@ -129,8 +129,10 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       expect(await page.waitForSelector(`${indicator99}.error`)).toBeTruthy()
     })
 
-    const getElement = async (selector: string, error = false) =>
-      await page.waitForSelector(`${selector}${error ? '.error' : ''}`)
+    const expectNoError = async (selector: string) => {
+      const hasError = await page.$eval(selector, e => e.className.includes('error'))
+      expect(hasError).toBeFalsy()
+    }
   })
 })
 
