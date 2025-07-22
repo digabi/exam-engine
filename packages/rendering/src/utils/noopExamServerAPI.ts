@@ -26,7 +26,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = () => {
-          resolve(String(reader.result))
+          resolve(String(reader.result as string))
         }
         reader.onerror = () => {
           reader.abort()
@@ -42,7 +42,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = () => {
-          resolve(String(reader.result))
+          resolve(String(reader.result as string))
         }
         reader.onerror = () => {
           reader.abort()
