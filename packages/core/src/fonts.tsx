@@ -5,7 +5,9 @@ import * as _ from 'lodash-es'
 export const ready = Promise.all([
   new FontFaceObserver('Noto Sans', { weight: 300 }).load(), // Light
   new FontFaceObserver('Noto Sans', { weight: 400 }).load(), // Regular
-  new FontFaceObserver('Noto Sans', { weight: 600 }).load() // Semibold
+  new FontFaceObserver('Noto Sans', { weight: 600 }).load(), // Semibold
+  new FontFaceObserver('Noto Sans', { weight: 700 }).load(), // Bold
+  new FontFaceObserver('Noto Sans', { style: 'italic' }).load()
 ])
   // eslint-disable-next-line promise/always-return
   .then(() => {
