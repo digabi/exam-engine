@@ -5,32 +5,40 @@
   margin-right: 0.125rem;
 }
 
+.e-exam .e-column:has(.text-answer--single-line) {
+  line-height: 29px;
+}
+
 .e-exam .text-answer {
-  border: 1px solid transparent;
-  border-bottom: none;
-  box-shadow: inset 0 0 0 2px @colors[grey];
   border-radius: 0.25rem;
   outline: none;
+  border: 1px solid @grey-700;
+  box-shadow: none;
 
   &:focus {
     border-color: @colors[link];
-    box-shadow:
-      0 0 0 1px @colors[link],
-      0 1px 0 1px @colors[link];
+  }
+
+  &:hover {
+    outline: 2px solid @blue-400;
+    outline-offset: -2px;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid @blue-800;
+    outline-offset: -1px;
   }
 
   &--single-line {
     .e-exam.e-sans-serif();
     .e-exam.e-font-size-m();
-    height: 1.5rem;
+    height: 26px;
     min-width: 8rem;
     max-width: 100%;
-    padding: 0 0.5rem 2px;
+    padding: 0 0.5rem 0;
     vertical-align: baseline;
     display: inline-block;
-    &:focus {
-      position: relative;
-    }
   }
 
   &--integer {
@@ -66,10 +74,6 @@
     resize: none;
     word-break: break-word;
     position: relative;
-
-    &:focus {
-      outline: none;
-    }
 
     &[aria-invalid='true'] {
       border-color: @colors[error];
