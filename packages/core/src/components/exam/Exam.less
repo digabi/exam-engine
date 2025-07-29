@@ -89,7 +89,7 @@
     .expand {
       position: absolute;
       border-radius: 4px;
-      background: @grey-050;
+      background: @blue-600;
       z-index: 2;
       height: 32px;
       display: grid;
@@ -97,9 +97,10 @@
       cursor: pointer;
       border: none;
       font-size: 16px;
+      color: white;
 
       &:hover {
-        background: @grey-100;
+        background: @blue-900;
         cursor: pointer;
       }
 
@@ -123,7 +124,6 @@
           right: calc(100% + 3px);
           font-size: 14px;
           white-space: nowrap;
-          background: @grey-100;
           padding: 0.25rem 0.75rem;
           pointer-events: none;
           transition: opacity 0.1s;
@@ -132,6 +132,8 @@
           box-sizing: border-box;
           display: grid;
           place-content: center;
+          color: @blue-900;
+          border: 1px solid @blue-900;
         }
 
         &:hover .label {
