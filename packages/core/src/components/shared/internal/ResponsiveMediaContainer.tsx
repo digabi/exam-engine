@@ -11,6 +11,7 @@ interface ResponsiveMediaContainerProps {
   width: number
   caption?: React.ReactNode[]
   captionId?: string
+  onMaxWidthCalculated?: (maxWidth: number) => void
 }
 
 /**
@@ -25,10 +26,17 @@ const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainer
   height,
   width,
   caption,
-  captionId
+  captionId,
+  onMaxWidthCalculated
 }) => {
   const paddingBottom = `${(height / width) * 100}%`
   const maxWidth = width + (bordered ? borderedPaddingAndBorderPx : 0)
+
+  React.useEffect(() => {
+    if (onMaxWidthCalculated) {
+      onMaxWidthCalculated(maxWidth)
+    }
+  }, [maxWidth, onMaxWidthCalculated])
 
   return (
     <span
