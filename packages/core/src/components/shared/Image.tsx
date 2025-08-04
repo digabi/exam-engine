@@ -7,10 +7,18 @@ import { CommonExamContext } from '../context/CommonExamContext'
 import ResponsiveMediaContainer from './internal/ResponsiveMediaContainer'
 import { isWhitespace } from '../../utils'
 
-function Image({ element, className, renderChildNodes }: ExamComponentProps) {
+function Image(props: ExamComponentProps) {
   const { resolveAttachment } = useContext(CommonExamContext)
-  const { t } = useExamTranslation()
+  return <ImageBase {...{ ...props, resolveAttachment }} />
+}
 
+export function ImageBase({
+  element,
+  className,
+  renderChildNodes,
+  resolveAttachment,
+  disableZoomIn
+}: ExamComponentProps & { resolveAttachment: (filename: string) => string; disableZoomIn?: boolean }) {
   const src = getAttribute(element, 'src')!
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
@@ -36,22 +44,30 @@ function Image({ element, className, renderChildNodes }: ExamComponentProps) {
           bordered: hasCaption || queryAncestors(element, 'choice-answer') != null
         }}
       >
-        {queryAncestors(element, ['choice-answer', 'hint']) != null ? (
+        {disableZoomIn || queryAncestors(element, ['choice-answer', 'hint']) != null ? (
           image
         ) : (
-          <a
-            title={t.raw('zoom-in')}
-            href={imgUrl}
-            target="original-picture"
-            className="e-zoomable"
-            aria-hidden={!hasCaption}
-            tabIndex={-1}
-          >
-            {image}
-          </a>
+          <ZoomInImage image={image} hasCaption={hasCaption} imgUrl={imgUrl} />
         )}
       </ResponsiveMediaContainer>
     </>
+  )
+}
+
+function ZoomInImage({ image, imgUrl, hasCaption }: { image: React.JSX.Element; imgUrl: string; hasCaption: boolean }) {
+  const { t } = useExamTranslation()
+
+  return (
+    <a
+      title={t.raw('zoom-in')}
+      href={imgUrl}
+      target="original-picture"
+      className="e-zoomable"
+      aria-hidden={!hasCaption}
+      tabIndex={-1}
+    >
+      {image}
+    </a>
   )
 }
 
