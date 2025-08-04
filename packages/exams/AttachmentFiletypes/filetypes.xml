@@ -37,6 +37,8 @@
                     <e:file src="ketcher.mol"/>
                     <br/>
                     <e:file src="certificate.pdf"/>
+                    <br/>
+                    <e:file src="puppua.turska"/>
                 </e:attachment>
             </e:external-material>
             <e:file src="python.py"/>
@@ -62,6 +64,8 @@
             <e:file src="drawio.drawio"/>
             <br/>
             <e:file src="certificate.pdf"/>
+            <br/>
+            <e:file src="puppua.turska"/>
             <e:text-answer type="rich-text" max-score="6"/>
         </e:question>
     </e:section>
