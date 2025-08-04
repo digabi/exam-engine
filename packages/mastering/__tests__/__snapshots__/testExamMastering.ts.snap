@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Exam mastering generates correct grading structure for dnd answers 1`] = `
 {
@@ -25901,6 +25901,12 @@ exports[`Exam mastering masters filetypes.xml exam correctly 1`] = `
       "visibleInGradingInstructions": false,
       "withinGradingInstruction": false,
     },
+    {
+      "filename": "puppua.turska",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
   ],
   "date": null,
   "dayCode": null,
@@ -25963,6 +25969,8 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
                     <e:file src="ketcher.mol"/>
                     <br/>
                     <e:file src="certificate.pdf"/>
+                    <br/>
+                    <e:file src="puppua.turska"/>
                 </e:attachment>
             </e:external-material>
             <e:file src="python.py"/>
@@ -25988,6 +25996,8 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
             <e:file src="drawio.drawio"/>
             <br/>
             <e:file src="certificate.pdf"/>
+            <br/>
+            <e:file src="puppua.turska"/>
             <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1"/>
         </e:question>
     </e:section>
