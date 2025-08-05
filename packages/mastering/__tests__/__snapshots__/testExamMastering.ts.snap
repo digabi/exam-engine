@@ -25907,6 +25907,18 @@ exports[`Exam mastering masters filetypes.xml exam correctly 1`] = `
       "visibleInGradingInstructions": false,
       "withinGradingInstruction": false,
     },
+    {
+      "filename": "word.docx",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
+      "filename": "loggerpro.cmbl",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
   ],
   "date": null,
   "dayCode": null,
@@ -25971,6 +25983,10 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
                     <e:file src="certificate.pdf"/>
                     <br/>
                     <e:file src="puppua.turska"/>
+                    <br/>
+                    <e:file src="word.docx"/>
+                    <br/>
+                    <e:file src="loggerpro.cmbl"/>
                 </e:attachment>
             </e:external-material>
             <e:file src="python.py"/>
