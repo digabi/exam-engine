@@ -17,8 +17,13 @@ export function ImageBase({
   className,
   renderChildNodes,
   resolveAttachment,
-  disableZoomIn
-}: ExamComponentProps & { resolveAttachment: (filename: string) => string; disableZoomIn?: boolean }) {
+  disableZoomIn,
+  onMaxWidthCalculated
+}: ExamComponentProps & {
+  resolveAttachment: (filename: string) => string
+  disableZoomIn?: boolean
+  onMaxWidthCalculated?: (maxWidth: number) => void
+}) {
   const src = getAttribute(element, 'src')!
   const width = getNumericAttribute(element, 'width')!
   const height = getNumericAttribute(element, 'height')!
@@ -41,7 +46,8 @@ export function ImageBase({
           height,
           caption,
           captionId,
-          bordered: hasCaption || queryAncestors(element, 'choice-answer') != null
+          bordered: hasCaption || queryAncestors(element, 'choice-answer') != null,
+          onMaxWidthCalculated
         }}
       >
         {disableZoomIn || queryAncestors(element, ['choice-answer', 'hint']) != null ? (
