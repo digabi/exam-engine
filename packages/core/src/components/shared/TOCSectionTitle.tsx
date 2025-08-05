@@ -30,9 +30,9 @@ export const TOCSectionTitle: React.FunctionComponent<ExamComponentProps> = ({ e
     <div className={isVisible ? 'current' : ''}>
       {element.hasChildNodes() && (
         <div className="toc-section-header-container">
-          <h4 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
+          <h3 className="toc-section-header" id={tocSectionTitleId(displayNumber)}>
             {sections.length > 1 && t('section', { displayNumber })} {renderChildNodes(element)}
-          </h4>
+          </h3>
         </div>
       )}
 
