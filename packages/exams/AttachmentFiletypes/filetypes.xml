@@ -39,6 +39,10 @@
                     <e:file src="certificate.pdf"/>
                     <br/>
                     <e:file src="puppua.turska"/>
+                    <br/>
+                    <e:file src="word.docx"/>
+                    <br/>
+                    <e:file src="loggerpro.cmbl"/>
                 </e:attachment>
             </e:external-material>
             <e:file src="python.py"/>
