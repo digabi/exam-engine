@@ -298,7 +298,7 @@ exports[`ee create-offline creates offline 1`] = `
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-5">Lesen Sie bitte zuerst die Anweisungen und Fragen und sehen Sie sich dann das Video an.
         Sie können sich das Video beliebig oft ansehen. Beantworten Sie die Fragen.
       </div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-49">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-49">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-49">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-49">
         <li data-list-number="5.A" aria-label="5.A"><a href="attachments/index.html#5.A" class="exam-attachment-title" target="attachments">Video: Katze</a></li>
       </ol></div>
 
@@ -478,7 +478,7 @@ exports[`ee create-offline creates offline 1`] = `
       <h3 id="question-title-8" class="exam-question-title"><strong class="exam-question-title__display-number">8. </strong>Hausaufgaben <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">4 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-8">Lesen Sie den folgenden WhatsApp-Chat und beantworten Sie die Fragen.
       </div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-58">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-58">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-58">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-58">
         <li data-list-number="8.A" aria-label="8.A"><a href="attachments/index.html#8.A" class="exam-attachment-title" target="attachments">Text: Whatsapp-Chat</a></li>
       </ol></div>
 
@@ -508,7 +508,7 @@ exports[`ee create-offline creates offline 1`] = `
         </span>
         
       </div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-59">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-59">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-59">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-59">
         <li data-list-number="9.A" aria-label="9.A"><a href="attachments/index.html#9.A" class="exam-attachment-title" target="attachments">Texte: Freitag der Dreizehnte</a></li>
       </ol></div>
 
@@ -547,7 +547,7 @@ exports[`ee create-offline creates offline 1`] = `
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="10" data-toc-id="question-10"><div class="anchor" id="question-nr-10"></div>
       <h3 id="question-title-10" class="exam-question-title"><strong class="exam-question-title__display-number">10. </strong>Duis Minim? <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">15 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-10">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-60">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-60">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-60">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-60">
         <li data-list-number="10.A" aria-label="10.A"><a href="attachments/index.html#10.A" class="exam-attachment-title" target="attachments">Text: Duis Minim?</a></li>
       </ol></div>
 
@@ -583,7 +583,7 @@ exports[`ee create-offline creates offline 1`] = `
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="11" data-toc-id="question-11"><div class="anchor" id="question-nr-11"></div>
       <h3 id="question-title-11" class="exam-question-title"><strong class="exam-question-title__display-number">11. </strong>Excepteur cupidatat! <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">20 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-11">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-62">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-62">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-62">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-62">
         <li data-list-number="11.A" aria-label="11.A"><a href="attachments/index.html#11.A" class="exam-attachment-title" target="attachments">Text: Excepteur cupidatat!</a></li>
       </ol></div>
 
@@ -681,7 +681,7 @@ exports[`ee create-offline creates offline 1`] = `
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="13" data-toc-id="question-13"><div class="anchor" id="question-nr-13"></div>
       <h3 id="question-title-13" class="exam-question-title"><strong class="exam-question-title__display-number">13. </strong>Adipisicing voluptate <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-13">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-68">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-68">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-68">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-68">
         <li data-list-number="13.A" aria-label="13.A"><a href="attachments/index.html#13.A" class="exam-attachment-title" target="attachments">Text: Adipisicing voluptate</a></li>
       </ol></div>
 
@@ -712,7 +712,7 @@ exports[`ee create-offline creates offline 1`] = `
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="14" data-toc-id="question-14"><div class="anchor" id="question-nr-14"></div>
       <h3 id="question-title-14" class="exam-question-title"><strong class="exam-question-title__display-number">14. </strong>Ullamco <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">13 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-14">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-70">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-70">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-70">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-70">
         <li data-list-number="14.A" aria-label="14.A"><a href="attachments/index.html#14.A" class="exam-attachment-title" target="attachments">Text: Ullamco</a></li>
       </ol></div>
 
@@ -749,7 +749,7 @@ exports[`ee create-offline creates offline 1`] = `
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="15" data-toc-id="question-15"><div class="anchor" id="question-nr-15"></div>
       <h3 id="question-title-15" class="exam-question-title"><strong class="exam-question-title__display-number">15. </strong>Eiusmod <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">19 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-15">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-72">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-72">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-72">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-72">
         <li data-list-number="15.A" aria-label="15.A"><a href="attachments/index.html#15.A" class="exam-attachment-title" target="attachments">Text: Eiusmod</a></li>
       </ol></div>
 
@@ -796,7 +796,7 @@ exports[`ee create-offline creates offline 1`] = `
     <div class="e-exam-question e-level-0 e-pad-b-8 e-clearfix" data-annotation-anchor="16" data-toc-id="question-16"><div class="anchor" id="question-nr-16"></div>
       <h3 id="question-title-16" class="exam-question-title"><strong class="exam-question-title__display-number">16. </strong>Duis dolore <span class="e-score e-nowrap e-score--large e-font-size-l e-semibold"><span lang="fi-FI">8 p.</span></span></h3>
       <div class="exam-question-instruction e-mrg-b-2" id="question-instruction-16">Lesen Sie den folgenden Text und beantworten Sie die Fragen.</div>
-      <div class="external-material-list e-mrg-b-4"><h4 class="external-material-title" id="external-material-list-title-74">Materialien</h4><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-74">
+      <div class="external-material-list e-mrg-b-4"><h3 class="external-material-title" id="external-material-list-title-74">Materialien</h3><ol class="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby="external-material-list-title-74">
         <li data-list-number="16.A" aria-label="16.A"><a href="attachments/index.html#16.A" class="exam-attachment-title" target="attachments">Text: Duis dolore</a></li>
       </ol></div>
 
