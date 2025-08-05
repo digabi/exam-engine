@@ -46,8 +46,6 @@ function ExternalMaterial({ element, showTitle = true, forceRender = false }: Ex
   const { t } = useExamTranslation()
   const id = externalMaterialListTitleId(element)
 
-  console.log(element)
-
   return (
     <div className="external-material-list e-mrg-b-4">
       {showTitle && (
