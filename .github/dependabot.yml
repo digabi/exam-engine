@@ -16,6 +16,10 @@ updates:
       playwright-packages:
         patterns:
           - "@playwright/*"
+      fontawesome-icons:
+        patterns:
+          - '@fortawesome/fontawesome-svg-core'
+          - '@fortawesome/*-svg-icons'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
