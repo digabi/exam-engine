@@ -46,12 +46,14 @@ function ExternalMaterial({ element, showTitle = true, forceRender = false }: Ex
   const { t } = useExamTranslation()
   const id = externalMaterialListTitleId(element)
 
+  console.log(element)
+
   return (
     <div className="external-material-list e-mrg-b-4">
       {showTitle && (
-        <h4 className="external-material-title" id={id}>
+        <h3 className="external-material-title" id={id}>
           {t('external-material-title')}
-        </h4>
+        </h3>
       )}
       <ol className="e-list-data e-pad-l-0 e-mrg-0" aria-labelledby={id}>
         {renderChildNodes(element)}
