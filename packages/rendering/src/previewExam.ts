@@ -15,6 +15,9 @@ export interface PreviewContext {
 export async function previewExam(examFile: string, options: RenderingOptions = {}): Promise<PreviewContext> {
   const config = getPreviewWebpackConfig(examFile, options)
   const compiler = webpack(config)
+  if (!compiler) {
+    throw new Error('Failed to create webpack compiler')
+  }
   const devServer = config.devServer!
   const webpackDevServer: Server = new Server({ ...devServer, port: options.port ?? 0, host: 'localhost' }, compiler)
   return new Promise((resolve, reject) => {
