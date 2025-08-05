@@ -18,12 +18,15 @@ jobs:
         uses: ./.github/actions/node-setup
       - name: Run eslint
         run: npm run lint
+        if: "!contains(github.ref_name, '-alpha')"
       - name: Build repo
         run: npm run build
       - name: Install playwright
         run: npx playwright install
+        if: "!contains(github.ref_name, '-alpha')"
       - name: Run tests
         run: npm run test
+        if: "!contains(github.ref_name, '-alpha')"
       - name: Publish release
         run: npx lerna publish --yes from-git
         if: "!contains(github.ref_name, '-alpha')"
