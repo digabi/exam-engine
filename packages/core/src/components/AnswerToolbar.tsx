@@ -63,7 +63,7 @@ function AnswerToolbar({
                   if (selectAnswerVersion) {
                     const question = queryAncestors(element, 'question')!
                     const questionTitle = findChildElement(question, 'question-title')!
-                    selectAnswerVersion(answer.questionId, questionTitle.textContent!)
+                    selectAnswerVersion(answer.questionId, questionTitle.textContent)
                   }
                 }}
               >

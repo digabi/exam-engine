@@ -83,7 +83,7 @@ const FallbackTitle: React.FunctionComponent<ExtraAnswer> = ({ elementType, disp
     if (section) {
       const sectionTitle = findChildElement(section, 'section-title')
       if (sectionTitle) {
-        return <>{`${sectionTitle.textContent!.trim()}:`}</>
+        return <>{`${sectionTitle.textContent.trim()}:`}</>
       }
     }
   }

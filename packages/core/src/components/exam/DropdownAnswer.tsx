@@ -70,7 +70,7 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   const { answers, questionLabelIds } = useContext(QuestionContext)
   const { getItemProps, getMenuProps, getToggleButtonProps, highlightedIndex, isOpen, selectedItem } = useSelect({
     items,
-    itemToString: item => (item ? item.textContent! : ''),
+    itemToString: item => (item ? item.textContent : ''),
     onSelectedItemChange: ({ selectedItem }) => {
       const value = selectedItem ? selectedItem.getAttribute('option-id')! : ''
       dispatch(saveAnswer({ type: 'choice', questionId, value, displayNumber }))

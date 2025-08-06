@@ -134,11 +134,11 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[], options: C
           // Fix asset path on attachments page.
           if (location.pathname.includes('attachments/index.html')) {
             const style = document.head.querySelector(':scope > style')!
-            style.textContent = style.textContent!.replace(/url\(assets\//g, 'url(../assets/')
+            style.textContent = style.textContent.replace(/url\(assets\//g, 'url(../assets/')
           }
           // Remove rich-text-editor injected styles
           Array.from(document.head.querySelectorAll(':scope > style'))
-            .filter(e => !e.textContent!.includes('NotoSans'))
+            .filter(e => !e.textContent.includes('NotoSans'))
             .forEach(e => e.remove())
           // Remove rich-text-editor injected HTML.
           document.body.querySelectorAll(':scope > :not(#app)').forEach(e => e.remove())
