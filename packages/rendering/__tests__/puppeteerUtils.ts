@@ -67,7 +67,7 @@ export async function getOuterHtml(page: Page, selector: string): Promise<string
 export async function getTextContent(page: Page, selector: string): Promise<string> {
   return page.$eval(selector, e => {
     if (e instanceof HTMLElement) {
-      return e.textContent!.trim()
+      return e.textContent.trim()
     } else {
       throw new Error(`Expected a HTML element, got ${e.localName}`)
     }

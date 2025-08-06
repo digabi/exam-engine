@@ -33,7 +33,7 @@ function randomizeOptions(elem: Element) {
 }
 
 function trimWhitespace(element: Element) {
-  const nonWhitespaceNode = (node: Text) => /\S/.test(node.textContent!)
+  const nonWhitespaceNode = (node: Text) => /\S/.test(node.textContent)
   const getTextNodes = () => {
     const result = []
     const treeWalker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT)
@@ -50,11 +50,11 @@ function trimWhitespace(element: Element) {
   // Remove leading whitespace from the start
   if (firstNonWhitespaceTextNode !== -1) {
     textNodes.slice(0, firstNonWhitespaceTextNode).forEach(node => node.remove())
-    textNodes[firstNonWhitespaceTextNode].textContent = _.trimStart(textNodes[firstNonWhitespaceTextNode].textContent!)
+    textNodes[firstNonWhitespaceTextNode].textContent = _.trimStart(textNodes[firstNonWhitespaceTextNode].textContent)
   }
   // ...and trailing whitespace from the end.
   if (lastNonWhitespaceTextNode !== -1) {
     textNodes.slice(lastNonWhitespaceTextNode + 1).forEach(node => node.remove())
-    textNodes[lastNonWhitespaceTextNode].textContent = _.trimEnd(textNodes[lastNonWhitespaceTextNode].textContent!)
+    textNodes[lastNonWhitespaceTextNode].textContent = _.trimEnd(textNodes[lastNonWhitespaceTextNode].textContent)
   }
 }

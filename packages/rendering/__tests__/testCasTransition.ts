@@ -62,7 +62,7 @@ describe('testCasTransition.ts - Allowing CAS software in a math exam', () => {
     await page.waitForFunction(() => {
       const maybeNotification = document.querySelector('.e-cas-controls .notification')
       if (maybeNotification) {
-        return maybeNotification.textContent!.trim() === 'A-osa palautettu'
+        return maybeNotification.textContent.trim() === 'A-osa palautettu'
       }
     })
   }

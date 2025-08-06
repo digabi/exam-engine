@@ -74,7 +74,7 @@ function Link({ element, renderChildNodes }: ExamComponentProps) {
 }
 
 function AsDate({ element }: ExamComponentProps) {
-  const textContent = element.textContent!
+  const textContent = element.textContent
   if (/^[0-9]{4}$/.test(textContent)) {
     return <span>{textContent}</span>
   } else {
