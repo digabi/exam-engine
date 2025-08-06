@@ -8,6 +8,7 @@ import parseExam from './parser/parseExam'
 export { Attachments, Exam, GradingInstructions, Results, parseExam }
 export type { ExamComponentProps } from './createRenderChildNodes'
 export { GradingAnswer } from './components/grading/GradingAnswer'
+export { ImageBase } from './components/shared/Image'
 export * from './types/ExamAnswer'
 export * from './types/ExamServerAPI'
 export * from './types/GradingStructure'
