@@ -24,52 +24,7 @@
 }
 
 .e-annotation {
-  background: rgba(@red-500, 0.2);
-  cursor: pointer;
   position: relative; // The index is positioned absolutely with respect to this element.
-
-  &[data-hidden=''] {
-    cursor: pointer;
-  }
-
-  &:hover {
-    .annotation-styles(@red-500, 0.3);
-  }
-
-  &.selected {
-    background-color: rgba(@orange-900, 0.2);
-  }
-
-  &.resolved {
-    background-color: @grey-900;
-    outline-color: @grey-900;
-  }
-
-  &[data-hidden='true'] {
-    background: none;
-    outline: none;
-
-    + sup.e-annotation {
-      display: none;
-    }
-  }
-
-  + sup.e-annotation {
-    // to make this "visible" for test
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    font-size: 14px;
-    font-weight: 600;
-
-    &:after {
-      line-height: 14px;
-      position: absolute;
-      margin-top: -0.5rem;
-      content: attr(data-content);
-      white-space: nowrap;
-    }
-  }
 
   // Below: styles created for the "old" annotation system — the one that renders them using vanilla JS.
   &--pregrading {
