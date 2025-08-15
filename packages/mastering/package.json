@@ -16,7 +16,7 @@
     "compare-versions": "^6.0.0",
     "ffprobe": "^1.1.0",
     "glob": "^11.0.0",
-    "i18next": "^23.2.11",
+    "i18next": "^25.3.6",
     "libxmljs2": "^0.37.0",
     "mathjax-node": "^2.1.1",
     "yazl": "^3.2.1"
