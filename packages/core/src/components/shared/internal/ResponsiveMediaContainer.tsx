@@ -26,17 +26,10 @@ const ResponsiveMediaContainer: React.FunctionComponent<ResponsiveMediaContainer
   height,
   width,
   caption,
-  captionId,
-  onMaxWidthCalculated
+  captionId
 }) => {
   const paddingBottom = `${(height / width) * 100}%`
   const maxWidth = width + (bordered ? borderedPaddingAndBorderPx : 0)
-
-  React.useEffect(() => {
-    if (onMaxWidthCalculated) {
-      onMaxWidthCalculated(maxWidth)
-    }
-  }, [maxWidth, onMaxWidthCalculated])
 
   return (
     <span
