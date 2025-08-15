@@ -17,12 +17,12 @@ export function ImageBase({
   className,
   renderChildNodes,
   resolveAttachment,
-  disableZoomIn,
-  onMaxWidthCalculated
+  overrideImage,
+  disableZoomIn
 }: ExamComponentProps & {
   resolveAttachment: (filename: string) => string
+  overrideImage?: React.JSX.Element
   disableZoomIn?: boolean
-  onMaxWidthCalculated?: (maxWidth: number) => void
 }) {
   const src = getAttribute(element, 'src')!
   const width = getNumericAttribute(element, 'width')!
@@ -35,7 +35,7 @@ export function ImageBase({
   const captionId = hasCaption ? imageCaptionId(element) : undefined
 
   const imgUrl = resolveAttachment(src)
-  const image = <img className="e-image" src={imgUrl} alt="" aria-labelledby={captionId} />
+  const image = overrideImage || <img className="e-image" src={imgUrl} alt="" aria-labelledby={captionId} />
 
   return (
     <>
@@ -46,8 +46,7 @@ export function ImageBase({
           height,
           caption,
           captionId,
-          bordered: hasCaption || queryAncestors(element, 'choice-answer') != null,
-          onMaxWidthCalculated
+          bordered: hasCaption || queryAncestors(element, 'choice-answer') != null
         }}
       >
         {disableZoomIn || queryAncestors(element, ['choice-answer', 'hint']) != null ? (
