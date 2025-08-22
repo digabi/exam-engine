@@ -328,8 +328,10 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                 </Footer>
               )}
 
-              <ErrorIndicator />
-              <SaveIndicator />
+              <div className="e-indicators-container">
+                <ErrorIndicator />
+                <SaveIndicator />
+              </div>
 
               {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
             </main>

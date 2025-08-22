@@ -82,8 +82,10 @@ function Question({ element, renderChildNodes }: ExamComponentProps) {
               {t('close-writing-mode')}
             </button>
             {renderChildNodes(element)}
-            <ErrorIndicator />
-            <SaveIndicator />
+            <div className="e-indicators-container">
+              <ErrorIndicator />
+              <SaveIndicator />
+            </div>
           </ModalDialog>
         ) : (
           renderChildNodes(element)
