@@ -12,6 +12,10 @@ updates:
       time: '02:00'
       timezone: 'Europe/Helsinki'
     open-pull-requests-limit: 99
+    cooldown:
+      default-days: 7
+      exclude:
+        - "@digabi/*"
     groups:
       playwright-packages:
         patterns:
