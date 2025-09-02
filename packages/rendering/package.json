@@ -3,10 +3,7 @@
   "version": "23.20.2",
   "main": "./dist/index.js",
   "license": "EUPL-1.1",
-  "files": [
-    "dist",
-    "public"
-  ],
+  "files": ["dist", "public"],
   "dependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-transform-runtime": "^7.8.3",
@@ -33,7 +30,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router5": "^8.0.1",
-    "rich-text-editor": "8.10.1",
+    "rich-text-editor": "8.10.2-0",
     "router5": "^8.0.1",
     "router5-plugin-browser": "^8.0.1",
     "tmp-promise": "^3.0.2",
