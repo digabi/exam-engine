@@ -5,14 +5,8 @@
   "types": "dist/index.d.ts",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
-  "sideEffects": [
-    "*.less",
-    "*.css"
-  ],
-  "files": [
-    "dist",
-    "src/css/colors.less"
-  ],
+  "sideEffects": ["*.less", "*.css"],
+  "files": ["dist", "src/css/colors.less"],
   "scripts": {
     "build": "webpack --mode=production",
     "build:analyze": "webpack --mode=production --profile --json --display normal > stats.json",
@@ -52,7 +46,7 @@
     "redux": "^5.0.1",
     "redux-saga": "^1.2.3",
     "redux-saga-test-plan": "^4.0.6",
-    "rich-text-editor": "8.10.1",
+    "rich-text-editor": "8.10.2",
     "sanitize-html": "^2.0.0",
     "typesafe-actions": "^5.1.0",
     "utility-types": "^3.10.0",
