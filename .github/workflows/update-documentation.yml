@@ -18,12 +18,10 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Install Exam Engine Packages
-        run: npm install @digabi/exam-engine-mastering @digabi/exam-engine-exams
-
       - name: Generate Offline Exams
         run: |
-          npx @digabi/exam-engine-mastering run ee create-offline node_modules/@digabi/exam-engine-exams/packages/exams/{}/{}.xml --outdir exams
+          npm install
+          echo -n SC N MexDocumentation | xargs -d ' ' -P0 -I {} npm run ee create-offline packages/exams/{}/{}.xml  --outdir exams
 
       - name: Publish to GitHub Pages
         run: |
@@ -31,13 +29,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout gh-pages
           git status
-          rm -rf MexDocumentation && cp -r exams/MexDocumentation/2022-01-27_fi MexDocumentation
-          rm -rf SC/fi-FI && cp -r exams/SC/1970-01-01_SC_fi SC/fi-FI
-          rm -rf SC/sv-FI && cp -r exams/SC/1970-01-01_SC_sv SC/sv-FI
-          rm -rf SC/fi-FI-hi && cp -r exams/SC/1970-01-01_SC_fi_hi SC/fi-FI-hi
-          rm -rf N/sv-FI && cp -r exams/N/2022-03-23_N_sv N/sv-FI
-          rm -rf N/fi-FI && cp -r exams/N/2022-03-23_N_fi N/fi-FI
-          rm -rf N/fi-FI-vi && cp -r exams/N/2022-03-23_N_fi_vi N/fi-FI-vi
+          rm -rf MexDocumentation && cp -r packages/exams/MexDocumentation/2022-01-27_fi    MexDocumentation
+          rm -rf SC/fi-FI         && cp -r packages/exams/SC/1970-01-01_SC_fi SC/fi-FI
+          rm -rf SC/sv-FI         && cp -r packages/exams/SC/1970-01-01_SC_sv SC/sv-FI
+          rm -rf SC/fi-FI-hi      && cp -r packages/exams/SC/1970-01-01_SC_fi_hi SC/fi-FI-hi
+          rm -rf N/sv-FI          && cp -r packages/exams/N/2022-03-23_N_sv  N/sv-FI
+          rm -rf N/fi-FI          && cp -r packages/exams/N/2022-03-23_N_fi  N/fi-FI
+          rm -rf N/fi-FI-vi       && cp -r packages/exams/N/2022-03-23_N_fi_vi  N/fi-FI-vi
           git add MexDocumentation SC N
           git commit --allow-empty -m 'Update MexDocumentation, SC, and N sample exam'
           git push origin gh-pages
