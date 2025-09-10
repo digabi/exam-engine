@@ -109,6 +109,10 @@ const Results: React.FunctionComponent<ResultsProps> = ({
 
   useEffect(() => {
     window.location.hash = ''
+
+    if (isStudentsExamineExamPage) {
+      window.scrollTo(0, 0)
+    }
   }, [])
 
   const onEndSession = () => {
