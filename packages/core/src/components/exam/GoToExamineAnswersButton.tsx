@@ -13,7 +13,6 @@ function GoToExamineAnswersButton() {
       return
     }
     examineExam()
-    window.scrollTo(0, 0)
   }
 
   return (
