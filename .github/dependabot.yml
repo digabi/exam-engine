@@ -11,7 +11,7 @@ updates:
       interval: 'daily'
       time: '02:00'
       timezone: 'Europe/Helsinki'
-    open-pull-requests-limit: 99
+    open-pull-requests-limit: 0
     cooldown:
       default-days: 7
       exclude:
