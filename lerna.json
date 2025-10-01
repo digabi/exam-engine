@@ -1,6 +1,6 @@
 {
   "npmClient": "npm",
   "packages": ["packages/*"],
-  "version": "23.20.4-debug-megatest.0",
+  "version": "23.20.5-debug-megatest.0",
   "exact": true
 }
