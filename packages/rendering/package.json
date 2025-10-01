@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "23.20.3",
+  "version": "23.20.4-alpha.0",
   "main": "./dist/index.js",
   "repository": "https://github.com/digabi/exam-engine",
   "license": "EUPL-1.1",
@@ -14,7 +14,7 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
-    "@digabi/exam-engine-core": "23.20.3",
+    "@digabi/exam-engine-core": "23.20.4-alpha.0",
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.0.0",
