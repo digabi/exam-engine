@@ -2,6 +2,7 @@
   "name": "@digabi/exam-engine-generator",
   "version": "23.20.3",
   "main": "dist/index.js",
+  "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "files": [

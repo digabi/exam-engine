@@ -1,6 +1,7 @@
 {
   "name": "@digabi/exam-engine-exams",
   "version": "23.20.3",
+  "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "main": "dist/index.js",

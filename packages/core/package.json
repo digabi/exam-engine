@@ -3,6 +3,7 @@
   "version": "23.20.3",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
+  "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
   "license": "EUPL-1.1",
   "sideEffects": [

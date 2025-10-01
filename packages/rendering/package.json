@@ -2,6 +2,7 @@
   "name": "@digabi/exam-engine-rendering",
   "version": "23.20.3",
   "main": "./dist/index.js",
+  "repository": "https://github.com/digabi/exam-engine",
   "license": "EUPL-1.1",
   "files": [
     "dist",
