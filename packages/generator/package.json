@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-generator",
-  "version": "23.20.4-alpha.0",
+  "version": "23.20.4-alpha.1",
   "main": "dist/index.js",
   "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "23.20.4-alpha.0",
+    "@digabi/exam-engine-core": "23.20.4-alpha.1",
     "libxmljs2": "^0.37.0",
     "lodash": "^4.17.15"
   },
