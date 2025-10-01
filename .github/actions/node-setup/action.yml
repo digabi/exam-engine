@@ -5,12 +5,15 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+    - uses: actions/setup-node@v4
       with:
         node-version-file: '.nvmrc'
         cache: 'npm'
+    # Ensure npm 11.5.1 or later is installed
+    - name: Update npm
+    - run: npm install -g npm@latest
 
     - name: Install Dependencies
       shell: bash
