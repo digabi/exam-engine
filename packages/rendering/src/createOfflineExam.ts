@@ -131,17 +131,18 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[], options: C
         await page.goto(`file://${htmlFile}`)
         await page.waitForSelector('.e-exam')
         await page.evaluate(() => {
-          // Fix asset path on attachments page.
-          if (location.pathname.includes('attachments/index.html')) {
-            const style = document.head.querySelector(':scope > style')!
-            style.textContent = style.textContent.replace(/url\(assets\//g, 'url(../assets/')
-          }
           // Remove rich-text-editor injected styles
           Array.from(document.head.querySelectorAll(':scope > style'))
             .filter(e => !e.textContent.includes('NotoSans'))
             .forEach(e => e.remove())
           // Remove rich-text-editor injected HTML.
           document.body.querySelectorAll(':scope > :not(#app)').forEach(e => e.remove())
+
+          // Fix asset path on attachments page.
+          if (location.pathname.includes('attachments/index.html')) {
+            const style = document.head.querySelector(':scope > style')!
+            style.textContent = style.textContent.replace(/url\(assets\//g, 'url(../assets/')
+          }
         })
         const prerenderedContent = await page.content()
         await fs.writeFile(htmlFile, prerenderedContent, 'utf-8')
