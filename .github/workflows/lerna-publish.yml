@@ -3,11 +3,11 @@ name: Publish exam-engine
 on:
   push:
     tags:
-    - 'v*.*.*'
-    - 'v*.*.*-alpha.*'
+      - 'v*.*.*'
+      - 'v*.*.*-alpha.*'
 
 concurrency:
-    group: publish-queue # Publish jobs fail if ran simultaneously
+  group: publish-queue # Publish jobs fail if ran simultaneously
 
 permissions:
   id-token: write # Required for NPM Trusted publishing
@@ -23,18 +23,18 @@ jobs:
         uses: ./.github/actions/node-setup
       - name: Run eslint
         run: npm run lint
-        if: "!contains(github.ref_name, '-alpha')"
+        if: "!contains(github.ref_name, '-debug-megatest')"
       - name: Build repo
         run: npm run build
       - name: Install playwright
         run: npx playwright install
-        if: "!contains(github.ref_name, '-alpha')"
+        if: "!contains(github.ref_name, '-debug-megatest')"
       - name: Run tests
         run: npm run test
-        if: "!contains(github.ref_name, '-alpha')"
+        if: "!contains(github.ref_name, '-debug-megatest')"
       - name: Publish release
         run: npx lerna publish --yes from-git
-        if: "!contains(github.ref_name, '-alpha')"
+        if: "!contains(github.ref_name, '-debug-megatest')"
       - name: Publish alpha release
         run: npx lerna publish --yes --dist-tag alpha from-git
-        if: contains(github.ref_name, '-alpha')
+        if: contains(github.ref_name, '-debug-megatest')
