@@ -47,7 +47,7 @@
     "jest-environment-jsdom": "^30.0.0",
     "jest-junit": "^16.0.0",
     "jest-snapshot-serializer-raw": "^1.1.0",
-    "lerna": "^8.1.2",
+    "lerna": "^9.0.0",
     "prettier": "^3.0.0",
     "puppeteer": "^24.0.0",
     "tmp-promise": "^3.0.2",
