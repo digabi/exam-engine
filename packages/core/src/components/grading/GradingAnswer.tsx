@@ -256,11 +256,9 @@ function GradingAnswerWithTranslations({
     saveAnnotations(savedAnnotations)
   }
   function hideTooltip() {
-    console.log(`[${new Date().toISOString()}] hideTooltip triggered`)
     hideTooltipTimeout = setTimeout(() => {
-      console.log(`[${new Date().toISOString()}] hideTooltip executed`)
       toggle(tooltipRef.current!, false)
-    }, 1400)
+    }, 800)
   }
 
   function onMouseOverTooltip() {
