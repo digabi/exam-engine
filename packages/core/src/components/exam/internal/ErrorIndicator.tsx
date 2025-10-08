@@ -42,8 +42,11 @@ export function ErrorIndicatorForErrors({
     <dialog
       open
       className={classNames(
-        { 'error-indicator e-bg-color-error e-color-off-white': inExam, 'e-font-size-xs': inExam },
-        'e-columns e-columns--inline  e-pad-1 e-mrg-r-1'
+        {
+          'error-indicator-active e-bg-color-error e-color-off-white': inExam,
+          'error-indicator-inactive': !inExam
+        },
+        'error-indicator e-font-size-xs e-columns e-columns--inline  e-pad-1 e-mrg-r-1'
       )}
       role="alert"
     >

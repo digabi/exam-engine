@@ -1,7 +1,18 @@
+.error-indicator-active {
+  box-shadow: 0px -2px 4px rgba(@grey-900, 0.15);
+  border-radius: 8px 8px 0 0;
+}
+
+.error-indicator-inactive {
+  box-shadow: none;
+  background: none;
+
+  svg {
+    color: @orange-900;
+  }
+}
+
 .error-indicator {
   position: relative !important;
   border: none !important;
-
-  box-shadow: 0px -2px 4px rgba(@grey-900, 0.15);
-  border-radius: 8px 8px 0 0;
 }
