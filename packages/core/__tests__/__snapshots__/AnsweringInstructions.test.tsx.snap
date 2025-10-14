@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<AnsweringInstructions /> question 2 child questions and maxAnswers = 1 1`] = `"Vastaa joko kohtaan 1.1 tai 1.2."`;
 

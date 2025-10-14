@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<QuestionAutoScore /> renders displayNumber number when there are more than one answer 1`] = `null`;
 
