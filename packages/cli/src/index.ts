@@ -3,15 +3,17 @@
 import { accessSync } from 'fs'
 import ora from 'ora'
 import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
 import { resolveExam, resolveFile } from './utils'
+
+const yargsInstance = yargs(hideBin(process.argv))
 
 const maybe =
   <T, U>(fn: (value: T) => U) =>
   (maybeValue: T | undefined) =>
     maybeValue === undefined ? maybeValue : fn(maybeValue)
 
-/* eslint-disable @typescript-eslint/no-misused-promises */
-void yargs
+void yargsInstance
   .usage('Usage: $0 <command> [options]')
   .command(
     'new <directory>',
@@ -112,7 +114,7 @@ void yargs
   })
   .demandCommand()
   .strict()
-  .wrap(yargs.terminalWidth()).argv
+  .wrap(yargsInstance.terminalWidth()).argv
 
 function addExamArgs(yargv: yargs.Argv) {
   yargv.positional('exam', {
