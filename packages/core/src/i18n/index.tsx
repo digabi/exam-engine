@@ -72,7 +72,7 @@ export function initI18n(language: string, examCode?: string, dayCode?: string):
     })
     .createInstance(
       {
-        compatibilityJSON: 'v3',
+        compatibilityJSON: 'v4',
         resources,
         lng: language,
         fallbackLng: 'fi-FI',

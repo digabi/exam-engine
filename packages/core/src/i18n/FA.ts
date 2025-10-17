@@ -3,7 +3,7 @@ import { ExamTranslations } from './fi-FI'
 export const FA: ExamTranslations = {
   'exam-total': 'Total des points',
   material: 'Document',
-  material_plural: 'Documents',
+  material_other: 'Documents',
   'external-material-title': 'Document',
   section: 'Partie {{displayNumber}}\u00A0:',
   references: {
