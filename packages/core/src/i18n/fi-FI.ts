@@ -2,9 +2,9 @@ import { DeepPartial } from 'utility-types'
 
 /** A helper type for type-safe i18next translations. */
 type ExtractTranslations<T> = {
-  [K in keyof T as K extends `${string}_plural` ? never : K]: ExtractTranslations<T[K]>
+  [K in keyof T as K extends `${string}_other` ? never : K]: ExtractTranslations<T[K]>
 } & {
-  [K in keyof T as K extends `${string}_plural` ? never : T[K] extends string ? `${K & string}_plural` : never]?: T[K]
+  [K in keyof T as K extends `${string}_other` ? never : T[K] extends string ? `${K & string}_other` : never]?: T[K]
 }
 
 export type Translations = ExtractTranslations<typeof fi_FI>
@@ -14,7 +14,7 @@ export const fi_FI = {
   'exam-total': 'Koe yhteensä',
   'grading-total': 'Yhteensä',
   material: 'Aineisto',
-  material_plural: 'Aineistot',
+  material_other: 'Aineistot',
   'attachments-page-title': 'Aineisto:',
   'external-material-title': 'Aineisto',
   'grading-instructions-page-title': 'Hyvän vastauksen piirteet:',
@@ -95,11 +95,11 @@ export const fi_FI = {
     restoreAnswer: 'Palauta',
     answerNoText: 'ei tekstiä',
     answerWordCount: '{{count}} sana',
-    answerWordCount_plural: '{{count}} sanaa',
+    answerWordCount_other: '{{count}} sanaa',
     answerCharacterCount: '{{count}} merkki',
-    answerCharacterCount_plural: '{{count}} merkkiä',
+    answerCharacterCount_other: '{{count}} merkkiä',
     answerImageCount: '{{count}} kuva',
-    answerImageCount_plural: '{{count}} kuvaa',
+    answerImageCount_other: '{{count}} kuvaa',
     minutesSinceAnswer: '{{ minutes }} min sitten',
     latestVersion: 'Viimeisin versio'
   },
@@ -128,9 +128,9 @@ export const fi_FI = {
   'open-writing-mode': 'Avaa kirjoitusnäkymä',
   'close-writing-mode': 'Pienennä näkymä',
   'listen-times-remaining': '{{count}} kuuntelukerta jäljellä.',
-  'listen-times-remaining_plural': '{{count}} kuuntelukertaa jäljellä.',
+  'listen-times-remaining_other': '{{count}} kuuntelukertaa jäljellä.',
   'answer-length': 'Vastauksen pituus: {{count}} merkki.',
-  'answer-length_plural': 'Vastauksen pituus: {{count}} merkkiä.',
+  'answer-length_other': 'Vastauksen pituus: {{count}} merkkiä.',
   'answer-length-with-max-length': 'Vastauksen pituus: {{count}} / {{maxLength}} merkkiä.',
   'max-length-surplus': 'Vastauksen enimmäispituus {{maxLength}} merkkiä ylittyy {{percentage}} %.',
   'max-length-info': 'Vastauksen pituus on enintään {{count}} merkkiä. Ylityksestä seuraa pistevähennys.',
