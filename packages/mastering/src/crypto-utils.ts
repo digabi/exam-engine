@@ -10,7 +10,7 @@ export interface KeyAndIv {
   iv: Buffer
 }
 
-export function createAES256EncryptStreamWithIv({ key, iv }: KeyAndIv): crypto.Cipher {
+export function createAES256EncryptStreamWithIv({ key, iv }: KeyAndIv): crypto.Cipheriv {
   return crypto.createCipheriv(symmetricAlgo, asBuffer(key), asBuffer(iv))
 }
 
