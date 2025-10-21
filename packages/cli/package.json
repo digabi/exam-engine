@@ -16,7 +16,7 @@
     "lodash": "^4.17.15",
     "ora": "^5.0.0",
     "rich-text-editor": "8.10.2",
-    "uuid": "^11.0.2",
+    "uuid": "^13.0.0",
     "yargs": "^18.0.0"
   },
   "gitHead": "38106fd91e7fab82ac4fdc9230c70ee4c8e29278"
