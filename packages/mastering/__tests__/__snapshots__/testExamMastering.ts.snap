@@ -25919,6 +25919,12 @@ exports[`Exam mastering masters filetypes.xml exam correctly 1`] = `
       "visibleInGradingInstructions": false,
       "withinGradingInstruction": false,
     },
+    {
+      "filename": "special!#€%()=characters.py",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
   ],
   "date": null,
   "dayCode": null,
@@ -25946,7 +25952,8 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
 <?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.1" exam-uuid="00000000-0000-0000-0000-000000000000" exam-lang="fi-FI" exam-type="normal" max-score="6">
     
-    <e:exam-title>Filetypes<br/></e:exam-title>
+    <e:exam-title>Filetypes<br/>
+    </e:exam-title>
     <e:exam-instruction/>
     <e:table-of-contents/>
     <e:section display-number="1" max-score="6">
@@ -25987,33 +25994,10 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
                     <e:file src="word.docx"/>
                     <br/>
                     <e:file src="loggerpro.cmbl"/>
+                    <br/>
+                    <e:file src="special!#€%()=characters.py"/>
                 </e:attachment>
             </e:external-material>
-            <e:file src="python.py"/>
-            <br/>
-            <e:file src="ketcher.mol"/>
-            <br/>
-            <e:file src="vernier.gambl"/>
-            <br/>
-            <e:file src="TINspireCAS.tns"/>
-            <br/>
-            <e:file src="geogebra.ggb"/>
-            <br/>
-            <e:file src="draw.odg"/>
-            <br/>
-            <e:file src="calc.ods"/>
-            <br/>
-            <e:file src="impress.odp"/>
-            <br/>
-            <e:file src="writer.odt"/>
-            <br/>
-            <e:file src="kleki.psd"/>
-            <br/>
-            <e:file src="drawio.drawio"/>
-            <br/>
-            <e:file src="certificate.pdf"/>
-            <br/>
-            <e:file src="puppua.turska"/>
             <e:text-answer type="rich-text" max-score="6" question-id="1" display-number="1"/>
         </e:question>
     </e:section>
