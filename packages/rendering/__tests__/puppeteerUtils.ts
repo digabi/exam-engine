@@ -76,7 +76,7 @@ export async function getTextContent(page: Page, selector: string): Promise<stri
 
 export async function getPageAndRequestErrors(page: Page, filename: string) {
   const requestErrors: string[] = []
-  const pageErrors: Error[] = []
+  const pageErrors: unknown[] = []
 
   page.on('requestfailed', req => {
     const errorText = req.failure()!.errorText
