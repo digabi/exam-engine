@@ -5,7 +5,7 @@ import ReactCSSTransitionReplace from 'react-css-transition-replace'
 import { AudioError } from '../../../index'
 import { useExamTranslation } from '../../../i18n'
 
-const AudioError: React.FunctionComponent<{
+const RenderIfNoError: React.FunctionComponent<{
   error?: AudioError
   children: React.ReactNode[] | React.ReactNode
 }> = ({ error, children }) => {
@@ -28,4 +28,4 @@ const AudioError: React.FunctionComponent<{
   )
 }
 
-export default AudioError
+export default RenderIfNoError

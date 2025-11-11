@@ -6,7 +6,7 @@ import { getNumericAttribute } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { audioLabelId } from '../../ids'
 import { getAudioPlaybackError, getPlaybackTimesRemaining } from '../../store/selectors'
-import AudioError from './internal/AudioError'
+import RenderIfNoError from './internal/RenderIfNoError'
 import { CommonExamContext } from '../context/CommonExamContext'
 import RestrictedAudioPlayer from './internal/RestrictedAudioPlayer'
 import AudioPlayer from './internal/AudioPlayer'
@@ -37,9 +37,9 @@ function Audio({ element, className, renderChildNodes }: ExamComponentProps) {
         <AudioPlayer src={resolveAttachment(src)} labelId={labelId} />
       )}
 
-      {(playbackTimesRemaining != null || audioPlaybackError != null) && (
+      {(playbackTimesRemaining != null || audioPlaybackError != null || element.hasChildNodes()) && (
         <div className="e-column" id={labelId}>
-          <AudioError error={audioPlaybackError}>{renderChildNodes(element)}</AudioError>
+          <RenderIfNoError error={audioPlaybackError}>{renderChildNodes(element)}</RenderIfNoError>
           {playbackTimesRemaining != null && <em>{t('listen-times-remaining', { count: playbackTimesRemaining })}</em>}
         </div>
       )}
