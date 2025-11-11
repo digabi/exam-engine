@@ -274,6 +274,9 @@ function GradingAnswerWithTranslations({
   }
 
   function showTooltip(target: HTMLElement) {
+    if (isEditAnnotationPopupVisible) {
+      return
+    }
     clearTimeout(hideTooltipTimeout)
     const tooltip = tooltipRef.current!
     const { type, listIndex, message } = target.dataset
