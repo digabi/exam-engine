@@ -7,7 +7,7 @@ import { getNumericAttribute, NBSP } from '../../dom-utils'
 import { useExamTranslation } from '../../i18n'
 import { playAudio } from '../../store/audio/actions'
 import { getAudioPlaybackError, getAudioState } from '../../store/selectors'
-import AudioError from './internal/AudioError'
+import AudioError from './internal/RenderIfNoError'
 import { CommonExamContext } from '../context/CommonExamContext'
 
 function AudioTest({ element }: ExamComponentProps) {

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons'
 import { useExamTranslation } from '../../../i18n'
-import AudioError from '../../shared/internal/AudioError'
+import RenderIfNoError from '../../shared/internal/RenderIfNoError'
 import { AudioError as AudioErrorType } from '../../../types/ExamServerAPI'
 import { NBSP } from '../../../dom-utils'
 import AudioPlayer from '../../shared/internal/AudioPlayer'
@@ -205,7 +205,7 @@ export function AudioRecorder({ audioUrl, onSave, onDelete, audioRecorderOptions
 
   const errorByStatusOrEmpty = () => {
     if (error) {
-      return <AudioError error={error}>{NBSP}</AudioError>
+      return <RenderIfNoError error={error}>{NBSP}</RenderIfNoError>
     }
     if (alreadyRecording && status != 'recording' && !savingAudio && !audioUrl) {
       return (
