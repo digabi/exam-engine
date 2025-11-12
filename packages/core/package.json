@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-core",
-  "version": "23.20.5",
+  "version": "23.20.6",
   "main": "dist/main-bundle.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/digabi/exam-engine",
