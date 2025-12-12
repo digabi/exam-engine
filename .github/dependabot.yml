@@ -17,13 +17,9 @@ updates:
       exclude:
         - "@digabi/*"
     groups:
-      playwright-packages:
+      exam-engine:
         patterns:
-          - "@playwright/*"
-      fontawesome-icons:
-        patterns:
-          - '@fortawesome/fontawesome-svg-core'
-          - '@fortawesome/*-svg-icons'
+          - '@digabi/exam-engine-*'
     ignore:
       - dependency-name: react
         update-types:
