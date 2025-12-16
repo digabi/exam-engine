@@ -2,6 +2,7 @@ name: Merge Dependabot pull requests
 on:
   schedule:
     - cron: '0 3-6 * * *'
+  workflow_dispatch:
 jobs:
   test:
     name: Merge Dependabot pull requests
