@@ -3,10 +3,12 @@
 function afterinstall() {
     # Add ee to $PATH
     local NODE_VERSION=$(< /home/digabi/exam-engine/.nvmrc)
+    local NODE_PATH=$(ls -d /home/digabi/digabi-top/nvm/versions/node/v$NODE_VERSION.*/bin 2>/dev/null | sort -V | tail -1)
+
     cat > /home/digabi/bin/ee << EOF
 #!/bin/bash
 
-PUPPETEER_CACHE_DIR=/home/digabi/exam-engine/.cache /home/digabi/digabi-top/nvm/versions/node/v$NODE_VERSION/bin/node /home/digabi/exam-engine/packages/cli/dist/index.js "\$@"
+PUPPETEER_CACHE_DIR=/home/digabi/exam-engine/.cache $NODE_PATH /home/digabi/exam-engine/packages/cli/dist/index.js "\$@"
 EOF
     chmod +x /home/digabi/bin/ee
 
