@@ -8,7 +8,7 @@ function afterinstall() {
     cat > /home/digabi/bin/ee << EOF
 #!/bin/bash
 
-PUPPETEER_CACHE_DIR=/home/digabi/exam-engine/.cache $NODE_PATH /home/digabi/exam-engine/packages/cli/dist/index.js "\$@"
+PUPPETEER_CACHE_DIR=/home/digabi/exam-engine/.cache $NODE_PATH/node /home/digabi/exam-engine/packages/cli/dist/index.js "\$@"
 EOF
     chmod +x /home/digabi/bin/ee
 
