@@ -1,0 +1,41 @@
+name: Update Snapshots
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-snapshots:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Node.js Setup
+        uses: ./.github/actions/node-setup
+
+      - name: Restore puppeteer cache
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - run: npm rebuild full-icu
+
+      - name: Update Jest Snapshots
+        run: npm run test-jest -- --ci -u
+
+      - name: Commit to branch
+        if: github.ref_name != 'master'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Update snapshots'
+
+      - name: Create Pull Request
+        if: github.ref_name == 'master'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'Update snapshots'
+          title: 'Update snapshots'
+          branch: update-snapshots-${{ github.run_id }}
+          delete-branch: true
