@@ -32,6 +32,7 @@ jobs:
         run: npm run test-jest -- --ci -u
 
       - name: Commit and push to branch
+        id: commit
         if: github.ref_name != 'master'
         run: |
           git config user.name "github-actions[bot]"
@@ -39,9 +40,22 @@ jobs:
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Update snapshots"
             git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Retrigger CI on PR
+        if: github.ref_name != 'master' && steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          PR_NUMBER=$(gh pr list --head "${{ github.ref_name }}" --json number --jq '.[0].number')
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr close "$PR_NUMBER"
+            gh pr reopen "$PR_NUMBER"
           fi
 
       - name: Create Pull Request
