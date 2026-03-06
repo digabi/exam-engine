@@ -6,6 +6,9 @@ on:
 jobs:
   update-snapshots:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/create-github-app-token@v2
         id: app-token
@@ -50,7 +53,7 @@ jobs:
       - name: Retrigger CI on PR
         if: github.ref_name != 'master' && steps.commit.outputs.pushed == 'true'
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=$(gh pr list --head "${{ github.ref_name }}" --json number --jq '.[0].number')
           if [ -n "$PR_NUMBER" ]; then
