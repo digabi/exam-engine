@@ -39,6 +39,8 @@
                     <br/>
                     <e:file src="ketcher.mol"/>
                     <br/>
+                    <e:file src="ketcher.ket"/>
+                    <br/>
                     <e:file src="certificate.pdf"/>
                     <br/>
                     <e:file src="puppua.turska"/>

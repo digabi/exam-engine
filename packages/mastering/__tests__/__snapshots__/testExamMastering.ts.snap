@@ -25896,6 +25896,12 @@ exports[`Exam mastering masters filetypes.xml exam correctly 1`] = `
       "withinGradingInstruction": false,
     },
     {
+      "filename": "ketcher.ket",
+      "restricted": false,
+      "visibleInGradingInstructions": false,
+      "withinGradingInstruction": false,
+    },
+    {
       "filename": "certificate.pdf",
       "restricted": false,
       "visibleInGradingInstructions": false,
@@ -25986,6 +25992,8 @@ exports[`Exam mastering masters filetypes.xml exam correctly: xml 1`] = `
                     <e:file src="python.py"/>
                     <br/>
                     <e:file src="ketcher.mol"/>
+                    <br/>
+                    <e:file src="ketcher.ket"/>
                     <br/>
                     <e:file src="certificate.pdf"/>
                     <br/>
