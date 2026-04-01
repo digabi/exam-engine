@@ -121,7 +121,7 @@ export function useExamTranslation() {
  * If you want to disable the wrapping, you can use `t.raw(…)`.
  */
 function translate(instance: typeof i18n, key: string | string[], options?: TOptions): string | JSX.Element {
-  const translation = instance.t(key, options)
+  const translation = instance.t(key, Array.isArray(key) ? key[0] : key, options)
 
   const namespace = instance.options.defaultNS!.toString()
   const examHasCustomTranslations = namespace !== 'translation' && namespace in examSpecificTranslations

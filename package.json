@@ -66,7 +66,7 @@
     "ee": "node packages/cli/dist/index.js",
     "test": "npm run test-ct -- --project=chrome && npm run test-jest",
     "prepare": "tsc --build --force && npm run --workspace @digabi/exam-engine-core build",
-    "test-jest": "NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
+    "test-jest": "I18NEXT_NO_SUPPORT_NOTICE=1 NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
     "test-ct": "playwright test -c packages/core/playwright-ct.config.ts",
     "clear-ct-cache": "rm -rf packages/core/__tests__/playwright/template/.cache"
   },
