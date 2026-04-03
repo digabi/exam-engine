@@ -39,7 +39,7 @@
     "jquery": "^4.0.0",
     "less": "^4.1.0",
     "less-loader": "^12.2.0",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.18.1",
     "mini-css-extract-plugin": "^2.10.2",
     "postcss": "^8.0.5",
     "postcss-loader": "^8.1.0",
