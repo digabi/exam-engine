@@ -2,13 +2,14 @@
 
 function afterinstall() {
     # Add ee to $PATH
-    local NODE_VERSION=$(< /home/digabi/exam-engine/.nvmrc)
-    local NODE_PATH=$(ls -d /home/digabi/digabi-top/nvm/versions/node/v$NODE_VERSION.*/bin 2>/dev/null | sort -V | tail -1)
+    # Hardcode node version temporarily to fix issues with tela laptops. Fix this when repacking in gh actions
+    # Using the latest from digabi-top doesnt work since that might be empty when this is installed
+    local NODE_VERSION=24.13.1
 
     cat > /home/digabi/bin/ee << EOF
 #!/bin/bash
 
-PUPPETEER_CACHE_DIR=/home/digabi/exam-engine/.cache $NODE_PATH/node /home/digabi/exam-engine/packages/cli/dist/index.js "\$@"
+PUPPETEER_CACHE_DIR=/home/digabi/exam-engine/.cache /home/digabi/digabi-top/nvm/versions/node/v$NODE_VERSION/bin/node /home/digabi/exam-engine/packages/cli/dist/index.js "\$@"
 EOF
     chmod +x /home/digabi/bin/ee
 
