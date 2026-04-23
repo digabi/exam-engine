@@ -15,7 +15,7 @@
     "@digabi/exam-engine-rendering": "23.22.0",
     "lodash": "^4.18.1",
     "ora": "^5.0.0",
-    "rich-text-editor": "8.10.4",
+    "rich-text-editor": "8.10.5",
     "uuid": "^14.0.0",
     "yargs": "^18.0.0"
   },
