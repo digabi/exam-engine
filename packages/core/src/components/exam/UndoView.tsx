@@ -146,8 +146,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
   }
 
   private overlayClicked(event: React.MouseEvent<HTMLDivElement>): void {
-    const targetClass = (event.target as HTMLDivElement).className
-    if (targetClass.includes('js-undo-overlay')) {
+    if (event.target instanceof HTMLDivElement && event.target.className.includes('js-undo-overlay')) {
       this.close()
     }
   }
