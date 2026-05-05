@@ -47,7 +47,9 @@ const DropdownAnswer: React.FunctionComponent<ExamComponentProps> = ({ element, 
   if (runningInBrowser) {
     // Force a re-measure if element changes or fonts are loaded after this
     // component has been rendered.
-    fonts.ready.then(() => !fontsLoaded && setFontsLoaded(true)).catch(err => console.error(err))
+    fonts.ready
+      .then(() => !fontsLoaded && setFontsLoaded(true))
+      .catch(err => console.error('Loading fonts failed', err))
 
     useEffect(() => setMeasuring(true), [element])
 

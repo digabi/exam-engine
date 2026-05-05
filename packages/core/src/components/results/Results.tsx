@@ -123,10 +123,14 @@ const Results: React.FunctionComponent<ResultsProps> = ({
         element.style.height = `${element.clientHeight}px`
       })
       setTimeout(() => {
-        void endSession()
+        // eslint-disable-next-line promise/prefer-await-to-then
+        void endSession().catch(e => {
+          console.error('Ending session failed', e)
+          throw e
+        })
       }, 50)
     } catch (e) {
-      console.error(e)
+      console.error('Ending session failed', e)
     }
   }
 

@@ -28,7 +28,7 @@ export function* performEnableCas(examServerApi: ExamServerAPI, { payload }: Ret
       yield put(allowCasCancelled())
     }
   } catch (error) {
-    console.error(error)
+    console.error('Enabling CAS failed', error)
   }
 }
 

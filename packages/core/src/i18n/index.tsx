@@ -146,7 +146,10 @@ function hasTranslation(instance: typeof i18n, namespace: string, key: string | 
 
 export const changeLanguage = (_i18n: typeof i18n, language: string) => (): void => {
   if (_i18n.language !== language) {
-    _i18n.changeLanguage(language).then(_.noop).catch(_.noop)
+    _i18n
+      .changeLanguage(language)
+      .then(_.noop)
+      .catch(e => console.error('Changing language failed', e))
   }
 }
 

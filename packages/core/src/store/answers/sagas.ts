@@ -16,6 +16,7 @@ function* performSave(action: SaveAnswerAction, examServerApi: ExamServerAPI) {
     yield call(examServerApi.saveAnswer, answer)
     yield put(saveAnswerSucceeded(answer))
   } catch (error) {
+    console.error('Perform save failed', error)
     yield put(saveAnswerFailed(answer, error))
   }
 
@@ -61,7 +62,7 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
         }
       }
     } catch (error) {
-      console.error(error)
+      console.error('Restoring answer failed', error)
     }
   }
 }
