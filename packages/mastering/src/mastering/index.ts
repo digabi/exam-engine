@@ -719,14 +719,17 @@ function applyEditableLocalization(
   type: ExamType,
   parentLocalization?: Element
 ) {
-  // traverse children first
-  localization.childNodes().forEach(node => {
-    const child = node as Element
-    const childName = child.name()
-    if (childName == 'localization') {
-      applyEditableLocalization(child, language, type, localization)
-    }
-  })
+  // traverse child elements first
+  localization
+    .childNodes()
+    .filter(node => node.type() == 'element')
+    .forEach(node => {
+      const child = node as Element
+      const childName = child.name()
+      if (childName == 'localization') {
+        applyEditableLocalization(child, language, type, localization)
+      }
+    })
 
   // ProseMirrors makes flat localizations, so take parent attributes for children to preverve them
   if (parentLocalization) {
