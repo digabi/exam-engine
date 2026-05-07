@@ -68,6 +68,7 @@ export function initializeExamStore(
   const sagaMiddleware = createSagaMiddleware({
     onError(error, errorInfo) {
       console.error('Uncaught saga error', error, errorInfo.sagaStack)
+      examServerApi.onFatalError?.(error)
     }
   })
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
