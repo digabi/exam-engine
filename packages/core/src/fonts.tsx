@@ -13,7 +13,7 @@ export const ready = Promise.all([
   .then(() => {
     loaded = true
   })
-  .catch(_.noop)
+  .catch(e => console.error('Loading fonts failed', e))
 
 /** A boolean flag that tells if the main fonts have been loaded.  */
 export let loaded = false

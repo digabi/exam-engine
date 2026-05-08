@@ -87,4 +87,7 @@ export interface ExamServerAPI {
   examineExam?: () => void
   /** Log client activity to server. Message format is free. Optional feature. */
   logActivity?: (message: string) => void
+
+  /** Called when an irrecoverable error occurs. Exam engine should be shut down gracefully in handler. */
+  onFatalError?: (error: unknown) => void
 }

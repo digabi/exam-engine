@@ -32,7 +32,8 @@ async function loadAndPlayRestrictedAudio(
         URL.revokeObjectURL(source.src)
       }
     }
-  } catch (_) {
+  } catch (e) {
+    console.log('Loading and playing restricted audio failed', e)
     return { response: 'other-error', cleanup: () => {} }
   }
 }
@@ -81,7 +82,7 @@ function* performPlayAudio(examServerApi: ExamServerAPI, action: PlayAudio) {
       result.cleanup()
     }
   } catch (error) {
-    console.error(error)
+    console.error('Playing audio failed', error)
   }
 }
 

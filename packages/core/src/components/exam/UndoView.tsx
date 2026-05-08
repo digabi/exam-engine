@@ -168,6 +168,7 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
       const answers = answerHistory.map(toAnswerHistoryEntry)
       this.setState({ answers, selectedAnswerIndex: 0, loading: false, loadRetryTimeout: null })
     } catch (error) {
+      console.error('Fetching answer history failed', error)
       if (!axios.isCancel(error)) {
         this.setState({
           loadRetryTimeout: window.setTimeout(() => {

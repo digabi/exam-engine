@@ -16,6 +16,7 @@ function* performSave(action: SaveAnswerAction, examServerApi: ExamServerAPI) {
     yield call(examServerApi.saveAnswer, answer)
     yield put(saveAnswerSucceeded(answer))
   } catch (error) {
+    console.error('Perform save failed', error)
     yield put(saveAnswerFailed(answer, error))
   }
 
@@ -45,7 +46,14 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
     const action: SelectAnswerAction = yield take('SELECT_ANSWER_VERSION')
     const { questionId, questionText } = action.payload
     if (examServerApi.logActivity) {
-      yield call(examServerApi.logActivity, `Opened answer version history for question ${questionId}, ${questionText}`)
+      try {
+        yield call(
+          examServerApi.logActivity,
+          `Opened answer version history for question ${questionId}, ${questionText}`
+        )
+      } catch (error) {
+        console.error('Logging activity failed', error)
+      }
     }
     try {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -61,7 +69,7 @@ function* answerHistorySaga(examServerApi: ExamServerAPI) {
         }
       }
     } catch (error) {
-      console.error(error)
+      console.error('Restoring answer failed', error)
     }
   }
 }

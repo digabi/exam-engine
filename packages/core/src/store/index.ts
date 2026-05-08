@@ -65,7 +65,12 @@ export function initializeExamStore(
     },
     cas: { casStatus }
   }
-  const sagaMiddleware = createSagaMiddleware()
+  const sagaMiddleware = createSagaMiddleware({
+    onError(error, errorInfo) {
+      console.error('Uncaught saga error', error, errorInfo.sagaStack)
+      examServerApi.onFatalError?.(error)
+    }
+  })
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
   const composeEnhancers = ((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ as typeof compose) || compose
   const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware))

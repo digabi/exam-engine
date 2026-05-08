@@ -77,7 +77,7 @@ export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: 
         audioPlayer.classList.add('audio-player--visible', 'audio-player--animating')
         return 'ok'
       } catch (err) {
-        console.error(err)
+        console.error('Playing audio failed', err)
         return 'other-error'
       }
     },
