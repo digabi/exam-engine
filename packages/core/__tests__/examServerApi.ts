@@ -2,6 +2,7 @@ import { ExamServerAPI } from '../src'
 
 export const examServerApi: ExamServerAPI = {
   getAnswers: () => Promise.resolve([]),
+  getAnswerHistory: () => Promise.resolve([]),
   setCasStatus: casStatus => Promise.resolve(casStatus),
   saveAnswer: () => Promise.resolve(),
   saveScreenshot: () => Promise.resolve('ok'),

@@ -333,7 +333,7 @@ const Exam: React.FunctionComponent<ExamProps & AnnotationProps> = ({
                 <SaveIndicator />
               </div>
 
-              {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} />}
+              {showUndoView && isNewKoeVersion && <UndoView {...undoViewProps} examServerApi={examServerApi} />}
             </main>
           </I18nextProvider>
         </TOCContext.Provider>
