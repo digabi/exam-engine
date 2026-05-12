@@ -37,6 +37,11 @@ export function ImageBase({
   const imgUrl = resolveAttachment(src)
   const image = overrideImage || <img className="e-image" src={imgUrl} alt="" aria-labelledby={captionId} />
 
+  const isWithinChoiceAnswer = queryAncestors(element, 'choice-answer') != null
+
+  const nonZoomableContexts = ['choice-answer', 'hint', 'dnd-answer-option']
+  const isWithinNonZoomableContext = queryAncestors(element, nonZoomableContexts) != null
+
   return (
     <>
       <ResponsiveMediaContainer
@@ -46,10 +51,10 @@ export function ImageBase({
           height,
           caption,
           captionId,
-          bordered: hasCaption || queryAncestors(element, 'choice-answer') != null
+          bordered: hasCaption || isWithinChoiceAnswer
         }}
       >
-        {disableZoomIn || queryAncestors(element, ['choice-answer', 'hint']) != null ? (
+        {disableZoomIn || isWithinNonZoomableContext ? (
           image
         ) : (
           <ZoomInImage image={image} hasCaption={hasCaption} imgUrl={imgUrl} />
