@@ -879,7 +879,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
                 </span><div class="connection-line"></div><div class="e-dnd-answer-droppable has-images" data-testid="dnd-droppable"><div class="e-dnd-answer-option"><div><div class="option-content">
                   
                     
-                    <span class="responsive-media-container"><span class="responsive-media-container__inner"><a title="Suurenna kuva" href="attachments/7.2.7291.jpg" target="original-picture" class="e-zoomable" aria-hidden="true" tabindex="-1"><img class="e-image" src="attachments/7.2.7291.jpg" alt=""></a></span></span>
+                    <span class="responsive-media-container"><span class="responsive-media-container__inner"><img class="e-image" src="attachments/7.2.7291.jpg" alt=""></span></span>
                     
                   
                 </div></div></div></div><span class="e-score e-nowrap e-score--small e-font-size-m e-semibold"><span lang="fi-FI">2 p.</span></span></div></span></div></div></div>
