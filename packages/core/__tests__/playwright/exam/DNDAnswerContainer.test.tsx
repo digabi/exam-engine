@@ -27,6 +27,13 @@ test.describe('DNDAnswerContainer', () => {
         secondAnswerContent
       } = await setupAnswerContext(component, answerMediaType)
 
+      await test.step('Image answers are not zoomable links in answer options', async () => {
+        if (answerMediaType === 'image') {
+          await expect(firstOptionLocator.locator('.e-zoomable')).toHaveCount(0)
+          await expect(secondOptionLocator.locator('.e-zoomable')).toHaveCount(0)
+        }
+      })
+
       await test.step('Drag first answer to answer container', async () => {
         const draggableLocator = firstOptionLocator.locator('.drag-handle')
         await draggableLocator.dragTo(answerContainer)
