@@ -1,4 +1,5 @@
 @import '../../css/colors.less';
+@import '../../css/full-size-image.less';
 
 .e-grading-answer-wrapper {
   background: @grey-010;
@@ -120,54 +121,8 @@
     }
   }
 
-  .e-large-image {
-    box-shadow: 0 1px 8px -3px @blue-800;
-  }
-  .full-size-image {
-    position: relative;
-    user-select: none;
+  .full-size-image-styles();
 
-    a {
-      &::before {
-        content: '+';
-        font-family: monospace;
-        font-size: 17px;
-        color: @grey-050;
-        background: @blue-800;
-        border-radius: 50%;
-        width: 17px;
-        height: 17px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      &::after {
-        content: '';
-        height: 3px;
-        background: @blue-800;
-        width: 9px;
-        display: block;
-        transform: rotate(45deg);
-        position: relative;
-        left: 12px;
-        bottom: 2px;
-      }
-
-      position: absolute;
-      bottom: 10px;
-      right: 100%;
-      margin-right: 13px;
-      color: @blue-800;
-      padding: 3px 7px;
-      background: @grey-050;
-      font-size: 22px;
-      &:hover {
-        color: @blue-900;
-        background: none;
-        text-decoration: none;
-      }
-    }
-  }
   img {
     max-width: 100%;
   }
