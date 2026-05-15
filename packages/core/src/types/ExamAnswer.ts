@@ -30,3 +30,10 @@ export interface AudioAnswer extends AnswerCommon {
 }
 
 export type ExamAnswer = TextAnswer | RichTextAnswer | ChoiceAnswer | AudioAnswer
+
+export type AnswerHistoryEntry = {
+  type: 'text' | 'richText'
+  value: string
+  answerTime: number
+  characterCount: number
+}

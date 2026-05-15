@@ -1,4 +1,4 @@
-import { ExamAnswer, QuestionId } from './ExamAnswer'
+import { AnswerHistoryEntry, ExamAnswer, QuestionId } from './ExamAnswer'
 
 export type SaveState = 'initial' | 'saving' | 'saved'
 /**
@@ -50,6 +50,8 @@ export interface ExamServerAPI {
   setCasStatus: (casStatus: CasStatus) => Promise<CasStatus>
   /** Retrieve the latest answer for each question */
   getAnswers: () => Promise<ExamAnswer[]>
+  /** Retrieve the answer history for one question */
+  getAnswerHistory?: (questionId: number) => Promise<AnswerHistoryEntry[]> // TODO: remove optionality when old servers can be broken with next exam packages
   /** Save a new answer to the server */
   saveAnswer: (answer: ExamAnswer) => Promise<void>
   /**

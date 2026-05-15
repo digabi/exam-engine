@@ -3,22 +3,17 @@ import React from 'react'
 import { UndoHistoryEntry } from './UndoHistoryEntry'
 import ModalDialog from '../shared/internal/ModalDialog'
 import { useExamTranslation } from '../../i18n'
-import { QuestionId, RichTextAnswer, TextAnswer } from '../../types/ExamAnswer'
+import { AnswerHistoryEntry, QuestionId, RichTextAnswer, TextAnswer } from '../../types/ExamAnswer'
+import { ExamServerAPI } from '../../types/ExamServerAPI'
 
 const CancelToken = axios.CancelToken
-
-export interface AnswerHistoryEntry {
-  type: 'text' | 'richText'
-  value: string
-  characterCount: number
-  answerTime: number
-}
 
 export interface UndoViewProps {
   close: () => void
   restoreAnswer: (examAnswer: TextAnswer | RichTextAnswer) => void
   questionId: number
   title: string
+  examServerApi: ExamServerAPI
 }
 
 interface UndoViewState {
@@ -161,11 +156,17 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
 
   private async fetchAnswerHistory(questionId: number) {
     try {
-      const answerHistoryResult = await axios.get<AnswerHistoryResult[]>(`/rest/answer-history/${questionId}`, {
-        cancelToken: this.source.token
-      })
-      const answerHistory = answerHistoryResult.data
-      const answers = answerHistory.map(toAnswerHistoryEntry)
+      let answers: AnswerHistoryEntry[]
+      if (this.props.examServerApi.getAnswerHistory) {
+        answers = await this.props.examServerApi.getAnswerHistory(questionId)
+      } else {
+        // TODO: remove when getAnswerHistory isn't optional
+        const answerHistoryResult = await axios.get<AnswerHistoryResult[]>(`/rest/answer-history/${questionId}`, {
+          cancelToken: this.source.token
+        })
+        const answerHistory = answerHistoryResult.data
+        answers = answerHistory.map(toAnswerHistoryEntry)
+      }
       this.setState({ answers, selectedAnswerIndex: 0, loading: false, loadRetryTimeout: null })
     } catch (error) {
       console.error('Fetching answer history failed', error)
