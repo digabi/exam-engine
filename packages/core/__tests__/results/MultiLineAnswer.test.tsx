@@ -9,12 +9,7 @@ describe('<MultiLineAnswer /> image opening', () => {
     const answer = createAnswer('<span class="e-annotation-wrapper"><img src="/screenshot/answer.png" /></span>')
     const image = answer.querySelector('img')!
     mockImageSize(image, 100, 50)
-    jest.spyOn(window, 'setTimeout').mockImplementation(callback => {
-      if (typeof callback === 'function') {
-        callback()
-      }
-      return 1
-    })
+    runImageUpdateImmediately()
 
     updateLargeImageWarnings(answer)
 
@@ -28,12 +23,7 @@ describe('<MultiLineAnswer /> image opening', () => {
     const answer = createAnswer('<span class="e-annotation-wrapper"><img src="/screenshot/answer.png" /></span>')
     const image = answer.querySelector('img')!
     mockImageSize(image, 100, 100)
-    jest.spyOn(window, 'setTimeout').mockImplementation(callback => {
-      if (typeof callback === 'function') {
-        callback()
-      }
-      return 1
-    })
+    runImageUpdateImmediately()
 
     updateLargeImageWarnings(answer)
 
@@ -44,12 +34,7 @@ describe('<MultiLineAnswer /> image opening', () => {
     const answer = createAnswer('<span class="e-annotation-wrapper"><img src="/screenshot/answer.png" /></span>')
     const image = answer.querySelector('img')!
     mockImageSize(image, 100, 50)
-    jest.spyOn(window, 'setTimeout').mockImplementation(callback => {
-      if (typeof callback === 'function') {
-        callback()
-      }
-      return 1
-    })
+    runImageUpdateImmediately()
 
     updateLargeImageWarnings(answer)
 
@@ -67,4 +52,13 @@ function mockImageSize(image: HTMLImageElement, naturalWidth: number, width: num
   Object.defineProperty(image, 'complete', { configurable: true, value: true })
   Object.defineProperty(image, 'naturalWidth', { configurable: true, value: naturalWidth })
   Object.defineProperty(image, 'width', { configurable: true, value: width })
+}
+
+function runImageUpdateImmediately() {
+  jest.spyOn(window, 'setTimeout').mockImplementation(callback => {
+    if (typeof callback === 'function') {
+      callback()
+    }
+    return undefined as unknown as ReturnType<typeof setTimeout>
+  })
 }
