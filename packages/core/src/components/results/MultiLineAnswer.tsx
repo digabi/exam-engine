@@ -1,9 +1,10 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import { Score } from '../..'
 import { useExamTranslation } from '../../i18n'
-import { renderAnnotations } from '../../renderAnnotations'
+import { renderAnnotations, wrapAllImages } from '../../renderAnnotations'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import classNames from 'classnames'
+import { updateLargeImageWarnings } from '../grading/largeImageDetector'
 
 export const MultiLineAnswer: React.FunctionComponent<{
   type: 'rich-text'
@@ -15,6 +16,8 @@ export const MultiLineAnswer: React.FunctionComponent<{
 
   useLayoutEffect(() => {
     if (answerRef.current) {
+      wrapAllImages(answerRef.current)
+      updateLargeImageWarnings(answerRef.current)
       renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], score?.censoring?.annotations ?? [])
     }
   })
