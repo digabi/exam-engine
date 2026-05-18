@@ -29,31 +29,17 @@ function updateImageStatus(img: HTMLImageElement) {
   remainingImages--
   const wrapper = img.parentElement
   const nextSibling = wrapper?.nextSibling
-  const fullSizeLinkContainer =
-    nextSibling instanceof HTMLElement && nextSibling.classList.contains('full-size-image') ? nextSibling : undefined
+  const hasFullSizeLink = nextSibling instanceof HTMLElement && nextSibling.classList.contains('full-size-image')
   const isLargeImage = img.naturalWidth > img.width + 1 // allow for rounding errors
   wrapper?.classList.toggle('e-large-image', isLargeImage)
 
   if (isLargeImage) {
-    const link = fullSizeLinkContainer?.querySelector<HTMLAnchorElement>('a') ?? createFullSizeImageLink()
-    updateFullSizeImageLink(link, img)
-
-    if (!fullSizeLinkContainer) {
-      const container = document.createElement('div')
-      container.className = 'full-size-image'
-      container.appendChild(link)
-      wrapper?.after(container)
+    if (!hasFullSizeLink) {
+      wrapper?.insertAdjacentHTML('afterend', `<div class="full-size-image"><a target="_blank" href="${img.src}"></a>`)
     }
   } else {
-    fullSizeLinkContainer?.remove()
+    if (hasFullSizeLink) {
+      nextSibling.remove()
+    }
   }
-}
-
-function createFullSizeImageLink() {
-  return document.createElement('a')
-}
-
-function updateFullSizeImageLink(link: HTMLAnchorElement, img: HTMLImageElement) {
-  link.href = img.src
-  link.target = '_blank'
 }
