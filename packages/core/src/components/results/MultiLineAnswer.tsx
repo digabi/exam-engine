@@ -16,6 +16,7 @@ export const MultiLineAnswer: React.FunctionComponent<{
 
   useLayoutEffect(() => {
     if (answerRef.current) {
+      console.log('answerRef.current', answerRef.current)
       wrapAllImages(answerRef.current)
       updateLargeImageWarnings(answerRef.current)
       renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], score?.censoring?.annotations ?? [])
