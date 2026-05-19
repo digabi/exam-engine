@@ -64,7 +64,7 @@ declare module 'react-i18next' {
 export function initI18n(language: string, examCode?: string, dayCode?: string): typeof i18n {
   const namespace = examCode ? examCode + (dayCode ? `_${dayCode}` : '') : 'translation'
 
-  return i18n
+  const i18nInstance = i18n
     .use<PostProcessorModule>({
       type: 'postProcessor',
       name: 'lowercase',
@@ -79,28 +79,19 @@ export function initI18n(language: string, examCode?: string, dayCode?: string):
         debug: false,
         defaultNS: namespace,
         fallbackNS: 'translation',
-        interpolation: {
-          escapeValue: false,
-          format: (value, format) => {
-            const val = value as [string, string]
-            switch (format) {
-              case 'range': {
-                const [start, end] = val
-                return start == null ? end : end == null ? start : start === end ? start : `${start}–${end}`
-              }
-              case 'first':
-                return _.first(val)
-              case 'last':
-                return _.last(val)
-              default:
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-                return value
-            }
-          }
-        }
+        interpolation: { escapeValue: false }
       },
       _.noop
     )
+
+  i18nInstance.services.formatter?.add('range', (value: [string, string]) => {
+    const [start, end] = value
+    return start == null ? end : end == null ? start : start === end ? start : `${start}–${end}`
+  })
+  i18nInstance.services.formatter?.add('first', (value: [string, string]) => _.first(value))
+  i18nInstance.services.formatter?.add('last', (value: [string, string]) => _.last(value))
+
+  return i18nInstance
 }
 
 export function useExamTranslation() {
