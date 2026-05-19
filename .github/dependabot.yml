@@ -47,9 +47,11 @@ updates:
         update-types:
           - version-update:semver-major
   - package-ecosystem: 'github-actions'
-    directory: '/'
     schedule:
       interval: 'daily'
       time: '02:00'
       timezone: 'Europe/Helsinki'
     open-pull-requests-limit: 99
+    directories:
+      - /
+      - /.github/actions/node-setup
