@@ -33,16 +33,12 @@ function updateImageStatus(img: HTMLImageElement) {
   const isLargeImage = img.naturalWidth > img.width + 1 // allow for rounding errors
   wrapper?.classList.toggle('e-large-image', isLargeImage)
 
-  if (isLargeImage) {
-    if (!hasFullSizeLink) {
-      wrapper?.insertAdjacentHTML(
-        'afterend',
-        `<div class="full-size-image"><a target="_blank" href="${img.src}"></a></div>`
-      )
-    }
-  } else {
-    if (hasFullSizeLink) {
-      nextSibling.remove()
-    }
+  if (isLargeImage && !hasFullSizeLink) {
+    wrapper?.insertAdjacentHTML(
+      'afterend',
+      `<div class="full-size-image"><a target="_blank" href="${img.src}"></a></div>`
+    )
+  } else if (hasFullSizeLink) {
+    nextSibling.remove()
   }
 }
