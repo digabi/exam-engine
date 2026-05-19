@@ -35,7 +35,10 @@ function updateImageStatus(img: HTMLImageElement) {
 
   if (isLargeImage) {
     if (!hasFullSizeLink) {
-      wrapper?.insertAdjacentHTML('afterend', `<div class="full-size-image"><a target="_blank" href="${img.src}"></a>`)
+      wrapper?.insertAdjacentHTML(
+        'afterend',
+        `<div class="full-size-image"><a target="_blank" href="${img.src}"></a></div>`
+      )
     }
   } else {
     if (hasFullSizeLink) {

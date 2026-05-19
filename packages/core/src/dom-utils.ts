@@ -241,3 +241,21 @@ export const getCorrectAnswerOptionIdsByQuestionId = (element: Element) => {
   )
   return correctAnswerOptionsByQuestionId
 }
+
+export function wrapAllImages(answerElement: HTMLElement) {
+  answerElement.querySelectorAll('img').forEach(getWrapper)
+}
+
+export function getWrapper(image: HTMLImageElement) {
+  const parent = image.parentElement!
+
+  if (parent instanceof HTMLSpanElement) {
+    return parent
+  }
+
+  const wrapper = createElement('span', { className: 'e-image-wrapper' })
+  parent.insertBefore(wrapper, image)
+  wrapper.appendChild(image)
+
+  return wrapper
+}

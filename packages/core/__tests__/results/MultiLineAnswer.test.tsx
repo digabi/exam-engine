@@ -6,7 +6,7 @@ describe('<MultiLineAnswer /> image opening', () => {
   })
 
   it('adds a full size image link for downscaled images', () => {
-    const answer = createAnswer('<span class="e-annotation-wrapper"><img src="/screenshot/answer.png" /></span>')
+    const answer = createAnswer('<span class="e-image-wrapper"><img src="/screenshot/answer.png" /></span>')
     const image = answer.querySelector('img')!
     mockImageSize(image, 100, 50)
     runImageUpdateImmediately()
@@ -14,13 +14,13 @@ describe('<MultiLineAnswer /> image opening', () => {
     updateLargeImageWarnings(answer)
 
     const link = answer.querySelector<HTMLAnchorElement>('.full-size-image a')
-    expect(answer.querySelector('.e-annotation-wrapper')?.classList.contains('e-large-image')).toBe(true)
+    expect(answer.querySelector('.e-image-wrapper')?.classList.contains('e-large-image')).toBe(true)
     expect(link?.href).toContain('/screenshot/answer.png')
     expect(link?.target).toBe('_blank')
   })
 
   it('does not add a full size image link for images rendered at natural size', () => {
-    const answer = createAnswer('<span class="e-annotation-wrapper"><img src="/screenshot/answer.png" /></span>')
+    const answer = createAnswer('<span class="e-image-wrapper"><img src="/screenshot/answer.png" /></span>')
     const image = answer.querySelector('img')!
     mockImageSize(image, 100, 100)
     runImageUpdateImmediately()
@@ -31,7 +31,7 @@ describe('<MultiLineAnswer /> image opening', () => {
   })
 
   it('opens grading full size image links in a new tab by default', () => {
-    const answer = createAnswer('<span class="e-annotation-wrapper"><img src="/screenshot/answer.png" /></span>')
+    const answer = createAnswer('<span class="e-image-wrapper"><img src="/screenshot/answer.png" /></span>')
     const image = answer.querySelector('img')!
     mockImageSize(image, 100, 50)
     runImageUpdateImmediately()

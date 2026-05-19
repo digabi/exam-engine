@@ -1,5 +1,5 @@
 import { Annotation, ImageAnnotation, LineAnnotation, RectAnnotation, TextAnnotation } from './types/Score'
-import { createElement } from './dom-utils'
+import { createElement, getWrapper } from './dom-utils'
 import classNames from 'classnames'
 
 const messageLengthThreshold = 5
@@ -42,24 +42,6 @@ export function updateImageAnnotationMarkSize(mark: HTMLElement, annotation: Lin
     style.right = pct(1 - annotation.x2)
     style.bottom = pct(1 - annotation.y2)
   }
-}
-
-function getWrapper(image: HTMLImageElement) {
-  const parent = image.parentElement!
-
-  if (parent instanceof HTMLSpanElement) {
-    return parent
-  }
-
-  const wrapper = createElement('span', { className: 'e-annotation-wrapper' })
-  parent.insertBefore(wrapper, image)
-  wrapper.appendChild(image)
-
-  return wrapper
-}
-
-export function wrapAllImages(answerElement: HTMLElement) {
-  answerElement.querySelectorAll('img').forEach(getWrapper)
 }
 
 export function renderImageAnnotation(
