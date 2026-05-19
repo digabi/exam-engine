@@ -2,12 +2,7 @@ import React, { FormEvent, useEffect, useLayoutEffect, useRef, useState } from '
 import { I18nextProvider } from 'react-i18next'
 import { Annotation, AudioAnswer, RichTextAnswer, TextAnnotation, TextAnswer } from '../..'
 import { changeLanguage, initI18n, useExamTranslation } from '../../i18n'
-import {
-  renderAnnotations,
-  renderImageAnnotationByImage,
-  updateImageAnnotationMarkSize,
-  wrapAllImages
-} from '../../renderAnnotations'
+import { renderAnnotations, renderImageAnnotationByImage, updateImageAnnotationMarkSize } from '../../renderAnnotations'
 import { useCached } from '../../useCached'
 import { AnswerCharacterCounter } from './AnswerCharacterCounter'
 import {
@@ -26,6 +21,7 @@ import {
 import GradingAnswerAnnotationList from './GradingAnswerAnnotationList'
 import { updateLargeImageWarnings } from './largeImageDetector'
 import AudioPlayer from '../shared/internal/AudioPlayer'
+import { wrapAllImages } from '../../dom-utils'
 type Annotations = { pregrading: Annotation[]; censoring: Annotation[] }
 
 type GradingRole = 'pregrading' | 'censoring'
@@ -333,7 +329,7 @@ function GradingAnswerWithTranslations({
     }
     window.addEventListener('mouseup', onWindowMouseUpAfterAnswerMouseDown)
     const target = e.target as Element
-    const img = target.closest('.e-annotation-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
+    const img = target.closest('.e-image-wrapper')?.querySelector<HTMLImageElement>('img') || undefined
     if (!img) {
       return
     }
