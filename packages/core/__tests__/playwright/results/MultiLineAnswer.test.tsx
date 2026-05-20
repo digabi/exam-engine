@@ -24,8 +24,8 @@ test.describe('<MultiLineAnswer /> image opening', () => {
 
   test('does not add a full size image link for images rendered at natural size', async ({ mount }) => {
     const component = await mount(<MultiLineAnswerStory imageWidth={400} />)
+    // we need to wait for the image to load, otherwise the assertion would be immediately true
     await waitForImageLoad(component.locator('img'))
-
     await expect(component.locator('.full-size-image')).toHaveCount(0)
   })
 
