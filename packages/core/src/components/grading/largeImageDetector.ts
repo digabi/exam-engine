@@ -17,10 +17,11 @@ export function updateLargeImageWarnings(answer: Element) {
   const images = answer?.querySelectorAll('img') || []
   remainingImages = images.length
   images.forEach(img => {
-    if (img.complete) {
-      setTimeout(() => updateImageStatus(img), 0)
+    const measure = () => requestAnimationFrame(() => requestAnimationFrame(() => updateImageStatus(img)))
+    if (img.complete && img.naturalWidth > 0) {
+      measure()
     } else {
-      img.addEventListener('load', () => updateImageStatus(img), { once: true })
+      img.addEventListener('load', measure, { once: true })
     }
   })
 }
