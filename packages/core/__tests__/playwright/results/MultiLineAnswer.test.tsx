@@ -16,11 +16,10 @@ const textAnnotationScore: Score = {
 test.describe('<MultiLineAnswer /> image opening', () => {
   test('adds a full size image link for downscaled images', async ({ mount }) => {
     const component = await mount(<MultiLineAnswerStory imageWidth={1600} />)
-    const src = await component.locator('img').getAttribute('src')
-    expect(src).not.toBeNull()
+    const src = await component.locator('img').evaluate((img: HTMLImageElement) => img.src)
 
     await expect(component.locator('.full-size-image a')).toHaveAttribute('target', '_blank')
-    await expect(component.locator('.full-size-image a')).toHaveAttribute('href', src!)
+    await expect(component.locator('.full-size-image a')).toHaveAttribute('href', src)
   })
 
   test('does not add a full size image link for images rendered at natural size', async ({ mount }) => {
