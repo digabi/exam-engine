@@ -22,7 +22,7 @@ export const MultiLineAnswer: React.FunctionComponent<{
       updateLargeImageWarnings(answerRef.current)
       renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], score?.censoring?.annotations ?? [])
     }
-  })
+  }, [value, score])
 
   return (
     <div
