@@ -14,6 +14,7 @@ export async function waitUntilImagesDone() {
 }
 
 export function updateLargeImageWarnings(answer: Element) {
+  answer?.querySelectorAll('.full-size-image').forEach(el => el.remove())
   const images = answer?.querySelectorAll('img') || []
   remainingImages = images.length
   images.forEach(img => {
@@ -34,12 +35,13 @@ function updateImageStatus(img: HTMLImageElement) {
   const isLargeImage = img.naturalWidth > img.width + 1 // allow for rounding errors
   wrapper?.classList.toggle('e-large-image', isLargeImage)
 
-  if (isLargeImage && !hasFullSizeLink) {
+  if (hasFullSizeLink) {
+    nextSibling.remove()
+  }
+  if (isLargeImage) {
     wrapper?.insertAdjacentHTML(
       'afterend',
       `<div class="full-size-image"><a target="_blank" href="${img.src}"></a></div>`
     )
-  } else if (hasFullSizeLink) {
-    nextSibling.remove()
   }
 }
