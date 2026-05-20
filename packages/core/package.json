@@ -35,7 +35,7 @@
     "date-fns": "^4.0.0",
     "downshift": "^9.0.0",
     "fontfaceobserver": "^2.1.0",
-    "i18next": "^26.0.10",
+    "i18next": "^26.1.0",
     "jquery": "^4.0.0",
     "less": "^4.1.0",
     "less-loader": "^12.2.0",
