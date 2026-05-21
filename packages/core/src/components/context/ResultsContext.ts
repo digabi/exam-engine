@@ -9,16 +9,17 @@ export interface ResultsContext {
   answersByQuestionId: Record<QuestionId, ExamAnswer>
   gradingStructure: GradingStructure
   scores: Score[]
-  gradingText: string | undefined
+  gradingText?: string
   totalScore: number
   singleGrading?: boolean
+  showAnnotationsAndZoomImages?: boolean
 }
 
 export const ResultsContext = React.createContext<ResultsContext>({} as ResultsContext)
 
 export const withResultsContext = withContext<ResultsContext, ResultsProps>(
   ResultsContext,
-  ({ scores, doc, gradingStructure, gradingText, answers, singleGrading }) => {
+  ({ scores, doc, gradingStructure, gradingText, answers, singleGrading, showAnnotationsAndZoomImages }) => {
     const answersByQuestionId = _.keyBy(answers, 'questionId')
     const topLevelQuestions = queryAll(doc.documentElement, 'question', false)
     const totalScore = calculateQuestionsTotalSumScore(topLevelQuestions, gradingStructure, scores, answersByQuestionId)
@@ -29,7 +30,8 @@ export const withResultsContext = withContext<ResultsContext, ResultsProps>(
       scores,
       totalScore,
       gradingText,
-      singleGrading
+      singleGrading,
+      showAnnotationsAndZoomImages
     }
   }
 )
