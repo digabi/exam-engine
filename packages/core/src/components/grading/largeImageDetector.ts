@@ -12,31 +12,36 @@ export async function waitUntilImagesDone() {
   }
   throw Error('Images not loaded')
 }
+
 export function updateLargeImageWarnings(answer: Element) {
+  answer?.querySelectorAll('.full-size-image').forEach(el => el.remove())
   const images = answer?.querySelectorAll('img') || []
   remainingImages = images.length
   images.forEach(img => {
-    if (img.complete) {
-      setTimeout(() => updateImageStatus(img), 0)
+    const measure = () => requestAnimationFrame(() => requestAnimationFrame(() => updateImageStatus(img)))
+    if (img.complete && img.naturalWidth > 0) {
+      measure()
     } else {
-      img.addEventListener('load', () => updateImageStatus(img))
+      img.addEventListener('load', measure, { once: true })
     }
   })
 }
+
 function updateImageStatus(img: HTMLImageElement) {
   remainingImages--
   const wrapper = img.parentElement
   const nextSibling = wrapper?.nextSibling
   const hasFullSizeLink = nextSibling instanceof HTMLElement && nextSibling.classList.contains('full-size-image')
-  const isLargeImage = img.naturalWidth > img.width
+  const isLargeImage = img.naturalWidth > img.width + 1 // allow for rounding errors
   wrapper?.classList.toggle('e-large-image', isLargeImage)
+
+  if (hasFullSizeLink) {
+    nextSibling.remove()
+  }
   if (isLargeImage) {
-    if (!hasFullSizeLink) {
-      wrapper?.insertAdjacentHTML('afterend', `<div class="full-size-image"><a target="_blank" href="${img.src}"></a>`)
-    }
-  } else {
-    if (hasFullSizeLink) {
-      nextSibling?.remove()
-    }
+    wrapper?.insertAdjacentHTML(
+      'afterend',
+      `<div class="full-size-image"><a target="_blank" href="${img.src}"></a></div>`
+    )
   }
 }

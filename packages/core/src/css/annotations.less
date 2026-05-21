@@ -1,6 +1,6 @@
 @import '../css/colors.less';
 
-.e-annotation-wrapper {
+.e-image-wrapper {
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -8,7 +8,7 @@
 
 .annotation-styles(@annotation-color, @alpha) {
   background-color: rgba(@annotation-color, @alpha);
-  .e-annotation-wrapper {
+  .e-image-wrapper {
     background: @grey-010;
     &:before {
       background: rgba(@annotation-color, @alpha);

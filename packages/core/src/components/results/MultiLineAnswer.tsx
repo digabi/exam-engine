@@ -1,9 +1,12 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useContext, useLayoutEffect, useRef } from 'react'
 import { Score } from '../..'
 import { useExamTranslation } from '../../i18n'
 import { renderAnnotations } from '../../renderAnnotations'
 import { ScreenReaderOnly } from '../ScreenReaderOnly'
 import classNames from 'classnames'
+import { updateLargeImageWarnings } from '../grading/largeImageDetector'
+import { wrapAllImages } from '../../dom-utils'
+import { ResultsContext } from '../context/ResultsContext'
 
 export const MultiLineAnswer: React.FunctionComponent<{
   type: 'rich-text'
@@ -11,13 +14,19 @@ export const MultiLineAnswer: React.FunctionComponent<{
   score?: Score
 }> = ({ type, score, value }) => {
   const { t, i18n } = useExamTranslation()
+  const { showAnnotationsAndZoomImages = true } = useContext(ResultsContext)
   const answerRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     if (answerRef.current) {
-      renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], score?.censoring?.annotations ?? [])
+      answerRef.current.innerHTML = value || ''
+      if (showAnnotationsAndZoomImages) {
+        wrapAllImages(answerRef.current)
+        updateLargeImageWarnings(answerRef.current)
+        renderAnnotations(answerRef.current, score?.pregrading?.annotations ?? [], score?.censoring?.annotations ?? [])
+      }
     }
-  })
+  }, [value, score, showAnnotationsAndZoomImages])
 
   return (
     <div

@@ -50,6 +50,7 @@ export interface ResultsProps extends CommonExamProps {
   endSession: () => Promise<void>
   studentSessionEnded?: boolean
   isPreviewPage?: boolean
+  showAnnotationsAndZoomImages?: boolean
 }
 
 const _renderChildNodes = createRenderChildNodes({
