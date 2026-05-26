@@ -24,6 +24,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@digabi/mathquill": "^0.10.12",
     "@digabi/noto-sans": "^3.0.0",
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
