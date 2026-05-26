@@ -196,7 +196,7 @@ describe('testTextAnswers.ts — Text answer interactions', () => {
     page.type(`.text-answer[data-question-id="${questionId}"]`, text)
 
   async function clearInput(questionId = DEFAULT_QUESTION_ID) {
-    await page.click(`.text-answer[data-question-id="${questionId}"]`, { clickCount: 3 })
+    await page.click(`.text-answer[data-question-id="${questionId}"]`, { count: 3 })
     await page.keyboard.press('Backspace')
   }
 
