@@ -55,7 +55,7 @@
     "redux-saga": "^1.5.0",
     "redux-saga-test-plan": "^4.0.6",
     "rich-text-editor": "^8.11.2",
-    "sanitize-html": "^2.17.4",
+    "sanitize-html": "^2.17.5",
     "typesafe-actions": "^5.1.0",
     "utility-types": "^3.10.0",
     "vite": "^8.0.16",
