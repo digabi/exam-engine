@@ -9,6 +9,15 @@ import { glob } from 'glob'
 
 const pipeline = promisify(stream.pipeline)
 
+/**
+ * Name of the top-level, unencrypted but signed manifest that declares the
+ * minimum KTP server version the package requires. It is intentionally left
+ * unencrypted so the server can read & signature-verify it before the decrypt
+ * passphrase is entered (signature verification is asymmetric and needs no
+ * passphrase). The matching detached signature is `${MIN_SERVER_VERSION_FILENAME}.sig`.
+ */
+export const MIN_SERVER_VERSION_FILENAME = 'min-server-version.json'
+
 export interface ExamFile {
   /** A relative filename (e.g. "foo.mp3"). This should be the same filename than in the exam XML. */
   filename: string
@@ -31,7 +40,8 @@ export async function createMex(
   outputStream: Writable,
   json?: Buffer | null,
   ktpUpdate?: Readable,
-  koeUpdate?: Readable
+  koeUpdate?: Readable,
+  minServerVersion?: string
 ): Promise<void> {
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(`${bundleDir}/{main-bundle.js,main.css,assets/*}`, {
@@ -41,6 +51,10 @@ export async function createMex(
 
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
+
+  if (minServerVersion) {
+    addSignedManifest(zipFile, answersPrivateKey, minServerVersion)
+  }
 
   encryptAndSign(
     zipFile,
@@ -100,10 +114,15 @@ export async function createMultiMex(
   outputStream: Writable,
   loadSimulationConfiguration?: Readable,
   ktpUpdate?: Readable,
-  koeUpdate?: Readable
+  koeUpdate?: Readable,
+  minServerVersion?: string
 ): Promise<void> {
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
+
+  if (minServerVersion) {
+    addSignedManifest(zipFile, answersPrivateKey, minServerVersion)
+  }
 
   for (const exam of exams) {
     zipFile.addReadStream(exam.contents, exam.filename)
@@ -166,6 +185,20 @@ function encryptAndSign(
 function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, input: Readable): void {
   const signer = signWithSHA256AndRSA(input, answersPrivateKey)
   zipFile.addReadStream(signer, `${filename}.sig`)
+}
+
+/**
+ * Adds the minimum-server-version manifest as a top-level, unencrypted but signed
+ * file (`min-server-version.json` + `min-server-version.json.sig`). Unlike everything
+ * else in the package it is deliberately not encrypted, so the server can read and
+ * verify it before the decrypt passphrase is entered. The signature is over the exact
+ * plaintext bytes written into the zip.
+ */
+function addSignedManifest(zipFile: ZipFile, answersPrivateKey: string, minServerVersion: string): void {
+  const manifest = Buffer.from(JSON.stringify({ minServerVersion }))
+  const input = cloneable(toStream(manifest))
+  zipFile.addReadStream(input.clone(), MIN_SERVER_VERSION_FILENAME)
+  sign(zipFile, MIN_SERVER_VERSION_FILENAME, answersPrivateKey, input)
 }
 
 function toStream(buffer: Buffer): Readable {
