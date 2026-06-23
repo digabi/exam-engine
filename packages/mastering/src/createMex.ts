@@ -11,10 +11,7 @@ const pipeline = promisify(stream.pipeline)
 
 /**
  * Name of the top-level, unencrypted but signed manifest that declares the
- * minimum KTP server version the package requires. It is intentionally left
- * unencrypted so the server can read & signature-verify it before the decrypt
- * passphrase is entered (signature verification is asymmetric and needs no
- * passphrase). The matching detached signature is `${MIN_SERVER_VERSION_FILENAME}.sig`.
+ * minimum KTP server version the package requires.
  */
 export const MIN_SERVER_VERSION_FILENAME = 'min-server-version.json'
 
@@ -189,10 +186,7 @@ function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, inp
 
 /**
  * Adds the minimum-server-version manifest as a top-level, unencrypted but signed
- * file (`min-server-version.json` + `min-server-version.json.sig`). Unlike everything
- * else in the package it is deliberately not encrypted, so the server can read and
- * verify it before the decrypt passphrase is entered. The signature is over the exact
- * plaintext bytes written into the zip.
+ * file (`min-server-version.json` + `min-server-version.json.sig`).
  */
 function addSignedManifest(zipFile: ZipFile, answersPrivateKey: string, minServerVersion: string): void {
   const manifest = Buffer.from(JSON.stringify({ minServerVersion }))
