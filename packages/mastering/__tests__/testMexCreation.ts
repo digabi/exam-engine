@@ -2,7 +2,13 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import yauzl from 'yauzl-promise'
 import { Readable, PassThrough } from 'stream'
-import { createMex, AttachmentFile, createMultiMex, ExamFile } from '../dist/createMex'
+import {
+  createMex,
+  AttachmentFile,
+  createMultiMex,
+  ExamFile,
+  REQUIRED_SERVER_VERSION_FILENAME
+} from '../dist/createMex'
 import { verifyWithSHA256AndRSA } from '../src/crypto-utils'
 
 interface YauzlEntryV4 extends yauzl.Entry {
@@ -104,6 +110,47 @@ describe('Mex exam package creation', () => {
     it('creates a mex with koe-update.zip', async () => {
       const koeUpdate = Readable.from(['mock koe-update.zip'])
       await expectCorrectMexIsCreated(koeUpdate)
+    })
+
+    it('does not add a required-server-version manifest when no required version is given', async () => {
+      const mexEntries = await expectCorrectMexIsCreated()
+      expect(mexEntries.find(e => e.filename === REQUIRED_SERVER_VERSION_FILENAME)).toBeUndefined()
+    })
+
+    it('adds an unencrypted, signed required-server-version manifest when a required version is given', async () => {
+      const requiredServerVersion = '1.54.4'
+      const { mexStream, mexBuffers } = getMexStreamAndBuffers()
+      await createMex(
+        xml,
+        attachments,
+        nsaScripts,
+        null,
+        passphrase,
+        privateKey,
+        mexStream,
+        undefined,
+        ktpUpdate,
+        undefined,
+        requiredServerVersion
+      )
+      const mexEntries = await expectZipEntriesAreCorrect(mexBuffers, e => ({
+        fileName: e.filename,
+        uncompressedSize: e.filename === 'rendering.zip.bin' ? 0 : e.uncompressedSize
+      }))
+
+      const manifest = await toBuffer(
+        await mexEntries.find(e => e.filename === REQUIRED_SERVER_VERSION_FILENAME)!.openReadStream()
+      )
+      const manifestSignature = (
+        await toBuffer(
+          await mexEntries.find(e => e.filename === `${REQUIRED_SERVER_VERSION_FILENAME}.sig`)!.openReadStream()
+        )
+      ).toString('utf8')
+
+      // The manifest is plaintext JSON (not encrypted) so the server can read it before decryption.
+      expect(JSON.parse(manifest.toString('utf8'))).toEqual({ requiredServerVersion })
+      // The signature is over the plaintext bytes and verifies with the public key (no passphrase needed).
+      expect(verifyWithSHA256AndRSA(manifest, publicKey, manifestSignature)).toBeTruthy()
     })
   })
 

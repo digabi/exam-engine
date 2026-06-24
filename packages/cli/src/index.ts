@@ -101,6 +101,11 @@ void yargsInstance
           description: 'koe-update.zip',
           coerce: maybe(resolveFile)
         })
+        .option('required-server-version', {
+          description:
+            'KTP server version required to run this exam (e.g. 1.54.x). Written to a signed, unencrypted required-server-version.json manifest in the package.',
+          type: 'string'
+        })
         .demandOption(['private-key', 'passphrase', 'nsa-scripts'])
     },
     runCommand('./commands/create-mex')
