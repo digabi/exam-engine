@@ -11,9 +11,9 @@ const pipeline = promisify(stream.pipeline)
 
 /**
  * Name of the top-level, unencrypted but signed manifest that declares the
- * minimum KTP server version the package requires.
+ * KTP server version the package requires.
  */
-export const MIN_SERVER_VERSION_FILENAME = 'min-server-version.json'
+export const REQUIRED_SERVER_VERSION_FILENAME = 'required-server-version.json'
 
 export interface ExamFile {
   /** A relative filename (e.g. "foo.mp3"). This should be the same filename than in the exam XML. */
@@ -38,7 +38,7 @@ export async function createMex(
   json?: Buffer | null,
   ktpUpdate?: Readable,
   koeUpdate?: Readable,
-  minServerVersion?: string
+  requiredServerVersion?: string
 ): Promise<void> {
   const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
   const renderingFiles = await glob(`${bundleDir}/{main-bundle.js,main.css,assets/*}`, {
@@ -49,8 +49,8 @@ export async function createMex(
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
 
-  if (minServerVersion) {
-    addSignedManifest(zipFile, answersPrivateKey, minServerVersion)
+  if (requiredServerVersion) {
+    addSignedManifest(zipFile, answersPrivateKey, requiredServerVersion)
   }
 
   encryptAndSign(
@@ -112,13 +112,13 @@ export async function createMultiMex(
   loadSimulationConfiguration?: Readable,
   ktpUpdate?: Readable,
   koeUpdate?: Readable,
-  minServerVersion?: string
+  requiredServerVersion?: string
 ): Promise<void> {
   const zipFile = new yazl.ZipFile()
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
 
-  if (minServerVersion) {
-    addSignedManifest(zipFile, answersPrivateKey, minServerVersion)
+  if (requiredServerVersion) {
+    addSignedManifest(zipFile, answersPrivateKey, requiredServerVersion)
   }
 
   for (const exam of exams) {
@@ -185,14 +185,14 @@ function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, inp
 }
 
 /**
- * Adds the minimum-server-version manifest as a top-level, unencrypted but signed
- * file (`min-server-version.json` + `min-server-version.json.sig`).
+ * Adds the required-server-version manifest as a top-level, unencrypted but signed
+ * file (`required-server-version.json` + `required-server-version.json.sig`).
  */
-function addSignedManifest(zipFile: ZipFile, answersPrivateKey: string, minServerVersion: string): void {
-  const manifest = Buffer.from(JSON.stringify({ minServerVersion }))
+function addSignedManifest(zipFile: ZipFile, answersPrivateKey: string, requiredServerVersion: string): void {
+  const manifest = Buffer.from(JSON.stringify({ requiredServerVersion }))
   const input = cloneable(toStream(manifest))
-  zipFile.addReadStream(input.clone(), MIN_SERVER_VERSION_FILENAME)
-  sign(zipFile, MIN_SERVER_VERSION_FILENAME, answersPrivateKey, input)
+  zipFile.addReadStream(input.clone(), REQUIRED_SERVER_VERSION_FILENAME)
+  sign(zipFile, REQUIRED_SERVER_VERSION_FILENAME, answersPrivateKey, input)
 }
 
 function toStream(buffer: Buffer): Readable {

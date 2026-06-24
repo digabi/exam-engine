@@ -101,9 +101,9 @@ void yargsInstance
           description: 'koe-update.zip',
           coerce: maybe(resolveFile)
         })
-        .option('min-server-version', {
+        .option('required-server-version', {
           description:
-            'Minimum KTP server version required to run this exam (e.g. 1.54.4). Written to a signed, unencrypted min-server-version.json manifest in the package.',
+            'KTP server version required to run this exam (e.g. 1.54.x). Written to a signed, unencrypted required-server-version.json manifest in the package.',
           type: 'string'
         })
         .demandOption(['private-key', 'passphrase', 'nsa-scripts'])

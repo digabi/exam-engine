@@ -13,7 +13,7 @@ export default async function createMexExam({
   privateKey,
   ktpUpdate,
   koeUpdate,
-  minServerVersion
+  requiredServerVersion
 }: {
   exam: string
   outdir?: string
@@ -23,7 +23,7 @@ export default async function createMexExam({
   privateKey: string
   ktpUpdate?: string
   koeUpdate?: string
-  minServerVersion?: string
+  requiredServerVersion?: string
 }): Promise<void> {
   const attachmentsDir = path.resolve(path.dirname(exam), 'attachments')
   const resolveAttachment = (attachment: string) => path.resolve(attachmentsDir, attachment)
@@ -51,7 +51,7 @@ export default async function createMexExam({
       null,
       ktpUpdate ? createReadStream(ktpUpdate) : undefined,
       koeUpdate ? createReadStream(koeUpdate) : undefined,
-      minServerVersion
+      requiredServerVersion
     )
   }
 }
