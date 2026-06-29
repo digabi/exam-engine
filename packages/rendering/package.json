@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-rendering",
-  "version": "23.25.0",
+  "version": "23.26.0-alpha.0",
   "main": "./dist/index.js",
   "repository": "https://github.com/digabi/exam-engine",
   "license": "EUPL-1.1",
@@ -30,7 +30,7 @@
     "postcss-loader": "^8.1.0",
     "postcss-preset-env": "^10.0.0",
     "promisify-child-process": "^5.0.0",
-    "puppeteer": "^25.0.2",
+    "puppeteer": "^25.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router5": "^8.0.1",
