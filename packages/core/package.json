@@ -44,7 +44,7 @@
     "mini-css-extract-plugin": "^2.10.2",
     "postcss": "^8.5.15",
     "postcss-loader": "^8.1.0",
-    "postcss-preset-env": "^10.0.0",
+    "postcss-preset-env": "^11.3.2",
     "react": "^18.2.0",
     "react-css-transition-replace": "^5.0.1",
     "react-dom": "^18.2.0",
