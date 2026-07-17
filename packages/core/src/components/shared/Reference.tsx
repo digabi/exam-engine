@@ -23,10 +23,7 @@ function Reference({ element, renderChildNodes, renderComponentOverrides }: Exam
   function renderWithPrefix(
     localName: string,
     translationKey:
-      | 'references.date'
-      | 'references.reference-date'
-      | 'references.translator'
-      | 'references.modified-by',
+      'references.date' | 'references.reference-date' | 'references.translator' | 'references.modified-by',
     Component: React.ComponentType<ExamComponentProps>
   ) {
     const childElement = findChildElement(element, localName)

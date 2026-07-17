@@ -8,4 +8,4 @@ export type GradingInstructionProps = GradingInstructionPropsBase & {
   EditorComponent?: React.ComponentType<{ element: Element; displayNumber: string }>
 }
 
-export const GradingInstructionContext = React.createContext({} as GradingInstructionProps)
+export const GradingInstructionContext = React.createContext<GradingInstructionProps>({})
