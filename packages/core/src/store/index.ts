@@ -55,6 +55,7 @@ export function initializeExamStore(
       serverQuestionIds: initialQuestionIds,
       supportsAnswerHistory: typeof examServerApi.selectAnswerVersion === 'function',
       savedQuestionIds: initialQuestionIds,
+      answerTooLongFailures: new Set(),
       examStructure,
       validationErrors: validateAnswers(examStructure, answersById)
     },

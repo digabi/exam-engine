@@ -1,6 +1,9 @@
 import { AnswerHistoryEntry, ExamAnswer, QuestionId } from './ExamAnswer'
 
 export type SaveState = 'initial' | 'saving' | 'saved'
+
+export type SaveAnswerError = 'answer-too-long'
+
 /**
  * CAS status is a state machine with three states.
  *

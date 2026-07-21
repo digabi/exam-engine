@@ -211,7 +211,9 @@ export const fi_FI = {
     'screenshot-byte-limit-reached':
       'Kokeesi kuvakaappauksille varattu tila on täyttynyt. (Voit viitata aineistokuviin suoraan ilman kuvakaappausta.)',
     'screenshot-upload-failed': 'Kuvan liittäminen ei onnistunut. Kokeile uudestaan.',
-    'answer-too-long': 'Vastaus on liian pitkä.'
+    'answer-too-long': 'Vastaus on liian pitkä.',
+    'answer-too-long-not-saved': 'Vastaus on liian pitkä eikä sitä voitu tallentaa. Muokkaa vastaustasi lyhyemmäksi.',
+    'save-failed-too-long': 'Tallentaminen ei onnistunut. Liian pitkä vastaus tehtävässä {{displayNumber}}.'
   },
   'screen-reader': {
     'answer-begin': '[Vastaus alkaa]',

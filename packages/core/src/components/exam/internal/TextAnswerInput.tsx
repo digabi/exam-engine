@@ -15,6 +15,7 @@ import AnswerLengthInfo from '../../shared/AnswerLengthInfo'
 import { CommonExamContext } from '../../context/CommonExamContext'
 import { answerBlurred, answerFocused, saveAnswer, selectAnswerVersion } from '../../../store/answers/actions'
 import { AnswersState } from '../../../store/answers/reducer'
+import { getAnswerTooLongFailure } from '../../../store/selectors'
 
 const borderWidthPx = 2
 
@@ -48,6 +49,8 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
       (error): error is AnswerTooLong => error.type === 'AnswerTooLong' && error.displayNumber === displayNumber
     )
   )
+
+  const tooLongSaveFailure = useSelector(getAnswerTooLongFailure(questionId))
 
   const dispatch = useDispatch()
   const ref = useRef<HTMLInputElement & HTMLTextAreaElement>(null)
@@ -170,7 +173,8 @@ const TextAnswerInput: React.FunctionComponent<ExamComponentProps> = ({ element,
                 showAnswerHistory,
                 supportsAnswerHistory,
                 screenshotError,
-                validationError
+                validationError,
+                tooLongSaveFailure
               }}
             />
           </div>

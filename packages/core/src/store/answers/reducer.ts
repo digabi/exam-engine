@@ -22,6 +22,11 @@ export interface AnswersState {
    */
   serverQuestionIds: Set<QuestionId>
   /**
+   * The set of questions whose most recent save attempt was rejected by the
+   * server because the answer was too long.
+   */
+  answerTooLongFailures: Set<QuestionId>
+  /**
    * Whether or not the Exam API has implemented the optional answer history
    * feature. For now, only the real ktp has implemented it. it.
    */
@@ -48,6 +53,7 @@ const initialState: AnswersState = {
   supportsAnswerHistory: false,
   serverQuestionIds: new Set(),
   savedQuestionIds: new Set(),
+  answerTooLongFailures: new Set(),
   validationErrors: []
 }
 
@@ -56,10 +62,16 @@ export default function answersReducer(state: AnswersState = initialState, actio
     case 'SAVE_ANSWER': {
       const { questionId } = action.payload
       const synchronizedQuestionIds = setDelete(state.savedQuestionIds, questionId)
+      const answerTooLongFailures = setDelete(state.answerTooLongFailures, questionId)
       const answersById = { ...state.answersById, [questionId]: action.payload }
-      return { ...state, savedQuestionIds: synchronizedQuestionIds, answersById }
+      return { ...state, savedQuestionIds: synchronizedQuestionIds, answerTooLongFailures, answersById }
     }
     case 'SAVE_ANSWER_FAILED': {
+      const { answer, error } = action.payload
+      if (error instanceof Error && error.message === 'answer-too-long') {
+        const answerTooLongFailures = setAdd(state.answerTooLongFailures, answer.questionId)
+        return { ...state, answerTooLongFailures }
+      }
       return state
     }
     case 'SAVE_ANSWER_SUCCEEDED': {
