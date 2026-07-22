@@ -23,9 +23,7 @@ jobs:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - run: npm install-scripts ls
-
-      - run: npm rebuild full-icu libxmljs2
+      - run: npm rebuild full-icu
 
       - name: Run Jest Tests
         run: npm run test-jest -- --ci
@@ -46,8 +44,6 @@ jobs:
 
       - name: Install Specific Playwright Browsers (Chromium and Firefox)
         run: npx playwright install chromium firefox
-
-      - run: npm rebuild full-icu libxmljs2
 
       - name: Run Playwright Component Tests
         run: CI=true npm run test-ct
