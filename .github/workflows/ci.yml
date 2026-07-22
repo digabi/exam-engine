@@ -24,7 +24,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - run: npm rebuild full-icu
-
+    
       - name: Run Jest Tests
         run: npm run test-jest -- --ci
 

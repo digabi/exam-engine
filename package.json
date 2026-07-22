@@ -81,6 +81,7 @@
   "allowScripts": {
     "libxmljs2@0.37.0": true,
     "@ffprobe-installer/linux-x64@5.2.0": true,
-    "full-icu@1.6.0": true
+    "full-icu@1.6.0": true,
+    "puppeteer@25.2.1": true
   }
 }
