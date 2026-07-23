@@ -1,5 +1,4 @@
 import { TOptions } from 'i18next'
-import * as _ from 'lodash-es'
 import React from 'react'
 import { RichTextAnswer as RichTextAnswerT } from '../../types/ExamAnswer'
 import { CommonExamContext } from '../context/CommonExamContext'
@@ -14,7 +13,7 @@ export interface ScreenshotError {
   options?: TOptions
 }
 
-type ErrorResponse = { response: { status: number } } & Error
+type ErrorResponse = { statusCode?: number; status?: number } & Error
 
 interface Props {
   answer?: RichTextAnswerT
@@ -42,7 +41,7 @@ export default class RichTextAnswer extends React.PureComponent<Props> {
 
   handleSaveError = (err: ErrorResponse): void => {
     const key = (() => {
-      switch (_.get(err, 'response.status')) {
+      switch (err.statusCode ?? err.status) {
         case 409:
           return 'screenshot-byte-limit-reached'
         case 413:

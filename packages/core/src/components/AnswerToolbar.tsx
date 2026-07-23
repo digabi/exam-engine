@@ -11,6 +11,7 @@ interface AnswerToolbarProps {
   answer?: TextAnswer | RichTextAnswer
   screenshotError?: ScreenshotError
   validationError?: AnswerTooLong
+  tooLongSaveFailure?: boolean
   element: Element
   selectAnswerVersion?: typeof actions.selectAnswerVersion
   showAnswerHistory?: boolean
@@ -22,6 +23,7 @@ function AnswerToolbar({
   element,
   screenshotError,
   validationError,
+  tooLongSaveFailure,
   selectAnswerVersion,
   showAnswerHistory = false,
   supportsAnswerHistory = false
@@ -45,10 +47,15 @@ function AnswerToolbar({
             {' '}
             {t(`answer-errors.${screenshotError.key}` as const, screenshotError.options)}
           </span>
-        ) : validationError ? (
+        ) : validationError && !tooLongSaveFailure ? (
           // We don't use an alert role here because ErrorIndicator already displays the same error message wrapped in an alert role
           <span> {t(`answer-errors.answer-too-long`, { count: validationError.characterCount })}</span>
         ) : null}
+        {tooLongSaveFailure && (
+          <div className="answer-toolbar__save-failed e-color-error" role="alert">
+            {t('answer-errors.answer-too-long-not-saved')}
+          </div>
+        )}
       </div>
       <div className="answer-toolbar__history e-column e-column--narrow e-text-right">
         {supportsAnswerHistory && (

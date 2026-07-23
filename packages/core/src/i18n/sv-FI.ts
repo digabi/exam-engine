@@ -204,7 +204,9 @@ export const sv_FI: Translations = {
     'screenshot-byte-limit-reached':
       'Minnesutrymmet för skärmdumpar är fullt. (Du kan referera till bilder i materialet direkt utan skärmdumpar.)',
     'screenshot-upload-failed': 'Bifogandet av skärmdumpen misslyckades. Försök på nytt.',
-    'answer-too-long': 'Svaret är för långt.'
+    'answer-too-long': 'Svaret är för långt.',
+    'answer-too-long-not-saved': 'Svaret är för långt och kunde inte sparas. Gör ditt svar kortare.',
+    'save-failed-too-long': 'Sparandet misslyckades. För långt svar i uppgift {{displayNumber}}.'
   },
   'screen-reader': {
     'answer-begin': '[Svaret börjar]',

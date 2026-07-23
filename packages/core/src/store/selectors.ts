@@ -60,3 +60,14 @@ function containsAnswerNotYetSavedInServer(
   }
   return false
 }
+
+export const getAnswerTooLongFailure =
+  (questionId: QuestionId) =>
+  (state: AppState): boolean =>
+    state.answers.answerTooLongFailures.has(questionId)
+
+export const getAnyAnswerTooLongFailure = (state: AppState): string | undefined => {
+  const { answerTooLongFailures, answersById } = state.answers
+  const [questionId] = answerTooLongFailures
+  return answersById[questionId]?.displayNumber
+}

@@ -3,13 +3,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { SaveState } from '../../../index'
 import { useExamTranslation } from '../../../i18n'
-import { getSaveState } from '../../../store/selectors'
+import { getAnyAnswerTooLongFailure, getSaveState } from '../../../store/selectors'
 
 function SaveIndicator() {
   const state: SaveState = useSelector(getSaveState)
+  const tooLongFailureDisplayNumber = useSelector(getAnyAnswerTooLongFailure)
   const { t } = useExamTranslation()
 
-  if (state === 'initial') {
+  if (state === 'initial' || tooLongFailureDisplayNumber) {
     return null
   }
 

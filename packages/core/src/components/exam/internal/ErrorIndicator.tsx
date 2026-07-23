@@ -31,11 +31,22 @@ const AnswerTooLongError: React.FunctionComponent<AnswerTooLong> = ({ displayNum
     </div>
   )
 }
+
+interface SaveFailedTooLong {
+  type: 'SaveFailedTooLong'
+  displayNumber: string
+}
+
+const SaveFailedTooLongError: React.FunctionComponent<SaveFailedTooLong> = ({ displayNumber }) => {
+  const { t } = useExamTranslation()
+  return <div>{t('answer-errors.save-failed-too-long', { displayNumber })}</div>
+}
+
 export function ErrorIndicatorForErrors({
   validationErrors,
   inExam
 }: {
-  validationErrors: ValidationError[]
+  validationErrors: (ValidationError | SaveFailedTooLong)[]
   inExam: boolean
 }) {
   return validationErrors.length > 0 ? (
@@ -57,6 +68,8 @@ export function ErrorIndicatorForErrors({
         {validationErrors.map(validationError => {
           const key = validationError.type + validationError.displayNumber
           switch (validationError.type) {
+            case 'SaveFailedTooLong':
+              return <SaveFailedTooLongError {...{ ...validationError, key }} />
             case 'ExtraAnswer':
               return <ExtraAnswerError {...{ ...validationError, key }} />
             default:
@@ -67,8 +80,23 @@ export function ErrorIndicatorForErrors({
     </dialog>
   ) : null
 }
+
+const mergeErrors = (state: AnswersState): (ValidationError | SaveFailedTooLong)[] => {
+  const saveFailedErrors = [...state.answerTooLongFailures].flatMap(questionId => {
+    const displayNumber = state.answersById[questionId]?.displayNumber
+    return displayNumber != null ? [{ type: 'SaveFailedTooLong' as const, displayNumber }] : []
+  })
+
+  // Prioritize save failed errors; filter out validation errors if there's a save failed error for the same question.
+  const otherErrors = state.validationErrors.filter(
+    error => !saveFailedErrors.some(saveFailedError => saveFailedError.displayNumber === error.displayNumber)
+  )
+
+  return [...otherErrors, ...saveFailedErrors]
+}
+
 const ErrorIndicator: React.FunctionComponent = () => {
-  const validationErrors = useSelector((state: { answers: AnswersState }) => state.answers.validationErrors)
+  const validationErrors = useSelector((state: { answers: AnswersState }) => mergeErrors(state.answers))
   return <ErrorIndicatorForErrors validationErrors={validationErrors} inExam={true} />
 }
 
