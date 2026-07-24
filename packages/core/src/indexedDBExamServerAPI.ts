@@ -47,13 +47,13 @@ export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: 
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = async () => {
-          const dataUrl = String(reader.result as string)
+          const dataUrl = reader.result as string
           await db.audio.put({ blob: combinedAudio, dataUrl, audioId })
           resolve(dataUrl)
         }
         reader.onerror = () => {
           reader.abort()
-          reject(reader.error as DOMException)
+          reject(reader.error!)
         }
         reader.readAsDataURL(combinedAudio)
       })
@@ -91,11 +91,11 @@ export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: 
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = () => {
-          resolve(String(reader.result as string))
+          resolve(reader.result as string)
         }
         reader.onerror = () => {
           reader.abort()
-          reject(reader.error as DOMException)
+          reject(reader.error!)
         }
         reader.readAsDataURL(file)
       })
