@@ -4,9 +4,7 @@ import * as actions from './actions'
 type CasAction = ActionType<typeof actions>
 
 export type CasState =
-  | { casStatus: 'forbidden' }
-  | { casStatus: 'allowing'; durationRemaining: number }
-  | { casStatus: 'allowed' }
+  { casStatus: 'forbidden' } | { casStatus: 'allowing'; durationRemaining: number } | { casStatus: 'allowed' }
 
 const initialState: CasState = {
   casStatus: 'forbidden'

@@ -35,7 +35,7 @@ function randomizeOptions(elem: Element) {
 function trimWhitespace(element: Element) {
   const nonWhitespaceNode = (node: Text) => /\S/.test(node.textContent)
   const getTextNodes = () => {
-    const result = []
+    const result: Text[] = []
     const treeWalker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT)
     while (treeWalker.nextNode()) {
       result.push(treeWalker.currentNode as Text)

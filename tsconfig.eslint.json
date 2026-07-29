@@ -4,7 +4,5 @@
     "allowJs": true
   },
   "extends": "./tsconfig.json",
-  "include": [
-    "./packages/core/playwright-ct.config.ts"
-  ]
+  "include": ["./packages/core/playwright-ct.config.ts"]
 }

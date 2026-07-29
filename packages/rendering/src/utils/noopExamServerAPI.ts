@@ -26,11 +26,11 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = () => {
-          resolve(String(reader.result as string))
+          resolve(reader.result as string)
         }
         reader.onerror = () => {
           reader.abort()
-          reject(reader.error as DOMException)
+          reject(reader.error!)
         }
         reader.readAsDataURL(audio)
       })
@@ -42,11 +42,11 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
       return new Promise((resolve, reject) => {
         const reader = new FileReader()
         reader.onload = () => {
-          resolve(String(reader.result as string))
+          resolve(reader.result as string)
         }
         reader.onerror = () => {
           reader.abort()
-          reject(reader.error as DOMException)
+          reject(reader.error!)
         }
         reader.readAsDataURL(file)
       })
