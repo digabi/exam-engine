@@ -54,7 +54,7 @@
     "redux": "^5.0.1",
     "redux-saga": "^1.5.1",
     "redux-saga-test-plan": "^4.0.6",
-    "rich-text-editor": "^8.11.2",
+    "rich-text-editor": "^8.12.0",
     "sanitize-html": "^2.17.6",
     "typesafe-actions": "^5.1.0",
     "utility-types": "^3.10.0",
