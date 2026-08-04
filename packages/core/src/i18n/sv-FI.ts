@@ -126,7 +126,7 @@ export const sv_FI: Translations = {
   'answer-length-with-max-length': 'Svarets längd: {{count}} / {{maxLength}} tecken.',
   'max-length-surplus': 'Svaret överskrider maximallängden på {{maxLength}} märken med {{percentage}} %.',
   'max-length-info':
-    'Svaret får inte överskrida {{count}} tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.',
+    'Svaret ska vara högst {{ maxCharacters }} tecken långt. Om det givna antalet tecken överskrids leder det till poängavdrag.',
   'previous-answer-versions': 'Tidigare utkast till svar',
   'zoom-in': 'Förstora bilden',
   'end-of-exam': 'Uppgifterna i provet slutar här.',
