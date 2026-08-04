@@ -8,7 +8,7 @@ const AnswerLengthInfo: React.FunctionComponent<{ maxLength: number; id?: string
   return (
     <p id={id} className="e-answer-length-info">
       <NotificationIcon />
-      <em>{t('max-length-info', { count: maxLength })}</em>
+      <em>{t('max-length-info', { maxCharacters: new Intl.NumberFormat('fi-FI').format(maxLength) })}</em>
     </p>
   )
 }
