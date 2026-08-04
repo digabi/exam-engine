@@ -93495,7 +93495,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
                   />
                 </svg>
                 <em>
-                  Vastauksen pituus on enintään 20 merkkiä. Ylityksestä seuraa pistevähennys.
+                  Vastaus saa olla enintään 20 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                 </em>
               </p>
               <div
@@ -105505,7 +105505,7 @@ exports[`MexDocumentation.xml renders properly: <GradingInstructions /> 1`] = `
             />
           </svg>
           <em>
-            Vastauksen pituus on enintään 20 merkkiä. Ylityksestä seuraa pistevähennys.
+            Vastaus saa olla enintään 20 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
           </em>
         </p>
         <ul />
@@ -109863,7 +109863,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
                 />
               </svg>
               <em>
-                Vastauksen pituus on enintään 20 merkkiä. Ylityksestä seuraa pistevähennys.
+                Vastaus saa olla enintään 20 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
               </em>
             </p>
             <span
@@ -213404,7 +213404,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   <span
                     lang="fi-FI"
                   >
-                    Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                    Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                   </span>
                 </em>
               </p>
@@ -213567,7 +213567,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
                   <span
                     lang="fi-FI"
                   >
-                    Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                    Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                   </span>
                 </em>
               </p>
@@ -235418,7 +235418,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   <span
                     lang="sv-FI"
                   >
-                    Svaret får inte överskrida 240 tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.
+                    Svaret ska vara högst 240 tecken långt. Om det givna antalet tecken överskrids leder det till poängavdrag.
                   </span>
                 </em>
               </p>
@@ -235576,7 +235576,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
                   <span
                     lang="sv-FI"
                   >
-                    Svaret får inte överskrida 240 tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.
+                    Svaret ska vara högst 240 tecken långt. Om det givna antalet tecken överskrids leder det till poängavdrag.
                   </span>
                 </em>
               </p>
@@ -250627,7 +250627,7 @@ exports[`SC.xml renders properly: <Exam /> 3`] = `
                   <span
                     lang="fi-FI"
                   >
-                    Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                    Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                   </span>
                 </em>
               </p>
@@ -250790,7 +250790,7 @@ exports[`SC.xml renders properly: <Exam /> 3`] = `
                   <span
                     lang="fi-FI"
                   >
-                    Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                    Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                   </span>
                 </em>
               </p>
@@ -260427,7 +260427,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 1`] = `
             <span
               lang="fi-FI"
             >
-              Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+              Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
             </span>
           </em>
         </p>
@@ -260506,7 +260506,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 1`] = `
             <span
               lang="fi-FI"
             >
-              Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+              Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
             </span>
           </em>
         </p>
@@ -268619,7 +268619,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 2`] = `
             <span
               lang="sv-FI"
             >
-              Svaret får inte överskrida 240 tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.
+              Svaret ska vara högst 240 tecken långt. Om det givna antalet tecken överskrids leder det till poängavdrag.
             </span>
           </em>
         </p>
@@ -268693,7 +268693,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 2`] = `
             <span
               lang="sv-FI"
             >
-              Svaret får inte överskrida 240 tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.
+              Svaret ska vara högst 240 tecken långt. Om det givna antalet tecken överskrids leder det till poängavdrag.
             </span>
           </em>
         </p>
@@ -274698,7 +274698,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 3`] = `
             <span
               lang="fi-FI"
             >
-              Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+              Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
             </span>
           </em>
         </p>
@@ -274777,7 +274777,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 3`] = `
             <span
               lang="fi-FI"
             >
-              Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+              Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
             </span>
           </em>
         </p>
@@ -288794,7 +288794,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
                 <span
                   lang="fi-FI"
                 >
-                  Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                  Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                 </span>
               </em>
             </p>
@@ -289110,7 +289110,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
                 <span
                   lang="fi-FI"
                 >
-                  Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                  Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                 </span>
               </em>
             </p>
@@ -304601,7 +304601,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
                 <span
                   lang="sv-FI"
                 >
-                  Svaret får inte överskrida 240 tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.
+                  Svaret ska vara högst 240 tecken långt. Om det givna antalet tecken överskrids leder det till poängavdrag.
                 </span>
               </em>
             </p>
@@ -304912,7 +304912,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
                 <span
                   lang="sv-FI"
                 >
-                  Svaret får inte överskrida 240 tecken. Om det givna antalet tecken överskrids leder det till poängavdrag.
+                  Svaret ska vara högst 240 tecken långt. Om det givna antalet tecken överskrids leder det till poängavdrag.
                 </span>
               </em>
             </p>
@@ -315743,7 +315743,7 @@ exports[`SC.xml renders properly: <Results /> 3`] = `
                 <span
                   lang="fi-FI"
                 >
-                  Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                  Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                 </span>
               </em>
             </p>
@@ -316059,7 +316059,7 @@ exports[`SC.xml renders properly: <Results /> 3`] = `
                 <span
                   lang="fi-FI"
                 >
-                  Vastauksen pituus on enintään 240 merkkiä. Ylityksestä seuraa pistevähennys.
+                  Vastaus saa olla enintään 240 merkkiä pitkä. Ylityksestä seuraa pistevähennys.
                 </span>
               </em>
             </p>

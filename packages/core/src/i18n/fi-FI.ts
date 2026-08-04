@@ -133,7 +133,7 @@ export const fi_FI = {
   'answer-length_other': 'Vastauksen pituus: {{count}} merkkiä.',
   'answer-length-with-max-length': 'Vastauksen pituus: {{count}} / {{maxLength}} merkkiä.',
   'max-length-surplus': 'Vastauksen enimmäispituus {{maxLength}} merkkiä ylittyy {{percentage}} %.',
-  'max-length-info': 'Vastauksen pituus on enintään {{count}} merkkiä. Ylityksestä seuraa pistevähennys.',
+  'max-length-info': 'Vastaus saa olla enintään {{ maxCharacters }} merkkiä pitkä. Ylityksestä seuraa pistevähennys.',
   'previous-answer-versions': 'Aiemmat vastausluonnokset',
   'zoom-in': 'Suurenna kuva',
   'end-of-exam': 'Kokeen tehtävät loppuvat tähän.',
