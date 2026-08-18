@@ -152,6 +152,32 @@ describe('Mex exam package creation', () => {
       // The signature is over the plaintext bytes and verifies with the public key (no passphrase needed).
       expect(verifyWithSHA256AndRSA(manifest, publicKey, manifestSignature)).toBeTruthy()
     })
+
+    it('rejects when an attachment stream aborts', async () => {
+      const { mexStream } = getMexStreamAndBuffers()
+      mexStream.resume()
+
+      await expect(
+        createMex(
+          xml,
+          [{ filename: 'attachment.txt', contents: abortingReadable(), restricted: false }],
+          nsaScripts,
+          null,
+          passphrase,
+          privateKey,
+          mexStream
+        )
+      ).rejects.toThrow('aborted')
+    }, 5_000)
+
+    it('rejects when a nsa scripts stream aborts', async () => {
+      const { mexStream } = getMexStreamAndBuffers()
+      mexStream.resume()
+
+      await expect(
+        createMex(xml, attachments, abortingReadable(), null, passphrase, privateKey, mexStream)
+      ).rejects.toThrow('aborted')
+    }, 5_000)
   })
 
   describe('with createMultiMex', () => {
@@ -183,8 +209,37 @@ describe('Mex exam package creation', () => {
       const koeUpdate = Readable.from(['mock koe-update.zip'])
       await expectCorrectMultiMexIsCreated(koeUpdate)
     })
+
+    it('rejects when an exam stream aborts', async () => {
+      const { mexStream } = getMexStreamAndBuffers()
+      mexStream.resume()
+
+      await expect(
+        createMultiMex(
+          [{ filename: 'exam.mex', contents: abortingReadable() }],
+          nsaScripts,
+          securityCodes,
+          passphrase,
+          privateKey,
+          mexStream
+        )
+      ).rejects.toThrow('aborted')
+    }, 5_000)
   })
 })
+
+function abortingReadable(): Readable {
+  let started = false
+
+  return new Readable({
+    read() {
+      if (started) return
+      started = true
+      this.push('partial data')
+      setImmediate(() => this.destroy(new Error('aborted')))
+    }
+  })
+}
 
 async function readResource(filename: string): Promise<string> {
   return fs.readFile(path.resolve(__dirname, 'resources', filename), 'utf-8')
