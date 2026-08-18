@@ -2,13 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import yauzl from 'yauzl-promise'
 import { Readable, PassThrough } from 'stream'
-import {
-  createMex,
-  AttachmentFile,
-  createMultiMex,
-  ExamFile,
-  REQUIRED_SERVER_VERSION_FILENAME
-} from '../dist/createMex'
+import { createMex, AttachmentFile, createMultiMex, ExamFile, REQUIRED_SERVER_VERSION_FILENAME } from '../src/createMex'
 import { verifyWithSHA256AndRSA } from '../src/crypto-utils'
 
 interface YauzlEntryV4 extends yauzl.Entry {
