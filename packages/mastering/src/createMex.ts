@@ -47,6 +47,7 @@ export async function createMex(
   })
 
   const zipFile = new yazl.ZipFile()
+  const promise = pipeZipFile(zipFile, outputStream)
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
 
   if (requiredServerVersion) {
@@ -97,7 +98,6 @@ export async function createMex(
     }))
   )
 
-  const promise = pipeline(zipFile.outputStream, outputStream)
   zipFile.end()
   await promise
 }
@@ -115,6 +115,7 @@ export async function createMultiMex(
   requiredServerVersion?: string
 ): Promise<void> {
   const zipFile = new yazl.ZipFile()
+  const promise = pipeZipFile(zipFile, outputStream)
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
 
   if (requiredServerVersion) {
@@ -122,7 +123,7 @@ export async function createMultiMex(
   }
 
   for (const exam of exams) {
-    zipFile.addReadStream(exam.contents, exam.filename)
+    addReadStream(zipFile, exam.contents, exam.filename)
   }
 
   encryptAndSign(zipFile, 'nsa.zip', keyAndIv, answersPrivateKey, nsaScripts)
@@ -145,7 +146,6 @@ export async function createMultiMex(
     sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdateCloneable)
   }
 
-  const promise = pipeline(zipFile.outputStream, outputStream)
   zipFile.end()
   await promise
 }
@@ -158,8 +158,9 @@ function encryptAndSignFiles(
   files: ExamFile[]
 ) {
   const innerZipFile = new yazl.ZipFile()
+  innerZipFile.on('error', error => zipFile.emit('error', error))
   for (const file of files) {
-    innerZipFile.addReadStream(file.contents, file.filename)
+    addReadStream(innerZipFile, file.contents, file.filename)
   }
   innerZipFile.end()
 
@@ -173,15 +174,16 @@ function encryptAndSign(
   answersPrivateKey: string,
   input: Readable
 ): void {
+  input.once('error', error => zipFile.emit('error', error))
   const encrypted = cloneable(input.pipe(createAES256EncryptStreamWithIv(keyAndIv)))
 
-  zipFile.addReadStream(encrypted.clone(), `${filename}.bin`)
+  addReadStream(zipFile, encrypted.clone(), `${filename}.bin`)
   sign(zipFile, `${filename}.bin`, answersPrivateKey, encrypted)
 }
 
 function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, input: Readable): void {
   const signer = signWithSHA256AndRSA(input, answersPrivateKey)
-  zipFile.addReadStream(signer, `${filename}.sig`)
+  addReadStream(zipFile, signer, `${filename}.sig`)
 }
 
 /**
@@ -191,8 +193,18 @@ function sign(zipFile: ZipFile, filename: string, answersPrivateKey: string, inp
 function addSignedManifest(zipFile: ZipFile, answersPrivateKey: string, requiredServerVersion: string): void {
   const manifest = Buffer.from(JSON.stringify({ requiredServerVersion }))
   const input = cloneable(toStream(manifest))
-  zipFile.addReadStream(input.clone(), REQUIRED_SERVER_VERSION_FILENAME)
+  addReadStream(zipFile, input.clone(), REQUIRED_SERVER_VERSION_FILENAME)
   sign(zipFile, REQUIRED_SERVER_VERSION_FILENAME, answersPrivateKey, input)
+}
+
+function pipeZipFile(zipFile: ZipFile, outputStream: Writable): Promise<void> {
+  zipFile.on('error', (error: Error) => outputStream.destroy(error))
+  return pipeline(zipFile.outputStream, outputStream)
+}
+
+function addReadStream(zipFile: ZipFile, input: Readable, filename: string): void {
+  input.once('error', error => zipFile.emit('error', error))
+  zipFile.addReadStream(input, filename)
 }
 
 function toStream(buffer: Buffer): Readable {
