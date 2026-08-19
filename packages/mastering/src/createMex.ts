@@ -1,11 +1,9 @@
-import fs from 'fs'
 import path from 'path'
 import stream, { Readable, Writable } from 'stream'
 import yazl, { ZipFile } from 'yazl'
 import { createAES256EncryptStreamWithIv, deriveAES256KeyAndIv, KeyAndIv, signWithSHA256AndRSA } from './crypto-utils'
 import cloneable from 'cloneable-readable'
 import { promisify } from 'util'
-import { glob } from 'glob'
 
 const pipeline = promisify(stream.pipeline)
 
@@ -30,7 +28,7 @@ export interface AttachmentFile extends ExamFile {
 export async function createMex(
   xml: string,
   attachments: AttachmentFile[],
-  nsaScripts: Readable,
+  nsaScripts: Readable | null,
   securityCodes: Readable | null,
   passphrase: string,
   answersPrivateKey: string,
@@ -40,12 +38,6 @@ export async function createMex(
   koeUpdate?: Readable,
   requiredServerVersion?: string
 ): Promise<void> {
-  const bundleDir = path.dirname(require.resolve('@digabi/exam-engine-core/dist/main-bundle.js'))
-  const renderingFiles = await glob(`${bundleDir}/{main-bundle.js,main.css,assets/*}`, {
-    nodir: true,
-    realpath: true
-  })
-
   const zipFile = new yazl.ZipFile()
   const promise = pipeZipFile(zipFile, outputStream)
   const keyAndIv = deriveAES256KeyAndIv(passphrase)
@@ -65,7 +57,9 @@ export async function createMex(
   if (json) {
     encryptAndSign(zipFile, 'exam.json', keyAndIv, answersPrivateKey, toStream(json))
   }
-  encryptAndSign(zipFile, 'nsa.zip', keyAndIv, answersPrivateKey, nsaScripts)
+  if (nsaScripts) {
+    encryptAndSign(zipFile, 'nsa.zip', keyAndIv, answersPrivateKey, nsaScripts)
+  }
   if (securityCodes) {
     encryptAndSign(zipFile, 'security-codes.json', keyAndIv, answersPrivateKey, securityCodes)
   }
@@ -77,16 +71,6 @@ export async function createMex(
     encryptAndSign(zipFile, 'koe-update.zip', keyAndIv, answersPrivateKey, koeUpdateCloneable.clone())
     sign(zipFile, 'koe-update.zip', answersPrivateKey, koeUpdateCloneable)
   }
-  encryptAndSignFiles(
-    zipFile,
-    'rendering.zip',
-    keyAndIv,
-    answersPrivateKey,
-    renderingFiles.map(renderingFile => ({
-      contents: fs.createReadStream(renderingFile),
-      filename: path.relative(bundleDir, renderingFile)
-    }))
-  )
   encryptAndSignFiles(
     zipFile,
     'attachments.zip',

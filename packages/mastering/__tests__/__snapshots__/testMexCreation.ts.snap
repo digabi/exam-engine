@@ -27,14 +27,6 @@ exports[`Mex exam package creation with createMex adds an unencrypted, signed re
     "uncompressedSize": 88,
   },
   {
-    "fileName": "rendering.zip.bin",
-    "uncompressedSize": 0,
-  },
-  {
-    "fileName": "rendering.zip.bin.sig",
-    "uncompressedSize": 88,
-  },
-  {
     "fileName": "attachments.zip.bin",
     "uncompressedSize": 22,
   },
@@ -76,14 +68,6 @@ exports[`Mex exam package creation with createMex creates a mex with koe-update.
     "uncompressedSize": 88,
   },
   {
-    "fileName": "rendering.zip.bin",
-    "uncompressedSize": 0,
-  },
-  {
-    "fileName": "rendering.zip.bin.sig",
-    "uncompressedSize": 88,
-  },
-  {
     "fileName": "attachments.zip.bin",
     "uncompressedSize": 22,
   },
@@ -110,14 +94,6 @@ exports[`Mex exam package creation with createMex creates a minimal mex with ver
   },
   {
     "fileName": "nsa.zip.bin.sig",
-    "uncompressedSize": 88,
-  },
-  {
-    "fileName": "rendering.zip.bin",
-    "uncompressedSize": 0,
-  },
-  {
-    "fileName": "rendering.zip.bin.sig",
     "uncompressedSize": 88,
   },
   {
@@ -150,11 +126,24 @@ exports[`Mex exam package creation with createMex does not add a required-server
     "uncompressedSize": 88,
   },
   {
-    "fileName": "rendering.zip.bin",
-    "uncompressedSize": 0,
+    "fileName": "attachments.zip.bin",
+    "uncompressedSize": 22,
   },
   {
-    "fileName": "rendering.zip.bin.sig",
+    "fileName": "attachments.zip.bin.sig",
+    "uncompressedSize": 88,
+  },
+]
+`;
+
+exports[`Mex exam package creation with createMex does not add nsa scripts when none are provided 1`] = `
+[
+  {
+    "fileName": "exam.xml.bin",
+    "uncompressedSize": 8,
+  },
+  {
+    "fileName": "exam.xml.bin.sig",
     "uncompressedSize": 88,
   },
   {

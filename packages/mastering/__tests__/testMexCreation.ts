@@ -68,12 +68,12 @@ describe('Mex exam package creation', () => {
   }
 
   describe('with createMex', () => {
-    async function expectCorrectMexIsCreated(koeUpdate?: Readable) {
+    async function expectCorrectMexIsCreated(koeUpdate?: Readable, nsaScriptsOverride: Readable | null = nsaScripts) {
       const { mexStream, mexBuffers } = getMexStreamAndBuffers()
       await createMex(
         xml,
         attachments,
-        nsaScripts,
+        nsaScriptsOverride,
         null,
         passphrase,
         privateKey,
@@ -84,7 +84,7 @@ describe('Mex exam package creation', () => {
       )
       return await expectZipEntriesAreCorrect(mexBuffers, e => ({
         fileName: e.filename,
-        uncompressedSize: e.filename === 'rendering.zip.bin' ? 0 : e.uncompressedSize // ignore rendering.zip size
+        uncompressedSize: e.uncompressedSize
       }))
     }
 
@@ -104,6 +104,12 @@ describe('Mex exam package creation', () => {
     it('creates a mex with koe-update.zip', async () => {
       const koeUpdate = Readable.from(['mock koe-update.zip'])
       await expectCorrectMexIsCreated(koeUpdate)
+    })
+
+    it('does not add nsa scripts when none are provided', async () => {
+      const mexEntries = await expectCorrectMexIsCreated(undefined, null)
+      expect(mexEntries.find(e => e.filename === 'nsa.zip.bin')).toBeUndefined()
+      expect(mexEntries.find(e => e.filename === 'nsa.zip.bin.sig')).toBeUndefined()
     })
 
     it('does not add a required-server-version manifest when no required version is given', async () => {
@@ -129,7 +135,7 @@ describe('Mex exam package creation', () => {
       )
       const mexEntries = await expectZipEntriesAreCorrect(mexBuffers, e => ({
         fileName: e.filename,
-        uncompressedSize: e.filename === 'rendering.zip.bin' ? 0 : e.uncompressedSize
+        uncompressedSize: e.uncompressedSize
       }))
 
       const manifest = await toBuffer(
