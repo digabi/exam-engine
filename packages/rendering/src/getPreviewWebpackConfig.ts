@@ -6,8 +6,6 @@ import { mathSvgResponse } from 'rich-text-editor/server/mathSvg'
 import WebpackDevServer from 'webpack-dev-server'
 
 export function getPreviewWebpackConfig(examFilename: string, options: RenderingOptions) {
-  const isDev = process.env.npm_package_name === '@digabi/exam-engine-root'
-
   return getWebpackConfig({
     mode: 'development',
     devtool: 'cheap-module-source-map',
@@ -20,20 +18,6 @@ export function getPreviewWebpackConfig(examFilename: string, options: Rendering
         'process.env.EDITABLE_GRADING_INSTRUCTIONS': options.editableGradingInstructions
       })
     ],
-    resolve: isDev
-      ? {
-          alias: {
-            '@digabi/exam-engine-core$': path.resolve(__dirname, '../../core/dist/index.js'),
-            '@digabi/exam-engine-core/dist/main.css$': path.resolve(__dirname, '../../core/src/css/main.less'),
-            '@digabi/exam-engine-core/dist/attachments/Attachments': path.resolve(__dirname, '../../core/dist'),
-            '@digabi/exam-engine-core/dist/exam/Exam': path.resolve(__dirname, '../../core/dist'),
-            '@digabi/exam-engine-core/dist/results/Results': path.resolve(__dirname, '../../core/dist')
-          }
-        }
-      : {},
-    watchOptions: {
-      ignored: path.resolve('../../core/dist/main-bundle.js')
-    },
     devServer: {
       open: options.openBrowser,
       client: {

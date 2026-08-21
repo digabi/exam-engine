@@ -1,4 +1,3 @@
-import '../src/css/main.less'
 import Attachments from './components/attachments/Attachments'
 import Exam from './components/exam/Exam'
 import GradingInstructions from './components/grading-instructions/GradingInstructions'
@@ -8,6 +7,8 @@ import parseExam from './parser/parseExam'
 export { Attachments, Exam, GradingInstructions, Results, parseExam }
 export type { ExamComponentProps } from './createRenderChildNodes'
 export { GradingAnswer } from './components/grading/GradingAnswer'
+export { withCommonExamContext } from './components/context/CommonExamContext'
+export { ResultsContext, withResultsContext } from './components/context/ResultsContext'
 export { ImageBase } from './components/shared/Image'
 export * from './types/ExamAnswer'
 export * from './types/ExamServerAPI'

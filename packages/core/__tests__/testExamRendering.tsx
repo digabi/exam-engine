@@ -5,9 +5,9 @@ import {
   GradingInstructions,
   GradingStructure,
   Score,
-  TextQuestion
+  TextQuestion,
+  parseExam
 } from '@digabi/exam-engine-core'
-import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
 import { listExams } from '@digabi/exam-engine-exams'
 import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'

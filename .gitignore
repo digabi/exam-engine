@@ -75,9 +75,6 @@ eslint3.xml
 *.tsbuildinfo
 *transfer.zip
 
-# Webpack bundle stats
-packages/core/stats.json
-
 # Playwright
 **/test-results/
 **/playwright-report/

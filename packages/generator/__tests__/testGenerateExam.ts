@@ -16,7 +16,6 @@ import {
   textAnswer
 } from '@digabi/exam-engine-generator'
 import { ns, parseExam } from '@digabi/exam-engine-mastering'
-import { formatISO } from 'date-fns'
 import * as fc from 'fast-check'
 import { wrap } from 'jest-snapshot-serializer-raw'
 import { Element } from 'libxmljs2'
@@ -280,7 +279,7 @@ describe('generateExam()', () => {
             max: new Date('2030-12-31'),
             noInvalidDate: true
           })
-          .map(d => formatISO(d, { representation: 'date' }))
+          .map(d => d.toISOString().substring(0, 10))
       ),
       examCode: optional(fc.constantFrom('EA', 'M', 'N')),
       maxAnswers: optional(maxAnswers),

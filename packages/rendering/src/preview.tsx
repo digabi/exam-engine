@@ -8,7 +8,6 @@ import {
   parseExam,
   indexedDBExamServerAPI
 } from '@digabi/exam-engine-core'
-import '@digabi/exam-engine-core/dist/main.css'
 import { ExamType, MasteringResult } from '@digabi/exam-engine-mastering'
 import React, { useEffect, useMemo, useRef } from 'react'
 import { createRoot } from 'react-dom/client'

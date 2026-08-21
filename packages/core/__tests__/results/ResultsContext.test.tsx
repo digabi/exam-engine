@@ -1,4 +1,4 @@
-import parseExam from '@digabi/exam-engine-core/dist/parser/parseExam'
+import { parseExam } from '@digabi/exam-engine-core'
 import { listExams } from '@digabi/exam-engine-exams'
 import { GetMediaMetadata, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
