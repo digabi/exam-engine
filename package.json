@@ -13,7 +13,7 @@
     "@types/cloneable-readable": "^2.0.0",
     "@types/fontfaceobserver": "^2.1.0",
     "@types/jest": "^30.0.0",
-    "@types/loader-utils": "^3.0.0",
+    "@types/less": "^3.0.8",
     "@types/lodash": "^4.14.149",
     "@types/lodash-es": "^4.17.3",
     "@types/node": "^24.10.9",
@@ -46,7 +46,6 @@
     "lerna": "^10.0.0",
     "prettier": "^3.0.0",
     "puppeteer": "^25.0.2",
-    "tmp-promise": "^3.0.2",
     "typescript": "^5.6.2",
     "uuid": "^14.0.0",
     "yauzl-promise": "^4.0.0"

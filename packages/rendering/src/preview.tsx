@@ -1,3 +1,4 @@
+import '@digabi/exam-engine-core/main.css'
 import {
   Attachments,
   Exam,

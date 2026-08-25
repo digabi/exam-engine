@@ -4,7 +4,9 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
 "<!DOCTYPE html><html lang="fi-FI"><head>
     <meta charset="utf-8">
     <title>Hyvän vastauksen piirteet: FI – Saksa, lyhyt oppimäärä</title>
-  <script defer="" src="./main-bundle.js"></script></head>
+    <link rel="stylesheet" href="./main.css">
+    <script defer="" src="./main.js"></script>
+  </head>
   <body>
     <div id="app"><main class="e-exam e-grading-instructions" lang="de-DE"><section aria-labelledby="title" class="e-section e-bg-color-off-white e-pad-6"><h1 id="title"><span lang="fi-FI">Hyvän vastauksen piirteet:</span> <span lang="fi-FI">FI – Saksa, lyhyt oppimäärä</span></h1><p><strong>1.1.1970</strong></p><div class="e-exam-grading-instruction notification e-pad-4" data-annotation-anchor="exam-grading-instruction">
     Lopullisista hyvän vastauksen piirteistä ilmenevät perusteet, joiden mukaan
@@ -887,7 +889,10 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
   </section>
 
   
-</main></div></body></html>"
+</main></div>
+  
+
+</body></html>"
 `;
 
 exports[`ee create-grading-instructions creates grading instructions 2`] = `
