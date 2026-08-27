@@ -20,6 +20,7 @@ export default function noopExamServerApi(resolveAttachment: (s: string) => stri
 
   const examServerAPI: ExamServerAPI = {
     getAnswers: () => Promise.resolve([]),
+    getAnswerHistory: () => Promise.resolve([]),
     setCasStatus: casStatus => Promise.resolve(casStatus),
     saveAnswer: () => Promise.resolve(),
     saveAudio(_, audio) {

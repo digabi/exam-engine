@@ -1,10 +1,11 @@
-import { ExamAnswer, ExamServerAPI } from '.'
 import Dexie from 'dexie'
+import { ExamAnswer, ExamServerAPI } from '.'
+import { TextAnswer, RichTextAnswer } from './types/ExamAnswer'
 
 /** Creates a mock Exam Server API, backed by a local IndexedDB database. */
 export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: string) => string): ExamServerAPI {
   const db = new (class extends Dexie {
-    answer!: Dexie.Table<ExamAnswer & { examUuid: string }, string>
+    answer!: Dexie.Table<ExamAnswer & { examUuid: string; answerTime: number }, string>
     audio!: Dexie.Table<{ blob: Blob; dataUrl: string; audioId: string }, string>
     constructor() {
       super('exam')
@@ -35,8 +36,18 @@ export function indexedDBExamServerAPI(examUuid: string, resolveAttachment: (s: 
   const examServerApi: ExamServerAPI = {
     setCasStatus: casStatus => Promise.resolve(casStatus),
     getAnswers: () => db.answer.where({ examUuid }).toArray(),
+    getAnswerHistory: questionId =>
+      db.answer
+        .where({ examUuid, questionId })
+        .toArray()
+        .then(answers =>
+          answers.filter(
+            (answer): answer is (TextAnswer | RichTextAnswer) & { examUuid: string; answerTime: number } =>
+              answer.type === 'text' || answer.type === 'richText'
+          )
+        ),
     saveAnswer: async answer => {
-      await db.answer.put({ ...answer, examUuid })
+      await db.answer.put({ ...answer, examUuid, answerTime: Date.now() })
     },
     async saveAudio(questionId: number, audio: Blob) {
       const audioId = `${examUuid}-${questionId}`

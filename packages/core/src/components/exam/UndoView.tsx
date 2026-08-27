@@ -1,12 +1,9 @@
-import axios from 'axios'
 import React from 'react'
 import { UndoHistoryEntry } from './UndoHistoryEntry'
 import ModalDialog from '../shared/internal/ModalDialog'
 import { useExamTranslation } from '../../i18n'
 import { AnswerHistoryEntry, QuestionId, RichTextAnswer, TextAnswer } from '../../types/ExamAnswer'
 import { ExamServerAPI } from '../../types/ExamServerAPI'
-
-const CancelToken = axios.CancelToken
 
 export interface UndoViewProps {
   close: () => void
@@ -21,20 +18,6 @@ interface UndoViewState {
   selectedAnswerIndex: number
   loading: boolean
   loadRetryTimeout: number | null
-}
-type AnswerHistoryResult = {
-  type: 'text' | 'richText'
-  value: string
-  answer_time: number
-  character_count: number
-}
-function toAnswerHistoryEntry(answer: AnswerHistoryResult): AnswerHistoryEntry {
-  return {
-    type: answer.type,
-    value: answer.value,
-    answerTime: answer.answer_time,
-    characterCount: answer.character_count
-  }
 }
 
 function AnswerDisplay(props: { selectedAnswer?: AnswerHistoryEntry }) {
@@ -112,8 +95,6 @@ function countScreenshots(answer: AnswerHistoryEntry): number {
 }
 
 export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> {
-  private source = CancelToken.source()
-
   constructor(props: UndoViewProps) {
     super(props)
     this.state = {
@@ -130,7 +111,6 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
   }
 
   public componentWillUnmount() {
-    this.source.cancel()
     document.removeEventListener('keydown', this.keydownListener, false)
   }
 
@@ -156,27 +136,10 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
 
   private async fetchAnswerHistory(questionId: number) {
     try {
-      let answers: AnswerHistoryEntry[]
-      if (this.props.examServerApi.getAnswerHistory) {
-        answers = await this.props.examServerApi.getAnswerHistory(questionId)
-      } else {
-        // TODO: remove when getAnswerHistory isn't optional
-        const answerHistoryResult = await axios.get<AnswerHistoryResult[]>(`/rest/answer-history/${questionId}`, {
-          cancelToken: this.source.token
-        })
-        const answerHistory = answerHistoryResult.data
-        answers = answerHistory.map(toAnswerHistoryEntry)
-      }
+      const answers = await this.props.examServerApi.getAnswerHistory(questionId)
       this.setState({ answers, selectedAnswerIndex: 0, loading: false, loadRetryTimeout: null })
     } catch (error) {
       console.error('Fetching answer history failed', error)
-      if (!axios.isCancel(error)) {
-        this.setState({
-          loadRetryTimeout: window.setTimeout(() => {
-            void this.fetchAnswerHistory(questionId)
-          }, 4000)
-        })
-      }
     }
   }
 
@@ -185,7 +148,6 @@ export class UndoView extends React.PureComponent<UndoViewProps, UndoViewState> 
     if (timeout) {
       clearTimeout(timeout)
     }
-    this.source.cancel()
     this.props.close()
   }
 
