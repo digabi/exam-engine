@@ -26,8 +26,6 @@ jobs:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - run: npm rebuild full-icu
-
       - name: Update Jest Snapshots
         run: npm run test-jest -- --ci -u
 

@@ -1,13 +1,16 @@
+import { execFile } from 'node:child_process'
 import { randomUUID } from 'node:crypto'
 import { promises as fs } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
+import { promisify } from 'node:util'
 import { Attachment, getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
 import esbuild from 'esbuild'
 import ffmpeg from 'ffmpeg-static'
-import { spawn } from 'promisify-child-process'
 import puppeteer from 'puppeteer'
 import { getOfflineBuildOptions, publicDirectory } from './build'
+
+const execFileAsync = promisify(execFile)
 
 export interface CreateOfflineExamOptions {
   /**
@@ -109,7 +112,17 @@ async function copyAttachment(
       await fs.copyFile(cachedFilename, newTarget)
     } catch (err) {
       if (ffmpeg) {
-        await spawn(ffmpeg, ['-i', source, '-c:v', 'libx264', '-c:a', 'libmp3lame', '-q:a', '4', cachedFilename])
+        await execFileAsync(ffmpeg, [
+          '-i',
+          source,
+          '-c:v',
+          'libx264',
+          '-c:a',
+          'libmp3lame',
+          '-q:a',
+          '4',
+          cachedFilename
+        ])
       }
       await fs.copyFile(cachedFilename, newTarget)
     }
