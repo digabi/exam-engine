@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   Exam,
   Attachments,
@@ -25,12 +26,13 @@ describe.each(listExams().map(exam => [path.basename(exam), exam]))('%s', (_base
 
   beforeEach(() => {
     // @ts-expect-error fix "IntersectionObserver is not defined" error in tests
-    global.IntersectionObserver = jest.fn((cb, options = {}) => {
+    // eslint-disable-next-line prefer-arrow-callback
+    global.IntersectionObserver = vi.fn(function (cb, options = {}) {
       const instance = {
-        observe: jest.fn,
-        takeRecords: jest.fn,
-        unobserve: jest.fn,
-        disconnect: jest.fn
+        observe: vi.fn,
+        takeRecords: vi.fn,
+        unobserve: vi.fn,
+        disconnect: vi.fn
       }
       return instance
     })

@@ -1,3 +1,4 @@
+import { beforeAll, describe, expect, it } from 'vitest'
 import { validateAnswers } from '../src/validateAnswers'
 import parseExam from '../src/parser/parseExam'
 import { parseExamStructure, RootElement } from '../src/parser/parseExamStructure'

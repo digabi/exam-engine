@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest'
 import { expectSaga } from 'redux-saga-test-plan'
 import {
   allowCas,
@@ -12,7 +13,7 @@ import { CasStatus } from '../src'
 describe('performEnableCas', () => {
   describe('in the successful case', () => {
     it(`calls setCasStatus with 'allowing', performs the countdown and calls setCasStatus with 'allowed'`, async () => {
-      const setCasStatus = jest.fn((casStatus: CasStatus) => Promise.resolve(casStatus))
+      const setCasStatus = vi.fn((casStatus: CasStatus) => Promise.resolve(casStatus))
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
@@ -29,7 +30,7 @@ describe('performEnableCas', () => {
 
   describe('when CAS software is already enabled', () => {
     it(`skips the countdown and calls setCasStatus with 'allowed'`, async () => {
-      const setCasStatus = jest.fn(() => Promise.resolve('allowed'))
+      const setCasStatus = vi.fn(() => Promise.resolve('allowed'))
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
@@ -43,7 +44,7 @@ describe('performEnableCas', () => {
 
   describe('when the user cancels the countdown', () => {
     it(`calls setCasStatus with 'forbidden' if the user cancels the countdown`, async () => {
-      const setCasStatus = jest.fn((casStatus: CasStatus) => Promise.resolve(casStatus))
+      const setCasStatus = vi.fn((casStatus: CasStatus) => Promise.resolve(casStatus))
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       await expectSaga(performEnableCas, { setCasStatus } as any, allowCas(2))
@@ -59,7 +60,7 @@ describe('performEnableCas', () => {
     })
 
     it(`doesn't cancel the countdown if CAS software has been allowed during the countdown`, async () => {
-      const setCasStatus = jest
+      const setCasStatus = vi
         .fn((casStatus: CasStatus) => Promise.resolve(casStatus))
         .mockImplementationOnce(() => Promise.resolve('allowing'))
         .mockImplementationOnce(() => Promise.resolve('allowed'))
@@ -79,7 +80,7 @@ describe('performEnableCas', () => {
     })
 
     it(`cancels the process if the post-countdown setCasStatus returns 'forbidden'`, async () => {
-      const setCasStatus = jest
+      const setCasStatus = vi
         .fn((casStatus: CasStatus) => Promise.resolve(casStatus))
         .mockImplementationOnce(() => Promise.resolve('allowing'))
         .mockImplementationOnce(() => Promise.resolve('forbidden'))

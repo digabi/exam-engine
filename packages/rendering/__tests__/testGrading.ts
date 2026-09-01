@@ -1,3 +1,4 @@
+import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest'
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'
 import { Page } from 'puppeteer'

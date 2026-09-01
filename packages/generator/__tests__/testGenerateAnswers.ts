@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest'
 import { GradingStructure } from '@digabi/exam-engine-core'
 import { generateAnswers } from '@digabi/exam-engine-generator'
 
