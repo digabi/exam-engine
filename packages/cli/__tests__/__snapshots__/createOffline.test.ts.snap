@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ee create-offline creates offline 1`] = `
+exports[`ee create-offline > creates offline 1`] = `
 "<!DOCTYPE html><html lang="fi-FI"><head>
     <meta charset="utf-8">
     <title>FI – Saksa, lyhyt oppimäärä</title>
@@ -1289,7 +1289,7 @@ exports[`ee create-offline creates offline 1`] = `
 </body></html>"
 `;
 
-exports[`ee create-offline creates offline 2`] = `
+exports[`ee create-offline > creates offline 2`] = `
 [
   "NotoMono.woff",
   "NotoMono.woff2",
@@ -1318,7 +1318,7 @@ exports[`ee create-offline creates offline 2`] = `
 ]
 `;
 
-exports[`ee create-offline creates offline 3`] = `
+exports[`ee create-offline > creates offline 3`] = `
 [
   "1.1.ogg",
   "1.2.ogg",
