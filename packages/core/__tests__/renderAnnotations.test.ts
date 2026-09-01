@@ -1,6 +1,6 @@
+import { describe, expect, it } from 'vitest'
 import { renderAnnotations } from '../src/renderAnnotations'
 import { Annotation } from '../src'
-import wrap from 'jest-snapshot-serializer-raw'
 
 describe('renderAnnotations()', () => {
   it('one text annotation', () => {
@@ -208,5 +208,5 @@ function render(
 ) {
   const answer = createAnswer(html)
   renderAnnotations(answer, pregradingAnnotations, censoringAnnotations)
-  return wrap(answer.innerHTML)
+  return answer.innerHTML
 }

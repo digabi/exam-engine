@@ -1,3 +1,4 @@
+import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import path from 'path'
 import * as childPromise from 'child_process'
 const exec = childPromise.exec

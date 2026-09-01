@@ -1,5 +1,6 @@
 'use strict'
 
+import { afterAll, beforeAll } from 'vitest'
 import puppeteer, { Browser, Page } from 'puppeteer'
 
 const isInDebugMode = process.env.PUPPETEER_DEBUG === '1'

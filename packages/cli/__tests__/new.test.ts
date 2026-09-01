@@ -1,3 +1,4 @@
+import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import * as fs from 'fs/promises'
 import { exec, stripColorCodes } from './util'
 import path from 'path'
