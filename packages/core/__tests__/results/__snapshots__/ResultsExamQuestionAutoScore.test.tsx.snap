@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<QuestionAutoScore /> renders displayNumber number when there are more than one answer 1`] = `null`;
+exports[`<QuestionAutoScore /> > renders displayNumber number when there are more than one answer 1`] = `null`;
 
-exports[`<QuestionAutoScore /> renders with score 1`] = `null`;
+exports[`<QuestionAutoScore /> > renders with score 1`] = `null`;
 
-exports[`<QuestionAutoScore /> renders without score 1`] = `null`;
+exports[`<QuestionAutoScore /> > renders without score 1`] = `null`;

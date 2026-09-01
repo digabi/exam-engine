@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Exam migrations migrates an old exam to the current schema 1`] = `
-<?xml version="1.0" encoding="UTF-8"?>
+exports[`Exam migrations > migrates an old exam to the current schema 1`] = `
+"<?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5" date="2020-01-01" exam-code="A" day-code="X">
     <e:exam-versions>
         <e:exam-version lang="fi-FI"/>
@@ -46,5 +46,5 @@ exports[`Exam migrations migrates an old exam to the current schema 1`] = `
     </e:section>
     
 </e:exam>
-
+"
 `;
