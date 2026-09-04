@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest'
 import { intersperse } from '../src/utils'
 
 describe('intersperse()', () => {

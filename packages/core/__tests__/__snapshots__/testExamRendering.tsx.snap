@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`A_E.xml renders properly: <Attachments /> 1`] = `
+exports[`A_E.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -679,7 +679,7 @@ exports[`A_E.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`A_E.xml renders properly: <Exam /> 1`] = `
+exports[`A_E.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -2440,7 +2440,7 @@ exports[`A_E.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`A_E.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`A_E.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -2991,7 +2991,7 @@ exports[`A_E.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`A_E.xml renders properly: <Results /> 1`] = `
+exports[`A_E.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -4776,7 +4776,7 @@ exports[`A_E.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`A_X.xml renders properly: <Attachments /> 1`] = `
+exports[`A_X.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -6232,7 +6232,7 @@ exports[`A_X.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`A_X.xml renders properly: <Exam /> 1`] = `
+exports[`A_X.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -8215,7 +8215,7 @@ exports[`A_X.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`A_X.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`A_X.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -8970,7 +8970,7 @@ exports[`A_X.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`A_X.xml renders properly: <Results /> 1`] = `
+exports[`A_X.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -10741,7 +10741,7 @@ exports[`A_X.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`FF.xml renders properly: <Attachments /> 1`] = `
+exports[`FF.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -13371,7 +13371,7 @@ exports[`FF.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`FF.xml renders properly: <Attachments /> 2`] = `
+exports[`FF.xml > renders properly > <Attachments /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -15938,7 +15938,7 @@ exports[`FF.xml renders properly: <Attachments /> 2`] = `
 </main>
 `;
 
-exports[`FF.xml renders properly: <Exam /> 1`] = `
+exports[`FF.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -20961,7 +20961,7 @@ exports[`FF.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`FF.xml renders properly: <Exam /> 2`] = `
+exports[`FF.xml > renders properly > <Exam /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -25961,7 +25961,7 @@ exports[`FF.xml renders properly: <Exam /> 2`] = `
 </main>
 `;
 
-exports[`FF.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`FF.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -29530,7 +29530,7 @@ exports[`FF.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`FF.xml renders properly: <GradingInstructions /> 2`] = `
+exports[`FF.xml > renders properly > <GradingInstructions /> 2`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="sv-FI"
@@ -33082,7 +33082,7 @@ exports[`FF.xml renders properly: <GradingInstructions /> 2`] = `
 </main>
 `;
 
-exports[`FF.xml renders properly: <Results /> 1`] = `
+exports[`FF.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -38376,7 +38376,7 @@ exports[`FF.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`FF.xml renders properly: <Results /> 2`] = `
+exports[`FF.xml > renders properly > <Results /> 2`] = `
 [
   <main
     className="e-exam e-results"
@@ -43653,7 +43653,7 @@ exports[`FF.xml renders properly: <Results /> 2`] = `
 ]
 `;
 
-exports[`GE.xml renders properly: <Attachments /> 1`] = `
+exports[`GE.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -46330,7 +46330,7 @@ exports[`GE.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`GE.xml renders properly: <Attachments /> 2`] = `
+exports[`GE.xml > renders properly > <Attachments /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -49015,7 +49015,7 @@ exports[`GE.xml renders properly: <Attachments /> 2`] = `
 </main>
 `;
 
-exports[`GE.xml renders properly: <Exam /> 1`] = `
+exports[`GE.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -56802,7 +56802,7 @@ exports[`GE.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`GE.xml renders properly: <Exam /> 2`] = `
+exports[`GE.xml > renders properly > <Exam /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -64601,7 +64601,7 @@ exports[`GE.xml renders properly: <Exam /> 2`] = `
 </main>
 `;
 
-exports[`GE.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`GE.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -67629,7 +67629,7 @@ exports[`GE.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`GE.xml renders properly: <GradingInstructions /> 2`] = `
+exports[`GE.xml > renders properly > <GradingInstructions /> 2`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="sv-FI"
@@ -70665,7 +70665,7 @@ exports[`GE.xml renders properly: <GradingInstructions /> 2`] = `
 </main>
 `;
 
-exports[`GE.xml renders properly: <Results /> 1`] = `
+exports[`GE.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -79253,7 +79253,7 @@ exports[`GE.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`GE.xml renders properly: <Results /> 2`] = `
+exports[`GE.xml > renders properly > <Results /> 2`] = `
 [
   <main
     className="e-exam e-results"
@@ -87849,7 +87849,7 @@ exports[`GE.xml renders properly: <Results /> 2`] = `
 ]
 `;
 
-exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
+exports[`MexDocumentation.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -88345,7 +88345,7 @@ exports[`MexDocumentation.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
+exports[`MexDocumentation.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -103686,7 +103686,7 @@ exports[`MexDocumentation.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`MexDocumentation.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`MexDocumentation.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -107625,7 +107625,7 @@ exports[`MexDocumentation.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
+exports[`MexDocumentation.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -119197,7 +119197,7 @@ exports[`MexDocumentation.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`N.xml renders properly: <Attachments /> 1`] = `
+exports[`N.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -119807,7 +119807,7 @@ exports[`N.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <Attachments /> 2`] = `
+exports[`N.xml > renders properly > <Attachments /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -120399,7 +120399,7 @@ exports[`N.xml renders properly: <Attachments /> 2`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <Attachments /> 3`] = `
+exports[`N.xml > renders properly > <Attachments /> 3`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -120893,7 +120893,7 @@ exports[`N.xml renders properly: <Attachments /> 3`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <Exam /> 1`] = `
+exports[`N.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -126837,7 +126837,7 @@ exports[`N.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <Exam /> 2`] = `
+exports[`N.xml > renders properly > <Exam /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -132740,7 +132740,7 @@ exports[`N.xml renders properly: <Exam /> 2`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <Exam /> 3`] = `
+exports[`N.xml > renders properly > <Exam /> 3`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -138599,7 +138599,7 @@ exports[`N.xml renders properly: <Exam /> 3`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`N.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -150531,7 +150531,7 @@ exports[`N.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <GradingInstructions /> 2`] = `
+exports[`N.xml > renders properly > <GradingInstructions /> 2`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="sv-FI"
@@ -162387,7 +162387,7 @@ exports[`N.xml renders properly: <GradingInstructions /> 2`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <GradingInstructions /> 3`] = `
+exports[`N.xml > renders properly > <GradingInstructions /> 3`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -173692,7 +173692,7 @@ exports[`N.xml renders properly: <GradingInstructions /> 3`] = `
 </main>
 `;
 
-exports[`N.xml renders properly: <Results /> 1`] = `
+exports[`N.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -179685,7 +179685,7 @@ exports[`N.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`N.xml renders properly: <Results /> 2`] = `
+exports[`N.xml > renders properly > <Results /> 2`] = `
 [
   <main
     className="e-exam e-results"
@@ -185649,7 +185649,7 @@ exports[`N.xml renders properly: <Results /> 2`] = `
 ]
 `;
 
-exports[`N.xml renders properly: <Results /> 3`] = `
+exports[`N.xml > renders properly > <Results /> 3`] = `
 [
   <main
     className="e-exam e-results"
@@ -191604,7 +191604,7 @@ exports[`N.xml renders properly: <Results /> 3`] = `
 ]
 `;
 
-exports[`SC.xml renders properly: <Attachments /> 1`] = `
+exports[`SC.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -192595,7 +192595,7 @@ exports[`SC.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <Attachments /> 2`] = `
+exports[`SC.xml > renders properly > <Attachments /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -193586,7 +193586,7 @@ exports[`SC.xml renders properly: <Attachments /> 2`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <Attachments /> 3`] = `
+exports[`SC.xml > renders properly > <Attachments /> 3`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -194406,7 +194406,7 @@ exports[`SC.xml renders properly: <Attachments /> 3`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <Exam /> 1`] = `
+exports[`SC.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -216421,7 +216421,7 @@ exports[`SC.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <Exam /> 2`] = `
+exports[`SC.xml > renders properly > <Exam /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -238431,7 +238431,7 @@ exports[`SC.xml renders properly: <Exam /> 2`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <Exam /> 3`] = `
+exports[`SC.xml > renders properly > <Exam /> 3`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -252986,7 +252986,7 @@ exports[`SC.xml renders properly: <Exam /> 3`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`SC.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="de-DE"
@@ -261183,7 +261183,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <GradingInstructions /> 2`] = `
+exports[`SC.xml > renders properly > <GradingInstructions /> 2`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="de-DE"
@@ -269371,7 +269371,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 2`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <GradingInstructions /> 3`] = `
+exports[`SC.xml > renders properly > <GradingInstructions /> 3`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="de-DE"
@@ -275454,7 +275454,7 @@ exports[`SC.xml renders properly: <GradingInstructions /> 3`] = `
 </main>
 `;
 
-exports[`SC.xml renders properly: <Results /> 1`] = `
+exports[`SC.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -291260,7 +291260,7 @@ exports[`SC.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`SC.xml renders properly: <Results /> 2`] = `
+exports[`SC.xml > renders properly > <Results /> 2`] = `
 [
   <main
     className="e-exam e-results"
@@ -307063,7 +307063,7 @@ exports[`SC.xml renders properly: <Results /> 2`] = `
 ]
 `;
 
-exports[`SC.xml renders properly: <Results /> 3`] = `
+exports[`SC.xml > renders properly > <Results /> 3`] = `
 [
   <main
     className="e-exam e-results"
@@ -318209,7 +318209,7 @@ exports[`SC.xml renders properly: <Results /> 3`] = `
 ]
 `;
 
-exports[`filetypes.xml renders properly: <Attachments /> 1`] = `
+exports[`filetypes.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -318489,7 +318489,7 @@ exports[`filetypes.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`filetypes.xml renders properly: <Exam /> 1`] = `
+exports[`filetypes.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -318948,7 +318948,7 @@ exports[`filetypes.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`filetypes.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`filetypes.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -319122,7 +319122,7 @@ exports[`filetypes.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`filetypes.xml renders properly: <Results /> 1`] = `
+exports[`filetypes.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -319449,7 +319449,7 @@ exports[`filetypes.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`no_attachments.xml renders properly: <Attachments /> 1`] = `
+exports[`no_attachments.xml > renders properly > <Attachments /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -319491,7 +319491,7 @@ exports[`no_attachments.xml renders properly: <Attachments /> 1`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Attachments /> 2`] = `
+exports[`no_attachments.xml > renders properly > <Attachments /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -319533,7 +319533,7 @@ exports[`no_attachments.xml renders properly: <Attachments /> 2`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Attachments /> 3`] = `
+exports[`no_attachments.xml > renders properly > <Attachments /> 3`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -319575,7 +319575,7 @@ exports[`no_attachments.xml renders properly: <Attachments /> 3`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Attachments /> 4`] = `
+exports[`no_attachments.xml > renders properly > <Attachments /> 4`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -319617,7 +319617,7 @@ exports[`no_attachments.xml renders properly: <Attachments /> 4`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Attachments /> 5`] = `
+exports[`no_attachments.xml > renders properly > <Attachments /> 5`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -319659,7 +319659,7 @@ exports[`no_attachments.xml renders properly: <Attachments /> 5`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Attachments /> 6`] = `
+exports[`no_attachments.xml > renders properly > <Attachments /> 6`] = `
 <main
   aria-labelledby="title"
   className="e-exam attachments"
@@ -319701,7 +319701,7 @@ exports[`no_attachments.xml renders properly: <Attachments /> 6`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Exam /> 1`] = `
+exports[`no_attachments.xml > renders properly > <Exam /> 1`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -320132,7 +320132,7 @@ exports[`no_attachments.xml renders properly: <Exam /> 1`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Exam /> 2`] = `
+exports[`no_attachments.xml > renders properly > <Exam /> 2`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -320563,7 +320563,7 @@ exports[`no_attachments.xml renders properly: <Exam /> 2`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Exam /> 3`] = `
+exports[`no_attachments.xml > renders properly > <Exam /> 3`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -320994,7 +320994,7 @@ exports[`no_attachments.xml renders properly: <Exam /> 3`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Exam /> 4`] = `
+exports[`no_attachments.xml > renders properly > <Exam /> 4`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -321425,7 +321425,7 @@ exports[`no_attachments.xml renders properly: <Exam /> 4`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Exam /> 5`] = `
+exports[`no_attachments.xml > renders properly > <Exam /> 5`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -321856,7 +321856,7 @@ exports[`no_attachments.xml renders properly: <Exam /> 5`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Exam /> 6`] = `
+exports[`no_attachments.xml > renders properly > <Exam /> 6`] = `
 <main
   aria-labelledby="title"
   className="e-exam"
@@ -322287,7 +322287,7 @@ exports[`no_attachments.xml renders properly: <Exam /> 6`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <GradingInstructions /> 1`] = `
+exports[`no_attachments.xml > renders properly > <GradingInstructions /> 1`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -322545,7 +322545,7 @@ exports[`no_attachments.xml renders properly: <GradingInstructions /> 1`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <GradingInstructions /> 2`] = `
+exports[`no_attachments.xml > renders properly > <GradingInstructions /> 2`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="sv-FI"
@@ -322822,7 +322822,7 @@ exports[`no_attachments.xml renders properly: <GradingInstructions /> 2`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <GradingInstructions /> 3`] = `
+exports[`no_attachments.xml > renders properly > <GradingInstructions /> 3`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -323111,7 +323111,7 @@ exports[`no_attachments.xml renders properly: <GradingInstructions /> 3`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <GradingInstructions /> 4`] = `
+exports[`no_attachments.xml > renders properly > <GradingInstructions /> 4`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="fi-FI"
@@ -323416,7 +323416,7 @@ exports[`no_attachments.xml renders properly: <GradingInstructions /> 4`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <GradingInstructions /> 5`] = `
+exports[`no_attachments.xml > renders properly > <GradingInstructions /> 5`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="sv-FI"
@@ -323723,7 +323723,7 @@ exports[`no_attachments.xml renders properly: <GradingInstructions /> 5`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <GradingInstructions /> 6`] = `
+exports[`no_attachments.xml > renders properly > <GradingInstructions /> 6`] = `
 <main
   className="e-exam e-grading-instructions"
   lang="sv-FI"
@@ -324030,7 +324030,7 @@ exports[`no_attachments.xml renders properly: <GradingInstructions /> 6`] = `
 </main>
 `;
 
-exports[`no_attachments.xml renders properly: <Results /> 1`] = `
+exports[`no_attachments.xml > renders properly > <Results /> 1`] = `
 [
   <main
     className="e-exam e-results"
@@ -324362,7 +324362,7 @@ exports[`no_attachments.xml renders properly: <Results /> 1`] = `
 ]
 `;
 
-exports[`no_attachments.xml renders properly: <Results /> 2`] = `
+exports[`no_attachments.xml > renders properly > <Results /> 2`] = `
 [
   <main
     className="e-exam e-results"
@@ -324694,7 +324694,7 @@ exports[`no_attachments.xml renders properly: <Results /> 2`] = `
 ]
 `;
 
-exports[`no_attachments.xml renders properly: <Results /> 3`] = `
+exports[`no_attachments.xml > renders properly > <Results /> 3`] = `
 [
   <main
     className="e-exam e-results"
@@ -325026,7 +325026,7 @@ exports[`no_attachments.xml renders properly: <Results /> 3`] = `
 ]
 `;
 
-exports[`no_attachments.xml renders properly: <Results /> 4`] = `
+exports[`no_attachments.xml > renders properly > <Results /> 4`] = `
 [
   <main
     className="e-exam e-results"
@@ -325358,7 +325358,7 @@ exports[`no_attachments.xml renders properly: <Results /> 4`] = `
 ]
 `;
 
-exports[`no_attachments.xml renders properly: <Results /> 5`] = `
+exports[`no_attachments.xml > renders properly > <Results /> 5`] = `
 [
   <main
     className="e-exam e-results"
@@ -325690,7 +325690,7 @@ exports[`no_attachments.xml renders properly: <Results /> 5`] = `
 ]
 `;
 
-exports[`no_attachments.xml renders properly: <Results /> 6`] = `
+exports[`no_attachments.xml > renders properly > <Results /> 6`] = `
 [
   <main
     className="e-exam e-results"

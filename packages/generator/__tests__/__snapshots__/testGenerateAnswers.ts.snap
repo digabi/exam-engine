@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`generateAnswers() creates an answer for each choice question in grading structure 1`] = `
+exports[`generateAnswers() > creates an answer for each choice question in grading structure 1`] = `
 [
   {
     "questionId": 2,
@@ -20,7 +20,7 @@ exports[`generateAnswers() creates an answer for each choice question in grading
 ]
 `;
 
-exports[`generateAnswers() creates an answer for each text question in grading structure 1`] = `
+exports[`generateAnswers() > creates an answer for each text question in grading structure 1`] = `
 [
   {
     "characterCount": 17,

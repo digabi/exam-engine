@@ -1,23 +1,23 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<QuestionManualScore /> fi-FI renders with NoPregrading when there are no scores 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders with NoPregrading when there are no scores 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders with NoPregrading when there is pregrading data but no scores 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders with NoPregrading when there is pregrading data but no scores 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders with displayNumber where there are more than one answer 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders with displayNumber where there are more than one answer 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders with pregrading and one censor scores 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders with pregrading and one censor scores 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders with pregrading and three censor scores 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders with pregrading and three censor scores 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders with pregrading score 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders with pregrading score 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders with pregrading, censor and inspection scores 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders with pregrading, censor and inspection scores 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when pregrading score is 0 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders without NoPregrading when pregrading score is 0 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders without NoPregrading when there are scores 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders without NoPregrading when there are scores 1`] = `null`;
 
-exports[`<QuestionManualScore /> fi-FI renders without score 1`] = `null`;
+exports[`<QuestionManualScore /> > fi-FI > renders without score 1`] = `null`;
 
-exports[`<QuestionManualScore /> sv-FI renders with pregrading, censor and inspection scores 1`] = `null`;
+exports[`<QuestionManualScore /> > sv-FI > renders with pregrading, censor and inspection scores 1`] = `null`;

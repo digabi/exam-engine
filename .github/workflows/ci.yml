@@ -9,7 +9,7 @@ on:
       - feature/*
 
 jobs:
-  jest-tests:
+  vitest-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -23,8 +23,8 @@ jobs:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - name: Run Jest Tests
-        run: npm run test-jest -- --ci
+      - name: Run Vitest Tests
+        run: npm run test-vitest
 
   playwright-component-tests:
     runs-on: ubuntu-latest

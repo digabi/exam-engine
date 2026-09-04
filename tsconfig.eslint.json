@@ -5,6 +5,7 @@
   },
   "extends": "./tsconfig.json",
   "include": [
-    "./packages/core/playwright-ct.config.ts"
+    "./packages/core/playwright-ct.config.ts",
+    "./vitest.config.ts",
   ]
 }

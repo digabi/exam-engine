@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ee create-grading-instructions creates grading instructions 1`] = `
+exports[`ee create-grading-instructions > creates grading instructions 1`] = `
 "<!DOCTYPE html><html lang="fi-FI"><head>
     <meta charset="utf-8">
     <title>Hyvän vastauksen piirteet: FI – Saksa, lyhyt oppimäärä</title>
@@ -895,7 +895,7 @@ exports[`ee create-grading-instructions creates grading instructions 1`] = `
 </body></html>"
 `;
 
-exports[`ee create-grading-instructions creates grading instructions 2`] = `
+exports[`ee create-grading-instructions > creates grading instructions 2`] = `
 [
   "NotoMono.woff",
   "NotoMono.woff2",
@@ -924,7 +924,7 @@ exports[`ee create-grading-instructions creates grading instructions 2`] = `
 ]
 `;
 
-exports[`ee create-grading-instructions creates grading instructions 3`] = `
+exports[`ee create-grading-instructions > creates grading instructions 3`] = `
 [
   "2.2.ogg",
   "2.3.ogg",

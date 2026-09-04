@@ -1,3 +1,4 @@
+import { beforeAll, describe, expect, it } from 'vitest'
 import { exec } from './util'
 import path from 'path'
 

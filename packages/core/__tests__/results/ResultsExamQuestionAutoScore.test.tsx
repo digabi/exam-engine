@@ -1,3 +1,4 @@
+import { beforeAll, describe, expect, it } from 'vitest'
 import * as i18next from 'i18next'
 import React from 'react'
 import { I18nextProvider } from 'react-i18next'
