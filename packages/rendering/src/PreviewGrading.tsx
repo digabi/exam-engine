@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { ResultsContext, withResultsContext } from '@digabi/exam-engine-core/dist/components/context/ResultsContext'
-import { Annotation } from '@digabi/exam-engine-core'
-import { GradingAnswer } from '@digabi/exam-engine-core/dist/components/grading/GradingAnswer'
-import { withCommonExamContext } from '@digabi/exam-engine-core/dist/components/context/CommonExamContext'
+import {
+  Annotation,
+  GradingAnswer,
+  ResultsContext,
+  withCommonExamContext,
+  withResultsContext
+} from '@digabi/exam-engine-core'
 
 function PreviewGrading() {
   const { answersByQuestionId } = useContext(ResultsContext)

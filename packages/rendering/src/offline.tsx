@@ -1,3 +1,4 @@
+import '@digabi/exam-engine-core/main.css'
 import { Attachments, Exam, GradingInstructions, ExamAnswer, parseExam } from '@digabi/exam-engine-core'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
@@ -6,7 +7,11 @@ import noopExamServerAPI from './utils/noopExamServerAPI'
 
 const exam = process.env.EXAM!
 const language = process.env.EXAM_LANGUAGE!
+const title = process.env.EXAM_TITLE!
 const isMediaVersion = !!process.env.MEDIA_VERSION
+
+document.documentElement.lang = language
+document.title = title
 
 const doc = parseExam(exam, true)
 const answers: ExamAnswer[] = []

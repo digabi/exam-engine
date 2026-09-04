@@ -26,7 +26,8 @@ describe('ee create-offline', () => {
       'assets',
       'attachments',
       'index.html',
-      'main-bundle.js'
+      'main.css',
+      'main.js'
     ])
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/assets`))).toMatchSnapshot()
     expect(filterFileList(await fs.readdir(`${exams}/SC/1970-01-01_SC_fi/attachments`))).toMatchSnapshot()

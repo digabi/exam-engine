@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      
+
       - name: Node.js Setup
         uses: ./.github/actions/node-setup
 
@@ -23,8 +23,6 @@ jobs:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - run: npm rebuild full-icu
-    
       - name: Run Jest Tests
         run: npm run test-jest -- --ci
 
@@ -32,10 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      
+
       - name: Node.js Setup
         uses: ./.github/actions/node-setup
-        
+
       - name: Restore Playwright Browser Cache
         uses: actions/cache@v6
         with:
@@ -52,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      
+
       - name: Node.js Setup
         uses: ./.github/actions/node-setup
 
@@ -66,6 +64,3 @@ jobs:
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
         run: npm run lint
-      - run: npm run bundlewatch
-        env:
-          BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}

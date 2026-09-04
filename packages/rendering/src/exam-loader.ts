@@ -1,51 +1,50 @@
-import { Attachment, getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
-import { promises as fs } from 'fs'
+import crypto from 'node:crypto'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import esbuild from 'esbuild'
 import { SyntaxError } from 'libxmljs2'
 import _ from 'lodash'
-import path from 'path'
-import * as uuid from 'uuid'
+import { getMediaMetadataFromLocalFile, masterExam } from '@digabi/exam-engine-mastering'
 
-function stringifyModule(module: any, attachments: Attachment[] = []): string {
-  const imports = attachments.map(attachment => `require('./attachments/${attachment.filename}')`).join('\n')
-  return `${imports}\nmodule.exports = ${JSON.stringify(module)}`
-}
+export default function examLoader(editableGradingInstructions?: boolean): esbuild.Plugin {
+  const examUuid = crypto.randomUUID()
+  return {
+    name: 'exam',
+    setup(build) {
+      build.onLoad({ filter: /\.xml$/ }, async args => {
+        const source = await fs.readFile(args.path, 'utf-8')
+        const resolveAttachment = (filename: string) => path.resolve(path.dirname(args.path), 'attachments', filename)
+        const getMediaMetadata = getMediaMetadataFromLocalFile(resolveAttachment)
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default async function examLoader(this: any, source: string): Promise<void> {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  const callback: <T>(error: unknown, value?: T) => void = this.async()
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
-  const baseDir = path.dirname(this.resourcePath)
-  const resolveAttachment = (attachment: string) => path.resolve(baseDir, 'attachments', attachment)
-  const getMediaMetadata = getMediaMetadataFromLocalFile(resolveAttachment)
-  const UUID = uuid.v4()
-  const generateUuid = () => UUID
+        try {
+          const results = await masterExam(source, () => examUuid, getMediaMetadata, {
+            removeCorrectAnswers: false,
+            editableGradingInstructions: Boolean(editableGradingInstructions)
+          })
+          const attachments = _.chain(results)
+            .flatMap(result => result.attachments)
+            .uniqWith(_.isEqual)
+            .value()
+          const attachmentPaths = attachments.map(attachment => resolveAttachment(attachment.filename))
+          await Promise.all(attachmentPaths.map(filename => fs.access(filename)))
 
-  try {
-    const results = await masterExam(source, generateUuid, getMediaMetadata, {
-      removeCorrectAnswers: false,
-      editableGradingInstructions: !!process.env.EDITABLE_GRADING_INSTRUCTIONS
-    })
-    const module = { original: source, results }
-
-    const attachments = _.chain(results)
-      .flatMap(r => r.attachments)
-      .uniqWith(_.isEqual)
-      .value()
-    await Promise.all(attachments.map(attachment => fs.access(resolveAttachment(attachment.filename))))
-
-    callback(null, stringifyModule(module))
-  } catch (err) {
-    if (isLibXmlError(err)) {
-      const isParseError = err.domain === 1
-
-      if (isParseError) {
-        callback(null, stringifyModule({ original: source, mastered: [] }))
-      } else {
-        callback(beautifyError(err, source))
-      }
-    } else {
-      callback(err instanceof Error ? err : new Error(`Unknown error occurred: ${String(err)}`))
+          return {
+            contents: `module.exports = ${JSON.stringify({ original: source, results })}`,
+            loader: 'js',
+            watchFiles: [args.path, ...attachmentPaths]
+          }
+        } catch (err) {
+          if (isLibXmlError(err) && err.domain === 1) {
+            return {
+              contents: `module.exports = ${JSON.stringify({ original: source, mastered: [] })}`,
+              loader: 'js',
+              watchFiles: [args.path]
+            }
+          } else {
+            return { errors: [{ text: getExamErrorMessage(err, source) }] }
+          }
+        }
+      })
     }
   }
 }
@@ -54,17 +53,18 @@ function isLibXmlError(err: unknown): err is SyntaxError {
   return Object.prototype.hasOwnProperty.call(err, 'domain')
 }
 
-function beautifyError(error: SyntaxError & Error, source: string) {
-  const { line, column, message } = error
+function getExamErrorMessage(err: unknown, source: string): string {
+  if (!isLibXmlError(err)) {
+    return err instanceof Error ? err.message : `Unknown error occurred: ${String(err)}`
+  }
 
-  const sourceLines = source.split('\n')
-  const offendingLine = sourceLines[line! - 1]
-
-  error.message = `${message}
-Rivi ${line!}, sarake ${column}:
+  const line = err.line ?? 0
+  const column = err.column ?? 0
+  const offendingLine = source.split('\n')[line - 1] ?? ''
+  return `${err.message}
+Rivi ${line}, sarake ${column}:
 
 ${offendingLine}
 ${column > 0 ? `${'-'.repeat(column)}^` : '^'.repeat(offendingLine.length)}
 `
-  return error
 }

@@ -11,7 +11,14 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
 
     beforeAll(async () => {
       ctx = await previewExam(resolveExam('GE/GE.xml'))
+    })
+
+    beforeEach(async () => {
       page = await createPage()
+    })
+
+    afterEach(async () => {
+      await page.browserContext().close()
     })
 
     afterAll(async () => {
@@ -88,6 +95,7 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
       expect(await questionSelector?.isIntersectingViewport()).not.toBe(true)
       await page.click(subQuestionLinkInSidebar)
       expect(await questionSelector?.isIntersectingViewport()).toBe(true)
+      await page.browserContext().close()
       await ctx.close()
     })
   })
@@ -99,7 +107,14 @@ describe('testSidebarNavigation.ts — Sidebar navigation functionality', () => 
 
     beforeAll(async () => {
       ctx = await previewExam(resolveExam('SC/SC.xml'))
+    })
+
+    beforeEach(async () => {
       page = await createPage()
+    })
+
+    afterEach(async () => {
+      await page.browserContext().close()
     })
 
     afterAll(async () => {

@@ -1,13 +1,16 @@
+import { execFile } from 'node:child_process'
+import { randomUUID } from 'node:crypto'
+import { promises as fs } from 'node:fs'
+import os from 'node:os'
+import path from 'node:path'
+import { promisify } from 'node:util'
 import { Attachment, getMediaMetadataFromLocalFile, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'
-import { spawn } from 'promisify-child-process'
-import { promises as fs } from 'fs'
-import path from 'path'
-import puppeteer from 'puppeteer'
-import tmp from 'tmp-promise'
-import * as uuid from 'uuid'
-import webpack from 'webpack'
-import { getOfflineWebpackConfig } from './getOfflineWebpackConfig'
+import esbuild from 'esbuild'
 import ffmpeg from 'ffmpeg-static'
+import puppeteer from 'puppeteer'
+import { getOfflineBuildOptions, publicDirectory } from './build'
+
+const execFileAsync = promisify(execFile)
 
 export interface CreateOfflineExamOptions {
   /**
@@ -36,16 +39,16 @@ export async function createOfflineExam(
   const resolveAttachment = (filename: string) => path.resolve(path.dirname(examFile), 'attachments', filename)
   const source = await fs.readFile(examFile, 'utf-8')
   const examOutputDirectories: string[] = []
-  const results = await masterExam(source, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
+  const results = await masterExam(source, () => randomUUID(), getMediaMetadataFromLocalFile(resolveAttachment), {
     removeCorrectAnswers: false
   })
-  const cacheDirectory = await tmp.dir({ unsafeCleanup: true }).then(d => d.path)
+  const cacheDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'exam-cache-'))
 
   for (const result of results) {
     const examOutputDirectory = getExamOutputDirectory(result, outputDirectory)
-    await runWebpack(result, examOutputDirectory, opts)
-
-    await fs.mkdir(`${examOutputDirectory}/attachments`, { recursive: true })
+    await esbuild.build(getOfflineBuildOptions(result, options, examOutputDirectory))
+    await fs.mkdir(path.resolve(examOutputDirectory, 'attachments'), { recursive: true })
+    await copyOfflineHtmlFiles(examOutputDirectory, opts)
 
     for (const attachment of result.attachments) {
       if (
@@ -60,6 +63,7 @@ export async function createOfflineExam(
   }
 
   await optimizeWithPuppeteer(examOutputDirectories, opts)
+  await fs.rm(cacheDirectory, { recursive: true, force: true })
 
   return examOutputDirectories
 }
@@ -72,17 +76,22 @@ function getExamOutputDirectory(result: MasteringResult, outputDirectory: string
   return path.resolve(outputDirectory, dirname)
 }
 
-async function runWebpack(result: MasteringResult, examOutputDirectory: string, options: CreateOfflineExamOptions) {
-  const config = getOfflineWebpackConfig(result, examOutputDirectory, options)
-  await new Promise<string | void>((resolve, reject) => {
-    webpack(config, (err, stats) => {
-      if (err || stats?.hasErrors()) {
-        reject(err || new Error(stats?.toString({ colors: true })))
-      } else {
-        resolve()
-      }
-    })
-  })
+async function copyOfflineHtmlFiles(examOutputDirectory: string, options: CreateOfflineExamOptions) {
+  if (options.type === 'offline') {
+    await Promise.all([
+      fs.copyFile(path.resolve(publicDirectory, 'offline.html'), path.resolve(examOutputDirectory, 'index.html')),
+      fs.copyFile(
+        path.resolve(publicDirectory, 'offline-attachments.html'),
+        path.resolve(examOutputDirectory, 'attachments/index.html')
+      )
+    ])
+  }
+  if (options.type === 'grading-instructions') {
+    await fs.copyFile(
+      path.resolve(publicDirectory, 'grading-instructions.html'),
+      path.resolve(examOutputDirectory, 'grading-instructions.html')
+    )
+  }
 }
 
 async function copyAttachment(
@@ -103,7 +112,17 @@ async function copyAttachment(
       await fs.copyFile(cachedFilename, newTarget)
     } catch (err) {
       if (ffmpeg) {
-        await spawn(ffmpeg, ['-i', source, '-c:v', 'libx264', '-c:a', 'libmp3lame', '-q:a', '4', cachedFilename])
+        await execFileAsync(ffmpeg, [
+          '-i',
+          source,
+          '-c:v',
+          'libx264',
+          '-c:a',
+          'libmp3lame',
+          '-q:a',
+          '4',
+          cachedFilename
+        ])
       }
       await fs.copyFile(cachedFilename, newTarget)
     }
@@ -137,12 +156,6 @@ async function optimizeWithPuppeteer(examOutputDirectories: string[], options: C
             .forEach(e => e.remove())
           // Remove rich-text-editor injected HTML.
           document.body.querySelectorAll(':scope > :not(#app)').forEach(e => e.remove())
-
-          // Fix asset path on attachments page.
-          if (location.pathname.includes('attachments/index.html')) {
-            const style = document.head.querySelector(':scope > style')!
-            style.textContent = style.textContent.replace(/url\(assets\//g, 'url(../assets/')
-          }
         })
         const prerenderedContent = await page.content()
         await fs.writeFile(htmlFile, prerenderedContent, 'utf-8')

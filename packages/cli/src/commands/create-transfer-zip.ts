@@ -1,10 +1,10 @@
 import { ExamType, getMediaMetadataFromLocalFile, masterExam, ns, parseExam } from '@digabi/exam-engine-mastering'
+import { randomUUID } from 'crypto'
 import { createReadStream, createWriteStream, promises as fs } from 'fs'
 import { Element } from 'libxmljs2'
 import _ from 'lodash'
 import { Ora } from 'ora'
 import path from 'path'
-import * as uuid from 'uuid'
 import yazl from 'yazl'
 import { examName } from '../utils'
 
@@ -29,9 +29,12 @@ export default async function createTransferZip({
     const type = (examVersion.attr('exam-type')?.value() ?? 'normal') as ExamType
     const language = examVersion.attr('lang')!.value()
     const localizedXml = localize(xml, language, type)
-    const results = await masterExam(localizedXml, () => uuid.v4(), getMediaMetadataFromLocalFile(resolveAttachment), {
-      removeCorrectAnswers: false
-    })
+    const results = await masterExam(
+      localizedXml,
+      () => randomUUID(),
+      getMediaMetadataFromLocalFile(resolveAttachment),
+      { removeCorrectAnswers: false }
+    )
     const typeSuffix = type === 'visually-impaired' ? '_vi' : type === 'hearing-impaired' ? '_hi' : ''
     const outputFilename = path.resolve(outdir, `${examName(exam)}_${language}${typeSuffix}_transfer.zip`)
 

@@ -1,22 +1,28 @@
+import fsP from 'node:fs/promises'
+import os from 'node:os'
+import path from 'node:path'
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { createOfflineExam } from '@digabi/exam-engine-rendering'
-import path from 'path'
 import { Page } from 'puppeteer'
-import tmp from 'tmp-promise'
 import { getPageAndRequestErrors, initPuppeteer } from './puppeteerUtils'
 
 describe('testGradingInstructionsGeneration.ts - grading instructions generation', () => {
   const createPage = initPuppeteer()
   let page: Page
   let gradingInstructionHtmlFile: string
+  let tmpdir: string
 
   beforeAll(async () => {
-    const tmpdir = await tmp.dir().then(r => r.path)
+    tmpdir = await fsP.mkdtemp(path.join(os.tmpdir(), 'grading-instructions-'))
     const [outputDirectory] = await createOfflineExam(resolveExam('A_E/A_E.xml'), tmpdir, {
       type: 'grading-instructions'
     })
     gradingInstructionHtmlFile = path.resolve(outputDirectory, 'grading-instructions.html')
     page = await createPage()
+  })
+
+  afterAll(async () => {
+    await fsP.rm(tmpdir, { recursive: true, force: true })
   })
 
   it('renders grading instruction page without errors', async () => {
