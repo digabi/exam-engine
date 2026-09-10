@@ -57,7 +57,7 @@
     "@types/react-test-renderer": "^19.1.0",
     "esbuild": "^0.28.2",
     "esbuild-plugin-less": "^1.3.39",
-    "less": "^4.9.0",
+    "less": "^4.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
