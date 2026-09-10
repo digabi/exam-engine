@@ -1,3 +1,4 @@
+import { beforeAll, describe, expect, it } from 'vitest'
 import { parseExam } from '@digabi/exam-engine-core'
 import { listExams } from '@digabi/exam-engine-exams'
 import { GetMediaMetadata, masterExam, MasteringResult } from '@digabi/exam-engine-mastering'

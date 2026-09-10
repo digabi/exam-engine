@@ -1,3 +1,4 @@
+import { beforeAll, describe, expect, it } from 'vitest'
 import * as fs from 'fs/promises'
 import { exec, removeStyles, stripColorCodes } from './util'
 import * as path from 'path'

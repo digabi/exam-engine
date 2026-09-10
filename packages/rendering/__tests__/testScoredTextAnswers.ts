@@ -1,3 +1,4 @@
+import { afterAll, beforeAll, describe, it } from 'vitest'
 import { QuestionId } from '@digabi/exam-engine-core'
 import { resolveExam } from '@digabi/exam-engine-exams'
 import { PreviewContext, previewExam } from '@digabi/exam-engine-rendering'

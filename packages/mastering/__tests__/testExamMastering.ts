@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest'
 import { listExams } from '@digabi/exam-engine-exams'
 import {
   choiceAnswer,
@@ -9,7 +10,6 @@ import {
 } from '@digabi/exam-engine-generator'
 import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/exam-engine-mastering'
 import { promises as fs } from 'fs'
-import { wrap } from 'jest-snapshot-serializer-raw'
 import _ from 'lodash'
 import path from 'path'
 import { readFixture } from './fixtures'
@@ -129,7 +129,7 @@ describe('Exam mastering', () => {
 
   it('calls generateUuid with exam metadata if it is an yo exam', async () => {
     const xml = await readFixture('minimal_yo_exam.xml')
-    const spy = jest.fn(generateUuid)
+    const spy = vi.fn(generateUuid)
     await masterExam(xml, spy, getMediaMetadata)
     expect(spy).toHaveBeenCalledTimes(2)
     expect(spy.mock.calls[0]).toEqual([
@@ -155,7 +155,7 @@ describe('Exam mastering', () => {
     const masteringResults = await masterExam(xml, generateUuid, getMediaMetadata)
 
     for (const masteringResult of masteringResults) {
-      expect(wrap(masteringResult.xml)).toMatchSnapshot(masteringResult.type)
+      expect(masteringResult.xml).toMatchSnapshot(masteringResult.type)
     }
   })
 
@@ -224,25 +224,25 @@ describe('Exam mastering', () => {
       ]
     })
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
-    expect(wrap(masteringResult.xml)).toMatchSnapshot('xml')
+    expect(masteringResult.xml).toMatchSnapshot('xml')
   })
 
   it('shuffles choice answers but keeps no-answer options last', async () => {
     const xml = await readFixture('choice_answer_with_no_answer.xml')
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
-    expect(wrap(masteringResult.xml)).toMatchSnapshot()
+    expect(masteringResult.xml).toMatchSnapshot()
   })
 
   it('shuffles dnd answers', async () => {
     const xml = await readFixture('dnd-answer.xml')
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
-    expect(wrap(masteringResult.xml)).toMatchSnapshot()
+    expect(masteringResult.xml).toMatchSnapshot()
   })
 
   it('generates correct grading structure for dnd answers', async () => {
     const xml = await readFixture('dnd-answer.xml')
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
-    expect(wrap(JSON.stringify(masteringResult.gradingStructure, null, 2))).toMatchSnapshot()
+    expect(JSON.stringify(masteringResult.gradingStructure, null, 2)).toMatchSnapshot()
   })
 
   it('adds a suffix to exam title for special exams', async () => {
@@ -271,7 +271,7 @@ describe('Exam mastering', () => {
   it('supports audio-answers', async () => {
     const xml = await readFixture('audio-answer.xml')
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
-    expect(wrap(JSON.stringify(masteringResult.gradingStructure, null, 2))).toMatchSnapshot()
+    expect(JSON.stringify(masteringResult.gradingStructure, null, 2)).toMatchSnapshot()
   })
 
   for (const exam of listExams()) {
@@ -279,8 +279,8 @@ describe('Exam mastering', () => {
       const source = await fs.readFile(exam, 'utf-8')
       const results = await masterExam(source, generateUuid, getMediaMetadata)
       for (const result of results) {
-        expect(wrap(result.xml)).toMatchSnapshot('xml')
-        expect(wrap(result.translation)).toMatchSnapshot('translation')
+        expect(result.xml).toMatchSnapshot('xml')
+        expect(result.translation).toMatchSnapshot('translation')
         expect(_.omit(result, 'xml', 'translation')).toMatchSnapshot()
       }
     })

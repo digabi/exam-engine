@@ -1,12 +1,12 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ee create-transfer-zip creates normal transfer zip 1`] = `
+exports[`ee create-transfer-zip > creates normal transfer zip 1`] = `
 [
   "13A.jpg",
 ]
 `;
 
-exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
+exports[`ee create-transfer-zip > creates normal transfer zip 2`] = `
 "<?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5" date="2022-03-23" exam-code="N">
 <e:exam-versions>
@@ -1385,9 +1385,9 @@ exports[`ee create-transfer-zip creates normal transfer zip 2`] = `
 "
 `;
 
-exports[`ee create-transfer-zip creates vi transfer zip 1`] = `[]`;
+exports[`ee create-transfer-zip > creates vi transfer zip 1`] = `[]`;
 
-exports[`ee create-transfer-zip creates vi transfer zip 2`] = `
+exports[`ee create-transfer-zip > creates vi transfer zip 2`] = `
 "<?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5" date="2022-03-23" exam-code="N">
 <e:exam-versions>

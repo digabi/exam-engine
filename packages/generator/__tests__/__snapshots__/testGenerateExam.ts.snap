@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`generateExam() creates a basic exam when called with minimal arguments 1`] = `
-<?xml version="1.0" encoding="UTF-8"?>
+exports[`generateExam() > creates a basic exam when called with minimal arguments 1`] = `
+"<?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5">
   <e:exam-versions>
     <e:exam-version lang="fi-FI"/>
@@ -15,11 +15,11 @@ exports[`generateExam() creates a basic exam when called with minimal arguments 
     </e:question>
   </e:section>
 </e:exam>
-
+"
 `;
 
-exports[`generateExam() localizes titles if multi-language exam 1`] = `
-<?xml version="1.0" encoding="UTF-8"?>
+exports[`generateExam() > localizes titles if multi-language exam 1`] = `
+"<?xml version="1.0" encoding="UTF-8"?>
 <e:exam xmlns:e="http://ylioppilastutkinto.fi/exam.xsd" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ylioppilastutkinto.fi/exam.xsd https://abitti.net/schema/exam.xsd" exam-schema-version="0.5">
   <e:exam-versions>
     <e:exam-version lang="fi-FI"/>
@@ -43,5 +43,5 @@ exports[`generateExam() localizes titles if multi-language exam 1`] = `
     </e:question>
   </e:section>
 </e:exam>
-
+"
 `;

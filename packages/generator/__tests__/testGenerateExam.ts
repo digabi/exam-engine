@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest'
 import {
   choiceAnswer,
   dropdownAnswer,
@@ -17,14 +18,13 @@ import {
 } from '@digabi/exam-engine-generator'
 import { ns, parseExam } from '@digabi/exam-engine-mastering'
 import * as fc from 'fast-check'
-import { wrap } from 'jest-snapshot-serializer-raw'
 import { Element } from 'libxmljs2'
 import { GenerateAnswerOptions, GenerateSubQuestionOptions } from '../src'
 
 describe('generateExam()', () => {
   it('creates a basic exam when called with minimal arguments', () => {
     const exam = generateAndParseExam({ sections: [{ questions: [question([textAnswer()])] }] })
-    expect(wrap(exam.toString(false))).toMatchSnapshot()
+    expect(exam.toString(false)).toMatchSnapshot()
   })
 
   it('localizes titles if multi-language exam', () => {
@@ -32,7 +32,7 @@ describe('generateExam()', () => {
       examVersions: [{ language: 'fi-FI' }, { language: 'sv-FI' }],
       sections: [{ questions: [question([textAnswer()])] }]
     })
-    expect(wrap(exam.toString(false))).toMatchSnapshot()
+    expect(exam.toString(false)).toMatchSnapshot()
   })
 
   it('does not add a default title if the exam has an exam code', () => {

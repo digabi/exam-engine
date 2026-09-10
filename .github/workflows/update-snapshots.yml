@@ -26,8 +26,8 @@ jobs:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - name: Update Jest Snapshots
-        run: npm run test-jest -- --ci -u
+      - name: Update Vitest Snapshots
+        run: npm run test-vitest:update-snapshots
 
       - name: Commit and push to branch
         id: commit
