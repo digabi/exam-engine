@@ -60,7 +60,7 @@
     "less": "^4.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-test-renderer": "^18.2.0",
+    "react-test-renderer": "^19.3.0",
     "redux-saga-test-plan": "^4.0.6"
   },
   "gitHead": "38106fd91e7fab82ac4fdc9230c70ee4c8e29278"
