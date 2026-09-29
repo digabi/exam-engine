@@ -10,7 +10,9 @@
       "require": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./main.css": "./dist/main.css"
+    "./main.css": "./dist/main.css",
+    "./dist/main.css": "./dist/main.css",
+    "./colors.less": "./src/css/colors.less"
   },
   "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
