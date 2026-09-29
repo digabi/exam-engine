@@ -1,6 +1,6 @@
 {
   "name": "@digabi/exam-engine-mastering",
-  "version": "25.0.0-alpha.1",
+  "version": "25.0.0-alpha.2",
   "main": "dist/index.js",
   "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
@@ -10,7 +10,7 @@
     "schema"
   ],
   "dependencies": {
-    "@digabi/exam-engine-core": "25.0.0-alpha.1",
+    "@digabi/exam-engine-core": "25.0.0-alpha.2",
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "cloneable-readable": "^3.0.0",
     "compare-versions": "^6.0.0",
