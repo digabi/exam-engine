@@ -12,7 +12,7 @@
     },
     "./main.css": "./dist/main.css",
     "./dist/main.css": "./dist/main.css",
-    "./colors.less": "./src/css/colors.less"
+    "./colors.less": "./dist/colors.less"
   },
   "repository": "https://github.com/digabi/exam-engine",
   "author": "Matriculation Examination Board, Finland",
