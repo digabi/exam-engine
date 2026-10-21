@@ -346,6 +346,47 @@ describe('Exam mastering', () => {
     })
   })
 
+  describe('A5 and O5 titles and writing-day footers', () => {
+    const defaultFooterFi =
+      'Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.'
+    const defaultFooterSv =
+      'Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.'
+    const writingFooterFi =
+      'Tarkista, että kirjoitit vain yhden aiheen vastaustilaan. Älä jätä mitään merkintöjä muiden aiheiden vastaustiloihin.'
+    const writingFooterSv =
+      'Kontrollera att du endast skrivit i ett svarsfält. Lämna inga anteckningar i de övriga svarsfälten.'
+
+    const examXml = (examCode: 'A5' | 'O5', language: 'fi-FI' | 'sv-FI', dayCode?: 'X' | 'E') =>
+      generateExam({
+        examCode,
+        date: dayCode ? '2027-01-01' : '2026-12-31',
+        dayCode,
+        examVersions: [{ language }],
+        sections: [{ questions: [question([textAnswer()])] }]
+      })
+
+    const footerText = (xml: string) => xml.match(/<e:exam-footer><p[^>]*>([^<]*)<\/p><\/e:exam-footer>/)?.[1]
+
+    it.each([
+      ['A5', 'X', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, lukutaidon koe', defaultFooterFi],
+      ['A5', 'E', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, kirjoitustaidon koe', writingFooterFi],
+      ['O5', 'X', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i läskompetens', defaultFooterSv],
+      ['O5', 'E', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i skrivkompetens', writingFooterSv]
+    ] as const)('%s_%s (%s) gets its title and footer', async (examCode, dayCode, language, title, expectedFooter) => {
+      const [result] = await masterExam(examXml(examCode, language, dayCode), generateUuid, getMediaMetadata)
+      expect(result.title).toBe(title)
+      expect(footerText(result.xml)).toBe(expectedFooter)
+    })
+
+    it.each([
+      ['A5', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus'],
+      ['O5', 'sv-FI', 'SV – Svenska som andraspråk och litteratur']
+    ] as const)('single-day %s keeps the current title', async (examCode, language, title) => {
+      const [result] = await masterExam(examXml(examCode, language), generateUuid, getMediaMetadata)
+      expect(result).toMatchObject({ examCode, dayCode: null, title })
+    })
+  })
+
   for (const exam of listExams()) {
     it(`masters ${path.basename(exam)} exam correctly`, async () => {
       const source = await fs.readFile(exam, 'utf-8')
