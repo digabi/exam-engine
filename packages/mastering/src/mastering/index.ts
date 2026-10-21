@@ -110,6 +110,21 @@ const defaultOptions = {
   throwOnLatexError: true
 }
 
+/** Inclusive start of examination period 2027K. Compared as an xs:date string. */
+const a5O5DayCodeRequiredFrom = '2027-01-01'
+
+/**
+ * A and O always have a reading day (X) and a writing day (E).
+ * A5 and O5 do from 2027-01-01. A missing date stays single-day.
+ * The date decides whether a day code is required; it does not choose X or E.
+ */
+function examRequiresDayCode(examCode: string, date: string | null): boolean {
+  if (examCode === 'A' || examCode === 'O') {
+    return true
+  }
+  return (examCode === 'A5' || examCode === 'O5') && date !== null && date >= a5O5DayCodeRequiredFrom
+}
+
 function assertExamIsValid(doc: Document): Document {
   if (!doc.validate(schema)) {
     // The Exam and XHTML schemas import each other, which causes libxml to add some extra warnings as error messages.
@@ -194,13 +209,13 @@ function assertExamIsValid(doc: Document): Document {
   const root = doc.root()!
   const examCode = getAttribute('exam-code', root, '')
   const dayCode = getAttribute('day-code', root, '')
-  const examCodesRequiringDayCode = ['A', 'O']
+  const date = getAttribute('date', root, null)
   if (dayCode) {
-    if (!examCodesRequiringDayCode.includes(examCode)) {
+    if (!examRequiresDayCode(examCode, date)) {
       throw mkError(`Invalid exam-code ${examCode} for day-code ${dayCode}`, doc.root()!)
     }
   } else {
-    if (examCodesRequiringDayCode.includes(examCode)) {
+    if (examRequiresDayCode(examCode, date)) {
       throw mkError(`Invalid empty day-code for exam-code ${examCode}`, doc.root()!)
     }
   }
