@@ -12,6 +12,8 @@ import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/exam-engine-
 import { promises as fs } from 'fs'
 import _ from 'lodash'
 import path from 'path'
+import examFootersFi from '../src/i18n/exam_footers_fi-FI.json'
+import examFootersSv from '../src/i18n/exam_footers_sv-FI.json'
 import { readFixture } from './fixtures'
 
 const generateUuid: GenerateUuid = () => '00000000-0000-0000-0000-000000000000'
@@ -347,15 +349,6 @@ describe('Exam mastering', () => {
   })
 
   describe('A5 and O5 titles and writing-day footers', () => {
-    const defaultFooterFi =
-      'Tarkista, että vastasit ohjeiden mukaiseen määrään tehtäviä. Älä jätä mitään merkintöjä sellaisen tehtävän vastaukselle varattuun tilaan, jota et halua jättää arvosteltavaksi.'
-    const defaultFooterSv =
-      'Kontrollera att du har svarat på det antal uppgifter som anges i instruktionerna. Lämna inga anteckningar i svarsfältet för sådana uppgifter som du inte vill lämna in för bedömning.'
-    const writingFooterFi =
-      'Tarkista, että kirjoitit vain yhden aiheen vastaustilaan. Älä jätä mitään merkintöjä muiden aiheiden vastaustiloihin.'
-    const writingFooterSv =
-      'Kontrollera att du endast skrivit i ett svarsfält. Lämna inga anteckningar i de övriga svarsfälten.'
-
     const examXml = (examCode: 'A5' | 'O5', language: 'fi-FI' | 'sv-FI', dayCode?: 'X' | 'E') =>
       generateExam({
         examCode,
@@ -367,11 +360,16 @@ describe('Exam mastering', () => {
 
     const footerText = (xml: string) => xml.match(/<e:exam-footer><p[^>]*>([^<]*)<\/p><\/e:exam-footer>/)?.[1]
 
+    it('writing-day footers match the mother-tongue writing exams', () => {
+      expect(examFootersFi.A5_E).toBe(examFootersFi.A_E)
+      expect(examFootersSv.O5_E).toBe(examFootersSv.O_E)
+    })
+
     it.each([
-      ['A5', 'X', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, lukutaidon koe', defaultFooterFi],
-      ['A5', 'E', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, kirjoitustaidon koe', writingFooterFi],
-      ['O5', 'X', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i läskompetens', defaultFooterSv],
-      ['O5', 'E', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i skrivkompetens', writingFooterSv]
+      ['A5', 'X', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, lukutaidon koe', examFootersFi.default],
+      ['A5', 'E', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, kirjoitustaidon koe', examFootersFi.A5_E],
+      ['O5', 'X', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i läskompetens', examFootersSv.default],
+      ['O5', 'E', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i skrivkompetens', examFootersSv.O5_E]
     ] as const)('%s_%s (%s) gets its title and footer', async (examCode, dayCode, language, title, expectedFooter) => {
       const [result] = await masterExam(examXml(examCode, language, dayCode), generateUuid, getMediaMetadata)
       expect(result.title).toBe(title)
