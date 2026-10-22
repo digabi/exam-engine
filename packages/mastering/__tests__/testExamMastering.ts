@@ -304,22 +304,33 @@ describe('Exam mastering', () => {
 
     it.each([
       ['A5', '2026-12-31'],
-      ['O5', '2026-12-31'],
-      ['A5', undefined],
-      ['O5', undefined]
-    ] as const)('masters %s without a day code when date is %s', async (examCode, date) => {
+      ['O5', '2026-12-31']
+    ] as const)('masters %s dated %s without a day code', async (examCode, date) => {
       const [result] = await masterExam(examXml(examCode, date), generateUuid, getMediaMetadata)
-      expect(result).toMatchObject({ examCode, date: date ?? null, dayCode: null })
+      expect(result).toMatchObject({ examCode, date, dayCode: null })
+    })
+
+    it.each(['A5', 'O5'] as const)('masters %s without a day code when date is omitted', async examCode => {
+      const xml = examXml(examCode)
+      expect(xml).not.toMatch(/\sdate="/)
+      const [result] = await masterExam(xml, generateUuid, getMediaMetadata)
+      expect(result).toMatchObject({ examCode, date: null, dayCode: null })
     })
 
     it.each([
       ['A5', '2026-12-31', 'X'],
-      ['O5', '2026-12-31', 'X'],
-      ['A5', undefined, 'X'],
-      ['O5', undefined, 'X']
+      ['O5', '2026-12-31', 'X']
     ] as const)('rejects %s dated %s with day-code %s', async (examCode, date, dayCode) => {
       await expect(masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)).rejects.toThrow(
         `Invalid exam-code ${examCode} for day-code ${dayCode}`
+      )
+    })
+
+    it.each(['A5', 'O5'] as const)('rejects a day code on %s when date is omitted', async examCode => {
+      const xml = examXml(examCode, undefined, 'X')
+      expect(xml).not.toMatch(/\sdate="/)
+      await expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
+        `Invalid exam-code ${examCode} for day-code X`
       )
     })
   })

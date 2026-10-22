@@ -115,14 +115,14 @@ const a5O5DayCodeRequiredFrom = '2027-01-01'
 
 /**
  * A and O always have a reading day (X) and a writing day (E).
- * A5 and O5 do from 2027-01-01. A missing date stays single-day.
+ * A5 and O5 do from 2027-01-01. An omitted date attribute stays single-day.
  * The date decides whether a day code is required; it does not choose X or E.
  */
-function examRequiresDayCode(examCode: string, date: string | null): boolean {
+function examRequiresDayCode(examCode: string, date = ''): boolean {
   if (examCode === 'A' || examCode === 'O') {
     return true
   }
-  return (examCode === 'A5' || examCode === 'O5') && date !== null && date >= a5O5DayCodeRequiredFrom
+  return (examCode === 'A5' || examCode === 'O5') && date >= a5O5DayCodeRequiredFrom
 }
 
 function assertExamIsValid(doc: Document): Document {
@@ -209,7 +209,7 @@ function assertExamIsValid(doc: Document): Document {
   const root = doc.root()!
   const examCode = getAttribute('exam-code', root, '')
   const dayCode = getAttribute('day-code', root, '')
-  const date = getAttribute('date', root, null)
+  const date = getAttribute('date', root, '')
   if (dayCode) {
     if (!examRequiresDayCode(examCode, date)) {
       throw mkError(`Invalid exam-code ${examCode} for day-code ${dayCode}`, doc.root()!)
