@@ -332,13 +332,14 @@ describe('Exam mastering', () => {
         }
       )
 
-      it.each(['A5', 'O5'] as const)(
-        'rejects %s with no date because day-code X is not allowed on a single-day exam',
-        async examCode => {
-          const xml = examXml(examCode, undefined, 'X')
-          expect(xml).not.toMatch(/\sdate="/)
-          await expect(masterExam(xml, generateUuid, getMediaMetadata)).rejects.toThrow(
-            `Invalid exam-code ${examCode} for day-code X`
+      it.each([
+        ['A5', undefined, 'X'],
+        ['O5', undefined, 'X']
+      ] as const)(
+        'rejects %s dated %s because day-code %s is not allowed on a single-day exam',
+        async (examCode, date, dayCode) => {
+          await expect(masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)).rejects.toThrow(
+            `Invalid exam-code ${examCode} for day-code ${dayCode}`
           )
         }
       )
