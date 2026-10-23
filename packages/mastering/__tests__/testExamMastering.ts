@@ -373,7 +373,7 @@ describe('Exam mastering', () => {
         'FI – Suomi toisena kielenä ja kirjallisuus, lukutaidon ja kuullun ymmärtämisen osakoe',
         examFootersFi.default
       ],
-      ['A5', 'E', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, kirjoitustaidon koe', examFootersFi.A5_E],
+      ['A5', 'E', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, kirjoitustaidon osakoe', examFootersFi.A5_E],
       [
         'O5',
         'X',
@@ -381,7 +381,7 @@ describe('Exam mastering', () => {
         'SV – Svenska som andraspråk och litteratur, delprovet i läskompetens och hörförståelse',
         examFootersSv.default
       ],
-      ['O5', 'E', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i skrivkompetens', examFootersSv.O5_E]
+      ['O5', 'E', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, delprovet i skrivkompetens', examFootersSv.O5_E]
     ] as const)('%s_%s (%s) gets its title and footer', async (examCode, dayCode, language, title, expectedFooter) => {
       const [result] = await masterExam(examXml(examCode, language, dayCode), generateUuid, getMediaMetadata)
       expect(result.title).toBe(title)
