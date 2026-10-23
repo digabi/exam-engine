@@ -274,6 +274,78 @@ describe('Exam mastering', () => {
     expect(JSON.stringify(masteringResult.gradingStructure, null, 2)).toMatchSnapshot()
   })
 
+  describe('day code on A5 and O5', () => {
+    const examXml = (examCode: string, date?: string, dayCode?: string) =>
+      generateExam({
+        examCode,
+        date,
+        dayCode,
+        sections: [{ questions: [question([textAnswer()])] }]
+      })
+
+    describe('two-day exams from 2027-01-01', () => {
+      it.each([
+        ['A5', '2027-01-01', 'X'],
+        ['A5', '2027-01-01', 'E'],
+        ['O5', '2027-03-16', 'X'],
+        ['O5', '2027-03-16', 'E']
+      ] as const)('masters %s dated %s with day-code %s', async (examCode, date, dayCode) => {
+        const [result] = await masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)
+        expect(result).toMatchObject({ examCode, date, dayCode })
+      })
+
+      it.each([
+        ['A5', '2027-01-01'],
+        ['O5', '2027-01-01']
+      ] as const)('rejects %s dated %s because a two-day exam needs a day code', async (examCode, date) => {
+        await expect(masterExam(examXml(examCode, date), generateUuid, getMediaMetadata)).rejects.toThrow(
+          `Invalid empty day-code for exam-code ${examCode}`
+        )
+      })
+    })
+
+    describe('single-day exams before 2027-01-01; an omitted date is the same case', () => {
+      it.each([
+        ['A5', '2026-12-31'],
+        ['O5', '2026-12-31']
+      ] as const)('masters %s dated %s with no day code', async (examCode, date) => {
+        const [result] = await masterExam(examXml(examCode, date), generateUuid, getMediaMetadata)
+        expect(result).toMatchObject({ examCode, date, dayCode: null })
+      })
+
+      it.each(['A5', 'O5'] as const)('masters %s with no date and no day code', async examCode => {
+        const xml = examXml(examCode)
+        expect(xml).not.toMatch(/\sdate="/)
+        const [result] = await masterExam(xml, generateUuid, getMediaMetadata)
+        expect(result).toMatchObject({ examCode, date: null, dayCode: null })
+      })
+
+      it.each([
+        ['A5', '2026-12-31', 'X'],
+        ['O5', '2026-12-31', 'X']
+      ] as const)(
+        'rejects %s dated %s because day-code %s is not allowed on a single-day exam',
+        async (examCode, date, dayCode) => {
+          await expect(masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)).rejects.toThrow(
+            `Invalid exam-code ${examCode} for day-code ${dayCode}`
+          )
+        }
+      )
+
+      it.each([
+        ['A5', undefined, 'X'],
+        ['O5', undefined, 'X']
+      ] as const)(
+        'rejects %s dated %s because day-code %s is not allowed on a single-day exam',
+        async (examCode, date, dayCode) => {
+          await expect(masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)).rejects.toThrow(
+            `Invalid exam-code ${examCode} for day-code ${dayCode}`
+          )
+        }
+      )
+    })
+  })
+
   for (const exam of listExams()) {
     it(`masters ${path.basename(exam)} exam correctly`, async () => {
       const source = await fs.readFile(exam, 'utf-8')
