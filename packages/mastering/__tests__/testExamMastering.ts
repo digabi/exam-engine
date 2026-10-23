@@ -12,6 +12,8 @@ import { GenerateUuid, GetMediaMetadata, masterExam } from '@digabi/exam-engine-
 import { promises as fs } from 'fs'
 import _ from 'lodash'
 import path from 'path'
+import examFootersFi from '../src/i18n/exam_footers_fi-FI.json'
+import examFootersSv from '../src/i18n/exam_footers_sv-FI.json'
 import { readFixture } from './fixtures'
 
 const generateUuid: GenerateUuid = () => '00000000-0000-0000-0000-000000000000'
@@ -272,6 +274,127 @@ describe('Exam mastering', () => {
     const xml = await readFixture('audio-answer.xml')
     const [masteringResult] = await masterExam(xml, generateUuid, getMediaMetadata)
     expect(JSON.stringify(masteringResult.gradingStructure, null, 2)).toMatchSnapshot()
+  })
+
+  describe('day code on A5 and O5', () => {
+    const examXml = (examCode: string, date?: string, dayCode?: string) =>
+      generateExam({
+        examCode,
+        date,
+        dayCode,
+        sections: [{ questions: [question([textAnswer()])] }]
+      })
+
+    describe('two-day exams from 2027-01-01', () => {
+      it.each([
+        ['A5', '2027-01-01', 'X'],
+        ['A5', '2027-01-01', 'E'],
+        ['O5', '2027-03-16', 'X'],
+        ['O5', '2027-03-16', 'E']
+      ] as const)('masters %s dated %s with day-code %s', async (examCode, date, dayCode) => {
+        const [result] = await masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)
+        expect(result).toMatchObject({ examCode, date, dayCode })
+      })
+
+      it.each([
+        ['A5', '2027-01-01'],
+        ['O5', '2027-01-01']
+      ] as const)('rejects %s dated %s because a two-day exam needs a day code', async (examCode, date) => {
+        await expect(masterExam(examXml(examCode, date), generateUuid, getMediaMetadata)).rejects.toThrow(
+          `Invalid empty day-code for exam-code ${examCode}`
+        )
+      })
+    })
+
+    describe('single-day exams before 2027-01-01; an omitted date is the same case', () => {
+      it.each([
+        ['A5', '2026-12-31'],
+        ['O5', '2026-12-31']
+      ] as const)('masters %s dated %s with no day code', async (examCode, date) => {
+        const [result] = await masterExam(examXml(examCode, date), generateUuid, getMediaMetadata)
+        expect(result).toMatchObject({ examCode, date, dayCode: null })
+      })
+
+      it.each(['A5', 'O5'] as const)('masters %s with no date and no day code', async examCode => {
+        const xml = examXml(examCode)
+        expect(xml).not.toMatch(/\sdate="/)
+        const [result] = await masterExam(xml, generateUuid, getMediaMetadata)
+        expect(result).toMatchObject({ examCode, date: null, dayCode: null })
+      })
+
+      it.each([
+        ['A5', '2026-12-31', 'X'],
+        ['O5', '2026-12-31', 'X']
+      ] as const)(
+        'rejects %s dated %s because day-code %s is not allowed on a single-day exam',
+        async (examCode, date, dayCode) => {
+          await expect(masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)).rejects.toThrow(
+            `Invalid exam-code ${examCode} for day-code ${dayCode}`
+          )
+        }
+      )
+
+      it.each([
+        ['A5', undefined, 'X'],
+        ['O5', undefined, 'X']
+      ] as const)(
+        'rejects %s dated %s because day-code %s is not allowed on a single-day exam',
+        async (examCode, date, dayCode) => {
+          await expect(masterExam(examXml(examCode, date, dayCode), generateUuid, getMediaMetadata)).rejects.toThrow(
+            `Invalid exam-code ${examCode} for day-code ${dayCode}`
+          )
+        }
+      )
+    })
+  })
+
+  describe('A5 and O5 titles and writing-day footers', () => {
+    const examXml = (examCode: 'A5' | 'O5', language: 'fi-FI' | 'sv-FI', dayCode?: 'X' | 'E') =>
+      generateExam({
+        examCode,
+        date: dayCode ? '2027-01-01' : '2026-12-31',
+        dayCode,
+        examVersions: [{ language }],
+        sections: [{ questions: [question([textAnswer()])] }]
+      })
+
+    const footerText = (xml: string) => xml.match(/<e:exam-footer><p[^>]*>([^<]*)<\/p><\/e:exam-footer>/)?.[1]
+
+    it('writing-day footers match the mother-tongue writing exams', () => {
+      expect(examFootersFi.A5_E).toBe(examFootersFi.A_E)
+      expect(examFootersSv.O5_E).toBe(examFootersSv.O_E)
+    })
+
+    it.each([
+      [
+        'A5',
+        'X',
+        'fi-FI',
+        'FI – Suomi toisena kielenä ja kirjallisuus, lukutaidon ja kuullun ymmärtämisen osakoe',
+        examFootersFi.default
+      ],
+      ['A5', 'E', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus, kirjoitustaidon koe', examFootersFi.A5_E],
+      [
+        'O5',
+        'X',
+        'sv-FI',
+        'SV – Svenska som andraspråk och litteratur, delprovet i läskompetens och hörförståelse',
+        examFootersSv.default
+      ],
+      ['O5', 'E', 'sv-FI', 'SV – Svenska som andraspråk och litteratur, provet i skrivkompetens', examFootersSv.O5_E]
+    ] as const)('%s_%s (%s) gets its title and footer', async (examCode, dayCode, language, title, expectedFooter) => {
+      const [result] = await masterExam(examXml(examCode, language, dayCode), generateUuid, getMediaMetadata)
+      expect(result.title).toBe(title)
+      expect(footerText(result.xml)).toBe(expectedFooter)
+    })
+
+    it.each([
+      ['A5', 'fi-FI', 'FI – Suomi toisena kielenä ja kirjallisuus'],
+      ['O5', 'sv-FI', 'SV – Svenska som andraspråk och litteratur']
+    ] as const)('single-day %s keeps the current title', async (examCode, language, title) => {
+      const [result] = await masterExam(examXml(examCode, language), generateUuid, getMediaMetadata)
+      expect(result).toMatchObject({ examCode, dayCode: null, title })
+    })
   })
 
   for (const exam of listExams()) {
