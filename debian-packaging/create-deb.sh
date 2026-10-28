@@ -2,7 +2,7 @@
 
 set -ex
 DEB_PACKAGE_SOURCE_DIR=debian-packaging/package-user-root/
-DEB_VERSION=1.1.${BUILD_NUMBER}
+DEB_VERSION=1.2.${BUILD_NUMBER}
 
 # cleanup
 rm *.deb || true
