@@ -18,8 +18,9 @@ export interface CommonExamContext {
   maxScore?: number
   sections: Element[]
   resolveAttachment: (filename: string) => string
+  /** Host-provided callback to open an attachment file instead of letting the browser follow the link. */
+  onFileOpen?: (href: string) => void
   root: Element
-  abitti2: boolean
 }
 
 export const CommonExamContext = React.createContext({} as CommonExamContext)
@@ -27,28 +28,31 @@ export const CommonExamContext = React.createContext({} as CommonExamContext)
 export function withCommonExamContext<P extends CommonExamProps>(
   Component: React.ComponentType<P>
 ): React.ComponentType<P> {
-  return withContext<CommonExamContext, P>(CommonExamContext, ({ attachmentsURL, resolveAttachment, doc, abitti2 }) => {
-    const root = doc.documentElement
-    const maybeDate = getAttribute(root, 'date')
-    const language = getAttribute(root, 'exam-lang')!
-    const examType = getAttribute(root, 'exam-type') ?? 'normal'
-    const subjectLanguage = getAttribute(root, 'lang') || language
+  return withContext<CommonExamContext, P>(
+    CommonExamContext,
+    ({ attachmentsURL, resolveAttachment, onFileOpen, doc }) => {
+      const root = doc.documentElement
+      const maybeDate = getAttribute(root, 'date')
+      const language = getAttribute(root, 'exam-lang')!
+      const examType = getAttribute(root, 'exam-type') ?? 'normal'
+      const subjectLanguage = getAttribute(root, 'lang') || language
 
-    return {
-      attachmentsURL,
-      date: maybeDate ? new Date(maybeDate) : undefined,
-      dateTimeFormatter: new Intl.DateTimeFormat('fi-FI', { timeZone: 'UTC' }),
-      dayCode: getAttribute(root, 'day-code'),
-      examCode: getAttribute(root, 'exam-code'),
-      language,
-      subjectLanguage,
-      examType,
-      maxAnswers: getNumericAttribute(root, 'max-answers'),
-      maxScore: getNumericAttribute(root, 'max-score'),
-      sections: queryAll(root, 'section'),
-      resolveAttachment,
-      abitti2: abitti2 || false,
-      root
+      return {
+        attachmentsURL,
+        date: maybeDate ? new Date(maybeDate) : undefined,
+        dateTimeFormatter: new Intl.DateTimeFormat('fi-FI', { timeZone: 'UTC' }),
+        dayCode: getAttribute(root, 'day-code'),
+        examCode: getAttribute(root, 'exam-code'),
+        language,
+        subjectLanguage,
+        examType,
+        maxAnswers: getNumericAttribute(root, 'max-answers'),
+        maxScore: getNumericAttribute(root, 'max-score'),
+        sections: queryAll(root, 'section'),
+        resolveAttachment,
+        onFileOpen,
+        root
+      }
     }
-  })(Component)
+  )(Component)
 }

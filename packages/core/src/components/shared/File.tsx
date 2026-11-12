@@ -6,10 +6,19 @@ import { ExamComponentProps } from '../../createRenderChildNodes'
 function File({ element, className, renderChildNodes }: ExamComponentProps) {
   const src = element.getAttribute('src')!
   const hasDescription = element.hasChildNodes()
-  const { resolveAttachment } = useContext(CommonExamContext)
+  const { resolveAttachment, onFileOpen } = useContext(CommonExamContext)
+  const href = resolveAttachment(src)
+
+  const onClick = (event: React.MouseEvent) => {
+    if (!onFileOpen) {
+      return
+    }
+    event.preventDefault()
+    onFileOpen(href)
+  }
 
   return (
-    <a className={classNames('file e-nowrap', className)} href={resolveAttachment(src)} download>
+    <a className={classNames('file e-nowrap', className)} href={href} onClick={onClick}>
       {hasDescription ? (
         <>
           {renderChildNodes(element)} ({src})

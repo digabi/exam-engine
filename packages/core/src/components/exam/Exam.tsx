@@ -66,11 +66,12 @@ export interface CommonExamProps {
   attachmentsURL: string
   /** A function that maps an attachment filename to a full URI. */
   resolveAttachment: (filename: string) => string
+  /** Host-provided callback to open an attachment file instead of letting the browser follow the link. */
+  onFileOpen?: (href: string) => void
   /** The exam XML */
   doc: XMLDocument
   /** @deprecated Not used anymore */
   language?: string
-  abitti2?: boolean
   renderComponentOverrides?: RenderComponentOverrides
 }
 
