@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "moduleResolution": "Node",
     "rootDir": "./src",
     "outDir": "./dist"
   },
