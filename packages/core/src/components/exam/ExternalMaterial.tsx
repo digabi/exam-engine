@@ -6,10 +6,12 @@ import { externalMaterialListTitleId } from '../../ids'
 import { url } from '../../url'
 import { AttachmentContext, withAttachmentContext } from '../context/AttachmentContext'
 import { CommonExamContext } from '../context/CommonExamContext'
+import Formula from '../shared/Formula'
 
 const renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),
-  'attachment-title': AttachmentTitle
+  'attachment-title': AttachmentTitle,
+  formula: Formula
 })()
 
 function Attachment({ element }: ExamComponentProps) {
