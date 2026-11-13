@@ -419,6 +419,13 @@ exports[`ee create-transfer-zip > creates hi transfer zip 2`] = `
         
         
       </e:question-instruction>
+
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Kuvalinkki</e:attachment-title>
+          <e:file src="maxmoritz.png"><i>Kursivoitu linkki kuvaan</i></e:file>
+        </e:attachment>
+      </e:external-material>
       <e:attachment>
         <e:attachment-title>Wendungen-teksti</e:attachment-title>
         <br/>
@@ -2685,6 +2692,13 @@ exports[`ee create-transfer-zip > creates transfer zip 2`] = `
         
         
       </e:question-instruction>
+
+      <e:external-material>
+        <e:attachment>
+          <e:attachment-title>Kuvalinkki</e:attachment-title>
+          <e:file src="maxmoritz.png"><i>Kursivoitu linkki kuvaan</i></e:file>
+        </e:attachment>
+      </e:external-material>
       <e:attachment>
         <e:attachment-title>Wendungen-teksti</e:attachment-title>
         <br/>

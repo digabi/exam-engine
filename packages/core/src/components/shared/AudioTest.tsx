@@ -17,7 +17,7 @@ function AudioTest({ element }: ExamComponentProps) {
   const audioState = useSelector(getAudioState(src))
   const audioPlaybackError = useSelector(getAudioPlaybackError(src))
   const dispatch = useDispatch()
-  const { abitti2, resolveAttachment } = useContext(CommonExamContext)
+  const { resolveAttachment } = useContext(CommonExamContext)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   return (
@@ -25,11 +25,9 @@ function AudioTest({ element }: ExamComponentProps) {
       <p>{t('audio-test.instructions')}</p>
       <div className="e-columns e-columns--center-v e-mrg-b-2">
         <div className="e-column e-column--narrow">
-          {abitti2 && (
-            <audio ref={audioRef} preload="none">
-              <source src={resolveAttachment(src)} />
-            </audio>
-          )}
+          <audio ref={audioRef} preload="none">
+            <source src={resolveAttachment(src)} />
+          </audio>
           <button
             className="e-button"
             disabled={audioState !== 'stopped'}
