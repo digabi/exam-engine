@@ -129,6 +129,14 @@ describe('Exam mastering', () => {
     )
   })
 
+  it('validates that the score of a dnd-answer-option equals the max-score of its dnd-answer', async () => {
+    const xml = await readFixture('dnd-answer.xml')
+    const invalidXml = xml.replace('<e:dnd-answer-option score="2">', '<e:dnd-answer-option score="1">')
+    return expect(masterExam(invalidXml, generateUuid, getMediaMetadata)).rejects.toThrow(
+      'The score of a dnd-answer-option must equal the max-score of its dnd-answer'
+    )
+  })
+
   it('calls generateUuid with exam metadata if it is an yo exam', async () => {
     const xml = await readFixture('minimal_yo_exam.xml')
     const spy = vi.fn(generateUuid)

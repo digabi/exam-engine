@@ -197,6 +197,21 @@ function assertExamIsValid(doc: Document): Document {
       }
     }
 
+    // Ensure that each dnd-answer-option's score equals the max-score of its dnd-answer parent
+    if (answer.name() === 'dnd-answer') {
+      const options = answer.find<Element>('./e:dnd-answer-option', ns)
+      const maxScore = getNumericAttribute(
+        'max-score',
+        answer,
+        _.max(options.map(option => getNumericAttribute('score', option, 0)))
+      )
+      for (const option of options) {
+        if (getNumericAttribute('score', option, 0) !== maxScore) {
+          throw mkError('The score of a dnd-answer-option must equal the max-score of its dnd-answer', option)
+        }
+      }
+    }
+
     // Validate that only text-answers where type = rich-text have max-lenth attributes.
     // default to single-line as the schema also defaults to that
     if (getAttribute('type', answer, 'single-line') !== 'rich-text') {
