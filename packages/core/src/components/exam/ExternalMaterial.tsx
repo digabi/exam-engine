@@ -1,3 +1,4 @@
+import _ from 'lodash-es'
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
 import { queryAncestors } from '../../dom-utils'
@@ -8,11 +9,14 @@ import { AttachmentContext, withAttachmentContext } from '../context/AttachmentC
 import { CommonExamContext } from '../context/CommonExamContext'
 import Formula from '../shared/Formula'
 
-const renderChildNodes = createRenderChildNodes({
+const _renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),
   'attachment-title': AttachmentTitle,
-  formula: Formula
-})()
+  formula: _.constant(null)
+})
+
+const renderChildNodes = _renderChildNodes()
+const renderTitleChildNodes = _renderChildNodes({ formula: Formula })
 
 function Attachment({ element }: ExamComponentProps) {
   const { displayNumber } = useContext(AttachmentContext)
@@ -30,7 +34,7 @@ function AttachmentTitle({ element }: ExamComponentProps) {
 
   return (
     <a href={url(attachmentsURL, { hash: displayNumber! })} className="exam-attachment-title" target="attachments">
-      {renderChildNodes(element)}
+      {renderTitleChildNodes(element)}
     </a>
   )
 }
