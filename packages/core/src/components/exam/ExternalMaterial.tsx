@@ -1,4 +1,4 @@
-import _ from 'lodash-es'
+import { constant } from 'lodash-es'
 import React, { useContext } from 'react'
 import { createRenderChildNodes, ExamComponentProps, RenderOptions } from '../../createRenderChildNodes'
 import { queryAncestors } from '../../dom-utils'
@@ -12,7 +12,7 @@ import Formula from '../shared/Formula'
 const _renderChildNodes = createRenderChildNodes({
   attachment: withAttachmentContext(Attachment),
   'attachment-title': AttachmentTitle,
-  formula: _.constant(null)
+  formula: constant(null)
 })
 
 const renderChildNodes = _renderChildNodes()
