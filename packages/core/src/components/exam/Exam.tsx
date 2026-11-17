@@ -68,6 +68,8 @@ export interface CommonExamProps {
   resolveAttachment: (filename: string) => string
   /** Host-provided callback to open an attachment file instead of letting the browser follow the link. */
   onFileOpen?: (href: string) => void
+  /** Set this to skip rendering an inline `<audio>` element in hosts that play restricted audio some other way */
+  skipInlineRestrictedAudio?: boolean
   /** The exam XML */
   doc: XMLDocument
   /** @deprecated Not used anymore */
