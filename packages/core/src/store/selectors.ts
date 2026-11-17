@@ -34,6 +34,8 @@ export const getPlaybackTimesRemaining =
   (state: AppState): number =>
     times - getPlaybackTimes(restrictedAudioId)(state)
 
+export const getSupportsInlineRestrictedAudio = (state: AppState): boolean => state.audio.supportsInlineRestrictedAudio
+
 export const getSaveState = (state: AppState): SaveState => {
   const { serverQuestionIds, savedQuestionIds, answersById } = state.answers
 

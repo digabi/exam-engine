@@ -21,7 +21,8 @@ async function loadAndPlayRestrictedAudio(
   playbackTimes: number
 ) {
   try {
-    const response = await examServerApi.getRestrictedAudio('', restrictedAudioId, playbackTimes)
+    // Reached only via the Abitti2 path, in which case getRestrictedAudio is always defined, so the call is safe here.
+    const response = await examServerApi.getRestrictedAudio!('', restrictedAudioId, playbackTimes)
     const source = audio.querySelector('source')!
     source.src = URL.createObjectURL(response)
     audio.load()

@@ -1,13 +1,17 @@
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
-import React, { useContext, useRef } from 'react'
+import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RestrictedAudioId } from '../../../index'
 import { useExamTranslation } from '../../../i18n'
 import { playAudio } from '../../../store/audio/actions'
-import { getAudioState, getDurationRemaining, getPlaybackTimesRemaining } from '../../../store/selectors'
-import { CommonExamContext } from '../../context/CommonExamContext'
+import {
+  getAudioState,
+  getDurationRemaining,
+  getPlaybackTimesRemaining,
+  getSupportsInlineRestrictedAudio
+} from '../../../store/selectors'
 
 function RestrictedAudioPlayer({
   src,
@@ -32,7 +36,7 @@ function RestrictedAudioPlayer({
   const disabled = !stopped || playbackTimesRemaining === 0
   const remainingLabelId = `audio-remaining-${restrictedAudioId}`
   const labels = playing ? [] : [remainingLabelId, labelId]
-  const { skipInlineRestrictedAudio } = useContext(CommonExamContext)
+  const supportsInlineRestrictedAudio = useSelector(getSupportsInlineRestrictedAudio)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   return (
@@ -43,7 +47,7 @@ function RestrictedAudioPlayer({
       )}
       lang={i18n.language}
     >
-      {!skipInlineRestrictedAudio && (
+      {supportsInlineRestrictedAudio && (
         <audio ref={audioRef} preload="none">
           <source />
         </audio>

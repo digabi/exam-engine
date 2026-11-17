@@ -26,12 +26,15 @@ export interface AudioState {
   errors: Record<string | RestrictedAudioId, AudioError>
   nowPlaying: NowPlaying | null
   playbackTimes: Record<RestrictedAudioId, number>
+  /** Whether the host supports playing restricted audio from an inline `<audio>` element (the Abitti2 way) */
+  supportsInlineRestrictedAudio: boolean
 }
 
 const initialState: AudioState = {
   errors: {},
   nowPlaying: null,
-  playbackTimes: {}
+  playbackTimes: {},
+  supportsInlineRestrictedAudio: false
 }
 
 export default function audioReducer(state: AudioState = initialState, action: AudioAction): AudioState {

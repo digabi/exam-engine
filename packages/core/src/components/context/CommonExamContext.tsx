@@ -20,9 +20,6 @@ export interface CommonExamContext {
   resolveAttachment: (filename: string) => string
   /** Host-provided callback to open an attachment file instead of letting the browser follow the link. */
   onFileOpen?: (href: string) => void
-  /** Set this to skip rendering an inline `<audio>`
-   element in hosts that play restricted audio some other way */
-  skipInlineRestrictedAudio?: boolean
   root: Element
 }
 
@@ -33,7 +30,7 @@ export function withCommonExamContext<P extends CommonExamProps>(
 ): React.ComponentType<P> {
   return withContext<CommonExamContext, P>(
     CommonExamContext,
-    ({ attachmentsURL, resolveAttachment, onFileOpen, skipInlineRestrictedAudio, doc }) => {
+    ({ attachmentsURL, resolveAttachment, onFileOpen, doc }) => {
       const root = doc.documentElement
       const maybeDate = getAttribute(root, 'date')
       const language = getAttribute(root, 'exam-lang')!
@@ -54,7 +51,6 @@ export function withCommonExamContext<P extends CommonExamProps>(
         sections: queryAll(root, 'section'),
         resolveAttachment,
         onFileOpen,
-        skipInlineRestrictedAudio,
         root
       }
     }
