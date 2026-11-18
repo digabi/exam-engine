@@ -62,7 +62,8 @@ export function initializeExamStore(
     audio: {
       errors: {},
       nowPlaying: null,
-      playbackTimes
+      playbackTimes,
+      supportsInlineRestrictedAudio: typeof examServerApi.getRestrictedAudio === 'function'
     },
     cas: { casStatus }
   }
